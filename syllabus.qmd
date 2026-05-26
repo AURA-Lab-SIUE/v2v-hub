@@ -3,7 +3,7 @@ title: "Course Syllabus"
 ---
 
 ## MC 451: Research Methods for Mass Communications
-### Spring 2026
+### Fall 2026
 
 ---
 
@@ -17,9 +17,9 @@ title: "Course Syllabus"
 | **Office Hours** | MW 10:00–11:30 AM and 1:30–3:00 PM |
 | **Class Time** | MW 3:00–4:15 PM |
 | **Classroom** | Dunham Hall 2039 |
-| **Duration** | Jan 12 – May 08, 2026 |
-| **Course Website** | https://sim-lab-siue.github.io/mc451-liaison-program/ |
-| **Textbook** | [From Vibes to Variables, 2nd Ed.](https://sim-lab-siue.github.io/vibes-to-variables/) (OER - Free) |
+| **Duration** | Aug 24 – Dec 18, 2026 |
+| **Course Website** | https://aura-lab-siue.github.io/v2v-hub/ |
+| **Textbook** | [Vibes to Variables, 3rd Ed.](https://aura-lab-siue.github.io/v2v/) (OER - Free) |
 
 ---
 
@@ -41,16 +41,16 @@ Students complete a two-part content analysis project across the semester: a qua
 
 ## Course Structure: The Five Phases
 
-### Phase I: The Journalist (Weeks 1–15) — 150 points
+### Phase I: The Journalist (Weeks 1–14) — 150 points
 - Weekly Reading Journal (10 pts/week x 14 teaching weeks + 10 pts consistency = 150 pts)
 
-### Phase II: The Architect (Weeks 2–4) — 125 points
+### Phase II: The Architect (Weeks 1–3) — 125 points
 - GitHub Profile (25 pts)
 - Syllabus Contract (25 pts)
 - Project Setup (25 pts)
 - Librarian Visit Report (50 pts)
 
-### Phase III: The Builder (Weeks 5–12) — 250 points
+### Phase III: The Builder (Weeks 4–9) — 250 points
 - Annotated Manuscript (25 pts)
 - Project Prospectus (25 pts)
 - Topic Selection — RQs (25 pts)
@@ -59,12 +59,12 @@ Students complete a two-part content analysis project across the semester: a qua
 - Sampling Plan & Pilot (75 pts)
 - CITI Ethics Certification (25 pts)
 
-### Phase IV: The Analyst (Weeks 13–15) — 225 points
+### Phase IV: The Analyst (Weeks 10–12) — 225 points
 - Data Wrangling [R] (50 pts)
 - Describing Data [R] (75 pts)
 - Inferencing Data [R] (100 pts)
 
-### Phase V: The Publisher (Weeks 16–17) — 250 points
+### Phase V: The Publisher (Weeks 13–15) — 250 points
 - Final Web Portfolio (250 pts)
 
 **Total Points:** 1000
@@ -88,7 +88,7 @@ Students complete a two-part content analysis project across the semester: a qua
 All software is free and open-source:
 
 - **R** — Statistical computing environment
-- **RStudio** — IDE for R
+- **VSCode** — IDE for R and Quarto
 - **Obsidian** — Personal knowledge management
 - **Quarto** — Scientific and technical publishing
 - **Git** — Version control
@@ -123,25 +123,24 @@ Per the SIUE Student Academic Code (3C2), plagiarism and cheating will not be to
 
 ## Weekly Schedule
 
-| Week | Dates | Reading | Assignment Due |
+| Week | Dates | Chapter | Assignment Due |
 |------|-------|---------|----------------|
-| 1 | Aug 24 | Syllabus and Introductions | GitHub Profile |
-| 2 | Aug 31 | Ch 1–2: Curiosity & Trust | Syllabus Contract |
-| 3 | Sep 07 | Ch 3–4: Reading Protocol & The Archivist | Project Setup |
-| 4 | Sep 14 | Ch 5–6: Choosing Your Lens & The Roadmap | Librarian Visit Report |
-| 5 | Sep 21 | Ch 7–8: Research Question & Ethics | Annotated Manuscript |
-| 6 | Sep 28 | Ch 9–10: Toolkit & Qualitative Methods | Project Prospectus |
-| 7 | Oct 05 | Ch 11–12: Surveys & Experiments | Topic Selection (RQs) |
-| 8 | Oct 12 | Ch 13–14: Immersion & Vibes to Variables | Definitions Practice |
-| 9 | Oct 19 | Ch 15–16: The Rulebook & Sampling Plan | Codebook & Qual Memo |
-| 10 | Oct 26 | Ch 17: Wrangling the Chaos | Sampling Plan & Pilot |
-| 11 | Nov 02 | Ch 18: Seeing Patterns | Data Wrangling [R] |
-| 12 | Nov 09 | Ch 19: The Surprise Detector | Describing Data [R] |
-| 13 | Nov 16 | Ch 20: Interpreting the Call | Inferencing Data [R] |
-| 14 | Nov 23 | **THANKSGIVING BREAK** | |
-| 15 | Nov 30 | Ch 21–22: Portfolio & Going Live | CITI Certification |
-| 16 | Dec 07 | **Remote Work Week** | |
-| 17 | Dec 14 | **Finals Week** | Final Web Portfolio |
+| 1 | Aug 24–30 | Syllabus + Intros | GitHub Profile |
+| 2 | Aug 31–Sep 6 | Ch 1–2: Storytelling & Open Workspace | Syllabus Contract |
+| 3 | Sep 7–13 | Ch 3–4: Epistemology & Intelligence Gathering | Project Setup |
+| 4 | Sep 14–20 | Ch 5–6: Theory & The Prospectus | Librarian Visit Report |
+| 5 | Sep 21–27 | Ch 7–8: Listening & Vibes to Variables | Annotated Manuscript |
+| 6 | Sep 28–Oct 4 | Ch 9–10: Rulebook & The Sample | Project Prospectus |
+| 7 | Oct 5–11 | Ch 11–12: Data Wrangling & Visualization | Topic Selection (RQs) |
+| 8 | Oct 12–18 | Ch 13–14: Making the Call & Reports | Definitions Practice + Codebook & Qual Memo |
+| — | Oct 19–Nov 2 | **Session Break** | — |
+| 9 | Nov 2–8 | Review & Advanced Topics | Sampling Plan & Pilot |
+| 10 | Nov 9–15 | Applied Practice [R] | Data Wrangling [R] |
+| 11 | Nov 16–22 | Applied Practice [R] | Describing Data [R] |
+| — | Nov 23–29 | **Thanksgiving Break** | — |
+| 12 | Nov 30–Dec 6 | Applied Practice [R] | Inferencing Data [R] |
+| — | Dec 7–13 | **Remote Work Week** | CITI Certification |
+| 13 | Dec 14–18 | **Finals Week** | Final Web Portfolio |
 
 *Schedule subject to change with notice*
 
@@ -180,10 +179,9 @@ Contact Accessible Campus Community and Equitable Student Support:
 
 ### Key Resources
 
-- **Textbook** — [From Vibes to Variables](https://sim-lab-siue.github.io/vibes-to-variables/) (free, online)
-- **coursepackR** — R package with datasets, templates, and setup tools
+- **Textbook** — [Vibes to Variables](https://aura-lab-siue.github.io/v2v/) (free, online)
+- **v2v R Package** — R package with datasets, templates, and setup tools
 - **Methods Vault** — Obsidian workspace template (download on [Resources](resources/) page)
-- **Weekly Templates** — Available via `coursepackR::download_week()`
 
 ### Getting Help
 

@@ -1,6 +1,6 @@
 project:
   type: website
-  title: "MC Research Methods: Open Methods Hub"
+  title: "V2V Hub"
   output-dir: docs
   render:
     - "*.qmd"
@@ -13,7 +13,7 @@ project:
     - "modules/04_analyst/pokemon-practice.qmd"
 
 website:
-  title: "Open Methods Hub"
+  title: "V2V Hub"
   navbar:
     background: primary
     left:
@@ -31,11 +31,11 @@ website:
         href: methods-vault.qmd
     right:
       - text: "Textbook"
-        href: https://sim-lab-siue.github.io/vibes-to-variables/
+        href: https://aura-lab-siue.github.io/v2v/
         target: _blank
 
   sidebar:
-    - title: "From Vibes to Variables"
+    - title: "V2V Hub"
       style: "docked"
       contents:
         - text: "Course Home"
@@ -44,80 +44,66 @@ website:
           href: how-it-works.qmd
         - text: "---"
 
-        - section: "Part I: Foundations"
+        - section: "Part I: Foundation"
           contents:
             - text: "Phase I: The Journalist"
               href: modules/01_journalist/index.qmd
-            - text: "Ch 1 -- The Architecture of Curiosity"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter01.html
-            - text: "Ch 2 -- The Infrastructure of Trust"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter02.html
-            - text: "Ch 3 -- The Reading Journal Protocol"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter03.html
-            - text: "Ch 4 -- The Archivist"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter04.html
+            - text: "Ch 1 — The Science of Storytelling"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter01.html
+            - text: "Ch 2 — The Open Workspace"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter02.html
+            - text: "Ch 3 — Knowing and Knowing Well"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter03.html
 
-        - section: "Part II: Design"
+        - section: "Part II: Planning"
           contents:
             - text: "Phase II: The Architect"
               href: modules/02_architect/index.qmd
-            - text: "Ch 5 -- Choosing Your Lens"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter05.html
-            - text: "Ch 6 -- The Roadmap"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter06.html
-            - text: "Ch 7 -- The Research Question"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter07.html
-            - text: "Ch 8 -- The Ethics of Inquiry"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter08.html
-            - text: "Ch 9 -- The Methodologist's Toolkit"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter09.html
+            - text: "Ch 4 — Intelligence Gathering"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter04.html
+            - text: "Ch 5 — Theory as a Lens"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter05.html
+            - text: "Ch 6 — The Prospectus"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter06.html
 
-        - section: "Part III: Methods"
+        - section: "Part III: Operationalization"
           contents:
             - text: "Phase III: The Builder"
               href: modules/03_builder/index.qmd
-            - text: "Ch 10 -- Qualitative Methods"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter10.html
-            - text: "Ch 11 -- Designing Surveys"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter11.html
-            - text: "Ch 12 -- Designing Experiments"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter12.html
+            - text: "Ch 7 — Structured Listening"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter07.html
+            - text: "Ch 8 — From Vibes to Variables"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter08.html
+            - text: "[R] Codebook Lab"
+              href: workbook/01-codebook.qmd
+            - text: "Ch 9 — The Rulebook and First Workspace"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter09.html
+            - text: "[R] Data Collection Lab"
+              href: workbook/02-data-collection.qmd
 
         - section: "Part IV: Execution"
           contents:
-            - text: "Ch 13 -- Music Immersion"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter13.html
-            - text: "Ch 14 -- Vibes to Variables"
-              href: workbook/01-codebook.qmd
-            - text: "Ch 15 -- The Rulebook"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter15.html
-            - text: "Ch 16 -- Sampling Plan & Pilot"
-              href: workbook/02-data-collection.qmd
-            - text: "R Setup -- Meet R and RStudio"
-              href: workbook/03-meet-r.qmd
-            - text: "Ch 17 -- Wrangling the Chaos"
-              href: workbook/04-data-wrangling.qmd
             - text: "Phase IV: The Analyst"
               href: modules/04_analyst/index.qmd
-            - text: "Ch 18 -- Seeing Patterns (Lecture)"
-              href: chapters/18a-seeing-patterns-lecture.qmd
-            - text: "Ch 18 -- Seeing Patterns (Lab)"
-              href: chapters/18b-seeing-patterns-lab.qmd
-            - text: "Ch 19 -- The Surprise Detector"
-              href: chapters/19-surprise-detector.qmd
-            - text: "Ch 20 -- Interpreting the Call"
-              href: chapters/20-interpreting-the-call.qmd
+            - text: "Ch 10 — The Sample"
+              href: https://aura-lab-siue.github.io/v2v/chapters/chapter10.html
+            - text: "Meet R"
+              href: workbook/03-meet-r.qmd
+            - text: "Ch 11 — Wrangling the Data [R]"
+              href: workbook/04-data-wrangling.qmd
+            - text: "Ch 12 — Visualizing the Narrative [R]"
+              href: workbook/05-describing-data.qmd
             - text: "Practice: Pokemon Wrangling"
               href: modules/04_analyst/practice-wrangling.qmd
 
-        - section: "Part V: Communication"
+        - section: "Part V: Inference and Publication"
           contents:
             - text: "Phase V: The Publisher"
               href: modules/05_publisher/index.qmd
-            - text: "Ch 21 -- The Portfolio"
+            - text: "Ch 13 — Making the Call [R]"
+              href: workbook/06-inferencing-data.qmd
+            - text: "Ch 14 — The One-Click Report [R]"
               href: workbook/07-publishing.qmd
-            - text: "Ch 22 -- Going Live"
-              href: https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter22.html
 
         - text: "---"
 

@@ -14,18 +14,18 @@ title: "MC 501 Course Syllabus"
 | **Instructor** | Alex P. Leith, PhD |
 | **Email** | aleith@siue.edu |
 | **Office** | Dunham Hall 1017 |
-| **Office Hours** | MW 10:00-11:30 AM and 1:30-3:00 PM |
-| **Class Time** | W 5:00-7:50 PM (170 minutes) |
+| **Office Hours** | MW 10:00–11:30 AM and 1:30–3:00 PM |
+| **Class Time** | W 5:00–7:50 PM (170 minutes) |
 | **Classroom** | TBD |
-| **Duration** | Aug 24 - Dec 18, 2026 |
-| **Course Website** | https://sim-lab-siue.github.io/liaison-program/ |
-| **Textbook** | [From Vibes to Variables, 2nd Ed.](https://sim-lab-siue.github.io/vibes-to-variables/) (OER - Free) |
+| **Duration** | Aug 24 – Dec 18, 2026 |
+| **Course Website** | https://aura-lab-siue.github.io/v2v-hub/ |
+| **Textbook** | [Vibes to Variables, 3rd Ed.](https://aura-lab-siue.github.io/v2v/) (OER - Free) |
 
 ---
 
 ## Course Description
 
-MC 501 is the graduate-level research methods course in mass communication. Students explore quantitative and qualitative methods -- surveys, experiments, content analysis, and in-depth interviews -- with emphasis on designing, executing, and communicating original research at a level approaching publishable quality.
+MC 501 is the graduate-level research methods course in mass communication. Students explore quantitative and qualitative methods — surveys, experiments, content analysis, and in-depth interviews — with emphasis on designing, executing, and communicating original research at a level approaching publishable quality.
 
 Students complete a two-part content analysis across the semester: a qualitative study developing coding variables through immersion, and a quantitative study testing relationships in coded data. The final deliverable is a professional White Paper suitable for conference submission or client delivery, published to GitHub Pages.
 
@@ -35,29 +35,29 @@ Graduate students engage with the textbook's graduate extensions: assigned peer-
 
 ## Course Structure: The Five Phases
 
-### Phase I: The Journalist (Weeks 1-15) - 150 points
+### Phase I: The Journalist (Weeks 1–14) — 150 points
 - Weekly Reading Journal with Graduate Extensions (10 pts/week x 14 teaching weeks + 10 pts consistency)
 
-### Phase II: The Architect (Weeks 1-4) - 100 points
+### Phase II: The Architect (Weeks 1–3) — 100 points
 - GitHub Profile (25 pts)
 - Syllabus Contract (25 pts)
 - Librarian Visit Report (50 pts)
 
-### Phase III: The Builder (Weeks 5-13) - 325 points
-- Annotated Manuscripts -- 3 articles (25 pts)
-- Research Proposal -- sentence outline (75 pts)
+### Phase III: The Builder (Weeks 4–9) — 325 points
+- Annotated Manuscripts — 3 articles (25 pts)
+- Research Proposal — sentence outline (75 pts)
 - Topic Selection / RQs (25 pts)
 - Definitions Practice (25 pts)
 - Extended Codebook & Reliability Protocol (75 pts)
-- Sampling Plan & Pilot -- 20-30 items (75 pts)
+- Sampling Plan & Pilot — 20–30 items (75 pts)
 - CITI Ethics Certification (25 pts)
 
-### Phase IV: The Analyst (Weeks 11-13) - 250 points
+### Phase IV: The Analyst (Weeks 10–12) — 250 points
 - Data Wrangling [R] (50 pts)
 - Describing Data [R] (100 pts)
 - Inferencing Data [R] (100 pts)
 
-### Phase V: The Publisher (Weeks 15-17) - 200 points
+### Phase V: The Publisher (Weeks 13–15) — 200 points
 - White Paper (200 pts)
 
 **Total Points:** 1,025
@@ -68,10 +68,10 @@ Graduate students engage with the textbook's graduate extensions: assigned peer-
 
 | Grade | Points |
 |-------|--------|
-| A | 922-1025 |
-| B | 820-921 |
-| C | 717-819 |
-| D | 615-716 |
+| A | 922–1025 |
+| B | 820–921 |
+| C | 717–819 |
+| D | 615–716 |
 | F | < 615 |
 
 ---
@@ -80,7 +80,7 @@ Graduate students engage with the textbook's graduate extensions: assigned peer-
 
 Both courses use the same textbook, tools, and schedule. Three dimensions separate them:
 
-**Depth of engagement.** You read the textbook's graduate extensions (collapsible callout blocks with assigned peer-reviewed readings) as required work. Your journal entries are 450-500 words and explicitly engage the assigned graduate reading.
+**Depth of engagement.** You read the textbook's graduate extensions (collapsible callout blocks with assigned peer-reviewed readings) as required work. Your journal entries are 450–500 words and explicitly engage the assigned graduate reading.
 
 **Methodological formality.** Your codebook includes a formal reliability protocol with planned sample size, target alpha thresholds, and revision triggers. Your research proposal is a structured sentence outline that could serve as the front half of a conference paper.
 
@@ -88,42 +88,16 @@ Both courses use the same textbook, tools, and schedule. Three dimensions separa
 
 ---
 
-## Weekly Schedule
-
-| Week | Dates | Reading | Assignment Due (Mon) |
-|------|-------|---------|---------------------|
-| 1 | Aug 24 | Syllabus + Intros | GitHub Profile |
-| 2 | Aug 31 | Ch 1-2: Curiosity & Trust | Syllabus Contract |
-| 3 | Sep 07 | Ch 3-4: Reading & Archivist | |
-| 4 | Sep 14 | Ch 5-6: Lens & Roadmap | Librarian Visit Report |
-| 5 | Sep 21 | Ch 7-8: Research Question & Ethics | Annotated Manuscripts (3) |
-| 6 | Sep 28 | Ch 9-10: Toolkit & Qualitative | Research Proposal |
-| 7 | Oct 05 | Ch 11-12: Surveys & Experiments | Topic Selection / RQs |
-| 8 | Oct 12 | Ch 13-14: Immersion & Variables | Definitions Practice |
-| 9 | Oct 19 | Ch 15-16: Rulebook & Sampling | Extended Codebook & Protocol |
-| 10 | Oct 26 | Ch 17: Wrangling (lecture + R lab) | Sampling Plan & Pilot |
-| 11 | Nov 02 | Ch 18: Seeing Patterns (lecture + R lab) | Data Wrangling [R] |
-| 12 | Nov 09 | Ch 19: Surprise Detector (lecture + R lab) | Describing Data [R] |
-| 13 | Nov 16 | Ch 20: Interpreting (lecture + R lab) | Inferencing Data [R] |
-| 14 | Nov 23 | **THANKSGIVING BREAK** | |
-| 15 | Nov 30 | Ch 21-22: Portfolio & Going Live | CITI Certification |
-| 16 | Dec 07 | **REMOTE WORK WEEK** | |
-| 17 | Dec 14 | **FINALS WEEK** | White Paper |
-
-**Due day:** MC 501 assignments are due the following Monday at 11:59 PM (allowing the weekend after Wednesday evening instruction).
-
----
-
 ## Required Software
 
 All software is free and open-source:
 
-- **R** -- Statistical computing environment
-- **RStudio** -- IDE for R
-- **Obsidian** -- Personal knowledge management
-- **Quarto** -- Scientific and technical publishing
-- **Git/GitHub** -- Version control
-- **GitHub Desktop** -- Visual git interface
+- **R** — Statistical computing environment
+- **VSCode** — IDE for R and Quarto
+- **Obsidian** — Personal knowledge management
+- **Quarto** — Scientific and technical publishing
+- **Git/GitHub** — Version control
+- **GitHub Desktop** — Visual git interface
 
 [Installation Guides](resources/index.qmd){.btn .btn-primary}
 
@@ -142,6 +116,31 @@ Assignments worth 50+ points may be revised and resubmitted within one week:
 
 ### Graduate Extension Readings
 Graduate extension readings are required, not optional. Your weekly journal must engage with both the chapter content and the assigned graduate reading. Entries that address only the chapter content will receive a maximum of 7/10 points.
+
+---
+
+## Weekly Schedule
+
+| Week | Dates | Chapter | Assignment Due (Mon) |
+|------|-------|---------|---------------------|
+| 1 | Aug 24–30 | Syllabus + Intros | GitHub Profile |
+| 2 | Aug 31–Sep 6 | Ch 1–2: Storytelling & Open Workspace | Syllabus Contract |
+| 3 | Sep 7–13 | Ch 3–4: Epistemology & Intelligence Gathering | — |
+| 4 | Sep 14–20 | Ch 5–6: Theory & The Prospectus | Librarian Visit Report |
+| 5 | Sep 21–27 | Ch 7–8: Listening & Vibes to Variables | Annotated Manuscripts (3) |
+| 6 | Sep 28–Oct 4 | Ch 9–10: Rulebook & The Sample | Research Proposal |
+| 7 | Oct 5–11 | Ch 11–12: Data Wrangling & Visualization | Topic Selection / RQs |
+| 8 | Oct 12–18 | Ch 13–14: Making the Call & Reports | Definitions Practice |
+| — | Oct 19–Nov 2 | **Session Break** | — |
+| 9 | Nov 2–8 | Review & Advanced Topics | Extended Codebook & Protocol |
+| 10 | Nov 9–15 | Applied Practice [R] | Sampling Plan & Pilot |
+| 11 | Nov 16–22 | Applied Practice [R] | Data Wrangling [R] |
+| — | Nov 23–29 | **Thanksgiving Break** | — |
+| 12 | Nov 30–Dec 6 | Applied Practice [R] | Describing Data [R] |
+| — | Dec 7–13 | **Remote Work Week** | Inferencing Data [R] + CITI Cert |
+| 13 | Dec 14–18 | **Finals Week** | White Paper |
+
+**Due day:** MC 501 assignments are due the following Monday at 11:59 PM (allowing the weekend after Wednesday evening instruction).
 
 ---
 
