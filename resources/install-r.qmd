@@ -1,305 +1,191 @@
 ---
-title: "Install R & RStudio"
+title: "Install R for VS Code"
 ---
 
-## Why R & RStudio?
+## Why R?
 
-R is the industry standard for statistical analysis, data visualization, and reproducible research in mass communications. RStudio is the professional interface that makes R accessible and powerful. Together, they're essential tools for any Communication Liaison who works with data.
+R is the industry standard for statistical analysis, data visualization, and reproducible research in mass communications. In this course you write and run R inside **VS Code** with the R extension, the same editor you use for everything else, so your code, notes, and reproducible reports all live in one workspace.
 
-In this course, you'll use R to:
+In this course you'll use R to:
+
 - Clean and analyze data from surveys and content analysis
 - Create publication-ready visualizations and reports
 - Build reproducible workflows for your research
 - Collaborate on data analysis projects
 
+This guide installs R and wires it into VS Code. If you have not installed VS Code yet, do that first: [Install VS Code](install-vscode.qmd).
+
 ---
 
-## What You'll Install
+## What you'll install
 
-1. **R** — The programming language (free, open-source)
-2. **RStudio** — The professional development environment (free, open-source)
-
-This is a two-step process: install R first, then RStudio.
+1. **R** itself (the programming language)
+2. The **R extension** for VS Code
+3. Two helper R packages (`languageserver` and `httpgd`) that make R feel at home in VS Code
 
 ---
 
 ## Step 1: Install R
 
-### For Windows
+### Windows
 
-1. Go to [r-project.org](https://www.r-project.org/)
-2. Click **"Download R"** in the left menu
-3. Click the **"Download R for Windows"** link
-4. Click **"base"**
-5. Click **"Download R X.X.X for Windows"** (where X.X.X is the latest version number)
-6. Run the installer (`.exe` file)
-   - Click "Next" through all screens
-   - Accept the default installation location
-   - Accept all default components
-7. Click "Finish"
+1. Go to [r-project.org](https://www.r-project.org/).
+2. Click **Download R**, then **Download R for Windows**, then **base**.
+3. Click **Download R X.X.X for Windows** and run the installer.
+4. Click through with the default location and components, then **Finish**.
 
-**To verify installation:**
-- Open PowerShell or Command Prompt
-- Type `R --version`
-- You should see R's version information
+**Verify:** open PowerShell and type `R --version`. You should see version information.
 
-### For macOS
+### macOS
 
-1. Go to [r-project.org](https://www.r-project.org/)
-2. Click **"Download R"** in the left menu
-3. Click **"Download R for macOS"**
-4. Download the appropriate `.pkg` file for your Mac:
-   - **Apple Silicon (M1/M2/M3 chips)**: Download the "ARM64" version
-   - **Intel Macs**: Download the "Intel 64" version
-   - Not sure? Click the Apple icon (top left) → **"About This Mac"** → check under "Processor"
-5. Run the installer (`.pkg` file)
-   - Click through all prompts
-   - Accept the default installation location
-6. Restart your Mac
+1. Go to [r-project.org](https://www.r-project.org/) and click **Download R for macOS**.
+2. Download the right `.pkg`: **Apple Silicon (M1/M2/M3)** uses the ARM64 build, **Intel Macs** use the Intel build. Not sure? Apple menu, **About This Mac**, check the chip.
+3. Run the installer and accept the defaults.
 
-**To verify installation:**
-- Open Terminal
-- Type `R --version`
-- You should see R's version information
+**Verify:** open Terminal and type `R --version`.
 
-### For Linux (Ubuntu/Debian)
-
-Open Terminal and run:
+### Linux (Ubuntu/Debian)
 
 ```bash
 sudo apt update
 sudo apt install r-base
 ```
 
-To verify: Type `R --version` in Terminal.
+**Verify:** type `R --version` in Terminal.
 
 ---
 
-## Step 2: Install RStudio
+## Step 2: Install the R extension in VS Code
 
-### For Windows, macOS, or Linux
-
-1. Go to [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
-2. Scroll down to **"All Installers"** or **"Download RStudio Desktop"**
-3. Select your operating system:
-   - **Windows**: Download the `.exe` file
-   - **macOS**: Download the `.dmg` file
-   - **Linux**: Download the appropriate `.deb` or `.rpm` file
-4. Run the installer
-   - Windows: Click through all default options
-   - Mac: Drag RStudio to Applications folder
-   - Linux: Follow the package manager prompts
-5. Open RStudio (you should see R is installed when you open it)
+1. Open VS Code and open the Extensions view (`Ctrl/Cmd+Shift+X`).
+2. Search for **R** by REditorSupport and click **Install**.
+3. If you cloned the [Methods Vault](../methods-vault.qmd), this extension is already in the recommended list, so the workspace will prompt you to install it.
 
 ---
 
-## Step 3: Verify RStudio Works
+## Step 3: Install the helper packages
 
-1. **Open RStudio** (should be in your Applications/Programs menu)
-2. You should see four panes:
-   - **Top left**: Script editor (blank)
-   - **Bottom left**: Console (shows `>` prompt)
-   - **Top right**: Environment & History
-   - **Bottom right**: Files, Plots, Packages, Help
+The R extension talks to R through two small packages. Open a terminal in VS Code (**Terminal, New Terminal**), type `R` to start an R session, and run:
 
-3. In the **Console** (bottom left), type this command and press Enter:
+```r
+install.packages("languageserver")  # code completion, diagnostics, help
+install.packages("httpgd")           # plots render in a VS Code panel
+```
+
+Type `q()` and then `n` to leave the R session when they finish.
+
+---
+
+## Step 4: Install the course packages
+
+Start R again (`R` in the terminal) and install the analysis packages, one at a time:
+
+```r
+install.packages("tidyverse")   # ggplot2, dplyr, readr, tidyr, and more
+install.packages("likert")      # Likert-scale survey analysis
+install.packages("rmarkdown")   # reports from your analysis
+```
+
+For later phases you may also want:
+
+```r
+install.packages("lm.beta")      # standardized regression coefficients
+install.packages("car")          # post-hoc tests and diagnostics
+install.packages("ggstatsplot")  # statistical plots with test results
+```
+
+**Wait for each to finish** (you'll see a blank `>` prompt when done).
+
+---
+
+## Step 5: Run your first R code in VS Code
+
+1. In your workspace, create a new file called `hello.R`.
+2. Type:
 
 ```r
 print("Hello, Communication Liaison!")
 ```
 
-4. You should see the output:
+3. With your cursor on that line, press **Ctrl+Enter** (Windows/Linux) or **Cmd+Enter** (Mac). VS Code starts an R terminal and runs the line.
+4. You should see:
+
 ```
 [1] "Hello, Communication Liaison!"
 ```
 
-If you see this output, **you're ready to go!**
+If you see that output, you're ready to go.
 
 ---
 
-## Step 4: Install Key Packages
+## Step 6: Test your setup with data
 
-RStudio comes with base R, but you'll need additional packages for data analysis. Open RStudio and copy these commands into the Console one at a time:
-
-### For Data Analysis & Visualization
+In the same `hello.R`, add and run:
 
 ```r
-install.packages("tidyverse")
-```
-
-This installs a collection of packages including:
-- **ggplot2** — Create professional visualizations
-- **dplyr** — Clean and transform data
-- **readr** — Import data from CSV, Excel, etc.
-- **tidyr** — Reshape data
-
-**Wait for it to finish** (you'll see a blank `>` prompt when done)
-
-### For Survey Analysis
-
-```r
-install.packages("likert")
-```
-
-Used for analyzing Likert-scale survey responses.
-
-### For Reporting
-
-```r
-install.packages("rmarkdown")
-```
-
-Creates professional PDF and HTML reports from your analysis.
-
-### Optional: Statistics Packages
-
-For later phases, you might want these too:
-
-```r
-install.packages("lm.beta")  # Standardized regression coefficients
-install.packages("car")       # Post-hoc tests and diagnostics
-install.packages("ggstatsplot")  # Statistical plots with test results
-```
-
----
-
-## Step 5: Create Your First R Project
-
-RStudio projects help you organize your work. Let's create one:
-
-1. In RStudio, click **File** → **New Project**
-2. Select **New Directory** → **New Project**
-3. Name your project `mc451-research` or similar
-4. Choose where to save it (suggest `Documents`)
-5. Click **Create Project**
-
-You should now see your project name in the top-right corner of RStudio.
-
----
-
-## Step 6: Test Your Setup with Data
-
-Let's make sure everything works by loading a dataset:
-
-In the Console, type:
-
-```r
-# Load the tidyverse library
 library(tidyverse)
-
-# Load a built-in dataset
 data(mtcars)
-
-# View the first few rows
 head(mtcars)
 ```
 
-You should see a table with car data. If this works, your R setup is complete!
+You should see a table of car data, and a plot panel will open the first time you draw a chart. Your R setup is complete.
 
 ---
 
-## Understanding the RStudio Interface
+## How R works in VS Code
 
-| Area | Purpose |
-|------|---------|
-| **Top Left (Script Editor)** | Write R code here and save as `.R` files |
-| **Bottom Left (Console)** | Results appear here; you can type commands directly |
-| **Top Right (Environment)** | Shows all variables and data you've loaded |
-| **Bottom Right (Files/Plots/Help)** | Navigate files, view plots, access documentation |
+| Part of VS Code | What it does for R |
+|-----------------|--------------------|
+| **Editor** | Write `.R` and `.qmd` files; send lines to R with `Ctrl/Cmd+Enter` |
+| **R terminal** | The live R session where results appear; type commands directly here too |
+| **Workspace panel** (R extension) | Shows the variables and data you've loaded |
+| **Plots panel** (httpgd) | Where your charts render |
+| **Explorer** | Your project files; the open folder is your working directory, so no `.Rproj` is needed |
 
----
-
-## Basic RStudio Workflow
-
-1. **Create a new script**: File → New File → R Script
-2. **Write code**: Type your commands in the script
-3. **Run code**: Select lines and press **Ctrl+Enter** (Windows/Linux) or **Cmd+Enter** (Mac)
-4. **See results**: Output appears in the Console or Plots pane
-5. **Save your work**: **Ctrl+S** or File → Save
+You do not create a separate project file. In VS Code you simply **open your workspace folder**, and that folder is the working directory for the whole session.
 
 ---
 
-## Common First-Time Issues
+## Common first-time issues
 
 ### "Command not found: R"
 
-**Problem**: Your computer doesn't recognize the R command.
+Restart your computer after installing R. On macOS/Linux you may need the full path `/usr/local/bin/R`.
 
-**Solution**:
-- Try restarting your computer after installation
-- Check that R installed correctly (reinstall if needed)
-- On Mac/Linux, you may need to use `/usr/bin/R` instead
+### The R extension cannot find R
 
-### RStudio Opens But Doesn't Find R
+Open Settings (`Ctrl/Cmd+,`), search for `r.rpath`, and set the path to your R executable (for example `C:\Program Files\R\R-4.x.x\bin\R.exe` on Windows, or `/usr/local/bin/R` on macOS).
 
-**Problem**: RStudio says "R not found" when you open it.
+### "Could not find function"
 
-**Solution**:
-1. Make sure you installed R first (before RStudio)
-2. In RStudio, go to **Tools** → **Global Options** → **General**
-3. Under "R sessions", check the "R home directory"
-4. If empty, browse to your R installation folder and select it
-5. Click "OK"
+Load the package first, for example `library(ggplot2)`.
 
-### "Error: Could not find function"
+### `install.packages()` seems stuck
 
-**Problem**: You get an error like `could not find function "ggplot"`
+Press **Escape**, then try a specific mirror:
 
-**Solution**: You need to load the package first. Run:
 ```r
-library(ggplot2)  # or whichever package you need
-```
-
-### Installation Stuck or Takes Forever
-
-**Problem**: `install.packages()` command seems frozen.
-
-**Solution**:
-1. Press **Escape** to stop it
-2. Try installing from a different CRAN mirror:
-```r
-install.packages("tidyverse", repos="https://cloud.r-project.org")
-```
-
-### "Permission denied" Error (Mac/Linux)
-
-**Problem**: Error when installing packages.
-
-**Solution**: Try:
-```r
-Sys.which("R")  # Check where R is installed
+install.packages("tidyverse", repos = "https://cloud.r-project.org")
 ```
 
 If you're still stuck, reach out during office hours.
 
 ---
 
-## Next Steps
+## Next steps
 
-1. ✅ Installed R
-2. ✅ Installed RStudio
-3. ✅ Verified it works
-4. ✅ Installed key packages
-5. **Next**: Learn R basics with your first assignment in Phase 2
+1. Installed R.
+2. Installed the R extension in VS Code.
+3. Installed the helper and course packages.
+4. Ran your first R code from the editor.
+5. Next: learn R basics in the [R Workbook](../workbook/index.qmd).
 
 ---
 
 ## Resources
 
-- **Official R Website**: [r-project.org](https://www.r-project.org/)
-- **RStudio Documentation**: [posit.co/support/](https://posit.co/support/)
-- **Bookdown R for Data Science**: [r4ds.had.co.nz](https://r4ds.had.co.nz/) (free online book)
-- **My Open-Source R Course**: [bookdown.org/alex_leith/mc451/](https://bookdown.org/alex_leith/mc451/) (free, written for this class!)
+- **Official R website:** [r-project.org](https://www.r-project.org/)
+- **R extension docs:** [VS Code R wiki](https://github.com/REditorSupport/vscode-R/wiki)
+- **R for Data Science (2nd ed):** [r4ds.hadley.nz](https://r4ds.hadley.nz/) (free online)
 
----
-
-## Questions?
-
-R and RStudio have a learning curve, but the payoff is huge. If you run into issues:
-
-1. Check the troubleshooting section above
-2. Search [stackoverflow.com](https://stackoverflow.com) for your error (others have likely encountered it)
-3. Visit office hours—we'll debug together
-4. Email with your specific error message
-
-You've got this! 💪
+Questions? Check the troubleshooting section, search [stackoverflow.com](https://stackoverflow.com) for your error, or visit office hours.

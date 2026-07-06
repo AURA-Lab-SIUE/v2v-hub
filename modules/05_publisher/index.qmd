@@ -6,7 +6,7 @@ title: "Phase V: The Publisher"
 # Phase V: The Publisher
 
 **Duration:** Weeks 16–17 | **Points:** 250
-Publish your research as a professional web portfolio
+Publish your research as a professional, audience-ready deliverable
 :::
 
 ---
@@ -29,7 +29,7 @@ By the end of Phase V, you will:
 
 Every assignment this semester has been a building block. The Reading Journals sharpened your thinking. The Librarian Visit Report confirmed your data source. The Prospectus gave you a roadmap. The Codebook gave you a rulebook. The R assignments turned raw codes into tables, charts, and tests. Now you assemble all of it into a single, coherent research report — published simultaneously as a PDF and a live website.
 
-Your final portfolio presents a two-part content analysis:
+Your final deliverable presents a two-part content analysis:
 
 - **Study 1 (Qualitative):** How you immersed yourself in the data, identified themes, and developed your coding variables
 - **Study 2 (Quantitative):** Descriptive statistics, visualizations, and an inferential test appropriate to your research questions
@@ -42,11 +42,20 @@ Your final portfolio presents a two-part content analysis:
 |------|-------|-------------|
 | 15 | Ch 21–22: Portfolio & Going Live | CITI Certification; begin assembling final project |
 | 16 | **Remote Work Week** — no class meetings | Build, render, publish |
-| 17 | **Finals Week** | Final Web Portfolio due |
+| 17 | **Finals Week** | Final deliverable due (Feature Article / White Paper) |
 
 ---
 
 ## The Final Project
+
+### Your Final Deliverable
+
+Your final piece depends on your course profile:
+
+- **MC 451 (Undergraduate):** a **Feature Article + Methodology Appendix**
+- **MC 501 (Graduate):** a **White Paper + Academic Conference Poster**
+
+Both profiles are produced from the same Quarto project and published simultaneously as a print-ready PDF and a live website.
 
 ### What You Build
 
