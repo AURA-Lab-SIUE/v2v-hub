@@ -98,11 +98,11 @@ Complete the CITI Program's Social & Behavioral Research training and submit you
 
 **Content Analysis Core (Weeks 7–11):** Immersion, operationalization, codebook construction, sampling, pilot testing, reliability
 
-**R Skills (Week 12):** Data wrangling, visualization, statistical testing — practice with the `unified_music` dataset via `coursepackR`
+**R Skills (Week 12):** Data wrangling, visualization, statistical testing — practice with the `twitch_chat_sample` / `twitch_streams_sample` datasets via the `v2v` package (loaders `twitch_chat()` / `twitch_streams()`)
 
 ---
 
 ## Related Resources
 
-- [From Vibes to Variables — Chapters 8–16](https://sim-lab-siue.github.io/vibes-to-variables/)
-- [coursepackR Documentation](https://sim-lab-siue.github.io/coursepackR/)
+- [From Vibes to Variables (3rd Edition)](https://aura-lab-siue.github.io/v2v/)
+- [v2v R Package](https://github.com/aura-lab-siue/v2v-r)

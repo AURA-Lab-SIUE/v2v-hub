@@ -1,12 +1,12 @@
 ---
 title: "Seeing Patterns: Building Publication-Ready Charts"
-subtitle: "Chapter 18 -- Lab"
+subtitle: "Chapter 12 -- Lab"
 execute:
   eval: false
   echo: true
 ---
 
-This is the hands-on companion to the [Chapter 18 lecture](18a-seeing-patterns-lecture.qmd). You will build the charts and tables that Assignment 02 requires --- focusing on the skills that go beyond what the [R Workbook Ch 5](../workbook/05-describing-data.qmd) already covers: decade trends, subset comparisons, and executive summary writing.
+This is the hands-on companion to the [Chapter 12 lecture](12a-seeing-patterns-lecture.qmd). You will build the charts and tables that Assignment 02 requires --- focusing on the skills that go beyond what the [R Workbook Ch 5](../workbook/05-describing-data.qmd) already covers: decade trends, subset comparisons, and executive summary writing.
 
 ::: {.callout-note}
 ## Before You Start
@@ -58,7 +58,7 @@ music |>
     subtitle = "Billboard/Spotify Music Dataset (n = 1,792)",
     x = "Number of Songs",
     y = NULL,
-    caption = "Source: Spotify API via coursepackR"
+    caption = "Source: Spotify API via v2v"
   ) +
   theme_minimal(base_size = 12) +
   theme(

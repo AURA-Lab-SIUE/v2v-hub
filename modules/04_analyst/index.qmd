@@ -28,7 +28,7 @@ By the end of Phase IV, you will:
 
 ## Phase IV Overview
 
-This phase is where your research becomes quantitative. Weeks 10–13 each get two full class sessions dedicated to a single R/analysis chapter, giving you time to practice in class. You apply data wrangling, visualization, and statistical testing to the `unified_music` dataset from coursepackR. These three assignments build on each other sequentially.
+This phase is where your research becomes quantitative. Weeks 10–13 each get two full class sessions dedicated to a single R/analysis chapter, giving you time to practice in class. You apply data wrangling, visualization, and statistical testing to the class Twitch dataset from the `v2v` package (`twitch_chat_sample` / `twitch_streams_sample`). These three assignments build on each other sequentially.
 
 ---
 
@@ -36,9 +36,9 @@ This phase is where your research becomes quantitative. Weeks 10–13 each get t
 
 | Week | Reading | Focus | Assignment Due |
 |------|---------|-------|----------------|
-| 11 | Ch 18: Seeing Patterns | ggplot2 grammar of graphics; publication-quality visualization | Data Wrangling [R] (50 pts) |
-| 12 | Ch 19: The Surprise Detector | Hypothesis testing; chi-square, correlation, regression; APA reporting | Describing Data [R] (75 pts) |
-| 13 | Ch 20: Interpreting the Call | Effect sizes; power; honest discussion writing | Inferencing Data [R] (100 pts) |
+| 11 | Ch 12: Seeing Patterns | ggplot2 grammar of graphics; publication-quality visualization | Data Wrangling [R] (50 pts) |
+| 12 | Ch 13: The Surprise Detector | Hypothesis testing; chi-square, correlation, regression; APA reporting | Describing Data [R] (75 pts) |
+| 13 | Ch 14: Interpreting the Call | Effect sizes; power; honest discussion writing | Inferencing Data [R] (100 pts) |
 
 ---
 
@@ -46,7 +46,7 @@ This phase is where your research becomes quantitative. Weeks 10–13 each get t
 
 ### Data Wrangling [R] (50 pts) — Week 13
 
-Using the `unified_music` dataset from coursepackR:
+Using the `twitch_chat_sample` / `twitch_streams_sample` datasets from the `v2v` package:
 
 1. **Hand-code** a variable for a 30-song sample
 2. **Import** the raw dataset and clean it (column names, factors, missing values)
@@ -85,11 +85,12 @@ Using `coding_data_clean.RDS`:
 
 ## R Environment
 
-All R assignments use the `unified_music` dataset (1,792 songs with Billboard, Spotify, and Genius data). Load it with:
+All R assignments use the class Twitch dataset from the `v2v` package: `twitch_chat_sample` (~35,000 Twitch IRC chat messages from 50 channels) and `twitch_streams_sample` (~32,000 stream snapshots for the same channels). Load them with:
 
 ```r
-library(coursepackR)
-data(unified_music)
+library(v2v)
+chat    <- twitch_chat()
+streams <- twitch_streams()
 ```
 
 **Required packages:** `tidyverse`, `knitr`, `kableExtra`, `scales`, `effsize`
@@ -102,6 +103,6 @@ data(unified_music)
 
 ## Related Resources
 
-- [From Vibes to Variables — Chapters 17–20](https://sim-lab-siue.github.io/vibes-to-variables/)
-- [coursepackR Documentation](https://sim-lab-siue.github.io/coursepackR/)
-- [Install R & RStudio](../../resources/install-r-rstudio.qmd)
+- [From Vibes to Variables (3rd Edition)](https://aura-lab-siue.github.io/v2v/)
+- [v2v R Package](https://github.com/aura-lab-siue/v2v-r)
+- [Install R](../../resources/install-r.qmd)

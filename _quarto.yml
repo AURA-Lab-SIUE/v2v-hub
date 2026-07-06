@@ -123,7 +123,7 @@ website:
         - section: "Setup Guides"
           contents:
             - setup.qmd
-            - resources/install-r-rstudio.qmd
+            - resources/install-r.qmd
             - resources/install-vscode.qmd
             - resources/github-setup.qmd
             - resources/github-desktop-setup.qmd

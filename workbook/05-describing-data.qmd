@@ -165,7 +165,7 @@ ggplot(genre_counts, aes(x = fct_reorder(playlist_genre, n), y = n, fill = playl
     subtitle = "Billboard/Spotify Music Dataset (n = 1,792)",
     x = NULL,
     y = "Number of Songs",
-    caption = "Source: Spotify API via coursepackR"
+    caption = "Source: Spotify API via v2v"
   ) +
   theme_minimal(base_size = 12) +
   theme(
@@ -195,7 +195,7 @@ music |>
     x = NULL,
     y = "Proportion",
     fill = "Mode",
-    caption = "Source: Spotify API via coursepackR"
+    caption = "Source: Spotify API via v2v"
   ) +
   theme_minimal(base_size = 12) +
   theme(plot.title = element_text(face = "bold"))
@@ -225,7 +225,7 @@ music |>
     subtitle = "Higher values indicate more energetic tracks",
     x = NULL,
     y = "Energy (0–1 scale)",
-    caption = "Source: Spotify API via coursepackR"
+    caption = "Source: Spotify API via v2v"
   ) +
   theme_minimal(base_size = 12) +
   theme(plot.title = element_text(face = "bold"))
