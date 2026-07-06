@@ -1,6 +1,6 @@
 ---
 title: "The Surprise Detector: Hypothesis Testing, t-Tests, and Correlation"
-subtitle: "Chapter 19"
+subtitle: "Chapter 13"
 execute:
   eval: false
   echo: true
@@ -8,7 +8,7 @@ execute:
 
 You have described the data and seen patterns. Now the real question: **are those patterns real, or could they be random noise?**
 
-This chapter introduces the logic of hypothesis testing and walks you through three inferential tests --- chi-square, the independent-samples t-test, and Pearson correlation. The chi-square test was covered in detail in the [R Workbook Ch 6](../workbook/06-inferencing-data.qmd); this chapter adds the t-test and correlation that [Assignment 03: Inferencing Data](https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter19.html) requires.
+This chapter introduces the logic of hypothesis testing and walks you through three inferential tests --- chi-square, the independent-samples t-test, and Pearson correlation. The chi-square test was covered in detail in the [R Workbook Ch 6](../workbook/06-inferencing-data.qmd); this chapter adds the t-test and correlation that [Assignment 03: Inferencing Data](https://aura-lab-siue.github.io/v2v/chapters/chapter13.html) requires.
 
 ---
 
@@ -58,7 +58,7 @@ And here is what it does **not** mean:
 | **Fail to reject H₀** | Correct decision | Type II error (false negative) |
 
 - **Type I error (alpha):** Claiming an effect exists when it does not. Controlled by the significance level (usually .05).
-- **Type II error (beta):** Missing a real effect because the sample was too small or noisy. Related to statistical power ([Chapter 20](20-interpreting-the-call.qmd)).
+- **Type II error (beta):** Missing a real effect because the sample was too small or noisy. Related to statistical power ([Chapter 14](14-interpreting-the-call.qmd)).
 
 ---
 
@@ -210,7 +210,7 @@ A small effect means the groups differ slightly. A large effect means the groups
 ::: {.callout-note}
 ## A Note on Small Samples
 
-With only 30 songs, this test has low **statistical power** --- meaning it may fail to detect a real difference even if one exists. A non-significant result here does not prove that romantic theme is unrelated to chart success. It means the sample was too small to detect the effect with confidence. [Chapter 20](20-interpreting-the-call.qmd) explores this issue in depth.
+With only 30 songs, this test has low **statistical power** --- meaning it may fail to detect a real difference even if one exists. A non-significant result here does not prove that romantic theme is unrelated to chart success. It means the sample was too small to detect the effect with confidence. [Chapter 14](14-interpreting-the-call.qmd) explores this issue in depth.
 :::
 
 ---

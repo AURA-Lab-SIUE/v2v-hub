@@ -80,6 +80,6 @@ Submit as PDF: `Lastname_ArchivistReport.pdf`
 
 ## Related Resources
 
-- [Install R & RStudio](../../resources/install-r-rstudio.qmd)
+- [Install R](../../resources/install-r.qmd)
 - [Obsidian Setup](../../resources/obsidian-setup.qmd)
 - [GitHub Setup](../../resources/github-setup.qmd)

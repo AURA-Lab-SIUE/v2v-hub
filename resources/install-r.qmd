@@ -1,0 +1,191 @@
+---
+title: "Install R for VS Code"
+---
+
+## Why R?
+
+R is the industry standard for statistical analysis, data visualization, and reproducible research in mass communications. In this course you write and run R inside **VS Code** with the R extension, the same editor you use for everything else, so your code, notes, and reproducible reports all live in one workspace.
+
+In this course you'll use R to:
+
+- Clean and analyze data from surveys and content analysis
+- Create publication-ready visualizations and reports
+- Build reproducible workflows for your research
+- Collaborate on data analysis projects
+
+This guide installs R and wires it into VS Code. If you have not installed VS Code yet, do that first: [Install VS Code](install-vscode.qmd).
+
+---
+
+## What you'll install
+
+1. **R** itself (the programming language)
+2. The **R extension** for VS Code
+3. Two helper R packages (`languageserver` and `httpgd`) that make R feel at home in VS Code
+
+---
+
+## Step 1: Install R
+
+### Windows
+
+1. Go to [r-project.org](https://www.r-project.org/).
+2. Click **Download R**, then **Download R for Windows**, then **base**.
+3. Click **Download R X.X.X for Windows** and run the installer.
+4. Click through with the default location and components, then **Finish**.
+
+**Verify:** open PowerShell and type `R --version`. You should see version information.
+
+### macOS
+
+1. Go to [r-project.org](https://www.r-project.org/) and click **Download R for macOS**.
+2. Download the right `.pkg`: **Apple Silicon (M1/M2/M3)** uses the ARM64 build, **Intel Macs** use the Intel build. Not sure? Apple menu, **About This Mac**, check the chip.
+3. Run the installer and accept the defaults.
+
+**Verify:** open Terminal and type `R --version`.
+
+### Linux (Ubuntu/Debian)
+
+```bash
+sudo apt update
+sudo apt install r-base
+```
+
+**Verify:** type `R --version` in Terminal.
+
+---
+
+## Step 2: Install the R extension in VS Code
+
+1. Open VS Code and open the Extensions view (`Ctrl/Cmd+Shift+X`).
+2. Search for **R** by REditorSupport and click **Install**.
+3. If you cloned the [Methods Vault](../methods-vault.qmd), this extension is already in the recommended list, so the workspace will prompt you to install it.
+
+---
+
+## Step 3: Install the helper packages
+
+The R extension talks to R through two small packages. Open a terminal in VS Code (**Terminal, New Terminal**), type `R` to start an R session, and run:
+
+```r
+install.packages("languageserver")  # code completion, diagnostics, help
+install.packages("httpgd")           # plots render in a VS Code panel
+```
+
+Type `q()` and then `n` to leave the R session when they finish.
+
+---
+
+## Step 4: Install the course packages
+
+Start R again (`R` in the terminal) and install the analysis packages, one at a time:
+
+```r
+install.packages("tidyverse")   # ggplot2, dplyr, readr, tidyr, and more
+install.packages("likert")      # Likert-scale survey analysis
+install.packages("rmarkdown")   # reports from your analysis
+```
+
+For later phases you may also want:
+
+```r
+install.packages("lm.beta")      # standardized regression coefficients
+install.packages("car")          # post-hoc tests and diagnostics
+install.packages("ggstatsplot")  # statistical plots with test results
+```
+
+**Wait for each to finish** (you'll see a blank `>` prompt when done).
+
+---
+
+## Step 5: Run your first R code in VS Code
+
+1. In your workspace, create a new file called `hello.R`.
+2. Type:
+
+```r
+print("Hello, Communication Liaison!")
+```
+
+3. With your cursor on that line, press **Ctrl+Enter** (Windows/Linux) or **Cmd+Enter** (Mac). VS Code starts an R terminal and runs the line.
+4. You should see:
+
+```
+[1] "Hello, Communication Liaison!"
+```
+
+If you see that output, you're ready to go.
+
+---
+
+## Step 6: Test your setup with data
+
+In the same `hello.R`, add and run:
+
+```r
+library(tidyverse)
+data(mtcars)
+head(mtcars)
+```
+
+You should see a table of car data, and a plot panel will open the first time you draw a chart. Your R setup is complete.
+
+---
+
+## How R works in VS Code
+
+| Part of VS Code | What it does for R |
+|-----------------|--------------------|
+| **Editor** | Write `.R` and `.qmd` files; send lines to R with `Ctrl/Cmd+Enter` |
+| **R terminal** | The live R session where results appear; type commands directly here too |
+| **Workspace panel** (R extension) | Shows the variables and data you've loaded |
+| **Plots panel** (httpgd) | Where your charts render |
+| **Explorer** | Your project files; the open folder is your working directory, so no `.Rproj` is needed |
+
+You do not create a separate project file. In VS Code you simply **open your workspace folder**, and that folder is the working directory for the whole session.
+
+---
+
+## Common first-time issues
+
+### "Command not found: R"
+
+Restart your computer after installing R. On macOS/Linux you may need the full path `/usr/local/bin/R`.
+
+### The R extension cannot find R
+
+Open Settings (`Ctrl/Cmd+,`), search for `r.rpath`, and set the path to your R executable (for example `C:\Program Files\R\R-4.x.x\bin\R.exe` on Windows, or `/usr/local/bin/R` on macOS).
+
+### "Could not find function"
+
+Load the package first, for example `library(ggplot2)`.
+
+### `install.packages()` seems stuck
+
+Press **Escape**, then try a specific mirror:
+
+```r
+install.packages("tidyverse", repos = "https://cloud.r-project.org")
+```
+
+If you're still stuck, reach out during office hours.
+
+---
+
+## Next steps
+
+1. Installed R.
+2. Installed the R extension in VS Code.
+3. Installed the helper and course packages.
+4. Ran your first R code from the editor.
+5. Next: learn R basics in the [R Workbook](../workbook/index.qmd).
+
+---
+
+## Resources
+
+- **Official R website:** [r-project.org](https://www.r-project.org/)
+- **R extension docs:** [VS Code R wiki](https://github.com/REditorSupport/vscode-R/wiki)
+- **R for Data Science (2nd ed):** [r4ds.hadley.nz](https://r4ds.hadley.nz/) (free online)
+
+Questions? Check the troubleshooting section, search [stackoverflow.com](https://stackoverflow.com) for your error, or visit office hours.

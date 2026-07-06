@@ -96,7 +96,7 @@ Statistical analysis and visualization
 
 [Download R](https://cran.r-project.org/){.btn .btn-secondary}  
 [Download RStudio](https://posit.co/download/rstudio-desktop/){.btn .btn-secondary}  
-[Install Guide](install-r-rstudio.qmd){.btn .btn-sm}
+[Install Guide](install-r.qmd){.btn .btn-sm}
 :::
 
 ::: {.card}
@@ -153,7 +153,7 @@ Statistical computing and data analysis.
 <span class="resource-badge">Free</span>
 
 [Download RStudio](https://posit.co/download/rstudio-desktop/){.btn .btn-sm .btn-secondary}
-[Setup Guide](install-r-rstudio.qmd){.btn .btn-sm .btn-primary}
+[Setup Guide](install-r.qmd){.btn .btn-sm .btn-primary}
 :::
 
 ::: {.card}
@@ -234,7 +234,7 @@ Full walkthrough for configuring your workspace, Obsidian, and tools.
 
 Detailed instructions for Windows, macOS, and Linux with troubleshooting.
 
-[Read R Setup Guide](install-r-rstudio.qmd){.btn .btn-sm .btn-secondary}
+[Read R Setup Guide](install-r.qmd){.btn .btn-sm .btn-secondary}
 :::
 
 :::{.resource-card}
@@ -266,7 +266,7 @@ Learn version control basics and how to sync your projects.
 **Setup & Tools:**
 - Can't install Obsidian? [See setup guide](../setup.qmd)
 - Git not working? [See GitHub guide](github-setup.qmd)
-- R installation stuck? [See R guide](install-r-rstudio.qmd)
+- R installation stuck? [See R guide](install-r.qmd)
 
 - What is The Journalist phase? [Read Phase I](../modules/01_journalist/index.qmd)
 - What is The Architect phase? [Read Phase II](../modules/02_architect/index.qmd)

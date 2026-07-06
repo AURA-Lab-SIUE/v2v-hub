@@ -118,16 +118,16 @@ glimpse(music)
 
 If you see a table of data in the Console and `music` appears in your Environment pane (top-right), everything is working.
 
-### Step 5: Verify the `coursepackR` Package (Optional)
+### Step 5: Verify the `v2v` Package (Optional)
 
 Your professor has created a course-specific R package with setup tools and diagnostics:
 
 ```r
 install.packages("remotes")
-remotes::install_github("SIM-Lab-SIUE/coursepackR")
+remotes::install_github("aura-lab-siue/v2v-r")
 
-library(coursepackR)
-mccourse_check()
+library(v2v)
+setup()
 ```
 
 This will verify your entire environment — R, RStudio, Quarto, Git, and all required packages. Fix any issues it flags.

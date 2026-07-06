@@ -1,6 +1,6 @@
 ---
 title: "Interpreting the Call: Effect Sizes, Power, and Honest Discussion"
-subtitle: "Chapter 20"
+subtitle: "Chapter 14"
 execute:
   eval: false
   echo: true
