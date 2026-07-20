@@ -15,8 +15,8 @@ title: "Course Syllabus"
 | **Email** | aleith@siue.edu |
 | **Office** | Dunham Hall 1017 |
 | **Office Hours** | MW 10:00-11:30 AM and 1:30-3:00 PM (or by appointment) |
-| **Class Time** | MW 3:00-4:15 PM |
-| **Classroom** | Dunham Hall 2039 |
+| **Class Time** | TuTh 11:00 AM-12:15 PM |
+| **Classroom** | Science East 2268 |
 | **Duration** | Aug 24 to Dec 18, 2026 |
 | **Course Website** | https://aura-lab-siue.github.io/v2v-hub/ |
 | **Textbook** | [From Vibes to Variables, 3rd Ed.](https://aura-lab-siue.github.io/v2v/) (OER, free) |

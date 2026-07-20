@@ -15,8 +15,8 @@ title: "MC 501 Course Syllabus"
 | **Email** | aleith@siue.edu |
 | **Office** | Dunham Hall 1017 |
 | **Office Hours** | MW 10:00-11:30 AM and 1:30-3:00 PM (or by appointment) |
-| **Class Time** | W 5:00-7:50 PM (170 minutes) |
-| **Classroom** | TBD |
+| **Class Time** | W 6:00-8:50 PM (170 minutes) |
+| **Classroom** | Dunham Hall 1015 |
 | **Duration** | Aug 24 to Dec 18, 2026 |
 | **Course Website** | https://aura-lab-siue.github.io/v2v-hub/ |
 | **Textbook** | [From Vibes to Variables, 3rd Ed.](https://aura-lab-siue.github.io/v2v/) (OER, free) |
