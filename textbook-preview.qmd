@@ -4,16 +4,16 @@ title: "Textbook Preview: Fall 2026"
 
 :::{.phase-header}
 # From Vibes to Variables
-**2nd Edition --- Fall 2026**
+**3rd Edition, Fall 2026**
 
-A complete open textbook for research methods in mass communication. 22 chapters across 5 parts, designed for both undergraduate (MC 451) and graduate (MC 501) instruction.
+A complete open textbook for research methods in mass communication. 14 chapters across 5 parts, designed for both undergraduate (MC 451) and graduate (MC 501) instruction.
 
 [Read the Full Textbook](https://aura-lab-siue.github.io/v2v/){.btn .btn-primary .btn-lg}
 :::
 
 ---
 
-:::{.callout-info}
+:::{.callout-note}
 ## Preview Edition
 
 This page previews the chapter structure and themes for the Fall 2026 edition. The full textbook is available online and is updated regularly.
@@ -21,75 +21,67 @@ This page previews the chapter structure and themes for the Fall 2026 edition. T
 
 ---
 
-## Part I: Foundations
+## Part I: Foundation
 
-*Chapters 1--4 build the habits and infrastructure every researcher needs before touching data.*
+*Chapters 1 to 3 build the habits and infrastructure every researcher needs before touching data.*
 
 | Ch | Title | What You'll Learn |
 |----|-------|-------------------|
-| 1 | **The Architecture of Curiosity** | How research questions emerge from observation and why curiosity is a skill, not a trait |
-| 2 | **The Infrastructure of Trust** | What makes research trustworthy --- validity, reliability, and the logic of evidence |
-| 3 | **The Reading Journal Protocol** | How to read academic literature actively and build a personal knowledge archive |
-| 4 | **The Archivist** | Organizing your research workspace, citations, and source materials systematically |
+| 1 | **The Science of Storytelling** | How research questions emerge from curiosity, and why storytelling and science share a method |
+| 2 | **The Open Workspace** | Setting up VS Code, R, Git, and the course workspace as one reproducible environment |
+| 3 | **Knowing and Knowing Well** | Epistemology for researchers: what counts as evidence, and how we know what we know |
 
 ---
 
-## Part II: Design
+## Part II: Planning
 
-*Chapters 5--9 cover the decisions that shape a study before any data is collected.*
+*Chapters 4 to 6 cover the decisions that shape a study before any data is collected.*
 
 | Ch | Title | What You'll Learn |
 |----|-------|-------------------|
-| 5 | **Choosing Your Lens** | Theoretical frameworks and how they focus your research questions |
-| 6 | **The Roadmap** | Literature reviews as strategic maps, not just summaries |
-| 7 | **The Research Question** | Crafting precise, testable questions that drive a study forward |
-| 8 | **The Ethics of Inquiry** | IRB, CITI certification, and the ethical responsibilities of researchers |
-| 9 | **The Methodologist's Toolkit** | Overview of quantitative, qualitative, and mixed methods approaches |
+| 4 | **Intelligence Gathering** | Reading the literature actively and turning it into a strategic map |
+| 5 | **Theory as a Lens** | How theoretical frameworks focus your questions and interpretation |
+| 6 | **The Prospectus** | Crafting a precise, testable research plan that drives the study forward |
 
 ---
 
-## Part III: Methods
+## Part III: Operationalization
 
-*Chapters 10--12 teach three core research methods. The course executes content analysis; surveys and experiments are taught conceptually.*
+*Chapters 7 to 9 turn concepts into measurable variables and a working codebook.*
 
 | Ch | Title | What You'll Learn |
 |----|-------|-------------------|
-| 10 | **Qualitative Methods** | Content analysis, interviews, focus groups, and thematic coding |
-| 11 | **Designing Surveys** | Question wording, response scales, sampling, and survey logic |
-| 12 | **Designing Experiments** | Variables, controls, randomization, and causal inference |
+| 7 | **Structured Listening** | Qualitative immersion in the Twitch corpus: observing, and pattern-finding |
+| 8 | **From Vibes to Variables** | Building a quantitative codebook from qualitative observations |
+| 9 | **The Rulebook and First Workspace** | Decision rules, anchor examples, and intercoder reliability |
 
 ---
 
 ## Part IV: Execution
 
-*Chapters 13--20 walk through the full content analysis pipeline --- from raw media to statistical findings.*
+*Chapters 10 to 12 walk from a sampling plan through cleaned data to visualization.*
 
 | Ch | Title | What You'll Learn |
 |----|-------|-------------------|
-| 13 | **Music Immersion** | Qualitative immersion in the class dataset --- listening, observing, pattern-finding |
-| 14 | **Vibes to Variables** | Building a quantitative codebook from qualitative observations |
-| 15 | **The Rulebook** | Decision rules, anchor examples, and intercoder reliability |
-| 16 | **The Sampling Plan and Pilot Test** | Sample size, selection strategy, and pilot testing your codebook |
-| 17 | **Wrangling the Chaos** | Data cleaning in R --- import, diagnose, fix, export |
-| 18 | **Seeing Patterns** | Descriptive statistics, frequency tables, and data visualization |
-| 19 | **The Surprise Detector** | Inferential statistics --- chi-square tests, effect sizes, and significance |
-| 20 | **Interpreting the Call** | Writing results in APA format and plain-English translation |
+| 10 | **The Sample** | Sample size, selection strategy, and pilot testing your codebook |
+| 11 | **Wrangling the Data** | Data cleaning in R: import, diagnose, fix, and export |
+| 12 | **Visualizing the Narrative** | Descriptive statistics, frequency tables, and publication-quality visualization |
 
 ---
 
-## Part V: Communication
+## Part V: Inference and Publication
 
-*Chapters 21--22 bring everything together into a professional research product.*
+*Chapters 13 to 14 test relationships and turn findings into a professional research product.*
 
 | Ch | Title | What You'll Learn |
 |----|-------|-------------------|
-| 21 | **The Portfolio** | Assembling a Quarto Book --- PDF + website from one source |
-| 22 | **Going Live** | Publishing to GitHub Pages, presenting findings, and the researcher's next steps |
+| 13 | **Making the Call** | Inferential statistics: chi-square, correlation, effect sizes, and APA reporting |
+| 14 | **The One-Click Report** | Assembling a Quarto portfolio (PDF plus website) and publishing to GitHub Pages |
 
 ---
 
 ## About the Textbook
 
-*From Vibes to Variables* is an open educational resource written by Dr. Alex P. Leith for research methods courses at SIUE. The 2nd edition (Fall 2026) restructures the original into 22 focused chapters, adds the R Workbook as a companion, and integrates with the [course workspace](workspace.qmd) and [coursepackR](resources/index.qmd) ecosystem.
+*From Vibes to Variables* is an open educational resource written by Dr. Alex P. Leith for research methods courses at SIUE. The 3rd edition (Fall 2026) presents the material in 14 focused chapters, adds the R Workbook as a companion, and integrates with the [course workspace](workspace.qmd) and the [v2v R package](https://github.com/AURA-Lab-SIUE/v2v-r).
 
 The textbook is free, open-access, and published via [GitHub Pages](https://aura-lab-siue.github.io/v2v/).

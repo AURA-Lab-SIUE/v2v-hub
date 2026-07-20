@@ -8,7 +8,6 @@ project:
     - "!modules/**/pokemon-practice.qmd"
     - "resources/*.qmd"
     - "workbook/*.qmd"
-    - "chapters/*.qmd"
   resources:
     - "modules/04_analyst/pokemon-practice.qmd"
 
