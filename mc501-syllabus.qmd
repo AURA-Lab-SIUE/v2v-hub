@@ -25,7 +25,7 @@ title: "MC 501 Course Syllabus"
 
 ## Course Description
 
-MC 501 is the graduate-level research methods course in mass communication. Students explore quantitative and qualitative methods — surveys, experiments, content analysis, and in-depth interviews — with emphasis on designing, executing, and communicating original research at a level approaching publishable quality.
+MC 501 is the graduate-level research methods course in mass communication. Students explore quantitative and qualitative methods, surveys, experiments, content analysis, and in-depth interviews, with emphasis on designing, executing, and communicating original research at a level approaching publishable quality.
 
 Students complete a two-part content analysis across the semester: a qualitative study developing coding variables through immersion, and a quantitative study testing relationships in coded data. The final deliverable is a professional White Paper suitable for conference submission or client delivery, published to GitHub Pages.
 
@@ -35,29 +35,29 @@ Graduate students engage with the textbook's graduate extensions: assigned peer-
 
 ## Course Structure: The Five Phases
 
-### Phase I: The Journalist (Weeks 1–14) — 150 points
+### Phase I: The Journalist (Weeks 1–14): 150 points
 - Weekly Reading Journal with Graduate Extensions (10 pts/week x 14 teaching weeks + 10 pts consistency)
 
-### Phase II: The Architect (Weeks 1–3) — 100 points
+### Phase II: The Architect (Weeks 1–3): 100 points
 - GitHub Profile (25 pts)
 - Syllabus Contract (25 pts)
 - Librarian Visit Report (50 pts)
 
-### Phase III: The Builder (Weeks 4–9) — 325 points
-- Annotated Manuscripts — 3 articles (25 pts)
-- Research Proposal — sentence outline (75 pts)
+### Phase III: The Builder (Weeks 4–9): 325 points
+- Annotated Manuscripts, 3 articles (25 pts)
+- Research Proposal, sentence outline (75 pts)
 - Topic Selection / RQs (25 pts)
 - Definitions Practice (25 pts)
 - Extended Codebook & Reliability Protocol (75 pts)
-- Sampling Plan & Pilot — 20–30 items (75 pts)
+- Sampling Plan & Pilot, 20–30 items (75 pts)
 - CITI Ethics Certification (25 pts)
 
-### Phase IV: The Analyst (Weeks 10–12) — 250 points
+### Phase IV: The Analyst (Weeks 10–12): 250 points
 - Data Wrangling [R] (50 pts)
 - Describing Data [R] (100 pts)
 - Inferencing Data [R] (100 pts)
 
-### Phase V: The Publisher (Weeks 13–15) — 200 points
+### Phase V: The Publisher (Weeks 13–15): 200 points
 - White Paper (200 pts)
 
 **Total Points:** 1,025
@@ -124,19 +124,19 @@ Graduate extension readings are required, not optional. Your weekly journal must
 |------|-------|---------|---------------------|
 | 1 | Aug 24–30 | Syllabus + Intros | GitHub Profile |
 | 2 | Aug 31–Sep 6 | Ch 1–2: Storytelling & Open Workspace | Syllabus Contract |
-| 3 | Sep 7–13 | Ch 3–4: Epistemology & Intelligence Gathering | — |
+| 3 | Sep 7–13 | Ch 3–4: Epistemology & Intelligence Gathering |  |
 | 4 | Sep 14–20 | Ch 5–6: Theory & The Prospectus | Librarian Visit Report |
 | 5 | Sep 21–27 | Ch 7–8: Listening & Vibes to Variables | Annotated Manuscripts (3) |
 | 6 | Sep 28–Oct 4 | Ch 9–10: Rulebook & The Sample | Research Proposal |
 | 7 | Oct 5–11 | Ch 11–12: Data Wrangling & Visualization | Topic Selection / RQs |
 | 8 | Oct 12–18 | Ch 13–14: Making the Call & Reports | Definitions Practice |
-| — | Oct 19–Nov 2 | **Session Break** | — |
+|  | Oct 19–Nov 2 | **Session Break** |  |
 | 9 | Nov 2–8 | Review & Advanced Topics | Extended Codebook & Protocol |
 | 10 | Nov 9–15 | Applied Practice [R] | Sampling Plan & Pilot |
 | 11 | Nov 16–22 | Applied Practice [R] | Data Wrangling [R] |
-| — | Nov 23–29 | **Thanksgiving Break** | — |
+|  | Nov 23–29 | **Thanksgiving Break** |  |
 | 12 | Nov 30–Dec 6 | Applied Practice [R] | Describing Data [R] |
-| — | Dec 7–13 | **Remote Work Week** | Inferencing Data [R] + CITI Cert |
+|  | Dec 7–13 | **Remote Work Week** | Inferencing Data [R] + CITI Cert |
 | 13 | Dec 14–18 | **Finals Week** | White Paper |
 
 **Due day:** MC 501 assignments are due the following Monday at 11:59 PM (allowing the weekend after Wednesday evening instruction).

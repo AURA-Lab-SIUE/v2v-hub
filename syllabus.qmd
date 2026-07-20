@@ -41,30 +41,30 @@ Students complete a two-part content analysis project across the semester: a qua
 
 ## Course Structure: The Five Phases
 
-### Phase I: The Journalist (Weeks 1–14) — 150 points
+### Phase I: The Journalist (Weeks 1–14): 150 points
 - Weekly Reading Journal (10 pts/week x 14 teaching weeks + 10 pts consistency = 150 pts)
 
-### Phase II: The Architect (Weeks 1–3) — 125 points
+### Phase II: The Architect (Weeks 1–3): 125 points
 - GitHub Profile (25 pts)
 - Syllabus Contract (25 pts)
 - Project Setup (25 pts)
 - Librarian Visit Report (50 pts)
 
-### Phase III: The Builder (Weeks 4–9) — 250 points
+### Phase III: The Builder (Weeks 4–9): 250 points
 - Annotated Manuscript (25 pts)
 - Project Prospectus (25 pts)
-- Topic Selection — RQs (25 pts)
+- Topic Selection, RQs (25 pts)
 - Definitions Practice (25 pts)
 - Codebook & Qual Memo (50 pts)
 - Sampling Plan & Pilot (75 pts)
 - CITI Ethics Certification (25 pts)
 
-### Phase IV: The Analyst (Weeks 10–12) — 225 points
+### Phase IV: The Analyst (Weeks 10–12): 225 points
 - Data Wrangling [R] (50 pts)
 - Describing Data [R] (75 pts)
 - Inferencing Data [R] (100 pts)
 
-### Phase V: The Publisher (Weeks 13–15) — 250 points
+### Phase V: The Publisher (Weeks 13–15): 250 points
 - Final Web Portfolio (250 pts)
 
 **Total Points:** 1000
@@ -132,13 +132,13 @@ Per the SIUE Student Academic Code (3C2), plagiarism and cheating will not be to
 | 6 | Sep 28–Oct 4 | Ch 9–10: Rulebook & The Sample | Project Prospectus |
 | 7 | Oct 5–11 | Ch 11–12: Data Wrangling & Visualization | Topic Selection (RQs) |
 | 8 | Oct 12–18 | Ch 13–14: Making the Call & Reports | Definitions Practice + Codebook & Qual Memo |
-| — | Oct 19–Nov 2 | **Session Break** | — |
+|  | Oct 19–Nov 2 | **Session Break** |  |
 | 9 | Nov 2–8 | Review & Advanced Topics | Sampling Plan & Pilot |
 | 10 | Nov 9–15 | Applied Practice [R] | Data Wrangling [R] |
 | 11 | Nov 16–22 | Applied Practice [R] | Describing Data [R] |
-| — | Nov 23–29 | **Thanksgiving Break** | — |
+|  | Nov 23–29 | **Thanksgiving Break** |  |
 | 12 | Nov 30–Dec 6 | Applied Practice [R] | Inferencing Data [R] |
-| — | Dec 7–13 | **Remote Work Week** | CITI Certification |
+|  | Dec 7–13 | **Remote Work Week** | CITI Certification |
 | 13 | Dec 14–18 | **Finals Week** | Final Web Portfolio |
 
 *Schedule subject to change with notice*
