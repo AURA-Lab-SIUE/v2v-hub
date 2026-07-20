@@ -1,55 +1,57 @@
 # V2V Hub: Pre-Semester TODO
 
-Tracking everything that must be addressed before Fall 2026, beyond the
-2026-05-26 redesign + Obsidian-to-VS-Code migration. Items are tagged, not yet
-done. Grouped by type. Update as items close.
+Status tracker for the Fall 2026 launch. Grouped by type. Update as items close.
 
-## Hyperlinks: resolved or stubbed (done 2026-05-26)
+## 2026-07-20 unify + redesign session (branch `redesign/unify-2026-07`, all 3 repos)
 
-- [x] Stale book links `sim-lab-siue.github.io/vibes-to-variables` repointed to the live book `aura-lab-siue.github.io/v2v`.
-- [x] `v2v-methods-vault` template repo created as a public stub (more to come): https://github.com/AURA-Lab-SIUE/v2v-methods-vault . The hero "Use this template" link now resolves.
+Done and pushed to `AURA-Lab-SIUE/{v2v-hub, v2v-r, v2v}`:
 
-## Content staleness (coursepackR / RStudio / dataset / chapter count)
+- [x] **Moderated AURA design system** rebuilt (`custom-styling.scss`) on the shared
+  `_brand.yml` tokens. Light chalk reading surface default + AURA dark canvas toggle,
+  calmer than the prior "editorial field-guide" look. Every colour pair verified
+  **WCAG 2.1/2.2 AA**; visible focus, >=24px targets, non-colour cues, reduced-motion.
+- [x] **Obsidian/Foam fully removed.** "Methods Vault" -> plain **Course Workspace**
+  (VS Code + Markdown + Git, no wiki-link/graph PKM). Files renamed
+  `methods-vault(.qmd|-setup)` -> `workspace(.qmd|-setup)`; repo `v2v-methods-vault`
+  -> `v2v-workspace` in all references.
+- [x] **Two new guides:** `resources/copilot-setup.qmd` (GitHub Education Copilot as a
+  supervised aid) and `resources/vscode-customization.qmd` (settings/themes/keys/profiles).
+- [x] **Naming/facts:** "Open Methods Hub" -> "V2V Hub"; `textbook-preview.qmd` rewritten
+  to the real 14-chapter 3rd-edition structure; dead `coursepackR` pkgdown links ->
+  `AURA-Lab-SIUE/v2v-r`; em dashes removed from touched pages.
+- [x] **Book + package alignment:** shared AA-safe brand tokens (`muted #52525B`);
+  org/link staleness fixed in the `v2v-r` README, book README, and book `_brand.yml`.
+- [x] Orphaned `chapters/18-20*.qmd` (pre-migration music-dataset drafts, unlinked)
+  dropped from the render.
+- [x] `.gitattributes` (LF) added to all three repos; line-ending noise normalized.
 
-The Obsidian sweep covered 9 files; these still carry pre-pivot content and need a
-content pass (blocked on the `v2v` R package API, so do not fabricate function names):
+## OPEN: the music -> Twitch corpus rebuild (the big remaining workstream)
 
-- [ ] **`coursepackR` -> `v2v`** rename across: `modules/03_builder`, `modules/04_analyst` (+ `practice-wrangling.qmd`), `modules/05_publisher`, `workbook/03-meet-r.qmd`, `workbook/05-describing-data.qmd`, `workbook/07-publishing.qmd`, `workbook/index.qmd`, `chapters/18b-seeing-patterns-lab.qmd`, `textbook-preview.qmd`, `resources/install-r-rstudio.qmd`, `resources/install-vscode.qmd`.
-- [ ] **`unified_music` dataset -> Twitch working corpus** in modules 03/04/05 and the workbook labs (the book moved to the Twitch corpus; figures/captions say "Spotify API via coursepackR").
-- [ ] **Chapter numbering**: modules reference "Chapters 8-16 / 17-20 / 21-22" (old 22-chapter book). Remap to the 14-chapter structure.
-- [x] **RStudio -> VS Code** removed everywhere (2026-05-26): 55 references across 7 files cleared. `install-r-rstudio.qmd` rewritten and renamed to `install-r.qmd` (old archived); `install-vscode.qmd` reframed as the course-standard R IDE; `workbook/03-meet-r.qmd` and `07-publishing.qmd` moved off `.Rproj`/RStudio panes to the VS Code open-folder + R-extension workflow; all `install-r-rstudio.qmd` links repointed. `grep -ri rstudio` over live `.qmd` returns zero.
-- [ ] **`download_week()`** and `remotes::install_github("SIM-Lab-SIUE/coursepackR")` references: replace with the real `v2v` workflow once the package API is frozen.
-- [ ] **`about.qmd` / `textbook-preview.qmd`**: still say "2nd edition / 22 chapters." Update to 3rd edition / 14 chapters.
+The package now ships the **Twitch chat/stream corpus** (`twitch_chat_sample`,
+`twitch_streams_sample`), but the following still teach the retired Spotify/Billboard/
+Genius **`unified_music`** dataset. Converting is a real lab/chapter rebuild (new data,
+new worked examples, new figures), not a find-replace, so it was deliberately NOT
+half-converted:
 
-## Dead or no-equivalent links
+- [ ] **Hub modules** `04_analyst` assignments (30-song sample, 1,792 songs) and the
+  `library(coursepackR); data(unified_music)` load block.
+- [ ] **Hub workbook labs** `01-codebook.qmd`, `05-describing-data.qmd` (ggplot examples
+  on `workbook/data/music_data_raw.csv`) and `03-meet-r.qmd` (install command).
+- [ ] **Book chapters + README** (line ~119 `unified_music` description; `data(unified_music)`).
+- [ ] Vendor a Twitch sample CSV for the workbook (export from `v2v::twitch_chat_sample`).
+- [ ] Module weekly-breakdown chapter numbers/titles still use the old 22-ch scheme;
+  remap to the 14-ch structure.
+- Twitch schema is known: chat = `id, channel, sender, message, date` (Unix ms, use
+  `clean_dates()`); 50 channels, 8 anchors. Coordinate with the **MC451/501 accessibility**
+  remediation (the ~68 R figures need `fig-alt` anyway).
 
-- [ ] **coursepackR doc-site links** (`sim-lab-siue.github.io/coursepackR`, 3 spots in modules + `resources/index.qmd`) and the **`bookdown.org/alex_leith/mc451`** link (`install-r-rstudio.qmd`): no live `v2v` equivalent. Either build a `v2v` package pkgdown site or repoint to the package repo, then update link text.
-- [ ] **Deep chapter links** in `chapters/18a-seeing-patterns-lecture.qmd` and `chapters/19-surprise-detector.qmd` were collapsed to the book root (the 22->14 renumber broke exact-chapter mapping). Repoint to the correct new chapters once the book is final.
-- [ ] Confirm the example placeholder links in `resources/github-setup.qmd` (`example.com`, `yourwebsite.com`, `linkedin.com/in/yourprofile`) are intended as template examples (they appear inside a sample profile README).
+## Other pre-launch
 
-## Assets
-
-- [ ] **`resources/Methods_Vault.zip`** is the retired Obsidian vault. No longer linked; archive or delete (currently still in the repo).
-- [ ] Verify `resources/Syllabus_Contract.pdf` and `resources/annotation-example.pdf` are current for Fall 2026.
-
-## Methods Vault template repo (flesh out the stub)
-
-- [ ] Write `00_START_HERE.md` walkthrough.
-- [ ] Add lab starter files and a codebook template under `_templates/`.
-- [ ] Populate `05_Textbook/` with links to the 14 chapters.
-- [ ] Test the full "Use this template -> clone -> install extensions" flow on a clean machine.
-
-## Book dependency (separate repo: `AURA-Lab-SIUE/v2v`)
-
-- [ ] Textbook chapters 7-14 are stubs; the Hub sidebar links to them resolve to thin pages. Confirm chapter completion before semester (tracked in the OER Courseware project).
-
-## Deploy
-
-- [ ] Full `quarto render` of the Hub (needs R + the `v2v` package installed, since workbook labs execute code), then commit + push. Pages changed on 2026-05-26 were rendered individually; the site has not had a full rebuild.
-- [ ] Same render + deploy for the textbook repo.
-
-## Design (done 2026-05-26, for reference)
-
-- [x] AURA editorial theme (Fraunces + Instrument Sans + JetBrains Mono, violet/amber on chalk), dark mode, all legacy classes restyled.
-- [x] Editorial hero, on-brand cards/buttons, five-phase arc map, pedagogical callout taxonomy.
-- [x] Obsidian fully removed from live pages; Methods Vault redefined as a VS Code workspace.
+- [ ] Flesh out the `v2v-workspace` template repo: `README.md`, `_templates/`
+  (journal + codebook), `.vscode/` recommended set (Quarto, R, GitLens), test the
+  "Use this template -> clone -> install extensions" flow.
+- [ ] **Rename the GitHub repo** `v2v-methods-vault` -> `v2v-workspace` (owner action;
+  hub already points at the new name).
+- [ ] Full `quarto render` of the hub (needs R + `v2v` installed) + deploy; same for the book.
+- [ ] Optional: automated axe/pa11y a11y pass on the rendered hub for belt-and-suspenders.
+- [ ] Consider deleting the 4 orphan `chapters/18-20*.qmd` files (now unrendered).
