@@ -1,23 +1,35 @@
 /*-- scss:defaults --*/
 
 /* ============================================================================
-   V2V Hub: AURA Lab editorial field-guide design system.
+   V2V Hub — moderated AURA Lab design system
    ----------------------------------------------------------------------------
-   Rewritten 2026-05-26. Replaces the prior Inter + Okabe-Ito blue/teal theme,
-   which read as a generic Bootstrap template. This brings the Hub onto the
-   same identity as the V2V textbook (aura-lab-siue.github.io/v2v):
-     - Type: Fraunces display serif (headings) + Instrument Sans (body) +
-       JetBrains Mono (code).
-     - Color: AURA violet primary + amber signal on warm chalk paper.
-     - One SCSS file serves BOTH light and dark Quarto themes; dark values
-       apply under `.quarto-dark`.
-   Every legacy class name (.hero-section, .card, .learning-objectives,
-   .deliverables, .callout-info, .phase-header, .phase-navigation,
-   .resource-card, .resource-badge, .btn-*) is RESTYLED in place so existing
-   module/workbook/resource pages adopt the new look without per-file edits.
+   Rebuilt 2026-07-20. One calm, legible system for a tool students live in.
+   Shares the AURA Lab v2 tokens with the V2V textbook (_brand.yml) and the
+   lab's canonical exemplar (banned-word-checker). This is the MODERATED
+   variant: the lab's public identity (dark canvas, Fraunces-900 display,
+   heavy uppercase tracking, motion) is dialled down for long reading and
+   daily coursework.
+
+     - Reading surface is LIGHT (warm chalk paper) by default; the AURA dark
+       canvas is the toggle (`.quarto-dark`), not the default.
+     - Type: Fraunces (display headings) + Instrument Sans (body/UI) +
+       JetBrains Mono (code + metadata).
+     - Colour: AURA violet primary + amber signal. Brand hues are used for
+       fills/borders; TEXT uses AA-safe variants (violet-800 on light,
+       violet-400 on dark; amber-800 on light, amber-400 on dark).
+     - Every colour pair here meets WCAG 2.1/2.2 AA (verified: body/link text
+       >=4.5:1, UI/non-text >=3:1). Non-colour cues, visible focus, >=24px
+       targets, and reduced-motion are all honoured.
+     - Legacy class names used by the pages (.hero-section, .card, .eyebrow,
+       .phase-header, .resource-card, .learning-objectives, .v2v-arc, .btn-*)
+       are restyled in place; Quarto's native callouts are themed to match.
+
+   Motion is intentionally minimal: colour/underline transitions only, no
+   lift/scale. Decoration is intentionally sparse: no radial motifs, one
+   faint violet section rule as the single AURA flourish.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 $font-family-sans-serif: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 $font-family-serif:      'Fraunces', Georgia, 'Times New Roman', serif;
@@ -26,74 +38,86 @@ $font-family-base:       $font-family-sans-serif;
 $headings-font-family:   $font-family-serif;
 $headings-font-weight:   700;
 
-// Bootstrap semantic colors mapped to AURA so stock components inherit brand.
-$primary:   #6D28D9;
-$secondary: #B45309;
-$body-color: #27272A;
-$body-bg:    #F4F0EB;
-$link-color: #6D28D9;
+// Bootstrap semantic colours mapped to AURA so stock components inherit brand.
+// $primary is a button-fill violet (white text passes AA at 7.1:1).
+$primary:          #6D28D9;
+$secondary:        #52525B;
+$body-color:       #27272A;
+$body-bg:          #F4F0EB;
+$link-color:       #5B21B6;   // violet-800: 7.9:1 on chalk
+$link-hover-color: #6D28D9;
 
 
 /*-- scss:rules --*/
 
 // ============================================================================
-// Design tokens
+// Design tokens (shared with V2V textbook; keep values in sync with _brand.yml)
 // ============================================================================
 :root {
-  --v2v-paper:      #F4F0EB;
-  --v2v-surface:    #ECE7E0;
-  --v2v-raised:     #FBFAF7;
-  --v2v-rule:       #E0D9CE;
+  // Surfaces (light / chalk)
+  --v2v-paper:   #F4F0EB;
+  --v2v-surface: #ECE7E0;
+  --v2v-raised:  #FBFAF7;
+  --v2v-rule:    #D9D2C7;
 
-  --v2v-ink:        #18181B;
-  --v2v-text:       #27272A;
-  --v2v-muted:      #52525B;   // AA-safe on chalk (6.8:1)
+  // Text (AA on paper: text 13.1:1, ink 15.6:1, muted 6.8:1)
+  --v2v-ink:   #18181B;
+  --v2v-text:  #27272A;
+  --v2v-muted: #52525B;
 
-  --v2v-violet:        #6D28D9;
-  --v2v-violet-bright: #7C3AED;
-  --v2v-violet-tint:   rgba(124, 58, 237, 0.09);
-  --v2v-amber:         #B45309;
-  --v2v-amber-bright:  #F59E0B;
-  --v2v-amber-tint:    rgba(245, 158, 11, 0.12);
+  // Brand — interactive TEXT uses AA-safe variants; -fill/-accent for fills+borders
+  --v2v-violet:      #5B21B6;  // link/label text, 7.9:1 on paper
+  --v2v-violet-fill: #6D28D9;  // button/accent fill (white text 7.1:1)
+  --v2v-violet-accent:#7C3AED; // brand hue for borders/dots/rules
+  --v2v-violet-tint: rgba(124, 58, 237, 0.08);
 
-  --v2v-try:    #1F6F4F;
-  --v2v-pitfall:#B4452E;
-  --v2v-check:  #2563A8;
-  --v2v-ai:     #7C3AED;
+  --v2v-amber:       #92400E;  // amber TEXT, 6.3:1 on paper
+  --v2v-amber-accent:#B45309;  // amber borders/rules
+  --v2v-amber-tint:  rgba(245, 158, 11, 0.14);
 
-  --v2v-navbar: #18181B;       // ink navbar
-  --v2v-shadow: 0 1px 2px rgba(24,24,27,.04), 0 8px 24px -12px rgba(24,24,27,.18);
+  // Semantic (all AA on paper)
+  --v2v-success: #1F6F4F;
+  --v2v-danger:  #B4452E;
+  --v2v-info:    #2563A8;
+
+  --v2v-navbar: #18181B;
+
+  --v2v-radius: 10px;
+  --v2v-measure: 72ch;
+  --v2v-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .quarto-dark {
-  --v2v-paper:      #17151A;
-  --v2v-surface:    #211E26;
-  --v2v-raised:     #1E1B22;
-  --v2v-rule:       #2E2A33;
+  --v2v-paper:   #0E0E12;   // AURA canvas
+  --v2v-surface: #1A1A22;
+  --v2v-raised:  #16161D;
+  --v2v-rule:    #2A2A33;
 
-  --v2v-ink:        #F4F0EB;
-  --v2v-text:       #E6E1DA;
-  --v2v-muted:      #A1A1AA;
+  --v2v-ink:   #F4F0EB;
+  --v2v-text:  #F0ECE8;
+  --v2v-muted: #A1A1AA;     // 7.5:1 on canvas
 
-  --v2v-violet:        #B79CFF;
-  --v2v-violet-bright: #8B5CF6;
-  --v2v-violet-tint:   rgba(139, 92, 246, 0.16);
-  --v2v-amber:         #FBBF24;
-  --v2v-amber-bright:  #FBBF24;
-  --v2v-amber-tint:    rgba(251, 191, 36, 0.14);
+  --v2v-violet:      #A78BFA;  // 7.1:1 on canvas
+  --v2v-violet-fill: #6D28D9;
+  --v2v-violet-accent:#7C3AED;
+  --v2v-violet-tint: rgba(139, 92, 246, 0.16);
 
-  --v2v-try:    #4FBF8B;
-  --v2v-pitfall:#E8826B;
-  --v2v-check:  #6BA8E8;
-  --v2v-ai:     #B79CFF;
+  --v2v-amber:       #FBBF24;  // 11.5:1 on canvas
+  --v2v-amber-accent:#F59E0B;
+  --v2v-amber-tint:  rgba(251, 191, 36, 0.12);
 
-  --v2v-navbar: #100E13;
-  --v2v-shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+  --v2v-success: #4FBF8B;
+  --v2v-danger:  #E8826B;
+  --v2v-info:    #6BA8E8;
+
+  --v2v-navbar: #09090C;
 }
 
 // ============================================================================
 // Base
 // ============================================================================
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
   font-family: $font-family-sans-serif;
   font-size: 1.0625rem;
@@ -104,120 +128,114 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'kern', 'liga';
 }
-main p, main ul, main ol, main dl { max-width: 72ch; }
-p { margin-bottom: 1.25rem; line-height: 1.65; }
+main p, main ul, main ol, main dl { max-width: var(--v2v-measure); }
+p { margin-bottom: 1.2rem; }
 strong, b { color: var(--v2v-ink); font-weight: 600; }
 ::selection { background: var(--v2v-violet-tint); }
+hr { border: 0; border-top: 1px solid var(--v2v-rule); margin: 2.5rem 0; }
 
 // ============================================================================
-// Headings (Fraunces display serif)
+// Headings — Fraunces, moderated weights/sizes (calm, not display-loud)
 // ============================================================================
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-serif;
   color: var(--v2v-ink);
-  font-variation-settings: 'opsz' 40;
+  line-height: 1.2;
   margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 h1 {
-  font-size: 2.6rem; font-weight: 800; font-variation-settings: 'opsz' 144;
-  line-height: 1.05; letter-spacing: -0.015em; margin-top: 2rem;
+  font-size: 2.25rem; font-weight: 700; line-height: 1.1;
+  letter-spacing: -0.01em; margin-top: 1.5rem;
 }
+// One AURA flourish: a faint violet rule above each major section heading.
 h2 {
-  font-size: 1.7rem; font-weight: 600; line-height: 1.15;
-  margin-top: 3rem; padding-top: 1.3rem; padding-bottom: 0;
-  border-top: 1px solid var(--v2v-rule); border-bottom: none;
+  font-size: 1.55rem; font-weight: 600;
+  margin-top: 2.75rem; padding-top: 1.1rem;
+  border-top: 1px solid var(--v2v-rule);
 }
-h3 { font-size: 1.3rem; font-weight: 600; color: var(--v2v-ink); }
+h3 { font-size: 1.22rem; font-weight: 600; }
+// h4 as a small uppercase label (Instrument Sans) — used sparingly.
 h4 {
   font-family: $font-family-sans-serif;
-  font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--v2v-violet);
+  font-size: 0.82rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--v2v-violet);
+  margin-top: 1.75rem;
 }
 h5, h6 { font-family: $font-family-sans-serif; font-weight: 600; color: var(--v2v-muted); }
 
-// Reusable eyebrow
+// Eyebrow — the one place wide tracking earns its keep. Use sparingly.
 .eyebrow {
   display: block; font-family: $font-family-sans-serif;
-  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+  font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--v2v-violet); margin-bottom: 0.5rem;
 }
 
 // ============================================================================
-// Links
+// Links — persistent underline in body (non-colour cue, WCAG 1.4.1)
 // ============================================================================
-a { color: var(--v2v-violet); text-decoration: none; transition: color .15s ease; }
-main a:not(.btn) {
-  border-bottom: 1px solid color-mix(in srgb, var(--v2v-violet) 35%, transparent);
+a { color: var(--v2v-violet); text-decoration: none; }
+main a:not(.btn):not(.nav-link) {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--v2v-violet) 40%, transparent);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color .15s var(--v2v-ease), color .15s var(--v2v-ease);
 }
-a:hover { color: var(--v2v-violet-bright); }
-main a:not(.btn):hover { background: var(--v2v-violet-tint); }
+main a:not(.btn):not(.nav-link):hover {
+  color: var(--v2v-violet-fill);
+  text-decoration-color: currentColor;
+}
 
-a:focus-visible, button:focus-visible, summary:focus-visible {
-  outline: 2px solid var(--v2v-violet); outline-offset: 2px; border-radius: 2px;
+// Visible focus for every interactive element (WCAG 2.4.7)
+a:focus-visible, button:focus-visible, summary:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible,
+.btn:focus-visible, .nav-link:focus-visible {
+  outline: 2px solid var(--v2v-violet-fill);
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 
 // ============================================================================
-// Buttons (legacy .btn-primary / .btn-secondary / .btn-outline-secondary)
+// Buttons — flat, calm. Min target 24px (WCAG 2.2 2.5.8); primary/lg exceed 44px.
 // ============================================================================
-.btn-primary {
-  background: var(--v2v-violet); border-color: var(--v2v-violet); color: #fff;
+.btn {
   font-family: $font-family-sans-serif; font-weight: 600;
-  padding: 0.7rem 1.4rem; border-radius: 6px; border-bottom: none !important;
-  transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
-  &:hover { background: var(--v2v-violet-bright); border-color: var(--v2v-violet-bright);
-    color: #fff; transform: translateY(-2px); box-shadow: var(--v2v-shadow); }
+  border-radius: 7px; min-height: 2.5rem;
+  padding: 0.55rem 1.2rem; text-decoration: none !important;
+  transition: background-color .15s var(--v2v-ease), border-color .15s var(--v2v-ease), color .15s var(--v2v-ease);
+}
+.btn-sm { min-height: 1.75rem; padding: 0.3rem 0.8rem; font-size: 0.85rem; }
+.btn-lg { padding: 0.75rem 1.5rem; font-size: 1.05rem; }
+.btn-primary {
+  background: var(--v2v-violet-fill); border: 1.5px solid var(--v2v-violet-fill); color: #fff;
+  &:hover, &:focus { background: #5B21B6; border-color: #5B21B6; color: #fff; }
 }
 .btn-secondary, .btn-outline-secondary {
   background: transparent; color: var(--v2v-violet) !important;
   border: 1.5px solid var(--v2v-violet);
-  font-family: $font-family-sans-serif; font-weight: 600;
-  padding: 0.65rem 1.35rem; border-radius: 6px; border-bottom: none !important;
-  transition: transform .15s ease, background-color .15s ease;
-  &:hover { background: var(--v2v-violet-tint); color: var(--v2v-violet-bright) !important;
-    border-color: var(--v2v-violet-bright); transform: translateY(-2px); }
+  &:hover, &:focus { background: var(--v2v-violet-tint); color: var(--v2v-violet-fill) !important;
+    border-color: var(--v2v-violet-fill); }
 }
 
 // ============================================================================
-// Hero (editorial: NOT a centered gradient). Paper panel, violet accent bar,
-// Fraunces display title. Distinctive and on-brand.
+// Hero — calm paper panel with a violet accent bar (no gradients/motifs)
 // ============================================================================
 .hero-section {
   background: var(--v2v-raised);
-  color: var(--v2v-text);
   border: 1px solid var(--v2v-rule);
-  border-left: 5px solid var(--v2v-violet-bright);
-  border-radius: 0 10px 10px 0;
-  padding: 3rem 2.5rem;
+  border-left: 4px solid var(--v2v-violet-accent);
+  border-radius: 0 var(--v2v-radius) var(--v2v-radius) 0;
+  padding: 2.25rem 2rem;
   margin: 1rem 0 2.5rem;
-  text-align: left;
-  box-shadow: var(--v2v-shadow);
-  position: relative;
-  overflow: hidden;
-
-  // faint corner motif
-  &::after {
-    content: '';
-    position: absolute; right: -60px; top: -60px;
-    width: 220px; height: 220px; border-radius: 50%;
-    background: radial-gradient(circle at center, var(--v2v-violet-tint), transparent 70%);
-    pointer-events: none;
-  }
-  h1 {
-    color: var(--v2v-ink); border: none; margin-top: 0;
-    font-size: 3rem; font-weight: 900; font-variation-settings: 'opsz' 144;
-    letter-spacing: -0.02em; line-height: 1.02;
-    &::before {
-      content: ''; display: block; width: 3.5rem; height: 4px;
-      background: var(--v2v-violet-bright); border-radius: 2px; margin-bottom: 1.25rem;
-    }
-  }
-  p { color: var(--v2v-text); font-size: 1.15rem; max-width: 60ch; }
+  h1 { margin-top: 0; border: none; padding: 0; font-size: 2.5rem; }
+  p { color: var(--v2v-text); font-size: 1.12rem; max-width: 60ch; margin-bottom: 0.5rem; }
   p strong { color: var(--v2v-ink); }
+  > :last-child { margin-bottom: 0; }
 }
 
 // ============================================================================
-// Cards (legacy .card-grid / .card) -> editorial cards
+// Cards — flat; hover shifts border colour only (no lift/scale)
 // ============================================================================
 .card-grid {
   display: grid;
@@ -227,31 +245,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .card {
   background: var(--v2v-raised);
   border: 1px solid var(--v2v-rule);
-  border-radius: 8px;
-  padding: 1.6rem 1.6rem 1.7rem;
-  text-align: left;
-  box-shadow: var(--v2v-shadow);
-  position: relative; overflow: hidden;
-  transition: transform .18s ease, border-color .18s ease;
-
-  &::before {
-    content: ''; position: absolute; inset: 0 auto 0 0; width: 3px;
-    background: var(--v2v-violet-bright); transform: scaleY(0); transform-origin: top;
-    transition: transform .18s ease;
-  }
-  &:hover {
-    transform: translateY(-3px);
-    border-color: color-mix(in srgb, var(--v2v-violet) 40%, var(--v2v-rule));
-    box-shadow: var(--v2v-shadow);
-    &::before { transform: scaleY(1); }
-  }
-  h3 { color: var(--v2v-ink); font-size: 1.18rem; margin-top: 0; margin-bottom: 0.5rem; }
-  p  { color: var(--v2v-text); font-size: 0.94rem; line-height: 1.5; margin-bottom: 1.1rem; }
-  .card-icon { font-size: 2.25rem; margin-bottom: 0.75rem; display: block; }
+  border-radius: var(--v2v-radius);
+  padding: 1.5rem;
+  transition: border-color .15s var(--v2v-ease);
+  &:hover { border-color: var(--v2v-violet-accent); }
+  h3 { color: var(--v2v-ink); font-size: 1.14rem; margin-top: 0; margin-bottom: 0.5rem; }
+  p  { color: var(--v2v-text); font-size: 0.95rem; line-height: 1.55; margin-bottom: 1rem; }
+  .card-icon { font-size: 2rem; margin-bottom: 0.6rem; display: block; }
+  > :last-child { margin-bottom: 0; }
 }
 
 // ============================================================================
-// Research-arc map (optional new component: .v2v-arc / .v2v-phase)
+// Research-arc map (.v2v-arc / .v2v-phase)
 // ============================================================================
 .v2v-arc {
   display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem;
@@ -261,143 +266,156 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .v2v-phase {
   counter-increment: phase; position: relative;
   background: var(--v2v-raised); border: 1px solid var(--v2v-rule);
-  border-radius: 7px; padding: 1.6rem 1rem 1rem;
+  border-radius: 8px; padding: 1.6rem 1rem 1rem;
   &::before {
     content: counter(phase); position: absolute; top: -0.8rem; left: 1rem;
     width: 1.7rem; height: 1.7rem; display: grid; place-items: center;
     font-family: $font-family-serif; font-weight: 700; font-size: 0.95rem;
-    color: #fff; background: var(--v2v-violet-bright); border-radius: 50%;
-    box-shadow: var(--v2v-shadow);
+    color: #fff; background: var(--v2v-violet-fill); border-radius: 50%;
   }
   .v2v-phase-name { font-family: $font-family-sans-serif; font-weight: 700;
     font-size: 0.9rem; color: var(--v2v-ink); display: block; margin-bottom: 0.25rem; }
-  .v2v-phase-meta { font-family: $font-family-sans-serif; font-size: 0.72rem;
-    text-transform: uppercase; letter-spacing: 0.08em; color: var(--v2v-muted); }
+  .v2v-phase-meta { font-family: $font-family-monospace; font-size: 0.72rem;
+    letter-spacing: 0.02em; color: var(--v2v-muted); }
 }
 
 // ============================================================================
-// Pedagogical panels: legacy .learning-objectives / .deliverables / .callout-info
-// plus new .try-this / .pitfall / .checkpoint / .ai-note
+// Pedagogical panels (custom divs) + Quarto native callouts, unified look
 // ============================================================================
 .learning-objectives, .deliverables, .callout-info,
 .try-this, .pitfall, .checkpoint, .ai-note {
   background: var(--v2v-raised);
   border: 1px solid var(--v2v-rule);
-  border-left: 4px solid var(--v2v-violet-bright);
-  border-radius: 0 6px 6px 0;
-  padding: 1.3rem 1.5rem;
+  border-left: 4px solid var(--v2v-violet-accent);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.4rem;
   margin: 1.75rem 0;
-  box-shadow: var(--v2v-shadow);
   h3, h4 { margin-top: 0; font-family: $font-family-sans-serif; }
   ul { margin-bottom: 0; padding-left: 1.3rem; }
-  li { margin-bottom: 0.4rem; line-height: 1.55; }
+  li { margin-bottom: 0.35rem; line-height: 1.55; }
   > :last-child { margin-bottom: 0; }
 }
-.learning-objectives { border-left-color: var(--v2v-violet); h3 { color: var(--v2v-violet); } }
-.deliverables        { border-left-color: var(--v2v-amber);  h3 { color: var(--v2v-amber); } }
-.callout-info        { border-left-color: var(--v2v-check);  h4 { color: var(--v2v-check); } }
+.learning-objectives { border-left-color: var(--v2v-violet-accent); h3 { color: var(--v2v-violet); } }
+.deliverables        { border-left-color: var(--v2v-amber-accent);  h3 { color: var(--v2v-amber); } }
+.callout-info        { border-left-color: var(--v2v-info);          h4 { color: var(--v2v-info); } }
 
-// New inline pedagogical blocks with auto labels
+// Inline pedagogical blocks with auto text labels (non-colour cue = the label)
 .try-this, .pitfall, .checkpoint, .ai-note {
   &::before { display: block; font-family: $font-family-sans-serif;
     font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.12em; margin-bottom: 0.5rem; }
+    letter-spacing: 0.08em; margin-bottom: 0.5rem; }
 }
-.try-this   { border-left-color: var(--v2v-try);
-  &::before { content: '\2192  Try this';       color: var(--v2v-try); } }
-.pitfall    { border-left-color: var(--v2v-pitfall);
-  &::before { content: '\26A0  Common pitfall'; color: var(--v2v-pitfall); } }
-.checkpoint { border-left-color: var(--v2v-check);
-  &::before { content: '\2713  Check yourself'; color: var(--v2v-check); } }
-.ai-note    { border-left-color: var(--v2v-ai); background: var(--v2v-violet-tint);
-  &::before { content: '\2726  AI disclosure';  color: var(--v2v-ai); } }
+.try-this   { border-left-color: var(--v2v-success);
+  &::before { content: 'Try this'; color: var(--v2v-success); } }
+.pitfall    { border-left-color: var(--v2v-danger);
+  &::before { content: 'Common pitfall'; color: var(--v2v-danger); } }
+.checkpoint { border-left-color: var(--v2v-info);
+  &::before { content: 'Check yourself'; color: var(--v2v-info); } }
+.ai-note    { border-left-color: var(--v2v-violet-accent); background: var(--v2v-violet-tint);
+  &::before { content: 'AI disclosure'; color: var(--v2v-violet); } }
+
+// Quarto native callouts — align to the same calm, bordered look.
+.callout { border-radius: 0 8px 8px 0 !important; border: 1px solid var(--v2v-rule) !important;
+  border-left-width: 4px !important; background: var(--v2v-raised) !important; }
+.callout.callout-style-default .callout-title { background: transparent !important;
+  font-family: $font-family-sans-serif; font-weight: 700; color: var(--v2v-ink); }
+.callout-tip       { border-left-color: var(--v2v-success) !important; }
+.callout-note      { border-left-color: var(--v2v-info) !important; }
+.callout-important { border-left-color: var(--v2v-violet-accent) !important; }
+.callout-warning   { border-left-color: var(--v2v-amber-accent) !important; }
+.callout-caution   { border-left-color: var(--v2v-danger) !important; }
 
 // ============================================================================
-// Phase header / navigation / progress
+// Phase header / navigation
 // ============================================================================
 .phase-header {
   background: var(--v2v-raised);
   border: 1px solid var(--v2v-rule);
-  border-left: 5px solid var(--v2v-violet-bright);
+  border-left: 4px solid var(--v2v-violet-accent);
   border-radius: 0 8px 8px 0;
-  padding: 2rem; margin-bottom: 2rem;
-  h1 { color: var(--v2v-ink); margin-top: 0; }
+  padding: 1.75rem 1.9rem; margin-bottom: 2rem;
+  h1 { color: var(--v2v-ink); margin-top: 0; border: none; padding: 0; }
+  > :last-child { margin-bottom: 0; }
 }
 .phase-navigation {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--v2v-rule);
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  margin-top: 3rem; padding-top: 1.75rem; border-top: 1px solid var(--v2v-rule);
 }
 .phase-nav-prev, .phase-nav-next {
-  font-family: $font-family-sans-serif; font-weight: 600;
-  padding: 0.7rem 1.3rem; border-radius: 6px; text-decoration: none;
-  border-bottom: none !important; transition: transform .15s ease, background-color .15s ease;
+  font-family: $font-family-sans-serif; font-weight: 600; min-height: 2.5rem;
+  display: inline-flex; align-items: center;
+  padding: 0.55rem 1.15rem; border-radius: 7px; text-decoration: none !important;
+  transition: background-color .15s var(--v2v-ease);
 }
 .phase-nav-prev { background: var(--v2v-surface); color: var(--v2v-violet) !important;
   &:hover { background: var(--v2v-violet-tint); } }
-.phase-nav-next { background: var(--v2v-violet); color: #fff !important;
-  &:hover { background: var(--v2v-violet-bright); transform: translateX(3px); } }
-.phase-progress { font-family: $font-family-sans-serif; color: var(--v2v-muted);
-  font-size: 0.9rem; font-weight: 500; }
+.phase-nav-next { background: var(--v2v-violet-fill); color: #fff !important;
+  &:hover { background: #5B21B6; } }
+.phase-progress { font-family: $font-family-monospace; color: var(--v2v-muted); font-size: 0.85rem; }
 
 // ============================================================================
-// Resource cards / badges
+// Resource cards / badges (mono metadata — AURA signature)
 // ============================================================================
 .resource-card {
   background: var(--v2v-raised); border: 1px solid var(--v2v-rule);
-  border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;
-  box-shadow: var(--v2v-shadow); transition: border-color .18s ease, transform .18s ease;
-  &:hover { border-color: color-mix(in srgb, var(--v2v-violet) 40%, var(--v2v-rule)); transform: translateY(-2px); }
-  h4 { color: var(--v2v-ink); margin-top: 0; margin-bottom: 0.5rem; font-family: $font-family-serif; font-size: 1.1rem; text-transform: none; letter-spacing: 0; }
+  border-radius: var(--v2v-radius); padding: 1.4rem; margin-bottom: 1.4rem;
+  transition: border-color .15s var(--v2v-ease);
+  &:hover { border-color: var(--v2v-violet-accent); }
+  h4 { color: var(--v2v-ink); margin-top: 0; margin-bottom: 0.5rem;
+    font-family: $font-family-serif; font-size: 1.1rem; text-transform: none; letter-spacing: 0; }
 }
 .resource-badge {
-  display: inline-block; font-family: $font-family-sans-serif;
+  display: inline-block; font-family: $font-family-monospace;
   background: var(--v2v-surface); color: var(--v2v-ink);
-  padding: 0.22rem 0.7rem; border-radius: 20px;
-  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
-  margin-right: 0.5rem; margin-bottom: 0.75rem;
+  padding: 0.18rem 0.6rem; border-radius: 999px;
+  font-size: 0.74rem; font-weight: 500;
+  margin-right: 0.4rem; margin-bottom: 0.6rem;
   &.time       { background: var(--v2v-violet-tint); color: var(--v2v-violet); }
   &.difficulty { background: var(--v2v-amber-tint);  color: var(--v2v-amber); }
 }
 
 // ============================================================================
-// Navbar (ink, chalk text, violet/amber hover, Fraunces brand)
+// Navbar — ink anchor with the AURA violet brand dot
 // ============================================================================
 .navbar {
   background: var(--v2v-navbar) !important;
-  box-shadow: 0 1px 0 var(--v2v-rule), var(--v2v-shadow);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   font-family: $font-family-sans-serif;
 }
 .navbar-brand {
   font-family: $font-family-serif !important;
-  font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em;
+  font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em;
   color: #F4F0EB !important;
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  &::before { content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--v2v-violet-accent); display: inline-block; }
 }
 .navbar-nav .nav-link {
-  color: rgba(244,240,235,0.88) !important; font-weight: 500; margin: 0 0.4rem;
-  &:hover { color: var(--v2v-amber-bright) !important; }
+  color: rgba(244,240,235,0.86) !important; font-weight: 500; margin: 0 0.35rem;
+  min-height: 2.5rem; display: inline-flex; align-items: center;
+  &:hover, &:focus { color: #FBBF24 !important; }
+  &.active { color: #fff !important; }
 }
 .dropdown-menu {
-  background: var(--v2v-raised); border: 1px solid var(--v2v-rule);
-  box-shadow: var(--v2v-shadow); border-radius: 6px;
+  background: var(--v2v-raised); border: 1px solid var(--v2v-rule); border-radius: 8px;
 }
 .dropdown-item {
   color: var(--v2v-text); font-family: $font-family-sans-serif; font-weight: 500;
-  padding: 0.6rem 1.25rem;
-  &:hover { background: var(--v2v-violet-tint); color: var(--v2v-violet); }
+  padding: 0.55rem 1.2rem; min-height: 2.5rem;
+  &:hover, &:focus { background: var(--v2v-violet-tint); color: var(--v2v-violet); }
 }
 
 // ============================================================================
-// Sidebar
+// Sidebar (docked)
 // ============================================================================
 .sidebar { border-right: 1px solid var(--v2v-rule); }
 .sidebar nav[role="navigation"] { border-right: none; }
 .sidebar .sidebar-title {
-  font-family: $font-family-serif; font-weight: 700; color: var(--v2v-ink);
-  font-size: 1.15rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--v2v-rule);
+  font-family: $font-family-serif; font-weight: 700; color: var(--v2v-ink); font-size: 1.1rem;
 }
 .sidebar-item-section > .sidebar-item-container .sidebar-item-text {
   font-family: $font-family-sans-serif; font-size: 0.7rem !important;
-  font-weight: 700 !important; text-transform: uppercase; letter-spacing: 0.1em;
+  font-weight: 700 !important; text-transform: uppercase; letter-spacing: 0.08em;
   color: var(--v2v-violet) !important;
 }
 .sidebar a.sidebar-item-text {
@@ -406,7 +424,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .sidebar a.active.sidebar-item-text {
   color: var(--v2v-violet) !important; font-weight: 600 !important;
-  border-left: 2px solid var(--v2v-violet);
+  border-left: 2px solid var(--v2v-violet-accent);
 }
 
 // ============================================================================
@@ -415,88 +433,82 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 #TOC, nav[role="doc-toc"] {
   font-family: $font-family-sans-serif; border-left: 1px solid var(--v2v-rule); padding-left: 1rem;
   > h2, .toc-title { font-size: 0.7rem !important; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.14em; color: var(--v2v-violet); border: none !important; }
+    letter-spacing: 0.1em; color: var(--v2v-violet); border: none !important; padding: 0; }
   .nav-link { font-size: 0.83rem !important; color: var(--v2v-muted) !important;
-    border-bottom: none !important; &:hover { color: var(--v2v-violet) !important; } }
+    text-decoration: none; &:hover { color: var(--v2v-violet) !important; } }
   .nav-link.active { color: var(--v2v-violet) !important; font-weight: 600;
-    border-left: 2px solid var(--v2v-violet) !important; padding-left: 0.5rem; }
+    border-left: 2px solid var(--v2v-violet-accent) !important; padding-left: 0.5rem; }
 }
 
 // ============================================================================
-// Tables (editorial, no blue fill)
+// Tables — editorial, no fill; horizontal scroll on small screens (reflow)
 // ============================================================================
+.table-responsive, .cell-output-display { overflow-x: auto; }
 table {
   font-family: $font-family-sans-serif; font-size: 0.92rem;
   border-collapse: collapse; width: 100%; margin: 2rem 0;
 }
-thead { background: transparent; color: var(--v2v-ink); }
 thead th {
   border: none; border-top: 1px solid var(--v2v-ink);
-  border-bottom: 1px solid var(--v2v-violet);
-  text-align: left; font-weight: 700; padding: 0.6rem 0.8rem;
-  text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--v2v-ink);
+  border-bottom: 1px solid var(--v2v-violet-accent);
+  text-align: left; font-weight: 700; padding: 0.55rem 0.8rem;
+  color: var(--v2v-ink);
 }
-tbody td { border: none; border-bottom: 1px solid var(--v2v-rule); padding: 0.6rem 0.8rem; vertical-align: top; }
-tbody tr:nth-child(even) { background: transparent; }
+tbody td { border: none; border-bottom: 1px solid var(--v2v-rule);
+  padding: 0.55rem 0.8rem; vertical-align: top; color: var(--v2v-text); }
 tbody tr:hover { background: var(--v2v-violet-tint); }
 tbody tr:last-child td { border-bottom: 1px solid var(--v2v-ink); }
 
 // ============================================================================
 // Lists
 // ============================================================================
-ol, ul { padding-left: 1.5rem; li { margin-bottom: 0.4rem; line-height: 1.55; } }
+ol, ul { padding-left: 1.4rem; li { margin-bottom: 0.35rem; line-height: 1.55; } }
 ol > li::marker { color: var(--v2v-violet); font-weight: 700; }
-ul > li::marker { color: var(--v2v-violet); }
+ul > li::marker { color: var(--v2v-violet-accent); }
 
 // ============================================================================
-// Code
+// Code — mono, chalk surface, calm violet edge
 // ============================================================================
 code {
   font-family: $font-family-monospace; font-size: 0.9em;
   background: var(--v2v-surface); color: var(--v2v-ink);
-  padding: 0.12em 0.35em; border-radius: 3px;
+  padding: 0.12em 0.35em; border-radius: 4px;
 }
 pre {
   font-family: $font-family-monospace; background: var(--v2v-surface);
-  color: var(--v2v-ink); border-left: 3px solid var(--v2v-violet-bright);
-  border-radius: 0 4px 4px 0; padding: 1.1rem 1.4rem; margin: 1.75rem 0;
-  overflow-x: auto; font-size: 0.86rem; line-height: 1.6;
+  color: var(--v2v-ink); border: 1px solid var(--v2v-rule);
+  border-left: 3px solid var(--v2v-violet-accent);
+  border-radius: 0 6px 6px 0; padding: 1rem 1.3rem; margin: 1.6rem 0;
+  overflow-x: auto; font-size: 0.86rem; line-height: 1.55;
   code { background: transparent; padding: 0; color: inherit; }
 }
+// Keep Quarto/knitr code annotations legible on our surface.
+div.sourceCode { background: var(--v2v-surface); border-radius: 6px; }
 
 // ============================================================================
 // Figures
 // ============================================================================
-figure, .quarto-figure { margin: 2.25rem 0; text-align: left; }
-figure img, .quarto-figure img {
-  border-radius: 6px; box-shadow: var(--v2v-shadow); max-width: 100%; height: auto;
-}
+figure, .quarto-figure { margin: 2rem 0; }
+figure img, .quarto-figure img { border-radius: 6px; max-width: 100%; height: auto; }
 figcaption, .figure-caption {
   font-family: $font-family-sans-serif; color: var(--v2v-muted);
-  font-size: 0.84rem; font-style: normal; margin-top: 0.75rem; line-height: 1.5;
+  font-size: 0.84rem; margin-top: 0.6rem; line-height: 1.5;
 }
 
 // ============================================================================
-// Footer (ink panel, amber section heads)
+// Footer
 // ============================================================================
 footer, .nav-footer, .page-footer {
-  background: var(--v2v-navbar); color: rgba(244,240,235,0.85);
-  border-top: 3px solid var(--v2v-violet-bright);
+  background: var(--v2v-navbar); color: rgba(244,240,235,0.82);
+  border-top: 3px solid var(--v2v-violet-accent);
   font-family: $font-family-sans-serif;
 }
-footer { padding: 3rem 0 1rem; margin-top: 4rem; }
-footer a, .nav-footer a { color: var(--v2v-amber-bright); border-bottom: none !important;
-  &:hover { color: #fff; } }
-.footer-section h5 { color: var(--v2v-amber-bright); font-weight: 700; font-size: 0.9rem;
-  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
-.footer-section ul { list-style: none; padding: 0; margin: 0; }
-.footer-bottom { border-top: 1px solid rgba(244,240,235,0.2); padding-top: 1.5rem;
-  margin-top: 1.5rem; text-align: center; font-size: 0.88rem; color: rgba(244,240,235,0.7); }
+footer a, .nav-footer a { color: #FBBF24;
+  &:hover, &:focus { color: #fff; } }
 
 // ============================================================================
-// Skip link + focus + reduced motion
+// Accessibility: skip link, video, reduced motion (WCAG 2.4.1 / 2.3.3)
 // ============================================================================
-*:focus-visible { outline: 2px solid var(--v2v-violet); outline-offset: 2px; border-radius: 2px; }
 .skip-to-content {
   position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
   z-index: 9999; background: var(--v2v-ink); color: #fff; padding: 0.75rem 1.5rem;
@@ -505,44 +517,47 @@ footer a, .nav-footer a { color: var(--v2v-amber-bright); border-bottom: none !i
 .skip-to-content:focus { position: fixed; top: 0; left: 0; width: auto; height: auto; overflow: visible; }
 
 .quarto-video { width: 100%; max-width: 960px; margin: 1.5rem auto;
-  border-radius: 8px; overflow: hidden; box-shadow: var(--v2v-shadow); }
+  border-radius: 8px; overflow: hidden; border: 1px solid var(--v2v-rule); }
 .quarto-video video { width: 100%; display: block; }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; animation: none !important; }
-  .card:hover, .resource-card:hover { transform: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 
 // ============================================================================
-// Mobile
+// Responsive
 // ============================================================================
 @media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.4rem; }
-  .hero-section { padding: 2rem 1.4rem; h1 { font-size: 2.2rem; } }
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.35rem; }
+  .hero-section { padding: 1.75rem 1.3rem; h1 { font-size: 2rem; } }
   .card-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .phase-navigation { flex-direction: column; gap: 1rem; }
-  .phase-nav-prev, .phase-nav-next { width: 100%; text-align: center; }
+  .phase-navigation { flex-direction: column; align-items: stretch; }
+  .phase-nav-prev, .phase-nav-next { justify-content: center; }
 }
 
 @media print {
-  .navbar, footer, .phase-navigation { display: none; }
-  body { font-size: 12pt; line-height: 1.5; }
+  .navbar, footer, .phase-navigation, .sidebar { display: none !important; }
+  body { font-size: 11pt; line-height: 1.5; color: #000; background: #fff; }
   h1, h2, h3 { page-break-after: avoid; }
-  .card { page-break-inside: avoid; }
+  .card, .callout, .learning-objectives, .resource-card { page-break-inside: avoid; }
+  main a:not(.btn) { text-decoration: underline; }
 }
 
 /* ============================================================================
    AUTHORING GUIDE (Hub pages — pedagogy lives HERE, not in the textbook)
    ----------------------------------------------------------------------------
-   Learning objectives:     ::: {.learning-objectives}  ### Objectives \n - ... :::
-   Deliverables:             ::: {.deliverables}         ### Deliverables \n - ... :::
-   Info callout:             ::: {.callout-info}         #### Note \n ... :::
-   Try this:                 ::: {.try-this}   ...prose... :::
-   Common pitfall:           ::: {.pitfall}    ...prose... :::
-   Check yourself:           ::: {.checkpoint} ...prose... :::
-   AI disclosure (required): ::: {.ai-note}    ...prose... :::
    Eyebrow label:            [Part I]{.eyebrow}
-   Phase arc map:            ::: {.v2v-arc} ::: {.v2v-phase} [Name]{.v2v-phase-name}
-                             [Ch 1-3]{.v2v-phase-meta} ::: ... :::
+   Hero:                     ::: {.hero-section} # Title \n prose :::
+   Card grid:                ::::: {.card-grid} ::: {.card} ### H \n p :::  :::::
+   Phase arc map:            ::: {.v2v-arc} ::: {.v2v-phase}
+                               [Name]{.v2v-phase-name} [Ch 1-3]{.v2v-phase-meta} ::: ... :::
+   Learning objectives:      ::: {.learning-objectives} ### Objectives \n - ... :::
+   Deliverables:             ::: {.deliverables}        ### Deliverables \n - ... :::
+   Try this / pitfall /      ::: {.try-this}   ...prose... :::   (auto-labelled)
+     checkpoint / ai-note    ::: {.checkpoint} ...prose... :::
+   Prefer Quarto callouts    ::: {.callout-tip} / {.callout-note} / {.callout-warning}
+     for standard notes; they are themed to match.
+   Resource card + badges:   ::: {.resource-card} #### Title
+                               [15 min]{.resource-badge .time} ... :::
    ========================================================================== */
