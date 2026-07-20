@@ -14,43 +14,65 @@ title: "Course Syllabus"
 | **Instructor** | Alex P. Leith, PhD |
 | **Email** | aleith@siue.edu |
 | **Office** | Dunham Hall 1017 |
-| **Office Hours** | MW 10:00–11:30 AM and 1:30–3:00 PM |
-| **Class Time** | MW 3:00–4:15 PM |
+| **Office Hours** | MW 10:00-11:30 AM and 1:30-3:00 PM (or by appointment) |
+| **Class Time** | MW 3:00-4:15 PM |
 | **Classroom** | Dunham Hall 2039 |
-| **Duration** | Aug 24 – Dec 18, 2026 |
+| **Duration** | Aug 24 to Dec 18, 2026 |
 | **Course Website** | https://aura-lab-siue.github.io/v2v-hub/ |
-| **Textbook** | [Vibes to Variables, 3rd Ed.](https://aura-lab-siue.github.io/v2v/) (OER - Free) |
+| **Textbook** | [From Vibes to Variables, 3rd Ed.](https://aura-lab-siue.github.io/v2v/) (OER, free) |
 
 ---
 
 ## Contact Methods
 
-- **Email:** aleith@siue.edu (preferred for time-insensitive and confidential communication)
-- **Discord:** APLeith (preferred for time-sensitive or casual communication)
-- **Teams:** [Schedule meetings](https://teams.microsoft.com) for short and medium-length consultations
+- **Email:** aleith@siue.edu (preferred for time-insensitive and confidential communication, such as grades or accommodations). Expect a response within 24 hours on weekdays.
+- **Office hours:** the primary support channel. Drop in during the times above in Dunham Hall 1017, or schedule an appointment.
+- **Course discussion (Blackboard):** for student-to-student questions. I participate periodically; bring instructor-directed questions to office hours or email.
+
+In all communication, clearly stated needs save us both time. State what you have tried, what is not working, and what kind of response you are hoping for.
 
 ---
 
 ## Course Description
 
-MC 451 introduces core research methodologies used in mass communication. Students explore quantitative and qualitative research methods, including surveys, experimental designs, content analysis, and in-depth interviews. The course emphasizes development of skills necessary for the design, execution, and presentation of research studies while engaging with professional and ethical principles that guide mass communication research.
+MC 451, Research Methods in Mass Media, introduces students to core research methodologies used in mass communication. Students explore quantitative and qualitative research methods, including surveys, experimental designs, content analysis, and in-depth interviews. The course emphasizes the skills necessary for the design, execution, and presentation of research studies while engaging with the professional and ethical principles that guide mass communication research.
 
-Students complete a two-part content analysis project across the semester: a qualitative study developing coding variables through immersion, and a quantitative study testing relationships in coded data. The final deliverable is a professional web portfolio published to GitHub Pages.
+Across the semester students complete a two-part content analysis project: a qualitative study that develops coding variables through immersion, and a quantitative study that tests relationships in the coded data. The final deliverable is a professional web portfolio published to GitHub Pages.
+
+---
+
+## Course Objectives
+
+By the end of this course, students will be able to:
+
+- Understand and apply the principles and laws of freedom of speech and press, particularly within the context of the United States, while gaining a global perspective on freedom of expression, including the right to dissent, monitor power, and petition for redress of grievances.
+- Demonstrate an understanding of the historical role of professionals and institutions in shaping mass communications and critically evaluate their impact on the development of media systems.
+- Recognize and analyze the impact of diversity in mass communications, including but not limited to gender, race, ethnicity, and sexual orientation, within both domestic and global contexts, and appreciate the significance of this diversity in shaping media content and audience reception.
+- Apply ethical principles in conducting and presenting research, ensuring that all research practices adhere to standards of truth, accuracy, fairness, and respect for diversity.
+- Think critically, creatively, and independently in the design and execution of research projects, developing robust research questions and applying appropriate methodologies.
+- Conduct rigorous research, evaluate information using appropriate methods, and communicate research findings clearly, concisely, and in an ethically responsible way.
+
+## Course Goals
+
+- Equip students to engage with mass communication research critically, so they can both conduct independent study and assess the research of others.
+- Foster an appreciation for the role of mass communications in reflecting and shaping societal values, particularly concerning diverse populations.
+- Prepare students to apply digital tools and technologies in their research, so they can navigate and contribute to the evolving landscape of mass media research.
+- Develop students' ability to communicate research findings effectively to both academic and non-academic audiences, using appropriate forms and styles.
 
 ---
 
 ## Course Structure: The Five Phases
 
-### Phase I: The Journalist (Weeks 1–14): 150 points
+### Phase I: The Journalist (Weeks 1-14): 150 points
 - Weekly Reading Journal (10 pts/week x 14 teaching weeks + 10 pts consistency = 150 pts)
 
-### Phase II: The Architect (Weeks 1–3): 125 points
+### Phase II: The Architect (Weeks 1-3): 125 points
 - GitHub Profile (25 pts)
 - Syllabus Contract (25 pts)
 - Project Setup (25 pts)
 - Librarian Visit Report (50 pts)
 
-### Phase III: The Builder (Weeks 4–9): 250 points
+### Phase III: The Builder (Weeks 4-9): 250 points
 - Annotated Manuscript (25 pts)
 - Project Prospectus (25 pts)
 - Topic Selection, RQs (25 pts)
@@ -59,64 +81,149 @@ Students complete a two-part content analysis project across the semester: a qua
 - Sampling Plan & Pilot (75 pts)
 - CITI Ethics Certification (25 pts)
 
-### Phase IV: The Analyst (Weeks 10–12): 225 points
+### Phase IV: The Analyst (Weeks 10-12): 225 points
 - Data Wrangling [R] (50 pts)
 - Describing Data [R] (75 pts)
 - Inferencing Data [R] (100 pts)
 
-### Phase V: The Publisher (Weeks 13–15): 250 points
+### Phase V: The Publisher (Weeks 13-15): 250 points
 - Final Web Portfolio (250 pts)
 
 **Total Points:** 1000
 
 ---
 
-## Grading Scale
+## Course Materials
 
-| Grade | Points |
-|-------|--------|
-| A | 900–1000 |
-| B | 800–899 |
-| C | 700–799 |
-| D | 600–699 |
-| F | < 599 |
+### Textbook
+
+This course uses an Open Educational Resource (OER): *From Vibes to Variables: A Field Guide to Open Media Science* (3rd Ed.), free and online at [aura-lab-siue.github.io/v2v](https://aura-lab-siue.github.io/v2v/). There is no textbook to purchase.
+
+### Required Software
+
+All software is free and open-source. Installation guides are on the [course website](https://aura-lab-siue.github.io/v2v-hub/resources/index.html).
+
+- **VS Code**: your single workspace for writing, R, Quarto, and Git
+- **R**: statistical computing environment, run inside VS Code
+- **Quarto**: scientific and technical publishing
+- **Git and GitHub**: version control and your final portfolio
+
+### Technology Requirements
+
+A reliable computer and internet connection are required.
+
+- A desktop or laptop computer for the R analysis in Phases IV and V; this work cannot be completed on a phone or tablet.
+- A current version of a supported browser (Chrome, Edge, Firefox, or Safari), kept updated.
+- Cloud storage (OneDrive, Google Drive, or similar) for backing up your project.
+- VS Code, R, and Git installed and working by the end of Week 2. The course website includes a setup walkthrough.
+
+Technical problems are not an excuse for missed deadlines, but they can often be resolved quickly; see Technical Support below.
 
 ---
 
-## Required Software
+## Artificial Intelligence Use Policy
 
-All software is free and open-source:
+AI coding assistants (for example, GitHub Education Copilot) are **permitted in this course as supervised aids**, with disclosure. This is a course-specific policy; unless a course states otherwise, SIUE's default is that AI use is prohibited.
 
-- **R**: Statistical computing environment
-- **VS Code**: IDE for R, Quarto, and your course workspace
-- **Quarto**: Scientific and technical publishing
-- **Git**: Version control
+- **Permitted:** using AI to remember syntax, scaffold code you understand, or draft prose you then revise, provided you can explain everything you submit and you disclose the assistance.
+- **Disclosure is required:** when AI shaped work you submit, note in your weekly journal what you used it for and how you checked its output.
+- **Not permitted:** submitting AI-generated work as your own without disclosure; using AI to fabricate citations, data, or results; or using AI to circumvent a learning objective. These are academic dishonesty.
 
-[Installation Guides](resources/index.qmd){.btn .btn-primary}
+You are accountable for everything you submit, including whatever role AI played in producing it. See the [GitHub Education Copilot guide](https://aura-lab-siue.github.io/v2v-hub/resources/copilot-setup.html) for how to use it responsibly.
 
 ---
 
-## Course Policies
+## Grading
 
-### Late Work
-- Late submissions (after Friday 11:59 PM): -10% per business day
-- Non-emergency extensions must be requested before the deadline
-- Assignments more than one weekday late without approval: 0 points
+### Grading Scale
+
+| Grade | Points | Percentage |
+|-------|--------|------------|
+| A | 900 to 1000 | 90 to 100% |
+| B | 800 to 899 | 80 to 89% |
+| C | 700 to 799 | 70 to 79% |
+| D | 600 to 699 | 60 to 69% |
+| F | below 600 | below 60% |
+
+### Grading Rubrics
+
+Grading rubrics are presented as checklists. You start at full credit and lose full or partial points for each item that is incorrect or missing. You are welcome to raise point disputes during office hours. In special cases, opportunities to address mistakes for partial credit are provided.
+
+### Feedback and Grading Timeline
+
+Grades with feedback are posted within one week of the due date for most assignments. Find your grades under **My Grades** in the Blackboard course menu.
+
+### Late or Missed Assignments
+
+- Late submissions (after Friday 11:59 PM) lose 10% of the assignment grade per business day, for up to one week.
+- After one week, the assignment receives a zero unless an accommodation has been arranged in writing before the original due date.
+- Non-emergency extensions must be requested before the deadline. If you are experiencing an emergency, contact me as early as possible; I work with students case by case when contacted proactively, but I cannot extend deadlines retroactively.
 
 ### Resubmission
-Assignments worth 50+ points may be revised and resubmitted within one week:
 
-- Final grade = average of original and resubmission
-- Example: 60% + 80% resubmission = 70% final grade
-
-### Participation
-Success requires attendance and active participation. Regular engagement with readings, activities, and discussions is essential.
+Assignments worth 50 or more points may be revised and resubmitted within one week of grade posting. The final grade is the average of the original and the resubmission (for example, 60% plus an 80% resubmission gives a 70% final grade).
 
 ---
 
-## Academic Integrity
+## Participation and Regular and Substantive Interaction (RSI)
 
-Per the SIUE Student Academic Code (3C2), plagiarism and cheating will not be tolerated and may lead to failure on an assignment, in class, or dismissal from the University. Students must comply with University policies on academic honesty.
+Success in this course requires attendance and active participation. Regular engagement with the readings, activities, and discussions is essential.
+
+Regular and Substantive Interaction (RSI) is required under U.S. Department of Education regulations. In this course, RSI takes the form of direct instruction and in-class activities, weekly office hours as a live support channel, substantive instructor participation in discussions, and personalized written feedback on graded work on the timeline above. Your part is to engage on a weekly cadence: read the assigned chapters, participate in class, and submit work on time.
+
+## Recordings of Class Content
+
+Any recordings of class sessions are for the educational use of students enrolled in this course only. Students may not copy, share, or distribute recordings without the written permission of the instructor. Office hours are not recorded, so that conversations about grades, accommodations, or personal circumstances stay private.
+
+---
+
+## Course Policies and University Policies
+
+### Academic Integrity
+
+The expectations and academic standards in the [Student Academic Code (3C2)](https://www.siue.edu/policies/3c2.shtml) apply to all courses at the University, regardless of modality. Plagiarism (the use of another person's words or ideas without credit) and cheating will not be tolerated and may lead to failure on an assignment, in the class, or dismissal from the University, per the [SIUE academic dishonesty policy (3C1)](https://www.siue.edu/policies/3c1.shtml). Cite your data sources and collaborators.
+
+### Diversity and Inclusion
+
+SIUE is committed to respecting everyone's dignity at all times. Our classroom must be a place where students and instructors feel safe and supported. Systems of oppression permeate our institutions and our classrooms; all students and instructors share responsibility for affirming inclusion, equity, and social justice. Racism, sexism, classism, ableism, heterosexism, xenophobia, and other social pathologies will not be tolerated, and violations will be enforced in line with the SIUE Student Conduct Code. The [Inclusive Excellence, Education, and Development Hub](https://www.siue.edu/inclusive-excellence/) is a resource for students.
+
+### Pregnancy and Newly Parenting Policy
+
+This course follows [SIUE's Newly Parenting Policy (3C15)](https://www.siue.edu/policies/3c15.shtml). Students may request accommodations through the Office of Equal Opportunity, Access, and Title IX Coordination (EOA).
+
+### Technology Privacy
+
+This course uses Blackboard; review the [Anthology Blackboard Privacy Statement](https://www.anthology.com/privacy-statement) for how your data is handled. The course also uses GitHub; review GitHub's privacy policy before creating an account.
+
+### Subject to Change Notice
+
+All material, assignments, and deadlines are subject to change with prior notice. Watch the course announcements and Blackboard regularly.
+
+---
+
+## Additional Support
+
+### Services for Students Needing Accommodations
+
+It is the policy and practice of SIUE to create inclusive learning environments. If aspects of the instruction or design of this course create barriers to your inclusion or to accurate assessment of achievement, please contact [Accessible Campus Community and Equitable Student Support (ACCESS)](https://www.siue.edu/access/) as soon as possible. Register with ACCESS online at siue.edu/access or in person in the Student Success Center, Room 1203. Email myaccess@siue.edu or call 618-650-3726.
+
+### Academic and Other Student Services
+
+- [Lovejoy Library Resources](https://www.siue.edu/lovejoy-library/)
+- [Academic Success Sessions](https://www.siue.edu/academic-success/)
+- [Tutoring Resource Center](https://www.siue.edu/tutoring/)
+- [The Writing Center](https://www.siue.edu/writing-center/)
+- [Academic Advising](https://www.siue.edu/advising/)
+- [Financial Aid](https://www.siue.edu/financialaid/)
+- [Counseling Services](https://www.siue.edu/counseling/)
+
+### Cougar Care
+
+College life can be challenging, and I support students prioritizing their mental health. Counseling is available at the Student Success Center, Room 0222. Make an appointment at [cougarcare.siue.edu](https://cougarcare.siue.edu/) or call 618-650-2842.
+
+### Technical Support
+
+A reliable computer and internet connection are required. Contact ITS at 618-650-5500 or help@siue.edu, check [ITS System Status](https://www.siue.edu/its/status/), or search the [ITS KnowledgeBase](https://www.siue.edu/its/kb/).
 
 ---
 
@@ -124,66 +231,21 @@ Per the SIUE Student Academic Code (3C2), plagiarism and cheating will not be to
 
 | Week | Dates | Chapter | Assignment Due |
 |------|-------|---------|----------------|
-| 1 | Aug 24–30 | Syllabus + Intros | GitHub Profile |
-| 2 | Aug 31–Sep 6 | Ch 1–2: Storytelling & Open Workspace | Syllabus Contract |
-| 3 | Sep 7–13 | Ch 3–4: Epistemology & Intelligence Gathering | Project Setup |
-| 4 | Sep 14–20 | Ch 5–6: Theory & The Prospectus | Librarian Visit Report |
-| 5 | Sep 21–27 | Ch 7–8: Listening & Vibes to Variables | Annotated Manuscript |
-| 6 | Sep 28–Oct 4 | Ch 9–10: Rulebook & The Sample | Project Prospectus |
-| 7 | Oct 5–11 | Ch 11–12: Data Wrangling & Visualization | Topic Selection (RQs) |
-| 8 | Oct 12–18 | Ch 13–14: Making the Call & Reports | Definitions Practice + Codebook & Qual Memo |
-|  | Oct 19–Nov 2 | **Session Break** |  |
-| 9 | Nov 2–8 | Review & Advanced Topics | Sampling Plan & Pilot |
-| 10 | Nov 9–15 | Applied Practice [R] | Data Wrangling [R] |
-| 11 | Nov 16–22 | Applied Practice [R] | Describing Data [R] |
-|  | Nov 23–29 | **Thanksgiving Break** |  |
-| 12 | Nov 30–Dec 6 | Applied Practice [R] | Inferencing Data [R] |
-|  | Dec 7–13 | **Remote Work Week** | CITI Certification |
-| 13 | Dec 14–18 | **Finals Week** | Final Web Portfolio |
+| 1 | Aug 24-30 | Syllabus + Intros | GitHub Profile |
+| 2 | Aug 31-Sep 6 | Ch 1-2: Storytelling & Open Workspace | Syllabus Contract |
+| 3 | Sep 7-13 | Ch 3-4: Epistemology & Intelligence Gathering | Project Setup |
+| 4 | Sep 14-20 | Ch 5-6: Theory & The Prospectus | Librarian Visit Report |
+| 5 | Sep 21-27 | Ch 7-8: Listening & Vibes to Variables | Annotated Manuscript |
+| 6 | Sep 28-Oct 4 | Ch 9-10: Rulebook & The Sample | Project Prospectus |
+| 7 | Oct 5-11 | Ch 11-12: Data Wrangling & Visualization | Topic Selection (RQs) |
+| 8 | Oct 12-18 | Ch 13-14: Making the Call & Reports | Definitions Practice + Codebook & Qual Memo |
+|  | Oct 19-Nov 2 | **Session Break** |  |
+| 9 | Nov 2-8 | Review & Advanced Topics | Sampling Plan & Pilot |
+| 10 | Nov 9-15 | Applied Practice [R] | Data Wrangling [R] |
+| 11 | Nov 16-22 | Applied Practice [R] | Describing Data [R] |
+|  | Nov 23-29 | **Thanksgiving Break** |  |
+| 12 | Nov 30-Dec 6 | Applied Practice [R] | Inferencing Data [R] |
+|  | Dec 7-13 | **Remote Work Week** | CITI Certification |
+| 13 | Dec 14-18 | **Finals Week** | Final Web Portfolio |
 
-*Schedule subject to change with notice*
-
----
-
-## Additional Support
-
-### Accommodations (ACCESS)
-Contact Accessible Campus Community and Equitable Student Support:
-
-- **Website:** siue.edu/access
-- **Email:** myaccess@siue.edu
-- **Phone:** 618-650-3726
-- **Location:** Student Success Center, Room 1203
-
-### Counseling Services (Cougar Care)
-- **Website:** cougarcare.siue.edu
-- **Phone:** 618-650-2842
-- **Location:** Student Success Center, Room 0222
-
-### Academic Support
-- Lovejoy Library Resources
-- Academic Success Sessions
-- Tutoring Resource Center
-- The Writing Center
-- Student Success Coaches (via Starfish)
-
-### Technical Support (ITS)
-- **Phone:** 618-650-5500
-- **Email:** help@siue.edu
-- **System Status:** [ITS Status Page](https://status.siue.edu)
-
----
-
-## Quick Reference
-
-### Key Resources
-
-- **Textbook**: [Vibes to Variables](https://aura-lab-siue.github.io/v2v/) (free, online)
-- **v2v R Package**: R package with sampled practice fixtures and setup tools
-- **Course workspace**: VS Code folder cloned from the GitHub template (see the [Resources](resources/) page)
-
-### Getting Help
-
-- **Office hours**: Stop by anytime during posted hours or schedule an appointment
-- **Email**: Send questions to aleith@siue.edu
-- **Discord**: APLeith for quick questions
+*Schedule subject to change with notice.*
