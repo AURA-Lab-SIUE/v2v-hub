@@ -9,7 +9,7 @@ execute:
 :::{.callout-tip}
 ## Download the Practice File
 
-Download the `.qmd` to work through in RStudio:
+Download the `.qmd` to work through in VS Code:
 
 [**pokemon-practice.qmd**](pokemon-practice.qmd){.btn .btn-primary download="pokemon-practice.qmd"}
 

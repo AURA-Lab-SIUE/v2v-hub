@@ -13,45 +13,45 @@ Make sure you have a reliable internet connection and about 500 MB of free disk 
 
 ---
 
-## Step 1: Download Your Workspace
+## Step 1: Create Your Workspace from the Template
 
-1. Visit the [Resources page](resources/index.qmd)
-2. Click **Download Methods_Vault.zip**
-3. Extract the ZIP file to:
-   - **Windows**: `C:\Users\YourName\Documents\Methods_Vault`
-   - **Mac**: `~/Documents/Methods_Vault`
-   - **Linux**: `~/Documents/Methods_Vault`
+1. Open the [Methods Vault template repository](https://github.com/AURA-Lab-SIUE/v2v-methods-vault) on GitHub
+2. Click the green **Use this template** button, then **Create a new repository**
+3. Name your copy (for example, `methods-vault`) and create it under your own GitHub account
 
----
-
-## Step 2: Install Obsidian
-
-1. Visit [obsidian.md](https://obsidian.md/)
-2. Download Obsidian for your operating system
-3. Install and open Obsidian
-4. Click **"Open folder as vault"**
-5. Navigate to your `Methods_Vault` folder and select it
-
-**Your vault will open with folders, templates, and a start guide ready to go.**
+This gives you your own copy of the course workspace on GitHub.
 
 ---
 
-## Step 3: Configure Obsidian
+## Step 2: Install VS Code
 
-Once your vault is open:
+1. Visit [code.visualstudio.com](https://code.visualstudio.com/)
+2. Download VS Code for your operating system
+3. Install and open VS Code
 
-1. Click the **Settings** icon (gear, bottom left)
-2. Navigate to **Files & Links**
-3. Set **Default location for new attachments** to `04_Resources`
-4. Close settings
+---
 
-This ensures images and PDFs are stored in the correct folder.
+## Step 3: Clone the Workspace and Open It in VS Code
+
+1. In VS Code, open the Command Palette (Ctrl+Shift+P on Windows/Linux, Cmd+Shift+P on Mac)
+2. Run **Git: Clone** and paste the URL of the repository you created in Step 1
+3. Choose a folder to clone into (for example, your `Documents` folder)
+4. When prompted, open the cloned workspace folder in VS Code
+
+**Your workspace will open with folders, the journal template, and a start guide ready to go.**
+
+When VS Code prompts you to install the recommended extensions, accept them. They include:
+
+- **Foam**: note-linking, `[[wiki-links]]`, a backlinks panel, and a graph view
+- **Quarto**: authoring and rendering Quarto documents
+- **R**: running and editing R code
+- **Markdown All in One**: Markdown editing helpers
 
 ---
 
 ## Step 4: Explore Your Workspace
 
-Your vault is organized into six folders:
+Your workspace is organized into these folders:
 
 | Folder | Purpose | What's Inside |
 |--------|---------|---|
@@ -60,7 +60,7 @@ Your vault is organized into six folders:
 | **02_Literature** | Reading notes & course materials | Includes textbook chapters and citation templates |
 | **03_Project** | Active research work | Organized by prospectus, codebook, data, and drafts folders |
 | **04_Resources** | Media & attachments | Images, PDFs, external files, and course materials |
-| **99_Templates** | Reusable templates | Weekly journal template and data dictionary template to copy and customize |
+| **_templates** | Reusable templates | The journal template (`_templates/journal-entry.md`) and a data dictionary template to copy and customize |
 
 ---
 
@@ -74,16 +74,16 @@ Once you complete these steps, move to **[Phase I: The Journalist](modules/01_jo
 
 ## Troubleshooting
 
-**Q: I extracted the ZIP file but Obsidian won't open it as a vault**
-- Make sure you're opening the folder that contains the `.obsidian` hidden folder
-- Try right-clicking the folder and checking "Show hidden files" if needed
+**Q: VS Code won't open my workspace folder**
+- Make sure you opened the folder you cloned in Step 3, not a parent folder
+- Use **File > Open Folder** and select the cloned workspace folder directly
 
 **Q: Where do I put my weekly journal entries?**
-- Create a new file in `01_Journal` named something like `Week_01_MyName.md`
-- Copy the template from `99_Templates/Weekly_Journal_Template.md` and fill it out
+- Copy `_templates/journal-entry.md` into `01_Journal`
+- Rename the copy something like `Week_01_MyName.md` and fill it out
 
-**Q: Can I share my vault with classmates?**
-- Yes! You can email them the ZIP file, or sync it via Git/GitHub for collaborative projects
+**Q: Can I share my workspace with classmates?**
+- Yes. Because the workspace is a Git repository, you can share its GitHub URL or collaborate through GitHub
 
 ---
 

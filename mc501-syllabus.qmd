@@ -92,12 +92,11 @@ Both courses use the same textbook, tools, and schedule. Three dimensions separa
 
 All software is free and open-source:
 
-- **R** — Statistical computing environment
-- **VSCode** — IDE for R and Quarto
-- **Obsidian** — Personal knowledge management
-- **Quarto** — Scientific and technical publishing
-- **Git/GitHub** — Version control
-- **GitHub Desktop** — Visual git interface
+- **R**: Statistical computing environment
+- **VS Code**: IDE for R, Quarto, and your Methods Vault workspace
+- **Quarto**: Scientific and technical publishing
+- **Git/GitHub**: Version control
+- **GitHub Desktop**: Visual git interface
 
 [Installation Guides](resources/index.qmd){.btn .btn-primary}
 

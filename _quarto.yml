@@ -123,15 +123,17 @@ website:
         - section: "Setup Guides"
           contents:
             - setup.qmd
-            - resources/install-r-rstudio.qmd
+            - resources/install-r.qmd
             - resources/install-vscode.qmd
+            - resources/methods-vault-setup.qmd
             - resources/github-setup.qmd
             - resources/github-desktop-setup.qmd
-            - resources/obsidian-setup.qmd
 
 format:
   html:
-    theme: [cosmo, custom-styling.scss]
+    theme:
+      light: [cosmo, custom-styling.scss]
+      dark: [darkly, custom-styling.scss]
     toc: true
     code-fold: false
     include-in-header:

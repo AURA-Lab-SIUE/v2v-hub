@@ -20,7 +20,7 @@ This workbook is your companion for the R programming portion of the course (Pha
 |---------|-------|---------------|
 | 1 | [Codebook](01-codebook.qmd) | Turn qualitative observations into numeric codes |
 | 2 | [Data Collection](02-data-collection.qmd) | Code your full sample with consistency checks |
-| 3 | [Meet R](03-meet-r.qmd) | Set up R, RStudio, and your project environment |
+| 3 | [Meet R](03-meet-r.qmd) | Set up R and your VS Code workspace |
 | 4 | [Data Wrangling](04-data-wrangling.qmd) | Import, clean, and export your dataset |
 | 5 | [Describing Data](05-describing-data.qmd) | Build frequency tables and publication-ready charts |
 | 6 | [Inferencing Data](06-inferencing-data.qmd) | Run chi-square tests and interpret results |
@@ -33,11 +33,11 @@ This workbook is your companion for the R programming portion of the course (Pha
 :::{.callout-tip}
 ## Watch, Then Do
 
-Every chapter opens with a **narrated video walkthrough**. Watch it first to get the big picture, then work through the written content at your own pace. The video and text cover the same material --- use whichever format helps you learn.
+Every chapter opens with a **narrated video walkthrough**. Watch it first to get the big picture, then work through the written content at your own pace. The video and text cover the same material, so use whichever format helps you learn.
 :::
 
 1. **Watch the video** at the top of each chapter
-2. **Follow along in RStudio** --- the code blocks are designed to run in order
+2. **Follow along in VS Code**, the code blocks are designed to run in order
 3. **Use the class dataset** (`music_data_raw.csv`) for practice
 4. **Apply to your own data** for the final portfolio
 
@@ -45,13 +45,13 @@ Every chapter opens with a **narrated video walkthrough**. Watch it first to get
 
 ## Reference
 
-- [R & RStudio Quick Reference](appendix-a-reference.qmd) --- common functions and syntax
-- [Glossary](appendix-b-glossary.qmd) --- key terms defined
+- [R Quick Reference](appendix-a-reference.qmd): common functions and syntax
+- [Glossary](appendix-b-glossary.qmd): key terms defined
 
 ---
 
 :::{.callout-info}
 ## Need the Workbook Offline?
 
-The workbook is also available as a standalone Quarto Book. Download it from the [Resources](../resources/index.qmd) page or install `coursepackR` to access the project files directly in RStudio.
+The workbook is also available as a standalone Quarto Book. Download it from the [Resources](../resources/index.qmd) page or install the course R package to open the project files directly in VS Code.
 :::

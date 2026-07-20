@@ -1,5 +1,6 @@
 ---
 title: "Home"
+toc: false
 ---
 
 ::: hero-section
@@ -7,83 +8,98 @@ title: "Home"
 
 **Design, execute, and communicate original research in mass media.**
 
-Your central hub for MC 451 and MC 501 — textbook chapters, R workbook, tools, and resources in one place. Follow the sidebar to read in order.
+Your central workspace for MC 451 and MC 501. Textbook chapters, the R workbook, tools, and resources live in one place. Follow the sidebar to read in order.
 :::
 
-------------------------------------------------------------------------
-
-## How to Use This Site
+## How to use this site
 
 The sidebar on the left follows the textbook (*Vibes to Variables*, 3rd Edition) chapter by chapter across five parts. Each entry links to either a Hub page with hands-on R walkthroughs or the corresponding textbook chapter.
 
-**Start here if you are new:**
+[Start here if you are new]{.eyebrow}
 
 ::::: card-grid
 ::: card
-### Set Up Your Workspace
+### Set up your workspace
 
-Install R, VSCode, and GitHub. Download the Methods Vault.
+Install R, VS Code, and GitHub, then clone the course workspace. One folder holds everything.
 
-[Get Started](setup.qmd){.btn .btn-primary}
+[Get started](setup.qmd){.btn .btn-primary}
 :::
 
 ::: card
-### Read the Textbook
+### Read the textbook
 
-14 chapters from foundations to publication — free and open access.
+Fourteen chapters from foundations to publication. Free and open access.
 
-[Open Textbook](https://aura-lab-siue.github.io/v2v/){.btn .btn-primary}
+[Open textbook](https://aura-lab-siue.github.io/v2v/){.btn .btn-primary}
 :::
 
 ::: card
-### R Workbook
+### R workbook
 
-Seven chapters with narrated video walkthroughs — from codebook to published portfolio.
+Seven chapters with narrated video walkthroughs, from codebook to published portfolio.
 
-[Open Workbook](workbook/index.qmd){.btn .btn-secondary}
+[Open workbook](workbook/index.qmd){.btn .btn-secondary}
 :::
 
 ::: card
 ### Methods Vault
 
-Download your Obsidian workspace — journals, project folders, and offline textbook chapters.
+Your VS Code course workspace: journals, project folders, and offline textbook chapters in one repository.
 
 [Get the Vault](methods-vault.qmd){.btn .btn-secondary}
 :::
 :::::
 
-------------------------------------------------------------------------
+## The five parts
 
-## The Five Parts
+Over one semester you build a complete content analysis from scratch, moving from qualitative immersion through quantitative testing, using real media data.
 
-Over one semester, you build a complete content analysis from scratch — qualitative immersion through quantitative testing — using real media data.
+::: {.v2v-arc}
+::: {.v2v-phase}
+[Foundation]{.v2v-phase-name}
+[Ch 1 to 3]{.v2v-phase-meta}
+:::
+::: {.v2v-phase}
+[Planning]{.v2v-phase-name}
+[Ch 4 to 6]{.v2v-phase-meta}
+:::
+::: {.v2v-phase}
+[Operationalization]{.v2v-phase-name}
+[Ch 7 to 9]{.v2v-phase-meta}
+:::
+::: {.v2v-phase}
+[Execution]{.v2v-phase-name}
+[Ch 10 to 12]{.v2v-phase-meta}
+:::
+::: {.v2v-phase}
+[Inference & Publication]{.v2v-phase-name}
+[Ch 13 to 14]{.v2v-phase-meta}
+:::
+:::
 
 | Part | Chapters | Focus |
 |------|----------|-------|
-| **I: Foundation** | 1–3 | Storytelling as science, open tools, epistemology |
-| **II: Planning** | 4–6 | Literature, theory, the research prospectus |
-| **III: Operationalization** | 7–9 | Qualitative immersion, codebook, data collection |
-| **IV: Execution** | 10–12 | Sampling, data wrangling, visualization |
-| **V: Inference and Publication** | 13–14 | Statistical inference, the one-click report |
+| **I: Foundation** | 1 to 3 | Storytelling as science, open tools, epistemology |
+| **II: Planning** | 4 to 6 | Literature, theory, the research prospectus |
+| **III: Operationalization** | 7 to 9 | Qualitative immersion, codebook, data collection |
+| **IV: Execution** | 10 to 12 | Sampling, data wrangling, visualization |
+| **V: Inference and Publication** | 13 to 14 | Statistical inference, the one-click report |
 
-------------------------------------------------------------------------
+## The ecosystem
 
-## The Ecosystem
+Three tools work together throughout the course. Each serves a distinct role, and all three live inside one VS Code workspace.
 
-Three tools work together throughout the course. Each serves a distinct role.
-
-| Tool | What It Does | When You Use It |
+| Tool | What it does | When you use it |
 |------|-------------|-----------------|
-| [**Methods Vault**](methods-vault.qmd) | Obsidian workspace for journals, notes, and project files | Every week — your personal research archive |
-| [**R Workbook**](workbook/index.qmd) | Hands-on R tutorials with narrated videos | Parts III–V — learning R for data analysis |
-| [**Textbook**](https://aura-lab-siue.github.io/v2v/) | *Vibes to Variables* (3rd Edition, 14 chapters) | Every week — conceptual foundations for each part |
+| [**Methods Vault**](methods-vault.qmd) | VS Code workspace for journals, notes, and project files | Every week, as your personal research archive |
+| [**R Workbook**](workbook/index.qmd) | Hands-on R tutorials with narrated videos | Parts III to V, learning R for data analysis |
+| [**Textbook**](https://aura-lab-siue.github.io/v2v/) | *Vibes to Variables* (3rd Edition, 14 chapters) | Every week, for the conceptual foundation of each part |
 
-------------------------------------------------------------------------
-
-## Course Information
+## Course information
 
 **Instructor:** Dr. Alex P. Leith
 **Office:** Dunham Hall 1017
-**Office Hours:** MW 10:00–11:30 AM and 1:30–3:00 PM (or by appointment)
+**Office Hours:** MW 10:00 to 11:30 AM and 1:30 to 3:00 PM (or by appointment)
 
-[View MC 451 Syllabus](syllabus.qmd){.btn .btn-primary} [View MC 501 Syllabus](mc501-syllabus.qmd){.btn .btn-secondary} [How It Works](how-it-works.qmd){.btn .btn-secondary}
+[View MC 451 syllabus](syllabus.qmd){.btn .btn-primary} [View MC 501 syllabus](mc501-syllabus.qmd){.btn .btn-secondary} [How it works](how-it-works.qmd){.btn .btn-secondary}

@@ -8,7 +8,7 @@ execute:
 
 You have clean data. Before you test anything statistically, you need to *look* at it. Visualization is how researchers detect patterns, spot anomalies, and communicate findings to audiences who will never read a contingency table.
 
-This chapter covers the conceptual foundation for data visualization. The [next session](18b-seeing-patterns-lab.qmd) puts these ideas into practice with ggplot2 in R. Together, they prepare you for [Assignment 02: Describing Data](https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter18.html).
+This chapter covers the conceptual foundation for data visualization. The [next session](18b-seeing-patterns-lab.qmd) puts these ideas into practice with ggplot2 in R. Together, they prepare you for [Assignment 02: Describing Data](https://aura-lab-siue.github.io/v2v/).
 
 ---
 

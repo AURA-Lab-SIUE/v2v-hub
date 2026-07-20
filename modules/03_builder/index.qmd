@@ -104,5 +104,5 @@ Complete the CITI Program's Social & Behavioral Research training and submit you
 
 ## Related Resources
 
-- [From Vibes to Variables — Chapters 8–16](https://sim-lab-siue.github.io/vibes-to-variables/)
+- [From Vibes to Variables — Chapters 8–16](https://aura-lab-siue.github.io/v2v/)
 - [coursepackR Documentation](https://sim-lab-siue.github.io/coursepackR/)

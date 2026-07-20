@@ -120,10 +120,9 @@ I'm a Communication Liaison at SIUE exploring research methodologies and data st
 
 ## Languages & Tools
 - Python
-- R & RStudio
+- R
 - Git & GitHub
-- Obsidian (Knowledge Management)
-- VS Code
+- VS Code (editor and Methods Vault workspace)
 
 ---
 _Last updated: January 2026_

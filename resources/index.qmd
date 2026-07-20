@@ -18,33 +18,25 @@ An example of a properly annotated research article, demonstrating the critical 
 
 ---
 
-## Essential Downloads
+## Get the Methods Vault Workspace
 
-### Liaison Obsidian Vault
+### Liaison Methods Vault
 
-Your complete workspace for the Open Methods Hub.
+Your complete VS Code course workspace for the Open Methods Hub.
 
-**[📥 Download Methods_Vault.zip](Methods_Vault.zip){.btn .btn-primary .btn-lg}**
+You do not download a ZIP. Instead, open the template repository on GitHub, click **Use this template** to create your own copy, then clone it into VS Code.
+
+**[🧱 Open the Methods Vault template on GitHub](https://github.com/AURA-Lab-SIUE/v2v-methods-vault){.btn .btn-primary .btn-lg}**
 
 **What's Included:**
-- 📁 **00_Inbox** - Quick capture area
-- 📔 **01_Journal** - Weekly reflection templates
-- 📚 **02_Literature** - Reading notes
-- 🔬 **03_Project** - Research workspace (prospectus, codebook, data, drafts)
-- 🖼️ **04_Resources** - Attachments and media
-- 📋 **99_Templates** - Assignment templates
+- 📁 **00_Inbox**: Quick capture area
+- 📔 **01_Journal**: Weekly reflection entries
+- 📚 **02_Literature**: Reading notes
+- 🔬 **03_Project**: Research workspace (prospectus, codebook, data, drafts)
+- 🖼️ **04_Resources**: Attachments and media
+- 📋 **_templates**: The journal template (`_templates/journal-entry.md`) and other reusable starting files
 
-**Size:** ~15 MB | **Format:** ZIP
-
----
-
-### Optional: Textbook Package
-
-Supplemental textbook bundle for reference.
-
-**[📥 Download 05_Textbook.zip](../05_Textbook.zip)** <span class="resource-badge">Optional</span>
-
-Extract into your vault's `04_Resources/` folder or keep adjacent for quick access.
+For step-by-step instructions, see the [Methods Vault Setup](methods-vault-setup.qmd) guide.
 
 ---
 
@@ -55,14 +47,14 @@ Install these tools before starting Phase 1:
 :::{.card-grid}
 
 ::: {.card}
-### 🗂️ Obsidian
+### 🗂️ Methods Vault (VS Code workspace)
 
-Personal knowledge management system
+Your course workspace with note-linking via the Foam extension
 
 <span class="resource-badge">Free</span>
 
-[Download](https://obsidian.md/){.btn .btn-secondary}  
-[Setup Guide](../setup.qmd){.btn .btn-sm}
+[Open the template](https://github.com/AURA-Lab-SIUE/v2v-methods-vault){.btn .btn-secondary}
+[Setup Guide](methods-vault-setup.qmd){.btn .btn-sm}
 :::
 
 ::: {.card}
@@ -88,25 +80,24 @@ Visual git interface (no command line)
 :::
 
 ::: {.card}
-### 📊 R & RStudio
+### 📊 R
 
 Statistical analysis and visualization
 
 <span class="resource-badge">Free</span>
 
-[Download R](https://cran.r-project.org/){.btn .btn-secondary}  
-[Download RStudio](https://posit.co/download/rstudio-desktop/){.btn .btn-secondary}  
-[Install Guide](install-r-rstudio.qmd){.btn .btn-sm}
+[Download R](https://cran.r-project.org/){.btn .btn-secondary}
+[Install Guide](install-vscode.qmd){.btn .btn-sm}
 :::
 
 ::: {.card}
 ### 💻 VS Code
 
-Code editor with Git integration
+Code editor with Git integration, your R and Quarto IDE, and your Methods Vault workspace
 
 <span class="resource-badge">Free</span>
 
-[Download](https://code.visualstudio.com/){.btn .btn-secondary}  
+[Download](https://code.visualstudio.com/){.btn .btn-secondary}
 [Install Guide](install-vscode.qmd){.btn .btn-sm}
 :::
 
@@ -119,7 +110,7 @@ Code editor with Git integration
 - [Setup Guide](../setup.qmd) - Complete your workspace in 15 minutes
 - [Phase I: The Journalist](../modules/01_journalist/index.qmd) - Start the program
 - [Syllabus](../syllabus.qmd) - Course policies and schedule
-- [Vibes to Variables Textbook](https://sim-lab-siue.github.io/vibes-to-variables/) - Companion textbook
+- [Vibes to Variables Textbook](https://aura-lab-siue.github.io/v2v/) - Companion textbook
 
 ---
 
@@ -127,7 +118,7 @@ Code editor with Git integration
 
 **Email:** aleith@siue.edu  
 **Office Hours:** MW 10:00–11:30 AM and 1:30–3:00 PM
-[Setup Guide](obsidian-setup.qmd){.btn .btn-sm .btn-primary}
+[Setup Guide](methods-vault-setup.qmd){.btn .btn-sm .btn-primary}
 :::
 
 ::: {.card}
@@ -146,14 +137,14 @@ Version control for your projects and collaboration.
 ::: {.card}
 <span class="card-icon">📊</span>
 
-### R & RStudio
+### R
 
 Statistical computing and data analysis.
 
 <span class="resource-badge">Free</span>
 
-[Download RStudio](https://posit.co/download/rstudio-desktop/){.btn .btn-sm .btn-secondary}
-[Setup Guide](install-r-rstudio.qmd){.btn .btn-sm .btn-primary}
+[Download R](https://cran.r-project.org/){.btn .btn-sm .btn-secondary}
+[Setup Guide](install-vscode.qmd){.btn .btn-sm .btn-primary}
 :::
 
 ::: {.card}
@@ -175,7 +166,7 @@ Professional code editor for Python, R, and more.
 
 ## Learning Templates
 
-Ready-to-use templates in your vault:
+Ready-to-use templates in your Methods Vault workspace:
 
 :::{.resource-card}
 
@@ -203,10 +194,10 @@ Define your variables and create your codebook in Phase 3. Includes columns for:
 
 :::{.resource-card}
 
-#### 📖 Vault Orientation File
+#### 📖 Workspace Orientation File
 <span class="resource-badge time">5 min</span>
 
-Start here for an overview of your vault structure and folder purposes.
+Start here for an overview of your workspace structure and folder purposes.
 
 [View File](../methods-vault.qmd){.btn .btn-sm .btn-secondary}
 :::
@@ -222,19 +213,19 @@ Step-by-step setup and configuration guides:
 #### 🚀 Complete Setup Guide
 <span class="resource-badge time">15-20 min</span>
 
-Full walkthrough for configuring your workspace, Obsidian, and tools.
+Full walkthrough for configuring your Methods Vault workspace in VS Code and the rest of your tools.
 
 [Read Setup Guide](../setup.qmd){.btn .btn-sm .btn-secondary}
 :::
 
 :::{.resource-card}
 
-#### 🧭 R & RStudio Installation
+#### 🧭 R Installation
 <span class="resource-badge time">20-30 min</span>
 
 Detailed instructions for Windows, macOS, and Linux with troubleshooting.
 
-[Read R Setup Guide](install-r-rstudio.qmd){.btn .btn-sm .btn-secondary}
+[Read R Setup Guide](install-vscode.qmd){.btn .btn-sm .btn-secondary}
 :::
 
 :::{.resource-card}
@@ -264,9 +255,9 @@ Learn version control basics and how to sync your projects.
 ### Questions by Topic
 
 **Setup & Tools:**
-- Can't install Obsidian? [See setup guide](../setup.qmd)
+- Can't set up your Methods Vault workspace? [See setup guide](../setup.qmd)
 - Git not working? [See GitHub guide](github-setup.qmd)
-- R installation stuck? [See R guide](install-r-rstudio.qmd)
+- R installation stuck? [See R guide](install-vscode.qmd)
 
 - What is The Journalist phase? [Read Phase I](../modules/01_journalist/index.qmd)
 - What is The Architect phase? [Read Phase II](../modules/02_architect/index.qmd)
@@ -286,11 +277,11 @@ A: No, it's optional. You can access course readings through the library or onli
 **Q: Can I use Excel instead of R?**  
 A: Yes, Excel works for basic analysis. R is recommended for more complex projects.
 
-**Q: What if I already use a note-taking app?**  
-A: Obsidian is recommended but optional. The course works with Notion, OneNote, or even physical notebooks.
+**Q: What if I already use a note-taking app?**
+A: The Methods Vault workspace in VS Code is the recommended approach for this course, since the journal template and Foam note-linking are built around it. You can keep personal notes elsewhere, but graded work lives in the workspace.
 
-**Q: Where do I turn in my work?**  
-A: Save deliverables in your Methods_Vault under `03_Project/`. Dr. Leith will collect via email or learning management system.
+**Q: Where do I turn in my work?**
+A: Save deliverables in your Methods Vault workspace under `03_Project/`. Dr. Leith will collect via email or learning management system.
 
 **Q: Can I work with others?**  
 A: Absolutely! Pair programming and collaborative analysis are encouraged. Document who contributed what.
@@ -326,9 +317,9 @@ A: Course readings will be posted in each phase. Check Phase 1 for the syllabus.
 
 | Tool | Cost | Best For | Learning Curve |
 |---|---|---|---|
-| **Obsidian** | Free | Note-taking, vault organization | Easy |
+| **VS Code + Foam** | Free | Note-taking, workspace organization, note-linking | Easy |
 | **Git/GitHub** | Free | Version control, collaboration | Medium |
-| **R/RStudio** | Free | Statistical analysis, detailed control | Medium-Hard |
+| **R** | Free | Statistical analysis, detailed control | Medium-Hard |
 | **Python** | Free | Data wrangling, flexible analysis | Medium |
 | **VS Code** | Free | Code editing, multiple languages | Medium |
 | **Excel** | Paid | Quick analysis, pivot tables | Easy |

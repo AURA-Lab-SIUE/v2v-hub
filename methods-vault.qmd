@@ -5,92 +5,92 @@ title: "Methods Vault"
 :::{.phase-header}
 # Methods Vault
 
-**Your personal research workspace in Obsidian**
+**Your personal research workspace in VS Code**
 
-A pre-configured note-taking environment that organizes your journals, literature notes, project files, and textbook chapters in one place --- synced to GitHub for version control.
+A pre-configured course workspace that organizes your journals, literature notes, project files, and textbook chapters in one place, version-controlled with Git and GitHub.
 
-[Download Methods Vault (.zip)](resources/Methods_Vault.zip){.btn .btn-primary .btn-lg}
+[Use this template on GitHub](https://github.com/AURA-Lab-SIUE/v2v-methods-vault){.btn .btn-primary .btn-lg}
 :::
 
 ---
 
-## What's Inside
+## What's inside
 
-The Methods Vault is an [Obsidian](https://obsidian.md) workspace template designed specifically for this course. When you unzip it, you get a ready-to-use folder structure:
+The Methods Vault is a GitHub template repository configured for this course. When you create your copy and open it in VS Code, you get a ready-to-use folder structure:
 
 ```
-Methods_Vault/
-├── 00_START_HERE.md         --- Your first stop: setup instructions
-├── 00_Inbox/                --- Quick capture for unprocessed notes
-├── 01_Journal/              --- Weekly reading reflections (pushed to GitHub)
-├── 02_Literature/           --- Reading notes and Zotero annotations
-├── 03_Project/              --- Your research project hub
-│   ├── 01_Prospectus/       --- Research design (Week 6)
-│   ├── 02_Codebook/         --- Data dictionary (Week 9)
-│   ├── 03_Data/             --- Raw CSV files and analysis (Weeks 10--13)
-│   └── 04_Drafts/           --- Report drafts and final portfolio (Weeks 15--17)
-├── 04_Resources/            --- PDFs, images, and attachments
-├── 05_Textbook/             --- All 22 chapters for offline reading
-└── 99_Templates/            --- Reusable templates for journals and data dictionaries
+v2v-methods-vault/
+├── 00_START_HERE.md         # Your first stop: setup instructions
+├── 00_Inbox/                # Quick capture for unprocessed notes
+├── 01_Journal/              # Weekly reading reflections (committed to GitHub)
+├── 02_Literature/           # Reading notes and Zotero annotations
+├── 03_Project/              # Your research project hub
+│   ├── 01_Prospectus/       # Research design (Week 6)
+│   ├── 02_Codebook/         # Data dictionary (Week 9)
+│   ├── 03_Data/             # Sampled fixtures and analysis (Weeks 10 to 13)
+│   └── 04_Drafts/           # Report drafts and final portfolio (Weeks 15 to 17)
+├── 04_Resources/            # PDFs, images, and attachments
+├── 05_Textbook/             # Chapter links for offline reading
+├── _templates/              # Reusable templates for journals and data dictionaries
+└── .vscode/                 # Recommended extensions, workspace settings
 ```
+
+The notes are plain Markdown, so they are readable anywhere and yours forever. The workspace adds **[Foam](https://foambubble.github.io/foam/)**, a free VS Code extension that gives you `[[wiki-links]]`, a backlinks panel, and a graph view, so your journals, literature notes, and project files become a connected research archive rather than a pile of loose files.
 
 ---
 
-## Setup Guide
+## Setup guide
 
-### Step 1: Download and Unzip
+### Step 1: Create your copy from the template
 
-Download the `.zip` file above and unzip it to a location you'll remember (e.g., `Documents/MC451/`).
+On the [v2v-methods-vault repository](https://github.com/AURA-Lab-SIUE/v2v-methods-vault), click **Use this template**, then **Create a new repository**. Name it something like `mc451-methods-vault` and keep it private if you prefer.
 
-### Step 2: Open in Obsidian
+### Step 2: Clone it into VS Code
 
-1. Download [Obsidian](https://obsidian.md) (free)
-2. Open Obsidian and click **Open folder as vault**
-3. Navigate to the unzipped `Methods_Vault` folder
-4. When prompted about community plugins, click **Trust author and enable plugins**
+In VS Code, open the Command Palette (`Ctrl/Cmd+Shift+P`), run **Git: Clone**, paste your new repository URL, and choose a location you will remember (for example, `Documents/MC451/`). VS Code will offer to open the folder.
 
-### Step 3: Read the Start Guide
+### Step 3: Install the recommended extensions
 
-Open `00_START_HERE.md` inside the vault. It walks you through the folder structure and settings.
+When VS Code opens the workspace, it will prompt you to install the **recommended extensions** (Foam, Quarto, the R extension, and Markdown support). Click **Install**. These are listed in `.vscode/extensions.json`, so everyone in the course works in the same environment.
 
-### Step 4: Connect to GitHub (Week 3)
+### Step 4: Read the start guide
 
-In Week 3, you'll initialize the vault as a Git repository using [GitHub Desktop](resources/github-desktop-setup.qmd). From that point forward, you'll commit and push your journal entries weekly.
+Open `00_START_HERE.md`. It walks you through the folder structure, how to start a journal entry from the template, and how Foam linking works.
 
 :::{.callout-tip}
 ## Why GitHub?
 
-Pushing your vault to GitHub gives you a backup, a history of your work, and a way for Dr. Leith to see your journal entries. It also introduces version control --- a skill you'll use again in the final portfolio.
+Committing your workspace to GitHub gives you a backup, a history of your work, and a way for Dr. Leith to see your journal entries. It also builds the version-control habit you will use again in the final portfolio.
 :::
 
 ---
 
-## How It Connects to the Course
+## How it connects to the course
 
-| Tool | Role | Relationship to Vault |
-|------|------|-----------------------|
-| **Methods Vault** (Obsidian) | Think, plan, reflect | Your primary writing workspace |
-| **coursepackR** (R package) | Access assignments and data | `download_week()` delivers templates you work on in RStudio, then reflect on in your vault journal |
-| **R Workbook** | Learn R skills | Read the [workbook chapters](workbook/index.qmd) online or work through them in RStudio |
-| **Textbook** | Conceptual foundations | All chapters are in `05_Textbook/` inside the vault for offline reading |
+| Tool | Role | Relationship to the Vault |
+|------|------|---------------------------|
+| **Methods Vault** (VS Code) | Think, plan, reflect | Your primary writing workspace |
+| **`v2v` R package** | Access course data | Loads the sampled fixtures you analyze, then reflect on in your journal |
+| **R Workbook** | Learn R skills | Work through the [workbook labs](workbook/index.qmd) directly in VS Code |
+| **Textbook** | Conceptual foundations | Linked in `05_Textbook/`; read online or alongside your workspace |
 
 ---
 
-## Weekly Workflow
+## Weekly workflow
 
-1. **Monday**: Run `download_week("mc451", N)` in R to get the week's assignment template
-2. **During the week**: Complete the assignment in RStudio, read the textbook chapter
-3. **Before class**: Write your journal entry in `01_Journal/` using the template
-4. **After class**: Commit and push your vault to GitHub via GitHub Desktop
+1. **Start of week:** Open your Methods Vault in VS Code and pull the latest from GitHub.
+2. **During the week:** Work through the week's [workbook lab](workbook/index.qmd) and read the textbook chapter.
+3. **Before class:** Copy `_templates/journal-entry.md` into `01_Journal/`, rename it for the week, and write your reflection. Use `[[wiki-links]]` to connect it to your literature and project notes.
+4. **After class:** Commit and push your workspace to GitHub.
 
 ---
 
 :::{.callout-info}
-## Detailed Setup Guides
+## Detailed setup guides
 
 For step-by-step instructions with screenshots, see:
 
-- [Obsidian Setup Guide](resources/obsidian-setup.qmd)
-- [GitHub Desktop Setup Guide](resources/github-desktop-setup.qmd)
+- [Methods Vault Setup Guide](resources/methods-vault-setup.qmd)
+- [Install VS Code](resources/install-vscode.qmd)
 - [Getting Started with GitHub](resources/github-setup.qmd)
 :::

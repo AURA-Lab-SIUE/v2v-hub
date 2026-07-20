@@ -13,10 +13,10 @@ This course uses four interconnected tools. Each one has a specific job. Here is
 | I need to... | Go here |
 |---|---|
 | Check the schedule or find an assignment description | **This website** (Open Methods Hub) |
-| Download this week's template | **RStudio:** `coursepackR::download_week(N)` |
-| Write a journal entry or organize notes | **Obsidian** (Methods Vault) |
-| Read the textbook | **[From Vibes to Variables](https://sim-lab-siue.github.io/vibes-to-variables/)** (online) or Obsidian (`05_Textbook/`) |
-| Run R code or render a document | **RStudio** |
+| Open this week's workbook lab | **VS Code** (in your Methods Vault workspace) |
+| Write a journal entry or organize notes | **VS Code** (the Methods Vault workspace) |
+| Read the textbook | **[From Vibes to Variables](https://aura-lab-siue.github.io/v2v/)** (online) or in your workspace (`05_Textbook/`) |
+| Run R code or render a document | **VS Code** |
 | Submit an assignment | **Blackboard** |
 | Push my work to my portfolio | **GitHub Desktop** |
 
@@ -24,11 +24,11 @@ This course uses four interconnected tools. Each one has a specific job. Here is
 
 ### The Four Tools
 
-**Obsidian (Methods Vault)** is your personal workspace. You write journals, take literature notes, and organize your project here. Everything is Markdown — the same syntax you will use in R and Quarto later. You start using Obsidian in Week 1.
+**VS Code (Methods Vault)** is your personal workspace. You write journals, take literature notes, and organize your project here. Everything is Markdown, the same syntax you will use in R and Quarto later. Note-linking and backlinks come from the Foam extension, so you can connect notes with `[[wiki-links]]`, browse a backlinks panel, and view a graph of your notes. You start using VS Code in Week 1.
 
-**coursepackR** is an R package you install once. It sets up your environment, checks that everything works, and delivers weekly assignment templates and the practice dataset. You install it in Week 2 and use it throughout the semester.
+**v2v** is an R package you install once. It sets up your environment, checks that everything works, and provides sampled practice fixtures for the applied weeks. You install it in Week 2 and use it throughout the semester.
 
-**From Vibes to Variables** is the textbook. You can read it online or in your Obsidian vault. It has 22 chapters covering the full research arc from curiosity to publication.
+**From Vibes to Variables** is the textbook. You can read it online or in your workspace. It has 14 chapters covering the full research arc from curiosity to publication.
 
 **This website (Open Methods Hub)** is your reference guide. It has the syllabus, the weekly schedule, setup instructions, and assignment descriptions. When you are not sure what is due or how to do something, check here first.
 
@@ -39,9 +39,9 @@ This course uses four interconnected tools. Each one has a specific job. Here is
 Each teaching week follows the same pattern:
 
 1. **Read** the assigned chapter(s) in the textbook
-2. **Download** the week's template: `coursepackR::download_week(N)`
-3. **Work** through the template in RStudio or Obsidian (depending on the week)
-4. **Write** your journal entry in Obsidian
+2. **Open** the week's workbook lab in VS Code
+3. **Work** through the lab in VS Code (depending on the week)
+4. **Write** your journal entry in VS Code
 5. **Push** your journal to GitHub using GitHub Desktop
 6. **Submit** any assignments to Blackboard by the deadline
 
@@ -53,13 +53,13 @@ Each teaching week follows the same pattern:
   You read the textbook
          |
          v
-  You work in Obsidian (journals, notes, qualitative work)
+  You work in VS Code (journals, notes, qualitative work)
          |
          v
   You push to GitHub (builds your commit history)
          |
          v
-  You work in RStudio (R assignments, data analysis)
+  You work in VS Code (R assignments, data analysis)
          |
          v
   You render with Quarto (final portfolio: PDF + website)
@@ -77,9 +77,9 @@ Each teaching week follows the same pattern:
 
 | Weeks | Primary Tools |
 |-------|--------------|
-| 1-9 | Obsidian, GitHub Desktop, Zotero, this website |
-| 10-13 | RStudio, R, coursepackR (plus Obsidian for journals) |
-| 15-17 | Quarto, GitHub Pages (assembling the final portfolio) |
+| 1 to 9 | VS Code, GitHub Desktop, Zotero, this website |
+| 10 to 13 | VS Code, R, v2v (plus VS Code for journals) |
+| 15 to 17 | Quarto, GitHub Pages (assembling the final portfolio) |
 
 You do not need to learn everything at once. Each tool is introduced when you need it.
 

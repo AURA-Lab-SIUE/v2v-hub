@@ -2,3 +2,5 @@
 /docs/
 
 **/*.quarto_ipynb
+*.bak-*
+*.archived-*

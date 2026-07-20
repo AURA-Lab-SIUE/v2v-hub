@@ -87,11 +87,10 @@ Students complete a two-part content analysis project across the semester: a qua
 
 All software is free and open-source:
 
-- **R** — Statistical computing environment
-- **VSCode** — IDE for R and Quarto
-- **Obsidian** — Personal knowledge management
-- **Quarto** — Scientific and technical publishing
-- **Git** — Version control
+- **R**: Statistical computing environment
+- **VS Code**: IDE for R, Quarto, and your Methods Vault workspace
+- **Quarto**: Scientific and technical publishing
+- **Git**: Version control
 
 [Installation Guides](resources/index.qmd){.btn .btn-primary}
 
@@ -179,9 +178,9 @@ Contact Accessible Campus Community and Equitable Student Support:
 
 ### Key Resources
 
-- **Textbook** — [Vibes to Variables](https://aura-lab-siue.github.io/v2v/) (free, online)
-- **v2v R Package** — R package with datasets, templates, and setup tools
-- **Methods Vault** — Obsidian workspace template (download on [Resources](resources/) page)
+- **Textbook**: [Vibes to Variables](https://aura-lab-siue.github.io/v2v/) (free, online)
+- **v2v R Package**: R package with sampled practice fixtures and setup tools
+- **Methods Vault**: VS Code course workspace, cloned from the GitHub template (see the [Resources](resources/) page)
 
 ### Getting Help
 
