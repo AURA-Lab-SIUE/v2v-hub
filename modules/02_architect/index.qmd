@@ -18,7 +18,7 @@ By the end of Phase II, you will:
 :::{.learning-objectives}
 - Build a professional GitHub profile with a profile README
 - Confirm all required software is installed and working
-- Structure your digital workspace (the Methods Vault workspace in VS Code) for the semester
+- Structure your digital workspace (the course workspace in VS Code) for the semester
 - Identify and evaluate media archives as potential data sources
 - Meet with a SIUE librarian to explore database options
 :::
@@ -52,9 +52,9 @@ Open the syllabus contract template in VS Code, fill in the acknowledgment field
 
 ### Project Setup (25 pts), Week 3
 
-Initialize your Methods Vault workspace as a GitHub repository and push it to GitHub. This proves VS Code, GitHub, and git all work together.
+Initialize your course workspace as a GitHub repository and push it to GitHub. This proves VS Code, GitHub, and git all work together.
 
-1. Open GitHub Desktop and create a new repository from your Methods Vault workspace folder
+1. Open GitHub Desktop and create a new repository from your course workspace folder
 2. Make an initial commit ("Initial workspace setup")
 3. Publish the repository to GitHub (public)
 4. Submit your repository URL to Blackboard
@@ -81,5 +81,5 @@ Submit as PDF: `Lastname_ArchivistReport.pdf`
 ## Related Resources
 
 - [Install R & VS Code](../../resources/install-vscode.qmd)
-- [Methods Vault Setup](../../resources/methods-vault-setup.qmd)
+- [course workspace Setup](../../resources/workspace-setup.qmd)
 - [GitHub Setup](../../resources/github-setup.qmd)

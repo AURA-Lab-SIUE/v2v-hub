@@ -90,6 +90,6 @@ This page previews the chapter structure and themes for the Fall 2026 edition. T
 
 ## About the Textbook
 
-*From Vibes to Variables* is an open educational resource written by Dr. Alex P. Leith for research methods courses at SIUE. The 2nd edition (Fall 2026) restructures the original into 22 focused chapters, adds the R Workbook as a companion, and integrates with the [Methods Vault](methods-vault.qmd) and [coursepackR](resources/index.qmd) ecosystem.
+*From Vibes to Variables* is an open educational resource written by Dr. Alex P. Leith for research methods courses at SIUE. The 2nd edition (Fall 2026) restructures the original into 22 focused chapters, adds the R Workbook as a companion, and integrates with the [course workspace](workspace.qmd) and [coursepackR](resources/index.qmd) ecosystem.
 
 The textbook is free, open-access, and published via [GitHub Pages](https://aura-lab-siue.github.io/v2v/).

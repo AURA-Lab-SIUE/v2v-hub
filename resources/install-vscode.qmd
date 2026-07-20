@@ -4,7 +4,7 @@ title: "Install VS Code"
 
 ## Why VS Code?
 
-VS Code (Visual Studio Code) is the editor you use for everything in this course: writing and running R, rendering Quarto documents, taking notes in your Methods Vault, and managing Git and GitHub. It is a professional, free, lightweight editor used by developers worldwide, and keeping all of your work in one editor means your code, your notes, and your reproducible report live together in a single workspace.
+VS Code (Visual Studio Code) is the editor you use for everything in this course: writing and running R, rendering Quarto documents, taking notes in your course workspace, and managing Git and GitHub. It is a professional, free, lightweight editor used by developers worldwide, and keeping all of your work in one editor means your code, your notes, and your reproducible report live together in a single workspace.
 
 In this course VS Code is the standard environment. This guide installs it and sets up the extensions you need; pair it with [Install R](install-r.qmd) to run R inside it.
 
@@ -63,27 +63,24 @@ When VS Code opens you'll see:
 
 ## Step 4: Install the course extensions
 
-Open the Extensions view (`Ctrl/Cmd+Shift+X`) and install these. If you cloned the [Methods Vault](methods-vault-setup.qmd), it will simply prompt you to install its recommended set.
+Open the Extensions view (`Ctrl/Cmd+Shift+X`) and install these. If you cloned the [course workspace](workspace-setup.qmd), it will simply prompt you to install its recommended set.
 
-### 1. R (REditorSupport) — required
+### 1. R (REditorSupport), required
 
 Search for **R** by REditorSupport and click **Install**. This is what lets you run R, get completions, and view data inside VS Code. Finish the wiring in [Install R](install-r.qmd).
 
-### 2. Quarto — required
+### 2. Quarto, required
 
 Search for **Quarto** and install. This previews and renders the `.qmd` documents you write for assignments and your final report.
 
-### 3. Foam — for your Methods Vault
+### 3. GitLens, recommended
 
-Search for **Foam** and install. It adds `[[wiki-links]]`, a backlinks panel, and a graph view across your notes.
+Search for **GitLens** and install. It shows who changed each line and when, making your Git history easy to read as you learn version control.
 
-### 4. Markdown All in One
+### Optional extras
 
-Search for **Markdown All in One** and install for table-of-contents, shortcuts, and list editing in Markdown.
-
-### Optional: Python
-
-If you ever branch into Python, install the **Python** extension by Microsoft. It is not required for this course.
+- **Markdown All in One** adds a table of contents, shortcuts, and list editing for Markdown.
+- **Python** (by Microsoft), only if you branch into Python. It is not required for this course.
 
 ---
 
@@ -100,7 +97,7 @@ Now you can clone repositories, view history, and commit and push without leavin
 
 In VS Code you work in a **folder**, not a project file. The open folder is your working directory.
 
-1. **File, Open Folder** and choose a folder (for example, your cloned Methods Vault).
+1. **File, Open Folder** and choose a folder (for example, your cloned course workspace).
 2. Create a file called `hello.R` and type:
 
 ```r
@@ -176,10 +173,10 @@ Install Git (see [Getting Started with GitHub](github-setup.qmd)) and restart VS
 ## Next steps
 
 1. Installed VS Code.
-2. Installed the R, Quarto, Foam, and Markdown extensions.
+2. Installed the R, Quarto, and GitLens extensions.
 3. Connected GitHub.
 4. Opened a workspace and ran R from the editor.
-5. Next: finish [Install R](install-r.qmd), then set up your [Methods Vault](methods-vault-setup.qmd).
+5. Next: finish [Install R](install-r.qmd), then set up your [course workspace](workspace-setup.qmd).
 
 ---
 

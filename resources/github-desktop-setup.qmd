@@ -19,13 +19,13 @@ GitHub Desktop is a free application that lets you manage your git repositories 
 
 ---
 
-## Step 2: Create a Repository from Your Methods Vault
+## Step 2: Create a Repository from Your Course Workspace
 
-Your Methods Vault is a VS Code workspace folder of Markdown files. GitHub Desktop can turn it into a git repository.
+Your course workspace is a VS Code workspace folder of Markdown files. GitHub Desktop can turn it into a git repository.
 
 1. Open GitHub Desktop
 2. Click **File > Add Local Repository** (or **File > New Repository** if this is your first time)
-3. Navigate to your Methods Vault workspace folder and select it
+3. Navigate to your course workspace folder and select it
 4. If prompted, choose **Create a Repository** and accept the defaults
 5. You should now see your workspace files listed in the "Changes" tab
 
@@ -47,7 +47,7 @@ A **commit** is a snapshot of your work at a specific point in time. Think of it
 **Publishing** uploads your repository to GitHub so it is accessible online.
 
 1. Click the **Publish repository** button in the top bar
-2. **Name:** Use something like `methods-vault` or `mc451-vault`
+2. **Name:** Use something like `mc451-workspace` or `mc451-workspace`
 3. **Keep this code private:** Uncheck this box (your repository should be public)
 4. Click **Publish Repository**
 5. Your workspace is now live at `https://github.com/YOUR-USERNAME/YOUR-REPO-NAME`
@@ -86,7 +86,7 @@ Your journal entry is now on GitHub. Your instructor can see your commit history
 Make sure you are signed into the correct GitHub account in GitHub Desktop (File > Options > Accounts).
 
 **Changes not showing up**
-GitHub Desktop only tracks files inside the repository folder. Make sure your journal entries are saved inside your Methods Vault workspace folder, not somewhere else.
+GitHub Desktop only tracks files inside the repository folder. Make sure your journal entries are saved inside your course workspace folder, not somewhere else.
 
 **"Merge conflict" error**
 This happens if you edited a file on GitHub.com and also locally. For this course, always edit locally in VS Code and push, never edit directly on GitHub.com.

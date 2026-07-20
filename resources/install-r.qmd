@@ -59,7 +59,7 @@ sudo apt install r-base
 
 1. Open VS Code and open the Extensions view (`Ctrl/Cmd+Shift+X`).
 2. Search for **R** by REditorSupport and click **Install**.
-3. If you cloned the [Methods Vault](methods-vault-setup.qmd), this extension is already in the recommended list, so the workspace will prompt you to install it.
+3. If you cloned the [course workspace](workspace-setup.qmd), this extension is already in the recommended list, so the workspace will prompt you to install it.
 
 ---
 

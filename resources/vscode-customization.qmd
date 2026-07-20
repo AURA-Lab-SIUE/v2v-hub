@@ -1,0 +1,130 @@
+---
+title: "Customizing VS Code"
+---
+
+**Make the editor yours.** You will spend real hours in VS Code this term, so it is worth fifteen minutes to set it up the way you think. This guide goes past installation into the settings, themes, and shortcuts that make the tool comfortable. None of it is required, but every part of it lowers the friction between you and your work.
+
+Everything here is reversible, so experiment freely.
+
+---
+
+## How settings work
+
+VS Code has two layers of settings, and understanding the difference saves confusion:
+
+- **User settings** apply to you, everywhere, on this computer.
+- **Workspace settings** apply only to the folder you have open, and travel with it in Git.
+
+The course workspace ships a small set of **workspace settings** in `.vscode/settings.json` so the whole class shares sensible defaults. Your **user settings** layer on top for everything else. You will not break the shared setup by customizing your own.
+
+Open settings two ways:
+
+- **Settings UI:** `Ctrl/Cmd + ,` gives a searchable, click-based interface. Start here.
+- **settings.json:** the Command Palette (`Ctrl/Cmd+Shift+P`) then **Preferences: Open User Settings (JSON)** shows the raw file. Every setting is just a line of JSON.
+
+---
+
+## Ten-minute starter kit
+
+A few high-value changes for new coders. Set them in the Settings UI (search the name in quotes) or paste the JSON into your user `settings.json`.
+
+| Setting | Why | JSON |
+|---------|-----|------|
+| Font size | Bigger text is easier to read for hours | `"editor.fontSize": 15` |
+| Word wrap | Long lines wrap instead of scrolling off-screen | `"editor.wordWrap": "on"` |
+| Auto save | Never lose work to a forgotten save | `"files.autoSave": "afterDelay"` |
+| Format on save | Tidy, consistent code automatically | `"editor.formatOnSave": true` |
+| Render whitespace | See spaces vs tabs when something looks off | `"editor.renderWhitespace": "boundary"` |
+| Sticky scroll | Keep the current function or heading pinned at the top | `"editor.stickyScroll.enabled": true` |
+
+:::{.callout-tip}
+## You can just paste JSON
+
+Open **Preferences: Open User Settings (JSON)**, and paste settings between the outer `{ }`, separated by commas. Save, and they take effect immediately.
+
+```json
+{
+  "editor.fontSize": 15,
+  "editor.wordWrap": "on",
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true
+}
+```
+:::
+
+---
+
+## Themes
+
+A theme you like makes the editor a place you want to be, and the right contrast makes code easier to read.
+
+- **Color theme:** `Ctrl/Cmd+K` then `Ctrl/Cmd+T`, then arrow through the list to preview live. Dark themes (One Dark, GitHub Dark) and light themes (GitHub Light, Quiet Light) are all built in.
+- **File icon theme:** the Command Palette then **Preferences: File Icon Theme**. Icons make the file explorer easier to scan.
+
+:::{.callout-note}
+## Readability is accessibility
+
+If text feels small or low-contrast, raise `editor.fontSize`, increase `"window.zoomLevel"`, or pick a high-contrast theme (**Preferences: Color Theme > Dark High Contrast**). Set up the editor so it is comfortable for *your* eyes, not someone else's.
+:::
+
+---
+
+## Keyboard shortcuts
+
+The single most useful key in VS Code is the **Command Palette**: `Ctrl/Cmd+Shift+P`. It searches every command by name, so you never have to memorize where things live.
+
+A starter set worth learning:
+
+| Shortcut (Win/Linux, Mac) | Action |
+|---------------------------|--------|
+| `Ctrl+Shift+P`, `Cmd+Shift+P` | Command Palette (do anything) |
+| `Ctrl+,`, `Cmd+,` | Open settings |
+| `Ctrl+P`, `Cmd+P` | Quick-open a file by name |
+| Ctrl+backtick, Cmd+backtick | Toggle the integrated terminal |
+| `Ctrl+/`, `Cmd+/` | Comment or uncomment the line |
+| `Ctrl+Shift+V`, `Cmd+Shift+V` | Preview a Markdown file |
+| `Alt+Up/Down`, `Option+Up/Down` | Move a line up or down |
+
+Rebind anything you like: the Command Palette then **Preferences: Open Keyboard Shortcuts**. Search for a command, click the pencil, and press your preferred keys.
+
+---
+
+## The integrated terminal
+
+VS Code has a terminal built in, so you can run R, Git, and Quarto without leaving the window. Open it with **Ctrl/Cmd + backtick** (the key above Tab, left of the 1). This is where you will run commands like `quarto render` and `git status`.
+
+---
+
+## Extensions and profiles
+
+- **Extensions** add features. The course workspace recommends Quarto, R, and GitLens. Beyond those, add whatever helps you (spell-checkers, a prettier theme), but you do not need many.
+- **Profiles** let you keep different setups for different contexts (for example, a lean "course" profile and a separate one for a personal project). The Command Palette then **Profiles: Create Profile**. Most students never need this, but it is there when you do.
+
+---
+
+## Sync your setup across computers
+
+If you use more than one machine (a laptop and a lab computer), turn on **Settings Sync**: click the gear (bottom-left) then **Turn on Settings Sync**, and sign in with GitHub. Your settings, themes, keybindings, and extensions follow you.
+
+---
+
+## Reset if you get lost
+
+Customizing is safe because it is reversible.
+
+- Undo one setting: find it in the Settings UI and click the gear then **Reset Setting**.
+- Start clean: open `settings.json` and delete the lines you added.
+
+:::{.callout-tip}
+## A tidy `settings.json` is a habit worth keeping
+
+Your editor configuration is just a small text file. Keeping it readable, and knowing what each line does, is the same skill you are building with your research code.
+:::
+
+---
+
+## Related guides
+
+- [Install VS Code](install-vscode.qmd)
+- [GitHub Education Copilot](copilot-setup.qmd)
+- [Course Workspace setup](workspace-setup.qmd)

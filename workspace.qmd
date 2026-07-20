@@ -1,0 +1,105 @@
+---
+title: "Course Workspace"
+---
+
+:::{.phase-header}
+# Course Workspace
+
+**One VS Code folder for everything you write and build this term.**
+
+A course template you copy on GitHub and open in VS Code. It keeps your journals, reading notes, project files, and reusable templates in a single folder, version-controlled with Git. Everything is plain Markdown and plain files, so your work is readable anywhere and yours to keep.
+
+[Use this template on GitHub](https://github.com/AURA-Lab-SIUE/v2v-workspace){.btn .btn-primary .btn-lg}
+:::
+
+---
+
+## Why one workspace, one tool
+
+You will spend real time in VS Code this term, so we keep everything in it rather than spreading your work across a separate notes app. You write in Markdown, run R, render Quarto, and commit to Git all in the same window. The skills compound: the editor you use for your journal in Week 1 is the editor you use for your analysis in Week 11 and your final portfolio in Week 16.
+
+No wiki plugins, no graph views, no second app to learn. Just folders, Markdown files, and Git, which are the same tools working researchers use.
+
+---
+
+## What's inside
+
+The workspace is a GitHub template repository. When you create your copy and open it in VS Code, you get a ready-to-use folder structure:
+
+```
+v2v-workspace/
+├── README.md                # Start here: what each folder is for
+├── 00_inbox/                # Quick capture for unprocessed notes
+├── 01_journal/              # Weekly reading reflections (committed to GitHub)
+├── 02_literature/           # Reading notes and Zotero annotations
+├── 03_project/              # Your research project
+│   ├── 01_prospectus/       # Research design (Chapter 6)
+│   ├── 02_codebook/         # Data dictionary (Chapter 8)
+│   ├── 03_data/             # Sampled data and analysis (Chapters 10 to 12)
+│   └── 04_drafts/           # Report drafts and final portfolio (Chapters 13 to 14)
+├── 04_resources/            # PDFs, images, and attachments
+├── _templates/              # Reusable templates for journals and codebooks
+└── .vscode/                 # Recommended extensions and shared settings
+```
+
+Because the notes are plain Markdown, they open in any editor and read fine on GitHub. The `.vscode/` folder ships a short list of **recommended extensions**, so everyone in the course works in the same environment: the Quarto extension, the R extension, and GitLens. VS Code prompts you to install them the first time you open the folder.
+
+---
+
+## Set it up
+
+The short version is below. For a step-by-step walkthrough with screenshots, follow the [Course Workspace setup guide](resources/workspace-setup.qmd).
+
+### 1. Create your copy from the template
+
+On the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace), click **Use this template**, then **Create a new repository**. Name it something like `mc451-workspace`. Keep it private if you prefer.
+
+### 2. Clone it into VS Code
+
+In VS Code, open the Command Palette (`Ctrl/Cmd+Shift+P`), run **Git: Clone**, paste your new repository URL, and choose a location you will remember (for example, `Documents/MC451/`). VS Code offers to open the folder.
+
+### 3. Install the recommended extensions
+
+When VS Code opens the workspace, it prompts you to install the **recommended extensions** (Quarto, R, and GitLens). Click **Install**. They are listed in `.vscode/extensions.json` so the whole class shares one setup.
+
+### 4. Read the README
+
+Open `README.md`. It walks you through the folder structure and how to start a journal entry from the template.
+
+:::{.callout-tip}
+## Why commit to GitHub?
+
+Committing your workspace gives you a backup, a full history of your work, and a way for Dr. Leith to see your journal entries. It also builds the version-control habit you use again in the final portfolio.
+:::
+
+---
+
+## How it fits the course
+
+| Tool | Role | Relationship to the workspace |
+|------|------|-------------------------------|
+| **Course Workspace** (VS Code) | Think, plan, reflect | Your primary writing and project folder |
+| **`v2v` R package** | Access course data | Loads the Twitch practice corpus you analyze, then reflect on in your journal |
+| **R Workbook** | Learn R skills | Work through the [workbook labs](workbook/index.qmd) directly in VS Code |
+| **Textbook** | Conceptual foundation | Read online or alongside your workspace |
+
+---
+
+## Weekly workflow
+
+1. **Start of week:** Open your workspace in VS Code and pull the latest from GitHub (**Source Control** panel, or `git pull`).
+2. **During the week:** Work through the week's [workbook lab](workbook/index.qmd) and read the textbook chapter.
+3. **Before class:** Copy `_templates/journal-entry.md` into `01_journal/`, rename it for the week, and write your reflection.
+4. **After class:** Commit and push your workspace to GitHub.
+
+---
+
+:::{.callout-note}
+## Detailed guides
+
+For step-by-step instructions with screenshots, see:
+
+- [Course Workspace setup guide](resources/workspace-setup.qmd)
+- [Install VS Code](resources/install-vscode.qmd)
+- [Getting started with GitHub](resources/github-setup.qmd)
+:::

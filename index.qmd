@@ -43,11 +43,11 @@ Seven chapters with narrated video walkthroughs, from codebook to published port
 :::
 
 ::: card
-### Methods Vault
+### Course workspace
 
-Your VS Code course workspace: journals, project folders, and offline textbook chapters in one repository.
+Your VS Code workspace: journals, project folders, and templates in one Git repository.
 
-[Get the Vault](methods-vault.qmd){.btn .btn-secondary}
+[Get the workspace](workspace.qmd){.btn .btn-secondary}
 :::
 :::::
 
@@ -92,7 +92,7 @@ Three tools work together throughout the course. Each serves a distinct role, an
 
 | Tool | What it does | When you use it |
 |------|-------------|-----------------|
-| [**Methods Vault**](methods-vault.qmd) | VS Code workspace for journals, notes, and project files | Every week, as your personal research archive |
+| [**Course Workspace**](workspace.qmd) | VS Code workspace for journals, notes, and project files | Every week, as your personal research archive |
 | [**R Workbook**](workbook/index.qmd) | Hands-on R tutorials with narrated videos | Parts III to V, learning R for data analysis |
 | [**Textbook**](https://aura-lab-siue.github.io/v2v/) | *Vibes to Variables* (3rd Edition, 14 chapters) | Every week, for the conceptual foundation of each part |
 

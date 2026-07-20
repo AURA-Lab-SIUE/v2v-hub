@@ -2,9 +2,9 @@
 title: "Getting Started"
 ---
 
-## Welcome to the Open Methods Hub
+## Welcome to the V2V Hub
 
-Complete these four steps to set up your workspace. **Time needed:** 15-20 minutes.
+Complete these four steps to set up your course workspace. **Time needed:** 15-20 minutes.
 
 :::{.callout-important}
 ## Before You Begin
@@ -15,9 +15,9 @@ Make sure you have a reliable internet connection and about 500 MB of free disk 
 
 ## Step 1: Create Your Workspace from the Template
 
-1. Open the [Methods Vault template repository](https://github.com/AURA-Lab-SIUE/v2v-methods-vault) on GitHub
+1. Open the [course workspace template](https://github.com/AURA-Lab-SIUE/v2v-workspace) on GitHub
 2. Click the green **Use this template** button, then **Create a new repository**
-3. Name your copy (for example, `methods-vault`) and create it under your own GitHub account
+3. Name your copy (for example, `mc451-workspace`) and create it under your own GitHub account
 
 This gives you your own copy of the course workspace on GitHub.
 
@@ -42,10 +42,9 @@ This gives you your own copy of the course workspace on GitHub.
 
 When VS Code prompts you to install the recommended extensions, accept them. They include:
 
-- **Foam**: note-linking, `[[wiki-links]]`, a backlinks panel, and a graph view
 - **Quarto**: authoring and rendering Quarto documents
 - **R**: running and editing R code
-- **Markdown All in One**: Markdown editing helpers
+- **GitLens**: seeing your Git history inside the editor
 
 ---
 
@@ -55,11 +54,11 @@ Your workspace is organized into these folders:
 
 | Folder | Purpose | What's Inside |
 |--------|---------|---|
-| **00_Inbox** | Quick notes & ideas | Capture rough thoughts and discussion notes here |
-| **01_Journal** | Weekly reflections | Sample journal entries showing the three thinking paths (Connector, Troubleshooter, Critic) |
-| **02_Literature** | Reading notes & course materials | Includes textbook chapters and citation templates |
-| **03_Project** | Active research work | Organized by prospectus, codebook, data, and drafts folders |
-| **04_Resources** | Media & attachments | Images, PDFs, external files, and course materials |
+| **00_inbox** | Quick notes & ideas | Capture rough thoughts and discussion notes here |
+| **01_journal** | Weekly reflections | Sample journal entries showing the three thinking paths (Connector, Troubleshooter, Critic) |
+| **02_literature** | Reading notes & course materials | Includes textbook chapters and citation templates |
+| **03_project** | Active research work | Organized by prospectus, codebook, data, and drafts folders |
+| **04_resources** | Media & attachments | Images, PDFs, external files, and course materials |
 | **_templates** | Reusable templates | The journal template (`_templates/journal-entry.md`) and a data dictionary template to copy and customize |
 
 ---
@@ -79,8 +78,8 @@ Once you complete these steps, move to **[Phase I: The Journalist](modules/01_jo
 - Use **File > Open Folder** and select the cloned workspace folder directly
 
 **Q: Where do I put my weekly journal entries?**
-- Copy `_templates/journal-entry.md` into `01_Journal`
-- Rename the copy something like `Week_01_MyName.md` and fill it out
+- Copy `_templates/journal-entry.md` into `01_journal`
+- Rename the copy something like `week-01-yourname.md` and fill it out
 
 **Q: Can I share my workspace with classmates?**
 - Yes. Because the workspace is a Git repository, you can share its GitHub URL or collaborate through GitHub

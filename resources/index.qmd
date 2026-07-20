@@ -2,339 +2,161 @@
 title: "Resources"
 ---
 
-## Course Documents
-
-### Syllabus Contract
-
-Review and sign the Syllabus Contract to confirm you understand course policies, grading expectations, and academic integrity standards.
-
-**[📥 Download Syllabus Contract (PDF)](Syllabus_Contract.pdf){.btn .btn-primary}**
-
-### Annotated Manuscript Example
-
-An example of a properly annotated research article, demonstrating the critical reading protocol used in Week 5.
-
-**[📥 Download Annotation Example (PDF)](annotation-example.pdf){.btn .btn-primary}**
+Everything you need to set up, run, and get help with the course. If you are just getting started, follow the [Getting Started](../setup.qmd) guide first.
 
 ---
 
-## Get the Methods Vault Workspace
+## Course documents
 
-### Liaison Methods Vault
+:::{.resource-card}
+#### Syllabus Contract
+<span class="resource-badge time">5 min</span>
 
-Your complete VS Code course workspace for the Open Methods Hub.
+Review and sign to confirm you understand course policies, grading, and academic integrity.
 
-You do not download a ZIP. Instead, open the template repository on GitHub, click **Use this template** to create your own copy, then clone it into VS Code.
-
-**[🧱 Open the Methods Vault template on GitHub](https://github.com/AURA-Lab-SIUE/v2v-methods-vault){.btn .btn-primary .btn-lg}**
-
-**What's Included:**
-- 📁 **00_Inbox**: Quick capture area
-- 📔 **01_Journal**: Weekly reflection entries
-- 📚 **02_Literature**: Reading notes
-- 🔬 **03_Project**: Research workspace (prospectus, codebook, data, drafts)
-- 🖼️ **04_Resources**: Attachments and media
-- 📋 **_templates**: The journal template (`_templates/journal-entry.md`) and other reusable starting files
-
-For step-by-step instructions, see the [Methods Vault Setup](methods-vault-setup.qmd) guide.
-
----
-
-## Required Software
-
-Install these tools before starting Phase 1:
-
-:::{.card-grid}
-
-::: {.card}
-### 🗂️ Methods Vault (VS Code workspace)
-
-Your course workspace with note-linking via the Foam extension
-
-<span class="resource-badge">Free</span>
-
-[Open the template](https://github.com/AURA-Lab-SIUE/v2v-methods-vault){.btn .btn-secondary}
-[Setup Guide](methods-vault-setup.qmd){.btn .btn-sm}
+[Download (PDF)](Syllabus_Contract.pdf){.btn .btn-sm .btn-primary}
 :::
 
-::: {.card}
-### GitHub
+:::{.resource-card}
+#### Annotated Manuscript Example
+<span class="resource-badge time">15 min</span>
 
-Version control and collaboration
+An example of a properly annotated research article, showing the critical reading protocol.
 
-<span class="resource-badge">Free</span>
-
-[Sign Up](https://github.com/signup){.btn .btn-secondary}
-[Setup Guide](github-setup.qmd){.btn .btn-sm}
-:::
-
-::: {.card}
-### GitHub Desktop
-
-Visual git interface (no command line)
-
-<span class="resource-badge">Free</span>
-
-[Download](https://desktop.github.com/){.btn .btn-secondary}
-[Setup Guide](github-desktop-setup.qmd){.btn .btn-sm}
-:::
-
-::: {.card}
-### 📊 R
-
-Statistical analysis and visualization
-
-<span class="resource-badge">Free</span>
-
-[Download R](https://cran.r-project.org/){.btn .btn-secondary}
-[Install Guide](install-vscode.qmd){.btn .btn-sm}
-:::
-
-::: {.card}
-### 💻 VS Code
-
-Code editor with Git integration, your R and Quarto IDE, and your Methods Vault workspace
-
-<span class="resource-badge">Free</span>
-
-[Download](https://code.visualstudio.com/){.btn .btn-secondary}
-[Install Guide](install-vscode.qmd){.btn .btn-sm}
-:::
-
+[Download (PDF)](annotation-example.pdf){.btn .btn-sm .btn-secondary}
 :::
 
 ---
 
-## Quick Links
+## Get the course workspace
 
-- [Setup Guide](../setup.qmd) - Complete your workspace in 15 minutes
-- [Phase I: The Journalist](../modules/01_journalist/index.qmd) - Start the program
-- [Syllabus](../syllabus.qmd) - Course policies and schedule
-- [Vibes to Variables Textbook](https://aura-lab-siue.github.io/v2v/) - Companion textbook
+Your VS Code course workspace holds your journals, notes, and project files in one Git-tracked folder. You do not download a ZIP: open the template on GitHub, click **Use this template** to create your own copy, then clone it into VS Code.
+
+[Use the template on GitHub](https://github.com/AURA-Lab-SIUE/v2v-workspace){.btn .btn-primary .btn-lg}
+[Setup guide](workspace-setup.qmd){.btn .btn-secondary}
+
+**What's inside:** `00_inbox` (quick capture), `01_journal` (weekly reflections), `02_literature` (reading notes), `03_project` (prospectus, codebook, data, drafts), `04_resources` (attachments), and `_templates` (journal and codebook templates).
 
 ---
 
-## Need Help?
+## Required software
 
-**Email:** aleith@siue.edu  
-**Office Hours:** MW 10:00–11:30 AM and 1:30–3:00 PM
-[Setup Guide](methods-vault-setup.qmd){.btn .btn-sm .btn-primary}
-:::
+Install these before Phase I. All are free.
 
-::: {.card}
-<span class="card-icon">💾</span>
+:::::: card-grid
 
-### Git & GitHub
-
-Version control for your projects and collaboration.
+::: card
+### VS Code
+Your single workspace for writing, R, Quarto, and Git.
 
 <span class="resource-badge">Free</span>
 
-[Download Git](https://git-scm.com/){.btn .btn-sm .btn-secondary}
-[Setup Guide](github-setup.qmd){.btn .btn-sm .btn-primary}
+[Download](https://code.visualstudio.com/){.btn .btn-sm .btn-secondary}
+[Install guide](install-vscode.qmd){.btn .btn-sm}
 :::
 
-::: {.card}
-<span class="card-icon">📊</span>
-
+::: card
 ### R
-
-Statistical computing and data analysis.
+Statistical analysis and visualization, run inside VS Code.
 
 <span class="resource-badge">Free</span>
 
 [Download R](https://cran.r-project.org/){.btn .btn-sm .btn-secondary}
-[Setup Guide](install-vscode.qmd){.btn .btn-sm .btn-primary}
+[Install guide](install-r.qmd){.btn .btn-sm}
 :::
 
-::: {.card}
-<span class="card-icon">💻</span>
-
-### VS Code
-
-Professional code editor for Python, R, and more.
+::: card
+### Git & GitHub
+Version control for your work and your final portfolio.
 
 <span class="resource-badge">Free</span>
 
-[Download VS Code](https://code.visualstudio.com/){.btn .btn-sm .btn-secondary}
-[Setup Guide](install-vscode.qmd){.btn .btn-sm .btn-primary}
+[Sign up](https://github.com/signup){.btn .btn-sm .btn-secondary}
+[Setup guide](github-setup.qmd){.btn .btn-sm}
 :::
 
+::: card
+### GitHub Desktop (optional)
+A visual Git interface if you prefer buttons to the command line.
+
+<span class="resource-badge">Free</span>
+
+[Download](https://desktop.github.com/){.btn .btn-sm .btn-secondary}
+[Setup guide](github-desktop-setup.qmd){.btn .btn-sm}
+:::
+
+::::::
+
+---
+
+## Make VS Code your own
+
+Once the tools are installed, spend a few minutes owning your editor. These guides go deeper than setup.
+
+:::{.resource-card}
+#### Customizing VS Code
+<span class="resource-badge time">15 min</span>
+
+Themes, settings, keyboard shortcuts, and profiles, so the editor fits how you work.
+
+[Read the guide](vscode-customization.qmd){.btn .btn-sm .btn-secondary}
+:::
+
+:::{.resource-card}
+#### GitHub Education Copilot
+<span class="resource-badge time">15 min</span>
+
+Claim the free student plan and use Copilot as a supervised code-completion aid.
+
+[Read the guide](copilot-setup.qmd){.btn .btn-sm .btn-secondary}
 :::
 
 ---
 
-## Learning Templates
+## Learning templates
 
-Ready-to-use templates in your Methods Vault workspace:
+Ready-to-use templates live in your course workspace under `_templates/`.
 
-:::{.resource-card}
+- **Weekly journal template** reflects on your learning using one of three thinking paths: the Connector (how does this relate to what I know?), the Troubleshooter (what problems did I solve?), and the Critic (does this match my experience?).
+- **Data dictionary / codebook template** defines your variables in Phase III, with columns for variable name, definition, type, allowed values, and examples.
 
-#### 📔 Weekly Journal Template
-<span class="resource-badge time">10-15 min</span>
-
-Use this each week to reflect on your learning using one of three thinking paths:
-- **The Connector** - How does this relate to what I know?
-- **The Troubleshooter** - What problems did I solve?
-- **The Critic** - Does this match my experience?
-
-[View Template](../methods-vault.qmd){.btn .btn-sm .btn-secondary}
-:::
-
-:::{.resource-card}
-
-#### 📋 Data Dictionary Template
-<span class="resource-badge time">15-20 min</span>
-
-Define your variables and create your codebook in Phase 3. Includes columns for:
-- Variable name, definition, type, allowed values, and examples
-
-[View Template](../methods-vault.qmd){.btn .btn-sm .btn-secondary}
-:::
-
-:::{.resource-card}
-
-#### 📖 Workspace Orientation File
-<span class="resource-badge time">5 min</span>
-
-Start here for an overview of your workspace structure and folder purposes.
-
-[View File](../methods-vault.qmd){.btn .btn-sm .btn-secondary}
-:::
-
----
-
-## Learning Guides
-
-Step-by-step setup and configuration guides:
-
-:::{.resource-card}
-
-#### 🚀 Complete Setup Guide
-<span class="resource-badge time">15-20 min</span>
-
-Full walkthrough for configuring your Methods Vault workspace in VS Code and the rest of your tools.
-
-[Read Setup Guide](../setup.qmd){.btn .btn-sm .btn-secondary}
-:::
-
-:::{.resource-card}
-
-#### 🧭 R Installation
-<span class="resource-badge time">20-30 min</span>
-
-Detailed instructions for Windows, macOS, and Linux with troubleshooting.
-
-[Read R Setup Guide](install-vscode.qmd){.btn .btn-sm .btn-secondary}
-:::
-
-:::{.resource-card}
-
-#### 💻 VS Code Setup for R & Python
-<span class="resource-badge time">15-20 min</span>
-
-Configure VS Code with extensions, GitHub integration, and workflow tips.
-
-[Read VS Code Guide](install-vscode.qmd){.btn .btn-sm .btn-secondary}
-:::
-
-:::{.resource-card}
-
-#### 🔗 GitHub & Git Quickstart
-<span class="resource-badge time">10-15 min</span>
-
-Learn version control basics and how to sync your projects.
-
-[Read GitHub Guide](github-setup.qmd){.btn .btn-sm .btn-secondary}
-:::
-
----
-
-## Getting Help
-
-### Questions by Topic
-
-**Setup & Tools:**
-- Can't set up your Methods Vault workspace? [See setup guide](../setup.qmd)
-- Git not working? [See GitHub guide](github-setup.qmd)
-- R installation stuck? [See R guide](install-vscode.qmd)
-
-- What is The Journalist phase? [Read Phase I](../modules/01_journalist/index.qmd)
-- What is The Architect phase? [Read Phase II](../modules/02_architect/index.qmd)
-- What is The Builder phase? [Read Phase III](../modules/03_builder/index.qmd)
-
-**General Questions:**
-- Email Dr. Leith: **aleith@siue.edu**
-- Office Hours: **MW 10:00–11:30 AM** or **1:30–3:00 PM** (or by appointment)
+[Open the workspace](../workspace.qmd){.btn .btn-sm .btn-secondary}
 
 ---
 
 ## FAQ {#faq}
 
-**Q: Do I need to download the textbook?**  
-A: No, it's optional. You can access course readings through the library or online sources.
+**Q: Do I need to buy the textbook?**
+No. *From Vibes to Variables* is free and open access. [Read it online](https://aura-lab-siue.github.io/v2v/).
 
-**Q: Can I use Excel instead of R?**  
-A: Yes, Excel works for basic analysis. R is recommended for more complex projects.
+**Q: Can I use RStudio or another editor instead of VS Code?**
+This course standardizes on VS Code so everyone shares one environment and one set of instructions. Learning it deeply is part of the course.
 
-**Q: What if I already use a note-taking app?**
-A: The Methods Vault workspace in VS Code is the recommended approach for this course, since the journal template and Foam note-linking are built around it. You can keep personal notes elsewhere, but graded work lives in the workspace.
+**Q: Do I need a separate note-taking app?**
+No. Your notes live as Markdown files in the course workspace. Keeping everything in VS Code is the whole point.
 
 **Q: Where do I turn in my work?**
-A: Save deliverables in your Methods Vault workspace under `03_Project/`. Dr. Leith will collect via email or learning management system.
+Graded deliverables live in your workspace under `03_project/` and are pushed to GitHub. Dr. Leith collects via GitHub or Blackboard as noted in the syllabus.
 
-**Q: Can I work with others?**  
-A: Absolutely! Pair programming and collaborative analysis are encouraged. Document who contributed what.
+**Q: Can I work with classmates?**
+Yes. Pair programming and collaborative analysis are encouraged. Document who contributed what.
 
-**Q: What if I fall behind?**  
-A: Reach out to Dr. Leith early. The phases are structured but flexible—we can adjust timelines if needed.
-
-**Q: Are there textbooks or readings?**  
-A: Course readings will be posted in each phase. Check Phase 1 for the syllabus.
+**Q: What if I fall behind?**
+Reach out to Dr. Leith early. The phases are structured but timelines can flex.
 
 ---
 
-## Recommended Third-Party Resources
+## More help
 
-### For Data Analysis
-- [R4DS Online Learning Community](https://r4ds.had.co.nz/) - Free R guide
-- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) - Free Python guide
-- [Kaggle Learn](https://kaggle.com/learn) - Short courses on data skills
-
-### For Research Methods
-- [JSTOR Daily](https://daily.jstor.org/) - Accessible research articles
-- [Google Scholar](https://scholar.google.com/) - Academic search
-- [ResearchGate](https://www.researchgate.net/) - Connect with researchers
-
-### For Communication
-- [Data Viz Catalogue](https://www.datavizcatalogue.com/) - Chart types and usage
-- [Canva](https://www.canva.com/) - Free design templates
-- [Hemingway App](http://www.hemingwayapp.com/) - Improve your writing clarity
+- **Setup:** [Getting Started](../setup.qmd) walks through the whole install in about 15 minutes.
+- **Concepts:** the relevant [textbook](https://aura-lab-siue.github.io/v2v/) chapter usually explains it.
+- **Email:** aleith@siue.edu (allow 24 hours Mon-Fri).
+- **Office hours:** MW 10:00 to 11:30 AM and 1:30 to 3:00 PM, Dunham Hall 1017.
 
 ---
 
-## Software Comparison Chart
+## Third-party learning resources
 
-| Tool | Cost | Best For | Learning Curve |
-|---|---|---|---|
-| **VS Code + Foam** | Free | Note-taking, workspace organization, note-linking | Easy |
-| **Git/GitHub** | Free | Version control, collaboration | Medium |
-| **R** | Free | Statistical analysis, detailed control | Medium-Hard |
-| **Python** | Free | Data wrangling, flexible analysis | Medium |
-| **VS Code** | Free | Code editing, multiple languages | Medium |
-| **Excel** | Paid | Quick analysis, pivot tables | Easy |
-
----
-
-## Feedback & Suggestions
-
-Have ideas for improving these resources?
-
-- **In-course feedback:** Talk to Dr. Leith or use Blackboard feedback
-- **Resource suggestion:** Email your ideas to aleith@siue.edu
-- **Bug report:** If links don't work, let me know!
-
----
-
-**Last Updated:** January 2026  
-**Questions?** Email Dr. Leith (aleith@siue.edu) or visit office hours
+- [R for Data Science](https://r4ds.hadley.nz/) is a free, well-written R guide.
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/) covers Git for R users.
+- [The Markdown Guide](https://www.markdownguide.org) is a concise Markdown reference.

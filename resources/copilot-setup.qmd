@@ -1,0 +1,95 @@
+---
+title: "GitHub Education Copilot"
+---
+
+**A supervised code-completion aid, not a replacement for understanding.**
+
+GitHub Copilot suggests code inside VS Code as you type. For first-time coders it can smooth over syntax you have not memorized yet, letting you focus on the research question. It is optional in this course, and it works best when you treat every suggestion as a draft you check, not an answer you trust.
+
+:::{.callout-important}
+## The one rule
+
+You are responsible for understanding every line you keep. If Copilot writes something you cannot explain, do not submit it. Disclose AI assistance in your journal, the same way you would cite any other source of help.
+:::
+
+---
+
+## What Copilot is (and is not)
+
+**It is** an autocomplete trained on public code. As you type, it offers a grey "ghost text" suggestion for the rest of a line or block. You accept it, edit it, or ignore it.
+
+**It is not** a tutor that knows your data, a statistician that picks the right test, or a source of truth. It guesses what code usually comes next, which means it can suggest a function that does not exist, a package you have not installed, or an analysis that is wrong for your question.
+
+---
+
+## A note on the free plan
+
+Copilot is a paid product. Students can usually get it free through the **GitHub Student Developer Pack**, and GitHub also offers a limited free Copilot tier to everyone. Both of these change over time, and the student benefit has been getting narrower, so treat Copilot as a helpful extra rather than something the course depends on. Everything in MC 451 and MC 501 works fully without it.
+
+Check the current terms at [education.github.com/pack](https://education.github.com/pack) and [github.com/features/copilot](https://github.com/features/copilot).
+
+---
+
+## Step 1: Claim the student benefit
+
+1. Go to [education.github.com/pack](https://education.github.com/pack) and click **Get Student Benefits**.
+2. Sign in with your GitHub account and verify your student status with your **@siue.edu** email.
+3. Once verified, enable Copilot from your GitHub account settings (**Settings > Copilot**).
+
+Verification can take a day or two. If it does not come through, you can still complete every assignment without Copilot.
+
+---
+
+## Step 2: Install and sign in
+
+1. In VS Code, open the Extensions view (`Ctrl/Cmd+Shift+X`).
+2. Search for **GitHub Copilot** and click **Install**.
+3. When prompted, **Sign in to GitHub** and authorize Copilot in your browser.
+4. A Copilot icon appears in the status bar (bottom). If it is not greyed out, you are connected.
+
+---
+
+## Step 3: Use it well
+
+| Key | What it does |
+|-----|--------------|
+| `Tab` | Accept the current suggestion |
+| `Esc` | Dismiss the suggestion |
+| `Alt/Option + ]` | See the next suggestion |
+| `Alt/Option + [` | See the previous suggestion |
+
+### Good uses
+
+- Remembering syntax you half-know (`ggplot()` layers, `dplyr` verbs, a `for` loop).
+- Repetitive, boilerplate code once you understand the pattern.
+- Writing a first draft of a plot or table that you then read line by line and adjust.
+
+### Be careful
+
+:::{.pitfall}
+Copilot will confidently suggest R functions that do not exist, or the wrong argument for one that does. Before you trust a suggestion, check it against the [textbook](https://aura-lab-siue.github.io/v2v/), the workbook, or the function's help page (`?function_name` in R).
+:::
+
+- Do not accept a statistical test or interpretation you cannot explain in your own words.
+- Do not paste anyone's private or regulated data into Copilot Chat. Treat it as a public service.
+- If a suggestion "just works" but you do not know why, stop and figure out why before moving on. That understanding is the actual point of the course.
+
+---
+
+## Disclosing AI use
+
+Whenever Copilot (or any AI tool) shaped work you submit, note it in your weekly journal: what you used it for, and how you checked its output. A short line is enough.
+
+::: {.ai-note}
+Used Copilot to scaffold the `ggplot()` call for Figure 2. I edited the aesthetics and verified each layer against Chapter 12 before keeping it.
+:::
+
+This is honest scholarship, and it also helps you notice how much you are relying on the tool.
+
+---
+
+## Related guides
+
+- [Install VS Code](install-vscode.qmd)
+- [Customizing VS Code](vscode-customization.qmd)
+- [Getting Started with GitHub](github-setup.qmd)

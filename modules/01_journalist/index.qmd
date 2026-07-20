@@ -18,7 +18,7 @@ By the end of Phase I, you will:
 :::{.learning-objectives}
 - Read and comprehend foundational research methods concepts
 - Reflect critically on assigned readings using structured approaches
-- Build a personal knowledge archive in your Methods Vault workspace
+- Build a personal knowledge archive in your course workspace
 - Practice translating academic concepts into your own words
 - Establish a weekly writing routine
 - Create a professional GitHub profile
@@ -61,7 +61,7 @@ Each week, write a reflection on the assigned reading. Choose one of three think
 
 ### Submission
 
-Write your journal entry in your Methods Vault workspace (`01_Journal/`) by copying the journal template (`_templates/journal-entry.md`) into that folder, then submit via Blackboard.
+Write your journal entry in your course workspace (`01_Journal/`) by copying the journal template (`_templates/journal-entry.md`) into that folder, then submit via Blackboard.
 
 ### What Makes a Strong Entry
 
@@ -76,4 +76,4 @@ Write your journal entry in your Methods Vault workspace (`01_Journal/`) by copy
 
 - [Setup Guide](../../setup.qmd): Configure your workspace
 - [GitHub Setup](../../resources/github-setup.qmd): Create your professional profile
-- [Methods Vault Setup](../../resources/methods-vault-setup.qmd): Get your workspace running
+- [course workspace Setup](../../resources/workspace-setup.qmd): Get your workspace running
