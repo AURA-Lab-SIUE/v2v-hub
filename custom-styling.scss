@@ -561,3 +561,16 @@ footer a, .nav-footer a { color: #FBBF24;
    Resource card + badges:   ::: {.resource-card} #### Title
                                [15 min]{.resource-badge .time} ... :::
    ========================================================================== */
+
+// ============================================================================
+// Disable coding-font ligatures  (2026-07-24)
+// The body sets font-feature-settings including "liga", inherited into code, so
+// JetBrains Mono renders "<-" as a left arrow and "|>" as a triangle. Students
+// new to R must READ and TYPE the literal characters; ligatures are wrong here.
+// ============================================================================
+code, pre, kbd, samp,
+pre code, pre.sourceCode, div.sourceCode, div.sourceCode pre,
+div.sourceCode code, .sourceCode span {
+  font-variant-ligatures: none !important;
+  font-feature-settings: "liga" 0, "clig" 0, "calt" 0 !important;
+}
