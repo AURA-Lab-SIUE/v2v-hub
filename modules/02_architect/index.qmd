@@ -5,7 +5,7 @@ title: "Phase II: The Architect"
 :::{.phase-header}
 # Phase II: The Architect
 
-**Duration:** Weeks 2–4 | **Points:** 125
+**Duration:** Weeks 2 to 4 | **Points:** 125
 Design your workspace and research foundation
 :::
 
@@ -18,7 +18,7 @@ By the end of Phase II, you will:
 :::{.learning-objectives}
 - Build a professional GitHub profile with a profile README
 - Confirm all required software is installed and working
-- Structure your digital workspace (Obsidian vault) for the semester
+- Structure your digital workspace (the course workspace in VS Code) for the semester
 - Identify and evaluate media archives as potential data sources
 - Meet with a SIUE librarian to explore database options
 :::
@@ -27,13 +27,13 @@ By the end of Phase II, you will:
 
 ## Phase II Overview
 
-As an architect designs blueprints before construction, you design your research infrastructure. This phase runs concurrently with Phase I — while you're reading and reflecting, you're also setting up the tools you'll use all semester and scouting your data source.
+As an architect designs blueprints before construction, you design your research infrastructure. This phase runs concurrently with Phase I. While you're reading and reflecting, you're also setting up the tools you'll use all semester and scouting your data source.
 
 ---
 
 ## Assignments
 
-### GitHub Profile (25 pts) — Week 1
+### GitHub Profile (25 pts), Week 1
 
 Create a professional GitHub account with:
 
@@ -44,35 +44,35 @@ Create a professional GitHub account with:
 
 ---
 
-### Syllabus Contract (25 pts) — Week 2
+### Syllabus Contract (25 pts), Week 2
 
-Open the syllabus contract template in RStudio, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, RStudio, Quarto) is installed and working.
+Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
 
 ---
 
-### Project Setup (25 pts) — Week 3
+### Project Setup (25 pts), Week 3
 
-Initialize your Methods Vault as a GitHub repository and push it to GitHub. This proves Obsidian, GitHub, and git all work together.
+Initialize your course workspace as a GitHub repository and push it to GitHub. This proves VS Code, GitHub, and git all work together.
 
-1. Open GitHub Desktop and create a new repository from your Methods Vault folder
-2. Make an initial commit ("Initial vault setup")
+1. Open GitHub Desktop and create a new repository from your course workspace folder
+2. Make an initial commit ("Initial workspace setup")
 3. Publish the repository to GitHub (public)
 4. Submit your repository URL to Blackboard
 
-From this point forward, you will commit and push your journal entries each week using GitHub Desktop — building a git habit before R enters the picture.
+From this point forward, you will commit and push your journal entries each week using GitHub Desktop, building a git habit before R enters the picture.
 
 [GitHub Desktop Setup Guide](../../resources/github-desktop-setup.qmd){.btn .btn-primary}
 
 ---
 
-### Librarian Visit Report (50 pts) — Week 4
+### Librarian Visit Report (50 pts), Week 4
 
 Meet with a SIUE librarian to identify and evaluate a data archive for your research project. Write a report documenting:
 
-1. **The archive** — Name, type, scope
-2. **What you learned** — Date range, searchability, export options
-3. **Feasibility** — Can this source answer your research questions?
-4. **Librarian consultation** — What did the librarian recommend?
+1. **The archive**: Name, type, scope
+2. **What you learned**: Date range, searchability, export options
+3. **Feasibility**: Can this source answer your research questions?
+4. **Librarian consultation**: What did the librarian recommend?
 
 Submit as PDF: `Lastname_ArchivistReport.pdf`
 
@@ -80,6 +80,6 @@ Submit as PDF: `Lastname_ArchivistReport.pdf`
 
 ## Related Resources
 
-- [Install R & RStudio](../../resources/install-r-rstudio.qmd)
-- [Obsidian Setup](../../resources/obsidian-setup.qmd)
+- [Install R & VS Code](../../resources/install-vscode.qmd)
+- [course workspace Setup](../../resources/workspace-setup.qmd)
 - [GitHub Setup](../../resources/github-setup.qmd)

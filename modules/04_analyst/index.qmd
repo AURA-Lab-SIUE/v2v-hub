@@ -98,10 +98,10 @@ data(unified_music)
 
 ## Practice Activities
 
-- [**Pokemon Wrangling Practice**](practice-wrangling.qmd) --- Apply the full Import → Diagnose → Clean → Export pipeline to a TidyTuesday Pokemon dataset. Includes a downloadable `.qmd` file to work through in RStudio.
+- [**Pokemon Wrangling Practice**](practice-wrangling.qmd): Apply the full Import, Diagnose, Clean, Export pipeline to a TidyTuesday Pokemon dataset. Includes a downloadable `.qmd` file to work through in VS Code.
 
 ## Related Resources
 
-- [From Vibes to Variables — Chapters 17–20](https://sim-lab-siue.github.io/vibes-to-variables/)
-- [coursepackR Documentation](https://sim-lab-siue.github.io/coursepackR/)
-- [Install R & RStudio](../../resources/install-r-rstudio.qmd)
+- [From Vibes to Variables textbook](https://aura-lab-siue.github.io/v2v/)
+- [v2v package (GitHub)](https://github.com/AURA-Lab-SIUE/v2v-r)
+- [Install R](../../resources/install-r.qmd)

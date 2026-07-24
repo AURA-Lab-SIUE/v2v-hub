@@ -119,6 +119,6 @@ Both must be present for the submission to be considered complete. Test your URL
 
 ## Related Resources
 
-- [From Vibes to Variables — Chapters 21–22](https://sim-lab-siue.github.io/vibes-to-variables/)
+- [From Vibes to Variables textbook](https://aura-lab-siue.github.io/v2v/)
 - [GitHub Setup](../../resources/github-setup.qmd)
-- [coursepackR Documentation](https://sim-lab-siue.github.io/coursepackR/)
+- [v2v package (GitHub)](https://github.com/AURA-Lab-SIUE/v2v-r)

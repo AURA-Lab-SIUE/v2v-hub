@@ -1,5 +1,5 @@
 ---
-title: "Meet R and RStudio"
+title: "Meet R"
 execute:
   eval: false
   echo: true
@@ -8,7 +8,7 @@ execute:
 
 {{< video videos/03-meet-r.mp4 >}}
 
-You have a codebook. You have (or will soon have) a dataset. Now you need a tool to analyze it. That tool is R — a free, open-source programming language built for data analysis and statistics. This chapter gets you set up and comfortable before the real work begins.
+You have a codebook. You have (or will soon have) a dataset. Now you need a tool to analyze it. That tool is R, a free, open-source programming language built for data analysis and statistics. This chapter gets you set up and comfortable before the real work begins. You will run R inside **VS Code**, the same editor you use for the rest of the course.
 
 ## Why R?
 
@@ -20,40 +20,42 @@ You might be wondering: *Why can't I just use Excel?* You can do some of this in
 
 You're not becoming a programmer. You're learning to use a specific tool for a specific purpose: turning your coded data into findings you can communicate.
 
-## The RStudio Interface
+## R inside VS Code
 
-When you open RStudio, you'll see four panels (called "panes"):
+With the R extension installed (see [Install R](../resources/install-r.qmd)), VS Code becomes your analysis environment. Four areas do the work:
 
 ```
 ┌─────────────────────┬─────────────────────┐
 │                     │                     │
-│   Source Editor     │   Environment       │
+│   Editor            │   Workspace         │
 │   (where you write  │   (your data and    │
-│    code in .qmd     │    variables live    │
-│    files)           │    here)            │
+│    code in .qmd     │    variables, via   │
+│    and .R files)    │    the R extension) │
 │                     │                     │
 ├─────────────────────┼─────────────────────┤
 │                     │                     │
-│   Console           │   Files / Plots /   │
-│   (where code runs  │   Help / Viewer     │
-│    and output       │   (file browser,    │
-│    appears)         │    charts, docs)    │
+│   R terminal        │   Plots panel       │
+│   (where code runs  │   (your charts      │
+│    and output       │    render here)     │
+│    appears)         │                     │
 │                     │                     │
 └─────────────────────┴─────────────────────┘
 ```
 
-- **Source Editor** (top-left): Where you write and edit your `.qmd` files. This is where most of your work happens.
-- **Console** (bottom-left): Where R actually runs your code. You can type commands here directly, but usually you'll run code from the Source Editor.
-- **Environment** (top-right): Shows you what data and variables R currently has loaded. When you import a dataset, it appears here.
-- **Files/Plots/Help** (bottom-right): A multi-purpose panel. The Files tab is a file browser. The Plots tab shows your charts. The Help tab shows documentation.
+- **Editor** (center): Where you write and edit your `.qmd` and `.R` files. This is where most of your work happens. Press `Ctrl/Cmd+Enter` to send a line to R.
+- **R terminal** (bottom panel): Where R actually runs your code. You can type commands here directly, but usually you'll send code from the editor.
+- **Workspace** (R extension sidebar): Shows what data and variables R currently has loaded. When you import a dataset, it appears here.
+- **Plots panel:** Opens automatically when you draw a chart.
 
-## Setting Up Your Environment
+There is no separate "project file." In VS Code you open your **workspace folder**, and that folder is your working directory.
 
-Let's verify everything works. Complete these steps in order — don't skip ahead.
+## Setting up your environment
 
-### Step 1: Verify R is Installed
+Let's verify everything works. Complete these steps in order, and don't skip ahead.
 
-Open RStudio. In the **Console** (bottom-left), type:
+### Step 1: Verify R is installed
+
+Open VS Code, open a terminal (**Terminal, New Terminal**), type `R` to start a session, and run:
 
 ```r
 R.version.string
@@ -61,7 +63,7 @@ R.version.string
 
 You should see something like `"R version 4.4.2 (2024-10-31)"`. The exact version doesn't matter as long as it starts with 4.
 
-### Step 2: Install and Load Required Packages
+### Step 2: Install and load required packages
 
 Packages are collections of functions that extend what R can do. You need two:
 
@@ -70,7 +72,7 @@ install.packages("tidyverse")
 install.packages("janitor")
 ```
 
-This may take a few minutes. You'll see red text scrolling — that's normal. When it's done, load them:
+This may take a few minutes. You'll see red text scrolling, which is normal. When it's done, load them:
 
 ```r
 library(tidyverse)
@@ -84,25 +86,22 @@ install.packages("tidyverse", dependencies = TRUE)
 ```
 
 ::: {.callout-warning}
-## Common Windows Issue
+## Common Windows issue
 
-If R says it can't install a package because a file is "in use," close all other R/RStudio windows and try again. Windows sometimes locks files that are open in another session.
+If R says it can't install a package because a file is "in use," close any other R sessions and try again. Windows sometimes locks files that are open in another session.
 :::
 
-### Step 3: Create an RStudio Project
+### Step 3: Open your workspace folder
 
-Projects keep your files organized and make file paths work correctly.
+Keeping your files in one folder makes file paths work correctly.
 
-1. In RStudio: **File → New Project → New Directory → New Project**
-2. Name it `MC451_Analysis` (no spaces)
-3. Choose a location you can find easily (e.g., your Documents folder)
-4. Click **Create Project**
+1. Create a folder you can find easily, for example `Documents/MC451_Analysis` (no spaces).
+2. In VS Code: **File, Open Folder**, and select it.
+3. That folder is now your working directory for the whole R session. Inside it, make a `data/` subfolder for your datasets.
 
-RStudio will restart in your new project. You'll see the project name in the top-right corner of the window.
+### Step 4: Test with the music dataset
 
-### Step 4: Test with the Music Dataset
-
-Download `music_data_raw.csv` from Blackboard (or copy it from this workbook's `data/` folder). Place it in your `MC451_Analysis` project folder.
+Download `music_data_raw.csv` from Blackboard (or copy it from this workbook's `data/` folder) into your `data/` subfolder.
 
 Now load it:
 
@@ -116,9 +115,9 @@ music <- read_csv("data/music_data_raw.csv")
 glimpse(music)
 ```
 
-If you see a table of data in the Console and `music` appears in your Environment pane (top-right), everything is working.
+If you see a table of data in the R terminal and `music` appears in the Workspace panel, everything is working.
 
-### Step 5: Verify the `coursepackR` Package (Optional)
+### Step 5: Verify the `coursepackR` package (optional)
 
 Your professor has created a course-specific R package with setup tools and diagnostics:
 
@@ -130,17 +129,17 @@ library(coursepackR)
 mccourse_check()
 ```
 
-This will verify your entire environment — R, RStudio, Quarto, Git, and all required packages. Fix any issues it flags.
+This will verify your entire environment: R, VS Code, Quarto, Git, and all required packages. Fix any issues it flags.
 
-## Quarto Documents (.qmd)
+## Quarto documents (.qmd)
 
-All of your R assignments are written in **Quarto documents** — files ending in `.qmd`. A Quarto document mixes text and code in a single file. When you "render" it, Quarto runs your R code, captures the output (tables, charts, numbers), and produces a polished PDF or HTML document.
+All of your R assignments are written in **Quarto documents**, files ending in `.qmd`. A Quarto document mixes text and code in a single file. When you "render" it, Quarto runs your R code, captures the output (tables, charts, numbers), and produces a polished PDF or HTML document.
 
-### The Structure of a .qmd File
+### The structure of a .qmd file
 
 A Quarto document has three parts:
 
-**1. YAML Header** (at the very top, between `---` marks):
+**1. YAML header** (at the very top, between `---` marks):
 ```yaml
 ---
 title: "My Analysis"
@@ -155,7 +154,7 @@ This analysis examines the relationship between genre
 and musical mode in the Billboard music dataset.
 ```
 
-**3. Code Chunks** (R code between special markers):
+**3. Code chunks** (R code between special markers):
 
 ````
 ```{{r}}
@@ -164,20 +163,19 @@ music <- read_csv("data/music_data_raw.csv")
 ```
 ````
 
-When you click the **Render** button (or press Ctrl+Shift+K), Quarto:
+When you click **Render** in the Quarto preview (or press `Ctrl/Cmd+Shift+K`), Quarto:
 
 1. Runs all the R code chunks in order
 2. Captures their output (tables, charts, printed results)
 3. Combines the text and output into a finished document
 4. Saves it as PDF or HTML (whichever you specified)
 
-This is exactly how your final portfolio will work — one Quarto project that renders into both a PDF and a website.
+This is exactly how your final portfolio will work: one Quarto project that renders into both a PDF and a website.
 
-## Try It Yourself
+## Try it yourself
 
-1. Create a new Quarto document in your project: **File → New File → Quarto Document**
-2. Give it a title like "My First Quarto Doc"
-3. In the first code chunk, type:
+1. In your open workspace, create a new file named `my-first-doc.qmd`.
+2. Add a YAML header with a title, then a code chunk:
 
 ```r
 library(tidyverse)
@@ -185,13 +183,13 @@ music <- read_csv("data/music_data_raw.csv")
 nrow(music)
 ```
 
-4. Click **Render** (or Ctrl+Shift+K)
-5. You should see a PDF (or HTML) with the number `1792` — the number of songs in the dataset
+3. Press `Ctrl/Cmd+Shift+K` to render (or click **Render** in the Quarto preview).
+4. You should see a PDF (or HTML) with the number `1792`, the number of songs in the dataset.
 
 If this works, you're ready for Chapter 4.
 
 ::: {.callout-tip}
-## Connection to Your Project
+## Connection to your project
 
-Every assignment from here forward is a `.qmd` file. Your final portfolio is a Quarto *book* — a collection of `.qmd` files that render together. The skills you're building now (writing text + code in the same document) are the exact skills you'll use to publish your research.
+Every assignment from here forward is a `.qmd` file. Your final portfolio is a Quarto *book*, a collection of `.qmd` files that render together. The skills you're building now (writing text plus code in the same document) are the exact skills you'll use to publish your research.
 :::

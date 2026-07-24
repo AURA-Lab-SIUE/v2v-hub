@@ -36,7 +36,7 @@ mc451-final-project/
 ├── references.qmd       ← Auto-generated bibliography
 ├── references.bib       ← Your citations (from Zotero)
 ├── custom.css           ← Website styling
-├── mc451-final-project.Rproj  ← RStudio project file
+├── .vscode/             ← Recommended extensions and settings
 └── README.md            ← Setup and publishing instructions
 ```
 
@@ -63,11 +63,11 @@ Every section of the final portfolio draws from an assignment you've already com
 
 1. Download `mc451-final-project.zip` from Blackboard
 2. Unzip it to a location you can find (e.g., Documents or your MC451 project folder)
-3. Open the `.Rproj` file in RStudio — this sets the working directory correctly
+3. In VS Code, choose **File, Open Folder** and select the unzipped folder. The open folder is your working directory.
 
 ### Step 2: Install Required Packages
 
-In the RStudio Console, run:
+In an R session inside VS Code's terminal, run:
 
 ```r
 install.packages(c("tidyverse", "knitr", "kableExtra", "scales"))
@@ -79,13 +79,13 @@ Copy your cleaned `.RDS` file (from Chapter 4 / the Data Wrangling assignment) i
 
 ### Step 4: First Render
 
-In RStudio's Terminal (not the Console), type:
+Open VS Code's integrated terminal (**Terminal, New Terminal**) and type:
 
 ```bash
 quarto render
 ```
 
-Or click the **Render** button while any `.qmd` file is open. Quarto will:
+Or press `Ctrl/Cmd+Shift+K` with any `.qmd` file open. Quarto will:
 
 - Run all R code in `03-results.qmd`
 - Combine all chapters into a single document
@@ -169,7 +169,7 @@ Write this **last**. The abstract summarizes the entire report in one paragraph:
 
 ### Step 2: Push Your Project
 
-In RStudio's Terminal, run these commands (replace the URL with your repo's URL):
+In VS Code's integrated terminal, run these commands (replace the URL with your repo's URL):
 
 ```bash
 git init
@@ -225,7 +225,7 @@ Test in incognito before submitting.
 
 ## Try It Yourself
 
-1. **Download the template** and open it as an RStudio project.
+1. **Download the template** and open the folder in VS Code.
 2. **Run `quarto render`** without making any changes. Does it produce output in the `docs/` folder?
 3. **Read each `.qmd` file** and identify which of your prior assignments provides the content for each section.
 4. **Replace one placeholder** in `03-results.qmd` with a real variable name from your dataset. Re-render and check the output.

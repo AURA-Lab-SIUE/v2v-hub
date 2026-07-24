@@ -8,7 +8,6 @@ project:
     - "!modules/**/pokemon-practice.qmd"
     - "resources/*.qmd"
     - "workbook/*.qmd"
-    - "chapters/*.qmd"
   resources:
     - "modules/04_analyst/pokemon-practice.qmd"
 
@@ -27,8 +26,8 @@ website:
             href: mc501-syllabus.qmd
       - text: "Resources"
         href: resources/index.qmd
-      - text: "Methods Vault"
-        href: methods-vault.qmd
+      - text: "Course Workspace"
+        href: workspace.qmd
     right:
       - text: "Textbook"
         href: https://aura-lab-siue.github.io/v2v/
@@ -42,41 +41,43 @@ website:
           href: index.qmd
         - text: "How It Works"
           href: how-it-works.qmd
+        - text: "Course Workspace"
+          href: workspace.qmd
         - text: "---"
 
         - section: "Part I: Foundation"
           contents:
             - text: "Phase I: The Journalist"
               href: modules/01_journalist/index.qmd
-            - text: "Ch 1 — The Science of Storytelling"
+            - text: "Ch 1: The Science of Storytelling"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter01.html
-            - text: "Ch 2 — The Open Workspace"
+            - text: "Ch 2: The Open Workspace"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter02.html
-            - text: "Ch 3 — Knowing and Knowing Well"
+            - text: "Ch 3: Knowing and Knowing Well"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter03.html
 
         - section: "Part II: Planning"
           contents:
             - text: "Phase II: The Architect"
               href: modules/02_architect/index.qmd
-            - text: "Ch 4 — Intelligence Gathering"
+            - text: "Ch 4: Intelligence Gathering"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter04.html
-            - text: "Ch 5 — Theory as a Lens"
+            - text: "Ch 5: Theory as a Lens"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter05.html
-            - text: "Ch 6 — The Prospectus"
+            - text: "Ch 6: The Prospectus"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter06.html
 
         - section: "Part III: Operationalization"
           contents:
             - text: "Phase III: The Builder"
               href: modules/03_builder/index.qmd
-            - text: "Ch 7 — Structured Listening"
+            - text: "Ch 7: Structured Listening"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter07.html
-            - text: "Ch 8 — From Vibes to Variables"
+            - text: "Ch 8: From Vibes to Variables"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter08.html
             - text: "[R] Codebook Lab"
               href: workbook/01-codebook.qmd
-            - text: "Ch 9 — The Rulebook and First Workspace"
+            - text: "Ch 9: The Rulebook and First Workspace"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter09.html
             - text: "[R] Data Collection Lab"
               href: workbook/02-data-collection.qmd
@@ -85,13 +86,13 @@ website:
           contents:
             - text: "Phase IV: The Analyst"
               href: modules/04_analyst/index.qmd
-            - text: "Ch 10 — The Sample"
+            - text: "Ch 10: The Sample"
               href: https://aura-lab-siue.github.io/v2v/chapters/chapter10.html
             - text: "Meet R"
               href: workbook/03-meet-r.qmd
-            - text: "Ch 11 — Wrangling the Data [R]"
+            - text: "Ch 11: Wrangling the Data [R]"
               href: workbook/04-data-wrangling.qmd
-            - text: "Ch 12 — Visualizing the Narrative [R]"
+            - text: "Ch 12: Visualizing the Narrative [R]"
               href: workbook/05-describing-data.qmd
             - text: "Practice: Pokemon Wrangling"
               href: modules/04_analyst/practice-wrangling.qmd
@@ -100,9 +101,9 @@ website:
           contents:
             - text: "Phase V: The Publisher"
               href: modules/05_publisher/index.qmd
-            - text: "Ch 13 — Making the Call [R]"
+            - text: "Ch 13: Making the Call [R]"
               href: workbook/06-inferencing-data.qmd
-            - text: "Ch 14 — The One-Click Report [R]"
+            - text: "Ch 14: The One-Click Report [R]"
               href: workbook/07-publishing.qmd
 
         - text: "---"
@@ -123,15 +124,19 @@ website:
         - section: "Setup Guides"
           contents:
             - setup.qmd
-            - resources/install-r-rstudio.qmd
+            - resources/install-r.qmd
             - resources/install-vscode.qmd
+            - resources/vscode-customization.qmd
+            - resources/copilot-setup.qmd
+            - resources/workspace-setup.qmd
             - resources/github-setup.qmd
             - resources/github-desktop-setup.qmd
-            - resources/obsidian-setup.qmd
 
 format:
   html:
-    theme: [cosmo, custom-styling.scss]
+    theme:
+      light: [cosmo, custom-styling.scss]
+      dark: [darkly, custom-styling.scss]
     toc: true
     code-fold: false
     include-in-header:

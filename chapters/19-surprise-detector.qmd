@@ -8,7 +8,7 @@ execute:
 
 You have described the data and seen patterns. Now the real question: **are those patterns real, or could they be random noise?**
 
-This chapter introduces the logic of hypothesis testing and walks you through three inferential tests --- chi-square, the independent-samples t-test, and Pearson correlation. The chi-square test was covered in detail in the [R Workbook Ch 6](../workbook/06-inferencing-data.qmd); this chapter adds the t-test and correlation that [Assignment 03: Inferencing Data](https://sim-lab-siue.github.io/vibes-to-variables/chapters/chapter19.html) requires.
+This chapter introduces the logic of hypothesis testing and walks you through three inferential tests --- chi-square, the independent-samples t-test, and Pearson correlation. The chi-square test was covered in detail in the [R Workbook Ch 6](../workbook/06-inferencing-data.qmd); this chapter adds the t-test and correlation that [Assignment 03: Inferencing Data](https://aura-lab-siue.github.io/v2v/) requires.
 
 ---
 

@@ -1,0 +1,153 @@
+---
+title: "Setting Up Your Course Workspace in VS Code"
+---
+
+## What is the course workspace?
+
+The course workspace is where you keep everything you write and build this term. It is a VS Code folder, copied from a GitHub template, that holds your journals, literature notes, project files, and reusable templates, all version-controlled with Git. Everything is plain Markdown and plain files, so you own your work and can read it anywhere.
+
+There is no separate notes app and no plugins to configure. You organize your work with folders and write in Markdown, the same tools you use for the rest of the course.
+
+---
+
+## Step 1: Install VS Code, R, and Git
+
+If you have not already, follow the [Install VS Code](install-vscode.qmd) guide. You also need R and Git, covered in [Install R](install-r.qmd) and [Getting Started with GitHub](github-setup.qmd).
+
+---
+
+## Step 2: Create your copy from the template
+
+1. Go to the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace).
+2. Click **Use this template**, then **Create a new repository**.
+3. Name it something like `mc451-workspace`. Private is fine.
+4. Click **Create repository**.
+
+You now have your own copy of the workspace on GitHub.
+
+---
+
+## Step 3: Clone it into VS Code
+
+1. Copy your new repository's URL (the green **Code** button).
+2. In VS Code, open the Command Palette: `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac).
+3. Type **Git: Clone** and press Enter.
+4. Paste your repository URL.
+5. Choose a folder you will remember, for example `Documents/MC451/`.
+6. When VS Code asks, click **Open** to open the cloned workspace.
+
+---
+
+## Step 4: Install the recommended extensions
+
+When the workspace opens, VS Code shows a prompt in the bottom-right: **"This workspace has extension recommendations."** Click **Install All**. These are defined in `.vscode/extensions.json` so the whole class shares one environment:
+
+| Extension | What it does |
+|-----------|--------------|
+| **Quarto** | Preview and render `.qmd` documents |
+| **R** (REditorSupport) | Run R code and view data inside VS Code |
+| **GitLens** | See who changed what, and when, in your Git history |
+
+If you miss the prompt, open the Extensions view (`Ctrl/Cmd+Shift+X`), type `@recommended`, and install from there.
+
+---
+
+## Step 5: Read the README
+
+Open `README.md` in the file explorer (left sidebar). It explains the folder structure and how to start a journal entry.
+
+The workspace is pre-organized:
+
+- **00_inbox** captures ideas quickly.
+- **01_journal** holds your weekly reflections (committed to GitHub).
+- **02_literature** holds reading notes and Zotero annotations.
+- **03_project** holds your active research work.
+- **04_resources** holds images, PDFs, and attachments.
+- **_templates** holds reusable templates.
+
+Follow this structure to stay organized.
+
+---
+
+## Step 6: Start a journal entry from the template
+
+1. In the file explorer, open `_templates/journal-entry.md`.
+2. Right-click it and choose **Copy**, then right-click the `01_journal/` folder and choose **Paste**.
+3. Rename the copy for the week, for example `week-02-curiosity-and-trust.md`.
+4. Fill in the prompts and write your reflection.
+
+:::{.callout-tip}
+## Keep files findable
+
+Name files in lower case with hyphens instead of spaces (`week-02-curiosity.md`, not `Week 2 Notes.md`). Consistent names sort cleanly and never break links.
+:::
+
+---
+
+## Step 7: Basic Markdown syntax
+
+Notes use Markdown. The essentials:
+
+| Syntax | Result |
+|--------|--------|
+| `# Heading 1` | Large heading |
+| `## Heading 2` | Medium heading |
+| `**Bold text**` | **Bold text** |
+| `*Italic text*` | *Italic text* |
+| `- List item` | Bullet list |
+| `1. Numbered item` | Numbered list |
+| `[Link text](https://example.com)` | Hyperlink |
+| `> Quote` | Block quote |
+| `` `code` `` | Inline code |
+
+VS Code shows a live preview with `Ctrl/Cmd+Shift+V`.
+
+---
+
+## Step 8: Commit and push your work
+
+At the end of each week, save your work to GitHub. You can use VS Code's **Source Control** panel (the branch icon in the left bar): stage your changes, write a short message, and click **Commit**, then **Sync Changes**. Or use the terminal:
+
+```bash
+git add .
+git commit -m "Week 2 journal and literature notes"
+git push
+```
+
+This gives you a backup, a history of your work, and a way for Dr. Leith to see your entries. It also builds the version-control habit you use in the final portfolio.
+
+---
+
+## Troubleshooting
+
+### The extension prompt never appeared
+
+Open the Extensions view (`Ctrl/Cmd+Shift+X`), type `@recommended`, and install the listed extensions.
+
+### I cannot push to GitHub
+
+Confirm you are signed in to GitHub in VS Code (the Accounts icon, bottom-left) and that you cloned **your** copy of the repository, not the original template.
+
+### VS Code opened the wrong folder
+
+Use **File > Open Folder** and select the workspace folder you cloned, not a parent folder above it.
+
+---
+
+## Next steps
+
+1. Install VS Code, R, and Git.
+2. Create your copy from the template and clone it.
+3. Install the recommended extensions.
+4. Read `README.md`.
+5. Start your first journal entry from the template.
+6. Begin [Phase I: The Journalist](../modules/01_journalist/index.qmd).
+
+---
+
+## Resources
+
+- **VS Code docs:** [code.visualstudio.com/docs](https://code.visualstudio.com/docs)
+- **Markdown guide:** [markdownguide.org](https://www.markdownguide.org)
+
+Stuck? Come to office hours.

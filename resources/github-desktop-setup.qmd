@@ -19,15 +19,15 @@ GitHub Desktop is a free application that lets you manage your git repositories 
 
 ---
 
-## Step 2: Create a Repository from Your Methods Vault
+## Step 2: Create a Repository from Your Course Workspace
 
-Your Methods Vault is a folder of Markdown files. GitHub Desktop can turn it into a git repository.
+Your course workspace is a VS Code workspace folder of Markdown files. GitHub Desktop can turn it into a git repository.
 
 1. Open GitHub Desktop
 2. Click **File > Add Local Repository** (or **File > New Repository** if this is your first time)
-3. Navigate to your Methods Vault folder and select it
-4. If prompted, choose **Create a Repository** — accept the defaults
-5. You should now see your vault files listed in the "Changes" tab
+3. Navigate to your course workspace folder and select it
+4. If prompted, choose **Create a Repository** and accept the defaults
+5. You should now see your workspace files listed in the "Changes" tab
 
 ---
 
@@ -35,8 +35,8 @@ Your Methods Vault is a folder of Markdown files. GitHub Desktop can turn it int
 
 A **commit** is a snapshot of your work at a specific point in time. Think of it as saving a version.
 
-1. In GitHub Desktop, you should see all your vault files listed as "Changes"
-2. In the **Summary** field at the bottom left, type: `Initial vault setup`
+1. In GitHub Desktop, you should see all your workspace files listed as "Changes"
+2. In the **Summary** field at the bottom left, type: `Initial workspace setup`
 3. Click **Commit to main**
 4. Your files are now tracked by git
 
@@ -47,16 +47,16 @@ A **commit** is a snapshot of your work at a specific point in time. Think of it
 **Publishing** uploads your repository to GitHub so it is accessible online.
 
 1. Click the **Publish repository** button in the top bar
-2. **Name:** Use something like `methods-vault` or `mc451-vault`
+2. **Name:** Use something like `mc451-workspace` or `mc451-workspace`
 3. **Keep this code private:** Uncheck this box (your repository should be public)
 4. Click **Publish Repository**
-5. Your vault is now live at `https://github.com/YOUR-USERNAME/YOUR-REPO-NAME`
+5. Your workspace is now live at `https://github.com/YOUR-USERNAME/YOUR-REPO-NAME`
 
 ---
 
 ## Weekly Workflow: Push Your Journal
 
-After writing each journal entry in Obsidian:
+After writing each journal entry in VS Code:
 
 1. Open GitHub Desktop — it will automatically detect the new/changed files
 2. Review the changes in the "Changes" tab (you should see your new journal entry)
@@ -86,19 +86,19 @@ Your journal entry is now on GitHub. Your instructor can see your commit history
 Make sure you are signed into the correct GitHub account in GitHub Desktop (File > Options > Accounts).
 
 **Changes not showing up**
-GitHub Desktop only tracks files inside the repository folder. Make sure your journal entries are saved inside your Methods Vault folder, not somewhere else.
+GitHub Desktop only tracks files inside the repository folder. Make sure your journal entries are saved inside your course workspace folder, not somewhere else.
 
 **"Merge conflict" error**
-This happens if you edited a file on GitHub.com and also locally. For this course, always edit locally in Obsidian and push — never edit directly on GitHub.com.
+This happens if you edited a file on GitHub.com and also locally. For this course, always edit locally in VS Code and push, never edit directly on GitHub.com.
 
 **Large files warning**
-Git works best with text files. Do not commit large data files (CSVs over 50MB, images, PDFs) to your vault repository. Keep those in your `04_Resources/` folder locally but add them to `.gitignore`.
+Git works best with text files. Do not commit large data files (CSVs over 50MB, images, PDFs) to your workspace repository. Keep those in your `04_Resources/` folder locally but add them to `.gitignore`.
 
 ---
 
 ## Next Steps
 
-Once your vault is on GitHub:
+Once your workspace is on GitHub:
 
 - **Week 3:** Submit your repository URL for the Project Setup assignment
 - **Every week:** Commit and push your journal entry after writing it
