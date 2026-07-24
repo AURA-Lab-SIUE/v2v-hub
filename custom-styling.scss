@@ -1,86 +1,87 @@
 /*-- scss:defaults --*/
 
 /* ============================================================================
-   V2V Hub — moderated AURA Lab design system
+   V2V Hub — AURA Lab design system (moderated "reading-skin" variant)
    ----------------------------------------------------------------------------
-   Rebuilt 2026-07-20. One calm, legible system for a tool students live in.
-   Shares the AURA Lab v2 tokens with the V2V textbook (_brand.yml) and the
-   lab's canonical exemplar (banned-word-checker). This is the MODERATED
-   variant: the lab's public identity (dark canvas, Fraunces-900 display,
-   heavy uppercase tracking, motion) is dialled down for long reading and
-   daily coursework.
+   Rebuilt 2026-07-24 to match the LIVE AURA Lab identity (aura-lab.siue.edu):
+   Archivo (grotesque display + UI) + Newsreader (serif, editorial/reading) +
+   Spline Sans Mono (technical labels + code), red #e5182d accent with a coral
+   signal, the red diamond mark, and the monospace "FIG. —" annotation system.
 
-     - Reading surface is LIGHT (warm chalk paper) by default; the AURA dark
-       canvas is the toggle (`.quarto-dark`), not the default.
-     - Type: Fraunces (display headings) + Instrument Sans (body/UI) +
-       JetBrains Mono (code + metadata).
-     - Colour: AURA violet primary + amber signal. Brand hues are used for
-       fills/borders; TEXT uses AA-safe variants (violet-800 on light,
-       violet-400 on dark; amber-800 on light, amber-400 on dark).
-     - Every colour pair here meets WCAG 2.1/2.2 AA (verified: body/link text
+   This is the MODERATED variant: the lab's public site runs a dark charcoal
+   canvas with a live cursor field; here that is dialled down for long reading
+   and daily coursework —
+     - Reading surface is LIGHT warm paper by default; the AURA charcoal canvas
+       is the toggle (`.quarto-dark`).
+     - Same type, same red, same mono-label system, same diamond — so the Hub
+       unmistakably belongs to AURA Lab, just calmer.
+     - Every colour pair meets WCAG 2.1/2.2 AA (verified: body/link text
        >=4.5:1, UI/non-text >=3:1). Non-colour cues, visible focus, >=24px
-       targets, and reduced-motion are all honoured.
-     - Legacy class names used by the pages (.hero-section, .card, .eyebrow,
+       targets, reduced-motion all honoured.
+     - Legacy class names the pages use (.hero-section, .card, .eyebrow,
        .phase-header, .resource-card, .learning-objectives, .v2v-arc, .btn-*)
-       are restyled in place; Quarto's native callouts are themed to match.
-
-   Motion is intentionally minimal: colour/underline transitions only, no
-   lift/scale. Decoration is intentionally sparse: no radial motifs, one
-   faint violet section rule as the single AURA flourish.
+       are restyled in place; Quarto native callouts are themed to match.
+   Motion is minimal (colour/underline only). One red section rule is the AURA
+   flourish; code ligatures are OFF so <- and |> stay literal for new coders.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Spline+Sans+Mono:wght@400;500;600&display=swap');
 
-$font-family-sans-serif: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-$font-family-serif:      'Fraunces', Georgia, 'Times New Roman', serif;
-$font-family-monospace:  'JetBrains Mono', 'Source Code Pro', Consolas, monospace;
+$font-family-sans-serif: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-family-serif:      'Newsreader', Georgia, 'Times New Roman', serif;
+$font-family-monospace:  'Spline Sans Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
 $font-family-base:       $font-family-sans-serif;
-$headings-font-family:   $font-family-serif;
-$headings-font-weight:   700;
+$headings-font-family:   $font-family-sans-serif;
+$headings-font-weight:   800;
 
 // Bootstrap semantic colours mapped to AURA so stock components inherit brand.
-// $primary is a button-fill violet (white text passes AA at 7.1:1).
-$primary:          #6D28D9;
-$secondary:        #52525B;
-$body-color:       #27272A;
-$body-bg:          #F4F0EB;
-$link-color:       #5B21B6;   // violet-800: 7.9:1 on chalk
-$link-hover-color: #6D28D9;
+// $primary is a button-fill red (white text passes AA at 4.9:1).
+$primary:          #E5182D;
+$secondary:        #6B6357;
+$body-color:       #2B2A28;
+$body-bg:          #FCFBF7;
+$link-color:       #B0301F;   // deep AURA red: 5.6:1 on warm paper
+$link-hover-color: #E5182D;
 
 
 /*-- scss:rules --*/
 
 // ============================================================================
-// Design tokens (shared with V2V textbook; keep values in sync with _brand.yml)
+// Design tokens (shared with the V2V textbook; keep in sync with _brand.yml)
 // ============================================================================
 :root {
-  // Surfaces (light / chalk)
-  --v2v-paper:   #F4F0EB;
-  --v2v-surface: #ECE7E0;
-  --v2v-raised:  #FBFAF7;
-  --v2v-rule:    #D9D2C7;
+  // Surfaces (light / warm paper)
+  --v2v-paper:   #FCFBF7;   // AURA light canvas
+  --v2v-surface: #F1EDE4;   // tinted paper (code, cards fill)
+  --v2v-raised:  #FFFFFF;
+  --v2v-rule:    #E0DACE;   // warm hairline
 
-  // Text (AA on paper: text 13.1:1, ink 15.6:1, muted 6.8:1)
-  --v2v-ink:   #18181B;
-  --v2v-text:  #27272A;
-  --v2v-muted: #52525B;
+  // Text (AA on paper: text 12.6:1, ink 15.8:1, muted 5.2:1)
+  --v2v-ink:   #191B1E;
+  --v2v-text:  #2B2A28;
+  --v2v-muted: #6B6357;
 
-  // Brand — interactive TEXT uses AA-safe variants; -fill/-accent for fills+borders
-  --v2v-violet:      #5B21B6;  // link/label text, 7.9:1 on paper
-  --v2v-violet-fill: #6D28D9;  // button/accent fill (white text 7.1:1)
-  --v2v-violet-accent:#7C3AED; // brand hue for borders/dots/rules
-  --v2v-violet-tint: rgba(124, 58, 237, 0.08);
+  // Brand red — interactive TEXT uses the deep variant; -fill/-mark for solids
+  --v2v-red:      #B0301F;  // link/label TEXT, 5.6:1 on paper
+  --v2v-red-fill: #E5182D;  // button/mark/accent fill (white text 4.9:1)
+  --v2v-red-mark: #E5182D;  // the diamond, rules, dots
+  --v2v-red-tint: rgba(229, 24, 45, 0.07);
 
-  --v2v-amber:       #92400E;  // amber TEXT, 6.3:1 on paper
-  --v2v-amber-accent:#B45309;  // amber borders/rules
-  --v2v-amber-tint:  rgba(245, 158, 11, 0.14);
+  // Coral — the AURA secondary signal
+  --v2v-coral:      #A8322A; // coral TEXT, 6.0:1 on paper
+  --v2v-coral-mark: #E0705F; // coral borders/rules
+  --v2v-coral-tint: rgba(224, 112, 95, 0.14);
 
   // Semantic (all AA on paper)
   --v2v-success: #1F6F4F;
   --v2v-danger:  #B4452E;
   --v2v-info:    #2563A8;
 
-  --v2v-navbar: #18181B;
+  // Chrome (navbar / sidebar rail / footer) — AURA charcoal
+  --v2v-chrome:      #101113;
+  --v2v-chrome-2:    #191B1E;
+  --v2v-on-chrome:   #ECEDEF;
+  --v2v-on-chrome-muted: #A6A9AE;
 
   --v2v-radius: 10px;
   --v2v-measure: 72ch;
@@ -88,29 +89,32 @@ $link-hover-color: #6D28D9;
 }
 
 .quarto-dark {
-  --v2v-paper:   #0E0E12;   // AURA canvas
-  --v2v-surface: #1A1A22;
-  --v2v-raised:  #16161D;
-  --v2v-rule:    #2A2A33;
+  --v2v-paper:   #101113;   // AURA charcoal canvas
+  --v2v-surface: #191B1E;
+  --v2v-raised:  #16181B;
+  --v2v-rule:    #2A2C30;
 
-  --v2v-ink:   #F4F0EB;
-  --v2v-text:  #F0ECE8;
-  --v2v-muted: #A1A1AA;     // 7.5:1 on canvas
+  --v2v-ink:   #ECEDEF;
+  --v2v-text:  #D9DADD;
+  --v2v-muted: #A6A9AE;     // 7.3:1 on canvas
 
-  --v2v-violet:      #A78BFA;  // 7.1:1 on canvas
-  --v2v-violet-fill: #6D28D9;
-  --v2v-violet-accent:#7C3AED;
-  --v2v-violet-tint: rgba(139, 92, 246, 0.16);
+  --v2v-red:      #F08072;  // coral-red TEXT, 6.4:1 on canvas
+  --v2v-red-fill: #E5182D;
+  --v2v-red-mark: #E5182D;
+  --v2v-red-tint: rgba(229, 24, 45, 0.18);
 
-  --v2v-amber:       #FBBF24;  // 11.5:1 on canvas
-  --v2v-amber-accent:#F59E0B;
-  --v2v-amber-tint:  rgba(251, 191, 36, 0.12);
+  --v2v-coral:      #E0705F;  // 5.8:1 on canvas
+  --v2v-coral-mark: #E0705F;
+  --v2v-coral-tint: rgba(224, 112, 95, 0.14);
 
   --v2v-success: #4FBF8B;
   --v2v-danger:  #E8826B;
   --v2v-info:    #6BA8E8;
 
-  --v2v-navbar: #09090C;
+  --v2v-chrome:      #09090B;
+  --v2v-chrome-2:    #16181B;
+  --v2v-on-chrome:   #ECEDEF;
+  --v2v-on-chrome-muted: #A6A9AE;
 }
 
 // ============================================================================
@@ -120,8 +124,8 @@ $link-hover-color: #6D28D9;
 
 body {
   font-family: $font-family-sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-size: 1.05rem;
+  line-height: 1.62;
   color: var(--v2v-text);
   background: var(--v2v-paper);
   -webkit-font-smoothing: antialiased;
@@ -130,60 +134,60 @@ body {
 }
 main p, main ul, main ol, main dl { max-width: var(--v2v-measure); }
 p { margin-bottom: 1.2rem; }
-strong, b { color: var(--v2v-ink); font-weight: 600; }
-::selection { background: var(--v2v-violet-tint); }
+strong, b { color: var(--v2v-ink); font-weight: 700; }
+::selection { background: var(--v2v-red-tint); }
 hr { border: 0; border-top: 1px solid var(--v2v-rule); margin: 2.5rem 0; }
 
 // ============================================================================
-// Headings — Fraunces, moderated weights/sizes (calm, not display-loud)
+// Headings — Archivo, heavy grotesque display (the AURA voice)
 // ============================================================================
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-serif;
+  font-family: $font-family-sans-serif;
   color: var(--v2v-ink);
-  line-height: 1.2;
+  line-height: 1.15;
   margin-top: 1.5rem;
   margin-bottom: 0.6rem;
 }
 h1 {
-  font-size: 2.25rem; font-weight: 700; line-height: 1.1;
-  letter-spacing: -0.01em; margin-top: 1.5rem;
+  font-size: 2.4rem; font-weight: 900; line-height: 1.04;
+  letter-spacing: -0.02em; margin-top: 1.5rem;
 }
-// One AURA flourish: a faint violet rule above each major section heading.
+// One AURA flourish: a faint red rule above each major section heading.
 h2 {
-  font-size: 1.55rem; font-weight: 600;
+  font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em;
   margin-top: 2.75rem; padding-top: 1.1rem;
   border-top: 1px solid var(--v2v-rule);
 }
-h3 { font-size: 1.22rem; font-weight: 600; }
-// h4 as a small uppercase label (Instrument Sans) — used sparingly.
+h3 { font-size: 1.24rem; font-weight: 700; }
+// h4 as a small mono uppercase label (AURA "FIG." voice) — used sparingly.
 h4 {
-  font-family: $font-family-sans-serif;
-  font-size: 0.82rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.08em; color: var(--v2v-violet);
+  font-family: $font-family-monospace;
+  font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--v2v-red);
   margin-top: 1.75rem;
 }
-h5, h6 { font-family: $font-family-sans-serif; font-weight: 600; color: var(--v2v-muted); }
+h5, h6 { font-family: $font-family-sans-serif; font-weight: 700; color: var(--v2v-muted); }
 
-// Eyebrow — the one place wide tracking earns its keep. Use sparingly.
+// Eyebrow — the AURA monospace annotation ("FIG. 1 — ..."). Use sparingly.
 .eyebrow {
-  display: block; font-family: $font-family-sans-serif;
-  font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--v2v-violet); margin-bottom: 0.5rem;
+  display: block; font-family: $font-family-monospace;
+  font-size: 0.74rem; font-weight: 500; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--v2v-red); margin-bottom: 0.5rem;
 }
 
 // ============================================================================
 // Links — persistent underline in body (non-colour cue, WCAG 1.4.1)
 // ============================================================================
-a { color: var(--v2v-violet); text-decoration: none; }
+a { color: var(--v2v-red); text-decoration: none; }
 main a:not(.btn):not(.nav-link) {
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--v2v-violet) 40%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--v2v-red) 45%, transparent);
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
   transition: text-decoration-color .15s var(--v2v-ease), color .15s var(--v2v-ease);
 }
 main a:not(.btn):not(.nav-link):hover {
-  color: var(--v2v-violet-fill);
+  color: var(--v2v-red-fill);
   text-decoration-color: currentColor;
 }
 
@@ -191,7 +195,7 @@ main a:not(.btn):not(.nav-link):hover {
 a:focus-visible, button:focus-visible, summary:focus-visible,
 input:focus-visible, select:focus-visible, textarea:focus-visible,
 .btn:focus-visible, .nav-link:focus-visible {
-  outline: 2px solid var(--v2v-violet-fill);
+  outline: 2px solid var(--v2v-red-fill);
   outline-offset: 2px;
   border-radius: 3px;
 }
@@ -200,7 +204,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 // Buttons — flat, calm. Min target 24px (WCAG 2.2 2.5.8); primary/lg exceed 44px.
 // ============================================================================
 .btn {
-  font-family: $font-family-sans-serif; font-weight: 600;
+  font-family: $font-family-sans-serif; font-weight: 700;
   border-radius: 7px; min-height: 2.5rem;
   padding: 0.55rem 1.2rem; text-decoration: none !important;
   transition: background-color .15s var(--v2v-ease), border-color .15s var(--v2v-ease), color .15s var(--v2v-ease);
@@ -208,27 +212,27 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 .btn-sm { min-height: 1.75rem; padding: 0.3rem 0.8rem; font-size: 0.85rem; }
 .btn-lg { padding: 0.75rem 1.5rem; font-size: 1.05rem; }
 .btn-primary {
-  background: var(--v2v-violet-fill); border: 1.5px solid var(--v2v-violet-fill); color: #fff;
-  &:hover, &:focus { background: #5B21B6; border-color: #5B21B6; color: #fff; }
+  background: var(--v2v-red-fill); border: 1.5px solid var(--v2v-red-fill); color: #fff;
+  &:hover, &:focus { background: #B0301F; border-color: #B0301F; color: #fff; }
 }
 .btn-secondary, .btn-outline-secondary {
-  background: transparent; color: var(--v2v-violet) !important;
-  border: 1.5px solid var(--v2v-violet);
-  &:hover, &:focus { background: var(--v2v-violet-tint); color: var(--v2v-violet-fill) !important;
-    border-color: var(--v2v-violet-fill); }
+  background: transparent; color: var(--v2v-red) !important;
+  border: 1.5px solid var(--v2v-red);
+  &:hover, &:focus { background: var(--v2v-red-tint); color: var(--v2v-red-fill) !important;
+    border-color: var(--v2v-red-fill); }
 }
 
 // ============================================================================
-// Hero — calm paper panel with a violet accent bar (no gradients/motifs)
+// Hero — calm paper panel with a red accent bar (no gradients/motifs)
 // ============================================================================
 .hero-section {
   background: var(--v2v-raised);
   border: 1px solid var(--v2v-rule);
-  border-left: 4px solid var(--v2v-violet-accent);
+  border-left: 4px solid var(--v2v-red-mark);
   border-radius: 0 var(--v2v-radius) var(--v2v-radius) 0;
   padding: 2.25rem 2rem;
   margin: 1rem 0 2.5rem;
-  h1 { margin-top: 0; border: none; padding: 0; font-size: 2.5rem; }
+  h1 { margin-top: 0; border: none; padding: 0; font-size: 2.7rem; }
   p { color: var(--v2v-text); font-size: 1.12rem; max-width: 60ch; margin-bottom: 0.5rem; }
   p strong { color: var(--v2v-ink); }
   > :last-child { margin-bottom: 0; }
@@ -248,7 +252,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
   border-radius: var(--v2v-radius);
   padding: 1.5rem;
   transition: border-color .15s var(--v2v-ease);
-  &:hover { border-color: var(--v2v-violet-accent); }
+  &:hover { border-color: var(--v2v-red-mark); }
   h3 { color: var(--v2v-ink); font-size: 1.14rem; margin-top: 0; margin-bottom: 0.5rem; }
   p  { color: var(--v2v-text); font-size: 0.95rem; line-height: 1.55; margin-bottom: 1rem; }
   .card-icon { font-size: 2rem; margin-bottom: 0.6rem; display: block; }
@@ -256,7 +260,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 }
 
 // ============================================================================
-// Research-arc map (.v2v-arc / .v2v-phase)
+// Research-arc map (.v2v-arc / .v2v-phase) — mono meta = AURA signature
 // ============================================================================
 .v2v-arc {
   display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem;
@@ -270,10 +274,10 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
   &::before {
     content: counter(phase); position: absolute; top: -0.8rem; left: 1rem;
     width: 1.7rem; height: 1.7rem; display: grid; place-items: center;
-    font-family: $font-family-serif; font-weight: 700; font-size: 0.95rem;
-    color: #fff; background: var(--v2v-violet-fill); border-radius: 50%;
+    font-family: $font-family-sans-serif; font-weight: 800; font-size: 0.95rem;
+    color: #fff; background: var(--v2v-red-fill); border-radius: 50%;
   }
-  .v2v-phase-name { font-family: $font-family-sans-serif; font-weight: 700;
+  .v2v-phase-name { font-family: $font-family-sans-serif; font-weight: 800;
     font-size: 0.9rem; color: var(--v2v-ink); display: block; margin-bottom: 0.25rem; }
   .v2v-phase-meta { font-family: $font-family-monospace; font-size: 0.72rem;
     letter-spacing: 0.02em; color: var(--v2v-muted); }
@@ -286,24 +290,24 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 .try-this, .pitfall, .checkpoint, .ai-note {
   background: var(--v2v-raised);
   border: 1px solid var(--v2v-rule);
-  border-left: 4px solid var(--v2v-violet-accent);
+  border-left: 4px solid var(--v2v-red-mark);
   border-radius: 0 8px 8px 0;
   padding: 1.2rem 1.4rem;
   margin: 1.75rem 0;
-  h3, h4 { margin-top: 0; font-family: $font-family-sans-serif; }
+  h3, h4 { margin-top: 0; font-family: $font-family-sans-serif; text-transform: none; letter-spacing: 0; color: var(--v2v-ink); }
   ul { margin-bottom: 0; padding-left: 1.3rem; }
   li { margin-bottom: 0.35rem; line-height: 1.55; }
   > :last-child { margin-bottom: 0; }
 }
-.learning-objectives { border-left-color: var(--v2v-violet-accent); h3 { color: var(--v2v-violet); } }
-.deliverables        { border-left-color: var(--v2v-amber-accent);  h3 { color: var(--v2v-amber); } }
-.callout-info        { border-left-color: var(--v2v-info);          h4 { color: var(--v2v-info); } }
+.learning-objectives { border-left-color: var(--v2v-red-mark);   h3 { color: var(--v2v-red); } }
+.deliverables        { border-left-color: var(--v2v-coral-mark); h3 { color: var(--v2v-coral); } }
+.callout-info        { border-left-color: var(--v2v-info);       h4 { color: var(--v2v-info); } }
 
 // Inline pedagogical blocks with auto text labels (non-colour cue = the label)
 .try-this, .pitfall, .checkpoint, .ai-note {
-  &::before { display: block; font-family: $font-family-sans-serif;
-    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  &::before { display: block; font-family: $font-family-monospace;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 0.5rem; }
 }
 .try-this   { border-left-color: var(--v2v-success);
   &::before { content: 'Try this'; color: var(--v2v-success); } }
@@ -311,8 +315,8 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
   &::before { content: 'Common pitfall'; color: var(--v2v-danger); } }
 .checkpoint { border-left-color: var(--v2v-info);
   &::before { content: 'Check yourself'; color: var(--v2v-info); } }
-.ai-note    { border-left-color: var(--v2v-violet-accent); background: var(--v2v-violet-tint);
-  &::before { content: 'AI disclosure'; color: var(--v2v-violet); } }
+.ai-note    { border-left-color: var(--v2v-red-mark); background: var(--v2v-red-tint);
+  &::before { content: 'AI disclosure'; color: var(--v2v-red); } }
 
 // Quarto native callouts — align to the same calm, bordered look.
 .callout { border-radius: 0 8px 8px 0 !important; border: 1px solid var(--v2v-rule) !important;
@@ -321,8 +325,8 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
   font-family: $font-family-sans-serif; font-weight: 700; color: var(--v2v-ink); }
 .callout-tip       { border-left-color: var(--v2v-success) !important; }
 .callout-note      { border-left-color: var(--v2v-info) !important; }
-.callout-important { border-left-color: var(--v2v-violet-accent) !important; }
-.callout-warning   { border-left-color: var(--v2v-amber-accent) !important; }
+.callout-important { border-left-color: var(--v2v-red-mark) !important; }
+.callout-warning   { border-left-color: var(--v2v-coral-mark) !important; }
 .callout-caution   { border-left-color: var(--v2v-danger) !important; }
 
 // ============================================================================
@@ -331,7 +335,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 .phase-header {
   background: var(--v2v-raised);
   border: 1px solid var(--v2v-rule);
-  border-left: 4px solid var(--v2v-violet-accent);
+  border-left: 4px solid var(--v2v-red-mark);
   border-radius: 0 8px 8px 0;
   padding: 1.75rem 1.9rem; margin-bottom: 2rem;
   h1 { color: var(--v2v-ink); margin-top: 0; border: none; padding: 0; }
@@ -342,15 +346,15 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
   margin-top: 3rem; padding-top: 1.75rem; border-top: 1px solid var(--v2v-rule);
 }
 .phase-nav-prev, .phase-nav-next {
-  font-family: $font-family-sans-serif; font-weight: 600; min-height: 2.5rem;
+  font-family: $font-family-sans-serif; font-weight: 700; min-height: 2.5rem;
   display: inline-flex; align-items: center;
   padding: 0.55rem 1.15rem; border-radius: 7px; text-decoration: none !important;
   transition: background-color .15s var(--v2v-ease);
 }
-.phase-nav-prev { background: var(--v2v-surface); color: var(--v2v-violet) !important;
-  &:hover { background: var(--v2v-violet-tint); } }
-.phase-nav-next { background: var(--v2v-violet-fill); color: #fff !important;
-  &:hover { background: #5B21B6; } }
+.phase-nav-prev { background: var(--v2v-surface); color: var(--v2v-red) !important;
+  &:hover { background: var(--v2v-red-tint); } }
+.phase-nav-next { background: var(--v2v-red-fill); color: #fff !important;
+  &:hover { background: #B0301F; } }
 .phase-progress { font-family: $font-family-monospace; color: var(--v2v-muted); font-size: 0.85rem; }
 
 // ============================================================================
@@ -360,9 +364,10 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
   background: var(--v2v-raised); border: 1px solid var(--v2v-rule);
   border-radius: var(--v2v-radius); padding: 1.4rem; margin-bottom: 1.4rem;
   transition: border-color .15s var(--v2v-ease);
-  &:hover { border-color: var(--v2v-violet-accent); }
+  &:hover { border-color: var(--v2v-red-mark); }
   h4 { color: var(--v2v-ink); margin-top: 0; margin-bottom: 0.5rem;
-    font-family: $font-family-serif; font-size: 1.1rem; text-transform: none; letter-spacing: 0; }
+    font-family: $font-family-sans-serif; font-size: 1.1rem; font-weight: 800;
+    text-transform: none; letter-spacing: 0; }
 }
 .resource-badge {
   display: inline-block; font-family: $font-family-monospace;
@@ -370,30 +375,32 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
   padding: 0.18rem 0.6rem; border-radius: 999px;
   font-size: 0.74rem; font-weight: 500;
   margin-right: 0.4rem; margin-bottom: 0.6rem;
-  &.time       { background: var(--v2v-violet-tint); color: var(--v2v-violet); }
-  &.difficulty { background: var(--v2v-amber-tint);  color: var(--v2v-amber); }
+  &.time       { background: var(--v2v-red-tint);   color: var(--v2v-red); }
+  &.difficulty { background: var(--v2v-coral-tint); color: var(--v2v-coral); }
 }
 
 // ============================================================================
-// Navbar — ink anchor with the AURA violet brand dot
+// Navbar — AURA charcoal with the red diamond mark
 // ============================================================================
 .navbar {
-  background: var(--v2v-navbar) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: var(--v2v-chrome) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
   font-family: $font-family-sans-serif;
 }
 .navbar-brand {
-  font-family: $font-family-serif !important;
-  font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em;
-  color: #F4F0EB !important;
+  font-family: $font-family-sans-serif !important;
+  font-size: 1.2rem; font-weight: 900; letter-spacing: -0.01em;
+  color: var(--v2v-on-chrome) !important;
   display: inline-flex; align-items: center; gap: 0.55rem;
-  &::before { content: ''; width: 7px; height: 7px; border-radius: 50%;
-    background: var(--v2v-violet-accent); display: inline-block; }
+  // the AURA red diamond
+  &::before { content: ''; width: 11px; height: 11px;
+    background: var(--v2v-red-mark); transform: rotate(45deg);
+    display: inline-block; }
 }
 .navbar-nav .nav-link {
-  color: rgba(244,240,235,0.86) !important; font-weight: 500; margin: 0 0.35rem;
+  color: rgba(236,237,239,0.86) !important; font-weight: 600; margin: 0 0.35rem;
   min-height: 2.5rem; display: inline-flex; align-items: center;
-  &:hover, &:focus { color: #FBBF24 !important; }
+  &:hover, &:focus { color: var(--v2v-coral-mark) !important; }
   &.active { color: #fff !important; }
 }
 .dropdown-menu {
@@ -402,7 +409,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 .dropdown-item {
   color: var(--v2v-text); font-family: $font-family-sans-serif; font-weight: 500;
   padding: 0.55rem 1.2rem; min-height: 2.5rem;
-  &:hover, &:focus { background: var(--v2v-violet-tint); color: var(--v2v-violet); }
+  &:hover, &:focus { background: var(--v2v-red-tint); color: var(--v2v-red); }
 }
 
 // ============================================================================
@@ -411,20 +418,20 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 .sidebar { border-right: 1px solid var(--v2v-rule); }
 .sidebar nav[role="navigation"] { border-right: none; }
 .sidebar .sidebar-title {
-  font-family: $font-family-serif; font-weight: 700; color: var(--v2v-ink); font-size: 1.1rem;
+  font-family: $font-family-sans-serif; font-weight: 900; color: var(--v2v-ink); font-size: 1.1rem;
 }
 .sidebar-item-section > .sidebar-item-container .sidebar-item-text {
-  font-family: $font-family-sans-serif; font-size: 0.7rem !important;
-  font-weight: 700 !important; text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--v2v-violet) !important;
+  font-family: $font-family-monospace; font-size: 0.68rem !important;
+  font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--v2v-red) !important;
 }
 .sidebar a.sidebar-item-text {
   font-family: $font-family-sans-serif; color: var(--v2v-text) !important;
-  &:hover { color: var(--v2v-violet) !important; }
+  &:hover { color: var(--v2v-red) !important; }
 }
 .sidebar a.active.sidebar-item-text {
-  color: var(--v2v-violet) !important; font-weight: 600 !important;
-  border-left: 2px solid var(--v2v-violet-accent);
+  color: var(--v2v-red) !important; font-weight: 700 !important;
+  border-left: 2px solid var(--v2v-red-mark);
 }
 
 // ============================================================================
@@ -432,12 +439,13 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 // ============================================================================
 #TOC, nav[role="doc-toc"] {
   font-family: $font-family-sans-serif; border-left: 1px solid var(--v2v-rule); padding-left: 1rem;
-  > h2, .toc-title { font-size: 0.7rem !important; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.1em; color: var(--v2v-violet); border: none !important; padding: 0; }
+  > h2, .toc-title { font-family: $font-family-monospace; font-size: 0.7rem !important;
+    font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--v2v-red); border: none !important; padding: 0; }
   .nav-link { font-size: 0.83rem !important; color: var(--v2v-muted) !important;
-    text-decoration: none; &:hover { color: var(--v2v-violet) !important; } }
-  .nav-link.active { color: var(--v2v-violet) !important; font-weight: 600;
-    border-left: 2px solid var(--v2v-violet-accent) !important; padding-left: 0.5rem; }
+    text-decoration: none; &:hover { color: var(--v2v-red) !important; } }
+  .nav-link.active { color: var(--v2v-red) !important; font-weight: 700;
+    border-left: 2px solid var(--v2v-red-mark) !important; padding-left: 0.5rem; }
 }
 
 // ============================================================================
@@ -450,24 +458,24 @@ table {
 }
 thead th {
   border: none; border-top: 1px solid var(--v2v-ink);
-  border-bottom: 1px solid var(--v2v-violet-accent);
+  border-bottom: 1px solid var(--v2v-red-mark);
   text-align: left; font-weight: 700; padding: 0.55rem 0.8rem;
   color: var(--v2v-ink);
 }
 tbody td { border: none; border-bottom: 1px solid var(--v2v-rule);
   padding: 0.55rem 0.8rem; vertical-align: top; color: var(--v2v-text); }
-tbody tr:hover { background: var(--v2v-violet-tint); }
+tbody tr:hover { background: var(--v2v-red-tint); }
 tbody tr:last-child td { border-bottom: 1px solid var(--v2v-ink); }
 
 // ============================================================================
 // Lists
 // ============================================================================
 ol, ul { padding-left: 1.4rem; li { margin-bottom: 0.35rem; line-height: 1.55; } }
-ol > li::marker { color: var(--v2v-violet); font-weight: 700; }
-ul > li::marker { color: var(--v2v-violet-accent); }
+ol > li::marker { color: var(--v2v-red); font-weight: 700; }
+ul > li::marker { color: var(--v2v-red-mark); }
 
 // ============================================================================
-// Code — mono, chalk surface, calm violet edge
+// Code — Spline Sans Mono, tinted paper surface, red edge, ligatures OFF
 // ============================================================================
 code {
   font-family: $font-family-monospace; font-size: 0.9em;
@@ -477,12 +485,11 @@ code {
 pre {
   font-family: $font-family-monospace; background: var(--v2v-surface);
   color: var(--v2v-ink); border: 1px solid var(--v2v-rule);
-  border-left: 3px solid var(--v2v-violet-accent);
+  border-left: 3px solid var(--v2v-red-mark);
   border-radius: 0 6px 6px 0; padding: 1rem 1.3rem; margin: 1.6rem 0;
   overflow-x: auto; font-size: 0.86rem; line-height: 1.55;
   code { background: transparent; padding: 0; color: inherit; }
 }
-// Keep Quarto/knitr code annotations legible on our surface.
 div.sourceCode { background: var(--v2v-surface); border-radius: 6px; }
 
 // ============================================================================
@@ -491,19 +498,19 @@ div.sourceCode { background: var(--v2v-surface); border-radius: 6px; }
 figure, .quarto-figure { margin: 2rem 0; }
 figure img, .quarto-figure img { border-radius: 6px; max-width: 100%; height: auto; }
 figcaption, .figure-caption {
-  font-family: $font-family-sans-serif; color: var(--v2v-muted);
-  font-size: 0.84rem; margin-top: 0.6rem; line-height: 1.5;
+  font-family: $font-family-monospace; color: var(--v2v-muted);
+  font-size: 0.8rem; margin-top: 0.6rem; line-height: 1.5; letter-spacing: 0.01em;
 }
 
 // ============================================================================
 // Footer
 // ============================================================================
 footer, .nav-footer, .page-footer {
-  background: var(--v2v-navbar); color: rgba(244,240,235,0.82);
-  border-top: 3px solid var(--v2v-violet-accent);
+  background: var(--v2v-chrome); color: rgba(236,237,239,0.82);
+  border-top: 3px solid var(--v2v-red-mark);
   font-family: $font-family-sans-serif;
 }
-footer a, .nav-footer a { color: #FBBF24;
+footer a, .nav-footer a { color: var(--v2v-coral-mark);
   &:hover, &:focus { color: #fff; } }
 
 // ============================================================================
@@ -528,9 +535,9 @@ footer a, .nav-footer a { color: #FBBF24;
 // Responsive
 // ============================================================================
 @media (max-width: 768px) {
-  h1 { font-size: 1.85rem; }
-  h2 { font-size: 1.35rem; }
-  .hero-section { padding: 1.75rem 1.3rem; h1 { font-size: 2rem; } }
+  h1 { font-size: 1.95rem; }
+  h2 { font-size: 1.4rem; }
+  .hero-section { padding: 1.75rem 1.3rem; h1 { font-size: 2.1rem; } }
   .card-grid { grid-template-columns: 1fr; gap: 1rem; }
   .phase-navigation { flex-direction: column; align-items: stretch; }
   .phase-nav-prev, .phase-nav-next { justify-content: center; }
@@ -547,7 +554,7 @@ footer a, .nav-footer a { color: #FBBF24;
 /* ============================================================================
    AUTHORING GUIDE (Hub pages — pedagogy lives HERE, not in the textbook)
    ----------------------------------------------------------------------------
-   Eyebrow label:            [Part I]{.eyebrow}
+   Eyebrow label:            [Fig. 1 — Part I]{.eyebrow}
    Hero:                     ::: {.hero-section} # Title \n prose :::
    Card grid:                ::::: {.card-grid} ::: {.card} ### H \n p :::  :::::
    Phase arc map:            ::: {.v2v-arc} ::: {.v2v-phase}
@@ -565,7 +572,7 @@ footer a, .nav-footer a { color: #FBBF24;
 // ============================================================================
 // Disable coding-font ligatures  (2026-07-24)
 // The body sets font-feature-settings including "liga", inherited into code, so
-// JetBrains Mono renders "<-" as a left arrow and "|>" as a triangle. Students
+// the mono font could render "<-" as an arrow and "|>" as a triangle. Students
 // new to R must READ and TYPE the literal characters; ligatures are wrong here.
 // ============================================================================
 code, pre, kbd, samp,
