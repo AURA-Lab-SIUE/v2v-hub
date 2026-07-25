@@ -97,7 +97,7 @@ By the end of this course, students will be able to:
 
 ### Textbook
 
-This course uses an Open Educational Resource (OER): *From Vibes to Variables: A Field Guide to Open Media Science* (3rd Ed., undergraduate edition), free and online at [aura-lab-siue.github.io/v2v](https://aura-lab-siue.github.io/v2v/). There is no textbook to purchase.
+This course uses an Open Educational Resource (OER): *From Vibes to Variables: A Field Guide to Open Media Science* (3rd Ed.), free and online at [aura-lab-siue.github.io/v2v](https://aura-lab-siue.github.io/v2v/). There is no textbook to purchase. Read it as-is; the optional "Graduate edition" toggle (for MC 501) stays off.
 
 ### Required Software
 
