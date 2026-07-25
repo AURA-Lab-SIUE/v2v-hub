@@ -19,7 +19,7 @@ title: "MC 501 Course Syllabus"
 | **Classroom** | Dunham Hall 1015 |
 | **Duration** | Aug 24 to Dec 18, 2026 |
 | **Course Website** | https://aura-lab-siue.github.io/v2v-hub/ |
-| **Textbook** | [From Vibes to Variables, 3rd Ed.](https://aura-lab-siue.github.io/v2v/) (OER, free) |
+| **Textbook** | [Beyond Vibes — V2V Graduate Edition, 3rd Ed.](https://aura-lab-siue.github.io/v2v/grad/) (OER, free) |
 
 ---
 
@@ -37,7 +37,7 @@ In all communication, clearly stated needs save us both time. State what you hav
 
 MC 501 is the graduate-level research methods course in mass communication. Students explore quantitative and qualitative methods, including surveys, experiments, content analysis, and in-depth interviews, with emphasis on designing, executing, and communicating original research at a level approaching publishable quality.
 
-Across the semester students complete a two-part content analysis project: a qualitative study that develops coding variables through immersion, and a quantitative study that tests relationships in the coded data. The final deliverable is a professional White Paper suitable for conference submission or client delivery, published to GitHub Pages. Graduate students engage with the textbook's graduate extensions: assigned peer-reviewed readings and advanced analytical prompts in every chapter.
+Across the semester students complete a two-part content analysis project: a qualitative study that develops coding variables through immersion, and a quantitative study that tests relationships in the coded data. The final deliverable is a professional White Paper suitable for conference submission or client delivery, published to GitHub Pages, paired with an academic conference poster. Graduate students read the graduate edition of the textbook (*Beyond Vibes*), whose graduate extension in every chapter, assigned peer-reviewed readings and advanced analytical prompts, is required material.
 
 ---
 
@@ -92,7 +92,7 @@ By the end of this course, students will be able to:
 
 ## How MC 501 Differs from MC 451
 
-Both courses use the same textbook, tools, and schedule. Three dimensions separate them:
+Both courses share the same content spine, tools, and schedule, but MC 501 reads the **graduate edition** (*Beyond Vibes*), which renders a required graduate extension in every chapter that the undergraduate edition omits. Three dimensions separate them:
 
 **Depth of engagement.** You read the textbook's graduate extensions (collapsible callout blocks with assigned peer-reviewed readings) as required work. Your journal entries are 450 to 500 words and explicitly engage the assigned graduate reading. Entries that address only the chapter content receive a maximum of 7 of 10 points.
 
@@ -108,7 +108,7 @@ Both courses use the same textbook, tools, and schedule. Three dimensions separa
 
 ### Textbook
 
-This course uses an Open Educational Resource (OER): *From Vibes to Variables: A Field Guide to Open Media Science* (3rd Ed.), free and online at [aura-lab-siue.github.io/v2v](https://aura-lab-siue.github.io/v2v/). There is no textbook to purchase. Graduate students read the graduate extension callouts in each chapter as required material.
+This course uses an Open Educational Resource (OER): the **graduate edition**, *Beyond Vibes: From Vibes to Variables, Graduate Supplement* (3rd Ed.), free and online at [aura-lab-siue.github.io/v2v/grad](https://aura-lab-siue.github.io/v2v/grad/). There is no textbook to purchase. The graduate edition renders the graduate extension in every chapter as integral, required material; the undergraduate edition (MC 451) does not include it. Read the graduate edition, not the undergraduate one.
 
 ### Required Software
 
