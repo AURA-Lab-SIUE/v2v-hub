@@ -72,7 +72,7 @@ By the end of this course, students will be able to:
 - Project Setup (25 pts)
 - Librarian Visit Report (50 pts)
 
-### Phase III: The Builder (Weeks 4-9): 250 points
+### Phase III: The Builder (Weeks 4-10): 250 points
 - Annotated Manuscript (25 pts)
 - Project Prospectus (25 pts)
 - Topic Selection, RQs (25 pts)
@@ -81,12 +81,12 @@ By the end of this course, students will be able to:
 - Sampling Plan & Pilot (75 pts)
 - CITI Ethics Certification (25 pts)
 
-### Phase IV: The Analyst (Weeks 10-12): 225 points
+### Phase IV: The Analyst (Weeks 11-13): 225 points
 - Data Wrangling [R] (50 pts)
 - Describing Data [R] (75 pts)
 - Inferencing Data [R] (100 pts)
 
-### Phase V: The Publisher (Weeks 13-15): 250 points
+### Phase V: The Publisher (Weeks 15-17): 250 points
 - Final Web Portfolio (250 pts)
 
 **Total Points:** 1000
@@ -229,23 +229,28 @@ A reliable computer and internet connection are required. Contact ITS at 618-650
 
 ## Weekly Schedule
 
-| Week | Dates | Chapter | Assignment Due |
-|------|-------|---------|----------------|
-| 1 | Aug 24-30 | Syllabus + Intros | GitHub Profile |
-| 2 | Aug 31-Sep 6 | Ch 1-2: Storytelling & Open Workspace | Syllabus Contract |
-| 3 | Sep 7-13 | Ch 3-4: Epistemology & Intelligence Gathering | Project Setup |
-| 4 | Sep 14-20 | Ch 5-6: Theory & The Prospectus | Librarian Visit Report |
-| 5 | Sep 21-27 | Ch 7-8: Listening & Vibes to Variables | Annotated Manuscript |
-| 6 | Sep 28-Oct 4 | Ch 9-10: Rulebook & The Sample | Project Prospectus |
-| 7 | Oct 5-11 | Ch 11-12: Data Wrangling & Visualization | Topic Selection (RQs) |
-| 8 | Oct 12-18 | Ch 13-14: Making the Call & Reports | Definitions Practice + Codebook & Qual Memo |
-|  | Oct 19-Nov 2 | **Session Break** |  |
-| 9 | Nov 2-8 | Review & Advanced Topics | Sampling Plan & Pilot |
-| 10 | Nov 9-15 | Applied Practice [R] | Data Wrangling [R] |
-| 11 | Nov 16-22 | Applied Practice [R] | Describing Data [R] |
-|  | Nov 23-29 | **Thanksgiving Break** |  |
-| 12 | Nov 30-Dec 6 | Applied Practice [R] | Inferencing Data [R] |
-|  | Dec 7-13 | **Remote Work Week** | CITI Certification |
-| 13 | Dec 14-18 | **Finals Week** | Final Web Portfolio |
+The course runs on a **Tuesday / Thursday rhythm**: one session teaches a concept, the
+next applies it to your own project (labs and studios marked). Every assignment is a
+building block of your final White Paper. Sessions are numbered S1–S27.
+
+| Week | Dates | Tuesday | Thursday | Due |
+|------|-------|---------|----------|-----|
+| 1 | Aug 25 / 27 | Orientation: syllabus, the five phases, your project | S1 · Ch 1 The Science of Storytelling | Syllabus Contract |
+| 2 | Sep 1 / 3 | S2 · Ch 2 The Open Workspace (R, VS Code, Git/GitHub) | S3 · Ch 2 project-setup lab | GitHub Profile |
+| 3 | Sep 8 / 10 | S4 · Ch 3 Ethics (Belmont, IRB, consent) | S5 · Ch 4 Intelligence Gathering — librarian visit | Project Setup |
+| 4 | Sep 15 / 17 | S6 · Ch 4 reading & annotating; the literature map | S7 · Ch 5 Theory as a Lens | Librarian Visit Report |
+| 5 | Sep 22 / 24 | S8 · Ch 5 variables & hypotheses | S9 · Ch 6 Research questions | Annotated Manuscript · CITI Certification |
+| 6 | Sep 29 / Oct 1 | S10 · Ch 6 the prospectus; pre-registration | S11 · Ch 7 Structured Listening; field notes | Topic Selection & RQs |
+| 7 | Oct 6 / 8 | S12 · Ch 7 manifest vs. latent; sampling observation | S13 · Ch 8 the operationalization gap | Project Prospectus |
+| 8 | Oct 13 / 15 | S14 · Ch 8 levels of measurement; reliability & validity | S15 · Ch 8 building the codebook [studio] | Definitions Practice |
+| 9 | Oct 20 / 22 | S16 · Ch 9 [R] coding the codebook | S17 · Ch 9 [R] reading data vs. the codebook; qual memo | Codebook & Qual Memo |
+| 10 | Oct 27 / 29 | S18 · Ch 10 The Sample: SRS, stratified, drawing | S19 · Ch 10 [R] the pilot; kappa / alpha | — |
+| 11 | Nov 3 / 5 | S20 · Ch 11 [R] Wrangling the Data | S21 · Ch 11 [R] wrangling lab | Sampling Plan & Pilot · Data Wrangling [R] |
+| 12 | Nov 10 / 12 | S22 · Ch 12 [R] Describing: descriptive statistics + graphics | S23 · Ch 12 [R] describing lab | Describing Data [R] |
+| 13 | Nov 17 / 19 | S24 · Ch 13 [R] Inferential: t-test, ANOVA, regression | S25 · Ch 13 [R] inference lab; *White Paper assigned* | Inferencing Data [R] |
+| 14 | Nov 23–27 | **Thanksgiving Break — no class** | | |
+| 15 | Dec 1 / 3 | S26 · Ch 14 The Publisher; assemble your paper | S27 · White-paper studio: peer review; the reflection | |
+| 16 | Dec 8–12 | **Work Session — open lab / support** | | |
+| 17 | Dec 14–18 | **Finals Week** | | White Paper |
 
 *Schedule subject to change with notice.*

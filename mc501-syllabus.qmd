@@ -71,7 +71,7 @@ By the end of this course, students will be able to:
 - Syllabus Contract (25 pts)
 - Librarian Visit Report (50 pts)
 
-### Phase III: The Builder (Weeks 4-9): 325 points
+### Phase III: The Builder (Weeks 4-10): 325 points
 - Annotated Manuscripts, 3 articles (25 pts)
 - Research Proposal, sentence outline (75 pts)
 - Topic Selection / RQs (25 pts)
@@ -80,12 +80,12 @@ By the end of this course, students will be able to:
 - Sampling Plan & Pilot, 20 to 30 items (75 pts)
 - CITI Ethics Certification (25 pts)
 
-### Phase IV: The Analyst (Weeks 10-12): 250 points
+### Phase IV: The Analyst (Weeks 11-13): 250 points
 - Data Wrangling [R] (50 pts)
 - Describing Data [R] (100 pts)
 - Inferencing Data [R] (100 pts)
 
-### Phase V: The Publisher (Weeks 13-15): 200 points
+### Phase V: The Publisher (Weeks 15-17): 200 points
 - White Paper (200 pts)
 
 **Total Points:** 1,025
@@ -98,7 +98,9 @@ Both courses use the same textbook, tools, and schedule. Three dimensions separa
 
 **Methodological formality.** Your codebook includes a formal reliability protocol with planned sample size, target alpha thresholds, and revision triggers. Your research proposal is a structured sentence outline that could serve as the front half of a conference paper.
 
-**Final product format.** You produce a White Paper: a formal Quarto Book with an executive summary, a structured literature review (15 or more sources), an explicit limitations analysis, and professional formatting suitable for conference submission or client delivery.
+**Final product format.** You produce a White Paper: a formal Quarto Book with an executive summary, a structured literature review (15 or more sources), an explicit limitations analysis, and professional formatting suitable for conference submission or client delivery, paired with an academic conference poster (the shared MC 500 / MC 501 requirement).
+
+**Graduate seminar and differentiation (cross-taught 400/500).** MC 451 and MC 501 are separate sections taught by the same instructor. Under SIUE's cross-taught policy, **at least one-third of MC 501 meeting time is engaged in substantially different, 500-level activity**: the required graduate-extension readings and the discussion built around them; the heavier graduate deliverables (Research Proposal, Extended Codebook & Reliability Protocol, and the conference-ready White Paper with its paired poster); and — because this is a small seminar — rotating **discussion leadership**, where each student leads the reading discussion several times across the term, with the weekly journal serving as the accompanying response memo. Your ethics work also goes beyond the undergraduate CITI requirement: you prepare the **non-human-subjects IRB determination** you would actually file, building familiarity with the protocol process for doctoral study. Statistics coverage is shared (descriptive statistics; inferential t-test, ANOVA, and regression); graduate work differentiates by depth — assumptions, diagnostics, and model interpretation — not by additional techniques.
 
 ---
 
@@ -243,23 +245,31 @@ A reliable computer and internet connection are required. Contact ITS at 618-650
 
 ## Weekly Schedule
 
-| Week | Dates | Chapter | Assignment Due |
-|------|-------|---------|----------------|
-| 1 | Aug 24-30 | Syllabus + Intros | GitHub Profile |
-| 2 | Aug 31-Sep 6 | Ch 1-2: Storytelling & Open Workspace | Syllabus Contract |
-| 3 | Sep 7-13 | Ch 3-4: Epistemology & Intelligence Gathering |  |
-| 4 | Sep 14-20 | Ch 5-6: Theory & The Prospectus | Librarian Visit Report |
-| 5 | Sep 21-27 | Ch 7-8: Listening & Vibes to Variables | Annotated Manuscripts (3) |
-| 6 | Sep 28-Oct 4 | Ch 9-10: Rulebook & The Sample | Research Proposal |
-| 7 | Oct 5-11 | Ch 11-12: Data Wrangling & Visualization | Topic Selection / RQs |
-| 8 | Oct 12-18 | Ch 13-14: Making the Call & Reports | Definitions Practice |
-|  | Oct 19-Nov 2 | **Session Break** |  |
-| 9 | Nov 2-8 | Review & Advanced Topics | Extended Codebook & Protocol |
-| 10 | Nov 9-15 | Applied Practice [R] | Sampling Plan & Pilot |
-| 11 | Nov 16-22 | Applied Practice [R] | Data Wrangling [R] |
-|  | Nov 23-29 | **Thanksgiving Break** |  |
-| 12 | Nov 30-Dec 6 | Applied Practice [R] | Describing Data [R] |
-|  | Dec 7-13 | **Remote Work Week** | Inferencing Data [R] + CITI Cert |
-| 13 | Dec 14-18 | **Finals Week** | White Paper |
+MC 501 meets once weekly (**Wed 6:00–8:50**). Each 170-minute block folds the week's two
+MC 451 sessions into one meeting and adds the graduate layer — the required
+graduate-extension readings, the discussion built around them, and the heavier graduate
+deliverables (see *How MC 501 Differs*). Both levels cover descriptive and inferential
+statistics (t-test, ANOVA, regression); graduate work goes deeper. The White Paper and
+its paired academic conference poster are assigned Week 13 and due at Finals.
+
+| Week | Wed | Topics (both sessions folded in) | Due |
+|------|-----|----------------------------------|-----|
+| 1 | Aug 26 | Orientation; Ch 1 The Science of Storytelling | Syllabus Contract |
+| 2 | Sep 2 | Ch 2 The Open Workspace + project setup | GitHub Profile |
+| 3 | Sep 9 | Ch 3 Ethics; Ch 4 Intelligence Gathering (librarian visit) | — |
+| 4 | Sep 16 | Ch 4 annotating; Ch 5 Theory as a Lens | Librarian Visit Report |
+| 5 | Sep 23 | Ch 5 variables & hypotheses; Ch 6 Research questions | Annotated Manuscripts (3) · CITI Certification |
+| 6 | Sep 30 | Ch 6 the prospectus; Ch 7 Structured Listening | Topic Selection / RQs |
+| 7 | Oct 7 | Ch 7 manifest vs. latent; Ch 8 operationalization | Research Proposal |
+| 8 | Oct 14 | Ch 8 measurement, reliability & validity; building the codebook | Definitions Practice |
+| 9 | Oct 21 | Ch 9 [R] coding the codebook; reading data vs. the codebook | Extended Codebook & Reliability Protocol |
+| 10 | Oct 28 | Ch 10 The Sample; the pilot; kappa / alpha | Sampling Plan & Pilot |
+| 11 | Nov 4 | Ch 11 [R] Wrangling the Data | Data Wrangling [R] |
+| 12 | Nov 11 | Ch 12 [R] Describing: descriptive statistics + graphics | Describing Data [R] |
+| 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* | Inferencing Data [R] |
+| 14 | Nov 25 | **Thanksgiving Break — no class** | |
+| 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio | |
+| 16 | Dec 9 | **Work Session — open lab / support** | |
+| 17 | Dec 16 | **Finals Week** | White Paper (+ conference poster) |
 
 *Schedule subject to change with notice.*
