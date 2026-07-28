@@ -581,3 +581,29 @@ div.sourceCode code, .sourceCode span {
   font-variant-ligatures: none !important;
   font-feature-settings: "liga" 0, "clig" 0, "calt" 0 !important;
 }
+
+// --- Schedule tables (syllabi) -------------------------------------------
+// Quarto/bootstrap renders these with equal-width columns, which squeezes the
+// long session cells into narrow ragged columns. Size columns to content and
+// let the wide topic cells take the room they need.
+.schedule-table table {
+  table-layout: auto;
+  width: 100%;
+  font-size: 0.85rem;
+}
+.schedule-table th,
+.schedule-table td {
+  vertical-align: top;
+  padding: 0.4em 0.6em;
+  hyphens: none;
+  word-break: normal;
+}
+// Week and date columns hug their content
+.schedule-table td:first-child,
+.schedule-table th:first-child { white-space: nowrap; width: 1%; }
+.schedule-table tbody td:nth-child(2) { white-space: nowrap; width: 1%; }
+// Readings table: the citation column must wrap freely
+.readings-table table { table-layout: auto; width: 100%; font-size: 0.85rem; }
+.readings-table th, .readings-table td { vertical-align: top; padding: 0.4em 0.6em; }
+.readings-table td:first-child, .readings-table th:first-child { white-space: nowrap; width: 1%; }
+.readings-table td:last-child, .readings-table th:last-child { white-space: nowrap; width: 1%; }
