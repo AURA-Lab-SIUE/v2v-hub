@@ -86,6 +86,25 @@ At 30 hand-coded messages, **a non-significant result does not prove there is no
 
 At 34,766 messages, the opposite trap opens. Significance is nearly guaranteed, so it stops carrying information, and the effect size becomes the only number that tells you anything about magnitude.
 
+Here is what a thirty-message pilot can actually detect, computed with `pwr` at
+the conventional alpha of .05, fifteen messages in each group:
+
+| True effect size | Power at n = 30 total | Power at n = 60 total |
+|---|---|---|
+| Small (*d* = 0.2) | 8% | 12% |
+| Medium (*d* = 0.5) | 26% | 48% |
+| Large (*d* = 0.8) | 56% | 86% |
+
+Read the first row again. If a small effect is genuinely there, a thirty-message
+pilot finds it eight times in a hundred. The other ninety-two times you conclude
+nothing is happening, and you are wrong.
+
+Now put the study's own result against that. The gaming and non-gaming difference
+in message length is *d* = 0.13, smaller than "small". Detecting an effect that
+size at 80% power would take about **930 messages in each group**. The chapter 19
+test had 34,766, which is why it found the effect easily, and why the effect it
+found is still too small to care much about.
+
 Do not guess at power. Compute it. The `pwr` package will tell you what a given design can and cannot detect, before you collect the data:
 
 ```r
