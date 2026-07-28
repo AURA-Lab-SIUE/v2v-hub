@@ -2,7 +2,7 @@
 title: "Course Syllabus"
 ---
 
-## MC 451: Research Methods for Mass Communications
+## MC 451: Research Methods in Mass Media
 ### Fall 2026
 
 ---
@@ -237,20 +237,20 @@ building block of your final White Paper. Sessions are numbered S1–S27.
 |------|-------|---------|----------|-----|
 | 1 | Aug 25 / 27 | Orientation: syllabus, the five phases, your project | S1 · Ch 1 The Science of Storytelling | Syllabus Contract |
 | 2 | Sep 1 / 3 | S2 · Ch 2 The Open Workspace (R, VS Code, Git/GitHub) | S3 · Ch 2 project-setup lab | GitHub Profile |
-| 3 | Sep 8 / 10 | S4 · Ch 3 Ethics (Belmont, IRB, consent) | S5 · Ch 4 Intelligence Gathering — librarian visit | Project Setup |
+| 3 | Sep 8 / 10 | S4 · Ch 3 Ethics (Belmont, IRB, consent) | S5 · Ch 4 Intelligence Gathering, librarian visit | Project Setup |
 | 4 | Sep 15 / 17 | S6 · Ch 4 reading & annotating; the literature map | S7 · Ch 5 Theory as a Lens | Librarian Visit Report |
 | 5 | Sep 22 / 24 | S8 · Ch 5 variables & hypotheses | S9 · Ch 6 Research questions | Annotated Manuscript · CITI Certification |
 | 6 | Sep 29 / Oct 1 | S10 · Ch 6 the prospectus; pre-registration | S11 · Ch 7 Structured Listening; field notes | Topic Selection & RQs |
 | 7 | Oct 6 / 8 | S12 · Ch 7 manifest vs. latent; sampling observation | S13 · Ch 8 the operationalization gap | Project Prospectus |
 | 8 | Oct 13 / 15 | S14 · Ch 8 levels of measurement; reliability & validity | S15 · Ch 8 building the codebook [studio] | Definitions Practice |
 | 9 | Oct 20 / 22 | S16 · Ch 9 [R] coding the codebook | S17 · Ch 9 [R] reading data vs. the codebook; qual memo | Codebook & Qual Memo |
-| 10 | Oct 27 / 29 | S18 · Ch 10 The Sample: SRS, stratified, drawing | S19 · Ch 10 [R] the pilot; kappa / alpha | — |
+| 10 | Oct 27 / 29 | S18 · Ch 10 The Sample: SRS, stratified, drawing | S19 · Ch 10 [R] the pilot; kappa / alpha | |
 | 11 | Nov 3 / 5 | S20 · Ch 11 [R] Wrangling the Data | S21 · Ch 11 [R] wrangling lab | Sampling Plan & Pilot · Data Wrangling [R] |
 | 12 | Nov 10 / 12 | S22 · Ch 12 [R] Describing: descriptive statistics + graphics | S23 · Ch 12 [R] describing lab | Describing Data [R] |
 | 13 | Nov 17 / 19 | S24 · Ch 13 [R] Inferential: t-test, ANOVA, regression | S25 · Ch 13 [R] inference lab; *White Paper assigned* | Inferencing Data [R] |
-| 14 | Nov 23–27 | **Thanksgiving Break — no class** | | |
+| 14 | Nov 23–27 | **Thanksgiving Break, no class** | | |
 | 15 | Dec 1 / 3 | S26 · Ch 14 The Publisher; assemble your paper | S27 · White-paper studio: peer review; the reflection | |
-| 16 | Dec 8–12 | **Work Session — open lab / support** | | |
+| 16 | Dec 8–12 | **Work Session: open lab / support** | | |
 | 17 | Dec 14–18 | **Finals Week** | | White Paper |
 
 *Schedule subject to change with notice.*

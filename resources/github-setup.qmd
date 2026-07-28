@@ -364,7 +364,7 @@ This is especially useful for data analysis, coding projects, and learning advan
 
 - **GitHub Docs**: [docs.github.com](https://docs.github.com)
 - **Git Basics**: [git-scm.com/book](https://git-scm.com/book) (Pro Git book, free online)
-- **GitHub Learning Lab**: [lab.github.com](https://lab.github.com) (interactive tutorials)
+- **GitHub Skills**: [skills.github.com](https://skills.github.com) (interactive tutorials)
 - **Markdown Guide**: [markdownguide.org](https://www.markdownguide.org) (learn to format your README)
 
 ---
