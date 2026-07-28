@@ -8,31 +8,33 @@ execute:
 
 {{< video videos/01-codebook.mp4 >}}
 
-You've spent weeks immersed in your media source — reading articles, watching videos, scrolling through posts. You've noticed patterns. You've written about them in your qualitative memo. Now it's time to turn those observations into something you can count.
+You've spent weeks immersed in your media source, reading articles, watching videos, scrolling through posts. You've noticed patterns. You've written about them in your qualitative memo. Now it's time to turn those observations into something you can count.
 
-This chapter walks you through the process of building a **quantitative codebook** — the document that translates your qualitative insights into numeric codes that R can analyze.
+This chapter walks you through the process of building a **quantitative codebook**, the document that translates your qualitative insights into numeric codes that R can analyze.
 
 ## What Is a Quantitative Codebook?
 
 A codebook is a **measurement manual**. It tells you (and anyone else) exactly how to assign a number to something you observe in your data. Every variable in your research gets:
 
-1. **A name** — short, descriptive, no spaces (e.g., `tone`, `source_type`, `article_length`)
-2. **A conceptual definition** — what the variable means in theory
-3. **An operational definition** — exactly how you measure it
-4. **Response categories** — the specific values it can take, each with a number
+1. **A name**, short, descriptive, no spaces (e.g., `is_gaming`, `message_length`, `viewer_band`)
+2. **A conceptual definition**, what the variable means in theory
+3. **An operational definition**, exactly how you measure it
+4. **Response categories**, the specific values it can take, each with a number
 
-### Example: Music Dataset
+### Example: Twitch Dataset
 
-In our class dataset (`music_data_raw.csv`), the variable `mode` works like this:
+The class dataset is the Twitch collection that ships inside the `v2v` package: chat messages and stream snapshots from fifty channels recorded across five and a half days of November 2018. In that dataset, the variable `is_gaming` works like this:
 
 | Element | Value |
 |---------|-------|
-| **Variable name** | `mode` |
-| **Conceptual definition** | The modality of a musical track — whether it sounds "happy" (major) or "sad" (minor) |
-| **Operational definition** | Spotify's audio analysis algorithm classifies each track as major (1) or minor (0) |
-| **Response categories** | 0 = Minor, 1 = Major |
+| **Variable name** | `is_gaming` |
+| **Conceptual definition** | Whether a channel is primarily a gaming channel or a non-gaming one |
+| **Operational definition** | For each channel, find the Twitch category its stream snapshots appeared under most often (the channel's modal category), then check that category against a fixed list of non-gaming categories: Art, ASMR, Just Chatting, Music, IRL, and the rest of Twitch's non-game sections |
+| **Response categories** | 0 = non-gaming, 1 = gaming |
 
-Notice: the codebook doesn't say "happy-sounding" or "sad-sounding" in the data. It uses **numbers** (0 and 1). This is what makes it quantitative.
+Notice: the codebook doesn't say "gaming channel" or "art channel" in the data. It uses **numbers** (0 and 1). This is what makes it quantitative. R happens to store this particular variable as `FALSE` and `TRUE`, which are the same two values wearing different clothes.
+
+A second variable from the same dataset shows the other kind of measurement. `message_length` is the character count of a chat message. It has no categories at all: it is a count, and a count can be averaged, compared, and plotted directly.
 
 ## From Qualitative Observations to Numeric Codes
 
@@ -59,7 +61,7 @@ For each observation, ask: **What am I actually measuring?**
 
 ### Step 3: Assign Numeric Codes
 
-Every category needs a number. This is non-negotiable — R works with numbers, not words.
+Every category needs a number. This is non-negotiable, because R works with numbers, not words.
 
 | Variable | Category | Code |
 |----------|----------|------|
@@ -95,18 +97,18 @@ Open Excel, Google Sheets, or any spreadsheet program. Set it up like this:
 - **Each row** after that is one item (one article, one post, one video)
 - **Each column** is one variable
 - **No merged cells**, no colors-as-data, no blank rows in the middle
-- **One column for notes** — this is your decision log for ambiguous cases
+- **One column for notes**, which is your decision log for ambiguous cases
 - Variable names: lowercase, no spaces, use underscores (`word_count`, not `Word Count`)
 
 ::: {.callout-tip}
 ## Connection to Your Project
 
-Your codebook from the Codebook & Qual Memo assignment is the foundation. But after your pilot test, you may have discovered variables that need adjustment — categories that overlap, definitions that are ambiguous, or codes you never actually used. **Update your codebook now**, before you code 100+ items. It's much easier to fix the measurement tool than to re-code the data.
+Your codebook from the Codebook & Qual Memo assignment is the foundation. But after your pilot test, you may have discovered variables that need adjustment: categories that overlap, definitions that are ambiguous, or codes you never actually used. **Update your codebook now**, before you code 100+ items. It's much easier to fix the measurement tool than to re-code the data.
 :::
 
 ## Decision Rules and Anchor Examples
 
-The hardest part of coding isn't the first 10 items — it's item 75, when your definitions start to feel fuzzy. Two tools help:
+The hardest part of coding isn't the first 10 items. It's item 75, when your definitions start to feel fuzzy. Two tools help:
 
 ### Decision Rules
 
@@ -115,9 +117,11 @@ A decision rule is a specific instruction for handling ambiguous cases. Write th
 - *Example: "If an article contains both positive and negative framing, code the dominant tone (whichever occupies more than 50% of the content). If roughly equal, code as neutral (2)."*
 - *Example: "If the source is listed as 'AP' or 'Reuters,' code as wire (2) regardless of which outlet published it."*
 
+The Twitch codebook needs the same kind of rule, and for the same reason. Real chat contains messages that are twenty-three question marks, or the same emote pasted forty times, or a reply addressed to a streamer whose display name is capitalized differently from the channel name the data stores. None of those cases codes itself. A rule has to decide each one in advance, before the coding starts.
+
 ### Anchor Examples
 
-An anchor example is a specific item that clearly represents each category. Keep 3–5 anchors per variable and re-code them at the start of each coding session.
+An anchor example is a specific item that clearly represents each category. Keep 3 to 5 anchors per variable and re-code them at the start of each coding session.
 
 | Variable | Category | Anchor Item | Why It's a Clear Example |
 |----------|----------|-------------|------------------------|
@@ -132,13 +136,13 @@ Before you start collecting your full dataset, verify:
 - [ ] Every variable in your codebook has a name, conceptual definition, operational definition, and numeric codes
 - [ ] Your coding spreadsheet has clean column headers matching your variable names
 - [ ] You have at least one decision rule for each categorical variable
-- [ ] You have 3–5 anchor examples you can re-code at the start of each session
+- [ ] You have 3 to 5 anchor examples you can re-code at the start of each session
 - [ ] Your pilot data (from the Sampling Plan assignment) is entered in the spreadsheet and looks correct
 
 ## Try It Yourself
 
-Look at the music dataset's `playlist_genre` variable. It contains categories like "pop," "rock," "r&b," "rap," "latin," and "edm."
+Look at the `game` column in the Twitch stream table. It records the category a stream was filed under, and the sample holds sixty of them: Art, Fortnite, Just Chatting, Hearthstone, League of Legends, and a long tail of fifty more.
 
-1. Write a conceptual definition for `playlist_genre` (what does genre mean in this context?).
-2. Write an operational definition (how was genre determined — by Spotify's playlist classification).
-3. If you were coding genre yourself (not using Spotify's classification), what decision rules would you need for songs that blend genres?
+1. Write a conceptual definition for `game` (what does a Twitch category mean in this context?).
+2. Write an operational definition. The streamer picks the category in the Twitch dashboard, and the collection records whatever was set at the moment of the snapshot.
+3. The `is_gaming` variable above collapses those sixty categories into two. If you were making that call yourself rather than using a fixed list, what decision rules would you need for a channel that plays a game while mostly talking to chat, or one that switches categories partway through a stream?

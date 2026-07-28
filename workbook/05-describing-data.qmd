@@ -8,18 +8,23 @@ execute:
 
 {{< video videos/05-describing-data.mp4 >}}
 
-You have clean data. Now you need to describe it — what's in the dataset? What patterns are visible? This chapter teaches you to build frequency tables and publication-ready charts using the same music dataset.
+You have clean data. Now you need to describe it. What's in the dataset? What patterns are visible? This chapter teaches you to build frequency tables and publication-ready charts using the same Twitch dataset you wrangled in Chapter 4.
 
-Describing data is not just a technical step — it's **communication**. Every table and chart in this chapter answers a question that a reader would have about your data.
+Describing data is not just a technical step. It is **communication**. Every table and chart in this chapter answers a question that a reader would have about your data.
 
 ## Load Your Clean Data
 
 ```r
 
 library(tidyverse)
+library(v2v)
 
-music <- readRDS("data/music_data_clean.RDS")
+analysis <- readRDS("data/twitch_analysis.RDS")
+
+streams <- twitch_streams()   # still useful: some questions are about streams, not messages
 ```
+
+Two tables, two units of analysis. `analysis` is one row per chat message, 35,267 of them. `streams` is one row per stream snapshot, 32,276 of them. Which one you reach for depends on what the question is about. A question about messages goes to `analysis`. A question about what was being streamed goes to `streams`.
 
 ## Frequency Tables
 
@@ -29,17 +34,52 @@ A frequency table answers the simplest question: **How many of each category do 
 
 ```r
 
-genre_counts <- music %>%
-  count(playlist_genre, sort = TRUE) %>%   # count and sort by frequency
-  mutate(
-    percent = n / sum(n) * 100,           # add percentage column
-    percent = round(percent, 1)           # round to one decimal
-  )
-
-genre_counts
+streams %>% count(game, sort = TRUE)
 ```
 
-This tells you the distribution of genres in the dataset. Notice that some genres have far more songs than others — that's important context for any analysis.
+```
+# A tibble: 60 × 2
+   game                                   n
+   <chr>                              <int>
+ 1 Art                                 5298
+ 2 Fortnite                            3682
+ 3 Just Chatting                       2474
+ 4 Hearthstone                         2157
+ 5 Pokemon: Let's Go, Pikachu!/Eevee!  1967
+ 6 League of Legends                   1952
+ 7 Heroes of the Storm                 1473
+ 8 Counter-Strike: Global Offensive    1346
+ 9 Rocket League                       1321
+10 World of Warcraft                    920
+# ℹ 50 more rows
+```
+
+Raw counts are useful. Percentages are usually more useful, because they tell a reader what share of the whole each category holds:
+
+```r
+
+game_counts <- streams %>%
+  count(game, sort = TRUE) %>%          # count and sort by frequency
+  mutate(
+    percent = n / sum(n) * 100,         # add percentage column
+    percent = round(percent, 1)         # round to one decimal
+  )
+
+game_counts
+```
+
+Two things in that table are worth saying out loud. First, Art leads, which is not what most people would predict about Twitch. That is Bob Ross, streaming continuously through the collection week. Second, sixty categories is a lot, and most of them are tiny. A handful of games account for most of the snapshots and a long tail of fifty more accounts for the rest. That shape is going to constrain every chart in this chapter.
+
+The message-level equivalent is the gaming split you built in Chapter 4:
+
+```r
+
+analysis %>%
+  count(channel_type) %>%
+  mutate(percent = round(n / sum(n) * 100, 1))
+```
+
+That table reports 3,457 messages from non-gaming channels, 31,309 from gaming channels, and 501 that could not be classified because their channels never recorded a category. Report the `NA` row. Dropping it silently is how a reader ends up with the wrong denominator.
 
 ### Two-Variable Cross-Tabulation
 
@@ -47,13 +87,13 @@ A cross-tabulation shows how two categorical variables relate to each other. Thi
 
 ```r
 
-cross_tab <- music %>%
-  filter(!is.na(mode_label)) %>%           # remove rows where mode is missing
-  count(playlist_genre, mode_label) %>%    # count each combination
-  pivot_wider(                            # reshape from long to wide format
-    names_from = mode_label,
+cross_tab <- analysis %>%
+  filter(!is.na(channel_type), !is.na(viewer_band)) %>%  # drop unclassifiable rows
+  count(viewer_band, channel_type) %>%                   # count each combination
+  pivot_wider(                                           # reshape long to wide
+    names_from = channel_type,
     values_from = n,
-    values_fill = 0                       # fill missing combinations with 0
+    values_fill = 0                                      # fill missing combos with 0
   )
 
 cross_tab
@@ -62,7 +102,7 @@ cross_tab
 ::: {.callout-note}
 ## What Does `pivot_wider()` Do?
 
-`pivot_wider()` reshapes your data from "long" format (one row per combination) to "wide" format (one row per genre, with columns for each mode). This makes the table easier to read — it looks like the cross-tabulations you've seen in textbooks.
+`pivot_wider()` reshapes your data from "long" format (one row per combination) to "wide" format (one row per viewer band, with a column for each channel type). This makes the table easier to read: it looks like the cross-tabulations you've seen in textbooks.
 :::
 
 ### Adding Proportions
@@ -71,18 +111,18 @@ Raw counts are useful, but proportions tell a richer story:
 
 ```r
 
-music %>%
-  filter(!is.na(mode_label)) %>%
-  count(playlist_genre, mode_label) %>%
-  group_by(playlist_genre) %>%
+analysis %>%
+  filter(!is.na(channel_type), !is.na(viewer_band)) %>%
+  count(viewer_band, channel_type) %>%
+  group_by(viewer_band) %>%
   mutate(
-    prop = n / sum(n),                    # proportion within each genre
-    prop = round(prop, 3)                 # round to 3 decimals
+    prop = n / sum(n),                  # proportion within each viewer band
+    prop = round(prop, 3)               # round to 3 decimals
   ) %>%
   ungroup()
 ```
 
-Now you can see not just *how many* songs in each genre are major vs. minor, but *what percentage*. If pop is 70% major and edm is 55% major, that's a meaningful difference — even if pop has more total songs.
+Now you can see not just *how many* messages in each audience-size band came from gaming channels, but *what percentage*. If small channels are 90% gaming and large channels are 60% gaming, that is a meaningful difference, even though the large channels contribute far more messages in total.
 
 ## The Grammar of Graphics (ggplot2)
 
@@ -99,27 +139,34 @@ Each piece:
 
 | Component | What It Does | Example |
 |-----------|-------------|---------|
-| `ggplot()` | Sets up the canvas and data | `ggplot(music, aes(x = playlist_genre))` |
-| `aes()` | Maps variables to visual properties | `aes(x = genre, fill = mode)` |
+| `ggplot()` | Sets up the canvas and data | `ggplot(analysis, aes(x = channel_type))` |
+| `aes()` | Maps variables to visual properties | `aes(x = viewer_band, fill = channel_type)` |
 | `geom_*()` | Adds the visual layer (bars, points, etc.) | `geom_col()`, `geom_boxplot()` |
-| `labs()` | Adds titles and labels | `labs(title = "Genre Distribution")` |
-| `theme()` | Controls appearance | `theme_minimal()` |
+| `labs()` | Adds titles and labels | `labs(title = "Chat Volume by Hour")` |
+| `theme()` | Controls appearance | `theme_minimal()`, `v2v::theme_v2v()` |
 
 Think of it like building a sandwich: you start with the bread (the canvas), add the main ingredient (the geometry), then add toppings (labels, colors, themes).
 
-## Bar Chart: Genre Distribution
+## Bar Chart: Game Category Distribution
 
-Let's build a chart in stages — from basic to publication-ready.
+Let's build a chart in stages, from basic to publication-ready. The question: which categories dominate the collection?
+
+Sixty categories will not fit on a readable chart, so the first decision is to show the top ten and say so in the subtitle. That is a choice you are making about the figure, and an undisclosed choice is a quiet distortion.
+
+```r
+
+top_games <- game_counts %>% slice_max(n, n = 10)
+```
 
 ### Stage 1: The Bare Minimum
 
 ```r
 
-ggplot(genre_counts, aes(x = playlist_genre, y = n)) +
+ggplot(top_games, aes(x = game, y = n)) +
   geom_col()
 ```
 
-This works, but it's ugly and hard to read. Let's improve it step by step.
+This works, but it's ugly, and the category names are long enough to overlap into mush. Let's improve it step by step.
 
 ### Stage 2: Sort the Bars
 
@@ -127,24 +174,24 @@ Unsorted bars make it harder to compare. Use `fct_reorder()` to sort by frequenc
 
 ```r
 
-ggplot(genre_counts, aes(x = fct_reorder(playlist_genre, n), y = n)) +
+ggplot(top_games, aes(x = fct_reorder(game, n), y = n)) +
   geom_col() +
-  coord_flip()  # horizontal bars are easier to read for category labels
+  coord_flip()  # horizontal bars are easier to read for long category labels
 ```
 
 ### Stage 3: Add Color and Labels
 
 ```r
 
-ggplot(genre_counts, aes(x = fct_reorder(playlist_genre, n), y = n, fill = playlist_genre)) +
+ggplot(top_games, aes(x = fct_reorder(game, n), y = n, fill = game)) +
   geom_col(show.legend = FALSE) +           # hide legend (redundant with axis)
   coord_flip() +
-  scale_fill_brewer(palette = "Set2") +      # colorblind-friendly palette
+  scale_fill_brewer(palette = "Set2") +     # colorblind-friendly palette
   labs(
-    title = "Distribution of Songs by Genre",
-    subtitle = "Billboard/Spotify Music Dataset (n = 1,792)",
-    x = NULL,                                # remove redundant axis label
-    y = "Number of Songs"
+    title = "Most-Streamed Categories",
+    subtitle = "Top 10 of 60 categories, Twitch stream snapshots (n = 32,276)",
+    x = NULL,                               # remove redundant axis label
+    y = "Stream Snapshots"
   ) +
   theme_minimal(base_size = 12)
 ```
@@ -153,21 +200,21 @@ ggplot(genre_counts, aes(x = fct_reorder(playlist_genre, n), y = n, fill = playl
 
 ```r
 
-ggplot(genre_counts, aes(x = fct_reorder(playlist_genre, n), y = n, fill = playlist_genre)) +
+ggplot(top_games, aes(x = fct_reorder(game, n), y = n, fill = game)) +
   geom_col(show.legend = FALSE, width = 0.7) +
   geom_text(aes(label = paste0(n, " (", percent, "%)")),  # add count labels
             hjust = -0.1, size = 3.5) +
   coord_flip() +
-  scale_fill_brewer(palette = "Set2") +
+  v2v::scale_fill_v2v() +
   scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +  # room for labels
   labs(
-    title = "Distribution of Songs by Genre",
-    subtitle = "Billboard/Spotify Music Dataset (n = 1,792)",
+    title = "Most-Streamed Categories",
+    subtitle = "Top 10 of 60 categories, Twitch stream snapshots (n = 32,276)",
     x = NULL,
-    y = "Number of Songs",
-    caption = "Source: Spotify API via coursepackR"
+    y = "Stream Snapshots",
+    caption = "Source: v2v package, November 2018 Twitch collection"
   ) +
-  theme_minimal(base_size = 12) +
+  v2v::theme_v2v() +
   theme(
     plot.title = element_text(face = "bold"),
     panel.grid.major.y = element_blank()     # remove horizontal grid lines
@@ -176,58 +223,89 @@ ggplot(genre_counts, aes(x = fct_reorder(playlist_genre, n), y = n, fill = playl
 
 That's the difference between a homework chart and a professional one. Every element serves a purpose: the sort order aids comparison, the labels provide exact values, and the clean theme reduces visual noise.
 
-## Stacked Proportional Bar Chart
+`v2v::theme_v2v()` and `v2v::scale_fill_v2v()` apply the course's house style in one call each, so that every figure in your portfolio looks like a member of one set rather than a pile of unrelated charts. `scale_fill_brewer(palette = "Set2")` is a perfectly good alternative when you're working outside this course.
 
-A stacked proportional chart shows how the composition of one variable changes across categories of another. This is perfect for showing genre × mode relationships:
+## Bar Chart: Counts Across Time
+
+A second bar chart, and a different question: across the hours of the day, when is chat busiest? This is what the timestamp conversion in Chapter 4 was for. You cannot read an hour off a run of milliseconds, but you can read it off a `<dttm>`:
 
 ```r
 
-music %>%
-  filter(!is.na(mode_label)) %>%
-  ggplot(aes(x = fct_infreq(playlist_genre), fill = mode_label)) +
+chat_by_hour <- analysis %>%
+  mutate(hour = hour(timestamp)) %>%
+  count(hour, name = "messages")
+
+ggplot(chat_by_hour, aes(x = hour, y = messages)) +
+  geom_col(fill = "#2f7d8a") +
+  labs(
+    title = "Chat Volume by Hour of Day",
+    x = "Hour of day (UTC)",
+    y = "Messages in sample",
+    caption = "Source: v2v package, November 2018 Twitch collection"
+  ) +
+  v2v::theme_v2v()
+```
+
+The figure shows a clear daily pulse. Chat peaks at 13:00 UTC with 2,201 messages and bottoms out at 03:00 with 833, a swing of well over two to one between the loudest hour and the quietest. The shape is not mysterious: Twitch's audience in 2018 was concentrated in the Americas and Europe, and UTC midday is the waking, screen-facing part of the day across that span. The point worth taking is what the bar chart does. It takes twenty-four numbers and makes a rhythm visible at a glance, which is exactly the job a bar chart is for.
+
+::: {.callout-note}
+## `geom_col()` or `geom_bar()`?
+
+`geom_col()` draws a bar whose height is a value you already computed, which is what `count()` produced above. `geom_bar()` does the counting itself from raw rows. Same picture, different division of labor. If you already have a column of counts, use `geom_col()`.
+:::
+
+## Stacked Proportional Bar Chart
+
+A stacked proportional chart shows how the composition of one variable changes across categories of another. This is perfect for the audience-size by channel-type relationship you'll test in Chapter 6:
+
+```r
+
+analysis %>%
+  filter(!is.na(channel_type), !is.na(viewer_band)) %>%
+  ggplot(aes(x = viewer_band, fill = channel_type)) +
   geom_bar(position = "fill") +               # "fill" makes it proportional
   coord_flip() +
-  scale_fill_brewer(palette = "Set1") +
+  v2v::scale_fill_v2v() +
   scale_y_continuous(labels = scales::percent) +  # show as percentages
   labs(
-    title = "Proportion of Major vs. Minor Mode by Genre",
-    subtitle = "Billboard/Spotify Music Dataset",
+    title = "Gaming and Non-Gaming Channels by Audience Size",
+    subtitle = "Twitch chat sample, November 2018",
     x = NULL,
-    y = "Proportion",
-    fill = "Mode",
-    caption = "Source: Spotify API via coursepackR"
+    y = "Proportion of messages",
+    fill = "Channel type",
+    caption = "Source: v2v package, November 2018 Twitch collection"
   ) +
-  theme_minimal(base_size = 12) +
+  v2v::theme_v2v() +
   theme(plot.title = element_text(face = "bold"))
 ```
 
 ::: {.callout-note}
 ## When to Use a Stacked Proportional Chart
 
-Use this chart when you want to compare the *composition* (not the count) across groups. It answers: "Does the proportion of major vs. minor mode differ across genres?" If all bars look roughly the same, there's probably no relationship. If they differ visibly, that's worth testing statistically (Chapter 6).
+Use this chart when you want to compare the *composition* (not the count) across groups. It answers: "Does the mix of gaming and non-gaming channels differ across audience-size bands?" If all bars look roughly the same, there's probably no relationship. If they differ visibly, that's worth testing statistically (Chapter 6).
 :::
 
 ## Boxplot: Comparing a Numeric Variable Across Groups
 
-Boxplots show the distribution of a continuous variable across categories. They reveal medians, spread, and outliers at a glance.
+Boxplots show the distribution of a continuous variable across categories. They reveal medians, spread, and outliers at a glance. The study's central question is a question of exactly this shape: do chat messages run longer on non-gaming channels than on gaming ones?
 
 ```r
 
-music %>%
-  ggplot(aes(x = fct_reorder(playlist_genre, energy, .fun = median),
-             y = energy,
-             fill = playlist_genre)) +
+analysis %>%
+  filter(!is.na(channel_type)) %>%
+  mutate(length_shown = pmin(message_length, 120)) %>%   # cap the view, see below
+  ggplot(aes(x = channel_type, y = length_shown, fill = channel_type)) +
   geom_boxplot(show.legend = FALSE, alpha = 0.7) +
   coord_flip() +
-  scale_fill_brewer(palette = "Set2") +
+  v2v::scale_fill_v2v() +
   labs(
-    title = "Energy Levels by Genre",
-    subtitle = "Higher values indicate more energetic tracks",
+    title = "Message Length by Channel Type",
+    subtitle = "Lengths capped at 120 characters for display",
     x = NULL,
-    y = "Energy (0–1 scale)",
-    caption = "Source: Spotify API via coursepackR"
+    y = "Message length (characters, capped at 120)",
+    caption = "Source: v2v package, November 2018 Twitch collection"
   ) +
-  theme_minimal(base_size = 12) +
+  v2v::theme_v2v() +
   theme(plot.title = element_text(face = "bold"))
 ```
 
@@ -235,45 +313,90 @@ music %>%
 
 - The **thick line** in the middle is the median (50th percentile)
 - The **box** spans the 25th to 75th percentile (the middle 50% of values)
-- The **whiskers** extend to 1.5× the box width; anything beyond is an **outlier** (shown as dots)
+- The **whiskers** extend to 1.5 times the box width, and anything beyond is an **outlier** (shown as dots)
+
+::: {.callout-important}
+## Disclose Your Cap
+
+`pmin(message_length, 120)` pushes every message longer than 120 characters down to 120, so the long tail does not stretch the axis and squash the part of the distribution where almost all the data lives. Twitch's real limit is 500 characters, so that top value is a genuine pile-up of long messages compressed into one place. Capping is legitimate. Capping without saying so is not, which is why the axis label says "capped at 120."
+:::
+
+## The Summary Table Behind the Picture
+
+A figure sets up a comparison. A summary table gives the numbers behind it:
+
+```r
+
+analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  group_by(is_gaming) %>%
+  summarise(
+    n      = n(),
+    mean   = mean(message_length, na.rm = TRUE),
+    median = median(message_length, na.rm = TRUE),
+    sd     = sd(message_length, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  v2v::pretty_table()
+```
+
+| is_gaming | n      | mean  | median | sd    |
+| --------- | ------ | ----- | ------ | ----- |
+| FALSE     | 3,457  | 33.70 | 16     | 60.68 |
+| TRUE      | 31,309 | 28.49 | 17     | 38.47 |
+
+Read the `mean` column and a story jumps out. Non-gaming messages, the `FALSE` row, average 33.70 characters against 28.49 for gaming messages. Non-gaming chat looks meaningfully longer.
+
+Now read the `median` column, the length of the exactly-middle message in each group, and the story collapses: 16 characters for non-gaming, 17 for gaming, all but identical, and pointing the other way. The typical message is the same length in both kinds of channel.
+
+Both things are true, and the distribution explains how. The mean is sensitive to a long tail in a way the median is not. A relatively small number of very long messages pulls an average upward while leaving the middle value untouched. The non-gaming group has the heavier tail, which its much larger standard deviation, 60.68 against 38.47, records directly. So the gap in means is real arithmetic, but it is the work of the tail, not of the typical message.
+
+::: {.callout-important}
+## Never Report a Mean Alone
+
+Lean only on the mean here and you would tell your reader that non-gaming chat is longer. The median, sitting right next to it, says the everyday message is the same in both. Report the mean, the median, the standard deviation, and the group sizes together. A mean is one number standing in for thousands, and which thousands it stands in for is something only the spread can show.
+:::
 
 ## Writing Your Interpretation
 
-Numbers and charts don't speak for themselves. Your assignment requires a 2–3 paragraph interpretation that cites specific numbers. Here's how to structure it:
+Numbers and charts don't speak for themselves. Your assignment requires a 2 to 3 paragraph interpretation that cites specific numbers. Here's how to structure it:
 
 **Paragraph 1: What the data contains**
-> "The dataset includes 1,792 songs spanning six genres. Pop and rap are the most represented genres, accounting for X% and Y% of the dataset respectively, while latin represents the smallest share at Z%."
+
+> "The sample includes 35,267 chat messages drawn from 50 Twitch channels over five and a half days in November 2018, alongside 32,276 stream snapshots. Gaming channels account for 31,309 messages and non-gaming channels for 3,457, with a further 501 messages coming from channels whose category was never recorded and which are therefore excluded from the comparison."
 
 **Paragraph 2: Key patterns**
-> "The cross-tabulation reveals notable differences in musical mode across genres. Pop songs are predominantly in major mode (X%), while [genre] shows a more even split (Y% major, Z% minor). This suggests that genre conventions may influence compositional choices around modality."
+
+> "Chat volume follows a clear daily rhythm, peaking at 13:00 UTC with 2,201 messages and falling to 833 at 03:00. Message length differs between the two kinds of channel, but not in a simple way: non-gaming messages average 33.70 characters against 28.49 for gaming messages, while the medians are nearly identical at 16 and 17. The gap in means is produced by a heavier tail of long messages on non-gaming channels, visible in the much larger standard deviation (60.68 versus 38.47)."
 
 **Paragraph 3: Implications**
-> "These descriptive patterns warrant further investigation. The apparent relationship between genre and mode will be tested statistically in the inferencing phase using a chi-square test of independence."
+
+> "These descriptive patterns warrant further investigation. Whether the five-character gap between the two group means reflects a real difference between gaming and non-gaming channels, or only the ordinary wobble any two samples produce, is a question the inferencing phase will test directly."
 
 ::: {.callout-important}
 ## Always Cite Specific Numbers
 
-"Most pop songs are in major mode" is weak. "72.3% of pop songs are in major mode, compared to 56.1% of edm tracks" is strong. Specific numbers make your writing credible and verifiable.
+"Non-gaming messages are longer" is weak. "Non-gaming messages average 33.70 characters against 28.49 for gaming messages, though the medians are 16 and 17" is strong. Specific numbers make your writing credible and verifiable, and in this case they also keep you from overstating the finding.
 :::
 
 ## Try It Yourself
 
 These exercises map directly to the Describing Data [R] assignment:
 
-1. **Build a frequency table** for `playlist_genre` with both counts and percentages. Format it so a reader can immediately see which genre is most and least common.
+1. **Build a frequency table** for `game` with both counts and percentages. Format it so a reader can immediately see which category is most and least common, and decide how many rows to show.
 
-2. **Create a cross-tabulation** of `playlist_genre` × `mode_label` with both counts and proportions.
+2. **Create a cross-tabulation** of `viewer_band` by `channel_type` with both counts and proportions. Which band has the most lopsided mix?
 
-3. **Build a horizontal bar chart** that is publication-ready: sorted bars, colorblind-friendly palette, count labels, full titles and captions.
+3. **Build a horizontal bar chart** that is publication-ready: sorted bars, colorblind-safe palette, count labels, full titles and captions.
 
-4. **Create a stacked proportional chart** showing the proportion of major vs. minor mode within each genre.
+4. **Create a stacked proportional chart** showing the mix of gaming and non-gaming messages within each audience-size band.
 
-5. **Choose one additional visualization** (boxplot, scatter plot, or another chart type) and write 2–3 sentences justifying why you chose it and what it reveals.
+5. **Choose one additional visualization** (histogram, boxplot, line chart, or another type) and write 2 to 3 sentences justifying why you chose it and what it reveals. A histogram of `message_length` is a strong candidate, because it shows the right skew that the mean alone hides.
 
-6. **Write your interpretation:** 2–3 paragraphs that cite specific numbers from your tables and describe the patterns you see.
+6. **Write your interpretation:** 2 to 3 paragraphs that cite specific numbers from your tables and describe the patterns you see.
 
 ::: {.callout-tip}
 ## Connection to Your Project
 
-For your final portfolio, you'll create a frequency table and bar chart using your own variables — not genre and mode, but whatever you coded in your content analysis. The `ggplot2` syntax is identical. Only the variable names change. The interpretation paragraphs become part of your Results section.
+For your final portfolio, you'll create a frequency table and bar chart using your own variables, not game category and channel type, but whatever you coded in your content analysis. The `ggplot2` syntax is identical. Only the variable names change. The interpretation paragraphs become part of your Results section.
 :::

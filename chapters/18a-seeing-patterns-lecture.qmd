@@ -14,7 +14,7 @@ This chapter covers the conceptual foundation for data visualization. The [next 
 
 ## Why Visualize?
 
-Summary statistics can deceive. Consider **Anscombe's Quartet** (1973) --- four datasets with identical means, standard deviations, and correlations, but radically different shapes when plotted:
+Summary statistics can deceive. Consider **Anscombe's Quartet** (1973): four datasets with identical means, standard deviations, and correlations, but radically different shapes when plotted:
 
 | Dataset | Mean X | Mean Y | SD X | SD Y | Correlation |
 |---------|--------|--------|------|------|-------------|
@@ -23,7 +23,7 @@ Summary statistics can deceive. Consider **Anscombe's Quartet** (1973) --- four 
 | III     | 9.0    | 7.5    | 3.3  | 2.0  | 0.816       |
 | IV      | 9.0    | 7.5    | 3.3  | 2.0  | 0.816       |
 
-The numbers are identical. The patterns are not --- one is linear, one is curved, one has an outlier pulling the trend, and one has a single extreme point creating a false correlation.
+The numbers are identical. The patterns are not: one is linear, one is curved, one has an outlier pulling the trend, and one has a single extreme point creating a false correlation.
 
 **The lesson:** always visualize before you analyze. A chart reveals what a summary statistic hides.
 
@@ -31,7 +31,7 @@ The numbers are identical. The patterns are not --- one is linear, one is curved
 
 ## The Grammar of Graphics
 
-In 1999, statistician Leland Wilkinson published *The Grammar of Graphics*, arguing that every statistical graphic can be decomposed into a small set of components --- just as every English sentence can be decomposed into subject, verb, and object.
+In 1999, statistician Leland Wilkinson published *The Grammar of Graphics*, arguing that every statistical graphic can be decomposed into a small set of components, just as every English sentence can be decomposed into subject, verb, and object.
 
 Hadley Wickham implemented this grammar in R as **ggplot2** (2005), which is now the most widely used data visualization package in the social sciences.
 
@@ -52,9 +52,11 @@ The syntax reads like a sentence:
 > "Take **this data**, map **these variables** to visual properties, and draw **this geometry**."
 
 ```r
-ggplot(music, aes(x = playlist_genre)) +
+ggplot(analysis, aes(x = is_gaming)) +
   geom_bar()
 ```
+
+Here `analysis` is the table you built in the wrangling chapter: one row per Twitch chat message, with a `message_length` column and an `is_gaming` label attached from the stream table.
 
 Everything after this is refinement: better colors, clearer labels, cleaner themes. The core logic is always data + aesthetics + geometry.
 
@@ -88,7 +90,9 @@ The most common mistake in student work is choosing a chart type arbitrarily. Th
 
 ### Multiple Groups
 
-For any of the above, **faceting** creates side-by-side panels --- one per group --- without overplotting.
+For any of the above, **faceting** creates side-by-side panels, one per group, without overplotting.
+
+For the Twitch study, this table does the choosing for you. Gaming status is categorical, so its distribution is a bar chart. Message length is continuous, so its distribution is a histogram. Message length split by gaming status is categorical plus continuous, so it is a boxplot or a pair of overlaid histograms. Viewer counts across the collection week are time plus continuous, so they are a line chart.
 
 ::: {.callout-warning}
 ## Charts to Avoid
@@ -106,7 +110,7 @@ Edward Tufte's *The Visual Display of Quantitative Information* (2001) establish
 
 ### The Data-Ink Ratio
 
-> "Erase non-data-ink, within reason." --- Tufte
+> "Erase non-data-ink, within reason." (Tufte, 2001)
 
 Every element on a chart should either represent data or help the reader interpret data. Remove:
 
@@ -130,12 +134,14 @@ A lie factor of 1.0 is honest. Common distortions:
 
 ### Small Multiples
 
-Instead of cramming five groups onto one chart, **faceting** creates a grid of small, identically-scaled panels --- one per group. This makes comparison easy without overplotting.
+Instead of cramming five groups onto one chart, **faceting** creates a grid of small, identically-scaled panels, one per group. This makes comparison easy without overplotting.
 
 ```r
-ggplot(music, aes(x = energy)) +
-  geom_histogram(binwidth = 0.05) +
-  facet_wrap(~playlist_genre)
+analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  ggplot(aes(x = message_length)) +
+  geom_histogram(binwidth = 5) +
+  facet_wrap(~is_gaming)
 ```
 
 Each panel uses the same axes, so differences in shape are immediately visible.
@@ -148,33 +154,33 @@ A chart alone is not analysis. You need to write about what it shows. Good inter
 
 ### 1. What the data contains
 
-> "The dataset includes 1,792 songs spanning six genres from the Billboard Hot 100 chart (1960--2020)."
+> "The dataset includes 35,267 chat messages drawn from 50 Twitch channels during the collection week of November 18 to 24, 2018."
 
 This orients the reader. How many observations? What do they represent? What is the time frame?
 
 ### 2. What patterns are visible
 
-> "Pop and rap are the most represented genres, accounting for 21.3% and 19.8% of the dataset respectively, while latin represents the smallest share at 12.4%."
+> "Chat volume follows a clear daily pulse. The busiest hour is 13:00 UTC, with 2,201 messages, and the quietest is 03:00, with 833, a swing of well over two to one across the day."
 
 Cite specific numbers. Compare groups. Note the biggest and smallest.
 
 ### 3. What the patterns suggest
 
-> "The cross-tabulation reveals notable differences in musical mode across genres. Pop songs are predominantly in major mode (72.3%), while rock shows a more even split (54.1% major). This suggests genre conventions may influence compositional choices."
+> "Non-gaming channels average 33.70 characters per message against 28.49 for gaming channels, but the median message runs 16 characters on non-gaming channels and 17 on gaming ones. The gap in the means is the work of a long tail rather than of the typical message, which suggests that the two kinds of channel are more alike in everyday chat than a mean-only comparison would imply."
 
 Connect the pattern to a research question. What does it mean? What should be tested next?
 
 ::: {.callout-important}
 ## Always Cite Specific Numbers
 
-"Most pop songs are in major mode" is weak. "72.3% of pop songs are in major mode, compared to 54.1% of rock tracks" is strong. Specific numbers make your writing credible and verifiable.
+"Non-gaming chat runs longer" is weak. "Non-gaming channels average 33.70 characters per message compared to 28.49 for gaming channels, on medians of 16 and 17" is strong. Specific numbers make your writing credible and verifiable.
 :::
 
 ---
 
 ## The Executive Summary
 
-Assignment 02 asks you to write an **executive summary** --- a 2-3 paragraph description aimed at a non-specialist reader (a journalist, a label executive, a podcast audience).
+Assignment 02 asks you to write an **executive summary**, a 2-3 paragraph description aimed at a non-specialist reader (a journalist, a platform policy analyst, a podcast audience).
 
 The rules of the executive summary:
 
@@ -195,10 +201,10 @@ This is a communication skill, not a statistical one. You are translating resear
 
 Assignment 02 (Describing Data, 75 pts) asks you to:
 
-1. Build **frequency tables** for genre and mode (Part 1)
+1. Build **frequency tables** for game category and gaming status (Part 1)
 2. Create a **bar chart** and a **stacked proportional chart** (Part 2)
-3. Build a **decade trend line chart** showing genre shifts over time (Part 3)
-4. Compare **audio features** between two subsets (Part 4)
+3. Build a **time trend line chart** showing how viewership moved across the collection week (Part 3)
+4. Compare **message length** between two subsets of the corpus (Part 4)
 5. Write an **executive summary** for a non-specialist audience (Part 5)
 
 The next session walks through the R code for Parts 3--5. For Parts 1--2, the [R Workbook Ch 5: Describing Data](../workbook/05-describing-data.qmd) provides complete code walkthroughs.

@@ -8,7 +8,7 @@ execute:
 
 {{< video videos/04-data-wrangling.mp4 >}}
 
-Real data is messy. The music dataset you're about to work with has missing values, duplicate rows, inconsistent labels, and out-of-range numbers — on purpose. This chapter teaches you how to find and fix these problems using R.
+Real data is messy. The Twitch dataset you're about to work with has missing values, unreadable timestamps, messages that are twenty-three question marks long, and the information you most need sitting in a second table that the first one has no link to. This chapter teaches you how to find and fix these problems using R.
 
 This is the single most practical R skill you'll learn: every dataset needs cleaning before analysis, and the cleaning process is the same regardless of the topic.
 
@@ -18,7 +18,7 @@ This is the single most practical R skill you'll learn: every dataset needs clea
 Import → Diagnose → Clean → Export
 ```
 
-Every data wrangling task follows this sequence. By the end of this chapter, you'll have taken a messy CSV file and produced a clean `.RDS` file ready for visualization and statistical testing.
+Every data wrangling task follows this sequence. By the end of this chapter, you'll have taken two raw tables and produced a single clean `.RDS` file ready for visualization and statistical testing.
 
 ## Step 1: Import
 
@@ -27,181 +27,362 @@ First, load your packages and import the data:
 ```r
 
 library(tidyverse)  # for data manipulation and visualization
-library(janitor)    # for clean_names() — fixes messy column headers
+library(v2v)        # the course package: data, themes, and helpers
 
-music_raw <- read_csv("data/music_data_raw.csv")
-
-music_raw <- music_raw %>% clean_names()
+chat <- twitch_chat()
+streams <- twitch_streams()
 ```
 
-Let's see what we're working with:
+Notice what is missing. There is no file path, no `read_csv()`, no download step. `twitch_chat()` and `twitch_streams()` reach into the `v2v` package, find the data that ships inside it, and hand it back. A new R user's first encounter with data is usually a pile of path errors, and these two functions remove that entire category of problem.
+
+`chat` is one row per chat message. `streams` is one row per snapshot of one stream at one moment. Let's see what we're working with:
 
 ```r
 
-dim(music_raw)
+dim(chat)
+dim(streams)
 ```
 
 ```r
 
-names(music_raw)
+names(chat)
+names(streams)
 ```
 
 ::: {.callout-note}
 ## What Is the `%>%` Symbol?
 
-The `%>%` is called a **pipe**. It takes the result from the left side and passes it to the function on the right side. Read it as "and then." So `music_raw %>% clean_names()` means "take music_raw **and then** clean the names."
+The `%>%` is called a **pipe**. It takes the result from the left side and passes it to the function on the right side. Read it as "and then." So `streams %>% count(game)` means "take streams **and then** count its games."
 
 You will also see `|>` in some tutorials. That is base R's own pipe, and it does nearly the same thing. We use `%>%` because it comes with the tidyverse, which is what this course is built on.
 :::
 
 ## Step 2: Diagnose
 
-Before cleaning, you need to know what's wrong. Think of this as a doctor's exam — you check vital signs before prescribing treatment.
+Before cleaning, you need to know what's wrong. Think of this as a doctor's exam: you check vital signs before prescribing treatment.
 
 ### Check the Structure
 
 ```r
 
-glimpse(music_raw)
+glimpse(chat)
+```
+
+```
+Rows: 35,267
+Columns: 5
+$ id      <int> 89, 551, 1033, 2094, 2803, …
+$ channel <chr> "sodapoppin", "xqcow", "forsen", "sodapoppin", "xqcow", …
+$ sender  <chr> "madzee", "prometheanow", "spectre155", "itsjer", "laserfru…
+$ message <chr> "???????????????????????", "TriEasy Clap TriEasy Clap TriE…
+$ date    <dbl> 1542578127023, 1542578135562, 1542578143610, 1542578157677…
+```
+
+```r
+
+glimpse(streams)
+```
+
+```
+Rows: 32,276
+Columns: 6
+$ id      <int> 4, 10, 18, 61, 105, …
+$ channel <chr> "sodapoppin", "xqcow", "forsen", "giantwaffle", "sodapoppin…
+$ title   <chr> "Hello truckers\n44835158804929_2115841973", "…", …
+$ game    <chr> "Marble It Up!", "Just Chatting", "Artifact", "Rocket Leag…
+$ viewers <int> 27934, 19381, 15300, 4697, 28076, …
+$ date    <dbl> 1542578200214, 1542578200240, 1542578200273, 1542578200423…
 ```
 
 Look at the data types:
+
 - `<chr>` = text (character)
+- `<int>` = whole number (integer)
 - `<dbl>` = number (double/decimal)
-- `<date>` = date
+- `<dttm>` = date-time (you don't have one yet, but you will)
+
+Two things in that output already tell you what the cleaning will involve. The `date` column is a run of enormous numbers marked `<dbl>`, not a date anyone can read. And there is no column anywhere saying how long a message is, or whether it came from a gaming channel. Those are variables your codebook named and the raw data does not contain.
 
 ### Check for Missing Values
 
 ```r
 
-music_raw %>%
+chat %>%
   summarize(across(everything(), ~sum(is.na(.)))) %>%
   pivot_longer(everything(), names_to = "column", values_to = "missing") %>%
   filter(missing > 0) %>%
   arrange(desc(missing))
 ```
 
-This tells you which columns have missing data and how much. A few missing values are normal. Columns with *most* values missing might need to be dropped entirely.
+Run the same check on `streams`. In this sample the tables are almost complete: four chat messages are missing their text, and ninety-six stream snapshots are missing both `title` and `game`. A few missing values are normal. Columns with *most* values missing might need to be dropped entirely. And missing values in a key column, like `game`, will matter later, because a snapshot with no category cannot help you decide whether a channel is a gaming channel.
 
 ### Check for Duplicates
 
 ```r
 
-cat("Total rows:", nrow(music_raw), "\n")
-cat("Unique rows:", nrow(distinct(music_raw)), "\n")
-cat("Duplicates:", nrow(music_raw) - nrow(distinct(music_raw)), "\n")
+cat("Total rows:", nrow(chat), "\n")
+cat("Unique rows:", nrow(distinct(chat)), "\n")
+cat("Duplicates:", nrow(chat) - nrow(distinct(chat)), "\n")
 ```
 
 ### Check Categorical Variables
 
-For text/categorical columns, check the unique values. Inconsistent labels are one of the most common data problems.
+For text and categorical columns, check the unique values. `count()` tallies how often each value appears:
 
 ```r
 
-music_raw %>% count(playlist_genre, sort = TRUE)
+streams %>% count(game, sort = TRUE)
 ```
+
+```
+# A tibble: 60 × 2
+   game                                   n
+   <chr>                              <int>
+ 1 Art                                 5298
+ 2 Fortnite                            3682
+ 3 Just Chatting                       2474
+ 4 Hearthstone                         2157
+ 5 Pokemon: Let's Go, Pikachu!/Eevee!  1967
+ 6 League of Legends                   1952
+ 7 Heroes of the Storm                 1473
+ 8 Counter-Strike: Global Offensive    1346
+ 9 Rocket League                       1321
+10 World of Warcraft                    920
+# ℹ 50 more rows
+```
+
+Sixty categories, with a handful of games accounting for most of the snapshots and a long tail of fifty more accounting for the rest. That shape matters: sixty is far too many lines to put on one chart, and Chapter 5 will have to do something about it.
+
+`count()` is also a way to confirm the data is the corpus you expect. A related function, `n_distinct()`, counts how many different values a column holds:
 
 ```r
 
-music_raw %>% count(mode, sort = TRUE)
+n_distinct(chat$channel)
 ```
+
+```
+[1] 50
+```
+
+Fifty distinct channels, exactly the corpus this dataset is described as holding.
 
 ### Check Numeric Variables
 
 ```r
 
-music_raw %>%
-  select(danceability, energy, valence, tempo, track_popularity) %>%
+streams %>%
+  select(viewers) %>%
   summary()
 ```
 
 Look for values that don't make sense:
-- `danceability`, `energy`, and `valence` should be between 0 and 1
-- `tempo` should be a positive number (usually 50–250 BPM)
-- `track_popularity` should be between 0 and 100
+
+- `viewers` should be zero or a positive whole number, never negative
+- `date` should be a count of milliseconds since 1970, so roughly 1.5 trillion for data collected in 2018. A value of 1542, or of 1.5 quintillion, means something went wrong upstream
 
 ## Step 3: Clean
 
-Now fix the problems you found. The order matters — handle duplicates first, then labels, then values.
+Now build what the analysis needs. The order matters: make the timestamps readable first, then derive the variables your codebook named, then join in the information that lives in the other table.
 
-### 3a: Remove Duplicates
+### 3a: Make the Timestamp Readable
+
+The `date` column holds a count of milliseconds elapsed since midnight on the first of January, 1970. That reference moment is the **Unix epoch**, the zero point nearly all computers use to keep time. The number is precise and entirely unreadable. `mutate()` is the verb that fixes it:
 
 ```r
 
-music_clean <- music_raw %>% distinct()
-
-cat("Rows before:", nrow(music_raw), "\n")
-cat("Rows after:", nrow(music_clean), "\n")
+analysis <- chat %>%
+  mutate(timestamp = as.POSIXct(date / 1000, origin = "1970-01-01", tz = "UTC"))
 ```
 
-### 3b: Standardize Text Labels
-
-If your genre column has inconsistent capitalization or spelling (e.g., "Pop" and "pop" and "POP"), fix it:
-
 ```r
 
-music_clean <- music_clean %>%
-  mutate(playlist_genre = str_to_lower(playlist_genre))
-
-music_clean %>% count(playlist_genre, sort = TRUE)
+analysis %>% select(date, timestamp) %>% head(3)
 ```
 
-### 3c: Handle Problematic Values
+```
+# A tibble: 3 × 2
+           date timestamp
+          <dbl> <dttm>
+1 1542578127023 2018-11-18 21:55:27
+2 1542578135562 2018-11-18 21:55:35
+3 1542578143610 2018-11-18 21:55:43
+```
 
-Use `case_when()` to recode or fix specific values. This function works like a series of if/then rules:
+::: {.callout-important}
+## Divide by 1,000 or Land in the Year 50,000
+
+`as.POSIXct()` expects a count of **seconds**. The `date` column is a count of **milliseconds**, a thousand times finer. Hand it the raw number and every message lands tens of thousands of years in the future. `date / 1000` converts milliseconds to seconds first. This is the single most common way this conversion fails, and it fails quietly: you get dates, they are just absurd ones.
+:::
+
+The column type changed too, from `<dbl>` to `<dttm>`. That new type is what makes the column useful. From a real date-time you can pull the hour of day, the day of week, or the calendar date, none of which can be read off the raw integer.
+
+### 3b: Derive Message Length
+
+`message_length` is a variable the codebook named and the data does not contain. `str_length()` counts the characters in a string:
 
 ```r
 
-music_clean <- music_clean %>%
+analysis <- analysis %>%
+  mutate(message_length = str_length(message))
+```
+
+```r
+
+analysis %>% select(message, message_length) %>% head(3)
+```
+
+```
+# A tibble: 3 × 2
+  message                                 message_length
+  <chr>                                             <int>
+1 "???????????????????????"                           23
+2 "TriEasy Clap TriEasy Clap TriEasy Cla…"            441
+3 "cmonBruh"                                            8
+```
+
+A single-word message at eight characters, a row of punctuation at twenty-three, and a block of copy-pasted text at 441 are all real Twitch chat. The distance between them is large, and that spread is the raw material of the analysis.
+
+### 3c: Label Gaming and Non-Gaming
+
+This is the transformation the research question turns on, and it takes the most work, because the information lives in the *other* table.
+
+Gaming or non-gaming is a property of the channel, fixed by what the channel mostly streams. So build it in three moves: find what each channel mostly streams, decide whether that counts as gaming, and attach the decision to every message from that channel.
+
+First, the modal category for each channel:
+
+```r
+
+channel_type <- streams %>%
+  filter(!is.na(game)) %>%          # drop snapshots with no category
+  count(channel, game) %>%          # how many snapshots per channel per category
+  group_by(channel) %>%
+  slice_max(n, n = 1, with_ties = FALSE) %>%   # keep the most frequent
+  ungroup()
+```
+
+Second, the judgment call, written down where a reader can see it. Twitch sorts streams into categories and some of those categories are not games:
+
+```r
+
+nongaming_categories <- c(
+  "Art", "ASMR", "Beauty & Body Art", "Creative", "Food & Drink",
+  "IRL", "Just Chatting", "Makers & Crafting", "Music",
+  "Music & Performing Arts", "Science & Technology",
+  "Sports & Fitness", "Talk Shows & Podcasts", "Travel & Outdoors"
+)
+
+channel_type <- channel_type %>%
+  mutate(is_gaming = !(game %in% nongaming_categories)) %>%
+  select(channel, game, is_gaming)
+```
+
+`game %in% nongaming_categories` asks whether a channel's dominant category is on the non-gaming list, and the `!` negates it, so `is_gaming` is `TRUE` for every channel whose main category is a game.
+
+Third, the **join**. A join brings columns from one table onto another by matching on a shared key, here the channel name. `left_join()` keeps every row of the chat table and attaches the matching values:
+
+```r
+
+analysis <- analysis %>%
+  left_join(channel_type, by = "channel")
+```
+
+Always inspect a column you just derived:
+
+```r
+
+analysis %>% count(is_gaming)
+```
+
+```
+# A tibble: 3 × 2
+  is_gaming     n
+  <lgl>     <int>
+1 FALSE      3457
+2 TRUE      31309
+3 NA          501
+```
+
+Two channels in the corpus streamed without ever having a category recorded, so they never made it into `channel_type` and the join left their messages with `is_gaming` set to `NA`. That is the correct outcome, not a bug. The data genuinely does not say whether those 501 messages came from gaming channels, and an honest `NA` records that. They will sit out the comparison rather than being guessed onto one side of it.
+
+::: {.callout-important}
+## A Join Is Only as Good as Its Keys
+
+Twitch's chat protocol writes channel names with a leading `#`, so the same channel can appear as `#bobross` in one source and `bobross` in another. Join two tables whose keys disagree like that and every row fails to match, silently, with no error message. The `v2v` data has already been normalized, but raw Twitch data would need that cleaning step first. When a join returns nothing, mismatched keys are the first thing to check.
+:::
+
+::: {.callout-tip}
+## The Shortcut
+
+`v2v::join_chat_streams()` performs this chat-to-stream join for you in one call. Build it by hand once, so you know what the shortcut is doing, then use the shortcut.
+:::
+
+### 3d: Band the Channels by Audience Size
+
+You'll want a second categorical variable for Chapter 6's chi-square test. Audience size is a good one, and `case_when()` is the tool. It works like a series of if/then rules:
+
+```r
+
+channel_size <- streams %>%
+  group_by(channel) %>%
+  summarize(median_viewers = median(viewers, na.rm = TRUE)) %>%
   mutate(
-    mode_label = case_when(
-      mode == 0 ~ "minor",
-      mode == 1 ~ "major",
-      TRUE ~ NA_character_  # anything else becomes NA
-    )
-  )
+    viewer_band = cut(median_viewers, breaks = c(0, 5000, 20000, Inf),
+                      labels = c("small", "medium", "large"))
+  ) %>%
+  select(channel, viewer_band)
 
-music_clean %>% count(mode_label)
+analysis <- analysis %>% left_join(channel_size, by = "channel")
+
+analysis %>% count(viewer_band)
 ```
 
 ::: {.callout-note}
 ## How `case_when()` Works
 
-`case_when()` checks conditions from top to bottom. The first condition that's TRUE determines the result. The `TRUE ~` at the end is a catch-all — it handles anything that didn't match the earlier rules. Think of it as "if none of the above, then..."
+`case_when()` checks conditions from top to bottom. The first condition that's TRUE determines the result. The `TRUE ~` at the end is a catch-all: it handles anything that didn't match the earlier rules. Think of it as "if none of the above, then..."
+
+The cutoffs above (1,000 and 10,000 median concurrent viewers) are a decision *you* are making, not a fact about the data. Write them into your codebook. A reader who disagrees with the cutoffs needs to be able to see them.
 :::
 
-### 3d: Convert to Factors
+### 3e: Convert to Factors
 
-A **factor** is R's way of storing a categorical variable — it remembers both the values and their labels. This matters for visualization and statistical tests.
+A **factor** is R's way of storing a categorical variable. It remembers both the values and their labels, which matters for visualization and statistical tests. Give the gaming split readable labels while you're at it:
 
 ```r
 
-music_clean <- music_clean %>%
+analysis <- analysis %>%
   mutate(
-    playlist_genre = factor(playlist_genre),
-    mode_label = factor(mode_label)
+    channel_type = case_when(
+      is_gaming == TRUE  ~ "gaming",
+      is_gaming == FALSE ~ "non-gaming",
+      TRUE ~ NA_character_
+    ),
+    channel_type = factor(channel_type),
+    viewer_band  = factor(viewer_band, levels = c("small", "mid", "large"))
   )
 
-levels(music_clean$playlist_genre)
-levels(music_clean$mode_label)
+levels(analysis$channel_type)
+levels(analysis$viewer_band)
 ```
+
+Setting `levels` explicitly for `viewer_band` matters. Without it R sorts alphabetically and you get large, mid, small, which puts your bands in a nonsense order on every chart you draw.
 
 ## Step 4: Export
 
-Save your cleaned data as an `.RDS` file. RDS is R's native format — it preserves factor levels, data types, and everything else about your cleaned dataset.
+Save your cleaned data as an `.RDS` file. RDS is R's native format: it preserves factor levels, data types, and everything else about your cleaned dataset.
 
 ```r
 
-saveRDS(music_clean, "data/music_data_clean.RDS")
+saveRDS(analysis, "data/twitch_analysis.RDS")
 
-music_verify <- readRDS("data/music_data_clean.RDS")
-cat("Saved successfully:", nrow(music_verify), "rows,", ncol(music_verify), "columns\n")
+verify <- readRDS("data/twitch_analysis.RDS")
+cat("Saved successfully:", nrow(verify), "rows,", ncol(verify), "columns\n")
 ```
 
 ::: {.callout-important}
 ## Why `.RDS` Instead of `.csv`?
 
-When you save as CSV, R forgets which columns are factors and what their levels are. When you save as RDS, everything is preserved. Since you just spent time setting up your factors, you don't want to lose that work. Always save your *cleaned* data as RDS.
+When you save as CSV, R forgets which columns are factors and what their levels are. It also flattens your `<dttm>` timestamp back into text. When you save as RDS, everything is preserved. Since you just spent time converting timestamps and setting up factors, you don't want to lose that work. Always save your *cleaned* data as RDS.
 :::
 
 ## The Complete Pipeline (Summary)
@@ -211,43 +392,84 @@ Here's the entire wrangling process in one code block, without the diagnostic ch
 ```r
 
 library(tidyverse)
-library(janitor)
+library(v2v)
 
-music_raw <- read_csv("data/music_data_raw.csv") %>% clean_names()
+chat <- twitch_chat()
+streams <- twitch_streams()
 
-music_clean <- music_raw %>%
-  distinct() %>%                                        # remove duplicates
-  mutate(playlist_genre = str_to_lower(playlist_genre)) %>%  # standardize labels
+nongaming_categories <- c(
+  "Art", "ASMR", "Beauty & Body Art", "Creative", "Food & Drink",
+  "IRL", "Just Chatting", "Makers & Crafting", "Music",
+  "Music & Performing Arts", "Science & Technology",
+  "Sports & Fitness", "Talk Shows & Podcasts", "Travel & Outdoors"
+)
+
+channel_type <- streams %>%                         # what each channel mostly streams
+  filter(!is.na(game)) %>%
+  count(channel, game) %>%
+  group_by(channel) %>%
+  slice_max(n, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  mutate(is_gaming = !(game %in% nongaming_categories)) %>%
+  select(channel, game, is_gaming)
+
+channel_size <- streams %>%                          # how big each channel's audience is
+  group_by(channel) %>%
+  summarize(median_viewers = median(viewers, na.rm = TRUE)) %>%
+  mutate(viewer_band = cut(median_viewers, breaks = c(0, 5000, 20000, Inf),
+                           labels = c("small", "medium", "large"))) %>%
+  select(channel, viewer_band)
+
+analysis <- chat %>%
   mutate(
-    mode_label = case_when(                            # create labeled mode
-      mode == 0 ~ "minor",
-      mode == 1 ~ "major",
-      TRUE ~ NA_character_
-    )
+    timestamp      = as.POSIXct(date / 1000, origin = "1970-01-01", tz = "UTC"),
+    message_length = str_length(message)
   ) %>%
+  left_join(channel_type, by = "channel") %>%
+  left_join(channel_size, by = "channel") %>%
   mutate(
-    playlist_genre = factor(playlist_genre),           # set factors
-    mode_label = factor(mode_label)
+    channel_type = factor(if_else(is_gaming, "gaming", "non-gaming")),
+    viewer_band  = factor(viewer_band, levels = c("small", "mid", "large"))
   )
 
-saveRDS(music_clean, "data/music_data_clean.RDS")
+saveRDS(analysis, "data/twitch_analysis.RDS")
 ```
+
+A `glimpse()` of the core table shows what the transformations bought you. This is the eight-column version the textbook builds; your pipeline adds `game`, `viewer_band`, and `channel_type` on top of it:
+
+```
+Rows: 35,267
+Columns: 8
+$ id             <int> 89, 551, 1033, 2094, 2803, …
+$ channel        <chr> "sodapoppin", "xqcow", "forsen", "sodapoppin", "xqcow…
+$ sender         <chr> "madzee", "prometheanow", "spectre155", "itsjer", "la…
+$ message        <chr> "???????????????????????", "TriEasy Clap TriEasy Cla…
+$ date           <dbl> 1542578127023, 1542578135562, 1542578143610, 1542578…
+$ timestamp      <dttm> 2018-11-18 21:55:27, 2018-11-18 21:55:35, 2018-11-18…
+$ message_length <int> 23, 441, 8, 12, 206, …
+$ is_gaming      <lgl> TRUE, FALSE, TRUE, TRUE, FALSE, …
+```
+
+The table is now **tidy**: each row is one observation, one chat message; each column is one variable; and everything the analysis needs sits in one place. The unreadable integers have become timestamps. Message length and gaming status, named in the codebook and absent from the raw data, are now columns. The chat and stream tables, once disconnected, are joined.
+
+None of this was analysis. Not one result has been computed. But every figure in Chapter 5 and every test in Chapter 6 comes out of this table, which is why the care spent building it is not optional. A wrangling mistake does not announce itself. It travels quietly into every chart downstream.
 
 ## Try It Yourself
 
 These exercises directly prepare you for the Data Wrangling [R] assignment:
 
-1. **Diagnose another column:** Pick a numeric variable from the dataset (e.g., `energy` or `valence`). Use `summary()` to check its range. Are there any values outside the expected 0–1 range?
+1. **Diagnose another column:** Run `summary()` on `streams$viewers`. What is the largest value? What is the median? Why is the gap between them so large?
 
-2. **Practice `case_when()`:** Create a new variable called `popularity_level` that categorizes `track_popularity` into three groups:
-   - "low" (0–33)
-   - "medium" (34–66)
-   - "high" (67–100)
+2. **Practice `case_when()`:** The `viewer_band` cutoffs above are arbitrary. Build a second version using tertiles instead (`quantile()` will find them for you), and compare how many channels land in each band under the two schemes.
 
-3. **Run the full pipeline:** Starting from `read_csv()`, apply all four steps to produce a clean `.RDS` file. Verify it loads correctly with `readRDS()`.
+3. **Check your join:** After running the full pipeline, run `analysis %>% filter(is.na(is_gaming)) %>% count(channel)`. Which channels came back `NA`, and what does the stream table say about them?
+
+4. **Run the full pipeline:** Starting from `twitch_chat()`, apply all four steps to produce a clean `.RDS` file. Verify it loads correctly with `readRDS()` and that `nrow()` still reports 35,267.
 
 ::: {.callout-tip}
 ## Connection to Your Project
 
-For your own data, you'll follow this exact pipeline — but with your CSV file and your variables. The assignment uses `music_data_raw.csv` as practice. Your final portfolio uses your own coded data. Same skills, different dataset.
+For your own data, you'll follow this exact pipeline, but with your file and your variables. The assignment uses the Twitch dataset as practice. Your final portfolio uses your own coded data. Same skills, different dataset.
+
+Your data will almost certainly need a derived variable, the way `message_length` had to be computed rather than collected, and it may well need a join, the way the gaming label had to be pulled from a second table. Those two moves are most of what wrangling is.
 :::

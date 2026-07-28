@@ -8,13 +8,15 @@ execute:
 
 You have described the data and seen patterns. Now the real question: **are those patterns real, or could they be random noise?**
 
-This chapter introduces the logic of hypothesis testing and walks you through three inferential tests --- chi-square, the independent-samples t-test, and Pearson correlation. The chi-square test was covered in detail in the [R Workbook Ch 6](../workbook/06-inferencing-data.qmd); this chapter adds the t-test and correlation that [Assignment 03: Inferencing Data](https://aura-lab-siue.github.io/v2v/) requires.
+The Twitch corpus is full of things that look surprising. In the collection week, Bob Ross averaged 3,178 concurrent viewers, streaming under *Art*, having died in 1995. xQc, live and talking, averaged 17,363. One of those facts is genuinely strange and the other is ordinary, and no statistical test will tell you which is which. What a test can do is smaller and more useful: it can tell you whether a difference you measured is larger than the wobble any two samples would show. This chapter is about learning to tell a real pattern from a lucky one, and about the harder second question that follows, which is whether a real pattern is big enough to care about.
+
+This chapter introduces the logic of hypothesis testing and walks you through three inferential tests: chi-square, the independent-samples t-test, and Pearson correlation. The chi-square test was covered in detail in the [R Workbook Ch 6](../workbook/06-inferencing-data.qmd); this chapter adds the t-test and correlation that [Assignment 03: Inferencing Data](https://aura-lab-siue.github.io/v2v/) requires.
 
 ---
 
 ## The Logic of Hypothesis Testing
 
-Statistical inference works like a courtroom trial. The defendant is **innocent until proven guilty** --- and in research, the null hypothesis is **true until the data overwhelms it**.
+Statistical inference works like a courtroom trial. The defendant is **innocent until proven guilty**, and in research, the null hypothesis is **true until the data overwhelms it**.
 
 ### The Framework
 
@@ -31,7 +33,7 @@ Statistical inference works like a courtroom trial. The defendant is **innocent 
 ::: {.callout-important}
 ## Hypotheses Come First
 
-Write your hypotheses *before* you run any code. This is not a formality --- it is how researchers avoid unconsciously fitting conclusions to output. The hypothesis drives the analysis, not the other way around.
+Write your hypotheses *before* you run any code. This is not a formality. It is how researchers avoid unconsciously fitting conclusions to output. The hypothesis drives the analysis, not the other way around.
 :::
 
 ### What a p-Value IS and IS NOT
@@ -47,7 +49,7 @@ And here is what it does **not** mean:
 | "The probability that H₀ is true" | No. The p-value assumes H₀ is true and asks how surprising the data is. |
 | "The probability that my finding is real" | No. A small p-value means the data is unlikely under H₀, not that H₁ is certainly true. |
 | "The probability of replication" | No. A p-value from one study does not predict whether the next study will replicate. |
-| "A measure of effect size" | No. A tiny, trivial effect can produce p < .001 with a large enough sample. |
+| "A measure of effect size" | No. A tiny, trivial effect can produce p < .001 with a large enough sample. You are about to see exactly that happen. |
 | "p = .049 and p = .051 are fundamentally different" | No. They are nearly identical. The .05 threshold is a convention, not a cliff. |
 
 ### Type I and Type II Errors
@@ -66,7 +68,7 @@ And here is what it does **not** mean:
 
 **When to use it:** You have two **categorical** variables and want to know if they are related.
 
-**Example:** Is there an association between `playlist_genre` and `mode` (major vs. minor)?
+**Example:** Is a channel's gaming status associated with the size of its audience? The stream table gives you `is_gaming` and, once viewer counts are cut into bands, a categorical `viewer_band`. Two categorical variables call for a chi-square test.
 
 The [R Workbook Ch 6](../workbook/06-inferencing-data.qmd) provides the complete walkthrough with code for:
 
@@ -80,12 +82,24 @@ The [R Workbook Ch 6](../workbook/06-inferencing-data.qmd) provides the complete
 ## Quick Reference
 
 ```r
-cont_table <- table(music_filtered$playlist_genre, music_filtered$mode_label)
-chi_result <- chisq.test(cont_table)
+library(v2v)
+library(tidyverse)
 
-# Effect size
-cramers_v <- sqrt(as.numeric(chi_result$statistic) / (sum(cont_table) * (min(dim(cont_table)) - 1)))
+banded <- twitch_streams() %>%
+  filter(!is.na(game)) %>%
+  mutate(
+    is_gaming   = !(game %in% nongaming_categories),
+    viewer_band = cut(viewers,
+                      breaks = c(0, 5000, 20000, Inf),
+                      labels = c("small", "medium", "large"))
+  )
+
+run_chi_square(banded, x = is_gaming, y = viewer_band)
 ```
+
+`nongaming_categories` is the explicit list you wrote in the wrangling lab, the one that states which Twitch categories the study counts as non-gaming. Keep using the same vector, so the rule stays identical across every test you run.
+
+`run_chi_square()` prints the chi-squared statistic, its degrees of freedom, the p-value, and Cramér's V with a plain-language size label. Run it yourself and read your own numbers off the output.
 
 **APA template:** A chi-square test of independence revealed a [significant/non-significant] association, chi-squared(df) = X.XX, p [< .001 / = .XXX], Cramer's V = .XX.
 :::
@@ -98,92 +112,126 @@ For the full walkthrough, work through [R Workbook Ch 6](../workbook/06-inferenc
 
 **When to use it:** You have one **categorical** variable with exactly **two groups** and one **continuous** variable. You want to know if the two groups differ on the continuous variable.
 
-**Example from Assignment 03:** Do romantic-themed songs spend more time on the Billboard chart than non-romantic songs?
+**Example from Assignment 03:** Do gaming channels and non-gaming channels differ in how long their chat messages run?
 
-- **Grouping variable:** `romantic_theme` (Romantic vs. Not romantic)
-- **Outcome variable:** `weeks_on_board` (continuous)
-- **Sample:** The 30 songs you hand-coded in Assignment 01
+- **Grouping variable:** `is_gaming` (TRUE vs FALSE)
+- **Outcome variable:** `message_length` (continuous)
+- **Sample:** The analysis table you built in the wrangling lab
+
+This is the study's central question, and the describing chapter left it precisely framed: non-gaming channels average 33.70 characters per message and gaming channels 28.49, a gap of a little over five characters. The histogram can show that gap. It cannot tell you whether the gap is real.
 
 ### Step 1: State Your Hypotheses
 
 | | |
 |---|---|
-| **H₀** | There is no difference in chart weeks between romantic and non-romantic songs. |
-| **H₁** | There is a difference in chart weeks between romantic and non-romantic songs. |
+| **H₀** | There is no difference in mean message length between gaming and non-gaming channels. |
+| **H₁** | There is a difference in mean message length between gaming and non-gaming channels. |
 
 ### Step 2: Prepare the Data
 
 ```r
 library(tidyverse)
+library(v2v)
 
-music <- readRDS("data/music_data_clean.RDS")
+analysis <- readRDS("data/processed/analysis.RDS")
 
-coded_songs <- music %>%
-  filter(!is.na(romantic_theme)) %>%
-  mutate(romantic_theme = factor(romantic_theme,
-                                  labels = c("Not romantic", "Romantic")))
-
-coded_songs %>% count(romantic_theme)
+analysis %>% count(is_gaming)
 ```
 
-You should see approximately 30 songs split between the two groups.
+```
+# A tibble: 3 × 2
+  is_gaming     n
+  <lgl>     <int>
+1 FALSE      3457
+2 TRUE      31309
+3 NA          501
+```
+
+Three groups appear, not two. The 501 `NA` messages come from two channels that streamed without ever having a category recorded, so the study genuinely cannot say whether they are gaming channels. They sit out the comparison rather than being guessed into one side of it, which leaves 34,766 messages for the test.
 
 ### Step 3: Visualize Before Testing
 
-Always look at the data before running a test. A boxplot shows the distribution of each group:
+Always look at the data before running a test. Overlaying the two distributions shows the shape of each group and how much they overlap:
 
 ```r
-coded_songs %>%
-  ggplot(aes(x = romantic_theme, y = weeks_on_board, fill = romantic_theme)) +
-  geom_boxplot(show.legend = FALSE) +
+msglen <- analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  mutate(length_shown = pmin(message_length, 120))
+
+ggplot(msglen, aes(x = length_shown, fill = is_gaming)) +
+  geom_histogram(binwidth = 5, position = "identity", alpha = 0.55) +
   labs(
-    title = "Chart Longevity by Romantic Theme",
-    x     = NULL,
-    y     = "Weeks on Billboard Chart"
+    title = "Message Length, Gaming versus Non-Gaming Channels",
+    x     = "Message Length (characters, capped at 120)",
+    y     = "Messages",
+    fill  = "Gaming Channel"
   ) +
-  theme_minimal(base_size = 13) +
-  theme(plot.title = element_text(face = "bold"))
+  v2v::scale_fill_v2v() +
+  v2v::theme_v2v()
 ```
 
-Before running the test, ask yourself: Do the two boxes overlap substantially? Does one group have a clearly higher median? Are there outliers pulling the mean?
+Before running the test, ask yourself: Do the two distributions overlap substantially? Does one group have a clearly higher center? Are there outliers pulling the mean?
+
+The descriptives answer the last question before the test does:
+
+| is_gaming | n      | mean  | median | sd    |
+| --------- | ------ | ----- | ------ | ----- |
+| FALSE     | 3,457  | 33.70 | 16     | 60.68 |
+| TRUE      | 31,309 | 28.49 | 17     | 38.47 |
+
+The means differ by about five characters. The medians, 16 and 17, are all but identical and point the other way. The gap in the means is the work of a long right tail on the non-gaming side, recorded directly by its much larger standard deviation. Keep that in mind: it is the first hint that whatever the test says, the difference is not going to be a difference between typical messages.
 
 ### Step 4: Run the t-Test
 
-R's `t.test()` runs **Welch's t-test** by default, which does not assume the two groups have equal variances. This is the safer choice, especially for small samples.
+R's `t.test()` runs **Welch's t-test** by default, which does not assume the two groups have equal variances. That is the right choice here, because the two standard deviations, 60.68 and 38.47, are plainly unequal. The `v2v` wrapper runs the same Welch test and reports the effect size alongside it:
 
 ```r
-t_result <- t.test(
-  weeks_on_board ~ romantic_theme,
-  data = coded_songs
-)
+run_t_test(analysis, value = message_length, group = is_gaming)
+```
 
-t_result
+```
+Welch two-sample t-test
+message_length by is_gaming
+
+  Mean, gaming         28.49 characters
+  Mean, non-gaming     33.70 characters
+  Difference           -5.22 characters
+
+  t                    -4.95
+  df                   3768.7
+  p-value              < .001
+  Cohen's d            -0.13  (negligible)
+
+  Gaming and non-gaming channels differ in mean message length by a
+  statistically significant but negligible amount.
 ```
 
 ### Reading the Output
 
 | Value | What It Means |
 |-------|--------------|
-| **t** | The test statistic --- how many standard errors apart the two group means are |
-| **df** | Degrees of freedom (Welch's correction adjusts this downward) |
-| **p-value** | Probability of seeing a difference this large if H₀ were true |
-| **confidence interval** | The range of plausible true differences between the groups |
-| **sample estimates** | The mean of each group |
+| **t** | The test statistic, here -4.95: how many standard errors apart the two group means are. The sign is direction only. |
+| **df** | Degrees of freedom, here 3768.7. Welch's correction computes it from both groups' sizes and spreads, which is why it is not a round number. |
+| **p-value** | Probability of seeing a difference this large if H₀ were true. Here it is below .001. |
+| **Difference** | The gap between the group means in the original units, here 5.22 characters. |
+| **Cohen's d** | How big that gap is in standard deviation units, here -0.13. |
 
 **Decision rule:** If p < .05, reject H₀ and conclude the groups differ. If p >= .05, you do not have sufficient evidence to claim a difference.
 
+Here p < .001, so H₀ is rejected. The two kinds of channel do differ in mean message length. That is the whole of what the p-value says, and it is less than it sounds.
+
 ### Step 5: Calculate Cohen's d (Effect Size)
 
-The p-value tells you *whether* the difference is statistically significant. **Cohen's d** tells you *how big* the difference is, in standard deviation units.
+The p-value tells you *whether* the difference is statistically significant. **Cohen's d** tells you *how big* the difference is, in standard deviation units. `run_t_test()` reports it for you, but the arithmetic is worth seeing, because it shows what the number is comparing:
 
 ```r
 # Extract group statistics
-n1 <- sum(coded_songs$romantic_theme == "Romantic")
-n0 <- sum(coded_songs$romantic_theme == "Not romantic")
-m1 <- mean(coded_songs$weeks_on_board[coded_songs$romantic_theme == "Romantic"])
-m0 <- mean(coded_songs$weeks_on_board[coded_songs$romantic_theme == "Not romantic"])
-s1 <- sd(coded_songs$weeks_on_board[coded_songs$romantic_theme == "Romantic"])
-s0 <- sd(coded_songs$weeks_on_board[coded_songs$romantic_theme == "Not romantic"])
+n1 <- sum(msglen$is_gaming == TRUE)
+n0 <- sum(msglen$is_gaming == FALSE)
+m1 <- mean(msglen$message_length[msglen$is_gaming == TRUE])
+m0 <- mean(msglen$message_length[msglen$is_gaming == FALSE])
+s1 <- sd(msglen$message_length[msglen$is_gaming == TRUE])
+s0 <- sd(msglen$message_length[msglen$is_gaming == FALSE])
 
 # Pooled standard deviation
 sp <- sqrt(((n1 - 1) * s1^2 + (n0 - 1) * s0^2) / (n1 + n0 - 2))
@@ -193,24 +241,43 @@ d <- (m1 - m0) / sp
 round(d, 3)
 ```
 
+The gap goes on the top and the spread of the data goes on the bottom. That is the whole idea: a difference only counts as large if it is large *compared to how much the data varies anyway*.
+
 ### Cohen's d Benchmarks
 
 | Cohen's d | Interpretation |
 |-----------|---------------|
+| below 0.2 | Negligible effect |
 | 0.2 | Small effect |
 | 0.5 | Medium effect |
 | 0.8 | Large effect |
 
 A small effect means the groups differ slightly. A large effect means the groups are clearly distinct. Most social science research finds small-to-medium effects.
 
+::: {.callout-important}
+## The Surprise: Significant and Trivial at the Same Time
+
+This result is the one worth carrying out of the chapter. The gap is real: p < .001 says chance is an unconvincing explanation for it. The gap is also negligible: d = -0.13 is smaller than Cohen's "small" benchmark.
+
+Both are true, and they are true for a reason you can state. Five characters is about fifteen percent of the non-gaming average, which does not sound negligible, but message lengths vary enormously, with standard deviations of 38 and 61 characters. Five characters set against that much variation is a ripple.
+
+The test came back significant anyway because it ran on 34,766 messages. A large enough sample will make almost any difference, however tiny, statistically significant. Report only the p-value and a reader pictures a real divide between two kinds of community. Report the effect size and the picture corrects itself: there is a divide, and it is almost too small to see.
+:::
+
 ### Step 6: Report in APA Format
 
-> An independent-samples t-test was conducted to compare chart longevity between romantic-themed songs (M = ___, SD = ___) and non-romantic songs (M = ___, SD = ___). The difference was [statistically significant / not statistically significant], t(___) = ___, p = ___. Cohen's d = ___, indicating a [small / medium / large / negligible] effect size.
+> An independent-samples t-test was conducted to compare chat message length between gaming channels (M = 28.49, SD = 38.47) and non-gaming channels (M = 33.70, SD = 60.68). The difference was statistically significant, Welch's *t*(3768.7) = -4.95, *p* < .001. Cohen's *d* = -0.13, indicating a negligible effect size.
+
+Note what the sentence does. It gives both group means with their standard deviations, the test statistic with its degrees of freedom, the p-value, and the effect size, and it names the effect size in words. A reader can reconstruct your finding without seeing your output, and cannot mistake a significant result for a large one.
 
 ::: {.callout-note}
-## A Note on Small Samples
+## A Note on Sample Size, in Both Directions
 
-With only 30 songs, this test has low **statistical power** --- meaning it may fail to detect a real difference even if one exists. A non-significant result here does not prove that romantic theme is unrelated to chart success. It means the sample was too small to detect the effect with confidence. [Chapter 20](20-interpreting-the-call.qmd) explores this issue in depth.
+Sample size cuts two ways, and this chapter shows one edge of it.
+
+With 34,766 messages, the test is so sensitive that it detects a difference far too small to matter. Very large samples pull statistical significance and practical importance apart, which is why the effect size is not optional.
+
+The opposite problem appears the moment you work with a hand-coded subset. If you draw 30 messages with `sample_messages()` and code them yourself, that test has low **statistical power**, meaning it may fail to detect a real difference even if one exists. A non-significant result there does not prove there is nothing to find. It means the sample was too small to find it with confidence. [Chapter 20](20-interpreting-the-call.qmd) explores both edges in depth.
 :::
 
 ---
@@ -219,76 +286,81 @@ With only 30 songs, this test has low **statistical power** --- meaning it may f
 
 **When to use it:** You have **two continuous variables** and want to know if they are linearly related.
 
-**Example from Assignment 03:** Does Spotify's `speechiness` score predict lyric word count?
+**Example from Assignment 03:** Does a channel's average viewer count predict how much its chat talks?
 
-This question is interesting because the two measurements come from completely different sources --- Spotify's audio analysis algorithm and Genius's lyric database --- using completely different methods. If they correlate, it validates both measurements.
+This question is interesting because the two measurements come from completely different sources. Viewer counts come from the stream snapshots, which Twitch reports; chat volume comes from the IRC message log, collected by a separate process. They were never designed to agree. If they correlate, each becomes a partial check on the other.
 
 ### Step 1: State Your Hypotheses
 
 | | |
 |---|---|
-| **H₀** | There is no relationship between speechiness and word count. |
-| **H₁** | There is a [positive / negative] relationship between speechiness and word count. |
+| **H₀** | There is no relationship between a channel's average viewer count and its chat volume. |
+| **H₁** | There is a [positive / negative] relationship between a channel's average viewer count and its chat volume. |
 
-### Step 2: Create the Word Count Variable
+### Step 2: Build the Channel-Level Table
 
-Genius lyrics include section tags like `[Verse 1]` and `[Chorus]` that are not actual words. Strip them before counting:
-
-```r
-music <- music %>%
-  mutate(word_count = str_count(
-    str_remove_all(lyrics, "\\[.*?\\]"),  # remove section tags
-    "\\S+"                                 # count non-whitespace sequences (words)
-  ))
-```
-
-Check how many songs have both variables:
+Both variables are properties of a channel, not of a message, so the unit of analysis has to change. Summarize each table down to one row per channel, then join them:
 
 ```r
-music %>%
-  filter(!is.na(word_count), !is.na(speechiness)) %>%
-  nrow()
+chat    <- twitch_chat()
+streams <- twitch_streams()
+
+channel_viewers <- streams %>%
+  group_by(channel) %>%
+  summarise(mean_viewers = mean(viewers, na.rm = TRUE),
+            .groups = "drop")
+
+channel_chat <- chat %>%
+  count(channel, name = "messages")
+
+channel_level <- channel_viewers %>%
+  inner_join(channel_chat, by = "channel") %>%
+  left_join(channel_type, by = "channel")
 ```
 
-Some songs have missing lyrics (Genius did not have them). This is expected --- it was the most common source of missing data in Assignment 01.
+`channel_type` is the one-row-per-channel lookup you built in the wrangling lab, carrying each channel's modal category and its `is_gaming` label. Check how many channels carry all three variables:
+
+```r
+nrow(channel_level)
+```
+
+Changing the unit of analysis is itself a decision your methods section has to state. You are no longer asking about messages. You are asking about channels, and there are only fifty of them, which is a far smaller sample than the t-test ran on.
 
 ### Step 3: Visualize the Relationship
 
-A scatterplot shows the direction and strength of the relationship. Color by genre to see if the pattern holds across groups or is driven by one genre.
+A scatterplot shows the direction and strength of the relationship. Color by gaming status to see whether the pattern holds across both kinds of channel or is driven by one.
 
 ```r
-music %>%
-  filter(!is.na(word_count), !is.na(speechiness)) %>%
-  ggplot(aes(x = speechiness, y = word_count, color = playlist_genre)) +
-  geom_point(alpha = 0.3, size = 1) +
+channel_level %>%
+  filter(!is.na(is_gaming)) %>%
+  ggplot(aes(x = mean_viewers, y = messages, color = is_gaming)) +
+  geom_point(alpha = 0.7, size = 2.4) +
   geom_smooth(method = "lm", se = FALSE, color = "black", linewidth = 0.8) +
   labs(
-    title    = "Spotify Speechiness vs. Genius Lyric Word Count",
-    subtitle = "Each point is one song; black line shows overall trend",
-    x        = "Speechiness (Spotify)",
-    y        = "Word Count (Genius)",
-    color    = "Genre",
-    caption  = "Source: Billboard chart archive -- MC 451 dataset"
+    title    = "Average Viewers vs. Chat Volume",
+    subtitle = "Each point is one channel; black line shows overall trend",
+    x        = "Mean Concurrent Viewers (stream snapshots)",
+    y        = "Messages in Sample (chat log)",
+    color    = "Gaming Channel",
+    caption  = "Source: v2v::twitch_streams() and v2v::twitch_chat()"
   ) +
-  theme_minimal(base_size = 13) +
-  theme(plot.title = element_text(face = "bold"))
+  v2v::scale_colour_v2v() +
+  v2v::theme_v2v()
 ```
 
 Look for:
 
 - **Direction:** Does the trend line go up (positive) or down (negative)?
 - **Strength:** Are points clustered tightly around the line, or scattered widely?
-- **Genre clusters:** Do rap songs cluster at the high end of both variables?
+- **Ceiling effects:** The chat fixture caps each channel at 1,000 sampled messages, so the busiest channels pile up against that ceiling. A sampling rule can flatten a real relationship, and this one does.
+- **Outliers:** Bob Ross is the point to find. An *Art* channel averaging 3,178 viewers, hosting a streamer who died in 1995, sits nowhere near where a gaming channel of that size would sit. A single point in the wrong place can bend a regression line, and it is always worth asking what that point is before deciding what to do about it.
 
 ### Step 4: Run the Correlation
 
 ```r
-music_lyric <- music %>%
-  filter(!is.na(word_count), !is.na(speechiness))
-
 cor_result <- cor.test(
-  music_lyric$speechiness,
-  music_lyric$word_count,
+  channel_level$mean_viewers,
+  channel_level$messages,
   method = "pearson"
 )
 
@@ -299,11 +371,13 @@ cor_result
 
 | Value | What It Means |
 |-------|--------------|
-| **cor** | Pearson's r --- the correlation coefficient. Range: -1 to +1. |
+| **cor** | Pearson's r, the correlation coefficient. Range: -1 to +1. |
 | **t** | The test statistic |
 | **df** | Degrees of freedom (n - 2) |
 | **p-value** | Probability of seeing a correlation this large if H₀ were true |
 | **confidence interval** | The range of plausible true correlations |
+
+With only fifty channels, that confidence interval will be wide. Read it before you read the point estimate, because it tells you how precisely the relationship is pinned down, and a wide interval is a finding in its own right.
 
 ### Cohen's Benchmarks for r
 
@@ -315,12 +389,16 @@ cor_result
 
 ### Step 5: Report in APA Format
 
-> A Pearson correlation was computed to assess the relationship between Spotify speechiness scores and Genius lyric word counts across ___ songs. There was a [positive / negative] correlation between the two variables, r(___) = ___, p [< .001 / = ___]. According to Cohen's conventions, this represents a [small / medium / large] effect.
+> A Pearson correlation was computed to assess the relationship between mean concurrent viewers and chat volume across ___ channels. There was a [positive / negative] correlation between the two variables, r(___) = ___, p [< .001 / = ___], 95% CI [___, ___]. According to Cohen's conventions, this represents a [small / medium / large] effect.
+
+Fill those blanks from your own output. Do not fill them from anyone else's, and do not report a number you have not seen printed.
 
 ::: {.callout-warning}
 ## Correlation Is Not Causation
 
-A significant correlation between speechiness and word count does not mean high speechiness *causes* more words (or vice versa). Both may be driven by **genre** --- rap songs are high in speechiness AND have more words. The correlation may reflect genre membership more than a direct causal link.
+A significant correlation between viewers and chat volume does not mean an audience *causes* messages in any simple way, or the reverse. Both are driven by channel size, by how long the streamer was live that week, and by how chatty that community is. A large channel that streamed for two hours and a small one that streamed for forty will not sit where their audiences alone would put them.
+
+The Bob Ross channel is the clean illustration. Its viewers are watching a rerun of a painting show. Whatever relationship between audience and talk holds on a live competitive stream, there is no reason to expect it to hold there, and a single model fitted across all fifty channels quietly assumes it does.
 :::
 
 ---
@@ -333,9 +411,12 @@ When you sit down to analyze data, the **types of your variables** determine whi
 |------------------------|---------------|------|-------------|
 | Are two categories related? | Categorical x Categorical | Chi-square | Cramer's V |
 | Do two groups differ on a measure? | Categorical (2 groups) x Continuous | t-test | Cohen's d |
+| Do more than two groups differ on a measure? | Categorical (3+ groups) x Continuous | ANOVA | Eta-squared |
 | Are two measures linearly related? | Continuous x Continuous | Pearson correlation | r |
 
 This decision is not a matter of preference. Using the wrong test for your variable types produces meaningless results.
+
+The third row is worth a sentence, because it is the one students reach for by mistake. If the question is not "gaming versus non-gaming" but "does message length differ across the specific games being played," there are four means rather than two, and a t-test cannot settle it. Comparing them two at a time takes six separate tests, each carrying its own chance of a false positive, and those chances pile up. ANOVA asks the question once, of all the groups together.
 
 ---
 
@@ -347,18 +428,20 @@ Every finding in Assignment 03 (and in your final portfolio) must be reported tw
 
 - Include: test name, test statistic, degrees of freedom, exact p-value, effect size, descriptive statistics (means, SDs, or proportions)
 - Use italics for statistics: *t*, *r*, *p*, chi-squared
-- Never write "p = .000" --- write "p < .001"
+- Never write "p = .000". Write "p < .001".
 
 ### Register 2: Journalist Translation (for everyone else)
 
 - No jargon: no p-values, no t-statistics, no "statistically significant"
 - Explain what was compared, what the data showed, and why it matters
-- Use concrete language: "Songs with romantic lyrics spent about the same number of weeks on the chart as non-romantic songs" rather than "the null hypothesis was not rejected"
+- Use concrete language. For the message-length finding: "Chat on gaming channels runs about five characters shorter than chat on non-gaming channels, roughly one word. Messages are so variable in length that the difference is easy to miss in practice, and the two kinds of channel are better thought of as alike than as different." That is honest. "The null hypothesis was rejected" is not a translation.
 
 ::: {.callout-important}
 ## Both Registers Are Required
 
 Being able to write in both registers is what makes a communication researcher different from a statistics student. Your portfolio needs both. Your career will demand both.
+
+The message-length result is the test case. A write-up that reports only "gaming and non-gaming chat differ significantly, p < .001" is technically accurate and leaves the reader with a false picture. The second register is where you are forced to say what you actually found.
 :::
 
 ---
@@ -370,15 +453,15 @@ Being able to write in both registers is what makes a communication researcher d
 
 Assignment 03 (Inferencing Data, 100 pts) asks you to:
 
-**RQ1 (50 pts):** Do romantic-themed songs spend more time on the chart?
+**RQ1 (50 pts):** Do gaming and non-gaming channels differ in chat message length?
 
-- State hypotheses, prepare 30-song coded subset, boxplot, t-test, Cohen's d, APA paragraph, journalist translation, sample size reflection
+- State hypotheses, prepare the analysis table and account for the unclassified messages, plot the two distributions, run the t-test, report Cohen's d, write the APA paragraph and the journalist translation, and reflect on what the sample size did to the result
 
-**RQ2 (50 pts):** Does Spotify speechiness predict lyric length?
+**RQ2 (50 pts):** Does a channel's audience size predict its chat volume?
 
-- State hypotheses, create word_count variable, scatterplot colored by genre, Pearson correlation, APA paragraph, journalist translation, genre reflection
+- State hypotheses, build the channel-level table from both source tables, scatterplot colored by gaming status, run the Pearson correlation, write the APA paragraph and the journalist translation, and reflect on what the per-channel sampling cap and the outlying channels do to the estimate
 
-**Conclusion (5 pts):** Reflect on what a null finding means and what a future study should do differently.
+**Conclusion (5 pts):** Reflect on the difference between a statistically significant finding and an important one, and on what a future study should do differently.
 
 All code, all interpretations, all writing must be present in the rendered PDF.
 :::

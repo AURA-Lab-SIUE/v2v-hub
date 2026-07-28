@@ -8,33 +8,39 @@ execute:
 
 {{< video videos/06-inferencing-data.mp4 >}}
 
-Describing data tells you what *is*. Inferencing tells you what it *means* — specifically, whether the patterns you see are real or could have happened by chance.
+Describing data tells you what *is*. Inferencing tells you what it *means*, specifically, whether the patterns you see are real or could have happened by chance.
 
-This chapter walks you through a **chi-square test of independence** — the statistical test you'll use to determine whether two categorical variables are related. You'll also learn to calculate effect size (Cramér's V), interpret standardized residuals, and write your findings in two registers: formal APA and plain-English "journalist translation."
+This chapter walks you through a **chi-square test of independence**, the statistical test you'll use to determine whether two categorical variables are related. You'll also learn to calculate effect size (Cramér's V), interpret standardized residuals, and write your findings in two registers: formal APA and plain-English "journalist translation."
 
 ## The Big Question
 
-Look at the stacked bar chart from Chapter 5. The proportion of major vs. minor mode appears to differ across genres. But is that difference *real*, or is it just noise in the data?
+Look at the stacked bar chart from Chapter 5. The mix of gaming and non-gaming channels appears to differ across audience-size bands. But is that difference *real*, or is it just noise in the data?
 
 This is what statistical inference answers. We set up a test, let the math run, and then interpret the result.
+
+::: {.callout-note}
+## The Variables Choose the Test
+
+There is not one hypothesis test. There are many, and which one applies depends on the kind of data in hand. Two categorical variables call for a chi-square test, which is what this chapter runs. One continuous outcome across two groups calls for a t-test, which appears later in the chapter. Three or more groups call for an ANOVA. A test applied to the wrong kind of data still produces a number, and the number is meaningless. The V2V Hub keeps a test decision tree. Consult it before you run anything.
+:::
 
 ## Step 1: State Your Hypotheses (Before Any Code)
 
 ::: {.callout-important}
 ## Hypotheses Come First
 
-Write your hypotheses *before* you run any code. This is not optional — it's how science works. You decide what you're testing, then test it. You don't look at the results and then decide what you were testing.
+Write your hypotheses *before* you run any code. This is not optional. It's how science works. You decide what you're testing, then test it. You don't look at the results and then decide what you were testing.
 :::
 
 Every chi-square test has two hypotheses:
 
 **Null Hypothesis (H₀):** There is no relationship between the two variables. Any differences you see are due to chance.
 
-> H₀: There is no association between playlist genre and musical mode.
+> H₀: There is no association between a channel's audience-size band and whether it is a gaming channel.
 
 **Alternative Hypothesis (H₁):** There is a relationship between the two variables. The differences are too large to be explained by chance alone.
 
-> H₁: There is an association between playlist genre and musical mode.
+> H₁: There is an association between a channel's audience-size band and whether it is a gaming channel.
 
 The chi-square test evaluates how much the observed data differs from what you'd expect if H₀ were true.
 
@@ -43,21 +49,35 @@ The chi-square test evaluates how much the observed data differs from what you'd
 ```r
 
 library(tidyverse)
+library(v2v)
 
-music <- readRDS("data/music_data_clean.RDS")
+analysis <- readRDS("data/twitch_analysis.RDS")
 
-music_filtered <- music %>% filter(!is.na(mode_label))
+tested <- analysis %>%
+  filter(!is.na(channel_type), !is.na(viewer_band))
 ```
 
 A contingency table is the raw input for the chi-square test. It shows the count for every combination of your two variables:
 
 ```r
 
-cont_table <- table(music_filtered$playlist_genre, music_filtered$mode_label)
+cont_table <- table(tested$viewer_band, tested$channel_type)
 cont_table
 ```
 
-Now add proportions — this helps you see the pattern before running the test:
+```
+         gaming non-gaming
+  small   25309       2457
+  medium   4000       1000
+  large    2000          0
+```
+
+Look at that bottom-right cell before running anything. Not one message in the
+sample comes from a large non-gaming channel. That zero is a real feature of this
+corpus, not a coding error, and it is doing a lot of the work in the test you are
+about to run. Say so when you report the result.
+
+Now add proportions. This helps you see the pattern before running the test:
 
 ```r
 
@@ -65,7 +85,7 @@ prop_table <- prop.table(cont_table, margin = 1)  # margin = 1 means row proport
 round(prop_table, 3)
 ```
 
-Look at the proportions. Do genres differ in their major/minor split? If every genre had roughly the same proportions, there would be no association. If they differ, the chi-square test will tell you whether that difference is statistically significant.
+Look at the proportions. Do the audience-size bands differ in their gaming and non-gaming mix? If every band had roughly the same proportions, there would be no association. If they differ, the chi-square test will tell you whether that difference is statistically significant.
 
 ## Step 3: Run the Chi-Square Test
 
@@ -75,6 +95,14 @@ chi_result <- chisq.test(cont_table)
 chi_result
 ```
 
+```
+
+	Pearson's Chi-squared test
+
+data:  cont_table
+X-squared = 822.66, df = 2, p-value < 2.2e-16
+```
+
 ### Reading the Output
 
 The test gives you three numbers:
@@ -82,15 +110,17 @@ The test gives you three numbers:
 | Value | What It Means |
 |-------|--------------|
 | **X-squared** (χ²) | How much the observed data deviates from what you'd expect under H₀. Bigger = more deviation. |
-| **df** | Degrees of freedom — based on the table dimensions: (rows - 1) × (columns - 1) |
+| **df** | Degrees of freedom, based on the table dimensions: (rows - 1) × (columns - 1) |
 | **p-value** | The probability of seeing data this extreme *if the null hypothesis were true* |
 
 ### Interpreting the p-value
 
-The p-value is the most important number. Here's what it means in plain terms:
+The p-value is the most important number, and the most misread number in statistics. Here's what it means in plain terms:
 
 - **p < .05:** The pattern is statistically significant. The probability of seeing this result by chance (if there's really no relationship) is less than 5%. We reject H₀.
-- **p ≥ .05:** The pattern is not statistically significant. We cannot reject H₀. This doesn't prove there's *no* relationship — just that we don't have enough evidence to claim one.
+- **p ≥ .05:** The pattern is not statistically significant. We cannot reject H₀. This doesn't prove there's *no* relationship, just that we don't have enough evidence to claim one.
+
+Be precise about what the p-value does *not* say. It is not the probability that the null hypothesis is true. It is not the probability that the result is a fluke. And it is not a measure of how large the difference is. A small p-value says the pattern is probably not nothing. It says nothing at all about whether the pattern is big.
 
 ```r
 
@@ -99,13 +129,19 @@ cat("Degrees of freedom:", chi_result$parameter, "\n")
 cat("p-value:", format.pval(chi_result$p.value, digits = 3), "\n")
 
 if (chi_result$p.value < .05) {
-  cat("\nResult: SIGNIFICANT — reject the null hypothesis.\n")
-  cat("There is evidence of an association between genre and mode.\n")
+  cat("\nResult: SIGNIFICANT, reject the null hypothesis.\n")
+  cat("There is evidence of an association between audience size and channel type.\n")
 } else {
-  cat("\nResult: NOT SIGNIFICANT — fail to reject the null hypothesis.\n")
-  cat("There is not enough evidence to claim an association between genre and mode.\n")
+  cat("\nResult: NOT SIGNIFICANT, fail to reject the null hypothesis.\n")
+  cat("There is not enough evidence to claim an association.\n")
 }
 ```
+
+::: {.callout-note}
+## The .05 Threshold Is a Convention
+
+It has no deep justification. A p-value of .049 and one of .051 describe almost identical evidence, and treating one as a discovery and the other as a non-event is a habit the field is right to question. Report the exact p-value, not just whether it cleared the bar.
+:::
 
 ## Step 4: Calculate Cramér's V (Effect Size)
 
@@ -131,7 +167,7 @@ cat("Cramér's V:", round(cramers_v, 3), "\n")
 | .30 | Medium effect |
 | .50 | Large effect |
 
-A small effect means the relationship exists but is weak. A large effect means the variables are strongly associated. Most social science research finds small-to-medium effects — that's normal and expected.
+A small effect means the relationship exists but is weak. A large effect means the variables are strongly associated. Most social science research finds small-to-medium effects, and that's normal and expected.
 
 ```r
 
@@ -146,6 +182,18 @@ if (cramers_v < .10) {
   cat("Interpretation: Large effect\n")
 }
 ```
+
+::: {.callout-tip}
+## The Shortcut
+
+`v2v::run_chi_square()` runs the test and computes Cramér's V for you, returning formatted output ready to paste into a caption. Compute it by hand once, so you know what the shortcut is doing, then use the shortcut.
+:::
+
+::: {.callout-important}
+## Big Samples Make Everything Significant
+
+The chat sample runs to tens of thousands of messages. With a sample that large, a hypothesis test will detect associations far too small to care about. This is the single most important habit to build: report the effect size next to the p-value, every time. Significance and size are different questions, and big samples pull them apart.
+:::
 
 ## Step 5: Standardized Residuals
 
@@ -166,16 +214,62 @@ round(residuals, 2)
 ```r
 
 residual_df <- as.data.frame(as.table(residuals))
-names(residual_df) <- c("genre", "mode", "residual")
+names(residual_df) <- c("viewer_band", "channel_type", "residual")
 
 residual_df %>%
   filter(abs(residual) > 2) %>%
   arrange(desc(abs(residual)))
 ```
 
-These are the combinations driving the result. For example, if "rock" × "minor" has a residual of +3.5, that means rock has significantly more minor-mode songs than you'd expect by chance. That's a finding you can write about.
+These are the combinations driving the result. If "large" by "non-gaming" comes back with a residual of +3.5, that means the biggest channels include more non-gaming channels than you'd expect by chance. That's a finding you can write about.
 
-## Step 6: Write It Up — APA Format
+## When the Outcome Is Continuous: The t-test
+
+Chi-square needs two categorical variables. The study's central question pairs a categorical split with a *continuous* outcome: is `message_length` different on gaming and non-gaming channels? A continuous outcome compared across two groups is the textbook setting for the **t-test**.
+
+`v2v::run_t_test()` takes the data, the variable to compare, and the variable that splits it into groups:
+
+```r
+
+v2v::run_t_test(analysis, value = message_length, group = is_gaming)
+```
+
+```
+Welch two-sample t-test
+message_length by is_gaming
+
+  Mean, gaming         28.49 characters
+  Mean, non-gaming     33.70 characters
+  Difference           -5.22 characters
+
+  t                    -4.95
+  df                   3768.7
+  p-value              < .001
+  Cohen's d            -0.13  (negligible)
+
+  Gaming and non-gaming channels differ in mean message length by a
+  statistically significant but negligible amount.
+```
+
+Read that output slowly, because it is the whole lesson of this chapter in one block.
+
+The test is a **Welch** t-test, and the choice is deliberate. The ordinary t-test assumes the two groups have the same spread, and Chapter 5 showed plainly that they do not: the non-gaming standard deviation of 60.68 is far larger than the gaming standard deviation of 38.47. Welch's version drops that assumption, which makes it the safer default whenever two groups might vary by different amounts.
+
+The p-value is below .001. If the two kinds of channel truly had the same mean message length, a gap this large would turn up less than one time in a thousand. Chance is an unconvincing explanation.
+
+And the effect size, Cohen's *d* of -0.13, says the difference is negligible. Cohen's benchmarks put a *d* of 0.2 at small, 0.5 at medium, and 0.8 at large, so 0.13 does not even reach small. The raw gap is about five characters, roughly fifteen percent of the non-gaming average, and fifteen percent does not *sound* negligible. But Cohen's *d* measures the gap against how much the data naturally vary, and message lengths vary enormously, with standard deviations of thirty-eight and sixty-one characters. Five characters set against that much variation is a ripple.
+
+So how did a negligible difference come back significant? Sample size. The test ran on 34,766 messages. A large enough sample will make almost any difference, however tiny, statistically significant. Both halves of the finding are true, and a report giving only the first half would mislead.
+
+::: {.callout-note}
+## Two More Tests You Will Meet
+
+**ANOVA**, when the split has more than two groups. Restrict the data to its four largest game categories and `summary(aov(message_length ~ game, data = four_games))` returns *F*(3, 13429) = 92.26, p < 2e-16. The categories do not all share a mean. And the effect size, eta-squared, is 0.02: category explains about two percent of the variation in message length. The same honest pair of facts the t-test forced.
+
+**Linear regression**, when you want a model rather than a comparison. `summary(lm(message_length ~ is_gaming, data = analysis))` returns an intercept of 33.70, the mean for the reference group (non-gaming), and a coefficient on `is_gamingTRUE` of -5.22, which is exactly the gap the t-test found. That is not a coincidence: a t-test is a regression with one two-level predictor, and an ANOVA is a regression with one many-level predictor. All three belong to one framework, the general linear model.
+:::
+
+## Step 6: Write It Up, APA Format
 
 Academic writing uses the American Psychological Association (APA) format for reporting statistical results. Here's the template:
 
@@ -192,19 +286,25 @@ cat(sprintf(
 ))
 ```
 
+A t-test result is written up the same compact way. Here is the message-length finding, in the form a journal expects:
+
+> Gaming channels produced shorter chat messages on average than non-gaming channels (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.95, *p* < .001, Cohen's *d* = -0.13.
+
 ## Step 7: The Journalist Translation
 
-This is the most important paragraph you'll write in this assignment — and arguably in the entire course. Communication students need to explain statistics to people who have never taken a research methods class.
+This is the most important paragraph you'll write in this assignment, and arguably in the entire course. Communication students need to explain statistics to people who have never taken a research methods class.
 
 **The rule:** No jargon. No p-values. No chi-square. No "statistically significant." Just plain English.
 
 **Template:**
 
-> This analysis asked whether [plain-English version of the research question]. After examining [sample size] [items], the data [showed/did not show] a clear pattern: [describe the key finding in concrete terms]. In practical terms, this means [so-what statement — why does this matter?].
+> This analysis asked whether [plain-English version of the research question]. After examining [sample size] [items], the data [showed/did not show] a clear pattern: [describe the key finding in concrete terms]. In practical terms, this means [so-what statement, why does this matter?].
 
 **Example:**
 
-> This analysis asked whether certain music genres tend to favor major (happy-sounding) or minor (sad-sounding) keys. After examining nearly 1,800 songs from the Billboard charts, the data showed a clear pattern: genres differ meaningfully in their use of major vs. minor keys. Pop and latin songs lean heavily toward major keys, while rock and R&B include a higher proportion of minor-key tracks. For music producers and playlist curators, this suggests that key choice is partly a genre convention — not just an artistic decision.
+> This analysis asked whether people type differently in the chat of a gaming stream than in the chat of a non-gaming one. After examining nearly 35,000 messages from fifty Twitch channels, the data showed a difference so small it barely counts: messages on non-gaming channels ran about five characters longer on average, roughly one short word. The typical message was the same length in both places. What separates the two is a handful of unusually long messages on the non-gaming side, not any everyday difference in how people talk. For anyone building tools around chat, this suggests the two kinds of channel are better thought of as alike than as different.
+
+Notice what that paragraph does. It reports the real difference, it refuses to inflate it, and it tells the reader what the study actually found. A translation that said "gaming and non-gaming chat differ significantly" and stopped there would leave a reader picturing a real divide between two communities. There is a divide, and it is almost too small to see.
 
 ::: {.callout-important}
 ## Both Paragraphs Are Required
@@ -216,22 +316,24 @@ The APA paragraph is for researchers. The journalist translation is for everyone
 
 These exercises map directly to the Inferencing Data [R] assignment:
 
-1. **Write your hypotheses** for the genre × mode relationship *before* looking at any output.
+1. **Write your hypotheses** for the audience-size by channel-type relationship *before* looking at any output.
 
-2. **Build a contingency table** and its proportional version. Which genres have the most extreme proportions?
+2. **Build a contingency table** and its proportional version. Which band has the most extreme mix?
 
 3. **Run the chi-square test.** Report the χ², df, and p-value.
 
-4. **Calculate Cramér's V** and interpret its magnitude using Cohen's benchmarks.
+4. **Calculate Cramér's V** and interpret its magnitude using Cohen's benchmarks. Then check your work against `v2v::run_chi_square()`.
 
-5. **Examine standardized residuals.** Which genre-mode combinations are driving the result? Why do you think that might be?
+5. **Examine standardized residuals.** Which band-by-type combinations are driving the result? Why do you think that might be?
 
-6. **Write the APA results paragraph** using the template above.
+6. **Run the t-test** on `message_length` by `is_gaming` and confirm you reproduce the output above. Then explain, in one sentence, how a result can be significant and negligible at the same time.
 
-7. **Write the journalist translation** — explain the finding to someone who has never taken a statistics course.
+7. **Write the APA results paragraph** using the template above.
+
+8. **Write the journalist translation**, explaining the finding to someone who has never taken a statistics course.
 
 ::: {.callout-tip}
 ## Connection to Your Project
 
-For your final portfolio, you'll run this exact test on your own variables. The code is the same — only the variable names change. Your Results section needs both the frequency table/bar chart from Chapter 5 *and* the chi-square test from this chapter. Together, they tell the complete story: here's what the data looks like (descriptive) and here's what it means (inferential).
+For your final portfolio, you'll run this test on your own variables. The code is the same. Only the variable names change. Your Results section needs both the frequency table and chart from Chapter 5 *and* the test from this chapter. Together, they tell the complete story: here's what the data looks like (descriptive) and here's what it means (inferential).
 :::
