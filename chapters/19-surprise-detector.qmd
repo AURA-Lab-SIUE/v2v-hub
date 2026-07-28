@@ -118,12 +118,12 @@ library(tidyverse)
 
 music <- readRDS("data/music_data_clean.RDS")
 
-coded_songs <- music |>
-  filter(!is.na(romantic_theme)) |>
+coded_songs <- music %>%
+  filter(!is.na(romantic_theme)) %>%
   mutate(romantic_theme = factor(romantic_theme,
                                   labels = c("Not romantic", "Romantic")))
 
-coded_songs |> count(romantic_theme)
+coded_songs %>% count(romantic_theme)
 ```
 
 You should see approximately 30 songs split between the two groups.
@@ -133,7 +133,7 @@ You should see approximately 30 songs split between the two groups.
 Always look at the data before running a test. A boxplot shows the distribution of each group:
 
 ```r
-coded_songs |>
+coded_songs %>%
   ggplot(aes(x = romantic_theme, y = weeks_on_board, fill = romantic_theme)) +
   geom_boxplot(show.legend = FALSE) +
   labs(
@@ -235,7 +235,7 @@ This question is interesting because the two measurements come from completely d
 Genius lyrics include section tags like `[Verse 1]` and `[Chorus]` that are not actual words. Strip them before counting:
 
 ```r
-music <- music |>
+music <- music %>%
   mutate(word_count = str_count(
     str_remove_all(lyrics, "\\[.*?\\]"),  # remove section tags
     "\\S+"                                 # count non-whitespace sequences (words)
@@ -245,8 +245,8 @@ music <- music |>
 Check how many songs have both variables:
 
 ```r
-music |>
-  filter(!is.na(word_count), !is.na(speechiness)) |>
+music %>%
+  filter(!is.na(word_count), !is.na(speechiness)) %>%
   nrow()
 ```
 
@@ -257,8 +257,8 @@ Some songs have missing lyrics (Genius did not have them). This is expected --- 
 A scatterplot shows the direction and strength of the relationship. Color by genre to see if the pattern holds across groups or is driven by one genre.
 
 ```r
-music |>
-  filter(!is.na(word_count), !is.na(speechiness)) |>
+music %>%
+  filter(!is.na(word_count), !is.na(speechiness)) %>%
   ggplot(aes(x = speechiness, y = word_count, color = playlist_genre)) +
   geom_point(alpha = 0.3, size = 1) +
   geom_smooth(method = "lm", se = FALSE, color = "black", linewidth = 0.8) +
@@ -283,7 +283,7 @@ Look for:
 ### Step 4: Run the Correlation
 
 ```r
-music_lyric <- music |>
+music_lyric <- music %>%
   filter(!is.na(word_count), !is.na(speechiness))
 
 cor_result <- cor.test(

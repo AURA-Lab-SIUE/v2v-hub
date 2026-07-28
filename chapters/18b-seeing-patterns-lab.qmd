@@ -41,12 +41,12 @@ You should see approximately 1,792 rows and columns including `playlist_genre`, 
 Here is the full pipeline from raw data to finished chart. Read each comment --- every line serves a purpose.
 
 ```r
-music |>
-  count(playlist_genre, sort = TRUE) |>
+music %>%
+  count(playlist_genre, sort = TRUE) %>%
   mutate(
     percent = round(n / sum(n) * 100, 1),
     playlist_genre = fct_reorder(playlist_genre, n)
-  ) |>
+  ) %>%
   ggplot(aes(x = n, y = playlist_genre, fill = playlist_genre)) +
   geom_col(show.legend = FALSE, width = 0.7) +
   geom_text(aes(label = paste0(n, " (", percent, "%)")),
@@ -83,7 +83,7 @@ Many research questions involve change over time. The music dataset includes a `
 **Integer division** (`%/%`) rounds down to the nearest 10:
 
 ```r
-music <- music |>
+music <- music %>%
   mutate(
     year   = as.numeric(year),
     decade = (year %/% 10) * 10
@@ -93,8 +93,8 @@ music <- music |>
 Verify with a frequency table:
 
 ```r
-music |>
-  filter(!is.na(decade)) |>
+music %>%
+  filter(!is.na(decade)) %>%
   count(decade)
 ```
 
@@ -109,15 +109,15 @@ A line chart is the standard visualization for change over time. Each genre gets
 ### Step 1: Count Songs by Decade and Genre
 
 ```r
-decade_genre <- music |>
-  filter(!is.na(decade)) |>
+decade_genre <- music %>%
+  filter(!is.na(decade)) %>%
   count(decade, playlist_genre)
 ```
 
 ### Step 2: Build the Chart
 
 ```r
-decade_genre |>
+decade_genre %>%
   ggplot(aes(x = decade, y = n,
              color = playlist_genre,
              group = playlist_genre)) +
@@ -160,10 +160,10 @@ Sometimes you want to compare two specific slices of the data. Assignment 02 ask
 ### Step 1: Create the Subsets
 
 ```r
-rock_classic <- music |>
+rock_classic <- music %>%
   filter(playlist_genre == "rock", decade %in% c(1970, 1980))
 
-pop_2010s <- music |>
+pop_2010s <- music %>%
   filter(playlist_genre == "pop", decade == 2010)
 ```
 
@@ -177,7 +177,7 @@ nrow(pop_2010s)
 ### Step 2: Compute Summary Statistics
 
 ```r
-rock_classic |>
+rock_classic %>%
   summarise(
     n                 = n(),
     mean_energy       = round(mean(energy, na.rm = TRUE), 3),
@@ -195,9 +195,9 @@ A side-by-side boxplot makes the comparison visual:
 
 ```r
 bind_rows(
-  rock_classic |> mutate(group = "Rock (1970s-80s)"),
-  pop_2010s    |> mutate(group = "Pop (2010s)")
-) |>
+  rock_classic %>% mutate(group = "Rock (1970s-80s)"),
+  pop_2010s    %>% mutate(group = "Pop (2010s)")
+) %>%
   ggplot(aes(x = group, y = energy, fill = group)) +
   geom_boxplot(show.legend = FALSE, alpha = 0.7) +
   scale_fill_manual(values = c("Rock (1970s-80s)" = "#e76f51", "Pop (2010s)" = "#2a9d8f")) +

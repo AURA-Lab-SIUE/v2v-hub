@@ -46,7 +46,7 @@ library(tidyverse)
 
 music <- readRDS("data/music_data_clean.RDS")
 
-music_filtered <- music |> filter(!is.na(mode_label))
+music_filtered <- music %>% filter(!is.na(mode_label))
 ```
 
 A contingency table is the raw input for the chi-square test. It shows the count for every combination of your two variables:
@@ -168,8 +168,8 @@ round(residuals, 2)
 residual_df <- as.data.frame(as.table(residuals))
 names(residual_df) <- c("genre", "mode", "residual")
 
-residual_df |>
-  filter(abs(residual) > 2) |>
+residual_df %>%
+  filter(abs(residual) > 2) %>%
   arrange(desc(abs(residual)))
 ```
 

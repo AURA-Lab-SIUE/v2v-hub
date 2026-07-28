@@ -55,7 +55,7 @@ pokemon_raw <- read_csv(
   "https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-04-01/pokemon_df.csv"
 )
 
-pokemon <- pokemon_raw |>
+pokemon <- pokemon_raw %>%
   clean_names()
 ```
 
@@ -110,14 +110,14 @@ cat("Unique rows:", nrow(distinct(pokemon)), "\n")
 ### Categories
 
 ```r
-pokemon |>
+pokemon %>%
   count(type_1, sort = TRUE)
 ```
 
 18 primary types. Water is the most common. This is a clean categorical variable --- no inconsistent labels, no typos. Not every dataset will be this cooperative.
 
 ```r
-pokemon |>
+pokemon %>%
   count(generation_id)
 ```
 
@@ -126,7 +126,7 @@ Generations 1 and 5 have the most Pokemon. This column is numeric, but it repres
 ### Numeric Ranges
 
 ```r
-pokemon |>
+pokemon %>%
   select(
     hp,
     attack,
@@ -135,7 +135,7 @@ pokemon |>
     weight,
     height,
     base_experience
-  ) |>
+  ) %>%
   summary()
 ```
 
@@ -169,7 +169,7 @@ Everything below this line is yours. The downloaded `.qmd` file has empty code c
 ### Remove duplicates
 
 ```r
-pokemon_clean <- pokemon |>
+pokemon_clean <- pokemon %>%
   distinct()
 ```
 
@@ -180,10 +180,10 @@ Even if there are none, write the code. It's part of the pipeline.
 Fill missing `type_2` with `"none"` and impute missing numerics with the column median:
 
 ```r
-pokemon_clean <- pokemon_clean |>
+pokemon_clean <- pokemon_clean %>%
   mutate(
     type_2 = ifelse(is.na(type_2), "none", type_2)
-  ) |>
+  ) %>%
   mutate(
     across(
       where(is.numeric),
@@ -207,7 +207,7 @@ Create `power_tier` from `base_experience`:
 - `"high"` if 200 or above
 
 ```r
-pokemon_clean <- pokemon_clean |>
+pokemon_clean <- pokemon_clean %>%
   mutate(
     power_tier = case_when(
       base_experience < 100  ~ "low",
@@ -217,7 +217,7 @@ pokemon_clean <- pokemon_clean |>
     )
   )
 
-pokemon_clean |>
+pokemon_clean %>%
   count(power_tier)
 ```
 
@@ -236,7 +236,7 @@ Create `size_class` from `weight`:
 - `"heavy"` if over 100
 
 ```r
-pokemon_clean <- pokemon_clean |>
+pokemon_clean <- pokemon_clean %>%
   mutate(
     size_class = case_when(
       weight < 25   ~ "light",
@@ -246,14 +246,14 @@ pokemon_clean <- pokemon_clean |>
     )
   )
 
-pokemon_clean |>
+pokemon_clean %>%
   count(size_class)
 ```
 
 ### Convert to factors
 
 ```r
-pokemon_clean <- pokemon_clean |>
+pokemon_clean <- pokemon_clean %>%
   mutate(
     type_1 = factor(type_1),
     type_2 = factor(type_2),
@@ -294,18 +294,18 @@ pokemon_raw <- read_csv(
   "https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-04-01/pokemon_df.csv"
 )
 
-pokemon_clean <- pokemon_raw |>
-  clean_names() |>
-  distinct() |>
+pokemon_clean <- pokemon_raw %>%
+  clean_names() %>%
+  distinct() %>%
   mutate(
     type_2 = ifelse(is.na(type_2), "none", type_2)
-  ) |>
+  ) %>%
   mutate(
     across(
       where(is.numeric),
       ~ ifelse(is.na(.), median(., na.rm = TRUE), .)
     )
-  ) |>
+  ) %>%
   mutate(
     power_tier = case_when(
       base_experience < 100  ~ "low",
@@ -319,7 +319,7 @@ pokemon_clean <- pokemon_raw |>
       weight > 100  ~ "heavy",
       TRUE          ~ NA_character_
     )
-  ) |>
+  ) %>%
   mutate(
     type_1 = factor(type_1),
     type_2 = factor(type_2),

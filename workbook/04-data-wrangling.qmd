@@ -31,7 +31,7 @@ library(janitor)    # for clean_names() — fixes messy column headers
 
 music_raw <- read_csv("data/music_data_raw.csv")
 
-music_raw <- music_raw |> clean_names()
+music_raw <- music_raw %>% clean_names()
 ```
 
 Let's see what we're working with:
@@ -47,11 +47,11 @@ names(music_raw)
 ```
 
 ::: {.callout-note}
-## What Is the `|>` Symbol?
+## What Is the `%>%` Symbol?
 
-The `|>` is called a **pipe**. It takes the result from the left side and passes it to the function on the right side. Read it as "and then." So `music_raw |> clean_names()` means "take music_raw **and then** clean the names."
+The `%>%` is called a **pipe**. It takes the result from the left side and passes it to the function on the right side. Read it as "and then." So `music_raw %>% clean_names()` means "take music_raw **and then** clean the names."
 
-You'll also see `%>%` in some tutorials — it does the same thing. We use `|>` because it's built into modern R.
+You will also see `|>` in some tutorials. That is base R's own pipe, and it does nearly the same thing. We use `%>%` because it comes with the tidyverse, which is what this course is built on.
 :::
 
 ## Step 2: Diagnose
@@ -74,10 +74,10 @@ Look at the data types:
 
 ```r
 
-music_raw |>
-  summarize(across(everything(), ~sum(is.na(.)))) |>
-  pivot_longer(everything(), names_to = "column", values_to = "missing") |>
-  filter(missing > 0) |>
+music_raw %>%
+  summarize(across(everything(), ~sum(is.na(.)))) %>%
+  pivot_longer(everything(), names_to = "column", values_to = "missing") %>%
+  filter(missing > 0) %>%
   arrange(desc(missing))
 ```
 
@@ -98,20 +98,20 @@ For text/categorical columns, check the unique values. Inconsistent labels are o
 
 ```r
 
-music_raw |> count(playlist_genre, sort = TRUE)
+music_raw %>% count(playlist_genre, sort = TRUE)
 ```
 
 ```r
 
-music_raw |> count(mode, sort = TRUE)
+music_raw %>% count(mode, sort = TRUE)
 ```
 
 ### Check Numeric Variables
 
 ```r
 
-music_raw |>
-  select(danceability, energy, valence, tempo, track_popularity) |>
+music_raw %>%
+  select(danceability, energy, valence, tempo, track_popularity) %>%
   summary()
 ```
 
@@ -128,7 +128,7 @@ Now fix the problems you found. The order matters — handle duplicates first, t
 
 ```r
 
-music_clean <- music_raw |> distinct()
+music_clean <- music_raw %>% distinct()
 
 cat("Rows before:", nrow(music_raw), "\n")
 cat("Rows after:", nrow(music_clean), "\n")
@@ -140,10 +140,10 @@ If your genre column has inconsistent capitalization or spelling (e.g., "Pop" an
 
 ```r
 
-music_clean <- music_clean |>
+music_clean <- music_clean %>%
   mutate(playlist_genre = str_to_lower(playlist_genre))
 
-music_clean |> count(playlist_genre, sort = TRUE)
+music_clean %>% count(playlist_genre, sort = TRUE)
 ```
 
 ### 3c: Handle Problematic Values
@@ -152,7 +152,7 @@ Use `case_when()` to recode or fix specific values. This function works like a s
 
 ```r
 
-music_clean <- music_clean |>
+music_clean <- music_clean %>%
   mutate(
     mode_label = case_when(
       mode == 0 ~ "minor",
@@ -161,7 +161,7 @@ music_clean <- music_clean |>
     )
   )
 
-music_clean |> count(mode_label)
+music_clean %>% count(mode_label)
 ```
 
 ::: {.callout-note}
@@ -176,7 +176,7 @@ A **factor** is R's way of storing a categorical variable — it remembers both 
 
 ```r
 
-music_clean <- music_clean |>
+music_clean <- music_clean %>%
   mutate(
     playlist_genre = factor(playlist_genre),
     mode_label = factor(mode_label)
@@ -213,18 +213,18 @@ Here's the entire wrangling process in one code block, without the diagnostic ch
 library(tidyverse)
 library(janitor)
 
-music_raw <- read_csv("data/music_data_raw.csv") |> clean_names()
+music_raw <- read_csv("data/music_data_raw.csv") %>% clean_names()
 
-music_clean <- music_raw |>
-  distinct() |>                                        # remove duplicates
-  mutate(playlist_genre = str_to_lower(playlist_genre)) |>  # standardize labels
+music_clean <- music_raw %>%
+  distinct() %>%                                        # remove duplicates
+  mutate(playlist_genre = str_to_lower(playlist_genre)) %>%  # standardize labels
   mutate(
     mode_label = case_when(                            # create labeled mode
       mode == 0 ~ "minor",
       mode == 1 ~ "major",
       TRUE ~ NA_character_
     )
-  ) |>
+  ) %>%
   mutate(
     playlist_genre = factor(playlist_genre),           # set factors
     mode_label = factor(mode_label)

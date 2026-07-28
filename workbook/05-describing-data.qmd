@@ -29,8 +29,8 @@ A frequency table answers the simplest question: **How many of each category do 
 
 ```r
 
-genre_counts <- music |>
-  count(playlist_genre, sort = TRUE) |>   # count and sort by frequency
+genre_counts <- music %>%
+  count(playlist_genre, sort = TRUE) %>%   # count and sort by frequency
   mutate(
     percent = n / sum(n) * 100,           # add percentage column
     percent = round(percent, 1)           # round to one decimal
@@ -47,9 +47,9 @@ A cross-tabulation shows how two categorical variables relate to each other. Thi
 
 ```r
 
-cross_tab <- music |>
-  filter(!is.na(mode_label)) |>           # remove rows where mode is missing
-  count(playlist_genre, mode_label) |>    # count each combination
+cross_tab <- music %>%
+  filter(!is.na(mode_label)) %>%           # remove rows where mode is missing
+  count(playlist_genre, mode_label) %>%    # count each combination
   pivot_wider(                            # reshape from long to wide format
     names_from = mode_label,
     values_from = n,
@@ -71,14 +71,14 @@ Raw counts are useful, but proportions tell a richer story:
 
 ```r
 
-music |>
-  filter(!is.na(mode_label)) |>
-  count(playlist_genre, mode_label) |>
-  group_by(playlist_genre) |>
+music %>%
+  filter(!is.na(mode_label)) %>%
+  count(playlist_genre, mode_label) %>%
+  group_by(playlist_genre) %>%
   mutate(
     prop = n / sum(n),                    # proportion within each genre
     prop = round(prop, 3)                 # round to 3 decimals
-  ) |>
+  ) %>%
   ungroup()
 ```
 
@@ -182,8 +182,8 @@ A stacked proportional chart shows how the composition of one variable changes a
 
 ```r
 
-music |>
-  filter(!is.na(mode_label)) |>
+music %>%
+  filter(!is.na(mode_label)) %>%
   ggplot(aes(x = fct_infreq(playlist_genre), fill = mode_label)) +
   geom_bar(position = "fill") +               # "fill" makes it proportional
   coord_flip() +
@@ -213,7 +213,7 @@ Boxplots show the distribution of a continuous variable across categories. They 
 
 ```r
 
-music |>
+music %>%
   ggplot(aes(x = fct_reorder(playlist_genre, energy, .fun = median),
              y = energy,
              fill = playlist_genre)) +

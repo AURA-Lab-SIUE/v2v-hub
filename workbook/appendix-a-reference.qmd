@@ -14,7 +14,7 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 |----------|---------|-------------|---------|
 | `read_csv()` | tidyverse | Imports a CSV file into R | `df <- read_csv("data.csv")` |
 | `readRDS()` | base R | Loads a saved .RDS file | `df <- readRDS("data.RDS")` |
-| `clean_names()` | janitor | Converts column names to lowercase_with_underscores | `df <- df |> clean_names()` |
+| `clean_names()` | janitor | Converts column names to lowercase_with_underscores | `df <- df %>% clean_names()` |
 
 ## Exploring Data
 
@@ -31,9 +31,9 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 
 | Function | Package | What It Does | Example |
 |----------|---------|-------------|---------|
-| `distinct()` | tidyverse | Remove duplicate rows | `df |> distinct()` |
-| `filter()` | tidyverse | Keep rows matching a condition | `df |> filter(age > 18)` |
-| `mutate()` | tidyverse | Create or modify columns | `df |> mutate(new = old * 2)` |
+| `distinct()` | tidyverse | Remove duplicate rows | `df %>% distinct()` |
+| `filter()` | tidyverse | Keep rows matching a condition | `df %>% filter(age > 18)` |
+| `mutate()` | tidyverse | Create or modify columns | `df %>% mutate(new = old * 2)` |
 | `case_when()` | tidyverse | Recode values with if/then logic | `case_when(x == 1 ~ "yes", TRUE ~ "no")` |
 | `str_to_lower()` | tidyverse | Convert text to lowercase | `str_to_lower("POP")` → `"pop"` |
 | `is.na()` | base R | Check for missing values | `filter(!is.na(column))` |
@@ -44,10 +44,10 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 
 | Function | Package | What It Does | Example |
 |----------|---------|-------------|---------|
-| `count()` | tidyverse | Count rows by group | `df |> count(genre, sort = TRUE)` |
-| `group_by()` | tidyverse | Group data for per-group calculations | `df |> group_by(genre)` |
+| `count()` | tidyverse | Count rows by group | `df %>% count(genre, sort = TRUE)` |
+| `group_by()` | tidyverse | Group data for per-group calculations | `df %>% group_by(genre)` |
 | `summarize()` | tidyverse | Calculate summary statistics per group | `summarize(mean_val = mean(x))` |
-| `ungroup()` | tidyverse | Remove grouping | `df |> ungroup()` |
+| `ungroup()` | tidyverse | Remove grouping | `df %>% ungroup()` |
 | `pivot_wider()` | tidyverse | Reshape long → wide | `pivot_wider(names_from = col, values_from = n)` |
 
 ## Visualization (ggplot2)
@@ -94,19 +94,19 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 | `knitr::kable()` | Format a data frame as a publication-ready table |
 | `@citationkey` | Insert an in-text citation from `references.bib` |
 
-## The Pipe: `|>`
+## The Pipe: `%>%`
 
 The pipe passes the result from the left to the first argument of the function on the right:
 
 ```r
 clean_names(read_csv("data.csv"))
 
-read_csv("data.csv") |> clean_names()
+read_csv("data.csv") %>% clean_names()
 
-music |>
-  filter(!is.na(mode)) |>
-  count(genre, sort = TRUE) |>
+music %>%
+  filter(!is.na(mode)) %>%
+  count(genre, sort = TRUE) %>%
   mutate(pct = n / sum(n) * 100)
 ```
 
-Read `|>` as **"and then."**
+Read `%>%` as **"and then."**

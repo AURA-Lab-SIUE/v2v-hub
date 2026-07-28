@@ -70,8 +70,8 @@ Key terms from this workbook, defined in plain English.
 **p-value**
 : The probability of seeing data as extreme as yours *if the null hypothesis were true*. A small p-value (< .05) means it would be very unlikely to see your results by chance, so you reject the null hypothesis. It is NOT the probability that your hypothesis is true.
 
-**Pipe (`|>`)**
-: An R operator that takes the result from the left side and passes it as the first argument to the function on the right side. Read it as "and then."
+**Pipe (`%>%`)**
+: A tidyverse operator (from the magrittr package, loaded with the tidyverse) that takes the result from the left side and passes it as the first argument to the function on the right side. Read it as "and then."
 
 **Quarto**
 : An open-source publishing tool that renders documents mixing text and code into PDFs, websites, presentations, and books. The successor to R Markdown.

@@ -63,15 +63,19 @@ By the end of this course, students will be able to:
 
 ## Course Structure: The Five Phases
 
+**The Journalist** is a throughline, not a stage: a weekly reading journal that
+runs the length of the term. The other four roles are sequential, and each hands
+you the materials for the next. Those four stages track the textbook's five parts.
+
 ### Phase I: The Journalist (Weeks 1-14): 150 points
 - Weekly Reading Journal with Graduate Extensions (10 pts/week x 14 teaching weeks + 10 pts consistency = 150 pts)
 
-### Phase II: The Architect (Weeks 1-3): 100 points
+### Phase II: The Architect (Weeks 1-3, Book Part I: Foundation): 100 points
 - GitHub Profile (25 pts)
 - Syllabus Contract (25 pts)
 - Librarian Visit Report (50 pts)
 
-### Phase III: The Builder (Weeks 4-10): 325 points
+### Phase III: The Builder (Weeks 4-10, Book Parts II and III: Planning and Operationalization): 325 points
 - Annotated Manuscripts, 3 articles (25 pts)
 - Research Proposal, sentence outline (75 pts)
 - Topic Selection / RQs (25 pts)
@@ -80,12 +84,12 @@ By the end of this course, students will be able to:
 - Sampling Plan & Pilot, 20 to 30 items (75 pts)
 - CITI Ethics Certification (25 pts)
 
-### Phase IV: The Analyst (Weeks 11-13): 250 points
+### Phase IV: The Analyst (Weeks 11-13, Book Part IV: Execution): 250 points
 - Data Wrangling [R] (50 pts)
 - Describing Data [R] (100 pts)
 - Inferencing Data [R] (100 pts)
 
-### Phase V: The Publisher (Weeks 15-17): 200 points
+### Phase V: The Publisher (Weeks 15-17, Book Part V: Inference and Publication): 200 points
 - White Paper (200 pts)
 
 **Total Points:** 1,025
