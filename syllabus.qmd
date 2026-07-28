@@ -87,7 +87,7 @@ By the end of this course, students will be able to:
 - Inferencing Data [R] (100 pts)
 
 ### Phase V: The Publisher (Weeks 15-17): 250 points
-- Final Web Portfolio (250 pts)
+- White Paper (250 pts)
 
 **Total Points:** 1000
 
