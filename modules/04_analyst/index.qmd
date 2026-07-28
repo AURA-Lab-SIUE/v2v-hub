@@ -85,14 +85,19 @@ Using `coding_data_clean.RDS`:
 
 ## R Environment
 
-All R assignments use the `unified_music` dataset (1,792 songs with Billboard, Spotify, and Genius data). Load it with:
+All R assignments use the Twitch corpus that ships with the `v2v` package: 35,267 chat
+messages and 32,276 stream snapshots across fifty channels. Load it with:
 
 ```r
-library(coursepackR)
-data(unified_music)
+library(v2v)
+
+chat    <- twitch_chat()
+streams <- twitch_streams()
 ```
 
-**Required packages:** `tidyverse`, `knitr`, `kableExtra`, `scales`, `effsize`
+There is no file to download and no path to get wrong.
+
+**Required packages:** `tidyverse`, `v2v`, `knitr`, `scales`
 
 ---
 

@@ -6,7 +6,7 @@ execute:
   echo: true
 ---
 
-Running a statistical test is not the finish line. The test gives you a number --- a p-value, a correlation coefficient, an effect size. **Interpreting** that number honestly, in context, with appropriate humility, is the harder and more important skill.
+Running a statistical test is not the finish line. The test gives you a number: a p-value, a correlation coefficient, an effect size. **Interpreting** that number honestly, in context, with appropriate humility, is the harder and more important skill.
 
 This chapter covers what comes after you get your results: how to evaluate whether an effect matters, why non-significant results are not failures, how to avoid common interpretation traps, and how to write a discussion section that is both confident and honest.
 
@@ -14,13 +14,13 @@ This chapter covers what comes after you get your results: how to evaluate wheth
 
 ## The Test Is Not the Answer
 
-Consider two scenarios from Assignment 03:
+Consider two scenarios from Assignment 03.
 
-**Scenario A:** Your t-test on romantic theme vs. chart weeks returns p = .42 and Cohen's d = 0.31. The result is not statistically significant --- but the effect size is small-to-medium. What does this mean?
+**Scenario A, hypothetical.** You draw 30 chat messages with `sample_messages()`, code them by hand, and run a t-test comparing message length on gaming and non-gaming channels. Suppose it comes back p = .42 with a Cohen's d of 0.31. Not statistically significant, and yet an effect size sitting between small and medium. What does that mean?
 
-**Scenario B:** Your correlation between speechiness and word count returns p < .001 and r = .52. The result is highly significant with a large effect size. What does this mean?
+**Scenario B, the real one.** [Chapter 19](19-surprise-detector.qmd) ran that same comparison on the full analysis table, and the output is on the page there: Welch's *t*(3768.7) = -4.95, *p* < .001, Cohen's *d* = -0.13. Highly significant, and an effect size below Cohen's threshold for "small." What does *that* mean?
 
-Both results need interpretation. Scenario A is not a failure, and Scenario B is not automatic success. The p-value tells you whether the pattern is likely real; the effect size tells you whether it matters; the context tells you what it means.
+Both results need interpretation, and neither reads the way a first glance suggests. Scenario A is not a failure. Scenario B is not a triumph. The p-value tells you whether the pattern is likely real; the effect size tells you whether it matters; the context tells you what it means. Read only the first of the three and you will get both scenarios wrong, in opposite directions.
 
 ---
 
@@ -28,7 +28,7 @@ Both results need interpretation. Scenario A is not a failure, and Scenario B is
 
 ### Why Significance Alone Is Not Enough
 
-With a large enough sample, *any* difference --- no matter how trivial --- becomes statistically significant. A study of 100,000 people might find that coffee drinkers are 0.3 seconds faster at reaction time tasks, with p < .001. Is that meaningful? No. The effect is real but practically invisible.
+With a large enough sample, *any* difference, no matter how trivial, becomes statistically significant. You have already seen this happen. The t-test in Chapter 19 ran on 34,766 messages and returned p < .001 for a gap of 5.22 characters, about one short word, in data whose standard deviations run to 38 and 61 characters. The difference is real in the narrow sense that chance does not explain it. It is also almost too small to see.
 
 Effect sizes measure the **magnitude** of a result, independent of sample size.
 
@@ -42,14 +42,16 @@ Effect sizes measure the **magnitude** of a result, independent of sample size.
 
 ### Context Matters More Than Benchmarks
 
-Cohen himself warned that his benchmarks were "rules of thumb" --- not laws. Whether an effect is meaningful depends on the domain:
+Cohen himself warned that his benchmarks were rules of thumb, not laws. Whether an effect is meaningful depends on the domain:
 
-- **Medicine:** A Cohen's d of 0.2 for a drug reducing heart attack risk is clinically important --- at scale, it saves thousands of lives.
+- **Medicine:** A Cohen's d of 0.2 for a drug reducing heart attack risk is clinically important. At scale, it saves thousands of lives.
 - **Education:** A Cohen's d of 0.2 for a teaching intervention that costs nothing to implement is worth adopting.
 - **Marketing:** A Pearson's r of 0.1 between ad exposure and purchase intent might be worth millions in revenue across millions of consumers.
-- **Music research:** A Cramer's V of 0.15 for genre and mode is a small but real pattern that reflects genuine compositional conventions.
+- **Platform research:** A Cramer's V of 0.15 between a channel's category and the size of its audience is a small but real pattern, and it may still be the thing a recommendation system is built on.
 
-The question is never just "is this effect small or large?" --- it is "does this effect matter in this context?"
+The question is never just "is this effect small or large?" It is "does this effect matter in this context?"
+
+For the message-length finding, the context argues *against* inflating it. Nobody is building a product on a five-character difference, and the medians in Chapter 5, 16 characters for non-gaming and 17 for gaming, say the typical message is the same length in both kinds of channel. A d of -0.13 in this setting means what it looks like it means.
 
 ---
 
@@ -70,17 +72,29 @@ $$\text{Power} = 1 - \beta$$
 
 ### What This Means for Assignment 03
 
-Your t-test in RQ1 uses **30 songs**. This is a very small sample. With n = 30 and a typical small-to-medium effect (d = 0.3-0.5), the power of a t-test is roughly:
+The Twitch study runs at three very different sample sizes, and power behaves differently at each. Lining them up is the fastest way to see what power actually does.
 
-| Cohen's d | Power (n = 30) | Interpretation |
-|-----------|----------------|----------------|
-| 0.2 (small) | ~10% | Almost no chance of detecting it |
-| 0.5 (medium) | ~30% | Coin flip --- likely to miss it |
-| 0.8 (large) | ~60% | Decent but not great |
+| Analysis | n | What the sample size does to the test |
+|---|---|---|
+| Hand-coded pilot, `sample_messages()` | 30 messages | Very low power. A real effect can easily go undetected. |
+| Channel-level correlation (Chapter 19) | 50 channels | Low power, and a wide confidence interval that shows it. |
+| Message-level t-test (Chapter 19) | 34,766 messages | So much power that negligible differences come back significant. |
 
-This means: **if your t-test is not significant, it does not prove that romantic theme is unrelated to chart success.** It may simply mean you did not have enough data to detect the effect.
+The two ends of that table are opposite failure modes of the same reasoning.
 
-Your correlation in RQ2 uses the full dataset (1,000+ songs with lyrics). With n > 1,000, even small effects (r = .10) are detectable with power > 95%.
+At 30 hand-coded messages, **a non-significant result does not prove there is nothing there.** It may only mean the sample was too small to find what is there. Notice that the effect size, which does not depend on sample size, is still worth reporting: an insignificant d of 0.31 in a 30-message pilot is a reason to collect more data, not a reason to conclude the effect is absent.
+
+At 34,766 messages, the opposite trap opens. Significance is nearly guaranteed, so it stops carrying information, and the effect size becomes the only number that tells you anything about magnitude.
+
+Do not guess at power. Compute it. The `pwr` package will tell you what a given design can and cannot detect, before you collect the data:
+
+```r
+install.packages("pwr")
+
+pwr::pwr.t.test(d = 0.5, sig.level = .05, power = .80)
+```
+
+Run with `power` supplied and `n` left out, it returns the sample size you would need. Run with `n` supplied and `power` left out, it returns the power you actually have. Doing this *before* coding a sample is how you avoid spending a week on a test that could never have detected anything.
 
 ::: {.callout-important}
 ## "We Didn't Find It" Is Not "It Doesn't Exist"
@@ -94,15 +108,17 @@ A non-significant result with low power is inconclusive, not informative. The ho
 
 ### 1. Overgeneralizing
 
-Your sample is Billboard Hot 100 songs from 1960--2020. Your findings apply to *Billboard-charting American popular music* --- not "all music," not "music globally," not "music throughout history."
+Your sample is fifty Twitch channels recorded across five and a half days of November 2018. Your findings apply to *those channels, in that week, on that platform*. Not "livestreaming," not "online communities," not "how people talk on the internet."
 
-**Bad:** "Romantic themes do not affect a song's success."
-**Good:** "Among Billboard-charting songs in this sample, romantic themes were not significantly associated with chart longevity."
+**Bad:** "Gaming audiences write shorter messages than non-gaming audiences."
+**Good:** "Among the fifty channels in this sample, messages on gaming channels averaged slightly fewer characters than messages on non-gaming channels."
+
+The date matters as much as the sample. Twitch in 2018 had different categories, different moderation tools, and a different audience than Twitch today. A finding from that week is a finding about that week.
 
 ### 2. Causal Language from Correlational Data
 
-**Bad:** "Higher speechiness causes songs to have more words."
-**Good:** "Songs with higher speechiness scores tended to have more words, though this association may reflect genre conventions rather than a direct causal relationship."
+**Bad:** "A larger audience causes a channel's chat to produce more messages."
+**Good:** "Channels with larger average audiences tended to produce more chat messages, though this association may reflect how long each channel streamed rather than a direct effect of audience size."
 
 The words *causes*, *leads to*, *produces*, and *results in* imply causation. Use *associated with*, *related to*, *tended to*, and *predicted* for correlational findings.
 
@@ -122,7 +138,7 @@ Selectively reporting only significant results is called **p-hacking** or the **
 
 ### 5. HARKing (Hypothesizing After Results are Known)
 
-**Bad:** Looking at the data, noticing that rock songs have more minor-key tracks, then writing "We hypothesized that rock songs would have more minor-key tracks."
+**Bad:** Looking at the data, noticing that Just Chatting channels have longer messages, then writing "We hypothesized that Just Chatting channels would have longer messages."
 **Good:** Writing your hypothesis *before* running the analysis, as Assignment 03 explicitly requires.
 
 Both exploratory and confirmatory analyses are valid. The dishonesty is in presenting exploration as if it were confirmation.
@@ -135,31 +151,32 @@ The discussion section is where you step back from the numbers and explain what 
 
 ### 1. Restate the Finding
 
-Start with a plain-English summary of the result. No new statistics --- the reader just saw them in the Results section.
+Start with a plain-English summary of the result. No new statistics, since the reader just saw them in the Results section.
 
-> "The analysis found no significant difference in chart longevity between romantic and non-romantic songs."
+> "Messages on gaming channels were slightly shorter on average than messages on non-gaming channels, but the difference was small enough to be of little practical consequence."
 
 ### 2. Interpret in Context
 
 Connect the finding to prior research, theory, or common assumptions.
 
-> "This contradicts the popular belief that love songs dominate the charts. While romantic themes are common in popular music, they do not appear to confer a measurable advantage in chart persistence --- at least not in this sample."
+> "This qualifies a common assumption about livestreaming: that gaming chat and non-gaming chat are distinct communicative registers. In this sample the two look far more alike than different, and what separates them is a thin tail of unusually long messages on the non-gaming side rather than any difference in the typical message."
 
 ### 3. Discuss Practical Significance
 
 Even non-significant results have practical implications.
 
-> "For music producers and playlist curators, this suggests that romantic content alone is not a reliable predictor of commercial success. Other factors --- production quality, artist popularity, release timing --- likely play larger roles."
+> "For anyone building moderation tools or chat interfaces, this suggests that a single design can serve both kinds of channel. Message length is not the variable on which the two communities separate, and other factors, including audience size, streamer interaction style, and time of day, are more likely candidates."
 
 ### 4. Acknowledge Limitations
 
 Be honest about what your study cannot claim. Common limitations for content analysis studies include:
 
-- **Sample size:** "The coded sample of 30 songs limits the statistical power of the t-test."
-- **Generalizability:** "The dataset includes only Billboard-charting songs, which may not represent independent or non-Western music."
-- **Operationalization:** "The binary romantic_theme coding (romantic / not romantic) may oversimplify the range of lyrical themes."
+- **Sample size:** "The hand-coded sample of 30 messages limits the statistical power of the t-test."
+- **Generalizability:** "The dataset covers fifty channels over five and a half days of November 2018, and may not represent Twitch as a whole or the platform as it exists now."
+- **Operationalization:** "Message length in characters is a crude proxy for how much a viewer says. It counts a pasted emote string and a full sentence on the same scale."
+- **Unclassifiable cases:** "Two channels never had a stream category recorded, so 501 messages could not be labeled as gaming or non-gaming and were excluded from the comparison."
 - **Single coder:** "All coding was performed by a single coder, and intercoder reliability was not assessed."
-- **Dataset constraints:** "Audio features were sourced from Spotify's algorithm, which may not perfectly capture human perceptions of speechiness or energy."
+- **Dataset constraints:** "The chat fixture caps each channel at 1,000 sampled messages, so the busiest channels are compressed against that ceiling and channel-level chat volume understates the real spread."
 
 ::: {.callout-tip}
 ## Limitations Are Credibility
@@ -173,25 +190,25 @@ Frame each limitation constructively: "This limitation suggests that future rese
 
 Every limitation implies a follow-up study.
 
-> "Future research should replicate this analysis with a larger coded sample (n > 200) to increase statistical power. A multi-coder design with intercoder reliability testing would strengthen the validity of the romantic theme variable."
+> "Future research should replicate this analysis with a larger coded sample (n > 200) to increase statistical power. A multi-coder design with intercoder reliability testing would strengthen the validity of the message-target variable, and a collection window spanning several weeks would separate the effect of channel type from the effect of whatever happened to be streaming that week."
 
 ### 6. Conclude with Implications
 
 End with the so-what. What does this study contribute?
 
-> "This study contributes to our understanding of how lyrical content relates to commercial outcomes in popular music. While the romantic theme finding was inconclusive, the strong correlation between Spotify speechiness and Genius word count demonstrates that automated audio analysis and human-generated lyric data capture related but distinct dimensions of musical content."
+> "This study contributes to our understanding of how the content of a livestream relates to the behavior of its chat. The central comparison found a difference that is statistically detectable and practically negligible, which is itself a useful result: it suggests that the gaming and non-gaming split, however intuitive as a way of sorting channels, does not by itself predict how people write."
 
 ---
 
 ## Example: A Complete Mini-Discussion
 
-Here is a model discussion paragraph for the Assignment 03 RQ2 result (correlation):
+Here is a model discussion paragraph for the Assignment 03 t-test result:
 
-> The Pearson correlation revealed a significant positive relationship between Spotify speechiness and Genius lyric word count (r = .52, p < .001), indicating that songs with higher speechiness scores tend to contain more words. This finding is consistent with the operational definitions of both variables: Spotify's speechiness score detects the presence of spoken words in the audio signal, while Genius word count measures the number of words in the transcribed lyrics. The large effect size suggests these two independently derived measurements are capturing a shared underlying construct --- the degree to which a song is "wordy" versus purely musical.
+> The independent-samples t-test revealed a statistically significant difference in message length between gaming channels (M = 28.49, SD = 38.47) and non-gaming channels (M = 33.70, SD = 60.68), Welch's *t*(3768.7) = -4.95, *p* < .001. The effect size, however, was negligible (Cohen's *d* = -0.13), well below Cohen's threshold for a small effect. The gap of roughly five characters is about one short word, set against standard deviations of 38 and 61 characters. The significance is a product of the sample size, 34,766 messages, rather than of the magnitude of the difference.
 >
-> However, the scatterplot revealed that this correlation may be partly driven by genre. Rap songs clustered at the high end of both variables, while genres like EDM and rock clustered at the low end. This raises the possibility that the overall correlation reflects genre membership rather than a direct relationship between speechiness and word count within genres. Future research should examine within-genre correlations to determine whether the relationship holds after controlling for genre effects.
+> The descriptive statistics locate where the difference actually lives. The two medians, 16 characters for non-gaming and 17 for gaming, are all but identical and point in the opposite direction from the means. The gap in the means is therefore the work of a long right tail on the non-gaming side, recorded directly by its much larger standard deviation. In other words, the typical message is the same length on both kinds of channel, and what differs is the frequency of unusually long messages. Future research should model the shape of that tail directly rather than comparing means, since the mean is the statistic least suited to describing this distribution.
 
-Notice: specific statistics, honest interpretation, limitation identified, future direction proposed.
+Notice: specific statistics, honest interpretation, limitation identified, future direction proposed. Notice also what it refuses to do. It never says the two kinds of channel "differ in message length" and stops there, even though that sentence would be technically true and much easier to write.
 
 ---
 
@@ -203,14 +220,14 @@ These exercises prepare you for the discussion and reflection sections of Assign
 
 2. **List 3 limitations** of the Assignment 03 analysis. For each, write one sentence identifying the limitation and one sentence proposing how a future study could address it.
 
-3. **Write a "future directions" paragraph** suggesting how a follow-up study could build on your findings. Be specific --- name the sample size, the coding approach, and the additional variables you would include.
+3. **Write a "future directions" paragraph** suggesting how a follow-up study could build on your findings. Be specific: name the sample size, the coding approach, and the additional variables you would include.
 
 4. **Rewrite one of your APA paragraphs** as a journalist translation. Remove all jargon. Explain the finding to someone who has never taken a statistics course.
 
 ::: {.callout-tip}
 ## Connection to Your Final Portfolio
 
-The discussion section of your final portfolio must address both Study 1 (qualitative content analysis) and Study 2 (quantitative analysis). The skills you practice here --- interpreting effect sizes, framing limitations, suggesting future research --- are exactly what the portfolio requires. Start writing now; don't wait until finals week.
+The discussion section of your final portfolio must address both Study 1 (qualitative content analysis) and Study 2 (quantitative analysis). The skills you practice here, interpreting effect sizes, framing limitations, and suggesting future research, are exactly what the portfolio requires. Start writing now; don't wait until finals week.
 :::
 
 ---

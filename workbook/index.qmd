@@ -7,14 +7,14 @@ title: "R Workbook: Novice to Social Scientist"
 
 **A hands-on guide to R for content analysis research**
 
-Seven chapters take you from building a codebook to publishing a professional research portfolio --- with narrated video walkthroughs for every chapter.
+Seven chapters take you from building a codebook to publishing a professional research portfolio, with narrated video walkthroughs for every chapter.
 :::
 
 ---
 
 ## What You'll Learn
 
-This workbook is your companion for the R programming portion of the course (Phases III--V). Each chapter builds on the previous one, following the same dataset through the full research pipeline.
+This workbook is your companion for the R programming portion of the course (Phases III--V). Each chapter builds on the previous one, following the same dataset through the full research pipeline: the Twitch corpus that ships inside the course `v2v` package, 35,267 chat messages and 32,276 stream snapshots drawn from fifty channels over five and a half days of November 2018.
 
 | Chapter | Title | What You'll Do |
 |---------|-------|---------------|
@@ -38,7 +38,7 @@ Every chapter opens with a **narrated video walkthrough**. Watch it first to get
 
 1. **Watch the video** at the top of each chapter
 2. **Follow along in VS Code**, the code blocks are designed to run in order
-3. **Use the class dataset** (`music_data_raw.csv`) for practice
+3. **Use the class dataset** for practice: `library(v2v)`, then `twitch_chat()` and `twitch_streams()`, with no file to download
 4. **Apply to your own data** for the final portfolio
 
 ---

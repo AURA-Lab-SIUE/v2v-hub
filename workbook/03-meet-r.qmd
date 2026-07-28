@@ -69,17 +69,21 @@ Packages are collections of functions that extend what R can do. You need two:
 
 ```r
 install.packages("tidyverse")
-install.packages("janitor")
+
+install.packages("remotes")
+remotes::install_github("AURA-Lab-SIUE/v2v-r")
 ```
+
+`tidyverse` is the standard collection of R packages for data work: importing, reshaping, summarizing, and charting. `v2v` is the course package. It ships the Twitch dataset this workbook uses, the course figure theme, and a set of helpers written for these assignments. It does not live on CRAN, which is why it installs from GitHub through `remotes`.
 
 This may take a few minutes. You'll see red text scrolling, which is normal. When it's done, load them:
 
 ```r
 library(tidyverse)
-library(janitor)
+library(v2v)
 ```
 
-If you see no errors, you're good. If you get an error about a package not being found, try the install command again with `dependencies = TRUE`:
+If you see no errors, you're good. If R reports `there is no package called 'v2v'`, the install did not finish; run the two install lines again and read the output for the real error. If the tidyverse install is the one that fails, try it again with `dependencies = TRUE`:
 
 ```r
 install.packages("tidyverse", dependencies = TRUE)
@@ -99,37 +103,48 @@ Keeping your files in one folder makes file paths work correctly.
 2. In VS Code: **File, Open Folder**, and select it.
 3. That folder is now your working directory for the whole R session. Inside it, make a `data/` subfolder for your datasets.
 
-### Step 4: Test with the music dataset
+### Step 4: Test with the Twitch dataset
 
-Download `music_data_raw.csv` from Blackboard (or copy it from this workbook's `data/` folder) into your `data/` subfolder.
-
-Now load it:
+There is nothing to download. The course dataset ships inside the `v2v` package, so you load it with a function call instead of a file path:
 
 ```r
 
 library(tidyverse)
-library(janitor)
+library(v2v)
 
-music <- read_csv("data/music_data_raw.csv")
+chat <- twitch_chat()
+streams <- twitch_streams()
 
-glimpse(music)
+glimpse(chat)
 ```
 
-If you see a table of data in the R terminal and `music` appears in the Workspace panel, everything is working.
+`chat` is one row per chat message. `streams` is one row per snapshot of one stream at one moment. `glimpse()` prints every column, its type, and its first few values:
 
-### Step 5: Verify the `coursepackR` package (optional)
+```
+Rows: 35,267
+Columns: 5
+$ id      <int> 89, 551, 1033, 2094, 2803, …
+$ channel <chr> "sodapoppin", "xqcow", "forsen", "sodapoppin", "xqcow", …
+$ sender  <chr> "madzee", "prometheanow", "spectre155", "itsjer", "laserfru…
+$ message <chr> "???????????????????????", "TriEasy Clap TriEasy Clap TriE…
+$ date    <dbl> 1542578127023, 1542578135562, 1542578143610, 1542578157677…
+```
 
-Your professor has created a course-specific R package with setup tools and diagnostics:
+If you see that table in the R terminal and `chat` appears in the Workspace panel, everything is working.
+
+Notice what did not happen. There was no file path to get wrong, no download step, no format to guess at. A new R user's first encounter with data is usually a pile of path errors, and `twitch_chat()` and `twitch_streams()` exist to remove that whole category of problem. Your own project data, later in the course, will arrive the ordinary way, through a file. This one arrives through a function.
+
+### Step 5: Check your environment with `v2v::setup()`
+
+The course package carries its own diagnostic:
 
 ```r
-install.packages("remotes")
-remotes::install_github("SIM-Lab-SIUE/coursepackR")
-
-library(coursepackR)
-mccourse_check()
+v2v::setup()
 ```
 
-This will verify your entire environment: R, VS Code, Quarto, Git, and all required packages. Fix any issues it flags.
+This verifies your environment: R, the packages the workbook depends on, and whether the versions agree. Fix anything it flags. Run it again any time you suspect an installation problem rather than a code problem.
+
+Note the `v2v::` in front of the function name. It tells R, and tells you, that `setup()` comes from the course package specifically. Functions you have loaded with `library(v2v)` work without the prefix, but writing it out makes clear which tools are the course's and which are R's own.
 
 ## Quarto documents (.qmd)
 
@@ -150,8 +165,8 @@ format: pdf
 
 **2. Text** (written in plain language, just like any document):
 ```
-This analysis examines the relationship between genre
-and musical mode in the Billboard music dataset.
+This analysis examines the relationship between channel type
+and message length in the Twitch dataset.
 ```
 
 **3. Code chunks** (R code between special markers):
@@ -159,7 +174,8 @@ and musical mode in the Billboard music dataset.
 ````
 ```{{r}}
 library(tidyverse)
-music <- read_csv("data/music_data_raw.csv")
+library(v2v)
+chat <- twitch_chat()
 ```
 ````
 
@@ -179,12 +195,13 @@ This is exactly how your final portfolio will work: one Quarto project that rend
 
 ```r
 library(tidyverse)
-music <- read_csv("data/music_data_raw.csv")
-nrow(music)
+library(v2v)
+chat <- twitch_chat()
+nrow(chat)
 ```
 
 3. Press `Ctrl/Cmd+Shift+K` to render (or click **Render** in the Quarto preview).
-4. You should see a PDF (or HTML) with the number `1792`, the number of songs in the dataset.
+4. You should see a PDF (or HTML) with the number `35267`, the number of chat messages in the dataset.
 
 If this works, you're ready for Chapter 4.
 

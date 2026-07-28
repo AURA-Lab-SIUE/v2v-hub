@@ -103,9 +103,9 @@ clean_names(read_csv("data.csv"))
 
 read_csv("data.csv") %>% clean_names()
 
-music %>%
-  filter(!is.na(mode)) %>%
-  count(genre, sort = TRUE) %>%
+chat %>%
+  filter(!is.na(is_gaming)) %>%
+  count(channel, sort = TRUE) %>%
   mutate(pct = n / sum(n) * 100)
 ```
 

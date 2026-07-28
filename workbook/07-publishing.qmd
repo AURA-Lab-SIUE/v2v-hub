@@ -145,7 +145,7 @@ The R code in your graded assignments is the foundation. Copy your working code 
 
 1. **Answer your RQs** (1 paragraph each): Directly address each research question with evidence from your results.
 2. **Connect to theory** (1 paragraph): How do your findings relate to the theory you introduced?
-3. **Limitations** (at least 3): Be specific. "Small sample size" is generic. "The sample included only Billboard-charting songs, which may not represent independent or international releases" is specific and useful.
+3. **Limitations** (at least 3): Be specific. "Small sample size" is generic. "The sample capped each channel at 1,000 messages, so the busiest channels are under-represented relative to their real chat volume" is specific and useful.
 4. **Conclusion** (2–3 sentences): What's the takeaway? What should future researchers investigate?
 
 ### Abstract (index.qmd) — ~150 words

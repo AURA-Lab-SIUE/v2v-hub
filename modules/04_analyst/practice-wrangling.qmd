@@ -22,7 +22,9 @@ The first half of this page walks through the dataset together. The second half 
 
 ## Why a New Dataset?
 
-You learned the four-step wrangling pipeline in the [Data Wrangling chapter](../../workbook/04-data-wrangling.qmd) using the music dataset. That chapter taught you the functions. This practice tests whether you can *apply* them --- to data you haven't seen, with column names you don't recognize, and problems you have to find yourself.
+You learned the four-step wrangling pipeline in the [Data Wrangling chapter](../../workbook/04-data-wrangling.qmd) using the Twitch dataset. That chapter taught you the functions. This practice tests whether you can *apply* them: to data you haven't seen, with column names you don't recognize, and problems you have to find yourself.
+
+There is a second difference, and it is a useful one. The Twitch data arrived through `twitch_chat()` and `twitch_streams()`, functions that reach into the `v2v` package and hand you the tables with no file path to get wrong. Almost no data in the world arrives that conveniently. This one comes from a URL, which is much closer to the ordinary case.
 
 The pipeline is always the same:
 
@@ -34,13 +36,13 @@ If you can wrangle Pokemon data, you can wrangle your content analysis data. Sam
 
 ## The Dataset
 
-Today's data comes from the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-04-01) project --- a weekly community data practice used by R learners and professionals worldwide. It contains stats, types, and physical attributes for 949 Pokemon across all generations.
+Today's data comes from the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-04-01) project, a weekly community data practice used by R learners and professionals worldwide. It contains stats, types, and physical attributes for 949 Pokemon across all generations.
 
 This dataset has:
 
-- **Text columns** (`type_1`, `type_2`, `color_1`, `egg_group_1`) --- for practicing `count()` and `factor()`
-- **Numeric columns** (`hp`, `attack`, `defense`, `speed`, `weight`, `height`) --- for practicing `summary()` and range checks
-- **Real missing values** --- not every Pokemon has a secondary type, so `type_2` and `egg_group_2` have legitimate NAs
+- **Text columns** (`type_1`, `type_2`, `color_1`, `egg_group_1`), for practicing `count()` and `factor()`
+- **Numeric columns** (`hp`, `attack`, `defense`, `speed`, `weight`, `height`), for practicing `summary()` and range checks
+- **Real missing values**: not every Pokemon has a secondary type, so `type_2` and `egg_group_2` have legitimate NAs
 - **Enough rows** (949) to feel like real data without being overwhelming
 
 ## Importing Together
@@ -62,7 +64,7 @@ pokemon <- pokemon_raw %>%
 ::: {.callout-note}
 ## Reading Data from a URL
 
-`read_csv()` works with URLs, not just local files. R downloads the data directly into memory. This is how many open datasets are shared --- no file download needed.
+`read_csv()` works with URLs, not just local files. R downloads the data directly into memory. This is how many open datasets are shared, with no file download needed.
 :::
 
 Check what we're working with:
@@ -86,9 +88,9 @@ glimpse(pokemon)
 
 Notice the mix of types:
 
-- `<chr>` = text (character) --- names, types, colors, egg groups, URLs
-- `<int>` = whole numbers --- stats like hp, attack, defense, speed
-- `<dbl>` = decimal numbers --- height, weight
+- `<chr>` = text (character): names, types, colors, egg groups, URLs
+- `<int>` = whole numbers: stats like hp, attack, defense, speed
+- `<dbl>` = decimal numbers: height, weight
 
 ### Missing Values
 
@@ -96,7 +98,7 @@ Notice the mix of types:
 colSums(is.na(pokemon))
 ```
 
-You'll find missing values in `type_2`, `color_2`, and `egg_group_2`. This is not an error --- not every Pokemon has a secondary type. But you need to decide what to do about it before analysis.
+You'll find missing values in `type_2`, `color_2`, and `egg_group_2`. This is not an error: not every Pokemon has a secondary type. But you need to decide what to do about it before analysis.
 
 You'll also find NAs in `base_experience`. Some Pokemon simply don't have this stat recorded.
 
@@ -114,14 +116,14 @@ pokemon %>%
   count(type_1, sort = TRUE)
 ```
 
-18 primary types. Water is the most common. This is a clean categorical variable --- no inconsistent labels, no typos. Not every dataset will be this cooperative.
+18 primary types. Water is the most common. This is a clean categorical variable, with no inconsistent labels and no typos. Not every dataset will be this cooperative.
 
 ```r
 pokemon %>%
   count(generation_id)
 ```
 
-Generations 1 and 5 have the most Pokemon. This column is numeric, but it represents a category --- a good candidate for `factor()`.
+Generations 1 and 5 have the most Pokemon. This column is numeric, but it represents a category, and a good candidate for `factor()`.
 
 ### Numeric Ranges
 
@@ -149,10 +151,10 @@ Here's what we found:
 
 | Issue | Column(s) | Decision |
 |-------|-----------|----------|
-| Missing secondary type | `type_2` | Fill with `"none"` --- absence is meaningful |
+| Missing secondary type | `type_2` | Fill with `"none"` (absence is meaningful) |
 | Missing base experience | `base_experience` | Impute with median |
 | No factor types | `type_1`, `generation_id` | Convert after cleaning |
-| No derived variables | --- | Create `power_tier` and `size_class` with `case_when()` |
+| No derived variables | (none yet) | Create `power_tier` and `size_class` with `case_when()` |
 
 This is typical. Not every dataset has dramatic errors. Sometimes cleaning is just structuring the data for the analysis you want to run.
 
@@ -195,7 +197,9 @@ pokemon_clean <- pokemon_clean %>%
 ::: {.callout-note}
 ## When Missing Data Isn't an Error
 
-In the music dataset, missing values usually meant something went wrong during collection. Here, a missing `type_2` means the Pokemon only has one type. The decision to fill it with `"none"` vs. leave it as `NA` depends on your analysis plan. We fill it here so `count()` and `factor()` work cleanly.
+In the Twitch dataset, a missing `game` meant the study genuinely could not say what a channel streamed, so those 501 messages kept an honest `NA` and sat out the comparison. Here, a missing `type_2` means something different: the Pokemon only has one type, and the absence is itself the information. The decision to fill it with `"none"` rather than leave it as `NA` depends on your analysis plan. We fill it here so `count()` and `factor()` work cleanly.
+
+The lesson is that `NA` is not one thing. Before you decide how to handle a missing value, work out what its absence means.
 :::
 
 ### Create a power tier with `case_when()`
@@ -224,7 +228,7 @@ pokemon_clean %>%
 ::: {.callout-tip}
 ## The `TRUE ~` Catch-All
 
-The `TRUE ~ NA_character_` line handles anything that didn't match above --- including any remaining `NA` values. Without it, unmatched rows silently become `NA`, which is confusing to debug. Always include a catch-all.
+The `TRUE ~ NA_character_` line handles anything that didn't match above, including any remaining `NA` values. Without it, unmatched rows silently become `NA`, which is confusing to debug. Always include a catch-all.
 :::
 
 ### Create a size class
@@ -344,5 +348,5 @@ saveRDS(pokemon_clean, "pokemon_clean.RDS")
 :::{.callout-important}
 ## Connection to Your Assignment
 
-The Data Wrangling assignment uses `music_data_raw.csv` and follows this exact pipeline. If you completed this practice, you've already done the hard part --- same functions, same order, different column names.
+The Data Wrangling assignment uses the Twitch data from the `v2v` package and follows this exact pipeline. If you completed this practice, you've already done the hard part: same functions, same order, different column names.
 :::
