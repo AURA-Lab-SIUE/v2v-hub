@@ -1,0 +1,243 @@
+---
+title: "The Prospectus and Structured Listening"
+subtitle: "Week 6 · Chapter 6 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## This week
+
+[Week 6 · Chapters 6 and 7]{.eyebrow}
+
+- **Due tonight**: Topic Selection and Research Questions
+- **Chapter 6**: the prospectus, and the research question it is built around
+- **Chapter 7**: structured listening, the immersion that precedes coding
+- **Assigned reading**: Lakens (2022), "Sample size justification"
+- The through line: a plan is only a plan once its numbers are defended
+
+## The paralysis
+
+- You have read thirty articles, notes scattered across several documents
+- The project feels too small (one study) and too large (impossible to finish)
+- The problem is not a lack of ideas. It is a lack of **focus**.
+- A **prospectus** is roughly one page: what you study, why it matters, how you will do it
+- It is a diagnostic. If you cannot state the project on one page, you cannot yet begin it.
+
+## Two questions
+
+- **A**: "How does livestreaming affect people?"
+- **B**: "Does the rate of chat messages per viewer differ between gaming and non-gaming streams?"
+- A is a career-spanning program disguised as a single question
+- B names what will be measured, what will be compared, and what evidence would answer it
+- The craft of this course is the craft of getting from A to B
+
+## What a strong question does
+
+- **Specific**: names the platform, the outcome, the bounded population. "How does social
+  media influence politics?" leaves all three undefined.
+- **Measurable**: survives **operationalization**. "Do authentic streamers build better
+  communities?" cannot be studied until "authentic" and "better" become observable.
+- **Answerable within your constraints**: decades of data, or hundreds of interviews,
+  is not a semester project no matter how good the question
+
+## What a strong question does, continued
+
+- **Not already definitively answered**: your Chapter 4 search should show the question is open
+- **It matters**: contributes to theory, resolves a contradiction, or has applied value
+- Tuesday streams versus Thursday streams is answerable and still trivia
+- The template: *does there exist* + a *specific variable* + a *relationship or difference*
+  + a *bounded population* + the *confounds accounted for*
+
+## The funnel, first passes
+
+- **1**: "I am interested in Twitch chat." Too broad. What aspect? Which streams?
+- **2**: "How viewers participate in chat." Better, still vast.
+- **3**: "Whether chat participation differs across kinds of streams." Which kinds? Measured how?
+- Each pass trades breadth for depth
+- **Scope creep** is the failure mode: more questions, more theories, one more thing
+
+## The funnel, the version that ships
+
+- **4**: "Whether chat message volume differs between gaming and non-gaming streams"
+- **5**: "Draw a stratified sample from the 50-channel working corpus, code each message as
+  directed at the streamer or broadcast to the room, and test whether the proportion of
+  directed messages differs between gaming and non-gaming streams"
+- Version 5 fits a semester. It will not answer everything. It will answer something rigorously.
+- Narrowing is not weakness. It is discipline.
+
+## Three ways narrowing fails
+
+- The **impossible comparison**: "are Twitch viewers lonelier than non-viewers?" compares
+  groups that differ in many ways besides the one studied
+- The **circular question**: "do popular streamers attract large audiences because people
+  want to watch them?" defines its terms in a loop
+- The **false binary**: "is it the streamer or the game?" forces a choice the data does not
+  require. Ask how much each contributes, and whether they interact.
+
+## Choosing an operationalization
+
+**Parasocial relationship** (Horton & Wohl, 1956) is not directly observable. Three routes:
+
+- **Self-report scale**: captures subjective experience, invites social desirability bias
+- **Behavioral indicators** (donations, subscription length, hours watched): more reliable
+  than self-report, but a behavior does not always reflect the bond you think it does
+- **Language analysis** of chat: naturalistic, labor-intensive, blind to viewers who feel
+  strongly and never post
+
+There is no right answer. You defend the proxy you chose.
+
+## Three research goals
+
+- **Exploratory**: "what is going on here?" Generates hypotheses. Output is patterns and themes.
+- **Descriptive**: "what does the landscape look like?" Output is frequencies and prevalence.
+- **Explanatory**: "why does this happen?" Hypothesis-driven. Output is support or disconfirmation.
+- Research on a topic often moves through these in order
+- You need not do all three. You must know which one you are attempting.
+
+## Question, hypothesis, null
+
+- A **research question** is interrogative: use it when exploring, or when theory makes
+  no clear prediction, or when the literature is too contradictory
+- A **hypothesis** is declarative: use it when theory predicts, or when prior work points
+  to a likely outcome
+- Behind every hypothesis sits the **null**: no relationship, no difference
+- The null is what statistical tests actually evaluate, and it is the sacred flaw again
+
+## The number that has to be defended
+
+- **Statistical power** is the probability of detecting an effect of a given size, if it is real
+- A study at 50% power has a coin-flip chance of finding a real effect
+- The conventional minimum is **80%**, and below it a significant result is less credible:
+  underpowered studies inflate false positives and overestimate effect sizes
+- In your prospectus, the number of cases is not asserted. It is defended.
+
+## Lakens on the convention
+
+> "the default recommendation to aim for 80% power lacks a solid justification."
+>
+> Lakens (2022, p. 6)
+
+- The 80% figure is a convention, not a derived optimum
+- Lakens treats justification by resource constraint as a **last resort**
+- The question that follows: is it defensible to run a design you know is underpowered?
+
+## Computing the required n
+
+With an effect size from your Chapter 4 reading and *α* = .05:
+
+```r
+library(pwr)
+# Two-group t-test, medium effect (d = 0.5), 80% power
+pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.80, type = "two.sample")
+```
+
+Ask `pwr` how many cases a two-group comparison needs to have an 80% chance of finding a
+medium effect. The answer, *n* = 64 per group, is the sampling-plan justification your
+prospectus method section will carry.
+
+## Discussion {.discuss}
+
+On Lakens (2022), "Sample size justification":
+
+- Lakens argues the 80% convention lacks solid justification. What would a *justified*
+  target look like for the study you are proposing?
+- He ranks resource constraints last among acceptable justifications. Is that ranking fair
+  to the realities of a one-semester, one-coder project?
+- If you cannot reach the *n* your power analysis demands, which is the more honest move:
+  revise the question, change the design, or report the limitation?
+
+*Five minutes in pairs, then we compare answers.*
+
+## Topic, theory, and data
+
+- Three elements must align, or the study collapses
+- **Topic** is bounded by population, time, medium, or context. "Livestreaming" is not a
+  topic. "Chat participation in the 50-channel working corpus" is.
+- **Theory** must predict patterns you can actually observe in your data
+- **Data** must be accessible, sufficient, and appropriate to the question
+- Misalignment example: parasocial topic, political-economy theory, chat-message data.
+  Political economy explains industry structure; chat messages are individual expression.
+
+## Six components of a prospectus
+
+1. A **descriptive title** hinting at the key variables
+2. One to three **focused questions or hypotheses**, not five and not ten
+3. A **theoretical framework**, two to three sentences, naming the theory and its relevance
+4. A **gap statement**, two to three sentences, citing a few key sources
+5. A **method overview**, three to four sentences: data, coding, number of cases
+6. An **expected contribution**, one to two sentences
+
+Roughly 250 words, one page, every sentence carrying weight.
+
+## The model prospectus: question and frame
+
+> **Research question.** Does the proportion of chat messages directed at the streamer
+> differ between streams in gaming categories and streams in non-gaming categories, among
+> the 50 channels in the Twitch working corpus?
+
+> **Theoretical framework.** Uses and gratifications theory (Katz, Blumler, & Gurevitch,
+> 1973) holds that audiences actively select media to satisfy specific needs, including
+> social ones.
+
+## The model prospectus: method and contribution
+
+- A **stratified sample of 1,500 chat messages** from the 50-channel working corpus,
+  balanced across gaming and non-gaming streams
+- Each **message** is the unit of analysis
+- Three mutually exclusive codes: directed at streamer, broadcast to the room, unclassifiable
+- Reliability against a second coder on a **10 percent subsample**, Krippendorff's alpha
+- Contribution: tests whether a survey finding leaves a visible trace in coded behavior
+
+## The prospectus as pre-registration
+
+- **Pre-registration** commits publicly to hypotheses, methods, and analysis plan before
+  data are collected or analyzed. The Open Science Framework timestamps the commitment.
+- Simmons, Nelson, and Simonsohn (2011) showed that researchers without a plan can adjust
+  hypotheses, variables, and choices until a result reaches significance
+- That is the source of the term **researcher degrees of freedom**
+- Your prospectus is an informal pre-registration: the record of what you set out to do
+
+## Chapter 7: what a coder cannot see
+
+- A coder who has never watched Twitch reads "KEKW" and sees a typo, not laughter
+- They read thirty identical messages and do not recognize **copypasta**
+- They read "@sodapoppin same" and cannot tell agreement from a reflexive stock reply
+- The scheme sorts every message confidently, and the buckets do not mean what you think
+- Geertz (1973) called the alternative **thick description**: a record rich enough to
+  capture not just what happened but what it meant in context
+
+## Three modes of attention
+
+- **Casual watching**: initial exposure across the range of the platform. No notes, no
+  coding. Replace your assumptions about Twitch with exposure to it.
+- **Focused watching**: same streams, one dimension at a time. Chat behavior, viewer
+  trajectories, host moves. Brief notes after each pass.
+- **Analytical watching**: pattern recognition across more streams. What recurs? What
+  clusters with what? What resists description?
+- Familiarize, then focus, then analyze. The sequence holds for any medium.
+
+## Field notes, four kinds
+
+- **Observational**: what you saw. "Chat moved in bursts, near silence while the streamer
+  talked, then a flood at every question."
+- **Methodological**: a measurement problem. "A coder reading the log as text cannot see
+  the question that prompted the burst."
+- **Theoretical**: an observation connected to a framework you have read
+- **Comparative**: how cases differ. "Gaming and non-gaming chat are not the same object."
+- One dated plain-text document, a note every fifteen or twenty minutes
+
+## Before Week 7
+
+- Read **Chapter 7** in full and **Chapter 8**, "From vibes to variables"
+- Read the assigned article: **Hayes & Krippendorff (2007)**, "Answering the call for a
+  standard reliability measure for coding data"
+- **Due next week: the Research Proposal**, as a structured sentence outline
+- Begin your structured listening log now. The codebook is built from it.
+- Journal entry, 450 to 500 words, engaging both the chapter and the reading

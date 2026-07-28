@@ -1,0 +1,175 @@
+---
+title: "The Publisher"
+subtitle: "S27 · Chapter 14 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Where the study stands
+
+[The Publisher]{.eyebrow}
+
+- A question and a theory, a codebook tested for reliability
+- A sample drawn with a defensible procedure, and a clean dataset
+- Three figures, and a finding tested and interpreted honestly
+- **Every hard part is finished.** And the study is still not done.
+- It lives in pieces: a script, a folder of images, output that scrolled past
+- Scattered across a dozen files, that is raw material, not a study
+
+## The fragile way to write it up
+
+- Run the analysis in R
+- Copy the numbers into a word processor
+- Screenshot the figures and paste them in
+- Write the prose around them
+
+This works, and it is quietly fragile. Change one coding rule and every pasted
+number is silently out of date, with nothing in the document saying so.
+
+## A report that rebuilds itself
+
+- Stop copying. Put the analysis **inside** the document.
+- A **Quarto document** (`.qmd`) interleaves prose with **code chunks**
+- When you render, Quarto runs every chunk and drops the output where it sat
+- Tables, figures, and test statistics all arrive from the code
+- Nothing is typed by hand, so nothing can fall out of date
+
+## Numbers computed inline
+
+```r
+The analysis dataset held `r nrow(analysis)` coded messages, of which
+`r sum(!is.na(analysis$is_gaming))` carried a gaming-status label.
+```
+
+Those backtick expressions become the actual counts in the rendered report.
+Add a hundred messages, re-render, and the sentence updates itself.
+
+## Figures produced, not pasted
+
+```r
+#| label: fig-msglen
+#| echo: false
+#| fig-cap: "Message length by channel type."
+
+ggplot(msglen, aes(message_length, fill = is_gaming)) +
+  geom_histogram(binwidth = 5) +
+  v2v::theme_v2v()
+```
+
+The histogram is not an image you drag in. It is a chunk that lives in the
+report and redraws itself every render. `echo: false` hides the code, shows the plot.
+
+## Your turn {.discuss}
+
+- Where in your own project have you already pasted a number by hand?
+- What would break if your data changed tomorrow?
+- Which of your figures could you produce from code inside the report today?
+
+*Two minutes with a neighbor, then we compare.*
+
+## Why this matters
+
+- The report cannot drift from the analysis, because the report **is** the analysis
+- Anyone with your source and your data can render it and get your results
+- That is the standard a scientific claim is supposed to meet
+- Donald Knuth named the idea **literate programming** in 1984
+- Runnable code and the prose explaining it belong in one document, not two
+
+## IMRaD, the shape of a report
+
+**I**ntroduction, **M**ethods, **R**esults, **D**iscussion. Four sections, in
+that fixed order, and the order is itself an argument.
+
+- It carries a reader from why the study was done, to what it found, to what it means
+- An abstract sits in front. References close it.
+- The V2V Hub ships an `imrad-template.qmd` with the skeleton in place
+- Not bureaucracy: a contract with the reader about where to look
+
+## Introduction and Methods
+
+**Introduction** states the question and why it is worth asking. For the chat
+study that is the prospectus: do gaming and non-gaming channels differ, and
+what would a uses-and-gratifications account predict.
+
+**Methods** says exactly what was done, in enough detail to repeat it. Your
+codebook, your sampling procedure, your reliability check, your wrangling.
+
+Methods earns the reader's trust, and a reproducible document supports it best:
+the code that did the work is right there to read.
+
+## Results and Discussion
+
+**Results** reports what was found, plainly and without interpretation. Your
+figures, your distributions, your group means, your test statistic with its
+degrees of freedom, its *p*-value, and its effect size. Facts only.
+
+**Discussion** says what it means: that the difference is statistically real
+but negligible, and what that implies for the question you opened with.
+
+Discussion is also where an honest study states its limits.
+
+## One site, many pages
+
+- The report is not the only document your study produced
+- There is also the codebook, the sampling record, the wrangling log
+- These do not get crushed into one enormous file. They become **pages of one site**.
+- `_quarto.yml` names the site and lists its pages and navigation bar
+- `quarto render` builds every page at once into a complete website
+
+## Going live
+
+- A website in a folder on a laptop is still private
+- Publishing means giving it a public address
+- The standard free option is **GitHub Pages**, which serves a site from a repo
+- `v2v::deploy_portfolio()` runs the checks and then publishes
+- What it hands back is a URL. That URL is your White Paper.
+
+## The pre-flight checks
+
+```r
+v2v::deploy_portfolio()
+```
+
+```
+Pre-flight checks
+  renv library in sync ......... ok
+  no uncommitted changes ....... ok
+  _quarto.yml valid ............ ok
+
+Rendering 4 pages ... done
+Live at: https://username.github.io/twitch-chat-study/
+```
+
+Three checks run before anything publishes, and only if all three pass does it deploy.
+
+## Why the checks exist
+
+- **renv in sync:** the site was built with the package versions your source declares
+- **No uncommitted changes:** what goes live matches the work you actually saved
+- **Valid `_quarto.yml`:** the render will not collapse halfway through
+- Each heads off a specific, demoralizing failure
+- The point is that the last step of a long study is the calm one
+
+## The reflection
+
+- One short piece remains: a **one-paragraph reflection**
+- Not part of IMRaD, not a result. Your own candid account.
+- Name what was harder than expected, where a coding rule went ambiguous,
+  what the dataset could not answer
+- Resist both easy failures: everything went well, everything went wrong
+- A researcher who can say where their study is weak understands it
+
+## Before next time
+
+- Thursday is a **studio**: peer review, plus the reflection, in class
+- Bring a **rendered draft** of your White Paper, not notes toward one
+- It does not have to be finished. It has to render.
+- Bring your project's public URL if you have one, or the error stopping you
+- The White Paper is due **finals week**. Thursday is your last full work session.

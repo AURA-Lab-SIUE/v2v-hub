@@ -1,0 +1,153 @@
+---
+title: "Variables and Hypotheses"
+subtitle: "S9 · Chapter 5 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## From a lens to a test
+
+- Tuesday: theory tells you what to look for and what would count as evidence
+- A lens on its own cannot be right or wrong. It has nothing to be checked against.
+- Theories become testable through **variables**
+- A **variable** is a measurable concept that can take on different values
+- Today is the translation step, from an idea to something you can count
+
+## The independent variable
+
+- The **independent variable** is the proposed cause
+- In an experiment, it is what you manipulate. In a correlational study, it is
+  what you measure as the predictor.
+- In livestreaming research it might be:
+  - the stream's category type, gaming or non-gaming
+  - the streamer's tenure on the platform
+  - the stream's concurrent viewer count
+
+## The dependent variable
+
+- The **dependent variable** is the outcome, the thing you think is influenced
+- In livestreaming research it might be:
+  - chat messages per minute
+  - viewer retention across a broadcast
+  - the rate of subscriptions and donations
+- If you cannot say which of your two variables is doing the influencing, you do
+  not have a hypothesis yet
+
+## A worked hypothesis
+
+> In non-gaming streams, a higher proportion of chat messages are directed at the
+> streamer than in gaming streams.
+
+- **Independent variable:** category type, gaming or non-gaming
+- **Dependent variable:** whether a message is directed at the streamer or
+  broadcast to the room
+- Both are things you can actually observe in this dataset
+
+## Your turn {.discuss}
+
+- Take the theory you are leaning toward. What is one thing it predicts?
+- Which part of that prediction is the cause, and which is the outcome?
+- Could you see both of them in a chat log, or would you need to ask someone?
+
+*Two minutes with a neighbor, then we compare.*
+
+## What testing it actually looks like
+
+- Classify streams by category, gaming or non-gaming
+- Code a sample of messages for whether each addresses the streamer
+- Run a statistical test to see whether the predicted relationship holds
+- Notice how much of that is **coding**, not statistics
+- The codebook is where the hypothesis gets its teeth. That is Chapters 7 and 8.
+
+## The same structure, a different domain
+
+> News stories framed around individual human interest will generate more social
+> media engagement than stories framed around systemic data.
+
+- **Independent variable:** frame type
+- **Dependent variable:** engagement
+- Different topic, identical logic
+- This is why the structure is worth learning once, carefully
+
+## Mediators: how and why
+
+- A **mediator** explains **how** an independent variable affects a dependent one
+- It is the mechanism sitting in between
+- If category affects the rate of directed messages, the mediator might be the
+  **perceived pace** of the stream
+- Non-gaming streams may feel more conversational, and that conversational feel
+  may be what invites viewers to address the streamer
+
+## Moderators: under what conditions
+
+- A **moderator** changes the **strength or direction** of a relationship
+- It answers the question "under what conditions?"
+- The category-to-directed-message relationship might be moderated by **audience
+  size**: holding on small streams, weakening on large ones
+- A moderator is not a nuisance to control away. It is often the finding.
+
+## From relates-to toward mechanism
+
+- **"X relates to Y"** is where a first project starts
+- **"X relates to Y, through this mechanism"** adds a mediator
+- **"X relates to Y, through this mechanism, under these conditions"** adds a
+  moderator
+- You do not need all three for a good White Paper
+- Knowing the ladder exists keeps you from overclaiming on the first rung
+
+## Choosing a theory, first three steps
+
+1. **Identify your research question, specifically.** "Livestreaming and
+   community" is too broad. "Does the proportion of chat messages directed at the
+   streamer differ between gaming and non-gaming streams?" is actionable.
+2. **Map the question to a theoretical domain.** Group processes point toward
+   social identity or uses and gratifications. Perception effects point toward
+   cultivation, agenda setting, or framing.
+3. **Review how others studied similar questions.** Convergence on a theory
+   signals it is productive for that domain.
+
+## Choosing a theory, last two steps
+
+4. **Derive hypotheses or research questions.** Let the theory generate the
+   prediction, rather than picking a theory to decorate a prediction you already
+   had.
+5. **Design measures that operationalize the concepts.** Turn abstractions like
+   identity or salience into variables you can measure.
+
+Step 5 is operationalization, and it is the work of Chapters 7 and 8.
+
+## Hypothesis or research question?
+
+- State a **hypothesis** when your theory is precise enough to predict a
+  direction: more, less, higher, lower
+- Ask a **research question** when the theory supports an expectation of
+  difference but not of direction
+- A research question is not a weaker hypothesis. It is an honest one.
+- What you must not do is write a question, look at the data, and then report it
+  as though it had been a directional prediction
+
+## Why the hypothesis comes first
+
+- **HARKing:** Hypothesizing After the Results are Known
+- You examine data, notice a pattern, then write as though you predicted it
+- The *p*-value still prints, but it no longer means what it claims, because the
+  hypothesis was generated **by** the data rather than before it
+- Writing your prediction down before you look is a five-minute act that protects
+  every inference that follows
+
+## Before next time
+
+- **The Annotated Manuscript is due this week**, 25 points
+- **CITI Ethics Certification is due this week**, 25 points. If you have not
+  started, do it tonight.
+- Write your working hypothesis or research question into your project repository
+  with its independent and dependent variables named
+- Read **Chapter 6** before Tuesday: the prospectus, where the literature, the
+  theory, and the method become one document

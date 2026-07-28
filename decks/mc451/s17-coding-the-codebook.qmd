@@ -1,0 +1,212 @@
+---
+title: "Coding the Codebook"
+subtitle: "S17 · Chapter 9 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## What we are building today
+
+[Lab session]{.eyebrow}
+
+- A **project folder** that holds this entire study in one place
+- Your Chapter 8 codebook, installed in it as a real document
+- The Twitch data, loaded into R and looked at for the first time
+- No analysis today. Nothing gets computed. We open, we load, we look.
+- Everything here becomes the Methods section of your White Paper
+
+## Why a project folder comes first
+
+- You have designed a whole study and **never seen the data**
+- Reproducible work lives in **files in known places**, not commands typed once
+- A **project** is one folder holding the data, code, codebook, and report
+- The study then travels together, and nothing depends on a file only you have
+- Deciding where files go is friction. We are going to skip that decision.
+
+## Scaffolding the project
+
+```r
+v2v::new_portfolio("twitch-portfolio")
+```
+
+That one line creates the whole folder for you, already named and already wired
+together.
+
+Note the `v2v::` prefix. It says the function comes from this book's package,
+so the package never becomes a hidden assumption.
+
+## What the scaffold gives you
+
+```
+twitch-portfolio/
+├── twitch-portfolio.Rproj
+├── _quarto.yml
+├── README.md
+├── codebook.qmd
+├── analysis.qmd
+├── data/
+└── .Rprofile
+```
+
+You did not decide where anything goes or what to name it, which is the point.
+
+## Confirming the stack
+
+```r
+v2v::setup()
+```
+
+`setup()` checks that R, the packages this book depends on, and the project
+environment are all present and agree on versions.
+
+- You met it once already, when you installed the stack
+- Run it every time you open the project
+- You find out about a missing piece **before** it interrupts you mid-analysis
+
+## The rulebook becomes a document
+
+- Look at the scaffold again. One file is `codebook.qmd`.
+- In Chapter 8 your codebook was an argument on paper
+- Now it becomes the project's **rulebook**, the reference every later step answers to
+- Move the draft in, add a version line and a date, and render it
+- A codebook that renders cleanly is one a second coder can actually read
+
+## Your turn {.discuss}
+
+We are about to run `glimpse(chat)`, which prints every column of the chat data.
+
+- What columns do you **predict** are in there? Name three.
+- Your codebook needs message text and sender. What if one is missing?
+- What would you do next if a column your study depends on is not there?
+
+*Two minutes with a neighbor, then we run it and see.*
+
+## Loading the data
+
+```r
+library(tidyverse)
+
+chat <- v2v::twitch_chat()
+streams <- v2v::twitch_streams()
+```
+
+Line one loads the tidyverse, the toolkit we use all term; the next two lines
+fetch the chat table and the stream table and give each a name with `<-`.
+
+The data arrives through a **function call**, not a file path, which removes an
+entire category of beginner error. What you get is the **working sample** from
+the fifty-channel corpus, not the full 2018 collection.
+
+## Looking: the chat table
+
+```r
+glimpse(chat)
+```
+
+```
+Rows: 35,267
+Columns: 5
+$ id      <int> 89, 551, 1033, 2094, 2803, …
+$ channel <chr> "sodapoppin", "xqcow", "forsen", …
+$ sender  <chr> "madzee", "prometheanow", "spectre155", …
+$ message <chr> "???????????????????????", "TriEasy Clap TriEasy…
+$ date    <dbl> 1542578127023, 1542578135562, 1542578143610, …
+```
+
+`glimpse()` prints every column, its type, and its first few values.
+
+## Reading that output
+
+- **35,267 rows**, five columns, and each row is one chat message
+- The first message is twenty-three question marks. The second is copypasta.
+- Those are not errors. That is what Twitch chat contains.
+- `date` is a `<dbl>`, an ordinary number, and is completely unreadable
+- It counts milliseconds since 1970. We fix that in Chapter 11.
+
+## Looking: the stream table
+
+```r
+glimpse(streams)
+```
+
+```
+Rows: 32,276
+Columns: 6
+$ channel <chr> "sodapoppin", "xqcow", "forsen", "giantwaffle", …
+$ title   <chr> "Hello truckers\n44835158804929_2115841973", …
+$ game    <chr> "Marble It Up!", "Just Chatting", "Artifact", …
+$ viewers <int> 27934, 19381, 15300, 4697, 28076, …
+$ date    <dbl> 1542578200214, 1542578200240, 1542578200273, …
+```
+
+Each row is one snapshot of one stream at one moment: its title, its category,
+its viewer count, and when the snapshot was taken.
+
+## Counting what channels stream
+
+```r
+streams %>% count(game, sort = TRUE)
+```
+
+```
+   game                     n
+ 1 Art                   5298
+ 2 Fortnite              3682
+ 3 Just Chatting         2474
+ 4 Hearthstone           2157
+ 6 League of Legends     1952
+# ℹ 50 more rows
+```
+
+`count()` tallies how often each value appears, and `sort = TRUE` puts the
+biggest first.
+
+## Confirming the corpus
+
+```r
+n_distinct(chat$channel)
+```
+
+```
+[1] 50
+```
+
+`n_distinct()` counts how many different values a column holds.
+
+- Fifty channels, exactly the corpus the book has described since Chapter 1
+- `n_distinct(streams$channel)` returns the same fifty
+- Sixty game categories across fifty channels, so most channels move around
+- Counting is how you check that the data is what you were told it is
+
+## When a line breaks
+
+- Sooner or later R will return an **error** instead of a result
+- Misspelled function, package not loaded, a stray bracket or quote
+- This happens to everyone who writes code. It is not a verdict on you.
+- The Hub keeps a **common-errors cheat sheet**: that is the first place to look
+- An error message is information. Read it before you retype anything.
+
+## Checkpoint
+
+You should now have:
+
+- A `twitch-portfolio` folder, created by `new_portfolio()`
+- A clean `v2v::setup()` result
+- Your Chapter 8 codebook living in `codebook.qmd`, versioned and rendered
+- `chat` and `streams` loaded, and a `glimpse()` of each
+- Nothing changed in the data. Looking is all we did.
+
+## Before Thursday
+
+- Finish moving your codebook into `codebook.qmd` and render it
+- **Codebook and Qual Memo is due this week**: the full codebook plus a 200 to
+  300 word qualitative memo
+- Bring your `glimpse()` output on Thursday. We read the data **against** your
+  codebook and find out whether your study is buildable.

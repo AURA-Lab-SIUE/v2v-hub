@@ -1,0 +1,179 @@
+---
+title: "Orientation"
+subtitle: "S1 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Welcome
+
+[MC 451 · Fall 2026]{.eyebrow}
+
+- **Dr. Alex Leith**, Dunham Hall 1017, aleith@siue.edu
+- Office hours MW 10:00 to 11:30 and 1:30 to 3:00, or by appointment
+- We meet **TuTh 11:00 to 12:15**, Science East 2268
+- Everything lives on the course site: syllabus, schedule, setup guides
+- The textbook is **free and online**. There is nothing to buy.
+
+## What this course actually is
+
+- Not a course *about* research. A course where **you do research**, start to finish.
+- You will take a real dataset, ask your own question of it, and defend an answer
+- By December you will have written and published a **White Paper**
+- No prior coding required. No math beyond arithmetic and careful reading.
+- We go slow, in order, and every assignment feeds the final paper
+
+## The dataset
+
+[One week of Twitch, November 2018]{.eyebrow}
+
+- **21,964,296 chat messages** across 1,695 channels
+- **590,876 stream snapshots**: who was streaming what, to how many people
+- Real, messy, public data, the kind you would actually encounter in the field
+- Bob Ross averaged 3,178 concurrent viewers that week. xQc averaged 17,363.
+- Your job this term is to turn a curiosity about that world into a defensible claim
+
+## Your turn {.discuss}
+
+- What is one thing about online media you have genuinely wondered about?
+- Not a research question yet. Just a curiosity.
+- What would you need to *observe* to say something defensible about it?
+
+*We will come back to these when you choose a topic in Week 6.*
+
+## How the term is built
+
+**The Journalist** runs the whole way through: a weekly reading journal, Weeks 1 to 14,
+worth **150 points**. It is the habit, not a stage.
+
+The project itself moves through four stages, and each hands you the materials for the next:
+
+| Stage | Weeks | Book part | Points |
+|---|---|---|---|
+| The Architect | 1 to 3 | I, Foundation | 125 |
+| The Builder | 4 to 10 | II and III, Planning and Operationalization | 250 |
+| The Analyst | 11 to 13 | IV, Execution | 225 |
+| The Publisher | 15 to 17 | V, Inference and Publication | 250 |
+
+**1,000 points total.**
+
+## The Journalist, all term
+
+- **Weekly Reading Journal**, 10 points a week across 14 teaching weeks
+- One entry per week, responding to the assigned chapter
+- This is where you practice thinking on the page before you have to defend it
+- 10 additional points for consistency, because the habit is the point
+- **150 points total**
+
+## The Architect (Weeks 1 to 3)
+
+Setting up the machinery and choosing your ground:
+
+- **Syllabus Contract**, 25 points
+- **GitHub Profile**, 25 points
+- **Project Setup**, 25 points
+- **Librarian Visit Report**, 50 points
+
+By the end of Week 3 you have working tools and a literature you can stand on.
+
+## The Builder (Weeks 4 to 10)
+
+Where the study gets designed, one decision at a time:
+
+- Annotated Manuscript, 25 · Project Prospectus, 25 · Topic Selection and RQs, 25
+- Definitions Practice, 25 · **Codebook and Qual Memo, 50**
+- **Sampling Plan and Pilot, 75** · CITI Ethics Certification, 25
+
+**250 points.** Every one of these becomes a section of your final paper.
+
+## The Analyst (Weeks 11 to 13)
+
+The three R assignments, in order of difficulty:
+
+- **Data Wrangling**, 50 points
+- **Describing Data**, 75 points
+- **Inferencing Data**, 100 points
+
+You will run these on my dataset first. The code you write here is the code you
+reuse on your own analysis. That is deliberate.
+
+## The Publisher (Weeks 15 to 17)
+
+- **The White Paper**, 250 points, published to the web
+- An executive summary, your literature, your methods, your findings, your limits
+- It is not a term paper. It is the document a client or a conference would read.
+- You will have written most of it already, in pieces, across the term
+
+## The tools
+
+[Four things to install]{.eyebrow}
+
+- **R**: the language that does the counting and the statistics
+- **VS Code**: the editor where you write code and prose in one place
+- **Quarto**: turns your work into a website, a PDF, or a paper
+- **Git and GitHub**: version control, so your work has a history and a home
+
+Nothing here costs money. Setup walkthroughs are on the course site.
+
+## What R actually looks like
+
+Do not panic. This is a full analysis:
+
+```r
+library(v2v)
+chat <- twitch_chat()
+
+chat %>%
+  group_by(channel) %>%
+  summarise(messages = n()) %>%
+  arrange(desc(messages))
+```
+
+Read it out loud: take the chat data, group it by channel, count the messages,
+sort from most to least. **That is all code is: instructions in order.**
+
+## What Quarto gives you
+
+- One document holds your writing, your code, and your results together
+- Change the data, re-render, and every number in your paper updates
+- No more pasting a chart into a document and hoping it is still current
+- Output to a website, a Word file, or a PDF from the same source
+- Your White Paper will be a Quarto document
+
+## Why version control
+
+- Git keeps a **time-stamped history** of every change you make
+- If you break something, you can go back to when it worked
+- GitHub puts that history online, which is where your paper will live
+- It is also how you show your work: a reviewer can retrace every step
+- Reproducibility is not a nicety here. It is the standard of evidence.
+
+## How the week works
+
+- **Tuesday** teaches a concept
+- **Thursday** applies it to your own project, in labs and studios
+- The reading comes before Tuesday. The journal entry closes the week.
+- Assignments are due Thursdays unless the schedule says otherwise
+- The full session-by-session schedule is in the syllabus, S1 through S28
+
+## On using AI
+
+- AI tools are **permitted as a supervised aid**, and you must disclose their use
+- Note in your journal what you used it for and how you **checked its output**
+- You are responsible for every claim and every line of code you submit
+- Using it to avoid learning R will show up in the Analyst weeks, when the code gets harder
+- Ask me if you are unsure whether a use is appropriate
+
+## Before Thursday
+
+- **Sign the Syllabus Contract** (due this week)
+- Skim **Chapter 1** on the course site: [aura-lab-siue.github.io/v2v](https://aura-lab-siue.github.io/v2v/)
+- Start the software setup if you can. We will troubleshoot together in Week 2.
+- Bring questions. The first three weeks are the ones where asking pays off most.

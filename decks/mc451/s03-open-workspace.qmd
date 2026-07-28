@@ -1,0 +1,164 @@
+---
+title: "The Open Workspace"
+subtitle: "S3 · Chapter 2 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Only 36 percent
+
+[Open Science Collaboration, 2015]{.eyebrow}
+
+- 270 researchers set out to redo **100 published psychology studies**
+- Same methods, similar participants, same analyses
+- Only **36 percent** replicated at conventional thresholds
+- Among those that did, effect sizes were on average **half** the original magnitude
+- Published in *Science*, and one of the decade's most cited findings
+
+## Not fraud. Friction.
+
+- Methods sections did not contain enough detail to re-run the analysis
+- Researchers had to email original authors for clarification
+- Some authors had moved. Some had lost the data.
+- Some had used software whose menus had since changed
+- The work was never **built to be retraceable** in the first place
+
+## The point-and-click problem
+
+- SPSS, Excel, and JMP work through menus and dialog boxes
+- You click Analyze, then Compare Means, then One-Way ANOVA
+- The result appears. **The click history vanishes.**
+- To verify your work, a collaborator needs a prose description of every click
+- Almost no one does this well, and almost no one wants to
+
+## Code as documentation
+
+- A script is a description of every step, in a language a computer can re-run
+- **When you write your analysis as code, the code is the methods section**
+- Reinhart and Rogoff was caught because the spreadsheet was eventually shared
+- It would have been caught faster if the analysis had been code from the start
+- **Reproducibility:** the analysis can be re-run and produce the same result
+
+## Your turn {.discuss}
+
+- Think of a number you produced for a class: an average, a count, a percentage
+- Could you reconstruct exactly how you got it, six months from now?
+- What would you need to have written down at the time?
+
+*Two minutes with a neighbor, then we compare.*
+
+## Four tools, one ecology
+
+[Free, open, cross-platform]{.eyebrow}
+
+- **VS Code:** the editor, where prose, code, and notes all live in tabs
+- **R:** the language that does the counting and the statistics
+- **Quarto:** the publishing system that turns source into finished output
+- **Git and GitHub:** version control and a home for the history
+- Each produces a **plain-text record** of what you did
+
+## Why R, why Quarto
+
+- R dominates social science: communication, sociology, political science
+- Its packages for content analysis, reliability, and regression are the deepest
+- Python is also excellent. The skills transfer both ways.
+- Quarto takes one `.qmd` source and produces HTML, PDF, Word, or slides
+- The source mixes prose with code, and **the code runs when you render**
+
+## Why Git and GitHub
+
+- Git tracks every change to every file in a project
+- GitHub hosts that history on the web, publicly by default
+- You get a permanent audit trail and the ability to roll back to any state
+- Students get the **GitHub Student Developer Pack** at no cost
+- This is the standard workflow in research labs and industry data teams
+
+## Install order, part one
+
+Order matters. Do these first:
+
+1. **R**, from cran.r-project.org, installer defaults
+2. **VS Code**, from code.visualstudio.com
+3. **The R extension** for VS Code, by REditorSupport
+4. **Quarto**, from quarto.org, install with defaults
+
+R has no interface of its own. It is a backend other tools call.
+
+## Install order, part two
+
+5. **The Quarto extension** for VS Code, for live preview of `.qmd` files
+6. **Git**, from git-scm.com, default options are fine
+7. **A GitHub account**, with a professional username you will link work to
+8. **The `v2v` package**, install command on the V2V Hub
+
+Click-by-click walkthroughs with screenshots live on the Hub.
+
+## The setup check
+
+Create a file named `setup-check.qmd` and add one chunk:
+
+```r
+library(v2v)
+v2v::setup()
+```
+
+The validator confirms that R, Quarto, Git, and the `v2v` package are all
+present at acceptable versions. Success prints **"V2V setup complete"**.
+Anything else, and the Hub has a troubleshooting page.
+
+## First contact with the data
+
+[stream_log, first ten rows]{.eyebrow}
+
+| channel | game | viewers | date |
+|---|---|---:|---:|
+| sodapoppin | Marble It Up! | 27,934 | 1542578200214 |
+| xqcow | Just Chatting | 19,381 | 1542578200240 |
+| forsen | Artifact | 15,300 | 1542578200273 |
+| giantwaffle | Rocket League | 4,697 | 1542578200423 |
+| sodapoppin | Marble It Up! | 28,076 | 1542578261145 |
+| xqcow | Just Chatting | 19,231 | 1542578261186 |
+
+## The data moves
+
+- This is a **time series**, not a snapshot. Four channels repeat across ten rows.
+- Sodapoppin climbs 27,934, then 28,076, then 28,203
+- That is **269 viewers gained in 122 seconds**
+- xQc lost 150 and then held steady. Forsen lost 120. Giantwaffle gained 3.
+- Each number is a real moment: a clip going viral, a raid arriving
+
+## Three more things to notice
+
+- **The timestamps look like nonsense.** 1542578200214 is **Unix epoch time**,
+  milliseconds since January 1, 1970. Chapter 11 fixes it.
+- **There is a hidden newline** inside sodapoppin's title. Real data is messy in
+  exactly this way.
+- **Titles are themselves data.** "No Smoking in Chat" performs etiquette.
+  Chapter 12 returns to title content.
+
+## The v2v package
+
+The course companion ships three things:
+
+- **Two fixtures:** `twitch_chat_sample`, roughly 35,000 messages, and
+  `twitch_streams_sample`, roughly 32,000 rows across 50 channels
+- **Helper functions** for loading data, codebook skeletons, reliability, plots
+- **The setup validator**, `v2v::setup()`, which you can rerun any time
+
+Load a fixture with `data(twitch_chat_sample, package = "v2v")`.
+
+## Looking ahead
+
+- **Thursday is a lab.** Bring a laptop with as much of the stack installed as
+  you managed. We troubleshoot together.
+- You will build your project repository and make your first commit
+- **Before then:** finish the installs, or get far enough to know where you stuck
+- Read **Chapter 3** on ethics before Tuesday
+- **Project Setup** is worth 25 points and is due at the end of Week 2

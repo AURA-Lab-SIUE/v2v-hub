@@ -1,0 +1,246 @@
+---
+title: "Ethics and Intelligence Gathering"
+subtitle: "Week 3 · Chapter 3 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Two halves tonight
+
+- First half: what you owe the people whose data you analyze
+- Second half: how you find out what has already been said, with a librarian here to help
+- The two halves are connected. Both are about accountability to someone outside your head.
+- Your ethics work in this course ends in a real IRB determination you could file
+- Bring a topic to the second half. You will search it live.
+
+## Nearly 700,000 people
+
+[Kramer, Guillory, and Hancock, 2014]{.eyebrow}
+
+- For one week in January 2012, Facebook manipulated the News Feeds of nearly **700,000 users**
+- Some saw fewer positive posts from friends, others saw fewer negative posts
+- Researchers then measured what those users posted themselves
+- Fewer positive posts produced slightly more negative content, and the reverse held
+- Published in *PNAS* as evidence of "massive-scale emotional contagion"
+
+## Why the reaction was explosive
+
+- No one was told their emotional environment was being manipulated
+- No one had the opportunity to decline
+- Facebook pointed to terms of service authorizing data use for "research"
+- The researchers argued the manipulation was minor and the effect size tiny
+- *PNAS* appended an **editorial expression of concern** about the consent process
+- Reasonable people still disagree about whether the study was ethical
+
+## Tuskegee, 1932 to 1972
+
+- The U.S. Public Health Service studied untreated syphilis in **399 Black men**
+  in Macon County, Alabama, for forty years
+- The men were told they were receiving free treatment for "bad blood"
+- Penicillin became standard in the 1940s. The researchers withheld it.
+- **28 men** died directly of syphilis, **100** of related complications,
+  **40 wives** were infected, **19 children** born with congenital syphilis
+- Federally funded, credentialed staff, published for decades without objection
+
+## Milgram and Humphreys
+
+- **Milgram (1961)**: participants believed they were delivering painful shocks to a
+  stranger because an authority figure told them to. Most complied.
+- The findings were foundational. The distress was acute and for some lasting.
+- **Humphreys (1970)**: recorded license plates of men meeting anonymously in public
+  restrooms, traced addresses, then visited their homes in disguise as a health survey
+- Exposure of that data could have destroyed marriages, careers, lives
+- Each researcher believed the work served a greater good
+
+## The common thread
+
+- Each case involved participants who were harmed, deceived, or exploited
+- Each researcher had institutional support and sincere motives
+- **Good intentions are not a protection.** They never were.
+- Ethics is therefore a disposition, not a form: how you treat the people you study
+  and how honestly you report what you find
+- What follows from that is external accountability: principles and institutional review
+
+## Belmont: respect for persons
+
+[National Commission, 1979]{.eyebrow}
+
+- People are autonomous agents capable of making their own decisions
+- **Informed consent**: understand the research, the risks, and the right to withdraw
+- **Protection of vulnerable populations**: children, prisoners, those with
+  diminished capacity to consent voluntarily
+- Survey a listener about a podcast and consent is straightforward
+- Analyze public posts and the question gets much harder
+
+## Belmont: beneficence and justice
+
+- **Beneficence** has two obligations: do no harm, and maximize the ratio of benefits
+  to risks
+- Harm includes physical, psychological, social, and economic injury
+- Content analysis usually carries minimal risk: you interact with texts, not people
+- **Justice**: benefits and burdens distributed fairly across groups
+- Tuskegee violated justice by loading all risk onto a marginalized population
+  while the knowledge accrued to everyone else
+
+## Consent in practice
+
+- Valid consent describes the study, the risks, the voluntariness, the contacts,
+  and how data will be stored
+- **Deception** is sometimes justified, but always paired with mandatory **debriefing**
+- **Passive consent**, the Facebook terms-of-service move, is generally insufficient
+- **Active consent** requires an affirmative act: a signature, a click, a spoken yes
+- **Secondary data analysis** raises whether the original consent covered your use.
+  Ethics here is still actively evolving.
+
+## Three tiers of review
+
+- **Exempt**: minimal risk, in defined federal categories. Most content analysis of
+  publicly available material lands here.
+- **Expedited**: no more than minimal risk but not fully exempt. Many surveys and
+  interview studies.
+- **Full board**: more than minimal risk, vulnerable populations, or deception
+- **The IRB makes the determination, not the researcher.** You submit, the board decides.
+- Submitting something you suspect is exempt wastes nobody's time
+
+## Walking Twitch through Belmont
+
+- Chat came from the **public IRC interface**; streams from the **public API**
+- No IP addresses, no emails, no internal user IDs, no payment data, no whispers
+- Usernames are **pseudonymous**: chosen handles, often unlinked to offline identity
+- Respect for persons rests on public broadcast, not on consent, which was never asked
+- Beneficence: risk is minimal, and no move in this course aggregates toward identity
+- Justice: the sample spans channels broadly, including non-gaming categories
+
+## Public is not automatically fair game
+
+- AoIR has long argued that "public" does not settle the ethical question
+  (Markham & Buchanan, 2012)
+- In practice, that obligation means three things
+- Do not aggregate in ways that would **re-identify** an individual user
+- Do not republish entire chat logs verbatim
+- Do not amplify messages whose senders expected obscurity more than broadcast
+
+## Three contrast cases
+
+- **Twitch whispers.** Private messages, reasonable expectation of privacy.
+  Expedited or full review.
+- **A private Discord with the same people.** Closed membership raises the expectation
+  of privacy even when the senders chat publicly elsewhere.
+- **An internal moderation log with platform flags on users.** Now the data carries
+  classifications about identified people. Full board is likely.
+- The narrow slice is what makes our corpus exempt by design
+- Most data you meet in your career will not be that narrow
+
+## When the reporting goes wrong
+
+- **Fabrication**: inventing data that do not exist
+- **Falsification**: manipulating data or results to change the outcome
+- **Selective reporting**: running many analyses, reporting only the ones that worked
+- **HARKing**: hypothesizing after the results are known, then writing as though
+  you predicted them all along
+- HARKing converts exploratory work, which is legitimate, into fake confirmatory work
+
+## Pre-registration is a paradigmatic commitment
+
+- Usually sold as a technique for controlling false positives. Accurate but incomplete.
+- It embodies the hypothetico-deductive move: derive predictions from theory
+  *before* examining data, then submit them to test
+
+> "Preregistration of an analysis plan is committing to analytic steps without advance knowledge of the research outcomes."
+>
+> Nosek et al. (2018, p. 2601)
+
+## Discussion {.discuss}
+
+On Nosek et al. (2018), "The preregistration revolution":
+
+- They call it a revolution. Is the mechanism they describe strong enough to
+  change behavior, or does it depend on incentives they do not control?
+- The paper separates prediction from postdiction. Where in your own thinking
+  does that line blur most easily?
+- Is pre-registration compatible with grounded theory or thematic analysis?
+  Make the case on epistemological rather than practical grounds.
+- What does a Registered Report protect that a pre-registration does not?
+
+*Take a position out loud, then let someone talk you out of it.*
+
+## Now the other half: the conversation
+
+- Imagine walking into a debate that has run for years among invested people
+- Blurt your idea out and it is dismissed as naive, or as already answered in 2012
+- To contribute you must know the key voices, the contested points, the open questions
+- A **literature review** is the disciplined act of listening before speaking
+- It is how you earn the right to ask your question
+
+## What a review actually accomplishes
+
+- **Situates your work** in a context you can demonstrate you understand
+- **Identifies a gap**, which is what answers the "so what?" question
+- **Prevents reinventing the wheel**, painfully common and easily avoided
+- **Provides methodological guidance**: validated measures, sampling strategies,
+  documented limitations (Krippendorff, 2018; Neuendorf, 2017)
+- **Refines your question** from a vague curiosity into something tractable
+
+## Phase one: exploratory searching
+
+- Start broad. You are learning terminology, key names, and which journals publish this.
+- **Google Scholar** first: less comprehensive than databases, fast and free
+- Wikipedia is not citable, but its reference list is a map to real scholarship
+- Any good article's reference list is also a map: repeated citations mark foundations
+- Collect everything promising in **Zotero** and tag liberally. Organization comes later.
+
+## Phase two: systematic searching
+
+- Communication & Mass Media Complete, PsycINFO, Web of Science, Scopus
+- **Boolean operators**: AND narrows, OR expands, NOT excludes, `*` catches variants
+
+```
+(livestream* OR "live streaming" OR Twitch) AND
+(motivation* OR gratification* OR engagement) AND
+(viewer* OR audience* OR chat)
+```
+
+Log every search: date, database, exact string, limiters, results, how many kept.
+The log is a methods disclosure, not a personal note.
+
+## Phase three: citation chaining
+
+- **Backward chaining**: read the references inside a keystone article
+- **Forward chaining**: use "Cited by" to see who has built on it since
+- The growth is a snowball, but a strategic one, following the network outward
+  from the work that matters most
+- Ad hoc searching cannot support later power analysis, because you cannot say
+  whether what you found is representative of the literature
+- A systematic search can be reproduced and updated by someone else
+
+## Knowing when to stop
+
+- **Saturation** is the point where more searching stops changing your understanding
+- Three consecutive database searches turning up zero new relevant articles
+- New articles citing the same eight to ten sources you have already read
+- You can predict what an article says from its title and abstract
+- Saturation does not mean you read everything. It means the map has stopped changing.
+
+## Questions worth asking the librarian
+
+- Which database actually indexes the journals in my area, and what does it miss?
+- How do I set up an alert so new work on my topic finds me?
+- What is the fastest route to an article my library does not hold?
+- Can Zotero pull straight from this database, and how do I fix broken metadata?
+- What would you search that I would not have thought to search?
+
+## Before Week 4
+
+- **Due:** the **Librarian Visit Report**, built from tonight's searching
+- Read **Chapter 4** (annotating) and **Chapter 5** (Theory as a Lens), with the
+  graduate edition toggle on
+- Read the assigned article: **Cohen (1992)**, "A power primer"
+- Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
+- Start your search log now. Backfilling it later is guesswork.

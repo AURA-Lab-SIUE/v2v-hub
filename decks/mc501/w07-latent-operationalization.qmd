@@ -1,0 +1,230 @@
+---
+title: "Manifest, Latent, and the Move to Variables"
+subtitle: "Week 7 · Chapter 7 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## This week
+
+[Week 7 · Chapters 7 and 8]{.eyebrow}
+
+- **Due tonight**: the Research Proposal
+- **Chapter 7**: manifest and latent content, edge cases, saturation
+- **Chapter 8**: operationalization, the move the book is named for
+- **Assigned reading**: Hayes & Krippendorff (2007), "Answering the call for a standard
+  reliability measure for coding data"
+- Today's argument: reliability is designed in during immersion, not repaired afterward
+
+## Where the codebook comes from
+
+- You have a field-notes document from your structured listening
+- It contains observations, uncertainties, and cases that resisted every category
+- Those three things are the raw material of a codebook, in that order
+- Nothing in the codebook should be an idea you had at a desk without watching
+- Today converts the record into instructions a stranger could follow
+
+## Manifest content
+
+- The **surface**: features explicitly present, identifiable with high agreement
+- Does the message contain an `@` mention? Is it under ten characters?
+- Does it contain a known emote token? How many words is it?
+- Countable almost mechanically. Reliable coding is mostly a matter of a clear rule.
+- Krippendorff (2018) places the manifest and latent distinction at the center of
+  codebook design for exactly this reason
+
+## Latent content
+
+- The **underlying meaning**, the part that requires interpretation
+- Is a message friendly or hostile? Directed at the streamer or performing for the room?
+- Is "first" a genuine claim or a running joke?
+- Is the mood of chat, taken as a whole, celebratory or restless?
+- Two careful coders can disagree about these **in good faith**. That is the definition.
+
+## Why immersion makes latent content codeable
+
+- You cannot code latent content reliably without an interpretive framework
+- That framework is built by watching, not by defining
+- The coder with twenty hours on live Twitch knows a wall of one emote after a big play
+  is celebration, not noise
+- They learned it by watching it happen until the pattern was obvious
+- Immersion is the mechanism that turns a subjective impression into a defensible judgment
+
+## The edge-case log
+
+- Some of what you observe resists every category you are tempted to draw
+- A message made entirely of emotes, with no words at all
+- A copypasta: technically a message, not in any normal sense something a viewer wrote
+- A message in a language you do not read, or an obvious bot
+- A message grammatically addressed to the streamer that is plainly a joke for the room
+- Log the case, what makes it ambiguous, and how a codebook could handle it
+
+## Edge cases become decision rules
+
+- These are not exceptions to be ignored. They are the raw material of **decision rules**.
+- Chapter 6's model prospectus included an "unclassifiable" category. The edge-case log is
+  where you find out what actually lands in it.
+- A codebook written without one meets these messages first during coding, when handling
+  them is expensive
+- A codebook written with one has already decided
+
+## Knowing when to stop
+
+- New streams stop surprising you
+- You can name three to five dimensions that clearly matter for your question
+- The edge-case log has enough entries to write decision rules from
+- Field notes have begun to repeat themselves, confirming rather than discovering
+- This is **saturation**, the same idea Chapter 4 applied to literature searching
+- Not the claim that you have seen everything. The claim that you have seen enough.
+
+## When observation changes the question
+
+- Observation does one of two things to the question in your proposal
+- It **confirms** it: the distinction turns out to be real, visible, worth measuring
+- Or it **complicates** it: much of chat is aimed at neither the streamer nor the room,
+  but at another viewer. The two-way split has a third term.
+- That is not a failure of the prospectus. It is the cheapest possible moment to learn it.
+- A distinction found now is a category. Found after coding, it is a reason to start over.
+
+## Reliability planning starts in the field notes
+
+- While you identify candidate categories, you are doing something else at the same time
+- You are identifying **where two coders will disagree**
+- Field notes that mark your own uncertainty are the earliest record of the reliability problem
+- Most codebook failures come not from poorly defined categories but from underspecified
+  decision rules for boundary cases
+- Code a comment "hostile" and a second coder calls it "sarcastic": the boundary was not drawn
+
+## The standard this all exists to meet
+
+> "Conclusions from such data can be trusted only after demonstrating their reliability."
+>
+> Hayes and Krippendorff (2007, p. 77)
+
+- Not a stylistic preference about methods sections
+- A precondition: without demonstrated reliability, the findings do not count for anything
+- Everything in the next two weeks is downstream of that one sentence
+
+## Discussion {.discuss}
+
+On Hayes & Krippendorff (2007):
+
+- They argue the field needs *one standard* measure rather than a menu. What is gained by
+  standardization, and what is lost?
+- Their claim is that trust is conditional on demonstrated reliability. Does that set the
+  bar in the right place for latent variables, where good-faith disagreement is expected?
+- Alpha corrects for chance agreement. Why is raw percent agreement not enough, and where
+  would it mislead you most in a chat corpus?
+- Bring one sentence you would cite in your own methods section.
+
+*Five minutes in pairs, then we compare.*
+
+## The field note that is useless
+
+> "Chat in the art stream felt calmer and more conversational than chat in the gaming
+> stream. People talked to each other, not just to the streamer."
+
+- A real observation. You earned it by watching.
+- "Calmer" is not a category anyone else can apply
+- "More conversational" is not something you can count
+- Hand it to two people with a thousand messages and you get two different sortings
+- True and unmeasurable. Closing that distance is the whole of Chapter 8.
+
+## The operationalization gap
+
+- The variable: the **target** of a chat message, who it is aimed at
+- A vague attempt: "Code each message by who it is for"
+- Then a coder meets a real message. A viewer types "same." A viewer types "LULW."
+  A viewer types "no way that just happened."
+- Each could plausibly be aimed at the streamer, the room, or another viewer
+- The coder guesses. Two coders guess differently. The variable is named, not operationalized.
+
+## The better attempt
+
+- **Directed at the streamer**: contains an at-mention of the streamer's channel name, or
+  is a second-person address responding to something the streamer just said or did
+- **Directed at another viewer**: at-mentions a non-streamer account, or replies to a
+  specific prior message
+- **Broadcast to the room**: a reaction or comment with no specific addressee
+- **Unclassifiable**: none of these criteria settle the question
+- Observable criteria, defined categories, and two coders who now land in the same place
+
+## Conceptual definitions
+
+- A **conceptual definition** says what the variable means in the abstract
+- It draws on your reading and your theory, and answers one question: what is this variable
+  meant to capture?
+- For message target: "the intended addressee of a chat message, reflecting whether the
+  message functions as participation with the streamer, with the chat collective, or with
+  a specific other viewer"
+- Clear about the idea. Not yet a recipe.
+
+## Operational definitions
+
+- An **operational definition** is the recipe: exactly what a coder does to assign a value
+- Detailed enough that a stranger could follow it and measure what you measured
+- The at-mention rule, the second-person-address rule, the reply rule
+- Conceptual tells you what the variable is *for*. Operational tells you what counts as *evidence*.
+- Write the two side by side for every variable. That is the first concrete step to a codebook.
+
+## Four failures, part one
+
+- **Conflating concepts**: measuring a streamer's community by counting chat messages.
+  A large channel can have a fast chat that is shallow and anonymous, thousands of
+  strangers reacting in parallel and never to each other. Volume is activity, not community.
+- **The unjustified proxy**: measuring stream quality by viewer count. Viewer count reflects
+  discoverability, time of day, and the popularity of the game, none of which is quality.
+  A proxy is not forbidden. An undefended one is.
+
+## Four failures, part two
+
+- **Oversimplification**: chat engagement is not only how many messages appear. It is also
+  who is talking, whether they talk to each other, and in what spirit. A message count
+  captures one dimension and silently discards the rest.
+- **The unmeasurable definition**: "a message is sincere if the viewer genuinely means it"
+  defines sincerity in terms of nothing a coder can observe
+- The fix in each case: measure the other dimensions, defend the proxy, or state honestly
+  what the study actually addresses
+
+## The promise you are making
+
+- An operational definition is a promise that someone else could follow your recipe and
+  measure what you measured
+- Each of the four failures breaks that promise in a different way
+- The medium changes and the act does not: a scholar coding immigration coverage must turn
+  "this article feels sympathetic" into a defined frame variable with observable criteria
+- A health researcher must turn "this ad feels fear-based" into something a coder can apply
+
+## Where this points
+
+- An operational definition can be perfectly precise and still be bad measurement
+- **Reliability** is consistency: do two trained coders applying your codebook independently
+  to the same messages agree?
+- If they do not, the codebook is not yet measuring anything stable, and no analysis
+  downstream repairs that
+- Cohen's kappa and Krippendorff's alpha quantify it, correcting for chance agreement
+- Next week is that machinery, and the codebook built to satisfy it
+
+## Checking your proposal against today
+
+- Does every variable in the proposal have **both** a conceptual and an operational definition?
+- Is each category **observable**, or does one of them require reading a viewer's mind?
+- Which of your variables is manifest, and which is latent? Name them.
+- For each latent variable, where do you expect a second coder to disagree with you?
+- Those expected disagreements are next week's decision rules
+
+## Before Week 8
+
+- Read **Chapter 8** in full, with attention to levels of measurement and the codebook
+- Read the assigned article: **Lombard, Snyder-Duch, & Campanella Bracken (2002)**,
+  "Content analysis in mass communication: Assessment and reporting of intercoder reliability"
+- **Due next week: Definitions Practice**, conceptual and operational pairs for your variables
+- Bring three categories where you anticipate disagreement, and one candidate rule for each
+- Journal entry, 450 to 500 words, engaging both the chapter and the reading

@@ -1,0 +1,139 @@
+---
+title: "Structured Listening"
+subtitle: "S12 · Chapter 7 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Three numbers, one climb
+
+[Sodapoppin, November 2018]{.eyebrow}
+
+- **27,934** concurrent viewers, then **28,076**, then **28,203**
+- Two hundred sixty-nine viewers in a hundred and twenty-two seconds
+- The dataset records the climb to the second
+- What the dataset cannot tell you is **what the climb was**
+
+## Same rows, four different events
+
+- A **raid**: another streamer ending a broadcast and sending their audience over
+- A **clip going viral** on Reddit, pulling in strangers
+- The streamer returning from a break
+- A game update, or just the slow accumulation of a good night
+- The row looks identical in all four cases: a number, a larger number, a larger number still
+
+## Signatures you can only learn by watching
+
+- A raid has a signature: a near-vertical jump, often with a wave of near-identical greetings in chat
+- A viral clip has a different one: a slower swell of viewers who do not know the room's conventions
+- The dataset will not label these for you
+- **You bring the labels**, and you can only bring them if you have done the looking
+
+## Immersion and structured listening
+
+- **Immersion:** sustained, systematic attention to a subject before analysis begins
+- For a content analyst working with Twitch, immersion takes the form of **structured listening**
+- Watch streams, read chat, take notes, with the discipline an ethnographer brings to a field site
+- The dataset is historical, 5.5 days in 2018. The platform is live in front of you right now.
+- The behaviors it records are still there to be watched
+
+## What happens when you skip it
+
+A coder who has never watched Twitch reads the log as plain text and:
+
+- Sees **KEKW** and cannot tell an emote from a typo or a username
+- Sees thirty accounts posting the same phrase and does not recognize **copypasta**
+- Sees "@sodapoppin same" and cannot tell agreement from a reflexive stock reply
+- The scheme sorts every message confidently, and the buckets do not mean what you think
+
+## Your turn {.discuss}
+
+- Name a convention in a media space you know well that an outsider would misread
+- What would they count wrong, and which direction would the error run?
+- What is the equivalent convention in Twitch chat that you do not yet know?
+
+*Two minutes with a neighbor, then we build a shared list on the board.*
+
+## Thick description
+
+- Geertz (1973): a record rich enough to capture not just what happened but **what it meant in context**
+- A **thin** description of the chat log counts messages
+- A **thick** description knows the count is made of raids, inside jokes, and reflexive replies
+- Structured listening is how a thin dataset becomes something you can describe thickly
+- The medium changes. The discipline does not.
+
+## Mode one: casual watching
+
+- Initial exposure, nothing more
+- Open several streams across the range: a large gaming channel, a small one, Just Chatting, art or music
+- **Do not take notes. Do not try to code anything.**
+- Let the medium be unfamiliar. What surprises you? What convention do you not understand yet?
+- The only goal is replacing your assumptions about Twitch with exposure to it
+
+## Mode two: focused watching
+
+Choose a few streams, watch with one dimension in mind per pass:
+
+- **Chat behavior:** how fast does it move, who is it addressed to, when does the pace change?
+- **Viewer trajectories:** does the count climb, hold, or fall, and what is happening on stream when it moves?
+- **Host moves:** does the streamer read chat aloud, react to it, ignore it, steer it?
+
+Brief notes after each pass. You are still describing, not coding.
+
+## Mode three: analytical watching
+
+- Watch a larger number of streams, asking what **recurs**
+- Do certain chat behaviors cluster with certain kinds of stream?
+- Are there category-specific conventions, so competitive-game chat differs from art-stream chat?
+- Which cases resist easy description?
+- The contours of your coding scheme start to appear here
+
+## Field notes exist or they do not
+
+- Observation without a record is just watching television
+- **Field notes:** written, dated, specific accounts of what you saw and what it made you think
+- They are not polished prose. They are thinking on paper.
+- Their value is catching an observation while it is fresh, before it hardens into something you assume you always knew
+- The notes do not need to be good. They need to **exist**.
+
+## Observational and methodological notes
+
+- **Observational note:** what you saw. "Watched a mid-size Just Chatting stream for forty minutes. Chat moved in bursts, near silence while the streamer talked, then a flood every time they paused."
+- **Methodological note:** a measurement problem. "The bursts after a question are answers to the streamer, so directed, but also performance for the room. A coder reading the log as text cannot see the question. The codebook may need a rule."
+
+## Theoretical and comparative notes
+
+- **Theoretical note:** links an observation to a framework. "The burst-after-a-question pattern fits uses and gratifications (Katz, Blumler, & Gurevitch, 1973). Chat volume is not a steady trait of a stream but a response to host moves."
+- **Comparative note:** how cases differ. "Two streams, same hour. Gaming chat ran fast and reactive; art chat ran slow and conversational. Gaming and non-gaming chat are not the same object."
+
+## The rhythm
+
+- One plain-text document, dated, **one entry per observation session**
+- The V2V Hub provides a field-notes template with the four note types
+- Set a rhythm: a note every fifteen or twenty minutes of watching
+- The record has to keep pace with the watching
+- The codebook you build in two sessions will be assembled almost entirely from what these notes contain
+
+## Observation tests your question
+
+- You arrived with a prospectus committing you to directed versus broadcast chat
+- Observation will either **confirm** that split or **complicate** it
+- You may notice a great deal of chat is aimed at neither: replies, arguments, inside jokes between regulars
+- The two-way distinction turns out to have a third term
+- That is not a failure of the prospectus. It is the cheapest possible moment to learn it.
+
+## Before next time
+
+- **Topic Selection and Research Questions is due this week.**
+- **The Project Prospectus follows next week.** Submit the version you can defend, not the version you love.
+- Start your field-notes document tonight: template on the Hub, dated entries, four note types
+- Log at least **two observation sessions** before we meet again, one gaming and one non-gaming
+- Read the rest of **Chapter 7**: manifest and latent content, sampling your observation, edge cases
+- Next session we use your notes to separate what any coder can see from what takes judgment

@@ -1,0 +1,242 @@
+---
+title: "Measurement, Reliability, and the Codebook"
+subtitle: "Week 8 · Chapter 8 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## This week
+
+[Week 8 · Chapter 8]{.eyebrow}
+
+- **Due tonight**: Definitions Practice
+- Levels of measurement, and what each one lets you conclude
+- Reliability and validity, the two criteria that judge a measure
+- The codebook: five parts, two governing principles, one draft
+- **Assigned reading**: Lombard, Snyder-Duch, & Campanella Bracken (2002),
+  "Content analysis in mass communication"
+
+## NOIR
+
+- Once a variable is operationalized, it has a **level of measurement**
+- That level determines what you are later allowed to do with it
+- **N**ominal, **O**rdinal, **I**nterval, **R**atio
+- The `stream_log` table happens to span all four: channel, title, game, viewers, date
+- Levels are not a property the data hands you. They are a property of your decision.
+
+## Nominal
+
+- Categories with **no inherent order**
+- `game` is nominal: Fortnite, Just Chatting, Art, Hearthstone
+- No arithmetic relates them. Fortnite is not greater than Art.
+- `channel` is nominal, and so is `title` in its raw string form
+- You can count how often each category appears and name the most common one
+- You cannot average it. The mean of Fortnite and Art is not a category.
+
+## Ordinal
+
+- Categories that **do** have an order, but with unequal distances between ranks
+- Bin stream titles by length into short, medium, and long
+- Long outranks short, but the gap from short to medium is not guaranteed to equal
+  the gap from medium to long
+- You can rank cases and find the **median**
+- The mean is not strictly meaningful
+
+## Interval
+
+- Equal, constant distances between values, but an **arbitrary zero**
+- `date` is stored as a bigint count of milliseconds since midnight, January 1, 1970
+- Converted to a timestamp it is interval-level: the distance from one minute to the next
+  is constant across the whole column
+- The zero point, 1970, does not mean "no time." It is a convention.
+- You can subtract two timestamps for a duration. You cannot say one is "twice" another.
+
+## Ratio
+
+- Equal intervals **and** a true zero that genuinely means none
+- `viewers` is ratio: zero viewers means no one is watching
+- Because that zero is real, 28,000 viewers is genuinely twice the audience of 14,000
+- The full range of arithmetic is available
+- Most counts are ratio: viewers, message length in characters, number of messages
+
+## One column, three levels
+
+- Stream **title** as a raw string is **nominal**
+- Title measured as a character count is **ratio**: a title can have zero characters
+- Title binned into short, medium, and long is **ordinal**
+- One column, three possible levels, depending entirely on how you operationalize it
+- Operationalize an interesting variable as nominal when it could have been ratio, and you
+  have narrowed what the study can conclude before coding a single case
+
+## Two kinds of variable
+
+- Some variables **arrive ready-made**: `viewers` is already a number, `game` is already a
+  category. The work is classification: pick the level, decide raw or transformed, move on.
+- Other variables **do not exist until you build them**. Message target is not a column in
+  `chat_log`. Nothing in the data records who a message was aimed at.
+- That variable exists only after a human coder reads each message and assigns a value
+- A coder can only do that consistently from precise written instructions
+- Those instructions are a **codebook**
+
+## Reliability
+
+- **Reliability is consistency**: the same result under the same conditions
+- A bathroom scale reading 150, then 162, then 147 as you step on and off is unreliable,
+  and its readings are worthless regardless of your actual weight
+- For content analysis the form that matters is **inter-coder reliability**
+- Two trained coders, the same messages, applied independently: do they agree?
+- Cohen's kappa and Krippendorff's alpha correct for the agreement chance alone would produce
+
+## Validity
+
+- **Validity is accuracy**: does the measure capture what it claims to capture?
+- **Face validity**: does it look, on inspection, like it assesses the intended concept?
+- **Content validity**: does it cover all of the concept, not just a convenient slice?
+- **Construct validity**, the most demanding: does the measure behave the way theory says
+  it should, relating to other variables as predicted?
+- Validity is a claim you argue for, not a statistic you compute
+
+## The two are independent
+
+- A scale calibrated ten pounds light is perfectly **reliable** and perfectly **invalid**:
+  it reads the same every time, and it is wrong every time
+- The reverse also happens: accurate on average, so inconsistent that any single reading
+  is unusable
+- **Reliability is necessary but not sufficient for validity**
+- An inconsistent measure cannot be accurately capturing anything, so unreliability rules
+  validity out. A consistent measure can still measure the wrong thing.
+- You get reliability first, because the codebook is the instrument that produces it
+
+## The reliability protocol, first half
+
+A complete protocol has four steps, and the order is not optional.
+
+1. The second coder receives the **codebook alone**: no walk-through, no hints. They code a
+   training set of 20 to 30 units independently.
+2. The two coders **compare and discuss every disagreement**. No new production data is
+   coded at this stage.
+
+The temptation to explain what you meant is exactly what the protocol forbids. If the
+codebook needs your narration, it is not yet an instrument.
+
+## The reliability protocol, second half
+
+3. The **codebook is revised** to add decision rules for every disagreement identified
+4. The second coder codes a **fresh reliability sample**, separate from the training set,
+   independently. The agreement on that fresh sample is the kappa you report.
+
+- Reporting agreement from the training set is a common and serious error
+- The training set is contaminated by the reconciliation conversation
+- Lombard and colleagues (2002) recommend reporting more than one reliability statistic
+
+## Why the protocol exists
+
+> "Conclusions from such data can be trusted only after demonstrating their reliability."
+>
+> Hayes and Krippendorff (2007, p. 77)
+
+- The four steps are not bureaucracy. They are the demonstration that sentence demands.
+- Nothing in your analysis, your figures, or your White Paper outranks this dependency
+- A finding built on an untested codebook is a number without a warrant
+
+## Discussion {.discuss}
+
+On Lombard et al. (2002), "Content analysis in mass communication":
+
+- They document how inconsistently reliability was assessed and reported in published
+  content analyses. Why would a field tolerate that for so long?
+- They recommend reporting more than one reliability statistic. Which second statistic
+  would you report alongside kappa for your study, and what would it add?
+- Their guidance is procedural: sample size, coder training, index selection, reporting.
+  Which of those does your current plan handle worst?
+- Where does their advice sit uneasily beside Hayes and Krippendorff's argument for a
+  single standard measure?
+
+*Five minutes in pairs, then we compare.*
+
+## The threshold and the sample
+
+- The standard threshold for Cohen's kappa is **0.70 or higher** (Landis & Koch, 1977)
+- Below it, the codebook requires further revision, not a caveat in your limitations section
+- The reliability sample should contain **at least 50 coded units**
+- For variables with **low base rates**, rare codes, 100 or more units are preferred
+- `v2v::reliability()` computes kappa with interpretation labels
+- Simulate two coders agreeing on 40 of 50 units. Does that codebook clear the bar?
+
+## The codebook is the instrument
+
+- Not paperwork assembled after the fact to satisfy a methods requirement
+- The most useful analogy is **source code**: if coding were a program, the codebook is
+  the program
+- It specifies every operation, handles every conditional, and ensures two processors,
+  here two human coders, running the same program on the same input produce the same output
+- Neuendorf (2017) calls it the heart of a content analysis
+- Its clarity is the single strongest predictor of whether your coders will agree
+
+## Five parts of a codebook
+
+1. **Unit of analysis**: exactly what one coded case is. "Code the chat" is not a unit.
+2. **Variables and categories**: conceptual definition, operational definition, every
+   category, a short description of each
+3. **Decision rules**: what to do with cases that do not sort themselves
+4. **Examples**: two or three prototypical cases per category, for training
+5. **Special cases**: recurring complications, usually thin in a first draft
+
+## Exhaustive and mutually exclusive
+
+- Categories must be **exhaustive**: every case can be coded. The "unclassifiable" or
+  "other" catch-all is what guarantees it.
+- Categories must be **mutually exclusive**: every case fits exactly one
+- If a message can honestly go in two categories, the categories overlap, and overlap
+  destroys reliability because two coders will split on it forever
+- The fix is sharper definitions or a rule that assigns precedence
+- If more than roughly one case in ten lands in the catch-all, the scheme is incomplete
+
+## The draft codebook: unit and target
+
+> **Unit of analysis.** A single chat message, defined as one row of `chat_log`: one
+> sender, one message string, one timestamp. Each message is coded independently of the
+> messages around it, except where a decision rule says otherwise.
+
+> **Variable 1: message target.** Categories: directed at streamer, directed at another
+> viewer, broadcast to the room, unclassifiable. Level: nominal.
+
+## The draft codebook: two more variables
+
+> **Variable 2: message length.** Conceptual: the verbal extent of the message.
+> Operational: the count of characters in the message string, including spaces and emote
+> tokens. Derived rather than judged. Level: ratio.
+
+> **Variable 3: contains emote.** Operational: coded yes if the message contains at least
+> one token from the project's emote list, no otherwise. Level: nominal.
+
+Two manifest measures a coder applies almost mechanically, one latent measure requiring
+real judgment.
+
+## The five decision rules
+
+1. **Precedence**: a message that both at-mentions the streamer and performs for the room
+   is coded directed at streamer. Explicit address wins.
+2. **Emote-only**: coded broadcast to the room, unless it contains an at-mention
+3. **Copypasta**: coded by its content like any other message. Being copypasta is not itself
+   a category.
+4. **Non-English**: code target if the addressee is determinable from at-mentions or
+   structure, otherwise unclassifiable
+5. **Bot accounts**: unclassifiable for target, noted for possible exclusion
+
+## Before Week 9
+
+- Read **Chapter 9**, "The rulebook and first workspace." Bring a laptop with R installed.
+- Re-read **Munafo et al. (2017)**, "A manifesto for reproducible science," concentrating
+  on the sections on **reporting and usability**
+- **Due next week: the Extended Codebook and Reliability Protocol**, with planned sample
+  size, target thresholds, and revision triggers
+- Have your three variables written out in full, with decision rules
+- Journal entry, 450 to 500 words, engaging both the chapter and the reading

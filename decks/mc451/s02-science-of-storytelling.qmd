@@ -1,0 +1,119 @@
+---
+title: "The Science of Storytelling"
+subtitle: "S2 · Chapter 1 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Two numbers, one week on Twitch
+
+[November 2018]{.eyebrow}
+
+- **Bob Ross:** 3,178 average viewers, streaming under *Art*, and dead since 1995
+- **xQc:** 17,363 average, a live variety streamer
+- Same platform, same week, very different audiences
+- The move a social scientist makes: ask not what those numbers *mean*, but what they *are*
+- They are **data:** collected on purpose, so a claim can be defended later
+
+## From a single snapshot to a corpus
+
+- One **snapshot** is one row, six columns: channel, title, game, viewers, timestamp, key
+- Multiply by half a million (590,876 snapshots, 5.5 days) and you have a **corpus**
+- A corpus is *a body of evidence that licenses some questions and refuses others*
+- Your first job is to respect what a given corpus can and cannot answer
+
+## One dataset, three roles
+
+The same data wears three hats, and conflating them is where first projects go wrong:
+
+- **Population:** the 1,690 channels present in both the chat and stream logs
+- **Working corpus:** 50 channels, stratified by chat volume, that you load into R
+- **Anchor set:** 8 channels that recur as named examples (xqcow, forsen, bobross)
+
+## Your turn {.discuss}
+
+- Pick a number from your own media life: followers, watch time, a like count
+- Is it **data**? What claim would it let you defend, and what would it refuse?
+- Where did it come from, and who decided what got counted?
+
+*Two minutes with a neighbor, then we compare.*
+
+## We are hypothesis-testing organisms
+
+[Why stories matter for science]{.eyebrow}
+
+- Barrett: the brain is a **prediction machine**, updating its models when predictions fail
+- Storr: **stories** are cognitive tools for modeling cause and effect
+- Science is not the opposite of storytelling; it is the same machinery under **rigor**
+- Stories without data are anecdotes. Data without stories is a spreadsheet.
+
+## Four everyday ways of knowing
+
+Earl Babbie's shortcuts work for Tuesday, and fail when others must trust the result:
+
+- **Tradition:** stable, but resists updating
+- **Authority:** efficient, only as reliable as the expertise behind it
+- **Common sense:** feels obvious, yet culturally bound and self-contradictory
+- **Intuition:** fast, but shaped by bias and recent examples
+
+Research is disciplined because the process **exposes bias to scrutiny**.
+
+## The sacred flaw and the null hypothesis
+
+- Storr's **sacred flaw**: a false belief the protagonist clings to as evidence mounts
+- The **null hypothesis** plays that role: *nothing interesting is happening here*
+- To **reject the null** is to force the data to tell a different story than you assumed
+- A *p*-value of 0.001 means the old story is so incompatible with the evidence that keeping it takes willful blindness
+
+## When the established story is wrong
+
+[Reinhart and Rogoff, 2010]{.eyebrow}
+
+- A famous finding: public debt above 90% of GDP crushes growth. It shaped austerity policy.
+- In 2013 a doctoral student replicating it *for a class* could not match the numbers
+- The original spreadsheet held an Excel error excluding several countries
+- Corrected, growth above the threshold was **+2.2%**, not −0.1%
+- The error was caught because the work was **transparent enough to retrace**
+
+## A study is a story, told with discipline
+
+| In a story | In a study |
+|---|---|
+| Inciting incident | The research problem, an anomaly |
+| Protagonist | The researcher as detective |
+| Antagonist | Confounds, sampling bias, measurement error |
+| Rising action | Literature review and theory |
+| Climax | The statistical test |
+| Falling action | Interpretation and limitations |
+| Resolution | Implications and future research |
+
+## Anecdote and data are partners
+
+- **Journalism** makes the abstract concrete, humanizes, makes audiences care
+- **Science** establishes generalizability: does the pattern hold across many cases?
+- Anecdotes generate hypotheses; data test them
+- A significant result without human context is true and unpersuasive
+- The best work holds both in tension
+
+## What this course teaches
+
+[One week of Twitch]{.eyebrow}
+
+- **21,964,296 chat messages**, 1,695 channels, 590,876 stream snapshots
+- You do original research on this real dataset, end to end, and publish a **White Paper**
+- The dataset is the vehicle; the destination is **methodological literacy**
+- Five parts: Foundations, Planning, Operationalization, Execution, Publication
+- One paradigm here (social scientific), but interpretive and critical work are legitimate too
+
+## Looking ahead to Thursday
+
+- **Chapter 2, The Open Workspace**: the tools that make research reproducible, VS Code, R, Quarto, Git
+- You meet the dataset for the first time: ten real rows from one minute in November 2018
+- **Before then:** sign the Syllabus Contract, and skim Chapter 2's setup walkthrough on the course site

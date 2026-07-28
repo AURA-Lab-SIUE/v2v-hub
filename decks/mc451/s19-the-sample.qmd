@@ -1,0 +1,149 @@
+---
+title: "The Sample"
+subtitle: "S19 · Chapter 10 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## A hundred hours of coding
+
+[Do the arithmetic first]{.eyebrow}
+
+- Suppose you coded chat by hand, one message every ten seconds
+- The **35,267 messages** in the working sample take just under a hundred hours
+- The full 2018 collection, all twenty-two million, would outlast your degree
+- So you will not code all of it. You will code a **sample**.
+- Drawing it well is the whole of today
+
+## Population, sample, census
+
+- The **population** is the full set of cases your conclusions are about
+- Here: all chat messages sent in the fifty-channel corpus during the collection week
+- The **sample** is the subset you actually examine
+- A **census** codes every case, and is right when the population is small enough
+- The stream table is close to a census: roughly 32,000 snapshots, all kept
+
+## Chat is the opposite case
+
+- Far too much of it to code by hand, so a census is off the table
+- This is the ordinary condition of content analysis, not a special problem
+- The point of a sample: make the work **finite** without making the conclusions
+  worthless
+- 1,500 messages can support a sound study or a misleading one
+- The difference is entirely **method**
+
+## Simple random sampling
+
+- **Simple random sampling** gives every message an equal chance of selection
+- Draw the number you need, and stop
+- One large virtue: it is **unbiased**. No message is favored over any other.
+- The sample carries no systematic tilt built in by the researcher
+- That is a real guarantee, and for Twitch chat it is not enough
+
+## Why that is not enough: skew
+
+[The shape of the data]{.eyebrow}
+
+- Chat volume is not spread evenly across channels. It is severely concentrated.
+- Busiest channel in the population: **more than a million messages** that week
+- Median channel: about **1,440**. Quietest channel: **one**.
+- That shape is called **right-skewed**: a few enormous values, a long thin tail
+- Draw at random and almost everything comes from the handful of giants
+
+## Your turn {.discuss}
+
+- If you drew 1,000 messages at random from that population, how many would you
+  expect from the channel that logged one message all week?
+- Is that sample **biased**? Is it **representative**? Are those the same question?
+- Your own study has a comparison at its center. Which side of it is rare?
+
+*Two minutes with a neighbor, then we look at the second dimension.*
+
+## The second dimension
+
+- **Forty-three of the fifty channels** in the corpus are gaming channels
+- Only a handful are not. Bob Ross's painting channel is the clearest case.
+- A random sample of messages would be drawn almost entirely from gaming chat
+- Not because of bias, but because that is where almost all the messages are
+- For a study comparing gaming and non-gaming chat, that is close to fatal
+
+## The trap, stated plainly
+
+- Simple random sampling is **unbiased and still unrepresentative** of what you
+  care about
+- It faithfully reproduces the population's imbalance at sample size
+- What the study needs is enough of **every group** to compare them
+- Unbiased is a property of the procedure, not a guarantee about the result
+- Noticing this before you draw is the difference between a study and a mess
+
+## Stratified sampling
+
+- Do not draw from the population as one undifferentiated pool
+- First divide it into meaningful subgroups called **strata**
+- Then draw a sample from **within each stratum separately**
+- Every stratum gets a place in the final sample, in whatever proportion you decide
+- Not in whatever proportion the population happens to hand you
+
+## Choosing strata that matter
+
+- Strata have to be chosen for the **research question**, not for convenience
+- For the chat study the natural stratifying variable is the **channel**
+- A fixed number of messages per channel puts small channels in at full strength
+- Gaming status is a property of the channel, so stratifying by channel also
+  rescues the central comparison
+- Every non-gaming channel is in the sample **by construction**, not by luck
+
+## The corpus is itself stratified
+
+- The fifty channels you loaded were **not** the fifty busiest
+- **Eight** were fixed anchors chosen for variety, Bob Ross among them as the
+  deliberate non-gaming case
+- The other **forty-two** were drawn by sorting the rest into ten volume bands
+  and sampling every band
+- So the corpus spans busiest to quietest, not just the head of the distribution
+- The skew did not get sampled away. It got sampled **across**, on purpose.
+
+## When a stratum is too small
+
+- Ask for thirty messages from a channel that produced nine, and you cannot have them
+- The sensible rule, and the one the tools follow: **take everything it has**
+- In this corpus, **nineteen of the fifty** channels hold fewer than a thousand messages
+- A few hold only a handful
+- A stratum contributes its full weight or, if it is too small, its full self
+
+## Drawing the sample
+
+```r
+set.seed(409)
+
+coding_sample <- v2v::sample_messages(chat, by = channel, n = 30)
+```
+
+`by = channel` makes each channel a stratum and `n = 30` asks for thirty
+messages from each, which across fifty channels aims at roughly 1,500 messages.
+
+That is large enough to support the study and small enough to code by hand.
+
+## Why `set.seed()` is not optional
+
+- Drawing a sample is **random**: run it twice, get two different samples
+- `set.seed()` fixes the starting point of R's random number generator
+- The "random" draw then comes out **identically every time** the code runs
+- Without it, anyone rerunning your analysis, including you in six months, gets
+  different messages and cannot check your results
+- The number 409 is arbitrary. What matters is that a number is set and recorded.
+
+## Looking ahead to Thursday
+
+- You have a sample. What you do not have is a codebook anyone has **tested**.
+- Thursday is the **pilot**: two coders, the same hundred messages, no conferring
+- We compute **Cohen's kappa** and see a codebook fail in public
+- **Read Chapter 10's second half** before Thursday, on the pilot and reliability
+- Bring your codebook. It is what goes on trial.

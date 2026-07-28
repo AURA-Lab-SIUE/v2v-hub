@@ -1,0 +1,258 @@
+---
+title: "Variables, Hypotheses, and the Research Question"
+subtitle: "Week 5 · Chapter 5 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Tonight: from lens to question
+
+- A theory tells you what to look at. Variables are how you look.
+- First half: variables, hypotheses, and the cost of deciding after you have looked
+- Second half: the research question, which is the hardest thing in the course
+- Your reading tonight explains why honest researchers still get false positives
+- Everything here feeds the prospectus you draft next week
+
+## Variables: the building blocks
+
+- Theories become testable through **variables**: measurable concepts that take on
+  different values
+- An **independent variable** is the proposed cause: what you manipulate, or what
+  you measure as the predictor
+- In this corpus: stream category, streamer tenure, concurrent viewer count
+- A **dependent variable** is the outcome you think is influenced
+- In this corpus: chat messages per minute, viewer retention, subscription rate
+
+## A hypothesis you can actually test
+
+- *In non-gaming streams, a higher proportion of chat messages are directed at the
+  streamer than in gaming streams.*
+- **IV**: category type, gaming or non-gaming
+- **DV**: whether a message addresses the streamer or the room
+- The procedure is visible in the sentence: classify streams, code a message sample,
+  run a test on the predicted relationship
+- Swap the domain and the structure holds: frame type predicting engagement works
+  the same way
+
+## Mediators and moderators
+
+- A **mediator** explains *how* or *why*: the mechanism sitting in between
+- If category affects directed messages, the mediator might be perceived pace:
+  non-gaming streams feel conversational, and that invites direct address
+- A **moderator** changes the strength or direction: it answers *under what conditions*
+- The category effect might hold on small streams and weaken on large ones
+- These move you from "X relates to Y" to "X relates to Y, by this mechanism,
+  under these conditions"
+
+## HARKing, precisely
+
+- **H**ypothesizing **A**fter **R**esults are **K**nown
+- You examine data, notice a pattern, then write as though you predicted it
+- The test still reports a *p*-value, but the hypothesis came from the data
+- That *p*-value therefore does not carry its nominal meaning
+- Nothing here requires dishonesty. It requires only ordinary forgetting.
+
+## The inferential cost
+
+> "Failing to appreciate the difference can lead to overconfidence in post hoc explanations (postdictions) and inflate the likelihood of believing that there is evidence for a finding when there is not."
+>
+> Nosek et al. (2018, p. 2600)
+
+Prediction and postdiction can describe the same pattern. Only one of them
+was risking anything.
+
+## The structural fix
+
+- Pre-registration submits theory-derived hypotheses, variables, and the analysis
+  plan to a public registry before data collection
+- The entry is time-stamped and permanent, so drift becomes visible rather than deniable
+- A V2V pre-registration contains: research question and directional hypotheses;
+  unit of analysis, platform, collection window; the codebook or extracted variables;
+  planned tests and inferential criteria; sample size justification
+- OSF's standard template walks each section
+
+## The garden of forking paths
+
+[Gelman and Loken, 2013]{.eyebrow}
+
+- The phrase belongs to Gelman and Loken
+- Their point is subtler than p-hacking: no conscious fishing is required
+- An analyst faces many **defensible** choices, and would have made different ones
+  had the data come out differently
+- Those unrealized paths still inflate the false-positive rate
+- The hypothesis can even have been posited ahead of time and the problem remains
+
+## Discussion {.discuss}
+
+On Gelman and Loken (2013), "The garden of forking paths":
+
+- They insist the problem survives even in honest, well-intentioned analysis.
+  Does that make the diagnosis more useful, or easier to shrug off?
+- Where in the workflow we are building does the first fork appear?
+- If the forks are unrealized, how would anyone ever detect them in a published paper?
+- They separate the multiple-comparisons problem from the researcher's intent.
+  Is intent doing any real work in how we currently judge research?
+
+*Two minutes with a neighbor, then we compare.*
+
+## The hardest part is the question
+
+- Running a test can be learned with practice. Asking well cannot be outsourced.
+- The question must be specific enough to answer, broad enough to matter, and
+  grounded enough not to reinvent the wheel
+- Question A: "How does livestreaming affect people?"
+- Question B: "Does the rate of chat messages per viewer differ between gaming and
+  non-gaming streams?"
+- A is a career disguised as a question. B you can design, execute, and finish.
+
+## Five criteria for a strong question
+
+- **Specific**: names the platform, the outcome, and the population
+- **Measurable**: its concepts survive **operationalization** into observable variables
+- **Answerable within your constraints**: not decades of data or hundreds of interviews
+- **Not already settled**: your review should tell you whether it is genuinely open
+- **It matters**: contributes to theory, resolves a contradiction, or has applied value
+
+## The template
+
+Some combination of *does there exist*, plus a *specific variable*, plus a
+*relationship, pattern, or difference*, plus a *bounded population*, plus any
+*confounds accounted for*.
+
+> Is there a relationship between stream category and chat message rate among
+> channels in the Twitch working corpus?
+
+Every part of that sentence is doing work. Delete one and the study loses shape.
+
+## The funnel
+
+1. "I am interested in Twitch chat." Too broad. Which aspect? Which streams?
+2. "How viewers participate in chat." Better, still vast.
+3. "Whether participation differs across kinds of streams." Which kinds? Measured how?
+4. "Whether chat message volume differs between gaming and non-gaming streams." Clearer.
+5. A stratified sample from the 50-channel corpus, each message coded as directed or
+   broadcast, tested across stream type, framed as social gratification.
+
+Each iteration trades breadth for depth. Narrowing is discipline, not weakness.
+
+## Narrowing mistakes with names
+
+- **The Everything Study**: "the effect of social media on society". A program,
+  not a project.
+- **The impossible comparison**: "are people who watch Twitch lonelier than people
+  who do not?" Self-selection confounds it before you start.
+- **The circular question**: "do popular streamers attract large audiences because
+  people want to watch them?" Defined in a loop.
+- **The false binary**: "is it the streamer or the game?" Ask how much each
+  contributes, and whether they interact.
+
+## Operationalizing a parasocial bond
+
+- The construct is not directly observable, so you choose among imperfect proxies
+- **Self-report scale**: "I feel like this streamer understands me". Direct access
+  to subjective experience, exposed to social desirability bias.
+- **Behavioral indicators**: donations, subscription length, hours watched.
+  More reliable, but a behavior does not always mean what you assume.
+- **Language analysis**: code chat for intimacy, disclosure, direct address.
+  Naturalistic, labor-intensive, blind to viewers who feel strongly and stay silent.
+
+## Operationalizing chat sentiment
+
+- **Automated scoring**: fast and replicable, blind to sarcasm, irony, and the
+  coded vocabulary of emotes
+- **Human coding**: captures context and nuance, labor-intensive, requires
+  intercoder reliability testing
+- **Dimensional coding**: valence and arousal scored separately, better on emotional
+  complexity, demands a much more careful codebook
+- There is no right answer. You pick the proxy that fits the question and the
+  resources, then defend its validity in writing.
+
+## Three kinds of research goal
+
+- **Exploratory** asks "what is going on here?" Generates hypotheses. Output is
+  patterns and preliminary frameworks.
+- **Descriptive** asks "what does the landscape look like?" Output is frequencies,
+  distributions, prevalence.
+- **Explanatory** asks "why does this happen?" Hypothesis-driven and deductive.
+  Output is support or disconfirmation.
+- Research on a topic often moves through them in order. You need not do all three.
+- You do need to know which one you are attempting.
+
+## Question or hypothesis
+
+- A **research question** is interrogative and open-ended: use it when exploring or
+  describing, when theory makes no clear prediction, or when the literature conflicts
+- A **hypothesis** is declarative and predictive: use it when theory predicts, when
+  prior research suggests an outcome, or when you are testing a causal claim
+- Behind every hypothesis sits the **null hypothesis**: no relationship, no difference
+- The null is the skeptical default, and it is what the test actually evaluates
+- The question is never whether you can tell a story. It is whether the data could
+  have come from a world without your effect.
+
+## Topic, theory, data
+
+- All three must align. Mismatch any one and the study collapses.
+- **Topic** must be bounded: "chat participation in the 50-channel working corpus",
+  not "livestreaming"
+- **Theory** must predict patterns your data could actually show
+- **Data** must be accessible, sufficient, and appropriate to the question
+- Political economy plus chat messages fails: the theory explains industry structure,
+  the data captures individual expression
+- Swap to parasocial interaction and the three start talking to each other
+
+## What the prospectus commits to
+
+- A descriptive **title** that hints at the key variables
+- One to three focused **questions or hypotheses**, not five and not ten
+- Two or three sentences of **theoretical framework**, naming the theory
+- Two or three sentences on the **gap**, with a few key citations
+- Three or four sentences of **method**: data, coding, number of cases
+- One or two sentences on the **expected contribution**
+
+## The number has to be defended
+
+- Your method section names a sample size. Next week it stops being an assertion.
+- **Statistical power** is the probability of detecting an effect of a given size,
+  assuming it is real
+- A study at 50% power is a coin flip even when the effect exists
+- The conventional minimum is 80%, and below it a significant result is less credible,
+  because underpowered studies inflate false positives and overestimate effects
+- That 80% is a convention, not a derived optimum
+
+## Lakens on the convention
+
+> "the default recommendation to aim for 80% power lacks a solid justification."
+>
+> Lakens (2022, p. 6)
+
+- He treats justification by resource constraint as a last resort
+- Worth arriving next week with a position: is it defensible to run a design
+  you already know is underpowered?
+
+## Computing the number
+
+```r
+library(pwr)
+# Two-group t-test, medium effect (d = 0.5), 80% power
+pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.80, type = "two.sample")
+```
+
+The result, *n* = 64 per group, is what a sampling plan justification looks like.
+If you cannot collect that many, revise the question, redesign for greater power,
+or state the limitation explicitly. Those are the only three honest options.
+
+## Before Week 6
+
+- **Due tonight:** **Annotated Manuscripts (3)** and **CITI Certification**
+- Read **Chapter 6** (the prospectus) and **Chapter 7** (Structured Listening),
+  with the graduate edition toggle on
+- Read the assigned article: **Lakens (2022)**, "Sample size justification"
+- Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
+- Bring a draft research question next week. We narrow them in the room.

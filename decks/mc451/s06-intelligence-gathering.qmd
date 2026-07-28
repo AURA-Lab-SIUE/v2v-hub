@@ -1,0 +1,154 @@
+---
+title: "Intelligence Gathering"
+subtitle: "S6 · Chapter 4 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Thirty sources in an hour
+
+- You find one article that seems directly relevant. It cites twelve others.
+- You track down three of those. Each cites fifteen more.
+- Within an hour you have thirty sources and no idea where to start
+- The instinct is to retreat: narrow the scope, keep three recent articles, hope
+- **The instinct is understandable and it is wrong**
+
+## A map, not a checklist
+
+- A **literature review** is not proof that you read enough articles
+- It is a **map of intellectual territory**
+- You cannot map territory from three landmarks
+- The **archivist mindset**: searching and synthesizing as active cartography
+- The process is identical whether your topic is livestreaming, news framing,
+  health campaigns, or algorithmic bias
+
+## The conversation metaphor
+
+- Imagine walking into a debate that has run for years
+- Blurt out your point and you will be dismissed as naive
+- You might be repeating an argument made a decade ago
+- You might not know someone already tested your idea and it failed
+- **The review is how you earn the right to ask your question**
+
+## What a review accomplishes
+
+- **It situates your work.** You are not operating in isolation.
+- **It identifies a gap.** This is the answer to "so what?"
+- **It prevents reinventing the wheel.** Your original idea may be a dissertation
+  from five years ago.
+- Both defensive and generative: seeing the connections reveals angles you had
+  not considered
+
+## Two more things it does
+
+- **It provides methodological guidance:** validated measures, sampling
+  strategies, analytical techniques, and other people's limitations
+- Krippendorff (2018) and Neuendorf (2017) compile decades of content analysis
+  practice on coding, sampling, and reliability
+- **It refines your question.** A vague curiosity about "Twitch chat" sharpens
+  into a specific debate about whether engagement is driven by the content on
+  screen or the social environment around it
+
+## Your turn {.discuss}
+
+- Name a media topic you are curious about, in one sentence
+- What words would a scholar use for it that you would not?
+- Where would you look first, and how would you know if you had missed the main
+  body of work?
+
+*Two minutes with a neighbor. The librarian will want your terms.*
+
+## Phase one: exploratory searching
+
+- Start broad. You are answering basic questions.
+- What terms do scholars use? Who are the key researchers? Which journals?
+- **Google Scholar** first: less comprehensive, but fast and free
+- **Wikipedia** is not citable, but its reference list is a doorway
+- Collect promising sources in **Zotero** and tag liberally. Do not over-organize yet.
+
+## Phase two: systematic searching
+
+Now the goal is comprehensiveness. Use the real databases:
+
+- **Communication & Mass Media Complete**, the primary database for our field
+- **PsycINFO** if your question touches emotion, persuasion, or cognition
+- **Web of Science** and **Scopus** for multidisciplinary citation tracking
+- Inside them, **Boolean operators** build precise strings
+
+## Building a search string
+
+- **AND** narrows: both terms must appear. **OR** expands. **NOT** excludes.
+- An asterisk is a wildcard: `stream*` finds stream, streams, streaming, streamer
+
+```
+(livestream* OR "live streaming" OR Twitch) AND
+(motivation* OR gratification* OR engagement) AND
+(viewer* OR audience* OR chat)
+```
+
+Three concept blocks, joined with AND, each with its own synonyms.
+
+## Keep a search log
+
+Plain text, in your repository. For every search, record:
+
+- The date and the database
+- The exact search string, copied, not remembered
+- The limiters you applied and the number of results
+- How many you kept
+
+It lets you defend the strategy later, and it shows you what is not working.
+
+## Phase three: citation chaining
+
+- Find a few **keystone articles**, the ones that are clearly central
+- **Backward chaining:** read the references they cite, the foundational works
+- **Forward chaining:** use Google Scholar's "Cited by" to see who cited them
+  since, which shows how the conversation evolved
+- The growth is a snowball, but a **strategic** one: you are following the
+  network outward from what matters most
+
+## Recognizing saturation
+
+**Saturation** is the point where more searching will not change your
+understanding. In practice it looks like:
+
+- Three consecutive database searches returning zero new relevant articles
+- New articles citing the same eight to ten sources you have already read
+- Being able to predict what an article says from its title and abstract
+
+It does not mean you read everything. Stop searching. Start synthesizing.
+
+## Our librarian is here
+
+[The rest of today]{.eyebrow}
+
+- Our subject librarian is going to run the databases with us, live
+- This is the part you cannot get from a chapter: the interface, the limiters,
+  the tricks that only come from doing it daily
+- Have your topic and your search terms ready
+- Interlibrary loan is free and faster than you think. Ask about it.
+
+## What to ask while you have them
+
+- Which database is actually right for **my** question?
+- How do I get the full text when the library does not subscribe?
+- How do I set up a saved search and an alert for new results?
+- What is the fastest way to export a batch of results into Zotero?
+- Can I make an appointment later in the term when I am stuck?
+
+## Before next time
+
+- **The Librarian Visit Report is due next week**, 50 points. Write it while the
+  session is fresh, not Sunday night.
+- The report wants your search log: databases, strings, results, what you kept
+- Get **Zotero** installed and connected to your browser if it is not yet
+- Read the rest of **Chapter 4** on the literature map before Thursday
+- Thursday we turn a pile of sources into a map, and a map into an argument

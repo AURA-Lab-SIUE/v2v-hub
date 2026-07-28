@@ -1,0 +1,188 @@
+---
+title: "Describing Lab"
+subtitle: "S24 · Chapter 12 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Today's job
+
+[Describing Data, 75 points, due this week]{.eyebrow}
+
+- Tuesday you watched me build three figures on my variables
+- Today you build three figures on **yours**, with me in the room
+- Everything you make today lands in your White Paper's Results section
+- Work in your project folder, in a `.qmd` file, not in the console
+- Get stuck out loud. That is what the room is for.
+
+## Where you should be starting
+
+- Your project opens in VS Code and your `.qmd` renders without error
+- You have a tidy `analysis` table from the wrangling assignment
+- You know which **one** variable your paper is really about
+- You know which column splits it into groups
+- If any of those is missing, say so now and we fix it first
+
+## Loading and looking
+
+```r
+library(tidyverse)
+library(v2v)
+
+analysis <- readRDS("data/analysis.rds")
+
+glimpse(analysis)
+```
+
+`glimpse()` prints every column with its type and its first few values. Before
+you plot anything, look at what you actually have.
+
+## A summary table first
+
+```r
+analysis %>%
+  group_by(is_gaming) %>%
+  summarise(
+    n      = n(),
+    mean   = mean(message_length, na.rm = TRUE),
+    median = median(message_length, na.rm = TRUE),
+    sd     = sd(message_length, na.rm = TRUE),
+    .groups = "drop"
+  )
+```
+
+Swap `is_gaming` for your grouping column and `message_length` for your
+variable. Read the mean against the median before you draw anything.
+
+## Your turn {.discuss}
+
+- Look at your table. Do your mean and median agree, or pull apart?
+- If they pull apart, which direction, and what does that predict about the shape?
+- Which single number would you put in an abstract, and why that one?
+
+*Two minutes with a neighbor, then we compare.*
+
+## Figure one: the shape
+
+```r
+ggplot(analysis, aes(x = message_length)) +
+  geom_histogram(binwidth = 5) +
+  labs(x = "Message length (characters)", y = "Messages") +
+  v2v::theme_v2v()
+```
+
+One variable, one histogram. Change `binwidth` and watch the shape change: that
+is why the number has to be reported, not hidden.
+
+## Reading your own histogram
+
+- Where is the tall stack? That is where the typical case lives.
+- Is there a long thin tail? If so, in which direction?
+- **Right-skewed** means most values are small and a few are very large
+- A skewed variable is why your mean and median disagreed
+- If you capped the axis with `pmin()`, say so in the axis label
+
+## Figure two: counts by category
+
+```r
+analysis %>%
+  count(game, name = "messages") %>%
+  slice_max(messages, n = 8) %>%
+  ggplot(aes(x = reorder(game, messages), y = messages)) +
+  geom_col(fill = "#2f7d8a") +
+  coord_flip() +
+  v2v::theme_v2v()
+```
+
+Count, keep the top eight, sort the bars, then flip the chart so long category
+names are readable. Unsorted bars are much harder to compare.
+
+## Figure three: groups side by side
+
+```r
+analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  ggplot(aes(x = message_length, fill = is_gaming)) +
+  geom_histogram(binwidth = 5, position = "identity", alpha = 0.55) +
+  v2v::scale_fill_v2v() +
+  v2v::theme_v2v()
+```
+
+`position = "identity"` with `alpha` overlays the two groups so you can compare
+shapes. Stacked bars would hide exactly the comparison you want.
+
+## Labels are not optional
+
+```r
+last_plot() +
+  labs(
+    title = "Message length by channel type",
+    x = "Message length (characters, capped at 120)",
+    y = "Messages",
+    fill = "Gaming channel"
+  )
+```
+
+Default labels are column names, which mean nothing to a reader. Every axis
+gets units. Every cap or transformation gets named in the label.
+
+## Colorblind-safe by default
+
+- Roughly **one man in twelve** has a color-vision deficiency
+- Red against green is the notorious pair, and it is not the only one
+- Use `scale_colour_v2v()` and `scale_fill_v2v()`, which are chosen to stay distinct
+- Do not let color carry the message alone: add a linetype, or split into panels
+- Test it: if the figure fails in grayscale, it fails for some of your readers
+
+## Alt text, written not skipped
+
+- A screen-reader user cannot see the figure. Alt text is what they get instead.
+- A figure with no alt text is, to them, simply missing
+- Alt text is **not** the caption repeated
+- Say what kind of chart, what is on each axis, and what it shows
+- In Quarto it goes in the figure's `fig-alt` attribute
+
+## Common errors and what they mean
+
+- `object 'analysis' not found`: you never ran the line that loads it
+- `could not find function "ggplot"`: `library(tidyverse)` has not run
+- Blank grey panel: your `aes()` names a column that does not exist
+- `Error in +`: a `+` is missing at the end of a line, or one is trailing at the end
+- Everything on one bar: your x variable is a character, not a number
+
+## Saving figures for the paper
+
+```r
+ggsave(
+  "figures/fig-msglen.png",
+  width = 7, height = 4.5, dpi = 300
+)
+```
+
+`ggsave()` writes the last plot to a file at a size and resolution you control.
+Fixed dimensions mean your figure looks the same everywhere, not squashed.
+
+## Checkpoint
+
+You should now have, saved in your project:
+
+- A grouped summary table with n, mean, median, and sd
+- Three figures, all using `theme_v2v()`, all fully labeled
+- Alt text drafted for each one
+- One sentence under each figure saying what it shows
+- A `.qmd` that renders start to finish without error
+
+## Before next time
+
+- **Describing Data [R] is due this week**, 75 points
+- Read **Chapter 13**, "Making the call," before Tuesday
+- Tuesday we answer the question your figures could only frame: is the gap real?
+- Bring the summary table you built today. We test the difference in it.
+- No new math to learn in advance. Come rested, come curious.

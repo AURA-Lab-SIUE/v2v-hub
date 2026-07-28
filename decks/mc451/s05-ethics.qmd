@@ -1,0 +1,163 @@
+---
+title: "Knowing and Knowing Well"
+subtitle: "S5 · Chapter 3 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Nearly 700,000 people
+
+[Facebook and Cornell, published June 2014]{.eyebrow}
+
+- For one week in January 2012, Facebook manipulated users' News Feeds
+- Some saw fewer positive posts from friends. Others saw fewer negative posts.
+- Researchers then measured what those users posted themselves
+- It worked: less positive input produced slightly more negative output
+- Published in *PNAS* as evidence of **massive-scale emotional contagion**
+
+## The reaction
+
+- Nearly 700,000 people were enrolled with **no informed consent**
+- No one was told. No one could decline.
+- Facebook argued its terms of service authorized "research"
+- Researchers argued the effect was tiny and the knowledge valuable
+- *PNAS* appended an **editorial expression of concern**, an unusual step
+
+## Ethics is a disposition, not a form
+
+- It is tempting to treat ethics as a training module between you and the data
+- It shapes how you think about your relationship to the people you study
+- It governs how honestly you report what you find
+- The protections exist because researchers **caused real harm**, systematically
+- Reasonable people still disagree about the Facebook study. That is the point.
+
+## Tuskegee, 1932 to 1972
+
+- The U.S. Public Health Service studied untreated syphilis in **399 Black men**
+- The men were told they were receiving free treatment for "bad blood"
+- Penicillin became standard in the 1940s. The researchers **withheld it.**
+- 28 died directly of syphilis, 100 of complications, 40 wives were infected,
+  19 children were born with congenital syphilis
+- Federally funded, peer-reviewed, and unchallenged for forty years
+
+## Milgram and Humphreys
+
+- **Milgram, 1961:** participants believed they were delivering painful shocks
+  because an authority figure told them to. Most complied.
+- The findings were foundational. The distress was severe and sometimes lasting.
+- **Humphreys, 1970:** recorded license plates at public restrooms, traced home
+  addresses through police records, visited in disguise as a health surveyor
+- Exposure would have destroyed marriages and careers
+
+## The common thread
+
+- Every one of these researchers believed the work served a greater good
+- Every one produced participants who were harmed, deceived, or exploited
+- **Good intentions are not sufficient protection**
+- Researchers need external accountability and formal principles
+- Tuskegee's exposure in 1972 produced the framework we use today
+
+## Your turn {.discuss}
+
+- Facebook says the terms of service covered it. Is that consent?
+- If the effect really was tiny, does that change your answer?
+- Where is the line between a company's A/B test and a psychology experiment?
+
+*Two minutes with a neighbor, then we compare.*
+
+## Belmont: respect for persons
+
+[National Commission, 1979]{.eyebrow}
+
+- People are **autonomous agents** capable of making their own decisions
+- **Informed consent:** understand the research, the risks, and the right to
+  withdraw without penalty
+- **Protection of vulnerable populations:** children, prisoners, people with
+  cognitive impairments, whose voluntary consent is compromised
+- Public social media complicates this, and we come back to it
+
+## Belmont: beneficence and justice
+
+- **Beneficence, do no harm:** no physical, psychological, social, or economic
+  injury to participants
+- **And maximize the benefit-to-risk ratio:** the knowledge must justify the risk
+- **Justice:** benefits and burdens distributed fairly across groups
+- Tuskegee violated justice directly: all risk on a marginalized population, the
+  knowledge accruing to everyone else
+
+## Institutional review
+
+- An **IRB** reviews a study **before** data collection: risk minimization,
+  equitable selection, consent, privacy and confidentiality
+- **Exempt:** minimal risk, in categories federal regulation names. Most content
+  analysis of public material qualifies.
+- **Expedited:** no more than minimal risk but not exempt. Many surveys and
+  interview studies with adults.
+- **Full board:** more than minimal risk, vulnerable populations, or deception
+- **The IRB makes the determination, not you.** You submit. The board decides.
+
+## The Twitch data through Belmont
+
+- Collected from Twitch's **public IRC interface** and **public API**
+- No IP addresses, no emails, no user IDs, no payment data, no whispers
+- Usernames are present but **pseudonymous**: chosen handles, not legal names
+- **Respect:** the case rests on public broadcast, not on consent
+- **Beneficence:** minimal risk. **Justice:** no group bears disproportionate burden
+
+Most IRBs classify this as **exempt**.
+
+## Public does not mean fair game
+
+- AoIR has long argued that public accessibility is not automatic permission
+  (Markham & Buchanan, 2012)
+- So: do not aggregate in ways that re-identify individual users
+- Do not republish entire chat logs verbatim
+- Do not amplify messages whose senders expected obscurity more than broadcast
+- The cleanness of this dataset is a starting point, not a license
+
+## Three contrast cases
+
+Same research question, different data, different determination:
+
+- **Twitch whispers.** Private messages, reasonable expectation of privacy.
+  Expedited or full review.
+- **A private Discord server**, same people. Closed membership, stronger privacy
+  expectation. Expedited or full.
+- **An internal moderation log** with platform flags on named users. Risk of harm
+  to identified individuals. **Full board likely.**
+
+## Consent gets complicated
+
+- **Deception** is sometimes justified, and always paired with mandatory
+  **debriefing** plus the option to withdraw your data
+- **Passive consent**, the terms-of-service move, is generally insufficient.
+  Ethicists prefer **active consent**: an affirmative act.
+- **Secondary analysis** of someone else's data raises whether the original
+  consent covered your use. Generally acceptable when de-identified.
+- This last one is where research ethics is still actively evolving
+
+## Honest reporting is an ethical obligation
+
+- **Fabrication:** inventing data. **Falsification:** manipulating results.
+  Both are fraud and both are career-ending.
+- **Selective reporting:** running many analyses, publishing only the ones that
+  worked. This distorts the literature.
+- **HARKing:** Hypothesizing After the Results are Known, then writing as though
+  you predicted it. A postdiction carries none of a prediction's weight.
+- "Our results suggest" quietly becomes "our results demonstrate." Watch for it.
+
+## Before next time
+
+- Read **Chapter 4, Intelligence Gathering**, before Thursday
+- Thursday we have a **librarian visiting** to run database searching with us.
+  Bring a laptop and a topic you are curious about.
+- Bring one thing you want to be able to find in the literature
+- **CITI Ethics Certification** is coming. Start it early, it takes real hours.
+- Journal entry on Chapter 3 closes the week

@@ -1,0 +1,230 @@
+---
+title: "Orientation and The Science of Storytelling"
+subtitle: "Week 1 · Chapter 1 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Welcome
+
+[MC 501 · Fall 2026]{.eyebrow}
+
+- **Dr. Alex Leith**, Dunham Hall 1017, aleith@siue.edu
+- Office hours MW 10:00 to 11:30 and 1:30 to 3:00, or by appointment
+- We meet **Wednesdays 6:00 to 8:50**, Dunham Hall 1015
+- The textbook is a free OER. Read it with the **Graduate edition toggle on**.
+- That toggle reveals a required extension in every chapter, plus the assigned reading
+
+## What you will produce
+
+- An original **two-part content analysis**: a qualitative phase that builds coding
+  variables through immersion, then a quantitative phase that tests relationships
+- A **Research Proposal** as a structured sentence outline
+- An **Extended Codebook and Reliability Protocol** with planned sample size,
+  target thresholds, and revision triggers
+- A conference-ready **White Paper**, paired with an **academic poster**
+- Work at a level approaching publishable quality
+
+## How the term is built
+
+**The Journalist** runs the whole way through: a weekly journal, Weeks 1 to 14,
+worth **150 points**. It is the habit, not a stage.
+
+The project moves through four stages, each tracking a part of the textbook:
+
+| Stage | Weeks | Book part | Points |
+|---|---|---|---|
+| The Architect | 1 to 3 | I, Foundation | 100 |
+| The Builder | 4 to 10 | II and III, Planning and Operationalization | 325 |
+| The Analyst | 11 to 13 | IV, Execution | 250 |
+| The Publisher | 15 to 17 | V, Inference and Publication | 200 |
+
+**1,025 points total.**
+
+## What each stage asks of you
+
+- **Journalist**: a weekly journal, 450 to 500 words, engaging both the chapter and
+  the assigned reading. Entries that address only the chapter cap at 7 of 10.
+- **Architect**: Syllabus Contract, GitHub Profile, Librarian Visit Report
+- **Builder**: Annotated Manuscripts, Research Proposal (75), Topic and RQs,
+  Definitions Practice, Extended Codebook (75), Sampling Plan and Pilot (75), CITI
+- **Analyst**: Wrangling (50), Describing (100), Inferencing (100)
+- **Publisher**: the White Paper (200) and its poster
+
+## The 500-level commitment
+
+- At least one third of our meeting time is **500-level activity**: the assigned
+  readings and the discussion built on them, and the heavier deliverables
+- Your ethics work includes the **non-human-subjects IRB determination** you would
+  actually file, which is the protocol experience doctoral work assumes
+- Statistics go deeper rather than broader: assumptions, diagnostics, interpretation
+- Each week has **one required reading**, listed in the syllabus with access links
+
+## The dataset
+
+[One week of Twitch, November 2018]{.eyebrow}
+
+- **21,964,296 chat messages** across 1,695 channels
+- **590,876 stream snapshots**: who streamed what, to how many people
+- Public, messy, and real, collected by automated process over five and a half days
+- Three roles you must not conflate: the **population** (1,690 channels in both
+  logs), the **working corpus** (50, stratified by chat volume), the **anchor set** (8)
+- Which role a claim rests on determines what the claim can say
+
+## The tools
+
+- **R** for the analysis, **VS Code** as the editor, **Quarto** for the documents,
+  **Git and GitHub** for version control and publication
+- All free. Setup walkthroughs are on the course site.
+- Your White Paper and your poster will both be built from Quarto sources
+- Version control is not a convenience here. It is your audit trail.
+
+## What R looks like
+
+A full analysis, start to finish:
+
+```r
+library(v2v)
+chat <- twitch_chat()
+
+chat %>%
+  group_by(channel) %>%
+  summarise(messages = n()) %>%
+  arrange(desc(messages))
+```
+
+Take the chat data, group by channel, count messages, sort descending. Code is
+instructions in order, and you will read far more of it than you write.
+
+## Two numbers, one week on Twitch
+
+[Chapter 1]{.eyebrow}
+
+- **Bob Ross**: 3,178 average viewers, streaming under *Art*, dead since 1995
+- **xQc**: 17,363 average, live variety, the highest chat volume in the collection
+- The move a social scientist makes: ask not what the numbers *mean*, but what they *are*
+- They are **data**, collected on purpose so a claim can be defended later
+- A **corpus** is a body of evidence that licenses some questions and refuses others
+
+## We are hypothesis-testing organisms
+
+- Barrett: the brain is a **prediction machine**, updating its models on error
+- Storr: **stories** are cognitive tools for cause-and-effect simulation
+- Science is the same narrative machinery under **rigor** and a public record
+- Babbie's everyday ways of knowing, tradition, authority, common sense, and
+  intuition, each serve daily life and each break when others must trust the result
+
+## The sacred flaw and the null
+
+- The **null hypothesis** is research's sacred flaw: *nothing is happening here*
+- To reject it is to force the data to tell a different story than you assumed
+- A *p* of 0.001 says the old story is untenable, not merely unlikely
+- The framing matters because it puts the burden where it belongs: on the evidence,
+  not on the elegance of your argument
+
+## The cliff that wasn't
+
+[Reinhart and Rogoff, 2010]{.eyebrow}
+
+- Public debt above 90% of GDP crushes growth, a finding that shaped austerity policy
+- In 2013 a doctoral student replicating it for a class could not match the numbers
+- The original spreadsheet held an Excel error that excluded several countries
+- Corrected, growth above the threshold was **+2.2%**, not −0.1%
+- The error was caught because the work was **transparent enough to retrace**.
+  That is the mechanism working, not failing.
+
+## Discussion {.discuss}
+
+On Munafò et al. (2017), "A manifesto for reproducible science":
+
+- Of its threats, low power, analytic flexibility, publication bias, poor reporting,
+  which most endangers a content-analysis study like the ones we are building?
+- The authors argue the fixes must change **incentives**, not just habits. Do you buy it?
+- Is pre-registration always appropriate, or are there questions it constrains unfairly?
+- Bring one sentence you would quote in your own methods section.
+
+## What makes a scholarly contribution
+
+A contribution in communication research does one of four things:
+
+1. **Tests a theory** in a new context
+2. **Replicates a finding** with new data
+3. **Resolves a conflict** between findings in the literature
+4. **Introduces a testable construct**
+
+Before you design a study, name which one you are doing. If you cannot say
+precisely, the research question is not ready yet.
+
+## The reproducibility crisis is a design problem
+
+- The **garden of forking paths** (Gelman and Loken, 2013): the many defensible
+  analytic choices that inflate false positives, with no conscious fishing at all
+- Munafò and colleagues locate a related danger in underpowered designs:
+
+> "Low statistical power increases the likelihood of obtaining both false-positive and false-negative results, meaning that it offers no advantage if the purpose is to accumulate knowledge."
+>
+> Munafò et al. (2017, p. 2)
+
+## Four pillars this course builds
+
+- **A priori power**: committing to a sample size before collection
+- **Pre-registration**: committing to hypotheses, measures, and analysis plan first
+- **Two-coder reliability**: verifying the codebook works regardless of who applies it
+- **An audit trail**: a version-controlled record from raw data to published figure
+
+These are not add-ons. They are entailments of the epistemology you are adopting.
+
+## Pre-registration, precisely
+
+> "The strongest form of pre-registration involves both registering the study ... and closely pre-specifying the study design, primary outcome and analysis plan in advance of conducting the study or knowing the outcomes of the research."
+>
+> Munafò et al. (2017, p. 3)
+
+- It is what separates **confirmatory** from **exploratory** work
+- Exploratory research is legitimate. Presenting it as confirmatory is not.
+
+## A study is a story, told with discipline
+
+| In a story | In a study |
+|---|---|
+| Inciting incident | The research problem, an anomaly |
+| Protagonist | The researcher as detective |
+| Antagonist | Confounds, sampling bias, measurement error |
+| Rising action | Literature review and theory |
+| Climax | The statistical test |
+| Falling action | Interpretation and limitations |
+| Resolution | Implications and future research |
+
+## Anecdote and data
+
+- **Journalism** makes the abstract concrete, and makes an audience care
+- **Science** establishes generalizability: does the pattern hold across many cases?
+- Anecdotes generate hypotheses; data test them. Data find patterns; anecdotes
+  explain why they matter.
+- A significant finding without human context is true and unpersuasive
+- Your White Paper has to do both, which is harder than it sounds
+
+## A note on paradigms
+
+- We work in a **social scientific** paradigm: hypotheses tested against data
+- **Interpretive** work asks how people make meaning, through interviews and ethnography
+- **Critical** work exposes and challenges structures of power
+- All three have produced foundational communication scholarship
+- Where would you place your own research question on the **ontology to epistemology**
+  axis, and what obligations follow from that placement?
+
+## Before Week 2
+
+- **Sign the Syllabus Contract** and set up your **GitHub profile**
+- Read **Chapter 2** with the graduate toggle on
+- Read the assigned article: **Wilson et al. (2017)**, "Good enough practices in
+  scientific computing" (open access, linked in the syllabus)
+- Write your journal entry, 450 to 500 words, engaging both
+- Attempt the software setup. We troubleshoot together next week.

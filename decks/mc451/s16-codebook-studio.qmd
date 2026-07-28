@@ -1,0 +1,156 @@
+---
+title: "Codebook Studio"
+subtitle: "S16 · Chapter 8 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## What we are building today
+
+[Studio session]{.eyebrow}
+
+- By the end of class you have a **draft codebook** with three variables, in a file, saved
+- Not notes about codebooks. The document itself.
+- It becomes the Codebook and Qual Memo assignment, and later the methods section of your White Paper
+- Every number in your results traces back to a rule you write in the next 75 minutes
+- Open your field notes and your edge-case log now
+
+## The codebook is the instrument
+
+- A **codebook** is the complete set of instructions for coding your data
+- It is not paperwork assembled afterward to satisfy a methods requirement
+- Think of it as **source code**: it specifies every operation and handles every conditional
+- Two processors, here two human coders, running the same program on the same input produce the same output
+- Neuendorf (2017) calls it the heart of a content analysis. Its clarity is the single strongest predictor of whether coders agree.
+
+## Five parts
+
+- **Unit of analysis:** what exactly one coded case is
+- **Variables and categories:** what you measure, and the values each can take
+- **Decision rules:** what to do with cases that do not sort themselves
+- **Examples:** two or three prototypical cases per category
+- **Special cases:** recurring complications, usually thin in a first draft
+
+## Two rules that govern every variable
+
+- Categories must be **exhaustive:** every case can be coded, which is what an "unclassifiable" or "other" catch-all guarantees
+- Categories must be **mutually exclusive:** every case fits exactly one
+- If a message can honestly go in two categories, the categories overlap, and overlap destroys reliability
+- **The fix:** sharper definitions, or a decision rule that assigns precedence
+- If more than roughly **one case in ten** lands in the catch-all, the scheme is incomplete
+
+## Step 1: write your unit of analysis
+
+Do this first, right now, in one sentence.
+
+- "Code the chat" is not a unit of analysis
+- This is: "The unit of analysis is a single chat message, defined as one row of the `chat_log` table: one sender, one message string, one timestamp"
+- If the unit is vague, every count you later report is vague
+- Add the independence clause: each unit coded on its own, except where a decision rule says otherwise
+
+## Your turn {.discuss}
+
+- Read your unit of analysis to a neighbor. Can they point at exactly one thing in the data?
+- If your unit is a stream or an hour rather than a message, how many cases will you have?
+- Is that enough cases to compare two groups?
+
+*Three minutes. Fix the sentence before you write a single variable.*
+
+## Step 2: definitions, side by side
+
+For each variable, write both, in this order:
+
+- **Conceptual definition:** what the variable is meant to capture, in the abstract
+- **Operational definition:** exactly what a coder does to assign a value
+- Then **Level:** nominal, ordinal, interval, or ratio
+- Then the **categories**, each with a one-line description
+- Aim for three variables. Three is the floor for a workable study.
+
+## Model codebook, variable 1
+
+> **Message target.** *Conceptual:* the intended addressee of the message. *Operational:* after reading the message, the coder assigns one category. *Categories:* **directed at streamer** (at-mention of the streamer's channel name, or second-person address responding to the streamer); **directed at another viewer** (at-mention of a non-streamer account, or a reply to a specific prior message); **broadcast to the room** (reaction or comment with no specific addressee); **unclassifiable**. *Level:* nominal.
+
+## Model codebook, variables 2 and 3
+
+> **Message length.** *Conceptual:* the verbal extent of the message. *Operational:* count of characters in the message string, including spaces and emote tokens. Derived, computed rather than judged. *Level:* ratio.
+>
+> **Contains emote.** *Conceptual:* whether the message uses Twitch's emote vocabulary. *Operational:* yes if the message contains at least one token from the project's emote list, no otherwise. *Level:* nominal.
+
+Two manifest measures, one latent. That mix is deliberate.
+
+## Step 3: the five decision rules
+
+From the model codebook:
+
+- **Rule 1, precedence:** at-mentions the streamer *and* performs for the room, code directed at streamer. Explicit address wins.
+- **Rule 2, emote-only:** code broadcast to the room unless it contains an at-mention
+- **Rule 3, copypasta:** code by its content like any other message. Being copypasta is not itself a category.
+- **Rule 4, non-English:** code target if the addressee is determinable from at-mentions or structure, otherwise unclassifiable
+- **Rule 5, bots:** known bot accounts coded unclassifiable, noted for possible exclusion
+
+## Write your own rules now
+
+- Open the edge-case log. **Every entry becomes a rule.**
+- Format each one: the ambiguous case, then the single action a coder takes
+- A rule that says "use your judgment" is not a rule
+- Start with the three cases you starred as most likely to split two coders
+- Aim for four to six rules. If you have none, your log was too thin, and coding will find that out expensively.
+
+## Step 4: examples and special cases
+
+- For each category, write **two or three prototypical cases**
+- Invented examples are fine for now; real messages from your observation are better
+- Examples do double duty: a reference for good coding, and training material for a second coder
+- The **special cases** section stays thin today. It fills in when you pilot the codebook.
+- Leave the heading in the file, empty, so you remember to come back to it
+
+## Deriving the manifest variables
+
+Message length and emote presence are computed, not judged:
+
+```r
+library(v2v)
+library(dplyr)
+
+chat <- twitch_chat()
+
+chat %>%
+  mutate(msg_length = nchar(message)) %>%
+  summarise(mean_length = mean(msg_length),
+            n_messages  = n())
+```
+
+Take the chat data, add a character count for every message, then report the average length and how many messages there were. Derived variables need an operational definition too, and this is it in executable form.
+
+## Common problems in the room today
+
+- **Categories that overlap:** if you hesitate between two, they are not mutually exclusive yet
+- **A latent variable with no observable criteria:** you wrote a concept, not a recipe
+- **Six variables:** cut to three. Each one is a reliability check and a results paragraph.
+- **A catch-all doing all the work:** if you expect a third of cases unclassifiable, the scheme is wrong
+- **Rules that restate the category:** a rule resolves a conflict, it does not repeat a definition
+
+## Checkpoint
+
+You should now have a file containing:
+
+- One unambiguous **unit of analysis**
+- **Three variables**, each with a conceptual definition, an operational definition, a level, and categories
+- Categories that are exhaustive and mutually exclusive
+- **Four to six decision rules**, each traceable to something you actually observed
+- Two or three **examples** per category, and an empty special-cases heading
+
+## Before next time
+
+- Finish and commit the codebook file tonight, while today's decisions are still in your head
+- Hand it to someone who was not in this room, with **no walk-through**, and ask them to code ten messages
+- Note every place they hesitated. Those are missing decision rules.
+- **Codebook and Qual Memo** is the assignment this draft becomes. The memo explains why you chose these variables.
+- Next we open the dataset in R and confirm the data you designed around is the data you actually have

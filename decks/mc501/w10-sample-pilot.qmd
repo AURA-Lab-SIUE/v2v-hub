@@ -1,0 +1,260 @@
+---
+title: "The Sample and the Pilot"
+subtitle: "Week 10 · Chapter 10 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Two jobs this week
+
+[Chapter 10]{.eyebrow}
+
+- **Draw the sample**: the subset of messages you will actually code
+- **Test the codebook**: the pilot that decides whether it is an instrument
+- The pilot has standing to send you back to Chapter 8 for a revision
+- Both halves are due together as the **Sampling Plan and Pilot**
+- A codebook is finalized in status, not in content, until a pilot certifies it
+
+## Why you sample
+
+- Hand-coding the chat fixture, one message every ten seconds, runs just under
+  **100 hours** for its **35,267** messages
+- The full 2018 collection, **22 million** messages, would outlast your degree
+- A **census** codes every case, and it is right when the population is small:
+  the stream fixture ships whole at roughly 32,000 snapshots
+- Chat is the opposite condition, and it is the ordinary condition of content analysis
+- The point of a sample: make the work finite without making the conclusions worthless
+
+## Unbiased is not the same as representative
+
+- **Simple random sampling** gives every message an equal chance of selection
+- Its virtue is real: no message is favored, so no researcher tilt is built in
+- Chat volume is severely **right-skewed**. The busiest channel logged over a
+  million messages in the week; the median channel about **1,440**; the quietest **one**
+- **43 of the 50** corpus channels are gaming channels
+- Draw at random and you get giant gaming channels, which is faithful to the
+  population and close to fatal for the study's central comparison
+
+## Stratified sampling
+
+- Divide the population into meaningful subgroups, called **strata**, then draw
+  from within each one separately
+- Every stratum is guaranteed a place, in whatever proportion **you** decide
+- The strata have to matter for the research question. Here the stratifying
+  variable is the **channel**.
+- Because gaming status is a property of the channel, stratifying by channel
+  rescues the comparison: every non-gaming channel is in by construction, not by luck
+
+## The corpus is itself a stratified design
+
+- Its fifty channels were **not** the fifty busiest
+- **Eight** were fixed anchors chosen for pedagogical variety, Bob Ross among
+  them as the deliberate non-gaming case
+- The other **42** were drawn by sorting the rest of the population into ten
+  bands by chat volume and sampling from every band
+- The corpus therefore spans the busiest channels to the quietest
+- The skew did not get sampled away. It got sampled across, on purpose.
+
+## Small strata: take all of it
+
+- Ask for 30 messages from a channel that produced 9, and there is no way to draw 30
+- The rule the tools follow: take everything that stratum has
+- **19 of the 50** channels in the fixture hold fewer than a thousand messages
+- A stratum contributes its full weight or, if too small, its full self
+- Document this rule in your sampling plan. It is a decision, not an accident.
+
+## Drawing the sample
+
+```r
+set.seed(409)
+
+coding_sample <- v2v::sample_messages(
+  chat,
+  by = channel,
+  n  = 30
+)
+```
+
+`by = channel` makes each channel a stratum and `n = 30` asks for thirty messages
+from each, aiming at roughly 1,500 messages across fifty channels.
+
+## `set.seed()` is not optional
+
+- Drawing a sample is a random process: run it twice, get two samples
+- `set.seed()` fixes the starting point of R's random number generator, so the
+  draw comes out identically every time
+- Without it your sample is **unreproducible**, and no one, including you in six
+  months, can check your results against the originals
+- The specific number is arbitrary. 409 means nothing.
+- What matters is that a number is set and **recorded**, so the draw is frozen
+
+## Where power meets the data
+
+- Sampling is not only a practical tradeoff about capturing variation
+- Your prospectus power analysis specified a minimum *n* at your chosen effect
+  size and power level. This is the week that number meets your dataset.
+- Need 128 coded units, dataset generates 10,000: stratified sampling solves it
+- Need 128, dataset generates 80: the study is **underpowered**
+- Then you change the design (longer window, multiple platforms, revised question)
+  or justify the limitation explicitly
+
+## Lakens on what honesty demands
+
+> "Do not try to spin a story where it looks like a study was highly informative when it was not. Instead, transparently evaluate how informative the study was given effect sizes that were of interest, and make sure that the conclusions follow from the data."
+>
+> Lakens (2022, p. 11)
+
+Purposive sampling improves **construct validity**. It has no effect on
+statistical power. Conflating the two produces a study that is internally
+coherent and statistically indefensible.
+
+## The pilot test
+
+- A trial run of the codebook before the real coding begins
+- A subset of the sample, **a hundred messages** is a reasonable size, coded by
+  **two** people working from the same codebook
+- Their codes are then compared
+- The question it answers: when two people apply these rules independently, do
+  they produce the same classifications?
+- **Reliability** is consistency, the property that the codebook gives the same
+  answer regardless of who holds it
+
+## Independence carries the whole logic
+
+- No conferring, no comparing notes, no checking each other as they go
+- The reason is not suspicion. The pilot measures the **codebook**, not the coders.
+- Discuss a hard message together, and later agreement measures their memory of
+  that conversation, not the clarity of the written rules
+- The study needs to know whether the rules can carry a classification alone,
+  without their author standing beside the coder
+- Build the isolation into your protocol and say so in the write-up
+
+## Why raw agreement is not enough
+
+- Two coders match on 74 of 100 pilot messages. **74 percent** sounds respectable.
+- Cohen's 1960 example: two clinicians assigning categories blindly, at the rates
+  the categories happen to occur, would still agree a large share of the time
+- That agreement reflects the number of categories and how often each is used,
+  not the soundness of any judgment
+- Raw agreement counts every match the same, the principled ones and the coincidences
+- Few categories, or one dominant category, and the coincidences pile up fast
+
+## Discussion {.discuss}
+
+On Hayes and Krippendorff (2007), "Answering the call for a standard reliability
+measure for coding data":
+
+- They argue percent agreement and kappa are the wrong defaults. What exactly is
+  the defect they attribute to kappa's handling of chance?
+- Alpha generalizes across coders, levels of measurement, and missing data.
+  What does that generality cost in interpretability?
+- They are cautious about fixed cutoffs. If not 0.80, what should set your threshold?
+- Which coefficient does **your** codebook call for, and can you defend it in one sentence?
+
+*Bring your answer to the fourth question in writing.*
+
+## Cohen's kappa
+
+- Built for the common case: **two coders**, a **nominal** codebook (Cohen, 1960)
+- Conceptually: observed agreement minus chance agreement, divided by the room
+  chance left on the table
+- `kappa = (observed - expected) / (1 - expected)`
+- Coders no better than chance: numerator is zero, kappa is zero, whatever the
+  raw agreement looked like
+- Perfect agreement: kappa is one. The codebook is credited only for what luck did not do.
+
+## Krippendorff's alpha
+
+- The more general instrument (Krippendorff, 2018)
+- Accommodates **any number of coders**, any level of measurement from nominal
+  to ratio, and datasets with **missing codes**
+- Three coders, or an ordinal central variable: alpha is the appropriate choice
+- For a standard two-coder nominal pilot, kappa and alpha tell much the same story
+- `v2v::reliability()` computes either, selected by its `method` argument
+
+## Computing alpha for your pilot
+
+```r
+pilot <- coding_sample %>%
+  slice_head(n = 100)
+
+v2v::reliability(
+  pilot$coder_a,
+  pilot$coder_b,
+  method = "alpha"
+)
+```
+
+Take the first hundred messages of the sample, hand the two coders' columns to
+`reliability()`, and ask for alpha rather than kappa.
+
+## A worked failure
+
+- The codebook asked coders to flag "high-energy" messages without defining the term
+- **Coder A** flagged messages carrying a Twitch emote (LULW, KEKW)
+- **Coder B** flagged messages containing a word in all capitals
+- Both rules are reasonable readings. Both coders believed they coded one variable.
+
+```
+Inter-coder reliability: Cohen's kappa
+
+  Messages coded   100
+  Cohen's kappa    0.236
+```
+
+## What 0.236 diagnoses
+
+- Observed agreement **0.74**, chance agreement about **0.66**, kappa about **0.24**
+- Emote-bearing and all-caps messages overlap enough in Twitch chat that two
+  coders keying on different features land on the same answer often
+- They never coded the same concept
+- The loose codebook let two careful people measure two different things while
+  believing they measured one
+- That is what kappa exposed and raw agreement concealed
+
+## Reading a coefficient against a standard
+
+- Landis and Koch (1977) attached labels to ranges: 0.0 to 0.2 slight, 0.2 to 0.4
+  fair, 0.4 to 0.6 moderate, 0.6 to 0.8 substantial, above 0.8 almost perfect
+- Those labels are a vocabulary, not a law
+- Published content analysis applies a stricter working rule: below about **0.70**
+  is too low to proceed on, with **0.80** a more comfortable floor
+- The exact threshold depends on the stakes of the study, and you must name yours
+  in advance rather than after seeing the number
+
+## When reliability fails
+
+- 0.236 is not a result to report. It is an instruction.
+- The coders, isolated until now, meet and go through every disagreement one by one
+- **The disagreements are the data**: they show where the codebook ran out of guidance
+- Repair: state operationally what counts, with explicit decision rules
+- Then pilot again. Fresh messages, independent coding, another coefficient.
+- Pilot, diagnose, revise, repeat, until the coefficient clears your threshold
+
+## The deliverable
+
+[Sampling Plan and Pilot · 75 points]{.eyebrow}
+
+- The **sampling frame** and the strata, with the reason each stratum matters
+- The **target n per stratum**, the floor rule for small strata, and the seed
+- The **pilot protocol**: how many units, how coders were trained and isolated
+- The **coefficient** you computed, the one you chose, and the threshold you set
+  **before** you saw the result
+- If it failed, the diagnosis and the specific codebook revision it produced
+
+## Before Week 11
+
+- Submit the **Sampling Plan and Pilot**, including the reliability computation
+- Read **Chapter 11** with the graduate toggle on
+- Read the assigned article: **Wickham (2014)**, "Tidy data", *Journal of
+  Statistical Software*, 59(10)
+- Write your journal entry, 450 to 500 words, engaging both
+- Bring a laptop with R, VS Code, and the `v2v` package working. Week 11 is
+  hands-on and we will be typing.

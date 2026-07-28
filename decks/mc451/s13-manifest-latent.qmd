@@ -1,0 +1,152 @@
+---
+title: "Manifest and Latent Content"
+subtitle: "S13 · Chapter 7 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Two layers in every message
+
+[Krippendorff, 2018]{.eyebrow}
+
+- Content analysis distinguishes two layers of meaning, and the distinction sits at the center of codebook design
+- **Manifest content:** what is explicitly present on the surface
+- **Latent content:** the underlying meaning, which requires interpretation
+- Most first codebooks fail because they treat a latent variable as if it were manifest
+
+## Manifest content
+
+Features any trained coder can identify with high agreement:
+
+- Does the message contain an `@` mention?
+- Is it shorter than ten characters?
+- Does it contain a known emote token?
+- How many words is it?
+
+Manifest features are countable almost mechanically. Reliable coding of them is mostly a matter of a clear rule.
+
+## Latent content
+
+Features that cannot be read off the surface:
+
+- Is the message friendly or hostile?
+- Is it directed at the streamer, or performing for the room?
+- Is "first" a genuine claim or a running joke?
+- Is the mood of chat, taken as a whole, celebratory or restless?
+
+**Two careful coders can disagree about these in good faith.**
+
+## Why this is the argument for watching
+
+- You cannot code latent content reliably until you have built the interpretive framework that turns an impression into a defensible judgment
+- That framework is built by **watching**
+- The coder who has spent twenty hours on live Twitch knows a wall of one emote after a big play is celebration, not noise
+- They learned it by watching it happen, again and again, until the pattern was obvious
+- Immersion is how latent content becomes codeable
+
+## Your turn {.discuss}
+
+- From your own field notes, name one thing you recorded that is clearly **manifest**
+- Name one that is clearly **latent**, and say what a second coder might see differently
+- For the latent one: what surface feature could stand in as evidence for it?
+
+*Three minutes with a neighbor. Bring the hardest latent case to the whole room.*
+
+## Sorting your notes
+
+- Go through the field-notes document and mark each observation M or L
+- Manifest items are candidate variables you can almost write today
+- Latent items are candidate variables that will need **decision rules**
+- A workable codebook usually mixes both: two or three manifest measures, one that takes real judgment
+- If everything on your list is latent, your reliability check is going to hurt
+
+## Sampling your observation
+
+- You cannot watch all of Twitch, and you do not need to
+- What you need is a **structured sample** of observation that reflects the range of the thing you will study
+- Ten streams that are all large competitive-gaming channels teach you about large competitive-gaming channels
+- They will mislead you about everything else
+
+## Match the corpus you will analyze
+
+- The working corpus spans a deliberate range: **50 channels** across the platform's volume distribution
+- Gaming and non-gaming, heavily populated and nearly empty
+- Your observation should span a comparable range
+- Watch big channels and small ones. Watch gaming, Just Chatting, and art.
+- Watch at different hours: a stream at peak and the same stream in a quiet hour are not the same room
+
+## Coverage beats volume
+
+- **Twenty streams chosen to span the variety** will teach you more than fifty that are all the same kind
+- This is the same principle as the wide literature search: see the shape of the whole conversation
+- It is the same principle that governs statistical sampling later in the term
+- Representativeness is a discipline that shows up at every stage of a study
+- Observation is the first stage it shows up in
+
+## When channels are actually live
+
+[Figure 7.1, the collection week]{.eyebrow}
+
+- Eight channels across the viewership distribution, November 18 to 24
+- Large channels are live daily, for long stretches
+- Small channels appear **once or twice all week**
+- A randomly placed two-hour window intersects the big channels easily and catches the small ones only by deliberate placement
+- Scheduling your observation is itself a sampling decision
+
+## The edge-case log
+
+- Some of what you observe will resist every category you are tempted to draw
+- Those moments are not annoyances. They are the most useful thing observation produces.
+- Keep an **edge-case log** alongside your field notes
+- For each case: log it, say what makes it ambiguous, and list the ways a codebook could handle it
+
+## Four edge cases you will meet
+
+- A message made **entirely of emotes**, no words. Directed, broadcast, or a different kind of object?
+- **Copypasta**: a block every regular pastes without reading. Technically a message, not in any normal sense written by that viewer.
+- A message in a language you do not read
+- An obvious **bot**, or a message grammatically addressed to the streamer but plainly a joke for the room
+
+## Edge cases become decision rules
+
+- These are the raw material of the **decision rules** that make a codebook work
+- The model prospectus included an "unclassifiable" category. The edge-case log is where you find out what actually lands in it.
+- A codebook written without one meets these messages for the first time during coding, when handling them is expensive
+- A codebook written with one has **already decided**
+
+## Knowing when to stop
+
+Four signs immersion has done its job:
+
+- New streams stop surprising you
+- You can name three to five dimensions that clearly matter for your question
+- Your edge-case log has enough entries to write rules from
+- Your field notes repeat themselves, confirming patterns rather than turning up new ones
+
+This is **saturation**, the same idea the literature search used.
+
+## What you walk away with
+
+Structured listening leaves you four things:
+
+- **Conceptual clarity** about what your variables mean in this medium
+- A set of **candidate categories** for each one
+- The beginnings of the **decision rules** for ambiguous cases
+- The contextual knowledge to recognize when a surface feature is about to mislead you
+
+Those four things are precisely the raw material of a codebook.
+
+## Before next time
+
+- Finish your field notes and edge-case log: aim for **three or more observation sessions** spanning big, small, gaming, and non-gaming
+- Mark every entry manifest or latent, and star the three you expect a second coder to fight you on
+- Write **two or three candidate research questions** grounded in what you actually saw, not what you assumed
+- Read **Chapter 8**, from vibes to variables, through the section on how operationalization goes wrong
+- Next session we take one field note and turn it into a variable a stranger could apply

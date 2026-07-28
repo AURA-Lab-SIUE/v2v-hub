@@ -1,0 +1,132 @@
+---
+title: "Measurement, Reliability, Validity"
+subtitle: "S15 · Chapter 8 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## NOIR
+
+- Once a variable is operationalized, it has a **level of measurement**
+- That level determines what you are later allowed to do with it
+- Four levels, easy to remember as **NOIR**: nominal, ordinal, interval, ratio
+- The `stream_log` table spans all four, which makes it a convenient place to see them
+- Recall its columns: channel, title, game, viewers, date
+
+## Nominal
+
+- Categories with **no inherent order**
+- `game` is nominal: Fortnite, Just Chatting, Art, Hearthstone
+- No arithmetic relates them. Fortnite is not greater than Art.
+- `channel` is nominal, and so, raw, is `title`: one string is not ranked above another
+- You can count how often each category appears and name the most common one. You cannot average it.
+
+## Ordinal
+
+- Categories that **do** have an order, but with uneven distances between ranks
+- Bin stream titles by length into short, medium, and long: that bin is ordinal
+- Long outranks short, but the gap short-to-medium is not guaranteed to equal medium-to-long
+- You can rank cases and find the **median**
+- The mean is not strictly meaningful
+
+## Interval
+
+- Equal, constant distances between values, but the **zero point is arbitrary**
+- `date` is stored as a count of milliseconds since midnight on January 1, 1970
+- Converted to a timestamp it is interval: minute-to-minute distance is constant across the column
+- But 1970 does not mean "no time." It is a convention.
+- You can subtract two timestamps to get a duration. You cannot say one timestamp is "twice" another.
+
+## Ratio
+
+- Equal intervals **and a true zero** that genuinely means none
+- `viewers` is ratio: zero viewers means nobody is watching
+- Because that zero is real, 28,000 viewers is genuinely twice the audience of 14,000
+- Ratio variables permit the full range of arithmetic
+- Most counts are ratio: viewers, message length in characters, number of messages
+
+## One column, three levels
+
+Stream title, measured three ways:
+
+- Raw string: **nominal**
+- Character count: **ratio**, because a title can have zero characters
+- Binned short, medium, long: **ordinal**
+
+**Level of measurement is not a property the data hands you. It is a property of the decision you make.**
+
+## Your turn {.discuss}
+
+- Take one variable from your Definitions Practice. What level did you land on?
+- Could you have operationalized it at a higher level? What would you have to record instead?
+- What would you lose if you binned it down to categories?
+
+*Three minutes with a neighbor. We will collect the ones that could be measured two ways.*
+
+## Levels govern the statistics
+
+- A nominal variable can be tested for association with a **chi-square** test
+- A ratio variable can be averaged, correlated, and entered into the tests we run late in the term
+- Operationalize an interesting variable at nominal when it could have been ratio, and you have quietly narrowed what your study can conclude
+- You do that **before coding a single case**, which is why this decision comes now
+
+## Two kinds of variable
+
+- Some variables arrive **ready-made**: `viewers` is already a number, `game` is already a category
+- For those, the work is classification: pick the level, decide raw or transformed, move on
+- Others **do not exist until you build them**: message target is not a column in `chat_log`
+- Nothing in the dataset records whether a message was aimed at the streamer or the room
+- That variable exists only after a human coder reads each message. For it, operationalization is most of the work.
+
+## Reliability
+
+- **Reliability is consistency:** the same result under the same conditions
+- A scale reading 150, then 162, then 147 as you step on and off is unreliable, and its readings are worthless whatever you actually weigh
+- For content analysis the form that matters is **inter-coder reliability**
+- Two trained coders, same messages, independently: do they agree?
+- If they do not, the codebook is not yet measuring anything stable, and no analysis downstream repairs that
+
+## Correcting for chance
+
+- Inter-coder agreement is quantified with statistics that correct for the agreement two coders would reach **by chance alone**
+- **Cohen's kappa** and **Krippendorff's alpha** are the two you will meet
+- Raw percent agreement flatters you, especially when one category is common
+- We cover the statistics and how to act on them when we pilot the codebook
+- For now the point is conceptual: **a codebook's job is to make independent coders agree**
+
+## Validity
+
+- **Validity is accuracy:** does the measure capture the thing it claims to capture?
+- **Face validity:** does it look, on inspection, like it assesses the intended concept?
+- **Content validity:** does it cover all of the concept, not just a convenient slice?
+- **Construct validity:** the most demanding, does it behave the way theory says it should, relating to other variables as predicted?
+
+## They are independent
+
+- A scale calibrated ten pounds light is perfectly **reliable** and perfectly **invalid**: same answer every time, wrong every time
+- The reverse also happens: accurate on average, so inconsistent that any single reading is unusable
+- Figure 8.2 draws this as four targets, from tight-on-centre to scattered-and-off-centre
+- Do not let a consistent number persuade you it is a correct one
+
+## The principle to hold onto
+
+- **Reliability is necessary but not sufficient for validity**
+- A measure that is inconsistent cannot be accurately capturing anything, so unreliability rules validity out
+- But a measure can be perfectly consistent and still measure the wrong thing
+- You need both, and you get reliability first
+- A codebook is the instrument that produces it
+
+## Before next time
+
+- **Definitions Practice is due this week.** Include the level of measurement for every variable.
+- Bring to next session: your three variables, their categories, and your edge-case log
+- We meet as a **studio**: you will leave with a draft codebook, not notes about codebooks
+- Re-read the model codebook in **Chapter 8** so you know the shape of what you are building
+- Have your field notes open and searchable. Every decision rule comes from them.

@@ -1,0 +1,200 @@
+---
+title: "Wrangling Lab"
+subtitle: "S22 · Chapter 11 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Finishing the wrangle
+
+[Lab session]{.eyebrow}
+
+- Tuesday you made timestamps readable and measured message length
+- Today: the transformation the research question actually turns on
+- We build the **gaming label**, join two tables, and inspect what the join leaves
+- Then we assemble the whole thing into one pipeline you can rerun
+- Open Tuesday's script. We continue from the last line.
+
+## What is still missing
+
+- `timestamp` exists. `message_length` exists. Good.
+- Nothing in the chat table says whether a message came from a gaming channel
+- That information sits in the **stream** table, which the chat table cannot see
+- Your central comparison has one of its two sides undefined
+- Building that column is more work than the last two, and worth every step
+
+## Gaming is a property of the channel
+
+- Gaming or non-gaming is fixed by **what the channel mostly streams**
+- Bob Ross's channel streams painting, so every message in it is a non-gaming message
+- So we do not classify messages. We classify **channels**, then attach the label.
+- Three steps: find what each channel mostly streams, decide whether that counts
+  as gaming, attach the decision to every message
+- Each step is one small pipeline
+
+## Step 1: the modal category
+
+```r
+channel_type <- streams %>%
+  filter(!is.na(game)) %>%
+  count(channel, game) %>%
+  group_by(channel) %>%
+  slice_max(n, n = 1, with_ties = FALSE) %>%
+  ungroup()
+```
+
+Read it in order: drop snapshots with no recorded category, count how many
+snapshots each channel logged in each category, then keep only each channel's
+single most frequent one.
+
+`is.na()` finds missing values and `!` means "not"; `slice_max()` keeps the top
+row by count. The result is **one row per channel**.
+
+## Your turn {.discuss}
+
+- **Predict**: what happens to a channel whose stream snapshots **all** have a
+  missing `game`? Trace it through `filter()` and `count()`.
+- Does that channel appear in `channel_type` at all?
+- What would you want R to do with its messages later: guess, drop, or flag?
+
+*Three minutes with a neighbor. We check your prediction in four slides.*
+
+## Step 2: naming the non-gaming categories
+
+```r
+nongaming_categories <- c(
+  "Art", "ASMR", "Beauty & Body Art", "Creative", "Food & Drink",
+  "IRL", "Just Chatting", "Makers & Crafting", "Music",
+  "Music & Performing Arts", "Science & Technology",
+  "Sports & Fitness", "Talk Shows & Podcasts", "Travel & Outdoors"
+)
+```
+
+`c()` builds a list of values, here every Twitch category this study treats as
+not a game.
+
+This is a **judgment**, so it should be visible in the code, not buried in prose.
+
+## Applying the rule
+
+```r
+channel_type <- channel_type %>%
+  mutate(is_gaming = !(game %in% nongaming_categories)) %>%
+  select(channel, is_gaming)
+```
+
+`%in%` asks whether a channel's dominant category is on the non-gaming list and
+`!` flips it, so `is_gaming` is `TRUE` for game channels and `FALSE` otherwise.
+
+`channel_type` is now a compact lookup: one row per channel, one column.
+
+## Step 3: the join
+
+```r
+chat <- chat %>%
+  left_join(channel_type, by = "channel")
+```
+
+A **join** brings columns from one table onto another by matching a shared key,
+and `left_join()` keeps every row of `chat` while attaching each channel's
+`is_gaming` value.
+
+`by = "channel"` names the key both tables share.
+
+## Joins fail on keys
+
+- A join is only as good as the match between its keys
+- Twitch's chat protocol writes channel names with a leading **"#"**
+- So the same channel can be `#bobross` in one source and `bobross` in another
+- Join tables whose keys disagree and **every row fails to match, silently**
+- The `v2v` data is already normalized, but raw Twitch data would need cleaning first
+
+## Always inspect what you derived
+
+```r
+chat %>% count(is_gaming)
+```
+
+```
+  is_gaming     n
+1 FALSE      3457
+2 TRUE      31309
+3 NA          501
+```
+
+`count()` on a new column is the cheapest check there is, and here it turns up
+a third value nobody asked for.
+
+## The 501 messages
+
+- **Two channels** streamed without ever having a category recorded
+- Every one of their snapshots had a missing `game`, so there was no modal category
+- They never entered `channel_type`, so the join left their messages as `NA`
+- That is the **correct outcome**, not a bug
+- The data genuinely does not say. Those 501 messages sit out the comparison
+  rather than being guessed into one side of it.
+
+## The whole thing, in one block
+
+```r
+chat <- v2v::twitch_chat() %>%
+  mutate(
+    timestamp = as.POSIXct(date / 1000, origin = "1970-01-01", tz = "UTC"),
+    message_length = str_length(message)
+  ) %>%
+  left_join(channel_type, by = "channel")
+```
+
+Four transformations in one pipeline, starting from the raw data every time, so
+the whole table can be rebuilt from scratch with one run.
+
+## What the table has become
+
+```
+Rows: 35,267
+Columns: 8
+$ channel        <chr> "sodapoppin", "xqcow", "forsen", …
+$ message        <chr> "???????????????????????", …
+$ date           <dbl> 1542578127023, 1542578135562, …
+$ timestamp      <dttm> 2018-11-18 21:55:27, 2018-11-18 21:55:35, …
+$ message_length <int> 23, 441, 8, 12, 206, …
+$ is_gaming      <lgl> TRUE, FALSE, TRUE, TRUE, FALSE, …
+```
+
+The table is now **tidy**: one row per observation, one column per variable,
+everything the study needs in one place.
+
+## Common errors today
+
+- Join returns all `NA`: mismatched keys, so check for a stray "#" or capitalization
+- `object 'channel_type' not found`: you ran the join before building the lookup
+- `slice_max` errors: you skipped `group_by()`, so there are no groups to slice within
+- A category name misspelled in `nongaming_categories` silently mislabels a channel
+- Rerun the whole script in a **fresh session**. If it does not reproduce, something
+  is undocumented.
+
+## Checkpoint
+
+You should now have:
+
+- A `channel_type` lookup, one row per channel, with `is_gaming`
+- A `chat` table of eight columns including `timestamp`, `message_length`, `is_gaming`
+- A `count(is_gaming)` result you have actually looked at
+- A saved script that rebuilds all of it from the raw data in one run
+- **Sampling Plan and Pilot, and Data Wrangling, are due this week**
+
+## Before next time
+
+- Rerun your script from a clean R session and confirm it reproduces the table
+- Comment your wrangling decisions. A reviewer will ask why you excluded what
+  you excluded.
+- Read **Chapter 12, Describing the Data**
+- Next week the table finally becomes pictures: chat volume by hour, viewership
+  by category, and message length compared across gaming and non-gaming

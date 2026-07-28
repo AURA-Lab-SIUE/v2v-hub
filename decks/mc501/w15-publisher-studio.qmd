@@ -1,0 +1,261 @@
+---
+title: "The Publisher: White Paper and Poster Studio"
+subtitle: "Week 15 · Chapter 14 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## The last meeting
+
+[Studio session]{.eyebrow}
+
+- Two working blocks: the **White Paper**, then the **poster**
+- Short input from me between them, and the rest of the time is yours
+- I am circulating. Bring me the specific problem, not the general anxiety.
+- What we build today is what you submit in finals week
+- Leave with a rendered site, a poster layout, and a written reflection
+
+## Done, and not finished
+
+- The study has a question, a theory, a reliability-tested codebook, a defensible
+  sample, a clean dataset, three figures, and a tested finding
+- Every hard part is behind you
+- And all of it lives in pieces: a codebook here, an R script there, a folder of
+  images, a test result that scrolled past in a console
+- A study scattered across a dozen files is raw material for a study, not a study
+- Today gives the work a **form**
+
+## A report that rebuilds itself
+
+- The ordinary way: run the analysis, copy the numbers into a word processor,
+  screenshot the figures, write prose around them
+- It works, and it is quietly fragile
+- Change one coding rule, add three hundred messages, and every pasted number is
+  silently out of date, with nothing in the document saying so
+- The alternative is to stop copying and put the analysis **inside** the document
+- A **Quarto document** interleaves prose with **code chunks** of live R
+
+## Numbers you never type
+
+```markdown
+The analysis dataset held `r nrow(analysis)` coded messages,
+of which `r sum(!is.na(analysis$is_gaming))` carried a
+gaming-status label.
+```
+
+In the rendered report those backtick expressions become the actual counts, so
+nothing in the sentence can fall out of date.
+
+## Figures you never paste
+
+```r
+#| label: fig-msglen
+#| echo: false
+#| fig-cap: "Message length by channel type."
+
+ggplot(msglen, aes(message_length, fill = is_gaming)) +
+  geom_histogram(binwidth = 5) +
+  v2v::theme_v2v()
+```
+
+Those eight lines sit inside an `{r}` chunk in the report itself, so the figure is
+produced at render time rather than pasted in.
+
+## Two payoffs that matter
+
+- The report **cannot drift** from the analysis, because the report *is* the analysis
+- The report **can be checked**: anyone with the source and the data renders it and
+  gets exactly the same results (Peng, 2011)
+- The idea predates Quarto and R. Knuth (1984) called it **literate programming**:
+  runnable code and the prose explaining it belong in one document.
+- The "one click" is the render button
+
+## IMRaD, and what each section owes
+
+- **Introduction**: the question and why it is worth asking, which is your prospectus
+- **Methods**: exactly what was done, in enough detail to be repeated. Codebook,
+  sampling, reliability, wrangling.
+- **Results**: what was found, plainly and without interpretation. Figures, means,
+  the test statistic with df, p, and effect size.
+- **Discussion**: what the results mean, plus the study's honest limits
+- An abstract in front, references at the back. The Hub ships `imrad-template.qmd`.
+
+## The white paper, specifically
+
+- IMRaD structure, **APA 7th edition** throughout
+- **Effect sizes and power statistics** reported, not just p-values
+- A **pre-registration disclosure** in the Methods section
+- The Discussion situates the finding in the theoretical literature you built earlier
+- Converting your results into IMRaD costs you something. Ask what is lost in the
+  move, and what has to be added to meet the standard.
+
+## Methods: three transparency markers
+
+1. A **data provenance** statement: where the data came from and how
+2. An **intercoder reliability** report: the coefficient, the training protocol,
+   and the threshold you applied
+3. The **pre-registration disclosure**, with its OSF URL
+
+Each one signals to a reviewer that the study meets the evidentiary standard it
+claims. Anything you ran beyond the plan is labelled **exploratory**.
+
+## What preregistration is for
+
+> "Preregistration distinguishes analyses and outcomes that result from predictions from those that result from postdictions."
+>
+> Nosek et al. (2018, p. 2600)
+
+- Not a promise of virtue: a way of making a distinction **legible** to a reader
+- Draft your disclosure sentence today, list your deviations, and say how you
+  report each one
+
+## Discussion {.discuss}
+
+On Wasserstein and Lazar (2016), the ASA statement on p-values:
+
+- They say conclusions should not rest **only** on a threshold. What is the "only"
+  protecting, and what would a reviewer have to do differently to honor it?
+- The statement lists what a p-value is not, far more than what it is. Is that a
+  failure of the statistic or a failure of how we teach it?
+- The ASA declined to endorse a replacement. Was that restraint or evasion?
+- Your own Results section reports a *p* < .001 and a *d* of -0.13. Write the
+  sentence that a reader who has absorbed this statement would need to see.
+
+*Two minutes on the last question. That sentence goes in your paper today.*
+
+## One site, many pages
+
+```yaml
+project:
+  type: website
+
+website:
+  title: "Twitch Chat Study"
+  navbar:
+    left:
+      - text: "Report"
+        href: index.qmd
+      - text: "Codebook"
+        href: codebook.qmd
+```
+
+`_quarto.yml` names the site and lists its pages, turning a folder of `.qmd` files
+into one navigable site rather than a pile of documents.
+
+## Studio block one
+
+[45 minutes · White Paper]{.eyebrow}
+
+- Open your portfolio and get `index.qmd` rendering, even if it is mostly headings
+- Move your Results in first. It is the section you already have.
+- Replace every pasted number with an inline `r` expression
+- Replace every pasted figure with a chunk that produces it
+- Then write the Discussion paragraph that reports both significance and size
+
+## Going live
+
+```r
+v2v::deploy_portfolio()
+```
+
+```
+Pre-flight checks
+  renv library in sync ......... ok
+  no uncommitted changes ....... ok
+  _quarto.yml valid ............ ok
+
+Rendering 4 pages ... done
+Live at: https://username.github.io/twitch-chat-study/
+```
+
+## The three pre-flight checks
+
+- **renv in sync**: the site was built with the package versions the source declares
+- **No uncommitted changes**: what went live matches the source that is actually saved
+- **`_quarto.yml` valid**: the render will not fail partway through
+- Each heads off a specific and demoralizing failure, the last one being a
+  deployment that collapses at eleven at night the evening a portfolio is due
+- The checks exist so that the last step of a long study is the calm one
+
+## The poster
+
+- **36 by 24 inches**, landscape orientation
+- Title, authors, institution; an abstract of about 100 words
+- Background and hypotheses; condensed methods
+- Key results with one or two `theme_v2v()` figures
+- Discussion and implications; a **QR code** to your pre-registration or portfolio
+
+## What earns space on a poster
+
+- The poster is a **ninety-second pitch**, not a paper at a larger font size
+- Decide which single figure communicates your main finding in thirty seconds,
+  and give it the most space on the board
+- Cut every sentence that exists to show effort rather than result
+- Numbers survive, hedges do not. The effect size goes on the board.
+- Your reader is standing up, holding a drink, and reading from four feet away
+
+## Studio block two
+
+[45 minutes · Poster]{.eyebrow}
+
+- Sketch the 36 by 24 layout on paper first, in blocks, before opening any software
+- Place your chosen figure, then build the text around it
+- Write the 100-word abstract last. It is easier once the blocks exist.
+- Generate the QR code from the URL `deploy_portfolio()` gave you
+- Read your title aloud. If it takes more than one breath, cut it.
+
+## Common failures in the last week
+
+- Rendering on your machine and nowhere else, because renv drifted
+- A figure that vanishes in the rendered site because the chunk depends on an
+  object created in your console rather than in the document
+- A poster exported at screen resolution and printed at 36 inches
+- A QR code pointing at a private repository
+- Test the whole chain today, on a machine that is not the one you built it on
+
+## The reflection
+
+- One paragraph, and the portfolio is not complete without it
+- Name what turned out harder than expected, where a coding rule proved ambiguous
+  in practice, what the dataset could not answer because of how it was collected
+- Resist both easy failures: the bland report that everything went well, and the
+  anxious confession that everything went wrong
+- A reflection is not an apology. It is evidence of judgment.
+- One honest paragraph is worth more than a page of hedging.
+
+## Checkpoint before you leave
+
+You should have:
+
+- A portfolio site that renders locally with no errors
+- A Results section with zero hand-typed numbers
+- A published URL, and a QR code pointing at it
+- A poster layout with its main figure chosen and placed
+- The reflection paragraph drafted, even roughly
+
+## From vibes to variables
+
+- A question became a design. A design became data. Data became figures and a test.
+- The whole of it became a reproducible site another person can read, check, and extend
+- The dataset happened to be Twitch chat. Nothing in the path depended on that.
+- **Vibes** are where a study starts. **Variables** are what discipline turns them into.
+- The distance between the two is the whole of research methods, and you have now
+  walked it once.
+
+## Due in finals week
+
+[Final deadline]{.eyebrow}
+
+- The **White Paper** and its paired **poster**, submitted together, 200 points
+- The published portfolio URL, live and public, submitted with them
+- Your **reflection** paragraph included in the portfolio
+- Your final **journal** entry
+- My office hours run through finals week, and I would rather see a draft on
+  Monday than a crisis on Friday. Bring it early.

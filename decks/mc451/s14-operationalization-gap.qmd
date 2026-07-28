@@ -1,0 +1,146 @@
+---
+title: "The Operationalization Gap"
+subtitle: "S14 · Chapter 8 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## A true, unmeasurable sentence
+
+Somewhere in your field notes is an entry like this:
+
+> "Chat in the art stream felt calmer and more conversational than chat in the gaming stream. People talked to each other, not just to the streamer."
+
+- That is a real observation. You earned it by watching.
+- It is also, as written, **useless to a coder**.
+
+## Why it is useless
+
+- "Calmer" is not a category anyone else can apply
+- "More conversational" is not something you can count
+- Hand that note to two people with a thousand messages and you get two different sortings
+- You would have no way to say which one was right
+- The observation is true, and the observation is unmeasurable. This session closes the distance between those two facts.
+
+## Operationalization
+
+[The act the book is named for]{.eyebrow}
+
+- **Operationalization:** turning a vibe, a holistic and subjective impression, into a variable, an explicit and replicable measurement
+- It is the central methodological act of content analysis
+- Done well, it preserves what you noticed while making it something a stranger could measure the same way
+- Done badly, it produces numbers that look like findings and are actually **artifacts**
+
+## The variable we have been circling
+
+Message target: who a chat message is aimed at. Observation gave us four categories:
+
+- **Directed at the streamer**
+- **Directed at another viewer**
+- **Broadcast to the room**
+- **Unclassifiable**
+
+Naming the categories is not the same as operationalizing them.
+
+## The vague attempt
+
+Instruction to the coder: *"Code each message by who it is for."*
+
+Then the coder meets real messages:
+
+- A viewer types "same."
+- A viewer types "LULW."
+- A viewer types "no way that just happened."
+
+Each could plausibly be aimed at the streamer, the room, or another viewer. The coder guesses. Two coders guess differently.
+
+## The better attempt
+
+Specify observable criteria:
+
+- **Directed at streamer:** contains an at-mention of the streamer's channel name, or is a second-person address ("you", "your") responding to something the streamer just said or did
+- **Directed at another viewer:** contains an at-mention of a non-streamer account, or is a reply to a specific prior message
+- **Broadcast to the room:** a reaction or comment with no specific addressee
+- **Unclassifiable:** none of these criteria settle the question
+
+## Your turn {.discuss}
+
+- Take one latent thing from your field notes and write a one-sentence coder instruction for it
+- Trade with a neighbor. Apply their rule to a message you invent designed to break it.
+- What did the rule fail to tell you?
+
+*Four minutes. The message that broke the rule is your first decision rule.*
+
+## Two definitions, working together
+
+- A **conceptual definition** says what the variable means in the abstract. It answers: what is this meant to capture?
+- Message target: "the intended addressee of a chat message, reflecting whether the message functions as participation with the streamer, with the chat collective, or with a specific other viewer"
+- That is clear about the idea. It is **not yet a recipe**.
+
+## The operational definition is the recipe
+
+- It says exactly what a coder does to assign a value
+- Detailed enough that a stranger could follow it and measure the same thing you measured
+- The at-mention rule, the second-person rule, the reply rule: that is the operational definition of message target
+- Conceptual tells you what the variable is **for**. Operational tells you what counts as **evidence**.
+
+## They discipline each other
+
+- A conceptual definition with no operational definition is an idea you cannot measure
+- An operational definition with no conceptual definition is a procedure that has lost track of why it exists
+- That is how a study ends up precisely measuring something nobody wanted to know
+- Writing the two side by side, for **every variable**, is the first concrete step toward a codebook
+
+## Failure one: conflating concepts
+
+- Treating two related but distinct ideas as if they were one
+- Measuring a streamer's **community** by counting **chat messages** conflates community with activity
+- A large channel can have a fast chat that is shallow and anonymous: thousands of strangers reacting in parallel, never to each other
+- Volume is real, but it is audience activity, not community
+- **The fix:** defend message volume as a deliberate narrow proxy, or measure community more directly
+
+## Failure two: the unjustified proxy
+
+- Using an indirect measure without explaining why it stands in for the thing you care about
+- The standard example: measuring **stream quality by viewer count**
+- Viewer count reflects discoverability, time of day, the popularity of the game, and existing momentum
+- None of that is quality
+- **The fix:** a proxy is not forbidden, but an undefended one is. Defend it or replace it.
+
+## Failure three: oversimplification
+
+- Collapsing a multi-dimensional concept into a single indicator that misses most of it
+- **Chat engagement** is not only how many messages appear
+- It is also who is talking, whether they are talking to each other, and in what spirit
+- A message count captures one dimension and silently discards the rest
+- **The fix:** measure the other dimensions, or say honestly that the study is about message volume specifically
+
+## Failure four: the unmeasurable definition
+
+- An operational definition that cannot actually be carried out
+- "A message is sincere if the viewer genuinely means it" defines sincerity in terms of something no coder can observe
+- **The fix:** operationalize through **observable indicators**, the best available surface evidence for what you cannot see directly
+- All four failures break one promise: that a stranger could follow your recipe and measure what you measured
+
+## Not a Twitch problem
+
+- A scholar coding immigration coverage must turn "this article feels sympathetic" into a defined frame variable with observable criteria
+- A health researcher must turn "this ad feels fear-based" into a category a coder can apply
+- The medium changes. The act does not.
+- Every field that reads content for evidence does exactly this work
+
+## Before next time
+
+- Pick **three variables** from your field notes and write conceptual and operational definitions for each, side by side
+- Run each one past the four failures and name which one it is closest to
+- Read the rest of **Chapter 8**: levels of measurement, reliability and validity, the codebook
+- **The Project Prospectus is due this week.**
+- **Definitions Practice is due next week.** These three pairs are most of it.
+- Next session: NOIR, and why the level you pick decides what your study is allowed to conclude

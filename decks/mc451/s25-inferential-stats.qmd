@@ -1,0 +1,182 @@
+---
+title: "Inferential: t-test, ANOVA, Regression"
+subtitle: "S25 · Chapter 13 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Where we left off
+
+[Inferencing Data, 100 points, due this week]{.eyebrow}
+
+- Gaming channels averaged **28.49** characters per message
+- Non-gaming channels averaged **33.70**
+- A gap of a little over **five characters**
+- The histogram could show us the gap. It could not tell us if it is real.
+- Today we settle it. No formulas to memorize, only questions to ask.
+
+## What a test actually asks
+
+Split a group of people in half at random and their average heights will still
+differ a little. Samples wobble. Any two samples show some gap.
+
+- We measured 34,766 messages to learn about chat **in general**
+- The sample is the means. The **population** is the point.
+- The honest question is not "is there a gap," because there plainly is
+- It is: **is the gap too large for chance to be a convincing explanation**
+
+## The skeptic's move
+
+- A **hypothesis test** starts from the opposite of what you suspect
+- The **null hypothesis**: no real difference, the gap is pure noise
+- Then it asks: if that were true, how surprising would this gap be?
+- Testing a coin works the same way. Assume it fair, flip it a hundred times,
+  and ask how often a fair coin looks that lopsided.
+- If the answer is "almost never," the fair-coin assumption is hard to keep
+
+## The variables choose the test
+
+There is not one test. Which one applies depends on the data you have.
+
+- One **continuous** outcome, split by **two** groups: the **t-test**
+- One continuous outcome, **three or more** groups: **ANOVA**
+- Two **categorical** variables: the **chi-square test**, `v2v::run_chi_square()`
+- Message length is a count of characters; gaming status has two values. So: t-test.
+
+A test applied to the wrong kind of data produces a number, and the number is meaningless.
+
+## Your turn {.discuss}
+
+- State the null hypothesis for **your** research question, in one plain sentence
+- What would have to be true for your finding to be nothing but sampling wobble?
+- What size of difference would actually change how you think about your topic?
+
+*Two minutes with a neighbor, then we compare.*
+
+## Running the t-test
+
+```r
+v2v::run_t_test(analysis, value = message_length, group = is_gaming)
+```
+
+One function call. You hand it the data, the variable to compare, and the
+variable that splits it into two groups.
+
+The output names the test as a **Welch** t-test. The ordinary version assumes
+both groups have the same spread, and ours plainly do not: sd of 60.68 against
+38.47. Welch drops that assumption, so it is the safer default.
+
+## Reading the output
+
+```
+  Mean, gaming         28.49 characters
+  Mean, non-gaming     33.70 characters
+  Difference           -5.22 characters
+
+  t                    -4.95
+  df                   3768.7
+  p-value              < .001
+  Cohen's d            -0.13  (negligible)
+```
+
+`t` measures the gap in units of its own uncertainty: how many widths of noise
+separate the averages. The sign is direction only.
+
+## What the p-value means
+
+- If the two kinds of chat truly had the **same** mean length, a gap this large
+  would happen **less than once in a thousand** samples
+- The data are very surprising under the assumption that nothing is going on
+- By convention, below **.05** counts as **statistically significant**
+- The threshold is a convention, not a law: *p* of .049 and .051 are near-identical evidence
+
+## What the p-value does not mean
+
+- It is **not** the probability that the null hypothesis is true
+- It is **not** the probability that your result is a fluke
+- It is **not** a measure of how large the difference is
+- It is **not** a measure of whether the difference matters
+- A small *p* says the gap is probably not zero. It says nothing about how big.
+
+## How big is the difference
+
+- For size we need a different number: an **effect size**
+- For a gap between two means that number is **Cohen's d**
+- It expresses the gap in units of how much the data naturally vary
+- Cohen's benchmarks: about **0.2 small, 0.5 medium, 0.8 large**
+- Ours is **-0.13**, below even "small," in the range called **negligible**
+
+## Real and trivial at once
+
+- Five characters is fifteen percent of the non-gaming mean, which sounds large
+- Set against standard deviations of 38 and 61 characters, it is a ripple
+- **So why was it significant?** Sample size: 34,766 messages
+- A large enough sample makes almost any difference statistically significant
+- Significance and size are different questions. Big samples pull them apart.
+
+## More than two groups: ANOVA
+
+```r
+four_games <- analysis %>%
+  filter(game %in% c("Fortnite", "Hearthstone",
+                     "Just Chatting", "League of Legends"))
+
+summary(aov(message_length ~ game, data = four_games))
+```
+
+Four means, not two, so a t-test will not do. Comparing them two at a time
+takes six tests, each with its own chance of a false positive, and those pile up.
+
+## Reading the F table
+
+```
+              Df    Sum Sq  Mean Sq  F value  Pr(>F)
+game           3    547281   182427    92.26  < 2e-16
+Residuals  13429  26552407     1977
+```
+
+**F** compares variation *between* the group means against variation *within*
+the groups. If all four shared a mean, F would sit near one. Here F is **92.26**.
+
+The effect size for ANOVA is **eta-squared**, here **0.02**: game category
+explains about two percent of the variation. Real, and small. The same pair of facts.
+
+## From difference to model: regression
+
+```r
+summary(lm(message_length ~ is_gaming, data = analysis))
+```
+
+```
+              Estimate  Std. Error  t value  Pr(>|t|)
+(Intercept)     33.70       0.70      48.16   < .001
+is_gamingTRUE   -5.22       0.74      -7.08   < .001
+```
+
+The intercept, 33.70, is the non-gaming mean. The coefficient, **-5.22**, is
+exactly the gap the t-test found, recast as a baseline plus an adjustment.
+
+## Checkpoint
+
+You should now be able to:
+
+- Name the test your own question calls for, and say why
+- Run `v2v::run_t_test()` and read the mean, difference, *p*, and *d*
+- Say in one sentence what a *p*-value does and does not claim
+- Report a significant result that is also negligible, without inflating it
+- Know that `aov()` handles three or more groups and `lm()` generalizes both
+
+## Before next time
+
+- **Inferencing Data [R] is due this week**, 100 points
+- Thursday is a lab: you run your own test, on your own variable, with me here
+- Bring your `analysis` table and the summary table from last week
+- Re-read the last section of **Chapter 13**, on significance versus importance
+- Thursday I also assign the **White Paper**, 250 points. Come ready for it.

@@ -1,0 +1,143 @@
+---
+title: "Research Questions"
+subtitle: "S10 · Chapter 6 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## The paralysis
+
+[Where projects stall]{.eyebrow}
+
+- You have read thirty articles and taken notes in five documents
+- You see connections everywhere, and you cannot start
+- The project feels **too small** (one study) and **too large** (impossible to finish) at once
+- The problem is not a lack of ideas. It is a lack of focus.
+- The fix is making the hard choices that turn possibility into a plan
+
+## Two questions
+
+- **A:** "How does livestreaming affect people?"
+- **B:** "Does the rate of chat messages per viewer differ between gaming and non-gaming streams?"
+- A is a career-spanning program disguised as a single question
+- B names what will be measured, what will be compared, what evidence would answer it
+- The craft of this course is getting from A to B
+
+## Five criteria: specific and measurable
+
+- **Specific:** "How does social media influence politics?" leaves all three terms undefined
+- Name the platform, specify the outcome, bound the population
+- **Measurable:** some concepts resist **operationalization**, the translation of an abstract idea into an observable variable
+- "Do authentic streamers build better communities?" cannot be studied until *authentic* and *better* become something you can record
+
+## Five criteria: answerable, open, and worth asking
+
+- **Answerable within your constraints:** decades of data or hundreds of interviews is not a semester project
+- **Not already answered:** your literature review tells you whether the question is genuinely open
+- Re-testing a settled relationship with no new angle contributes little
+- **It matters:** Tuesday versus Thursday start times might be answerable, and would still be trivia
+
+## A template for building one
+
+Assemble the parts deliberately:
+
+- *Does there exist* ...
+- a **specific variable or concept** ...
+- a **relationship, pattern, or difference** ...
+- in a **bounded population or context**?
+
+"Is there a relationship between stream category and chat message rate among channels in the Twitch working corpus?" is built from exactly those parts.
+
+## Your turn {.discuss}
+
+- Take the curiosity you brought to this course and say it out loud in one sentence
+- Which of the five criteria does it fail right now?
+- What would you have to **observe** to answer it?
+
+*Two minutes with a neighbor, then we take a few and narrow them together.*
+
+## The Everything Study
+
+- It announces itself: "I want to study the effect of social media on society"
+- **Scope creep:** too many questions, too many theories, data too large for the timeline
+- It also creeps by addition, one more variable, one more comparison
+- The cure is relentless narrowing until the project fits the time and skill you actually have
+- Narrowing is not weakness. It is discipline.
+
+## The funnel, iterations 1 to 3
+
+- **1.** "I am interested in Twitch chat." Too broad. What aspect? Which streams?
+- **2.** "How viewers participate in chat." Better, still vast.
+- **3.** "Whether chat participation differs across kinds of streams." Which kinds? Measured how?
+
+Each pass trades breadth for depth.
+
+## The funnel, iterations 4 and 5
+
+- **4.** "Whether chat message volume differs between gaming and non-gaming streams."
+- **5.** "I will draw a stratified sample from the 50-channel working corpus, code each message as directed at the streamer or broadcast to the room, and test whether the proportion of directed messages differs by stream type."
+
+Version 5 will not answer everything about Twitch chat. It will answer **something rigorously**.
+
+## Three narrowing mistakes
+
+- **Impossible comparison:** "Are Twitch viewers lonelier than non-viewers?" The groups differ in a hundred ways besides the one you care about.
+- **Circular question:** "Do popular streamers attract large audiences because people want to watch them?" The terms define each other.
+- **False binary:** "Is it the streamer or the game?" Better: how much does each contribute, and do they interact?
+
+## Concepts need operational choices
+
+**Parasocial relationship** (Horton & Wohl, 1956), the one-sided bond between viewer and media figure, is not directly observable. Three routes:
+
+- **Self-report scale:** captures subjective experience, invites social desirability bias
+- **Behavioral indicators:** donations, subscription length, hours watched, reliable but ambiguous
+- **Language analysis:** code chat for intimacy and direct address, naturalistic but labor-intensive
+
+## Sentiment, same problem
+
+**Chat sentiment**, the emotional valence of chat content:
+
+- **Automated scoring:** fast and replicable, blind to sarcasm and emote vocabulary
+- **Human coding:** captures context, costs labor, requires reliability testing
+- **Dimensional coding:** valence and arousal at once, richer, needs a more careful codebook
+
+There is no single right answer. You pick, and you **defend the proxy**.
+
+## Three goals, three kinds of question
+
+- **Exploratory:** "What is going on here?" Generates hypotheses. Output is patterns and themes.
+- **Descriptive:** "What does the landscape look like?" Output is frequencies and distributions.
+- **Explanatory:** "Why does this happen?" Tests relationships. Output is support or disconfirmation.
+- Research moves through these in order. You need not do all three, but know which one you are attempting.
+
+## Question or hypothesis?
+
+- A **research question** is interrogative and open-ended: use it when exploring, describing, or when the literature is contradictory
+- A **hypothesis** is declarative and predictive: use it when theory makes a specific prediction
+- Behind every hypothesis sits the **null hypothesis**: no relationship, no difference
+- The null is the skeptical default, and it is what statistical tests actually evaluate
+- Same logic as the sacred flaw in Chapter 1
+
+## Topic, theory, data must align
+
+- **Topic:** bounded by population, time, medium. "Livestreaming" is not a topic; "chat participation in the 50-channel corpus" is.
+- **Theory:** must predict patterns you can actually observe in your data
+- **Data:** accessible, sufficient, appropriate to the question
+- **Mismatch:** parasocial topic, political economy theory, chat content analysis
+- Political economy explains industry structure; chat messages are individual expression
+- Swap in parasocial interaction theory and the three finally talk to each other
+
+## Before next time
+
+- **The Annotated Manuscript and CITI Certification are due this week.**
+- **Topic Selection and Research Questions follows next week.** Bring your question through the funnel first.
+- Run your draft past the five criteria and name which one it is weakest on
+- Read **Chapter 6** on the prospectus, especially the model prospectus and the weak-draft example
+- Next session we assemble the six components of the prospectus and talk about pre-registration

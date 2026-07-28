@@ -1,0 +1,179 @@
+---
+title: "Lab: Setting Up Your Project"
+subtitle: "S4 · Chapter 2 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## What we are building today
+
+[Working session]{.eyebrow}
+
+- A **project repository** on GitHub, with a working copy on your machine
+- A `setup-check.qmd` that renders and proves the stack works
+- Your **first commit**, pushed and visible on the web
+- This is the **Project Setup** assignment, 25 points
+- It is also the folder your White Paper will be written in, all term
+
+## Why it matters for the White Paper
+
+- Every assignment from here lands in this repository
+- Your literature map, codebook, R scripts, and final paper all live here
+- The commit history becomes part of what you can show a reader
+- If your machine dies in November, your work is on GitHub
+- Set it up carelessly now and you will be fighting it in Week 12
+
+## Three concepts, briefly
+
+- A **repository** is a folder that Git is watching
+- A **commit** is a time-stamped snapshot of every file, with a message
+- **Push** sends your commits to GitHub. **Pull** brings changes down.
+- Rendering is separate: Quarto turns `.qmd` source into a finished document
+- Nothing you do today is irreversible
+
+## What a .qmd file is
+
+- Plain text, with **YAML front matter** at the top between `---` lines
+- Prose in Markdown, code in fenced chunks
+- When Quarto renders, the chunks run and the results appear in place
+- Change the data, re-render, and every number updates
+- Your White Paper is one of these
+
+## Step 1: create the repository
+
+On github.com:
+
+- Click **New repository**
+- Name it `mc451-project` (lowercase, no spaces)
+- Set it **Public**, and check **Add a README file**
+- Leave everything else at defaults, then click **Create repository**
+
+Public is deliberate. Your work is meant to be retraceable.
+
+## Step 2: clone it locally
+
+Copy the green **Code** button's HTTPS URL, then in a terminal:
+
+```bash
+cd Documents
+git clone https://github.com/YOURNAME/mc451-project.git
+cd mc451-project
+```
+
+`clone` downloads the repository and sets up the connection to GitHub in one
+move. You now have a folder Git is watching.
+
+## Step 3: open it and add structure
+
+In VS Code, use **File > Open Folder** and choose `mc451-project`. Then create
+these folders inside it:
+
+```bash
+mkdir data scripts writing figures
+```
+
+Four folders, four kinds of thing. Raw data never gets edited by hand, scripts
+do the work, writing holds prose, figures holds output.
+
+## Step 4: write the setup check
+
+Create a new file, `setup-check.qmd`, with this exact content:
+
+```r
+---
+title: "Setup check"
+---
+
+library(v2v)
+v2v::setup()
+```
+
+The block between the `---` lines is YAML. The two R lines go inside a code
+chunk, which the Quarto extension will help you insert.
+
+## Step 5: render it
+
+Click Quarto's **Preview** button, or run:
+
+```bash
+quarto preview setup-check.qmd
+```
+
+A browser window opens with the rendered page. If you see **"V2V setup
+complete"**, R, Quarto, Git, and the package are all in place.
+
+## Your turn {.discuss}
+
+- Your output says something other than "V2V setup complete." What is the first
+  thing you check?
+- Why does it matter that this check is a **file** rather than something you
+  typed once into a console?
+- What would a reader six months from now learn from your repository that they
+  could not learn from a folder of Word documents?
+
+*Talk it through with a neighbor while renders finish.*
+
+## Step 6: your first commit
+
+```bash
+git add .
+git commit -m "Initial project setup with setup check"
+```
+
+`add .` stages every changed file. `commit` writes the snapshot with a message.
+Write messages a stranger could read: **what changed and why**, not "stuff".
+
+## Step 7: push it
+
+```bash
+git push
+git log --oneline
+```
+
+`push` uploads your commits to GitHub. `log --oneline` prints the history, one
+line per commit. Refresh your repository page in the browser and your files are
+there.
+
+## Common errors, part one
+
+- **`quarto: command not found`.** Quarto installed but the terminal was already
+  open. Close it and open a new one.
+- **`there is no package called 'v2v'`.** R is installed, the package is not.
+  Run the install command from the Hub.
+- **`fatal: not a git repository`.** You are in the wrong folder. `cd` into
+  `mc451-project` first.
+
+## Common errors, part two
+
+- **Authentication failed on push.** GitHub wants a token, not your password.
+  VS Code's sign-in flow handles this. Do it once.
+- **`nothing to commit, working tree clean`.** You already committed, or you did
+  not save the file. Save, then `git add .` again.
+- **Render fails on the YAML.** The `---` lines need to be the very first thing
+  in the file, with no blank line above.
+
+## Checkpoint
+
+You should now have:
+
+- A public repository named `mc451-project` on GitHub
+- A local folder with `data`, `scripts`, `writing`, and `figures`
+- A `setup-check.qmd` that renders and prints **V2V setup complete**
+- At least one commit visible in `git log --oneline` and on github.com
+
+Raise a hand if any line above is not true for you.
+
+## Before next time
+
+- **Project Setup** is due this week: submit your repository URL
+- If your setup check still fails, come to office hours. Do not wait.
+- Read **Chapter 3, Knowing and Knowing Well**, before Tuesday
+- Tuesday is ethics: Belmont, the IRB, and what consent means for public data
+- Your weekly journal entry closes the week

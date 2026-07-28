@@ -1,0 +1,173 @@
+---
+title: "The Pilot: Kappa and Alpha"
+subtitle: "S20 · Chapter 10 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Putting the codebook on trial
+
+[Lab session]{.eyebrow}
+
+- Tuesday you drew a sample. Today the codebook has to earn its status.
+- We run a **pilot test** and turn agreement into a number
+- We watch a real codebook fail, and diagnose exactly why
+- You leave with a reliability coefficient for your own instrument
+- This is the session that can send you back to Chapter 8, and that is fine
+
+## What a pilot test is
+
+- A **trial run** of the codebook before any real coding begins
+- Take a subset of the sample. A hundred messages is a reasonable size.
+- Two people code it, working from the **same codebook**
+- Then their codes are compared
+- The question: when two people apply these rules, do they produce the same
+  classifications?
+
+## Independently, and why
+
+- The two coders work in **genuine isolation**: no conferring, no comparing notes
+- The reason is not suspicion. It is that the pilot measures the **codebook**,
+  not the coders.
+- If they discuss a hard message and agree, later agreement measures their
+  memory of that conversation
+- Only independent coding tests whether the **written rules** carry a
+  classification on their own
+- **Reliability** is consistency: the same answer regardless of who holds the codebook
+
+## The obvious number
+
+- Suppose the two coders agreed on **74 of the 100** pilot messages
+- That is 74 percent agreement
+- Seventy-four percent sounds respectable
+- It is also misleading, and seeing why is the key idea of the chapter
+- Some agreement between two coders happens for no good reason at all
+
+## Your turn {.discuss}
+
+- Is 74 percent agreement good enough to start coding on? Commit to an answer.
+- Two coders flipping coins on a **two-category** variable would agree how often?
+- What if one category is used 90 percent of the time by both coders?
+- What number would make you comfortable, and where did that number come from?
+
+*Two minutes with a neighbor. Write down your threshold before we compute one.*
+
+## Why raw agreement misleads
+
+- Cohen's 1960 paper made the point with two clinicians sorting patients
+- Suppose each assigns categories **blindly**, at the rates the categories occur
+- Coordinating on nothing, they still agree a large share of the time
+- That agreement reflects the **number of categories**, not any judgment
+- Raw agreement counts coincidence and insight the same way
+
+## Cohen's kappa
+
+```
+kappa = (observed agreement - expected agreement) / (1 - expected agreement)
+```
+
+Kappa starts from the agreement you observed, subtracts the agreement chance
+alone would have produced, and credits the codebook only with the difference.
+
+- Coders no better than chance: the numerator is zero, so **kappa is zero**
+- Perfect agreement: **kappa is one**
+- Built for the common case: **two coders, nominal categories**
+
+## Krippendorff's alpha
+
+- The more **general** instrument, and the one to reach for when kappa will not fit
+- Handles **any number of coders**, not just two
+- Handles **any level of measurement**, nominal through ratio
+- Handles datasets with **missing codes**
+- For the standard two-coder nominal pilot, kappa and alpha tell much the same
+  story, and kappa is the more familiar choice
+
+## Running the check
+
+```r
+v2v::reliability(pilot$coder_a, pilot$coder_b, method = "kappa")
+```
+
+`reliability()` takes the two coders' columns of codes and returns the
+coefficient, with `method = "kappa"` or `method = "alpha"` selecting which one.
+
+The `$` pulls a single named column out of a table.
+
+## The result
+
+```
+Inter-coder reliability: Cohen's kappa
+
+  Messages coded   100
+  Cohen's kappa    0.236
+```
+
+- Observed agreement was 0.74, the respectable-looking 74 percent
+- Chance alone, given how often each coder flagged a message, predicts about 0.66
+- Run that through the formula and the result is **0.236**
+- The raw agreement was almost all coincidence
+
+## What went wrong: two rules, one name
+
+- The codebook asked coders to flag "high-energy" messages and never defined it
+- **Coder A** decided high-energy meant carrying a Twitch emote, LULW or KEKW
+- **Coder B** decided it meant shouting, so any word in all capitals
+- Both readings are reasonable. Both coders believed they coded one variable.
+- Emote messages and all-caps messages overlap enough to agree by accident
+
+## Reading the number
+
+Landis and Koch (1977) attached labels to ranges:
+
+| Kappa | Label |
+|---|---|
+| 0.0 to 0.2 | Slight |
+| 0.2 to 0.4 | Fair |
+| 0.4 to 0.6 | Moderate |
+| 0.6 to 0.8 | Substantial |
+| Above 0.8 | Almost perfect |
+
+By these labels 0.236 is "fair." Published content analysis treats anything
+below about **0.70** as too low to proceed on, with **0.80** a comfortable floor.
+
+## When it fails: diagnose, revise, re-pilot
+
+- A kappa of 0.236 is not a result to report. It is an **instruction**.
+- The two coders finally meet and walk the messages they classified differently
+- **The disagreements are the data**: they show where the codebook ran out of guidance
+- Repair the rule, in writing, with the explicit decision rules Chapter 8 built
+- Then pilot **again**: fresh messages, independent coding, another coefficient
+
+## Common errors today
+
+- `object 'pilot' not found`: your two coders' codes are not in one table yet
+- Coders' columns of **different lengths**: someone skipped a message
+- A kappa of exactly 1 usually means you passed the same column in twice
+- A kappa near 0 with high raw agreement is the classic **loose-definition** signature
+- `NA` in the result: missing codes, which is a case for alpha rather than kappa
+
+## Checkpoint
+
+You should now have:
+
+- A hundred-message pilot subset, coded independently by two people
+- A `v2v::reliability()` call that runs and returns a number
+- A written note on whether that number clears **0.70**
+- A list of the messages the coders split on, which is your revision list
+- If you failed: a revised rule for each disagreement, in the codebook
+
+## Before next time
+
+- Revise the codebook against your disagreement list, then **re-pilot**
+- Read **Chapter 11, Wrangling the Data**
+- Next week is R for real: unreadable timestamps, missing variables, two tables
+  that do not talk to each other
+- **Sampling Plan and Pilot, and Data Wrangling, are both due next week.** Start
+  the sampling plan now while the pilot is fresh.

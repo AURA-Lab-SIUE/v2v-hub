@@ -1,0 +1,52 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Spline+Sans+Mono:wght@400;600&display=swap');
+
+$body-bg: #fcfbf7;
+$body-color: #101113;
+$link-color: #c41425;
+$selection-bg: #e5182d;
+
+$font-family-sans-serif: "Newsreader", Georgia, serif;
+// Readable from the back row without overflowing; content top-aligns (center:false).
+$presentation-font-size-root: 33px;
+$presentation-line-height: 1.25;
+$presentation-heading-font: "Archivo", system-ui, sans-serif;
+$presentation-heading-color: #101113;
+$presentation-heading-font-weight: 800;
+$presentation-h1-font-size: 1.7em;
+$presentation-h2-font-size: 1.15em;
+$presentation-h3-font-size: 1em;
+$code-block-font-size: 0.8em;
+
+/*-- scss:rules --*/
+.reveal { font-family: "Newsreader", Georgia, serif; }
+.reveal h1, .reveal h2, .reveal h3 { font-family: "Archivo", system-ui, sans-serif; letter-spacing: -0.015em; margin-bottom: 0.4em; }
+.reveal code, .reveal pre, .reveal kbd { font-family: "Spline Sans Mono", ui-monospace, monospace; }
+.reveal em { color: #c41425; font-style: italic; }
+.reveal strong { color: #101113; }
+
+// ONE consistent body size for every bullet, at every level. No shrinking slides.
+.reveal .slides section { font-size: 1em; }
+.reveal ul, .reveal ol { margin-left: 0.6em; }
+.reveal li { font-size: 1em; line-height: 1.28; margin: 0.32em 0; }
+.reveal li li { font-size: 1em; }          // nested bullets stay the same size
+.reveal p { font-size: 1em; margin: 0.4em 0; }
+.reveal table { font-size: 0.9em; }
+.reveal table th, .reveal table td { padding: 0.2em 0.5em; }
+.reveal blockquote { font-size: 0.95em; border-left: 3px solid #e5182d; background: rgba(229,24,45,0.04); }
+
+// red diamond after the title-slide title, the AURA mark
+.reveal .title-slide h1::after { content: " \25C6"; color: #e5182d; font-size: 0.5em; vertical-align: middle; }
+.reveal .slide-number { color: #c41425; background: transparent; }
+.reveal a { color: #c41425; text-underline-offset: 2px; }
+
+// mono eyebrow labels
+.reveal .eyebrow { font-family: "Spline Sans Mono", monospace; text-transform: uppercase;
+  letter-spacing: 0.13em; color: #c41425; font-size: 0.6em; font-weight: 600; display: block; margin-bottom: 0.3em; }
+
+// discussion / activity slide accent (used mid-deck for engagement)
+.reveal .discuss { border-left: 4px solid #e5182d; padding-left: 0.7em; }
+.reveal .discuss h2 { color: #c41425; }
+
+// keep code ligature-free (the <- / |> arrow bug in the book)
+.reveal code { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }

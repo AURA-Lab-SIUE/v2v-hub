@@ -1,0 +1,160 @@
+---
+title: "Inference Lab"
+subtitle: "S26 · Chapter 13 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Today's job
+
+[Inferencing Data, 100 points, due this week]{.eyebrow}
+
+- Tuesday I ran the test on my variable. Today you run it on yours.
+- One test, correctly chosen, correctly read, honestly reported
+- Then you write the two sentences that go in your paper
+- **The White Paper is assigned today.** We spend the last stretch on it.
+- Work in your `.qmd`, not the console, so nothing gets lost
+
+## Pick your test before you run it
+
+Write this down before you touch the keyboard:
+
+- My outcome variable is ______, and it is continuous or categorical
+- My grouping variable is ______, and it has ______ levels
+- Therefore the test is ______
+
+Continuous outcome, two groups: **t-test**. Three or more: **ANOVA**. Two
+categorical variables: **chi-square**.
+
+## Running your test
+
+```r
+library(v2v)
+
+analysis <- readRDS("data/analysis.rds")
+
+run_t_test(analysis, value = message_length, group = is_gaming)
+```
+
+Swap `message_length` for your outcome and `is_gaming` for your two-level
+grouping column. Everything else stays exactly as written.
+
+## Your turn {.discuss}
+
+- Read your output aloud to a neighbor: the two means, the difference, *p*, and *d*
+- Is your effect small, medium, or large by Cohen's benchmarks?
+- Did your *p* and your *d* tell the same story, or pull apart?
+
+*Three minutes, then we hear two or three of them.*
+
+## Report it in one line
+
+The compact form journals expect, using the chat study's numbers:
+
+> Gaming channels produced shorter chat messages on average than non-gaming
+> channels (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.95,
+> *p* < .001, Cohen's *d* = -0.13.
+
+Every element earns its place: both means, the test with its degrees of
+freedom, the *p*-value, the effect size. Never *p* alone.
+
+## Then say it again in English
+
+- A string of statistics is not an interpretation
+- Write a second sentence a non-statistician can read
+- Ours: gaming and non-gaming channels do differ in message length, but the
+  difference is so small that the two are better thought of as alike
+- That sentence is the call. It reports the difference and refuses to inflate it.
+- If you cannot write it, you do not yet understand your own result
+
+## Effect size, every time
+
+- **Statistical significance** asks whether an effect is distinguishable from zero
+- **Practical significance** asks whether it is large enough to matter
+- They are different questions, and large samples pull them apart
+- A finding is only honestly reported when **both** are on the page
+- "Significant" without a *d* is a claim you have not actually supported
+
+## If you have more than two groups
+
+```r
+four_games <- analysis %>%
+  filter(game %in% c("Fortnite", "Hearthstone",
+                     "Just Chatting", "League of Legends"))
+
+summary(aov(message_length ~ game, data = four_games))
+```
+
+ANOVA asks one question of all the groups at once. Ours returned
+**F(3, 13429) = 92.26**, and eta-squared of **0.02**: real, and small.
+
+## If you want a model
+
+```r
+summary(lm(message_length ~ is_gaming, data = analysis))
+```
+
+The intercept is your reference group's mean (33.70). The coefficient
+(**-5.22**) is the gap itself, recast as a baseline plus an adjustment.
+
+A t-test is a regression with one two-level predictor. An ANOVA is a regression
+with one many-level predictor. Same framework, different shape.
+
+## Common errors and what they mean
+
+- `grouping variable must have exactly 2 levels`: you have NAs, or three groups
+- `not enough 'x' observations`: your filter left almost nothing behind
+- A *p* of exactly 1: your two groups are identical, usually a bad join
+- `NA` for the mean: add `na.rm = TRUE`, then ask why the NAs are there
+- An impossibly large *t*: check that you did not compare a variable to itself
+
+## The White Paper, 250 points
+
+[Assigned today, due finals week]{.eyebrow}
+
+- The full study, written as one reproducible document, published to the web
+- Executive summary, then Introduction, Methods, Results, Discussion
+- It is not a term paper. It is the document a client would actually read.
+- Rendered from Quarto, so every number in it comes from your code
+- Published at a public URL, not submitted as a file
+
+## What goes in it
+
+- **Introduction:** your question and why it is worth asking
+- **Methods:** your sampling, your codebook, your reliability check, your wrangling
+- **Results:** your figures and your test, stated plainly, without interpretation
+- **Discussion:** what it means, and what it does not, including your limits
+- **Reflection:** one honest paragraph on what you would do differently
+
+## You have already written most of it
+
+- Your **prospectus** is the spine of your Introduction
+- Your **codebook** and **sampling plan** are the Methods section
+- Last week's **three figures** and this week's **test** are the Results
+- The two sentences you wrote today are the heart of the Discussion
+- The work left is assembly and honesty, not starting over
+
+## Checkpoint
+
+You should now have, saved in your project:
+
+- A chosen test, with a written reason for choosing it
+- Output showing your means, your test statistic, your *p*, and your effect size
+- The one-line statistical report, formatted as above
+- The plain-English sentence that goes with it
+- The White Paper assignment open, and a first look at its rubric
+
+## Before next time
+
+- **Inferencing Data [R] is due this week**, 100 points
+- Read **Chapter 14**, "The one-click report," before Tuesday
+- Tuesday is The Publisher: how the whole study becomes one document
+- Bring your figures and your test output. We assemble them in class.
+- Start thinking about your title. It is the first thing a reader sees.

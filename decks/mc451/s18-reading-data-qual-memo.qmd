@@ -1,0 +1,169 @@
+---
+title: "Reading the Data Against the Codebook"
+subtitle: "S18 · Chapter 9 · MC 451 Research Methods in Mass Media"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## What we are doing today
+
+[Lab session]{.eyebrow}
+
+- Tuesday we loaded the data. Today we hold it **next to the codebook**.
+- One question: can this data actually carry the study you designed?
+- Then we find the messages that will fight your rules
+- Then the **qualitative memo**, which is due with the codebook this week
+- Open your `codebook.qmd` and your R session side by side
+
+## The blunt question
+
+- Open the codebook next to your `glimpse()` output
+- Ask: does the data contain what each variable needs to be coded?
+- Answer it **now**, not halfway through coding a thousand messages
+- A missing column discovered late costs you weeks
+- Walk the variables one at a time. Do not skim.
+
+## Variable 1: message target
+
+```r
+chat %>% select(channel, sender, message) %>% head(5)
+```
+
+`select()` keeps only the columns you name, and `head(5)` shows the first five
+rows, so you can read what a coder would actually be looking at.
+
+Message target is coded from the **message text**, plus **sender** for
+at-mentions and replies. Both columns exist. Supported.
+
+## Variables 2 and 3
+
+```r
+chat %>% select(message) %>% head(3)
+```
+
+The same move, narrowed to the one column both remaining variables read from.
+
+- **Message length**: the character count of the message string. There is a
+  `message` column. Supported.
+- **Contains emote**: read from the message text. Same column. Supported.
+- Three variables, three confirmations. The study is buildable.
+
+## Your turn {.discuss}
+
+- Suppose the chat table had **no `sender` column**. Which of your decision
+  rules stops working, and what would you replace it with?
+- Your codebook says a message can be "a reply to a specific prior message."
+  Does this data let a coder see that? Check.
+- What is one thing your codebook assumes that you have not verified?
+
+*Three minutes. Write the answer into your codebook if you find a gap.*
+
+## What first contact confirmed
+
+- The columns your variables need are all present
+- The messiness the book warned about is real and visible in row one
+- Your Chapter 7 edge cases are not hypothetical. They are in the first five rows.
+- Twenty-three question marks: a message with no obvious target
+- "TriEasy Clap" repeated: copypasta, already covered by your Rule 3
+
+## What the data makes harder
+
+- Short emote-only tokens are everywhere, which is why Rule 2 exists
+- A wall of punctuation has no addressee, which is why "unclassifiable" exists
+- Stream titles contain line breaks and long digit strings
+- None of this is broken data. It is what people actually type.
+- Your codebook has to meet the data as it is, not as you wish it were
+
+## One genuine wrinkle
+
+- Among the first messages is one beginning **"@xQcOW"**
+- The `channel` column on that same row reads **"xqcow"**
+- Same name, different casing: the display name a viewer types against the
+  lowercase login name the data stores
+- A rule keyed on "an at-mention of the streamer's channel name" will miss it
+- Two coders will resolve this differently unless you decide for them
+
+## Turning a wrinkle into a rule
+
+- Write it down **now**, while the codebook is still a living rulebook
+- Something like: at-mentions are matched **ignoring capitalization**
+- State it in the decision-rules section, numbered, next to Rules 1 through 5
+- This is what the special-cases section is for, and yours should stop being thin
+- Every rule you add is a disagreement you will not have to arbitrate later
+
+## Hunting your own edge cases
+
+```r
+chat %>%
+  filter(str_detect(message, "@")) %>%
+  select(channel, sender, message) %>%
+  head(10)
+```
+
+`filter()` keeps only rows meeting a condition, here messages containing an
+at-sign, so you can read ten real at-mentions and see how they behave.
+
+Swap the `"@"` for anything your rules depend on and read what comes back.
+
+## The qualitative memo
+
+[Due with the codebook]{.eyebrow}
+
+- **200 to 300 words**, describing the patterns you observed during immersion
+- It is the written record of what your Chapter 7 watching actually taught you
+- It explains **why** your codebook has the categories it has
+- It is graded with the codebook as one 50-point assignment
+- Short does not mean easy. Every sentence should point at something you saw.
+
+## The four kinds of field note
+
+Your memo is assembled from notes you already have:
+
+- **Observational**: what you saw, concretely, with times and counts
+- **Methodological**: a measurement problem you noticed while watching
+- **Theoretical**: an observation connected to a framework from your reading
+- **Comparative**: how two cases differed, gaming against non-gaming
+
+## From notes to memo
+
+- Name the **dimensions** that turned out to matter for your question
+- Name the **edge cases** that drove your decision rules, with examples
+- Say where you are still uncertain. Uncertainty is a finding, not a weakness.
+- Connect at least one pattern to your theory
+- Do not write a summary of Twitch. Write what changed your codebook.
+
+## Common errors today
+
+- `could not find function "str_detect"`: you did not run `library(tidyverse)`
+- `object 'chat' not found`: the data is not loaded in this session
+- `object 'message' not found`: you used a column name outside a verb, or
+  misspelled it
+- A `filter()` returning zero rows usually means the condition, not the data,
+  is wrong
+- Check the Hub cheat sheet before retyping the line
+
+## Checkpoint
+
+You should now have:
+
+- A written confirmation that each codebook variable has the data it needs
+- At least one new decision rule, added today, traceable to a real message
+- A special-cases section that is no longer empty
+- Field notes sorted into the four types
+- A draft qualitative memo between 200 and 300 words
+
+## Before next time
+
+- **Codebook and Qual Memo is due this week.** Render the codebook before you
+  submit it.
+- Read **Chapter 10, The Sample**
+- Next Tuesday we ask why you cannot code all 35,267 messages, and how to draw
+  the ones you will code
+- Then your codebook goes on trial: two coders, one hundred messages, one number

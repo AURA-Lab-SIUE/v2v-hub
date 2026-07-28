@@ -1,0 +1,303 @@
+---
+title: "Coding the Codebook and First Contact in R"
+subtitle: "Week 9 · Chapter 9 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## What we are building today
+
+[Week 9 · Chapter 9 · working session]{.eyebrow}
+
+- **Due tonight**: the Extended Codebook and Reliability Protocol
+- A **project workspace** that holds the whole study in one folder
+- Your codebook installed in it as a rendered document, the project's rulebook
+- The Twitch data loaded and inspected, column by column, for the first time
+- **Assigned reading**: Munafo et al. (2017), revisited for reporting and usability
+
+## Why the workspace comes first
+
+- Chapter 2's argument: reproducible research lives or dies on **traceability**
+- A study someone else can rerun is built from files in known places, not from commands
+  typed once and forgotten
+- A **project** is a single folder holding everything one study needs: data, code,
+  codebook, report
+- The whole study travels together, and nothing depends on a file that lives only on
+  your laptop
+- Your White Paper in Week 15 will be rendered from this folder
+
+## Scaffolding the project
+
+```r
+v2v::new_portfolio("twitch-portfolio")
+```
+
+Create a complete, correctly wired study folder in one call.
+
+- The `v2v::` prefix is not decoration. It tells R, and you, that `new_portfolio()` comes
+  from this book's package specifically.
+- Every `v2v::` call in the chapters ahead carries it, so the package never becomes a
+  hidden assumption
+
+## What the scaffold contains
+
+```
+twitch-portfolio/
+├── twitch-portfolio.Rproj
+├── _quarto.yml
+├── README.md
+├── codebook.qmd
+├── analysis.qmd
+├── data/
+└── .Rprofile
+```
+
+You did not decide where files go, what to name them, or how to wire them. That is the
+point: an hour lost to file layout is an hour not spent on the study.
+
+## Confirming the stack
+
+```r
+v2v::setup()
+```
+
+Check that R, the packages this book depends on, and the project environment are all
+present and that the versions agree.
+
+- You met `setup()` once already, in Chapter 2, as the last step of installation
+- It returns here as a habit: run it when you open a project
+- You find out about a missing piece before it interrupts you mid-analysis
+
+## The rulebook becomes a document
+
+- One of the scaffolded files is `codebook.qmd`
+- Move your Chapter 8 draft into it, add a **version line and a date**, and render it
+- A codebook that renders cleanly is a codebook with no broken structure
+- A rendered codebook is one a second coder can actually read
+- What today finalizes is not the content but the **status**: it stops being a sketch in
+  your notes and becomes the official instrument, versioned and ready to be tested
+
+## Loading the data
+
+```r
+library(tidyverse)
+
+chat <- v2v::twitch_chat()
+streams <- v2v::twitch_streams()
+```
+
+Load the tidyverse, then pull in the two tables and give each a name.
+
+- The arrow, `<-`, assigns: `chat` and `streams` now refer to the tables for the session
+- Called with no arguments, each returns the full working sample
+
+## Why a function call, not a file path
+
+- A new R user's first encounter with data is usually a pile of path errors
+- `twitch_chat()` and `twitch_streams()` reach into the package, find the data shipped
+  inside it, and hand it back. There is no path for you to get wrong.
+- "Everything" here is **not** the entire 2018 collection: the full dump runs to tens of
+  millions of rows and well over a gigabyte
+- What ships is a working sample drawn from the 50-channel corpus, large enough to be real
+  and small enough to be fast
+
+## Provenance is a methodological disclosure
+
+- First contact is exploration, but it rests on a prior step: **documenting where the data
+  came from**, before the first line of analysis runs
+- "I collected Twitch chat data" is not a methods section
+- "I collected 14 days of Twitch chat from the top 10 most-viewed streams in the *Just
+  Chatting* category, using Twitch API v2, between 2024-01-15 and 2024-01-28, saving raw
+  JSON responses to `data/raw/` before any processing" is
+- Replication requires exact knowledge of what was done
+
+## Munafo on usability
+
+> "Poor usability reflects difficulty in evaluating what was done, in reusing the
+> methodology to assess reproducibility, and in incorporating the evidence into systematic
+> reviews and meta-analyses."
+>
+> Munafo et al. (2017, p. 4)
+
+- Discoverable is not the same as usable
+- A study can be public, cited, and still impossible to evaluate or reuse
+
+## Discussion {.discuss}
+
+On Munafo et al. (2017), the reporting and usability sections:
+
+- They separate *discoverability* from *usability*. Which failure is more damaging to a
+  field, work nobody can find or work nobody can evaluate?
+- Usability is defined by what a later researcher can do with your record. What does that
+  imply your provenance statement owes a reader you will never meet?
+- Reporting standards are checklists. Do checklists change behavior, or do they only
+  change documents?
+- What in your own workflow this semester would fail a usability audit today?
+
+*Five minutes in pairs, then we compare.*
+
+## What the provenance record includes
+
+For a study using fresh API data, the record must name:
+
+1. Data source and **API version**
+2. Date and **time range** of collection
+3. Any **filters, keywords, or channel selectors** applied
+4. The **format** in which raw data was saved
+5. The **git commit** at which raw data was frozen, tagged as immutable
+
+Item 5 is the audit trail: never re-run collection to overwrite a file a downstream script
+already depends on.
+
+## Looking: the chat table
+
+```r
+glimpse(chat)
+```
+
+Print every column, its type, and its first few values, without changing anything.
+
+```
+Rows: 35,267
+Columns: 5
+$ id      <int> 89, 551, 1033, 2094, 2803, …
+$ channel <chr> "sodapoppin", "xqcow", "forsen", …
+$ sender  <chr> "madzee", "prometheanow", "spectre155", …
+$ message <chr> "???????????????????????", "TriEasy Clap TriEasy Clap …
+$ date    <dbl> 1542578127023, 1542578135562, 1542578143610, …
+```
+
+## Reading the chat glimpse
+
+- **35,267 rows**, five columns, one chat message per row
+- `message` values are real and not tidy: the first is twenty-three question marks, the
+  second is "TriEasy Clap" pasted over and over
+- These are not errors. They are what Twitch chat contains, and your codebook must meet
+  them as they are.
+- `date` is a column of enormous numbers marked `<dbl>`: milliseconds since 1970,
+  interval-level, and as it stands unreadable. Converting it is Chapter 11's headline.
+
+## Looking: the stream table
+
+```r
+glimpse(streams)
+```
+
+```
+Rows: 32,276
+Columns: 6
+$ id      <int> 4, 10, 18, 61, 105, …
+$ channel <chr> "sodapoppin", "xqcow", "forsen", "giantwaffle", …
+$ title   <chr> "Hello truckers\n44835158804929_2115841973", …
+$ game    <chr> "Marble It Up!", "Just Chatting", "Artifact", …
+$ viewers <int> 27934, 19381, 15300, 4697, 28076, …
+$ date    <dbl> 1542578200214, 1542578200240, 1542578200273, …
+```
+
+## Reading the stream glimpse
+
+- **32,276 rows**, each one snapshot of one stream at one moment
+- Row 1 is Sodapoppin playing Marble It Up! at **27,934 viewers**, the row Chapter 2 opened with
+- Row 5 is the same channel minutes later at **28,076**, the climb Chapter 2 asked you to interpret
+- `title` shows the same messiness as chat: a line break inside the string and a long run
+  of digits, which is not a tidy title but is what some streamers actually type
+- Noticing this now, before any analysis, is the entire reason for first contact
+
+## Counting
+
+```r
+streams %>% count(game, sort = TRUE)
+```
+
+Take `streams`, then tally how often each game appears, most frequent first.
+
+```
+   game                 n
+ 1 Art               5298
+ 2 Fortnite          3682
+ 3 Just Chatting     2474
+ 4 Hearthstone       2157
+```
+
+The `%>%` is the tidyverse **pipe**: it feeds the thing on its left to the function on
+its right, so the line reads as an instruction in order.
+
+## What the count tells you
+
+- Sixty distinct games, more variety than a study can examine one by one
+- A handful account for most snapshots, and a long tail of fifty more accounts for the rest
+- **Art** at 5,298 snapshots tops the list on a platform mostly playing games
+- That shape matters in Chapter 12, when you have to draw a chart that does not drown in
+  sixty lines
+- `count()` is looking, not changing. The table is exactly as loaded.
+
+## Checking the corpus
+
+```r
+n_distinct(chat$channel)
+```
+
+```
+[1] 50
+```
+
+Count how many different channels the chat table actually contains.
+
+- Chapter 1 described a working corpus of fifty channels, and here it is, verified
+- `n_distinct(streams$channel)` returns the same fifty
+- The data you loaded is the corpus the book has described, no more and no less
+
+## Reading the data against the codebook
+
+Open the codebook beside the `glimpse()` output and ask a blunt question.
+
+- **Message target** is coded from the message text plus sender information. There is a
+  `message` column and a `sender` column. **Supported.**
+- **Message length** is a character count of the message string. **Supported.**
+- **Contains emote** is read from the message text. **Supported.**
+- Far better to confirm this now than to discover a missing column halfway through coding
+
+## The wrinkle worth carrying forward
+
+- Among the first messages is one beginning **"@xQcOW"**
+- The `channel` column for that same row reads **"xqcow"**
+- The at-mention and the channel name are the same name in different casing: the display
+  name a viewer typed against the lowercase login name the data stores
+- Your rule keys on "an at-mention of the streamer's channel name," so it must account for
+  that difference
+- Fix it in the codebook now, while it is still a living rulebook and before a case is coded
+
+## When a line breaks
+
+- Sooner or later a line returns an error: a misspelled function, a package not loaded,
+  a stray bracket
+- `could not find function "glimpse"` means the tidyverse is not loaded in this session
+- `object 'chat' not found` means the assignment line has not been run yet
+- `there is no package called 'v2v'` means installation, not syntax
+- The Hub keeps a common-errors cheat sheet. An error is information, not a verdict.
+
+## Checkpoint
+
+You should now have:
+
+- A `twitch-portfolio/` folder that `v2v::setup()` reports as sound
+- `codebook.qmd` holding your rulebook, versioned, dated, and rendering cleanly
+- `chat` (35,267 rows) and `streams` (32,276 rows) loaded in your session
+- A written provenance statement for the dataset, four sentences
+- At least one codebook revision prompted by what first contact showed you
+
+## Before Week 10
+
+- Read **Chapter 10**, on sampling and putting the codebook on trial
+- Re-read **Lakens (2022)**, "Sample size justification," now with your own reliability
+  sample in mind
+- **Due next week: the Sampling Plan and Pilot**
+- Bring the revisions first contact prompted, folded into `codebook.qmd` and committed
+- Journal entry, 450 to 500 words, engaging both the chapter and the reading

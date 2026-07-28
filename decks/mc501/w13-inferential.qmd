@@ -1,0 +1,297 @@
+---
+title: "Inferencing the Data [R]"
+subtitle: "Week 13 · Chapter 13 · MC 501 Research Methods for Mass Communications"
+author: "Dr. Alex Leith"
+format:
+  revealjs:
+    theme: [default, ../aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## What we are building today
+
+[Working session]{.eyebrow}
+
+- The **t-test** that settles the study's central question
+- An **ANOVA** for more than two groups, and a **regression** that contains both
+- The assumption checks and diagnostics that decide whether any of it is trustworthy
+- Two deliverables open this week: the **White Paper** and its paired **poster**
+- By the end you will have the sentence that goes in your Results section
+
+## The gap and the doubt
+
+- Gaming channels averaged **28.49** characters per message, non-gaming **33.70**
+- A difference of a little over **five characters**
+- The doubt is not idle. Split any group in two at random and the averages differ.
+- The gap could be a real difference between the two kinds of channel
+- It could also be the ordinary wobble any two samples produce
+- The histogram cannot tell them apart, because both possibilities produce a gap
+
+## What a test actually asks
+
+- The study did not measure those **34,766** messages because anyone cares about them
+- It measured them to learn about gaming and non-gaming chat in general, so the
+  sample is a means and the population is the point
+- The honest question is not "is there a gap", because there plainly is. It is
+  whether the gap is large enough that **chance is an unconvincing explanation**.
+- The test starts from the opposite of what you suspect, the **null hypothesis**:
+  the two groups have the same true mean length
+- Testing a coin, you assume it fair, work out how often a fair coin lands this
+  lopsided, and judge the assumption by how surprising the data are
+
+## The variables choose the test
+
+- Message length is a **ratio** variable, an exact count of characters
+- Gaming status is **nominal** with two values
+- A continuous outcome across two groups is the textbook setting for the **t-test**
+- Two categorical variables instead, and the test is **chi-square**,
+  `v2v::run_chi_square()`
+- The V2V Hub keeps a test-decision tree. Consult it before running anything.
+- A test applied to the wrong kind of data produces a number, and the number is meaningless
+
+## Running the test
+
+```r
+v2v::run_t_test(
+  analysis,
+  value = message_length,
+  group = is_gaming
+)
+```
+
+One call takes the data, the variable to compare, and the variable that splits it
+into groups.
+
+## The output
+
+```
+Welch two-sample t-test
+message_length by is_gaming
+
+  Mean, gaming         28.49 characters
+  Mean, non-gaming     33.70 characters
+  Difference           -5.22 characters
+
+  t                    -4.95
+  df                   3768.7
+  p-value              < .001
+  Cohen's d            -0.13  (negligible)
+```
+
+## Why Welch, and not Student
+
+- The ordinary t-test assumes the two groups have the **same spread**
+- Week 12 showed plainly that they do not: sd of **60.68** against **38.47**
+- Welch's t-test drops that assumption, which is why it is the safer default
+- `t` of **-4.95** measures the gap in units of its own uncertainty: about five
+  widths of sampling noise separate the averages
+- The sign is direction only. `df` of **3768.7** is not round because Welch
+  computes it from both groups' sizes and spreads.
+
+## Reading the p-value
+
+- It means: **if** the two groups truly had the same mean length, a gap at least
+  this large would occur less than one time in a thousand
+- The data are very surprising under the assumption that nothing is going on
+- By convention a p-value below **.05** counts as statistically significant, and
+  this clears that bar easily
+- Chance alone is an unconvincing explanation for the gap
+- That is the entire content of the number
+
+## What the p-value does not say
+
+- It is **not** the probability that the null hypothesis is true. The null is
+  either true or false; the p-value is a statement about data.
+- It is **not** the probability that the result is a fluke
+- It is **not** a measure of how large the difference is
+- It is **not** a measure of how much the difference matters
+- A small p says the gap is probably not zero. It says nothing about whether it is big.
+
+## On the threshold itself
+
+> "Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold."
+>
+> Wasserstein & Lazar (2016, p. 131)
+
+- A p of .049 and one of .051 describe almost identical evidence
+- Run ten tests on one dataset without correction and you expect one false positive
+- Declare the number of tests and any correction **in advance**, report the alpha
+  you chose, say why it fits your design, and apply it consistently
+
+## Discussion {.discuss}
+
+On Lakens et al. (2018), "Justify your alpha":
+
+- They answer a proposal to redefine significance at .005 with a demand to justify
+  instead. Is "justify" enforceable, or does it hand the choice back to the author?
+- What would actually justify *α* = .01 rather than .05 in **your** study?
+- A justified alpha depends on the cost of each error type. Who bears those costs
+  in communication research, and does anyone in the review process represent them?
+- Seventy-two authors signed this. Does a consensus of methodologists settle a
+  question that is, at bottom, about values?
+
+*Take the second question in writing. It belongs in your White Paper.*
+
+## How big is the difference
+
+- The p-value hands the question to a different number: an **effect size**
+- For a gap between two means that is **Cohen's *d***, the gap expressed in units
+  of how much the data naturally vary. Here **d = -0.13**.
+- Cohen (1988): about 0.2 is small, 0.5 medium, 0.8 large. 0.13 is smaller than
+  even "small", and the standard word is **negligible**.
+- The raw gap is fifteen percent of the non-gaming average, which does not sound
+  negligible, but *d* measures it against standard deviations of **38** and **61**
+- How did it reach significance? **n = 34,766.** A large enough sample detects a
+  difference far too small to care about.
+
+## Seeing it
+
+```r
+means_ci <- analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  group_by(is_gaming) %>%
+  summarise(mean = mean(message_length, na.rm = TRUE),
+            se   = sd(message_length, na.rm = TRUE) / sqrt(n()),
+            .groups = "drop") %>%
+  mutate(lower = mean - 1.96 * se,
+         upper = mean + 1.96 * se)
+```
+
+Compute each group's mean and its standard error, then turn the error into a
+ninety-five percent interval you can plot.
+
+## Writing the result up
+
+- The intervals nearly vanish behind the points, and that they **do not overlap**
+  is the visual signature of significance
+- Both points still sit close together far above zero, which is the negligible
+  effect size made visible
+
+> Gaming channels produced shorter chat messages on average than non-gaming
+> channels (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.95,
+> *p* < .001, Cohen's *d* = -0.13.
+
+Then again in one plain sentence: the two kinds of channel do differ, but so
+slightly that they are better thought of as alike than as different.
+
+## Four groups, four means
+
+```
+game category       n     mean length
+Fortnite          4000       33.23
+Hearthstone       3004       36.82
+Just Chatting     2429       39.03
+League of Legends 4000       22.63
+```
+
+- A t-test compares two means and there are four
+- Comparing them two at a time takes six tests, each carrying its own false-positive
+  chance, and those chances pile up
+
+## ANOVA
+
+```r
+four_games <- analysis %>%
+  filter(game %in% c("Fortnite", "Hearthstone",
+                     "Just Chatting", "League of Legends"))
+
+summary(aov(message_length ~ game, data = four_games))
+```
+
+```
+              Df    Sum Sq  Mean Sq  F value  Pr(>F)
+game           3    547281   182427    92.26  < 2e-16 ***
+Residuals  13429  26552407     1977
+```
+
+## Reading F, and then eta squared
+
+- **F** compares the variation *between* group means against the variation *within* groups
+- Shared mean, and the between-group spread would be no larger than the ordinary
+  noise inside each, so F would sit near **one**
+- Here **F(3, 13429) = 92.26**, far above one, with a minuscule p
+- League of Legends chat at 22.63 characters runs visibly shorter than Just
+  Chatting at 39.03
+- The effect size is **eta squared = 0.02**: category explains about **two percent**
+  of the variation in message length
+
+## The assumptions underneath `aov()`
+
+- ANOVA and ordinary regression assume the groups share a common variance,
+  **homoscedasticity**
+- Week 12 showed the chat groups plainly do not, which is why the two-group test
+  used **Welch's correction**
+- For the same reason `oneway.test()`, Welch's ANOVA, is the safer choice over
+  the pooled `aov()` above
+- Run the pooled version anyway and compare. If the two disagree, the assumption
+  was doing real work and you must report the robust one.
+
+## Which pair actually differs
+
+- A significant ANOVA says only that **some** pair of means differs, not which
+- Naming the pairs takes post-hoc comparisons, and `TukeyHSD()` is the standard one
+- Tukey's HSD corrects for the multiple looks you are taking, which is exactly
+  the correction that six ad-hoc t-tests would lack
+- Report the adjusted p-values, not the raw ones
+- With eta squared at 0.02, expect pairs that separate cleanly and still matter little
+
+## Regression re-derives the t-test
+
+```r
+summary(lm(message_length ~ is_gaming, data = analysis))
+```
+
+```
+              Estimate  Std. Error  t value  Pr(>|t|)
+(Intercept)     33.70       0.70      48.16   < .001
+is_gamingTRUE   -5.22       0.74      -7.08   < .001
+```
+
+The intercept is the non-gaming mean and the coefficient is exactly the gap the
+t-test found, now cast as a baseline plus an adjustment.
+
+## One framework, three faces
+
+- A t-test is a regression with a single two-level predictor
+- An ANOVA is a regression with a single many-level predictor
+- All three belong to the **general linear model**
+- The regression's `t` of -7.08 differs from Welch's -4.95 because a plain
+  regression pools the two spreads. The coefficient itself is identical.
+- R² here is about **0.001**: gaming status accounts for almost none of the variation
+
+## Residuals, and earning a predictor
+
+- A regression's credibility rests on its **residuals**, and `plot(model)` draws
+  the diagnostic quartet
+- Residuals versus fitted: linearity and equal spread
+- A Q-Q plot: are the residuals normal?
+- Leverage: is one influential point carrying the result?
+- Whether an added predictor earns its place is **model comparison**: adjusted R²,
+  AIC, or a nested F-test, never raw R², which never falls when you add a predictor
+
+## The White Paper and its poster
+
+[Both assigned this week · 200 points]{.eyebrow}
+
+- The **White Paper**: IMRaD, APA 7th throughout, effect sizes and power reported,
+  and a pre-registration disclosure in the Methods section
+- Its Discussion situates the finding in the theoretical literature you built earlier
+- The **poster**: 36 by 24 inches, landscape, title through implications, with a
+  QR code to your pre-registration or portfolio
+- The poster is your ninety-second pitch, built from one or two `theme_v2v()` figures
+- Both are due in finals week. Week 15 is a studio to build them.
+
+## Before Week 15
+
+- Submit **Inferencing Data [R]** (100 points): the test, the assumption checks,
+  the effect sizes, and the two-sentence interpretation
+- **No class Week 14.** Thanksgiving break.
+- Read **Chapter 14** with the graduate toggle on
+- Read the assigned article: **Wasserstein and Lazar (2016)**, "The ASA's statement
+  on p-values", *The American Statistician*, 70(2), 129 to 133
+- Bring a draft White Paper outline and a poster sketch to Week 15. It is a
+  working studio, not a lecture.
