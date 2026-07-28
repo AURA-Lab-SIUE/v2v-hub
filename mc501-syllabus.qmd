@@ -249,6 +249,8 @@ A reliable computer and internet connection are required. Contact ITS at 618-650
 
 ## Weekly Schedule
 
+Lecture decks for every meeting are posted at [MC 501 Lecture Decks](decks/mc501/index.qmd).
+
 MC 501 meets once weekly (**Wed 6:00–8:50**). Each 170-minute block covers a full week
 of material and adds the graduate layer: the required
 graduate-extension readings, the discussion built around them, and the heavier graduate

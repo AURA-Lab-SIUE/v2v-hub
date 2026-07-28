@@ -4,3 +4,5 @@
 **/*.quarto_ipynb
 *.bak-*
 *.archived-*
+/site_libs/
+decks/**/*.html

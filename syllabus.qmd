@@ -233,6 +233,8 @@ A reliable computer and internet connection are required. Contact ITS at 618-650
 
 ## Weekly Schedule
 
+Lecture decks for every session are posted at [MC 451 Lecture Decks](decks/mc451/index.qmd).
+
 The course runs on a **Tuesday / Thursday rhythm**: one session teaches a concept, the
 next applies it to your own project (labs and studios marked). Every assignment is a
 building block of your final White Paper. Sessions are numbered S1–S28.

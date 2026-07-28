@@ -1,0 +1,41 @@
+---
+title: "MC 451 Lecture Decks"
+subtitle: "Research Methods in Mass Media"
+---
+
+One deck per class session. Sessions run S1 through S28 across the Tuesday and Thursday meetings. Each deck opens in your browser; use the arrow keys to move through it.
+
+::: {.schedule-table}
+
+| Session | Topic | Deck |
+|---|---|---|
+| S1 | Orientation | [Open](s01-orientation.html) |
+| S2 | The Science of Storytelling | [Open](s02-science-of-storytelling.html) |
+| S3 | The Open Workspace | [Open](s03-open-workspace.html) |
+| S4 | Lab: Setting Up Your Project | [Open](s04-project-setup-lab.html) |
+| S5 | Knowing and Knowing Well | [Open](s05-ethics.html) |
+| S6 | Intelligence Gathering | [Open](s06-intelligence-gathering.html) |
+| S7 | Reading, Annotating, and the Literature Map | [Open](s07-reading-annotating.html) |
+| S8 | Theory as a Lens | [Open](s08-theory-as-a-lens.html) |
+| S9 | Variables and Hypotheses | [Open](s09-variables-hypotheses.html) |
+| S10 | Research Questions | [Open](s10-research-questions.html) |
+| S11 | The Prospectus and Pre-Registration | [Open](s11-prospectus-prereg.html) |
+| S12 | Structured Listening | [Open](s12-structured-listening.html) |
+| S13 | Manifest and Latent Content | [Open](s13-manifest-latent.html) |
+| S14 | The Operationalization Gap | [Open](s14-operationalization-gap.html) |
+| S15 | Measurement, Reliability, Validity | [Open](s15-measurement-reliability.html) |
+| S16 | Codebook Studio | [Open](s16-codebook-studio.html) |
+| S17 | Coding the Codebook | [Open](s17-coding-the-codebook.html) |
+| S18 | Reading the Data Against the Codebook | [Open](s18-reading-data-qual-memo.html) |
+| S19 | The Sample | [Open](s19-the-sample.html) |
+| S20 | The Pilot: Kappa and Alpha | [Open](s20-pilot-kappa-alpha.html) |
+| S21 | Wrangling the Data | [Open](s21-wrangling-data.html) |
+| S22 | Wrangling Lab | [Open](s22-wrangling-lab.html) |
+| S23 | Describing: Statistics and Graphics | [Open](s23-describing-data.html) |
+| S24 | Describing Lab | [Open](s24-describing-lab.html) |
+| S25 | Inferential: t-test, ANOVA, Regression | [Open](s25-inferential-stats.html) |
+| S26 | Inference Lab | [Open](s26-inference-lab.html) |
+| S27 | The Publisher | [Open](s27-the-publisher.html) |
+| S28 | White-Paper Studio | [Open](s28-white-paper-studio.html) |
+
+:::
