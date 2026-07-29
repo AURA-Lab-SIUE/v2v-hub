@@ -123,7 +123,7 @@ the transparency markers a reviewer looks for.
 ::: {.schedule-table}
 
 | Component | Points | Full marks means |
-|---|---|---|
+|:-----------------------|:--------|:------------------------------------------------------------------|
 | Introduction and framing | 25 | States the question and why it is worth asking, and situates it in the theoretical literature rather than gesturing at it. |
 | Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, an intercoder reliability report giving the kappa value with the training protocol and threshold applied, and the pre-registration disclosure with its OSF URL. |
 | Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labelled and captioned. |
@@ -291,7 +291,7 @@ its paired academic conference poster are assigned Week 13 and due at Finals.
 ::: {.schedule-table}
 
 | Week | Wed | Topics | Due |
-|------|-----|----------------------------------|-----|
+|:--------|:-----------|:---------------------------------------------------|:--------------------------|
 | 1 | Aug 26 | Orientation; Ch 1 The Science of Storytelling (Reading: Munafo et al. (2017))| Syllabus Contract |
 | 2 | Sep 2 | Ch 2 The Open Workspace + project setup (Reading: Wilson et al. (2017))| GitHub Profile |
 | 3 | Sep 9 | Ch 3 Ethics; Ch 4 Intelligence Gathering (librarian visit) (Reading: Nosek et al. (2018))| |
@@ -324,7 +324,7 @@ Library (Lovejoy) with your student login; everything else is open access.
 ::: {.readings-table}
 
 | Week | Reading | Access |
-|------|---------|--------|
+|:-------|:---------------------------------------------------------------------|:---------------------|
 | 1 | Munafo, M. R., et al. (2017). A manifesto for reproducible science. *Nature Human Behaviour*, *1*, 0021. | [Open](https://doi.org/10.1038/s41562-016-0021) |
 | 2 | Wilson, G., et al. (2017). Good enough practices in scientific computing. *PLOS Computational Biology*, *13*(6), e1005510. | [Open](https://doi.org/10.1371/journal.pcbi.1005510) |
 | 3 | Nosek, B. A., et al. (2018). The preregistration revolution. *PNAS*, *115*(11), 2600-2606. | [Open](https://doi.org/10.1073/pnas.1708274114) |

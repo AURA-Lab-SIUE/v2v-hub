@@ -112,7 +112,7 @@ question, the procedure, the finding, and the meaning.
 ::: {.schedule-table}
 
 | Component | Points | Full marks means |
-|---|---|---|
+|:-----------------------|:--------|:------------------------------------------------------------------|
 | Introduction | 30 | States the question and why it is worth asking. The theoretical lens is doing work, not decoration, and it sets up something the study can actually deliver. |
 | Methods | 60 | Says exactly what was done, in enough detail that another researcher could repeat it: the codebook, the sampling procedure, the reliability check, and the wrangling steps. |
 | Results | 50 | Reports what was found, plainly and without interpretation: distributions, group means, the test statistic with its degrees of freedom, its p-value, and its effect size. Figures are labelled and captioned. |
@@ -274,7 +274,7 @@ building block of your final White Paper. Sessions are numbered S1–S28.
 ::: {.schedule-table}
 
 | Week | Dates | Tuesday | Thursday | Due |
-|------|-------|---------|----------|-----|
+|:--------|:--------------|:--------------------------|:--------------------------|:---------------------|
 | 1 | Aug 25 / 27 | S1 · Orientation: syllabus, the five phases, your project | S2 · Ch 1 The Science of Storytelling | Syllabus Contract |
 | 2 | Sep 1 / 3 | S3 · Ch 2 The Open Workspace (R, VS Code, Git/GitHub) | S4 · Ch 2 project-setup lab | GitHub Profile |
 | 3 | Sep 8 / 10 | S5 · Ch 3 Ethics (Belmont, IRB, consent) | S6 · Ch 4 Intelligence Gathering, librarian visit | Project Setup |
