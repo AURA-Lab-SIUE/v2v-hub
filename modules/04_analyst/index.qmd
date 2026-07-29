@@ -28,7 +28,7 @@ By the end of Phase IV, you will:
 
 ## Phase IV Overview
 
-This phase is where your research becomes quantitative. Weeks 10–13 each get two full class sessions dedicated to a single R/analysis chapter, giving you time to practice in class. You apply data wrangling, visualization, and statistical testing to the `unified_music` dataset from coursepackR. These three assignments build on each other sequentially.
+This phase is where your research becomes quantitative. Weeks 11 to 13 each get two full class sessions dedicated to a single R/analysis chapter, giving you time to practice in class. You apply data wrangling, visualization, and statistical testing to the Twitch corpus that ships with the `v2v` package. These three assignments build on each other sequentially.
 
 ---
 
@@ -44,22 +44,22 @@ This phase is where your research becomes quantitative. Weeks 10–13 each get t
 
 ## Assignments
 
-### Data Wrangling [R] (50 pts) — Week 13
+### Data Wrangling [R] (50 pts), Week 11
 
-Using the `unified_music` dataset from coursepackR:
+Using the Twitch data from the `v2v` package:
 
-1. **Hand-code** a variable for a 30-song sample
-2. **Import** the raw dataset and clean it (column names, factors, missing values)
-3. **Join** your coded data back to the main dataset
-4. **Export** a clean dataset as `coding_data_clean.RDS`
+1. **Hand-code** a variable for a 30-message sample drawn with `sample_messages()`
+2. **Load and clean** the chat and stream tables (timestamps, message length, factors, missing values)
+3. **Join** the stream-level information back onto the chat messages
+4. **Export** a clean dataset as `twitch_analysis.RDS`
 
 This assignment teaches the full data pipeline: raw input to analysis-ready output.
 
 ---
 
-### Describing Data [R] (75 pts) — Week 14
+### Describing Data [R] (75 pts), Week 12
 
-Using `coding_data_clean.RDS`:
+Using `twitch_analysis.RDS`:
 
 1. Create **frequency tables** for key categorical variables
 2. Build **ggplot2 visualizations** (bar charts, trend lines) with professional formatting
@@ -68,9 +68,9 @@ Using `coding_data_clean.RDS`:
 
 ---
 
-### Inferencing Data [R] (100 pts) — Week 15
+### Inferencing Data [R] (100 pts), Week 13
 
-Using `coding_data_clean.RDS`:
+Using `twitch_analysis.RDS`:
 
 1. **State your hypothesis** in plain English before running any code
 2. **Select the appropriate test** based on your variable types:

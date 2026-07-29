@@ -153,6 +153,8 @@ below about **0.70** as too low to proceed on, with **0.80** a comfortable floor
 - A kappa near 0 with high raw agreement is the classic **loose-definition** signature
 - `NA` in the result: missing codes, which is a case for alpha rather than kappa
 
+The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+
 ## Checkpoint
 
 You should now have:

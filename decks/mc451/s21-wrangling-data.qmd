@@ -165,6 +165,8 @@ ratio variable: true zero, equal intervals, safe to average.
 - Assigning with `<-` is what makes a change stick. Without it, R prints and forgets.
 - `unexpected '='` usually means `=` where `==` belongs inside `filter()`
 
+The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+
 ## Checkpoint
 
 You should now have:

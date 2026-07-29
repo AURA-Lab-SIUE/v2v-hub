@@ -16,7 +16,7 @@ format:
 
 [Working session]{.eyebrow}
 
-- A **project repository** on GitHub, with a working copy on your machine
+- Your own copy of the **course workspace template**, cloned to your machine
 - A `setup-check.qmd` that renders and proves the stack works
 - Your **first commit**, pushed and visible on the web
 - This is the **Project Setup** assignment, 25 points
@@ -46,41 +46,38 @@ format:
 - Change the data, re-render, and every number updates
 - Your White Paper is one of these
 
-## Step 1: create the repository
+## Step 1: copy the course template
 
-On github.com:
+The workspace is a **template repository**, so you start from the course
+structure rather than an empty folder.
 
-- Click **New repository**
-- Name it `mc451-project` (lowercase, no spaces)
-- Set it **Public**, and check **Add a README file**
-- Leave everything else at defaults, then click **Create repository**
+- Go to the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace)
+- Click **Use this template**, then **Create a new repository**
+- Name it `mc451-workspace`. Private is fine.
+- Click **Create repository**
 
-Public is deliberate. Your work is meant to be retraceable.
+## Step 2: clone it into VS Code
 
-## Step 2: clone it locally
+- Copy your new repository's URL from the green **Code** button
+- In VS Code open the Command Palette, `Ctrl+Shift+P` or `Cmd+Shift+P`
+- Run **Git: Clone**, paste the URL
+- Choose a folder you will remember, for example `Documents/MC451/`
+- When VS Code asks, click **Open**
 
-Copy the green **Code** button's HTTPS URL, then in a terminal:
+## Step 3: extensions and the README
 
-```bash
-cd Documents
-git clone https://github.com/YOURNAME/mc451-project.git
-cd mc451-project
+When the workspace opens, VS Code offers **"This workspace has extension
+recommendations."** Click **Install All**: Quarto, R, and GitLens, so the whole
+class works in one environment.
+
+Then open `README.md`. The structure is already there:
+
+```
+01_journal/     02_literature/     03_project/
+  01_prospectus/  02_codebook/  03_data/  04_drafts/
 ```
 
-`clone` downloads the repository and sets up the connection to GitHub in one
-move. You now have a folder Git is watching.
-
-## Step 3: open it and add structure
-
-In VS Code, use **File > Open Folder** and choose `mc451-project`. Then create
-these folders inside it:
-
-```bash
-mkdir data scripts writing figures
-```
-
-Four folders, four kinds of thing. Raw data never gets edited by hand, scripts
-do the work, writing holds prose, figures holds output.
+Your prospectus, codebook, data, and drafts each have a home already.
 
 ## Step 4: write the setup check
 
@@ -147,8 +144,10 @@ there.
   open. Close it and open a new one.
 - **`there is no package called 'v2v'`.** R is installed, the package is not.
   Run the install command from the Hub.
-- **`fatal: not a git repository`.** You are in the wrong folder. `cd` into
-  `mc451-project` first.
+- **`fatal: not a git repository`.** You are in the wrong folder. `cd` into your
+  workspace folder first.
+
+The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
 
 ## Common errors, part two
 
@@ -163,8 +162,8 @@ there.
 
 You should now have:
 
-- A public repository named `mc451-project` on GitHub
-- A local folder with `data`, `scripts`, `writing`, and `figures`
+- Your own copy of the workspace template, named `mc451-workspace`, on GitHub
+- It cloned locally and opened in VS Code, with the recommended extensions installed
 - A `setup-check.qmd` that renders and prints **V2V setup complete**
 - At least one commit visible in `git log --oneline` and on github.com
 

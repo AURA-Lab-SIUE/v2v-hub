@@ -283,6 +283,8 @@ Open the codebook beside the `glimpse()` output and ask a blunt question.
 - `there is no package called 'v2v'` means installation, not syntax
 - The Hub keeps a common-errors cheat sheet. An error is information, not a verdict.
 
+The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+
 ## Checkpoint
 
 You should now have:

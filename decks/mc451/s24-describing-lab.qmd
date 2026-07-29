@@ -157,6 +157,8 @@ gets units. Every cap or transformation gets named in the label.
 - `Error in +`: a `+` is missing at the end of a line, or one is trailing at the end
 - Everything on one bar: your x variable is a character, not a number
 
+The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+
 ## Saving figures for the paper
 
 ```r

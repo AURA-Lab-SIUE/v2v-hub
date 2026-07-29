@@ -115,6 +115,8 @@ with one many-level predictor. Same framework, different shape.
 - `NA` for the mean: add `na.rm = TRUE`, then ask why the NAs are there
 - An impossibly large *t*: check that you did not compare a variable to itself
 
+The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+
 ## The White Paper, 250 points
 
 [Assigned today, due finals week]{.eyebrow}

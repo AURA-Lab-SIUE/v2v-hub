@@ -149,6 +149,8 @@ Your memo is assembled from notes you already have:
   is wrong
 - Check the Hub cheat sheet before retyping the line
 
+The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+
 ## Checkpoint
 
 You should now have:

@@ -289,6 +289,8 @@ $ is_gaming      <lgl> TRUE, FALSE, TRUE, TRUE, FALSE, …
 - `object 'channel_type' not found`: you ran the chunks out of order, which is
   exactly what a fresh-session test would have caught
 
+The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+
 ## Checkpoint
 
 You should now have:
