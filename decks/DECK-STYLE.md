@@ -89,3 +89,9 @@ Draw content from the matching book chapter at
 `O:\20-research\aura-lab\v2v-book\chapters\chapterNN.qmd`. The book is the
 authority for numbers, examples, and terminology. Do not invent data, findings,
 or quotes.
+
+## Pre-commit check
+
+Run `python3 decks/qa_decks.py` before committing any deck. It checks em-dashes,
+the native pipe, cross-course references, level labels, discussion count and
+placement, front matter, theme path, and the slide-count bands above.

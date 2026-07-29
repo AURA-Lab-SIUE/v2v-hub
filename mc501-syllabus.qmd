@@ -106,6 +106,30 @@ You read the textbook with the **Graduate edition toggle on**, which reveals a r
 
 **500-level activity.** At least one-third of class meeting time is engaged in **500-level activity**: the required graduate-extension readings and the discussion built around them, and the heavier graduate deliverables (Research Proposal, Extended Codebook & Reliability Protocol, and the conference-ready White Paper with its paired poster). Your ethics work includes the **non-human-subjects IRB determination** you would actually file, building familiarity with the protocol process for doctoral study. Statistics coverage goes deeper by depth (assumptions, diagnostics, and model interpretation), not by additional techniques.
 
+
+### White Paper rubric (200 points)
+
+The white paper follows **IMRaD**: Introduction, Methods, Results, Discussion, in
+that order, with a short abstract in front and references at the close. It uses
+APA 7th edition throughout, reports effect sizes and power statistics, and carries
+the transparency markers a reviewer looks for.
+
+::: {.schedule-table}
+
+| Component | Points | Full marks means |
+|---|---|---|
+| Introduction and framing | 25 | States the question and why it is worth asking, and situates it in the theoretical literature rather than gesturing at it. |
+| Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, an intercoder reliability report giving the kappa value with the training protocol and threshold applied, and the pre-registration disclosure with its OSF URL. |
+| Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labelled and captioned. |
+| Discussion | 40 | Interprets the findings, situates them within the theoretical literature, distinguishes statistical significance from practical size, and states the limits. |
+| Abstract and references | 15 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
+| Reproducibility and publication | 15 | The document renders from source with no pasted numbers, and is live at a public address. |
+| Reflection | 10 | One specific paragraph naming what proved harder than expected, what the data could not answer, and what a second attempt would change. |
+
+:::
+
+The paired conference poster is a separate requirement shared with MC 500.
+
 ---
 
 ## Course Materials

@@ -116,6 +116,22 @@ claims. Anything you ran beyond the plan is labelled **exploratory**.
 - Draft your disclosure sentence today, list your deviations, and say how you
   report each one
 
+## Where the 200 points sit
+
+| Section | Points |
+|---|---|
+| Introduction and framing | 25 |
+| Methods | 55 |
+| Results | 40 |
+| Discussion | 40 |
+| Abstract and references | 15 |
+| Reproducibility and publication | 15 |
+| Reflection | 10 |
+
+Methods carries the most weight because it carries the transparency markers: the
+provenance statement, the reliability report, and the pre-registration
+disclosure. The full rubric is in the syllabus.
+
 ## Discussion {.discuss}
 
 On Wasserstein and Lazar (2016), the ASA statement on p-values:

@@ -38,13 +38,21 @@ format:
 - Published at a public URL through GitHub Pages
 - Graded on the study, the writing, and whether it actually reproduces
 
-## The rubric in plain terms
+## Where the 250 points sit
 
-- **Does it answer its own question?** Introduction and Discussion must match
-- **Could someone repeat it?** Methods detailed enough to follow
-- **Are the numbers right and complete?** Test statistic, *p*, and effect size
-- **Is it honest?** Limits stated, effect size not inflated
-- **Does it render and deploy?** A paper nobody can open scores nothing
+| Section | Points |
+|---|---|
+| Introduction | 30 |
+| Methods | 60 |
+| Results | 50 |
+| Discussion | 50 |
+| Abstract and references | 20 |
+| Reproducibility and publication | 25 |
+| Reflection | 15 |
+
+The full rubric, with what earns full marks in each row, is in the syllabus.
+Read it as five questions: does it answer its own question, could someone
+repeat it, are the numbers complete, is it honest about limits, does it deploy.
 
 ## Your turn {.discuss}
 

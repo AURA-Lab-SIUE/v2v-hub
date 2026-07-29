@@ -50,8 +50,9 @@ format:
 
 ## How the term is built
 
-**The Journalist** runs the whole way through: a weekly reading journal, Weeks 1 to 14,
-worth **150 points**. It is the habit, not a stage.
+**The Journalist** runs the whole way through: a weekly reading journal, 10 points a
+week across Weeks 1 to 14 plus 10 for consistency, **150 points**. It is the habit,
+not a stage.
 
 The project itself moves through four stages, and each hands you the materials for the next:
 
@@ -63,14 +64,6 @@ The project itself moves through four stages, and each hands you the materials f
 | The Publisher | 15 to 17 | V, Inference and Publication | 250 |
 
 **1,000 points total.**
-
-## The Journalist, all term
-
-- **Weekly Reading Journal**, 10 points a week across 14 teaching weeks
-- One entry per week, responding to the assigned chapter
-- This is where you practice thinking on the page before you have to defend it
-- 10 additional points for consistency, because the habit is the point
-- **150 points total**
 
 ## The Architect (Weeks 1 to 3)
 

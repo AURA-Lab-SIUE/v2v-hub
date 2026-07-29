@@ -95,6 +95,32 @@ you the materials for the next. Those four stages track the textbook's five part
 
 **Total Points:** 1000
 
+
+### White Paper rubric (250 points)
+
+The white paper follows **IMRaD**: Introduction, Methods, Results, Discussion, in
+that order, with a short abstract in front and references at the close. The
+structure is a contract with the reader, who knows where to look for the
+question, the procedure, the finding, and the meaning.
+
+::: {.schedule-table}
+
+| Component | Points | Full marks means |
+|---|---|---|
+| Introduction | 30 | States the question and why it is worth asking. The theoretical lens is doing work, not decoration, and it sets up something the study can actually deliver. |
+| Methods | 60 | Says exactly what was done, in enough detail that another researcher could repeat it: the codebook, the sampling procedure, the reliability check, and the wrangling steps. |
+| Results | 50 | Reports what was found, plainly and without interpretation: distributions, group means, the test statistic with its degrees of freedom, its p-value, and its effect size. Figures are labelled and captioned. |
+| Discussion | 50 | Says what the results mean, answers the question the Introduction asked, and states the study's limits honestly. Effect size is characterised accurately rather than inflated. |
+| Abstract and references | 20 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
+| Reproducibility and publication | 25 | The document renders from source with no pasted numbers, and is live at a public address. A paper nobody can open scores nothing. |
+| Reflection | 15 | One specific paragraph naming what proved harder than expected, where a rule was ambiguous in practice, what the data could not answer, and what a second attempt would change. |
+
+:::
+
+The reflection is graded on candour and precision, not on whether the study went
+well. A researcher who can say exactly where their study is weak is a researcher
+who understands it.
+
 ---
 
 ## Course Materials
