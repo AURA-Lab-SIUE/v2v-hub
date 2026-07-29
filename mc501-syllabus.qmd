@@ -2,6 +2,12 @@
 title: "MC 501 Course Syllabus"
 ---
 
+```{=typst}
+#set par(justify: false)
+#set text(hyphenate: false)
+```
+
+
 ## MC 501: Research Methods for Mass Communications
 ### Fall 2026
 

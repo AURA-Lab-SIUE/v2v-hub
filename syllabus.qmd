@@ -2,6 +2,12 @@
 title: "Course Syllabus"
 ---
 
+```{=typst}
+#set par(justify: false)
+#set text(hyphenate: false)
+```
+
+
 ## MC 451: Research Methods in Mass Media
 ### Fall 2026
 
