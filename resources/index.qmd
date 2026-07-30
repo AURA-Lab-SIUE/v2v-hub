@@ -14,7 +14,7 @@ Everything you need to set up, run, and get help with the course. If you are jus
 
 Review and sign to confirm you understand course policies, grading, and academic integrity.
 
-[Download (PDF)](Syllabus_Contract.pdf){.btn .btn-sm .btn-primary}
+[MC 451 (PDF)](Syllabus_Contract_MC451.pdf){.btn .btn-sm .btn-primary} [MC 501 (PDF)](Syllabus_Contract_MC501.pdf){.btn .btn-sm .btn-primary}
 :::
 
 :::{.resource-card}
