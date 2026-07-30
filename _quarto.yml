@@ -135,9 +135,15 @@ website:
 
 format:
   html:
-    theme:
-      light: [cosmo, custom-styling.scss]
-      dark: [darkly, custom-styling.scss]
+    # a11y-2026-07-30: light-only, dark theme removed. The dark bundle was
+    # [darkly, custom-styling.scss] - the SAME stylesheet as light - and that
+    # sheet hard-codes the warm-paper surface. Toggling therefore swapped only
+    # Quarto's syntax palette and left pale dark tokens on light paper:
+    # #f8f8f2 on #f1ede4 = 1.09:1, code effectively invisible, 321 axe
+    # violations on a single workbook page. A real dark skin needs a dark
+    # variant of every token in custom-styling.scss; until then light-only is
+    # the honest state, and matches the book.
+    theme: [cosmo, custom-styling.scss]
     toc: true
     code-fold: false
     include-in-header:

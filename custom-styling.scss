@@ -11,8 +11,10 @@
    This is the MODERATED variant: the lab's public site runs a dark charcoal
    canvas with a live cursor field; here that is dialled down for long reading
    and daily coursework —
-     - Reading surface is LIGHT warm paper by default; the AURA charcoal canvas
-       is the toggle (`.quarto-dark`).
+     - Reading surface is LIGHT warm paper. The AURA charcoal canvas below was
+       meant to be a `.quarto-dark` toggle, but Quarto never applied that class
+       here and the dark theme has been removed (see _quarto.yml, 2026-07-30).
+       The token block is kept as the starting point for a real dark skin.
      - Same type, same red, same mono-label system, same diamond — so the Hub
        unmistakably belongs to AURA Lab, just calmer.
      - Every colour pair meets WCAG 2.1/2.2 AA (verified: body/link text
@@ -88,6 +90,9 @@ $link-hover-color: #E5182D;
   --v2v-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+// a11y-2026-07-30: DORMANT. Nothing sets .quarto-dark, so none of this
+// applies. Kept deliberately - these tokens are already contrast-checked and
+// are the head start for a real dark skin. Do not assume dark mode works.
 .quarto-dark {
   --v2v-paper:   #101113;   // AURA charcoal canvas
   --v2v-surface: #191B1E;
