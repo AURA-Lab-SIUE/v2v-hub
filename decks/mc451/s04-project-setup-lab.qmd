@@ -73,7 +73,7 @@ class works in one environment.
 Then open `README.md`. The structure is already there:
 
 ```
-01_journal/     02_literature/     03_project/
+01_Journal/     02_Literature/     03_Project/
   01_prospectus/  02_codebook/  03_data/  04_drafts/
 ```
 

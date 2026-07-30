@@ -29,15 +29,15 @@ The workspace is a GitHub template repository. When you create your copy and ope
 ```
 v2v-workspace/
 ├── README.md                # Start here: what each folder is for
-├── 00_inbox/                # Quick capture for unprocessed notes
-├── 01_journal/              # Weekly reading reflections (committed to GitHub)
-├── 02_literature/           # Reading notes and Zotero annotations
-├── 03_project/              # Your research project
+├── 00_Inbox/                # Quick capture for unprocessed notes
+├── 01_Journal/              # Weekly reading reflections (committed to GitHub)
+├── 02_Literature/           # Reading notes and Zotero annotations
+├── 03_Project/              # Your research project
 │   ├── 01_prospectus/       # Research design (Chapter 6)
 │   ├── 02_codebook/         # Data dictionary (Chapter 8)
 │   ├── 03_data/             # Sampled data and analysis (Chapters 10 to 12)
 │   └── 04_drafts/           # Report drafts and final portfolio (Chapters 13 to 14)
-├── 04_resources/            # PDFs, images, and attachments
+├── 04_Resources/            # PDFs, images, and attachments
 ├── _templates/              # Reusable templates for journals and codebooks
 └── .vscode/                 # Recommended extensions and shared settings
 ```
@@ -89,7 +89,7 @@ Committing your workspace gives you a backup, a full history of your work, and a
 
 1. **Start of week:** Open your workspace in VS Code and pull the latest from GitHub (**Source Control** panel, or `git pull`).
 2. **During the week:** Work through the week's [workbook lab](workbook/index.qmd) and read the textbook chapter.
-3. **Before class:** Copy `_templates/journal-entry.md` into `01_journal/`, rename it for the week, and write your reflection.
+3. **Before class:** Copy `_templates/journal-entry.md` into `01_Journal/`, rename it for the week, and write your reflection.
 4. **After class:** Commit and push your workspace to GitHub.
 
 ---

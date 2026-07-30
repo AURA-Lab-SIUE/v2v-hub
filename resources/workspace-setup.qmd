@@ -72,7 +72,7 @@ Follow this structure to stay organized.
 ## Step 6: Start a journal entry from the template
 
 1. In the file explorer, open `_templates/journal-entry.md`.
-2. Right-click it and choose **Copy**, then right-click the `01_journal/` folder and choose **Paste**.
+2. Right-click it and choose **Copy**, then right-click the `01_Journal/` folder and choose **Paste**.
 3. Rename the copy for the week, for example `week-02-curiosity-and-trust.md`.
 4. Fill in the prompts and write your reflection.
 
