@@ -1,0 +1,40 @@
+# a11y-2026-07-30 - directory metadata, merged into every deck in this tree.
+# Two RevealJS defaults fail WCAG and neither can be fixed from a .qmd:
+#   1. the slide-menu control is <a href="#"> with no text and no aria-label, so
+#      a screen reader announces a bare "link" that sits in the tab order
+#      (WCAG 4.1.2, 42 decks);
+#   2. Quarto's reveal template writes user-scalable=no, blocking pinch zoom
+#      (WCAG 1.4.4, 42 decks).
+# Both are patched at runtime here rather than by forking Quarto's template.
+format:
+  revealjs:
+    include-after-body:
+      text: |
+        <script>
+        (function(){
+          var vp = document.querySelector('meta[name="viewport"]');
+          if (vp && /user-scalable\s*=\s*no|maximum-scale/.test(vp.content))
+            vp.setAttribute('content', 'width=device-width, initial-scale=1.0');
+
+          function labelMenu(){
+            var els = document.querySelectorAll('.slide-menu-button a, a.slide-menu-button');
+            els.forEach(function(a){
+              if (!a.getAttribute('aria-label')) a.setAttribute('aria-label','Slide menu');
+            });
+            /* the menu's slide list scrolls once a deck is long enough (every
+               MC 501 deck), and the plugin leaves it unfocusable, so a keyboard
+               user cannot scroll it (WCAG 2.1.1) */
+            document.querySelectorAll('.slide-menu-panel').forEach(function(el){
+              if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex','0');
+            });
+            return els.length > 0;
+          }
+          /* the menu control is injected by the plugin after Reveal initialises,
+             so poll briefly rather than assume it exists at DOMContentLoaded */
+          var tries = 0;
+          var t = setInterval(function(){
+            if (labelMenu() || ++tries > 40) clearInterval(t);
+          }, 150);
+          document.addEventListener('DOMContentLoaded', labelMenu);
+        })();
+        </script>

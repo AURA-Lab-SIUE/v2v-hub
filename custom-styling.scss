@@ -135,6 +135,10 @@ body {
 main p, main ul, main ol, main dl { max-width: var(--v2v-measure); }
 p { margin-bottom: 1.2rem; }
 strong, b { color: var(--v2v-ink); font-weight: 700; }
+// a11y-2026-07-30 bold-in-button: the rule above also caught <strong> inside
+// filled buttons, overriding their white text and leaving #191B1E on the red
+// fill at 3.69:1. Bold inside any button inherits the button's own colour.
+.btn strong, .btn b { color: inherit; }
 ::selection { background: var(--v2v-red-tint); }
 hr { border: 0; border-top: 1px solid var(--v2v-rule); margin: 2.5rem 0; }
 
@@ -607,3 +611,14 @@ div.sourceCode code, .sourceCode span {
 .readings-table th, .readings-table td { vertical-align: top; padding: 0.4em 0.6em; }
 .readings-table td:first-child, .readings-table th:first-child { white-space: nowrap; width: 1%; }
 .readings-table td:last-child, .readings-table th:last-child { white-space: nowrap; width: 1%; }
+
+// ============================================================
+// a11y-2026-07-30 sourcecode-at-token
+// Quarto's default highlighter paints the attribute token (.at) #657422, which
+// is only 4.41:1 on the tinted code surface. It appears in nearly every R code
+// block, so this was the single largest contrast failure on either site.
+// #55611C measures 5.77:1 on #F1EDE4. !important is required because Quarto
+// emits its highlight CSS after the theme.
+// ============================================================
+code span.at,
+pre code span.at { color: #55611C !important; }
