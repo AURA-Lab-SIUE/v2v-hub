@@ -1,0 +1,207 @@
+---
+title: "Installing the v2v Package"
+---
+
+:::{.phase-header}
+# Installing the `v2v` package
+
+**The course package does not come from the usual place, so the usual command does not work.**
+:::
+
+Most R packages install from CRAN, the official archive, with `install.packages()`. The
+course package is not on CRAN. It installs from GitHub instead, which takes one extra
+step and introduces a few error messages worth recognizing on sight.
+
+---
+
+## The one thing that confuses everyone
+
+**The repository is named `v2v-r`. The package is named `v2v`.**
+
+You install from the repository and then load the package, so the two names appear in
+two different commands and they are deliberately different:
+
+```r
+remotes::install_github("AURA-Lab-SIUE/v2v-r")   # the REPOSITORY
+library(v2v)                                      # the PACKAGE
+```
+
+This is a normal convention for R packages hosted on GitHub. The `-r` suffix marks which
+of an organization's repositories holds the R code, since this one also publishes the
+textbook and the course site.
+
+Two commands that will **not** work, and the error each produces:
+
+| You type | What happens |
+| --- | --- |
+| `install.packages("v2v")` | `package 'v2v' is not available` |
+| `library(v2v-r)` | `object 'r' not found`, because R reads the hyphen as minus |
+
+---
+
+## Install it
+
+### Step 1. Get `remotes`
+
+`remotes` is on CRAN, so this part is ordinary. You only ever do this once.
+
+```r
+install.packages("remotes")
+```
+
+### Step 2. Install `v2v` from GitHub
+
+```r
+remotes::install_github("AURA-Lab-SIUE/v2v-r")
+```
+
+This takes a few minutes the first time. Text scrolls past, some of it red. Red text in
+R is not automatically an error; it is just how R writes to the console. What matters is
+the last line.
+
+### Step 3. Verify
+
+```r
+library(v2v)
+packageVersion("v2v")
+twitch_chat(n = 5)
+```
+
+If you get a version number and five rows of chat, you are done.
+
+---
+
+## Prompts you will see, and what to answer
+
+**"These packages have more recent versions available. Which would you like to update?"**
+
+You get a numbered list and a prompt. **Type `3` and press Enter**, or press Enter on an
+empty line, to skip updates. Updating dependencies mid-semester is how a setup that
+worked yesterday stops working today. Skip them.
+
+**"Do you want to install from sources the package which needs compilation?"**
+
+**Answer `no`.** The precompiled version is fine and installing from source requires a
+compiler you probably do not have. Only answer yes if something specifically failed and
+you have installed the build tools below.
+
+---
+
+## When it fails
+
+### `package 'v2v' is not available`
+
+You used `install.packages()`. It only looks at CRAN. Use the `install_github()` line.
+
+### `there is no package called 'v2v'`
+
+The install did not finish, even if it looked like it did. Run the install line again and
+read the output from the **bottom up**. The real error is usually several lines above
+where you stopped reading.
+
+### `HTTP error 403` or `API rate limit exceeded`
+
+GitHub allows a limited number of anonymous requests per hour from one network address.
+On campus wifi, a whole classroom shares that address, so a lab section installing
+together can exhaust it in minutes.
+
+Two fixes. Wait an hour, or authenticate, which raises the limit substantially:
+
+```r
+install.packages("gitcreds")
+gitcreds::gitcreds_set()
+```
+
+Paste a GitHub personal access token when prompted. A token with no scopes selected is
+sufficient; this is only to identify you, not to grant access to anything. See the
+[GitHub setup guide](github-setup.qmd) for creating one.
+
+### The install needs to compile something
+
+If you answered `no` above and it still fails asking for a compiler, install the build
+tools for your system, then retry:
+
+- **Windows:** [Rtools](https://cran.r-project.org/bin/windows/Rtools/). The version has
+  to match your R version, and the download page states which is which. Check yours with
+  `R.version.string` first.
+- **macOS:** open Terminal and run `xcode-select --install`.
+
+### `file is in use` on Windows
+
+R cannot overwrite a package that another R session has loaded. Close every other R and
+VS Code window, then reinstall. If it persists, restart R with **R: Restart R Session**
+from the Command Palette and try again before reopening anything else.
+
+### `installed help of package 'v2v' is corrupt`
+
+The package works but its help files did not install cleanly, so `?twitch_chat` and
+`?v2v::common_errors` come back empty. Reinstall with `force = TRUE`:
+
+```r
+remotes::install_github("AURA-Lab-SIUE/v2v-r", force = TRUE)
+```
+
+Then restart R. Help files load once per session, so a reinstall without a restart looks
+like it did nothing.
+
+---
+
+## Updating during the semester
+
+The package is updated as the course runs. When you are told a new version is out:
+
+```r
+remotes::install_github("AURA-Lab-SIUE/v2v-r", force = TRUE)
+```
+
+Then **restart R**. `force = TRUE` reinstalls even when the version number has not
+changed, which matters because a fix does not always bump the version.
+
+Check what you have with `packageVersion("v2v")`.
+
+---
+
+## What you get
+
+Once loaded, the package supplies:
+
+**Two datasets.** `twitch_chat_sample`, roughly 35,000 chat messages stratified across a
+50-channel corpus, and `twitch_streams_sample`, the stream snapshots for those same
+channels. Reach them through `twitch_chat()` and `twitch_streams()`, which let you filter
+as you load, or directly with `data(twitch_chat_sample, package = "v2v")`.
+
+**Helpers for the places this data trips people up.** `clean_dates()` for the
+millisecond timestamps, `join_chat_streams()` for matching messages to stream snapshots,
+`sample_messages()` for drawing a reliability sample, and `reliability()` for intercoder
+agreement.
+
+**Analysis and presentation.** `run_t_test()`, `run_chi_square()`, and `pretty_table()`.
+
+**The course figure theme.** `theme_v2v()` with `scale_colour_v2v()` and
+`scale_fill_v2v()` for categories, and the `_c` variants
+(`scale_colour_v2v_c()`, `scale_fill_v2v_c()`) for continuous values such as message
+length. American spellings (`scale_color_v2v()`) work identically.
+
+**Portfolio scaffolding.** `new_portfolio()` and `deploy_portfolio()`.
+
+**A troubleshooting page** for the errors this dataset produces most often:
+
+```r
+?v2v::common_errors
+```
+
+That page is worth reading once early rather than searching for at midnight.
+
+---
+
+:::{.callout-tip}
+## Check your setup
+
+`v2v::setup()` checks the whole toolchain: the R packages the textbook depends on, plus
+Quarto and Git on your PATH. It prints a green check for each thing present and a red x
+with a copy-paste install hint for each thing missing.
+
+Run it at the end of Chapter 2 to confirm your setup before any code chapters begin, and
+run it again any time something feels wrong. Paste its output when you ask for help; it
+answers the first three questions anyone would ask you.
+:::

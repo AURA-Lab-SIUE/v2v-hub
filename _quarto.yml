@@ -126,6 +126,7 @@ website:
           contents:
             - setup.qmd
             - resources/install-r.qmd
+            - resources/install-v2v.qmd
             - resources/install-vscode.qmd
             - resources/vscode-customization.qmd
             - resources/copilot-setup.qmd

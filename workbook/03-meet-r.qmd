@@ -74,7 +74,11 @@ install.packages("remotes")
 remotes::install_github("AURA-Lab-SIUE/v2v-r")
 ```
 
-`tidyverse` is the standard collection of R packages for data work: importing, reshaping, summarizing, and charting. `v2v` is the course package. It ships the Twitch dataset this workbook uses, the course figure theme, and a set of helpers written for these assignments. It does not live on CRAN, which is why it installs from GitHub through `remotes`.
+`tidyverse` is the standard collection of R packages for data work: importing, reshaping, summarizing, and charting. `v2v` is the course package. It ships the Twitch dataset this workbook uses, the course figure theme, and a set of helpers written for these assignments.
+
+Note that the two names in that second command are different on purpose. You install from the **repository** `v2v-r`, and you load the **package** `v2v`. The package is not on CRAN, so `install.packages("v2v")` will not find it.
+
+If the install gives you trouble, or you hit a prompt you are not sure how to answer, the [Installing the v2v package](../resources/install-v2v.qmd) guide covers every error and prompt this step produces.
 
 This may take a few minutes. You'll see red text scrolling, which is normal. When it's done, load them:
 
