@@ -33,10 +33,10 @@ v2v-workspace/
 ├── 01_Journal/              # Weekly reading reflections (committed to GitHub)
 ├── 02_Literature/           # Reading notes and Zotero annotations
 ├── 03_Project/              # Your research project
-│   ├── 01_prospectus/       # Research design (Chapter 6)
-│   ├── 02_codebook/         # Data dictionary (Chapter 8)
-│   ├── 03_data/             # Sampled data and analysis (Chapters 10 to 12)
-│   └── 04_drafts/           # Report drafts and final portfolio (Chapters 13 to 14)
+│   ├── 01_Prospectus/       # Research design (Chapter 6)
+│   ├── 02_Codebook/         # Data dictionary (Chapter 8)
+│   ├── 03_Data/             # Sampled data and analysis (Chapters 10 to 12)
+│   └── 04_Drafts/           # Report drafts and final portfolio (Chapters 13 to 14)
 ├── 04_Resources/            # PDFs, images, and attachments
 ├── _templates/              # Reusable templates for journals and codebooks
 └── .vscode/                 # Recommended extensions and shared settings
