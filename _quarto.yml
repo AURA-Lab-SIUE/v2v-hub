@@ -177,3 +177,35 @@ format:
           document.addEventListener('toggle', mark, true);
         })();
         </script>
+        <script>
+        /* edition-toggle-2026-08-12: MC 451 / MC 501 view switch. Shares the
+           key and the origin with the textbook, so the choice follows the
+           student across both sites. */
+        (function(){
+          var KEY = 'v2v-show-grad-ext';
+          function apply(on){
+            document.body.classList.toggle('show-grad-ext', on);
+            var b = document.getElementById('v2v-edition-toggle');
+            if(b){
+              b.setAttribute('aria-pressed', on ? 'true' : 'false');
+              b.querySelector('.label').textContent =
+                on ? 'Graduate edition: on' : 'Graduate edition: off';
+            }
+          }
+          document.addEventListener('DOMContentLoaded', function(){
+            var on = localStorage.getItem(KEY) === '1';
+            var btn = document.createElement('button');
+            btn.id = 'v2v-edition-toggle';
+            btn.type = 'button';
+            btn.title = 'Switch between the MC 451 and MC 501 view. Your choice is remembered across pages.';
+            btn.innerHTML = '<span class="dot" aria-hidden="true"></span><span class="label"></span>';
+            btn.addEventListener('click', function(){
+              var now = !(localStorage.getItem(KEY) === '1');
+              localStorage.setItem(KEY, now ? '1' : '0');
+              apply(now);
+            });
+            document.body.appendChild(btn);
+            apply(on);
+          });
+        })();
+        </script>

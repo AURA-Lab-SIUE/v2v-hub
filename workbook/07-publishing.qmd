@@ -8,16 +8,16 @@ execute:
 
 {{< video videos/07-publishing.mp4 >}}
 
-You've collected data, cleaned it, visualized it, and tested a hypothesis. Now you assemble everything into a professional research report — published simultaneously as a PDF and a live website.
+You've collected data, cleaned it, visualized it, and tested a hypothesis. Now you assemble everything into a professional research report, published simultaneously as a PDF and a live website.
 
 This chapter walks you through the **final project template** (`mc451-final-project.zip`) and shows you how each piece connects to the work you've already done.
 
 ## What You're Building
 
-Your final portfolio is a **Quarto Book** — a collection of `.qmd` files that Quarto renders into a single, cohesive document. One command (`quarto render`) produces:
+Your final portfolio is a **Quarto Book**: a collection of `.qmd` files that Quarto renders into a single, cohesive document. One command (`quarto render`) produces:
 
-1. **A PDF** — print-ready, submitted to Blackboard
-2. **A website** — hosted free on GitHub Pages, accessible to anyone with the link
+1. **A PDF**: print-ready, submitted to Blackboard
+2. **A website**: hosted free on GitHub Pages, accessible to anyone with the link
 
 This is real academic publishing. Graduate students, researchers, and data journalists use this exact workflow.
 
@@ -54,7 +54,7 @@ mc451-final-project/
 ::: {.callout-important}
 ## You Are Not Starting from Scratch
 
-Every section of the final portfolio draws from an assignment you've already completed. This is assembly and revision — not new writing. Your Introduction comes from your Prospectus. Your Methodology comes from your Codebook and Sampling Plan. Your Results come from your three R assignments.
+Every section of the final portfolio draws from an assignment you've already completed. This is assembly and revision, not new writing. Your Introduction comes from your Prospectus. Your Methodology comes from your Codebook and Sampling Plan. Your Results come from your three R assignments.
 :::
 
 ## Setup: Getting the Template Running
@@ -75,7 +75,7 @@ install.packages(c("tidyverse", "knitr", "kableExtra", "scales"))
 
 ### Step 3: Place Your Data
 
-Copy your cleaned `.RDS` file (from Chapter 4 / the Data Wrangling assignment) into the project folder. The template's `03-results.qmd` expects a file called `coding_data_clean.RDS` — rename yours to match, or update the filename in the code.
+Copy your cleaned `.RDS` file (from Chapter 4 / the Data Wrangling assignment) into the project folder. The template's `03-results.qmd` expects a file called `coding_data_clean.RDS`, so rename yours to match, or update the filename in the code.
 
 ### Step 4: First Render
 
@@ -91,11 +91,11 @@ Or press `Ctrl/Cmd+Shift+K` with any `.qmd` file open. Quarto will:
 - Combine all chapters into a single document
 - Produce a PDF and HTML website in the `docs/` folder
 
-If it works, you'll see a `docs/` folder appear with your rendered files. If it doesn't, check the error message — it will tell you exactly which line failed.
+If it works, you'll see a `docs/` folder appear with your rendered files. If it doesn't, check the error message; it will tell you exactly which line failed.
 
 ## Writing Each Section
 
-### Introduction (01-introduction.qmd) — 500–700 words
+### Introduction (01-introduction.qmd): 500 to 700 words
 
 **Structure:**
 
@@ -104,20 +104,20 @@ If it works, you'll see a `docs/` folder appear with your rendered files. If it 
 3. **Theory** (1 paragraph): Which communication theory frames your study? How does it connect to your variables?
 4. **Research Questions** (list): State both RQs exactly as you wrote them in your Topic Selection & RQs assignment.
 
-**Source:** Pull from your Project Prospectus and Topic Selection assignments. Revise for flow — these were separate assignments, so connecting them into a single narrative takes some editing.
+**Source:** Pull from your Project Prospectus and Topic Selection assignments. Revise for flow, because these were separate assignments, so connecting them into a single narrative takes some editing.
 
-### Methodology (02-methodology.qmd) — 400–600 words
+### Methodology (02-methodology.qmd): 400 to 600 words
 
 **Structure:**
 
 1. **Data source** (1 paragraph): What media content did you analyze? Where did you find it? What time period?
 2. **Sampling strategy** (1 paragraph): How did you select your sample? What was the population? What was the final sample size?
-3. **Variables** (1–2 paragraphs): Define each variable — conceptual and operational definitions. This comes directly from your codebook.
+3. **Variables** (1–2 paragraphs): Define each variable: conceptual and operational definitions. This comes directly from your codebook.
 4. **Pilot findings** (1 paragraph): What did you learn from the pilot test? What changes did you make to the codebook?
 
 **Source:** Pull from your Codebook & Qual Memo and Sampling Plan & Pilot assignments.
 
-### Results (03-results.qmd) — Code + Interpretation
+### Results (03-results.qmd): code and interpretation
 
 The template includes pre-written R code with placeholder variable names. You need to:
 
@@ -139,7 +139,7 @@ The Results section includes three components:
 The R code in your graded assignments is the foundation. Copy your working code from the Describing Data and Inferencing Data assignments into the template. Adjust variable names as needed. The template provides scaffolding, but your tested code is more reliable.
 :::
 
-### Discussion (04-discussion.qmd) — 400–500 words
+### Discussion (04-discussion.qmd): 400 to 500 words
 
 **Structure:**
 
@@ -148,7 +148,7 @@ The R code in your graded assignments is the foundation. Copy your working code 
 3. **Limitations** (at least 3): Be specific. "Small sample size" is generic. "The sample capped each channel at 1,000 messages, so the busiest channels are under-represented relative to their real chat volume" is specific and useful.
 4. **Conclusion** (2–3 sentences): What's the takeaway? What should future researchers investigate?
 
-### Abstract (index.qmd) — ~150 words
+### Abstract (index.qmd): about 150 words
 
 Write this **last**. The abstract summarizes the entire report in one paragraph:
 - What you studied (1 sentence)
@@ -234,5 +234,5 @@ Test in incognito before submitting.
 ::: {.callout-tip}
 ## Connection to Your Project
 
-This is it — the final deliverable. Everything you've learned in this workbook feeds into this Quarto Book. Chapters 1–2 prepared your data. Chapters 3–6 taught you the R skills. This chapter assembles the final product. When you're done, you'll have a live research website and a professional PDF — real artifacts for a graduate school application or a job portfolio.
+This is it: the final deliverable. Everything you've learned in this workbook feeds into this Quarto Book. Chapters 1–2 prepared your data. Chapters 3–6 taught you the R skills. This chapter assembles the final product. When you're done, you'll have a live research website and a professional PDF, real artifacts for a graduate school application or a job portfolio.
 :::

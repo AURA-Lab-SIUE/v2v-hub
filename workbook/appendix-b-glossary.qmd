@@ -14,7 +14,7 @@ Key terms from this workbook, defined in plain English.
 : The claim that there *is* a relationship between two variables. This is what you're hoping to find evidence for. If the p-value is small enough, you reject the null hypothesis in favor of this one.
 
 **APA Format**
-: The citation and writing style used by the American Psychological Association. In research methods, it refers specifically to how you report statistical results — e.g., *χ²(5) = 23.41, p < .001*.
+: The citation and writing style used by the American Psychological Association. In research methods, it refers specifically to how you report statistical results, for example *χ²(5) = 23.41, p < .001*.
 
 **Categorical Variable**
 : A variable whose values are groups or labels, not numbers on a scale. Examples: genre (pop, rock, rap), tone (positive, neutral, negative), mode (major, minor).
@@ -23,7 +23,7 @@ Key terms from this workbook, defined in plain English.
 : A statistical test that asks: "Are these two categorical variables related, or are the patterns I see just due to chance?" It compares what you *observed* to what you'd *expect* if there were no relationship.
 
 **Codebook**
-: A document that defines every variable in your study — what it means, how you measure it, and what values it can take. Think of it as the instruction manual for your data.
+: A document that defines every variable in your study: what it means, how you measure it, and what values it can take. Think of it as the instruction manual for your data.
 
 **Coder Drift**
 : The gradual, unconscious change in how you apply coding rules over time. Item 1 and item 100 might get coded differently even though the rules haven't changed. Anchor examples and decision logs help prevent this.
@@ -56,13 +56,13 @@ Key terms from this workbook, defined in plain English.
 : A table showing how many times each value of a variable appears in the dataset. Usually includes both raw counts and percentages.
 
 **ggplot2**
-: An R package for creating data visualizations. It uses the "grammar of graphics" — you build charts in layers by specifying data, visual mappings (aesthetics), and geometric shapes (geoms).
+: An R package for creating data visualizations. It uses the "grammar of graphics": you build charts in layers by specifying data, visual mappings (aesthetics), and geometric shapes (geoms).
 
 **GitHub Pages**
 : A free hosting service from GitHub that turns a repository's files into a public website. You push your rendered Quarto Book to GitHub, enable Pages, and your research report becomes a live URL.
 
 **Null Hypothesis (H₀)**
-: The claim that there is *no* relationship between two variables — any pattern you see is just random chance. The default assumption; you need statistical evidence to reject it.
+: The claim that there is *no* relationship between two variables, so any pattern you see is just random chance. The default assumption; you need statistical evidence to reject it.
 
 **Operational Definition**
 : The specific, measurable procedure for assigning a value to a variable. "Tone is how positive or negative the article feels" is a conceptual definition. "Tone is coded as 1 (positive), 2 (neutral), or 3 (negative) based on the dominant framing in the headline and first paragraph" is an operational definition.
@@ -77,13 +77,13 @@ Key terms from this workbook, defined in plain English.
 : An open-source publishing tool that renders documents mixing text and code into PDFs, websites, presentations, and books. The successor to R Markdown.
 
 **Quarto Book**
-: A Quarto project that combines multiple `.qmd` files into a single, multi-chapter document — rendered as both a PDF and a navigable website.
+: A Quarto project that combines multiple `.qmd` files into a single, multi-chapter document, rendered as both a PDF and a navigable website.
 
 **RDS**
 : R's native file format for saving data. Unlike CSV, RDS preserves factor levels, data types, and column attributes. Always save cleaned data as RDS.
 
 **Standardized Residual**
-: A number showing how much a specific cell in a contingency table deviates from what you'd expect under the null hypothesis. Values above +2 or below -2 indicate cells that are notably different from expected — these are the combinations "driving" your chi-square result.
+: A number showing how much a specific cell in a contingency table deviates from what you'd expect under the null hypothesis. Values above +2 or below -2 indicate cells that are notably different from expected; these are the combinations "driving" your chi-square result.
 
 **Statistical Significance**
 : A result is "statistically significant" when the p-value falls below a chosen threshold (usually .05). It means the pattern in the data is unlikely to have occurred by chance alone. It does NOT mean the finding is important, meaningful, or large.

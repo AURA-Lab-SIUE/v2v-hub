@@ -5,8 +5,12 @@ title: "Phase I: The Journalist"
 :::{.phase-header}
 # Phase I: The Journalist
 
-**Duration:** Weeks 1 to 15 (every teaching week) | **Points:** 150
+**Duration:** Weeks 1 to 14 (every teaching week) | **Points:** 150
 Develop your voice through weekly reading reflections
+:::
+
+::: {.edition-note}
+**Reading this page for MC 501?** Use the **Graduate edition** control in the lower corner of the page. It reveals the graduate requirements for every assignment, and your choice is remembered across the hub and the textbook. MC 451 students should leave it off.
 :::
 
 ---
@@ -20,44 +24,60 @@ By the end of Phase I, you will:
 - Reflect critically on assigned readings using structured approaches
 - Build a personal knowledge archive in your course workspace
 - Practice translating academic concepts into your own words
-- Establish a weekly writing routine
-- Create a professional GitHub profile
+- Establish a weekly writing routine that runs the length of the term
 :::
 
 ---
 
 ## Phase I Overview
 
-In this phase, you develop the habits of a research journalist: reading critically, reflecting thoughtfully, and documenting consistently. Each week, you engage with chapters from [From Vibes to Variables](https://aura-lab-siue.github.io/v2v/) and write reflections that build your understanding over time.
+The Journalist is a throughline, not a stage. While the other four roles hand you the materials for the next one in sequence, this phase runs alongside all of them from week 1 to week 14.
+
+In this phase you develop the habits of a research journalist: reading critically, reflecting thoughtfully, and documenting consistently. Each week you engage with a chapter of [From Vibes to Variables](https://aura-lab-siue.github.io/v2v/) and write a reflection that builds your understanding over time.
 
 ### The Journalist Mindset
-- **Read actively**: Engage with the text, ask questions, make connections
-- **Reflect deeply**: Consider how concepts apply to your interests
-- **Document consistently**: Build your personal knowledge archive
-- **Share openly**: Contribute to collaborative learning through GitHub
 
----
+- **Read actively**: engage with the text, ask questions, make connections
+- **Reflect deeply**: consider how concepts apply to your interests
+- **Document consistently**: build your personal knowledge archive
+- **Share openly**: contribute to collaborative learning through GitHub
 
-## Weekly Breakdown
+### Which chapter, which week
 
-| Week | Reading | Key Topics |
-|------|---------|------------|
-| 1 | Syllabus and Introductions | Course overview; tools; GitHub setup |
-| 2 | Ch 1 to 2: Curiosity & Trust | Research as storytelling; reproducibility; tools (R, VS Code, Quarto, Git) |
-| 3 | Ch 3 to 4: Reading Protocol & Archivist | Active reading; IMRAD; Zotero; literature searching; citation chaining |
-| 4 | Ch 5 to 6: Lens & Roadmap | Theory as a focusing tool; three paradigms; narrowing a topic; Holy Trinity |
+The reading for each week is set by your course schedule, which is the authority on dates:
+
+- [MC 451 schedule](../../syllabus.qmd)
+- [MC 501 schedule](../../mc501-syllabus.qmd)
 
 ---
 
 ## Assignment: Weekly Reading Journal (150 pts total)
 
-**Due:** Every Friday by 11:59 PM | **Length:** 250 to 300 words per entry | **Scoring:** 10 pts/week times 14 teaching weeks, plus 10 pts for consistency across the semester
+**Due:** every Friday by 11:59 PM | **Scoring:** 10 pts per week across 14 teaching weeks, plus 10 pts for consistency across the semester
 
 Each week, write a reflection on the assigned reading. Choose one of three thinking paths:
 
-1. **The Connector**: Link the reading to your project, other concepts, or real-world examples
-2. **The Troubleshooter**: Document a challenge you encountered and how you worked through it
-3. **The Critic**: Ask critical questions, challenge assumptions, or explore implications
+1. **The Connector**: link the reading to your project, other concepts, or real-world examples
+2. **The Troubleshooter**: document a challenge you encountered and how you worked through it
+3. **The Critic**: ask critical questions, challenge assumptions, or explore implications
+
+::: {.undergraduate-only}
+### MC 451 requirements
+
+**Length:** 250 to 300 words per entry.
+
+Write on the assigned chapter. You are not required to read outside the textbook for the journal.
+:::
+
+::: {.graduate-extension}
+### MC 501 requirements
+
+**Length:** 450 to 500 words per entry.
+
+You read the textbook with the **Graduate edition toggle on**, which reveals a required graduate extension in every chapter. Each week also carries an assigned peer-reviewed article, listed in the [MC 501 schedule](../../mc501-syllabus.qmd).
+
+Your entry must explicitly engage that week's assigned graduate reading, not only the chapter. **An entry that addresses chapter content alone receives a maximum of 7 of 10 points.**
+:::
 
 ### Submission
 
@@ -65,15 +85,15 @@ Write your journal entry in your course workspace (`01_Journal/`) by copying the
 
 ### What Makes a Strong Entry
 
-- **Depth over breadth**: Focus on 1 to 2 ideas rather than summarizing everything
-- **Specificity**: Reference specific concepts, examples, or passages
-- **Connection**: Link to your own project or prior readings
-- **Honesty**: It's fine to be confused or skeptical; document your thinking
+- **Depth over breadth**: focus on one or two ideas rather than summarizing everything
+- **Specificity**: reference specific concepts, examples, or passages
+- **Connection**: link to your own project or to prior readings
+- **Honesty**: it is fine to be confused or skeptical, so document your thinking
 
 ---
 
 ## Related Resources
 
-- [Setup Guide](../../setup.qmd): Configure your workspace
-- [GitHub Setup](../../resources/github-setup.qmd): Create your professional profile
-- [course workspace Setup](../../resources/workspace-setup.qmd): Get your workspace running
+- [Setup Guide](../../setup.qmd): configure your workspace
+- [Course workspace setup](../../resources/workspace-setup.qmd): get your workspace running
+- [From Vibes to Variables textbook](https://aura-lab-siue.github.io/v2v/)

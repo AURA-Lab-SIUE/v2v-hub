@@ -11,7 +11,7 @@ Southern Illinois University Edwardsville
 
 ## Background
 
-I'm an Associate Professor of Mass Communications at SIUE, where I direct the Social Interaction & Media Lab (SIM Lab). My research focuses on how people communicate, connect, and collaborate through digital platforms—from video games and streaming to virtual reality and remote work environments.
+I'm an Associate Professor of Mass Communications at SIUE, where I direct the Social Interaction & Media Lab (SIM Lab). My research focuses on how people communicate, connect, and collaborate through digital platforms, from video games and streaming to virtual reality and remote work environments.
 
 Before joining SIUE, I completed my PhD in Information and Media at Michigan State University, where I studied gameplay livestreaming and how audiences build relationships with streamers. My master's degree in Speech Communication from SIUE examined parasocial relationships on social media platforms like Facebook.
 
@@ -30,7 +30,7 @@ My current work explores:
 
 ## Teaching Philosophy
 
-I believe the best research methods courses empower students to ask *good questions* before worrying about technical answers. This course is structured around the idea that you're a **Communication Liaison**—someone who bridges data science and creative thinking.
+I believe the best research methods courses empower students to ask *good questions* before worrying about technical answers. This course is structured around the idea that you're a **Communication Liaison**, someone who bridges data science and creative thinking.
 
 I'm committed to:
 - Making research methods accessible (not just for math people)

@@ -5,8 +5,12 @@ title: "Phase V: The Publisher"
 :::{.phase-header}
 # Phase V: The Publisher
 
-**Duration:** Weeks 16–17 | **Points:** 250
-Publish your research as a professional web portfolio
+**Duration:** Weeks 15 to 17 (Book Part V: Inference and Publication)
+Assemble and publish your research as a white paper
+:::
+
+::: {.edition-note}
+**Reading this page for MC 501?** Use the **Graduate edition** control in the lower corner of the page. The final deliverable differs between the two courses, and so does the rubric. MC 451 students should leave it off.
 :::
 
 ---
@@ -16,109 +20,163 @@ Publish your research as a professional web portfolio
 By the end of Phase V, you will:
 
 :::{.learning-objectives}
-- Assemble a complete two-part research report (qualitative + quantitative content analysis)
-- Render your report as both a print-ready PDF and a multi-page website
-- Manage citations with Zotero and BibTeX
-- Deploy your portfolio to GitHub Pages
-- Write for multiple audiences (academic, professional, general public)
+- Assemble a complete IMRaD research report from the work of the previous four phases
+- Render your report from source, with no pasted numbers, to both a PDF and a live web address
+- Manage citations in APA 7th edition
+- Deploy your paper to GitHub Pages
+- Write honestly about what your study could and could not establish
 :::
 
 ---
 
 ## Phase V Overview
 
-Every assignment this semester has been a building block. The Reading Journals sharpened your thinking. The Librarian Visit Report confirmed your data source. The Prospectus gave you a roadmap. The Codebook gave you a rulebook. The R assignments turned raw codes into tables, charts, and tests. Now you assemble all of it into a single, coherent research report — published simultaneously as a PDF and a live website.
+Every assignment this semester has been a building block. The reading journals sharpened your thinking. The librarian visit confirmed your data source. The prospectus gave you a roadmap. The codebook gave you a rulebook. The R assignments turned raw codes into tables, charts, and tests. Now you assemble all of it into one coherent paper, published from source as both a PDF and a live website.
 
-Your final portfolio presents a two-part content analysis:
+Read Chapter 14, The one-click report, alongside this phase.
 
-- **Study 1 (Qualitative):** How you immersed yourself in the data, identified themes, and developed your coding variables
-- **Study 2 (Quantitative):** Descriptive statistics, visualizations, and an inferential test appropriate to your research questions
+### The IMRaD contract
+
+The white paper follows **IMRaD**: Introduction, Methods, Results, Discussion, in that order, with a short abstract in front and references at the close. The structure is a contract with the reader, who knows where to look for the question, the procedure, the finding, and the meaning.
+
+Your paper reports a two-part study:
+
+- **Study 1, qualitative:** how you immersed yourself in the data, identified themes, and developed your coding variables
+- **Study 2, quantitative:** descriptive statistics, visualizations, and the inferential test appropriate to your research questions
 
 ---
 
 ## Timeline
 
 | Week | Focus | Deliverable |
-|------|-------|-------------|
-| 15 | Ch 21–22: Portfolio & Going Live | CITI Certification; begin assembling final project |
-| 16 | **Remote Work Week** — no class meetings | Build, render, publish |
-| 17 | **Finals Week** | Final Web Portfolio due |
+|:--|:--|:--|
+| 15 | Ch 14: The Publisher; assemble your paper | |
+| 16 | Work session: open lab and support | |
+| 17 | Finals week | White paper due |
+
+**Due:** Friday, December 18, 2026 at 11:59 PM.
 
 ---
 
-## The Final Project
+## What You Build
 
-### What You Build
+A **Quarto project** that renders to two outputs from the same source files:
 
-A **Quarto Book Project** that renders to two outputs from the same source files:
-
-- **A multi-page website** hosted on GitHub Pages
+- **A live website** hosted on GitHub Pages
 - **A print-ready PDF** submitted to Blackboard
 
-### Project Structure
+A paper nobody can open scores nothing, so both are required for the submission to count. Test your URL in a private or incognito browser window before you submit.
 
-| File | Content | R Code? |
-|------|---------|---------|
-| `index.qmd` | Abstract + landing page | No |
-| `01-literature-review.qmd` | Background, theory, research questions | No |
-| `02-methodology.qmd` | Two-phase design, data source, variables, pilot | No |
-| `03-study-1.qmd` | Qualitative immersion, themes, variable development | No |
-| `04-study-2.qmd` | Descriptive stats, visualization, inferential test | Yes |
-| `05-discussion.qmd` | Interpretation of both studies, limitations, conclusion | No |
+### Project structure
+
+| File | Content | R code? |
+|:--|:--|:--|
+| `index.qmd` | Abstract and landing page | No |
+| `01-introduction.qmd` | Framing, theory, research questions | No |
+| `02-methods.qmd` | Design, data source, codebook, sampling, reliability, wrangling | No |
+| `03-results.qmd` | Study 1 themes; Study 2 descriptives, figures, the test | Yes |
+| `04-discussion.qmd` | Interpretation, limits, conclusion | No |
 | `references.qmd` | Auto-generated bibliography | No |
 
-### Choosing Your Statistical Test (Study 2)
+### Choosing your statistical test
 
-| Your RQ compares... | Use this test |
-|---|---|
-| Two categorical variables (e.g., tone x outlet) | Chi-Square |
-| One categorical (2 groups) x one continuous (e.g., tone x word count) | T-Test |
-| Two continuous variables (e.g., word count x shares) | Correlation |
+| Your research question compares | Use this test |
+|:--|:--|
+| Two categorical variables (for example, tone by outlet) | Chi-square |
+| One categorical (two groups) by one continuous (for example, tone by word count) | Independent t-test |
+| Two continuous variables (for example, word count by shares) | Pearson correlation |
 
-The starter project includes pre-written R code for all three tests. Keep the one that matches your variables, delete the other two.
+The starter project includes pre-written R code for all three. Keep the one that matches your variables and delete the other two.
 
-### Recommended Writing Order
+### Recommended writing order
 
-1. **Methodology** — easiest; draws from Codebook and Sampling Plan
-2. **Study 1** — expand your qualitative memo; describe themes and variable development
-3. **Literature Review** — expand your Prospectus; add theory from Annotated Manuscript
-4. **Study 2** — place your .RDS file, update variable names, choose your test
-5. **Discussion** — interpret both studies; answer the RQs
-6. **Abstract** — write last, once everything else exists
+1. **Methods** first: it is the easiest, because it draws directly from your codebook and sampling plan
+2. **Results**: expand your qualitative memo for Study 1, then place your `.RDS` file and run Study 2
+3. **Introduction**: expand your prospectus and add the theory from your annotated reading
+4. **Discussion**: interpret both studies and answer the questions the introduction asked
+5. **Abstract**: write it last, once everything else exists
 
 ---
 
-## Submission
+::: {.undergraduate-only}
 
-Submit both to Blackboard by **Friday, December 19, 2026 at 11:59 pm**:
+## Submission (MC 451)
 
-1. **PDF file** — rename to `Lastname_FinalPortfolio.pdf`
-2. **Live URL** — your GitHub Pages link
+Submit both to Blackboard by Friday, December 18, 2026 at 11:59 PM:
+
+1. **PDF file**, renamed to `Lastname_WhitePaper.pdf`
+2. **Live URL**, your GitHub Pages link
 
 ::: callout-warning
-Both must be present for the submission to be considered complete. Test your URL in a private/incognito browser window before submitting.
+Both must be present for the submission to be considered complete.
 :::
 
----
+## White Paper rubric (250 points)
 
-## Grading Criteria (250 points)
+| Component | Points | Full marks means |
+|:--|:--|:--|
+| Introduction | 30 | States the question and why it is worth asking. The theoretical lens is doing work, not decoration, and it sets up something the study can actually deliver. |
+| Methods | 60 | Says exactly what was done, in enough detail that another researcher could repeat it: the codebook, the sampling procedure, the reliability check, and the wrangling steps. |
+| Results | 50 | Reports what was found, plainly and without interpretation: distributions, group means, the test statistic with its degrees of freedom, its p-value, and its effect size. Figures are labelled and captioned. |
+| Discussion | 50 | Says what the results mean, answers the question the introduction asked, and states the study's limits honestly. Effect size is characterised accurately rather than inflated. |
+| Abstract and references | 20 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
+| Reproducibility and publication | 25 | The document renders from source with no pasted numbers, and is live at a public address. |
+| Reflection | 15 | One specific paragraph naming what proved harder than expected, where a rule was ambiguous in practice, what the data could not answer, and what a second attempt would change. |
 
-| Criterion | Points |
-|---|---|
-| Literature Review | 40 |
-| Methodology | 40 |
-| Study 1 — Qualitative Analysis | 40 |
-| Study 2 — Descriptive Statistics | 25 |
-| Study 2 — Inferential Test | 35 |
-| Discussion & Conclusion | 30 |
-| PDF Formatting | 20 |
-| GitHub Pages Website | 20 |
-| **Total** | **250** |
+The reflection is graded on candour and precision, not on whether the study went well. A researcher who can say exactly where their study is weak is a researcher who understands it.
+
+:::
+
+::: {.graduate-extension}
+
+## The graduate deliverable (MC 501)
+
+You produce a **white paper plus an academic conference poster**. The white paper is a formal Quarto Book carrying:
+
+- an **executive summary** in front of the abstract
+- a **structured literature review** drawing on **15 or more sources**
+- an **explicit limitations analysis**, not a limitations sentence
+- professional formatting suitable for conference submission or client delivery
+
+The paper carries the three transparency markers a reviewer looks for: a **data provenance statement**, an **intercoder reliability report** giving the kappa value with the training protocol and the threshold applied, and the **pre-registration disclosure** with its OSF URL.
+
+### The conference poster
+
+The poster is a separate requirement shared with MC 500, rendered at 36 by 24 inches from the Quarto Typst poster template. It is assigned in Week 13 alongside the white paper and worked in the Week 15 studio session.
+
+## Submission (MC 501)
+
+Submit to Blackboard by Friday, December 18, 2026 at 11:59 PM:
+
+1. **PDF file**, renamed to `Lastname_WhitePaper.pdf`
+2. **Live URL**, your GitHub Pages link
+3. **Poster PDF**, renamed to `Lastname_Poster.pdf`
+
+::: callout-warning
+All three must be present for the submission to be considered complete.
+:::
+
+## White Paper rubric (200 points)
+
+| Component | Points | Full marks means |
+|:--|:--|:--|
+| Introduction and framing | 25 | States the question and why it is worth asking, and situates it in the theoretical literature rather than gesturing at it. |
+| Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, an intercoder reliability report giving the kappa value with the training protocol and threshold applied, and the pre-registration disclosure with its OSF URL. |
+| Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labelled and captioned. |
+| Discussion | 40 | Interprets the findings, situates them within the theoretical literature, distinguishes statistical significance from practical size, and states the limits. |
+| Abstract and references | 15 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
+| Reproducibility and publication | 15 | The document renders from source with no pasted numbers, and is live at a public address. |
+| Reflection | 10 | One specific paragraph naming what proved harder than expected, what the data could not answer, and what a second attempt would change. |
+
+The paired conference poster is graded as a separate requirement shared with MC 500.
+
+:::
 
 ---
 
 ## Related Resources
 
 - [From Vibes to Variables textbook](https://aura-lab-siue.github.io/v2v/)
+- [Publishing Lab](../../workbook/07-publishing.qmd)
 - [GitHub Setup](../../resources/github-setup.qmd)
 - [v2v package (GitHub)](https://github.com/AURA-Lab-SIUE/v2v-r)

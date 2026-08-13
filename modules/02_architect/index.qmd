@@ -5,8 +5,12 @@ title: "Phase II: The Architect"
 :::{.phase-header}
 # Phase II: The Architect
 
-**Duration:** Weeks 2 to 4 | **Points:** 125
+**Duration:** Weeks 1 to 3 (Book Part I: Foundation)
 Design your workspace and research foundation
+:::
+
+::: {.edition-note}
+**Reading this page for MC 501?** Use the **Graduate edition** control in the lower corner of the page. Phase II differs between the two courses, and your choice is remembered across the hub and the textbook. MC 451 students should leave it off.
 :::
 
 ---
@@ -27,13 +31,23 @@ By the end of Phase II, you will:
 
 ## Phase II Overview
 
-As an architect designs blueprints before construction, you design your research infrastructure. This phase runs concurrently with Phase I. While you're reading and reflecting, you're also setting up the tools you'll use all semester and scouting your data source.
+As an architect designs blueprints before construction, you design your research infrastructure. This phase runs concurrently with Phase I. While you are reading and reflecting, you are also setting up the tools you will use all semester and scouting your data source.
+
+Read Chapters 1 to 3 alongside this phase. Every assignment is due Friday of the week listed, by 11:59 PM.
 
 ---
 
-## Assignments
+::: {.undergraduate-only}
 
-### GitHub Profile (25 pts), Week 1
+## Assignments (MC 451): 125 points
+
+### Syllabus Contract (25 pts), Week 1
+
+Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
+
+---
+
+### GitHub Profile (25 pts), Week 2
 
 Create a professional GitHub account with:
 
@@ -41,12 +55,6 @@ Create a professional GitHub account with:
 - A profile README introducing yourself and your research interests
 
 [GitHub Setup Guide](../../resources/github-setup.qmd){.btn .btn-primary}
-
----
-
-### Syllabus Contract (25 pts), Week 2
-
-Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
 
 ---
 
@@ -59,7 +67,7 @@ Initialize your course workspace as a GitHub repository and push it to GitHub. T
 3. Publish the repository to GitHub (public)
 4. Submit your repository URL to Blackboard
 
-From this point forward, you will commit and push your journal entries each week using GitHub Desktop, building a git habit before R enters the picture.
+From this point forward you commit and push your journal entries each week using GitHub Desktop, building a git habit before R enters the picture.
 
 [GitHub Desktop Setup Guide](../../resources/github-desktop-setup.qmd){.btn .btn-primary}
 
@@ -69,17 +77,61 @@ From this point forward, you will commit and push your journal entries each week
 
 Meet with a SIUE librarian to identify and evaluate a data archive for your research project. Write a report documenting:
 
-1. **The archive**: Name, type, scope
-2. **What you learned**: Date range, searchability, export options
-3. **Feasibility**: Can this source answer your research questions?
-4. **Librarian consultation**: What did the librarian recommend?
+1. **The archive**: name, type, scope
+2. **What you learned**: date range, searchability, export options
+3. **Feasibility**: can this source answer your research questions?
+4. **Librarian consultation**: what did the librarian recommend?
+
+Submit as PDF: `Lastname_ArchivistReport.pdf`
+
+:::
+
+::: {.graduate-extension}
+
+## Assignments (MC 501): 100 points
+
+### Syllabus Contract (25 pts), Week 1
+
+Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
+
+---
+
+### GitHub Profile (25 pts), Week 2
+
+Create a professional GitHub account with:
+
+- A professional username and profile photo
+- A profile README introducing yourself and your research interests
+
+[GitHub Setup Guide](../../resources/github-setup.qmd){.btn .btn-primary}
+
+---
+
+### Librarian Visit Report (50 pts), Week 4
+
+Meet with a SIUE librarian to identify and evaluate a data archive for your research project. Write a report documenting:
+
+1. **The archive**: name, type, scope
+2. **What you learned**: date range, searchability, export options
+3. **Feasibility**: can this source answer your research questions?
+4. **Librarian consultation**: what did the librarian recommend?
 
 Submit as PDF: `Lastname_ArchivistReport.pdf`
 
 ---
 
+### A note on Project Setup
+
+MC 501 has no separate Project Setup assignment. You build the workspace repository during the Week 2 class session, alongside Chapter 2, and you are expected to be committing and pushing your journal entries from that point forward.
+
+[GitHub Desktop Setup Guide](../../resources/github-desktop-setup.qmd){.btn .btn-primary}
+
+:::
+
+---
+
 ## Related Resources
 
-- [Install R & VS Code](../../resources/install-vscode.qmd)
-- [course workspace Setup](../../resources/workspace-setup.qmd)
+- [Install R and VS Code](../../resources/install-vscode.qmd)
+- [Course workspace setup](../../resources/workspace-setup.qmd)
 - [GitHub Setup](../../resources/github-setup.qmd)

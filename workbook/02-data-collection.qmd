@@ -8,11 +8,11 @@ execute:
 
 {{< video videos/02-data-collection.mp4 >}}
 
-Your codebook is ready. Your spreadsheet is set up. Now you need to code your full sample — somewhere between 50 and 200 items, depending on your sampling plan. This chapter covers the practical realities of doing that well.
+Your codebook is ready. Your spreadsheet is set up. Now you need to code your full sample, somewhere between 50 and 200 items, depending on your sampling plan. This chapter covers the practical realities of doing that well.
 
 ## The Coder Drift Problem
 
-Here's what happens to every researcher: the first 20 items are easy. You're focused, your definitions are fresh, and every coding decision feels clear. By item 75, things get fuzzy. You start second-guessing yourself. You code something as `2` that you would have coded as `1` an hour ago. This is **coder drift** — the gradual, unconscious shift in how you apply your coding rules.
+Here's what happens to every researcher: the first 20 items are easy. You're focused, your definitions are fresh, and every coding decision feels clear. By item 75, things get fuzzy. You start second-guessing yourself. You code something as `2` that you would have coded as `1` an hour ago. This is **coder drift**: the gradual, unconscious shift in how you apply your coding rules.
 
 Coder drift is normal. It's also dangerous, because inconsistent coding produces unreliable data, and unreliable data produces meaningless results.
 
@@ -20,18 +20,18 @@ Coder drift is normal. It's also dangerous, because inconsistent coding produces
 
 **1. Anchor Re-Coding**
 
-At the start of every coding session, re-code 5 items you've already coded — your anchor examples from Chapter 1. If your new codes match the originals, you're consistent. If they don't, stop and review your decision rules before continuing.
+At the start of every coding session, re-code 5 items you've already coded, your anchor examples from Chapter 1. If your new codes match the originals, you're consistent. If they don't, stop and review your decision rules before continuing.
 
 **2. The Decision Log**
 
-Every time you encounter an ambiguous case, write it down in your `coder_notes` column. Don't just pick a code and move on — document *why* you chose it. At the end of each session, review your log. If you see patterns (e.g., "I keep struggling with items that are partially sarcastic"), add a new decision rule to your codebook.
+Every time you encounter an ambiguous case, write it down in your `coder_notes` column. Don't just pick a code and move on; document *why* you chose it. At the end of each session, review your log. If you see patterns (e.g., "I keep struggling with items that are partially sarcastic"), add a new decision rule to your codebook.
 
 ## Batch Workflow
 
 Code in focused batches rather than marathon sessions. Here's a realistic workflow:
 
 ### Before Each Session (5 minutes)
-1. Open your codebook — have it visible on screen or printed
+1. Open your codebook; have it visible on screen or printed
 2. Re-code your 5 anchor examples
 3. Review any decision log entries from last session
 
@@ -43,7 +43,7 @@ Code in focused batches rather than marathon sessions. Here's a realistic workfl
 ### After Each Session (5 minutes)
 7. Review your decision log entries
 8. Update your codebook if you added any new rules
-9. Record your count: "Session 3 complete — items 61–95 coded"
+9. Record your count: "Session 3 complete, items 61–95 coded"
 
 ## Source-Specific Tips
 
@@ -91,7 +91,7 @@ Before you move to R, run through this checklist on your completed spreadsheet:
 - [ ] **No text in numeric columns:** Codes are numbers, not words (check for stray "yes" or "positive" entries)
 - [ ] **No duplicate items:** Each item appears exactly once
 - [ ] **Column headers are clean:** Lowercase, no spaces, underscores only (e.g., `source_type` not `Source Type`)
-- [ ] **Saved as CSV:** Export your spreadsheet as a `.csv` file — this is what R will import
+- [ ] **Saved as CSV:** Export your spreadsheet as a `.csv` file; this is what R will import
 
 ### How to Export as CSV
 
@@ -102,7 +102,7 @@ Name your file descriptively: `my_coding_data_raw.csv` (the "raw" reminds you th
 
 ## Try It Yourself
 
-1. Calculate your personal data collection timeline using the table above. Is your target realistic? If not, what can you adjust — batch size, sessions per day, or sample size (consult your professor before reducing sample size)?
+1. Calculate your personal data collection timeline using the table above. Is your target realistic? If not, what can you adjust: batch size, sessions per day, or sample size (consult your professor before reducing sample size)?
 
 2. Open your coding spreadsheet and run the quality self-check. Fix any issues you find *now*, before you import to R.
 

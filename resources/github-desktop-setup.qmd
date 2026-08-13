@@ -4,7 +4,7 @@ title: "GitHub Desktop Setup"
 
 ## GitHub Desktop: Version Control Without the Command Line
 
-GitHub Desktop is a free application that lets you manage your git repositories with a visual interface. You will use it to push your journal entries and project files to GitHub each week — building a commit history that demonstrates your progress across the semester.
+GitHub Desktop is a free application that lets you manage your git repositories with a visual interface. You will use it to push your journal entries and project files to GitHub each week, building a commit history that demonstrates your progress across the semester.
 
 **Time needed:** 10 minutes
 
@@ -14,7 +14,7 @@ GitHub Desktop is a free application that lets you manage your git repositories 
 
 1. Visit [desktop.github.com](https://desktop.github.com/)
 2. Download the installer for your operating system (Windows or Mac)
-3. Run the installer — it requires no special configuration
+3. Run the installer; it requires no special configuration
 4. When prompted, sign in with your GitHub account (the one you created in Week 1)
 
 ---
@@ -58,7 +58,7 @@ A **commit** is a snapshot of your work at a specific point in time. Think of it
 
 After writing each journal entry in VS Code:
 
-1. Open GitHub Desktop — it will automatically detect the new/changed files
+1. Open GitHub Desktop; it will automatically detect the new/changed files
 2. Review the changes in the "Changes" tab (you should see your new journal entry)
 3. Type a commit message: `Week 3 journal` (or similar)
 4. Click **Commit to main**
@@ -72,7 +72,7 @@ Your journal entry is now on GitHub. Your instructor can see your commit history
 
 | Term | What It Means |
 |------|--------------|
-| **Repository (repo)** | A folder tracked by git — it knows every change you have made |
+| **Repository (repo)** | A folder tracked by git; it knows every change you have made |
 | **Commit** | A saved snapshot of your work with a message describing what changed |
 | **Push** | Upload your commits to GitHub so they are visible online |
 | **Pull** | Download changes from GitHub to your local machine (used when collaborating) |

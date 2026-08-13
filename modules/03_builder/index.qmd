@@ -5,8 +5,12 @@ title: "Phase III: The Builder"
 :::{.phase-header}
 # Phase III: The Builder
 
-**Duration:** Weeks 5–12 | **Points:** 250
+**Duration:** Weeks 4 to 10 (Book Parts II and III: Planning and Operationalization)
 Construct your research framework and measurement tools
+:::
+
+::: {.edition-note}
+**Reading this page for MC 501?** Use the **Graduate edition** control in the lower corner of the page. Phase III is where the two courses differ most, and your choice is remembered across the hub and the textbook. MC 451 students should leave it off.
 :::
 
 ---
@@ -17,8 +21,7 @@ By the end of Phase III, you will:
 
 :::{.learning-objectives}
 - Understand research ethics and complete CITI certification
-- Apply theory to frame research questions
-- Understand the full methods landscape (surveys, experiments, qualitative, content analysis)
+- Apply theory to frame research questions and hypotheses
 - Define variables conceptually and operationally
 - Build a comprehensive codebook through qualitative immersion
 - Design a sampling plan and pilot test your coding scheme
@@ -29,80 +32,129 @@ By the end of Phase III, you will:
 
 ## Phase III Overview
 
-This is the longest and most substantive phase. You move from planning to building: selecting a theoretical framework, learning about multiple research methods, then diving deep into content analysis. The qualitative work you do here — immersing yourself in data, noticing patterns, developing variables — becomes Study 1 of your final project.
+This is the longest and most substantive phase. You move from planning to building: choosing a theoretical lens, writing questions the data can actually answer, then working through the operationalization gap into a codebook you could hand to another coder.
+
+The qualitative work you do here, immersing yourself in the data and noticing patterns before you count anything, becomes the first half of your final paper.
+
+### Reading map
+
+| Chapter | What it gives you |
+|:--|:--|
+| Ch 4: Intelligence Gathering | Finding and reading the literature; the literature map |
+| Ch 5: Theory as a Lens | Theory, variables, and hypotheses |
+| Ch 6: The Prospectus | Research questions; the prospectus; pre-registration |
+| Ch 7: Structured listening | Field notes; manifest and latent content |
+| Ch 8: From vibes to variables | The operationalization gap; levels of measurement; reliability and validity |
+| Ch 9: The rulebook and first workspace | Building and coding the codebook in R |
+| Ch 10: The sample | Sampling strategies; the pilot; kappa and alpha |
+
+Your course schedule is the authority on which week each chapter lands: [MC 451](../../syllabus.qmd), [MC 501](../../mc501-syllabus.qmd). Every assignment is due Friday of the week listed, by 11:59 PM.
 
 ---
 
-## Weekly Breakdown
+::: {.undergraduate-only}
 
-| Week | Reading | Focus | Assignment Due |
-|------|---------|-------|----------------|
-| 5 | Ch 7–8: Research Question & Ethics | Writing strong RQs; Belmont Report; IRB; ethics in content analysis | Annotated Manuscript (25 pts) |
-| 6 | Ch 9–10: Toolkit & Qualitative Methods | Methods overview; interviews; focus groups; thematic analysis | Project Prospectus (25 pts) |
-| 7 | Ch 11–12: Surveys & Experiments | Survey design; sampling theory; experimental design (conceptual) | Topic Selection / RQs (25 pts) |
-| 8 | Ch 13–14: Immersion & Vibes to Variables | Data immersion; operationalization; conceptual vs. operational definitions | Definitions Practice (25 pts) |
-| 9 | Ch 15–16: Rulebook & Sampling Plan | Codebook construction; sampling strategies; pilot testing; reliability | Codebook & Qual Memo (50 pts) |
-| 10 | Ch 17: Wrangling the Chaos | R programming begins; data wrangling with tidyverse | Sampling Plan & Pilot (75 pts) |
+## Assignments (MC 451): 250 points
+
+### CITI Ethics Certification (25 pts), Week 5
+
+Complete the CITI Program's Social and Behavioral Research training and submit your completion certificate. This is due early because it gates the human-subjects reasoning you apply for the rest of the term.
 
 ---
 
-## Assignments
+### Annotated Manuscript (25 pts), Week 5
 
-### Annotated Manuscript (25 pts) — Week 5
-
-Find and annotate a peer-reviewed research article related to your topic. Focus on the research gap, theoretical framework, method, findings, and limitations. Write a connection statement explaining how this article relates to your project.
+Find and annotate one peer-reviewed research article related to your topic. Focus on the research gap, theoretical framework, method, findings, and limitations. Write a connection statement explaining how this article relates to your project.
 
 ---
 
-### Project Prospectus (25 pts) — Week 6
+### Topic Selection and Research Questions (25 pts), Week 6
 
-Draft a one-page research plan: Topic, Theory, Data source, preliminary RQs, and a rough timeline.
-
----
-
-### Topic Selection — Research Questions (25 pts) — Week 7
-
-Submit your finalized topic, formal RQs (and/or hypotheses), a variable preview, and justification for why these questions matter.
+Submit your finalized topic, formal research questions (and hypotheses where appropriate), a variable preview, and a justification for why these questions matter.
 
 ---
 
-### Definitions Practice (25 pts) — Week 8
+### Project Prospectus (25 pts), Week 7
 
-Define at least 4 variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge case decision rules.
-
----
-
-### Codebook & Qualitative Memo (50 pts) — Week 10
-
-Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a 200–300 word qualitative memo describing the patterns you observed during immersion.
+Draft a one-page research plan: topic, theory, data source, preliminary research questions, and a rough timeline.
 
 ---
 
-### Sampling Plan & Pilot (75 pts) — Week 11
+### Definitions Practice (25 pts), Week 8
 
-Design your sampling strategy (search terms, date range, method) and pilot test your codebook on 10–20 items. Document edge cases, coding decisions, and any revisions.
-
----
-
-### CITI Ethics Certification (25 pts) — Week 15
-
-Complete the CITI Program's Social & Behavioral Research training and submit your completion certificate.
+Define at least four variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge-case decision rules.
 
 ---
 
-## Key Concepts Across Phase III
+### Codebook and Qualitative Memo (50 pts), Week 9
 
-**Ethics (Week 5):** Belmont Report, informed consent, IRB review categories, ethics of analyzing public social media content
+Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a 200 to 300 word qualitative memo describing the patterns you observed during immersion.
 
-**Methods Landscape (Weeks 6–7):** Content analysis, surveys, experiments, and qualitative methods — what each can and cannot tell you
+---
 
-**Content Analysis Core (Weeks 7–11):** Immersion, operationalization, codebook construction, sampling, pilot testing, reliability
+### Sampling Plan and Pilot (75 pts), Week 11
 
-**R Skills (Week 12):** Data wrangling, visualization, statistical testing, practicing with the Twitch corpus via the `v2v` package
+Design your sampling strategy (search terms, date range, method) and pilot test your codebook on 10 to 20 items. Document edge cases, coding decisions, and any revisions.
+
+:::
+
+::: {.graduate-extension}
+
+## Assignments (MC 501): 325 points
+
+### CITI Ethics Certification (25 pts), Week 5
+
+Complete the CITI Program's Social and Behavioral Research training and submit your completion certificate.
+
+Your ethics work also includes the **non-human-subjects IRB determination** you would actually file for this project. Drafting it builds familiarity with the protocol process you will need for doctoral study, even though a public-content content analysis is unlikely to require review.
+
+---
+
+### Annotated Manuscripts, three articles (25 pts), Week 5
+
+Find and annotate **three** peer-reviewed research articles related to your topic. For each, address the research gap, theoretical framework, method, findings, and limitations. Then write a single synthesis statement explaining how the three relate to each other and to your project. The synthesis, not the three summaries, is where the graduate work lives.
+
+---
+
+### Topic Selection and Research Questions (25 pts), Week 6
+
+Submit your finalized topic, formal research questions (and hypotheses where appropriate), a variable preview, and a justification for why these questions matter.
+
+---
+
+### Research Proposal, sentence outline (75 pts), Week 7
+
+A structured sentence outline that could serve as the front half of a conference paper: framing, theoretical positioning, the questions, and the proposed design. Every point in the outline is a full sentence carrying an actual claim, not a topic label.
+
+This replaces the undergraduate one-page prospectus and is worth three times as much, because it is doing three times as much work.
+
+---
+
+### Definitions Practice (25 pts), Week 8
+
+Define at least four variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge-case decision rules.
+
+---
+
+### Extended Codebook and Reliability Protocol (75 pts), Week 9
+
+Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a qualitative memo describing the patterns you observed during immersion.
+
+Your codebook adds a **formal reliability protocol**: the planned sample size for the reliability subset, the target alpha threshold, the coder training procedure, and the revision triggers that say in advance what you will do if the threshold is missed.
+
+---
+
+### Sampling Plan and Pilot, 20 to 30 items (75 pts), Week 10
+
+Design your sampling strategy (search terms, date range, method) and pilot test your codebook on **20 to 30 items**, a large enough subset to compute a meaningful reliability statistic. Document edge cases, coding decisions, the alpha you obtained, and any revisions the pilot forced.
+
+:::
 
 ---
 
 ## Related Resources
 
 - [From Vibes to Variables textbook](https://aura-lab-siue.github.io/v2v/)
+- [Codebook Lab](../../workbook/01-codebook.qmd)
+- [Data Collection Lab](../../workbook/02-data-collection.qmd)
 - [v2v package (GitHub)](https://github.com/AURA-Lab-SIUE/v2v-r)

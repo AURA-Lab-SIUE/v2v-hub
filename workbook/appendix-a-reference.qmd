@@ -74,10 +74,10 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 | `table()` | base R | Build a contingency table | `table(df$var1, df$var2)` |
 | `prop.table()` | base R | Convert counts to proportions | `prop.table(tbl, margin = 1)` |
 | `chisq.test()` | base R | Chi-square test of independence | `chisq.test(tbl)` |
-| `$statistic` | — | Extract χ² value from test result | `result$statistic` |
-| `$parameter` | — | Extract degrees of freedom | `result$parameter` |
-| `$p.value` | — | Extract p-value | `result$p.value` |
-| `$stdres` | — | Extract standardized residuals | `result$stdres` |
+| `$statistic` | n/a | Extract χ² value from test result | `result$statistic` |
+| `$parameter` | n/a | Extract degrees of freedom | `result$parameter` |
+| `$p.value` | n/a | Extract p-value | `result$p.value` |
+| `$stdres` | n/a | Extract standardized residuals | `result$stdres` |
 
 ## Exporting Data
 
