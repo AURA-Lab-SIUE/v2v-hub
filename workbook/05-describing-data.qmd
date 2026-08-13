@@ -223,7 +223,7 @@ ggplot(top_games, aes(x = fct_reorder(game, n), y = n, fill = game)) +
 
 That's the difference between a homework chart and a professional one. Every element serves a purpose: the sort order aids comparison, the labels provide exact values, and the clean theme reduces visual noise.
 
-`v2v::theme_v2v()` and `v2v::scale_fill_v2v()` apply the course's house style in one call each, so that every figure in your portfolio looks like a member of one set rather than a pile of unrelated charts. `scale_fill_brewer(palette = "Set2")` is a perfectly good alternative when you're working outside this course.
+`v2v::theme_v2v()` and `v2v::scale_fill_v2v()` apply the course's house style in one call each, so that every figure in your White Paper looks like a member of one set rather than a pile of unrelated charts. `scale_fill_brewer(palette = "Set2")` is a perfectly good alternative when you're working outside this course.
 
 ## Bar Chart: Counts Across Time
 
@@ -398,5 +398,5 @@ These exercises map directly to the Describing Data [R] assignment:
 ::: {.callout-tip}
 ## Connection to Your Project
 
-For your final portfolio, you'll create a frequency table and bar chart using your own variables, not game category and channel type, but whatever you coded in your content analysis. The `ggplot2` syntax is identical. Only the variable names change. The interpretation paragraphs become part of your Results section.
+For your White Paper, you'll create a frequency table and bar chart using your own variables, not game category and channel type, but whatever you coded in your content analysis. The `ggplot2` syntax is identical. Only the variable names change. The interpretation paragraphs become part of your Results section.
 :::

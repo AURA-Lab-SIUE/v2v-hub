@@ -114,7 +114,7 @@ git commit -m "Week 2 journal and literature notes"
 git push
 ```
 
-This gives you a backup, a history of your work, and a way for Dr. Leith to see your entries. It also builds the version-control habit you use in the final portfolio.
+This gives you a backup, a history of your work, and a way for Dr. Leith to see your entries. It also builds the version-control habit you use in the White Paper.
 
 ---
 

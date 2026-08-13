@@ -67,7 +67,7 @@ Statistical analysis and visualization, run inside VS Code.
 
 ::: card
 ### Git & GitHub
-Version control for your work and your final portfolio.
+Version control for your work and your White Paper.
 
 <span class="resource-badge">Free</span>
 

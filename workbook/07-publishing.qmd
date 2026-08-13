@@ -8,62 +8,76 @@ execute:
 
 {{< video videos/07-publishing.mp4 >}}
 
-You've collected data, cleaned it, visualized it, and tested a hypothesis. Now you assemble everything into a professional research report, published simultaneously as a PDF and a live website.
+You have collected data, cleaned it, visualized it, and tested a hypothesis. Now you assemble everything into your **White Paper**, published simultaneously as a PDF and a live website.
 
-This chapter walks you through the **final project template** (`mc451-final-project.zip`) and shows you how each piece connects to the work you've already done.
+The White Paper is the graded deliverable. A **Quarto Book** is the format it takes: a collection of `.qmd` files that Quarto renders into a single, cohesive document. Two words, one artifact. When the syllabus says White Paper and this chapter says Quarto Book, they are describing the same thing from two angles: what you wrote, and how it is built.
 
 ## What You're Building
 
-Your final portfolio is a **Quarto Book**: a collection of `.qmd` files that Quarto renders into a single, cohesive document. One command (`quarto render`) produces:
+One command (`quarto render`) produces:
 
 1. **A PDF**: print-ready, submitted to Blackboard
 2. **A website**: hosted free on GitHub Pages, accessible to anyone with the link
 
 This is real academic publishing. Graduate students, researchers, and data journalists use this exact workflow.
 
-## The Template: File by File
+### The structure is IMRaD
 
-When you download and unzip `mc451-final-project.zip`, you'll find this structure:
+Your White Paper follows **IMRaD**: Introduction, Methods, Results, and Discussion, in that order, with a short abstract in front and references at the close. The structure is a contract with the reader, who knows where to look for the question, the procedure, the finding, and the meaning. Your syllabus rubric is organized by these same sections, so the file layout below maps one to one onto how the paper is graded.
+
+## Scaffolding the Project
+
+Create the project with the course R package rather than assembling folders by hand:
+
+```r
+library(v2v)
+new_portfolio("~/Documents/mc451-whitepaper")
+```
+
+That gives you the White Paper skeleton, a `journals/` directory for your weekly reading journal, a `codebook/` directory, a data tree with `data/raw/` already gitignored, and a `_quarto.yml` wired as a Quarto Book:
 
 ```
-mc451-final-project/
+mc451-whitepaper/
 ├── _quarto.yml          ← Master configuration file
 ├── index.qmd            ← Abstract (write this LAST)
-├── 01-introduction.qmd  ← Background, theory, research questions
-├── 02-methodology.qmd   ← Data source, sampling, variables, pilot
-├── 03-results.qmd       ← R code + output (tables, charts, chi-square)
+├── 01-introduction.qmd  ← Question, theory, research questions
+├── 02-methods.qmd       ← Data provenance, sampling, variables, reliability
+├── 03-results.qmd       ← R code + output (tables, charts, tests, effect sizes)
 ├── 04-discussion.qmd    ← Interpretation, limitations, conclusion
+├── 05-reflection.qmd    ← What was hard, what was ambiguous, what you'd change
 ├── references.qmd       ← Auto-generated bibliography
 ├── references.bib       ← Your citations (from Zotero)
-├── custom.css           ← Website styling
-├── .vscode/             ← Recommended extensions and settings
-└── README.md            ← Setup and publishing instructions
+├── journals/            ← Weekly reading journal entries
+├── codebook/            ← Draft and final codebooks
+├── data/raw/            ← Source data (gitignored)
+├── data/derived/        ← Cleaned, analysis-ready data
+└── figures/             ← Exported plots
 ```
 
 ### How the Files Map to Your Prior Work
 
 | Template File | What to Write | Where It Comes From |
 |--------------|---------------|-------------------|
-| `01-introduction.qmd` | Topic background, theory, 2 research questions | Project Prospectus + Topic Selection & RQs |
-| `02-methodology.qmd` | Data source, sampling strategy, variable definitions, pilot findings | Codebook & Qual Memo + Sampling Plan & Pilot |
-| `03-results.qmd` | Frequency table, bar chart, chi-square test | Data Wrangling + Describing Data + Inferencing Data |
-| `04-discussion.qmd` | Answer your RQs, connect to theory, list 3+ limitations | Your own analysis and reflection |
-| `index.qmd` | 150-word abstract summarizing the entire report | Write this LAST |
+| `01-introduction.qmd` | Question, theoretical lens, research questions | Project Prospectus + Topic Selection & RQs |
+| `02-methods.qmd` | Data provenance, sampling strategy, variable definitions, reliability, wrangling steps | Codebook & Qual Memo + Sampling Plan & Pilot |
+| `03-results.qmd` | Distributions, group comparisons, test statistics, effect sizes | Data Wrangling + Describing Data + Inferencing Data |
+| `04-discussion.qmd` | Answer your RQs, connect to theory, state the limits | Your own analysis |
+| `05-reflection.qmd` | What proved harder than expected, and what a second attempt would change | Your own experience of the term |
+| `index.qmd` | Abstract summarizing all four IMRaD sections | Write this LAST |
 | `references.bib` | BibTeX citations for all sources | Export from Zotero |
 
 ::: {.callout-important}
 ## You Are Not Starting from Scratch
 
-Every section of the final portfolio draws from an assignment you've already completed. This is assembly and revision, not new writing. Your Introduction comes from your Prospectus. Your Methodology comes from your Codebook and Sampling Plan. Your Results come from your three R assignments.
+Every section draws from an assignment you have already completed. This is assembly and revision, not new writing. Your Introduction comes from your Prospectus. Your Methods come from your Codebook and Sampling Plan. Your Results come from your three R assignments.
 :::
 
-## Setup: Getting the Template Running
+## Setup: Getting the Project Running
 
-### Step 1: Download and Open
+### Step 1: Scaffold and Open
 
-1. Download `mc451-final-project.zip` from Blackboard
-2. Unzip it to a location you can find (e.g., Documents or your MC451 project folder)
-3. In VS Code, choose **File, Open Folder** and select the unzipped folder. The open folder is your working directory.
+1. Run `v2v::new_portfolio()` as shown above.
+2. In VS Code, choose **File, Open Folder** and select the new folder. The open folder is your working directory.
 
 ### Step 2: Install Required Packages
 
@@ -75,7 +89,7 @@ install.packages(c("tidyverse", "knitr", "kableExtra", "scales"))
 
 ### Step 3: Place Your Data
 
-Copy your cleaned `.RDS` file (from Chapter 4 / the Data Wrangling assignment) into the project folder. The template's `03-results.qmd` expects a file called `coding_data_clean.RDS`, so rename yours to match, or update the filename in the code.
+Copy your cleaned `.RDS` file (from Chapter 4 and the Data Wrangling assignment) into `data/derived/`. The starter `03-results.qmd` expects a file called `coding_data_clean.RDS`, so rename yours to match, or update the filename in the code.
 
 ### Step 4: First Render
 
@@ -85,76 +99,140 @@ Open VS Code's integrated terminal (**Terminal, New Terminal**) and type:
 quarto render
 ```
 
-Or press `Ctrl/Cmd+Shift+K` with any `.qmd` file open. Quarto will:
+Or press `Ctrl/Cmd+Shift+K` with any `.qmd` file open. Quarto will run all R code in `03-results.qmd`, combine the chapters into a single document, and produce a PDF and HTML website in the `docs/` folder.
 
-- Run all R code in `03-results.qmd`
-- Combine all chapters into a single document
-- Produce a PDF and HTML website in the `docs/` folder
-
-If it works, you'll see a `docs/` folder appear with your rendered files. If it doesn't, check the error message; it will tell you exactly which line failed.
+If it works, you will see a `docs/` folder appear with your rendered files. If it does not, check the error message; it will tell you exactly which line failed.
 
 ## Writing Each Section
 
-### Introduction (01-introduction.qmd): 500 to 700 words
+### Introduction (01-introduction.qmd)
 
 **Structure:**
 
-1. **Opening hook** (2–3 sentences): Why should anyone care about your topic? Start with a concrete example or a surprising fact.
-2. **Background** (1–2 paragraphs): What do we already know? Cite your sources using `@citationkey` syntax (Quarto auto-generates the reference list).
-3. **Theory** (1 paragraph): Which communication theory frames your study? How does it connect to your variables?
-4. **Research Questions** (list): State both RQs exactly as you wrote them in your Topic Selection & RQs assignment.
+1. **Opening hook** (2 to 3 sentences): why should anyone care about your topic? Start with a concrete example or a surprising fact.
+2. **Background** (1 to 2 paragraphs): what do we already know? Cite your sources using `@citationkey` syntax (Quarto auto-generates the reference list).
+3. **Theory** (1 paragraph): which communication theory frames your study, and how does it connect to your variables? The rubric asks for a lens that is doing work rather than decoration, so the theory has to set up something your study can actually deliver.
+4. **Research Questions** (list): state both RQs exactly as you wrote them in your Topic Selection & RQs assignment.
 
-**Source:** Pull from your Project Prospectus and Topic Selection assignments. Revise for flow, because these were separate assignments, so connecting them into a single narrative takes some editing.
+::: {.undergraduate-only}
+Aim for roughly 500 to 700 words. That is guidance for pacing, not a graded threshold; the rubric scores whether the question is clear and the lens is load-bearing.
+:::
 
-### Methodology (02-methodology.qmd): 400 to 600 words
+::: {.graduate-extension}
+Your Introduction is scored on framing: the question has to be situated **in the theoretical literature** rather than gestured at. That means a structured literature review drawing on **15 or more sources**, organized by argument rather than listed one study per paragraph. Expect this section to run substantially longer than the undergraduate version.
+:::
+
+**Source:** pull from your Project Prospectus and Topic Selection assignments. Revise for flow, because these were separate assignments, so connecting them into a single narrative takes some editing.
+
+### Methods (02-methods.qmd)
+
+The rubric standard is repeatability: enough detail that another researcher could run your study again and get your dataset.
 
 **Structure:**
 
-1. **Data source** (1 paragraph): What media content did you analyze? Where did you find it? What time period?
-2. **Sampling strategy** (1 paragraph): How did you select your sample? What was the population? What was the final sample size?
-3. **Variables** (1–2 paragraphs): Define each variable: conceptual and operational definitions. This comes directly from your codebook.
-4. **Pilot findings** (1 paragraph): What did you learn from the pilot test? What changes did you make to the codebook?
+1. **Data provenance** (1 paragraph): what media content did you analyze, where did it come from, and over what time period?
+2. **Sampling strategy** (1 paragraph): how did you select your sample? What was the population, and what was the final sample size?
+3. **Variables** (1 to 2 paragraphs): define each variable, conceptually and operationally. This comes directly from your codebook.
+4. **Reliability** (1 paragraph): report your pilot, the agreement statistic you computed, and any codebook changes it prompted.
+5. **Wrangling** (1 paragraph): the steps between raw file and analysis-ready data.
 
-**Source:** Pull from your Codebook & Qual Memo and Sampling Plan & Pilot assignments.
+::: {.undergraduate-only}
+Aim for roughly 400 to 600 words. Methods carries the single largest block of points in the rubric, so specificity pays here more than anywhere else in the paper.
+:::
 
-### Results (03-results.qmd): code and interpretation
+::: {.graduate-extension}
+Methods carries three **transparency markers**, and each is checked explicitly:
 
-The template includes pre-written R code with placeholder variable names. You need to:
+1. **A data provenance statement**: the source, the access method, and the collection window, stated so a reader can reconstruct the dataset.
+2. **An intercoder reliability report**: the kappa value, the training protocol that produced it, and the threshold you applied before coding the full sample.
+3. **A pre-registration disclosure with its OSF URL**, including anything you changed after registering and why.
+
+A Methods section missing any of the three is incomplete regardless of how well the rest reads.
+:::
+
+**Source:** pull from your Codebook and Sampling Plan & Pilot assignments.
+
+### Results (03-results.qmd)
+
+Report what you found, plainly and without interpretation. Interpretation belongs in the Discussion, and moving it there is worth points in both sections.
+
+The starter file includes pre-written R code with placeholder variable names. You need to:
 
 1. Replace `var1` and `var2` with your actual variable names
 2. Update the `readRDS()` call to point to your `.RDS` file
-3. Add your interpretation paragraphs between the code chunks
-
-The Results section includes three components:
+3. Add your reporting paragraphs between the code chunks
 
 | Component | What to Include | Source Assignment |
 |-----------|----------------|-------------------|
 | Frequency table | `knitr::kable()` formatted table with counts and percentages | Describing Data |
-| Bar chart | `ggplot2` publication-ready chart | Describing Data |
-| Chi-square test | APA-format results + journalist translation | Inferencing Data |
+| Bar chart | `ggplot2` publication-ready chart, labelled and captioned | Describing Data |
+| Test result | The test statistic with its degrees of freedom, its p-value, **and its effect size**, in APA format, plus the journalist translation | Inferencing Data |
+
+::: {.callout-warning}
+## The Effect Size Is Not Optional
+
+A test statistic and a p-value tell a reader whether you found something. Only the effect size tells them whether it matters. The rubric asks for it in Results and then asks, in Discussion, whether you characterized it accurately rather than inflating it. Reporting the p-value alone costs points twice.
+:::
+
+::: {.graduate-extension}
+Report the **power statistics behind the design** alongside your effect sizes: the power analysis you ran, the effect size it assumed, and the sample size it implied. If your realized sample differs from that target, say so here rather than in the limitations.
+:::
 
 ::: {.callout-tip}
 ## Don't Reinvent the Wheel
 
-The R code in your graded assignments is the foundation. Copy your working code from the Describing Data and Inferencing Data assignments into the template. Adjust variable names as needed. The template provides scaffolding, but your tested code is more reliable.
+The R code in your graded assignments is the foundation. Copy your working code from the Describing Data and Inferencing Data assignments into the starter file and adjust the variable names. The scaffold is a starting point, but your tested code is more reliable.
 :::
 
-### Discussion (04-discussion.qmd): 400 to 500 words
+### Discussion (04-discussion.qmd)
 
 **Structure:**
 
-1. **Answer your RQs** (1 paragraph each): Directly address each research question with evidence from your results.
-2. **Connect to theory** (1 paragraph): How do your findings relate to the theory you introduced?
-3. **Limitations** (at least 3): Be specific. "Small sample size" is generic. "The sample capped each channel at 1,000 messages, so the busiest channels are under-represented relative to their real chat volume" is specific and useful.
-4. **Conclusion** (2–3 sentences): What's the takeaway? What should future researchers investigate?
+1. **Answer your RQs** (1 paragraph each): directly address each research question with evidence from your results.
+2. **Connect to theory** (1 paragraph): how do your findings relate to the theory you introduced?
+3. **Limitations** (at least 3): be specific. "Small sample size" is generic. "The sample capped each channel at 1,000 messages, so the busiest channels are under-represented relative to their real chat volume" is specific and useful.
+4. **Conclusion** (2 to 3 sentences): what is the takeaway, and what should future researchers investigate?
 
-### Abstract (index.qmd): about 150 words
+::: {.undergraduate-only}
+Aim for roughly 400 to 500 words.
+:::
 
-Write this **last**. The abstract summarizes the entire report in one paragraph:
+::: {.graduate-extension}
+Two additions. First, distinguish **statistical significance from practical size** explicitly: a significant result with a trivial effect is a finding about your sample size, not about the world, and saying so is worth points. Second, the limitations are graded as an **explicit limitations analysis** rather than a list: for each limitation, say what it threatens (internal validity, external validity, reliability) and how a future design would address it.
+:::
+
+### Reflection (05-reflection.qmd)
+
+One specific paragraph naming what proved harder than expected, where a rule was ambiguous in practice, what the data could not answer, and what a second attempt would change.
+
+::: {.callout-note}
+## Graded on Candour, Not on Success
+
+The reflection is scored on precision, not on whether the study went well. A researcher who can say exactly where their study is weak is a researcher who understands it. "Everything went smoothly" is the lowest-scoring answer available.
+:::
+
+### Abstract (index.qmd)
+
+Write this **last**. The abstract summarizes all four IMRaD sections in one paragraph of about 150 words:
+
 - What you studied (1 sentence)
 - How you studied it (1 sentence)
-- What you found (2–3 sentences)
+- What you found (2 to 3 sentences)
 - Why it matters (1 sentence)
+
+::: {.graduate-extension}
+Graduate submissions carry an **executive summary** in addition to the abstract. The abstract is written for a researcher deciding whether to read the paper; the executive summary is written for a client or editor deciding what to do about it. Lead with the finding and its practical consequence, not with the method.
+:::
+
+## Reproducibility: No Pasted Numbers
+
+The rubric awards points for a document that **renders from source with no pasted numbers**. That means every figure in your prose comes from inline R rather than from typing what you saw in the console:
+
+```r
+The mean message length was `r round(mean(dat$len), 1)` characters.
+```
+
+If you retype a number and later re-run the analysis on a corrected dataset, the prose silently goes stale and disagrees with the table beside it. Inline code cannot go stale. It is also the single easiest place in the paper to lose points, because a grader can spot it by changing one row of your data and re-rendering.
 
 ## Publishing to GitHub Pages
 
@@ -162,9 +240,9 @@ Write this **last**. The abstract summarizes the entire report in one paragraph:
 
 1. Go to [github.com](https://github.com) and sign in
 2. Click **New Repository** (the green button or the + icon)
-3. Name it something descriptive (e.g., `mc451-final-portfolio`)
+3. Name it something descriptive (for example, `mc451-whitepaper`)
 4. Set it to **Public** (GitHub Pages requires a public repo on free accounts)
-5. Do NOT add a README, .gitignore, or license (the template already has these)
+5. Do NOT add a README, .gitignore, or license (the scaffold already has these)
 6. Click **Create Repository**
 
 ### Step 2: Push Your Project
@@ -174,9 +252,9 @@ In VS Code's integrated terminal, run these commands (replace the URL with your 
 ```bash
 git init
 git add .
-git commit -m "Initial portfolio commit"
+git commit -m "Initial white paper commit"
 git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/mc451-final-portfolio.git
+git remote add origin https://github.com/YOUR-USERNAME/mc451-whitepaper.git
 git push -u origin main
 ```
 
@@ -191,48 +269,58 @@ git push -u origin main
 
 ### Step 4: Wait and Test
 
-GitHub Pages takes 1–2 minutes to build. Your site will be available at:
+GitHub Pages takes 1 to 2 minutes to build. Your site will be available at:
 
 ```
-https://YOUR-USERNAME.github.io/mc451-final-portfolio/
+https://YOUR-USERNAME.github.io/mc451-whitepaper/
 ```
 
-Test it in an **incognito/private window** to make sure it works for someone who isn't logged into your GitHub account.
+Test it in an **incognito or private window** to make sure it works for someone who is not logged into your GitHub account. The rubric is explicit that a paper nobody can open scores nothing, and "it worked on my laptop" is the most common way to discover that too late.
 
 ::: {.callout-warning}
 ## The Most Common Last-Minute Problem
 
 Broken GitHub Pages link. This usually happens because:
 
-1. The `docs/` folder wasn't pushed (run `git add docs/ && git commit -m "add docs" && git push`)
+1. The `docs/` folder was not pushed (run `git add docs/ && git commit -m "add docs" && git push`)
 2. GitHub Pages source is set wrong (should be `main` branch, `/docs` folder)
-3. You haven't waited long enough (give it 2 minutes)
+3. You have not waited long enough (give it 2 minutes)
 
 Test in incognito before submitting.
 :::
 
 ## Submission Checklist
 
-- [ ] All five `.qmd` files are complete and written in your own words
-- [ ] `references.bib` contains all your citations (exported from Zotero)
+- [ ] All IMRaD sections plus the abstract and reflection are complete and in your own words
+- [ ] Every reported number comes from inline R, with nothing retyped from the console
+- [ ] Test results include the statistic, its degrees of freedom, the p-value, and the effect size
+- [ ] `references.bib` contains all your citations (exported from Zotero) and renders in APA 7th edition
 - [ ] `quarto render` produces both PDF and HTML without errors
-- [ ] PDF is in the `docs/` folder and looks correct
-- [ ] Website is in the `docs/` folder and displays all sections
+- [ ] PDF and website are in the `docs/` folder and display all sections
 - [ ] GitHub repo is public and contains the `docs/` folder
 - [ ] GitHub Pages is enabled and the site loads in an incognito window
-- [ ] PDF renamed to `Lastname_FinalPortfolio.pdf` and uploaded to Blackboard
+- [ ] PDF renamed to `Lastname_WhitePaper.pdf` and uploaded to Blackboard
 - [ ] GitHub Pages URL pasted into Blackboard submission text
+
+::: {.graduate-extension}
+- [ ] Executive summary included alongside the abstract
+- [ ] Literature review draws on 15 or more sources
+- [ ] Methods carries all three transparency markers, including the OSF pre-registration URL
+- [ ] Power statistics reported with the effect sizes
+- [ ] **Conference poster** submitted (a separate requirement, shared with MC 500)
+:::
 
 ## Try It Yourself
 
-1. **Download the template** and open the folder in VS Code.
+1. **Scaffold the project** with `v2v::new_portfolio()` and open the folder in VS Code.
 2. **Run `quarto render`** without making any changes. Does it produce output in the `docs/` folder?
 3. **Read each `.qmd` file** and identify which of your prior assignments provides the content for each section.
 4. **Replace one placeholder** in `03-results.qmd` with a real variable name from your dataset. Re-render and check the output.
-5. **Set up a GitHub repository** and push the template. Enable Pages and verify the site loads.
+5. **Convert one retyped number** in your prose into inline R and re-render to confirm it still reads correctly.
+6. **Set up a GitHub repository**, push, enable Pages, and verify the site loads in an incognito window.
 
 ::: {.callout-tip}
 ## Connection to Your Project
 
-This is it: the final deliverable. Everything you've learned in this workbook feeds into this Quarto Book. Chapters 1–2 prepared your data. Chapters 3–6 taught you the R skills. This chapter assembles the final product. When you're done, you'll have a live research website and a professional PDF, real artifacts for a graduate school application or a job portfolio.
+This is it: the final deliverable. Everything in this workbook feeds into it. Chapters 1 and 2 prepared your data. Chapters 3 through 6 taught you the R skills. This chapter assembles the White Paper. When you are done, you will have a live research website and a professional PDF, real artifacts for a graduate school application or a job application.
 :::

@@ -469,7 +469,7 @@ These exercises directly prepare you for the Data Wrangling [R] assignment:
 ::: {.callout-tip}
 ## Connection to Your Project
 
-For your own data, you'll follow this exact pipeline, but with your file and your variables. The assignment uses the Twitch dataset as practice. Your final portfolio uses your own coded data. Same skills, different dataset.
+For your own data, you'll follow this exact pipeline, but with your file and your variables. The assignment uses the Twitch dataset as practice. Your White Paper uses your own coded data. Same skills, different dataset.
 
 Your data will almost certainly need a derived variable, the way `message_length` had to be computed rather than collected, and it may well need a join, the way the gaming label had to be pulled from a second table. Those two moves are most of what wrangling is.
 :::

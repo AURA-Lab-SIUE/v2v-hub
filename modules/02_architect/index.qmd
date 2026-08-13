@@ -5,7 +5,7 @@ title: "Phase II: The Architect"
 :::{.phase-header}
 # Phase II: The Architect
 
-**Duration:** Weeks 1 to 3 (Book Part I: Foundation)
+**Duration:** Weeks 1 to 4 (Book Part I: Foundation)
 Design your workspace and research foundation
 :::
 

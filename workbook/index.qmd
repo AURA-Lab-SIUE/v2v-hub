@@ -7,7 +7,7 @@ title: "R Workbook: Novice to Social Scientist"
 
 **A hands-on guide to R for content analysis research**
 
-Seven chapters take you from building a codebook to publishing a professional research portfolio, with narrated video walkthroughs for every chapter.
+Seven chapters take you from building a codebook to publishing a professional White Paper, with narrated video walkthroughs for every chapter.
 :::
 
 ---
@@ -24,7 +24,7 @@ This workbook is your companion for the R programming portion of the course (Pha
 | 4 | [Data Wrangling](04-data-wrangling.qmd) | Import, clean, and export your dataset |
 | 5 | [Describing Data](05-describing-data.qmd) | Build frequency tables and publication-ready charts |
 | 6 | [Inferencing Data](06-inferencing-data.qmd) | Run chi-square tests and interpret results |
-| 7 | [Publishing](07-publishing.qmd) | Assemble your portfolio as a Quarto Book |
+| 7 | [Publishing](07-publishing.qmd) | Assemble your White Paper as a Quarto Book |
 
 ---
 
@@ -39,7 +39,7 @@ Every chapter opens with a **narrated video walkthrough**. Watch it first to get
 1. **Watch the video** at the top of each chapter
 2. **Follow along in VS Code**, the code blocks are designed to run in order
 3. **Use the class dataset** for practice: `library(v2v)`, then `twitch_chat()` and `twitch_streams()`, with no file to download
-4. **Apply to your own data** for the final portfolio
+4. **Apply to your own data** for the White Paper
 
 ---
 

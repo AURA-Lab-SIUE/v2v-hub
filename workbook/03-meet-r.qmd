@@ -190,7 +190,7 @@ When you click **Render** in the Quarto preview (or press `Ctrl/Cmd+Shift+K`), Q
 3. Combines the text and output into a finished document
 4. Saves it as PDF or HTML (whichever you specified)
 
-This is exactly how your final portfolio will work: one Quarto project that renders into both a PDF and a website.
+This is exactly how your White Paper will work: one Quarto project that renders into both a PDF and a website.
 
 ## Try it yourself
 
@@ -212,5 +212,5 @@ If this works, you're ready for Chapter 4.
 ::: {.callout-tip}
 ## Connection to your project
 
-Every assignment from here forward is a `.qmd` file. Your final portfolio is a Quarto *book*, a collection of `.qmd` files that render together. The skills you're building now (writing text plus code in the same document) are the exact skills you'll use to publish your research.
+Every assignment from here forward is a `.qmd` file. Your White Paper is a Quarto *book*, a collection of `.qmd` files that render together. The skills you're building now (writing text plus code in the same document) are the exact skills you'll use to publish your research.
 :::

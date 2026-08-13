@@ -182,7 +182,7 @@ agreement.
 (`scale_colour_v2v_c()`, `scale_fill_v2v_c()`) for continuous values such as message
 length. American spellings (`scale_color_v2v()`) work identically.
 
-**Portfolio scaffolding.** `new_portfolio()` and `deploy_portfolio()`.
+**White Paper scaffolding.** `new_portfolio()` and `deploy_portfolio()`.
 
 **A troubleshooting page** for the errors this dataset produces most often:
 

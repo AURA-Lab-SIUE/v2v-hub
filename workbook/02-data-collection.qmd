@@ -109,5 +109,5 @@ Name your file descriptively: `my_coding_data_raw.csv` (the "raw" reminds you th
 ::: {.callout-tip}
 ## Connection to Your Project
 
-The CSV file you produce at the end of this chapter is the input for everything that follows. Chapters 4 to 6 will teach you R using the class Twitch dataset, but you'll apply those same techniques to your own CSV for the final portfolio. A clean dataset here means smooth analysis later. A messy dataset means debugging headaches in R.
+The CSV file you produce at the end of this chapter is the input for everything that follows. Chapters 4 to 6 will teach you R using the class Twitch dataset, but you'll apply those same techniques to your own CSV for the White Paper. A clean dataset here means smooth analysis later. A messy dataset means debugging headaches in R.
 :::

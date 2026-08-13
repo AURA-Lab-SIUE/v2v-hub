@@ -16,7 +16,7 @@ A course template you copy on GitHub and open in VS Code. It keeps your journals
 
 ## Why one workspace, one tool
 
-You will spend real time in VS Code this term, so we keep everything in it rather than spreading your work across a separate notes app. You write in Markdown, run R, render Quarto, and commit to Git all in the same window. The skills compound: the editor you use for your journal in Week 1 is the editor you use for your analysis in Week 11 and your final portfolio in Week 16.
+You will spend real time in VS Code this term, so we keep everything in it rather than spreading your work across a separate notes app. You write in Markdown, run R, render Quarto, and commit to Git all in the same window. The skills compound: the editor you use for your journal in Week 1 is the editor you use for your analysis in Week 11 and your White Paper in Week 17.
 
 No wiki plugins, no graph views, no second app to learn. Just folders, Markdown files, and Git, which are the same tools working researchers use.
 
@@ -36,7 +36,7 @@ v2v-workspace/
 │   ├── 01_Prospectus/       # Research design (Chapter 6)
 │   ├── 02_Codebook/         # Data dictionary (Chapter 8)
 │   ├── 03_Data/             # Sampled data and analysis (Chapters 10 to 12)
-│   └── 04_Drafts/           # Report drafts and final portfolio (Chapters 13 to 14)
+│   └── 04_Drafts/           # White Paper drafts (Chapters 13 to 14)
 ├── 04_Resources/            # PDFs, images, and attachments
 ├── _templates/              # Reusable templates for journals and codebooks
 └── .vscode/                 # Recommended extensions and shared settings
@@ -69,7 +69,7 @@ Open `README.md`. It walks you through the folder structure and how to start a j
 :::{.callout-tip}
 ## Why commit to GitHub?
 
-Committing your workspace gives you a backup, a full history of your work, and a way for Dr. Leith to see your journal entries. It also builds the version-control habit you use again in the final portfolio.
+Committing your workspace gives you a backup, a full history of your work, and a way for Dr. Leith to see your journal entries. It also builds the version-control habit you use again in the White Paper.
 :::
 
 ---

@@ -76,7 +76,7 @@ This page previews the chapter structure and themes for the Fall 2026 edition. T
 | Ch | Title | What You'll Learn |
 |----|-------|-------------------|
 | 13 | **Making the Call** | Inferential statistics: chi-square, correlation, effect sizes, and APA reporting |
-| 14 | **The One-Click Report** | Assembling a Quarto portfolio (PDF plus website) and publishing to GitHub Pages |
+| 14 | **The One-Click Report** | Assembling the White Paper as a Quarto book (PDF plus website) and publishing to GitHub Pages |
 
 ---
 

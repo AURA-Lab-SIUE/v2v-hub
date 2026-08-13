@@ -309,7 +309,7 @@ Notice what that paragraph does. It reports the real difference, it refuses to i
 ::: {.callout-important}
 ## Both Paragraphs Are Required
 
-The APA paragraph is for researchers. The journalist translation is for everyone else. You need both in your assignment and in your final portfolio. Being able to write in both registers is what makes a communication researcher different from a statistics student.
+The APA paragraph is for researchers. The journalist translation is for everyone else. You need both in your assignment and in your White Paper. Being able to write in both registers is what makes a communication researcher different from a statistics student.
 :::
 
 ## Try It Yourself
@@ -335,5 +335,5 @@ These exercises map directly to the Inferencing Data [R] assignment:
 ::: {.callout-tip}
 ## Connection to Your Project
 
-For your final portfolio, you'll run this test on your own variables. The code is the same. Only the variable names change. Your Results section needs both the frequency table and chart from Chapter 5 *and* the test from this chapter. Together, they tell the complete story: here's what the data looks like (descriptive) and here's what it means (inferential).
+For your White Paper, you'll run this test on your own variables. The code is the same. Only the variable names change. Your Results section needs both the frequency table and chart from Chapter 5 *and* the test from this chapter. Together, they tell the complete story: here's what the data looks like (descriptive) and here's what it means (inferential).
 :::

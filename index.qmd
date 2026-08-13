@@ -37,7 +37,7 @@ Fourteen chapters from foundations to publication. Free and open access.
 ::: card
 ### R workbook
 
-Seven chapters with narrated video walkthroughs, from codebook to published portfolio.
+Seven chapters with narrated video walkthroughs, from codebook to published White Paper.
 
 [Open workbook](workbook/index.qmd){.btn .btn-secondary}
 :::
