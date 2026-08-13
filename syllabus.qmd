@@ -271,6 +271,16 @@ The course runs on a **Tuesday / Thursday rhythm**: one session teaches a concep
 next applies it to your own project (labs and studios marked). Every assignment is a
 building block of your final White Paper. Sessions are numbered S1–S28.
 
+::: {.callout-important}
+## Week 11 carries 125 points
+
+Week 11 is the heaviest week of the term. The **Sampling Plan and Pilot** (75 pts) and
+**Data Wrangling** (50 pts) are both due Friday, November 6. That is deliberate: the
+Sampling Plan is given an extra week so the pilot coding is real work rather than rushed
+work, and that extra week places it alongside the first R assignment. Plan for it from
+Week 1, and draft the sampling plan during Week 10.
+:::
+
 ::: {.schedule-table}
 
 | Week | Dates | Tuesday | Thursday | Due |
@@ -285,7 +295,7 @@ building block of your final White Paper. Sessions are numbered S1–S28.
 | 8 | Oct 13 / 15 | S15 · Ch 8 levels of measurement; reliability & validity | S16 · Ch 8 building the codebook [studio] | Definitions Practice |
 | 9 | Oct 20 / 22 | S17 · Ch 9 [R] coding the codebook | S18 · Ch 9 [R] reading data vs. the codebook; qual memo | Codebook & Qual Memo |
 | 10 | Oct 27 / 29 | S19 · Ch 10 The Sample: SRS, stratified, drawing | S20 · Ch 10 [R] the pilot; kappa / alpha | |
-| 11 | Nov 3 / 5 | S21 · Ch 11 [R] Wrangling the Data | S22 · Ch 11 [R] wrangling lab | Sampling Plan & Pilot · Data Wrangling [R] |
+| 11 | Nov 3 / 5 | S21 · Ch 11 [R] Wrangling the Data | S22 · Ch 11 [R] wrangling lab | Sampling Plan & Pilot · Data Wrangling [R] · **125 pts, the heaviest week** |
 | 12 | Nov 10 / 12 | S23 · Ch 12 [R] Describing: descriptive statistics + graphics | S24 · Ch 12 [R] describing lab | Describing Data [R] |
 | 13 | Nov 17 / 19 | S25 · Ch 13 [R] Inferential: t-test, ANOVA, regression | S26 · Ch 13 [R] inference lab; *White Paper assigned* | Inferencing Data [R] |
 | 14 | Nov 23–27 | **Thanksgiving Break, no class** | | |

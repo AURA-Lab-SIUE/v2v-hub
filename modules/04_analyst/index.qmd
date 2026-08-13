@@ -59,6 +59,14 @@ Using the Twitch data from the `v2v` package:
 
 This assignment teaches the full data pipeline, from raw input to analysis-ready output.
 
+::: {.undergraduate-only}
+::: {.callout-important}
+## Week 11 carries 125 points
+
+MC 451 collects the **Sampling Plan and Pilot** (75 pts) in this same week, so Week 11 is the heaviest week of the term at 125 points. The Sampling Plan is given an extra week so the pilot is real work rather than rushed work. Draft it during Week 10.
+:::
+:::
+
 ::: {.graduate-extension}
 **MC 501:** your wrangling script carries a **data provenance statement**: where each field came from, every transformation applied, and every row dropped with the reason. It is the same 50 points, but it has to survive being read by someone reproducing your work.
 :::

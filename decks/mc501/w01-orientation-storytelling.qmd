@@ -34,15 +34,15 @@ format:
 
 ## How the term is built
 
-**The Journalist** runs the whole way through: a weekly journal, Weeks 1 to 14,
-worth **150 points**. It is the habit, not a stage.
+**The Journalist** runs the whole way through: a weekly journal across the
+14 teaching weeks in Weeks 1 to 15, worth **150 points**. It is the habit, not a stage.
 
 The project moves through four stages, each tracking a part of the textbook:
 
 | Stage | Weeks | Book part | Points |
 |---|---|---|---|
-| The Architect | 1 to 3 | I, Foundation | 100 |
-| The Builder | 4 to 10 | II and III, Planning and Operationalization | 325 |
+| The Architect | 1 to 4 | I, Foundation | 100 |
+| The Builder | 5 to 10 | II and III, Planning and Operationalization | 325 |
 | The Analyst | 11 to 13 | IV, Execution | 250 |
 | The Publisher | 15 to 17 | V, Inference and Publication | 200 |
 

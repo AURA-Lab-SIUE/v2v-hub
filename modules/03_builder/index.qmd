@@ -96,6 +96,12 @@ Submit your complete codebook (study overview, unit of analysis, all variables w
 
 Design your sampling strategy (search terms, date range, method) and pilot test your codebook on 10 to 20 items. Document edge cases, coding decisions, and any revisions.
 
+::: {.callout-important}
+## Week 11 carries 125 points in MC 451
+
+This assignment is due the same Friday as **Data Wrangling** (50 pts) in the Analyst phase, so Week 11 is the heaviest week of the term. The extra week exists so the pilot is real work rather than rushed work. Draft the sampling plan during Week 10.
+:::
+
 :::
 
 ::: {.graduate-extension}

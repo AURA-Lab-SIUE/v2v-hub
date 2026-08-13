@@ -51,21 +51,33 @@ format:
 ## How the term is built
 
 **The Journalist** runs the whole way through: a weekly reading journal, 10 points a
-week across Weeks 1 to 14 plus 10 for consistency, **150 points**. It is the habit,
+week across the 14 teaching weeks in Weeks 1 to 15, plus 10 for consistency,
+**150 points**. It is the habit,
 not a stage.
 
 The project itself moves through four stages, and each hands you the materials for the next:
 
 | Stage | Weeks | Book part | Points |
 |---|---|---|---|
-| The Architect | 1 to 3 | I, Foundation | 125 |
-| The Builder | 4 to 10 | II and III, Planning and Operationalization | 250 |
+| The Architect | 1 to 4 | I, Foundation | 125 |
+| The Builder | 5 to 11 | II and III, Planning and Operationalization | 250 |
 | The Analyst | 11 to 13 | IV, Execution | 225 |
 | The Publisher | 15 to 17 | V, Inference and Publication | 250 |
 
 **1,000 points total.**
 
-## The Architect (Weeks 1 to 3)
+## Mark Week 11 now
+
+Two assignments land in the same week, on purpose:
+
+- **Sampling Plan and Pilot**, 75 points, the last Builder assignment
+- **Data Wrangling**, 50 points, the first Analyst assignment
+
+That is **125 points due Friday, November 6**, the heaviest week of the term.
+The Sampling Plan gets an extra week because a pilot done properly takes one.
+Put Week 11 in your calendar today and draft the sampling plan during Week 10.
+
+## The Architect (Weeks 1 to 4)
 
 Setting up the machinery and choosing your ground:
 
@@ -74,9 +86,9 @@ Setting up the machinery and choosing your ground:
 - **Project Setup**, 25 points
 - **Librarian Visit Report**, 50 points
 
-By the end of Week 3 you have working tools and a literature you can stand on.
+By the end of Week 4 you have working tools and a literature you can stand on.
 
-## The Builder (Weeks 4 to 10)
+## The Builder (Weeks 5 to 11)
 
 Where the study gets designed, one decision at a time:
 
@@ -153,7 +165,7 @@ sort from most to least. **That is all code is: instructions in order.**
 - **Tuesday** teaches a concept
 - **Thursday** applies it to your own project, in labs and studios
 - The reading comes before Tuesday. The journal entry closes the week.
-- Assignments are due Thursdays unless the schedule says otherwise
+- Assignments are due Friday of the week listed, by 11:59 PM
 - The full session-by-session schedule is in the syllabus, S1 through S28
 
 ## On using AI
