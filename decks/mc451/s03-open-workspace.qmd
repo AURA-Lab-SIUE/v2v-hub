@@ -161,4 +161,5 @@ Load a fixture with `data(twitch_chat_sample, package = "v2v")`.
 - You will build your project repository and make your first commit
 - **Before then:** finish the installs, or get far enough to know where you stuck
 - Read **Chapter 3** on ethics before Tuesday
-- **Project Setup** is worth 25 points and is due at the end of Week 2
+- **GitHub Profile** is worth 25 points and is due at the end of Week 2
+- **Project Setup** is worth 25 points and follows at the end of Week 3
