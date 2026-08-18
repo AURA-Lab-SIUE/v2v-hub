@@ -1,0 +1,88 @@
+<!--
+SHARED UNIVERSITY POLICY BLOCK. Included by every syllabus in this hub via
+{{< include _includes/university-policies.qmd >}}.
+
+Wording is unchanged from the approved 2026 Fall MC 451 / MC 501 syllabi.
+Students are bound by this text, so it is copied, not rewritten. The only edits
+are link targets, verified live 2026-08-17: the three policy URLs now point at
+`/policies/table-of-contents/`, which is where the short forms redirect, and
+the diversity paragraph points at the Kimmel Belonging and Engagement Hub, the
+office that replaced the Inclusive Excellence hub (the old URL 404s).
+
+COLLAPSED BY DEFAULT, PRINTED IN FULL. These are required and rarely the reason
+anyone opened the page, so they are <details>. syllabus-styling.scss and the
+beforeprint handler in _quarto.yml force every one of them open for printing
+and for PDF export, so the printed artefact carries the complete policy set.
+-->
+
+## University policies
+
+<details class="syl-policy">
+<summary>Academic integrity</summary>
+
+The expectations and academic standards in the
+[Student Academic Code (3C2)](https://www.siue.edu/policies/table-of-contents/3c2.shtml)
+apply to all courses at the University, regardless of modality. Plagiarism (the
+use of another person's words or ideas without credit) and cheating will not be
+tolerated and may lead to failure on an assignment, in the class, or dismissal
+from the University, per the
+[SIUE academic dishonesty policy (3C1)](https://www.siue.edu/policies/table-of-contents/3c1.shtml).
+Cite your data sources and collaborators.
+
+</details>
+
+<details class="syl-policy">
+<summary>Diversity and inclusion</summary>
+
+SIUE is committed to respecting everyone's dignity at all times. Our classroom
+must be a place where students and instructors feel safe and supported. Systems
+of oppression permeate our institutions and our classrooms; all students and
+instructors share responsibility for affirming inclusion, equity, and social
+justice. Racism, sexism, classism, ableism, heterosexism, xenophobia, and other
+social pathologies will not be tolerated, and violations will be enforced in
+line with the SIUE Student Conduct Code. The
+[Kimmel Belonging and Engagement Hub](https://www.siue.edu/kimmel-hub/) is a
+resource for students.
+
+</details>
+
+<details class="syl-policy">
+<summary>Pregnancy and newly parenting</summary>
+
+This course follows
+[SIUE's Newly Parenting Policy (3C15)](https://www.siue.edu/policies/table-of-contents/3c15.shtml).
+Students may request accommodations through the Office of Equal Opportunity,
+Access, and Title IX Coordination ([EOA](https://www.siue.edu/eoa/)).
+
+</details>
+
+<details class="syl-policy">
+<summary>Technology and privacy</summary>
+
+This course uses Blackboard; review the
+[Anthology Blackboard Privacy Statement](https://www.anthology.com/privacy-statement)
+for how your data is handled. The course also uses GitHub; review GitHub's
+privacy policy before creating an account.
+
+</details>
+
+<details class="syl-policy">
+<summary>Recordings of class content</summary>
+
+Any recordings of class sessions are for the educational use of students
+enrolled in this course only. Students may not copy, share, or distribute
+recordings without the written permission of the instructor. Office hours are
+not recorded, so that conversations about grades, accommodations, or personal
+circumstances stay private.
+
+</details>
+
+<details class="syl-policy">
+<summary>Subject to change</summary>
+
+All material, assignments, and deadlines are subject to change with prior
+notice. Watch the course announcements and Blackboard regularly. This page is
+the live version of the syllabus; if a printed copy and this page disagree, this
+page is correct.
+
+</details>

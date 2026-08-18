@@ -1,5 +1,11 @@
 ---
-title: "MC 501 Course Syllabus"
+# No `title:` on purpose. The .syl-hero block below IS the page title, and a
+# Quarto title block would emit a SECOND <h1> above it - two h1s on one page,
+# which is a heading-structure defect, not just a duplicate.
+pagetitle: "MC 501 Syllabus | Fall 2026"
+toc: true
+toc-depth: 2
+toc-title: "On this page"
 ---
 
 ```{=typst}
@@ -7,113 +13,232 @@ title: "MC 501 Course Syllabus"
 #set text(hyphenate: false)
 ```
 
+::: {.syl-hero}
+[MC 501 · Fall 2026 · Graduate]{.syl-course}
 
-## MC 501: Research Methods for Mass Communications
-### Fall 2026
+# Research Methods for Mass Communications
 
----
+::: {.syl-tagline}
+You will run an original two-part content analysis to a standard approaching
+publishable quality, and finish with a conference-ready White Paper and poster
+published at a public address.
+:::
+:::
 
-## Essential Information
+<ul class="syl-facts">
+<li>
+  <span class="syl-fact-label">When</span>
+  <span class="syl-fact-value"><strong>Wednesdays, 6:00 to 8:50 PM</strong></span>
+  <span class="syl-fact-note">Aug 24 to Dec 18, 2026. One 170-minute block per week.</span>
+</li>
+<li>
+  <span class="syl-fact-label">Where</span>
+  <span class="syl-fact-value"><strong>Dunham Hall 1015</strong></span>
+  <span class="syl-fact-note">Bring a laptop from Week 2 onward</span>
+</li>
+<li>
+  <span class="syl-fact-label">Instructor</span>
+  <span class="syl-fact-value"><strong>Alex P. Leith, PhD</strong></span>
+  <span class="syl-fact-note">Alex, AP, or Dr. Leith. He / they.</span>
+</li>
+<li>
+  <span class="syl-fact-label">Office hours</span>
+  <span class="syl-fact-value"><strong>M / W, 10:00 to 11:30 AM and 1:30 to 3:00 PM</strong></span>
+  <span class="syl-fact-note">Dunham Hall 1017, drop in, or by appointment</span>
+</li>
+<li>
+  <span class="syl-fact-label">Email</span>
+  <span class="syl-fact-value"><a href="mailto:aleith@siue.edu">aleith@siue.edu</a></span>
+  <span class="syl-fact-note">Reply within 24 hours on weekdays</span>
+</li>
+<li>
+  <span class="syl-fact-label">Textbook</span>
+  <span class="syl-fact-value"><a href="https://aura-lab-siue.github.io/v2v/">From Vibes to Variables, 3rd ed.</a></span>
+  <span class="syl-fact-note">Free and online. Turn the <strong>Graduate edition</strong> toggle ON.</span>
+</li>
+</ul>
 
-| Item | Details |
-|------|---------|
-| **Instructor** | Alex P. Leith, PhD |
-| **Email** | aleith@siue.edu |
-| **Office** | Dunham Hall 1017 |
-| **Office Hours** | MW 10:00-11:30 AM and 1:30-3:00 PM (or by appointment) |
-| **Class Time** | W 6:00-8:50 PM (170 minutes) |
-| **Classroom** | Dunham Hall 1015 |
-| **Duration** | Aug 24 to Dec 18, 2026 |
-| **Course Website** | https://aura-lab-siue.github.io/v2v-hub/ |
-| **Textbook** | [From Vibes to Variables, 3rd Ed.](https://aura-lab-siue.github.io/v2v/) (OER, free). Turn on the **Graduate edition** toggle |
+::: {.syl-first-week}
+## Start here: your first week
 
----
+You do not have to read this whole page today. Do these five things and you are
+current.
 
-## Contact Methods
+1. **Turn on the Graduate edition toggle** in the
+   [textbook](https://aura-lab-siue.github.io/v2v/). It is the control in the
+   lower corner of any page, and it reveals required material you are graded on.
+2. **Read the Week 1 row** of the [schedule](#weekly-schedule), including the
+   assigned reading. The reading comes before the session, not after.
+3. **Sign the Syllabus Contract** in Blackboard. It is due at the end of Week 1
+   and it is worth 25 points.
+4. **Skim [what makes this graduate work](#what-makes-this-graduate-work)**. Four
+   specific things separate MC 501 from MC 451, and all four are graded.
+5. **Bookmark this page.** It is the live syllabus. A printed copy goes stale;
+   this does not.
 
-- **Email:** aleith@siue.edu (preferred for time-insensitive and confidential communication, such as grades or accommodations). Expect a response within 24 hours on weekdays.
-- **Office hours:** the primary support channel. Drop in during the times above in Dunham Hall 1017, or schedule an appointment.
-- **Course discussion (Blackboard):** for student-to-student questions. I participate periodically; bring instructor-directed questions to office hours or email.
+<p>Nothing needs to be installed yet. Software comes in Week 2, with a
+walkthrough.</p>
+:::
 
-In all communication, clearly stated needs save us both time. State what you have tried, what is not working, and what kind of response you are hoping for.
+## How to reach me
 
----
+- **Office hours** are the primary support channel. Drop in during the times
+  above in Dunham Hall 1017, or schedule an appointment.
+- **Email** ([aleith@siue.edu](mailto:aleith@siue.edu)) is preferred for
+  time-insensitive and confidential communication, such as grades or
+  accommodations. Expect a response within 24 hours on weekdays.
+- **Course discussion (Blackboard)** is for student-to-student questions. I
+  participate periodically; bring instructor-directed questions to office hours
+  or email.
 
-## Course Description
+In all communication, clearly stated needs save us both time. State what you have
+tried, what is not working, and what kind of response you are hoping for.
 
-MC 501 is the graduate-level research methods course in mass communication. Students explore quantitative and qualitative methods, including surveys, experiments, content analysis, and in-depth interviews, with emphasis on designing, executing, and communicating original research at a level approaching publishable quality.
+## What this course is
 
-Across the semester students complete a two-part content analysis project: a qualitative study that develops coding variables through immersion, and a quantitative study that tests relationships in the coded data. The final deliverable is a professional White Paper suitable for conference submission or client delivery, published to GitHub Pages, paired with an academic conference poster. Graduate students read the textbook with the graduate-edition toggle on; the graduate extension in every chapter, assigned peer-reviewed readings and advanced analytical prompts, is required material.
+MC 501 is the graduate-level research methods course in mass communication.
+Students explore quantitative and qualitative methods, including surveys,
+experiments, content analysis, and in-depth interviews, with emphasis on
+designing, executing, and communicating original research at a level approaching
+publishable quality.
 
----
+Across the semester students complete a two-part content analysis project: a
+qualitative study that develops coding variables through immersion, and a
+quantitative study that tests relationships in the coded data. The final
+deliverable is a professional White Paper suitable for conference submission or
+client delivery, published to GitHub Pages, paired with an academic conference
+poster. Graduate students read the textbook with the graduate-edition toggle on;
+the graduate extension in every chapter, assigned peer-reviewed readings and
+advanced analytical prompts, is required material.
 
-## Course Objectives
+<details class="syl-policy">
+<summary>Course objectives and goals, in full</summary>
 
 By the end of this course, students will be able to:
 
-- Understand and apply the principles and laws of freedom of speech and press, particularly within the context of the United States, while gaining a global perspective on freedom of expression, including the right to dissent, monitor power, and petition for redress of grievances.
-- Demonstrate an understanding of the historical role of professionals and institutions in shaping mass communications and critically evaluate their impact on the development of media systems.
-- Recognize and analyze the impact of diversity in mass communications, including but not limited to gender, race, ethnicity, and sexual orientation, within both domestic and global contexts, and appreciate the significance of this diversity in shaping media content and audience reception.
-- Apply ethical principles in conducting and presenting research, ensuring that all research practices adhere to standards of truth, accuracy, fairness, and respect for diversity.
-- Design and execute original research independently, developing robust research questions and applying appropriate methodologies at a level approaching publishable quality.
-- Conduct rigorous research, evaluate information using appropriate methods, and communicate research findings clearly and in an ethically responsible way to both academic and professional audiences.
+- Understand and apply the principles and laws of freedom of speech and press,
+  particularly within the context of the United States, while gaining a global
+  perspective on freedom of expression, including the right to dissent, monitor
+  power, and petition for redress of grievances.
+- Demonstrate an understanding of the historical role of professionals and
+  institutions in shaping mass communications and critically evaluate their
+  impact on the development of media systems.
+- Recognize and analyze the impact of diversity in mass communications,
+  including but not limited to gender, race, ethnicity, and sexual orientation,
+  within both domestic and global contexts, and appreciate the significance of
+  this diversity in shaping media content and audience reception.
+- Apply ethical principles in conducting and presenting research, ensuring that
+  all research practices adhere to standards of truth, accuracy, fairness, and
+  respect for diversity.
+- Design and execute original research independently, developing robust research
+  questions and applying appropriate methodologies at a level approaching
+  publishable quality.
+- Conduct rigorous research, evaluate information using appropriate methods, and
+  communicate research findings clearly and in an ethically responsible way to
+  both academic and professional audiences.
 
-## Course Goals
+The course also aims to:
 
-- Equip students to engage with mass communication research critically, so they can both conduct independent study and assess the research of others.
-- Foster an appreciation for the role of mass communications in reflecting and shaping societal values, particularly concerning diverse populations.
-- Prepare students to apply digital tools and technologies in their research, so they can navigate and contribute to the evolving landscape of mass media research.
-- Develop students' ability to communicate research findings effectively to both academic and non-academic audiences, using appropriate forms and styles.
+- Equip students to engage with mass communication research critically, so they
+  can both conduct independent study and assess the research of others.
+- Foster an appreciation for the role of mass communications in reflecting and
+  shaping societal values, particularly concerning diverse populations.
+- Prepare students to apply digital tools and technologies in their research, so
+  they can navigate and contribute to the evolving landscape of mass media
+  research.
+- Develop students' ability to communicate research findings effectively to both
+  academic and non-academic audiences, using appropriate forms and styles.
 
----
+</details>
 
-## Course Structure: The Five Phases
+## What makes this graduate work {#what-makes-this-graduate-work}
 
-**The Journalist** is a throughline, not a stage: a weekly reading journal that
-runs the length of the term. The other four roles are sequential, and each hands
-you the materials for the next. Those four stages track the textbook's five parts.
+You read the textbook with the **Graduate edition toggle on**, which reveals a
+required graduate extension in every chapter. Graduate work is distinguished on
+four dimensions.
 
-### Phase I: The Journalist (Weeks 1-15): 150 points
-- Weekly Reading Journal with Graduate Extensions (10 pts/week x 14 teaching weeks + 10 pts consistency = 150 pts)
+**Depth of engagement.** You read the textbook's graduate extensions (collapsible
+callout blocks with assigned peer-reviewed readings) as required work. Your
+journal entries are 450 to 500 words and explicitly engage the assigned graduate
+reading. Entries that address only the chapter content receive a maximum of 7 of
+10 points.
 
-### Phase II: The Architect (Weeks 1-4, Book Part I: Foundation): 100 points
-- GitHub Profile (25 pts)
-- Syllabus Contract (25 pts)
-- Librarian Visit Report (50 pts)
+**Methodological formality.** Your codebook includes a formal reliability
+protocol with planned sample size, target alpha thresholds, and revision
+triggers. Your research proposal is a structured sentence outline that could
+serve as the front half of a conference paper.
 
-### Phase III: The Builder (Weeks 5-10, Book Parts II and III: Planning and Operationalization): 325 points
-- Annotated Manuscripts, 3 articles (25 pts)
-- Research Proposal, sentence outline (75 pts)
-- Topic Selection / RQs (25 pts)
-- Definitions Practice (25 pts)
-- Extended Codebook & Reliability Protocol (75 pts)
-- Sampling Plan & Pilot, 20 to 30 items (75 pts)
-- CITI Ethics Certification (25 pts)
+**Final product format.** You produce a White Paper: a formal Quarto Book with an
+executive summary, a structured literature review (15 or more sources), an
+explicit limitations analysis, and professional formatting suitable for
+conference submission or client delivery, paired with an academic conference
+poster (a shared requirement with MC 500).
 
-### Phase IV: The Analyst (Weeks 11-13, Book Part IV: Execution): 250 points
-- Data Wrangling [R] (50 pts)
-- Describing Data [R] (100 pts)
-- Inferencing Data [R] (100 pts)
+**500-level activity.** At least one-third of class meeting time is engaged in
+**500-level activity**: the required graduate-extension readings and the
+discussion built around them, and the heavier graduate deliverables (Research
+Proposal, Extended Codebook & Reliability Protocol, and the conference-ready
+White Paper with its paired poster). Your ethics work includes the
+**non-human-subjects IRB determination** you would actually file, building
+familiarity with the protocol process for doctoral study. Statistics coverage
+goes deeper by depth (assumptions, diagnostics, and model interpretation), not by
+additional techniques.
 
-### Phase V: The Publisher (Weeks 15-17, Book Part V: Inference and Publication): 200 points
-- White Paper (200 pts)
+## How the course works
 
-**Total Points:** 1,025
+The course runs in five roles. **The Journalist** is a throughline, not a stage:
+a weekly reading journal that runs the length of the term. The other four are
+sequential, and each hands you the materials for the next. Those four track the
+textbook's five parts.
 
-## Graduate Requirements
+<table class="syl-points">
+<caption>Points by phase, out of 1,025</caption>
+<thead>
+<tr>
+  <th scope="col">Phase</th>
+  <th scope="col">When</th>
+  <th scope="col" class="syl-weight">Points</th>
+  <th scope="col">What you hand in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th scope="row">I. The Journalist</th>
+  <td>Weeks 1 to 15</td>
+  <td class="syl-weight"><span class="syl-bar" style="--pct:46" aria-hidden="true"></span>150</td>
+  <td>Weekly Reading Journal with graduate extensions (10 pts per week for 14 teaching weeks, plus 10 pts consistency)</td>
+</tr>
+<tr>
+  <th scope="row">II. The Architect</th>
+  <td>Weeks 1 to 4</td>
+  <td class="syl-weight"><span class="syl-bar" style="--pct:31" aria-hidden="true"></span>100</td>
+  <td>GitHub Profile (25) · Syllabus Contract (25) · Librarian Visit Report (50)</td>
+</tr>
+<tr>
+  <th scope="row">III. The Builder</th>
+  <td>Weeks 5 to 10</td>
+  <td class="syl-weight"><span class="syl-bar" style="--pct:100" aria-hidden="true"></span>325</td>
+  <td>Annotated Manuscripts, 3 articles (25) · Research Proposal, sentence outline (75) · Topic Selection and RQs (25) · Definitions Practice (25) · Extended Codebook &amp; Reliability Protocol (75) · Sampling Plan &amp; Pilot, 20 to 30 items (75) · CITI Ethics Certification (25)</td>
+</tr>
+<tr>
+  <th scope="row">IV. The Analyst</th>
+  <td>Weeks 11 to 13</td>
+  <td class="syl-weight"><span class="syl-bar" style="--pct:77" aria-hidden="true"></span>250</td>
+  <td>Data Wrangling in R (50) · Describing Data in R (100) · Inferencing Data in R (100)</td>
+</tr>
+<tr>
+  <th scope="row">V. The Publisher</th>
+  <td>Weeks 15 to 17</td>
+  <td class="syl-weight"><span class="syl-bar" style="--pct:62" aria-hidden="true"></span>200</td>
+  <td>White Paper (200), plus the paired conference poster</td>
+</tr>
+</tbody>
+<tfoot>
+<tr><th scope="row">Total</th><td></td><td class="syl-weight">1,025</td><td></td></tr>
+</tfoot>
+</table>
 
-You read the textbook with the **Graduate edition toggle on**, which reveals a required graduate extension in every chapter. Graduate work is distinguished on four dimensions:
-
-**Depth of engagement.** You read the textbook's graduate extensions (collapsible callout blocks with assigned peer-reviewed readings) as required work. Your journal entries are 450 to 500 words and explicitly engage the assigned graduate reading. Entries that address only the chapter content receive a maximum of 7 of 10 points.
-
-**Methodological formality.** Your codebook includes a formal reliability protocol with planned sample size, target alpha thresholds, and revision triggers. Your research proposal is a structured sentence outline that could serve as the front half of a conference paper.
-
-**Final product format.** You produce a White Paper: a formal Quarto Book with an executive summary, a structured literature review (15 or more sources), an explicit limitations analysis, and professional formatting suitable for conference submission or client delivery, paired with an academic conference poster (a shared requirement with MC 500).
-
-**500-level activity.** At least one-third of class meeting time is engaged in **500-level activity**: the required graduate-extension readings and the discussion built around them, and the heavier graduate deliverables (Research Proposal, Extended Codebook & Reliability Protocol, and the conference-ready White Paper with its paired poster). Your ethics work includes the **non-human-subjects IRB determination** you would actually file, building familiarity with the protocol process for doctoral study. Statistics coverage goes deeper by depth (assumptions, diagnostics, and model interpretation), not by additional techniques.
-
-
-### White Paper rubric (200 points)
+### The White Paper (200 points)
 
 The white paper follows **IMRaD**: Introduction, Methods, Results, Discussion, in
 that order, with a short abstract in front and references at the close. It uses
@@ -136,52 +261,7 @@ the transparency markers a reviewer looks for.
 
 The paired conference poster is a separate requirement shared with MC 500.
 
----
-
-## Course Materials
-
-### Textbook
-
-This course uses an Open Educational Resource (OER): *From Vibes to Variables: A Field Guide to Open Media Science* (3rd Ed.), free and online at [aura-lab-siue.github.io/v2v](https://aura-lab-siue.github.io/v2v/). There is no textbook to purchase. **Turn on the "Graduate edition" toggle** (the control in the lower corner of any page), which reveals a **required graduate extension in every chapter** (assigned peer-reviewed readings and advanced analytical prompts). Your choice is remembered across pages. For you it is required material.
-
-### Required Software
-
-All software is free and open-source. Installation guides are on the [course website](https://aura-lab-siue.github.io/v2v-hub/resources/index.html).
-
-- **VS Code**: your single workspace for writing, R, Quarto, and Git
-- **R**: statistical computing environment, run inside VS Code
-- **Quarto**: scientific and technical publishing
-- **Git and GitHub**: version control and your White Paper
-- **GitHub Desktop** (optional): a visual Git interface
-
-### Technology Requirements
-
-A reliable computer and internet connection are required.
-
-- A desktop or laptop computer for the R analysis in Phases IV and V; this work cannot be completed on a phone or tablet.
-- A current version of a supported browser (Chrome, Edge, Firefox, or Safari), kept updated.
-- Cloud storage (OneDrive, Google Drive, or similar) for backing up your project.
-- VS Code, R, and Git installed and working by the end of Week 2. The course website includes a setup walkthrough.
-
-Technical problems are not an excuse for missed deadlines, but they can often be resolved quickly; see Technical Support below.
-
----
-
-## Artificial Intelligence Use Policy
-
-AI coding assistants (for example, GitHub Education Copilot) are **permitted in this course as supervised aids**, with disclosure. This is a course-specific policy; unless a course states otherwise, SIUE's default is that AI use is prohibited.
-
-- **Permitted:** using AI to remember syntax, scaffold code you understand, or draft prose you then revise, provided you can explain everything you submit and you disclose the assistance.
-- **Disclosure is required:** when AI shaped work you submit, note in your weekly journal what you used it for and how you checked its output. Graduate work carries a higher expectation that AI-assisted analysis is independently verified.
-- **Not permitted:** submitting AI-generated work as your own without disclosure; using AI to fabricate citations, data, or results; or using AI to circumvent a learning objective. These are academic dishonesty.
-
-You are accountable for everything you submit, including whatever role AI played in producing it. See the [GitHub Education Copilot guide](https://aura-lab-siue.github.io/v2v-hub/resources/copilot-setup.html) for how to use it responsibly.
-
----
-
 ## Grading
-
-### Grading Scale
 
 | Grade | Points | Percentage |
 |-------|--------|------------|
@@ -191,102 +271,55 @@ You are accountable for everything you submit, including whatever role AI played
 | D | 615 to 716 | 60 to 69% |
 | F | below 615 | below 60% |
 
-### Grading Rubrics
+**Rubrics are checklists.** You start at full credit and lose full or partial
+points for each item that is incorrect or missing. You are welcome to raise point
+disputes during office hours. In special cases, opportunities to address mistakes
+for partial credit are provided.
 
-Grading rubrics are presented as checklists. You start at full credit and lose full or partial points for each item that is incorrect or missing. You are welcome to raise point disputes during office hours. In special cases, opportunities to address mistakes for partial credit are provided.
+**Feedback timeline.** Grades with feedback are posted within one week of the due
+date for most assignments. Find your grades under **My Grades** in the Blackboard
+course menu.
 
-### Feedback and Grading Timeline
+**Late work.** Late submissions (after Friday 11:59 PM) lose 10% of the
+assignment grade per business day, for up to one week. After one week, the
+assignment receives a zero unless an accommodation has been arranged in writing
+before the original due date. Non-emergency extensions must be requested before
+the deadline. If you are experiencing an emergency, contact me as early as
+possible; I work with students case by case when contacted proactively, but I
+cannot extend deadlines retroactively.
 
-Grades with feedback are posted within one week of the due date for most assignments. Find your grades under **My Grades** in the Blackboard course menu.
+**Resubmission.** Assignments worth 50 or more points may be revised and
+resubmitted within one week of grade posting. The final grade is the average of
+the original and the resubmission.
 
-### Late or Missed Assignments
+**Graduate extension readings are required, not optional.** Your weekly journal
+must engage with both the chapter content and the assigned graduate reading.
+Entries that address only the chapter content receive a maximum of 7 of 10
+points.
 
-- Late submissions (after Friday 11:59 PM) lose 10% of the assignment grade per business day, for up to one week.
-- After one week, the assignment receives a zero unless an accommodation has been arranged in writing before the original due date.
-- Non-emergency extensions must be requested before the deadline. If you are experiencing an emergency, contact me as early as possible; I work with students case by case when contacted proactively, but I cannot extend deadlines retroactively.
+## Weekly schedule {#weekly-schedule}
 
-### Resubmission
+Lecture decks for every meeting are posted at
+[MC 501 Lecture Decks](decks/mc501/index.qmd).
 
-Assignments worth 50 or more points may be revised and resubmitted within one week of grade posting. The final grade is the average of the original and the resubmission.
+MC 501 meets once weekly (**Wed 6:00 to 8:50 PM**). Each 170-minute block covers a
+full week of material and adds the graduate layer: the required
+graduate-extension readings, the discussion built around them, and the heavier
+graduate deliverables (see
+[What makes this graduate work](#what-makes-this-graduate-work)). The course
+covers descriptive and inferential statistics (t-test, ANOVA, regression);
+graduate work goes deeper. The White Paper and its paired academic conference
+poster are assigned Week 13 and due at Finals.
 
-### Graduate Extension Readings
+::: {.callout-important}
+## Week 5 and Week 9 are the pinch points
 
-Graduate extension readings are required, not optional. Your weekly journal must engage with both the chapter content and the assigned graduate reading. Entries that address only the chapter content receive a maximum of 7 of 10 points.
-
----
-
-## Participation and Regular and Substantive Interaction (RSI)
-
-Success in this course requires attendance and active participation. Regular engagement with the readings, activities, and discussions is essential.
-
-Regular and Substantive Interaction (RSI) is required under U.S. Department of Education regulations. In this course, RSI takes the form of direct instruction and in-class activities, weekly office hours as a live support channel, substantive instructor participation in discussions, and personalized written feedback on graded work on the timeline above. Your part is to engage on a weekly cadence: read the assigned chapters and graduate extensions, participate in class, and submit work on time.
-
-## Recordings of Class Content
-
-Any recordings of class sessions are for the educational use of students enrolled in this course only. Students may not copy, share, or distribute recordings without the written permission of the instructor. Office hours are not recorded, so that conversations about grades, accommodations, or personal circumstances stay private.
-
----
-
-## Course Policies and University Policies
-
-### Academic Integrity
-
-The expectations and academic standards in the [Student Academic Code (3C2)](https://www.siue.edu/policies/3c2.shtml) apply to all courses at the University, regardless of modality. Plagiarism (the use of another person's words or ideas without credit) and cheating will not be tolerated and may lead to failure on an assignment, in the class, or dismissal from the University, per the [SIUE academic dishonesty policy (3C1)](https://www.siue.edu/policies/3c1.shtml). Cite your data sources and collaborators.
-
-### Diversity and Inclusion
-
-SIUE is committed to respecting everyone's dignity at all times. Our classroom must be a place where students and instructors feel safe and supported. Systems of oppression permeate our institutions and our classrooms; all students and instructors share responsibility for affirming inclusion, equity, and social justice. Racism, sexism, classism, ableism, heterosexism, xenophobia, and other social pathologies will not be tolerated, and violations will be enforced in line with the SIUE Student Conduct Code. The [Inclusive Excellence, Education, and Development Hub](https://www.siue.edu/inclusive-excellence/) is a resource for students.
-
-### Pregnancy and Newly Parenting Policy
-
-This course follows [SIUE's Newly Parenting Policy (3C15)](https://www.siue.edu/policies/3c15.shtml). Students may request accommodations through the Office of Equal Opportunity, Access, and Title IX Coordination (EOA).
-
-### Technology Privacy
-
-This course uses Blackboard; review the [Anthology Blackboard Privacy Statement](https://www.anthology.com/privacy-statement) for how your data is handled. The course also uses GitHub; review GitHub's privacy policy before creating an account.
-
-### Subject to Change Notice
-
-All material, assignments, and deadlines are subject to change with prior notice. Watch the course announcements and Blackboard regularly.
-
----
-
-## Additional Support
-
-### Services for Students Needing Accommodations
-
-It is the policy and practice of SIUE to create inclusive learning environments. If aspects of the instruction or design of this course create barriers to your inclusion or to accurate assessment of achievement, please contact [Accessible Campus Community and Equitable Student Support (ACCESS)](https://www.siue.edu/access/) as soon as possible. Register with ACCESS online at siue.edu/access or in person in the Student Success Center, Room 1203. Email myaccess@siue.edu or call 618-650-3726.
-
-### Academic and Other Student Services
-
-- [Lovejoy Library Resources](https://www.siue.edu/lovejoy-library/)
-- [Academic Success Sessions](https://www.siue.edu/academic-success/)
-- [Tutoring Resource Center](https://www.siue.edu/tutoring/)
-- [The Writing Center](https://www.siue.edu/writing-center/)
-- [Academic Advising](https://www.siue.edu/advising/)
-- [Financial Aid](https://www.siue.edu/financialaid/)
-- [Counseling Services](https://www.siue.edu/counseling/)
-
-### Cougar Care
-
-College life can be challenging, and I support students prioritizing their mental health. Counseling is available at the Student Success Center, Room 0222. Make an appointment at [cougarcare.siue.edu](https://cougarcare.siue.edu/) or call 618-650-2842.
-
-### Technical Support
-
-A reliable computer and internet connection are required. Contact ITS at 618-650-5500 or help@siue.edu, check [ITS System Status](https://www.siue.edu/its/status/), or search the [ITS KnowledgeBase](https://www.siue.edu/its/kb/).
-
----
-
-## Weekly Schedule
-
-Lecture decks for every meeting are posted at [MC 501 Lecture Decks](decks/mc501/index.qmd).
-
-MC 501 meets once weekly (**Wed 6:00–8:50**). Each 170-minute block covers a full week
-of material and adds the graduate layer: the required
-graduate-extension readings, the discussion built around them, and the heavier graduate
-deliverables (see *Graduate Requirements*). The course covers descriptive and inferential
-statistics (t-test, ANOVA, regression); graduate work goes deeper. The White Paper and
-its paired academic conference poster are assigned Week 13 and due at Finals.
+Week 5 stacks the Annotated Manuscripts with CITI Certification, and Week 9
+carries the Extended Codebook and Reliability Protocol (75 pts) one week before
+the Sampling Plan and Pilot (75 pts). Those four weeks in the middle of the term
+carry 200 points between them. Start the CITI certification in Week 1; it is the
+one item here that is pure clock time and can be finished early.
+:::
 
 ::: {.schedule-table}
 
@@ -314,12 +347,13 @@ its paired academic conference poster are assigned Week 13 and due at Finals.
 
 *Schedule subject to change with notice.*
 
-## Required Graduate Readings
+## Required graduate readings
 
 Each week has one required reading, assigned below and discussed in class. Read it
 before the session; your weekly journal engages it. These are the sources behind each
 chapter's graduate extension. Items marked *Library* are available through the SIUE
-Library (Lovejoy) with your student login; everything else is open access.
+Library (Lovejoy) with your student login; everything else is open access. Weeks
+14, 16, and 17 (break, work session, and finals) have no assigned reading.
 
 ::: {.readings-table}
 
@@ -342,5 +376,76 @@ Library (Lovejoy) with your student login; everything else is open access.
 
 :::
 
-Weeks 14, 16, and 17 (break, work session, and finals) have no assigned reading.
+## Materials and technology
 
+**Textbook.** This course uses an Open Educational Resource (OER): *From Vibes to
+Variables: A Field Guide to Open Media Science* (3rd Ed.), free and online at
+[aura-lab-siue.github.io/v2v](https://aura-lab-siue.github.io/v2v/). There is no
+textbook to purchase. **Turn on the "Graduate edition" toggle** (the control in
+the lower corner of any page), which reveals a **required graduate extension in
+every chapter** (assigned peer-reviewed readings and advanced analytical
+prompts). Your choice is remembered across pages. For you it is required
+material.
+
+**Software.** All software is free and open-source. Installation guides are on
+the [setup pages](https://aura-lab-siue.github.io/v2v-hub/resources/index.html).
+
+- **VS Code**: your single workspace for writing, R, Quarto, and Git
+- **R**: statistical computing environment, run inside VS Code
+- **Quarto**: scientific and technical publishing
+- **Git and GitHub**: version control and your White Paper
+- **GitHub Desktop** (optional): a visual Git interface
+
+**What you need to have.** A reliable computer and internet connection are
+required.
+
+- A desktop or laptop computer for the R analysis in Phases IV and V; this work
+  cannot be completed on a phone or tablet.
+- A current version of a supported browser (Chrome, Edge, Firefox, or Safari),
+  kept updated.
+- Cloud storage (OneDrive, Google Drive, or similar) for backing up your project.
+- VS Code, R, and Git installed and working by the end of Week 2. The setup pages
+  include a walkthrough.
+
+Technical problems are not an excuse for missed deadlines, but they can often be
+resolved quickly. See [Getting help](#getting-help).
+
+## Artificial intelligence
+
+AI coding assistants (for example, GitHub Education Copilot) are **permitted in
+this course as supervised aids**, with disclosure. This is a course-specific
+policy; unless a course states otherwise, SIUE's default is that AI use is
+prohibited.
+
+- **Permitted:** using AI to remember syntax, scaffold code you understand, or
+  draft prose you then revise, provided you can explain everything you submit and
+  you disclose the assistance.
+- **Disclosure is required:** when AI shaped work you submit, note in your weekly
+  journal what you used it for and how you checked its output. Graduate work
+  carries a higher expectation that AI-assisted analysis is independently
+  verified.
+- **Not permitted:** submitting AI-generated work as your own without disclosure;
+  using AI to fabricate citations, data, or results; or using AI to circumvent a
+  learning objective. These are academic dishonesty.
+
+You are accountable for everything you submit, including whatever role AI played
+in producing it. See the
+[GitHub Education Copilot guide](https://aura-lab-siue.github.io/v2v-hub/resources/copilot-setup.html)
+for how to use it responsibly.
+
+## Participation and interaction
+
+Success in this course requires attendance and active participation. Regular
+engagement with the readings, activities, and discussions is essential.
+
+Regular and Substantive Interaction (RSI) is required under U.S. Department of
+Education regulations. In this course, RSI takes the form of direct instruction
+and in-class activities, weekly office hours as a live support channel,
+substantive instructor participation in discussions, and personalized written
+feedback on graded work on the timeline above. Your part is to engage on a weekly
+cadence: read the assigned chapters and graduate extensions, participate in
+class, and submit work on time.
+
+{{< include _includes/siue-support.qmd >}}
+
+{{< include _includes/university-policies.qmd >}}

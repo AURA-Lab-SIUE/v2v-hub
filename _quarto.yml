@@ -144,7 +144,7 @@ format:
     # violations on a single workbook page. A real dark skin needs a dark
     # variant of every token in custom-styling.scss; until then light-only is
     # the honest state, and matches the book.
-    theme: [cosmo, custom-styling.scss]
+    theme: [cosmo, custom-styling.scss, syllabus-styling.scss]
     toc: true
     code-fold: false
     include-in-header:
@@ -207,5 +207,31 @@ format:
             document.body.appendChild(btn);
             apply(on);
           });
+        })();
+        </script>
+        <script>
+        /* syllabus-print-2026-08-17: force every <details> open for printing,
+           then restore. Without this the collapsed policy blocks are simply
+           absent from the printed syllabus and from Chrome's PDF export.
+           CSS cannot do it: Chrome hides the content with content-visibility
+           on a UA-level slot, not with display. */
+        (function(){
+          var opened = [];
+          function expand(){
+            opened = [];
+            document.querySelectorAll('details:not([open])').forEach(function(d){
+              opened.push(d); d.open = true;
+            });
+          }
+          function restore(){ opened.forEach(function(d){ d.open = false; }); opened = []; }
+          window.addEventListener('beforeprint', expand);
+          window.addEventListener('afterprint', restore);
+          /* Safari and headless Chrome drive print through matchMedia only. */
+          if (window.matchMedia) {
+            var mq = window.matchMedia('print');
+            var onChange = function(m){ m.matches ? expand() : restore(); };
+            if (mq.addEventListener) mq.addEventListener('change', onChange);
+            else if (mq.addListener) mq.addListener(onChange);
+          }
         })();
         </script>

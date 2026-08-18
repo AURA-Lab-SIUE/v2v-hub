@@ -1,0 +1,363 @@
+/*-- scss:rules --*/
+
+/* ============================================================================
+   SYLLABUS LAYOUT LAYER  (2026-08-17)
+   ----------------------------------------------------------------------------
+   A syllabus is not a document that happens to be on the web. It is the page a
+   student opens on a phone, at 11pm, to answer ONE question: when is it due,
+   where do I go, who do I ask. This layer restructures the syllabus pages
+   around that use, on the existing AURA tokens in custom-styling.scss. No new
+   palette, no new type. Every colour pair here is drawn from tokens that were
+   already contrast-checked, and re-measured on RENDERED PIXELS after build
+   (tools/measure_contrast.py) against the 5:1 house floor, not AA's 4.5.
+
+   WHY EACH PIECE EXISTS
+   - .syl-facts       The old "Essential Information" 2-column markdown table
+                      squeezed room numbers and office hours into a 50%-width
+                      cell and read as a spreadsheet. Facts a student re-checks
+                      weekly should be cards, scannable at a glance, and they
+                      must reflow to one column on a phone.
+   - .syl-first-week  Liquid-syllabus move (Pacansky-Brock): the first thing on
+                      the page is what to DO, not what is forbidden. Reduces the
+                      week-one email load.
+   - .syl-points      Grade weight is the single most-read number in any
+                      syllabus. The bar is decoration ONLY; the number is text
+                      in the same cell, so nothing is encoded in colour or
+                      width alone (WCAG 1.4.1).
+   - .syl-help        "Sufficient information concerning resources" means a
+                      student can route themselves without knowing SIUE's org
+                      chart. Symptom first, office second.
+   - details.syl-policy  University boilerplate is required but is not what the
+                      page is FOR. Collapsed by default, native <details> so it
+                      is keyboard-operable with no JS, and force-opened in print
+                      so the printed artefact is complete.
+   - @media print     The printed page IS the printer-friendly version. Link
+                      hrefs are expanded because a printed hyperlink is dead
+                      otherwise.
+   ========================================================================== */
+
+// Labels sitting on the TINTED surface need a darker ink than --v2v-muted,
+// which measures 5.06:1 there - technically over the floor, but with no margin
+// for the renderer's antialiasing. 6.5:1 gives room.
+:root {
+  --syl-label: #5A5349;
+  --syl-gap: 1rem;
+}
+
+// --- Hero -------------------------------------------------------------------
+.syl-hero {
+  margin: 0 0 2rem;
+  padding: 1.75rem 0 1.5rem;
+  border-bottom: 3px solid var(--v2v-red-mark);
+
+  .syl-course {
+    display: block;
+    font-family: $font-family-monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--v2v-red);
+    margin-bottom: 0.4rem;
+  }
+  h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.6rem);
+    line-height: 1.1;
+  }
+  .syl-tagline {
+    margin: 0;
+    max-width: 60ch;
+    font-family: $font-family-serif;
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--v2v-text);
+  }
+}
+
+// --- Fact cards -------------------------------------------------------------
+.syl-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--syl-gap);
+  margin: 1.5rem 0 2rem;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    background: var(--v2v-surface);
+    border: 1px solid var(--v2v-rule);
+    border-radius: var(--v2v-radius);
+    padding: 0.9rem 1rem;
+  }
+  .syl-fact-label {
+    display: block;
+    font-family: $font-family-monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--syl-label);
+    margin-bottom: 0.3rem;
+  }
+  .syl-fact-value {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.45;
+    color: var(--v2v-text);
+    strong { font-weight: 700; }
+  }
+  .syl-fact-note {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: var(--syl-label);
+  }
+}
+
+// --- First week / start here ------------------------------------------------
+.syl-first-week {
+  margin: 2rem 0;
+  padding: 1.25rem 1.4rem;
+  background: var(--v2v-raised);
+  border: 1px solid var(--v2v-rule);
+  border-left: 5px solid var(--v2v-red-mark);
+  border-radius: var(--v2v-radius);
+
+  > h2, > h3 { margin-top: 0; }
+  ol { margin-bottom: 0; padding-left: 1.2rem; }
+  li { margin-bottom: 0.5rem; line-height: 1.55; }
+  li:last-child { margin-bottom: 0; }
+}
+
+// --- Points / weight table --------------------------------------------------
+// The bar is a background layer behind the cell; the figure is real text on
+// top of it. Screen readers get the number, sighted readers get the shape,
+// and a monochrome printer gets both.
+.syl-points {
+  width: 100%;
+  margin: 1.25rem 0 1.75rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+
+  caption {
+    caption-side: top;
+    text-align: left;
+    padding: 0 0 0.6rem;
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--syl-label);
+  }
+  th, td {
+    padding: 0.5rem 0.65rem;
+    border-bottom: 1px solid var(--v2v-rule);
+    vertical-align: top;
+    text-align: left;
+  }
+  thead th {
+    border-bottom: 2px solid var(--v2v-ink);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--v2v-ink);
+  }
+  tbody th { font-weight: 700; color: var(--v2v-ink); }
+
+  .syl-weight {
+    width: 34%;
+    white-space: nowrap;
+  }
+  // --pct is set inline per row. Decorative only.
+  .syl-bar {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(var(--pct) * 1%);
+    min-width: 3px;
+    height: 0.7rem;
+    margin-right: 0.5rem;
+    background: var(--v2v-red-mark);
+    border-radius: 2px;
+  }
+  tfoot td, tfoot th {
+    border-top: 2px solid var(--v2v-ink);
+    border-bottom: none;
+    font-weight: 800;
+    color: var(--v2v-ink);
+  }
+}
+
+// --- "I need help with..." router -------------------------------------------
+.syl-help {
+  width: 100%;
+  margin: 1.25rem 0 1.75rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+
+  // Bootstrap puts captions BELOW the table. A caption that arrives after ten
+  // rows is not a label, it is a footnote - it must lead.
+  caption {
+    caption-side: top;
+    text-align: left;
+    padding: 0 0 0.6rem;
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--syl-label);
+  }
+  th, td {
+    padding: 0.55rem 0.7rem;
+    border-bottom: 1px solid var(--v2v-rule);
+    vertical-align: top;
+    text-align: left;
+    line-height: 1.5;
+  }
+  thead th {
+    border-bottom: 2px solid var(--v2v-ink);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  tbody th {
+    font-weight: 700;
+    color: var(--v2v-ink);
+    width: 30%;
+  }
+  td:last-child { color: var(--v2v-text); }
+}
+
+// --- Collapsible policy blocks ----------------------------------------------
+details.syl-policy {
+  margin: 0.6rem 0;
+  border: 1px solid var(--v2v-rule);
+  border-radius: var(--v2v-radius);
+  background: var(--v2v-raised);
+
+  > summary {
+    cursor: pointer;
+    padding: 0.7rem 1rem;
+    font-weight: 700;
+    color: var(--v2v-ink);
+    list-style-position: outside;
+    border-radius: var(--v2v-radius);
+  }
+  > summary:hover { background: var(--v2v-surface); }
+  > summary:focus-visible {
+    outline: 3px solid var(--v2v-red);
+    outline-offset: 2px;
+  }
+  > *:not(summary) { padding: 0 1rem; }
+  > *:last-child { padding-bottom: 0.9rem; }
+}
+
+// --- Schedule table upgrades ------------------------------------------------
+// Builds on .schedule-table in custom-styling.scss. Adds a sticky header row
+// (a 17-week table is taller than any viewport) and a non-colour "due" marker.
+.schedule-table {
+  thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--v2v-surface);
+    border-bottom: 2px solid var(--v2v-ink);
+  }
+  tbody tr:nth-child(even) td { background: rgba(224, 218, 206, 0.28); }
+  // Break weeks read as structure, not as an empty row.
+  tr.syl-break td {
+    font-style: italic;
+    color: var(--syl-label);
+    background: var(--v2v-surface) !important;
+  }
+}
+
+// A due item carries a diamond AND the word, so the emphasis is never colour
+// alone. The diamond is the AURA mark.
+.syl-due::before {
+  content: "\25C6\00a0";
+  color: var(--v2v-red-mark);
+}
+
+// --- Print ------------------------------------------------------------------
+// This is the "printer-friendly version": no second document to keep in sync.
+@media print {
+  .syl-hero { border-bottom-width: 2px; padding-top: 0; }
+  .syl-facts {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .syl-facts > li {
+    background: transparent;
+    border: 1px solid #999;
+    break-inside: avoid;
+  }
+  // NOT break-inside: avoid. This block is ~half a page tall, so protecting it
+  // pushed it whole to page 2 and left 40% of page 1 blank. Keeping the heading
+  // with its list is the part that actually matters.
+  .syl-first-week {
+    background: transparent;
+    border: 1px solid #999;
+    break-inside: auto;
+    > h2, > h3 { break-after: avoid; }
+    li { break-inside: avoid; }
+  }
+  // Everything collapsed must print. A printed syllabus with hidden policy
+  // sections is not a syllabus.
+  details.syl-policy {
+    border: none;
+    break-inside: auto;
+  }
+  details.syl-policy > summary {
+    font-size: 1.05rem;
+    padding-left: 0;
+    list-style: none;
+  }
+  details.syl-policy > summary::-webkit-details-marker { display: none; }
+  details.syl-policy > *:not(summary) { padding-left: 0; }
+
+  .syl-points, .syl-help, .schedule-table table { font-size: 9.5pt; }
+  .syl-points .syl-bar { background: #666 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .schedule-table thead th { position: static; }
+  .schedule-table tbody tr { break-inside: avoid; }
+  thead { display: table-header-group; }
+
+  // A printed link is dead without its address. Skip in-page anchors and
+  // mailto/tel, where the visible text already IS the address.
+  main a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    word-break: break-all;
+    color: #333;
+  }
+  main a[href^="#"]::after,
+  main a[href^="mailto"]::after,
+  main a[href^="tel"]::after { content: ""; }
+
+  // Inside the dense tables the expanded address competes with the link text it
+  // belongs to. Keep it (a printed resource table with dead links is the worst
+  // case of all) but drop it a tier so the eye reads the NAME first.
+  .syl-help a[href^="http"]::after,
+  .schedule-table a[href^="http"]::after {
+    font-size: 7.5pt;
+    color: #444;
+  }
+}
+
+// Due column of the schedule. Marked with the AURA diamond AND weight, never
+// colour alone. Applied by position so the markdown table stays plain text
+// (a bracketed span breaks on cells that contain "[R]").
+.schedule-table tbody td:last-child:not(:empty) {
+  font-weight: 600;
+  color: var(--v2v-ink);
+}
+.schedule-table tbody td:last-child:not(:empty)::before {
+  content: "\25C6\00a0";
+  color: var(--v2v-red-mark);
+  font-weight: 400;
+}
+@media print {
+  .schedule-table tbody td:last-child:not(:empty)::before { color: #000; }
+}
