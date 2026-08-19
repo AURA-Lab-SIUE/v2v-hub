@@ -193,6 +193,12 @@ textbook's five parts.
 
 <table class="syl-points">
 <caption>Points by phase, out of 1,025</caption>
+<colgroup>
+<col class="syl-col-phase" style="width: 24%">
+<col class="syl-col-when" style="width: 20%">
+<col class="syl-col-points" style="width: 12%">
+<col class="syl-col-hand" style="width: 44%">
+</colgroup>
 <thead>
 <tr>
   <th scope="col">Phase</th>
@@ -203,33 +209,55 @@ textbook's five parts.
 </thead>
 <tbody>
 <tr>
-  <th scope="row">I. The Journalist</th>
+  <th scope="row"><span class="syl-phase-num">I.</span> The Journalist</th>
   <td>Weeks 1 to 15</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:46" aria-hidden="true"></span>150</td>
+  <td class="syl-weight">150<span class="syl-bar" style="--pct:46" aria-hidden="true"></span></td>
   <td>Weekly Reading Journal with graduate extensions (10 pts per week for 14 teaching weeks, plus 10 pts consistency)</td>
 </tr>
 <tr>
-  <th scope="row">II. The Architect</th>
+  <th scope="row"><span class="syl-phase-num">II.</span> The Architect</th>
   <td>Weeks 1 to 4</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:31" aria-hidden="true"></span>100</td>
-  <td>GitHub Profile (25) · Syllabus Contract (25) · Librarian Visit Report (50)</td>
+  <td class="syl-weight">100<span class="syl-bar" style="--pct:31" aria-hidden="true"></span></td>
+  <td>
+  <ul class="syl-deliv">
+    <li>GitHub Profile (25)</li>
+    <li>Syllabus Contract (25)</li>
+    <li>Librarian Visit Report (50)</li>
+  </ul>
+  </td>
 </tr>
 <tr>
-  <th scope="row">III. The Builder</th>
+  <th scope="row"><span class="syl-phase-num">III.</span> The Builder</th>
   <td>Weeks 5 to 10</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:100" aria-hidden="true"></span>325</td>
-  <td>Annotated Manuscripts, 3 articles (25) · Research Proposal, sentence outline (75) · Topic Selection and RQs (25) · Definitions Practice (25) · Extended Codebook &amp; Reliability Protocol (75) · Sampling Plan &amp; Pilot, 20 to 30 items (75) · CITI Ethics Certification (25)</td>
+  <td class="syl-weight">325<span class="syl-bar" style="--pct:100" aria-hidden="true"></span></td>
+  <td>
+  <ul class="syl-deliv">
+    <li>Annotated Manuscripts, 3 articles (25)</li>
+    <li>Research Proposal, sentence outline (75)</li>
+    <li>Topic Selection and RQs (25)</li>
+    <li>Definitions Practice (25)</li>
+    <li>Extended Codebook &amp; Reliability Protocol (75)</li>
+    <li>Sampling Plan &amp; Pilot, 20 to 30 items (75)</li>
+    <li>CITI Ethics Certification (25)</li>
+  </ul>
+  </td>
 </tr>
 <tr>
-  <th scope="row">IV. The Analyst</th>
+  <th scope="row"><span class="syl-phase-num">IV.</span> The Analyst</th>
   <td>Weeks 11 to 13</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:77" aria-hidden="true"></span>250</td>
-  <td>Data Wrangling in R (50) · Describing Data in R (100) · Inferencing Data in R (100)</td>
+  <td class="syl-weight">250<span class="syl-bar" style="--pct:77" aria-hidden="true"></span></td>
+  <td>
+  <ul class="syl-deliv">
+    <li>Data Wrangling in R (50)</li>
+    <li>Describing Data in R (100)</li>
+    <li>Inferencing Data in R (100)</li>
+  </ul>
+  </td>
 </tr>
 <tr>
-  <th scope="row">V. The Publisher</th>
+  <th scope="row"><span class="syl-phase-num">V.</span> The Publisher</th>
   <td>Weeks 15 to 17</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:62" aria-hidden="true"></span>200</td>
+  <td class="syl-weight">200<span class="syl-bar" style="--pct:62" aria-hidden="true"></span></td>
   <td>White Paper (200), plus the paired conference poster</td>
 </tr>
 </tbody>
@@ -248,7 +276,7 @@ the transparency markers a reviewer looks for.
 ::: {.schedule-table}
 
 | Component | Points | Full marks means |
-|:-----------------------|:--------|:------------------------------------------------------------------|
+|:---------------------|:-----------|:---------------------------------------------------------------|
 | Introduction and framing | 25 | States the question and why it is worth asking, and situates it in the theoretical literature rather than gesturing at it. |
 | Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, an intercoder reliability report giving the kappa value with the training protocol and threshold applied, and the pre-registration disclosure with its OSF URL. |
 | Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labelled and captioned. |

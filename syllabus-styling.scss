@@ -166,20 +166,67 @@
   }
   tbody th { font-weight: 700; color: var(--v2v-ink); }
 
-  .syl-weight {
-    width: 34%;
-    white-space: nowrap;
+  // The numeral is WRAPPED IN A SPAN in the source, and it has to stay that
+  // way. Left bare, a cell whose content begins "II. " is parsed by pandoc's
+  // markdown-in-html as an ordered list: the web page got
+  // `<ol start="2" type="I"><li>The Architect</li></ol>` INSIDE the row header
+  // (a synthesised marker rather than the literal text, and a one-item list a
+  // screen reader announces as a list), and Word got a numbered list paragraph,
+  // which is where the mis-set "II.  The Architect" and "III.The Builder" on
+  // the printed table came from. "I." and "V." escaped it only because pandoc
+  // treats a single capital as an ambiguous initial.
+  //
+  // Colour is --syl-label (7.6:1 on white), NOT --v2v-red-mark: #E5182D
+  // measures 4.67:1 there, under the 5:1 floor. The red is for rules and
+  // marks, never for text.
+  .syl-phase-num {
+    color: var(--syl-label);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
   }
-  // --pct is set inline per row. Decorative only.
+
+  // COLUMN WIDTHS ARE NOT SET HERE. They live in the table's <colgroup>,
+  // because this table has two renderers and CSS only reaches one of them.
+  // Pandoc reads a colgroup and emits a real w:tblGrid, so one set of widths
+  // governs the web page and the Word/PDF build. When the width
+  // lived here as `.syl-weight { width: 34% }`, paper got no widths at all and
+  // fell back to four equal 25% columns - which is how "What you hand in" held
+  // seven deliverables in a quarter of the table.
+  .syl-weight {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  // --pct is set inline per row. DECORATIVE ONLY: the number beside it is real
+  // text in the same cell, so nothing is encoded in colour or width alone
+  // (WCAG 1.4.1), and extract.py strips the span before the PDF build.
+  //
+  // display:block, not inline-block. As an inline box its calc(--pct * 1%)
+  // resolved against the cell's own width, so the two 100% rows drew a bar the
+  // full width of the cell and shoved the `nowrap` number out of the column and
+  // on top of the next one - the "250" that printed over "Annotated Manuscript".
+  // As a block it sits on its own line under the number and cannot collide.
   .syl-bar {
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
     width: calc(var(--pct) * 1%);
+    max-width: 100%;
     min-width: 3px;
-    height: 0.7rem;
-    margin-right: 0.5rem;
+    height: 0.4rem;
+    margin: 0.4rem 0 0.1rem;
     background: var(--v2v-red-mark);
     border-radius: 2px;
+  }
+  // Deliverables are a LIST, not a middot-separated run. A run of seven items
+  // is a ragged wall at any column width, and the middots are punctuation a
+  // screen reader does not announce, so the items ran into each other. Tight
+  // leading keeps the row from growing taller than the run it replaces.
+  .syl-deliv {
+    margin: 0;
+    padding-left: 1.1rem;
+    li {
+      padding: 0.08rem 0;
+      line-height: 1.35;
+      &::marker { color: var(--syl-label); }
+    }
   }
   tfoot td, tfoot th {
     border-top: 2px solid var(--v2v-ink);

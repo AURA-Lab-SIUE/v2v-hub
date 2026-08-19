@@ -158,6 +158,12 @@ textbook's five parts.
 
 <table class="syl-points">
 <caption>Points by phase, out of 1000</caption>
+<colgroup>
+<col class="syl-col-phase" style="width: 24%">
+<col class="syl-col-when" style="width: 20%">
+<col class="syl-col-points" style="width: 12%">
+<col class="syl-col-hand" style="width: 44%">
+</colgroup>
 <thead>
 <tr>
   <th scope="col">Phase</th>
@@ -168,33 +174,56 @@ textbook's five parts.
 </thead>
 <tbody>
 <tr>
-  <th scope="row">I. The Journalist</th>
+  <th scope="row"><span class="syl-phase-num">I.</span> The Journalist</th>
   <td>Weeks 1 to 15</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:60" aria-hidden="true"></span>150</td>
+  <td class="syl-weight">150<span class="syl-bar" style="--pct:60" aria-hidden="true"></span></td>
   <td>Weekly Reading Journal (10 pts per week for 14 teaching weeks, plus 10 pts consistency)</td>
 </tr>
 <tr>
-  <th scope="row">II. The Architect</th>
+  <th scope="row"><span class="syl-phase-num">II.</span> The Architect</th>
   <td>Weeks 1 to 4</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:50" aria-hidden="true"></span>125</td>
-  <td>GitHub Profile (25) · Syllabus Contract (25) · Project Setup (25) · Librarian Visit Report (50)</td>
+  <td class="syl-weight">125<span class="syl-bar" style="--pct:50" aria-hidden="true"></span></td>
+  <td>
+  <ul class="syl-deliv">
+    <li>GitHub Profile (25)</li>
+    <li>Syllabus Contract (25)</li>
+    <li>Project Setup (25)</li>
+    <li>Librarian Visit Report (50)</li>
+  </ul>
+  </td>
 </tr>
 <tr>
-  <th scope="row">III. The Builder</th>
+  <th scope="row"><span class="syl-phase-num">III.</span> The Builder</th>
   <td>Weeks 5 to 11</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:100" aria-hidden="true"></span>250</td>
-  <td>Annotated Manuscript (25) · Project Prospectus (25) · Topic Selection and RQs (25) · Definitions Practice (25) · Codebook and Qual Memo (50) · Sampling Plan and Pilot (75) · CITI Ethics Certification (25)</td>
+  <td class="syl-weight">250<span class="syl-bar" style="--pct:100" aria-hidden="true"></span></td>
+  <td>
+  <ul class="syl-deliv">
+    <li>Annotated Manuscript (25)</li>
+    <li>Project Prospectus (25)</li>
+    <li>Topic Selection and RQs (25)</li>
+    <li>Definitions Practice (25)</li>
+    <li>Codebook and Qual Memo (50)</li>
+    <li>Sampling Plan and Pilot (75)</li>
+    <li>CITI Ethics Certification (25)</li>
+  </ul>
+  </td>
 </tr>
 <tr>
-  <th scope="row">IV. The Analyst</th>
+  <th scope="row"><span class="syl-phase-num">IV.</span> The Analyst</th>
   <td>Weeks 11 to 13</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:90" aria-hidden="true"></span>225</td>
-  <td>Data Wrangling in R (50) · Describing Data in R (75) · Inferencing Data in R (100)</td>
+  <td class="syl-weight">225<span class="syl-bar" style="--pct:90" aria-hidden="true"></span></td>
+  <td>
+  <ul class="syl-deliv">
+    <li>Data Wrangling in R (50)</li>
+    <li>Describing Data in R (75)</li>
+    <li>Inferencing Data in R (100)</li>
+  </ul>
+  </td>
 </tr>
 <tr>
-  <th scope="row">V. The Publisher</th>
+  <th scope="row"><span class="syl-phase-num">V.</span> The Publisher</th>
   <td>Weeks 15 to 17</td>
-  <td class="syl-weight"><span class="syl-bar" style="--pct:100" aria-hidden="true"></span>250</td>
+  <td class="syl-weight">250<span class="syl-bar" style="--pct:100" aria-hidden="true"></span></td>
   <td>White Paper (250)</td>
 </tr>
 </tbody>
@@ -213,7 +242,7 @@ question, the procedure, the finding, and the meaning.
 ::: {.schedule-table}
 
 | Component | Points | Full marks means |
-|:-----------------------|:--------|:------------------------------------------------------------------|
+|:---------------------|:-----------|:---------------------------------------------------------------|
 | Introduction | 30 | States the question and why it is worth asking. The theoretical lens is doing work, not decoration, and it sets up something the study can actually deliver. |
 | Methods | 60 | Says exactly what was done, in enough detail that another researcher could repeat it: the codebook, the sampling procedure, the reliability check, and the wrangling steps. |
 | Results | 50 | Reports what was found, plainly and without interpretation: distributions, group means, the test statistic with its degrees of freedom, its p-value, and its effect size. Figures are labelled and captioned. |
