@@ -325,56 +325,6 @@ must engage with both the chapter content and the assigned graduate reading.
 Entries that address only the chapter content receive a maximum of 7 of 10
 points.
 
-## Weekly schedule {#weekly-schedule}
-
-Lecture decks for every meeting are posted at
-[MC 501 Lecture Decks](decks/mc501/index.qmd).
-
-MC 501 meets once weekly (**Wed 6:00 to 8:50 PM**). Each 170-minute block covers a
-full week of material and adds the graduate layer: the required
-graduate-extension readings, the discussion built around them, and the heavier
-graduate deliverables (see
-[What makes this graduate work](#what-makes-this-graduate-work)). The course
-covers descriptive and inferential statistics (t-test, ANOVA, regression);
-graduate work goes deeper. The White Paper and its paired academic conference
-poster are assigned Week 13 and due at Finals.
-
-::: {.callout-important}
-## Week 5 and Week 9 are the pinch points
-
-Week 5 stacks the Annotated Manuscripts with CITI Certification, and Week 9
-carries the Extended Codebook and Reliability Protocol (75 pts) one week before
-the Sampling Plan and Pilot (75 pts). Those four weeks in the middle of the term
-carry 200 points between them. Start the CITI certification in Week 1; it is the
-one item here that is pure clock time and can be finished early.
-:::
-
-::: {.schedule-table}
-
-| Week | Wed | Topics | Due |
-|:--------|:-----------|:---------------------------------------------------|:--------------------------|
-| 1 | Aug 26 | Orientation; Ch 1 The Science of Storytelling (Reading: Munafo et al. (2017))| Syllabus Contract |
-| 2 | Sep 2 | Ch 2 The Open Workspace + project setup (Reading: Wilson et al. (2017))| GitHub Profile |
-| 3 | Sep 9 | Ch 3 Ethics; Ch 4 Intelligence Gathering (librarian visit) (Reading: Nosek et al. (2018))| |
-| 4 | Sep 16 | Ch 4 annotating; Ch 5 Theory as a Lens (Reading: Cohen (1992))| Librarian Visit Report |
-| 5 | Sep 23 | Ch 5 variables & hypotheses; Ch 6 Research questions (Reading: Gelman & Loken (2013))| Annotated Manuscripts (3) · CITI Certification |
-| 6 | Sep 30 | Ch 6 the prospectus; Ch 7 Structured Listening (Reading: Lakens (2022))| Topic Selection / RQs |
-| 7 | Oct 7 | Ch 7 manifest vs. latent; Ch 8 operationalization (Reading: Hayes & Krippendorff (2007))| Research Proposal |
-| 8 | Oct 14 | Ch 8 measurement, reliability & validity; building the codebook (Reading: Lombard et al. (2002))| Definitions Practice |
-| 9 | Oct 21 | Ch 9 [R] coding the codebook; reading data vs. the codebook (Reading: Munafo et al. (2017), revisit)| Extended Codebook & Reliability Protocol |
-| 10 | Oct 28 | Ch 10 The Sample; the pilot; kappa / alpha (Reading: Hayes & Krippendorff (2007), revisit)| Sampling Plan & Pilot |
-| 11 | Nov 4 | Ch 11 [R] Wrangling the Data (Reading: Wickham (2014))| Data Wrangling [R] |
-| 12 | Nov 11 | Ch 12 [R] Describing: descriptive statistics + graphics (Reading: Lakens (2013))| Describing Data [R] |
-| 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* (Reading: Lakens et al. (2018))| Inferencing Data [R] |
-| 14 | Nov 25 | **Thanksgiving Break, no class** | |
-| 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio (Reading: Wasserstein & Lazar (2016))| |
-| 16 | Dec 9 | **Work Session: open lab / support** | |
-| 17 | Dec 16 | **Finals Week** | White Paper (+ conference poster) |
-
-:::
-
-*Schedule subject to change with notice.*
-
 ## Required graduate readings
 
 Each week has one required reading, assigned below and discussed in class. Read it
@@ -477,3 +427,54 @@ class, and submit work on time.
 {{< include _includes/siue-support.qmd >}}
 
 {{< include _includes/university-policies.qmd >}}
+
+
+## Weekly schedule {#weekly-schedule}
+
+Lecture decks for every meeting are posted at
+[MC 501 Lecture Decks](decks/mc501/index.qmd).
+
+MC 501 meets once weekly (**Wed 6:00 to 8:50 PM**). Each 170-minute block covers a
+full week of material and adds the graduate layer: the required
+graduate-extension readings, the discussion built around them, and the heavier
+graduate deliverables (see
+[What makes this graduate work](#what-makes-this-graduate-work)). The course
+covers descriptive and inferential statistics (t-test, ANOVA, regression);
+graduate work goes deeper. The White Paper and its paired academic conference
+poster are assigned Week 13 and due at Finals.
+
+::: {.callout-important}
+## Week 5 and Week 9 are the pinch points
+
+Week 5 stacks the Annotated Manuscripts with CITI Certification, and Week 9
+carries the Extended Codebook and Reliability Protocol (75 pts) one week before
+the Sampling Plan and Pilot (75 pts). Those four weeks in the middle of the term
+carry 200 points between them. Start the CITI certification in Week 1; it is the
+one item here that is pure clock time and can be finished early.
+:::
+
+::: {.schedule-table}
+
+| Week | Wed | Topics | Due |
+|:--------|:-----------|:---------------------------------------------------|:--------------------------|
+| 1 | Aug 26 | Orientation; Ch 1 The Science of Storytelling (Reading: Munafo et al. (2017))| Syllabus Contract |
+| 2 | Sep 2 | Ch 2 The Open Workspace + project setup (Reading: Wilson et al. (2017))| GitHub Profile |
+| 3 | Sep 9 | Ch 3 Ethics; Ch 4 Intelligence Gathering (librarian visit) (Reading: Nosek et al. (2018))| |
+| 4 | Sep 16 | Ch 4 annotating; Ch 5 Theory as a Lens (Reading: Cohen (1992))| Librarian Visit Report |
+| 5 | Sep 23 | Ch 5 variables & hypotheses; Ch 6 Research questions (Reading: Gelman & Loken (2013))| Annotated Manuscripts (3) · CITI Certification |
+| 6 | Sep 30 | Ch 6 the prospectus; Ch 7 Structured Listening (Reading: Lakens (2022))| Topic Selection / RQs |
+| 7 | Oct 7 | Ch 7 manifest vs. latent; Ch 8 operationalization (Reading: Hayes & Krippendorff (2007))| Research Proposal |
+| 8 | Oct 14 | Ch 8 measurement, reliability & validity; building the codebook (Reading: Lombard et al. (2002))| Definitions Practice |
+| 9 | Oct 21 | Ch 9 [R] coding the codebook; reading data vs. the codebook (Reading: Munafo et al. (2017), revisit)| Extended Codebook & Reliability Protocol |
+| 10 | Oct 28 | Ch 10 The Sample; the pilot; kappa / alpha (Reading: Hayes & Krippendorff (2007), revisit)| Sampling Plan & Pilot |
+| 11 | Nov 4 | Ch 11 [R] Wrangling the Data (Reading: Wickham (2014))| Data Wrangling [R] |
+| 12 | Nov 11 | Ch 12 [R] Describing: descriptive statistics + graphics (Reading: Lakens (2013))| Describing Data [R] |
+| 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* (Reading: Lakens et al. (2018))| Inferencing Data [R] |
+| 14 | Nov 25 | **Thanksgiving Break, no class** | |
+| 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio (Reading: Wasserstein & Lazar (2016))| |
+| 16 | Dec 9 | **Work Session: open lab / support** | |
+| 17 | Dec 16 | **Finals Week** | White Paper (+ conference poster) |
+
+:::
+
+*Schedule subject to change with notice.*
