@@ -164,7 +164,7 @@ precisely, the research question is not ready yet.
 
 ## The reproducibility crisis is a design problem
 
-- The **garden of forking paths** (Gelman and Loken, 2013): the many defensible
+- The **garden of forking paths** (Gelman and Loken, 2014): the many defensible
   analytic choices that inflate false positives, with no conscious fishing at all
 - Munafò and colleagues locate a related danger in underpowered designs:
 

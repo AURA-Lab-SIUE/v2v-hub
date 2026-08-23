@@ -80,7 +80,7 @@ was risking anything.
 
 ## The garden of forking paths
 
-[Gelman and Loken, 2013]{.eyebrow}
+[Gelman and Loken, 2014]{.eyebrow}
 
 - The phrase belongs to Gelman and Loken
 - Their point is subtler than p-hacking: no conscious fishing is required
@@ -91,7 +91,7 @@ was risking anything.
 
 ## Discussion {.discuss}
 
-On Gelman and Loken (2013), "The garden of forking paths":
+On Gelman and Loken (2014), "The statistical crisis in science":
 
 - They insist the problem survives even in honest, well-intentioned analysis.
   Does that make the diagnosis more useful, or easier to shrug off?

@@ -341,7 +341,7 @@ Library (Lovejoy) with your student login; everything else is open access. Weeks
 | 2 | Wilson, G., et al. (2017). Good enough practices in scientific computing. *PLOS Computational Biology*, *13*(6), e1005510. | [Open](https://doi.org/10.1371/journal.pcbi.1005510) |
 | 3 | Nosek, B. A., et al. (2018). The preregistration revolution. *PNAS*, *115*(11), 2600-2606. | [Open](https://doi.org/10.1073/pnas.1708274114) |
 | 4 | Cohen, J. (1992). A power primer. *Psychological Bulletin*, *112*(1), 155-159. | [Library](https://doi.org/10.1037/0033-2909.112.1.155) |
-| 5 | Gelman, A., & Loken, E. (2013). *The garden of forking paths*. Columbia University. | [Open](http://www.stat.columbia.edu/~gelman/research/unpublished/forking.pdf) |
+| 5 | Gelman, A., & Loken, E. (2014). The statistical crisis in science. *American Scientist*, *102*(6), 460-465. | [Open](https://doi.org/10.1511/2014.111.460) |
 | 6 | Lakens, D. (2022). Sample size justification. *Collabra: Psychology*, *8*(1), 33267. | [Open](https://doi.org/10.1525/collabra.33267) |
 | 7 | Hayes, A. F., & Krippendorff, K. (2007). Answering the call for a standard reliability measure for coding data. *Communication Methods and Measures*, *1*(1), 77-89. | [Library](https://doi.org/10.1080/19312450709336664) |
 | 8 | Lombard, M., Snyder-Duch, J., & Campanella Bracken, C. (2002). Content analysis in mass communication. *Human Communication Research*, *28*(4), 587-604. | [Library](https://doi.org/10.1111/j.1468-2958.2002.tb00826.x) |
@@ -461,7 +461,7 @@ one item here that is pure clock time and can be finished early.
 | 2 | Sep 2 | Ch 2 The Open Workspace + project setup (Reading: Wilson et al. (2017))| GitHub Profile |
 | 3 | Sep 9 | Ch 3 Ethics; Ch 4 Intelligence Gathering (librarian visit) (Reading: Nosek et al. (2018))| |
 | 4 | Sep 16 | Ch 4 annotating; Ch 5 Theory as a Lens (Reading: Cohen (1992))| Librarian Visit Report |
-| 5 | Sep 23 | Ch 5 variables & hypotheses; Ch 6 Research questions (Reading: Gelman & Loken (2013))| Annotated Manuscripts (3) · CITI Certification |
+| 5 | Sep 23 | Ch 5 variables & hypotheses; Ch 6 Research questions (Reading: Gelman & Loken (2014))| Annotated Manuscripts (3) · CITI Certification |
 | 6 | Sep 30 | Ch 6 the prospectus; Ch 7 Structured Listening (Reading: Lakens (2022))| Topic Selection / RQs |
 | 7 | Oct 7 | Ch 7 manifest vs. latent; Ch 8 operationalization (Reading: Hayes & Krippendorff (2007))| Research Proposal |
 | 8 | Oct 14 | Ch 8 measurement, reliability & validity; building the codebook (Reading: Lombard et al. (2002))| Definitions Practice |

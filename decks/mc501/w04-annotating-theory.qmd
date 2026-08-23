@@ -238,6 +238,6 @@ Four messages from one stretch of a real broadcast. Read them once before we cod
 - **Due:** **Annotated Manuscripts (3)** and your **CITI Certification**
 - Read **Chapter 5** (variables and hypotheses) and **Chapter 6** (research questions),
   with the graduate edition toggle on
-- Read the assigned article: **Gelman and Loken (2013)**, "The garden of forking paths"
+- Read the assigned article: **Gelman and Loken (2014)**, "The statistical crisis in science"
 - Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
 - Start CITI early. It takes longer than anyone expects.
