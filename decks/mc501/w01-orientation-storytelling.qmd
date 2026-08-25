@@ -17,7 +17,7 @@ format:
 [MC 501 · Fall 2026]{.eyebrow}
 
 - **Dr. Alex Leith**, Dunham Hall 1017, aleith@siue.edu
-- Office hours MW 10:00 to 11:30 and 1:30 to 3:00, or by appointment
+- Office hours TuTh 12:30 to 1:45 and 3:30 to 5:00, or by appointment
 - We meet **Wednesdays 6:00 to 8:50**, Dunham Hall 1015
 - The textbook is a free OER. Read it with the **Graduate edition toggle on**.
 - That toggle reveals a required extension in every chapter, plus the assigned reading

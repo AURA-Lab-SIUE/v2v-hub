@@ -151,7 +151,7 @@ Reach out to Dr. Leith early. The phases are structured but timelines can flex.
 - **Setup:** [Getting Started](../setup.qmd) walks through the whole install in about 15 minutes.
 - **Concepts:** the relevant [textbook](https://aura-lab-siue.github.io/v2v/) chapter usually explains it.
 - **Email:** aleith@siue.edu (allow 24 hours Mon-Fri).
-- **Office hours:** MW 10:00 to 11:30 AM and 1:30 to 3:00 PM, Dunham Hall 1017.
+- **Office hours:** TuTh 12:30 to 1:45 PM and 3:30 to 5:00 PM, Dunham Hall 1017.
 
 ---
 

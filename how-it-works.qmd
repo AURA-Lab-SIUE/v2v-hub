@@ -97,4 +97,4 @@ You do not need to learn everything at once. Each tool is introduced when you ne
 2. **Check the textbook.** The relevant chapter usually explains the concept.
 3. **Ask a classmate.** Someone else probably had the same issue.
 4. **Email Dr. Leith** at aleith@siue.edu (allow 24 hours Mon-Fri).
-5. **Office hours:** MW 10:00-11:30 AM and 1:30-3:00 PM, Dunham Hall 1017.
+5. **Office hours:** TuTh 12:30-1:45 PM and 3:30-5:00 PM, Dunham Hall 1017.
