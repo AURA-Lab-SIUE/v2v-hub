@@ -663,8 +663,8 @@ body.show-grad-ext .undergraduate-only { display: none; }
 }
 // Name the COURSE NUMBER, not just the edition: "Undergraduate edition" asks a
 // student to know which one they are; "MC 501" is the string on their registration.
-.graduate-extension::before  { content: "Graduate edition 4 MC 501"; }
-.undergraduate-only::before  { content: "Undergraduate edition 4 MC 451"; }
+.graduate-extension::before  { content: "MC 501 graduate edition"; }
+.undergraduate-only::before  { content: "MC 451 undergraduate edition"; }
 
 .edition-note {
   margin: 1.5rem 0;
