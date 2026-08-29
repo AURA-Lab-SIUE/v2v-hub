@@ -647,8 +647,12 @@ body.show-grad-ext .undergraduate-only { display: none; }
 
 // Course-specific assignment blocks carry a visible eyebrow so a student is
 // never guessing which course's rules they are reading.
-.graduate-extension > h2:first-child::before,
-.undergraduate-only > h2:first-child::before {
+// 2026-08-29: was , which silently produced NO label
+// on any course block that opens with an h3 or whose first child is not a
+// heading -- exactly where a student cannot tell whose rules they are reading.
+// Now labels the block itself.
+.graduate-extension::before,
+.undergraduate-only::before {
   display: block;
   font-size: 0.66rem;
   font-weight: 700;
@@ -657,8 +661,10 @@ body.show-grad-ext .undergraduate-only { display: none; }
   color: var(--v2v-red);          // #B0301F, 6.4:1 on paper
   margin-bottom: 0.35rem;
 }
-.graduate-extension > h2:first-child::before { content: "Graduate edition"; }
-.undergraduate-only > h2:first-child::before { content: "Undergraduate edition"; }
+// Name the COURSE NUMBER, not just the edition: "Undergraduate edition" asks a
+// student to know which one they are; "MC 501" is the string on their registration.
+.graduate-extension::before  { content: "Graduate edition 4 MC 501"; }
+.undergraduate-only::before  { content: "Undergraduate edition 4 MC 451"; }
 
 .edition-note {
   margin: 1.5rem 0;
