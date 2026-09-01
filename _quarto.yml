@@ -11,6 +11,9 @@ project:
     - "decks/**/*.qmd"
   resources:
     - "modules/04_analyst/pokemon-practice.qmd"
+    # Starter files students DOWNLOAD and open in VS Code. Deliberately outside the
+    # render list above: they are source to be handed over, not pages to be built.
+    - "starters/*.qmd"
 
 website:
   title: "V2V Hub"

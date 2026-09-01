@@ -12,167 +12,190 @@ format:
     transition: none
 ---
 
-## What we are building today
+## Laptops open
 
-[Working session]{.eyebrow}
+Working session. I am walking the room the whole time. And before we start:
 
-- Your own copy of the **course workspace template**, cloned to your machine
-- A `setup-check.qmd` that renders and proves the stack works
-- Your **first commit**, pushed and visible on the web
+**Something is going to break today.**
+
+- It breaks in every section, every semester, for somebody
+- It is never because that person is bad at this
+- It is a version number disagreeing with another version number
+- The whole reason we do this in a room together is so it breaks where I can see it
+- Fifteen minutes stuck, then raise a hand. Not thirty.
+
+## What you walk out with
+
+- Your own copy of the course workspace, on GitHub, named `mc451-workspace`
+- That folder open in VS Code on your laptop
+- A setup check that runs and comes back green
+- One commit, pushed, visible on the web
 - This is the **Project Setup** assignment, 25 points
-- It is also the folder your White Paper will be written in, all term
 
-## Why it matters for the White Paper
+## This folder is the whole semester
 
-- Every assignment from here lands in this repository
-- Your literature map, codebook, R scripts, and final paper all live here
-- The commit history becomes part of what you can show a reader
-- If your machine dies in November, your work is on GitHub
-- Set it up carelessly now and you will be fighting it in Week 12
+Every assignment from here lands in it. Your literature map, your codebook, your R scripts,
+your final paper.
 
-## Three concepts, briefly
+Set it up carefully now and you will not think about it again. Set it up carelessly and you
+will be fighting it in Week 12, during the part that actually counts.
 
-- A **repository** is a folder that Git is watching
-- A **commit** is a time-stamped snapshot of every file, with a message
-- **Push** sends your commits to GitHub. **Pull** brings changes down.
-- Rendering is separate: Quarto turns `.qmd` source into a finished document
-- Nothing you do today is irreversible
+If your laptop dies in November, your work is on GitHub and you lose nothing.
 
-## What a .qmd file is
+## Idea one: a repository
 
-- Plain text, with **YAML front matter** at the top between `---` lines
-- Prose in Markdown, code in fenced chunks
-- When Quarto renders, the chunks run and the results appear in place
-- Change the data, re-render, and every number updates
-- Your White Paper is one of these
+A **repository**, or repo, is just a folder that Git is watching.
+
+Nothing about it looks special on your computer. It is a folder with files in it. The
+difference is that Git is keeping a record of every version of every file inside.
+
+## Idea two: a commit
+
+A **commit** is a snapshot. You take one whenever you have finished something.
+
+It saves what every file looked like at that moment, stamped with the time and a short
+message you write. You can return to any snapshot later.
+
+**Push** sends your snapshots up to GitHub. **Pull** brings them back down.
+
+## Idea three: render
+
+**Rendering** is separate from all of that.
+
+Quarto takes your `.qmd` file, which is plain text, runs the code inside it, and produces a
+finished document with the results already dropped in place.
+
+You write once, render, and you have something you could hand to a reader.
 
 ## Step 1: copy the course template
 
-The workspace is a **template repository**, so you start from the course
-structure rather than an empty folder.
+Go to the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace).
 
-- Go to the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace)
-- Click **Use this template**, then **Create a new repository**
+- Click the green **Use this template**, then **Create a new repository**
 - Name it `mc451-workspace`. Private is fine.
 - Click **Create repository**
 
-## Step 2: clone it into VS Code
+**You should see:** a page with your own username at the top and the same folders as the
+template. You have not copied anything to your laptop yet.
 
-- Copy your new repository's URL from the green **Code** button
-- In VS Code open the Command Palette, `Ctrl+Shift+P` or `Cmd+Shift+P`
-- Run **Git: Clone**, paste the URL
-- Choose a folder you will remember, for example `Documents/MC451/`
+## Step 2: clone it onto your laptop
+
+- On your new repo, click the green **Code** button and copy the URL
+- In VS Code press `Ctrl+Shift+P`, or `Cmd+Shift+P` on a Mac. A search bar drops down.
+- Type **Git: Clone**, press Enter, paste the URL
+- Pick a folder you will find again. `Documents/MC451/` is a fine answer.
 - When VS Code asks, click **Open**
 
-## Step 3: extensions and the README
+**You should see:** your folder names down the left side of VS Code.
 
-When the workspace opens, VS Code offers **"This workspace has extension
-recommendations."** Click **Install All**: Quarto, R, and GitLens, so the whole
-class works in one environment.
+## Step 3: let VS Code install the extensions
 
-Then open `README.md`. The structure is already there:
+A box appears in the bottom right: **"This workspace has extension recommendations."**
 
-```
-01_Journal/     02_Literature/     03_Project/
-  01_prospectus/  02_codebook/  03_data/  04_drafts/
-```
+Click **Install All**. That is Quarto, R, and GitLens, and it means everybody in this room
+is working in the same environment.
 
-Your prospectus, codebook, data, and drafts each have a home already.
+If the box already vanished, press `Ctrl+Shift+X`, then search for and install **Quarto**
+and **R** by REditorSupport.
 
-## Step 4: write the setup check
+## Step 4: open the file we wrote for you
 
-Create a new file, `setup-check.qmd`, with this exact content:
+In the workspace, open `00-check-your-setup.qmd`. It is also on the Hub and in your email.
+
+You do not have to write it. You do not have to understand it. You click through it, one
+grey box at a time, and it tells you what each box should print.
+
+Start now. I am coming round.
+
+## What "working" looks like
+
+The file ends by running a checker we wrote for this course:
 
 ```r
----
-title: "Setup check"
----
-
 library(v2v)
-v2v::setup()
+setup()
 ```
 
-The block between the `---` lines is YAML. The two R lines go inside a code
-chunk, which the Quarto extension will help you insert.
+**You want:** green check marks all the way down **Required R packages**.
 
-## Step 5: render it
+**Red next to Quarto or Git** is fine if you have not reached those steps yet.
 
-Click Quarto's **Preview** button, or run:
-
-```bash
-quarto preview setup-check.qmd
-```
-
-A browser window opens with the rendered page. If you see **"V2V setup
-complete"**, R, Quarto, Git, and the package are all in place.
+**Red under Required** is the one that needs me. Wave.
 
 ## Your turn {.discuss}
 
-- Your output says something other than "V2V setup complete." What is the first
-  thing you check?
-- Why does it matter that this check is a **file** rather than something you
-  typed once into a console?
-- What would a reader six months from now learn from your repository that they
-  could not learn from a folder of Word documents?
+- Your check came back with something red. What is the first thing you look at, and why
+  that one first?
+- Why does it matter that this check is a **file** and not something you typed once into a
+  console and lost?
+- What would a reader six months from now learn from your repository that they could never
+  learn from a folder of Word documents?
 
 *Talk it through with a neighbor while renders finish.*
 
-## Step 6: your first commit
+## Step 5: your first commit
+
+In VS Code's terminal:
 
 ```bash
 git add .
 git commit -m "Initial project setup with setup check"
 ```
 
-`add .` stages every changed file. `commit` writes the snapshot with a message.
-Write messages a stranger could read: **what changed and why**, not "stuff".
+`add .` gathers up everything you changed. `commit` writes the snapshot with your message.
 
-## Step 7: push it
+**You should see:** a line reporting how many files changed. Write messages a stranger could
+read: what changed and why, never "stuff".
+
+## Step 6: push it
 
 ```bash
 git push
 git log --oneline
 ```
 
-`push` uploads your commits to GitHub. `log --oneline` prints the history, one
-line per commit. Refresh your repository page in the browser and your files are
-there.
+`push` uploads your snapshots to GitHub. `log --oneline` prints your history, one line each.
 
-## Common errors, part one
+**You should see:** your commit message in the list, and the same files appear on your
+GitHub page when you refresh it in the browser.
 
-- **`quarto: command not found`.** Quarto installed but the terminal was already
-  open. Close it and open a new one.
-- **`there is no package called 'v2v'`.** R is installed, the package is not.
-  Run the install command from the Hub.
-- **`fatal: not a git repository`.** You are in the wrong folder. `cd` into your
-  workspace folder first.
+## The five errors you will actually hit
 
-The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+- **`quarto: command not found`.** Quarto is installed, but this terminal opened before it
+  was. Close the terminal, open a new one.
+- **`there is no package called 'v2v'`.** R is fine, the package is missing. Rerun step 3
+  of the check file.
+- **`fatal: not a git repository`.** You are in the wrong folder. `cd` into your workspace.
+- **`nothing to commit, working tree clean`.** You did not save the file. Save, then `git add .`
+- **Render fails on the YAML.** The `---` must be the very first line, nothing above it.
 
-## Common errors, part two
+## When GitHub asks for a password
 
-- **Authentication failed on push.** GitHub wants a token, not your password.
-  VS Code's sign-in flow handles this. Do it once.
-- **`nothing to commit, working tree clean`.** You already committed, or you did
-  not save the file. Save, then `git add .` again.
-- **Render fails on the YAML.** The `---` lines need to be the very first thing
-  in the file, with no blank line above.
+It will, and your password will not work. That is not a mistake on your part.
+
+GitHub stopped accepting passwords for this in 2021 and wants a token instead. VS Code's
+sign-in flow does the whole thing for you, once, and then never asks again.
+
+Click through it when prompted. If it loops, wave at me rather than retrying.
+
+For errors specific to our Twitch data, run `?v2v::common_errors`.
 
 ## Checkpoint
 
-You should now have:
+Every line should be true before you leave:
 
-- Your own copy of the workspace template, named `mc451-workspace`, on GitHub
-- It cloned locally and opened in VS Code, with the recommended extensions installed
-- A `setup-check.qmd` that renders and prints **V2V setup complete**
-- At least one commit visible in `git log --oneline` and on github.com
+- Your own `mc451-workspace` exists on GitHub
+- It is cloned locally and open in VS Code, extensions installed
+- `00-check-your-setup.qmd` runs and `setup()` comes back green
+- At least one commit shows in `git log --oneline` **and** on github.com
 
-Raise a hand if any line above is not true for you.
+Raise a hand if any line is not true. Do not go home and hope.
 
 ## Before next time
 
-- **Project Setup** is due this week: submit your repository URL
-- If your setup check still fails, come to office hours. Do not wait.
+- **Project Setup** is due this week. Submit your repository URL.
+- If the check still fails, come to office hours. Tuesday and Thursday, 12:30 to 1:45 and
+  3:30 to 5:00, Dunham Hall 1017. Drop in.
 - Read **Chapter 3, Knowing and Knowing Well**, before Tuesday
 - Tuesday is ethics: Belmont, the IRB, and what consent means for public data
 - Your weekly journal entry closes the week

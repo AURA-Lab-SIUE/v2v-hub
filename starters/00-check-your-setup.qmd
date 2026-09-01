@@ -1,0 +1,153 @@
+---
+title: "Check Your Setup"
+subtitle: "MC 451 / MC 501 · Open this file first"
+format: html
+execute:
+  eval: false
+---
+
+## What this file is
+
+This is a **Quarto document**. It is a plain text file that holds two kinds of thing:
+writing, like this paragraph, and **code chunks**, which are the grey boxes below. You
+are reading it inside **VS Code**, the program we use for everything in this course.
+
+You do not need to understand any of the code. You need to run it and see what happens.
+That is the whole assignment.
+
+Nothing in this file can break your computer, delete anything, or cost money.
+
+## How to run a code chunk
+
+Look at the grey box below. At its top left corner there is a small **Run Cell** link, or
+a ▷ triangle. Click it.
+
+If you do not see one, click anywhere inside the grey box and press **Ctrl+Enter**
+(Windows) or **Cmd+Enter** (Mac). That sends the line your cursor is on to R.
+
+The first time you do this, VS Code may take twenty or thirty seconds to wake R up, and a
+new panel will open at the bottom of the screen. That panel is **the R console** — it is
+where R answers you. Slowness the first time is normal and is not a sign that anything is
+wrong.
+
+## Step 1 — Is R alive?
+
+This chunk asks R to say which version of itself it is running. It changes nothing. It is
+a pulse check.
+
+```{r}
+R.version.string
+```
+
+**What you should see:** a line of text starting with `"R version 4."` and then some
+numbers and a date.
+
+**If you see that,** R is installed and VS Code can talk to it. Move on.
+
+**If you see an error, or nothing happens at all,** stop here. Either R is not installed
+or the R extension is not installed. Do not try to fix it by installing things at random —
+write down exactly what the screen says and bring it to office hours or email it to me.
+A screenshot is perfect.
+
+## Step 2 — Install the helper that fetches our course package
+
+Our course package does not live in R's usual store, so we need one small tool that knows
+how to fetch it from somewhere else. That tool is called `remotes`.
+
+You only ever run this once, on this computer, for the whole semester.
+
+```{r}
+install.packages("remotes")
+```
+
+**What you should see:** a lot of text scrolling past, some of it red, ending in something
+like `package 'remotes' successfully unpacked`.
+
+**Red text in R is not automatically an error.** R writes ordinary progress messages in
+red. Only the last line matters. If R asks you a question in the console — for example
+whether to use a "personal library" — answer **yes**.
+
+## Step 3 — Install the course package
+
+Now we fetch the course package itself, `v2v`. It holds our datasets and the shortcuts we
+will use all term.
+
+This one takes a few minutes the first time. Let it run. Go get water.
+
+```{r}
+remotes::install_github("AURA-Lab-SIUE/v2v-r")
+```
+
+**One thing that confuses everyone, so read it once now:** the thing we *download* is
+called `v2v-r`, and the thing we *use* is called `v2v`. Two names, same course package.
+That is normal for R and it is not a typo.
+
+If R asks **"Which would you like to update?"** and offers a numbered list, type **1** and
+press Enter. If it asks about installing from source, answer **no**.
+
+## Step 4 — Switch the package on
+
+Installing a package puts it on your computer. It does not switch it on. `library()`
+switches it on, and you do this **every time you start a new R session** — not just once.
+
+```{r}
+library(v2v)
+```
+
+**What you should see:** nothing, or a short startup message. In R, silence usually means
+success.
+
+## Step 5 — The real check
+
+This is the one that matters. `setup()` is a function we wrote for this course. It looks
+over your whole installation and prints a checklist: green checks for what is working,
+red marks for what is missing.
+
+```{r}
+setup()
+```
+
+**What you should see:** a list of package names with green check marks, then a
+**Command-line tools** section.
+
+**Two red marks are expected and fine at this stage** if you have not done the later
+setup steps yet: Quarto CLI and Git. Everything under **Required R packages** should be
+green. If a required package is red, `setup()` prints the exact command to fix it — copy
+that command, paste it into the console, press Enter, then run `setup()` again.
+
+## Step 6 — Prove it can actually get data
+
+Last one. This pulls five rows of real Twitch chat out of the course dataset, so you can
+see that the package is not just installed but working.
+
+```{r}
+twitch_chat(n = 5)
+```
+
+**What you should see:** a small table, five rows, with columns of usernames and message
+text.
+
+## You are done
+
+If Step 6 gave you five rows of chat, your setup is finished and you are ready for class.
+You do not need to do anything else.
+
+**Please send me one thing:** a screenshot of the output of Step 5, `setup()`. That is how
+I know you are ready, and it lets me spot a problem before it costs you a class period.
+
+## If you got stuck
+
+That is genuinely expected. Installing this stack breaks for someone in every section,
+every semester, and it is never because that person is bad at this.
+
+Do this, in order:
+
+1. Close VS Code completely and reopen it. This fixes a surprising share of problems.
+2. Run the chunk again. Some failures are a slow network, not a real fault.
+3. Email me the **exact** text of the error, or a screenshot, plus which step number you
+   were on. Do not paraphrase the error — the wording is the diagnosis.
+4. Come to office hours: Tuesday and Thursday, 12:30 to 1:45 and 3:30 to 5:00, Dunham
+   Hall 1017. Drop in, no appointment.
+
+What I do not want is for you to spend two hours fighting this alone. Fifteen minutes,
+then ask.

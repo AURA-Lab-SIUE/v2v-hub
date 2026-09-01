@@ -12,143 +12,164 @@ format:
     transition: none
 ---
 
-## Where we left off
+## Tonight
 
-- Week 1 ended on a single spreadsheet error that moved national policy
-- Tonight the question widens: what happens when the whole field is checked?
-- The answer is an infrastructure problem, not a character problem
-- By the end you will have R, VSCode, Quarto, and Git running on your own machine
-- You will also look at the first ten rows of the Twitch data
+By the time you leave this room you will have four programs installed, talking to each
+other, and one file that proves it.
 
-## One hundred studies
+That is the whole goal. Everything else on these slides is me explaining why we bother.
+
+## Let me be honest about tonight
+
+- This is the least enjoyable evening of the semester. I am not going to pretend otherwise.
+- Installing software is not research. It is the tedious part that makes research possible.
+- **Something will break for somebody in this room.** It happens every section, every term.
+- When it breaks it is not a verdict on you. It is one version number disagreeing with another.
+- We fix it together, tonight, in the room. That is why we do it here and not at home.
+
+## The reason, in one sentence
+
+Six weeks from now you will look at a number in your own draft and not remember where it came from.
+
+Everything tonight exists to make that impossible.
+
+## What that looks like at scale
 
 [Open Science Collaboration, 2015]{.eyebrow}
 
 - 270 researchers set out to redo **100 published psychology studies**
-- They followed the published methods, recruited similar participants, ran the same analyses
-- Only **36 percent** of the original results replicated at conventional thresholds
-- Among those that did replicate, effect sizes were on average about **half** the original magnitude
-- The result, published in *Science*, is one of the decade's most cited findings
+- Same published methods, similar participants, same analyses
+- Only **36 percent** replicated at conventional thresholds
+- Among those that did, effect sizes averaged about **half** the original
+- These were not careless people. Their work simply was not built to be retraced.
 
 ## What actually blocked them
 
-- The Collaboration was not finding fraud. It was finding **ordinary friction**.
-- Methods sections did not contain enough detail to re-run the original analysis
-- Researchers had to email original authors for clarification
+- Not fraud. Ordinary friction.
+- Methods sections did not say enough to re-run the analysis
+- Researchers had to email the original authors to ask
 - Some authors had moved. Some had lost the data.
 - Some had used software whose menus had since changed
-- The work had never been built to be **retraceable**
 
 ## Reproducibility, defined
 
-- **Reproducibility**: the analysis can be re-run, by you or by someone else, and
-  it produces the same result
-- Not an abstract virtue. A practical property of how the work is stored.
-- The test: can you recover, six months from now, exactly what produced a number?
-- The tools that make it possible are an editor, a language, a publishing format,
-  and a version control system
-- None are interesting alone. Together they make every move visible.
+**Reproducibility** means the analysis can be re-run, by you or by anyone else, and it
+produces the same result.
 
-## Researcher degrees of freedom
+It is not a virtue. It is a property of how you stored your work.
 
-- Every analytical decision is a chance to nudge a result toward publishable
-- Which observations to keep, which controls to include, which test to run
-- Documented decisions can be **evaluated** by other people
-- Undocumented decisions vanish into the methods section as if never made
-- The replication crisis is the slow recognition that this compounds across a field
+The test is small and personal: can you recover, six months from now, exactly what produced
+a number?
 
-## The point-and-click problem
+## Why clicking loses
 
 - SPSS, Excel, and JMP work through menus and dialog boxes
-- Click Analyze, then Compare Means, then One-Way ANOVA. The result appears.
+- You click Analyze, then Compare Means, then One-Way ANOVA. The result appears.
 - **The click history vanishes.**
-- Redoing it next month means remembering which menus, in what order, with what options
-- Verifying it means writing every click out in prose. Almost no one does this well.
+- Redoing it next month means remembering which menus, in what order, with which options
+- Writing it down means describing every click in prose. Nobody does this well.
 
-## Code as documentation
+## Why code wins
 
-- A script is a description of every step, in a language the computer can re-run
-- Reinhart and Rogoff was caught because the broken formula was eventually on the page
-- Written as code, that error would have been visible from the start
-- **The code is the methods section.** That is the whole argument for the stack.
-- The tools ahead are chosen because each leaves a plain-text record
+A script is a description of every step, in a language a computer can re-run.
 
-## The ecology: editor and language
+**The code is the methods section.** That is the entire argument for everything we install
+tonight.
 
-- **VSCode** is the editor: free, from Microsoft, dominant in industry
-- Prose, code, configuration, notes, terminal, Git history, live Quarto preview
-- **R** is the language: dominant in communication, sociology, political science
-- Python is the other good option. R is taught here because its content analysis,
-  reliability, and regression packages are deeper and its Quarto integration tighter.
-- The skills transfer in both directions
+Reinhart and Rogoff, the spreadsheet error from last week, was caught only because the file
+was eventually shared. Written as code, it would have been visible from the first day.
 
-## The ecology: publishing and version control
+## Tool 1 of 4: VS Code
 
-- **Quarto** takes one `.qmd` source and produces HTML, PDF, Word, slides, or a book
-- Prose and executable code in one file. Render it and the code runs in place.
-- Your results tables and figures come from code every single time
-- **Git** tracks every change; **GitHub** hosts the repository on the web
-- A permanent audit trail, rollback to any prior state, public by default
+**What it is:** a text editor. Free, from Microsoft.
 
-## Install order, part one
+**What it does for you:** it is the one window where everything lives. Your writing, your
+code, your files, your output. You stop alt-tabbing between five programs.
 
-1. **R** from cran.r-project.org, default settings, no interface of its own
-2. **VSCode** from code.visualstudio.com; you may decline the sync prompt
-3. **The R extension** in VSCode, by REditorSupport, which connects 1 and 2
-4. **Quarto** from quarto.org, install with defaults
+You will spend more time in this than in anything else this term. It is the desk, not the work.
 
-Order matters: each tool expects the one before it to already be present.
+## Tool 2 of 4: R
 
-## Install order, part two
+**What it is:** a programming language built for data and statistics.
 
-5. **The Quarto extension** in VSCode, for live preview and `.qmd` syntax
-6. **Git** from git-scm.com; on macOS it also ships with Xcode command-line tools
-7. **A GitHub account.** Use a professional username. Employers will see it.
-8. **The `v2v` package**, which ships the Twitch fixtures and course helpers
+**What it does for you:** it counts things, tests things, and draws charts, and it leaves a
+written record of having done so.
 
-The Student Developer Pack is claimed at education.github.com/pack.
+You are not becoming a programmer. You are learning to drive one tool for one job, the way
+you learned to drive a citation manager.
 
-## The setup check
+## Tool 3 of 4: Quarto
 
-Create `setup-check.qmd`, give it a title, and add one chunk:
+**What it is:** a publishing system.
+
+**What it does for you:** you write one file holding both your prose and your code, press
+render, and it produces a finished document with the charts already in place.
+
+No more pasting a chart into Word, finding an error, redoing the chart, and pasting it again.
+
+## Tool 4 of 4: Git and GitHub
+
+**What it is:** Git records every change you make. GitHub keeps that record online.
+
+**What it does for you:** an undo button that reaches back months, and proof of when you did what.
+
+It is also the closest thing our field has to a portfolio. Employers look. Use a professional
+username.
+
+## Install in this order
+
+1. **R**, from cran.r-project.org
+2. **VS Code**, from code.visualstudio.com
+3. **The R extension** inside VS Code, by REditorSupport
+4. **Quarto**, from quarto.org
+5. **The Quarto extension** inside VS Code
+6. **Git**, from git-scm.com
+
+The order is not decorative. Each one looks for the one before it and gets confused when it
+is missing.
+
+## Now open the file I sent you
+
+`00-check-your-setup.qmd` is on the Hub and in your email.
+
+Open it in VS Code. It walks you through the rest, one grey box at a time, and it tells you
+what each box should print.
+
+Work through it. I am coming round the room. Raise a hand the moment something looks wrong,
+not at the end.
+
+## What "working" looks like
+
+The file finishes by running a checker we wrote for this course:
 
 ```r
 library(v2v)
-v2v::setup()
+setup()
 ```
 
-Render it. The validator checks that R, Quarto, Git, and the package are all present
-at acceptable versions, and prints "V2V setup complete" when they are. Anything else
-sends you to the Hub troubleshooting page.
+You want a list of green check marks under **Required R packages**.
 
-## Git as evidence, not convenience
+Red marks next to Quarto or Git are expected tonight if you have not finished those steps.
+Red under Required is the one that needs me.
 
-- Every `git commit` is a time-stamped record of the analysis at a specific moment
-- Another researcher can check out any commit and see what your code did then
-- Wilson and colleagues put change-tracking at the center of the practice:
+## When it breaks
 
-> "Keeping track of changes that you or your collaborators make to data and software is a critical part of research. Being able to reference or retrieve a specific version of the entire project aids in reproducibility for you leading up to publication, when responding to reviewer comments, and when providing supporting information for reviewers, editors, and readers."
->
-> Wilson et al. (2017, p. 12)
-
-## What your first commit contains
-
-- Treat `git log` as a portion of your methods section
-- The **first commit**, before any analysis code exists, carries your data,
-  your codebook, and a `README` describing the study
-- Later commits then show the analysis arriving, in order, with reasons
-- Try this: run `git log --oneline` on a project you finished before version control
-- Ask what a reviewer would want that you can no longer reconstruct
+- **Red text in R is not automatically an error.** R prints ordinary progress in red. Read
+  the last line, not the colour.
+- Close VS Code completely and reopen it. This genuinely fixes a lot.
+- If R asks "which would you like to update", type 1 and press Enter.
+- Send me the exact wording of the error, not a paraphrase. The wording is the diagnosis.
+- Fifteen minutes stuck, then ask. Not two hours.
 
 ## Discussion {.discuss}
 
 On Wilson et al. (2017), "Good enough practices in scientific computing":
 
 - The title concedes something. What work is "good enough" doing, and who is it for?
-- Which of their practices would survive contact with your actual working habits,
-  and which would you quietly abandon by October?
-- They target the researcher without formal training in computing. Does that framing
-  make the advice more usable or does it lower the ceiling?
+- Which of their practices would survive contact with your actual working habits, and which
+  would you quietly abandon by October?
+- They write for the researcher with no formal computing training. Does that framing make the
+  advice more usable, or does it lower the ceiling?
 - Bring one practice you think is oversold.
 
 *Two minutes with a neighbor, then we compare.*
@@ -170,66 +191,57 @@ Look before you read on. Resist doing anything with it.
 
 ## The data moves
 
-- This is a **time series**, not a snapshot. Four channels recur across ten rows.
+- This is a **time series**, not a snapshot. Four channels recur across these rows.
 - Sodapoppin climbs 27,934, then 28,076, then 28,203
-- That is **269 viewers in 122 seconds**, an audience expanding close to real time
-- xQc lost 150 between the first two snapshots, then held; forsen lost 120
+- That is **269 viewers in 122 seconds**, an audience growing close to real time
+- xQc lost 150 between the first two snapshots, then held. Forsen lost 120.
 - Each number is a real moment: a clip went viral, a raid arrived, bandwidth dropped
 
 ## The timestamps are not dates
 
-- The date column is a thirteen-digit integer: 1542578200214
+- That date column is a thirteen-digit integer: 1542578200214
 - The next row, 26 milliseconds later, reads 1542578200240
 - **Unix epoch time**: milliseconds since midnight, January 1, 1970
-- The gap between sodapoppin's first two rows is 60,931, roughly one minute
+- The gap between sodapoppin's first two rows is 60,931, about a minute
 - Converting it is a wrangling step, not a research question. Chapter 11 handles it.
-
-## Real data is messy in specific ways
-
-- Sodapoppin's title contains a literal line break, written here as `\n`
-- The streamer's software inserted a newline into a title field and the data kept it
-- Fields contain characters they were never designed for
-- A stray newline in one title is harmless
-- The habit of noticing things like that is not
 
 ## Titles are themselves data
 
 - xQc: "RANK 1 GAMER ~ NO PLAN (help me)", which is a joke
 - Forsen is giving away keys for a card game called Artifact
 - Giantwaffle performs etiquette: "No Smoking in Chat"
-- These are content analysis opportunities sitting in a column you might call metadata
-- Chapter 12 returns to title content directly
+- One title even carries a literal line break, because the streamer's software let it through
+- These are content analysis opportunities sitting in a column you might dismiss as metadata
 
-## The v2v package
+## What the package gives you
 
-- `twitch_chat_sample`: roughly **35,000** chat messages from the 50-channel corpus
+- `twitch_chat_sample`: roughly **35,000** chat messages from a 50-channel corpus
 - `twitch_streams_sample`: the stream snapshots for those channels, about **32,000** rows
-- Helper functions wrap loading, codebook skeletons, reliability metrics, diagnostics
-- The helpers are not magic. They keep the concept from being buried in setup code.
-- `v2v::setup()` re-runs any time you suspect an installation problem
+- Helpers that wrap loading, codebook skeletons, reliability metrics, and diagnostics
+- The helpers are not magic. They keep the concept from being buried under setup code.
+- `setup()` re-runs any time you suspect an installation problem
 
-## The lock file is a citation
+## Lock the versions
 
-- `renv.lock` records the exact version of every package your analysis depends on
-- Without it, a reader attempting replication may get different numbers because a
-  package updated between your run and theirs
-- Run `renv::init()` before your first line of analysis code
-- Commit the lock file before you collect your first data point
-- The same discipline extends to everything a human made
+`renv.lock` is a file recording the exact version of every package your analysis used.
 
-## Wilson et al. on what to back up
+Without it, someone re-running your work next year may get different numbers, because a
+package changed underneath them and nobody noticed.
+
+```r
+renv::init()
+```
+
+Run it before your first line of analysis code. Commit it before you collect your first data point.
 
 > "Back up (almost) everything created by a human being as soon as it is created. This includes scripts and programs of all kinds, software packages that your project depends on, and documentation."
 >
 > Wilson et al. (2017, p. 12)
 
-Weigh honestly what skipping `renv::init()` costs a project you intend to publish.
-
 ## Before Week 3
 
-- **Due:** your **GitHub Profile**, with the stack installed and `v2v::setup()` passing
-- Read **Chapter 3** (Ethics) and **Chapter 4** (Intelligence Gathering), with the
-  graduate edition toggle on
+- **Due:** your GitHub Profile, with the stack installed and `setup()` passing
+- Read **Chapter 3** (Ethics) and **Chapter 4** (Intelligence Gathering), graduate edition toggle on
 - Read the assigned article: **Nosek et al. (2018)**, "The preregistration revolution"
 - Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
 - A librarian joins us next week. Bring a topic you might actually search.
