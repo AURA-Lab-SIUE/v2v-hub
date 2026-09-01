@@ -25,8 +25,42 @@ MC 501 subtitle form: `"Week 7 · Chapter 8 · MC 501 Research Methods for Mass 
 
 ## Length
 
-- **MC 451** session (75 minutes): 12 to 16 content slides.
-- **MC 501** week (170 minutes): 20 to 24 content slides.
+- **MC 451** session (75 minutes): 12 to 18 content slides.
+- **MC 501** week (170 minutes): 20 to 27 content slides.
+
+**Raised 2026-09-01 (owner), from 12-16 and 20-24.** This deliberately reopens a band that
+was tightened once before, so do not "restore" the old numbers. The reason: every deck had
+been authored to the very top of the old band, which meant the tone rewrite below could only
+buy a slide of warmth by deleting a slide of content. The extra room is for pacing, not for
+more material.
+
+## Tone, and who these students are
+
+Adopted 2026-09-01 after the owner reported that students were glazing over: the decks read
+too technical and too cold to people who dislike VS Code, R, and coding generally.
+
+1. **Open on the student's situation, not the field's.** Slide one answers "what will I be
+   able to do by the end of today," in plain words. Not "here is why research is in crisis."
+2. **Name the feeling before the tool.** Where something is tedious, slow, or likely to
+   break, the slide says so. A student told in advance that installs break for somebody
+   every semester does not conclude they are stupid when it breaks for them.
+3. **One new named thing per slide.** Never VS Code, R, Quarto, and Git together. Each gets
+   its own moment and a one-line answer to "what does this do for me."
+4. **Show before you justify.** They see it work, then hear why it matters. Abstraction
+   before contact is what makes eyes glaze.
+5. **Vary the slide shape.** A single sentence, a two-column contrast, a question, a table.
+   Uniform five-bullet density reads as a wall no matter how good the bullets are.
+6. **Sell it on their stakes.** Most of these students will not publish, review, or
+   replicate. Reproducibility sells on "you will not be able to reconstruct your own numbers
+   in six weeks," which is true and personal. The replication crisis is not theirs.
+7. **Every code slide carries three things:** what to type, what should appear, and what to
+   do when it does not.
+8. **No unexplained jargon.** First use gets a plain gloss on the same slide. "Repository",
+   "chunk", "render", "commit", and "console" all count.
+
+**Never make a student hand-author a file from a slide.** Ship a starter they open instead:
+`starters/` in this repo, and the root of the `v2v-workspace` template. s04 used to show YAML
+followed by two bare R lines with no fenced chunk, which does not render if copied literally.
 
 ## Density, the hard rule
 
