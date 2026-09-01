@@ -9,6 +9,11 @@ project:
     - "resources/*.qmd"
     - "workbook/*.qmd"
     - "decks/**/*.qmd"
+    # Starter files are handed to students as SOURCE, never built. Listing them under
+    # resources: below is not enough on its own - Quarto still picks a .qmd up as a
+    # render target, tries the knitr engine on its R chunks, and the CI runner has no
+    # R installed. Build failed exactly that way 2026-09-01.
+    - "!starters/*.qmd"
   resources:
     - "modules/04_analyst/pokemon-practice.qmd"
     # Starter files students DOWNLOAD and open in VS Code. Deliberately outside the
