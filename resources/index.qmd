@@ -39,6 +39,16 @@ Your VS Code course workspace holds your journals, notes, and project files in o
 
 ---
 
+## Check your setup
+
+`00-check-your-setup.qmd` walks you through every install, one grey box at a time, and
+tells you what each box should print. Save it into your workspace folder and open it in
+VS Code. Run it whenever something stops working, not only in week one.
+
+[Download 00-check-your-setup.qmd](starters/00-check-your-setup.qmd){.btn .btn-primary}
+
+---
+
 ## Required software
 
 Install these before Phase I. All are free.

@@ -98,9 +98,13 @@ is working in the same environment.
 If the box already vanished, press `Ctrl+Shift+X`, then search for and install **Quarto**
 and **R** by REditorSupport.
 
-## Step 4: open the file we wrote for you
+## Step 4: get the file we wrote for you
 
-In the workspace, open `00-check-your-setup.qmd`. It is also on the Hub and in your email.
+Download it from the Hub. The link is on the Resources page, or type it straight in:
+
+[aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd](https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd)
+
+Save it into your workspace folder, then open it in VS Code.
 
 You do not have to write it. You do not have to understand it. You click through it, one
 grey box at a time, and it tells you what each box should print.

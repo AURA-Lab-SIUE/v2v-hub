@@ -128,11 +128,13 @@ username.
 The order is not decorative. Each one looks for the one before it and gets confused when it
 is missing.
 
-## Now open the file I sent you
+## Now get the setup file
 
-`00-check-your-setup.qmd` is on the Hub and in your email.
+Download it from the Hub. The link is on the Resources page, or type it straight in:
 
-Open it in VS Code. It walks you through the rest, one grey box at a time, and it tells you
+[aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd](https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd)
+
+Save it into your workspace folder and open it in VS Code. It walks you through the rest, one grey box at a time, and it tells you
 what each box should print.
 
 Work through it. I am coming round the room. Raise a hand the moment something looks wrong,
