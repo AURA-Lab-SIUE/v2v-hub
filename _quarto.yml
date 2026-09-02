@@ -33,6 +33,12 @@ website:
             href: syllabus.qmd
           - text: "MC 501 (Fall 2026)"
             href: mc501-syllabus.qmd
+      - text: "Assignments"
+        menu:
+          - text: "MC 451 (Fall 2026)"
+            href: mc451-assignments.qmd
+          - text: "MC 501 (Fall 2026)"
+            href: mc501-assignments.qmd
       - text: "Resources"
         href: resources/index.qmd
       - text: "Course Workspace"

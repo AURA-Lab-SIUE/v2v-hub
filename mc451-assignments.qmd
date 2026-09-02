@@ -1,0 +1,328 @@
+---
+title: "MC 451 Assignments"
+---
+
+:::{.phase-header}
+# MC 451 Assignments
+
+**Every assignment in this course, what it asks for, and when it is due.**
+
+This page is the full version. The Blackboard entry for each assignment is deliberately brief and links back here, so there is one place to check and one place that can be wrong.
+:::
+
+::: {.callout-note}
+## How to turn work in
+
+**Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting** -- grading happens from the Blackboard submission. Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it.
+
+Everything is due at **11:59 PM** on the **Friday** listed.
+
+Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, just submit again.
+:::
+
+## Everything at a glance
+
+| Due | Assignment | Points |
+|---|---|---:|
+| Friday, August 28 | [Syllabus Contract](#syllabus-contract) | 25 |
+| Friday, September 4 | [GitHub Profile](#github-profile) | 25 |
+| Friday, September 11 | [Project Setup](#project-setup) | 25 |
+| Friday, September 18 | [Librarian Visit Report](#librarian-visit-report) | 50 |
+| Friday, September 25 | [CITI Ethics Certification](#citi-ethics-certification) | 25 |
+| Friday, September 25 | [Annotated Manuscript](#annotated-manuscript) | 25 |
+| Friday, October 2 | [Topic Selection and Research Questions](#topic-selection-and-research-questions) | 25 |
+| Friday, October 9 | [Project Prospectus](#project-prospectus) | 25 |
+| Friday, October 16 | [Definitions Practice](#definitions-practice) | 25 |
+| Friday, October 23 | [Codebook and Qualitative Memo](#codebook-and-qualitative-memo) | 50 |
+| Friday, November 6 | [Sampling Plan and Pilot](#sampling-plan-and-pilot) | 75 |
+| Friday, November 6 | [Data Wrangling in R](#data-wrangling-in-r) | 50 |
+| Friday, November 13 | [Describing Data in R](#describing-data-in-r) | 75 |
+| Friday, November 20 | [Inferencing Data in R](#inferencing-data-in-r) | 100 |
+| Friday, December 18 | [White Paper](#white-paper) | 250 |
+| Every week | [Weekly reading journal](#weekly-reading-journal), 14 entries | 140 |
+| End of term | Journal consistency | 10 |
+
+**Total: 1000 points.**
+
+---
+
+## Weekly reading journal
+
+**10 points each, 14 entries, plus 10 points for consistency. 150 points total.** Due every Friday at 11:59 PM.
+
+**Due:** every Friday by 11:59 PM | **Scoring:** 10 pts per week across 14 teaching weeks, plus 10 pts for consistency across the semester
+
+Each week, write a reflection on the assigned reading. Choose one of three thinking paths:
+
+1. **The Connector**: link the reading to your project, other concepts, or real-world examples
+2. **The Troubleshooter**: document a challenge you encountered and how you worked through it
+3. **The Critic**: ask critical questions, challenge assumptions, or explore implications
+
+#### MC 451 requirements
+
+**Length:** 250 to 300 words per entry.
+
+Write on the assigned chapter. You are not required to read outside the textbook for the journal.
+
+#### Submission
+
+Write your journal entry in your course workspace (`01_Journal/`) by copying the journal template (`_templates/journal-entry.md`) into that folder, then submit via Blackboard.
+
+#### What Makes a Strong Entry
+
+- **Depth over breadth**: focus on one or two ideas rather than summarizing everything
+- **Specificity**: reference specific concepts, examples, or passages
+- **Connection**: link to your own project or to prior readings
+- **Honesty**: it is fine to be confused or skeptical, so document your thinking
+
+---
+
+#### If you used AI
+
+If AI shaped any work you submit that week, note in the entry what you used it for and how you checked its output. This is required by the syllabus.
+
+#### The fourteen entries
+
+There is **no Week 14** -- that is Thanksgiving.
+
+| Week | Due |
+|---|---|
+| Week 1 | Friday, August 28 |
+| Week 2 | Friday, September 4 |
+| Week 3 | Friday, September 11 |
+| Week 4 | Friday, September 18 |
+| Week 5 | Friday, September 25 |
+| Week 6 | Friday, October 2 |
+| Week 7 | Friday, October 9 |
+| Week 8 | Friday, October 16 |
+| Week 9 | Friday, October 23 |
+| Week 10 | Friday, October 30 |
+| Week 11 | Friday, November 6 |
+| Week 12 | Friday, November 13 |
+| Week 13 | Friday, November 20 |
+| Week 15 | Friday, December 4 |
+
+---
+
+## The assignments
+
+### Syllabus Contract {#syllabus-contract}
+
+**25 points. Due Friday, August 28, 11:59 PM.** *(Week 1)*
+
+Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
+
+---
+
+### GitHub Profile {#github-profile}
+
+**25 points. Due Friday, September 4, 11:59 PM.** *(Week 2)*
+
+Create a professional GitHub account with:
+
+- A professional username and profile photo
+- A profile README introducing yourself and your research interests
+
+[GitHub Setup Guide](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
+
+---
+
+### Project Setup {#project-setup}
+
+**25 points. Due Friday, September 11, 11:59 PM.** *(Week 3)*
+
+Initialize your course workspace as a GitHub repository and push it to GitHub. This proves VS Code, GitHub, and git all work together.
+
+1. Open GitHub Desktop and create a new repository from your course workspace folder
+2. Make an initial commit ("Initial workspace setup")
+3. Publish the repository to GitHub (public)
+4. Submit your repository URL to Blackboard
+
+From this point forward you commit and push your journal entries each week using GitHub Desktop, building a git habit before R enters the picture.
+
+[GitHub Desktop Setup Guide](https://aura-lab.siue.edu/v2v-hub/resources/github-desktop-setup.html)
+
+---
+
+### Librarian Visit Report {#librarian-visit-report}
+
+**50 points. Due Friday, September 18, 11:59 PM.** *(Week 4)*
+
+Meet with a SIUE librarian to identify and evaluate a data archive for your research project. Write a report documenting:
+
+1. **The archive**: name, type, scope
+2. **What you learned**: date range, searchability, export options
+3. **Feasibility**: can this source answer your research questions?
+4. **Librarian consultation**: what did the librarian recommend?
+
+Submit as PDF: `Lastname_ArchivistReport.pdf`
+
+### CITI Ethics Certification {#citi-ethics-certification}
+
+**25 points. Due Friday, September 25, 11:59 PM.** *(Week 5)*
+
+Complete the CITI Program's Social and Behavioral Research training and submit your completion certificate. This is due early because it gates the human-subjects reasoning you apply for the rest of the term.
+
+---
+
+### Annotated Manuscript {#annotated-manuscript}
+
+**25 points. Due Friday, September 25, 11:59 PM.** *(Week 5)*
+
+Find and annotate one peer-reviewed research article related to your topic. Focus on the research gap, theoretical framework, method, findings, and limitations. Write a connection statement explaining how this article relates to your project.
+
+---
+
+### Topic Selection and Research Questions {#topic-selection-and-research-questions}
+
+**25 points. Due Friday, October 2, 11:59 PM.** *(Week 6)*
+
+Submit your finalized topic, formal research questions (and hypotheses where appropriate), a variable preview, and a justification for why these questions matter.
+
+---
+
+**Run every question past the five criteria before you submit it:**
+
+1. **Specific.** Name the platform, specify the outcome, bound the population. "How does
+   social media influence politics?" leaves all three undefined.
+2. **Measurable.** Some concepts resist operationalization. "Do authentic streamers build
+   better communities?" cannot be studied until *authentic* and *better* become something
+   you can record.
+3. **Answerable within your constraints.** Decades of data or hundreds of interviews is
+   not a semester project.
+4. **Not already answered.** Your literature review tells you whether the question is
+   genuinely open.
+5. **It matters.** A question can be answerable and still be trivia.
+
+### Project Prospectus {#project-prospectus}
+
+**25 points. Due Friday, October 9, 11:59 PM.** *(Week 7)*
+
+Draft a one-page research plan: topic, theory, data source, preliminary research questions, and a rough timeline.
+
+---
+
+**What a prospectus is.** Roughly one page: what you are studying, why it matters, and
+how you will do it. The model prospectus in Chapter 6 runs about 250 words. It is a
+diagnostic, not busywork -- if you cannot state the project clearly on one page, you do
+not yet understand it well enough to begin.
+
+**The six components, with the length each should run:**
+
+| Component | Length |
+|---|---|
+| Descriptive title hinting at key variables | one line |
+| Research questions or hypotheses | 1 to 3, not 10 |
+| Theoretical framework | 2 to 3 sentences |
+| Gap in the literature | 2 to 3 sentences |
+| Method overview | 3 to 4 sentences |
+| Expected contribution | 1 to 2 sentences |
+
+Draft all six, even badly, then cut.
+
+### Definitions Practice {#definitions-practice}
+
+**25 points. Due Friday, October 16, 11:59 PM.** *(Week 8)*
+
+Define at least four variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge-case decision rules.
+
+---
+
+**Each variable needs both kinds of definition, written side by side.**
+
+A **conceptual definition** says what the variable means in the abstract: what is this
+meant to capture? An **operational definition** is the recipe -- exactly what a coder
+does to assign a value, detailed enough that a stranger could follow it and measure the
+same thing you measured.
+
+Conceptual tells you what the variable is *for*. Operational tells you what counts as
+*evidence*. A conceptual definition with no operational definition is an idea you cannot
+measure; an operational definition with no conceptual definition is a procedure that has
+lost track of why it exists. That is how a study ends up precisely measuring something
+nobody wanted to know.
+
+### Codebook and Qualitative Memo {#codebook-and-qualitative-memo}
+
+**50 points. Due Friday, October 23, 11:59 PM.** *(Week 9)*
+
+Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a 200 to 300 word qualitative memo describing the patterns you observed during immersion.
+
+---
+
+**The two parts are graded together as one 50-point assignment.**
+
+**The qualitative memo** is **200 to 300 words** describing the patterns you observed
+during immersion. It is the written record of what your Chapter 7 watching actually
+taught you, and it explains *why* your codebook has the categories it has.
+
+### Sampling Plan and Pilot {#sampling-plan-and-pilot}
+
+**75 points. Due Friday, November 6, 11:59 PM.** *(Week 11)*
+
+Design your sampling strategy (search terms, date range, method) and pilot test your codebook on 10 to 20 items. Document edge cases, coding decisions, and any revisions.
+
+### Data Wrangling in R {#data-wrangling-in-r}
+
+**50 points. Due Friday, November 6, 11:59 PM.** *(Week 11)*
+
+Using the Twitch data from the `v2v` package:
+
+1. **Hand-code** a variable for a 30-message sample drawn with `sample_messages()`
+2. **Load and clean** the chat and stream tables (timestamps, message length, factors, missing values)
+3. **Join** the stream-level information back onto the chat messages
+4. **Export** a clean dataset as `twitch_analysis.RDS`
+
+This assignment teaches the full data pipeline, from raw input to analysis-ready output.
+
+### Describing Data in R {#describing-data-in-r}
+
+**75 points. Due Friday, November 13, 11:59 PM.** *(Week 12)*
+
+Using `twitch_analysis.RDS`:
+
+1. Create **frequency tables** for key categorical variables
+2. Build **ggplot2 visualizations** (bar charts, trend lines) with professional formatting
+3. Create a **cross-tabulation** showing the relationship between two variables
+4. Write **two to three sentences of narrative** interpreting each output
+
+**MC 501:** this assignment is worth 100 points rather than 75, and the extra weight is in the diagnostics. Report the distributional checks behind each figure, not only the figure: what the shape of the variable is, whether the assumptions of the test you are heading toward look tenable, and what the outliers are.
+
+---
+
+### Inferencing Data in R {#inferencing-data-in-r}
+
+**100 points. Due Friday, November 20, 11:59 PM.** *(Week 13)*
+
+Using `twitch_analysis.RDS`:
+
+1. **State your hypothesis** in plain English before running any code
+2. **Select the appropriate test** based on your variable types:
+   - Two categorical variables: **chi-square** test of independence
+   - One categorical (two groups) by one continuous: **independent t-test**
+   - Two continuous variables: **Pearson correlation**
+3. **Run the test** in R and report it in APA format
+4. **Interpret** the result in plain English
+5. **Calculate** and report the effect size
+
+**MC 501:** go deeper on the same test rather than adding more tests. Report and check the assumptions, show the diagnostics, and give the power statistics behind the design. Distinguish statistical significance from practical size explicitly.
+
+---
+
+### White Paper {#white-paper}
+
+**250 points. Due Friday, December 18, 11:59 PM.**
+
+## Submission (MC 451)
+
+Submit both to Blackboard by Friday, December 18, 2026 at 11:59 PM:
+
+1. **PDF file**, renamed to `Lastname_WhitePaper.pdf`
+2. **Live URL**, your GitHub Pages link
+
+**Important:** Both must be present for the submission to be considered complete.
+
+The full rubric, the project structure, and the recommended writing order are on the [Phase V page](https://aura-lab.siue.edu/v2v-hub/modules/05_publisher/?edition=mc451).
+
+---
+
+*Anything here that disagrees with the syllabus is a mistake -- tell me and I will fix it. The syllabus is the contract of record.*
