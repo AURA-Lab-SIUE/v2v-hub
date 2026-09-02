@@ -20,7 +20,8 @@ If you have not already, follow the [Install VS Code](install-vscode.qmd) guide.
 
 1. Go to the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace).
 2. Click **Use this template**, then **Create a new repository**.
-3. Name it something like `mc451-workspace`. Private is fine.
+3. Name it `mc451-workspace` or `mc501-workspace`, and leave it **Public**. Your graded
+   submission is the repository URL, so it has to be one anyone can open.
 4. Click **Create repository**.
 
 You now have your own copy of the workspace on GitHub.

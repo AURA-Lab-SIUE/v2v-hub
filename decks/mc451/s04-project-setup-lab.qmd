@@ -72,7 +72,7 @@ You write once, render, and you have something you could hand to a reader.
 Go to the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace).
 
 - Click the green **Use this template**, then **Create a new repository**
-- Name it `mc451-workspace`. Private is fine.
+- Name it `mc451-workspace`. Leave it **Public**.
 - Click **Create repository**
 
 **You should see:** a page with your own username at the top and the same folders as the

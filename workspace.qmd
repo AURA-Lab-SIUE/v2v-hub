@@ -52,7 +52,7 @@ The short version is below. For a step-by-step walkthrough with screenshots, fol
 
 ### 1. Create your copy from the template
 
-On the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace), click **Use this template**, then **Create a new repository**. Name it something like `mc451-workspace`. Keep it private if you prefer.
+On the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace), click **Use this template**, then **Create a new repository**. Name it `mc451-workspace` or `mc501-workspace`, and leave it **Public**. Your graded submission is the repository URL, so it has to be one anyone can open.
 
 ### 2. Clone it into VS Code
 

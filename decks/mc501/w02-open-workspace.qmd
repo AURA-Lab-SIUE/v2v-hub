@@ -163,8 +163,8 @@ Walked through one step at a time: [GitHub Setup](https://aura-lab.siue.edu/v2v-
 One folder holds everything you write this term. You copy ours. You do not build it.
 
 1. Open the [v2v-workspace template](https://github.com/AURA-Lab-SIUE/v2v-workspace)
-2. Click the green **Use this template**, then **Create a new repository**, and name it
-   `mc501-workspace`
+2. Click the green **Use this template**, then **Create a new repository**. Name it
+   `mc501-workspace` and leave it **Public**
 3. In VS Code press `Ctrl+Shift+P`, or `Cmd+Shift+P` on a Mac, type **Git: Clone**, press
    Enter, and paste your new repository's URL
 

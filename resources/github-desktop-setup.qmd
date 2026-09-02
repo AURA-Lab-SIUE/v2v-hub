@@ -4,7 +4,9 @@ title: "GitHub Desktop Setup"
 
 ## GitHub Desktop: Version Control Without the Command Line
 
-GitHub Desktop is a free application that lets you manage your git repositories with a visual interface. You will use it to push your journal entries and project files to GitHub each week, building a commit history that demonstrates your progress across the semester.
+GitHub Desktop is a free application that lets you commit and push with a visual interface instead of typing git commands. It is **optional**. VS Code's Source Control panel does the same job in the window you are already in.
+
+It does **not** create your repository. Your workspace comes from the [course template](https://github.com/AURA-Lab-SIUE/v2v-workspace), already public and already on GitHub. GitHub Desktop is only a way to send your weekly work to it.
 
 **Time needed:** 10 minutes
 
@@ -19,15 +21,16 @@ GitHub Desktop is a free application that lets you manage your git repositories 
 
 ---
 
-## Step 2: Create a Repository from Your Course Workspace
+## Step 2: Add Your Workspace to GitHub Desktop
 
-Your course workspace is a VS Code workspace folder of Markdown files. GitHub Desktop can turn it into a git repository.
+Your workspace repository already exists: you created it from the template and cloned it into VS Code. GitHub Desktop only needs to be pointed at that folder.
 
 1. Open GitHub Desktop
-2. Click **File > Add Local Repository** (or **File > New Repository** if this is your first time)
-3. Navigate to your course workspace folder and select it
-4. If prompted, choose **Create a Repository** and accept the defaults
-5. You should now see your workspace files listed in the "Changes" tab
+2. Click **File > Add Local Repository**
+3. Navigate to your cloned workspace folder and select it
+4. You should now see your workspace files listed in the "Changes" tab
+
+Do not use **File > New Repository**. That makes a second, unconnected repository, and your work would stop matching the URL you submitted.
 
 ---
 
@@ -42,15 +45,13 @@ A **commit** is a snapshot of your work at a specific point in time. Think of it
 
 ---
 
-## Step 4: Publish to GitHub
+## Step 4: Push to GitHub
 
-**Publishing** uploads your repository to GitHub so it is accessible online.
+Your repository is already on GitHub, and already public, because it came from the template. You never publish it a second time.
 
-1. Click the **Publish repository** button in the top bar
-2. **Name:** Use something like `mc451-workspace` or `mc451-workspace`
-3. **Keep this code private:** Uncheck this box (your repository should be public)
-4. Click **Publish Repository**
-5. Your workspace is now live at `https://github.com/YOUR-USERNAME/YOUR-REPO-NAME`
+1. Click **Push origin** in the top bar
+2. Refresh your repository page on github.com, and your commit is there
+3. Your workspace lives at `https://github.com/YOUR-USERNAME/mc451-workspace`
 
 ---
 

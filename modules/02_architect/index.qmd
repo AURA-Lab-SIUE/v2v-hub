@@ -60,16 +60,17 @@ Create a professional GitHub account with:
 
 ### Project Setup (25 pts), Week 3
 
-Initialize your course workspace as a GitHub repository and push it to GitHub. This proves VS Code, GitHub, and git all work together.
+Create your course workspace from the class template, clone it onto your laptop, and push a commit back. This proves VS Code, GitHub, and git all work together.
 
-1. Open GitHub Desktop and create a new repository from your course workspace folder
-2. Make an initial commit ("Initial workspace setup")
-3. Publish the repository to GitHub (public)
-4. Submit your repository URL to Blackboard
+1. On the [course workspace template](https://github.com/AURA-Lab-SIUE/v2v-workspace), click **Use this template**, then **Create a new repository**
+2. Name it `mc451-workspace` and leave it **Public**
+3. Clone it into VS Code: `Ctrl+Shift+P` (`Cmd+Shift+P` on a Mac), then **Git: Clone**, then paste your repository URL
+4. Make a commit ("Initial workspace setup") and push it
+5. Submit your repository URL to Blackboard
 
-From this point forward you commit and push your journal entries each week using GitHub Desktop, building a git habit before R enters the picture.
+From this point forward you commit and push your journal entries each week, building a git habit before R enters the picture.
 
-[GitHub Desktop Setup Guide](../../resources/github-desktop-setup.qmd){.btn .btn-primary}
+[Workspace Setup Guide](../../resources/workspace-setup.qmd){.btn .btn-primary}
 
 ---
 
@@ -122,9 +123,9 @@ Submit as PDF: `Lastname_ArchivistReport.pdf`
 
 ### A note on Project Setup
 
-MC 501 has no separate Project Setup assignment. You build the workspace repository during the Week 2 class session, alongside Chapter 2, and you are expected to be committing and pushing your journal entries from that point forward.
+MC 501 has no separate Project Setup assignment. You build the workspace repository during the Week 2 class session, alongside Chapter 2, from the same public template, and you are expected to be committing and pushing your journal entries from that point forward.
 
-[GitHub Desktop Setup Guide](../../resources/github-desktop-setup.qmd){.btn .btn-primary}
+[Workspace Setup Guide](../../resources/workspace-setup.qmd){.btn .btn-primary}
 
 :::
 

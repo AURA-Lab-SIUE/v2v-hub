@@ -141,19 +141,20 @@ Create a professional GitHub account with:
 
 **25 points. Due Friday, September 11, 11:59 PM.** *(Week 3)*
 
-Initialize your course workspace as a GitHub repository and push it to GitHub. This proves VS Code, GitHub, and git all work together.
+Create your course workspace from the class template, clone it onto your laptop, and push a commit back. This proves VS Code, GitHub, and git all work together.
 
 <details class="syl-policy">
 <summary>Full requirements</summary>
 
-1. Open GitHub Desktop and create a new repository from your course workspace folder
-2. Make an initial commit ("Initial workspace setup")
-3. Publish the repository to GitHub (public)
-4. Submit your repository URL to Blackboard
+1. On the [course workspace template](https://github.com/AURA-Lab-SIUE/v2v-workspace), click **Use this template**, then **Create a new repository**
+2. Name it `mc451-workspace` and leave it **Public**
+3. Clone it into VS Code: `Ctrl+Shift+P` (`Cmd+Shift+P` on a Mac), then **Git: Clone**, then paste your repository URL
+4. Make a commit ("Initial workspace setup") and push it
+5. Submit your repository URL to Blackboard
 
-From this point forward you commit and push your journal entries each week using GitHub Desktop, building a git habit before R enters the picture.
+From this point forward you commit and push your journal entries each week, building a git habit before R enters the picture.
 
-[GitHub Desktop Setup Guide](https://aura-lab.siue.edu/v2v-hub/resources/github-desktop-setup.html)
+[Workspace Setup Guide](https://aura-lab.siue.edu/v2v-hub/resources/workspace-setup.html)
 
 </details>
 
