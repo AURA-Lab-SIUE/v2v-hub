@@ -45,7 +45,7 @@ Your VS Code course workspace holds your journals, notes, and project files in o
 tells you what each box should print. Save it into your workspace folder and open it in
 VS Code. Run it whenever something stops working, not only in week one.
 
-[Download 00-check-your-setup.qmd](starters/00-check-your-setup.qmd){.btn .btn-primary}
+[Download 00-check-your-setup.qmd](../starters/00-check-your-setup.qmd){.btn .btn-primary}
 
 ---
 
