@@ -96,11 +96,12 @@ Click **Install All**. That is Quarto, R, and GitLens, and it means everybody in
 is working in the same environment.
 
 If the box already vanished, press `Ctrl+Shift+X`, then search for and install **Quarto**
-and **R** by REditorSupport.
+and **R** by REditorSupport. Stuck? [Install VS Code](https://aura-lab.siue.edu/v2v-hub/resources/install-vscode.html)
 
 ## Step 4: get the file we wrote for you
 
-Download it from the Hub. The link is on the Resources page, or type it straight in:
+Download it from the Hub. It is the blue button on the
+[Resources page](https://aura-lab.siue.edu/v2v-hub/resources/index.html), or click it here:
 
 [aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd](https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd)
 
@@ -181,6 +182,7 @@ GitHub stopped accepting passwords for this in 2021 and wants a token instead. V
 sign-in flow does the whole thing for you, once, and then never asks again.
 
 Click through it when prompted. If it loops, wave at me rather than retrying.
+Step by step: [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
 
 For errors specific to our Twitch data, run `?v2v::common_errors`.
 
@@ -197,7 +199,8 @@ Raise a hand if any line is not true. Do not go home and hope.
 
 ## Before next time
 
-- **Project Setup** is due this week. Submit your repository URL.
+- **[Project Setup](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#project-setup)**, 25 points,
+  is due Friday, September 11, 11:59 PM. Submit your repository URL.
 - If the check still fails, come to office hours. Tuesday and Thursday, 12:30 to 1:45 and
   3:30 to 5:00, Dunham Hall 1017. Drop in.
 - Read **Chapter 3, Knowing and Knowing Well**, before Tuesday
