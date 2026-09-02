@@ -53,7 +53,7 @@ published at a public address.
 </li>
 <li>
   <span class="syl-fact-label">Textbook</span>
-  <span class="syl-fact-value"><a href="https://aura-lab-siue.github.io/v2v/">From Vibes to Variables, 3rd ed.</a></span>
+  <span class="syl-fact-value"><a href="https://aura-lab.siue.edu/v2v/">From Vibes to Variables, 3rd ed.</a></span>
   <span class="syl-fact-note">Free and online. Turn the <strong>Graduate edition</strong> toggle ON.</span>
 </li>
 </ul>
@@ -65,7 +65,7 @@ You do not have to read this whole page today. Do these five things and you are
 current.
 
 1. **Turn on the Graduate edition toggle** in the
-   [textbook](https://aura-lab-siue.github.io/v2v/). It is the control in the
+   [textbook](https://aura-lab.siue.edu/v2v/). It is the control in the
    lower corner of any page, and it reveals required material you are graded on.
 2. **Read the Week 1 row** of the [schedule](#weekly-schedule), including the
    assigned reading. The reading comes before the session, not after.
@@ -358,7 +358,7 @@ Library (Lovejoy) with your student login; everything else is open access. Weeks
 
 **Textbook.** This course uses an Open Educational Resource (OER): *From Vibes to
 Variables: A Field Guide to Open Media Science* (3rd Ed.), free and online at
-[aura-lab-siue.github.io/v2v](https://aura-lab-siue.github.io/v2v/). There is no
+[aura-lab.siue.edu/v2v](https://aura-lab.siue.edu/v2v/). There is no
 textbook to purchase. **Turn on the "Graduate edition" toggle** (the control in
 the lower corner of any page), which reveals a **required graduate extension in
 every chapter** (assigned peer-reviewed readings and advanced analytical
@@ -366,7 +366,7 @@ prompts). Your choice is remembered across pages. For you it is required
 material.
 
 **Software.** All software is free and open-source. Installation guides are on
-the [setup pages](https://aura-lab-siue.github.io/v2v-hub/resources/index.html).
+the [setup pages](https://aura-lab.siue.edu/v2v-hub/resources/index.html).
 
 - **VS Code**: your single workspace for writing, R, Quarto, and Git
 - **R**: statistical computing environment, run inside VS Code
@@ -408,7 +408,7 @@ prohibited.
 
 You are accountable for everything you submit, including whatever role AI played
 in producing it. See the
-[GitHub Education Copilot guide](https://aura-lab-siue.github.io/v2v-hub/resources/copilot-setup.html)
+[GitHub Education Copilot guide](https://aura-lab.siue.edu/v2v-hub/resources/copilot-setup.html)
 for how to use it responsibly.
 
 ## Participation and interaction

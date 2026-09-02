@@ -53,7 +53,7 @@ White Paper at a public address anyone can open.
 </li>
 <li>
   <span class="syl-fact-label">Textbook</span>
-  <span class="syl-fact-value"><a href="https://aura-lab-siue.github.io/v2v/">From Vibes to Variables, 3rd ed.</a></span>
+  <span class="syl-fact-value"><a href="https://aura-lab.siue.edu/v2v/">From Vibes to Variables, 3rd ed.</a></span>
   <span class="syl-fact-note">Free and online. Nothing to buy, ever.</span>
 </li>
 </ul>
@@ -293,12 +293,12 @@ gives a 70% final grade.
 
 **Textbook.** This course uses an Open Educational Resource (OER): *From Vibes to
 Variables: A Field Guide to Open Media Science* (3rd Ed.), free and online at
-[aura-lab-siue.github.io/v2v](https://aura-lab-siue.github.io/v2v/). There is no
+[aura-lab.siue.edu/v2v](https://aura-lab.siue.edu/v2v/). There is no
 textbook to purchase. Read it as-is; the optional "Graduate edition" toggle stays
 off.
 
 **Software.** All software is free and open-source. Installation guides are on
-the [setup pages](https://aura-lab-siue.github.io/v2v-hub/resources/index.html).
+the [setup pages](https://aura-lab.siue.edu/v2v-hub/resources/index.html).
 
 - **VS Code**: your single workspace for writing, R, Quarto, and Git
 - **R**: statistical computing environment, run inside VS Code
@@ -337,7 +337,7 @@ prohibited.
 
 You are accountable for everything you submit, including whatever role AI played
 in producing it. See the
-[GitHub Education Copilot guide](https://aura-lab-siue.github.io/v2v-hub/resources/copilot-setup.html)
+[GitHub Education Copilot guide](https://aura-lab.siue.edu/v2v-hub/resources/copilot-setup.html)
 for how to use it responsibly.
 
 ## Participation and interaction

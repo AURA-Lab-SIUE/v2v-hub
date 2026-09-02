@@ -10,7 +10,7 @@ Part of the **AURA Lab** *From Vibes to Variables* teaching stack:
 | Product | Repo | What it is |
 |---------|------|------------|
 | **V2V Hub** (this repo) | `AURA-Lab-SIUE/v2v-hub` | Course website: syllabus, schedule, setup, R workbook |
-| **Textbook** | [`AURA-Lab-SIUE/v2v`](https://github.com/AURA-Lab-SIUE/v2v) | *From Vibes to Variables* (14 chapters) &middot; [read online](https://aura-lab-siue.github.io/v2v/) |
+| **Textbook** | [`AURA-Lab-SIUE/v2v`](https://github.com/AURA-Lab-SIUE/v2v) | *From Vibes to Variables* (14 chapters) &middot; [read online](https://aura-lab.siue.edu/v2v/) |
 | **`v2v` R package** | [`AURA-Lab-SIUE/v2v-r`](https://github.com/AURA-Lab-SIUE/v2v-r) | Companion package: Twitch practice corpus + student helpers |
 | **Course workspace** | [`AURA-Lab-SIUE/v2v-workspace`](https://github.com/AURA-Lab-SIUE/v2v-workspace) | VS Code template: journals, project folders, Git |
 

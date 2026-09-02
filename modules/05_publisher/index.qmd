@@ -176,7 +176,7 @@ The paired conference poster is graded as a separate requirement shared with MC 
 
 ## Related Resources
 
-- [From Vibes to Variables textbook](https://aura-lab-siue.github.io/v2v/)
+- [From Vibes to Variables textbook](https://aura-lab.siue.edu/v2v/)
 - [Publishing Lab](../../workbook/07-publishing.qmd)
 - [GitHub Setup](../../resources/github-setup.qmd)
 - [v2v package (GitHub)](https://github.com/AURA-Lab-SIUE/v2v-r)

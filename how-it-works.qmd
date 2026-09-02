@@ -15,7 +15,7 @@ This course uses four connected tools. Each one has a specific job, and they all
 | Check the schedule or find an assignment description | **This website** (V2V Hub) |
 | Open this week's workbook lab | **VS Code** (in your course workspace) |
 | Write a journal entry or organize notes | **VS Code** (your course workspace) |
-| Read the textbook | **[From Vibes to Variables](https://aura-lab-siue.github.io/v2v/)** (online) or alongside your workspace |
+| Read the textbook | **[From Vibes to Variables](https://aura-lab.siue.edu/v2v/)** (online) or alongside your workspace |
 | Run R code or render a document | **VS Code** |
 | Submit an assignment | **Blackboard** |
 | Push my work to GitHub | **VS Code Source Control** (or GitHub Desktop) |

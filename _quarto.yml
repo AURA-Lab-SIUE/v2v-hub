@@ -45,7 +45,7 @@ website:
         href: workspace.qmd
     right:
       - text: "Textbook"
-        href: https://aura-lab-siue.github.io/v2v/
+        href: https://aura-lab.siue.edu/v2v/
         target: _blank
 
   sidebar:
@@ -65,35 +65,35 @@ website:
             - text: "Phase I: The Journalist"
               href: modules/01_journalist/index.qmd
             - text: "Ch 1: The Science of Storytelling"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter01.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter01.html
             - text: "Ch 2: The Open Workspace"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter02.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter02.html
             - text: "Ch 3: Knowing and Knowing Well"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter03.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter03.html
 
         - section: "Part II: Planning"
           contents:
             - text: "Phase II: The Architect"
               href: modules/02_architect/index.qmd
             - text: "Ch 4: Intelligence Gathering"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter04.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter04.html
             - text: "Ch 5: Theory as a Lens"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter05.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter05.html
             - text: "Ch 6: The Prospectus"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter06.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter06.html
 
         - section: "Part III: Operationalization"
           contents:
             - text: "Phase III: The Builder"
               href: modules/03_builder/index.qmd
             - text: "Ch 7: Structured Listening"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter07.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter07.html
             - text: "Ch 8: From Vibes to Variables"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter08.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter08.html
             - text: "[R] Codebook Lab"
               href: workbook/01-codebook.qmd
             - text: "Ch 9: The Rulebook and First Workspace"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter09.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter09.html
             - text: "[R] Data Collection Lab"
               href: workbook/02-data-collection.qmd
 
@@ -102,7 +102,7 @@ website:
             - text: "Phase IV: The Analyst"
               href: modules/04_analyst/index.qmd
             - text: "Ch 10: The Sample"
-              href: https://aura-lab-siue.github.io/v2v/chapters/chapter10.html
+              href: https://aura-lab.siue.edu/v2v/chapters/chapter10.html
             - text: "Meet R"
               href: workbook/03-meet-r.qmd
             - text: "Ch 11: Wrangling the Data [R]"

@@ -137,7 +137,7 @@ Ready-to-use templates live in your course workspace under `_templates/`.
 ## FAQ {#faq}
 
 **Q: Do I need to buy the textbook?**
-No. *From Vibes to Variables* is free and open access. [Read it online](https://aura-lab-siue.github.io/v2v/).
+No. *From Vibes to Variables* is free and open access. [Read it online](https://aura-lab.siue.edu/v2v/).
 
 **Q: Can I use RStudio or another editor instead of VS Code?**
 This course standardizes on VS Code so everyone shares one environment and one set of instructions. Learning it deeply is part of the course.
@@ -159,7 +159,7 @@ Reach out to Dr. Leith early. The phases are structured but timelines can flex.
 ## More help
 
 - **Setup:** [Getting Started](../setup.qmd) walks through the whole install in about 15 minutes.
-- **Concepts:** the relevant [textbook](https://aura-lab-siue.github.io/v2v/) chapter usually explains it.
+- **Concepts:** the relevant [textbook](https://aura-lab.siue.edu/v2v/) chapter usually explains it.
 - **Email:** aleith@siue.edu (allow 24 hours Mon-Fri).
 - **Office hours:** TuTh 12:30 to 1:45 PM and 3:30 to 5:00 PM, Dunham Hall 1017.
 

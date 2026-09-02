@@ -31,7 +31,7 @@ Install R, VS Code, and GitHub, then clone the course workspace. One folder hold
 
 Fourteen chapters from foundations to publication. Free and open access.
 
-[Open textbook](https://aura-lab-siue.github.io/v2v/){.btn .btn-primary}
+[Open textbook](https://aura-lab.siue.edu/v2v/){.btn .btn-primary}
 :::
 
 ::: card
@@ -94,7 +94,7 @@ Three tools work together throughout the course. Each serves a distinct role, an
 |------|-------------|-----------------|
 | [**Course Workspace**](workspace.qmd) | VS Code workspace for journals, notes, and project files | Every week, as your personal research archive |
 | [**R Workbook**](workbook/index.qmd) | Hands-on R tutorials with narrated videos | Parts III to V, learning R for data analysis |
-| [**Textbook**](https://aura-lab-siue.github.io/v2v/) | *Vibes to Variables* (3rd Edition, 14 chapters) | Every week, for the conceptual foundation of each part |
+| [**Textbook**](https://aura-lab.siue.edu/v2v/) | *Vibes to Variables* (3rd Edition, 14 chapters) | Every week, for the conceptual foundation of each part |
 
 ## Course information
 

@@ -67,7 +67,7 @@ Verification can take a day or two. If it does not come through, you can still c
 ### Be careful
 
 :::{.pitfall}
-Copilot will confidently suggest R functions that do not exist, or the wrong argument for one that does. Before you trust a suggestion, check it against the [textbook](https://aura-lab-siue.github.io/v2v/), the workbook, or the function's help page (`?function_name` in R).
+Copilot will confidently suggest R functions that do not exist, or the wrong argument for one that does. Before you trust a suggestion, check it against the [textbook](https://aura-lab.siue.edu/v2v/), the workbook, or the function's help page (`?function_name` in R).
 :::
 
 - Do not accept a statistical test or interpretation you cannot explain in your own words.
