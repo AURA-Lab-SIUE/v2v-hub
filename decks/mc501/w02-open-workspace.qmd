@@ -118,19 +118,50 @@ username.
 
 ## Install in this order
 
-1. **R**, from cran.r-project.org
-2. **VS Code**, from code.visualstudio.com
+1. **[R](https://cran.r-project.org/)**, from cran.r-project.org
+2. **[VS Code](https://code.visualstudio.com/)**, from code.visualstudio.com
 3. **The R extension** inside VS Code, by REditorSupport
-4. **Quarto**, from quarto.org
+4. **[Quarto](https://quarto.org/docs/get-started/)**, from quarto.org
 5. **The Quarto extension** inside VS Code
-6. **Git**, from git-scm.com
+6. **[Git](https://git-scm.com/downloads)**, from git-scm.com
+
+Click a name to open its download page. Steps 3 and 5 happen inside VS Code, not in a browser.
 
 The order is not decorative. Each one looks for the one before it and gets confused when it
 is missing.
 
+## Every link from tonight
+
+Every page below is on the Hub, under **Resources** in the top menu.
+
+| For this | Open this |
+|---|---|
+| Installing R | [Install R](https://aura-lab.siue.edu/v2v-hub/resources/install-r.html) |
+| Installing VS Code | [Install VS Code](https://aura-lab.siue.edu/v2v-hub/resources/install-vscode.html) |
+| Making a GitHub account | [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html) |
+| Installing the course package | [Install v2v](https://aura-lab.siue.edu/v2v-hub/resources/install-v2v.html) |
+| Building your workspace folder | [Workspace Setup](https://aura-lab.siue.edu/v2v-hub/resources/workspace-setup.html) |
+| All of it in one place | [Resources](https://aura-lab.siue.edu/v2v-hub/resources/index.html) |
+
+Bookmark the Resources page tonight. Everything else is one click from there.
+
+## Make your GitHub account
+
+**GitHub** is a website that stores your files and their history. Git is the program on your
+laptop; GitHub is the copy online. You need the account before Git is any use to you.
+
+1. Sign up at [github.com/signup](https://github.com/signup). Choose a **professional
+   username**, because employers will read it.
+2. Add a profile photo and a short profile README saying who you are and what you study.
+3. Claim the free [Student Developer Pack](https://education.github.com/pack) with your
+   SIUE email.
+
+Walked through one step at a time: [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
+
 ## Now get the setup file
 
-Download it from the Hub. The link is on the Resources page, or type it straight in:
+Download it from the Hub. It is the blue button on the
+[Resources page](https://aura-lab.siue.edu/v2v-hub/resources/index.html), or click it here:
 
 [aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd](https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd)
 
@@ -242,7 +273,9 @@ Run it before your first line of analysis code. Commit it before you collect you
 
 ## Before Week 3
 
-- **Due:** your GitHub Profile, with the stack installed and `setup()` passing
+- **Due Monday, September 7, 11:59 PM:** your
+  [GitHub Profile](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#github-profile),
+  25 points, with the stack installed and `setup()` passing
 - Read **Chapter 3** (Ethics) and **Chapter 4** (Intelligence Gathering), graduate edition toggle on
 - Read the assigned article: **Nosek et al. (2018)**, "The preregistration revolution"
 - Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
