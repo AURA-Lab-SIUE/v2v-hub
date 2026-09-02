@@ -158,15 +158,31 @@ laptop; GitHub is the copy online. You need the account before Git is any use to
 
 Walked through one step at a time: [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
 
-## Now get the setup file
+## Make your workspace folder
 
-Download it from the Hub. It is the blue button on the
+One folder holds everything you write this term. You copy ours. You do not build it.
+
+1. Open the [v2v-workspace template](https://github.com/AURA-Lab-SIUE/v2v-workspace)
+2. Click the green **Use this template**, then **Create a new repository**, and name it
+   `mc501-workspace`
+3. In VS Code press `Ctrl+Shift+P`, or `Cmd+Shift+P` on a Mac, type **Git: Clone**, press
+   Enter, and paste your new repository's URL
+
+**You should see:** your folder names down the left side of VS Code.
+
+Walked through with more detail: [Workspace Setup](https://aura-lab.siue.edu/v2v-hub/resources/workspace-setup.html)
+
+## Now open the setup file
+
+**It is already in your workspace**, in the top folder: `00-check-your-setup.qmd`. Click it.
+
+No workspace yet? Download the file on its own from the
 [Resources page](https://aura-lab.siue.edu/v2v-hub/resources/index.html), or click it here:
 
 [aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd](https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd)
 
-Save it into your workspace folder and open it in VS Code. It walks you through the rest, one grey box at a time, and it tells you
-what each box should print.
+It walks you through the rest, one grey box at a time, and it tells you what each box
+should print.
 
 Work through it. I am coming round the room. Raise a hand the moment something looks wrong,
 not at the end.
