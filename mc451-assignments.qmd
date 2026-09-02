@@ -5,9 +5,9 @@ title: "MC 451 Assignments"
 :::{.phase-header}
 # MC 451 Assignments
 
-**Every assignment in this course, what it asks for, and when it is due.**
+**Every assignment in this course, grouped by phase, with what it asks for and when it is due.**
 
-This page is the full version. The Blackboard entry for each assignment is deliberately brief and links back here, so there is one place to check and one place that can be wrong.
+Each assignment shows a short description. Open **Full requirements** for the detail: what to include, how long, and what earns full credit.
 :::
 
 ::: {.callout-note}
@@ -17,42 +17,47 @@ This page is the full version. The Blackboard entry for each assignment is delib
 
 Everything is due at **11:59 PM** on the **Friday** listed.
 
-Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, just submit again.
+Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, submit again.
 :::
 
 ## Everything at a glance
 
-| Due | Assignment | Points |
-|---|---|---:|
-| Friday, August 28 | [Syllabus Contract](#syllabus-contract) | 25 |
-| Friday, September 4 | [GitHub Profile](#github-profile) | 25 |
-| Friday, September 11 | [Project Setup](#project-setup) | 25 |
-| Friday, September 18 | [Librarian Visit Report](#librarian-visit-report) | 50 |
-| Friday, September 25 | [CITI Ethics Certification](#citi-ethics-certification) | 25 |
-| Friday, September 25 | [Annotated Manuscript](#annotated-manuscript) | 25 |
-| Friday, October 2 | [Topic Selection and Research Questions](#topic-selection-and-research-questions) | 25 |
-| Friday, October 9 | [Project Prospectus](#project-prospectus) | 25 |
-| Friday, October 16 | [Definitions Practice](#definitions-practice) | 25 |
-| Friday, October 23 | [Codebook and Qualitative Memo](#codebook-and-qualitative-memo) | 50 |
-| Friday, November 6 | [Sampling Plan and Pilot](#sampling-plan-and-pilot) | 75 |
-| Friday, November 6 | [Data Wrangling in R](#data-wrangling-in-r) | 50 |
-| Friday, November 13 | [Describing Data in R](#describing-data-in-r) | 75 |
-| Friday, November 20 | [Inferencing Data in R](#inferencing-data-in-r) | 100 |
-| Friday, December 18 | [White Paper](#white-paper) | 250 |
-| Every week | [Weekly reading journal](#weekly-reading-journal), 14 entries | 140 |
-| End of term | Journal consistency | 10 |
+| Due | Assignment | Phase | Points |
+|---|---|---|---:|
+| Friday, August 28 | [Syllabus Contract](#syllabus-contract) | Phase II | 25 |
+| Friday, September 4 | [GitHub Profile](#github-profile) | Phase II | 25 |
+| Friday, September 11 | [Project Setup](#project-setup) | Phase II | 25 |
+| Friday, September 18 | [Librarian Visit Report](#librarian-visit-report) | Phase II | 50 |
+| Friday, September 25 | [CITI Ethics Certification](#citi-ethics-certification) | Phase III | 25 |
+| Friday, September 25 | [Annotated Manuscript](#annotated-manuscript) | Phase III | 25 |
+| Friday, October 2 | [Topic Selection and Research Questions](#topic-selection-and-research-questions) | Phase III | 25 |
+| Friday, October 9 | [Project Prospectus](#project-prospectus) | Phase III | 25 |
+| Friday, October 16 | [Definitions Practice](#definitions-practice) | Phase III | 25 |
+| Friday, October 23 | [Codebook and Qualitative Memo](#codebook-and-qualitative-memo) | Phase III | 50 |
+| Friday, November 6 | [Sampling Plan and Pilot](#sampling-plan-and-pilot) | Phase III | 75 |
+| Friday, November 6 | [Data Wrangling in R](#data-wrangling-in-r) | Phase IV | 50 |
+| Friday, November 13 | [Describing Data in R](#describing-data-in-r) | Phase IV | 75 |
+| Friday, November 20 | [Inferencing Data in R](#inferencing-data-in-r) | Phase IV | 100 |
+| Friday, December 18 | [White Paper](#white-paper) | Phase V | 250 |
+| Every week | [Weekly reading journal](#weekly-reading-journal), 14 entries | Phase I | 140 |
+| End of term | Journal consistency | Phase I | 10 |
 
 **Total: 1000 points.**
 
 ---
 
-## Weekly reading journal
+## Phase I: The Journalist {#phase-i-the-journalist}
+
+*Foundation.* The habit that runs the whole term. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/01_journalist/?edition=mc451)
+
+### Weekly reading journal {#weekly-reading-journal}
 
 **10 points each, 14 entries, plus 10 points for consistency. 150 points total.** Due every Friday at 11:59 PM.
 
-**Due:** every Friday by 11:59 PM | **Scoring:** 10 pts per week across 14 teaching weeks, plus 10 pts for consistency across the semester
-
 Each week, write a reflection on the assigned reading. Choose one of three thinking paths:
+
+<details class="syl-policy">
+<summary>Full requirements, including length and the fourteen due dates</summary>
 
 1. **The Connector**: link the reading to your project, other concepts, or real-world examples
 2. **The Troubleshooter**: document a challenge you encountered and how you worked through it
@@ -102,9 +107,13 @@ There is **no Week 14** -- that is Thanksgiving.
 | Week 13 | Friday, November 20 |
 | Week 15 | Friday, December 4 |
 
+</details>
+
 ---
 
-## The assignments
+## Phase II: The Architect {#phase-ii-the-architect}
+
+*Planning.* Get the tools working and the project pointed at something answerable. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/02_architect/?edition=mc451)
 
 ### Syllabus Contract {#syllabus-contract}
 
@@ -112,26 +121,30 @@ There is **no Week 14** -- that is Thanksgiving.
 
 Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
 
----
-
 ### GitHub Profile {#github-profile}
 
 **25 points. Due Friday, September 4, 11:59 PM.** *(Week 2)*
 
 Create a professional GitHub account with:
 
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 - A professional username and profile photo
 - A profile README introducing yourself and your research interests
 
 [GitHub Setup Guide](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
 
----
+</details>
 
 ### Project Setup {#project-setup}
 
 **25 points. Due Friday, September 11, 11:59 PM.** *(Week 3)*
 
 Initialize your course workspace as a GitHub repository and push it to GitHub. This proves VS Code, GitHub, and git all work together.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 1. Open GitHub Desktop and create a new repository from your course workspace folder
 2. Make an initial commit ("Initial workspace setup")
@@ -142,13 +155,16 @@ From this point forward you commit and push your journal entries each week using
 
 [GitHub Desktop Setup Guide](https://aura-lab.siue.edu/v2v-hub/resources/github-desktop-setup.html)
 
----
+</details>
 
 ### Librarian Visit Report {#librarian-visit-report}
 
 **50 points. Due Friday, September 18, 11:59 PM.** *(Week 4)*
 
 Meet with a SIUE librarian to identify and evaluate a data archive for your research project. Write a report documenting:
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 1. **The archive**: name, type, scope
 2. **What you learned**: date range, searchability, export options
@@ -157,13 +173,19 @@ Meet with a SIUE librarian to identify and evaluate a data archive for your rese
 
 Submit as PDF: `Lastname_ArchivistReport.pdf`
 
+</details>
+
+---
+
+## Phase III: The Builder {#phase-iii-the-builder}
+
+*Operationalization.* Turn concepts into an instrument a stranger could apply. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/03_builder/?edition=mc451)
+
 ### CITI Ethics Certification {#citi-ethics-certification}
 
 **25 points. Due Friday, September 25, 11:59 PM.** *(Week 5)*
 
 Complete the CITI Program's Social and Behavioral Research training and submit your completion certificate. This is due early because it gates the human-subjects reasoning you apply for the rest of the term.
-
----
 
 ### Annotated Manuscript {#annotated-manuscript}
 
@@ -171,15 +193,14 @@ Complete the CITI Program's Social and Behavioral Research training and submit y
 
 Find and annotate one peer-reviewed research article related to your topic. Focus on the research gap, theoretical framework, method, findings, and limitations. Write a connection statement explaining how this article relates to your project.
 
----
-
 ### Topic Selection and Research Questions {#topic-selection-and-research-questions}
 
 **25 points. Due Friday, October 2, 11:59 PM.** *(Week 6)*
 
 Submit your finalized topic, formal research questions (and hypotheses where appropriate), a variable preview, and a justification for why these questions matter.
 
----
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **Run every question past the five criteria before you submit it:**
 
@@ -194,13 +215,16 @@ Submit your finalized topic, formal research questions (and hypotheses where app
    genuinely open.
 5. **It matters.** A question can be answerable and still be trivia.
 
+</details>
+
 ### Project Prospectus {#project-prospectus}
 
 **25 points. Due Friday, October 9, 11:59 PM.** *(Week 7)*
 
 Draft a one-page research plan: topic, theory, data source, preliminary research questions, and a rough timeline.
 
----
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **What a prospectus is.** Roughly one page: what you are studying, why it matters, and
 how you will do it. The model prospectus in Chapter 6 runs about 250 words. It is a
@@ -220,13 +244,16 @@ not yet understand it well enough to begin.
 
 Draft all six, even badly, then cut.
 
+</details>
+
 ### Definitions Practice {#definitions-practice}
 
 **25 points. Due Friday, October 16, 11:59 PM.** *(Week 8)*
 
 Define at least four variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge-case decision rules.
 
----
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **Each variable needs both kinds of definition, written side by side.**
 
@@ -241,13 +268,16 @@ measure; an operational definition with no conceptual definition is a procedure 
 lost track of why it exists. That is how a study ends up precisely measuring something
 nobody wanted to know.
 
+</details>
+
 ### Codebook and Qualitative Memo {#codebook-and-qualitative-memo}
 
 **50 points. Due Friday, October 23, 11:59 PM.** *(Week 9)*
 
 Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a 200 to 300 word qualitative memo describing the patterns you observed during immersion.
 
----
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **The two parts are graded together as one 50-point assignment.**
 
@@ -255,17 +285,28 @@ Submit your complete codebook (study overview, unit of analysis, all variables w
 during immersion. It is the written record of what your Chapter 7 watching actually
 taught you, and it explains *why* your codebook has the categories it has.
 
+</details>
+
 ### Sampling Plan and Pilot {#sampling-plan-and-pilot}
 
 **75 points. Due Friday, November 6, 11:59 PM.** *(Week 11)*
 
 Design your sampling strategy (search terms, date range, method) and pilot test your codebook on 10 to 20 items. Document edge cases, coding decisions, and any revisions.
 
+---
+
+## Phase IV: The Analyst {#phase-iv-the-analyst}
+
+*Execution.* Draw the sample, wrangle the data, and describe what is there. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/04_analyst/?edition=mc451)
+
 ### Data Wrangling in R {#data-wrangling-in-r}
 
 **50 points. Due Friday, November 6, 11:59 PM.** *(Week 11)*
 
 Using the Twitch data from the `v2v` package:
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 1. **Hand-code** a variable for a 30-message sample drawn with `sample_messages()`
 2. **Load and clean** the chat and stream tables (timestamps, message length, factors, missing values)
@@ -274,11 +315,16 @@ Using the Twitch data from the `v2v` package:
 
 This assignment teaches the full data pipeline, from raw input to analysis-ready output.
 
+</details>
+
 ### Describing Data in R {#describing-data-in-r}
 
 **75 points. Due Friday, November 13, 11:59 PM.** *(Week 12)*
 
 Using `twitch_analysis.RDS`:
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 1. Create **frequency tables** for key categorical variables
 2. Build **ggplot2 visualizations** (bar charts, trend lines) with professional formatting
@@ -287,13 +333,16 @@ Using `twitch_analysis.RDS`:
 
 **MC 501:** this assignment is worth 100 points rather than 75, and the extra weight is in the diagnostics. Report the distributional checks behind each figure, not only the figure: what the shape of the variable is, whether the assumptions of the test you are heading toward look tenable, and what the outliers are.
 
----
+</details>
 
 ### Inferencing Data in R {#inferencing-data-in-r}
 
 **100 points. Due Friday, November 20, 11:59 PM.** *(Week 13)*
 
 Using `twitch_analysis.RDS`:
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 1. **State your hypothesis** in plain English before running any code
 2. **Select the appropriate test** based on your variable types:
@@ -306,11 +355,22 @@ Using `twitch_analysis.RDS`:
 
 **MC 501:** go deeper on the same test rather than adding more tests. Report and check the assumptions, show the diagnostics, and give the power statistics behind the design. Distinguish statistical significance from practical size explicitly.
 
+</details>
+
 ---
+
+## Phase V: The Publisher {#phase-v-the-publisher}
+
+*Inference and Publication.* Test the relationship and publish the result. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/05_publisher/?edition=mc451)
 
 ### White Paper {#white-paper}
 
 **250 points. Due Friday, December 18, 11:59 PM.**
+
+The final deliverable: your study written up in IMRaD, rendered to PDF and published to the web.
+
+<details class="syl-policy">
+<summary>Full requirements and what to submit</summary>
 
 ## Submission (MC 451)
 
@@ -323,6 +383,8 @@ Submit both to Blackboard by Friday, December 18, 2026 at 11:59 PM:
 
 The full rubric, the project structure, and the recommended writing order are on the [Phase V page](https://aura-lab.siue.edu/v2v-hub/modules/05_publisher/?edition=mc451).
 
+</details>
+
 ---
 
-*Anything here that disagrees with the syllabus is a mistake -- tell me and I will fix it. The syllabus is the contract of record.*
+*Anything here that disagrees with the syllabus is a mistake. Tell me and I will fix it: the syllabus is the contract of record.*

@@ -5,9 +5,9 @@ title: "MC 501 Assignments"
 :::{.phase-header}
 # MC 501 Assignments
 
-**Every assignment in this course, what it asks for, and when it is due.**
+**Every assignment in this course, grouped by phase, with what it asks for and when it is due.**
 
-This page is the full version. The Blackboard entry for each assignment is deliberately brief and links back here, so there is one place to check and one place that can be wrong.
+Each assignment shows a short description. Open **Full requirements** for the detail: what to include, how long, and what earns full credit.
 :::
 
 ::: {.callout-note}
@@ -15,43 +15,48 @@ This page is the full version. The Blackboard entry for each assignment is delib
 
 **Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting** -- grading happens from the Blackboard submission. Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it.
 
-Everything is due at **11:59 PM** on the **Monday** listed. You are welcome to submit any assignment early -- attempts are unlimited, so an early submission can still be revised right up to the deadline.
+Everything is due at **11:59 PM** on the **Monday** listed. You are welcome to submit any assignment early. Attempts are unlimited, so an early submission can still be revised right up to the deadline.
 
-Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, just submit again.
+Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, submit again.
 :::
 
 ## Everything at a glance
 
-| Due | Assignment | Points |
-|---|---|---:|
-| Monday, August 31 | [Syllabus Contract](#syllabus-contract) | 25 |
-| Monday, September 7 | [GitHub Profile](#github-profile) | 25 |
-| Monday, September 21 | [Librarian Visit Report](#librarian-visit-report) | 50 |
-| Monday, September 28 | [CITI Ethics Certification](#citi-ethics-certification) | 25 |
-| Monday, September 28 | [Annotated Manuscripts, three articles](#annotated-manuscripts-three-articles) | 25 |
-| Monday, October 5 | [Topic Selection and Research Questions](#topic-selection-and-research-questions) | 25 |
-| Monday, October 12 | [Research Proposal, sentence outline](#research-proposal-sentence-outline) | 75 |
-| Monday, October 19 | [Definitions Practice](#definitions-practice) | 25 |
-| Monday, October 26 | [Extended Codebook and Reliability Protocol](#extended-codebook-and-reliability-protocol) | 75 |
-| Monday, November 2 | [Sampling Plan and Pilot, 20 to 30 items](#sampling-plan-and-pilot-20-to-30-items) | 75 |
-| Monday, November 9 | [Data Wrangling in R](#data-wrangling-in-r) | 50 |
-| Monday, November 16 | [Describing Data in R](#describing-data-in-r) | 100 |
-| Monday, November 23 | [Inferencing Data in R](#inferencing-data-in-r) | 100 |
-| Friday, December 18 | [White Paper and conference poster](#white-paper-and-conference-poster) | 200 |
-| Every week | [Weekly reading journal](#weekly-reading-journal), 14 entries | 140 |
-| End of term | Journal consistency | 10 |
+| Due | Assignment | Phase | Points |
+|---|---|---|---:|
+| Monday, August 31 | [Syllabus Contract](#syllabus-contract) | Phase II | 25 |
+| Monday, September 7 | [GitHub Profile](#github-profile) | Phase II | 25 |
+| Monday, September 21 | [Librarian Visit Report](#librarian-visit-report) | Phase II | 50 |
+| Monday, September 28 | [CITI Ethics Certification](#citi-ethics-certification) | Phase III | 25 |
+| Monday, September 28 | [Annotated Manuscripts, three articles](#annotated-manuscripts-three-articles) | Phase III | 25 |
+| Monday, October 5 | [Topic Selection and Research Questions](#topic-selection-and-research-questions) | Phase III | 25 |
+| Monday, October 12 | [Research Proposal, sentence outline](#research-proposal-sentence-outline) | Phase III | 75 |
+| Monday, October 19 | [Definitions Practice](#definitions-practice) | Phase III | 25 |
+| Monday, October 26 | [Extended Codebook and Reliability Protocol](#extended-codebook-and-reliability-protocol) | Phase III | 75 |
+| Monday, November 2 | [Sampling Plan and Pilot, 20 to 30 items](#sampling-plan-and-pilot-20-to-30-items) | Phase III | 75 |
+| Monday, November 9 | [Data Wrangling in R](#data-wrangling-in-r) | Phase IV | 50 |
+| Monday, November 16 | [Describing Data in R](#describing-data-in-r) | Phase IV | 100 |
+| Monday, November 23 | [Inferencing Data in R](#inferencing-data-in-r) | Phase IV | 100 |
+| Friday, December 18 | [White Paper and conference poster](#white-paper-and-conference-poster) | Phase V | 200 |
+| Every week | [Weekly reading journal](#weekly-reading-journal), 14 entries | Phase I | 140 |
+| End of term | Journal consistency | Phase I | 10 |
 
 **Total: 1025 points.**
 
 ---
 
-## Weekly reading journal
+## Phase I: The Journalist {#phase-i-the-journalist}
+
+*Foundation.* The habit that runs the whole term. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/01_journalist/?edition=mc501)
+
+### Weekly reading journal {#weekly-reading-journal}
 
 **10 points each, 14 entries, plus 10 points for consistency. 150 points total.** Due every Monday at 11:59 PM.
 
-**Due:** every Monday by 11:59 PM | **Scoring:** 10 pts per week across 14 teaching weeks, plus 10 pts for consistency across the semester
-
 Each week, write a reflection on the assigned reading. Choose one of three thinking paths:
+
+<details class="syl-policy">
+<summary>Full requirements, including length and the fourteen due dates</summary>
 
 1. **The Connector**: link the reading to your project, other concepts, or real-world examples
 2. **The Troubleshooter**: document a challenge you encountered and how you worked through it
@@ -103,9 +108,13 @@ There is **no Week 14** -- that is Thanksgiving.
 | Week 13 | Monday, November 23 |
 | Week 15 | Monday, December 7 |
 
+</details>
+
 ---
 
-## The assignments
+## Phase II: The Architect {#phase-ii-the-architect}
+
+*Planning.* Get the tools working and the project pointed at something answerable. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/02_architect/?edition=mc501)
 
 ### Syllabus Contract {#syllabus-contract}
 
@@ -113,26 +122,30 @@ There is **no Week 14** -- that is Thanksgiving.
 
 Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
 
----
-
 ### GitHub Profile {#github-profile}
 
 **25 points. Due Monday, September 7, 11:59 PM.** *(Week 2)*
 
 Create a professional GitHub account with:
 
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 - A professional username and profile photo
 - A profile README introducing yourself and your research interests
 
 [GitHub Setup Guide](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
 
----
+</details>
 
 ### Librarian Visit Report {#librarian-visit-report}
 
 **50 points. Due Monday, September 21, 11:59 PM.** *(Week 4)*
 
 Meet with a SIUE librarian to identify and evaluate a data archive for your research project. Write a report documenting:
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 1. **The archive**: name, type, scope
 2. **What you learned**: date range, searchability, export options
@@ -141,15 +154,13 @@ Meet with a SIUE librarian to identify and evaluate a data archive for your rese
 
 Submit as PDF: `Lastname_ArchivistReport.pdf`
 
----
-
-### A note on Project Setup
-
-MC 501 has no separate Project Setup assignment. You build the workspace repository during the Week 2 class session, alongside Chapter 2, and you are expected to be committing and pushing your journal entries from that point forward.
-
-[GitHub Desktop Setup Guide](https://aura-lab.siue.edu/v2v-hub/resources/github-desktop-setup.html)
+</details>
 
 ---
+
+## Phase III: The Builder {#phase-iii-the-builder}
+
+*Operationalization.* Turn concepts into an instrument a stranger could apply. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/03_builder/?edition=mc501)
 
 ### CITI Ethics Certification {#citi-ethics-certification}
 
@@ -157,9 +168,12 @@ MC 501 has no separate Project Setup assignment. You build the workspace reposit
 
 Complete the CITI Program's Social and Behavioral Research training and submit your completion certificate.
 
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 Your ethics work also includes the **non-human-subjects IRB determination** you would actually file for this project. Drafting it builds familiarity with the protocol process you will need for doctoral study, even though a public-content content analysis is unlikely to require review.
 
----
+</details>
 
 ### Annotated Manuscripts, three articles {#annotated-manuscripts-three-articles}
 
@@ -167,15 +181,14 @@ Your ethics work also includes the **non-human-subjects IRB determination** you 
 
 Find and annotate **three** peer-reviewed research articles related to your topic. For each, address the research gap, theoretical framework, method, findings, and limitations. Then write a single synthesis statement explaining how the three relate to each other and to your project. The synthesis, not the three summaries, is where the graduate work lives.
 
----
-
 ### Topic Selection and Research Questions {#topic-selection-and-research-questions}
 
 **25 points. Due Monday, October 5, 11:59 PM.** *(Week 6)*
 
 Submit your finalized topic, formal research questions (and hypotheses where appropriate), a variable preview, and a justification for why these questions matter.
 
----
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **Run every question past the five criteria before you submit it:**
 
@@ -190,15 +203,20 @@ Submit your finalized topic, formal research questions (and hypotheses where app
    genuinely open.
 5. **It matters.** A question can be answerable and still be trivia.
 
+</details>
+
 ### Research Proposal, sentence outline {#research-proposal-sentence-outline}
 
 **75 points. Due Monday, October 12, 11:59 PM.** *(Week 7)*
 
 A structured sentence outline that could serve as the front half of a conference paper: framing, theoretical positioning, the questions, and the proposed design. Every point in the outline is a full sentence carrying an actual claim, not a topic label.
 
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 This replaces the undergraduate one-page prospectus and is worth three times as much, because it is doing three times as much work.
 
----
+</details>
 
 ### Definitions Practice {#definitions-practice}
 
@@ -206,7 +224,8 @@ This replaces the undergraduate one-page prospectus and is worth three times as 
 
 Define at least four variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge-case decision rules.
 
----
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **Each variable needs both kinds of definition, written side by side.**
 
@@ -221,15 +240,20 @@ measure; an operational definition with no conceptual definition is a procedure 
 lost track of why it exists. That is how a study ends up precisely measuring something
 nobody wanted to know.
 
+</details>
+
 ### Extended Codebook and Reliability Protocol {#extended-codebook-and-reliability-protocol}
 
 **75 points. Due Monday, October 26, 11:59 PM.** *(Week 9)*
 
 Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a qualitative memo describing the patterns you observed during immersion.
 
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 Your codebook adds a **formal reliability protocol**: the planned sample size for the reliability subset, the target alpha threshold, the coder training procedure, and the revision triggers that say in advance what you will do if the threshold is missed.
 
----
+</details>
 
 ### Sampling Plan and Pilot, 20 to 30 items {#sampling-plan-and-pilot-20-to-30-items}
 
@@ -239,11 +263,18 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 
 ---
 
+## Phase IV: The Analyst {#phase-iv-the-analyst}
+
+*Execution.* Draw the sample, wrangle the data, and describe what is there. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/04_analyst/?edition=mc501)
+
 ### Data Wrangling in R {#data-wrangling-in-r}
 
 **50 points. Due Monday, November 9, 11:59 PM.** *(Week 11)*
 
 Using the Twitch data from the `v2v` package:
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 1. **Hand-code** a variable for a 30-message sample drawn with `sample_messages()`
 2. **Load and clean** the chat and stream tables (timestamps, message length, factors, missing values)
@@ -252,11 +283,16 @@ Using the Twitch data from the `v2v` package:
 
 This assignment teaches the full data pipeline, from raw input to analysis-ready output.
 
+</details>
+
 ### Describing Data in R {#describing-data-in-r}
 
 **100 points. Due Monday, November 16, 11:59 PM.** *(Week 12)*
 
 Using `twitch_analysis.RDS`:
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 1. Create **frequency tables** for key categorical variables
 2. Build **ggplot2 visualizations** (bar charts, trend lines) with professional formatting
@@ -265,13 +301,16 @@ Using `twitch_analysis.RDS`:
 
 **MC 501:** this assignment is worth 100 points rather than 75, and the extra weight is in the diagnostics. Report the distributional checks behind each figure, not only the figure: what the shape of the variable is, whether the assumptions of the test you are heading toward look tenable, and what the outliers are.
 
----
+</details>
 
 ### Inferencing Data in R {#inferencing-data-in-r}
 
 **100 points. Due Monday, November 23, 11:59 PM.** *(Week 13)*
 
 Using `twitch_analysis.RDS`:
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 1. **State your hypothesis** in plain English before running any code
 2. **Select the appropriate test** based on your variable types:
@@ -284,11 +323,22 @@ Using `twitch_analysis.RDS`:
 
 **MC 501:** go deeper on the same test rather than adding more tests. Report and check the assumptions, show the diagnostics, and give the power statistics behind the design. Distinguish statistical significance from practical size explicitly.
 
+</details>
+
 ---
+
+## Phase V: The Publisher {#phase-v-the-publisher}
+
+*Inference and Publication.* Test the relationship and publish the result. [Phase page](https://aura-lab.siue.edu/v2v-hub/modules/05_publisher/?edition=mc501)
 
 ### White Paper and conference poster {#white-paper-and-conference-poster}
 
 **200 points. Due Friday, December 18, 11:59 PM.**
+
+The final deliverable: your study written up in IMRaD, rendered to PDF and published to the web. Graduate students also submit a conference poster.
+
+<details class="syl-policy">
+<summary>Full requirements and what to submit</summary>
 
 ## Submission (MC 501)
 
@@ -302,6 +352,8 @@ Submit to Blackboard by Friday, December 18, 2026 at 11:59 PM:
 
 The full rubric, the project structure, and the recommended writing order are on the [Phase V page](https://aura-lab.siue.edu/v2v-hub/modules/05_publisher/?edition=mc501).
 
+</details>
+
 ---
 
-*Anything here that disagrees with the syllabus is a mistake -- tell me and I will fix it. The syllabus is the contract of record.*
+*Anything here that disagrees with the syllabus is a mistake. Tell me and I will fix it: the syllabus is the contract of record.*
