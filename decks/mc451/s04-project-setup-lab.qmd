@@ -80,18 +80,21 @@ them. On a Mac it may already be there.
 
 ## Prove all four are really there
 
-Installers fail quietly. Open VS Code, then **Terminal, New Terminal**, and run these:
+Installers fail quietly. Open VS Code, then **Terminal, New Terminal**, and run these two:
 
 ```bash
-R --version
-quarto --version
+quarto check
 git --version
 ```
 
-**You should see:** three version numbers, one per command.
+`quarto check` is Quarto's own self test. It checks itself, then goes looking for R, and
+prints a line for each thing it finds.
 
-**"command not found"** means that one did not finish, or your terminal opened before it
-did. Close the terminal, open a new one, and try again. That single step fixes most of it.
+**You should see:** green check marks from `quarto check`, and a version number from Git.
+
+**On Windows, typing `R --version` says "not recognized" even when R is perfectly fine.**
+The R installer does not add R to the command line and does not need to. Trust
+`quarto check`.
 
 ## Your turn {.discuss}
 
@@ -171,8 +174,8 @@ setup()
 
 ## When it breaks
 
-- **`command not found`** for anything. That terminal opened before the install finished.
-  Close it, open a new one.
+- **`quarto: command not found`.** That terminal opened before Quarto finished installing.
+  Close it, open a new one. This is the single most common problem today.
 - **`there is no package called 'v2v'`.** R is fine, the package is not there yet. Rerun
   the install step inside the check file.
 - **Red text in R is not automatically an error.** R prints ordinary progress in red. Read
@@ -184,7 +187,7 @@ setup()
 
 Every line should be true before you leave:
 
-- `R --version`, `quarto --version`, and `git --version` all answer
+- `quarto check` comes back clean, and `git --version` answers
 - Your own `mc451-workspace` exists on GitHub, and is cloned into VS Code
 - The extensions installed
 - `00-check-your-setup.qmd` runs and `setup()` comes back green
