@@ -12,15 +12,15 @@ format:
     transition: none
 ---
 
-## Today, and only today
+## What this video is for
 
 We are doing one thing: getting four programs onto your laptop, making your own copy of
 the course workspace, and running a file that proves it all works.
 
-That is the entire class. Nothing else is due today, nothing else gets covered today, and
-we are not moving on until the room is working.
+**Work along with me, do not watch first and do it later.** Pause whenever you need to and
+rewind anything that goes past too fast. Nothing here is a race, and the video will wait.
 
-## What you walk out with
+## What you will have at the end
 
 [Project Setup · 25 points · due Friday, September 11]{.eyebrow}
 
@@ -34,8 +34,9 @@ we are not moving on until the room is working.
 - It breaks in every section, every semester, for somebody
 - It is never because that person is bad at this
 - It is one version number disagreeing with another
-- The whole reason we do this in a room together is so it breaks where I can see it
-- Fifteen minutes stuck, then raise a hand. Not thirty.
+- **Pause the video the moment something looks wrong.** Do not push on and hope.
+- Fifteen minutes stuck is enough. Then email me the exact wording of the error, or bring
+  the laptop to office hours. Not two hours, and not the night before it is due.
 
 ## Install 1 of 4: R
 
@@ -47,7 +48,7 @@ your operating system and accept every default.
 **On a Mac you have to pick the right file:** Apple silicon or Intel. Apple menu, **About
 This Mac**, and read the chip.
 
-**Start this download now**, then keep reading. It is the biggest of the four.
+**Start this download now**, then keep watching. It is the biggest of the four.
 
 ## Install 2 of 4: VS Code
 
@@ -109,9 +110,9 @@ While the installers run:
   about how research software gets built, compared with Word or Photoshop?
 - Think of the last time software failed you. Did you assume the software was broken, or
   that you were? What made you pick that one?
-- What would you need to see today to believe that this is going to be worth it?
+- What would you need to see to believe that this is going to be worth it?
 
-*Two minutes with a neighbor, then we compare.*
+*Answer these in your journal this week. We pick them up when we next meet.*
 
 ## Step 1: make your own copy of the workspace
 
@@ -142,7 +143,7 @@ Nothing is on your computer yet. Only on GitHub.
 
 A box appears in the bottom right: **"This workspace has extension recommendations."**
 
-Click **Install All**. That is Quarto, R, and GitLens, and it means everyone in this room
+Click **Install All**. That is Quarto, R, and GitLens, and it means everyone in the course
 is working in the same environment.
 
 If the box already vanished, press `Ctrl+Shift+X` and search for **Quarto** and for **R**
@@ -160,7 +161,7 @@ Save it into your `mc451-workspace` folder, then open it in VS Code.
 You do not have to write it. You do not have to understand it. You click through it one
 grey box at a time, and it tells you what each box should print.
 
-Start now. I am coming round.
+**Pause here and work through the whole file.** The rest of this video assumes you have.
 
 ## What "working" looks like
 
@@ -175,12 +176,13 @@ setup()
 
 **Red next to Quarto or Git** is fine if you have not reached those steps yet.
 
-**Red under Required** is the one that needs me. Wave.
+**Red under Required** is the one that needs me. Email me that whole block of output,
+exactly as it appears, rather than describing it.
 
 ## When it breaks
 
 - **`quarto: command not found`.** That terminal opened before Quarto finished installing.
-  Close it, open a new one. This is the single most common problem today.
+  Close it, open a new one. This is the single most common problem in the whole setup.
 - **`there is no package called 'v2v'`.** R is fine, the package is not there yet. Rerun
   the install step inside the check file.
 - **Red text in R is not automatically an error.** R prints ordinary progress in red. Read
@@ -190,14 +192,16 @@ setup()
 
 ## Checkpoint
 
-Every line should be true before you leave:
+Every line should be true before you stop:
 
 - `quarto check` comes back clean, and `git --version` answers
 - Your own `mc451-workspace` exists on GitHub, and is cloned into VS Code
 - The extensions installed
 - `00-check-your-setup.qmd` runs and `setup()` comes back green
 
-Raise a hand if any line is not true. Do not go home and hope.
+If any line is not true, do not leave it there. Email me the exact wording of the error,
+or bring the laptop to office hours. Closing the laptop and hoping is the one approach
+that never works.
 
 ## Before next time
 
