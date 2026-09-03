@@ -1,0 +1,172 @@
+---
+title: "Install Quarto"
+---
+
+## Why Quarto?
+
+Quarto is what turns your `.qmd` files into finished documents. You write prose and code in
+one file, press render, and Quarto runs the code and drops the results, tables, and charts
+into place. Your final White Paper is a Quarto document.
+
+It is also the piece students most often think they have installed when they do not.
+
+:::{.callout-important}
+## The VS Code extension is not the program
+
+There are two separate things with the same name, and you need both:
+
+1. **Quarto**, the program. It does the actual work. You download it from quarto.org and
+   install it like any other application. **This page.**
+2. **The Quarto extension** for VS Code. It adds the Render button, the preview pane, and
+   syntax highlighting. It is a front end for the program above.
+
+Installing the extension does not install the program. If you searched for "Quarto" inside
+VS Code's Extensions panel and clicked Install, you have the extension only, and `quarto
+render` will still fail.
+:::
+
+---
+
+## What you'll install
+
+1. **Quarto** itself, the command line program
+2. The **Quarto extension** for VS Code, if you do not already have it
+
+Install R first if you have not: [Install R](install-r.qmd). Quarto needs R in order to run
+the R code inside your documents.
+
+---
+
+## Step 1: Install Quarto
+
+### Windows
+
+1. Go to [quarto.org/docs/get-started](https://quarto.org/docs/get-started/).
+2. Click the download button for **Windows**. You get a `.msi` file.
+3. Run it and accept every default.
+
+The installer adds Quarto to your PATH, which is what lets you type `quarto` in a terminal.
+
+### macOS
+
+1. Go to [quarto.org/docs/get-started](https://quarto.org/docs/get-started/).
+2. Click the download button for **macOS**. You get a `.pkg` file.
+3. Run it and accept every default.
+
+### Linux (Ubuntu/Debian)
+
+Download the `.deb` from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/), then:
+
+```bash
+sudo dpkg -i quarto-*-linux-amd64.deb
+```
+
+---
+
+## Step 2: Close your terminal and open a new one
+
+This step is not optional, and skipping it is the most common reason Quarto looks broken
+five minutes after a successful install.
+
+A terminal only learns about programs that existed when it opened. If you had a terminal
+open while the installer ran, that terminal has never heard of Quarto and never will. In VS
+Code, click the bin icon on the terminal panel to close it, then **Terminal, New Terminal**.
+
+---
+
+## Step 3: Verify with `quarto check`
+
+In a new terminal, run:
+
+```bash
+quarto check
+```
+
+`quarto check` is Quarto's own self test. It checks itself, then goes looking for the other
+pieces of your toolchain and prints a line for each. You want green check marks under
+**Quarto** and under **R**.
+
+:::{.callout-note}
+## On Windows, `R --version` failing does not mean R is broken
+
+If you type `R --version` in a terminal on Windows you will probably see "not recognized",
+even with R installed and working perfectly. The R installer does not add R to your PATH,
+and it does not need to: Quarto finds R through the Windows registry instead.
+
+Trust `quarto check`. It is the answer to "is my setup working", and `R --version` is not.
+:::
+
+---
+
+## Step 4: Install the VS Code extension
+
+Open VS Code, open the Extensions view (`Ctrl/Cmd+Shift+X`), search for **Quarto** by
+Posit, and click **Install**.
+
+If you cloned the [course workspace](workspace-setup.qmd), it is already in the recommended
+set and VS Code will offer it to you.
+
+---
+
+## Step 5: Render something
+
+Open any `.qmd` file, such as
+[`00-check-your-setup.qmd`](../starters/00-check-your-setup.qmd), and either click
+**Render** at the top of the editor or run:
+
+```bash
+quarto render 00-check-your-setup.qmd
+```
+
+**You should see:** a stream of output ending in `Output created:` and a new `.html` file
+beside your `.qmd`.
+
+---
+
+## Common first-time issues
+
+### `quarto: command not found` or `'quarto' is not recognized`
+
+Almost always Step 2. Close the terminal, open a new one, and try again. If it still fails
+after a fresh terminal, the install did not finish, so run the installer again.
+
+### `quarto check` says R was not found
+
+Quarto found itself but not R. Install R first ([Install R](install-r.qmd)), then close and
+reopen your terminal and run `quarto check` again.
+
+### The Render button appears but does nothing
+
+You have the extension and not the program. Go back to Step 1.
+
+### `ERROR: Failed to spawn 'Rscript'`
+
+Same cause as above, seen from the other side: Quarto is trying to run the R code in your
+document and cannot find R. Install R, then reopen the terminal.
+
+### Render fails with a YAML error
+
+The `---` block must be the very first thing in the file, with nothing above it, not even a
+blank line.
+
+### I already have RStudio, am I done?
+
+No. RStudio ships its own private copy of Quarto that only RStudio can see. It is not on
+your PATH and VS Code cannot use it. Install Quarto properly with Step 1.
+
+---
+
+## Next steps
+
+- [Install the v2v package](install-v2v.qmd) and run `v2v::setup()` for a full toolchain check
+- [Set up your workspace](workspace-setup.qmd)
+
+---
+
+## Resources
+
+- **Official site:** [quarto.org](https://quarto.org/)
+- **Get started guide:** [quarto.org/docs/get-started](https://quarto.org/docs/get-started/)
+- **Quarto in VS Code:** [quarto.org/docs/tools/vscode.html](https://quarto.org/docs/tools/vscode.html)
+
+Questions? Check the issues above, or bring it to office hours.

@@ -34,7 +34,13 @@ This guide installs R and wires it into VS Code. If you have not installed VS Co
 3. Click **Download R X.X.X for Windows** and run the installer.
 4. Click through with the default location and components, then **Finish**.
 
-**Verify:** open PowerShell and type `R --version`. You should see version information.
+**Verify:** open the **R x64** app from the Start menu. You should get an R console with
+version information at the top.
+
+Do not verify with `R --version` in PowerShell. The Windows installer does not add R to your
+command line, so that will say "not recognized" even when R is installed and working. Once
+you have [installed Quarto](install-quarto.qmd), `quarto check` is the real answer to "is my
+setup working".
 
 ### macOS
 
@@ -150,7 +156,12 @@ You do not create a separate project file. In VS Code you simply **open your wor
 
 ### "Command not found: R"
 
-Restart your computer after installing R. On macOS/Linux you may need the full path `/usr/local/bin/R`.
+**On Windows this is normal and not a problem.** The installer deliberately leaves R off your
+command line. R still works, VS Code still finds it, and Quarto still finds it through the
+Windows registry. Use `quarto check` to confirm your setup rather than `R --version`.
+
+On macOS or Linux, try restarting your computer, and if it persists use the full path
+`/usr/local/bin/R`.
 
 ### The R extension cannot find R
 

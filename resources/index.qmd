@@ -76,6 +76,16 @@ Statistical analysis and visualization, run inside VS Code.
 :::
 
 ::: card
+### Quarto
+Turns your `.qmd` files into finished documents. This is the program, not the VS Code extension of the same name. You need both.
+
+<span class="resource-badge">Free</span>
+
+[Download Quarto](https://quarto.org/docs/get-started/){.btn .btn-sm .btn-secondary}
+[Install guide](install-quarto.qmd){.btn .btn-sm}
+:::
+
+::: card
 ### Git & GitHub
 Version control for your work and your White Paper.
 

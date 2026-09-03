@@ -71,7 +71,15 @@ Search for **R** by REditorSupport and click **Install**. This is what lets you 
 
 ### 2. Quarto, required
 
-Search for **Quarto** and install. This previews and renders the `.qmd` documents you write for assignments and your final report.
+Search for **Quarto** by Posit and click **Install**. This gives you the Render button, the preview pane, and highlighting for the `.qmd` documents you write for assignments and your final report.
+
+:::{.callout-warning}
+## This extension is not the Quarto program
+
+The extension is a front end. It needs Quarto itself, a separate download, installed on your computer, and it does not install it for you. If you stop here the Render button will do nothing and `quarto render` will report that the command was not found.
+
+Install the program: [Install Quarto](install-quarto.qmd).
+:::
 
 ### 3. GitLens, recommended
 

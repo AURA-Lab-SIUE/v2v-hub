@@ -4,7 +4,7 @@ title: "Getting Started"
 
 ## Welcome to the V2V Hub
 
-Complete these four steps to set up your course workspace. **Time needed:** 15-20 minutes.
+Complete these six steps to set up your course workspace. **Time needed:** 30-45 minutes, most of it waiting on downloads.
 
 :::{.callout-important}
 ## Before You Begin
@@ -31,7 +31,27 @@ This gives you your own copy of the course workspace on GitHub.
 
 ---
 
-## Step 3: Clone the Workspace and Open It in VS Code
+## Step 3: Install R and Quarto
+
+Two more programs, and they are the two people most often miss. Install them in this order.
+
+1. **R**, the language that runs your analysis: [Install R](resources/install-r.qmd)
+2. **Quarto**, which turns your `.qmd` files into finished documents: [Install Quarto](resources/install-quarto.qmd)
+
+:::{.callout-warning}
+## Installing the VS Code extensions is not the same as installing these
+
+VS Code has extensions named **R** and **Quarto**. They are front ends for the two programs
+above. They do not install them, and having them is not the same as having R and Quarto on
+your computer. You need both halves of each: the program, and the extension.
+:::
+
+**Verify:** close any open terminal, open a new one in VS Code (**Terminal, New Terminal**),
+and run `quarto check`. Green check marks under **Quarto** and under **R** mean you are ready.
+
+---
+
+## Step 4: Clone the Workspace and Open It in VS Code
 
 1. In VS Code, open the Command Palette (Ctrl+Shift+P on Windows/Linux, Cmd+Shift+P on Mac)
 2. Run **Git: Clone** and paste the URL of the repository you created in Step 1
@@ -46,9 +66,12 @@ When VS Code prompts you to install the recommended extensions, accept them. The
 - **R**: running and editing R code
 - **GitLens**: seeing your Git history inside the editor
 
+These are the front ends. If you skipped Step 3, install R and Quarto themselves now, or
+the Render button will do nothing.
+
 ---
 
-## Step 4: Explore Your Workspace
+## Step 5: Explore Your Workspace
 
 Your workspace is organized into these folders:
 
@@ -63,7 +86,7 @@ Your workspace is organized into these folders:
 
 ---
 
-## Step 5: You're Ready!
+## Step 6: You're Ready!
 
 Once you complete these steps, move to **[Phase I: The Journalist](modules/01_journalist/index.qmd)** to begin.
 

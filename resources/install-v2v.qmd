@@ -199,7 +199,8 @@ That page is worth reading once early rather than searching for at midnight.
 
 `v2v::setup()` checks the whole toolchain: the R packages the textbook depends on, plus
 Quarto and Git on your PATH. It prints a green check for each thing present and a red x
-with a copy-paste install hint for each thing missing.
+with a copy-paste install hint for each thing missing. A red x next to Quarto means the
+program is missing, not the VS Code extension: see [Install Quarto](install-quarto.qmd).
 
 Run it at the end of Chapter 2 to confirm your setup before any code chapters begin, and
 run it again any time something feels wrong. Paste its output when you ask for help; it

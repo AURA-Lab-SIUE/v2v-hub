@@ -140,6 +140,7 @@ website:
           contents:
             - setup.qmd
             - resources/install-r.qmd
+            - resources/install-quarto.qmd
             - resources/install-v2v.qmd
             - resources/install-vscode.qmd
             - resources/vscode-customization.qmd
