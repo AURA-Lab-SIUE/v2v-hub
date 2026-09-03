@@ -12,93 +12,115 @@ format:
     transition: none
 ---
 
-## Laptops open
+## Today, and only today
 
-Working session. I am walking the room the whole time. And before we start:
+We are doing one thing: getting four programs onto your laptop, making your own copy of
+the course workspace, and running a file that proves it all works.
 
-**Something is going to break today.**
-
-- It breaks in every section, every semester, for somebody
-- It is never because that person is bad at this
-- It is a version number disagreeing with another version number
-- The whole reason we do this in a room together is so it breaks where I can see it
-- Fifteen minutes stuck, then raise a hand. Not thirty.
+That is the entire class. Nothing else is due today, nothing else gets covered today, and
+we are not moving on until the room is working.
 
 ## What you walk out with
 
-- Your own copy of the course workspace, on GitHub, named `mc451-workspace`
+[Project Setup · 25 points · due Friday, September 11]{.eyebrow}
+
+- R, VS Code, Quarto, and Git installed and answering
+- Your own repository on GitHub, named `mc451-workspace`
 - That folder open in VS Code on your laptop
 - A setup check that runs and comes back green
-- One commit, pushed, visible on the web
-- This is the **Project Setup** assignment, 25 points
 
-## This folder is the whole semester
+## Something is going to break
 
-Every assignment from here lands in it. Your literature map, your codebook, your R scripts,
-your final paper.
+- It breaks in every section, every semester, for somebody
+- It is never because that person is bad at this
+- It is one version number disagreeing with another
+- The whole reason we do this in a room together is so it breaks where I can see it
+- Fifteen minutes stuck, then raise a hand. Not thirty.
 
-Set it up carefully now and you will not think about it again. Set it up carelessly and you
-will be fighting it in Week 12, during the part that actually counts.
+## Install 1 of 4: R
 
-If your laptop dies in November, your work is on GitHub and you lose nothing.
+**What it is:** the language that does the counting and the statistics.
 
-## Three words you need today
+Download from [cran.r-project.org](https://cran.r-project.org). Pick your operating system,
+take the newest release, accept every default.
 
-**Repository.** A folder that Git is watching. Nothing about it looks special on your
-computer. Git is simply keeping a record of every version of every file inside it.
+**Start this download now**, then keep reading. It is the biggest of the four.
 
-**Commit.** A snapshot, taken whenever you finish something, stamped with the time and a
-short message you write. You can return to any snapshot later. **Push** sends your
-snapshots up to GitHub; **pull** brings them back down.
+You are not becoming a programmer. You are learning to drive one tool for one job.
 
-**Render.** Separate from both. Quarto takes your `.qmd` file, runs the code inside it,
-and produces a finished document with the results already in place.
+## Install 2 of 4: VS Code
 
-## Step 0: install the four tools
+**What it is:** the window you will actually work in. It is a text editor, free, from
+Microsoft.
 
-Install in this order. Each one looks for the one before it.
+Download from [code.visualstudio.com](https://code.visualstudio.com). Accept every default.
 
-1. **R** from [cran.r-project.org](https://cran.r-project.org), the base language
-2. **VS Code** from [code.visualstudio.com](https://code.visualstudio.com), where you work
-3. **Quarto** from [quarto.org/docs/get-started](https://quarto.org/docs/get-started), which turns your files into documents
-4. **Git** from [git-scm.com/downloads](https://git-scm.com/downloads), the version history
+Your writing, your code, your files, and your results all live here, so you stop switching
+between five programs to do one thing.
 
-Accept every default. On Windows, Git's installer asks a lot of questions: **Next** to all
-of them is the right answer.
+## Install 3 of 4: Quarto
 
-Every link is on the Hub under **Resources**, so you are not typing these from a slide.
+**What it is:** the thing that turns your file into a finished document.
 
-## Step 0b: prove they installed
+Download from [quarto.org/docs/get-started](https://quarto.org/docs/get-started). Accept
+every default.
 
-Downloads fail quietly. Before you go further, open VS Code, then **Terminal, New
-Terminal**, and run all four:
+You write prose and code in one file, press render, and get back a document with the
+charts and numbers already dropped into place.
+
+## Install 4 of 4: Git
+
+**What it is:** the program that keeps a history of your files, so nothing you write this
+semester can be lost.
+
+Download from [git-scm.com/downloads](https://git-scm.com/downloads).
+
+On Windows the installer asks a lot of questions. **Next** is the right answer to all of
+them. On a Mac it may already be there.
+
+## Prove all four are really there
+
+Installers fail quietly. Open VS Code, then **Terminal, New Terminal**, and run these:
 
 ```bash
 R --version
-code --version
 quarto --version
 git --version
 ```
 
-**You should see:** four version numbers. Any "command not found" means that one did not
-finish, or the installer never added it to your PATH.
+**You should see:** three version numbers, one per command.
 
-**If one fails:** reinstall that one, then **close the terminal and open a new one**. A
-terminal only learns about software that existed when it opened. That single step fixes
-most of what looks broken today.
+**"command not found"** means that one did not finish, or your terminal opened before it
+did. Close the terminal, open a new one, and try again. That single step fixes most of it.
 
-## Step 1: copy the course template
+## Your turn {.discuss}
 
-Go to the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace).
+While the installers run:
+
+- We are asking you to install four separate programs, not one. What does that tell you
+  about how research software gets built, compared with Word or Photoshop?
+- Think of the last time software failed you. Did you assume the software was broken, or
+  that you were? What made you pick that one?
+- What would you need to see today to believe that this is going to be worth it?
+
+*Two minutes with a neighbor, then we compare.*
+
+## Step 1: make your own copy of the workspace
+
+A **repository**, or repo, is just a folder that Git is watching. Ours has the course
+folder structure already in it.
+
+Go to [github.com/AURA-Lab-SIUE/v2v-workspace](https://github.com/AURA-Lab-SIUE/v2v-workspace).
 
 - Click the green **Use this template**, then **Create a new repository**
 - Name it `mc451-workspace`. Leave it **Public**.
 - Click **Create repository**
 
-**You should see:** a page with your own username at the top and the same folders as the
-template. You have not copied anything to your laptop yet.
+**You should see:** the same folders, now under your own username.
 
-## Step 2: clone it onto your laptop
+## Step 2: bring it down to your laptop
+
+Nothing is on your computer yet. Only on GitHub.
 
 - On your new repo, click the green **Code** button and copy the URL
 - In VS Code press `Ctrl+Shift+P`, or `Cmd+Shift+P` on a Mac. A search bar drops down.
@@ -112,29 +134,29 @@ template. You have not copied anything to your laptop yet.
 
 A box appears in the bottom right: **"This workspace has extension recommendations."**
 
-Click **Install All**. That is Quarto, R, and GitLens, and it means everybody in this room
+Click **Install All**. That is Quarto, R, and GitLens, and it means everyone in this room
 is working in the same environment.
 
-If the box already vanished, press `Ctrl+Shift+X`, then search for and install **Quarto**
-and **R** by REditorSupport. Stuck? [Install VS Code](https://aura-lab.siue.edu/v2v-hub/resources/install-vscode.html)
+If the box already vanished, press `Ctrl+Shift+X` and search for **Quarto** and for **R**
+by REditorSupport. Stuck? [Install VS Code](https://aura-lab.siue.edu/v2v-hub/resources/install-vscode.html)
 
-## Step 4: get the file we wrote for you
+## Step 4: open the file we wrote for you
 
-Download it from the Hub. It is the blue button on the
-[Resources page](https://aura-lab.siue.edu/v2v-hub/resources/index.html), or click it here:
+Download it here, or from the blue button on the
+[Resources page](https://aura-lab.siue.edu/v2v-hub/resources/index.html):
 
 [aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd](https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd)
 
-Save it into your workspace folder, then open it in VS Code.
+Save it into your `mc451-workspace` folder, then open it in VS Code.
 
-You do not have to write it. You do not have to understand it. You click through it, one
+You do not have to write it. You do not have to understand it. You click through it one
 grey box at a time, and it tells you what each box should print.
 
 Start now. I am coming round.
 
 ## What "working" looks like
 
-The file ends by running a checker we wrote for this course:
+The file finishes by running a checker we wrote for this course:
 
 ```r
 library(v2v)
@@ -147,82 +169,34 @@ setup()
 
 **Red under Required** is the one that needs me. Wave.
 
-## Your turn {.discuss}
+## When it breaks
 
-- Your check came back with something red. What is the first thing you look at, and why
-  that one first?
-- Why does it matter that this check is a **file** and not something you typed once into a
-  console and lost?
-- What would a reader six months from now learn from your repository that they could never
-  learn from a folder of Word documents?
-
-*Talk it through with a neighbor while renders finish.*
-
-## Step 5: your first commit
-
-In VS Code's terminal:
-
-```bash
-git add .
-git commit -m "Initial project setup with setup check"
-```
-
-`add .` gathers up everything you changed. `commit` writes the snapshot with your message.
-
-**You should see:** a line reporting how many files changed. Write messages a stranger could
-read: what changed and why, never "stuff".
-
-## Step 6: push it
-
-```bash
-git push
-git log --oneline
-```
-
-`push` uploads your snapshots to GitHub. `log --oneline` prints your history, one line each.
-
-**You should see:** your commit message in the list, and the same files appear on your
-GitHub page when you refresh it in the browser.
-
-## The five errors you will actually hit
-
-- **`quarto: command not found`.** Quarto is installed, but this terminal opened before it
-  was. Close the terminal, open a new one.
-- **`there is no package called 'v2v'`.** R is fine, the package is missing. Rerun step 3
-  of the check file.
-- **`fatal: not a git repository`.** You are in the wrong folder. `cd` into your workspace.
-- **`nothing to commit, working tree clean`.** You did not save the file. Save, then `git add .`
-- **Render fails on the YAML.** The `---` must be the very first line, nothing above it.
-
-## When GitHub asks for a password
-
-It will, and your password will not work. That is not a mistake on your part.
-
-GitHub stopped accepting passwords for this in 2021 and wants a token instead. VS Code's
-sign-in flow does the whole thing for you, once, and then never asks again.
-
-Click through it when prompted. If it loops, wave at me rather than retrying.
-Step by step: [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
-
-For errors specific to our Twitch data, run `?v2v::common_errors`.
+- **`command not found`** for anything. That terminal opened before the install finished.
+  Close it, open a new one.
+- **`there is no package called 'v2v'`.** R is fine, the package is not there yet. Rerun
+  the install step inside the check file.
+- **Red text in R is not automatically an error.** R prints ordinary progress in red. Read
+  the last line, not the colour.
+- **GitHub asks for a password and refuses it.** Not your mistake. It wants a token now.
+  Click through VS Code's sign-in and it never asks again.
 
 ## Checkpoint
 
 Every line should be true before you leave:
 
-- Your own `mc451-workspace` exists on GitHub
-- It is cloned locally and open in VS Code, extensions installed
+- `R --version`, `quarto --version`, and `git --version` all answer
+- Your own `mc451-workspace` exists on GitHub, and is cloned into VS Code
+- The extensions installed
 - `00-check-your-setup.qmd` runs and `setup()` comes back green
-- At least one commit shows in `git log --oneline` **and** on github.com
 
 Raise a hand if any line is not true. Do not go home and hope.
 
 ## Before next time
 
-- **[Project Setup](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#project-setup)**, 25 points,
-  is due Friday, September 11, 11:59 PM. Submit your repository URL.
+- **[Project Setup](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#project-setup)**,
+  25 points, is due Friday, September 11, 11:59 PM. Submit your repository URL.
 - If the check still fails, come to office hours. Tuesday and Thursday, 12:30 to 1:45 and
   3:30 to 5:00, Dunham Hall 1017. Drop in.
-- Read **Chapter 3, Knowing and Knowing Well**, before Tuesday
-- Tuesday is ethics: Belmont, the IRB, and what consent means for public data
-- Your weekly journal entry closes the week
+- Saving your work back to GitHub is the first thing we do next time. Everything you need
+  is on the [Hub](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html).
+- Read **Chapter 3, Knowing and Knowing Well**, before we meet
