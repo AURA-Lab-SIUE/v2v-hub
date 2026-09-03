@@ -71,7 +71,7 @@ Packages are collections of functions that extend what R can do. You need two:
 install.packages("tidyverse")
 
 install.packages("remotes")
-remotes::install_github("AURA-Lab-SIUE/v2v-r")
+remotes::install_github("AURA-Lab-SIUE/v2v-r", upgrade = "never")
 ```
 
 `tidyverse` is the standard collection of R packages for data work: importing, reshaping, summarizing, and charting. `v2v` is the course package. It ships the Twitch dataset this workbook uses, the course figure theme, and a set of helpers written for these assignments.

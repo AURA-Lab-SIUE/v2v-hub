@@ -22,7 +22,7 @@ You install from the repository and then load the package, so the two names appe
 two different commands and they are deliberately different:
 
 ```r
-remotes::install_github("AURA-Lab-SIUE/v2v-r")   # the REPOSITORY
+remotes::install_github("AURA-Lab-SIUE/v2v-r", upgrade = "never")   # the REPOSITORY
 library(v2v)                                      # the PACKAGE
 ```
 
@@ -52,7 +52,7 @@ install.packages("remotes")
 ### Step 2. Install `v2v` from GitHub
 
 ```r
-remotes::install_github("AURA-Lab-SIUE/v2v-r")
+remotes::install_github("AURA-Lab-SIUE/v2v-r", upgrade = "never")
 ```
 
 This takes a few minutes the first time. Text scrolls past, some of it red. Red text in
@@ -138,7 +138,7 @@ The package works but its help files did not install cleanly, so `?twitch_chat` 
 `?v2v::common_errors` come back empty. Reinstall with `force = TRUE`:
 
 ```r
-remotes::install_github("AURA-Lab-SIUE/v2v-r", force = TRUE)
+remotes::install_github("AURA-Lab-SIUE/v2v-r", force = TRUE, upgrade = "never")
 ```
 
 Then restart R. Help files load once per session, so a reinstall without a restart looks
@@ -151,7 +151,7 @@ like it did nothing.
 The package is updated as the course runs. When you are told a new version is out:
 
 ```r
-remotes::install_github("AURA-Lab-SIUE/v2v-r", force = TRUE)
+remotes::install_github("AURA-Lab-SIUE/v2v-r", force = TRUE, upgrade = "never")
 ```
 
 Then **restart R**. `force = TRUE` reinstalls even when the version number has not
