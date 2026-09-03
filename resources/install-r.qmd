@@ -48,7 +48,9 @@ setup working".
 2. Download the right `.pkg`: **Apple Silicon (M1/M2/M3)** uses the ARM64 build, **Intel Macs** use the Intel build. Not sure? Apple menu, **About This Mac**, check the chip.
 3. Run the installer and accept the defaults.
 
-**Verify:** open Terminal and type `R --version`.
+**Verify:** open Terminal and type `R --version`. You should see version information.
+
+Unlike Windows, this works on a Mac: the macOS installer does put R on your command line.
 
 ### Linux (Ubuntu/Debian)
 

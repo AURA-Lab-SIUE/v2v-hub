@@ -41,12 +41,13 @@ we are not moving on until the room is working.
 
 **What it is:** the language that does the counting and the statistics.
 
-Download from [cran.r-project.org](https://cran.r-project.org). Pick your operating system,
-take the newest release, accept every default.
+Download from [cran.r-project.org](https://cran.r-project.org). Take the newest release for
+your operating system and accept every default.
+
+**On a Mac you have to pick the right file:** Apple silicon or Intel. Apple menu, **About
+This Mac**, and read the chip.
 
 **Start this download now**, then keep reading. It is the biggest of the four.
-
-You are not becoming a programmer. You are learning to drive one tool for one job.
 
 ## Install 2 of 4: VS Code
 
@@ -55,8 +56,11 @@ Microsoft.
 
 Download from [code.visualstudio.com](https://code.visualstudio.com). Accept every default.
 
-Your writing, your code, your files, and your results all live here, so you stop switching
-between five programs to do one thing.
+**On a Mac**, open the downloaded file and drag **Visual Studio Code** into Applications.
+Do not run it out of the Downloads window.
+
+Your writing, your code, and your results all live here, so you stop switching between
+five programs to do one thing.
 
 ## Install 3 of 4: Quarto
 
@@ -73,10 +77,11 @@ charts and numbers already dropped into place.
 **What it is:** the program that keeps a history of your files, so nothing you write this
 semester can be lost.
 
-Download from [git-scm.com/downloads](https://git-scm.com/downloads).
+**Windows:** download from [git-scm.com/downloads](https://git-scm.com/downloads). The
+installer asks a lot of questions. **Next** is the right answer to every one of them.
 
-On Windows the installer asks a lot of questions. **Next** is the right answer to all of
-them. On a Mac it may already be there.
+**Mac:** nothing to download. In Terminal type `git --version`. If a box offers to install
+developer tools, click **Install** and wait. That box is Git arriving.
 
 ## Prove all four are really there
 
@@ -92,9 +97,9 @@ prints a line for each thing it finds.
 
 **You should see:** green check marks from `quarto check`, and a version number from Git.
 
-**On Windows, typing `R --version` says "not recognized" even when R is perfectly fine.**
-The R installer does not add R to the command line and does not need to. Trust
-`quarto check`.
+**Windows only:** typing `R --version` says "not recognized" even when R is perfectly fine,
+because the R installer does not add R to the command line. On a Mac it answers normally.
+Either way, `quarto check` is the check that counts.
 
 ## Your turn {.discuss}
 

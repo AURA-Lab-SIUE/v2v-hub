@@ -168,13 +168,22 @@ When you visit a repository on GitHub, the README appears automatically below th
 To work with repositories on your computer, you need **Git** (the tool GitHub uses).
 
 **Windows:**
-1. Download Git from [git-scm.com](https://git-scm.com)
-2. Run the installer and follow default options
-3. Restart your computer
 
-**Mac:**
-1. Download Git from [git-scm.com](https://git-scm.com) or use Homebrew
-2. Open Terminal and run: `brew install git`
+1. Download Git from [git-scm.com](https://git-scm.com)
+2. Run the installer and accept the default options. It asks a lot of questions and **Next**
+   is the right answer to all of them.
+3. Close any open terminal and open a new one, then run `git --version` to confirm.
+
+**Mac:** there is nothing to download.
+
+1. Open **Terminal** and run `git --version`.
+2. If a box appears offering to install the command line developer tools, click **Install**
+   and wait for it to finish. That box is Git arriving.
+3. Run `git --version` again. You should see a version number.
+
+You do not need Homebrew for this. If you have seen `brew install git` suggested elsewhere,
+ignore it: Homebrew is a separate thing you would have to install first, and macOS gives you
+Git without it.
 
 **Linux:**
 Open Terminal and run:
