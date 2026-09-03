@@ -42,30 +42,50 @@ will be fighting it in Week 12, during the part that actually counts.
 
 If your laptop dies in November, your work is on GitHub and you lose nothing.
 
-## Idea one: a repository
+## Three words you need today
 
-A **repository**, or repo, is just a folder that Git is watching.
+**Repository.** A folder that Git is watching. Nothing about it looks special on your
+computer. Git is simply keeping a record of every version of every file inside it.
 
-Nothing about it looks special on your computer. It is a folder with files in it. The
-difference is that Git is keeping a record of every version of every file inside.
+**Commit.** A snapshot, taken whenever you finish something, stamped with the time and a
+short message you write. You can return to any snapshot later. **Push** sends your
+snapshots up to GitHub; **pull** brings them back down.
 
-## Idea two: a commit
+**Render.** Separate from both. Quarto takes your `.qmd` file, runs the code inside it,
+and produces a finished document with the results already in place.
 
-A **commit** is a snapshot. You take one whenever you have finished something.
+## Step 0: install the four tools
 
-It saves what every file looked like at that moment, stamped with the time and a short
-message you write. You can return to any snapshot later.
+Install in this order. Each one looks for the one before it.
 
-**Push** sends your snapshots up to GitHub. **Pull** brings them back down.
+1. **R** from [cran.r-project.org](https://cran.r-project.org), the base language
+2. **VS Code** from [code.visualstudio.com](https://code.visualstudio.com), where you work
+3. **Quarto** from [quarto.org/docs/get-started](https://quarto.org/docs/get-started), which turns your files into documents
+4. **Git** from [git-scm.com/downloads](https://git-scm.com/downloads), the version history
 
-## Idea three: render
+Accept every default. On Windows, Git's installer asks a lot of questions: **Next** to all
+of them is the right answer.
 
-**Rendering** is separate from all of that.
+Every link is on the Hub under **Resources**, so you are not typing these from a slide.
 
-Quarto takes your `.qmd` file, which is plain text, runs the code inside it, and produces a
-finished document with the results already dropped in place.
+## Step 0b: prove they installed
 
-You write once, render, and you have something you could hand to a reader.
+Downloads fail quietly. Before you go further, open VS Code, then **Terminal, New
+Terminal**, and run all four:
+
+```bash
+R --version
+code --version
+quarto --version
+git --version
+```
+
+**You should see:** four version numbers. Any "command not found" means that one did not
+finish, or the installer never added it to your PATH.
+
+**If one fails:** reinstall that one, then **close the terminal and open a new one**. A
+terminal only learns about software that existed when it opened. That single step fixes
+most of what looks broken today.
 
 ## Step 1: copy the course template
 

@@ -105,9 +105,21 @@ VS Code shows a live preview with `Ctrl/Cmd+Shift+V`.
 
 ---
 
-## Step 8: Commit and push your work
+## Step 8: Commit and push your work back to your repository
 
-At the end of each week, save your work to GitHub. You can use VS Code's **Source Control** panel (the branch icon in the left bar): stage your changes, write a short message, and click **Commit**, then **Sync Changes**. Or use the terminal:
+Your workspace is a copy of the course template that belongs to **you**. Sending your work
+back up to it is how you get a backup, a history you can walk through, and the version
+control habit the White Paper depends on.
+
+**Committing is not submitting.** Graded work is turned in through Blackboard. Commit as
+well, always, but an assignment that was committed and never submitted has not been turned
+in.
+
+### The weekly rhythm
+
+Save your files first. Then, in VS Code's **Source Control** panel (the branch icon in the
+left bar): stage your changes with the **+**, write a short message, click **Commit**, then
+**Sync Changes**. Or in the terminal:
 
 ```bash
 git add .
@@ -115,7 +127,34 @@ git commit -m "Week 2 journal and literature notes"
 git push
 ```
 
-This gives you a backup, a history of your work, and a way for Dr. Leith to see your entries. It also builds the version-control habit you use in the White Paper.
+Write messages a stranger could read: what changed and why, never "stuff".
+
+### Prove it actually landed
+
+A push that fails often fails quietly. After pushing:
+
+```bash
+git log --oneline
+git status
+```
+
+You should see your commit at the top of the log, and `git status` should say your branch
+is **up to date with origin/main**. Then open your repository on github.com and refresh.
+**If your commit is not visible in the browser, it did not push**, whatever the terminal
+appeared to say.
+
+### The first push asks you to sign in
+
+It will, and your GitHub password will not work. That is not a mistake on your part: GitHub
+stopped accepting passwords for this in 2021 and wants a token instead.
+
+VS Code handles the whole exchange for you. When the browser window opens, sign in and
+authorise it. It asks once and then never again on that machine.
+
+If you would rather do it by hand, or the browser flow loops, generate a personal access
+token at **github.com, Settings, Developer settings, Personal access tokens, Tokens
+(classic)**, give it the **repo** scope, and paste the token when git asks for a password.
+Save it somewhere safe. GitHub shows it once.
 
 ---
 
