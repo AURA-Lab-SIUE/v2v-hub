@@ -12,16 +12,17 @@ format:
     transition: none
 ---
 
-## This week
+## Tonight
 
 [Week 8 · Chapter 8]{.eyebrow}
 
-- **Due tonight**: Definitions Practice
-- Levels of measurement, and what each one lets you conclude
-- Reliability and validity, the two criteria that judge a measure
-- The codebook: five parts, two governing principles, one draft
-- **Assigned reading**: Lombard, Snyder-Duch, & Campanella Bracken (2002),
-  "Content analysis in mass communication"
+Tonight looks like vocabulary and is really a set of decisions you cannot take back
+cheaply. The level you record a variable at decides which tests you are allowed to run in
+November, and by then recoding two thousand messages is not an option.
+
+Then the codebook, which is the instrument the entire back half of this course runs on.
+
+**Due tonight:** Definitions Practice.
 
 ## NOIR
 
@@ -72,8 +73,10 @@ format:
 - Title measured as a character count is **ratio**: a title can have zero characters
 - Title binned into short, medium, and long is **ordinal**
 - One column, three possible levels, depending entirely on how you operationalize it
-- Operationalize an interesting variable as nominal when it could have been ratio, and you
-  have narrowed what the study can conclude before coding a single case
+- Operationalize an interesting variable as nominal when it could have been ratio and you
+  have narrowed what the study can conclude, before coding a single case
+- Nobody notices at the time. It surfaces in November as a test you are not permitted to
+  run on data you already spent forty hours coding.
 
 ## Two kinds of variable
 
@@ -172,7 +175,9 @@ On Lombard et al. (2002), "Content analysis in mass communication":
 
 ## The codebook is the instrument
 
-- Not paperwork assembled after the fact to satisfy a methods requirement
+- Not paperwork assembled afterwards to satisfy a methods requirement
+- If that framing has made it feel like an administrative chore, this is the slide to
+  change your mind on
 - The most useful analogy is **source code**: if coding were a program, the codebook is
   the program
 - It specifies every operation, handles every conditional, and ensures two processors,

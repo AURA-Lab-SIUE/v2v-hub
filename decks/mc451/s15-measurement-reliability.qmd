@@ -12,6 +12,17 @@ format:
     transition: none
 ---
 
+## Today
+
+Today looks like vocabulary and is actually a decision with consequences you will not see
+until November.
+
+The level you record a variable at determines which statistical tests are available to you
+later. Choose narrowly now and your final paper is quietly forbidden from saying certain
+things, and by then it is too late to recode two thousand messages.
+
+You leave with a level assigned to every variable in your Definitions Practice.
+
 ## NOIR
 
 - Once a variable is operationalized, it has a **level of measurement**
@@ -74,8 +85,11 @@ Stream title, measured three ways:
 
 - A nominal variable can be tested for association with a **chi-square** test
 - A ratio variable can be averaged, correlated, and entered into the tests we run late in the term
-- Operationalize an interesting variable at nominal when it could have been ratio, and you have quietly narrowed what your study can conclude
-- You do that **before coding a single case**, which is why this decision comes now
+- Operationalize an interesting variable at nominal when it could have been ratio, and you
+  have quietly narrowed what your study is able to conclude
+- Nobody catches this at the time. It shows up in November as a test you are not allowed
+  to run, on data you already spent forty hours coding.
+- You make the choice **before coding a single case**, which is why it comes now
 
 ## Two kinds of variable
 
@@ -113,7 +127,8 @@ Stream title, measured three ways:
 - A scale calibrated ten pounds light is perfectly **reliable** and perfectly **invalid**: same answer every time, wrong every time
 - The reverse also happens: accurate on average, so inconsistent that any single reading is unusable
 - Figure 8.2 draws this as four targets, from tight-on-centre to scattered-and-off-centre
-- Do not let a consistent number persuade you it is a correct one
+- Do not let a consistent number persuade you that it is a correct one. Consistency is
+  the easiest thing to mistake for accuracy.
 
 ## The principle to hold onto
 
