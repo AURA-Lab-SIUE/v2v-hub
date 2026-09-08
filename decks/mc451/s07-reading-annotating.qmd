@@ -14,154 +14,155 @@ format:
 
 ## You have dozens of sources
 
-- After the librarian visit, your Zotero library is full and shapeless
-- The challenge now is not finding more. It is **making sense of what you have.**
-- Not as individual articles, but as a coherent body of knowledge
+- After the librarian visit your Zotero library is full and shapeless
+- The problem is no longer finding more. It is making sense of what you have.
+- This is the part that feels impossible, and it is a skill rather than a talent
 - Today: from a pile, to a map, to an argument
-- The map you build here becomes the structure of your written review
+- You leave with a literature map file started in your own repository
 
 ## Zotero as a working tool
 
-- Every source gets in, with the PDF attached, as you find it
-- **Tag liberally.** Tags are cheap and they are how themes surface later.
-- Notes go on the item, not in a separate document you will lose
-- Zotero generates citations and a reference list in APA when you write
-- Undisciplined collection now is a week of re-finding sources in November
+- Every source goes in as you find it, with the PDF attached
+- **Tag freely.** Tags cost nothing and they are how themes surface later.
+- Notes go on the item itself, not in a separate document you will lose
+- Zotero writes your citations and reference list in APA when you get there
+- Being casual about this now costs you a week of re-finding sources in November
 
 ## The literature map
 
-- A **literature map** organizes sources **by theme**, not by date or alphabet
+- A **literature map** organises sources **by theme**, not by date or alphabet
 - Build it as a markdown file in your repository, one heading per theme
 - For livestreaming: viewer motivations, community and social dynamics, streamer
-  labor, content analysis methods
-- Plus a running section for the **gaps** you notice as you read
-- Your topic will have different themes. The shape is the same.
-- It is a working document. It changes every week.
+  labour, content analysis methods
+- Keep a running section for the **gaps** you notice while reading
+- Your topic will have different themes. The shape is identical.
 
 ## What the map does for you
 
-- It shows at a glance which themes are **well covered** and which are thin
-- It forces you to think about how sources **relate**, which is the beginning of
-  synthesis
-- Its structure often becomes the structure of your written review
+- It shows at a glance which themes are well covered and which are thin
+- It makes you decide how sources **relate**, which is where synthesis starts
+- Its structure usually becomes the structure of your written review
 - A thin theme is not a failure. It may be your gap.
 
 ## Your turn {.discuss}
 
 - Look at the sources you have so far. What are two themes you can already name?
-- Which theme is thinnest, and is that because the work is missing or because
-  your searching is?
-- What is one thing all your sources seem to agree on?
+- Which theme is thinnest, and is that because the work is missing or because your
+  searching is?
+- What is one thing all of your sources seem to agree on?
 
 *Two minutes with a neighbor, then we compare.*
 
 ## A gap is not just an absence
 
-- "Nobody studied this" is not by itself a gap
-- A **research gap** is a space where inquiry is **justified**
-- Either the absence of knowledge creates a problem, or contradictions demand
-  resolution
-- Gaps come in four recognizable forms
-- Naming the type sharpens the argument you will make
+"Nobody studied this" is not a gap on its own. Plenty of things are unstudied because
+nobody needed them studied.
+
+A **research gap** is a space where the inquiry is *justified*: either the missing knowledge
+creates a problem, or existing findings contradict each other and something has to resolve
+them.
+
+They come in four recognisable shapes, and naming which one you have sharpens the argument
+you are about to make.
 
 ## Topical and methodological gaps
 
-- A **topical void:** a phenomenon, population, or context no one has studied.
-  There is much on why people watch livestreams, less on how chat behavior
-  differs between gaming and non-gaming streams.
-- Be careful: what looks novel may be covered under different terminology
-- A **methodological gap:** studied, but with methods that have limits. Most
-  livestream motivation work is self-report survey. Behavioral trace data, like a
-  chat log, could show whether what viewers do matches what they say.
+- A **topical void:** a phenomenon, population, or context nobody has looked at. There is a
+  lot on why people watch livestreams, and much less on how chat differs between gaming and
+  non-gaming streams.
+- Be careful. What looks unstudied is often studied under words you did not search.
+- A **methodological gap:** studied, but with methods that have limits. Most livestream
+  motivation work is self-report survey, so behavioural trace data like a chat log could
+  show whether what viewers do matches what they say.
 
 ## Contradictions and theoretical gaps
 
 - A **contradiction:** two well-designed studies reaching opposite conclusions
-- That is not embarrassing to report. It is an opening.
-- A **theoretical gap:** existing work explains the phenomenon through one lens
-  and another would illuminate more
-- If engagement research is dominated by uses and gratifications, a
-  parasocial-interaction framework (Horton & Wohl, 1956) may light a dark corner
+- That is not embarrassing to report. It is an opening, and often the best one.
+- A **theoretical gap:** the work explains the phenomenon through one lens when another
+  would show more
+- If engagement research is dominated by uses and gratifications, a parasocial-interaction
+  framework (Horton & Wohl, 1956) may light a corner nobody has looked into
 
 ## Articulating the gap
 
-The gap is the hinge of the argument. Three moves, always in this order:
+The gap is the hinge the whole argument turns on. Three moves, always in this order:
 
 1. **Establish what is known.** Show you understand the conversation.
 2. **Identify the limitation.** What is missing, contradictory, or unexplained?
-3. **Argue for your study.** How does your research address that gap?
+3. **Argue for your study.** How does your work address that?
 
-Research has established X, however most studies share limitation Y, this study
-addresses that gap by doing Z.
+Research has established X, however most studies share limitation Y, and this study
+addresses that by doing Z.
 
-## Summary reads like a list
+## This is what summary looks like
 
-A weak review:
+> Hamilton, Garretson, and Kerne (2014) studied Twitch as a participatory community.
+> Sjöblom and Hamari (2017) examined viewer motivations. Hilvert-Bruce and colleagues
+> (2018) studied social motivations for engagement.
 
-> Hamilton, Garretson, and Kerne (2014) studied Twitch as a participatory
-> community. Sjöblom and Hamari (2017) examined viewer motivations.
-> Hilvert-Bruce and colleagues (2018) studied social motivations for engagement.
+Three disconnected summaries. A reader learns what each study was about and nothing
+whatsoever about how they fit together.
 
-Three disconnected summaries. The reader learns what each study was about, and
-nothing about how they fit together.
+Most first drafts look like this. It is a stage, not a verdict.
 
-## Synthesis reads like an argument
+## This is what synthesis looks like
 
 The strong version does five things instead:
 
-- **Names the convergence first:** viewing is motivated less by the content on
-  screen than by the social experience around it
-- **Groups the sources under it:** ethnography (2014), survey test (2017),
-  extension to engagement (2018)
-- **Adds nuance:** viewers of smaller channels were more socially motivated
+- **Names the convergence first:** viewing is motivated less by what is on screen than by
+  the social experience around it
+- **Groups the sources under it:** ethnography (2014), survey test (2017), extension to
+  engagement (2018)
+- **Adds the nuance:** viewers of smaller channels were more socially motivated
 - **Names a shared limitation:** all of it is self-report
-- **Points at the gap:** would behavioral traces in a chat log corroborate it?
+- **Points at the gap:** would behavioural traces in a chat log back it up?
 
 ## Why that works
 
-- The claim comes first. The citations support it, rather than driving it.
-- Sources are grouped by what they argue, not by publication year
-- The limitation is shared across the group, which makes it structural
-- The gap is not asserted. It **falls out** of the limitation.
-- Notice where the gap points: at a content analysis of a real chat log
+- The claim comes first, and the citations support it instead of driving it
+- Sources are grouped by what they argue, not by the year they appeared
+- The limitation is shared across the group, which makes it structural rather than a
+  complaint about one paper
+- The gap is never asserted. It falls out of the limitation on its own.
+- Notice where it points: at a content analysis of a real chat log
 
-## A minimum viable literature review
+## If that feels out of reach
 
-If synthesis feels out of reach, start with three sources and four sentences:
+Start with three sources and four sentences. This is a floor, not a compromise:
 
 1. Source A, one sentence. What did it find?
 2. Source B, one sentence. What did it find?
 3. Source C, one sentence. What did it find?
 4. **The gap**, one sentence. What do these three, together, leave unexplored?
 
-Four sentences, three citations, one gap. Enough to anchor a prospectus.
+Four sentences, three citations, one gap. That is enough to anchor a prospectus.
 
-## The worked example
+## The same thing, written out
 
-> Hamilton, Garretson, and Kerne (2014) characterized Twitch streams as virtual
-> third places where informal communities form. Sjöblom and Hamari (2017) found
-> that social and tension-release motivations were central to why people watch.
-> Hilvert-Bruce and colleagues (2018) extended this to show that social
-> interaction predicted not just watching but chatting and subscribing. All three
-> rely on self-report surveys, leaving open whether the same patterns appear in
-> behavioral chat-log data.
+> Hamilton, Garretson, and Kerne (2014) characterized Twitch streams as virtual third
+> places where informal communities form. Sjöblom and Hamari (2017) found that social and
+> tension-release motivations were central to why people watch. Hilvert-Bruce and colleagues
+> (2018) extended this to show that social interaction predicted not just watching but
+> chatting and subscribing. All three rely on self-report surveys, leaving open whether the
+> same patterns appear in behavioral chat-log data.
 
 ## The ethics of citation
 
-- Citation is not bureaucratic. It is ethical.
-- **Cite:** specific empirical findings, theoretical concepts, methodological
-  approaches, direct quotes, paraphrased ideas
-- **Do not need to cite:** genuine common knowledge ("Twitch is a livestreaming
+- Citation is not bureaucracy. It is ethics.
+- **Cite:** specific empirical findings, theoretical concepts, methodological approaches,
+  direct quotes, and paraphrased ideas
+- **You do not need to cite:** genuine common knowledge ("Twitch is a livestreaming
   platform"), your own interpretations, your own data and analysis
-- Over-citation is rarely criticized. Under-citation damages credibility, and in
-  its serious forms it is plagiarism.
+- Nobody has ever been criticised for citing too much. Under-citation damages credibility,
+  and in its serious forms it is plagiarism.
 
 ## Before next time
 
 - **The Librarian Visit Report is due this week**, 50 points.
 - **The Annotated Manuscript is due next week**, 25 points. Pick your article now.
-- **CITI Ethics Certification** is also due next week. It takes hours, not
-  minutes. Start tonight.
-- Start your literature map file in your repository, even with four sources
-- Read **Chapter 5, Theory as a Lens**, before Tuesday
-- Tuesday: why three researchers can look at one finding and see three studies
+- **CITI Ethics Certification** is also due next week. It takes hours rather than minutes,
+  so start it tonight.
+- Start your literature map file in your repository, even with four sources in it
+- Read **Chapter 5, Theory as a Lens**, before Thursday
+- Thursday: why three researchers can look at one finding and see three different studies
