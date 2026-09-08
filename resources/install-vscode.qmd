@@ -202,13 +202,13 @@ If the box will not accept it, or the same message comes back, Windows is still 
 record of the old install. Look at what it thinks is there:
 
 ```powershell
-Get-ChildItem 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall' | ForEach-Object { Get-ItemProperty $_.PSPath } | Where-Object { $_.DisplayName -like '*Visual Studio Code*' } | Select-Object DisplayName, InstallLocation
+Get-ChildItem 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall' | ForEach-Object { Get-ItemProperty $_.PSPath -EA SilentlyContinue } | Where-Object { $_.DisplayName -like '*Visual Studio Code*' } | Select-Object DisplayName, InstallLocation
 ```
 
 An `InstallLocation` on a drive other than `C:` is the problem. Clear that leftover record:
 
 ```powershell
-Get-ChildItem 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall' | Where-Object { (Get-ItemProperty $_.PSPath).DisplayName -like '*Visual Studio Code*' } | Remove-Item -Recurse -Force
+Get-ChildItem 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall' | Where-Object { (Get-ItemProperty $_.PSPath -EA SilentlyContinue).DisplayName -like '*Visual Studio Code*' } | Remove-Item -Recurse -Force
 ```
 
 That removes only Windows' note about the old install. It deletes no programs and none of
