@@ -176,6 +176,36 @@ Check your internet connection, then try installing from the Extension Marketpla
 
 Install Git (see [Getting Started with GitHub](github-setup.qmd)) and restart VS Code.
 
+### "Git: Clone" is not in the Command Palette
+
+VS Code hides that command instead of greying it out, so when Git is not visible to VS Code
+the command is simply not on the list. Three causes, in the order worth checking.
+
+**1. VS Code was open while you installed Git.** This is much the most common. VS Code reads
+your PATH once, at the moment it starts, so a program installed afterwards stays invisible to
+it. **Quit VS Code completely and open it again.** On a Mac use `Cmd+Q`, because closing the
+window leaves it running. **Reload Window** does not help, because the program keeps the PATH
+it started with.
+
+**2. Windows: Git was installed without being added to your PATH.** The Git installer has a
+page about adjusting your PATH, and the right choice is the middle option, *Git from the
+command line and also from 3rd-party software*. If you picked *Use Git from Git Bash only*,
+VS Code cannot see it. Run the Git installer again and choose the middle option.
+
+**3. Mac: the developer tools prompt was cancelled.** Open Terminal and run `git --version`.
+If a box offers to install the command line developer tools, click **Install** and let it
+finish, then quit and reopen VS Code.
+
+**To check what VS Code can actually see**, open a terminal inside VS Code (**Terminal, New
+Terminal**) and run `git --version`. If that prints a version but the command is still
+missing after a full restart, point VS Code at Git yourself: open Settings, search
+`git.path`, and set it to the full path of the program. On Windows that is usually
+`C:\Program Files\Git\bin\git.exe`.
+
+**If you need to get on with it now**, you do not have to wait for the palette. In a terminal
+inside VS Code, `cd` to where you want the folder and run `git clone` with the URL you copied
+from GitHub. That does exactly what the palette command does.
+
 ### The installer says the drive or UNC share does not exist
 
 This happens on Windows when VS Code was previously installed somewhere that is no longer
