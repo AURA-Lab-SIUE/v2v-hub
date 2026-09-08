@@ -12,115 +12,116 @@ format:
     transition: none
 ---
 
+## Today
+
+Theory is the part of this course that sounds least useful and turns out to decide the
+most. It is what tells you which of the thousands of chat messages in front of you are
+worth counting.
+
+You leave today with a lens picked for your own project, and a reason for picking it that
+you could say out loud to somebody who disagreed.
+
 ## One finding, three explanations
 
 Livestream viewing looks more socially motivated than content motivated. Why?
 
-- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): viewers are
-  active agents meeting a social need a finished video cannot
-- **Parasocial interaction** (Horton & Wohl, 1956): viewers form one-sided bonds
-  with the streamer, and connection is how that bond feels
-- **Social identity** (Tajfel & Turner, 1979): the community is a group, and the
-  chat is a space of belonging
+- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): viewers are active agents
+  meeting a social need a finished video cannot
+- **Parasocial interaction** (Horton & Wohl, 1956): viewers form one-sided bonds with the
+  streamer, and connection is how that bond feels
+- **Social identity** (Tajfel & Turner, 1979): the community is a group, and chat is a
+  space of belonging
 
-Same pattern, three research programs.
+Same pattern, three research programs, three different studies.
 
 ## Theory is not speculation
 
-- In casual use, "theory" means guess. In research it does not.
-- A **theory** is a formal, systematic explanation of relationships between
-  concepts or variables
-- **Logically coherent:** the parts fit without contradiction
-- **Generalizable:** applies across contexts, not to one case
-- **Falsifiable:** it makes predictions that could be proven wrong
-- **Generative:** it produces new hypotheses
+- In casual use "theory" means guess. In research it means the opposite of a guess.
+- A **theory** is a formal, systematic explanation of relationships between concepts
+- **Logically coherent:** the parts fit together without contradiction
+- **Generalizable:** it applies across contexts rather than to one case
+- **Falsifiable:** it makes predictions that could turn out wrong
+- **Generative:** it produces new hypotheses rather than closing the question
 
 ## Social identity, worked
 
-Tajfel and Turner (1979): people derive part of their self-concept from the
-groups they belong to. This generates testable predictions:
+Tajfel and Turner (1979) held that people take part of their self-concept from the groups
+they belong to. Watch what that produces:
 
-- Viewers rate their preferred community above rivals, especially on subjective
-  dimensions like authenticity
-- Criticize a streamer and regular viewers respond defensively
-- In a different domain: partisans rate aligned news outlets as more credible,
-  even when the factual content is identical
+- Viewers rate their preferred community above rivals, especially on subjective dimensions
+  like authenticity
+- Criticize a streamer and the regulars respond defensively
+- In a different domain entirely: partisans rate aligned news outlets as more credible even
+  when the factual content is identical
+
+One idea, three predictions, all of them checkable.
 
 ## The lens metaphor
 
-- Theory works like a camera lens: some things sharp, some outside the frame
-- **Appraisal theory** focuses you on individual cognitive evaluation, so you
-  design surveys and experiments measuring personal reactions
-- **Social identity** focuses you on group meaning, so you analyze how members
-  talk about the stream as an identity marker
-- Same phenomenon, different designs. **Neither is wrong.**
-- You cannot use every lens at once. That produces blur.
+- Theory works like a camera lens. Some things come sharp, some fall outside the frame.
+- **Appraisal theory** focuses you on individual evaluation, so you build surveys and
+  experiments measuring personal reactions
+- **Social identity** focuses you on group meaning, so you analyze how members talk about
+  the stream as a marker of who they are
+- Same phenomenon, different designs, and **neither one is wrong**
+- You cannot use every lens at once. Trying produces blur, not depth.
 
 ## Your turn {.discuss}
 
-- Pick a media behavior you have noticed: a subscription, a donation, a defense
-  of something online
+- Pick a media behaviour you have noticed: a subscription, a donation, somebody defending
+  something online
 - Which of the three lenses would you use, and what would it make you look at?
-- What would that lens push out of the frame, and does that matter?
+- What would that lens push out of the frame, and does losing it matter?
 
 *Two minutes with a neighbor, then we compare.*
 
-## The social scientific paradigm
+## Three paradigms
 
-- Assumes an objective reality that can be observed and measured
-- **Deductive:** start with theory, derive predictions, collect data, test
-- Its question: **does X cause Y?**
-- Example: cultivation theory predicts heavy viewers develop particular
-  perceptions, so you design a study to test that
-- Data supports it, confidence strengthens. Data does not, and you refine.
-
-## Interpretive and critical paradigms
-
-- **Interpretive:** reality is socially constructed, meaning emerges through
-  interaction. **Inductive:** observe, find patterns, build theory from the data.
-  Its question: *what does X mean to the people who experience it?*
-- Methods: grounded theory, thematic analysis (Braun & Clarke, 2006), narrative
-- **Critical and cultural:** power shapes what counts as knowledge, and research
-  should challenge inequity. Its question: *whose interests does X serve, and
-  whose voices does it silence?*
+- **Social scientific:** an objective reality that can be observed and measured. Deductive,
+  so you start from theory and test. Asks *does X cause Y?*
+- **Interpretive:** reality is built through interaction. Inductive, so you observe and
+  build theory from what you find. Asks *what does X mean to the people who live it?*
+  Methods include grounded theory and thematic analysis (Braun & Clarke, 2006).
+- **Critical and cultural:** power shapes what counts as knowledge. Asks *whose interests
+  does X serve, and whose voices go unheard?*
 
 ## Grand and middle-range
 
-- **Grand theories** explain human behavior across all contexts: Marxism,
-  psychoanalysis, structuralism
-- Intellectually powerful, and very hard to test. The scope is too broad and the
-  predictions too general.
-- **Middle-range theories** are specific enough to generate testable hypotheses,
-  broad enough to generalize past one case
-- Robert Merton coined the term. Every theory in the catalog ahead is one.
+- **Grand theories** explain human behaviour across every context: Marxism, psychoanalysis,
+  structuralism
+- Intellectually powerful, and close to untestable. The scope is too wide and the
+  predictions too general to be proven wrong.
+- **Middle-range theories** are specific enough to generate testable hypotheses and broad
+  enough to travel past one case
+- Robert Merton named the zone. Every theory in the catalogue ahead sits in it.
 
-## Catalog: relationship and group
+## Catalogue: relationship and group
 
-- **Parasocial interaction** (Horton & Wohl, 1956): one-sided bonds with media
-  figures that feel intimate but lack reciprocity. Predicts stronger connection
-  with more consumption, and betrayal when a scandal breaks. The lens for
-  donations to strangers, and for influencer marketing.
-- **Social identity** (Tajfel & Turner, 1979): group membership shapes
-  self-concept. Predicts in-group favoritism and symbolic boundary maintenance.
-  Foundational in political communication and sports fandom.
+- **Parasocial interaction** (Horton & Wohl, 1956): one-sided bonds with media figures that
+  feel intimate but are not reciprocated. Predicts stronger connection with more
+  consumption, and a sense of betrayal when a scandal breaks. The lens for donations to
+  strangers, and for influencer marketing.
+- **Social identity** (Tajfel & Turner, 1979): group membership shapes self-concept.
+  Predicts in-group favouritism and symbolic boundary keeping. Foundational in political
+  communication and sports fandom.
 
-## Catalog: media and message
+## Catalogue: media and message
 
-- **Agenda setting** (McCombs & Shaw, 1972): media do not tell people what to
-  think, they tell people what to think about. On Twitch, the front page,
-  recommendations, and category rankings are agenda setters.
-- **Framing** (Goffman, 1974; Entman, 1993): how information is presented shapes
-  interpretation. Episodic framing pushes blame toward individuals, thematic
-  framing toward structures. Visible in how streamers title their broadcasts.
+- **Agenda setting** (McCombs & Shaw, 1972): media do not tell people what to think, they
+  tell people what to think about. On Twitch the front page, the recommendations, and the
+  category rankings are all setting an agenda.
+- **Framing** (Goffman, 1974; Entman, 1993): how information is presented shapes how it is
+  read. Episodic framing pushes blame toward individuals, thematic framing toward
+  structures. You can see it in how streamers title their own broadcasts.
 
-## Catalog: audience and exposure
+## Catalogue: audience and exposure
 
-- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): audiences are
-  active and choose media to satisfy needs. Sjöblom and Hamari (2017) used it
-  explicitly to study why people watch others play video games.
-- **Cultivation** (Gerbner & Gross, 1976): long-term cumulative exposure shapes
-  perceptions of social reality. Heavy consumers overestimate what they see.
-  Strongest where audiences lack direct experience.
+- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): audiences are active and
+  pick media to meet needs. Sjöblom and Hamari (2017) used it directly to study why people
+  watch other people play video games.
+- **Cultivation** (Gerbner & Gross, 1976): long-term cumulative exposure shapes how people
+  perceive social reality. Heavy consumers overestimate what they keep seeing, most
+  strongly where they have no direct experience to check it against.
 
 ## Two lenses on the same chat
 
@@ -134,45 +135,47 @@ Four messages from one Twitch broadcast:
 >
 > **streamfan22:** chat is this real
 
+Read them once before we put a lens on them.
+
 ## Two readings
 
-- **Uses and gratifications:** four needs, four viewers. Evaluative commentary,
-  collective emotional expression, direct acknowledgement, collective
-  sense-making. All four are equally interesting.
-- **Parasocial interaction:** realnamedfan is the case. An @-direct address plus
-  a memory claim about a prior acknowledgement treats a one-sided interaction as
-  a continuing relationship.
-- emotelord and streamfan22 never address the streamer, so the second lens
-  pushes them to the periphery
+- **Uses and gratifications:** four needs, four viewers. Evaluative commentary, collective
+  emotional expression, direct acknowledgement, collective sense-making. All four are
+  equally interesting to this lens.
+- **Parasocial interaction:** realnamedfan is the case. An @-address plus a memory claim
+  about a previous acknowledgement treats a one-sided interaction as a continuing
+  relationship.
+- emotelord and streamfan22 never address the streamer, so this lens pushes them to the
+  edges. Same four messages. Two different studies.
 
 ## Four methods, four questions
 
-- **Surveys** measure what people report. Natural for uses and gratifications.
-  Limited by the gap between what people say and do.
-- **Experiments** isolate cause by manipulation. Natural for "does X cause Y?"
-  Limited by artificiality.
-- **Qualitative methods** capture meaning and lived experience. Natural for the
-  interpretive question. They trade breadth for depth.
-- **Content analysis** quantifies features of the content itself, at a scale too
-  large to eyeball.
+- **Surveys** measure what people report. Natural for uses and gratifications, and limited
+  by the gap between what people say and what they do.
+- **Experiments** isolate cause by manipulating something. Natural for "does X cause Y?",
+  and limited by artificiality.
+- **Qualitative methods** capture meaning and lived experience. Natural for the interpretive
+  question, and they trade breadth for depth.
+- **Content analysis** quantifies features of the content itself, at a scale nobody could
+  eyeball.
 
 ## Why content analysis here
 
 Three reasons, and none of them is that it is the best method:
 
 - **Fit:** the Twitch data *is* content, millions of messages and stream records
-- **Pedagogical completeness:** you practice operationalization, sampling,
-  reliability, and analysis on one dataset, without recruiting human subjects
-- **Transfer:** a precise codebook, tested reliability, and systematic sampling
-  are what make every other method work too
+- **Pedagogical completeness:** you practise operationalization, sampling, reliability, and
+  analysis on one dataset, without having to recruit a single human subject
+- **Transfer:** a precise codebook, tested reliability, and systematic sampling are what
+  make every other method work too
 
-Committing with the alternatives in view beats committing by default.
+Choosing with the alternatives in view beats choosing by default.
 
-## Looking ahead to Thursday
+## Looking ahead to Tuesday
 
-- Thursday: **variables and hypotheses**, where a lens becomes something testable
+- Tuesday: **variables and hypotheses**, where a lens turns into something testable
 - Independent and dependent variables, mediators, and moderators
-- Bring the theory you are leaning toward. You will use it.
+- Bring the theory you are leaning toward. You will use it, not just name it.
 - **The Librarian Visit Report is due this week**, 50 points.
 - **The Annotated Manuscript and CITI Certification are both due next week**
-- Read the second half of **Chapter 5** if you have not
+- Read the second half of **Chapter 5** if you have not yet
