@@ -181,6 +181,36 @@ Press **Escape**, then try a specific mirror:
 install.packages("tidyverse", repos = "https://cloud.r-project.org")
 ```
 
+### Stray characters around every chunk, or two chunks running as one
+
+Two symptoms, one cause. Either **Run Cell** puts odd characters before and after your code
+in the R console, something like `[200~` and `[201~`, or the next chunk you run comes out
+joined onto the previous one and both execute together.
+
+Fix it in your workspace:
+
+1. Open Settings. `Ctrl` and `,` on Windows, `Cmd` and `,` on a Mac.
+2. Click the **Workspace** tab along the top. This part matters: Workspace is the tab that
+   holds the settings that came with your course folder.
+3. Search for `bracketed`.
+4. Untick **R > Bracketed Paste**.
+
+Then give yourself a clean console, because R may be sitting part way through a command it
+never finished. Click the bin icon on the terminal panel to close the R terminal, then run a
+cell again and a new one opens.
+
+**Why this happens:** bracketed paste is a feature for `radian`, an alternative R console
+that this course does not use. With plain R the markers it sends are not understood, so they
+arrive in your console as ordinary text wrapped around your code. That broken line leaves R
+waiting for the rest of a command that is never coming, which is why the chunk you run next
+gets added onto it instead of running on its own.
+
+Whether you see visible characters or just odd behaviour depends on your R build, which is
+why this looks random and affects some machines and not others.
+
+Workspaces created from the course template before 2026-09-08 have this setting switched on.
+Copies made after that do not, so this only affects you if you set your workspace up earlier.
+
 If you're still stuck, reach out during office hours.
 
 ---
