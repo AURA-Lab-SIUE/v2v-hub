@@ -21,6 +21,8 @@ format:
 - Everything in Weeks 12 and 13 is computed from the table you build today
 - Your White Paper's Methods section is, in large part, this script
 - Type along. The code is short; the decisions inside it are not.
+- Fair warning: this is the least rewarding evening of the term. It is also where working
+  researchers spend most of their hours, and none of them enjoy it either.
 
 ## The gap between what you have and what you asked
 

@@ -18,7 +18,8 @@ format:
 
 - **Draw the sample**: the subset of messages you will actually code
 - **Test the codebook**: the pilot that decides whether it is an instrument
-- The pilot has standing to send you back to Chapter 8 for a revision
+- The pilot has standing to send you back to Chapter 8 for a revision, and being sent back
+  is the pilot doing its job rather than you having done yours badly
 - Both halves are due together as the **Sampling Plan and Pilot**
 - A codebook is finalized in status, not in content, until a pilot certifies it
 

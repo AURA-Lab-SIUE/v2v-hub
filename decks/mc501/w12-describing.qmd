@@ -21,6 +21,8 @@ format:
 - Each is a different geometry chosen for a different kind of question
 - These figures go straight into your White Paper's Results and onto your poster
 - Plus the reporting rule that turns a picture into a claim: the **effect size**
+- Expect your first version of every figure to look wrong. That is what a first version is
+  for, and the fix is usually one line rather than starting again.
 
 ## Thirty-five thousand rows you cannot read
 

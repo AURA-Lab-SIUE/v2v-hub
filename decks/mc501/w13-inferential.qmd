@@ -21,6 +21,8 @@ format:
 - The assumption checks and diagnostics that decide whether any of it is trustworthy
 - Two deliverables open this week: the **White Paper** and its paired **poster**
 - By the end you will have the sentence that goes in your Results section
+- If "run a statistical test" has been sitting in your stomach since August, the doing of
+  it is one function call. The thinking around it is the part that takes the evening.
 
 ## The gap and the doubt
 

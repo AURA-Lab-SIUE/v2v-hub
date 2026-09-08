@@ -30,6 +30,9 @@ format:
 - Your central comparison has one of its two sides undefined
 - Building that column is more work than the last two, and worth every step
 
+Joins go wrong for everyone the first few times, and they go wrong quietly, which is worse.
+The slide on what the join leaves behind is the one to pay attention to.
+
 ## Gaming is a property of the channel
 
 - Gaming or non-gaming is fixed by **what the channel mostly streams**

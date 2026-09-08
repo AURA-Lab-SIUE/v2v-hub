@@ -131,6 +131,10 @@ Take the chat data, add a character count for every message, then report the ave
 
 ## Common problems in the room today
 
+Every one of these turns up today, and most of them turn up for everybody eventually.
+Hitting them in a studio with me walking around is the entire reason this is a studio and
+not a reading.
+
 - **Categories that overlap:** if you hesitate between two, they are not mutually exclusive yet
 - **A latent variable with no observable criteria:** you wrote a concept, not a recipe
 - **Six variables:** cut to three. Each one is a reliability check and a results paragraph.

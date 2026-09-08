@@ -21,6 +21,8 @@ format:
 - Today we build **three figures** and one summary table
 - Each figure is a different chart type, chosen to fit a different question
 - These figures become the Results section of your White Paper
+- Your first version of each one will look wrong. That is what the first version is for,
+  and fixing it is three lines rather than a restart.
 
 ## The grammar of graphics
 

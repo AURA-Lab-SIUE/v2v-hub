@@ -21,6 +21,8 @@ format:
 - Then we run two transformations: readable timestamps, and message length
 - Thursday we finish the job with the gaming label and the join
 - Nothing here is analysis. Every result later depends on getting it right.
+- Be warned that this is the least rewarding part of the whole term. It is also the part
+  that professionals spend most of their time on, and nobody enjoys it either.
 
 ## What the chat table cannot answer
 

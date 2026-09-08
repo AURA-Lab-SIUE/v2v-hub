@@ -18,7 +18,8 @@ format:
 
 - Two working blocks: the **White Paper**, then the **poster**
 - Short input from me between them, and the rest of the time is yours
-- I am circulating. Bring me the specific problem, not the general anxiety.
+- I am circulating all evening. The more specific the question, the faster I can help, and
+  a vague one is still worth asking if that is where you are.
 - What we build today is what you submit in finals week
 - Leave with a rendered site, a poster layout, and a written reflection
 

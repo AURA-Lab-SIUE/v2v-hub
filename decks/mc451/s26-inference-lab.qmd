@@ -21,6 +21,8 @@ format:
 - Then you write the two sentences that go in your paper
 - **The White Paper is assigned today.** We spend the last stretch on it.
 - Work in your `.qmd`, not the console, so nothing gets lost
+- If the phrase "run a statistical test" has been sitting in your stomach all term, today
+  is smaller than you think. It is one function call and two sentences.
 
 ## Pick your test before you run it
 

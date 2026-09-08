@@ -25,6 +25,8 @@ format:
 ## What you should have in hand
 
 - A **rendered** draft of your White Paper, even if sections are thin
+- Thin is expected. Everybody in this room is arriving with something unfinished, and a
+  reviewer reading a rough draft is the entire point of the exercise.
 - Your three figures, produced by code inside the document
 - Your test output: means, test statistic, *p*, and effect size
 - Your `_quarto.yml` and a project that builds without error

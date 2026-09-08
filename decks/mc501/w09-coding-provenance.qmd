@@ -22,6 +22,10 @@ format:
 - The Twitch data loaded and inspected, column by column, for the first time
 - **Assigned reading**: Munafo et al. (2017), revisited for reporting and usability
 
+This is the first evening we spend inside R. If that is the part of this course you have
+been quietly dreading, tonight is deliberately the gentlest version of it: you load data
+and look at it. Nothing you type can break anything.
+
 ## Why the workspace comes first
 
 - Chapter 2's argument: reproducible research lives or dies on **traceability**

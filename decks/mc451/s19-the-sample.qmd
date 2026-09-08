@@ -37,7 +37,8 @@ format:
 - The point of a sample: make the work **finite** without making the conclusions
   worthless
 - 1,500 messages can support a sound study or a misleading one
-- The difference is entirely **method**
+- The difference is entirely **method**, which is good news: it means the quality of your
+  sample is something you decide rather than something you get lucky with
 
 ## Simple random sampling
 

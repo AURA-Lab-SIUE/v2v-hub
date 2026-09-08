@@ -30,6 +30,9 @@ format:
 - A missing column discovered late costs you weeks
 - Walk the variables one at a time. Do not skim.
 
+If the answer for some variable is no, that is a good result today. It is an expensive one
+in three weeks.
+
 ## Variable 1: message target
 
 ```r
