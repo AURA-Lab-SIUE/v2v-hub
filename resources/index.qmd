@@ -39,6 +39,16 @@ Your VS Code course workspace holds your journals, notes, and project files in o
 
 ---
 
+## Something broken?
+
+Three problems have come up across the course. The **Fix It** page has each one in plain
+steps: strange characters when you run a cell, a missing `Git: Clone` command, and an install
+that ends in "there is no package called v2v".
+
+[Fix It](fix-it.qmd){.btn .btn-primary}
+
+---
+
 ## Check your setup
 
 `00-check-your-setup.qmd` walks you through every install, one grey box at a time, and

@@ -1,0 +1,137 @@
+---
+title: "Fix It"
+---
+
+Three problems have come up across the course this week. None of them mean you did anything
+wrong, and none of them mean your computer is broken. Each one below has what you would see,
+what to do about it, and how to tell it worked.
+
+The first one applies to everybody. The other two only matter if you have actually run into
+them.
+
+---
+
+## 1. Do this one even if nothing looks broken
+
+**What you might see:** you click **Run Cell** above a grey code box, and strange characters
+appear around your code in the console, something like `[200~` and `[201~`. Or the next cell
+you run comes out stuck onto the previous one and both run at once. Or the console just
+behaves oddly and you cannot say why.
+
+**Why:** your course folder came with one setting switched on that should have been off. It
+tells VS Code to send code in a format a different R console understands, and the plain R
+console we use does not. The setting was wrong in the course template until 8 September, so
+everyone who set up their workspace before then has it.
+
+**What to do:**
+
+1. Open Settings. Hold `Ctrl` and press `,` on Windows, or hold `Cmd` and press `,` on a Mac.
+2. At the top of the Settings page there are tabs: **User** and **Workspace**. Click
+   **Workspace**. This matters. Workspace is the tab holding the settings that arrived with
+   your course folder.
+3. In the search box at the top, type `bracketed`.
+4. One result appears, **R: Bracketed Paste**, with a tick box. **Untick it.**
+5. Close the Settings tab. There is nothing to save; VS Code saves it for you.
+
+Now give yourself a clean console, because R may still be waiting halfway through a command
+it never finished. Find the terminal panel at the bottom of VS Code and click the bin icon to
+close it. The next time you run a cell, a fresh one opens.
+
+**How to tell it worked:** run a cell. Your code appears in the console with nothing extra
+wrapped around it, and it runs on its own rather than dragging the previous cell along.
+
+---
+
+## 2. "Git: Clone" is not in the Command Palette
+
+**What you would see:** you press `Ctrl+Shift+P` (or `Cmd+Shift+P` on a Mac), type
+`Git: Clone`, and it is not on the list at all. Not greyed out. Just absent.
+
+**Why:** VS Code hides that command when it cannot find Git on your computer. Nine times in
+ten Git is installed perfectly well, but VS Code was already open when you installed it. VS
+Code checks for programs once, when it starts, so anything installed while it was running
+stays invisible to it.
+
+**What to do, in this order:**
+
+1. **Quit VS Code completely, then open it again.** On Windows, close every VS Code window.
+   On a Mac, press `Cmd+Q`, because closing the window leaves VS Code running. Do not use
+   **Reload Window**; it is not the same thing and will not fix this.
+2. Look for the command again. For most people it is now there and you are done.
+3. Still missing? Check whether Git is really installed. In VS Code open **Terminal, New
+   Terminal** and type `git --version`. A version number means Git is fine.
+4. **On Windows,** if that says Git is not recognised, run the Git installer again from
+   [git-scm.com](https://git-scm.com/downloads). On the page asking about your PATH, choose
+   the **middle** option, *Git from the command line and also from 3rd-party software*. The
+   Git Bash only option hides Git from VS Code.
+5. **On a Mac,** if that says Git is not recognised, open Terminal and run `git --version`.
+   A box may offer to install the developer tools. Click **Install** and wait for it to
+   finish, then quit and reopen VS Code.
+
+**If you need to get on with your work right now,** you do not have to wait for the palette.
+In a terminal inside VS Code, move to the folder where you want your project and run
+`git clone` followed by the address you copied from GitHub. That does exactly what the menu
+command does.
+
+**How to tell it worked:** `Git: Clone` appears in the Command Palette when you type it.
+
+---
+
+## 3. R says there is no package called 'v2v'
+
+**What you would see:** the install seemed to work, with a long list of packages reporting
+success, and then `library(v2v)` answers `there is no package called 'v2v'`. Looking back up
+the output there are lines saying `Warning: cannot remove prior installation of package` and
+`Warning: restored`.
+
+**Why:** during the install R offered to update a long list of other packages, and choosing
+**All** causes this. Some of those packages were in use by R at that moment, and Windows will
+not replace a file that is already open. Those packages quietly went back to the version you
+had, and the course package then refused to build because one of them was too old. The word
+`restored` in that output means *put back*, not *repaired*. This mainly affects Windows.
+
+**If your setup check came back green, ignore this section.** Nothing is wrong.
+
+**What to do:**
+
+1. **Quit VS Code completely.** This is the step that matters, because VS Code is what was
+   holding those files open. On a Mac use `Cmd+Q`.
+2. Open R on its own. On Windows, open the Start menu and look for **R x64**. On a Mac, open
+   the **R** application from your Applications folder.
+3. In that R window, run this line and let it finish:
+
+   ```r
+   install.packages(c("rlang", "cli", "curl", "xfun", "fs"))
+   ```
+
+4. Then run this one. The ending matters, so copy the whole line:
+
+   ```r
+   remotes::install_github("AURA-Lab-SIUE/v2v-r", upgrade = "never")
+   ```
+
+   `upgrade = "never"` is what stops R offering that list again.
+
+5. Then check it loaded:
+
+   ```r
+   library(v2v)
+   setup()
+   ```
+
+6. Close R and reopen VS Code.
+
+**How to tell it worked:** `library(v2v)` returns without complaint, and `setup()` prints
+green ticks down the **Required R packages** list.
+
+---
+
+## None of this fixed it
+
+Send me the exact wording of what you see rather than a description of it. A screenshot of
+the whole console is ideal. Office hours are Tuesday and Thursday, 12:30 to 1:45 and 3:30 to
+5:00, in Dunham Hall 1017, and you are welcome to bring the laptop.
+
+The longer guides have more detail if you want it: [Install R](install-r.qmd),
+[Install VS Code](install-vscode.qmd), [Install the v2v package](install-v2v.qmd), and
+[Getting Started with GitHub](github-setup.qmd).

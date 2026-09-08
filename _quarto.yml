@@ -139,6 +139,7 @@ website:
         - section: "Setup Guides"
           contents:
             - setup.qmd
+            - resources/fix-it.qmd
             - resources/install-r.qmd
             - resources/install-quarto.qmd
             - resources/install-v2v.qmd
