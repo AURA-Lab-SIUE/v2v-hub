@@ -21,6 +21,9 @@ Somewhere in your field notes is an entry like this:
 - That is a real observation. You earned it by watching.
 - It is also, as written, **useless to a coder**.
 
+Both of those are true at once, and holding them together is the skill. You leave today
+with three of your own variables written as something a stranger could apply.
+
 ## Why it is useless
 
 - "Calmer" is not a category anyone else can apply
@@ -37,6 +40,9 @@ Somewhere in your field notes is an entry like this:
 - It is the central methodological act of content analysis
 - Done well, it preserves what you noticed while making it something a stranger could measure the same way
 - Done badly, it produces numbers that look like findings and are actually **artifacts**
+
+This is the hardest thing in the course to do well, and the easiest to fake. A vague rule
+still produces a spreadsheet full of numbers.
 
 ## The variable we have been circling
 
@@ -143,4 +149,5 @@ Specify observable criteria:
 - Read the rest of **Chapter 8**: levels of measurement, reliability and validity, the codebook
 - **The Project Prospectus is due this week.**
 - **Definitions Practice is due next week.** These three pairs are most of it.
-- Next session: NOIR, and why the level you pick decides what your study is allowed to conclude
+- Next session: NOIR, and why the level of measurement you pick decides what your study is
+  allowed to conclude
