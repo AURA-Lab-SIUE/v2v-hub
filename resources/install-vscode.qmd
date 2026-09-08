@@ -176,6 +176,53 @@ Check your internet connection, then try installing from the Extension Marketpla
 
 Install Git (see [Getting Started with GitHub](github-setup.qmd)) and restart VS Code.
 
+### The installer says the drive or UNC share does not exist
+
+This happens on Windows when VS Code was previously installed somewhere that is no longer
+there, most often an external drive that has since been unplugged or wiped. The installer
+remembers the old location and tries to reuse it, so it stops on a drive letter that no
+longer exists.
+
+**First, unplug the external drive** if it is connected, so the installer cannot default
+back to it. Then:
+
+1. Find the folder VS Code should actually go in. Open PowerShell from the Start menu and
+   run this, then copy the line it prints:
+
+   ```powershell
+   "$env:LOCALAPPDATA\Programs\Microsoft VS Code"
+   ```
+
+2. Download the **User Installer** for Windows from
+   [code.visualstudio.com](https://code.visualstudio.com/) and run it.
+3. On the **Select Destination Location** page, delete whatever is in the box and paste the
+   path from step 1. Then continue through the installer normally.
+
+If the box will not accept it, or the same message comes back, Windows is still holding a
+record of the old install. Look at what it thinks is there:
+
+```powershell
+Get-ChildItem 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall' | ForEach-Object { Get-ItemProperty $_.PSPath } | Where-Object { $_.DisplayName -like '*Visual Studio Code*' } | Select-Object DisplayName, InstallLocation
+```
+
+An `InstallLocation` on a drive other than `C:` is the problem. Clear that leftover record:
+
+```powershell
+Get-ChildItem 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall' | Where-Object { (Get-ItemProperty $_.PSPath).DisplayName -like '*Visual Studio Code*' } | Remove-Item -Recurse -Force
+```
+
+That removes only Windows' note about the old install. It deletes no programs and none of
+your files. Run the installer again afterwards.
+
+**Verify:** leave the external drive unplugged, then open VS Code from the Start menu. If it
+opens, the new copy is on your internal drive and does not depend on the external one.
+
+Uninstalling first through **Settings, Apps** will not work here, because the uninstaller
+lived in the folder that was deleted along with everything else.
+
+Your old settings and extensions are stored separately and are not affected by any of this,
+so they should reappear once VS Code opens.
+
 ---
 
 ## Next steps
