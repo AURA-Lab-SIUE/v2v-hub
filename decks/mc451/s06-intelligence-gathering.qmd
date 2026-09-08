@@ -12,80 +12,79 @@ format:
     transition: none
 ---
 
+## Today
+
+Our subject librarian is here for most of the hour, running the databases live with us.
+
+You walk out with a topic, a set of search terms that actually work, and the start of a
+search log. That log is most of the Librarian Visit Report, so the work you do in this room
+is the assignment rather than preparation for it.
+
+**Have a topic in mind before the librarian starts.** Rough is fine.
+
 ## Thirty sources in an hour
 
-- You find one article that seems directly relevant. It cites twelve others.
-- You track down three of those. Each cites fifteen more.
-- Within an hour you have thirty sources and no idea where to start
-- The instinct is to retreat: narrow the scope, keep three recent articles, hope
-- **The instinct is understandable and it is wrong**
+- You find one article that looks right. It cites twelve others.
+- You chase three of those. Each cites fifteen more.
+- An hour later you have thirty sources open and no idea which one to read first
+- The instinct is to retreat: narrow the topic, keep three recent articles, hope
+- That instinct is completely reasonable, and following it is what makes the next
+  three weeks harder than they need to be
 
-## A map, not a checklist
+## It is a map, not a reading list
 
-- A **literature review** is not proof that you read enough articles
-- It is a **map of intellectual territory**
-- You cannot map territory from three landmarks
-- The **archivist mindset**: searching and synthesizing as active cartography
-- The process is identical whether your topic is livestreaming, news framing,
-  health campaigns, or algorithmic bias
+A **literature review** is not evidence that you read enough articles. It is a map of who
+has said what, and where the arguments are.
 
-## The conversation metaphor
+Think of it as walking into a debate that has been running for years. Say your piece cold
+and you get told it was answered in 2012. Knowing the terrain is how you earn the right to
+ask your question.
 
-- Imagine walking into a debate that has run for years
-- Blurt out your point and you will be dismissed as naive
-- You might be repeating an argument made a decade ago
-- You might not know someone already tested your idea and it failed
-- **The review is how you earn the right to ask your question**
+You cannot map terrain from three landmarks, which is why retreating to three articles
+fails.
 
-## What a review accomplishes
+## What a review does for you
 
-- **It situates your work.** You are not operating in isolation.
-- **It identifies a gap.** This is the answer to "so what?"
-- **It prevents reinventing the wheel.** Your original idea may be a dissertation
-  from five years ago.
-- Both defensive and generative: seeing the connections reveals angles you had
-  not considered
-
-## Two more things it does
-
-- **It provides methodological guidance:** validated measures, sampling
-  strategies, analytical techniques, and other people's limitations
-- Krippendorff (2018) and Neuendorf (2017) compile decades of content analysis
-  practice on coding, sampling, and reliability
-- **It refines your question.** A vague curiosity about "Twitch chat" sharpens
-  into a specific debate about whether engagement is driven by the content on
-  screen or the social environment around it
+- **It shows where your work sits.** You are not the first person to wonder this.
+- **It finds the gap**, which is your answer to "so what?"
+- **It stops you rebuilding something that already exists.** Your original idea may be
+  somebody's dissertation from five years ago.
+- **It hands you methods**: measures that have been validated, sampling strategies, and
+  other people's documented limitations (Krippendorff, 2018; Neuendorf, 2017)
+- **It sharpens the question** from "something about Twitch chat" into something you can
+  actually answer
 
 ## Your turn {.discuss}
 
 - Name a media topic you are curious about, in one sentence
 - What words would a scholar use for it that you would not?
-- Where would you look first, and how would you know if you had missed the main
-  body of work?
+- Where would you look first, and how would you know if you had missed the main body of work?
 
-*Two minutes with a neighbor. The librarian will want your terms.*
+*Two minutes with a neighbor. The librarian will ask you for your terms, so this is not a
+warm-up exercise.*
 
-## Phase one: exploratory searching
+## Phase one: search broadly
 
-- Start broad. You are answering basic questions.
-- What terms do scholars use? Who are the key researchers? Which journals?
-- **Google Scholar** first: less comprehensive, but fast and free
-- **Wikipedia** is not citable, but its reference list is a doorway
-- Collect promising sources in **Zotero** and tag liberally. Do not over-organize yet.
+- Start wide. You are answering basic questions, not finding your final sources.
+- What words do scholars use for this? Who keeps coming up? Which journals publish it?
+- **Google Scholar** first. Less thorough than the real databases, and fast and free.
+- **Wikipedia** is not citable, and its reference list is still a doorway
+- Collect anything promising in **Zotero** and tag freely. Do not tidy yet.
 
-## Phase two: systematic searching
+## Phase two: search systematically
 
-Now the goal is comprehensiveness. Use the real databases:
+Now you want coverage rather than speed, which means the real databases:
 
-- **Communication & Mass Media Complete**, the primary database for our field
+- **Communication & Mass Media Complete**, the main one for our field
 - **PsycINFO** if your question touches emotion, persuasion, or cognition
-- **Web of Science** and **Scopus** for multidisciplinary citation tracking
-- Inside them, **Boolean operators** build precise strings
+- **Web of Science** and **Scopus** for tracking citations across disciplines
+
+These do not work like Google. They expect **Boolean operators**, which is the next slide.
 
 ## Building a search string
 
-- **AND** narrows: both terms must appear. **OR** expands. **NOT** excludes.
-- An asterisk is a wildcard: `stream*` finds stream, streams, streaming, streamer
+**AND** narrows, so both terms must appear. **OR** widens. **NOT** excludes. An asterisk is
+a wildcard: `stream*` catches stream, streams, streaming, and streamer.
 
 ```
 (livestream* OR "live streaming" OR Twitch) AND
@@ -93,62 +92,64 @@ Now the goal is comprehensiveness. Use the real databases:
 (viewer* OR audience* OR chat)
 ```
 
-Three concept blocks, joined with AND, each with its own synonyms.
+Three concept blocks joined with AND, each holding its own synonyms. Build yours the same
+way and the librarian can fix it with you in seconds.
 
 ## Keep a search log
 
-Plain text, in your repository. For every search, record:
+Plain text, in your repository. For every search you run, write down:
 
-- The date and the database
-- The exact search string, copied, not remembered
-- The limiters you applied and the number of results
+- The date and which database
+- The exact string, copied and pasted, never remembered
+- The limiters you set and how many results came back
 - How many you kept
 
-It lets you defend the strategy later, and it shows you what is not working.
+**You should see** it getting boring to write, which is the point. It lets you defend the
+strategy later, and it shows you fast which searches are not working.
 
-## Phase three: citation chaining
+## Phase three: follow the citations
 
-- Find a few **keystone articles**, the ones that are clearly central
-- **Backward chaining:** read the references they cite, the foundational works
-- **Forward chaining:** use Google Scholar's "Cited by" to see who cited them
-  since, which shows how the conversation evolved
-- The growth is a snowball, but a **strategic** one: you are following the
-  network outward from what matters most
+- Pick a few **keystone articles**, the ones that clearly sit at the centre
+- **Backward chaining:** read what they cite, which takes you to the foundations
+- **Forward chaining:** use Google Scholar's "Cited by" to see who has cited them since,
+  which shows you how the argument moved
+- It snowballs, but on purpose, following the network out from what matters most rather
+  than wandering
 
-## Recognizing saturation
+## Knowing when to stop
 
-**Saturation** is the point where more searching will not change your
-understanding. In practice it looks like:
+**Saturation** is the point where more searching stops changing your understanding. You
+will recognise it three ways:
 
-- Three consecutive database searches returning zero new relevant articles
-- New articles citing the same eight to ten sources you have already read
-- Being able to predict what an article says from its title and abstract
+- Three database searches in a row turn up nothing new that is relevant
+- New articles keep citing the same eight or ten sources you have already read
+- You can guess what an article says from its title and abstract
 
-It does not mean you read everything. Stop searching. Start synthesizing.
+It does not mean you read everything. It means stop searching and start synthesizing.
 
-## Our librarian is here
+## Over to our librarian
 
 [The rest of today]{.eyebrow}
 
-- Our subject librarian is going to run the databases with us, live
-- This is the part you cannot get from a chapter: the interface, the limiters,
-  the tricks that only come from doing it daily
-- Have your topic and your search terms ready
-- Interlibrary loan is free and faster than you think. Ask about it.
+- They are going to run the databases with us, live, on real topics
+- This is the part a chapter cannot give you: the interface, the limiters, and the tricks
+  that only come from using these every day
+- Have your topic and your terms open
+- Interlibrary loan is free and much faster than you expect. Ask about it.
 
 ## What to ask while you have them
 
 - Which database is actually right for **my** question?
 - How do I get the full text when the library does not subscribe?
 - How do I set up a saved search and an alert for new results?
-- What is the fastest way to export a batch of results into Zotero?
-- Can I make an appointment later in the term when I am stuck?
+- What is the fastest way to push a batch of results into Zotero?
+- Can I book an appointment later in the term, when I am properly stuck?
 
 ## Before next time
 
-- **The Librarian Visit Report is due next week**, 50 points. Write it while the
-  session is fresh, not Sunday night.
-- The report wants your search log: databases, strings, results, what you kept
-- Get **Zotero** installed and connected to your browser if it is not yet
-- Read the rest of **Chapter 4** on the literature map before Thursday
-- Thursday we turn a pile of sources into a map, and a map into an argument
+- **The Librarian Visit Report is due next week**, 50 points. Write it while today is
+  still fresh, not Sunday night.
+- It wants your search log: databases, strings, results, and what you kept
+- Install **Zotero** and connect it to your browser if you have not yet
+- Read the rest of **Chapter 4** on the literature map before Tuesday
+- Tuesday we turn a pile of sources into a map, and a map into an argument
