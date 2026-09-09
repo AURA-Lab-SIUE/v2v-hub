@@ -63,7 +63,7 @@ the Twitch working corpus?" is built from exactly those four parts.
 - Which of the five criteria does it fail right now?
 - What would you have to **observe** in order to answer it?
 
-*Two minutes with a neighbor, then we take a few and narrow them together.*
+*Two minutes to draft it, then we take a few and narrow them together.*
 
 ## The Everything Study
 

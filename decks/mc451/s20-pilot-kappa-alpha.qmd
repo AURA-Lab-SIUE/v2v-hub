@@ -57,7 +57,7 @@ format:
 - What if one category is used 90 percent of the time by both coders?
 - What number would make you comfortable, and where did that number come from?
 
-*Two minutes with a neighbor. Write down your threshold before we compute one.*
+*Two minutes. Write down your threshold before we compute one, then we compare as a group.*
 
 ## Why raw agreement misleads
 

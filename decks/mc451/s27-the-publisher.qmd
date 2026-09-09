@@ -72,7 +72,7 @@ report and redraws itself every render. `echo: false` hides the code, shows the 
 - What would break if your data changed tomorrow?
 - Which of your figures could you produce from code inside the report today?
 
-*Two minutes with a neighbor, then we compare.*
+*Two minutes to think, then we take it as a group.*
 
 ## Why this matters
 

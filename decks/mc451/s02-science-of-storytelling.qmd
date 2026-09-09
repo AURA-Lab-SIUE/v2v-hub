@@ -43,7 +43,7 @@ The same data wears three hats, and conflating them is where first projects go w
 - Is it **data**? What claim would it let you defend, and what would it refuse?
 - Where did it come from, and who decided what got counted?
 
-*Two minutes with a neighbor, then we compare.*
+*Two minutes to think, then we take it as a group.*
 
 ## We are hypothesis-testing organisms
 

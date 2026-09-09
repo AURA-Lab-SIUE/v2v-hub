@@ -86,7 +86,7 @@ We are about to run `glimpse(chat)`, which prints every column of the chat data.
 - Your codebook needs message text and sender. What if one is missing?
 - What would you do next if a column your study depends on is not there?
 
-*Two minutes with a neighbor, then we run it and see.*
+*Two minutes to commit to a guess, then we run it and see.*
 
 ## Loading the data
 

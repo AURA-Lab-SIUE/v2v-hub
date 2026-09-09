@@ -161,7 +161,7 @@ cumulative science":
 - For one comparison in your own analysis, what would you report, and what would
   its confidence interval have to look like before you would interpret it?
 
-*Two minutes with a neighbor on the last question, then we compare.*
+*Two minutes on the last question, then we take it as a group.*
 
 ## Figure 3: a histogram for shape
 

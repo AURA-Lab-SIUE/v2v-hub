@@ -72,7 +72,7 @@ Features you cannot read off the surface:
 - Name one that is clearly **latent**, and say what a second coder might see differently
 - For the latent one: what surface feature could stand in as evidence for it?
 
-*Three minutes with a neighbor. Bring the hardest latent case to the whole room.*
+*Three minutes. Bring the hardest latent case to the room.*
 
 ## Sorting your notes
 

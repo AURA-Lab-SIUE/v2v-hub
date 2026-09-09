@@ -58,7 +58,7 @@ A test applied to the wrong kind of data produces a number, and the number is me
 - What would have to be true for your finding to be nothing but sampling wobble?
 - What size of difference would actually change how you think about your topic?
 
-*Two minutes with a neighbor, then we compare.*
+*Two minutes to think, then we take it as a group.*
 
 ## Running the t-test
 

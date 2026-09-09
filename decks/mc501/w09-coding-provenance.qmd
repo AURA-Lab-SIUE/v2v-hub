@@ -145,7 +145,7 @@ On Munafo et al. (2017), the reporting and usability sections:
   change documents?
 - What in your own workflow this semester would fail a usability audit today?
 
-*Five minutes in pairs, then we compare.*
+*Five minutes to think it through, then we take it as a group.*
 
 ## What the provenance record includes
 

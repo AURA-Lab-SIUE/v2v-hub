@@ -67,7 +67,7 @@ row by count. The result is **one row per channel**.
 - Does that channel appear in `channel_type` at all?
 - What would you want R to do with its messages later: guess, drop, or flag?
 
-*Three minutes with a neighbor. We check your prediction in four slides.*
+*Three minutes. We check your prediction in four slides.*
 
 ## Step 2: naming the non-gaming categories
 

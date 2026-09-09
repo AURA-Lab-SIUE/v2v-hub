@@ -146,7 +146,7 @@ On Wickham (2014), "Tidy data":
 - Wrangling that produces tidy data can be audited. Is the structure itself a
   transparency claim, or does that overstate it?
 
-*Three minutes in pairs, then we take the second question as a group.*
+*Three minutes to think, then we take the second question as a group.*
 
 ## Step 1: what a channel mostly streams
 

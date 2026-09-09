@@ -66,7 +66,7 @@ A coder who has never watched Twitch reads the log as plain text and:
 - What would they count wrong, and which direction would the error run?
 - What is the equivalent convention in Twitch chat that you do not know yet?
 
-*Two minutes with a neighbor, then we build a shared list on the board.*
+*Two minutes to think, then we build a shared list on the board.*
 
 ## Thick description
 

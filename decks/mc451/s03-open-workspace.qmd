@@ -52,7 +52,7 @@ format:
 - Could you reconstruct exactly how you got it, six months from now?
 - What would you need to have written down at the time?
 
-*Two minutes with a neighbor, then we compare.*
+*Two minutes to think, then we take it as a group.*
 
 ## Four tools, one ecology
 

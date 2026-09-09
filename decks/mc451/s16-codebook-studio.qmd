@@ -57,7 +57,7 @@ Do this first, right now, in one sentence.
 
 ## Your turn {.discuss}
 
-- Read your unit of analysis to a neighbor. Can they point at exactly one thing in the data?
+- We will read a few aloud. Can the room point at exactly one thing in the data?
 - If your unit is a stream or an hour rather than a message, how many cases will you have?
 - Is that enough cases to compare two groups?
 

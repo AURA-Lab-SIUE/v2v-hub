@@ -50,7 +50,7 @@ grouping column. Everything else stays exactly as written.
 
 ## Your turn {.discuss}
 
-- Read your output aloud to a neighbor: the two means, the difference, *p*, and *d*
+- Read your output back to yourself: the two means, the difference, *p*, and *d*
 - Is your effect small, medium, or large by Cohen's benchmarks?
 - Did your *p* and your *d* tell the same story, or pull apart?
 

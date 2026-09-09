@@ -79,7 +79,7 @@ Specify observable criteria:
 ## Your turn {.discuss}
 
 - Take one latent thing from your field notes and write a one-sentence coder instruction for it
-- Trade with a neighbor. Apply their rule to a message you invent designed to break it.
+- We will take a few aloud, and try to break each rule with a message somebody invents.
 - What did the rule fail to tell you?
 
 *Four minutes. The message that broke the rule is your first decision rule.*

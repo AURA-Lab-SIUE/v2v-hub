@@ -221,7 +221,7 @@ On Wilson et al. (2017), "Good enough practices in scientific computing":
   advice more usable, or does it lower the ceiling?
 - Bring one practice you think is oversold.
 
-*Two minutes with a neighbor, then we compare.*
+*Two minutes to think, then we take it as a group.*
 
 ## First contact with the data
 

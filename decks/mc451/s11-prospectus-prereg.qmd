@@ -73,7 +73,7 @@ already ruled out most of what you could have done, which is the point.
 - What is your unit of analysis: a message, a stream, a channel, an hour?
 - Which of the six components do you currently have nothing at all to write?
 
-*Two minutes with a neighbor. The component you cannot fill is your homework.*
+*Two minutes. The component you cannot fill is your homework, and we will hear a few.*
 
 ## Same data, different theory
 

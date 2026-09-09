@@ -59,7 +59,7 @@ repeat it, are the numbers complete, is it honest about limits, does it deploy.
 ## Your turn {.discuss}
 
 - What is the one sentence your paper is actually claiming?
-- Say it to a neighbor without using the words significant or *p*-value
+- Say it out loud without using the words significant or *p*-value
 - If it takes you more than one sentence, which part are you unsure of?
 
 *Three minutes. This is the sentence your abstract has to carry.*

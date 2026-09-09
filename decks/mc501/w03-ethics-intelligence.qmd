@@ -223,11 +223,16 @@ The paper draws a sharper line than "exploratory versus confirmatory".
 - **Postdiction** explains a result you have already seen. It is legitimate, often the most
   creative part of the work, and it is where the next prediction comes from.
 - The error is never doing postdiction. The error is reporting it as prediction.
-- Preregistration does not forbid exploration. It timestamps which one you were doing.
+
+## What preregistration actually does
 
 > "Preregistration of an analysis plan is committing to analytic steps without advance knowledge of the research outcomes."
 >
 > Nosek et al. (2018, p. 2601)
+
+It does not forbid exploration, and it does not ask you to know the answer in advance. It
+timestamps **which of the two you were doing**, so a reader can tell a prediction that
+survived a real test from an explanation built after the fact.
 
 ## The objections, and what the paper says back
 
@@ -258,21 +263,19 @@ whether the answers actually hold.
   began. Preregistration disciplines what you do with data you already had the right to
   hold, and says nothing about whether you had the right.
 
-## Studio: preregister your own project {.discuss}
+## Discussion {.discuss}
 
-Ten minutes, on paper, for the project you actually intend to run.
+On Nosek et al. (2018), "The preregistration revolution":
 
-1. The research question, one sentence
-2. What you expect to find, and **what result would prove you wrong**
-3. Where the data come from, and how much of it
-4. The one analysis that tests line 2, named before you have seen anything
-5. The decision you can already feel yourself wanting to leave open
+- They call it a revolution. Is the mechanism strong enough to change behaviour on its own,
+  or does it rest on incentives the authors do not control?
+- The paper separates prediction from postdiction. Where does that line blur most easily,
+  and would you catch yourself crossing it?
+- Is preregistration compatible with grounded theory or thematic analysis? Argue it on
+  epistemological grounds rather than practical ones.
+- What does a Registered Report protect that a preregistration does not?
 
-Then trade with the person beside you and attack line 5, because line 5 is where the
-forking paths live and neither of you will spot your own.
-
-*Keep this page. It is the first draft of your Topic Selection, and of the Research
-Proposal after that.*
+*A few minutes to think, then we take it as a group.*
 
 ## The second half: the conversation you are joining
 

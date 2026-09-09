@@ -146,7 +146,7 @@ On Lakens (2022), "Sample size justification":
 - If you cannot reach the *n* your power analysis demands, which is the more honest move:
   revise the question, change the design, or report the limitation?
 
-*Five minutes in pairs, then we compare answers.*
+*Five minutes to think it through, then we compare answers as a group.*
 
 ## Topic, theory, and data
 

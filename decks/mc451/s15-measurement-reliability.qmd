@@ -79,7 +79,7 @@ Stream title, measured three ways:
 - Could you have operationalized it at a higher level? What would you have to record instead?
 - What would you lose if you binned it down to categories?
 
-*Three minutes with a neighbor. We will collect the ones that could be measured two ways.*
+*Three minutes. We will collect the ones that could be measured two ways.*
 
 ## Levels govern the statistics
 

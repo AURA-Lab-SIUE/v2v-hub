@@ -102,7 +102,7 @@ format:
 - If the effect really was tiny, does that change your answer?
 - Where is the line between a company's A/B test and a psychology experiment?
 
-*Two minutes with a neighbor, then we compare.*
+*Two minutes to think, then we take it as a group.*
 
 ## Belmont: respect for persons
 
