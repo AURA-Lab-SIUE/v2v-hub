@@ -196,7 +196,31 @@ Open Terminal and run:
 sudo apt-get install git
 ```
 
-### 4.2 Clone Your First Repository
+### 4.2 Tell Git Who You Are
+
+Git stamps every commit with a name and an email address, and it refuses to
+commit until it knows them. Run these two commands once, in the same terminal:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@siue.edu"
+```
+
+Use an address that is attached to your GitHub account, either the one you
+signed up with or one you added under **Settings, Emails**. A commit made with
+any other address still saves, but GitHub cannot match it to your profile, so
+your work shows up under a stranger's name. That matters in this course,
+because your repository is how your work is read and graded.
+
+`--global` means once per computer, not once per repository. To see what Git
+already has, run `git config --global --list`.
+
+**If you skip this step**, your first commit stops with `Author identity
+unknown` and `Please tell me who you are`. That message is not about your
+GitHub password or your login. It means these two commands have not been run
+yet. Run them, then commit again.
+
+### 4.3 Clone Your First Repository
 
 1. Go to your `hello-world` repository on GitHub
 2. Click the green **"Code"** button

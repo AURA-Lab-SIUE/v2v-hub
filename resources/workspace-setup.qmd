@@ -59,12 +59,15 @@ Open `README.md` in the file explorer (left sidebar). It explains the folder str
 
 The workspace is pre-organized:
 
-- **00_inbox** captures ideas quickly.
-- **01_journal** holds your weekly reflections (committed to GitHub).
-- **02_literature** holds reading notes and Zotero annotations.
-- **03_project** holds your active research work.
-- **04_resources** holds images, PDFs, and attachments.
+- **00_Inbox** captures ideas quickly.
+- **01_Journal** holds your weekly reflections (committed to GitHub).
+- **02_Literature** holds reading notes and Zotero annotations.
+- **03_Project** holds your active research work.
+- **04_Resources** holds images, PDFs, and attachments.
 - **_templates** holds reusable templates.
+
+Those capitals are part of the folder names. Git treats `01_Journal` and
+`01_journal` as two different folders, so match what you see in the file explorer.
 
 Follow this structure to stay organized.
 
