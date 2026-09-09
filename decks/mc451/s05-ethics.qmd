@@ -210,6 +210,31 @@ Same research question, different data, different determination:
   you predicted it. A postdiction carries none of a prediction's weight.
 - "Our results suggest" quietly becomes "our results demonstrate." Watch for it.
 
+## CITI, and what it actually is
+
+**CITI** is the Collaborative Institutional Training Initiative, the research ethics
+training nearly every American university runs. You complete the **Social and
+Behavioral Research** course and submit the completion certificate.
+
+- The modules walk the ground we just walked: the history, the principles, consent,
+  privacy and confidentiality, assessing risk, vulnerable populations
+- Each module ends in a quiz you have to pass
+- It takes hours rather than minutes, and it saves your place, so do it in pieces
+- **Due Friday, September 25**, 25 points
+
+## Why it applies to you anyway
+
+A fair question, given the last ten minutes: if your project is not human subjects
+research, why train for human subjects research?
+
+- Because "this is not human subjects research" is an **argument you have to be able
+  to make**, and CITI is where you learn to make it
+- Because the moment a project touches people directly, no IRB will look at you
+  without it
+- Because it travels. Graduate programs and research jobs ask to see it.
+- Start it this week. Somebody every term starts the night before and discovers it
+  is not a twenty-minute task.
+
 ## Before next time
 
 - Read **Chapter 4, Intelligence Gathering**, before Thursday

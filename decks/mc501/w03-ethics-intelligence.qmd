@@ -335,6 +335,31 @@ It does not mean you read everything. It means the map stopped changing.
 - Can Zotero pull straight from this database, and how do I fix broken metadata?
 - What would you search that I would never have thought to search?
 
+## CITI, and what it actually is
+
+**CITI** is the Collaborative Institutional Training Initiative, the research ethics
+training nearly every American university runs. You complete the **Social and Behavioral
+Research** course and submit the completion certificate.
+
+- The modules cover the ground of this first half: the history, the principles, informed
+  consent, privacy and confidentiality, assessing risk, vulnerable populations
+- Each module ends in a quiz you have to pass to earn the certificate
+- It takes hours rather than minutes, and it saves your place, so do it across several
+  sittings rather than one
+- **Due Monday, September 28**, 25 points
+
+## Why it applies to you anyway
+
+A fair question after the last half hour: if your project is not human subjects research,
+why complete training for human subjects research?
+
+- Because "this is not human subjects research" is an **argument you have to be able to
+  make**, and CITI is where the vocabulary for making it comes from
+- Because the moment any project touches people directly, no IRB will look at you without it
+- Because it travels. Doctoral programs and research positions ask to see the certificate.
+- Because your non-human-subjects determination is a document you write, and writing it
+  well is easier once you have done the training that explains what it is arguing against
+
 ## Before Week 4
 
 - **Due:** the **Librarian Visit Report**, built from tonight's searching
