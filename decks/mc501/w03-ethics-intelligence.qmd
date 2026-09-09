@@ -18,8 +18,9 @@ Two halves. First, what you owe the people whose messages you are about to analy
 Second, how to find out what has already been said about your topic, with a librarian in
 the room to help you do it.
 
-You leave with an IRB determination you could actually file, and a search log that becomes
-part of your methods section.
+You leave with three things: an IRB determination you could actually file, a
+preregistration stub for your own project, and a search log that becomes part of your
+methods section.
 
 **Bring a topic to the second half.** You will search it live.
 
@@ -160,30 +161,67 @@ than that.
   though you predicted it all along
 - HARKing turns exploratory work, which is perfectly legitimate, into fake confirmatory work
 
-## What pre-registration actually commits you to
+## Prediction and postdiction
 
-Usually sold as a way of controlling false positives. True, and incomplete.
+[Nosek et al., 2018]{.eyebrow}
 
-It commits you to deriving your predictions from theory *before* you look at the data, and
-then testing them. The commitment is what makes the test mean anything.
+The paper draws a sharper line than "exploratory versus confirmatory".
+
+- **Prediction** commits to the outcome before the data can inform it. The test can fail,
+  which is the only reason passing it means anything.
+- **Postdiction** explains a result you have already seen. It is legitimate, often the most
+  creative part of the work, and it is where the next prediction comes from.
+- The error is never doing postdiction. The error is reporting it as prediction.
+- Preregistration does not forbid exploration. It timestamps which one you were doing.
 
 > "Preregistration of an analysis plan is committing to analytic steps without advance knowledge of the research outcomes."
 >
 > Nosek et al. (2018, p. 2601)
 
-## Discussion {.discuss}
+## The objections, and what the paper says back
 
-On Nosek et al. (2018), "The preregistration revolution":
+[Nosek et al., 2018]{.eyebrow}
 
-- They call it a revolution. Is the mechanism strong enough to change behaviour on its own,
-  or does it rest on incentives the authors do not control?
-- The paper separates prediction from postdiction. Where does that line blur most easily in
-  your own thinking?
-- Is pre-registration compatible with grounded theory or thematic analysis? Argue it on
-  epistemological grounds rather than practical ones.
-- What does a Registered Report protect that a pre-registration does not?
+Read it for its argument, not its conclusion. Nosek anticipates three objections. Decide
+whether the answers actually hold.
 
-*Take a position out loud, then let somebody talk you out of it.*
+- **"It is a straitjacket."** Depart from the plan when the work demands it, and disclose
+  the departure. A plan you deviated from in the open still tells a reader more than no
+  plan at all.
+- **"It does not fit exploratory or qualitative work."** The answer offered is that
+  preregistration marks which claims were predicted, so work making no predictions gives up
+  nothing by saying so.
+- **"It slows everything down."** It front-loads decisions you were going to make anyway,
+  later, under worse conditions, with the results already in view.
+
+## Registered Reports, and what this cannot fix
+
+[Nosek et al., 2018]{.eyebrow}
+
+- A **Registered Report** sends the plan to peer review *before* the data exist, and the
+  acceptance stands whatever the results turn out to be
+- It aims at the incentive rather than the person: whether you get published stops depending
+  on whether the finding came out positive
+- That is the same move Belmont makes. Outside accountability, not private virtue.
+- **It would not have saved Kramer.** That failure happened at consent, before any analysis
+  began. Preregistration disciplines what you do with data you already had the right to
+  hold, and says nothing about whether you had the right.
+
+## Studio: preregister your own project {.discuss}
+
+Ten minutes, on paper, for the project you actually intend to run.
+
+1. The research question, one sentence
+2. What you expect to find, and **what result would prove you wrong**
+3. Where the data come from, and how much of it
+4. The one analysis that tests line 2, named before you have seen anything
+5. The decision you can already feel yourself wanting to leave open
+
+Then trade with the person beside you and attack line 5, because line 5 is where the
+forking paths live and neither of you will spot your own.
+
+*Keep this page. It is the first draft of your Topic Selection, and of the Research
+Proposal after that.*
 
 ## The second half: the conversation you are joining
 
@@ -263,5 +301,7 @@ It does not mean you read everything. It means the map stopped changing.
 - Read **Chapter 4** (annotating) and **Chapter 5** (Theory as a Lens), with the
   edition toggle on
 - Read the assigned article: **Cohen (1992)**, "A power primer"
-- Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
+- Write your journal entry, 450 to 500 words, engaging both the chapters and the reading.
+  The graduate extension this week: take whichever of Nosek's three answers you found
+  weakest and argue it against your own design, not against preregistration in general
 - Start the search log tonight. Backfilling it later is guesswork and it shows.
