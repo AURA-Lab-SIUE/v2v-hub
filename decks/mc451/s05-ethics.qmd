@@ -222,6 +222,19 @@ Behavioral Research** course and submit the completion certificate.
 - It takes hours rather than minutes, and it saves your place, so do it in pieces
 - **Due Friday, September 25**, 25 points
 
+## Where to actually go
+
+Two pages, and the order matters:
+
+1. **[SIUE Compliance Training](https://www.siue.edu/compliance/training/)** first. This is
+   the route in, and it tells you how to attach your account to SIUE.
+2. **[CITI Program](https://www.citiprogram.org/index.cfm?pageID=668)** to register and work
+   through the modules.
+
+**Register through SIUE, not as an "independent learner."** The independent route charges
+you money and the certificate does not come back to the university, so it will not count.
+If you have already made an account that way, say so and we will sort it out.
+
 ## Why it applies to you anyway
 
 A fair question, given the last ten minutes: if your project is not human subjects
