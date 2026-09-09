@@ -18,7 +18,7 @@ Two halves. First, what you owe the people whose messages you are about to analy
 Second, how to find out what has already been said about your topic, with a librarian in
 the room to help you do it.
 
-You leave with three things: an IRB determination you could actually file, a
+You leave with three things: a non-human-subjects determination you could actually file, a
 preregistration stub for your own project, and a search log that becomes part of your
 methods section.
 
@@ -64,16 +64,46 @@ Keep this one in mind. Of everything tonight, it sits closest to what you are ab
   were infected, **19 children** were born with congenital syphilis
 - Federally funded, credentialed staff, published for decades without objection
 
-## Milgram and Humphreys
+## Milgram, 1961
 
-**Milgram, 1961.** Participants believed they were delivering painful electric shocks to a
-stranger because a man in a lab coat told them to continue. Most complied. The findings
-reshaped how the field understands obedience, and the distress was acute.
+- Recruited by newspaper advertisement, and told it was a study of memory and learning
+- Cast as the "teacher"; a confederate played the "learner" in the next room
+- Instructed to deliver escalating shocks for wrong answers, up to a switch at **450 volts**
+- The shocks were not real. The belief that they were real, and the distress, were.
+- **26 of 40** participants in the baseline condition went to the maximum voltage
+- Hesitation was met with scripted prods, "the experiment requires that you continue",
+  rather than with permission to stop
 
-**Humphreys, 1970.** He recorded the license plates of men meeting anonymously in public
-restrooms, traced them to home addresses, then visited the houses in disguise as a health
-surveyor. Exposure of that data could have ended marriages and careers, and in 1970 worse
-than that.
+## Milgram, what it cost
+
+- Milgram reported participants sweating, trembling, and stuttering, and in one case a
+  seizure violent enough to stop the session
+- Participants were debriefed, and the deception was total until that point
+- The findings reshaped how the field understands obedience to authority, and they are
+  still taught in every introductory course
+- The argument about whether the knowledge justified the distress has never closed
+- Which is the point: this is not a case where the researcher was careless or malicious
+
+## Humphreys, 1970
+
+- Doctoral research on anonymous sexual encounters between men in public restrooms
+- He took the role of **watchqueen**, the lookout, which let him observe without
+  participating and without disclosing that he was a researcher
+- He recorded the **license plate numbers** of the men he observed
+- He traced those plates to home addresses through motor vehicle records, obtained via a
+  contact in the police
+- About a year later he changed his appearance and his car, and interviewed the men in
+  their own homes, posing as an interviewer on an unrelated health survey
+
+## Humphreys, what it cost
+
+- Most of the men were married and living otherwise conventional lives
+- In 1970 exposure meant criminal prosecution, loss of employment, and destroyed families
+- He kept the data secure and argued the work reduced stigma by showing who these men
+  actually were
+- The book won a major award in sociology, and his own department fought over whether to
+  strip his doctorate
+- Both halves of that sentence are true at once, which is why the case is still assigned
 
 ## The common thread
 
@@ -114,14 +144,18 @@ than that.
 - **Secondary analysis** raises whether the original consent covered your use, and that
   question is still genuinely unsettled
 
-## Three tiers of review
+## The question that comes first
 
-- **Exempt**: minimal risk, inside defined federal categories. Most content analysis of
-  public material lands here.
-- **Expedited**: no more than minimal risk but not fully exempt. Many surveys and interviews.
-- **Full board**: more than minimal risk, vulnerable populations, or deception
-- **The board decides, not you.** You submit your reasoning; they make the determination.
-- Submitting something you are fairly sure is exempt wastes nobody's time
+Before anyone asks which level of review a study needs, there is a prior question:
+**is this human subjects research at all?**
+
+Federal regulation defines a **human subject** as a living person about whom you obtain
+information either through **intervention or interaction** with them, or in the form of
+**identifiable private information**.
+
+- You never interact with anyone. The messages were sent before you arrived.
+- They were **broadcast publicly**, so they are not private information.
+- Neither limb is met, so this is **not human subjects research**
 
 ## Your project, walked through Belmont
 
@@ -132,6 +166,18 @@ than that.
 - Beneficence: risk is minimal, and nothing we do aggregates toward identifying anyone
 - Justice: the sample spans channels broadly, including non-gaming categories
 
+## This determination has already been made twice
+
+- **Not hypothetical.** The Twitch data in front of you was formally determined **not human
+  subjects research** by Michigan State University, and the Twitter data from the NSF work
+  was determined the same way by SIUE.
+- **Your project is expected to land in the same place**: a content analysis of public
+  broadcast content is not human subjects research.
+- You still write and submit the determination. **The office decides, not you**, and that
+  is true even when the answer looks obvious.
+- You still complete CITI, because the training is what lets you make the argument, and
+  because the next dataset you meet may not be this clean
+
 ## Public is not the end of the question
 
 - Researchers have argued for years that "public" does not settle the ethics
@@ -141,16 +187,18 @@ than that.
 - Do not republish whole chat logs verbatim
 - Do not amplify messages whose senders expected obscurity more than broadcast
 
-## Three cases that would not be exempt
+## Three cases that would be human subjects research
 
-- **Twitch whispers.** Private messages carry a reasonable expectation of privacy.
-  Expedited or full review.
-- **A private Discord with the same people in it.** Closed membership raises that
-  expectation even when those people chat publicly elsewhere.
-- **An internal moderation log with platform flags on users.** Now the data carries
-  classifications attached to identified people. Full board, most likely.
-- The narrowness of our corpus is what makes it exempt, and that narrowness was designed
-- Most data you meet after this course will not be that narrow
+Change one thing about the data and the answer flips. Then the tiers apply.
+
+- **Twitch whispers.** Private messages, so identifiable private information. Expedited or
+  full board.
+- **A private Discord with the same people in it.** Closed membership makes the same words
+  private, even though those people chat publicly elsewhere.
+- **An internal moderation log with platform flags on users.** Classifications attached to
+  identified people. Full board, most likely.
+- The narrowness of our corpus is what keeps it outside the definition, and that narrowness
+  was designed rather than lucky
 
 ## When the reporting goes wrong
 
@@ -225,20 +273,12 @@ Proposal after that.*
 
 ## The second half: the conversation you are joining
 
-Picture walking into an argument that has been running for years among people who care
-about it deeply.
-
-Say your piece cold and you get dismissed as naive, or told it was settled in 2012. To
-contribute you have to know the voices, the contested points, and the open questions.
-
-A **literature review** is the disciplined act of listening before speaking. It is how you
-earn the right to ask your question.
-
-## What a review does for you
+Say your piece cold in an argument that has run for years and you get dismissed as naive,
+or told it was settled in 2012. A **literature review** is the disciplined act of listening
+before speaking, and it is how you earn the right to ask your question. Concretely it:
 
 - **Situates your work** in a context you can show you understand
 - **Identifies a gap**, which is what answers "so what?"
-- **Stops you reinventing the wheel**, which is common and entirely avoidable
 - **Hands you methods**: validated measures, sampling strategies, documented limitations
   (Krippendorff, 2018; Neuendorf, 2017)
 - **Sharpens your question** from a vague curiosity into something you can actually do

@@ -37,13 +37,13 @@ PROFILES = {
     "mc451": dict(
         fmt="qmd", glob="*.qmd", skip={"index.qmd"},
         roots=["/Volumes/One Touch/20-research/aura-lab/v2v-hub/decks/mc451"],
-        bands=(12, 18), other_course="MC 501",
+        bands=(12, 22), other_course="MC 501",
         theme_marker="default, ../aura-reveal.scss",
     ),
     "mc501": dict(
         fmt="qmd", glob="*.qmd", skip={"index.qmd"},
         roots=["/Volumes/One Touch/20-research/aura-lab/v2v-hub/decks/mc501"],
-        bands=(20, 27), other_course="MC 451",
+        bands=(20, 32), other_course="MC 451",
         theme_marker="default, ../aura-reveal.scss",
     ),
     "fst101": dict(

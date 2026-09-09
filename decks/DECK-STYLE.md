@@ -25,8 +25,14 @@ MC 501 subtitle form: `"Week 7 · Chapter 8 · MC 501 Research Methods for Mass 
 
 ## Length
 
-- **MC 451** session (75 minutes): 12 to 18 content slides.
-- **MC 501** week (170 minutes): 20 to 27 content slides.
+- **MC 451** session (75 minutes): 12 to 22 content slides.
+- **MC 501** week (170 minutes): 20 to 32 content slides.
+
+**Raised again 2026-09-09 (owner), from 12-18 and 20-27.** This is the SECOND deliberate
+loosening, so the numbers below are history and not a target to restore. The owner ruled
+that he adapts teaching time to the slide count rather than the reverse, so the ceiling is
+no longer a proxy for session length. It now exists only to catch a runaway deck. Do not
+compress content to satisfy it: if a deck needs the room, it has the room.
 
 **Raised 2026-09-01 (owner), from 12-16 and 20-24.** This deliberately reopens a band that
 was tightened once before, so do not "restore" the old numbers. The reason: every deck had
