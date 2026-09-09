@@ -118,6 +118,33 @@ control habit the White Paper depends on.
 well, always, but an assignment that was committed and never submitted has not been turned
 in.
 
+### Before your first commit: tell Git who you are
+
+Do this once per computer, before anything below. Git stamps every commit with a name and
+an email address, and it refuses to commit until it has them. In a VS Code terminal
+(**Terminal, New Terminal**):
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@siue.edu"
+```
+
+Use an address attached to your GitHub account, either the one you signed up with or one
+you added under **Settings, Emails**. A commit made with any other address still saves, but
+GitHub cannot match it to your profile, so your work shows up under a stranger's name, and
+your repository is how your work is read and graded.
+
+Check that it took:
+
+```bash
+git config --global --list
+```
+
+You should see your `user.name` and `user.email` in the output. Signing in to GitHub in VS
+Code does **not** set these. They are two separate things, and doing one is not doing the
+other. There is more on this in
+[Getting Started with GitHub](github-setup.qmd#tell-git-who-you-are).
+
 ### The weekly rhythm
 
 Save your files first. Then, in VS Code's **Source Control** panel (the branch icon in the
@@ -170,6 +197,14 @@ Open the Extensions view (`Ctrl/Cmd+Shift+X`), type `@recommended`, and install 
 ### I cannot push to GitHub
 
 Confirm you are signed in to GitHub in VS Code (the Accounts icon, bottom-left) and that you cloned **your** copy of the repository, not the original template.
+
+### Git says "Author identity unknown"
+
+The rest of the message is `Please tell me who you are`. It is not about your GitHub
+password or your login, and you get it the same way whether you commit from the terminal or
+from the **Source Control** panel, because both run the same Git underneath. It means the
+two commands in **Before your first commit** above have not been run yet on this computer.
+Run them, then commit again. Nothing you wrote is lost.
 
 ### VS Code opened the wrong folder
 
