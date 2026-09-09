@@ -47,14 +47,46 @@ format:
   19 children were born with congenital syphilis
 - Federally funded, peer-reviewed, and unchallenged for forty years
 
-## Milgram and Humphreys
+## Milgram, 1961
 
-- **Milgram, 1961:** participants believed they were delivering painful shocks
-  because an authority figure told them to. Most complied.
-- The findings were foundational. The distress was severe and sometimes lasting.
-- **Humphreys, 1970:** recorded license plates at public restrooms, traced home
-  addresses through police records, visited in disguise as a health surveyor
-- Exposure would have destroyed marriages and careers
+- Recruited by newspaper advertisement, told it was a study of memory and learning
+- Cast as the "teacher"; a confederate played the "learner" in the next room
+- Told to deliver escalating shocks for wrong answers, up to a switch marked **450 volts**
+- The shocks were not real. The belief that they were, and the distress, were.
+- **26 of 40** in the baseline condition went all the way to the maximum
+- Hesitating got a scripted prod, "the experiment requires that you continue",
+  rather than permission to stop
+
+## Milgram, what it cost
+
+- Milgram reported participants sweating, trembling, stuttering, and one seizure
+  violent enough to stop the session
+- The deception was total until the debriefing afterwards
+- The findings reshaped how the field understands obedience to authority, and
+  they are still taught in every introductory course
+- Whether that knowledge justified the distress has never been settled
+- Which is the point: he was neither careless nor malicious
+
+## Humphreys, 1970
+
+- Doctoral research on anonymous sexual encounters between men in public restrooms
+- He took the role of **watchqueen**, the lookout, which let him observe without
+  taking part and without saying he was a researcher
+- He wrote down the **license plates** of the men he observed
+- He traced those plates to home addresses through motor vehicle records, reached
+  through a contact in the police
+- About a year later he changed his appearance and his car, and interviewed those
+  men in their own homes, posing as an interviewer on an unrelated health survey
+
+## Humphreys, what it cost
+
+- Most of the men were married and living otherwise conventional lives
+- In 1970 exposure meant criminal prosecution, lost jobs, and ruined families
+- He kept the data secure, and argued the work reduced stigma by showing who
+  these men actually were
+- The book won a major award in sociology, and his own department fought over
+  whether to take his doctorate away
+- Both of those are true at once, which is why it is still assigned
 
 ## The common thread
 
@@ -96,12 +128,25 @@ format:
 
 - An **IRB** reviews a study **before** data collection: risk minimization,
   equitable selection, consent, privacy and confidentiality
-- **Exempt:** minimal risk, in categories federal regulation names. Most content
-  analysis of public material qualifies.
-- **Expedited:** no more than minimal risk but not exempt. Many surveys and
-  interview studies with adults.
+- **Expedited:** no more than minimal risk. Many surveys and interview studies
+  with adults.
 - **Full board:** more than minimal risk, vulnerable populations, or deception
+- **Exempt:** minimal risk, inside categories federal regulation names
 - **The IRB makes the determination, not you.** You submit. The board decides.
+
+## The question that comes first
+
+Before any of that, there is a prior question: **is this human subjects research
+at all?**
+
+Federal regulation defines a **human subject** as a living person about whom you
+obtain information either through **intervention or interaction** with them, or as
+**identifiable private information**.
+
+- You never interact with anyone. The messages were sent before you arrived.
+- They were **broadcast publicly**, so they are not private information.
+- Neither part is met, so this is **not human subjects research**, and the three
+  levels above never come into it
 
 ## The Twitch data through Belmont
 
@@ -111,7 +156,19 @@ format:
 - **Respect:** the case rests on public broadcast, not on consent
 - **Beneficence:** minimal risk. **Justice:** no group bears disproportionate burden
 
-Most IRBs classify this as **exempt**.
+## This determination has been made twice already
+
+- **Not hypothetical.** The Twitch data in front of you was formally determined
+  **not human subjects research** by Michigan State University, and the Twitter
+  data from the NSF work was determined the same way by SIUE.
+- **Your project is expected to land in the same place:** a content analysis of
+  public broadcast content is not human subjects research.
+- **The university makes that call, never the researcher.** You do not file anything
+  for this course, because the determination already exists for this data.
+- Carry work like this past the course, into a thesis or a job, and requesting the
+  determination becomes your job
+- You still do CITI, because the training is what lets you make the argument, and
+  because the next dataset you meet may not be this clean
 
 ## Public does not mean fair game
 
@@ -122,7 +179,7 @@ Most IRBs classify this as **exempt**.
 - Do not amplify messages whose senders expected obscurity more than broadcast
 - The cleanness of this dataset is a starting point, not a license
 
-## Three contrast cases
+## Three cases that would be human subjects research
 
 Same research question, different data, different determination:
 
