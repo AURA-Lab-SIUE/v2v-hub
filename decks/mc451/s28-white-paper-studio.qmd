@@ -94,8 +94,8 @@ Fifteen minutes, Results and Discussion. Answer in writing:
 ## What a useful review sounds like
 
 - **Not useful:** "This is good, maybe add more detail"
-- **Useful:** "I could not tell from paragraph two whether your 50 channels were
-  random or chosen. Say which."
+- **Useful:** "I could not tell from paragraph two whether your cases were drawn at random
+  or chosen. Say which."
 - Point at a location. Name the problem. Suggest one fix.
 - You are not grading. You are the first reader who is not the author.
 - Assume the writer is competent and the sentence is unfinished

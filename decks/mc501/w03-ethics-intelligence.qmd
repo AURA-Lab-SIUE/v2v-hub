@@ -157,7 +157,7 @@ information either through **intervention or interaction** with them, or in the 
 - They were **broadcast publicly**, so they are not private information.
 - Neither limb is met, so this is **not human subjects research**
 
-## Your project, walked through Belmont
+## Walking the class dataset through Belmont
 
 - Chat came from the **public IRC interface**, streams from the **public API**
 - No IP addresses, no emails, no internal user IDs, no payment data, no whispers
@@ -165,6 +165,9 @@ information either through **intervention or interaction** with them, or in the 
 - Respect for persons here rests on public broadcast, because consent was never asked
 - Beneficence: risk is minimal, and nothing we do aggregates toward identifying anyone
 - Justice: the sample spans channels broadly, including non-gaming categories
+
+That is the worked example. **You run the same walkthrough on the source you choose**, and
+the answers will not all be identical to these.
 
 ## This determination has already been made twice
 

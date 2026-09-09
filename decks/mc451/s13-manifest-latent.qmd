@@ -92,14 +92,16 @@ Features you cannot read off the surface:
   competitive-gaming channels
 - About everything else, they will actively mislead you
 
-## Match the corpus you will analyze
+## Match the range of your own source
 
-- The working corpus spans a deliberate range: **50 channels** across the platform's volume
-  distribution
-- Gaming and non-gaming, heavily populated and nearly empty
-- Your observation should span a comparable range
-- Watch big channels and small ones. Watch gaming, Just Chatting, and art.
-- Watch at different hours. A stream at peak and the same stream in a quiet hour are not
+- The class dataset spans a deliberate range: **50 channels** across the platform's volume
+  distribution, gaming and non-gaming, heavily populated and nearly empty
+- That range is the **principle**, not the assignment. Your observation should span the
+  range of whatever source you settled on with the librarian.
+- On Twitch that means big channels and small ones, gaming and Just Chatting and art
+- On a subreddit it means busy threads and dead ones. On a news site, the front page and
+  the pages nobody links to.
+- Sample across **time** as well. A feed at peak and the same feed in a quiet hour are not
   the same room.
 
 ## Coverage beats volume

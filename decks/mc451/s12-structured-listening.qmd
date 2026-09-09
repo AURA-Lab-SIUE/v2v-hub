@@ -145,11 +145,12 @@ Brief notes after each pass. You are still describing, not coding.
 
 ## Observation tests your question
 
-- You arrived with a prospectus committing you to directed versus broadcast chat
+- You arrived with a prospectus committing you to some distinction, whatever yours is
 - Observation will either **confirm** that split or **complicate** it
-- You may notice a great deal of chat is aimed at neither: replies, arguments, inside jokes
+- In the class dataset the classic case is directed versus broadcast chat: watch for a
+  while and you find messages aimed at neither, replies and arguments and inside jokes
   between regulars
-- The two-way distinction turns out to have a third term
+- A two-way distinction turns out to have a third term. Yours will do something similar.
 - That is not a failure of your prospectus. It is the cheapest possible moment to find out.
 
 ## Before next time

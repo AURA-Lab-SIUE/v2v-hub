@@ -25,7 +25,10 @@ format:
 ## Population, sample, census
 
 - The **population** is the full set of cases your conclusions are about
-- Here: all chat messages sent in the fifty-channel corpus during the collection week
+- In the class dataset that is every chat message in the fifty-channel corpus during the
+  collection week
+- **In your study it is whatever your prospectus said it was**, and pinning it down is your
+  job rather than something the data hands you
 - The **sample** is the subset you actually examine
 - A **census** codes every case, and is right when the population is small enough
 - The stream table is close to a census: roughly 32,000 snapshots, all kept
