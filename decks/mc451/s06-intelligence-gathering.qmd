@@ -14,13 +14,14 @@ format:
 
 ## Today
 
-Our subject librarian is here for most of the hour, running the databases live with us.
-
 You walk out with a topic, a set of search terms that actually work, and the start of a
-search log. That log is most of the Librarian Visit Report, so the work you do in this room
-is the assignment rather than preparation for it.
+search log. That log is most of the Librarian Visit Report.
 
-**Have a topic in mind before the librarian starts.** Rough is fine.
+**No librarian is coming to us.** You book your own appointment at Lovejoy and go to them,
+and that meeting is the assignment. Today is how you arrive there with something worth
+their time.
+
+**Have a topic in mind.** Rough is fine.
 
 ## Thirty sources in an hour
 
@@ -60,7 +61,7 @@ fails.
 - What words would a scholar use for it that you would not?
 - Where would you look first, and how would you know if you had missed the main body of work?
 
-*Two minutes to get your terms down. The librarian will ask you for them, so this is not a
+*Two minutes to get your terms down. Your librarian will ask you for them, so this is not a
 warm-up exercise.*
 
 ## Phase one: search broadly
@@ -93,7 +94,7 @@ a wildcard: `stream*` catches stream, streams, streaming, and streamer.
 ```
 
 Three concept blocks joined with AND, each holding its own synonyms. Build yours the same
-way and the librarian can fix it with you in seconds.
+way and take it with you: a librarian can fix a string like this in seconds.
 
 ## Keep a search log
 
@@ -127,28 +128,38 @@ will recognise it three ways:
 
 It does not mean you read everything. It means stop searching and start synthesizing.
 
-## Over to our librarian
+## Book your librarian appointment
 
-[The rest of today]{.eyebrow}
+[Do this today, not Thursday]{.eyebrow}
 
-- They are going to run the databases with us, live, on real topics
+- Go to [Lovejoy Library](https://www.siue.edu/lovejoy-library/) and ask for the
+  **Mass Communications subject librarian** by name. That is what they are there for.
+- Book it **this week**. The report is due Friday and their calendar is not yours.
+- Bring your topic, your terms, and your search log. A consultation with nothing in hand
+  wastes the half hour and gives you nothing to write up.
 - This is the part a chapter cannot give you: the interface, the limiters, and the tricks
-  that only come from using these every day
-- Have your topic and your terms open
-- Interlibrary loan is free and much faster than you expect. Ask about it.
+  that only come from using these every day.
 
-## What to ask while you have them
+## What to ask while you are there
 
 - Which database is actually right for **my** question?
 - How do I get the full text when the library does not subscribe?
 - How do I set up a saved search and an alert for new results?
 - What is the fastest way to push a batch of results into Zotero?
-- Can I book an appointment later in the term, when I am properly stuck?
+- Interlibrary loan is free and much faster than you expect. Ask how to use it.
+
+## The rest of today: search, in here, now
+
+- Open a database and run your first real string. I am walking the room.
+- Start the search log on your **first** search, not once you have something good
+- Before you leave: a topic, one string that works, and three sources in Zotero
+- Bring me the search that returns 40,000 hits, or the one that returns none. Both are
+  normal and both are fixable in about a minute.
 
 ## Before next time
 
-- **The Librarian Visit Report is due next week**, 50 points. Write it while today is
-  still fresh, not Sunday night.
+- **The Librarian Visit Report is due Friday, September 18**, 50 points. You cannot write
+  it without the meeting, so book the meeting today.
 - It wants your search log: databases, strings, results, and what you kept
 - Install **Zotero** and connect it to your browser if you have not yet
 - Read the rest of **Chapter 4** on the literature map before Tuesday
