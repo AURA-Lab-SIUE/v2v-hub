@@ -1,0 +1,149 @@
+---
+title: "Commit Your Work"
+subtitle: "MC 451 / MC 501 · Download this into your workspace, then commit it"
+format: html
+execute:
+  eval: false
+---
+
+## What this file is, and why it is the assignment
+
+You just downloaded this file into your course workspace folder. It is not in the template,
+so right now it exists on your laptop and nowhere else.
+
+**Getting this file onto GitHub is the whole exercise.** When I can see
+`01-commit-your-work.qmd` sitting in your repository on github.com, that proves three things
+at once: your workspace is a real repository, it is connected to GitHub, and you know how to
+send your work there. That is the check.
+
+Save this file into the **top folder** of your workspace, next to `README.md`. Not in
+`01_Journal/`, not in Downloads.
+
+## What committing actually is
+
+Two words, and people mix them up constantly.
+
+- A **commit** is a snapshot saved on **your laptop**. It records what every file looked like
+  at that moment, with a short message you write.
+- A **push** sends your commits **up to GitHub**.
+
+A commit without a push is a diary in a drawer. You need both, every time.
+
+## Step 1 - Save the file
+
+In VS Code, press `Ctrl+S`, or `Cmd+S` on a Mac.
+
+**What you should see:** the white dot in this file's tab turns back into an X.
+
+**If the dot is still there,** the file is unsaved and nothing below will pick it up. Git only
+ever sees what is saved to disk.
+
+## Step 2 - Open Source Control
+
+Click the **Source Control** icon in the bar down the left side of VS Code. It is the one
+that looks like a branching line. Or press `Ctrl+Shift+G`.
+
+**What you should see:** a panel listing changed files, with `01-commit-your-work.qmd` among
+them and a **U** next to it. U means untracked, which is git saying "this file is new to me."
+
+**If the panel says there are no changes,** you saved the file somewhere outside your
+workspace folder. Find it and move it in.
+
+## Step 3 - Stage the file
+
+Hover over `01-commit-your-work.qmd` in that list and click the **+** that appears.
+
+**What you should see:** the file jumps up into a section called **Staged Changes**.
+
+**Staging** is you choosing what goes into this snapshot. You can commit some files and not
+others. Today, stage everything you have worked on.
+
+## Step 4 - Write a message
+
+Click the message box at the top of the Source Control panel and type something a stranger
+could read:
+
+```
+Add the commit walkthrough file
+```
+
+**Write what changed and why.** Not "stuff", not "update", not "asdf". You will read these
+back in November trying to find when something broke, and "update" will tell you nothing.
+
+## Step 5 - Commit
+
+Click the blue **Commit** button.
+
+**What you should see:** the Staged Changes list empties. The snapshot now exists on your
+laptop.
+
+**If it refuses and asks you to configure a username or email,** open the terminal in VS Code
+(`Ctrl+` backtick) and run these two lines with your own details, then commit again:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@siue.edu"
+```
+
+## Step 6 - Push it to GitHub
+
+Click **Sync Changes**, the blue button that appears after a commit. If this is the first
+push from this folder, the button says **Publish Branch** instead. Either is correct.
+
+**What you should see:** a brief progress bar, then nothing. Silence means success.
+
+**If a browser window opens asking you to sign in to GitHub,** that is normal and it happens
+once. Approve it and the push continues on its own.
+
+**If it asks for a password and then rejects it,** your password is not the problem. GitHub
+stopped accepting passwords for this in 2021 and wants a token instead. Let VS Code's sign-in
+flow handle it rather than typing anything, and wave me over if it loops.
+
+## Step 7 - Prove it, on GitHub
+
+Open your repository page on **github.com** in a browser and refresh it.
+
+**What you should see:** `01-commit-your-work.qmd` in the file list, and your commit message
+next to it with a timestamp of a minute ago.
+
+**That is the verification.** If you can see this file on github.com, you are done and you
+have met the requirement. If you cannot, something above did not take, and it is almost
+always Step 6.
+
+## Doing this from the terminal instead
+
+The buttons and the commands are the same four actions. If you prefer typing, open the
+terminal in VS Code and run:
+
+```bash
+git add .
+git commit -m "Add the commit walkthrough file"
+git push
+```
+
+`add .` stages everything you changed. `commit` writes the snapshot. `push` sends it up.
+
+To see what you have done so far:
+
+```bash
+git log --oneline
+```
+
+## The habit this is building
+
+From here on, the end of every work session looks like this: save, stage, commit with a real
+message, push. It takes about twenty seconds.
+
+Do it at the end of every week at the absolute minimum. If your laptop dies in November, the
+only work you still have is the work you pushed.
+
+## If you got stuck
+
+That is expected, and it is never because you are bad at this.
+
+1. Close VS Code completely and reopen it. This fixes a surprising share of problems.
+2. Try the step again. Some failures are a slow network, not a real fault.
+3. Email me the **exact** text of the error, or a screenshot, plus which step number you were
+   on. Do not paraphrase the error; the wording is the diagnosis.
+4. Office hours: Tuesday and Thursday, 12:30 to 1:45 and 3:30 to 5:00, Dunham Hall 1017.
+   Drop in, no appointment.

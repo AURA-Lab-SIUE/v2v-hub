@@ -156,6 +156,29 @@ It does not mean you read everything. It means stop searching and start synthesi
 - Bring me the search that returns 40,000 hits, or the one that returns none. Both are
   normal and both are fixable in about a minute.
 
+## Last part of today: commit your work
+
+You have a topic, a working string, and the start of a search log. None of it is anywhere
+but your laptop.
+
+Download this into the **top folder** of your workspace, beside `README.md`:
+
+[aura-lab.siue.edu/v2v-hub/starters/01-commit-your-work.qmd](https://aura-lab.siue.edu/v2v-hub/starters/01-commit-your-work.qmd)
+
+**Getting that file onto GitHub is the check.** It is not in the template, so if I can see it
+in your repository, you put it there yourself.
+
+## Save, stage, commit, push
+
+1. **Save** it, `Ctrl+S`. The dot in the tab turns back into an X.
+2. **Source Control** in the left bar, or `Ctrl+Shift+G`. Your file is listed with a **U**.
+3. **Stage** it: hover over the name, click the **+**. It moves to Staged Changes.
+4. Type a **message** a stranger could read, then click **Commit**. Never "update".
+5. Click **Sync Changes**. The first time from a folder it says **Publish Branch** instead.
+
+**You should see** the file on your repository page at github.com when you refresh it. A
+commit stays on your laptop; the push is what sends it. You need both, every time.
+
 ## Before next time
 
 - **The Librarian Visit Report is due Friday, September 18**, 50 points. You cannot write

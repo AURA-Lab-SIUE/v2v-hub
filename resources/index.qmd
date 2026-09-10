@@ -59,6 +59,19 @@ VS Code. Run it whenever something stops working, not only in week one.
 
 ---
 
+## Commit your work to GitHub
+
+`01-commit-your-work.qmd` walks you through saving, staging, committing, and pushing, with
+what you should see at every step and what to do when it does not happen. Save it into the
+**top folder** of your workspace, next to `README.md`.
+
+Getting that file onto GitHub is itself the check: it is deliberately not in the workspace
+template, so if it appears in your repository, you put it there.
+
+[Download 01-commit-your-work.qmd](../starters/01-commit-your-work.qmd){.btn .btn-primary}
+
+---
+
 ## Required software
 
 Install these before Phase I. All are free.

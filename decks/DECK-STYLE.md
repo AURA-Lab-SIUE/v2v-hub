@@ -79,11 +79,37 @@ too technical and too cold to people who dislike VS Code, R, and coding generall
 `starters/` in this repo, and the root of the `v2v-workspace` template. s04 used to show YAML
 followed by two bare R lines with no fenced chunk, which does not render if copied literally.
 
+## Bullets, not paragraphs (owner, 2026-09-10, ALL courses)
+
+> "I will always prefer bullet points in slides over paragraphs. Unless we are directly quoting
+> something, I should never feel the need to read something long from the board or have students
+> read something long on the board unless it is truly important in its full length."
+
+**The test is reading aloud.** If he would have to read a block off the board, or ask the room to
+read it, that block is wrong. Convert it to bullets. Two exceptions only:
+
+1. **A direct quote**, which needs its words verbatim and stays a block quote.
+2. **Text that is genuinely load-bearing at full length**: a definition whose exact wording
+   matters, an assignment requirement, a policy sentence. Rare.
+
+This does **not** ban the short slide. A single sentence, a question, or a two-word landing is
+still good shape, because nobody has to "read" one line. What it bans is the multi-line paragraph
+a room reads silently while the instructor talks over it, so that neither the slide nor the
+speech lands.
+
+It also does **not** license cramming. There is no maximum slide count, so a paragraph becomes
+four bullets across two slides. **Split, never trim**: shortening a slide by deleting content is
+the failure mode this rule exists to prevent.
+
+This supersedes nothing in "Vary the slide shape" below, which is about rhythm and still holds.
+Where the two seem to disagree, the read-aloud test wins.
+
 ## Density, the hard rule
 
 Every slide must fit without overflowing at a 33px root font. In practice:
 
-- 4 to 6 bullets per slide, each **one or two lines**, never a paragraph.
+- 4 to 6 bullets per slide, each **one or two lines**, never a paragraph. See the
+  read-aloud test above: bullets are the default shape for everything that is not a quote.
 - If a topic needs more, split it across two slides. Never shrink text.
 - Tables: 7 rows maximum, short cells.
 - One idea per slide. A slide is a landing point, not a document.
