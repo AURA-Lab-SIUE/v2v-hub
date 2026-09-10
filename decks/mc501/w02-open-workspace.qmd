@@ -295,4 +295,4 @@ Run it before your first line of analysis code. Commit it before you collect you
 - Read **Chapter 3** (Ethics) and **Chapter 4** (Intelligence Gathering), graduate edition toggle on
 - Read the assigned article: **Nosek et al. (2018)**, "The preregistration revolution"
 - Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
-- A librarian joins us next week. Bring a topic you might actually search.
+- Next week is searching. Bring a topic you might actually search.

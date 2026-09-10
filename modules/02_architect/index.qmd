@@ -76,7 +76,7 @@ From this point forward you commit and push your journal entries each week, buil
 
 ### Librarian Visit Report (50 pts), Week 4
 
-Meet with a SIUE librarian to identify and evaluate a data archive for your research project. Write a report documenting:
+Meet with a SIUE librarian to identify and evaluate a data archive for your research project. **You arrange this meeting yourself; no librarian visits class.** Go to [Lovejoy Library](https://www.siue.edu/lovejoy-library/) and ask for the Mass Communications subject librarian by name. Write a report documenting:
 
 1. **The archive**: name, type, scope
 2. **What you learned**: date range, searchability, export options
@@ -110,7 +110,7 @@ Create a professional GitHub account with:
 
 ### Librarian Visit Report (50 pts), Week 4
 
-Meet with a SIUE librarian to identify and evaluate a data archive for your research project. Write a report documenting:
+Meet with a SIUE librarian to identify and evaluate a data archive for your research project. **You arrange this meeting yourself; no librarian visits class.** Go to [Lovejoy Library](https://www.siue.edu/lovejoy-library/) and ask for the Mass Communications subject librarian by name. Write a report documenting:
 
 1. **The archive**: name, type, scope
 2. **What you learned**: date range, searchability, export options

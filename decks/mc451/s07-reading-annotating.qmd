@@ -14,7 +14,7 @@ format:
 
 ## You have dozens of sources
 
-- After the librarian visit your Zotero library is full and shapeless
+- After a week of searching your Zotero library is full and shapeless
 - The problem is no longer finding more. It is making sense of what you have.
 - This is the part that feels impossible, and it is a skill rather than a talent
 - Today: from a pile, to a map, to an argument

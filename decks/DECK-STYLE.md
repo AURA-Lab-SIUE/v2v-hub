@@ -25,8 +25,18 @@ MC 501 subtitle form: `"Week 7 · Chapter 8 · MC 501 Research Methods for Mass 
 
 ## Length
 
-- **MC 451** session (75 minutes): 12 to 26 content slides.
-- **MC 501** week (170 minutes): 20 to 36 content slides.
+- **MC 451** session (75 minutes): **at least 12** content slides.
+- **MC 501** week (170 minutes): **at least 20** content slides.
+
+There is no maximum. A deck is never too long.
+
+**Ceiling REMOVED 2026-09-10 (owner), and this is the end of the sequence.** His words:
+covering what is necessary beats missing important things, and the problem is too FEW
+slides. A short deck is the real defect, because that is where a session quietly lost
+material it needed; a long one only means the topic needed the room. `qa_decks.py` now
+checks the floor alone. Do not reintroduce an upper bound, and do not cut content to hit
+a number. The two raises below are history, kept because they show the ceiling being
+wrong twice before it was removed.
 
 **Raised again 2026-09-09 (owner), from 12-18 and 20-27, then to 12-26 and 20-36 the same
 day after two decks hit the new ceiling within the hour.** This is the SECOND deliberate

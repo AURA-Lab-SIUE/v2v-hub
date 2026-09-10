@@ -142,7 +142,7 @@ Create a professional GitHub account with:
 
 **50 points. Due Monday, September 21, 11:59 PM.** *(Week 4)*
 
-Meet with a SIUE librarian to identify and evaluate a data archive for your research project. Write a report documenting:
+Meet with a SIUE librarian to identify and evaluate a data archive for your research project. **You arrange this meeting yourself; no librarian visits MC 501.** You meet ours in **MC 500**. If you need more than that, book a subject librarian at [Lovejoy Library](https://www.siue.edu/lovejoy-library/). Write a report documenting:
 
 <details class="syl-policy">
 <summary>Full requirements</summary>

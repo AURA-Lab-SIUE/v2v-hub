@@ -15,8 +15,8 @@ format:
 ## Tonight
 
 Two halves. First, what you owe the people whose messages you are about to analyze.
-Second, how to find out what has already been said about your topic, with a librarian in
-the room to help you do it.
+Second, how to find out what has already been said about your topic, so that when you sit
+down with a librarian you arrive with something worth their time.
 
 You leave with three things: a non-human-subjects determination you could actually file, a
 preregistration stub for your own project, and a search log that becomes part of your
@@ -333,7 +333,7 @@ recognise it three ways:
 
 It does not mean you read everything. It means the map stopped changing.
 
-## Worth asking the librarian tonight
+## Worth asking your librarian
 
 - Which database actually indexes the journals in my area, and what does it miss?
 - How do I set an alert so new work on my topic finds me instead of the other way round?
@@ -381,7 +381,9 @@ why complete training for human subjects research?
 
 ## Before Week 4
 
-- **Due:** the **Librarian Visit Report**, built from tonight's searching
+- **Due:** the **Librarian Visit Report**, built from tonight's searching plus your own
+  visit. **No librarian comes to this class.** You meet ours in **MC 500**; if you need
+  more, book a subject librarian at [Lovejoy](https://www.siue.edu/lovejoy-library/).
 - Read **Chapter 4** (annotating) and **Chapter 5** (Theory as a Lens), with the
   edition toggle on
 - Read the assigned article: **Cohen (1992)**, "A power primer"

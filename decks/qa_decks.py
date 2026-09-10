@@ -108,9 +108,15 @@ def check_qmd(p, t, prof):
         issues.append("no front matter")
     if prof["theme_marker"] not in t:
         issues.append("theme path")
-    lo, hi = prof["bands"]
-    if not (lo <= n <= hi):
-        issues.append(f"slides={n} outside {lo}-{hi}")
+    # Owner 2026-09-10, THIRD and final loosening: the ceiling is gone, not raised.
+    # He adapts teaching time to the deck, so a long deck is never the defect; a SHORT
+    # one is, because that is where a session quietly lost material it needed. Covering
+    # what the session needs beats trimming to a number. Floor only. Do not re-add an
+    # upper bound: it was raised twice (12-18 -> 12-26, 20-27 -> 20-36) and still caught
+    # only correct decks.
+    lo, _hi = prof["bands"]
+    if n < lo:
+        issues.append(f"slides={n} under the floor of {lo}")
     return n, dpos, issues
 
 

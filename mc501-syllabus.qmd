@@ -459,7 +459,7 @@ one item here that is pure clock time and can be finished early.
 |:--------|:-----------|:---------------------------------------------------|:--------------------------|
 | 1 | Aug 26 | Orientation; Ch 1 The Science of Storytelling (Reading: Munafo et al. (2017))| Syllabus Contract |
 | 2 | Sep 2 | Ch 2 The Open Workspace + project setup (Reading: Wilson et al. (2017))| GitHub Profile |
-| 3 | Sep 9 | Ch 3 Ethics; Ch 4 Intelligence Gathering (librarian visit) (Reading: Nosek et al. (2018))| |
+| 3 | Sep 9 | Ch 3 Ethics; Ch 4 Intelligence Gathering (Reading: Nosek et al. (2018))| |
 | 4 | Sep 16 | Ch 4 annotating; Ch 5 Theory as a Lens (Reading: Cohen (1992))| Librarian Visit Report |
 | 5 | Sep 23 | Ch 5 variables & hypotheses; Ch 6 Research questions (Reading: Gelman & Loken (2014))| Annotated Manuscripts (3) · CITI Certification |
 | 6 | Sep 30 | Ch 6 the prospectus; Ch 7 Structured Listening (Reading: Lakens (2022))| Topic Selection / RQs |
