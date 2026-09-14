@@ -199,7 +199,7 @@ Take the first hundred messages of the sample, hand the two coders' columns to
 ## A worked failure
 
 - The codebook asked coders to flag "high-energy" messages without defining the term
-- **Coder A** flagged messages carrying a Twitch emote (LULW, KEKW)
+- **Coder A** flagged messages carrying a Twitch emote (LULW, OMEGALUL)
 - **Coder B** flagged messages containing a word in all capitals
 - Both rules are reasonable readings. Both coders believed they coded one variable.
 

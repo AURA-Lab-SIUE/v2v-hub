@@ -117,7 +117,7 @@ Inter-coder reliability: Cohen's kappa
 ## What went wrong: two rules, one name
 
 - The codebook asked coders to flag "high-energy" messages and never defined it
-- **Coder A** decided high-energy meant carrying a Twitch emote, LULW or KEKW
+- **Coder A** decided high-energy meant carrying a Twitch emote, LULW or OMEGALUL
 - **Coder B** decided it meant shouting, so any word in all capitals
 - Both readings are reasonable. Both coders believed they coded one variable.
 - Emote messages and all-caps messages overlap enough to agree by accident

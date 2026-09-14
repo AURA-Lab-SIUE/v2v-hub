@@ -54,7 +54,7 @@ still. Today is about how you come to know which one it was.
 
 A coder who has never watched Twitch reads the log as plain text and:
 
-- Sees **KEKW** and cannot tell an emote from a typo or a username
+- Sees **LULW** and cannot tell an emote from a typo or a username
 - Sees thirty accounts posting the same phrase and does not recognise **copypasta**, a block
   the regulars paste together as a joke
 - Sees "@sodapoppin same" and cannot tell agreement from a reflexive stock reply

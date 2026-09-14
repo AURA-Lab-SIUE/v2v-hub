@@ -201,7 +201,7 @@ Roughly 250 words. One page, with every sentence carrying weight.
 
 ## Chapter 7: what a coder cannot see
 
-- A coder who has never watched Twitch reads "KEKW" and sees a typo rather than laughter
+- A coder who has never watched Twitch reads "LULW" and sees a typo rather than laughter
 - They read thirty identical messages and do not recognise **copypasta**, a block of text
   the room repeats together as a joke
 - They read "@sodapoppin same" and cannot tell agreement from a reflexive stock reply
