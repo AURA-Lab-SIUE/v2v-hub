@@ -356,8 +356,8 @@ Library (Lovejoy) with your student login; everything else is open access. Weeks
 
 ## Materials and technology
 
-**Textbook.** This course uses an Open Educational Resource (OER): *From Vibes to
-Variables: A Field Guide to Open Media Science* (3rd Ed.), free and online at
+**Textbook.** This course uses an Open Educational Resource (OER): *Vibes to Variables: A Methods
+Package for Students New to Research, Stats, and Code* (3rd Ed.), free and online at
 [aura-lab.siue.edu/v2v](https://aura-lab.siue.edu/v2v/). There is no
 textbook to purchase. **Turn on the "Graduate edition" toggle** (the control in
 the lower corner of any page), which reveals a **required graduate extension in
