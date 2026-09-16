@@ -101,10 +101,19 @@ addresses that by doing Z.
 > Sjöblom and Hamari (2017) examined viewer motivations. Hilvert-Bruce and colleagues
 > (2018) studied social motivations for engagement.
 
-Three disconnected summaries. A reader learns what each study was about and nothing
-whatsoever about how they fit together.
+- Three disconnected summaries, and nothing whatsoever about how they fit together
+- Every sentence is driven by **who wrote the study** instead of by what is known
+- Most first drafts look like this. It is a stage, not a verdict.
 
-Most first drafts look like this. It is a stage, not a verdict.
+## Where the citation goes
+
+- Default: make the **claim** the subject and put the citation at the **end**, in
+  parentheses, as (Sjöblom & Hamari, 2017)
+- Lead with the name only when that study is the point: a landmark, a definition you
+  are adopting, or a finding you are about to argue with
+- An author-led sentence announces a **study**. A claim-led sentence states a **finding**.
+- A page of "X (2014) found, Y (2017) found" is an annotated bibliography wearing the
+  clothes of a review
 
 ## This is what synthesis looks like
 
@@ -120,7 +129,8 @@ The strong version does five things instead:
 
 ## Why that works
 
-- The claim comes first, and the citations support it instead of driving it
+- The claim comes first, and the citations sit at the end supporting it instead of
+  driving it
 - Sources are grouped by what they argue, not by the year they appeared
 - The limitation is shared across the group, which makes it structural rather than a
   complaint about one paper
@@ -140,12 +150,12 @@ Four sentences, three citations, one gap. That is enough to anchor a prospectus.
 
 ## The same thing, written out
 
-> Hamilton, Garretson, and Kerne (2014) characterized Twitch streams as virtual third
-> places where informal communities form. Sjöblom and Hamari (2017) found that social and
-> tension-release motivations were central to why people watch. Hilvert-Bruce and colleagues
-> (2018) extended this to show that social interaction predicted not just watching but
-> chatting and subscribing. All three rely on self-report surveys, leaving open whether the
-> same patterns appear in behavioral chat-log data.
+> Livestream viewing is motivated less by what is on screen than by the social experience
+> around it. Twitch streams function as virtual third places where informal communities
+> form (Hamilton et al., 2014), and social and tension-release motivations are central to
+> why people watch (Sjöblom & Hamari, 2017). Social interaction predicts not just watching
+> but chatting and subscribing (Hilvert-Bruce et al., 2018). All three rely on self-report
+> surveys, leaving open whether the same patterns appear in behavioral chat-log data.
 
 ## The ethics of citation
 

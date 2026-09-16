@@ -47,9 +47,20 @@ what makes the sources comparable to each other.
 > Sjöblom and Hamari (2017) examined viewer motivations. Hilvert-Bruce and colleagues
 > (2018) studied social motivations for engagement.
 
-Three disconnected summaries. The reader learns what each study was about and nothing
-about how they relate. This is what annotation without synthesis produces, and most first
-drafts look exactly like it.
+- Three disconnected summaries, and nothing about how they relate
+- Every sentence is driven by **who wrote the study** instead of by what is known
+- This is what annotation without synthesis produces
+- Most first drafts look exactly like it. It is a stage, not a verdict.
+
+## Where the citation goes
+
+- Default: make the **claim** the subject and put the citation at the **end**, in
+  parentheses, as (Sjöblom & Hamari, 2017)
+- Lead with the name only when that study is the point: a landmark, a definition you
+  are adopting, or a finding you are about to argue with
+- An author-led sentence announces a **study**. A claim-led sentence states a **finding**.
+- A page of "X (2014) found, Y (2017) found" is an annotated bibliography wearing the
+  clothes of a review
 
 ## What a strong review does
 
@@ -58,7 +69,25 @@ drafts look exactly like it.
 - **Adds nuance**: where they disagree, or where one qualifies another
 - **Names a shared limitation**, which is usually where your gap lives
 - Worked: survey research converges on livestream viewing being socially motivated, but
-  all of it is self-report, so nobody has checked the behavioural trace
+  all of it is self-report, so nobody has checked the behavioral trace
+
+## The same thing, written out
+
+> Livestream viewing is motivated less by what is on screen than by the social experience
+> around it. Twitch streams function as virtual third places where informal communities
+> form (Hamilton et al., 2014), and social and tension-release motivations are central to
+> why viewers watch (Sjöblom & Hamari, 2017). Social interaction predicts not just
+> watching but chatting and subscribing (Hilvert-Bruce et al., 2018). All three rely on
+> self-report, leaving open whether the same patterns appear in behavioral chat-log data.
+
+## Why that version works
+
+- The **claim leads**, and the citations arrive behind it as support
+- Sources are grouped by what they argue, not by the year they appeared
+- The limitation is shared across the group, which makes it structural rather than a
+  complaint about one paper
+- The gap is never asserted. It falls out of the limitation on its own.
+- Notice where it points: at a content analysis of a real chat log
 
 ## What to mark in a manuscript
 

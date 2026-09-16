@@ -104,6 +104,34 @@ the failure mode this rule exists to prevent.
 This supersedes nothing in "Vary the slide shape" below, which is about rhythm and still holds.
 Where the two seem to disagree, the read-aloud test wins.
 
+## Citations: claim first, citation at the end (owner, 2026-09-16)
+
+> "Not all citations should start with LastName et al. (YEAR). I prefer that most citations
+> are (Lastname, YEAR) at the end of the text. Only key articles should start with the
+> citation."
+
+The default is the **parenthetical** form at the end of the sentence or bullet: the claim is
+the subject, and the citation follows it as support.
+
+- Wrong by default: `Neuendorf (2017) calls it the heart of a content analysis.`
+- Right: `It is the heart of a content analysis (Neuendorf, 2017).`
+
+**Lead with the name only when that source is the point of the sentence.** In practice that is:
+
+1. The **assigned article** for the week, on the reading slide or the `{.discuss}` slide
+   (`On Lakens (2022), "Sample size justification":`).
+2. A **block-quote attribution**, which is a citation line rather than prose.
+3. A landmark being named as a landmark, a definition being adopted, or a study the slide
+   is about to argue with.
+
+This matters most in the review-writing slides, because students copy whatever the model
+paragraph does. A worked review paragraph must lead with the claim and carry its citations at
+the end, or it teaches the annotated-bibliography habit the same slide is warning against
+(mc451 s07, mc501 w04).
+
+`qa_decks.py` flags a narrative citation outside those three contexts. It is a warning worth
+reading, not a law: if the sentence really is about the author, leave it and move on.
+
 ## Density, the hard rule
 
 Every slide must fit without overflowing at a 33px root font. In practice:

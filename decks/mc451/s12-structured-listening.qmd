@@ -70,8 +70,8 @@ A coder who has never watched Twitch reads the log as plain text and:
 
 ## Thick description
 
-Geertz (1973) called it **thick description**: a record rich enough to capture not just what
-happened but what it meant to the people it happened among.
+The alternative is **thick description**: a record rich enough to capture not just what
+happened but what it meant to the people it happened among (Geertz, 1973).
 
 A *thin* description of the chat log counts messages. A *thick* one knows the count is made
 of raids, inside jokes, and reflexive replies.

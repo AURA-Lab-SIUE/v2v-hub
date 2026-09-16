@@ -45,8 +45,8 @@ Same pattern, three research programs, three different studies.
 
 ## Social identity, worked
 
-Tajfel and Turner (1979) held that people take part of their self-concept from the groups
-they belong to. Watch what that produces:
+People take part of their self-concept from the groups they belong to (Tajfel & Turner,
+1979). Watch what that produces:
 
 - Viewers rate their preferred community above rivals, especially on subjective dimensions
   like authenticity
@@ -117,8 +117,8 @@ One idea, three predictions, all of them checkable.
 ## Catalogue: audience and exposure
 
 - **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): audiences are active and
-  pick media to meet needs. Sjöblom and Hamari (2017) used it directly to study why people
-  watch other people play video games.
+  pick media to meet needs. It is the lens behind most research on why people watch other
+  people play video games (Sjöblom & Hamari, 2017).
 - **Cultivation** (Gerbner & Gross, 1976): long-term cumulative exposure shapes how people
   perceive social reality. Heavy consumers overestimate what they keep seeing, most
   strongly where they have no direct experience to check it against.

@@ -137,7 +137,8 @@ codebook needs your narration, it is not yet an instrument.
 
 - Reporting agreement from the training set is a common and serious error
 - The training set is contaminated by the reconciliation conversation
-- Lombard and colleagues (2002) recommend reporting more than one reliability statistic
+- Reporting more than one reliability statistic is the published recommendation
+  (Lombard et al., 2002)
 
 ## Why the protocol exists
 
@@ -182,7 +183,7 @@ On Lombard et al. (2002), "Content analysis in mass communication":
   the program
 - It specifies every operation, handles every conditional, and ensures two processors,
   here two human coders, running the same program on the same input produce the same output
-- Neuendorf (2017) calls it the heart of a content analysis
+- It is the heart of a content analysis (Neuendorf, 2017)
 - Its clarity is the single strongest predictor of whether your coders will agree
 
 ## Five parts of a codebook

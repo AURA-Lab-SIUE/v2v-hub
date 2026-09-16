@@ -124,7 +124,7 @@ Inter-coder reliability: Cohen's kappa
 
 ## Reading the number
 
-Landis and Koch (1977) attached labels to ranges:
+Labels have long been attached to ranges (Landis & Koch, 1977):
 
 | Kappa | Label |
 |---|---|

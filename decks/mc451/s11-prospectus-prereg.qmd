@@ -82,8 +82,8 @@ Swap the lens and everything downstream of it changes:
 - **Title.** Markers of parasocial bond in viewer chat, large-audience versus
   small-audience streams
 - **RQ.** Do smaller-audience streams show a higher rate of parasocial language?
-- **Framework.** Parasocial interaction (Horton & Wohl, 1956); Hilvert-Bruce et al. (2018)
-  found smaller-channel viewers more socially motivated
+- **Framework.** Parasocial interaction (Horton & Wohl, 1956); smaller-channel viewers
+  are the more socially motivated ones (Hilvert-Bruce et al., 2018)
 
 Same corpus. Different study entirely.
 
@@ -155,8 +155,8 @@ Before you submit, answer four questions honestly:
 - **Pre-registration** means publicly committing to your hypotheses, methods, and analysis
   plan before you collect or analyze anything
 - Services like the Open Science Framework timestamp that commitment so it cannot move
-- Simmons, Nelson, and Simonsohn (2011) showed that without a fixed plan, researchers
-  adjust hypotheses and variables until something crosses significance
+- Without a fixed plan, researchers adjust hypotheses and variables until something
+  crosses significance (Simmons et al., 2011)
 - That is where the phrase **researcher degrees of freedom** comes from
 - Pre-registration closes them by making the plan inspectable by somebody else
 

@@ -194,8 +194,8 @@ Roughly 250 words. One page, with every sentence carrying weight.
 
 - **Pre-registration** commits publicly to hypotheses, methods, and analysis plan before
   data are collected or analyzed, and the Open Science Framework timestamps it
-- Simmons, Nelson, and Simonsohn (2011) showed that researchers without a fixed plan can
-  adjust hypotheses, variables, and choices until a result reaches significance
+- Researchers without a fixed plan can adjust hypotheses, variables, and choices until a
+  result reaches significance (Simmons et al., 2011)
 - That is where **researcher degrees of freedom** comes from
 - Your prospectus is an informal pre-registration: the record of what you set out to do
 
@@ -206,8 +206,8 @@ Roughly 250 words. One page, with every sentence carrying weight.
   the room repeats together as a joke
 - They read "@sodapoppin same" and cannot tell agreement from a reflexive stock reply
 - The scheme sorts every message confidently, and the buckets do not mean what you think
-- Geertz (1973) called the alternative **thick description**: a record rich enough to
-  capture not just what happened but what it meant to the people there
+- The alternative is **thick description**, a record rich enough to capture not just what
+  happened but what it meant to the people there (Geertz, 1973)
 
 ## Three modes of attention
 

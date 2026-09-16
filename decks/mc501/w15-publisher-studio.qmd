@@ -74,8 +74,8 @@ produced at render time rather than pasted in.
 - The report **cannot drift** from the analysis, because the report *is* the analysis
 - The report **can be checked**: anyone with the source and the data renders it and
   gets exactly the same results (Peng, 2011)
-- The idea predates Quarto and R. Knuth (1984) called it **literate programming**:
-  runnable code and the prose explaining it belong in one document.
+- The idea predates Quarto and R. Runnable code and the prose explaining it belong in
+  one document, an arrangement named **literate programming** (Knuth, 1984).
 - The "one click" is the render button
 
 ## IMRaD, and what each section owes

@@ -222,8 +222,8 @@ Inter-coder reliability: Cohen's kappa
 
 ## Reading a coefficient against a standard
 
-- Landis and Koch (1977) attached labels to ranges: 0.0 to 0.2 slight, 0.2 to 0.4
-  fair, 0.4 to 0.6 moderate, 0.6 to 0.8 substantial, above 0.8 almost perfect
+- Labels have long been attached to ranges: 0.0 to 0.2 slight, 0.2 to 0.4 fair, 0.4 to
+  0.6 moderate, 0.6 to 0.8 substantial, above 0.8 almost perfect (Landis & Koch, 1977)
 - Those labels are a vocabulary, not a law
 - Published content analysis applies a stricter working rule: below about **0.70**
   is too low to proceed on, with **0.80** a more comfortable floor

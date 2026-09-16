@@ -28,7 +28,7 @@ format:
 - It is not paperwork assembled afterward to satisfy a methods requirement
 - Think of it as **source code**: it specifies every operation and handles every conditional
 - Two processors, here two human coders, running the same program on the same input produce the same output
-- Neuendorf (2017) calls it the heart of a content analysis. Its clarity is the single strongest predictor of whether coders agree.
+- It is the heart of a content analysis (Neuendorf, 2017). Its clarity is the single strongest predictor of whether coders agree.
 
 ## Five parts
 

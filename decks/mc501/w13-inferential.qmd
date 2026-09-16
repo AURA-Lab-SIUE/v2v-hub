@@ -143,8 +143,8 @@ On Lakens et al. (2018), "Justify your alpha":
 - The p-value hands the question to a different number: an **effect size**
 - For a gap between two means that is **Cohen's *d***, the gap expressed in units
   of how much the data naturally vary. Here **d = -0.13**.
-- Cohen (1988): about 0.2 is small, 0.5 medium, 0.8 large. 0.13 is smaller than
-  even "small", and the standard word is **negligible**.
+- About 0.2 is small, 0.5 medium, 0.8 large (Cohen, 1988). 0.13 is smaller than even
+  "small", and the standard word is **negligible**.
 - The raw gap is fifteen percent of the non-gaming average, which does not sound
   negligible, but *d* measures it against standard deviations of **38** and **61**
 - How did it reach significance? **n = 34,766.** A large enough sample detects a

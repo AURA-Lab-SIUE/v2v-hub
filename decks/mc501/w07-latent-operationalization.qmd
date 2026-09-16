@@ -39,8 +39,8 @@ it has passed.
 - Does the message contain an `@` mention? Is it under ten characters?
 - Does it contain a known emote token? How many words is it?
 - Countable almost mechanically, and coding them reliably is mostly writing one clear rule
-- Krippendorff (2018) puts the manifest and latent distinction at the centre of codebook
-  design for exactly this reason
+- The manifest and latent distinction sits at the center of codebook design for exactly
+  this reason (Krippendorff, 2018)
 
 ## Latent content
 

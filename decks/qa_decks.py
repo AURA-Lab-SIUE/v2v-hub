@@ -84,6 +84,38 @@ def deck_files(prof, root):
     return out
 
 
+# Owner 2026-09-16: "Not all citations should start with LastName et al. (YEAR). I prefer that
+# most citations are (Lastname, YEAR) at the end of the text. Only key articles should start
+# with the citation." A narrative citation is allowed in exactly three places: a block-quote
+# attribution, the assigned-reading line, and the `On <Author> (YEAR)` lead of a discuss slide.
+# Everywhere else the claim leads and the citation trails. Warning, not law: see DECK-STYLE.md.
+NARRATIVE_CITE = re.compile(
+    r"(?<![(\[])\b[A-Z][A-Za-zÀ-ɏ'’-]+"
+    r"(?:(?:,)? (?:and|&) [A-Z][A-Za-zÀ-ɏ'’-]+)*"
+    r"(?:,? (?:et al\.|and colleagues|and others))?"
+    r"\s\((?:1[0-9]{3}|2[0-9]{3})[a-z]?(?:,[^)]*)?\)"
+)
+CITE_OK_LINE = re.compile(
+    r"^\s*>"                                    # block-quote attribution
+    r"|^On\b"                                   # "On Lakens (2022), ..." discuss lead
+    r"|assigned article|Assigned reading|Re-read"
+)
+CITE_SKIP_LEAD = ("Figure", "Table", "Chapter", "Section", "Appendix", "Week", "Exhibit")
+
+
+def narrative_citations(t):
+    """Line numbers of narrative citations outside the three allowed contexts."""
+    hits = []
+    for i, line in enumerate(t.split("\n"), 1):
+        if CITE_OK_LINE.search(line):
+            continue
+        for m in NARRATIVE_CITE.finditer(line):
+            if m.group().split()[0] in CITE_SKIP_LEAD:
+                continue
+            hits.append((i, m.group()))
+    return hits
+
+
 # --------------------------------------------------------------------------- qmd rules
 def check_qmd(p, t, prof):
     """Unchanged semantics from the 2026-07-30 script."""
@@ -117,6 +149,10 @@ def check_qmd(p, t, prof):
     lo, _hi = prof["bands"]
     if n < lo:
         issues.append(f"slides={n} under the floor of {lo}")
+    cites = narrative_citations(t)
+    if cites:
+        issues.append("author-led citation x%d (line %s)" %
+                      (len(cites), ", ".join(str(ln) for ln, _ in cites[:5])))
     return n, dpos, issues
 
 
