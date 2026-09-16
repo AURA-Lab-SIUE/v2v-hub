@@ -14,13 +14,14 @@ format:
 
 ## Tonight
 
-You have searched. Tonight you read, and reading for research has a shape you can learn.
+Tonight is about what you are looking for, before you go looking for it.
 
-First half: what to pull out of every manuscript, including a number you will need long
-before you expect to. Second half: theory, which decides what you look at and what you
-ignore.
+First half: what makes an article worth keeping, and what to pull out of one when you read
+it, including a number you will need long before you expect to. Second half: theory, which
+decides what you look at and what you ignore.
 
-Three annotated manuscripts are due next week, so tonight is the method for doing them.
+You do not need a stack of articles yet. You need to know what you are reading for, because
+three annotated manuscripts are due the Monday after next.
 
 ## This is a heavy evening
 
@@ -32,14 +33,14 @@ Three annotated manuscripts are due next week, so tonight is the method for doin
 - If the theory half feels abstract, hold on until the last two slides, where we read
   four real chat messages through two lenses
 
-## Where the search stopped
-
-Saturation ended the searching. Synthesis begins here, and a stack of PDFs is raw material
-rather than a literature review.
+## Decide this before the pile exists
 
 Reading for annotation is a different act from reading for interest. You are extracting a
-fixed set of things from every manuscript, and extracting the same things every time is
-what makes the sources comparable to each other.
+fixed set of things from every manuscript, and extracting the same things every time is what
+makes the sources comparable to each other.
+
+Which means the list comes first. Downloading twenty PDFs and deciding later what mattered
+gives you twenty documents you have to open twice.
 
 ## What a weak review sounds like
 
@@ -129,13 +130,14 @@ is not the arithmetic.
 The literature review is how that difficulty becomes tractable. You are not inventing an
 estimate. You are borrowing one from people who already did the measuring.
 
-## Practicing the move
+## What that looks like when you read
 
-- Pick a published study close to your own design
-- Extract its primary effect size, and note whether the authors reported a power analysis
-- Use the `pwr` package to find the *n* needed to detect that effect at 80% power
-- Then the harder case: nobody has reported an effect for your question
-- Be ready to defend **two** strategies for justifying a sample size anyway
+- Start with one study close to the kind of thing you want to do
+- Find its primary effect size, and note whether the authors ran a power analysis themselves
+- Later in the term you hand those numbers to the `pwr` package, which turns them into the
+  sample size you need
+- The harder case is coming: nobody has reported an effect for your question
+- We will build **two** strategies for justifying a sample size anyway
 
 ## Discussion {.discuss}
 
@@ -147,7 +149,8 @@ On Cohen (1992), "A power primer":
   arithmetic, stall people?
 - A paper this short has shaped decades of practice. What does its brevity buy, and what
   does it leave to the reader to get wrong?
-- Bring the effect size you would use for your own study, and defend where you got it.
+- Where would you expect to find an effect size for a question like yours, and what would
+  you do if nobody has reported one?
 
 *Two minutes to think, then we take it as a group.*
 
@@ -174,6 +177,8 @@ Known, then limitation, then what this study does. The topic changes. The hinge 
 - It shows at a glance which themes are well covered and which are thin
 - It makes you decide how sources relate, which is where synthesis starts
 - Its structure usually becomes the structure of the written review
+- Start it this week with the first article you read. Three headings and one source
+  under one of them is already a map.
 
 ## If that feels out of reach
 
@@ -291,12 +296,23 @@ Four messages from one stretch of a real broadcast. Read them once before we cod
 - emotelord and streamfan22 never address the streamer, so this lens pushes them aside
 - Same data, two stories. Your prospectus commits to one of them.
 
+## Choosing what to read
+
+- Start from the **keystone articles**: the ones your other sources keep citing
+- Prefer studies close to your **design**, not only your topic. A content analysis of chat
+  is worth more to you than a survey about streaming.
+- Take one that disagrees with the others if you can find it, because contradiction is a gap
+- Fit beats recency. A 2016 study measuring what you want to measure beats a 2024 one that
+  does not.
+- Three is the floor, not the target
+
 ## Before Week 5
 
+- **Read three articles on your topic this week**, with tonight's list beside you. They
+  become the **Annotated Manuscripts**, due **Monday, September 28**, with **CITI**.
 - **Monday, September 21:** the **Librarian Visit Report**. Tonight is the last class
   before it is due, and you arrange the meeting yourself: ours is in **MC 500**, or book
   a subject librarian at [Lovejoy](https://www.siue.edu/lovejoy-library/).
-- **Due next week:** **Annotated Manuscripts (3)** and your **CITI Certification**
 - Read **Chapter 5** (variables and hypotheses) and **Chapter 6** (research questions),
   with the edition toggle on
 - Read the assigned article: **Gelman and Loken (2014)**, "The statistical crisis in science"
