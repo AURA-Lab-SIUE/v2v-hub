@@ -126,7 +126,7 @@ Stream title, measured three ways:
 
 - A scale calibrated ten pounds light is perfectly **reliable** and perfectly **invalid**: same answer every time, wrong every time
 - The reverse also happens: accurate on average, so inconsistent that any single reading is unusable
-- Figure 8.2 draws this as four targets, from tight-on-centre to scattered-and-off-centre
+- Figure 8.2 draws this as four targets, from tight-on-center to scattered-and-off-center
 - Do not let a consistent number persuade you that it is a correct one. Consistency is
   the easiest thing to mistake for accuracy.
 

@@ -162,7 +162,7 @@ Each step trades breadth for depth. Narrowing is discipline rather than weakness
 ## Narrowing mistakes with names
 
 - **The Everything Study**: "the effect of social media on society". That is a research
-  programme, not a project.
+  program, not a project.
 - **The impossible comparison**: "are people who watch Twitch lonelier than people who do
   not?" Self-selection confounds it before you collect anything.
 - **The circular question**: "do popular streamers attract large audiences because people
@@ -177,16 +177,16 @@ the one you chose.
 
 - **Self-report scale**: "I feel like this streamer understands me". Direct access to
   subjective experience, exposed to social desirability bias.
-- **Behavioural indicators**: donations, subscription length, hours watched. More reliable,
-  but a behaviour does not always mean what you assume it means.
+- **Behavioral indicators**: donations, subscription length, hours watched. More reliable,
+  but a behavior does not always mean what you assume it means.
 - **Language analysis**: code chat for intimacy, disclosure, direct address. Naturalistic,
-  labour-intensive, and blind to viewers who feel strongly and say nothing.
+  labor-intensive, and blind to viewers who feel strongly and say nothing.
 
 ## Operationalizing chat sentiment
 
 - **Automated scoring**: fast and replicable, blind to sarcasm, irony, and the coded
   vocabulary of emotes
-- **Human coding**: catches context and nuance, labour-intensive, and requires intercoder
+- **Human coding**: catches context and nuance, labor-intensive, and requires intercoder
   reliability testing
 - **Dimensional coding**: valence and arousal scored separately, better on emotional
   complexity, and demands a much more careful codebook
@@ -254,7 +254,7 @@ talking to each other.
 >
 > Lakens (2022, p. 6)
 
-He treats justification by resource constraint as a last resort rather than a defence.
+He treats justification by resource constraint as a last resort rather than a defense.
 
 Come next week with a position on this: is it defensible to run a design you already know
 is underpowered?

@@ -30,10 +30,10 @@ format:
 
 ## The literature map
 
-- A **literature map** organises sources **by theme**, not by date or alphabet
+- A **literature map** organizes sources **by theme**, not by date or alphabet
 - Build it as a markdown file in your repository, one heading per theme
 - For livestreaming: viewer motivations, community and social dynamics, streamer
-  labour, content analysis methods
+  labor, content analysis methods
 - Keep a running section for the **gaps** you notice while reading
 - Your topic will have different themes. The shape is identical.
 
@@ -62,7 +62,7 @@ A **research gap** is a space where the inquiry is *justified*: either the missi
 creates a problem, or existing findings contradict each other and something has to resolve
 them.
 
-They come in four recognisable shapes, and naming which one you have sharpens the argument
+They come in four recognizable shapes, and naming which one you have sharpens the argument
 you are about to make.
 
 ## Topical and methodological gaps
@@ -72,7 +72,7 @@ you are about to make.
   non-gaming streams.
 - Be careful. What looks unstudied is often studied under words you did not search.
 - A **methodological gap:** studied, but with methods that have limits. Most livestream
-  motivation work is self-report survey, so behavioural trace data like a chat log could
+  motivation work is self-report survey, so behavioral trace data like a chat log could
   show whether what viewers do matches what they say.
 
 ## Contradictions and theoretical gaps
@@ -125,7 +125,7 @@ The strong version does five things instead:
   engagement (2018)
 - **Adds the nuance:** viewers of smaller channels were more socially motivated
 - **Names a shared limitation:** all of it is self-report
-- **Points at the gap:** would behavioural traces in a chat log back it up?
+- **Points at the gap:** would behavioral traces in a chat log back it up?
 
 ## Why that works
 

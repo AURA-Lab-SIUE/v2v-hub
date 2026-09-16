@@ -55,7 +55,7 @@ already ruled out most of what you could have done, which is the point.
   the gratification they are seeking
 - **Gap.** Livestreaming motivation research is dominated by self-report surveys
   (Sjöblom & Hamari, 2017; Hilvert-Bruce et al., 2018)
-- Whether the behavioural traces in a chat log back those surveys up is largely unexamined
+- Whether the behavioral traces in a chat log back those surveys up is largely unexamined
 
 ## Method, in four sentences
 

@@ -267,7 +267,7 @@ whether the answers actually hold.
 
 On Nosek et al. (2018), "The preregistration revolution":
 
-- They call it a revolution. Is the mechanism strong enough to change behaviour on its own,
+- They call it a revolution. Is the mechanism strong enough to change behavior on its own,
   or does it rest on incentives the authors do not control?
 - The paper separates prediction from postdiction. Where does that line blur most easily,
   and would you catch yourself crossing it?
@@ -295,7 +295,7 @@ before speaking, and it is how you earn the right to ask your question. Concrete
 - **Google Scholar** first. Less comprehensive than the databases, but fast and free.
 - Wikipedia is not citable, and its reference list is still a map to real scholarship
 - Any good article's reference list is a map too. Repeated names mark the foundations.
-- Collect everything promising in **Zotero** and tag freely. Organising comes later.
+- Collect everything promising in **Zotero** and tag freely. Organizing comes later.
 
 ## Phase two: systematic searching
 
@@ -325,7 +325,7 @@ That log is a methods disclosure, not a private note.
 ## Knowing when to stop
 
 **Saturation** is the point where more searching stops changing your understanding. You
-recognise it three ways:
+recognize it three ways:
 
 - Three database searches in a row turn up nothing new that is relevant
 - New articles keep citing the same eight or ten sources you have already read

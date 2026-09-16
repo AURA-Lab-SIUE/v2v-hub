@@ -38,7 +38,7 @@ you notice while watching, and a coder who has never watched cannot see it.
 - **B**: "Does the rate of chat messages per viewer differ between gaming and non-gaming
   streams?"
 
-A is a career-spanning programme disguised as a single question. B names what will be
+A is a career-spanning program disguised as a single question. B names what will be
 measured, what will be compared, and what evidence would answer it.
 
 ## What a strong question does
@@ -77,9 +77,9 @@ Version 5 fits a semester. It answers something rather than everything.
 **Parasocial relationship** (Horton & Wohl, 1956) is not directly observable. Three routes:
 
 - **Self-report scale**: captures subjective experience, invites social desirability bias
-- **Behavioural indicators** (donations, subscription length, hours watched): more reliable
-  than self-report, and a behaviour does not always reflect the bond you assume
-- **Language analysis** of chat: naturalistic, labour-intensive, and blind to viewers who
+- **Behavioral indicators** (donations, subscription length, hours watched): more reliable
+  than self-report, and a behavior does not always reflect the bond you assume
+- **Language analysis** of chat: naturalistic, labor-intensive, and blind to viewers who
   feel strongly and never post
 
 There is no right answer. You defend the proxy you chose.
@@ -188,7 +188,7 @@ Roughly 250 words. One page, with every sentence carrying weight.
 - Each **message** is the unit of analysis
 - Three mutually exclusive codes: directed at streamer, broadcast to the room, unclassifiable
 - Reliability against a second coder on a **10 percent subsample**, Krippendorff's alpha
-- Contribution: tests whether a survey finding leaves a visible trace in coded behaviour
+- Contribution: tests whether a survey finding leaves a visible trace in coded behavior
 
 ## The prospectus as pre-registration
 
@@ -202,7 +202,7 @@ Roughly 250 words. One page, with every sentence carrying weight.
 ## Chapter 7: what a coder cannot see
 
 - A coder who has never watched Twitch reads "LULW" and sees a typo rather than laughter
-- They read thirty identical messages and do not recognise **copypasta**, a block of text
+- They read thirty identical messages and do not recognize **copypasta**, a block of text
   the room repeats together as a joke
 - They read "@sodapoppin same" and cannot tell agreement from a reflexive stock reply
 - The scheme sorts every message confidently, and the buckets do not mean what you think
@@ -213,7 +213,7 @@ Roughly 250 words. One page, with every sentence carrying weight.
 
 - **Casual watching**: initial exposure across the range of the platform. No notes and no
   coding. You are replacing your assumptions about Twitch with actual exposure to it.
-- **Focused watching**: the same streams, one dimension at a time. Chat behaviour, viewer
+- **Focused watching**: the same streams, one dimension at a time. Chat behavior, viewer
   trajectories, host moves. Brief notes after each pass.
 - **Analytical watching**: pattern recognition across more streams. What recurs? What
   clusters with what? What resists description entirely?

@@ -73,10 +73,21 @@ The project moves through four stages, each tracking a part of the textbook:
 
 - **21,964,296 chat messages** across 1,695 channels
 - **590,876 stream snapshots**: who streamed what, to how many people
-- Public, messy, and real, collected by automated process over five and a half days
+- Public, messy, and real, collected by automated process across six days
 - Three roles you must not conflate: the **population** (1,690 channels in both
   logs), the **working corpus** (50, stratified by chat volume), the **anchor set** (8)
 - Which role a claim rests on determines what the claim can say
+
+## Mark Weeks 5 and 9 now
+
+Two weeks carry the term's weight, and both are visible from here:
+
+- **Week 5** stacks the **Annotated Manuscripts** with **CITI Certification**
+- **Week 9** carries the **Extended Codebook and Reliability Protocol**, 75 points,
+  one week before the **Sampling Plan and Pilot**, also 75
+- Those four middle weeks hold **200 points** between them
+- **Start CITI in Week 1.** It is the one item that is pure clock time, and it is the
+  only one you can finish before it is needed.
 
 ## The tools
 

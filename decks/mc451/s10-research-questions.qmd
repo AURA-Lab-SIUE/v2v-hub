@@ -29,7 +29,7 @@ format:
 - **B:** "Does the rate of chat messages per viewer differ between gaming and non-gaming
   streams?"
 
-A is a career-spanning programme disguised as a single question. B names what will be
+A is a career-spanning program disguised as a single question. B names what will be
 measured, what will be compared, and what evidence would settle it.
 
 Getting from A to B is most of the craft in this course.
@@ -101,17 +101,17 @@ A **parasocial relationship** (Horton & Wohl, 1956), the one-sided bond between 
 and a media figure, is not something you can see directly. Three routes to it:
 
 - **Self-report scale:** captures subjective experience, invites social desirability bias
-- **Behavioural indicators:** donations, subscription length, hours watched. Reliable, and
+- **Behavioral indicators:** donations, subscription length, hours watched. Reliable, and
   ambiguous about what they mean.
 - **Language analysis:** code chat for intimacy and direct address. Naturalistic, and
-  labour-intensive.
+  labor-intensive.
 
 ## Sentiment, the same problem
 
 **Chat sentiment** is the emotional valence of what gets typed. Same shape of choice:
 
 - **Automated scoring:** fast and replicable, blind to sarcasm and to emote vocabulary
-- **Human coding:** catches context, costs labour, and needs reliability testing
+- **Human coding:** catches context, costs labor, and needs reliability testing
 - **Dimensional coding:** valence and arousal at once, richer, and demands a much more
   careful codebook
 

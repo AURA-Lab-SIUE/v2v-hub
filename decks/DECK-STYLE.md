@@ -145,6 +145,14 @@ Every slide must fit without overflowing at a 33px root font. In practice:
 ## Voice and formatting
 
 - **No em-dashes anywhere.** Recast with commas, colons, or parentheses.
+- **American spelling, always** (owner, 2026-09-16): "Never use British spelling unless
+  quoting something that uses British spelling." So behavior, labor, center, recognize,
+  organize, program, practice, defense, labeled, gray, color, acknowledgment. Four things
+  keep their own spelling: a **block quote**, which is the owner's stated exception;
+  **code**, because `summarise()` and `scale_colour_v2v()` are dplyr and v2v identifiers;
+  **proper nouns** such as the journal *Nature Human Behaviour*; and words that only look
+  British, since "analyses" is the ordinary American plural and "organisms" is not
+  "organise". `qa_decks.py` checks this with those exemptions built in.
 - Use the tidyverse pipe `%>%`, never `|>`.
 - Bold the term being defined, italics sparingly for emphasis.
 - Numbers and concrete detail beat adjectives. Prefer "3,178 average viewers"

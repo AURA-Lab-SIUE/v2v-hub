@@ -105,7 +105,7 @@ produced at render time rather than pasted in.
 3. The **pre-registration disclosure**, with its OSF URL
 
 Each one signals to a reviewer that the study meets the evidentiary standard it
-claims. Anything you ran beyond the plan is labelled **exploratory**.
+claims. Anything you ran beyond the plan is labeled **exploratory**.
 
 ## What preregistration is for
 

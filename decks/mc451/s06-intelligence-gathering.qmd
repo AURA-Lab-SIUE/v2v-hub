@@ -110,7 +110,7 @@ strategy later, and it shows you fast which searches are not working.
 
 ## Phase three: follow the citations
 
-- Pick a few **keystone articles**, the ones that clearly sit at the centre
+- Pick a few **keystone articles**, the ones that clearly sit at the center
 - **Backward chaining:** read what they cite, which takes you to the foundations
 - **Forward chaining:** use Google Scholar's "Cited by" to see who has cited them since,
   which shows you how the argument moved
@@ -120,7 +120,7 @@ strategy later, and it shows you fast which searches are not working.
 ## Knowing when to stop
 
 **Saturation** is the point where more searching stops changing your understanding. You
-will recognise it three ways:
+will recognize it three ways:
 
 - Three database searches in a row turn up nothing new that is relevant
 - New articles keep citing the same eight or ten sources you have already read

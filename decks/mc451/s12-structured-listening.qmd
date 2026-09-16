@@ -48,14 +48,14 @@ still. Today is about how you come to know which one it was.
 - Watch streams, read chat, take notes, with the discipline an ethnographer brings to a
   field site
 - The dataset is historical, 5.5 days in 2018. The platform is live in front of you now.
-- The behaviours it recorded are still there to be watched
+- The behaviors it recorded are still there to be watched
 
 ## What happens when you skip it
 
 A coder who has never watched Twitch reads the log as plain text and:
 
 - Sees **LULW** and cannot tell an emote from a typo or a username
-- Sees thirty accounts posting the same phrase and does not recognise **copypasta**, a block
+- Sees thirty accounts posting the same phrase and does not recognize **copypasta**, a block
   the regulars paste together as a joke
 - Sees "@sodapoppin same" and cannot tell agreement from a reflexive stock reply
 - Sorts every message confidently, and produces buckets that do not mean what you think
@@ -92,7 +92,7 @@ medium changes and the discipline does not.
 
 Choose a few streams and watch with one dimension in mind per pass:
 
-- **Chat behaviour:** how fast does it move, who is it addressed to, when does the pace change?
+- **Chat behavior:** how fast does it move, who is it addressed to, when does the pace change?
 - **Viewer trajectories:** does the count climb, hold, or fall, and what is happening on
   stream when it moves?
 - **Host moves:** does the streamer read chat aloud, react to it, ignore it, steer it?
@@ -102,7 +102,7 @@ Brief notes after each pass. You are still describing, not coding.
 ## Mode three: analytical watching
 
 - Watch a larger number of streams, asking what **recurs**
-- Do certain chat behaviours cluster with certain kinds of stream?
+- Do certain chat behaviors cluster with certain kinds of stream?
 - Are there category conventions, so competitive-game chat differs from art-stream chat?
 - Which cases resist easy description?
 - The contours of your coding scheme start showing up here, without you forcing them

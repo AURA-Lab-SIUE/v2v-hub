@@ -30,6 +30,29 @@ format:
 - No prior coding required. No math beyond arithmetic and careful reading.
 - We go slow, in order, and every assignment feeds the final paper
 
+## What you will actually build
+
+[A two-part content analysis]{.eyebrow}
+
+- **Content analysis** is the method: turning messages into countable, defensible data
+- **Phase one is qualitative.** You read real chat closely until you can say what is
+  there, and write the memo that becomes your codebook
+- **Phase two is quantitative.** You and a second coder apply that codebook, prove you
+  agree on the numbers, and test relationships in R
+- Every assignment this term is one piece of that study, in the order you need it
+
+## The road from curiosity to claim
+
+| Weeks | What you are doing |
+|---|---|
+| 1 to 4 | Tools, ethics, and finding the literature |
+| 5 to 8 | Theory, research questions, and the prospectus |
+| 8 to 11 | Building the codebook, testing it, drawing the sample |
+| 11 to 13 | Wrangling, describing, and testing in R |
+| 15 to 17 | Writing and publishing the White Paper |
+
+Nothing here is a detour. Each row hands the next one its materials.
+
 ## The dataset
 
 [One week of Twitch, November 2018]{.eyebrow}

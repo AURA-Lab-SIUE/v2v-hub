@@ -181,7 +181,7 @@ No workspace yet? Download the file on its own from the
 
 [aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd](https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd)
 
-It walks you through the rest, one grey box at a time, and it tells you what each box
+It walks you through the rest, one gray box at a time, and it tells you what each box
 should print.
 
 Work through it. I am coming round the room. Raise a hand the moment something looks wrong,
@@ -204,7 +204,7 @@ Red under Required is the one that needs me.
 ## When it breaks
 
 - **Red text in R is not automatically an error.** R prints ordinary progress in red. Read
-  the last line, not the colour.
+  the last line, not the color.
 - Close VS Code completely and reopen it. This genuinely fixes a lot.
 - If R asks "which would you like to update", type 1 and press Enter.
 - Send me the exact wording of the error, not a paraphrase. The wording is the diagnosis.

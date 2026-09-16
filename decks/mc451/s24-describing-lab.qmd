@@ -153,7 +153,7 @@ gets units. Every cap or transformation gets named in the label.
 
 - `object 'analysis' not found`: you never ran the line that loads it
 - `could not find function "ggplot"`: `library(tidyverse)` has not run
-- Blank grey panel: your `aes()` names a column that does not exist
+- Blank gray panel: your `aes()` names a column that does not exist
 - `Error in +`: a `+` is missing at the end of a line, or one is trailing at the end
 - Everything on one bar: your x variable is a character, not a number
 

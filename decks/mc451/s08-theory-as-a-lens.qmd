@@ -68,7 +68,7 @@ One idea, three predictions, all of them checkable.
 
 ## Your turn {.discuss}
 
-- Pick a media behaviour you have noticed: a subscription, a donation, somebody defending
+- Pick a media behavior you have noticed: a subscription, a donation, somebody defending
   something online
 - Which of the three lenses would you use, and what would it make you look at?
 - What would that lens push out of the frame, and does losing it matter?
@@ -87,7 +87,7 @@ One idea, three predictions, all of them checkable.
 
 ## Grand and middle-range
 
-- **Grand theories** explain human behaviour across every context: Marxism, psychoanalysis,
+- **Grand theories** explain human behavior across every context: Marxism, psychoanalysis,
   structuralism
 - Intellectually powerful, and close to untestable. The scope is too wide and the
   predictions too general to be proven wrong.
@@ -140,10 +140,10 @@ Read them once before we put a lens on them.
 ## Two readings
 
 - **Uses and gratifications:** four needs, four viewers. Evaluative commentary, collective
-  emotional expression, direct acknowledgement, collective sense-making. All four are
+  emotional expression, direct acknowledgment, collective sense-making. All four are
   equally interesting to this lens.
 - **Parasocial interaction:** realnamedfan is the case. An @-address plus a memory claim
-  about a previous acknowledgement treats a one-sided interaction as a continuing
+  about a previous acknowledgment treats a one-sided interaction as a continuing
   relationship.
 - emotelord and streamfan22 never address the streamer, so this lens pushes them to the
   edges. Same four messages. Two different studies.
@@ -164,7 +164,7 @@ Read them once before we put a lens on them.
 Three reasons, and none of them is that it is the best method:
 
 - **Fit:** the Twitch data *is* content, millions of messages and stream records
-- **Pedagogical completeness:** you practise operationalization, sampling, reliability, and
+- **Pedagogical completeness:** you practice operationalization, sampling, reliability, and
   analysis on one dataset, without having to recruit a single human subject
 - **Transfer:** a precise codebook, tested reliability, and systematic sampling are what
   make every other method work too

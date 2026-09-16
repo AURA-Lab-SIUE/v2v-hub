@@ -284,7 +284,7 @@ Four messages from one stretch of a real broadcast. Read them once before we cod
 ## What each lens foregrounds
 
 - **Uses and gratifications** asks what need each viewer is meeting: evaluative commentary,
-  collective emotional expression, direct acknowledgement, group sense-making
+  collective emotional expression, direct acknowledgment, group sense-making
 - All four viewers are equally interesting, because each one shows a different gratification
 - **Parasocial interaction** asks what the bond looks like: realnamedfan's @-address plus a
   memory claim is the textbook case

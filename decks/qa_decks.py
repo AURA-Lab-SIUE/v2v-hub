@@ -116,6 +116,44 @@ def narrative_citations(t):
     return hits
 
 
+# Owner 2026-09-16: "Never use British spelling unless quoting something that uses British
+# spelling." So the check skips BLOCK QUOTES (the owner's own exception), fenced and inline
+# CODE (`summarise()` and `scale_colour_v2v()` are dplyr and v2v identifiers, not prose), and
+# PROPER NOUNS such as the journal Nature Human Behaviour. Stems that only look British are
+# excluded by lookahead: "analyses" is the ordinary American plural and "organisms" is not
+# "organise". catalogue, dialogue and towards are standard American usage and are not swept.
+BRITISH = [
+    (r"behaviour", "behavior"), (r"labour", "labor"), (r"centre", "center"),
+    (r"recognis", "recogniz"), (r"organis(?=e|ing|ed|ation)", "organiz"),
+    (r"programme(?!r)", "program"), (r"practis(?=e|ing)", "practic"),
+    (r"defence", "defense"), (r"offence", "offense"),
+    (r"labelled", "labeled"), (r"labelling", "labeling"), (r"modelling", "modeling"),
+    (r"\bgrey\b", "gray"), (r"colour", "color"),
+    (r"acknowledgement", "acknowledgment"), (r"judgement", "judgment"),
+    (r"\bwhilst\b", "while"), (r"\bamongst\b", "among"), (r"\blearnt\b", "learned"),
+    (r"analys(?=e\b|ed\b|ing\b)", "analyz"), (r"summaris(?=e\b|ed\b|ing\b)", "summariz"),
+]
+BRITISH_PROTECTED = re.compile(
+    r"Nature Human Behaviour|scale_colour_v2v|summarise\s*\(|`[^`]*`")
+
+
+def british_spellings(t):
+    """(line number, word) for each British spelling outside quotes, code and names."""
+    out, in_code = [], False
+    for i, line in enumerate(t.split("\n"), 1):
+        if line.lstrip().startswith("```"):
+            in_code = not in_code
+            continue
+        if in_code or line.lstrip().startswith(">"):
+            continue
+        masked = BRITISH_PROTECTED.sub(lambda m: "\x00" * len(m.group(0)), line)
+        for pat, _amer in BRITISH:
+            for m in re.finditer(pat, masked, re.I):
+                if "\x00" not in masked[m.start():m.end()]:
+                    out.append((i, m.group(0)))
+    return out
+
+
 # --------------------------------------------------------------------------- qmd rules
 def check_qmd(p, t, prof):
     """Unchanged semantics from the 2026-07-30 script."""
@@ -153,6 +191,10 @@ def check_qmd(p, t, prof):
     if cites:
         issues.append("author-led citation x%d (line %s)" %
                       (len(cites), ", ".join(str(ln) for ln, _ in cites[:5])))
+    brit = british_spellings(t)
+    if brit:
+        issues.append("British spelling x%d (%s)" %
+                      (len(brit), ", ".join("%s:%d" % (w, ln) for ln, w in brit[:4])))
     return n, dpos, issues
 
 

@@ -159,7 +159,7 @@ Download it here, or from the blue button on the
 Save it into your `mc451-workspace` folder, then open it in VS Code.
 
 You do not have to write it. You do not have to understand it. You click through it one
-grey box at a time, and it tells you what each box should print.
+gray box at a time, and it tells you what each box should print.
 
 **Pause here and work through the whole file.** The rest of this video assumes you have.
 
@@ -186,7 +186,7 @@ exactly as it appears, rather than describing it.
 - **`there is no package called 'v2v'`.** R is fine, the package is not there yet. Rerun
   the install step inside the check file.
 - **Red text in R is not automatically an error.** R prints ordinary progress in red. Read
-  the last line, not the colour.
+  the last line, not the color.
 - **GitHub asks for a password and refuses it.** Not your mistake. It wants a token now.
   Click through VS Code's sign-in and it never asks again.
 

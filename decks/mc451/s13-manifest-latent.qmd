@@ -26,7 +26,7 @@ You leave having sorted your own field notes into the easy half and the hard hal
 
 [Krippendorff, 2018]{.eyebrow}
 
-- Content analysis separates two layers of meaning, and the split sits at the centre of
+- Content analysis separates two layers of meaning, and the split sits at the center of
   codebook design
 - **Manifest content:** what is explicitly present on the surface
 - **Latent content:** the underlying meaning, which takes interpretation to reach
@@ -169,7 +169,7 @@ Structured listening leaves you four things:
 - **Conceptual clarity** about what your variables mean in this particular medium
 - A set of **candidate categories** for each one
 - The beginnings of the **decision rules** for ambiguous cases
-- Enough contextual knowledge to recognise when a surface feature is about to mislead you
+- Enough contextual knowledge to recognize when a surface feature is about to mislead you
 
 Those four things are precisely the raw material of a codebook, which is what you build next.
 
