@@ -93,6 +93,7 @@ what makes the sources comparable to each other.
 
 - The **research question**, in the authors' own words, and the theory behind it
 - The **design**: unit of analysis, sample, how the key construct was measured
+- The **finding** in one sentence, and the **gap** the authors claim to fill
 - The **effect size** and the sample size used to detect it
 - The **limitation the authors admit**, and the one they do not
 - One sentence you would be willing to quote in your own methods section
