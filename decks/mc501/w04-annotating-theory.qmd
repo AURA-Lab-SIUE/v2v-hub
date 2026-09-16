@@ -25,7 +25,7 @@ Three annotated manuscripts are due next week, so tonight is the method for doin
 ## This is a heavy evening
 
 - Two chapters, a statistics primer, and a catalogue of theories
-- The middle section involves effect sizes, and it will feel like a maths class for
+- The middle section involves effect sizes, and it will feel like a math class for
   about fifteen minutes
 - You are not being asked to derive anything. You are being asked to find a number in
   somebody else's paper and write it down.
@@ -128,7 +128,7 @@ is not the arithmetic.
 The literature review is how that difficulty becomes tractable. You are not inventing an
 estimate. You are borrowing one from people who already did the measuring.
 
-## Practising the move
+## Practicing the move
 
 - Pick a published study close to your own design
 - Extract its primary effect size, and note whether the authors reported a power analysis
@@ -168,7 +168,7 @@ Known, then limitation, then what this study does. The topic changes. The hinge 
 
 ## The literature map
 
-- A markdown file in your project, organised by **theme** rather than alphabetically
+- A markdown file in your project, organized by **theme** rather than alphabetically
 - One heading per theme, sources beneath it, plus a running section for gaps
 - It shows at a glance which themes are well covered and which are thin
 - It makes you decide how sources relate, which is where synthesis starts
@@ -242,7 +242,7 @@ The theory does not change. The domain does. That is what makes it testable.
 
 ## Grand and middle-range
 
-- **Grand theories** explain human behaviour across all contexts: Marxism, psychoanalysis,
+- **Grand theories** explain human behavior across all contexts: Marxism, psychoanalysis,
   structuralism
 - Intellectually powerful, and too broad to design a study that could disprove them
 - **Middle-range theories** are specific enough to generate testable hypotheses and broad
@@ -255,7 +255,7 @@ The theory does not change. The domain does. That is what makes it testable.
 - **Parasocial interaction** (Horton & Wohl, 1956): one-sided bonds that feel intimate
   without reciprocity. Explains donating to a streamer you have never met.
 - **Social identity** (Tajfel & Turner, 1979): group membership shapes self-concept,
-  producing in-group favouritism and boundary policing through emotes and slang
+  producing in-group favoritism and boundary policing through emotes and slang
 - **Agenda setting** (McCombs & Shaw, 1972): media do not tell people what to think, but
   what to think about. The front page and the category rankings set an agenda.
 
@@ -292,7 +292,10 @@ Four messages from one stretch of a real broadcast. Read them once before we cod
 
 ## Before Week 5
 
-- **Due:** **Annotated Manuscripts (3)** and your **CITI Certification**
+- **Monday, September 21:** the **Librarian Visit Report**. Tonight is the last class
+  before it is due, and you arrange the meeting yourself: ours is in **MC 500**, or book
+  a subject librarian at [Lovejoy](https://www.siue.edu/lovejoy-library/).
+- **Due next week:** **Annotated Manuscripts (3)** and your **CITI Certification**
 - Read **Chapter 5** (variables and hypotheses) and **Chapter 6** (research questions),
   with the edition toggle on
 - Read the assigned article: **Gelman and Loken (2014)**, "The statistical crisis in science"
