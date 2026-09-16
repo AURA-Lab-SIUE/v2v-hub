@@ -1,6 +1,6 @@
 ---
 title: "Variables, Hypotheses, and the Research Question"
-subtitle: "Week 5 · Chapter 5 · MC 501 Research Methods for Mass Communications"
+subtitle: "Week 5 · Chapters 5 and 6 · MC 501 Research Methods for Mass Communications"
 author: "Dr. Alex Leith"
 format:
   revealjs:

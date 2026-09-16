@@ -1,6 +1,6 @@
 ---
 title: "The Prospectus and Structured Listening"
-subtitle: "Week 6 · Chapter 6 · MC 501 Research Methods for Mass Communications"
+subtitle: "Week 6 · Chapters 6 and 7 · MC 501 Research Methods for Mass Communications"
 author: "Dr. Alex Leith"
 format:
   revealjs:

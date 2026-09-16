@@ -1,6 +1,6 @@
 ---
 title: "Ethics and Intelligence Gathering"
-subtitle: "Week 3 · Chapter 3 · MC 501 Research Methods for Mass Communications"
+subtitle: "Week 3 · Chapters 3 and 4 · MC 501 Research Methods for Mass Communications"
 author: "Dr. Alex Leith"
 format:
   revealjs:

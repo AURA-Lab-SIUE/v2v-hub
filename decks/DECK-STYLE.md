@@ -21,7 +21,14 @@ format:
 ---
 ```
 
-MC 501 subtitle form: `"Week 7 · Chapter 8 · MC 501 Research Methods for Mass Communications"`
+MC 501 subtitle form: `"Week 7 · Chapters 7 and 8 · MC 501 Research Methods for Mass Communications"`
+
+**Name every chapter the session covers** (owner, 2026-09-16). A 170-minute MC 501 evening
+usually finishes the chapter begun the week before and then takes the next one whole, so most
+weeks read "Chapters N and N+1". Naming only the first tells a student checking what tonight
+covers exactly half the truth. Read the pairing off the syllabus schedule table, not off the
+deck's filename. MC 451 is the opposite case and is already right: a 75-minute session really
+does take one chapter, so `"S7 · Chapter 4"` is accurate.
 
 ## Length
 
