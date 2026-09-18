@@ -186,19 +186,93 @@ Submit as PDF: `Lastname_ArchivistReport.pdf`
 
 **25 points. Due Friday, September 25, 11:59 PM.** *(Week 5)*
 
-Complete the CITI Program's Social and Behavioral Research training and submit your completion certificate. This is due early because it gates the human-subjects reasoning you apply for the rest of the term.
+Complete the CITI Program's Social and Behavioral Research training and submit your completion certificate. It is due early because it gates the human-subjects reasoning you apply for the rest of the term.
+
+**What you submit:** one PDF, the completion certificate as CITI issues it. Do not retype it, screenshot it, or submit the completion report in place of the certificate.
+
+**Requirements**
+
+1. The course completed is **Social and Behavioral Research**, the student version. It is not Responsible Conduct of Research, which does not satisfy this.
+2. The institution on the certificate reads **Southern Illinois University Edwardsville**.
+3. Your name on the certificate matches your enrolled name.
+4. The completion date falls on or before the due date.
+5. The certificate carries its verification ID.
+
+**How it is graded.** 5 points per item above. It is a checklist, so a certificate that meets all five earns 25 and one that names the wrong course earns 0 on item 1 regardless of effort.
+
+**Where it comes from.** Session 5 and Chapter 3. **What it feeds:** every later decision about what your data is and whether the people in it needed to consent.
+
+**How this loses points.** Taking Responsible Conduct of Research by mistake is the single most common failure; it appears near the Social and Behavioral course in the CITI menu. Starting it the night before is the second: the modules take two to three hours and the site does not save partial quizzes indefinitely.
 
 ### Annotated Manuscript {#annotated-manuscript}
 
 **25 points. Due Friday, September 25, 11:59 PM.** *(Week 5)*
 
-Find and annotate one peer-reviewed research article related to your topic. Focus on the research gap, theoretical framework, method, findings, and limitations. Write a connection statement explaining how this article relates to your project.
+Find and annotate one peer-reviewed research article related to your topic, then say what it means for your project.
+
+**What you submit:** one PDF of the article carrying your highlights and comments, plus a one-page document holding the six items below. Two files, or one file if your annotations and notes are in the same PDF.
+
+**Requirements**
+
+1. The article is **peer reviewed** and reports original research. A trade piece, a magazine feature, or a literature review with no data of its own does not qualify.
+2. **The gap the authors claim**, in one or two sentences: what they say was missing before their study.
+3. **The theoretical framework**, named. If the article uses none, write that it uses none, which is itself a finding.
+4. **The method**, with the unit of analysis, the sample and how the key construct was measured.
+5. **The finding**, in one sentence, with the **effect size and the sample size** if the article reports them. If it reports neither, say so.
+6. **The limitation the authors admit**, and one they do not.
+7. **A connection statement**, 100 to 150 words: what this article gives your project, and what it leaves for you to do.
+8. A full **APA 7 reference** for the article.
+
+**How it is graded.** Items 2 through 6 are 3 points each. The connection statement is 5. The reference and the peer-reviewed requirement are 5 between them.
+
+**Where it comes from.** Session 7 and Chapter 4. **What it feeds:** the Project Prospectus, which rests on gaps you can only name from articles you have read this way.
+
+**How this loses points.** Summarizing the article instead of extracting these six things is the usual one: a good summary that never names the gap scores low. Choosing an article because it shares your topic rather than your design is the other; a survey about streaming helps you less than a content analysis of anything.
 
 ### Topic Selection and Research Questions {#topic-selection-and-research-questions}
 
 **25 points. Due Friday, October 2, 11:59 PM.** *(Week 6)*
 
-Submit your finalized topic, formal research questions (and hypotheses where appropriate), a variable preview, and a justification for why these questions matter.
+Commit to a topic and write the questions your study will answer.
+
+**What you submit:** one document, roughly one page.
+
+**Requirements**
+
+1. **A topic statement** of two to three sentences naming the phenomenon, the population and the context.
+2. **One to three research questions**, numbered, each written as a question. Three is a maximum, not a target.
+3. **Hypotheses where you have a directional prediction**, each labeled H1, H2, and stated as a relationship between two variables. If your questions are descriptive, write that you have no hypotheses and why.
+4. **A variable preview**: for each question, name what you would measure and on which unit. Two columns is enough.
+5. **A justification**, 100 to 150 words, of why the answer would matter to someone who is not you.
+6. **The five-criteria check**, applied in writing to each question. One line per criterion per question.
+
+**How it is graded.** Topic 3, questions 6, hypotheses or the reasoned absence of them 3, variable preview 5, justification 4, five-criteria check 4.
+
+<details class="syl-policy">
+<summary>The five criteria, in full</summary>
+
+**Run every question past these before you submit it:**
+
+1. **Specific.** Name the platform, specify the outcome, bound the population. "How does
+   social media influence politics?" leaves all three undefined.
+2. **Measurable.** Some concepts resist operationalization. "Do authentic streamers build
+   better communities?" cannot be studied until *authentic* and *better* become something
+   you can record.
+3. **Answerable within your constraints.** Decades of data or hundreds of interviews is
+   not a semester project.
+4. **Not already answered.** Your literature review tells you whether the question is
+   genuinely open.
+5. **It matters.** A question can be answerable and still be trivia.
+
+Two of these you can check yourself. **Not already answered** and **it matters** are
+judgments you make from your reading, and the check asks you to state the judgment, not
+to prove it.
+
+</details>
+
+**Where it comes from.** Sessions 9 and 10, Chapters 5 and 6. **What it feeds:** the Prospectus a week later, which is these questions with a method attached.
+
+**How this loses points.** Submitting a topic where a question was asked is the most common failure: "parasocial interaction on Twitch" is a subject, not a question. Writing five questions is the next, because it usually means none of them has been chosen.
 
 <details class="syl-policy">
 <summary>Full requirements</summary>

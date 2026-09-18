@@ -166,26 +166,90 @@ Submit as PDF: `Lastname_ArchivistReport.pdf`
 
 **25 points. Due Monday, September 28, 11:59 PM.** *(Week 5)*
 
-Complete the CITI Program's Social and Behavioral Research training and submit your completion certificate.
+Complete the CITI Program's Social and Behavioral Research training, and draft the determination you would actually file.
 
-<details class="syl-policy">
-<summary>Full requirements</summary>
+**What you submit:** two files. The CITI completion certificate as a PDF, and your non-human-subjects determination draft.
 
-Your ethics work also includes the **non-human-subjects IRB determination** you would actually file for this project. Drafting it builds familiarity with the protocol process you will need for doctoral study, even though a public-content content analysis is unlikely to require review.
+**Requirements**
 
-</details>
+1. The course completed is **Social and Behavioral Research**, the student version, not Responsible Conduct of Research.
+2. The institution reads **Southern Illinois University Edwardsville**, your name matches your enrolled name, and the certificate carries its verification ID.
+3. **The determination draft**, 300 to 400 words, stating: what your data is, where it came from, whether the people in it are identifiable, why the project does or does not meet the federal definition of human-subjects research, and which exemption or determination category you would claim.
+4. The draft names **one fact that would change the answer**. A public corpus that became identifiable through a join is the obvious case, and it is the one your own project runs closest to.
+
+**How it is graded.** Certificate 10, determination 10, the changed-answer paragraph 5.
+
+**Where it comes from.** Week 3 and Chapter 3. **What it feeds:** the methods section of your White Paper, which has to state the determination rather than assume it.
+
+**How this loses points.** Concluding "not human subjects" without naming the definition you applied. The determination is an argument from a rule, not a verdict, and a reviewer will ask which rule.
 
 ### Annotated Manuscripts, three articles {#annotated-manuscripts-three-articles}
 
 **25 points. Due Monday, September 28, 11:59 PM.** *(Week 5)*
 
-Find and annotate **three** peer-reviewed research articles related to your topic. For each, address the research gap, theoretical framework, method, findings, and limitations. Then write a single synthesis statement explaining how the three relate to each other and to your project. The synthesis, not the three summaries, is where the graduate work lives.
+Annotate three peer-reviewed articles, then write the paragraph that makes them one body of work rather than three summaries.
+
+**What you submit:** the three annotated PDFs, plus one document holding the per-article notes and the synthesis.
+
+**Requirements**
+
+1. All three are **peer reviewed** and report original research.
+2. For **each** article: the gap the authors claim, the theoretical framework or its absence, the method with unit and sample, the finding in one sentence with its **effect size and n** where reported, and the limitation the authors admit.
+3. **A synthesis paragraph**, 200 to 300 words, that names what the three converge on, where they disagree or qualify each other, and the limitation they share.
+4. The synthesis **leads with the claim and carries its citations at the end**, in the form (Lastname, YEAR). A chain of author-led sentences is an annotated bibliography, not a synthesis.
+5. **One sentence naming the gap** the three leave open, and what your study would do about it.
+6. **APA 7 references** for all three.
+
+**How it is graded.** Per-article notes 12, four points each. Synthesis 8. The gap sentence 3. References and the peer-reviewed requirement 2.
+
+**Where it comes from.** Week 4 and Chapter 4. **What it feeds:** the Research Proposal two weeks later, whose introduction is this synthesis with a study attached.
+
+**How this loses points.** Three good summaries and a weak synthesis is the failure this assignment is designed to expose, and it is worth 8 of 25. Picking three articles that agree with each other is the other: convergence with nothing to qualify it gives you nothing to argue with.
 
 ### Topic Selection and Research Questions {#topic-selection-and-research-questions}
 
 **25 points. Due Monday, October 5, 11:59 PM.** *(Week 6)*
 
-Submit your finalized topic, formal research questions (and hypotheses where appropriate), a variable preview, and a justification for why these questions matter.
+Commit to a topic and write the questions your study will answer.
+
+**What you submit:** one document, roughly one page.
+
+**Requirements**
+
+1. **A topic statement** of two to three sentences naming the phenomenon, the population and the context.
+2. **One to three research questions**, numbered, each written as a question.
+3. **Hypotheses where you have a directional prediction**, labeled H1, H2, each a stated relationship between two variables, each with **one sentence of theoretical justification** for the direction. A prediction with no reason behind it is a guess.
+4. **A variable preview**: for each question, the construct, what you would measure, the unit of analysis and the expected level of measurement.
+5. **A justification**, 100 to 150 words, of why the answer matters, written for a reader in your field rather than for me.
+6. **The five-criteria check**, applied in writing to each question.
+
+**How it is graded.** Topic 3, questions 5, hypotheses with justification 5, variable preview 5, justification 4, five-criteria check 3.
+
+<details class="syl-policy">
+<summary>The five criteria, in full</summary>
+
+**Run every question past these before you submit it:**
+
+1. **Specific.** Name the platform, specify the outcome, bound the population. "How does
+   social media influence politics?" leaves all three undefined.
+2. **Measurable.** Some concepts resist operationalization. "Do authentic streamers build
+   better communities?" cannot be studied until *authentic* and *better* become something
+   you can record.
+3. **Answerable within your constraints.** Decades of data or hundreds of interviews is
+   not a semester project.
+4. **Not already answered.** Your literature review tells you whether the question is
+   genuinely open.
+5. **It matters.** A question can be answerable and still be trivia.
+
+Two of these you can check yourself. **Not already answered** and **it matters** are
+judgments you make from your reading, and the check asks you to state the judgment and
+the evidence behind it.
+
+</details>
+
+**Where it comes from.** Weeks 5 and 6, Chapters 5 and 6. **What it feeds:** the Research Proposal, which is these questions with a method and a sampling plan attached.
+
+**How this loses points.** A directional hypothesis with no theory behind it costs the justification points even when the direction turns out right. Submitting a subject rather than a question is the other common one.
 
 <details class="syl-policy">
 <summary>Full requirements</summary>
