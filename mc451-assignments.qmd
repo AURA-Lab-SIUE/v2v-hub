@@ -296,7 +296,25 @@ to prove it.
 
 **25 points. Due Friday, October 9, 11:59 PM.** *(Week 7)*
 
-Draft a one-page research plan: topic, theory, data source, preliminary research questions, and a rough timeline.
+Put the whole study on one page.
+
+**What you submit:** one document, about one page, roughly 250 to 400 words. Six headed sections.
+
+**Requirements**
+
+1. **A descriptive title** that hints at your key variables.
+2. **Research questions or hypotheses**, one to three, carried over from last week and revised if the reading changed them.
+3. **A theoretical framework**, two to three sentences: which lens, and what it predicts you will see.
+4. **The gap**, two to three sentences, resting on the sources you annotated rather than on an assertion that nobody has studied this.
+5. **A method overview**, three to four sentences: unit of analysis, where the data comes from, roughly how much of it, and how you will measure the key construct.
+6. **The expected contribution**, one to two sentences.
+7. **A rough timeline** to the end of term, by assignment rather than by week.
+
+**How it is graded.** Four points each for questions, theory, gap and method. Three each for title and contribution. Three for the timeline.
+
+**Where it comes from.** Session 11 and Chapter 6. **What it feeds:** everything. The Definitions Practice operationalizes the constructs named here, and the codebook implements them.
+
+**How this loses points.** Writing more than a page is the commonest, and it is a diagnostic rather than a formatting complaint: if you cannot state the project on one page you do not yet understand it well enough to begin. Naming a theory in the framework section and never using it again is the other.
 
 <details class="syl-policy">
 <summary>Full requirements</summary>
@@ -325,7 +343,23 @@ Draft all six, even badly, then cut.
 
 **25 points. Due Friday, October 16, 11:59 PM.** *(Week 8)*
 
-Define at least four variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge-case decision rules.
+Turn your constructs into things a stranger could measure.
+
+**What you submit:** one document, one entry per variable, at least four variables.
+
+**Requirements.** Each variable carries all five of these:
+
+1. **A conceptual definition**: what the variable means in the abstract, in one or two sentences.
+2. **An operational definition**: exactly what a coder does to assign a value. Detailed enough that someone who has not met you could follow it.
+3. **The level of measurement**, named: nominal, ordinal, interval or ratio.
+4. **The coded values**, listed in full, with what each one means.
+5. **At least two edge-case decision rules**, each written as a rule rather than an intention. "Emote-only messages are coded 0" is a rule. "Be careful with emotes" is not.
+
+**How it is graded.** Five points per variable across the five elements, with the operational definition and the edge cases carrying most of the weight. More than four variables earns no extra credit; four done properly is the assignment.
+
+**Where it comes from.** Sessions 14 and 15, Chapter 8. **What it feeds:** the codebook, which is this document plus examples and a unit of analysis.
+
+**How this loses points.** Restating the conceptual definition in the operational slot, in slightly different words, is the failure this assignment exists to catch. If your operational definition does not contain a verb a coder performs, it is not one yet.
 
 <details class="syl-policy">
 <summary>Full requirements</summary>
@@ -349,7 +383,25 @@ nobody wanted to know.
 
 **50 points. Due Friday, October 23, 11:59 PM.** *(Week 9)*
 
-Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a 200 to 300 word qualitative memo describing the patterns you observed during immersion.
+Build the instrument, and write down what watching taught you.
+
+**What you submit:** two documents, or one with two headed parts. The codebook, and the qualitative memo.
+
+**The codebook carries five parts**
+
+1. **Study overview**, three to four sentences: the question, the corpus, the period.
+2. **The unit of analysis**, stated exactly. One message, one stream, one channel-day. This is the single most consequential line in the document.
+3. **Every variable**, carrying the five elements from Definitions Practice.
+4. **Decision rules** for cases that do not sort themselves, written as rules.
+5. **Two or three prototypical examples per category**, taken from your actual corpus, not invented.
+
+**The memo is 200 to 300 words** describing the patterns you saw during immersion, and it has one job: explain why the codebook has the categories it has. A category you cannot trace back to something you saw is a category you guessed.
+
+**How it is graded.** Codebook 35, split across the five parts with the unit of analysis and the decision rules weighted heaviest. Memo 15.
+
+**Where it comes from.** Sessions 12, 13 and 16, Chapters 7 and 8. **What it feeds:** the pilot, which puts this instrument on trial.
+
+**How this loses points.** A codebook with no examples is the usual one. Examples are what make a rule usable by somebody who was not in your head when you wrote it.
 
 <details class="syl-policy">
 <summary>Full requirements</summary>
@@ -366,7 +418,31 @@ taught you, and it explains *why* your codebook has the categories it has.
 
 **75 points. Due Friday, November 6, 11:59 PM.** *(Week 11)*
 
-Design your sampling strategy (search terms, date range, method) and pilot test your codebook on 10 to 20 items. Document edge cases, coding decisions, and any revisions.
+Decide what you will code, then prove the codebook survives contact with it.
+
+**What you submit:** one document with two parts, plus your coded pilot data as a spreadsheet or CSV.
+
+**The sampling plan**
+
+1. **The population**, defined: everything your claim will cover.
+2. **The sampling frame**, and how it differs from the population. It always differs.
+3. **The method**, named: census, simple random, stratified, systematic or purposive, with the reason you chose it.
+4. **The size**, with the arithmetic behind it. Coding minutes per item times items is the number that decides this, and it belongs in the document.
+5. **The date range and any filters**, stated as rules someone else could apply.
+
+**The pilot**
+
+6. **Ten to twenty items coded** with your own codebook, submitted as data.
+7. **Every edge case you hit**, listed, with the decision you made.
+8. **The revisions the pilot forced**, with before and after. A pilot that changed nothing almost always means the pilot was too easy.
+
+**How it is graded.** Plan 35, pilot data 15, edge cases 10, revisions 15.
+
+**Where it comes from.** Sessions 19 and 20, Chapter 10. **What it feeds:** the full coding run, and the methods section of the White Paper, which is this document rewritten in past tense.
+
+**How this loses points.** A size with no arithmetic behind it. "About 200 messages" is a wish; 200 items at 90 seconds each is five hours, and that is a plan.
+
+**Note.** This is due the same day as Data Wrangling. Draft it during Week 10.
 
 ---
 
@@ -378,59 +454,74 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 
 **50 points. Due Friday, November 6, 11:59 PM.** *(Week 11)*
 
-Using the Twitch data from the `v2v` package:
+Build the analysis-ready table from the raw one.
 
-<details class="syl-policy">
-<summary>Full requirements</summary>
+**What you submit:** your script, and the exported dataset. Name the script `wrangling.R` or `wrangling.qmd`, and the dataset exactly `twitch_analysis.RDS`.
 
-1. **Hand-code** a variable for a 30-message sample drawn with `sample_messages()`
-2. **Load and clean** the chat and stream tables (timestamps, message length, factors, missing values)
-3. **Join** the stream-level information back onto the chat messages
-4. **Export** a clean dataset as `twitch_analysis.RDS`
+**Requirements**
 
-This assignment teaches the full data pipeline, from raw input to analysis-ready output.
+1. **Hand-code** one variable for a 30-message sample drawn with `sample_messages()`, using your own codebook.
+2. **Load** the chat and stream tables from the `v2v` package.
+3. **Convert the timestamps** from epoch milliseconds to a real date-time. Divide by 1,000 first.
+4. **Derive message length** as a new column.
+5. **Join** the stream-level information onto the chat messages, and say in a comment which key you joined on.
+6. **Handle missing values explicitly.** Report how many rows carry them and what you did. Dropping them silently is the error.
+7. **Export** as `twitch_analysis.RDS`.
+8. **Every step is in the script.** Nothing done by hand in the console and left undocumented.
 
-</details>
+**How it is graded.** Six points per numbered step above, plus two for a script that runs start to finish in a clean session.
+
+**Where it comes from.** Sessions 21 and 22, Chapter 11. **What it feeds:** both remaining R assignments read this file.
+
+**How this loses points.** A script that only runs because of something still in your environment. Restart R, run it top to bottom, and see what breaks before you submit.
 
 ### Describing Data in R {#describing-data-in-r}
 
 **75 points. Due Friday, November 13, 11:59 PM.** *(Week 12)*
 
-Using `twitch_analysis.RDS`:
+Say what is in the data before you test anything.
 
-<details class="syl-policy">
-<summary>Full requirements</summary>
+**What you submit:** your script or Quarto document, and the rendered output carrying the figures.
 
-1. Create **frequency tables** for key categorical variables
-2. Build **ggplot2 visualizations** (bar charts, trend lines) with professional formatting
-3. Create a **cross-tabulation** showing the relationship between two variables
-4. Write **two to three sentences of narrative** interpreting each output
+**Requirements**
 
-**MC 501:** this assignment is worth 100 points rather than 75, and the extra weight is in the diagnostics. Report the distributional checks behind each figure, not only the figure: what the shape of the variable is, whether the assumptions of the test you are heading toward look tenable, and what the outliers are.
+1. **Frequency tables** for your key categorical variables.
+2. **Three numbers for every continuous variable you report**: mean, median and standard deviation. Not the mean alone.
+3. **At least two figures** built with ggplot2, each with axis labels, a title and a caption.
+4. **A cross-tabulation** of two variables.
+5. **Alt text on every figure**, describing what the figure shows rather than repeating its caption.
+6. **Two to three sentences interpreting each output**, naming what it shows and what it does not.
+7. **One sentence per figure disclosing a choice you made**: a bin width, a cap on an axis, a category you collapsed.
 
-</details>
+**How it is graded.** Tables 15, the three numbers 15, figures 20, cross-tab 10, alt text 5, interpretation 10.
+
+**Where it comes from.** Sessions 23 and 24, Chapter 12. **What it feeds:** the Results section, and the test you choose next week.
+
+**How this loses points.** Reporting a mean whose median disagrees with it, and not noticing. When those two part company the distribution is telling you something, and the figure is how you hear it.
 
 ### Inferencing Data in R {#inferencing-data-in-r}
 
 **100 points. Due Friday, November 20, 11:59 PM.** *(Week 13)*
 
-Using `twitch_analysis.RDS`:
+Test the relationship, and report how big it is.
 
-<details class="syl-policy">
-<summary>Full requirements</summary>
+**What you submit:** your script or Quarto document, and the rendered output.
 
-1. **State your hypothesis** in plain English before running any code
-2. **Select the appropriate test** based on your variable types:
-   - Two categorical variables: **chi-square** test of independence
-   - One categorical (two groups) by one continuous: **independent t-test**
-   - Two continuous variables: **Pearson correlation**
-3. **Run the test** in R and report it in APA format
-4. **Interpret** the result in plain English
-5. **Calculate** and report the effect size
+**Requirements**
 
-**MC 501:** go deeper on the same test rather than adding more tests. Report and check the assumptions, show the diagnostics, and give the power statistics behind the design. Distinguish statistical significance from practical size explicitly.
+1. **State the hypothesis in plain English** before any code appears.
+2. **Choose the test from your variable types**, and say in one sentence why that test and not another. Two categorical variables take a chi-square test of independence; one two-group categorical against one continuous takes an independent t-test; two continuous take a Pearson correlation.
+3. **Run it** in R.
+4. **Report it in APA format**, with the test statistic, the degrees of freedom, the p-value and the n.
+5. **Report the effect size**, and say what it means in the units of your data rather than only as a label.
+6. **Interpret the result in plain English**, in three to four sentences.
+7. **One sentence on what the result does not license.** A significant test on your sample is not a claim about Twitch.
 
-</details>
+**How it is graded.** Hypothesis 10, test selection with its justification 20, execution 15, APA reporting 20, effect size 20, interpretation 10, the limit 5.
+
+**Where it comes from.** Sessions 25 and 26, Chapter 13. **What it feeds:** the Results and Discussion sections.
+
+**How this loses points.** Reporting p and stopping. The effect size is worth twice the test statistic here, on purpose: a p-value says something happened, and only the effect size says whether it matters.
 
 ---
 
@@ -443,6 +534,25 @@ Using `twitch_analysis.RDS`:
 **250 points. Due Friday, December 18, 11:59 PM.**
 
 The final deliverable: your study written up in IMRaD, rendered to PDF and published to the web.
+
+**What you submit:** two things, both required. A PDF renamed `Lastname_WhitePaper.pdf`, and the live URL of your GitHub Pages site. One without the other is incomplete.
+
+**Requirements**
+
+1. **Introduction and framing**, stating the question and why it is worth asking, situated in the literature rather than gesturing at it.
+2. **Methods**, repeatable in detail: unit of analysis, sampling plan as executed, the codebook and how it was built, and what you did about the cases that did not sort themselves.
+3. **Results**, reported without interpretation, carrying the descriptive numbers, the test, the effect size and the figures.
+4. **Discussion**, interpreting the findings, distinguishing statistical significance from practical size, and stating the limits honestly.
+5. **Abstract**, summarizing all four sections in 150 to 250 words.
+6. **References** in APA 7, complete, with every in-text citation appearing in the list and the reverse.
+7. **It renders from source with no pasted numbers.** Every figure and every statistic in the text comes from the code that produced it.
+8. **It is live at a public address.**
+
+**How it is graded.** The rubric is on the Phase V page and the section weights there govern.
+
+**Where it comes from.** Sessions 27 and 28, Chapter 14. Most of it you have already written, in pieces, since Week 6.
+
+**How this loses points.** Pasting a number into the prose that the code no longer produces. It is the one error this whole course is built to make impossible, and it happens when someone edits a figure the night before and does not re-render.
 
 <details class="syl-policy">
 <summary>Full requirements and what to submit</summary>

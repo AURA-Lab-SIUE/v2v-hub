@@ -273,18 +273,47 @@ the evidence behind it.
 
 **75 points. Due Monday, October 12, 11:59 PM.** *(Week 7)*
 
-A structured sentence outline that could serve as the front half of a conference paper: framing, theoretical positioning, the questions, and the proposed design. Every point in the outline is a full sentence carrying an actual claim, not a topic label.
+A structured sentence outline that could serve as the front half of a conference paper.
 
-<details class="syl-policy">
-<summary>Full requirements</summary>
+**What you submit:** one document, 1,200 to 1,800 words, in outline form. Every point is a full sentence carrying a claim, never a topic label. "Parasocial interaction and chat" is a label; "Viewers of smaller channels report stronger parasocial bonds, which should leave a visible trace in how they address the streamer" is a point.
 
-This replaces the undergraduate one-page prospectus and is worth three times as much, because it is doing three times as much work.
+**Requirements**
 
-</details>
+1. **Framing**, three to five points: the phenomenon, why it matters now, and what is at stake in getting the answer wrong.
+2. **Theoretical positioning**, four to six points naming the lens, what it predicts, and what a competing lens would predict instead. The competing lens is not optional; a framework with no rival is a decoration.
+3. **The literature**, six to ten points, organized by theme rather than by author, carrying the convergence, the nuance and the shared limitation. This is your synthesis paragraph expanded.
+4. **The gap**, two to three points, resting on that shared limitation.
+5. **Research questions or hypotheses**, stated formally, each traceable to a point in the theory section.
+6. **The proposed design**, eight to twelve points: unit of analysis, population and frame, sampling method, measurement, the reliability protocol you intend, and the analysis you plan before you see the data.
+7. **Contribution**, two to three points, written for your field rather than for this course.
+8. **References** in APA 7 for everything cited.
+
+**How it is graded.** Framing 8, theory 15, literature 15, gap 8, questions 10, design 15, contribution 4.
+
+**Where it comes from.** Weeks 5 and 6, Chapters 5 and 6. **What it feeds:** the front half of the White Paper, and the analysis plan you commit to before running anything.
+
+**How this loses points.** Topic labels instead of sentences is the failure this assignment is named for. The second is a design section that names no analysis, which quietly defers every hard decision until after you have seen the data, which is exactly what this term has been arguing against.
 
 ### Definitions Practice {#definitions-practice}
 
 **25 points. Due Monday, October 19, 11:59 PM.** *(Week 8)*
+
+**What you submit:** one document, one entry per variable, at least four variables.
+
+**Requirements.** Each variable carries all six:
+
+1. **A conceptual definition**, with a citation to where the construct comes from. At this level a construct you invented needs more defense than one you borrowed.
+2. **An operational definition**: exactly what a coder does to assign a value.
+3. **The level of measurement**, named, with one sentence on what that permits and forbids in analysis.
+4. **The coded values**, in full, with what each means.
+5. **At least two edge-case decision rules**, written as rules.
+6. **One sentence on validity**: what would make you doubt this measures the construct you named in point 1.
+
+**How it is graded.** Five per variable across the six elements, with the operational definition, the edge cases and the validity sentence carrying the weight.
+
+**Where it comes from.** Week 7, Chapter 8. **What it feeds:** the Extended Codebook a week later.
+
+**How this loses points.** Restating the conceptual definition in the operational slot. If your operational definition contains no verb a coder performs, it is not one yet.
 
 Define at least four variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge-case decision rules.
 
@@ -310,6 +339,31 @@ nobody wanted to know.
 
 **75 points. Due Monday, October 26, 11:59 PM.** *(Week 9)*
 
+**What you submit:** the codebook and the protocol, as one document with two headed parts.
+
+**The codebook**
+
+1. **Study overview**, the question, the corpus, the period.
+2. **The unit of analysis**, stated exactly.
+3. **Every variable** with the six elements from Definitions Practice.
+4. **Decision rules** for cases that do not sort themselves.
+5. **Two or three prototypical examples per category**, drawn from your corpus.
+
+**The reliability protocol**
+
+6. **The statistic you will report**, named, with one sentence on why it rather than another. Percent agreement alone is not acceptable and the protocol should say why.
+7. **The threshold you will treat as adequate**, with the source of that threshold.
+8. **The training procedure**: how the second coder learns the instrument.
+9. **A fresh reliability sample**, separate from the training set, with its size and how it is drawn.
+10. **What happens when it fails**: the revision rule, and how the codebook changes without quietly fitting itself to one coder's habits.
+11. **What you will report even if the number is disappointing.**
+
+**How it is graded.** Codebook 40, protocol 35, weighted toward points 6, 9 and 10.
+
+**Where it comes from.** Week 8, Chapter 8 and the Lombard reading. **What it feeds:** the pilot, and the transparency markers the White Paper methods section is graded on.
+
+**How this loses points.** A protocol that reports agreement from the training set. The training set is contaminated by the conversation that reconciled it, and reporting from it is a common and serious error rather than a technicality.
+
 Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a qualitative memo describing the patterns you observed during immersion.
 
 <details class="syl-policy">
@@ -323,6 +377,25 @@ Your codebook adds a **formal reliability protocol**: the planned sample size fo
 
 **75 points. Due Monday, November 2, 11:59 PM.** *(Week 10)*
 
+**What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure.
+
+**Requirements**
+
+1. **Population, frame, and the gap between them**, stated rather than assumed.
+2. **The sampling method**, named and justified, including what it makes estimable and what it does not.
+3. **The size, with its justification.** Either an effect-size estimate borrowed from a named study, a smallest effect of interest argued from consequence, or a resource constraint stated as a constraint and paired with a sensitivity analysis. Name which of the three you are using.
+4. **Twenty to thirty items coded**, submitted as data.
+5. **A reliability figure computed on those items**, with the code that produced it.
+6. **Every edge case**, with the decision made and the rule added.
+7. **The revisions the pilot forced**, before and after.
+8. **One paragraph on what the pilot tells you about the full run**: how long it will take, and what you will change.
+
+**How it is graded.** Plan 25, size justification 15, pilot data and reliability computation 20, edge cases and revisions 15.
+
+**Where it comes from.** Week 10, Chapter 10 and the Hayes and Krippendorff reading. **What it feeds:** the full coding run and the methods section.
+
+**How this loses points.** A sample size justified by convention rather than by argument. "Eighty percent power" is a convention, and Lakens spends a paper on why that is not a justification by itself.
+
 Design your sampling strategy (search terms, date range, method) and pilot test your codebook on **20 to 30 items**, a large enough subset to compute a meaningful reliability statistic. Document edge cases, coding decisions, the alpha you obtained, and any revisions the pilot forced.
 
 ---
@@ -334,6 +407,26 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 ### Data Wrangling in R {#data-wrangling-in-r}
 
 **50 points. Due Monday, November 9, 11:59 PM.** *(Week 11)*
+
+**What you submit:** your script, and `twitch_analysis.RDS`.
+
+**Requirements**
+
+1. **Hand-code** one variable for a 30-message sample drawn with `sample_messages()`.
+2. **Load** the chat and stream tables.
+3. **Convert the timestamps** from epoch milliseconds, dividing by 1,000 first.
+4. **Derive message length.**
+5. **Join** the stream-level information on, naming the key in a comment.
+6. **Handle missing values explicitly**, reporting the count and the decision.
+7. **Export** as `twitch_analysis.RDS`.
+8. **Three comments naming decisions a reviewer could challenge**, each stating the rule and its justification. This is the graduate half of the assignment: the script is a methods section in executable form.
+9. The script runs start to finish in a clean session.
+
+**How it is graded.** Steps 1 to 7 are four points each. The three reviewer-facing comments are 15. A clean-session run is 7.
+
+**Where it comes from.** Week 11, Chapter 11 and the Wickham reading. **What it feeds:** both remaining R assignments.
+
+**How this loses points.** A script that runs only because of something already in your environment. Restart and run it top to bottom before you submit.
 
 Using the Twitch data from the `v2v` package:
 
@@ -353,6 +446,25 @@ This assignment teaches the full data pipeline, from raw input to analysis-ready
 
 **100 points. Due Monday, November 16, 11:59 PM.** *(Week 12)*
 
+**What you submit:** your Quarto document and its rendered output.
+
+**Requirements**
+
+1. **Frequency tables** for the key categorical variables.
+2. **Mean, median and standard deviation** for every continuous variable you report.
+3. **At least two ggplot2 figures**, labeled, titled and captioned.
+4. **A cross-tabulation** of two variables.
+5. **Alt text on every figure.**
+6. **Distributional diagnostics behind each figure**: the shape of the variable, whether the assumptions of the test you are heading toward look tenable, and where the outliers are. This is where the extra 25 points over the undergraduate version sit.
+7. **Two to three sentences interpreting each output.**
+8. **Every display choice disclosed**: bin width, axis caps, collapsed categories.
+
+**How it is graded.** Tables and the three numbers 20, figures 20, cross-tab 10, alt text 5, diagnostics 25, interpretation 15, disclosures 5.
+
+**Where it comes from.** Week 12, Chapter 12 and the Lakens reading. **What it feeds:** the Results section and next week's test.
+
+**How this loses points.** Producing the figure and skipping the diagnostic. The figure is the claim; the diagnostic is whether you are allowed to make it.
+
 Using `twitch_analysis.RDS`:
 
 <details class="syl-policy">
@@ -370,6 +482,26 @@ Using `twitch_analysis.RDS`:
 ### Inferencing Data in R {#inferencing-data-in-r}
 
 **100 points. Due Monday, November 23, 11:59 PM.** *(Week 13)*
+
+**What you submit:** your Quarto document and its rendered output.
+
+**Requirements**
+
+1. **State the hypothesis in plain English** before any code.
+2. **Choose the test** from your variable types and justify the choice against one alternative you rejected.
+3. **Check and report the assumptions**, with the diagnostics shown rather than asserted.
+4. **Run the test.**
+5. **Report it in APA format** with statistic, degrees of freedom, p and n.
+6. **Report the effect size**, expressed in the units of your data as well as by its conventional label.
+7. **Report the power statistics behind the design**: what effect this sample could detect, and what that means for a null result.
+8. **Distinguish statistical significance from practical size explicitly**, in a paragraph that would survive a reviewer.
+9. **One paragraph on what the result does not license.**
+
+**How it is graded.** Hypothesis 8, selection and rejected alternative 15, assumptions and diagnostics 20, APA reporting 15, effect size 15, power 15, significance against size 12.
+
+**Where it comes from.** Week 13, Chapter 13 and the Lakens et al. reading. **What it feeds:** Results and Discussion.
+
+**How this loses points.** Going wide instead of deep. Three tests reported shallowly score below one test reported with its assumptions, its diagnostics, its effect size and its power.
 
 Using `twitch_analysis.RDS`:
 
@@ -398,6 +530,30 @@ Using `twitch_analysis.RDS`:
 ### White Paper and conference poster {#white-paper-and-conference-poster}
 
 **200 points. Due Friday, December 18, 11:59 PM.**
+
+**What you submit:** three things. The paper as `Lastname_WhitePaper.pdf`, the poster as a PDF, and the live URL. All three are required for the submission to be complete.
+
+**The paper carries the three transparency markers**, and they are graded as such:
+
+1. **A data provenance statement**: where the corpus came from, what was excluded and why.
+2. **An intercoder reliability report** giving the statistic, its value, the training protocol and the threshold applied.
+3. **The pre-registration disclosure with its OSF URL**, and an honest account of anything that departed from the plan.
+
+**The rest of the paper**
+
+4. **Introduction and framing**, situating the question in the theoretical literature.
+5. **Methods**, repeatable in detail.
+6. **Results**, without interpretation, carrying effect sizes and the power statistics.
+7. **Discussion**, interpreting, distinguishing significance from size, and stating the limits.
+8. **Abstract** summarizing all four sections, and complete APA 7 references.
+9. **It renders from source with no pasted numbers, and is live at a public address.**
+10. **Reflection**, one specific paragraph naming what proved harder than expected, what the data could not answer, and what a second attempt would change.
+
+**The poster** carries the study at a glance: question, method, one figure that does real work, the finding with its effect size, and the limitation. It is read standing up from three feet away, so it is not the paper shrunk.
+
+**How it is graded.** The component weights in the syllabus govern: framing 25, methods 55, results 40, discussion 40, abstract and references 15, reproducibility and publication 15, reflection 10.
+
+**How this loses points.** Methods carries more weight than any other section, and a methods section that omits one of the three transparency markers cannot reach full credit no matter how good the writing is.
 
 The final deliverable: your study written up in IMRaD, rendered to PDF and published to the web. Graduate students also submit a conference poster.
 
