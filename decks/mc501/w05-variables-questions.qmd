@@ -105,18 +105,39 @@ anything.
 - Those unrealised paths still inflate the false-positive rate
 - The hypothesis can even have been stated in advance and the problem survives
 
-## Discussion {.discuss}
+## Forking Paths {.discuss}
 
-On Gelman and Loken (2014), "The statistical crisis in science":
+> "In this garden of forking paths, whatever route you take seems predetermined, but that's
+> because the choices are done implicitly."
+>
+> Gelman and Loken (2014, p. 464)
 
-- They insist the problem survives honest, well-intentioned analysis. Does that make the
-  diagnosis more useful, or easier to shrug off?
-- Where in the workflow we are building does the first fork appear?
-- If the forks are never taken, how would anybody detect them in a published paper?
-- They separate the multiple-comparisons problem from the researcher's intent. Is intent
-  doing any real work in how we currently judge research?
+- Name one implicit choice in your design
+- What data would have changed it?
 
-*Two minutes to think, then we take it as a group.*
+*Straight in. One contribution each before seconds.*
+
+## Multiple Comparisons
+
+> "it is possible to have multiple potential comparisons ... without the researcher performing
+> any conscious procedure of fishing through the data"
+>
+> Gelman and Loken (2014, p. 460)
+
+- Intent is doing no work here
+- Where does this bite a content analysis?
+- Your codebook forks too: name one
+
+## Preregistration's Limits
+
+> "Preregistration may be practical in some fields and for some types of problems, but it cannot
+> realistically be a general solution."
+>
+> Gelman and Loken (2014, p. 464)
+
+- This course teaches preregistration as a pillar
+- Where does their objection land hardest?
+- What survives it
 
 ## The hardest part is the question
 
