@@ -281,7 +281,7 @@ the transparency markers a reviewer looks for.
 | Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, an intercoder reliability report giving the kappa value with the training protocol and threshold applied, and the pre-registration disclosure with its OSF URL. |
 | Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labeled and captioned. |
 | Discussion | 40 | Interprets the findings, situates them within the theoretical literature, distinguishes statistical significance from practical size, and states the limits. |
-| Abstract and references | 15 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
+| Abstract and references | 15 | The abstract summarizes all four sections. References are complete and in APA 7th edition. |
 | Reproducibility and publication | 15 | The document renders from source with no pasted numbers, and is live at a public address. |
 | Reflection | 10 | One specific paragraph naming what proved harder than expected, what the data could not answer, and what a second attempt would change. |
 
@@ -308,7 +308,7 @@ for partial credit are provided.
 date for most assignments. Find your grades under **My Grades** in the Blackboard
 course menu.
 
-**Late work.** Late submissions (after Friday 11:59 PM) lose 10% of the
+**Late work.** Late submissions (after Monday 11:59 PM) lose 10% of the
 assignment grade per business day, for up to one week. After one week, the
 assignment receives a zero unless an accommodation has been arranged in writing
 before the original due date. Non-emergency extensions must be requested before
@@ -452,6 +452,9 @@ the Sampling Plan and Pilot (75 pts). Those four weeks in the middle of the term
 carry 200 points between them. Start the CITI certification in Week 1; it is the
 one item here that is pure clock time and can be finished early.
 :::
+
+**Everything in the Due column is due the Monday after that week's class, at 11:59 PM.**
+The one exception is the White Paper and poster in finals week.
 
 ::: {.schedule-table}
 
