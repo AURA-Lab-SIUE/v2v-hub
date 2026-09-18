@@ -20,6 +20,24 @@ Everything is due at **11:59 PM** on the **Friday** listed.
 Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, submit again.
 :::
 
+
+## Every assignment is a part of the paper
+
+Almost nothing here is submitted and then finished. Each assignment builds a component the next one
+consumes, and the White Paper is those components assembled and argued. That is why the workspace
+has the folders it has:
+
+| Folder | What accumulates there |
+|---|---|
+| `02_Literature/` | one file per source, named `author-year-slug.md` |
+| `03_Project/01_Prospectus/` | the question, the design, the justification |
+| `03_Project/02_Codebook/` | definitions, then the instrument itself |
+| `03_Project/03_Data/` | the sampling plan, the pilot, the coded data, the scripts |
+| `03_Project/04_Drafts/` | figures, drafts, and the White Paper |
+
+Each assignment below says where its artifact lives. Keeping it there is not bookkeeping: it is what
+makes the methods section writable in December, because by then the trail is already on disk.
+
 ## Everything at a glance
 
 | Due | Assignment | Phase | Points |
@@ -190,6 +208,8 @@ Complete the CITI Program's Social and Behavioral Research training and submit y
 
 **What you submit:** one PDF, the completion certificate as CITI issues it. Do not retype it, screenshot it, or submit the completion report in place of the certificate.
 
+**Where it lives:** `04_Resources/`. The certificate is evidence you keep, not a component you build on.
+
 **Requirements**
 
 1. The course completed is **Social and Behavioral Research**, the student version. It is not Responsible Conduct of Research, which does not satisfy this.
@@ -211,6 +231,8 @@ Complete the CITI Program's Social and Behavioral Research training and submit y
 Find and annotate one peer-reviewed research article related to your topic, then say what it means for your project.
 
 **What you submit:** one PDF of the article carrying your highlights and comments, plus a one-page document holding the six items below. Two files, or one file if your annotations and notes are in the same PDF.
+
+**Where it lives:** `02_Literature/`, one file per source named `author-year-slug.md`, with the APA reference added to a running `02_Literature/references.md`. Your literature review is written from this folder, and the paper's reference list is that file.
 
 **Requirements**
 
@@ -236,6 +258,8 @@ Find and annotate one peer-reviewed research article related to your topic, then
 Commit to a topic and write the questions your study will answer.
 
 **What you submit:** one document, roughly one page.
+
+**Where it lives:** `03_Project/01_Prospectus/`. These questions are the ones the paper answers, so they are edited in place rather than rewritten each time.
 
 **Requirements**
 
@@ -300,6 +324,8 @@ Put the whole study on one page.
 
 **What you submit:** one document, about one page, roughly 250 to 400 words. Six headed sections.
 
+**Where it lives:** `03_Project/01_Prospectus/`. This is the first draft of the paper's introduction, not a separate document. In December you revise it; you do not start it again.
+
 **Requirements**
 
 1. **A descriptive title** that hints at your key variables.
@@ -347,6 +373,8 @@ Turn your constructs into things a stranger could measure.
 
 **What you submit:** one document, one entry per variable, at least four variables.
 
+**Where it lives:** `03_Project/02_Codebook/`. Each entry is pasted into the codebook next week, so write them in the form the codebook needs.
+
 **Requirements.** Each variable carries all five of these:
 
 1. **A conceptual definition**: what the variable means in the abstract, in one or two sentences.
@@ -387,6 +415,8 @@ Build the instrument, and write down what watching taught you.
 
 **What you submit:** two documents, or one with two headed parts. The codebook, and the qualitative memo.
 
+**Where it lives:** `03_Project/02_Codebook/`, starting from `_templates/codebook.md`. The codebook goes into the paper as an appendix and the memo becomes the qualitative half of the results.
+
 **The codebook carries five parts**
 
 1. **Study overview**, three to four sentences: the question, the corpus, the period.
@@ -421,6 +451,8 @@ taught you, and it explains *why* your codebook has the categories it has.
 Decide what you will code, then prove the codebook survives contact with it.
 
 **What you submit:** one document with two parts, plus your coded pilot data as a spreadsheet or CSV.
+
+**Where it lives:** `03_Project/03_Data/`, with the coded pilot beside the plan. The plan becomes the methods section, in past tense.
 
 **The sampling plan**
 
@@ -458,6 +490,8 @@ Build the analysis-ready table from the raw one.
 
 **What you submit:** your script, and the exported dataset. Name the script `wrangling.R` or `wrangling.qmd`, and the dataset exactly `twitch_analysis.RDS`.
 
+**Where it lives:** `03_Project/03_Data/`. The script stays there and the paper runs it; `twitch_analysis.RDS` is read by both remaining assignments.
+
 **Requirements**
 
 1. **Hand-code** one variable for a 30-message sample drawn with `sample_messages()`, using your own codebook.
@@ -483,6 +517,8 @@ Say what is in the data before you test anything.
 
 **What you submit:** your script or Quarto document, and the rendered output carrying the figures.
 
+**Where it lives:** `03_Project/03_Data/` for the script, and the figures are **written to `03_Project/04_Drafts/figures/` by the code that makes them**. The White Paper renders those figures rather than re-creating them, so a figure produced only inside a submission has to be built twice.
+
 **Requirements**
 
 1. **Frequency tables** for your key categorical variables.
@@ -506,6 +542,8 @@ Say what is in the data before you test anything.
 Test the relationship, and report how big it is.
 
 **What you submit:** your script or Quarto document, and the rendered output.
+
+**Where it lives:** `03_Project/03_Data/`. The paper calls this script for its numbers, which is what makes a pasted statistic impossible to keep in sync.
 
 **Requirements**
 
@@ -536,6 +574,8 @@ Test the relationship, and report how big it is.
 The final deliverable: your study written up in IMRaD, rendered to PDF and published to the web.
 
 **What you submit:** two things, both required. A PDF renamed `Lastname_WhitePaper.pdf`, and the live URL of your GitHub Pages site. One without the other is incomplete.
+
+**Where it lives:** `03_Project/04_Drafts/`. By now every section has a source file somewhere above, and writing is mostly assembly and argument.
 
 **Requirements**
 

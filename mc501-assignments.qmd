@@ -20,6 +20,24 @@ Everything is due at **11:59 PM** on the **Monday** listed. You are welcome to s
 Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, submit again.
 :::
 
+
+## Every assignment is a part of the paper
+
+Almost nothing here is submitted and then finished. Each assignment builds a component the next one
+consumes, and the White Paper is those components assembled and argued. That is why the workspace
+has the folders it has:
+
+| Folder | What accumulates there |
+|---|---|
+| `02_Literature/` | one file per source, named `author-year-slug.md` |
+| `03_Project/01_Prospectus/` | the question, the design, the justification |
+| `03_Project/02_Codebook/` | definitions, then the instrument itself |
+| `03_Project/03_Data/` | the sampling plan, the pilot, the coded data, the scripts |
+| `03_Project/04_Drafts/` | figures, drafts, and the White Paper |
+
+Each assignment below says where its artifact lives. Keeping it there is not bookkeeping: it is what
+makes the methods section writable in December, because by then the trail is already on disk.
+
 ## Everything at a glance
 
 | Due | Assignment | Phase | Points |
@@ -170,6 +188,8 @@ Complete the CITI Program's Social and Behavioral Research training, and draft t
 
 **What you submit:** two files. The CITI completion certificate as a PDF, and your non-human-subjects determination draft.
 
+**Where it lives:** `04_Resources/` for the certificate, `03_Project/01_Prospectus/` for the determination. The determination is the first draft of the ethics paragraph in your methods section.
+
 **Requirements**
 
 1. The course completed is **Social and Behavioral Research**, the student version, not Responsible Conduct of Research.
@@ -190,6 +210,8 @@ Complete the CITI Program's Social and Behavioral Research training, and draft t
 Annotate three peer-reviewed articles, then write the paragraph that makes them one body of work rather than three summaries.
 
 **What you submit:** the three annotated PDFs, plus one document holding the per-article notes and the synthesis.
+
+**Where it lives:** `02_Literature/`, one file per source named `author-year-slug.md`, with the APA references added to a running `02_Literature/references.md`. The synthesis paragraph is the first draft of a paragraph in your Research Proposal.
 
 **Requirements**
 
@@ -213,6 +235,8 @@ Annotate three peer-reviewed articles, then write the paragraph that makes them 
 Commit to a topic and write the questions your study will answer.
 
 **What you submit:** one document, roughly one page.
+
+**Where it lives:** `03_Project/01_Prospectus/`. These are the questions the paper answers, edited in place rather than rewritten.
 
 **Requirements**
 
@@ -277,6 +301,8 @@ A structured sentence outline that could serve as the front half of a conference
 
 **What you submit:** one document, 1,200 to 1,800 words, in outline form. Every point is a full sentence carrying a claim, never a topic label. "Parasocial interaction and chat" is a label; "Viewers of smaller channels report stronger parasocial bonds, which should leave a visible trace in how they address the streamer" is a point.
 
+**Where it lives:** `03_Project/01_Prospectus/`. This outline is the front half of the White Paper in skeleton form. Every point becomes a sentence or a paragraph in December.
+
 **Requirements**
 
 1. **Framing**, three to five points: the phenomenon, why it matters now, and what is at stake in getting the answer wrong.
@@ -299,6 +325,8 @@ A structured sentence outline that could serve as the front half of a conference
 **25 points. Due Monday, October 19, 11:59 PM.** *(Week 8)*
 
 **What you submit:** one document, one entry per variable, at least four variables.
+
+**Where it lives:** `03_Project/02_Codebook/`. Written in the form the Extended Codebook needs next week.
 
 **Requirements.** Each variable carries all six:
 
@@ -341,6 +369,8 @@ nobody wanted to know.
 
 **What you submit:** the codebook and the protocol, as one document with two headed parts.
 
+**Where it lives:** `03_Project/02_Codebook/`, starting from `_templates/codebook.md`. The protocol becomes the intercoder reliability report that the paper's methods section is graded on.
+
 **The codebook**
 
 1. **Study overview**, the question, the corpus, the period.
@@ -379,6 +409,8 @@ Your codebook adds a **formal reliability protocol**: the planned sample size fo
 
 **What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure.
 
+**Where it lives:** `03_Project/03_Data/`. The plan becomes the methods section in past tense, and the reliability computation becomes one of the three transparency markers.
+
 **Requirements**
 
 1. **Population, frame, and the gap between them**, stated rather than assumed.
@@ -409,6 +441,8 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 **50 points. Due Monday, November 9, 11:59 PM.** *(Week 11)*
 
 **What you submit:** your script, and `twitch_analysis.RDS`.
+
+**Where it lives:** `03_Project/03_Data/`. The three reviewer-facing comments are the raw material of the provenance statement the paper has to carry.
 
 **Requirements**
 
@@ -448,6 +482,8 @@ This assignment teaches the full data pipeline, from raw input to analysis-ready
 
 **What you submit:** your Quarto document and its rendered output.
 
+**Where it lives:** `03_Project/03_Data/` for the script, and figures are **written to `03_Project/04_Drafts/figures/` by the code that makes them**, because the paper renders them rather than re-creating them.
+
 **Requirements**
 
 1. **Frequency tables** for the key categorical variables.
@@ -484,6 +520,8 @@ Using `twitch_analysis.RDS`:
 **100 points. Due Monday, November 23, 11:59 PM.** *(Week 13)*
 
 **What you submit:** your Quarto document and its rendered output.
+
+**Where it lives:** `03_Project/03_Data/`. The paper calls this script for its numbers.
 
 **Requirements**
 
@@ -532,6 +570,8 @@ Using `twitch_analysis.RDS`:
 **200 points. Due Friday, December 18, 11:59 PM.**
 
 **What you submit:** three things. The paper as `Lastname_WhitePaper.pdf`, the poster as a PDF, and the live URL. All three are required for the submission to be complete.
+
+**Where it lives:** `03_Project/04_Drafts/`. Every section has a source file above it by now; the poster is built from the same figures rather than from new ones.
 
 **The paper carries the three transparency markers**, and they are graded as such:
 
