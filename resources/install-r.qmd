@@ -205,7 +205,7 @@ arrive in your console as ordinary text wrapped around your code. That broken li
 waiting for the rest of a command that is never coming, which is why the chunk you run next
 gets added onto it instead of running on its own.
 
-Whether you see visible characters or just odd behaviour depends on your R build, which is
+Whether you see visible characters or just odd behavior depends on your R build, which is
 why this looks random and affects some machines and not others.
 
 Workspaces created from the course template before 2026-09-08 have this setting switched on.

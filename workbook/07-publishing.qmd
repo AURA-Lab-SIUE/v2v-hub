@@ -165,7 +165,7 @@ The starter file includes pre-written R code with placeholder variable names. Yo
 | Component | What to Include | Source Assignment |
 |-----------|----------------|-------------------|
 | Frequency table | `knitr::kable()` formatted table with counts and percentages | Describing Data |
-| Bar chart | `ggplot2` publication-ready chart, labelled and captioned | Describing Data |
+| Bar chart | `ggplot2` publication-ready chart, labeled and captioned | Describing Data |
 | Test result | The test statistic with its degrees of freedom, its p-value, **and its effect size**, in APA format, plus the journalist translation | Inferencing Data |
 
 ::: {.callout-warning}

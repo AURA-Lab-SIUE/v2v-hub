@@ -117,7 +117,7 @@ Both must be present for the submission to be considered complete.
 |:--|:--|:--|
 | Introduction | 30 | States the question and why it is worth asking. The theoretical lens is doing work, not decoration, and it sets up something the study can actually deliver. |
 | Methods | 60 | Says exactly what was done, in enough detail that another researcher could repeat it: the codebook, the sampling procedure, the reliability check, and the wrangling steps. |
-| Results | 50 | Reports what was found, plainly and without interpretation: distributions, group means, the test statistic with its degrees of freedom, its p-value, and its effect size. Figures are labelled and captioned. |
+| Results | 50 | Reports what was found, plainly and without interpretation: distributions, group means, the test statistic with its degrees of freedom, its p-value, and its effect size. Figures are labeled and captioned. |
 | Discussion | 50 | Says what the results mean, answers the question the introduction asked, and states the study's limits honestly. Effect size is characterised accurately rather than inflated. |
 | Abstract and references | 20 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
 | Reproducibility and publication | 25 | The document renders from source with no pasted numbers, and is live at a public address. |
@@ -162,7 +162,7 @@ All three must be present for the submission to be considered complete.
 |:--|:--|:--|
 | Introduction and framing | 25 | States the question and why it is worth asking, and situates it in the theoretical literature rather than gesturing at it. |
 | Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, an intercoder reliability report giving the kappa value with the training protocol and threshold applied, and the pre-registration disclosure with its OSF URL. |
-| Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labelled and captioned. |
+| Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labeled and captioned. |
 | Discussion | 40 | Interprets the findings, situates them within the theoretical literature, distinguishes statistical significance from practical size, and states the limits. |
 | Abstract and references | 15 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
 | Reproducibility and publication | 15 | The document renders from source with no pasted numbers, and is live at a public address. |

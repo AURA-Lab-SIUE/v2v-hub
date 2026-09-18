@@ -9,7 +9,7 @@ execute:
 ## What this file is
 
 This is a **Quarto document**. It is a plain text file that holds two kinds of thing:
-writing, like this paragraph, and **code chunks**, which are the grey boxes below. You
+writing, like this paragraph, and **code chunks**, which are the gray boxes below. You
 are reading it inside **VS Code**, the program we use for everything in this course.
 
 You do not need to understand any of the code. You need to run it and see what happens.
@@ -19,10 +19,10 @@ Nothing in this file can break your computer, delete anything, or cost money.
 
 ## How to run a code chunk
 
-Look at the grey box below. At its top left corner there is a small **Run Cell** link, or
+Look at the gray box below. At its top left corner there is a small **Run Cell** link, or
 a ▷ triangle. Click it.
 
-If you do not see one, click anywhere inside the grey box and press **Ctrl+Enter**
+If you do not see one, click anywhere inside the gray box and press **Ctrl+Enter**
 (Windows) or **Cmd+Enter** (Mac). That sends the line your cursor is on to R.
 
 The first time you do this, VS Code may take twenty or thirty seconds to wake R up, and a

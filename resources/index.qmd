@@ -51,7 +51,7 @@ that ends in "there is no package called v2v".
 
 ## Check your setup
 
-`00-check-your-setup.qmd` walks you through every install, one grey box at a time, and
+`00-check-your-setup.qmd` walks you through every install, one gray box at a time, and
 tells you what each box should print. Save it into your workspace folder and open it in
 VS Code. Run it whenever something stops working, not only in week one.
 

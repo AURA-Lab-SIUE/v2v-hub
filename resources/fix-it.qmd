@@ -13,7 +13,7 @@ them.
 
 ## 1. Do this one even if nothing looks broken
 
-**What you might see:** you click **Run Cell** above a grey code box, and strange characters
+**What you might see:** you click **Run Cell** above a gray code box, and strange characters
 appear around your code in the console, something like `[200~` and `[201~`. Or the next cell
 you run comes out stuck onto the previous one and both run at once. Or the console just
 behaves oddly and you cannot say why.
@@ -60,11 +60,11 @@ stays invisible to it.
 2. Look for the command again. For most people it is now there and you are done.
 3. Still missing? Check whether Git is really installed. In VS Code open **Terminal, New
    Terminal** and type `git --version`. A version number means Git is fine.
-4. **On Windows,** if that says Git is not recognised, run the Git installer again from
+4. **On Windows,** if that says Git is not recognized, run the Git installer again from
    [git-scm.com](https://git-scm.com/downloads). On the page asking about your PATH, choose
    the **middle** option, *Git from the command line and also from 3rd-party software*. The
    Git Bash only option hides Git from VS Code.
-5. **On a Mac,** if that says Git is not recognised, open Terminal and run `git --version`.
+5. **On a Mac,** if that says Git is not recognized, open Terminal and run `git --version`.
    A box may offer to install the developer tools. Click **Install** and wait for it to
    finish, then quit and reopen VS Code.
 

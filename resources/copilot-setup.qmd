@@ -16,7 +16,7 @@ You are responsible for understanding every line you keep. If Copilot writes som
 
 ## What Copilot is (and is not)
 
-**It is** an autocomplete trained on public code. As you type, it offers a grey "ghost text" suggestion for the rest of a line or block. You accept it, edit it, or ignore it.
+**It is** an autocomplete trained on public code. As you type, it offers a gray "ghost text" suggestion for the rest of a line or block. You accept it, edit it, or ignore it.
 
 **It is not** a tutor that knows your data, a statistician that picks the right test, or a source of truth. It guesses what code usually comes next, which means it can suggest a function that does not exist, a package you have not installed, or an analysis that is wrong for your question.
 
