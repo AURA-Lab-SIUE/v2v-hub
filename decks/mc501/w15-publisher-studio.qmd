@@ -133,20 +133,20 @@ Methods carries the most weight because it carries the transparency markers: the
 provenance statement, the reliability report, and the pre-registration
 disclosure. The full rubric is in the syllabus.
 
-## Discussion {.discuss}
+## Not Only a Threshold {.discuss}
 
-On Wasserstein and Lazar (2016), the ASA statement on p-values:
+[Wasserstein and Lazar (2016)]{.eyebrow}
 
-- They say conclusions should not rest **only** on a threshold. What is the "only"
-  protecting, and what would a reviewer have to do differently to honor it?
-- The statement lists what a p-value is not, far more than what it is. Is that a
-  failure of the statistic or a failure of how we teach it?
-- The ASA declined to endorse a replacement. Was that restraint or evasion?
-- Your own Results section reports a *p* < .001 and a *d* of -0.13. Write the
-  sentence that a reader who has absorbed this statement would need to see.
+> "Scientific conclusions and business or policy decisions should not be based only on
+> whether a p-value passes a specific threshold."
+>
+> Wasserstein and Lazar (2016, p. 131)
 
-*Two minutes on the last question. That sentence goes in your paper today.*
+- The word doing the work is *only*
+- What else does your White Paper put beside it?
+- A reader who ignores your p: what convinces them?
 
+*Straight in. One contribution each before seconds.*
 ## One site, many pages
 
 ```yaml

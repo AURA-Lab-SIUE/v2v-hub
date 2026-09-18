@@ -147,20 +147,29 @@ coherent and statistically indefensible.
 - Raw agreement counts every match the same, the principled ones and the coincidences
 - Few categories, or one dominant category, and the coincidences pile up fast
 
-## Discussion {.discuss}
+## Reliability First {.discuss}
 
-On Hayes and Krippendorff (2007), "Answering the call for a standard reliability
-measure for coding data":
+[Returning to Hayes and Krippendorff]{.eyebrow}
 
-- They argue percent agreement and kappa are the wrong defaults. What exactly is
-  the defect they attribute to kappa's handling of chance?
-- Alpha generalizes across coders, levels of measurement, and missing data.
-  What does that generality cost in interpretability?
-- They are cautious about fixed cutoffs. If not 0.80, what should set your threshold?
-- Which coefficient does **your** codebook call for, and can you defend it in one sentence?
+> "Conclusions from such data can be trusted only after demonstrating their reliability."
+>
+> Hayes and Krippendorff (2007, p. 77)
 
-*Bring your answer to the fourth question in writing.*
+- You have a number now. Does it clear the bar?
+- What would you report if it does not?
+- Whose trust is the standard protecting?
 
+*Straight in. One contribution each before seconds.*
+
+## Informative, Not Impressive
+
+> "Do not try to spin a story where it looks like a study was highly informative when it
+> was not."
+>
+> Lakens (2022, p. 11)
+
+- Say what your pilot could not settle
+- What does that cost the White Paper?
 ## Cohen's kappa
 
 - Built for the common case: **two coders**, a **nominal** codebook (Cohen, 1960)

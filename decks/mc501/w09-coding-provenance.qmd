@@ -133,20 +133,21 @@ Load the tidyverse, then pull in the two tables and give each a name.
 - Discoverable is not the same as usable
 - A study can be public, cited, and still impossible to evaluate or reuse
 
-## Discussion {.discuss}
+## Usability, Not Discoverability {.discuss}
 
-On Munafo et al. (2017), the reporting and usability sections:
+[Munafo et al. (2017)]{.eyebrow}
 
-- They separate *discoverability* from *usability*. Which failure is more damaging to a
-  field, work nobody can find or work nobody can evaluate?
-- Usability is defined by what a later researcher can do with your record. What does that
-  imply your provenance statement owes a reader you will never meet?
-- Reporting standards are checklists. Do checklists change behavior, or do they only
-  change documents?
-- What in your own workflow this semester would fail a usability audit today?
+> "Poor usability reflects difficulty in evaluating what was done, in reusing the
+> methodology to assess reproducibility, and in incorporating the evidence into systematic
+> reviews and meta-analyses."
+>
+> Munafo et al. (2017, p. 4)
 
-*Five minutes to think it through, then we take it as a group.*
+- Which is worse: unfindable, or unevaluable?
+- Your provenance statement owes a stranger what?
+- Name one thing in your workflow that fails today
 
+*Straight in. One contribution each before seconds.*
 ## What the provenance record includes
 
 For a study using fresh API data, the record must name:

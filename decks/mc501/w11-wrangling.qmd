@@ -133,21 +133,19 @@ into a new column.
 - Not a preference: it is the structural assumption every tidyverse function makes
   about its inputs and produces about its outputs
 
-## Discussion {.discuss}
+## Meaning and Structure {.discuss}
 
-On Wickham (2014), "Tidy data":
+[Wickham (2014)]{.eyebrow}
 
-- He defines tidiness by the **mapping** from meaning to structure. What work is
-  "meaning" doing there, and who decides it?
-- Tidy data assumes you know what counts as one observation. Where in your own
-  study is the unit of observation genuinely contestable?
-- He concedes tidy form is not always the right form for analysis or display.
-  When would you deliberately leave it?
-- Wrangling that produces tidy data can be audited. Is the structure itself a
-  transparency claim, or does that overstate it?
+> "Tidy data is a standard way of mapping the meaning of a dataset to its structure."
+>
+> Wickham (2014, p. 4)
 
-*Three minutes to think, then we take the second question as a group.*
+- Name the meaning your table currently encodes
+- Where does your structure fight it?
+- Is tidiness a property of data, or of a question?
 
+*Straight in. One contribution each before seconds.*
 ## Step 1: what a channel mostly streams
 
 ```r

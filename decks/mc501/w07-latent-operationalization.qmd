@@ -122,20 +122,25 @@ demonstrated reliability the findings do not count for anything at all.
 
 Everything in the next two weeks sits downstream of that one sentence.
 
-## Discussion {.discuss}
+## Trust and Reliability {.discuss}
 
-On Hayes & Krippendorff (2007):
+[Hayes and Krippendorff (2007)]{.eyebrow}
 
-- They argue the field needs *one standard* measure rather than a menu. What is gained by
-  standardization, and what is lost?
-- Their claim is that trust is conditional on demonstrated reliability. Does that set the
-  bar in the right place for latent variables, where good-faith disagreement is expected?
-- Alpha corrects for chance agreement. Why is raw percent agreement not enough, and where
-  would it mislead you most in a chat corpus?
-- Bring one sentence you would cite in your own methods section.
+> "Conclusions from such data can be trusted only after demonstrating their reliability."
+>
+> Hayes and Krippendorff (2007, p. 77)
 
-*Five minutes to think it through, then we take it as a group.*
+- Apply it to a latent variable you are coding
+- Good-faith disagreement is expected there. Then what?
+- What does percent agreement hide in a chat corpus?
 
+*Straight in. One contribution each before seconds.*
+
+## One Standard Measure
+
+- They want one measure, not a menu
+- What does standardization buy a field?
+- What does it cost a study with an unusual unit?
 ## The field note that is useless
 
 > "Chat in the art stream felt calmer and more conversational than chat in the gaming

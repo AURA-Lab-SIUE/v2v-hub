@@ -135,19 +135,19 @@ pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.80, type = "two.sample")
 **You should see** *n* = 64 per group. That number, with the reasoning that produced it, is
 the sampling-plan justification your method section carries.
 
-## Discussion {.discuss}
+## Justified, Not Conventional {.discuss}
 
-On Lakens (2022), "Sample size justification":
+[Lakens (2022)]{.eyebrow}
 
-- Lakens argues the 80% convention lacks solid justification. What would a *justified*
-  target look like for the study you are proposing?
-- He ranks resource constraints last among acceptable justifications. Is that fair to the
-  realities of a one-semester, one-coder project?
-- If you cannot reach the *n* your power analysis demands, which is the more honest move:
-  revise the question, change the design, or report the limitation?
+> "the default recommendation to aim for 80% power lacks a solid justification."
+>
+> Lakens (2022, p. 6)
 
-*Five minutes to think it through, then we compare answers as a group.*
+- What would justify a target for your study?
+- He ranks resource constraints last. Fair?
+- One coder, one semester: where does that leave you?
 
+*Straight in. One contribution each before seconds.*
 ## Topic, theory, and data
 
 Three elements have to line up or the study quietly collapses.

@@ -147,22 +147,19 @@ exactly what `count()` produced.
 - A bar showing one group higher than another is a visual impression, not a claim
 - The effect size quantifies the magnitude in a scale-invariant unit
 
-## Discussion {.discuss}
+## The Most Important Outcome {.discuss}
 
-On Lakens (2013), "Calculating and reporting effect sizes to facilitate
-cumulative science":
+[Lakens (2013)]{.eyebrow}
 
-- His case is cumulative: effect sizes are inputs to other people's power
-  analyses. Does that make reporting them an obligation to a field rather than a reader?
-- He calls effect sizes the most important outcome of a study. Is that defensible,
-  or does it undersell what a well-specified null result contributes?
-- Effect sizes rarely appear in standard communication write-ups. What practical
-  barriers keep them out, and which of those could a journal actually fix?
-- For one comparison in your own analysis, what would you report, and what would
-  its confidence interval have to look like before you would interpret it?
+> "Effect sizes are the most important outcome of empirical studies."
+>
+> Lakens (2013, p. 1)
 
-*Two minutes on the last question, then we take it as a group.*
+- Most important to whom?
+- Your field reports p first. Why?
+- What would change if journals inverted that?
 
+*Straight in. One contribution each before seconds.*
 ## Figure 3: a histogram for shape
 
 - The study's central question: how long is a chat message, and does the answer

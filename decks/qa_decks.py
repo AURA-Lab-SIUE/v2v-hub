@@ -100,6 +100,7 @@ CITE_OK_LINE = re.compile(
     r"|^On\b"                                   # "On Lakens (2022), ..." discuss lead
     r"|assigned article|Assigned reading|Re-read"
 )
+EYEBROW = re.compile(r"\[[^\]]*\]\{\.eyebrow\}")
 CITE_SKIP_LEAD = ("Figure", "Table", "Chapter", "Section", "Appendix", "Week", "Exhibit")
 
 
@@ -109,6 +110,8 @@ def narrative_citations(t):
     for i, line in enumerate(t.split("\n"), 1):
         if CITE_OK_LINE.search(line):
             continue
+        # an eyebrow is a source anchor, a label rather than a sentence
+        line = EYEBROW.sub(lambda m: "\x00" * len(m.group(0)), line)
         for m in NARRATIVE_CITE.finditer(line):
             if m.group().split()[0] in CITE_SKIP_LEAD:
                 continue
