@@ -150,21 +150,32 @@ codebook needs your narration, it is not yet an instrument.
 - Nothing in your analysis, your figures, or your White Paper outranks this dependency
 - A finding built on an untested codebook is a number without a warrant
 
-## Discussion {.discuss}
+## Never Considered Valid {.discuss}
 
-On Lombard et al. (2002), "Content analysis in mass communication":
+[Lombard et al. (2002)]{.eyebrow}
 
-- They document how inconsistently reliability was assessed and reported in published
-  content analyses. Why would a field tolerate that for so long?
-- They recommend reporting more than one reliability statistic. Which second statistic
-  would you report alongside kappa for your study, and what would it add?
-- Their guidance is procedural: sample size, coder training, index selection, reporting.
-  Which of those does your current plan handle worst?
-- Where does their advice sit uneasily beside Hayes and Krippendorff's argument for a
-  single standard measure?
+> "It is widely acknowledged that intercoder reliability is a critical component of content
+> analysis and (although it does not ensure validity) when it is not established, the data and
+> interpretations of the data can never be considered valid."
+>
+> Lombard et al. (2002, p. 589)
 
-*Five minutes to think it through, then we take it as a group.*
+- Your study has one coder. Now what?
+- Is that sentence a standard or a threat?
+- What can you still claim honestly?
 
+*Straight in. One contribution each before seconds.*
+
+## The Researcher as Coder
+
+> "Coding must be done independently and without consultation or guidance. If possible, the
+> researcher should not be a coder."
+>
+> Lombard et al. (2002, p. 601)
+
+- You are both. Name the specific risk
+- What would catch it if it happened?
+- Their rule of thumb for a reliability sample is 30 units
 ## The threshold and the sample
 
 - The standard threshold for Cohen's kappa is **0.70 or higher** (Landis & Koch, 1977)

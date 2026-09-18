@@ -124,20 +124,29 @@ message_length by is_gaming
 - Declare the number of tests and any correction **in advance**, report the alpha
   you chose, say why it fits your design, and apply it consistently
 
-## Discussion {.discuss}
+## Justify, Not Redefine {.discuss}
 
-On Lakens et al. (2018), "Justify your alpha":
+[Lakens et al. (2018)]{.eyebrow}
 
-- They answer a proposal to redefine significance at .005 with a demand to justify
-  instead. Is "justify" enforceable, or does it hand the choice back to the author?
-- What would actually justify *α* = .01 rather than .05 in **your** study?
-- A justified alpha depends on the cost of each error type. Who bears those costs
-  in communication research, and does anyone in the review process represent them?
-- Seventy-two authors signed this. Does a consensus of methodologists settle a
-  question that is, at bottom, about values?
+> "we propose that researchers should transparently report and justify all choices they make
+> when designing a study, including the alpha level."
+>
+> Lakens et al. (2018, p. 168)
 
-*Take the second question in writing. It belongs in your White Paper.*
+- Which choice in your study is least justified?
+- They answer a threshold with a demand. Enough?
+- Eighty-eight authors signed this. Does that matter?
 
+*Straight in. One contribution each before seconds.*
+
+## Retiring the Phrase
+
+> "We conclude that the term 'statistically significant' should no longer be used."
+>
+> Lakens et al. (2018)
+
+- Write your result without the phrase
+- What did you lose, and what did you gain?
 ## How big is the difference
 
 - The p-value hands the question to a different number: an **effect size**
