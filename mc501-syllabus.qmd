@@ -116,23 +116,22 @@ advanced analytical prompts, is required material.
 
 By the end of this course, students will be able to:
 
-- Understand and apply the principles and laws of freedom of speech and press,
-  particularly within the context of the United States, while gaining a global
-  perspective on freedom of expression, including the right to dissent, monitor
-  power, and petition for redress of grievances.
-- Demonstrate an understanding of the historical role of professionals and
-  institutions in shaping mass communications and critically evaluate their
-  impact on the development of media systems.
-- Recognize and analyze the impact of diversity in mass communications,
-  including but not limited to gender, race, ethnicity, and sexual orientation,
-  within both domestic and global contexts, and appreciate the significance of
-  this diversity in shaping media content and audience reception.
-- Apply ethical principles in conducting and presenting research, ensuring that
-  all research practices adhere to standards of truth, accuracy, fairness, and
-  respect for diversity.
 - Design and execute original research independently, developing robust research
   questions and applying appropriate methodologies at a level approaching
   publishable quality.
+- Build an extended codebook with a reliability protocol, report intercoder
+  agreement as a kappa value with the training protocol and threshold applied,
+  and draw a sample the study can defend.
+- Apply ethical principles in conducting and presenting research, ensuring that
+  all research practices adhere to standards of truth, accuracy, fairness, and
+  respect for diversity.
+- Pre-register a study and document where its data came from, so that another
+  researcher can audit the design rather than take it on trust.
+- Analyze data in R and report effect sizes alongside the power statistics
+  behind the design, distinguishing statistical significance from practical
+  size.
+- Produce a reproducible research document that renders from source with no
+  pasted numbers, and publish it at a public address anyone can open.
 - Conduct rigorous research, evaluate information using appropriate methods, and
   communicate research findings clearly and in an ethically responsible way to
   both academic and professional audiences.

@@ -114,23 +114,22 @@ book.
 
 By the end of this course, students will be able to:
 
-- Understand and apply the principles and laws of freedom of speech and press,
-  particularly within the context of the United States, while gaining a global
-  perspective on freedom of expression, including the right to dissent, monitor
-  power, and petition for redress of grievances.
-- Demonstrate an understanding of the historical role of professionals and
-  institutions in shaping mass communications and critically evaluate their
-  impact on the development of media systems.
-- Recognize and analyze the impact of diversity in mass communications,
-  including but not limited to gender, race, ethnicity, and sexual orientation,
-  within both domestic and global contexts, and appreciate the significance of
-  this diversity in shaping media content and audience reception.
-- Apply ethical principles in conducting and presenting research, ensuring that
-  all research practices adhere to standards of truth, accuracy, fairness, and
-  respect for diversity.
 - Think critically, creatively, and independently in the design and execution of
   research projects, developing robust research questions and applying
   appropriate methodologies.
+- Build a codebook from close reading of the material, define variables
+  precisely enough that another coder can apply them, and draw a sample the
+  study can defend.
+- Apply ethical principles in conducting and presenting research, ensuring that
+  all research practices adhere to standards of truth, accuracy, fairness, and
+  respect for diversity.
+- Wrangle, describe, and test data in R, reporting a test statistic with its
+  degrees of freedom, p-value, and effect size, and characterizing that effect
+  accurately rather than inflating it.
+- Produce a reproducible research document that renders from source with no
+  pasted numbers, and publish it at a public address anyone can open.
+- Read published research critically and evaluate their own work with candor,
+  naming what a study could not answer.
 - Conduct rigorous research, evaluate information using appropriate methods, and
   communicate research findings clearly, concisely, and in an ethically
   responsible way.
