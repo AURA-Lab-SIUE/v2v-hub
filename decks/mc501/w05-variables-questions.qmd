@@ -234,7 +234,7 @@ variables. The theory supplied both and labeled neither.
 
 - **IV, persona behavior:** how often the figure addresses viewers directly
     - Counted per minute, or coded present and absent per segment.
-- **DV, audience response:** intimacy and direct address in chat
+- **DV, audience response:** intimacy and direct address in audience text
     - Second-person pronouns, first names, disclosure, repeat visits.
 - **The split that matters:** interaction during viewing, relationship between viewings
     - Dibble, Hartmann and Rosaen (2016) separated the two.
@@ -251,6 +251,8 @@ variables. The theory supplied both and labeled neither.
 
 Broadcast transcripts work too, and they cap what you can ask: the audience never appears in
 the data, so the DV has to come from somewhere else.
+
+The pair travels. Pick the medium your question actually lives in.
 
 ## Three kinds of research goal
 
@@ -296,6 +298,9 @@ talking to each other.
 
 Open the theory you are building on. No theory settled yet? Take the closest one and treat
 tonight as a test of whether it holds.
+
+The corpus we keep returning to is a **shared example**, not your data. Yours is whatever your
+question needs: a comment section, a subreddit, a news archive, a set of TikToks.
 
 - **Two candidate IVs** your theory says should matter
     - Name where each one lives in the content itself.
