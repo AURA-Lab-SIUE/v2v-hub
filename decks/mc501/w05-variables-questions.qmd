@@ -33,35 +33,33 @@ Everything here feeds the prospectus you draft next week.
 
 ## Variables: the building blocks
 
-- Theories become testable through **variables**: measurable concepts that take different
-  values
-- An **independent variable** is the proposed cause: what you manipulate, or what you
-  measure as the predictor
-- In this corpus: stream category, streamer tenure, concurrent viewer count
-- A **dependent variable** is the outcome you think gets influenced
-- In this corpus: chat messages per minute, viewer retention, subscription rate
+- Theories become testable through **variables**, concepts that take values
+- **Independent variable:** the proposed cause, or the predictor you measure
+    - In this corpus: stream category, streamer tenure, viewer count.
+- **Dependent variable:** the outcome you think gets influenced
+    - In this corpus: messages per minute, retention, subscription rate.
 
 ## A hypothesis you can actually test
 
 > In non-gaming streams, a higher proportion of chat messages are directed at the streamer
 > than in gaming streams.
 
-- **IV**: category type, gaming or non-gaming
-- **DV**: whether a message addresses the streamer or the room
-- The whole procedure is visible in that sentence: classify streams, code a sample of
-  messages, test the predicted relationship
-- Swap the domain and the structure survives. Frame type predicting engagement works
-  identically.
+- **IV:** category type, gaming or non-gaming
+- **DV:** whether a message addresses the streamer or the room
+- **The whole procedure is visible in that sentence**
+    - Classify streams, code a sample, test the predicted relationship.
+    - Swap the domain and the structure survives.
 
 ## Mediators and moderators
 
-- A **mediator** explains *how* or *why*. It is the mechanism sitting in between.
-- If category affects directed messages, the mediator might be perceived pace: non-gaming
-  streams feel conversational, and that invites direct address
-- A **moderator** changes the strength or direction, answering *under what conditions*
-- The category effect might hold on small streams and weaken on large ones
-- Together they move you from "X relates to Y" to "X relates to Y, by this mechanism,
-  under these conditions"
+- A **mediator** explains how or why, the mechanism in between
+    - Category may affect directed messages through perceived pace.
+    - Non-gaming streams feel conversational, which invites direct address.
+- A **moderator** changes strength or direction, under what conditions
+    - The effect might hold on small streams and weaken on large ones.
+
+Together they move you from "X relates to Y" to "X relates to Y, by this mechanism, under
+these conditions".
 
 ## HARKing, precisely
 
@@ -86,24 +84,24 @@ anything.
 
 ## The structural fix
 
-- Pre-registration submits theory-derived hypotheses, variables, and the analysis plan to a
-  public registry before data collection
-- The entry is time-stamped and permanent, so drift becomes visible rather than deniable
-- A V2V pre-registration carries: research question and directional hypotheses; unit of
-  analysis, platform, collection window; the codebook or extracted variables; planned tests
-  and inferential criteria; sample size justification
-- OSF's standard template walks you through each section
+- **Pre-registration** submits hypotheses, variables, and analysis plan publicly
+    - Filed before collection, time-stamped, and permanent.
+    - Drift becomes visible rather than deniable.
+- **A V2V entry carries** question, design, and criteria
+    - Directional hypotheses; unit of analysis, platform, collection window.
+    - Codebook or extracted variables; planned tests; sample size justification.
+- OSF's standard template walks you through each section.
 
 ## The garden of forking paths
 
 [Gelman and Loken, 2014]{.eyebrow}
 
-- The phrase belongs to Gelman and Loken, and their point is subtler than p-hacking
-- No conscious fishing is required for the problem to appear
-- An analyst faces many **defensible** choices, and would have made different ones had the
-  data come out differently
-- Those unrealised paths still inflate the false-positive rate
-- The hypothesis can even have been stated in advance and the problem survives
+- **The point is subtler than p-hacking**
+    - No conscious fishing is required for the problem to appear.
+- **Many defensible choices**, each contingent on the data
+    - You would have chosen differently had the data come out differently.
+    - Those unrealised paths still inflate the false-positive rate.
+- The hypothesis can be stated in advance and the problem survives.
 
 ## Forking Paths {.discuss}
 
@@ -152,12 +150,13 @@ semester.
 
 ## Five criteria for a strong question
 
-- **Specific**: names the platform, the outcome, and the population
-- **Measurable**: its concepts survive **operationalization**, the move from an abstract
-  idea to something observable
-- **Answerable within your constraints**: not decades of data or hundreds of interviews
-- **Not already settled**: your review is what tells you whether it is genuinely open
-- **It matters**: contributes to theory, resolves a contradiction, or has applied value
+- **Specific and measurable:** names platform, outcome, and population
+    - Its concepts must survive **operationalization**.
+    - The move from an abstract idea to something observable.
+- **Answerable and open:** finishable, and not already settled
+    - Not decades of data or hundreds of interviews.
+    - Your review tells you whether it is genuinely open.
+- **It matters:** contributes to theory, resolves a contradiction, or applies.
 
 ## The template
 
@@ -182,35 +181,35 @@ Each step trades breadth for depth. Narrowing is discipline rather than weakness
 
 ## Narrowing mistakes with names
 
-- **The Everything Study**: "the effect of social media on society". That is a research
-  program, not a project.
-- **The impossible comparison**: "are people who watch Twitch lonelier than people who do
-  not?" Self-selection confounds it before you collect anything.
-- **The circular question**: "do popular streamers attract large audiences because people
-  want to watch them?" Defined in a loop.
-- **The false binary**: "is it the streamer or the game?" Ask how much each contributes,
-  and whether they interact.
+- **The Everything Study:** "the effect of social media on society"
+    - A research program, not a project.
+- **The impossible comparison:** Twitch viewers against non-viewers
+    - Self-selection confounds it before you collect anything.
+- **Circular and binary questions:** loops, and forced either/or
+    - "Popular because people watch them" defines itself in a loop.
+    - "Streamer or game?" should ask how much each contributes.
 
 ## Operationalizing a parasocial bond
 
 The construct is not directly observable, so you choose among imperfect proxies and defend
 the one you chose.
 
-- **Self-report scale**: "I feel like this streamer understands me". Direct access to
-  subjective experience, exposed to social desirability bias.
-- **Behavioral indicators**: donations, subscription length, hours watched. More reliable,
-  but a behavior does not always mean what you assume it means.
-- **Language analysis**: code chat for intimacy, disclosure, direct address. Naturalistic,
-  labor-intensive, and blind to viewers who feel strongly and say nothing.
+- **Self-report scale:** "I feel like this streamer understands me"
+    - Direct access to subjective experience.
+    - Exposed to social desirability bias.
+- **Behavioral indicators:** donations, subscription length, hours watched
+    - More reliable, and a behavior may not mean what you assume.
+- **Language analysis:** code chat for intimacy, disclosure, direct address
+    - Naturalistic, labor-intensive, blind to viewers who say nothing.
 
 ## Operationalizing chat sentiment
 
-- **Automated scoring**: fast and replicable, blind to sarcasm, irony, and the coded
-  vocabulary of emotes
-- **Human coding**: catches context and nuance, labor-intensive, and requires intercoder
-  reliability testing
-- **Dimensional coding**: valence and arousal scored separately, better on emotional
-  complexity, and demands a much more careful codebook
+- **Automated scoring:** fast and replicable
+    - Blind to sarcasm, irony, and the coded vocabulary of emotes.
+- **Human coding:** catches context and nuance
+    - Labor-intensive, and requires intercoder reliability testing.
+- **Dimensional coding:** valence and arousal scored separately
+    - Better on emotional complexity, demands a more careful codebook.
 
 There is no right answer here. You pick the proxy that fits the question and the resources
 you have, then defend its validity in writing.
@@ -255,34 +254,37 @@ the data, so the DV has to come from somewhere else.
 
 ## Three kinds of research goal
 
-- **Exploratory** asks "what is going on here?" It generates hypotheses, and its output is
-  patterns and preliminary frameworks.
-- **Descriptive** asks "what does the landscape look like?" Output is frequencies,
-  distributions, prevalence.
-- **Explanatory** asks "why does this happen?" Hypothesis-driven and deductive, and its
-  output is support or disconfirmation.
-- Research on a topic usually moves through them in that order, and you do not need to do
-  all three. You do need to know which one you are attempting.
+- **Exploratory:** "what is going on here?"
+    - Generates hypotheses. Output is patterns and frameworks.
+- **Descriptive:** "what does the landscape look like?"
+    - Output is frequencies, distributions, prevalence.
+- **Explanatory:** "why does this happen?"
+    - Hypothesis-driven. Output is support or disconfirmation.
+
+Research usually moves through them in that order. You do not need all three, and you do
+need to know which one you are attempting.
 
 ## Question or hypothesis
 
-- A **research question** is interrogative and open: use it when exploring or describing,
-  when theory makes no clear prediction, or when the literature conflicts
-- A **hypothesis** is declarative and predictive: use it when theory predicts, when prior
-  work suggests an outcome, or when you are testing a causal claim
-- Behind every hypothesis sits the **null hypothesis**: no relationship, no difference
-- The null is the skeptical default, and it is what your test actually evaluates
-- The question is never whether you can tell a story. It is whether this data could have
-  come from a world with no effect in it.
+- A **research question** is interrogative and open
+    - Use it when exploring, describing, or when the literature conflicts.
+- A **hypothesis** is declarative and predictive
+    - Use it when theory predicts, or when prior work suggests an outcome.
+- Behind every hypothesis sits the **null hypothesis**
+    - No relationship, no difference. The skeptical default.
+    - It is what your test actually evaluates.
+
+The question is never whether you can tell a story. It is whether this data could have come
+from a world with no effect in it.
 
 ## Topic, theory, data
 
 All three have to line up. Mismatch any one of them and the study collapses quietly.
 
-- **Topic** must be bounded: "chat participation in the 50-channel working corpus", not
-  "livestreaming"
-- **Theory** must predict patterns your data could actually show
-- **Data** must be accessible, sufficient, and appropriate to the question
+- **Topic** must be bounded, never a whole medium
+    - "Chat participation in the 50-channel corpus", not "livestreaming".
+- **Theory** must predict patterns your data could show
+- **Data** must be accessible, sufficient, and appropriate.
 
 Political economy plus chat messages fails: the theory explains industry structure and the
 data captures individual expression. Swap to parasocial interaction and the three begin
@@ -318,22 +320,21 @@ cannot answer with this method.
 
 ## What the prospectus commits to
 
-- A descriptive **title** that hints at the key variables
-- One to three focused **questions or hypotheses**, not five and not ten
-- Two or three sentences of **theoretical framework**, naming the theory
-- Two or three sentences on the **gap**, with a few key citations
-- Three or four sentences of **method**: data, coding, number of cases
-- One or two sentences on the **expected contribution**
+- **Title and questions:** descriptive, hinting at the key variables
+    - One to three focused questions or hypotheses, not ten.
+- **Framework and gap:** two or three sentences each
+    - Name the theory. Cite a few key sources on the gap.
+- **Method and contribution:** three or four sentences, then one or two
+    - Data, coding, number of cases. Then what it adds.
 
 ## The number has to be defended
 
-- Your method section names a sample size. Next week it stops being an assertion.
-- **Statistical power** is the probability of detecting an effect of a given size, assuming
-  the effect is real
-- A study at 50% power is a coin flip even when the effect is there
-- The conventional minimum is 80%. Below it a significant result is less credible, because
-  underpowered studies both inflate false positives and overestimate real effects.
-- That 80% is a convention, and not a derived optimum
+- Your method section names a sample size, and next week it stops being an assertion.
+- **Statistical power:** the chance of detecting a real effect
+    - A study at 50% power is a coin flip even when the effect is there.
+- **The conventional minimum is 80%**, and it is a convention
+    - Below it a significant result is less credible.
+    - Underpowered studies inflate false positives and overestimate effects.
 
 ## Lakens on the convention
 
@@ -363,8 +364,9 @@ state the limitation explicitly. Those are the only three honest options.
 ## Before Week 6
 
 - **Due tonight:** **Annotated Manuscripts (3)** and **CITI Certification**
-- Read **Chapter 6** (the prospectus) and **Chapter 7** (Structured Listening), with the
-  edition toggle on
-- Read the assigned article: **Lakens (2022)**, "Sample size justification"
-- Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
-- Bring a draft research question. We narrow them in the room.
+- **Read:** Chapter 6 on the prospectus, Chapter 7 on Structured Listening
+    - Keep the edition toggle on.
+    - Plus **Lakens (2022)**, "Sample size justification".
+- **Write and bring:** a journal entry of 450 to 500 words
+    - Engage both the chapters and the reading.
+    - Bring a draft research question. We narrow them in the room.
