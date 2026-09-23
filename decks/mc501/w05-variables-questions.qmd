@@ -110,8 +110,8 @@ anything.
 >
 > Gelman and Loken (2014, p. 464)
 
-- Name one implicit choice in your design
-- What data would have changed it?
+- Name one choice the authors of an annotated manuscript never flagged
+- What result would have made them choose otherwise?
 
 *Straight in. One contribution each before seconds.*
 
@@ -124,7 +124,7 @@ anything.
 
 - Intent is doing no work here
 - Where does this bite a content analysis?
-- Your codebook forks too: name one
+- Name one place a coding scheme could fork unnoticed
 
 ## Preregistration's Limits
 
