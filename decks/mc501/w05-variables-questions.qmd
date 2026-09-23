@@ -23,15 +23,15 @@ single thing in this course.
 
 Everything here feeds the prospectus you draft next week.
 
-## Fair warning about the second half
+## Fair Warning, Second Half
 
-- Nobody writes a good research question on the first try. Nobody.
+- Nobody writes a good research question on the first try. Nobody
 - Narrowing feels like giving up on the interesting version of your idea, and it is not
 - The version you arrive with tonight will almost certainly be too big, which is the
   normal starting point rather than a sign you misunderstood
-- We narrow them in the room, out loud, together. Bring the too-big one.
+- We narrow them in the room, out loud, together. Bring the too-big one
 
-## Variables: the building blocks
+## Variables: The Building Blocks
 
 - Theories become testable through **variables**, concepts that take values
 - **Independent variable:** the proposed cause, or the predictor you measure
@@ -39,7 +39,7 @@ Everything here feeds the prospectus you draft next week.
 - **Dependent variable:** the outcome you think gets influenced
     - In this corpus: messages per minute, retention, subscription rate.
 
-## A hypothesis you can actually test
+## A Testable Hypothesis
 
 > In non-gaming streams, a higher proportion of chat messages are directed at the streamer
 > than in gaming streams.
@@ -50,7 +50,7 @@ Everything here feeds the prospectus you draft next week.
     - Classify streams, code a sample, test the predicted relationship.
     - Swap the domain and the structure survives.
 
-## Mediators and moderators
+## Mediators And Moderators
 
 - A **mediator** explains how or why, the mechanism in between
     - Category may affect directed messages through perceived pace.
@@ -61,7 +61,7 @@ Everything here feeds the prospectus you draft next week.
 Together they move you from "X relates to Y" to "X relates to Y, by this mechanism, under
 these conditions".
 
-## HARKing, precisely
+## HARKing, Precisely
 
 **H**ypothesizing **A**fter **R**esults are **K**nown. You look at data, notice a pattern,
 then write as though you predicted it.
@@ -72,7 +72,7 @@ The test still reports a *p*-value. But the hypothesis came out of the data, so 
 Nothing here requires dishonesty. It requires only ordinary forgetting, which is why the
 fix has to be structural rather than a matter of good character.
 
-## The inferential cost
+## The Inferential Cost
 
 > "Failing to appreciate the difference can lead to overconfidence in post hoc explanations (postdictions) and inflate the likelihood of believing that there is evidence for a finding when there is not."
 >
@@ -82,7 +82,7 @@ A **postdiction** is an explanation produced after the fact. It can describe the
 pattern a prediction would. The difference is that only the prediction was risking
 anything.
 
-## The structural fix
+## The Structural Fix
 
 - **Pre-registration** submits hypotheses, variables, and analysis plan publicly
     - Filed before collection, time-stamped, and permanent.
@@ -90,9 +90,9 @@ anything.
 - **A V2V entry carries** question, design, and criteria
     - Directional hypotheses; unit of analysis, platform, collection window.
     - Codebook or extracted variables; planned tests; sample size justification.
-- OSF's standard template walks you through each section.
+- OSF's standard template walks you through each section
 
-## The garden of forking paths
+## The Garden Of Forking Paths
 
 [Gelman and Loken, 2014]{.eyebrow}
 
@@ -101,7 +101,7 @@ anything.
 - **Many defensible choices**, each contingent on the data
     - You would have chosen differently had the data come out differently.
     - Those unrealised paths still inflate the false-positive rate.
-- The hypothesis can be stated in advance and the problem survives.
+- The hypothesis can be stated in advance and the problem survives
 
 ## Forking Paths {.discuss}
 
@@ -115,7 +115,7 @@ anything.
 
 *Straight in. One contribution each before seconds.*
 
-## Multiple Comparisons
+## Multiple Comparisons {.discuss}
 
 > "it is possible to have multiple potential comparisons ... without the researcher performing
 > any conscious procedure of fishing through the data"
@@ -126,7 +126,9 @@ anything.
 - Where does this bite a content analysis?
 - Name one place a coding scheme could fork unnoticed
 
-## Preregistration's Limits
+*Two minutes. Take the second question first if the room is quiet.*
+
+## Preregistration's Limits {.discuss}
 
 > "Preregistration may be practical in some fields and for some types of problems, but it cannot
 > realistically be a general solution."
@@ -135,9 +137,11 @@ anything.
 
 - This course teaches preregistration as a pillar
 - Where does their objection land hardest?
-- What survives it
+- What survives it?
 
-## The hardest part is the question
+*Two minutes. I want the strongest version of their objection, not a defense.*
+
+## The Hardest Part
 
 Running a test can be learned with practice. Asking well cannot be outsourced to anyone.
 
@@ -148,7 +152,7 @@ Running a test can be learned with practice. Asking well cannot be outsourced to
 A is a career disguised as a question. B you can design, execute, and finish inside one
 semester.
 
-## Five criteria for a strong question
+## Five Criteria For Questions
 
 - **Specific and measurable:** names platform, outcome, and population
     - Its concepts must survive **operationalization**.
@@ -156,9 +160,9 @@ semester.
 - **Answerable and open:** finishable, and not already settled
     - Not decades of data or hundreds of interviews.
     - Your review tells you whether it is genuinely open.
-- **It matters:** contributes to theory, resolves a contradiction, or applies.
+- **It matters:** contributes to theory, resolves a contradiction, or applies
 
-## The template
+## The Question Template
 
 Some combination of *does there exist*, plus a *specific variable*, plus a *relationship,
 pattern, or difference*, plus a *bounded population*, plus any *confounds accounted for*.
@@ -168,7 +172,7 @@ pattern, or difference*, plus a *bounded population*, plus any *confounds accoun
 
 Every part of that sentence is doing work. Delete one and the study loses its shape.
 
-## The funnel
+## The Narrowing Funnel
 
 1. "I am interested in Twitch chat." Too broad. Which aspect? Which streams?
 2. "How viewers participate in chat." Better, still vast.
@@ -179,7 +183,7 @@ Every part of that sentence is doing work. Delete one and the study loses its sh
 
 Each step trades breadth for depth. Narrowing is discipline rather than weakness.
 
-## Narrowing mistakes with names
+## Narrowing Mistakes With Names
 
 - **The Everything Study:** "the effect of social media on society"
     - A research program, not a project.
@@ -189,7 +193,7 @@ Each step trades breadth for depth. Narrowing is discipline rather than weakness
     - "Popular because people watch them" defines itself in a loop.
     - "Streamer or game?" should ask how much each contributes.
 
-## Operationalizing a parasocial bond
+## Operationalizing A Parasocial Bond
 
 The construct is not directly observable, so you choose among imperfect proxies and defend
 the one you chose.
@@ -202,7 +206,7 @@ the one you chose.
 - **Language analysis:** code chat for intimacy, disclosure, direct address
     - Naturalistic, labor-intensive, blind to viewers who say nothing.
 
-## Operationalizing chat sentiment
+## Operationalizing Chat Sentiment
 
 - **Automated scoring:** fast and replicable
     - Blind to sarcasm, irony, and the coded vocabulary of emotes.
@@ -254,7 +258,7 @@ the data, so the DV has to come from somewhere else.
 
 The pair travels. Pick the medium your question actually lives in.
 
-## Three kinds of research goal
+## Three Kinds Of Goal
 
 - **Exploratory:** "what is going on here?"
     - Generates hypotheses. Output is patterns and frameworks.
@@ -266,7 +270,7 @@ The pair travels. Pick the medium your question actually lives in.
 Research usually moves through them in that order. You do not need all three, and you do
 need to know which one you are attempting.
 
-## Question or hypothesis
+## Question Or Hypothesis
 
 - A **research question** is interrogative and open
     - Use it when exploring, describing, or when the literature conflicts.
@@ -279,14 +283,14 @@ need to know which one you are attempting.
 The question is never whether you can tell a story. It is whether this data could have come
 from a world with no effect in it.
 
-## Topic, theory, data
+## Topic, Theory, Data
 
 All three have to line up. Mismatch any one of them and the study collapses quietly.
 
 - **Topic** must be bounded, never a whole medium
     - "Chat participation in the 50-channel corpus", not "livestreaming".
 - **Theory** must predict patterns your data could show
-- **Data** must be accessible, sufficient, and appropriate.
+- **Data** must be accessible, sufficient, and appropriate
 
 Political economy plus chat messages fails: the theory explains industry structure and the
 data captures individual expression. Swap to parasocial interaction and the three begin
@@ -323,7 +327,7 @@ question needs: a comment section, a subreddit, a news archive, a set of TikToks
 This is the constraint your prospectus inherits. A question you cannot code is a question you
 cannot answer with this method.
 
-## What the prospectus commits to
+## What The Prospectus Commits
 
 - **Title and questions:** descriptive, hinting at the key variables
     - One to three focused questions or hypotheses, not ten.
@@ -332,16 +336,16 @@ cannot answer with this method.
 - **Method and contribution:** three or four sentences, then one or two
     - Data, coding, number of cases. Then what it adds.
 
-## The number has to be defended
+## Defending The Number
 
-- Your method section names a sample size, and next week it stops being an assertion.
+- Your method section names a sample size, and next week it stops being an assertion
 - **Statistical power:** the chance of detecting a real effect
     - A study at 50% power is a coin flip even when the effect is there.
 - **The conventional minimum is 80%**, and it is a convention
     - Below it a significant result is less credible.
     - Underpowered studies inflate false positives and overestimate effects.
 
-## Lakens on the convention
+## Lakens On The Convention
 
 > "the default recommendation to aim for 80% power lacks a solid justification."
 >
@@ -352,7 +356,7 @@ He treats justification by resource constraint as a last resort rather than a de
 Come next week with a position on this: is it defensible to run a design you already know
 is underpowered?
 
-## Computing the number
+## Computing The Number
 
 ```r
 library(pwr)
