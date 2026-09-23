@@ -110,10 +110,9 @@ anything.
 >
 > Gelman and Loken (2014, p. 464)
 
-- Name one choice tonight's gaming example leaves implicit
-- What result would have made you choose otherwise?
-
-*Straight in. One contribution each before seconds.*
+- A study compares directed messages in gaming and non-gaming streams
+- Name one choice that comparison leaves implicit
+- What result would have made the author choose otherwise?
 
 ## Multiple Comparisons {.discuss}
 
@@ -126,8 +125,6 @@ anything.
 - Where does this bite a content analysis?
 - Name one place a coding scheme could fork unnoticed
 
-*Two minutes. Take the second question first if the room is quiet.*
-
 ## Preregistration's Limits {.discuss}
 
 > "Preregistration may be practical in some fields and for some types of problems, but it cannot
@@ -138,8 +135,6 @@ anything.
 - This course teaches preregistration as a pillar
 - Where does their objection land hardest?
 - What survives it?
-
-*Two minutes. I want the strongest version of their objection, not a defense.*
 
 ## The Hardest Part
 
@@ -312,8 +307,6 @@ question needs: a comment section, a subreddit, a news archive, a set of TikToks
     - Say what a coder would look at to record it.
 - **Then cut what you cannot code**
     - If it needs a survey, it is out tonight.
-
-*Ten minutes. Then a few of you read one pair out and we stress-test it together.*
 
 ## What Content Analysis Reaches
 
