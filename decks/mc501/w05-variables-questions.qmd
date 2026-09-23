@@ -215,6 +215,44 @@ the one you chose.
 There is no right answer here. You pick the proxy that fits the question and the resources
 you have, then defend its validity in writing.
 
+## Variables Hide In Descriptions {.discuss}
+
+[aura-lab.siue.edu/theories]{.eyebrow}
+
+Open **Parasocial Interaction** and read the TL;DR aloud. We pull the variables out of prose
+that never names them.
+
+- **What the persona does:** direct address, camera look, informal talk
+    - Horton and Wohl called it an illusion of face-to-face conversation.
+    - It varies by figure, by segment, and by platform.
+- **What the audience does:** loyalty, reliance, a sense of knowing
+    - Rubin, Perse and Powell (1985) built a scale for exactly this.
+
+The first list is candidate independent variables and the second is candidate dependent
+variables. The theory supplied both and labeled neither.
+
+## Naming The IV And DV
+
+- **IV, persona behavior:** how often the figure addresses viewers directly
+    - Counted per minute, or coded present and absent per segment.
+- **DV, audience response:** intimacy and direct address in chat
+    - Second-person pronouns, first names, disclosure, repeat visits.
+- **The split that matters:** interaction during viewing, relationship between viewings
+    - Dibble, Hartmann and Rosaen (2016) separated the two.
+    - Which one you measure decides what your DV can be.
+
+## The Pair Across Media
+
+- **Livestream chat:** persona talk and stream category as IV
+    - DV is directed messages as a share of all messages.
+- **Influencer comments:** posting cadence and reply behavior as IV
+    - DV is intimacy markers across the comment thread.
+- **Social VR capture:** proximity and apparent eye contact as IV
+    - DV is turn-taking and disclosure in recorded speech.
+
+Broadcast transcripts work too, and they cap what you can ask: the audience never appears in
+the data, so the DV has to come from somewhere else.
+
 ## Three kinds of research goal
 
 - **Exploratory** asks "what is going on here?" It generates hypotheses, and its output is
@@ -249,6 +287,34 @@ All three have to line up. Mismatch any one of them and the study collapses quie
 Political economy plus chat messages fails: the theory explains industry structure and the
 data captures individual expression. Swap to parasocial interaction and the three begin
 talking to each other.
+
+## Your Theory, Your Variables {.discuss}
+
+[aura-lab.siue.edu/theories]{.eyebrow}
+
+Open the theory you are building on. No theory settled yet? Take the closest one and treat
+tonight as a test of whether it holds.
+
+- **Two candidate IVs** your theory says should matter
+    - Name where each one lives in the content itself.
+- **Two candidate DVs** the same theory predicts
+    - Say what a coder would look at to record it.
+- **Then cut what you cannot code**
+    - If it needs a survey, it is out tonight.
+
+*Ten minutes. Then a few of you read one pair out and we stress-test it together.*
+
+## What Content Analysis Reaches
+
+- **Reachable:** what is said, shown, posted, or counted
+    - Word choice, frequency, address, timing, visible behavior.
+- **Out of reach alone:** what a person felt or intended
+    - Loneliness, satisfaction, and attitude need a survey or interview.
+- **The usual fix:** move the construct to its visible trace
+    - Not felt closeness, but expressions of closeness in the thread.
+
+This is the constraint your prospectus inherits. A question you cannot code is a question you
+cannot answer with this method.
 
 ## What the prospectus commits to
 
