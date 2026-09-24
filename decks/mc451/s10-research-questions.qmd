@@ -39,8 +39,9 @@ Getting from A to B is most of the craft in this course.
 - **Specific:** name the platform, the outcome, and the population. "How does social media
   influence politics?" leaves all three undefined.
 - **Measurable:** it must survive **operationalization**, the move from an abstract idea to
-  something you can actually record. "Do authentic streamers build better communities?"
-  cannot start until *authentic* and *better* become observable.
+  something you can actually record
+  - "Do authentic streamers build better communities?" cannot start until *authentic* and
+    *better* become observable.
 - **Answerable:** not decades of data or hundreds of interviews
 - **Not already settled:** your literature review is what tells you
 - **Worth asking:** Tuesday versus Thursday stream start times is answerable and is trivia
@@ -50,9 +51,9 @@ Getting from A to B is most of the craft in this course.
 Assemble the parts on purpose:
 
 - *Does there exist* ...
-- a **specific variable or concept** ...
-- a **relationship, pattern, or difference** ...
-- in a **bounded population or context**?
+  - a **specific variable or concept**,
+  - showing a **relationship, pattern, or difference**,
+  - within a **bounded population or context**?
 
 "Is there a relationship between stream category and chat message rate among channels in
 the Twitch working corpus?" is built from exactly those four parts.
@@ -62,15 +63,14 @@ the Twitch working corpus?" is built from exactly those four parts.
 - Say the curiosity you brought into this course out loud, in one sentence
 - Which of the five criteria does it fail right now?
 - What would you have to **observe** in order to answer it?
-
-*Two minutes to draft it, then we take a few and narrow them together.*
+- The corpus is our shared example; your data is whatever your own question needs
 
 ## The Everything Study
 
 - It announces itself: "I want to study the effect of social media on society"
 - **Scope creep** arrives as too many questions, too many theories, and data too large for
   the time you have
-- It also creeps by addition: one more variable, one more comparison, one more group
+  - It also creeps by addition: one more variable, one more comparison, one more group
 - The cure is narrowing until the project fits the time and the skill you actually have
 - Narrowing is not weakness. It is the discipline that lets you finish.
 
@@ -88,12 +88,13 @@ Version 5 will not answer everything about Twitch chat. It will answer something
 
 ## Three narrowing mistakes
 
-- **Impossible comparison:** "Are Twitch viewers lonelier than non-viewers?" The two groups
-  differ in a hundred ways besides the one you care about.
-- **Circular question:** "Do popular streamers attract large audiences because people want
-  to watch them?" The terms define each other, so nothing could disconfirm it.
-- **False binary:** "Is it the streamer or the game?" Ask instead how much each contributes
-  and whether they interact.
+- **Impossible comparison:** "Are viewers of a platform lonelier than non-viewers?"
+  - The two groups differ in a hundred ways besides the one you care about.
+- **Circular question:** "Do popular creators attract large audiences because people want
+  to watch them?"
+  - The terms define each other, so nothing could disconfirm it.
+- **False binary:** "Is it the streamer or the game?"
+  - Ask instead how much each contributes and whether they interact.
 
 ## Concepts need operational choices
 
@@ -103,8 +104,8 @@ and a media figure, is not something you can see directly. Three routes to it:
 - **Self-report scale:** captures subjective experience, invites social desirability bias
 - **Behavioral indicators:** donations, subscription length, hours watched. Reliable, and
   ambiguous about what they mean.
-- **Language analysis:** code chat for intimacy and direct address. Naturalistic, and
-  labor-intensive.
+- **Language analysis:** code what viewers write for intimacy and direct address.
+  Naturalistic, and labor-intensive.
 
 ## Sentiment, the same problem
 
@@ -119,12 +120,12 @@ There is no single right answer. You pick, and then you **defend the proxy** in 
 
 ## Three goals, three kinds of question
 
-- **Exploratory:** "What is going on here?" Generates hypotheses. Output is patterns and
-  themes.
-- **Descriptive:** "What does the landscape look like?" Output is frequencies and
-  distributions.
-- **Explanatory:** "Why does this happen?" Tests relationships. Output is support or
-  disconfirmation.
+- **Exploratory:** "What is going on here?" Generates hypotheses.
+  - Output is patterns and themes.
+- **Descriptive:** "What does the landscape look like?"
+  - Output is frequencies and distributions.
+- **Explanatory:** "Why does this happen?" Tests relationships.
+  - Output is support or disconfirmation.
 - Research on a topic tends to move through these in order. You do not have to do all
   three, and you do have to know which one you are attempting.
 
@@ -135,13 +136,13 @@ There is no single right answer. You pick, and then you **defend the proxy** in 
 - A **hypothesis** is declarative and predictive: use it when theory makes a specific
   prediction you could be wrong about
 - Behind every hypothesis sits the **null hypothesis**: no relationship, no difference
-- The null is the skeptical default, and it is what a statistical test actually evaluates
+  - The null is the skeptical default, and it is what a statistical test actually evaluates
 - Same logic as the sacred flaw from Chapter 1
 
 ## Topic, theory, data must align
 
-- **Topic:** bounded by population, time, and medium. "Livestreaming" is not a topic.
-  "Chat participation in the 50-channel corpus" is.
+- **Topic:** bounded by population, time, and medium
+  - "Livestreaming" is not a topic. "Chat participation in the 50-channel corpus" is.
 - **Theory:** must predict patterns your data could actually show
 - **Data:** accessible, sufficient, and appropriate to the question
 
