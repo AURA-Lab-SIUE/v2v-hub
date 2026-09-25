@@ -12,154 +12,158 @@ format:
     transition: none
 ---
 
-## Three numbers, one climb
+## Today's Agenda
+
+- What a number cannot tell you
+- Immersion, and structured listening
+- Three modes of watching
+- Field notes, and the rhythm that keeps them
+
+## Three Numbers, One Climb
 
 [Sodapoppin, November 2018]{.eyebrow}
 
-- **27,934** concurrent viewers, then **28,076**, then **28,203**
-- Two hundred sixty-nine viewers in a hundred and twenty-two seconds
-- The dataset records that climb to the second
-- What the dataset cannot tell you is **what the climb was**
+- **27,934**, then **28,076**, then **28,203** concurrent viewers
+- Two hundred sixty-nine viewers in 122 seconds
+- **The dataset records that climb to the second**
+    - What it cannot tell you is what the climb was
 
-## Same rows, four different events
+## Same Rows, Four Events
 
-- A **raid**: another streamer ending a broadcast and sending their audience over
-- A **clip going viral** on Reddit, pulling in strangers
-- The streamer coming back from a break
-- A game update, or just the slow accumulation of a good night
+- **A raid:** another streamer sending their audience over
+- **A viral clip** on Reddit, pulling in strangers
+- **The streamer returning** from a break
+- **A game update**, or a good night accumulating
 
-The row looks identical in all four cases. A number, a larger number, a larger number
-still. Today is about how you come to know which one it was.
+The row looks identical in all four cases. Today is about how you come to know which one it
+was.
 
-## Signatures you can only learn by watching
+## Signatures You Learn by Watching
 
-- A raid has a signature: a near-vertical jump, usually with a wave of near-identical
-  greetings arriving in chat
-- A viral clip has a different one: a slower swell of viewers who do not know the room's
-  conventions
-- The dataset will never label these for you
-- **You bring the labels.** You can only bring them if you have done the looking.
-- That is the whole argument for spending this week watching television for credit
+- **A raid has a signature**
+    - A near-vertical jump in the count
+    - A wave of near-identical greetings in chat
+- **A viral clip has a different one**
+    - A slower swell of arriving viewers
+    - They do not know the room's conventions
+- **You bring the labels**, and only if you looked
 
-## Immersion and structured listening
+## Immersion and Structured Listening
 
-- **Immersion** is sustained, systematic attention to a subject before analysis begins
-- For a content analyst working with Twitch it takes the form of **structured listening**
-- Watch streams, read chat, take notes, with the discipline an ethnographer brings to a
-  field site
-- The dataset is historical, 5.5 days in 2018. The platform is live in front of you now.
-- The behaviors it recorded are still there to be watched
+- **Immersion:** sustained attention before analysis begins
+    - Here it takes the form of **structured listening**
+    - Watch, read chat, take notes, with an ethnographer's discipline
+- **The data is historical, the platform is live**
+    - 5.5 days in 2018, and the site is open right now
+    - The behaviors it recorded are still there to watch
 
-## What happens when you skip it
+## Skipping It Costs You
 
 A coder who has never watched Twitch reads the log as plain text and:
 
-- Sees **LULW** and cannot tell an emote from a typo or a username
-- Sees thirty accounts posting the same phrase and does not recognize **copypasta**, a block
-  the regulars paste together as a joke
-- Sees "@sodapoppin same" and cannot tell agreement from a reflexive stock reply
-- Sorts every message confidently, and produces buckets that do not mean what you think
+- Sees **LULW** as a typo or a username
+- Sees thirty identical posts, not **copypasta**
+- Sees "@sodapoppin same" and cannot tell agreement from reflex
+- Sorts everything confidently into buckets that mislead
 
-## Your turn {.discuss}
+## Your Turn {.discuss}
 
-- Name a convention in a media space you know well that an outsider would misread
-- What would they count wrong, and which direction would the error run?
-- What is the equivalent convention in Twitch chat that you do not know yet?
+- **Name a convention an outsider would misread**
+    - In a media space you already know well
+- What would they count wrong, and which direction?
+- Which Twitch convention do you not know yet?
 
-*Two minutes to think, then we build a shared list on the board.*
+## Thick Description
 
-## Thick description
+- **Thick description** captures meaning, not only events (Geertz, 1973)
+    - Rich enough to say what it meant to those present
+- **Thin counts messages, thick knows the count**
+    - Raids, inside jokes, and reflexive replies
+- Structured listening is how thin becomes thick
 
-The alternative is **thick description**: a record rich enough to capture not just what
-happened but what it meant to the people it happened among (Geertz, 1973).
+The medium changes and the discipline does not.
 
-A *thin* description of the chat log counts messages. A *thick* one knows the count is made
-of raids, inside jokes, and reflexive replies.
+## Mode One, Casual Watching
 
-Structured listening is how a thin dataset becomes something you can describe thickly. The
-medium changes and the discipline does not.
+- **Initial exposure and nothing more**
+    - Open several streams across the range
+    - A large gaming channel, a small one, Just Chatting, art
+- **Do not take notes, and do not code**
+    - Let the medium be unfamiliar
+    - What surprises you, and what do you not understand?
+- The goal is exposure replacing assumption
 
-## Mode one: casual watching
-
-- Initial exposure and nothing more
-- Open several streams across the range: a large gaming channel, a small one, Just
-  Chatting, art or music
-- **Do not take notes. Do not try to code anything.**
-- Let the medium be unfamiliar. What surprises you? Which convention do you not understand?
-- The only goal is replacing your assumptions about Twitch with actual exposure to it
-
-## Mode two: focused watching
+## Mode Two, Focused Watching
 
 Choose a few streams and watch with one dimension in mind per pass:
 
-- **Chat behavior:** how fast does it move, who is it addressed to, when does the pace change?
-- **Viewer trajectories:** does the count climb, hold, or fall, and what is happening on
-  stream when it moves?
-- **Host moves:** does the streamer read chat aloud, react to it, ignore it, steer it?
+- **Chat behavior:** pace, who it addresses, when it changes
+- **Viewer trajectories:** climb, hold, or fall, and why
+- **Host moves:** read aloud, react, ignore, or steer
 
 Brief notes after each pass. You are still describing, not coding.
 
-## Mode three: analytical watching
+## Mode Three, Analytical Watching
 
-- Watch a larger number of streams, asking what **recurs**
-- Do certain chat behaviors cluster with certain kinds of stream?
-- Are there category conventions, so competitive-game chat differs from art-stream chat?
-- Which cases resist easy description?
-- The contours of your coding scheme start showing up here, without you forcing them
+- **Watch more streams, asking what recurs**
+    - Do chat behaviors cluster with kinds of stream?
+    - Does competitive-game chat differ from art-stream chat?
+- **Which cases resist easy description?**
+- The contours of your coding scheme show up here
 
-## Field notes exist or they do not
+## Field Notes Exist or Not
 
-- Observation without a record is just watching television
-- **Field notes** are written, dated, specific accounts of what you saw and what it made
-  you think
-- They are not polished prose. They are thinking on paper.
-- Their value is catching an observation while it is fresh, before it hardens into
-  something you assume you always knew
-- The notes do not need to be good. They need to **exist**.
+- **Observation without a record is watching television**
+- **Field notes** are written, dated, and specific
+    - Not polished prose, but thinking on paper
+    - They catch an observation while it is still fresh
+- The notes do not need to be good, they need to **exist**
 
-## Observational and methodological notes
+## Observational and Methodological Notes
 
-- **Observational note:** what you saw. "Watched a mid-size Just Chatting stream for forty
-  minutes. Chat moved in bursts, near silence while the streamer talked, then a flood every
-  time they paused."
-- **Methodological note:** a measurement problem. "The bursts after a question are answers
-  to the streamer, so directed, but also performance for the room. A coder reading the log
-  as text cannot see the question. The codebook may need a rule."
+- **Observational:** what you saw
+    - "Chat moved in bursts, near silence while they talked"
+    - "Then a flood every time they paused"
+- **Methodological:** a measurement problem
+    - "The bursts are answers, and performance for the room"
+    - "A coder reading text cannot see the question"
 
-## Theoretical and comparative notes
+## Theoretical and Comparative Notes
 
-- **Theoretical note:** links an observation to a framework. "The burst-after-a-question
-  pattern fits uses and gratifications (Katz, Blumler, & Gurevitch, 1973). Chat volume is
-  not a steady trait of a stream but a response to host moves."
-- **Comparative note:** how cases differ. "Two streams, same hour. Gaming chat ran fast and
-  reactive, art chat ran slow and conversational. Gaming and non-gaming chat are not the
-  same object."
+- **Theoretical:** links an observation to a framework
+    - "The burst pattern fits uses and gratifications (Katz et al., 1973)"
+    - "Chat volume responds to host moves, it is not a trait"
+- **Comparative:** how cases differ
+    - "Gaming chat ran fast, art chat ran slow"
+    - "They are not the same object"
 
-## The rhythm
+## The Rhythm
 
-- One plain-text document, dated, **one entry per observation session**
-- The Hub has a field-notes template carrying the four note types
-- Set a rhythm: a note every fifteen or twenty minutes of watching
-- The record has to keep pace with the watching, because memory will not
-- The codebook you build in two sessions gets assembled almost entirely out of these notes
+- **One plain-text document**, dated, one entry per session
+    - The Hub template carries the four note types
+- **A note every fifteen or twenty minutes**
+    - The record has to keep pace, because memory will not
+- Your codebook gets assembled out of these notes
 
-## Observation tests your question
+## Observation Tests Your Question
 
-- You arrived with a prospectus committing you to some distinction, whatever yours is
-- Observation will either **confirm** that split or **complicate** it
-- In the class dataset the classic case is directed versus broadcast chat: watch for a
-  while and you find messages aimed at neither, replies and arguments and inside jokes
-  between regulars
-- A two-way distinction turns out to have a third term. Yours will do something similar.
-- That is not a failure of your prospectus. It is the cheapest possible moment to find out.
+- **Your prospectus commits you to some distinction**
+    - Observation will confirm it, or complicate it
+- **The classic case is directed against broadcast**
+    - Watch a while and you find messages aimed at neither
+    - Replies, arguments, and inside jokes between regulars
+- A two-way split gains a third term
 
-## Before next time
+That is not a failure of your prospectus. It is the cheapest possible moment to find out.
 
-- **Topic Selection and Research Questions is due this week.**
-- **The Project Prospectus follows next week.** Submit the version you can defend, not the
-  version you love.
-- Start your field-notes document tonight: template on the Hub, dated entries, four types
-- Log at least **two observation sessions** before we meet again, one gaming and one not
-- Read the rest of **Chapter 7**: manifest and latent content, sampling your observation,
-  edge cases
-- Next session we separate what any coder can see from what takes judgment
+## Before Next Time
+
+- **Due this week:** Topic Selection and Research Questions
+- **Next week:** the Project Prospectus
+    - Submit the version you can defend, not the one you love
+- **Start your field-notes document tonight**
+    - Template on the Hub, dated entries, four types
+    - Log two observation sessions, one gaming and one not
+- **Read** the rest of Chapter 7
+
+## Questions?
