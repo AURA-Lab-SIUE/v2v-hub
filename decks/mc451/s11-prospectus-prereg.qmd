@@ -12,111 +12,112 @@ format:
     transition: none
 ---
 
-## One page, six decisions
+## Today's Agenda
+
+- The six components of a prospectus
+- Two worked prospectuses off one corpus
+- What the draft does not need yet
+- A failed draft, and the feasibility test
+- Pre-registration, and what it binds
+
+## One Page, Six Decisions
 
 [The prospectus]{.eyebrow}
 
-- Next week you hand in one page saying what you are studying, why it matters, and how you
-  will do it
-- It is not busywork. It is a **diagnostic**.
-- If you cannot state the project clearly on one page, you do not yet understand it well
-  enough to start, and better to find that out now than in November
-- The model prospectus in Chapter 6 runs about 250 words
-- You leave today knowing which of the six pieces you cannot yet write
+- **What you hand in:** one page, next week
+    - The topic, the reason, the method
+    - Chapter 6's model runs 250 words
+- **A diagnostic, not busywork**
+    - Cannot state it briefly, cannot start it
+    - Better found now than in November
+- You leave knowing which piece you cannot write
 
-## The six components
+## The Six Components
 
-| Component | Length |
-|---|---|
-| Descriptive title hinting at key variables | one line |
-| Research questions or hypotheses | 1 to 3, not 10 |
-| Theoretical framework | 2 to 3 sentences |
-| Gap in the literature | 2 to 3 sentences |
-| Method overview | 3 to 4 sentences |
-| Expected contribution | 1 to 2 sentences |
+- **Title and questions:** one line, then one to three
+    - Not ten questions
+    - The title hints at the key variables
+- **Framework and gap:** two to three sentences each
+- **Method and contribution:** three to four, then one to two
 
-## Title and question
+## Title and Question
 
-From the model prospectus:
+[Model prospectus]{.eyebrow}
 
-- **Title.** "Directed and broadcast chat in gaming and non-gaming streams: A content
-  analysis of the Twitch working corpus."
-- **RQ.** "Does the proportion of chat messages directed at the streamer differ between
-  gaming and non-gaming streams, among the 50 channels in the working corpus?"
+- **Title:** directed and broadcast chat, gaming versus not
+- **RQ:** does the directed proportion differ between them?
+- **What the pair buys you**
+    - The title names the variables
+    - The question names the comparison
 
-The title names the variables. The question names the comparison. Between them they have
-already ruled out most of what you could have done, which is the point.
+Between them they have already ruled out most of what you could have done, which is the point.
 
-## Framework and gap
+## Framework and Gap
 
-- **Framework.** Uses and gratifications (Katz, Blumler, & Gurevitch, 1973): audiences
-  actively select media to satisfy needs, including social ones
-- If viewing is socially motivated, *how* viewers participate is one observable trace of
-  the gratification they are seeking
-- **Gap.** Livestreaming motivation research is dominated by self-report surveys
-  (Sjöblom & Hamari, 2017; Hilvert-Bruce et al., 2018)
-- Whether the behavioral traces in a chat log back those surveys up is largely unexamined
+- **Framework:** uses and gratifications (Katz et al., 1973)
+    - Audiences pick media to satisfy needs, social ones included
+    - How viewers participate is one observable trace
+- **Gap:** self-report surveys dominate this literature
+    - (Sjöblom and Hamari, 2017; Hilvert-Bruce et al., 2018)
+    - Whether chat traces back them up is unexamined
 
-## Method, in four sentences
+## Method in Four Sentences
 
-- A **stratified sample of 1,500 chat messages** from the 50-channel working corpus,
-  balanced across gaming and non-gaming
-- **Unit of analysis:** each message
-- **Coding:** directed at the streamer, broadcast to the room, or unclassifiable
-- **Reliability:** a second coder on a 10 percent subsample, Krippendorff's alpha
-- Then the proportion of directed messages gets compared between the two groups
+- **Sample and unit:** 1,500 messages, stratified
+    - Balanced across gaming and non-gaming
+    - The unit of analysis is each message
+- **Coding and reliability:** three categories, one check
+    - Directed, broadcast, or unclassifiable
+    - Second coder on 10 percent, Krippendorff's alpha
+- Then the directed proportion gets compared
 
-## Your turn {.discuss}
+## Your Turn {.discuss}
 
-- In your project, what is the single **comparison** you will make? Say it as "X will be
-  compared between A and B."
-- What is your unit of analysis: a message, a stream, a channel, an hour?
-- Which of the six components do you currently have nothing at all to write?
+- Name the single comparison you will make
+- Say it as "X compared between A and B"
+- What is your unit of analysis?
+- Which component can you not write at all?
 
-*Two minutes. The component you cannot fill is your homework, and we will hear a few.*
+## Same Data, Different Theory
 
-## Same data, different theory
-
-Swap the lens and everything downstream of it changes:
-
-- **Title.** Markers of parasocial bond in viewer chat, large-audience versus
-  small-audience streams
-- **RQ.** Do smaller-audience streams show a higher rate of parasocial language?
-- **Framework.** Parasocial interaction (Horton & Wohl, 1956); smaller-channel viewers
-  are the more socially motivated ones (Hilvert-Bruce et al., 2018)
+- **Title:** parasocial markers, large audiences versus small
+- **RQ:** do smaller audiences show more parasocial language?
+- **Framework:** parasocial interaction (Horton and Wohl, 1956)
+    - Smaller-channel viewers are the more socially motivated ones
+    - (Hilvert-Bruce et al., 2018)
 
 Same corpus. Different study entirely.
 
-## The second method paragraph
+## The Second Method Paragraph
 
-- **1,000 messages**, split between top-quartile and bottom-quartile channels by average
-  viewer count
-- **Three markers** coded present or absent: second-person address, expressions of
-  familiarity, emotional disclosure
-- Reliability on a 10 percent subsample, Krippendorff's alpha
-- The rate of each marker compared between the two audience-size groups
+- **Sample:** 1,000 messages, top and bottom quartile
+    - Quartiles by average viewer count
+- **Three markers, coded present or absent**
+    - Second-person address, familiarity, emotional disclosure
+- **Reliability and comparison**
+    - Second coder on 10 percent, Krippendorff's alpha
+    - Each marker's rate compared between groups
 
-## Pick the workload, not just the question
+## Pick the Workload
 
-- The first prospectus codes **one** variable. The second codes **three**.
-- Three variables means three codebook decisions, three reliability checks, three sets of
-  results, and roughly three times the coding hours
-- The second is the better study to read and the heavier term to survive
-- Neither is more correct. Both are defensible plans.
-- Make that trade visible now, while it is still a paragraph, rather than halfway through
-  coding in November
+- **One variable against three**
+    - The first prospectus codes one, the second three
+    - Three means three codebook decisions and three checks
+- **The better study is the heavier term**
+    - Roughly three times the coding hours
+    - Neither is more correct, and both are defensible
+- Make the trade visible now, not in November
 
-## What you do not need yet
+## What You Do Not Need
 
-- The prospectus is **pre-statistics work**
-- You do not need to know which test you will run, or what your *p*-value is, or any R code
-- "Will be compared" is genuinely all the method paragraph needs at this stage
-- What you commit to is structure: question, theory, unit of analysis, coding scheme,
-  comparison
-- If you have been putting this off because you thought you needed the statistics first,
-  you do not
+- **The prospectus is pre-statistics work**
+    - No test, no *p*-value, no R code yet
+    - "Will be compared" is all the method needs
+- **What you commit to is structure**
+    - Question, theory, unit, coding scheme, comparison
+- Waiting for the statistics is not a reason
 
-## A prospectus that fails
+## A Prospectus That Fails
 
 > **Title.** Twitch and Society.
 >
@@ -128,52 +129,54 @@ Same corpus. Different study entirely.
 >
 > **Method.** I will look at some chat logs and see what patterns emerge.
 
-## Why it fails
+## Why It Fails
 
-- The title names **no variables**
-- The research question is three or four questions stacked on top of each other
-- Three theories pull in different directions and cannot all be operationalized on this data
-- The method cannot be judged for feasibility, because nothing in it is specific
+- **The title and question fail first**
+    - No variables are named
+    - Three or four questions stacked together
+- **The theory and method cannot be judged**
+    - Three theories pull in different directions
+    - Nothing in the method is specific enough
 - The contribution could be pasted into any project
 
-That draft was not lazy. It was trying to do too much, which is what ambition looks like
-before it gets disciplined.
+That draft was not lazy. It was ambition before discipline.
 
-## The feasibility test
+## The Feasibility Test
 
-Before you submit, answer four questions honestly:
+- **Can you get the data, and analyze it?**
+    - The working corpus ships inside the `v2v` package
+    - Fifty channels is manageable, 1,690 is not
+- **Does the method match the question?**
+    - Content analysis reaches content, never why someone felt
+- **Have you controlled scope creep?**
+    - Narrow until it hurts slightly, then narrow again
 
-- **Can you get the data?** Here, yes: the working corpus ships inside the `v2v` package
-- **Can you analyze it in the time you have?** Fifty channels is manageable. The full 1,690
-  is not, for one person in one term.
-- **Does your method match your question?** Content analysis tells you what is in the
-  content, never why a viewer felt something
-- **Have you controlled scope creep?** Narrow until it hurts slightly, then narrow again
+## Prospectus as Pre-Registration
 
-## The prospectus as pre-registration
+- **Pre-registration** commits the plan before the data
+    - Hypotheses, methods, and analysis plan, publicly
+    - The Open Science Framework timestamps it
+- **Without a fixed plan, the plan drifts**
+    - Researchers adjust until something crosses significance (Simmons et al., 2011)
+    - The source of **researcher degrees of freedom**
+- It closes them by making the plan inspectable
 
-- **Pre-registration** means publicly committing to your hypotheses, methods, and analysis
-  plan before you collect or analyze anything
-- Services like the Open Science Framework timestamp that commitment so it cannot move
-- Without a fixed plan, researchers adjust hypotheses and variables until something
-  crosses significance (Simmons et al., 2011)
-- That is where the phrase **researcher degrees of freedom** comes from
-- Pre-registration closes them by making the plan inspectable by somebody else
+## Your Prospectus Is Your Record
 
-## Your prospectus is your record
+- **It records what you planned**
+    - Written before any coding or analysis
+- **It is what you check yourself against**
+    - When you are tempted to chase a surprise
+    - A gap is visible, not automatically wrong
+- Chapter 2's transparency argument, aimed at your project
 
-- It documents what you planned before you had coded or analyzed anything
-- When you are later tempted to add a variable or chase a surprise, it is the record of
-  what you actually set out to do
-- A difference between the plan and the paper is not automatically wrong. It is **visible**,
-  and it raises a question worth raising.
-- This is Chapter 2's transparency argument, pointed at your own project
+## Before Next Time
 
-## Before next time
+- **Due:** Topic Selection and Research Questions, this week
+- **Next week:** the Project Prospectus
+    - Draft all six components badly, then cut
+- **Read** Chapter 7 on structured listening
+- **Watch** two streams, one gaming and one not
+    - No notes yet, just watch
 
-- **Topic Selection and Research Questions is due this week.**
-- **The Project Prospectus follows next week.** Draft all six components, badly, then cut.
-- Read **Chapter 7**, structured listening, before we meet again
-- Between now and then, open Twitch and watch two live streams, one gaming and one not.
-  No notes yet. Just watch.
-- Next session we turn that watching into field notes you can build a codebook from
+## Questions?

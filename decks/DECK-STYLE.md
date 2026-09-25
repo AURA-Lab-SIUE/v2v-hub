@@ -173,10 +173,21 @@ Every slide must fit without overflowing at a 33px root font. In practice:
    `[November 2018]{.eyebrow}` renders as a small red uppercase kicker.
 2. A **discussion or activity slide**, placed **early or in the middle**, never
    at the end. Mark it `## Your turn {.discuss}` (451) or
-   `## Discussion {.discuss}` (501). Give 2 to 4 real questions plus a short
-   italic instruction such as *Two minutes with a neighbor, then we compare.*
-3. A closing **"Looking ahead"** or **"Before next time"** slide with concrete
-   preparation: what to read, what is due.
+   `## Discussion {.discuss}` (501). Give 2 to 4 real questions and nothing else.
+   **The italic instruction is WITHDRAWN (2026-09-23, owner).** This clause used to
+   require a line such as *Two minutes with a neighbor, then we compare*, and it is
+   what put a facilitation directive on every deck in both courses. No duration and
+   no facilitation instruction appears on a slide, in the body or the eyebrow, in any
+   course: he makes pacing calls in the room. An eyebrow carries a source or a URL
+   and nothing else.
+3. A closing **"Before next time"** slide with concrete preparation (what to read,
+   what is due), then **`## Questions?` with an empty body as the final slide**
+   (owner, 2026-09-25, applying DECK-CONSTRUCTION.md section 3 to v2v).
+4. **`## Today's Agenda` as the first content slide**, naming the parts of the
+   session (owner, 2026-09-25, DECK-CONSTRUCTION.md section 2). The deck title and
+   subtitle are the topic plus source anchor, so they satisfy slide 1 already.
+5. **Title Case on every slide title**, 5 words or fewer (DECK-CONSTRUCTION.md
+   section 4). Sentence case is the defect, settled 2026-09-25.
 
 ## Lab and studio sessions
 
