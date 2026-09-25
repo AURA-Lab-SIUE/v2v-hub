@@ -58,7 +58,7 @@ Between them they have already ruled out most of what you could have done, which
     - Audiences pick media to satisfy needs, social ones included
     - How viewers participate is one observable trace
 - **Gap:** self-report surveys dominate this literature
-    - (Sjöblom and Hamari, 2017; Hilvert-Bruce et al., 2018)
+    - (Sjöblom & Hamari, 2017; Hilvert-Bruce et al., 2018)
     - Whether chat traces back them up is unexamined
 
 ## Method in Four Sentences
@@ -82,7 +82,7 @@ Between them they have already ruled out most of what you could have done, which
 
 - **Title:** parasocial markers, large audiences versus small
 - **RQ:** do smaller audiences show more parasocial language?
-- **Framework:** parasocial interaction (Horton and Wohl, 1956)
+- **Framework:** parasocial interaction (Horton & Wohl, 1956)
     - Smaller-channel viewers are the more socially motivated ones
     - (Hilvert-Bruce et al., 2018)
 
