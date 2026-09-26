@@ -153,7 +153,7 @@ Every clause in that sentence is something a replicator would otherwise have to 
 
 ## What the Record Includes
 
-For a study using fresh API data, the record must name:
+For fresh API data the record must name:
 
 1. Data source and **API version**
 2. Date and **time range** of collection
@@ -161,7 +161,7 @@ For a study using fresh API data, the record must name:
 4. The **format** in which raw data was saved
 5. The **git commit** at which raw data was frozen
 
-Item 5 is the audit trail: never re-run collection over a file a script depends on.
+Item 5 is the audit trail: never re-run collection over a file a script uses.
 
 ## Looking, the Chat Table
 

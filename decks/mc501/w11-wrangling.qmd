@@ -12,38 +12,44 @@ format:
     transition: none
 ---
 
-## What we are building today
+## Today's Agenda
+
+- The gap between what you have and what you asked
+- Four transformations, built one at a time
+- Joins, and how they fail silently
+- Your wrangling script as a methods section
+
+## What We Build Today
 
 [Working session]{.eyebrow}
 
-- One **analysis-ready table**, built from the raw chat and stream tables
-- Four transformations: a readable timestamp, message length, a gaming label, a join
-- Everything in Weeks 12 and 13 is computed from the table you build today
-- Your White Paper's Methods section is, in large part, this script
-- Type along. The code is short; the decisions inside it are not.
-- Fair warning: this is the least rewarding evening of the term. It is also where working
-  researchers spend most of their hours, and none of them enjoy it either.
+- **One analysis-ready table**, from the raw chat and stream tables
+    - A readable timestamp, message length, a gaming label, a join
+- **Weeks 12 and 13 compute everything from it**
+- **Your Methods section is largely this script**
 
-## The gap between what you have and what you asked
+The least rewarding evening of the term, and where researchers spend most of their hours.
 
-- The study asks whether chat behaves differently on gaming and non-gaming channels
-- It operationalizes that through **message length**
-- There is no message-length column
-- There is no column saying whether a message came from a gaming channel
-- The timestamps are unreadable runs of digits
-- The gaming information is not in the chat table at all. It is in the stream table.
+## The Gap You Are Closing
 
-## The verbs of data wrangling
+- **The study asks whether the two kinds of channel differ**
+    - It operationalizes that through message length
+- **Neither column exists**
+    - No message length, no gaming label
+- **The timestamps are unreadable runs of digits**
+- **The gaming information is in the other table entirely**
 
-- **`filter()`** keeps rows meeting a condition and drops the rest
+## The Verbs of Data Wrangling
+
+- **`filter()`** keeps rows meeting a condition
 - **`select()`** keeps or drops columns
-- **`mutate()`** adds or changes a column computed from existing ones
+- **`mutate()`** adds or changes a computed column
 - **`arrange()`** reorders rows by a column's values
-- **`group_by()`** with **`summarize()`** collapses many rows into one per group
-- Each takes a data frame and returns a data frame, which is exactly what lets
-  the pipe chain them
+- **`group_by()` with `summarize()`** collapses rows per group
 
-## Two verbs, seen
+Each takes a data frame and returns one, which is what lets the pipe chain them.
+
+## Two Verbs, Seen
 
 ```r
 chat %>%
@@ -53,10 +59,10 @@ chat %>%
   select(channel, sender, message)
 ```
 
-The first keeps only Bob Ross's messages and drops every other row; the second
-keeps three columns and drops the rest.
+The first keeps only Bob Ross's messages and drops every other row. The second keeps three
+columns and drops the rest.
 
-## Transformation 1: a readable timestamp
+## Transformation 1, a Readable Timestamp
 
 ```r
 chat <- chat %>%
@@ -69,18 +75,19 @@ chat <- chat %>%
   )
 ```
 
-`as.POSIXct()` turns a number into a date-time value, counting from the origin
-you give it.
+`as.POSIXct()` turns a number into a date-time value, counting from the origin you give it.
 
-## The millisecond trap
+## The Millisecond Trap
 
-- The `date` column counts **milliseconds** since midnight, 1 January 1970
-- That reference moment is the **Unix epoch**, the zero point computers keep time from
-- `as.POSIXct()` expects **seconds**, a thousand times coarser
-- Hand it the raw number and every message lands tens of thousands of years in the future
-- `date / 1000` converts first. It is the single most common way this fails.
+- **`date` counts milliseconds since 1 January 1970**
+    - That moment is the **Unix epoch**
+- **`as.POSIXct()` expects seconds**, a thousand times coarser
+- **Hand it the raw number and everything lands in the future**
+    - Tens of thousands of years into it
 
-## The type change is the payoff
+`date / 1000` converts first, and skipping it is how this fails.
+
+## The Type Change Is the Payoff
 
 ```
 # A tibble: 3 × 2
@@ -91,10 +98,10 @@ you give it.
 3 1542578143610 2018-11-18 21:55:43
 ```
 
-The column type moved from `<dbl>`, an ordinary number, to `<dttm>`, a date-time,
-and only from a date-time can you pull the hour, the weekday, or the calendar date.
+The type moved from `<dbl>` to `<dttm>`, and only from a date-time can you pull the hour,
+the weekday, or the calendar date.
 
-## Transformation 2: message length
+## Transformation 2, Message Length
 
 ```r
 chat <- chat %>%
@@ -105,10 +112,10 @@ chat %>%
   head(3)
 ```
 
-`str_length()` counts the characters in a string, and `mutate()` writes the count
-into a new column.
+`str_length()` counts the characters in a string, and `mutate()` writes the count into a
+new column.
 
-## What the lengths look like
+## What the Lengths Look Like
 
 ```
 # A tibble: 3 × 2
@@ -119,19 +126,20 @@ into a new column.
 3 "cmonBruh"                                            8
 ```
 
-- `message_length` is a **ratio** variable: true zero, equal intervals, averageable
-- Eight characters, twenty-three, and 441 are all real Twitch chat
-- That spread is the raw material of the study, and Week 12 looks hard at its shape
+- **`message_length` is ratio:** true zero, equal intervals, averageable
+- **Eight, twenty-three and 441 are all real Twitch chat**
 
-## Tidy data, defined
+That spread is the raw material, and Week 12 looks hard at its shape.
+
+## Tidy Data, Defined
 
 > "Tidy data is a standard way of mapping the meaning of a dataset to its structure."
 >
 > Wickham (2014, p. 4)
 
-- One observation per row, one variable per column, one value per cell
-- Not a preference: it is the structural assumption every tidyverse function makes
-  about its inputs and produces about its outputs
+- **One observation per row, one variable per column, one value per cell**
+- **Not a preference**, but the structural assumption every tidyverse function
+  makes about its inputs and produces about its outputs
 
 ## Meaning and Structure {.discuss}
 
@@ -145,8 +153,7 @@ into a new column.
 - Where does your structure fight it?
 - Is tidiness a property of data, or of a question?
 
-*Straight in. One contribution each before seconds.*
-## Step 1: what a channel mostly streams
+## Step 1, What a Channel Mostly Streams
 
 ```r
 channel_type <- streams %>%
@@ -157,10 +164,10 @@ channel_type <- streams %>%
   ungroup()
 ```
 
-Drop snapshots with no category, count how often each channel streamed each
-category, then keep only each channel's **modal** category, one row per channel.
+Drop snapshots with no category, count how often each channel streamed each category, then
+keep each channel's **modal** category, one row per channel.
 
-## Step 2: name the non-gaming categories
+## Step 2, Name the Non-Gaming
 
 ```r
 nongaming_categories <- c(
@@ -173,10 +180,9 @@ nongaming_categories <- c(
 )
 ```
 
-Listing them explicitly states the rule the study is using, so the judgment is
-visible in the code rather than buried in prose.
+Listing them states the rule, so the judgment is visible in the code.
 
-## Step 3: the join
+## Step 3, the Join
 
 ```r
 channel_type <- channel_type %>%
@@ -187,20 +193,20 @@ chat <- chat %>%
   left_join(channel_type, by = "channel")
 ```
 
-`left_join()` keeps every chat row and attaches the matching `is_gaming` value
-from the lookup table, matching on the shared `channel` key.
+`left_join()` keeps every chat row and attaches the matching `is_gaming` value, matching on
+the shared `channel` key.
 
-## Joins fail silently on keys
+## Joins Fail Silently on Keys
 
-- A join is only as good as the match between its keys
-- Twitch's chat protocol writes channel names with a leading `#`, so the same
-  channel appears as `#bobross` in one source and `bobross` in another
-- Join two tables whose keys disagree like that and **every** row fails to match,
-  with no error
-- The `v2v` fixture has already normalized this. Raw Twitch data would not be.
-- When a join returns nothing, mismatched keys are the first thing to check.
+- **A join is only as good as its key match**
+    - Twitch writes channel names with a leading `#`
+    - So `#bobross` in one source, `bobross` in another
+- **Keys that disagree fail every row, with no error**
+- **The `v2v` fixture is normalized, and raw data is not**
 
-## Always inspect a column you just derived
+When a join returns nothing, check the keys first.
+
+## Always Inspect a Derived Column
 
 ```r
 chat %>% count(is_gaming)
@@ -215,20 +221,20 @@ chat %>% count(is_gaming)
 3 NA          501
 ```
 
-Counting the new column is one line, and it is the line that catches the problem
-you did not anticipate.
+Counting the new column is one line, and it is the line that catches the problem you did
+not anticipate.
 
-## The `NA` is the correct outcome
+## The `NA` Is the Correct Outcome
 
-- Two channels streamed without ever having a category recorded
-- With no categories at all there is no modal category, so they never entered
-  `channel_type`, and the join left their messages `NA`
-- The data genuinely does not say whether those **501** messages came from
-  gaming channels
-- An honest `NA` records that the study cannot classify them
-- They sit out the gaming comparison rather than being guessed into one side
+- **Two channels never had a category recorded**
+    - No categories, so no modal category, so no lookup row
+    - The join left their messages `NA`
+- **The data genuinely does not say** for those 501 messages
+- **An honest `NA` records that the study cannot classify them**
 
-## The whole pipeline in one place
+They sit the comparison out rather than being guessed into a side.
+
+## The Whole Pipeline in One Place
 
 ```r
 chat <- v2v::twitch_chat() %>%
@@ -241,10 +247,10 @@ chat <- v2v::twitch_chat() %>%
   left_join(channel_type, by = "channel")
 ```
 
-Four transformations, run in sequence from the raw fixture, rebuild the chat
-table into the one every later result depends on.
+Four transformations, run in sequence from the raw fixture, rebuild the table every later
+result depends on.
 
-## The analysis-ready table
+## The Analysis-Ready Table
 
 ```
 Rows: 35,267
@@ -259,55 +265,53 @@ $ message_length <int> 23, 441, 8, 12, 206, …
 $ is_gaming      <lgl> TRUE, FALSE, TRUE, TRUE, FALSE, …
 ```
 
-## Your wrangling script is a methods section
+## Your Script Is a Methods Section
 
-- A wrangling script is a **documented transformation chain** connecting raw data
-  to analysis-ready data
-- Every `mutate()`, `filter()`, and `group_by()` is a methodological decision
-- Which cases to exclude. How to handle missing values. How to bucket time.
-- A reviewer asks "how did you handle the streamer's own username in chat?" and
-  the answer is in the script, but only if it is version-controlled and commented
-- Identify **three** decisions a reviewer could challenge and comment each with
-  its rule and its justification
+- **A documented transformation chain, raw to analysis-ready**
+    - Every `mutate()` and `filter()` is a methodological decision
+    - Which cases to exclude, how to treat missing, how to bucket time
+- **A reviewer will ask how you handled something**
+    - The answer is in the script, if it is commented and committed
 
-## Never overwrite raw data
+Identify **three** decisions a reviewer could challenge and comment each.
 
-- `data/raw/` is read-only after the first commit
-- Your script reads from `data/raw/` and writes to `data/processed/`
-- That separation is what lets you rebuild the processed dataset from scratch
-  against immutable raw data
-- Overwriting raw data severs the guarantee, permanently and quietly
-- Test it: re-run your script in a **fresh R session**. If it does not reproduce
-  the processed dataset without manual intervention, you have an undocumented dependency.
+## Never Overwrite Raw Data
 
-## Common errors and what they mean
+- **`data/raw/` is read-only after the first commit**
+    - Your script reads from it and writes to `data/processed/`
+- **That separation lets you rebuild from immutable raw data**
+    - Overwriting severs the guarantee, quietly and permanently
+- **Test it: re-run in a fresh session**
 
-- Timestamps in the year 51,000: you forgot `/ 1000`
-- `could not find function "%>%"` or `str_length`: `library(tidyverse)` never ran
-- Every joined column is `NA`: your keys disagree, usually whitespace or a `#`
-- Row count grew after a join: your lookup table has duplicate keys
-- `object 'channel_type' not found`: you ran the chunks out of order, which is
-  exactly what a fresh-session test would have caught
+If it does not reproduce without intervention, you have a hidden dependency.
 
-The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+## Common Errors and Meanings
+
+- **Timestamps in the year 51,000:** you forgot `/ 1000`
+- **`could not find function "%>%"`:** the tidyverse never loaded
+- **Every joined column `NA`:** the keys disagree, often a `#`
+- **Row count grew after a join:** duplicate keys in the lookup
+- **`object 'channel_type' not found`:** chunks run out of order
+
+Run `?v2v::common_errors` for the ones specific to this data.
 
 ## Checkpoint
 
 You should now have:
 
 - A `chat` object with **8 columns** and **35,267 rows**
-- A `timestamp` column of type `<dttm>`, and a `message_length` column of type `<int>`
-- An `is_gaming` column with 3,457 `FALSE`, 31,309 `TRUE`, and 501 `NA`
+- A `timestamp` of type `<dttm>` and a `message_length` of type `<int>`
+- An `is_gaming` with 3,457 `FALSE`, 31,309 `TRUE`, and 501 `NA`
 - A commented script that runs top to bottom in a clean session
-- The processed dataset written to `data/processed/`, and raw data untouched
+- The processed dataset written out, and raw data untouched
 
 ## Before Week 12
 
-- Submit **Data Wrangling [R]** (50 points): the script, its comments, and the
-  three reviewer-facing justifications
-- Read **Chapter 12** with the graduate toggle on
-- Read the assigned article: **Lakens (2013)**, "Calculating and reporting effect
-  sizes to facilitate cumulative science", *Frontiers in Psychology*, 4, 863
-- Write your journal entry, 450 to 500 words, engaging both
-- Bring the same laptop and the same working environment. Week 12 builds figures
-  from the table you just made.
+- **Submit** Data Wrangling [R], 50 points
+    - The script, its comments, and three justifications
+- **Read** Chapter 12 with the graduate toggle on
+    - Plus the assigned article: **Lakens (2013)** on effect sizes
+- **Write** a journal entry, 450 to 500 words
+- **Bring the same laptop and environment**
+
+## Questions?
