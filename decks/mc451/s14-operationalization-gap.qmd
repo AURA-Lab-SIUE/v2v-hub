@@ -12,39 +12,52 @@ format:
     transition: none
 ---
 
-## A true, unmeasurable sentence
+## Today's Agenda
+
+- A true observation a coder cannot use
+- Conceptual and operational definitions
+- Four ways operationalization fails
+- Three of your own variables, written down
+
+## A True, Unmeasurable Sentence
 
 Somewhere in your field notes is an entry like this:
 
-> "Chat in the art stream felt calmer and more conversational than chat in the gaming stream. People talked to each other, not just to the streamer."
+> "Chat in the art stream felt calmer and more conversational than chat in the gaming
+> stream. People talked to each other, not just to the streamer."
 
-- That is a real observation. You earned it by watching.
-- It is also, as written, **useless to a coder**.
+- **That is a real observation**, earned by watching
+- **It is also useless to a coder**, as written
 
-Both of those are true at once, and holding them together is the skill. You leave today
-with three of your own variables written as something a stranger could apply.
+## Holding Both at Once
 
-## Why it is useless
+- **Both statements are true together**
+    - The note records something you actually saw
+    - No stranger could apply it to a thousand messages
+- **Holding them together is the skill**
+- You leave with three of your own variables a stranger could apply
 
-- "Calmer" is not a category anyone else can apply
-- "More conversational" is not something you can count
-- Hand that note to two people with a thousand messages and you get two different sortings
-- You would have no way to say which one was right
-- The observation is true, and the observation is unmeasurable. This session closes the distance between those two facts.
+## Why It Is Useless
+
+- **"Calmer" is not a category anyone can apply**
+- **"More conversational" is not something you can count**
+- **Two people, a thousand messages, two sortings**
+    - You would have no way to say which was right
+- The observation is true, and it is unmeasurable
 
 ## Operationalization
 
 [The act the book is named for]{.eyebrow}
 
-- **Operationalization:** turning a vibe, a holistic and subjective impression, into a variable, an explicit and replicable measurement
-- It is the central methodological act of content analysis
-- Done well, it preserves what you noticed while making it something a stranger could measure the same way
-- Done badly, it produces numbers that look like findings and are actually **artifacts**
+- **Operationalization:** turning a vibe into a variable
+    - From a holistic impression to a replicable measurement
+    - The central methodological act of content analysis
+- **Done well, it preserves what you noticed**
+- **Done badly, it produces artifacts that look like findings**
 
-This is the hardest thing in the course to do well, and the easiest to fake. A vague rule
-still produces a spreadsheet full of numbers.
+Easy to fake, because a vague rule still produces numbers.
 
-## The variable we have been circling
+## The Variable We Keep Circling
 
 Message target: who a chat message is aimed at. Observation gave us four categories:
 
@@ -55,7 +68,7 @@ Message target: who a chat message is aimed at. Observation gave us four categor
 
 Naming the categories is not the same as operationalizing them.
 
-## The vague attempt
+## The Vague Attempt
 
 Instruction to the coder: *"Code each message by who it is for."*
 
@@ -65,89 +78,101 @@ Then the coder meets real messages:
 - A viewer types "LULW."
 - A viewer types "no way that just happened."
 
-Each could plausibly be aimed at the streamer, the room, or another viewer. The coder guesses. Two coders guess differently.
+Each could be aimed at the streamer, the room, or another viewer. The coder guesses, and
+two coders guess differently.
 
-## The better attempt
+## The Better Attempt
 
 Specify observable criteria:
 
-- **Directed at streamer:** contains an at-mention of the streamer's channel name, or is a second-person address ("you", "your") responding to something the streamer just said or did
-- **Directed at another viewer:** contains an at-mention of a non-streamer account, or is a reply to a specific prior message
-- **Broadcast to the room:** a reaction or comment with no specific addressee
-- **Unclassifiable:** none of these criteria settle the question
+- **Directed at streamer:** an at-mention of the channel name
+    - Or second-person address answering something they just did
+- **Directed at another viewer:** an at-mention of another account
+    - Or a reply to a specific prior message
+- **Broadcast:** a reaction with no specific addressee
+- **Unclassifiable:** no criterion settles it
 
-## Your turn {.discuss}
+## Your Turn {.discuss}
 
-- Take one latent thing from your field notes and write a one-sentence coder instruction for it
-- We will take a few aloud, and try to break each rule with a message somebody invents.
+- Take one latent thing from your notes
+- Write a one-sentence coder instruction for it
+- We will try to break each rule with an invented message
 - What did the rule fail to tell you?
 
-*Four minutes. The message that broke the rule is your first decision rule.*
+## Two Definitions, Working Together
 
-## Two definitions, working together
+- **A conceptual definition says what it means**
+    - What is this variable meant to capture?
+- **For message target:** the intended addressee of a message
+    - Participation with the streamer, the collective, or one viewer
+- That is clear about the idea, and **not yet a recipe**
 
-- A **conceptual definition** says what the variable means in the abstract. It answers: what is this meant to capture?
-- Message target: "the intended addressee of a chat message, reflecting whether the message functions as participation with the streamer, with the chat collective, or with a specific other viewer"
-- That is clear about the idea. It is **not yet a recipe**.
+## The Operational Definition Is the Recipe
 
-## The operational definition is the recipe
+- **It says exactly what a coder does**
+    - Detailed enough for a stranger to measure the same thing
+    - The at-mention, second-person and reply rules are it
+- **Conceptual tells you what the variable is for**
+- **Operational tells you what counts as evidence**
 
-- It says exactly what a coder does to assign a value
-- Detailed enough that a stranger could follow it and measure the same thing you measured
-- The at-mention rule, the second-person rule, the reply rule: that is the operational definition of message target
-- Conceptual tells you what the variable is **for**. Operational tells you what counts as **evidence**.
+## They Discipline Each Other
 
-## They discipline each other
+- **Conceptual with no operational** is an idea you cannot measure
+- **Operational with no conceptual** has lost track of why it exists
+    - That is how a study precisely measures something nobody wanted
+- Writing the two side by side is the first step to a codebook
 
-- A conceptual definition with no operational definition is an idea you cannot measure
-- An operational definition with no conceptual definition is a procedure that has lost track of why it exists
-- That is how a study ends up precisely measuring something nobody wanted to know
-- Writing the two side by side, for **every variable**, is the first concrete step toward a codebook
+## Failure One, Conflating Concepts
 
-## Failure one: conflating concepts
+- **Two distinct ideas treated as one**
+    - Counting chat messages to measure **community**
+    - That conflates community with activity
+- **A fast chat can be shallow and anonymous**
+    - Thousands of strangers reacting in parallel, never to each other
+- **The fix:** defend volume as a narrow proxy, or measure community
 
-- Treating two related but distinct ideas as if they were one
-- Measuring a streamer's **community** by counting **chat messages** conflates community with activity
-- A large channel can have a fast chat that is shallow and anonymous: thousands of strangers reacting in parallel, never to each other
-- Volume is real, but it is audience activity, not community
-- **The fix:** defend message volume as a deliberate narrow proxy, or measure community more directly
+## Failure Two, the Unjustified Proxy
 
-## Failure two: the unjustified proxy
+- **An indirect measure with no stated reason**
+    - The standard example is quality measured by viewer count
+- **Viewer count reflects other things entirely**
+    - Discoverability, time of day, the game, existing momentum
+    - None of that is quality
+- **The fix:** a proxy is fine, an undefended one is not
 
-- Using an indirect measure without explaining why it stands in for the thing you care about
-- The standard example: measuring **stream quality by viewer count**
-- Viewer count reflects discoverability, time of day, the popularity of the game, and existing momentum
-- None of that is quality
-- **The fix:** a proxy is not forbidden, but an undefended one is. Defend it or replace it.
+## Failure Three, Oversimplification
 
-## Failure three: oversimplification
+- **A multi-dimensional concept collapsed into one indicator**
+    - **Chat engagement** is not only how many messages appear
+    - It is who talks, whether to each other, and in what spirit
+- **A message count keeps one dimension and discards the rest**
+- **The fix:** measure the others, or say the study is about volume
 
-- Collapsing a multi-dimensional concept into a single indicator that misses most of it
-- **Chat engagement** is not only how many messages appear
-- It is also who is talking, whether they are talking to each other, and in what spirit
-- A message count captures one dimension and silently discards the rest
-- **The fix:** measure the other dimensions, or say honestly that the study is about message volume specifically
+## Failure Four, the Unmeasurable Definition
 
-## Failure four: the unmeasurable definition
+- **A recipe that cannot be carried out**
+    - "Sincere if the viewer genuinely means it"
+    - That defines sincerity by something no coder observes
+- **The fix:** operationalize through **observable indicators**
+    - The best available surface evidence for the unseen thing
+- All four break one promise: that a stranger could repeat you
 
-- An operational definition that cannot actually be carried out
-- "A message is sincere if the viewer genuinely means it" defines sincerity in terms of something no coder can observe
-- **The fix:** operationalize through **observable indicators**, the best available surface evidence for what you cannot see directly
-- All four failures break one promise: that a stranger could follow your recipe and measure what you measured
+## Not a Twitch Problem
 
-## Not a Twitch problem
+- **Immigration coverage:** "this article feels sympathetic"
+    - Becomes a frame variable with observable criteria
+- **Health messaging:** "this ad feels fear-based"
+    - Becomes a category a coder can apply
+- The medium changes and the act does not
 
-- A scholar coding immigration coverage must turn "this article feels sympathetic" into a defined frame variable with observable criteria
-- A health researcher must turn "this ad feels fear-based" into a category a coder can apply
-- The medium changes. The act does not.
-- Every field that reads content for evidence does exactly this work
+## Before Next Time
 
-## Before next time
+- **Pick three variables** from your field notes
+    - Write conceptual and operational definitions side by side
+    - Run each past the four failures and name the closest
+- **Due this week:** the Project Prospectus
+- **Due next week:** Definitions Practice
+    - Those three pairs are most of it
+- **Read** the rest of Chapter 8
 
-- Pick **three variables** from your field notes and write conceptual and operational definitions for each, side by side
-- Run each one past the four failures and name which one it is closest to
-- Read the rest of **Chapter 8**: levels of measurement, reliability and validity, the codebook
-- **The Project Prospectus is due this week.**
-- **Definitions Practice is due next week.** These three pairs are most of it.
-- Next session: NOIR, and why the level of measurement you pick decides what your study is
-  allowed to conclude
+## Questions?
