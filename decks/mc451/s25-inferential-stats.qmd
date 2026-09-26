@@ -12,53 +12,56 @@ format:
     transition: none
 ---
 
-## Where we left off
+## Today's Agenda
+
+- What a hypothesis test actually asks
+- Choosing the test from your variables
+- Reading a p-value, and refusing to overread it
+- Effect size, and why big samples split the two
+
+## Where We Left Off
 
 [Inferencing Data, 100 points, due this week]{.eyebrow}
 
-- Gaming channels averaged **28.49** characters per message
-- Non-gaming channels averaged **33.70**
-- A gap of a little over **five characters**
-- The histogram could show us the gap. It could not tell us if it is real.
-- Today we settle it. No formulas to memorize, only questions to ask.
+- **Gaming channels averaged 28.49 characters**
+- **Non-gaming averaged 33.70**, a gap of five characters
+- **The histogram showed the gap, and could not say it was real**
 
-## What a test actually asks
+Today we settle it. No formulas to memorize, only questions to ask.
 
-Split a group of people in half at random and their average heights will still
-differ a little. Samples wobble. Any two samples show some gap.
+## What a Test Actually Asks
 
-- We measured 34,766 messages to learn about chat **in general**
-- The sample is the means. The **population** is the point.
-- The honest question is not "is there a gap," because there plainly is
-- It is: **is the gap too large for chance to be a convincing explanation**
+Split a group of people in half at random and their average heights still differ a little.
+Samples wobble.
 
-## The skeptic's move
+- **We measured 34,766 messages to learn about chat in general**
+    - The sample is the means, and the population is the point
+- **The honest question is not whether there is a gap**
+    - It is whether chance is a convincing explanation for it
 
-- A **hypothesis test** starts from the opposite of what you suspect
-- The **null hypothesis**: no real difference, the gap is pure noise
-- Then it asks: if that were true, how surprising would this gap be?
-- Testing a coin works the same way. Assume it fair, flip it a hundred times,
-  and ask how often a fair coin looks that lopsided.
-- If the answer is "almost never," the fair-coin assumption is hard to keep
+## The Skeptic's Move
 
-## The variables choose the test
+- **A test starts from the opposite of what you suspect**
+    - The **null hypothesis:** no real difference, pure noise
+    - Then: if that were true, how surprising is this gap?
+- **Testing a coin works the same way**
+    - Assume it fair, flip a hundred times, ask how often it looks this lopsided
+- "Almost never" makes the fair-coin assumption hard to keep
 
-There is not one test. Which one applies depends on the data you have.
+## The Variables Choose the Test
 
-- One **continuous** outcome, split by **two** groups: the **t-test**
-- One continuous outcome, **three or more** groups: **ANOVA**
-- Two **categorical** variables: the **chi-square test**, `v2v::run_chi_square()`
-- Message length is a count of characters; gaming status has two values. So: t-test.
+- **Continuous outcome, two groups:** the **t-test**
+- **Continuous outcome, three or more:** **ANOVA**
+- **Two categorical variables:** **chi-square**, `v2v::run_chi_square()`
+- **Ours:** characters counted, gaming status has two values, so t-test
 
-A test applied to the wrong kind of data produces a number, and the number is meaningless.
+A test applied to the wrong kind of data produces a meaningless number.
 
-## Your turn {.discuss}
+## Your Turn {.discuss}
 
-- State the null hypothesis for **your** research question, in one plain sentence
-- What would have to be true for your finding to be nothing but sampling wobble?
-- What size of difference would actually change how you think about your topic?
-
-*Two minutes to think, then we take it as a group.*
+- State the null hypothesis for **your** question, in one sentence
+- What would make your finding nothing but sampling wobble?
+- What size of difference would change how you think about your topic?
 
 ## Running the t-test
 
@@ -66,14 +69,12 @@ A test applied to the wrong kind of data produces a number, and the number is me
 v2v::run_t_test(analysis, value = message_length, group = is_gaming)
 ```
 
-One function call. You hand it the data, the variable to compare, and the
-variable that splits it into two groups.
+One call: the data, the variable to compare, and the variable that splits it.
 
-The output names the test as a **Welch** t-test. The ordinary version assumes
-both groups have the same spread, and ours plainly do not: sd of 60.68 against
-38.47. Welch drops that assumption, so it is the safer default.
+The output names a **Welch** t-test. The ordinary version assumes equal spread, and ours
+plainly differ, at sd 60.68 against 38.47. Welch drops that assumption.
 
-## Reading the output
+## Reading the Output
 
 ```
   Mean, gaming         28.49 characters
@@ -86,42 +87,43 @@ both groups have the same spread, and ours plainly do not: sd of 60.68 against
   Cohen's d            -0.13  (negligible)
 ```
 
-`t` measures the gap in units of its own uncertainty: how many widths of noise
-separate the averages. The sign is direction only.
+`t` measures the gap in units of its own uncertainty. The sign is direction only.
 
-## What the p-value means
+## What the p-value Means
 
-- If the two kinds of chat truly had the **same** mean length, a gap this large
-  would happen **less than once in a thousand** samples
-- The data are very surprising under the assumption that nothing is going on
-- By convention, below **.05** counts as **statistically significant**
-- The threshold is a convention, not a law: *p* of .049 and .051 are near-identical evidence
+- **If the two truly had the same mean length**
+    - A gap this large happens less than once in a thousand samples
+    - The data are surprising if nothing is going on
+- **Below .05 counts as statistically significant, by convention**
+    - A convention, not a law: .049 and .051 are the same evidence
 
-## What the p-value does not mean
+## What the p-value Does Not Mean
 
-- It is **not** the probability that the null hypothesis is true
-- It is **not** the probability that your result is a fluke
-- It is **not** a measure of how large the difference is
-- It is **not** a measure of whether the difference matters
-- A small *p* says the gap is probably not zero. It says nothing about how big.
+- **Not** the probability the null hypothesis is true
+- **Not** the probability your result is a fluke
+- **Not** a measure of how large the difference is
+- **Not** a measure of whether the difference matters
 
-## How big is the difference
+A small *p* says the gap is probably not zero, and nothing about its size.
 
-- For size we need a different number: an **effect size**
-- For a gap between two means that number is **Cohen's d**
-- It expresses the gap in units of how much the data naturally vary
-- Cohen's benchmarks: about **0.2 small, 0.5 medium, 0.8 large**
-- Ours is **-0.13**, below even "small," in the range called **negligible**
+## How Big Is the Difference
 
-## Real and trivial at once
+- **For size you need an effect size**
+    - Between two means, that is **Cohen's d**
+    - It states the gap in units of natural variation
+- **Cohen's benchmarks:** 0.2 small, 0.5 medium, 0.8 large
+- **Ours is -0.13**, below small, in the range called negligible
 
-- Five characters is fifteen percent of the non-gaming mean, which sounds large
-- Set against standard deviations of 38 and 61 characters, it is a ripple
-- **So why was it significant?** Sample size: 34,766 messages
-- A large enough sample makes almost any difference statistically significant
-- Significance and size are different questions. Big samples pull them apart.
+## Real and Trivial at Once
 
-## More than two groups: ANOVA
+- **Five characters is fifteen percent of the non-gaming mean**
+    - Against standard deviations of 38 and 61, it is a ripple
+- **So why was it significant? Sample size: 34,766**
+    - A large enough sample makes almost anything significant
+
+Significance and size are different questions, and big samples pull them apart.
+
+## More Than Two Groups, ANOVA
 
 ```r
 four_games <- analysis %>%
@@ -131,10 +133,10 @@ four_games <- analysis %>%
 summary(aov(message_length ~ game, data = four_games))
 ```
 
-Four means, not two, so a t-test will not do. Comparing them two at a time
-takes six tests, each with its own chance of a false positive, and those pile up.
+Four means, so a t-test will not do. Comparing them two at a time takes six tests, each
+with its own chance of a false positive.
 
-## Reading the F table
+## Reading the F Table
 
 ```
               Df    Sum Sq  Mean Sq  F value  Pr(>F)
@@ -142,13 +144,13 @@ game           3    547281   182427    92.26  < 2e-16
 Residuals  13429  26552407     1977
 ```
 
-**F** compares variation *between* the group means against variation *within*
-the groups. If all four shared a mean, F would sit near one. Here F is **92.26**.
+**F** compares variation between the group means against variation within them. If all four
+shared a mean, F would sit near one. Here it is **92.26**.
 
-The effect size for ANOVA is **eta-squared**, here **0.02**: game category
-explains about two percent of the variation. Real, and small. The same pair of facts.
+The effect size is **eta-squared**, here **0.02**: category explains about two percent of
+the variation. Real, and small.
 
-## From difference to model: regression
+## From Difference to Model
 
 ```r
 summary(lm(message_length ~ is_gaming, data = analysis))
@@ -160,23 +162,25 @@ summary(lm(message_length ~ is_gaming, data = analysis))
 is_gamingTRUE   -5.22       0.74      -7.08   < .001
 ```
 
-The intercept, 33.70, is the non-gaming mean. The coefficient, **-5.22**, is
-exactly the gap the t-test found, recast as a baseline plus an adjustment.
+The intercept is the non-gaming mean. The coefficient, **-5.22**, is exactly the gap the
+t-test found, recast as a baseline plus an adjustment.
 
 ## Checkpoint
 
 You should now be able to:
 
-- Name the test your own question calls for, and say why
-- Run `v2v::run_t_test()` and read the mean, difference, *p*, and *d*
-- Say in one sentence what a *p*-value does and does not claim
-- Report a significant result that is also negligible, without inflating it
-- Know that `aov()` handles three or more groups and `lm()` generalizes both
+- Name the test your question calls for, and say why
+- Run `v2v::run_t_test()` and read the means, difference, *p*, and *d*
+- Say what a *p*-value does and does not claim
+- Report a significant result that is negligible, without inflating it
+- Know that `aov()` handles three or more groups, and `lm()` generalizes both
 
-## Before next time
+## Before Next Time
 
-- **Inferencing Data [R] is due this week**, 100 points
-- Thursday is a lab: you run your own test, on your own variable, with me here
-- Bring your `analysis` table and the summary table from last week
-- Re-read the last section of **Chapter 13**, on significance versus importance
-- Thursday I also assign the **White Paper**, 250 points. Come ready for it.
+- **Due this week:** Inferencing Data [R], 100 points
+- **Thursday is a lab**, running your own test with me here
+    - Bring your `analysis` table and last week's summary
+- **Re-read** Chapter 13 on significance against importance
+- **Thursday I assign the White Paper**, 250 points
+
+## Questions?

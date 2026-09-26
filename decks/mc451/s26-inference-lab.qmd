@@ -12,30 +12,37 @@ format:
     transition: none
 ---
 
-## Today's job
+## Today's Agenda
+
+- Choosing your test before you run it
+- Reporting it in one line, then in English
+- Effect size, every time
+- The White Paper, assigned today
+
+## Today's Job
 
 [Inferencing Data, 100 points, due this week]{.eyebrow}
 
-- Tuesday I ran the test on my variable. Today you run it on yours.
-- One test, correctly chosen, correctly read, honestly reported
-- Then you write the two sentences that go in your paper
-- **The White Paper is assigned today.** We spend the last stretch on it.
-- Work in your `.qmd`, not the console, so nothing gets lost
-- If the phrase "run a statistical test" has been sitting in your stomach all term, today
-  is smaller than you think. It is one function call and two sentences.
+- **Tuesday I ran the test on mine, today you run yours**
+    - One test, correctly chosen, correctly read, honestly reported
+    - Then the two sentences that go in your paper
+- **The White Paper is assigned today**
+- **Work in your `.qmd`**, not the console
 
-## Pick your test before you run it
+This is smaller than it has felt: one function call and two sentences.
+
+## Pick Your Test First
 
 Write this down before you touch the keyboard:
 
-- My outcome variable is ______, and it is continuous or categorical
-- My grouping variable is ______, and it has ______ levels
-- Therefore the test is ______
+- **My outcome variable is ______**, continuous or categorical
+- **My grouping variable is ______**, with ______ levels
+- **Therefore the test is ______**
 
-Continuous outcome, two groups: **t-test**. Three or more: **ANOVA**. Two
-categorical variables: **chi-square**.
+Continuous and two groups: **t-test**. Three or more: **ANOVA**. Two categorical:
+**chi-square**.
 
-## Running your test
+## Running Your Test
 
 ```r
 library(v2v)
@@ -45,46 +52,46 @@ analysis <- readRDS("data/analysis.rds")
 run_t_test(analysis, value = message_length, group = is_gaming)
 ```
 
-Swap `message_length` for your outcome and `is_gaming` for your two-level
-grouping column. Everything else stays exactly as written.
+Swap `message_length` for your outcome and `is_gaming` for your two-level grouping column.
+Everything else stays exactly as written.
 
-## Your turn {.discuss}
+## Your Turn {.discuss}
 
-- Read your output back to yourself: the two means, the difference, *p*, and *d*
+- Read your output back: the two means, the difference, *p*, and *d*
 - Is your effect small, medium, or large by Cohen's benchmarks?
 - Did your *p* and your *d* tell the same story, or pull apart?
 
-*Three minutes, then we hear two or three of them.*
-
-## Report it in one line
+## Report It in One Line
 
 The compact form journals expect, using the chat study's numbers:
 
-> Gaming channels produced shorter chat messages on average than non-gaming
-> channels (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.95,
-> *p* < .001, Cohen's *d* = -0.13.
+> Gaming channels produced shorter chat messages on average than non-gaming channels
+> (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.95, *p* < .001,
+> Cohen's *d* = -0.13.
 
-Every element earns its place: both means, the test with its degrees of
-freedom, the *p*-value, the effect size. Never *p* alone.
+Every element earns its place: both means, the test with its degrees of freedom, the
+*p*-value, the effect size. Never *p* alone.
 
-## Then say it again in English
+## Then Say It Again in English
 
-- A string of statistics is not an interpretation
-- Write a second sentence a non-statistician can read
-- Ours: gaming and non-gaming channels do differ in message length, but the
-  difference is so small that the two are better thought of as alike
-- That sentence is the call. It reports the difference and refuses to inflate it.
-- If you cannot write it, you do not yet understand your own result
+- **A string of statistics is not an interpretation**
+    - Write a second sentence a non-statistician can read
+- **Ours:** the two kinds of channel do differ in message length
+    - The difference is so small they are better thought of as alike
+- **That sentence is the call**, reporting without inflating
 
-## Effect size, every time
+If you cannot write it, you do not yet understand your result.
 
-- **Statistical significance** asks whether an effect is distinguishable from zero
-- **Practical significance** asks whether it is large enough to matter
-- They are different questions, and large samples pull them apart
-- A finding is only honestly reported when **both** are on the page
-- "Significant" without a *d* is a claim you have not actually supported
+## Effect Size, Every Time
 
-## If you have more than two groups
+- **Statistical significance:** is the effect distinguishable from zero?
+- **Practical significance:** is it large enough to matter?
+- **Different questions, and large samples pull them apart**
+- **A finding is honestly reported only with both on the page**
+
+"Significant" without a *d* is a claim you have not supported.
+
+## If You Have More Than Two Groups
 
 ```r
 four_games <- analysis %>%
@@ -94,71 +101,74 @@ four_games <- analysis %>%
 summary(aov(message_length ~ game, data = four_games))
 ```
 
-ANOVA asks one question of all the groups at once. Ours returned
-**F(3, 13429) = 92.26**, and eta-squared of **0.02**: real, and small.
+ANOVA asks one question of all the groups at once. Ours returned **F(3, 13429) = 92.26**,
+with eta-squared of **0.02**: real, and small.
 
-## If you want a model
+## If You Want a Model
 
 ```r
 summary(lm(message_length ~ is_gaming, data = analysis))
 ```
 
-The intercept is your reference group's mean (33.70). The coefficient
-(**-5.22**) is the gap itself, recast as a baseline plus an adjustment.
+The intercept is your reference group's mean, 33.70. The coefficient, **-5.22**, is the gap
+itself, recast as a baseline plus an adjustment.
 
-A t-test is a regression with one two-level predictor. An ANOVA is a regression
-with one many-level predictor. Same framework, different shape.
+A t-test is a regression with one two-level predictor. An ANOVA is one with a many-level
+predictor. Same framework, different shape.
 
-## Common errors and what they mean
+## Common Errors and Meanings
 
-- `grouping variable must have exactly 2 levels`: you have NAs, or three groups
-- `not enough 'x' observations`: your filter left almost nothing behind
-- A *p* of exactly 1: your two groups are identical, usually a bad join
-- `NA` for the mean: add `na.rm = TRUE`, then ask why the NAs are there
-- An impossibly large *t*: check that you did not compare a variable to itself
+- **`must have exactly 2 levels`:** you have NAs, or three groups
+- **`not enough 'x' observations`:** your filter left almost nothing
+- **A *p* of exactly 1:** identical groups, usually a bad join
+- **`NA` for the mean:** add `na.rm = TRUE`, then ask why
+- **An impossibly large *t*:** you compared a variable to itself
 
-The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+Run `?v2v::common_errors` for the ones specific to this data.
 
-## The White Paper, 250 points
+## The White Paper, 250 Points
 
 [Assigned today, due finals week]{.eyebrow}
 
-- The full study, written as one reproducible document, published to the web
-- Executive summary, then Introduction, Methods, Results, Discussion
-- It is not a term paper. It is the document a client would actually read.
-- Rendered from Quarto, so every number in it comes from your code
-- Published at a public URL, not submitted as a file
+- **The full study as one reproducible document, published**
+    - Executive summary, then the four standard sections
+- **Not a term paper**, but a document a client would read
+- **Rendered from Quarto**, so every number comes from your code
+- **Published at a public URL**, not submitted as a file
 
-## What goes in it
+## What Goes In It
 
-- **Introduction:** your question and why it is worth asking
-- **Methods:** your sampling, your codebook, your reliability check, your wrangling
-- **Results:** your figures and your test, stated plainly, without interpretation
-- **Discussion:** what it means, and what it does not, including your limits
-- **Reflection:** one honest paragraph on what you would do differently
+- **Introduction:** your question, and why it is worth asking
+- **Methods:** sampling, codebook, reliability, wrangling
+- **Results:** figures and test, stated without interpretation
+- **Discussion:** what it means, what it does not, and your limits
+- **Reflection:** one honest paragraph on what you would change
 
-## You have already written most of it
+## You Have Written Most of It
 
-- Your **prospectus** is the spine of your Introduction
-- Your **codebook** and **sampling plan** are the Methods section
-- Last week's **three figures** and this week's **test** are the Results
-- The two sentences you wrote today are the heart of the Discussion
-- The work left is assembly and honesty, not starting over
+- **Your prospectus** is the spine of the Introduction
+- **Your codebook and sampling plan** are the Methods
+- **Last week's figures and this week's test** are the Results
+- **Today's two sentences** are the heart of the Discussion
+
+The work left is assembly and honesty, not starting over.
 
 ## Checkpoint
 
 You should now have, saved in your project:
 
 - A chosen test, with a written reason for choosing it
-- Output showing your means, your test statistic, your *p*, and your effect size
+- Output showing means, test statistic, *p*, and effect size
 - The one-line statistical report, formatted as above
 - The plain-English sentence that goes with it
-- The White Paper assignment open, and a first look at its rubric
+- The White Paper assignment open, and its rubric read
 
-## Before next time
+## Before Next Time
 
-- **Inferencing Data [R] is due this week**, 100 points
-- Read **Chapter 14**, "The one-click report," before Tuesday
-- Tuesday is The Publisher: how the whole study becomes one document
-- Bring your figures and your test output. We assemble them in class.
-- Start thinking about your title. It is the first thing a reader sees.
+- **Due this week:** Inferencing Data [R], 100 points
+- **Read** Chapter 14, "The one-click report," before Tuesday
+- **Tuesday is The Publisher**, assembling the whole study
+    - Bring your figures and your test output
+- **Start thinking about your title**
+
+## Questions?
