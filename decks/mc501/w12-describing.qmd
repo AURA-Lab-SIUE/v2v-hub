@@ -279,7 +279,7 @@ You should now have:
 - **Submit** Describing Data [R], 100 points
     - Figures, descriptives, alt text, and the disclosed choices
 - **Read** Chapter 13 with the graduate toggle on
-    - Plus **Lakens et al. (2018)**, "Justify your alpha"
+    - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"
 - **Write** a journal entry, 450 to 500 words
 
 The histogram left a precise question. Week 13 answers it.

@@ -224,7 +224,7 @@ that never names them.
     - Horton and Wohl called it an illusion of face-to-face conversation.
     - It varies by figure, by segment, and by platform.
 - **What the audience does:** loyalty, reliance, a sense of knowing
-    - Rubin, Perse and Powell (1985) built a scale for exactly this.
+    - A scale exists for exactly this (Rubin, Perse & Powell, 1985).
 
 The first list is candidate independent variables and the second is candidate dependent
 variables. The theory supplied both and labeled neither.
@@ -236,7 +236,7 @@ variables. The theory supplied both and labeled neither.
 - **DV, audience response:** intimacy and direct address in audience text
     - Second-person pronouns, first names, disclosure, repeat visits.
 - **The split that matters:** interaction during viewing, relationship between viewings
-    - Dibble, Hartmann and Rosaen (2016) separated the two.
+    - The two have been separated (Dibble, Hartmann & Rosaen, 2016).
     - Which one you measure decides what your DV can be.
 
 ## The Pair Across Media
@@ -368,7 +368,7 @@ state the limitation explicitly. Those are the only three honest options.
 - **Due tonight:** **Annotated Manuscripts (3)** and **CITI Certification**
 - **Read:** Chapter 6 on the prospectus, Chapter 7 on Structured Listening
     - Keep the edition toggle on.
-    - Plus **Lakens (2022)**, "Sample size justification".
+    - The assigned article: **Lakens (2022)**, "Sample size justification".
 - **Write and bring:** a journal entry of 450 to 500 words
     - Engage both the chapters and the reading.
     - Bring a draft research question. We narrow them in the room.
