@@ -12,67 +12,78 @@ format:
     transition: none
 ---
 
-## From raw to analysis-ready
+## Today's Agenda
+
+- Why the loaded table cannot answer your question
+- The five verbs that reshape a table
+- Readable timestamps, and the thousand that breaks them
+- Message length, your first derived variable
+
+## From Raw to Analysis-Ready
 
 [Lab session]{.eyebrow}
 
-- The chat table you loaded **cannot answer your research question**. Not yet.
-- Today we learn the five verbs that reshape a table
-- Then we run two transformations: readable timestamps, and message length
-- Thursday we finish the job with the gaming label and the join
-- Nothing here is analysis. Every result later depends on getting it right.
-- Be warned that this is the least rewarding part of the whole term. It is also the part
-  that professionals spend most of their time on, and nobody enjoys it either.
+- **The chat table cannot answer your question yet**
+- **Today: five verbs, then two transformations**
+    - Readable timestamps, and message length
+    - Thursday brings the gaming label and the join
+- **Nothing here is analysis**, and every later result rests on it
 
-## What the chat table cannot answer
+The least rewarding part of the term, and what professionals spend most of their time on.
 
-- The study asks whether chat differs on gaming and non-gaming channels
-- It operationalizes that through **message length**
-- There is no column for message length
-- There is no column saying whether a message came from a gaming channel
-- The timestamps are unreadable runs of digits, and the gaming information is
-  in a **different table** with no link to this one
+## What the Table Cannot Answer
 
-## Data wrangling, defined
+- **The study compares gaming and non-gaming chat**
+    - It operationalizes that through message length
+- **Neither column exists**
+    - No message length, no gaming label
+- **The timestamps are unreadable runs of digits**
+    - The gaming information sits in another table, unlinked
 
-- **Data wrangling** turns the data you collected into the data you can analyze
-- Reshaping, cleaning, deriving the variables your codebook named, joining tables
-- It is unglamorous, rarely mentioned in the paper, and **most of the work**
-- It looks like small technical steps. It is building the table every result rests on.
-- The tidyverse does it with five functions, called the **dplyr verbs**
+## Data Wrangling, Defined
 
-## The verbs: filter and select
+- **Turning data you collected into data you can analyze**
+    - Reshaping, cleaning, deriving, joining
+- **Unglamorous, rarely in the paper, and most of the work**
+    - It looks like small technical steps
+    - It is building the table every result rests on
+- The tidyverse does it with five **dplyr verbs**
+
+## The Verbs, Filter and Select
 
 ```r
 chat %>% filter(channel == "bobross")
 ```
 
-`filter()` keeps the rows that meet a condition and drops the rest, here only
-Bob Ross's messages.
+`filter()` keeps the rows meeting a condition and drops the rest, here only Bob Ross's
+messages.
 
 ```r
 chat %>% select(channel, sender, message)
 ```
 
-`select()` keeps or drops **columns**, here narrowing five columns to three.
+`select()` keeps or drops **columns**, here narrowing five to three.
 
-## The verbs: mutate, arrange, group_by
+## The Verbs, Mutate and the Rest
 
-- **`mutate()`** adds a new column, or changes one, computed from columns already there
+- **`mutate()`** adds or changes a column, computed from others
 - **`arrange()`** reorders the rows by a column's values
-- **`group_by()`** with **`summarize()`** collapses many rows into one per group
-- That last pair is how you get a per-channel or per-game figure
-- Five verbs, and they carry almost all of the wrangling you will ever do
+- **`group_by()` with `summarize()`** collapses rows into one per group
+    - That pair is how you get a per-channel figure
 
-## Why the verbs chain
+Five verbs, and they carry almost all the wrangling you will ever do.
 
-- Every one of these takes a data frame and **returns a data frame**
-- That shared design is what lets the pipe, `%>%`, string them together
-- The output of one verb flows in as the input of the next
-- A pipeline reads in order: take the data, then do this, then do that
-- Four such transformations rebuild the chat table
+## Why the Verbs Chain
 
-## Your turn {.discuss}
+- **Each one takes a data frame and returns a data frame**
+    - That shared design is what lets `%>%` string them together
+    - One verb's output is the next one's input
+- **A pipeline reads in order**
+    - Take the data, then do this, then do that
+
+Four such transformations rebuild the chat table.
+
+## Your Turn {.discuss}
 
 ```r
 chat %>%
@@ -80,40 +91,41 @@ chat %>%
   select(sender, message)
 ```
 
-- **Predict**: how many columns come back? How many rows, roughly?
-- What would change if the two lines were swapped?
-- What if you typed `channel = "bobross"` with one equals sign?
+- **Predict:** how many columns come back? How many rows?
+- What changes if the two lines are swapped?
+- What if you type `channel = "bobross"` with one equals sign?
 
-*Two minutes. Then run it and find out who was right.*
+## The Unreadable Timestamp
 
-## The unreadable timestamp
+- **`date` is a column of very large numbers, typed `<dbl>`**
+    - It counts milliseconds since midnight, 1 January 1970
+- **That moment is the Unix epoch**
+    - Counting from it makes a timestamp one integer
+    - Precise, and unreadable
 
-- The `date` column is a column of very large numbers, typed `<dbl>`
-- What it holds is a count of **milliseconds since midnight, 1 January 1970**
-- That reference moment is the **Unix epoch**, the zero point computers count from
-- Counting from it makes a timestamp a single integer: precise, and unreadable
-- Chapter 8 called this interval data, with a catch. This is the catch.
+Chapter 8 called this interval data, with a catch. This is the catch.
 
-## Converting it
+## Converting It
 
 ```r
 chat <- chat %>%
   mutate(timestamp = as.POSIXct(date / 1000, origin = "1970-01-01", tz = "UTC"))
 ```
 
-`as.POSIXct()` turns a number into a date-time value, given the origin to count
-from, and `mutate()` writes the result into a new `timestamp` column.
+`as.POSIXct()` turns a number into a date-time value, given the origin to count from, and
+`mutate()` writes the result into a new `timestamp` column.
 
-## The thousand that breaks it
+## The Thousand That Breaks It
 
-- `as.POSIXct()` expects a count of **seconds**
-- The `date` column is a count of **milliseconds**, a thousand times finer
-- Hand it the raw number and every message lands tens of thousands of years in
-  the future
-- `date / 1000` converts milliseconds to seconds first
-- Small arithmetic step, and the single most common way this conversion fails
+- **`as.POSIXct()` expects seconds**
+    - `date` counts milliseconds, a thousand times finer
+- **Hand it the raw number and every message lands in the future**
+    - Tens of thousands of years into it
+- **`date / 1000` converts first**
 
-## Seeing the conversion
+A small arithmetic step, and the most common way this conversion fails.
+
+## Seeing the Conversion
 
 ```r
 chat %>% select(date, timestamp) %>% head(3)
@@ -127,23 +139,22 @@ chat %>% select(date, timestamp) %>% head(3)
 3 1542578143610 2018-11-18 21:55:43
 ```
 
-Same instant, now legible: the evening of 18 November 2018, three messages
-eight seconds apart.
+Same instant, now legible: three messages eight seconds apart.
 
-The type changed too, from `<dbl>` to `<dttm>`. From a date-time you can pull
-the hour of day and the day of week, which the raw integer will never give you.
+The type changed from `<dbl>` to `<dttm>`, and a date-time gives you the hour and the
+weekday that the raw integer never will.
 
-## Measuring message length
+## Measuring Message Length
 
 ```r
 chat <- chat %>%
   mutate(message_length = str_length(message))
 ```
 
-`str_length()` counts the characters in a string, and `mutate()` stores that
-count as a new column your codebook named but the data did not contain.
+`str_length()` counts the characters in a string, and `mutate()` stores that count as a new
+column your codebook named but the data did not contain.
 
-## What the lengths show
+## What the Lengths Show
 
 ```r
 chat %>% select(message, message_length) %>% head(3)
@@ -156,33 +167,35 @@ chat %>% select(message, message_length) %>% head(3)
 3 "cmonBruh"                                    8
 ```
 
-A single word at 8, punctuation at 23, copypasta at 441. `message_length` is a
-ratio variable: true zero, equal intervals, safe to average.
+A single word at 8, punctuation at 23, copypasta at 441. `message_length` is ratio: true
+zero, equal intervals, safe to average.
 
-## Common errors today
+## Common Errors Today
 
-- Every message dated in the year 50000: you forgot `/ 1000`
-- `could not find function "str_length"`: run `library(tidyverse)` first
-- `object 'message_length' not found`: you never assigned the result back to `chat`
-- Assigning with `<-` is what makes a change stick. Without it, R prints and forgets.
-- `unexpected '='` usually means `=` where `==` belongs inside `filter()`
+- **Every message dated in the year 50000:** you forgot `/ 1000`
+- **`could not find function "str_length"`:** load the tidyverse
+- **`object 'message_length' not found`:** you never assigned back
+    - `<-` is what makes a change stick
+- **`unexpected '='`:** usually `=` where `==` belongs
 
-The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+Run `?v2v::common_errors` for the ones specific to this data.
 
 ## Checkpoint
 
 You should now have:
 
-- A `chat` object with a working `timestamp` column, typed `<dttm>`
+- A `chat` object with a working `timestamp`, typed `<dttm>`
 - A `message_length` column, typed `<int>`
-- Output from `select(date, timestamp)` showing dates in November 2018
-- A saved script, not just lines typed into the console
-- Still missing: the gaming label. That is Thursday.
+- Output showing dates in November 2018
+- A saved script, not lines typed into the console
+
+Still missing: the gaming label. That is Thursday.
 
 ## Before Thursday
 
-- Run today's two transformations on your own project and save the script
-- **Sampling Plan and Pilot** and **Data Wrangling** are both due this week
-- Thursday we build the gaming label, join the two tables, and inspect what the
-  join leaves behind
-- Bring your script. We pick it up exactly where it stops.
+- **Run today's transformations on your project** and save the script
+- **Due this week:** Sampling Plan and Pilot, and Data Wrangling
+- **Thursday:** the gaming label, the join, and what it leaves behind
+- **Bring your script**, because we pick it up where it stops
+
+## Questions?

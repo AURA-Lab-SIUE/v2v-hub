@@ -12,95 +12,98 @@ format:
     transition: none
 ---
 
-## Putting the codebook on trial
+## Today's Agenda
+
+- What a pilot test is, and why coders work alone
+- Why raw agreement flatters a codebook
+- Kappa, alpha, and reading the number
+- Diagnosing a failure and re-piloting
+
+## Putting the Codebook on Trial
 
 [Lab session]{.eyebrow}
 
-- Tuesday you drew a sample. Today the codebook has to earn its status.
-- We run a **pilot test** and turn agreement into a number
-- We watch a real codebook fail, and diagnose exactly why
-- You leave with a reliability coefficient for your own instrument
-- This is the session that can send you back to Chapter 8, and that is fine
+- **Tuesday you drew a sample, today the codebook earns its status**
+- **We run a pilot and turn agreement into a number**
+    - We watch a real codebook fail, and diagnose why
+    - You leave with a coefficient for your own instrument
 
-## What a pilot test is
+This session can send you back to Chapter 8, and that is fine.
 
-- A **trial run** of the codebook before any real coding begins
-- Take a subset of the sample. A hundred messages is a reasonable size.
-- Two people code it, working from the **same codebook**
-- Then their codes are compared
-- The question: when two people apply these rules, do they produce the same
-  classifications?
+## What a Pilot Test Is
 
-## Independently, and why
+- **A trial run before any real coding begins**
+    - Take a subset of the sample, a hundred messages
+    - Two people code it from the **same codebook**
+    - Then their codes are compared
+- **The question:** do the same rules produce the same classifications?
 
-- The two coders work in **genuine isolation**: no conferring, no comparing notes
-- The reason is not suspicion. It is that the pilot measures the **codebook**,
-  not the coders.
-- If they discuss a hard message and agree, later agreement measures their
-  memory of that conversation
-- Only independent coding tests whether the **written rules** carry a
-  classification on their own
-- **Reliability** is consistency: the same answer regardless of who holds the codebook
+## Independently, and Why
 
-## The obvious number
+- **Genuine isolation: no conferring, no comparing**
+    - Not suspicion: the pilot measures the codebook, not the coders
+- **Discuss a hard message and you measure memory**
+    - Only independent coding tests the written rules
+- **Reliability is consistency**, whoever holds the codebook
 
-- Suppose the two coders agreed on **74 of the 100** pilot messages
-- That is 74 percent agreement
-- Seventy-four percent sounds respectable
-- It is also misleading, and seeing why is the key idea of the chapter
-- Some agreement between two coders happens for no good reason at all
+## The Obvious Number
 
-## Your turn {.discuss}
+- **The two coders agreed on 74 of 100**
+    - Seventy-four percent sounds respectable
+- **It is also misleading**
+    - Seeing why is the key idea of the chapter
+- Some agreement happens for no good reason at all
 
-- Is 74 percent agreement good enough to start coding on? Commit to an answer.
-- Two coders flipping coins on a **two-category** variable would agree how often?
-- What if one category is used 90 percent of the time by both coders?
-- What number would make you comfortable, and where did that number come from?
+## Your Turn {.discuss}
 
-*Two minutes. Write down your threshold before we compute one, then we compare as a group.*
+- Is 74 percent good enough to start on? Commit to an answer
+- Two coders flipping coins on two categories agree how often?
+- What if both use one category 90 percent of the time?
+- What number would satisfy you, and where did it come from?
 
-## Why raw agreement misleads
+## Why Raw Agreement Misleads
 
-- Cohen's 1960 paper made the point with two clinicians sorting patients
-- Suppose each assigns categories **blindly**, at the rates the categories occur
-- Coordinating on nothing, they still agree a large share of the time
-- That agreement reflects the **number of categories**, not any judgment
-- Raw agreement counts coincidence and insight the same way
+- **Cohen's 1960 paper used two clinicians sorting patients**
+    - Each assigns categories blindly, at the observed rates
+    - Coordinating on nothing, they still agree often
+- **That agreement reflects the number of categories**
+    - It reflects no judgment at all
+- Raw agreement counts coincidence and insight alike
 
-## Cohen's kappa
+## Cohen's Kappa
 
 ```
 kappa = (observed agreement - expected agreement) / (1 - expected agreement)
 ```
 
-Kappa starts from the agreement you observed, subtracts the agreement chance
-alone would have produced, and credits the codebook only with the difference.
+Kappa starts from the agreement you observed, subtracts what chance alone would have
+produced, and credits the codebook only with the difference.
 
-- Coders no better than chance: the numerator is zero, so **kappa is zero**
-- Perfect agreement: **kappa is one**
-- Built for the common case: **two coders, nominal categories**
+- **No better than chance:** the numerator is zero, so kappa is zero
+- **Perfect agreement:** kappa is one
+- **Built for two coders and nominal categories**
 
-## Krippendorff's alpha
+## Krippendorff's Alpha
 
-- The more **general** instrument, and the one to reach for when kappa will not fit
-- Handles **any number of coders**, not just two
-- Handles **any level of measurement**, nominal through ratio
-- Handles datasets with **missing codes**
-- For the standard two-coder nominal pilot, kappa and alpha tell much the same
-  story, and kappa is the more familiar choice
+- **The general instrument, when kappa will not fit**
+    - Any number of coders, not just two
+    - Any level of measurement, nominal through ratio
+    - Datasets with missing codes
+- **For a two-coder nominal pilot they agree**
+    - Kappa is the more familiar choice
 
-## Running the check
+## Running the Check
 
 ```r
 v2v::reliability(pilot$coder_a, pilot$coder_b, method = "kappa")
 ```
 
-`reliability()` takes the two coders' columns of codes and returns the
-coefficient, with `method = "kappa"` or `method = "alpha"` selecting which one.
+`reliability()` takes the two coders' columns of codes and returns the coefficient, with
+`method = "kappa"` or `method = "alpha"` selecting which one.
 
 The `$` pulls a single named column out of a table.
 
-## The result
+## The Result
 
 ```
 Inter-coder reliability: Cohen's kappa
@@ -109,67 +112,70 @@ Inter-coder reliability: Cohen's kappa
   Cohen's kappa    0.236
 ```
 
-- Observed agreement was 0.74, the respectable-looking 74 percent
-- Chance alone, given how often each coder flagged a message, predicts about 0.66
-- Run that through the formula and the result is **0.236**
-- The raw agreement was almost all coincidence
+- **Observed agreement was 0.74**, the respectable-looking number
+- **Chance alone predicts about 0.66**, given the flag rates
+- **The formula returns 0.236**
 
-## What went wrong: two rules, one name
+The raw agreement was almost all coincidence.
 
-- The codebook asked coders to flag "high-energy" messages and never defined it
-- **Coder A** decided high-energy meant carrying a Twitch emote, LULW or OMEGALUL
-- **Coder B** decided it meant shouting, so any word in all capitals
-- Both readings are reasonable. Both coders believed they coded one variable.
-- Emote messages and all-caps messages overlap enough to agree by accident
+## Two Rules, One Name
 
-## Reading the number
+- **The codebook said "high-energy" and never defined it**
+    - **Coder A** read it as carrying a Twitch emote
+    - **Coder B** read it as shouting, so all capitals
+- **Both readings are reasonable**
+    - Both coders believed they coded one variable
+    - Emotes and all-caps overlap enough to agree by accident
+
+## Reading the Number
 
 Labels have long been attached to ranges (Landis & Koch, 1977):
 
-| Kappa | Label |
-|---|---|
-| 0.0 to 0.2 | Slight |
-| 0.2 to 0.4 | Fair |
-| 0.4 to 0.6 | Moderate |
-| 0.6 to 0.8 | Substantial |
-| Above 0.8 | Almost perfect |
+- **0.0 to 0.2:** slight
+- **0.2 to 0.4:** fair
+- **0.4 to 0.6:** moderate
+- **0.6 to 0.8:** substantial
+- **Above 0.8:** almost perfect
 
-By these labels 0.236 is "fair." Published content analysis treats anything
-below about **0.70** as too low to proceed on, with **0.80** a comfortable floor.
+By these labels 0.236 is "fair." Published work treats below **0.70** as too low to proceed
+on, with **0.80** a comfortable floor.
 
-## When it fails: diagnose, revise, re-pilot
+## Diagnose, Revise, Re-Pilot
 
-- A kappa of 0.236 is not a result to report. It is an **instruction**.
-- The two coders finally meet and walk the messages they classified differently
-- **The disagreements are the data**: they show where the codebook ran out of guidance
-- Repair the rule, in writing, with the explicit decision rules Chapter 8 built
-- Then pilot **again**: fresh messages, independent coding, another coefficient
+- **A kappa of 0.236 is an instruction, not a result**
+- **The two coders finally meet**
+    - They walk the messages they classified differently
+    - **The disagreements are the data**
+- **Repair the rule in writing**, then pilot again
 
-## Common errors today
+Fresh messages, independent coding, another coefficient.
 
-- `object 'pilot' not found`: your two coders' codes are not in one table yet
-- Coders' columns of **different lengths**: someone skipped a message
-- A kappa of exactly 1 usually means you passed the same column in twice
-- A kappa near 0 with high raw agreement is the classic **loose-definition** signature
-- `NA` in the result: missing codes, which is a case for alpha rather than kappa
+## Common Errors Today
 
-The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+- **`object 'pilot' not found`:** the codes are not in one table
+- **Columns of different lengths:** someone skipped a message
+- **Kappa of exactly 1:** you passed the same column twice
+- **Kappa near 0 with high agreement:** the loose-definition signature
+- **`NA` in the result:** missing codes, so use alpha
+
+Run `?v2v::common_errors` for the ones specific to this data.
 
 ## Checkpoint
 
 You should now have:
 
-- A hundred-message pilot subset, coded independently by two people
+- A hundred-message pilot, coded independently by two people
 - A `v2v::reliability()` call that runs and returns a number
-- A written note on whether that number clears **0.70**
-- A list of the messages the coders split on, which is your revision list
-- If you failed: a revised rule for each disagreement, in the codebook
+- A written note on whether it clears **0.70**
+- The list of messages the coders split on, your revision list
+- If you failed, a revised rule for each disagreement
 
-## Before next time
+## Before Next Time
 
-- Revise the codebook against your disagreement list, then **re-pilot**
-- Read **Chapter 11, Wrangling the Data**
-- Next week is R for real: unreadable timestamps, missing variables, two tables
-  that do not talk to each other
-- **Sampling Plan and Pilot, and Data Wrangling, are both due next week.** Start
-  the sampling plan now while the pilot is fresh.
+- **Revise against your disagreement list, then re-pilot**
+- **Read** Chapter 11, Wrangling the Data
+- **Next week is R for real**
+    - Unreadable timestamps, missing variables, two tables apart
+- **Due next week:** Sampling Plan and Pilot, and Data Wrangling
+
+## Questions?
