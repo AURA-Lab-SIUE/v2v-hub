@@ -12,25 +12,34 @@ format:
     transition: none
 ---
 
-## Today's job
+## Today's Agenda
+
+- A summary table before any picture
+- Three figures on your own variables
+- Labels, color, and alt text
+- Saving figures the paper can use
+
+## Today's Job
 
 [Describing Data, 75 points, due this week]{.eyebrow}
 
-- Tuesday you watched me build three figures on my variables
-- Today you build three figures on **yours**, with me in the room
-- Everything you make today lands in your White Paper's Results section
-- Work in your project folder, in a `.qmd` file, not in the console
-- Get stuck out loud. That is what the room is for.
+- **Tuesday you watched me build three figures**
+- **Today you build three on yours**, with me in the room
+    - Everything you make lands in your Results section
+- **Work in a `.qmd` in your project**, not the console
 
-## Where you should be starting
+Get stuck out loud. That is what the room is for.
 
-- Your project opens in VS Code and your `.qmd` renders without error
-- You have a tidy `analysis` table from the wrangling assignment
-- You know which **one** variable your paper is really about
-- You know which column splits it into groups
-- If any of those is missing, say so now and we fix it first
+## Where You Should Be Starting
 
-## Loading and looking
+- **Your project opens and your `.qmd` renders**
+- **You have a tidy `analysis` table** from the wrangling assignment
+- **You know which one variable the paper is about**
+- **You know which column splits it into groups**
+
+If any of those is missing, say so now and we fix it first.
+
+## Loading and Looking
 
 ```r
 library(tidyverse)
@@ -41,10 +50,10 @@ analysis <- readRDS("data/analysis.rds")
 glimpse(analysis)
 ```
 
-`glimpse()` prints every column with its type and its first few values. Before
-you plot anything, look at what you actually have.
+`glimpse()` prints every column with its type and its first few values. Before you plot
+anything, look at what you actually have.
 
-## A summary table first
+## A Summary Table First
 
 ```r
 analysis %>%
@@ -58,18 +67,17 @@ analysis %>%
   )
 ```
 
-Swap `is_gaming` for your grouping column and `message_length` for your
-variable. Read the mean against the median before you draw anything.
+Swap in your grouping column and your variable. Read the mean against the median before you
+draw anything.
 
-## Your turn {.discuss}
+## Your Turn {.discuss}
 
-- Look at your table. Do your mean and median agree, or pull apart?
-- If they pull apart, which direction, and what does that predict about the shape?
-- Which single number would you put in an abstract, and why that one?
+- Do your mean and median agree, or pull apart?
+- If they pull apart, in which direction?
+- What does that predict about the shape?
+- Which single number would you put in an abstract, and why?
 
-*Two minutes to think, then we take it as a group.*
-
-## Figure one: the shape
+## Figure One, the Shape
 
 ```r
 ggplot(analysis, aes(x = message_length)) +
@@ -78,18 +86,18 @@ ggplot(analysis, aes(x = message_length)) +
   v2v::theme_v2v()
 ```
 
-One variable, one histogram. Change `binwidth` and watch the shape change: that
-is why the number has to be reported, not hidden.
+One variable, one histogram. Change `binwidth` and watch the shape change, which is why the
+number has to be reported rather than hidden.
 
-## Reading your own histogram
+## Reading Your Own Histogram
 
-- Where is the tall stack? That is where the typical case lives.
-- Is there a long thin tail? If so, in which direction?
-- **Right-skewed** means most values are small and a few are very large
-- A skewed variable is why your mean and median disagreed
-- If you capped the axis with `pmin()`, say so in the axis label
+- **Where is the tall stack?** That is the typical case
+- **Is there a long thin tail, and in which direction?**
+    - **Right-skewed** means most values small, a few very large
+    - A skewed variable is why mean and median disagreed
+- **If you capped the axis with `pmin()`, say so in the label**
 
-## Figure two: counts by category
+## Figure Two, Counts by Category
 
 ```r
 analysis %>%
@@ -101,10 +109,10 @@ analysis %>%
   v2v::theme_v2v()
 ```
 
-Count, keep the top eight, sort the bars, then flip the chart so long category
-names are readable. Unsorted bars are much harder to compare.
+Count, keep the top eight, sort the bars, then flip so long names are readable. Unsorted
+bars are much harder to compare.
 
-## Figure three: groups side by side
+## Figure Three, Groups Side by Side
 
 ```r
 analysis %>%
@@ -115,10 +123,10 @@ analysis %>%
   v2v::theme_v2v()
 ```
 
-`position = "identity"` with `alpha` overlays the two groups so you can compare
-shapes. Stacked bars would hide exactly the comparison you want.
+`position = "identity"` with `alpha` overlays the two groups so the shapes compare. Stacked
+bars would hide exactly the comparison you want.
 
-## Labels are not optional
+## Labels Are Not Optional
 
 ```r
 last_plot() +
@@ -130,36 +138,37 @@ last_plot() +
   )
 ```
 
-Default labels are column names, which mean nothing to a reader. Every axis
-gets units. Every cap or transformation gets named in the label.
+Default labels are column names, which mean nothing to a reader. Every axis gets units, and
+every cap gets named.
 
-## Colorblind-safe by default
+## Colorblind-Safe by Default
 
-- Roughly **one man in twelve** has a color-vision deficiency
-- Red against green is the notorious pair, and it is not the only one
-- Use `scale_colour_v2v()` and `scale_fill_v2v()`, which are chosen to stay distinct
-- Do not let color carry the message alone: add a linetype, or split into panels
-- Test it: if the figure fails in grayscale, it fails for some of your readers
+- **Roughly one man in twelve** has a color-vision deficiency
+    - Red against green is notorious, and not the only pair
+- **Use `scale_colour_v2v()` and `scale_fill_v2v()`**
+- **Do not let color carry the message alone**
+    - Add a linetype, or split into panels
+- If it fails in grayscale, it fails for some readers
 
-## Alt text, written not skipped
+## Alt Text, Written Not Skipped
 
-- A screen-reader user cannot see the figure. Alt text is what they get instead.
-- A figure with no alt text is, to them, simply missing
-- Alt text is **not** the caption repeated
-- Say what kind of chart, what is on each axis, and what it shows
+- **A screen-reader user gets the alt text instead of the figure**
+    - With none, the figure is simply missing
+- **Alt text is not the caption repeated**
+- **Say the chart type, the axes, and what it shows**
 - In Quarto it goes in the figure's `fig-alt` attribute
 
-## Common errors and what they mean
+## Common Errors and Meanings
 
-- `object 'analysis' not found`: you never ran the line that loads it
-- `could not find function "ggplot"`: `library(tidyverse)` has not run
-- Blank gray panel: your `aes()` names a column that does not exist
-- `Error in +`: a `+` is missing at the end of a line, or one is trailing at the end
-- Everything on one bar: your x variable is a character, not a number
+- **`object 'analysis' not found`:** you never ran the load line
+- **`could not find function "ggplot"`:** the tidyverse has not loaded
+- **Blank gray panel:** `aes()` names a column that does not exist
+- **`Error in +`:** a `+` is missing, or one is trailing
+- **Everything on one bar:** your x is a character, not a number
 
-The package ships the ones specific to this data: run `?v2v::common_errors` for the year-50,888 timestamp, the join that matches nothing, and the surprisingly low kappa.
+Run `?v2v::common_errors` for the ones specific to this data.
 
-## Saving figures for the paper
+## Saving Figures for the Paper
 
 ```r
 ggsave(
@@ -168,23 +177,25 @@ ggsave(
 )
 ```
 
-`ggsave()` writes the last plot to a file at a size and resolution you control.
-Fixed dimensions mean your figure looks the same everywhere, not squashed.
+`ggsave()` writes the last plot to a file at a size and resolution you control. Fixed
+dimensions mean the figure looks the same everywhere.
 
 ## Checkpoint
 
 You should now have, saved in your project:
 
-- A grouped summary table with n, mean, median, and sd
-- Three figures, all using `theme_v2v()`, all fully labeled
+- A grouped summary with n, mean, median, and sd
+- Three figures on `theme_v2v()`, all fully labeled
 - Alt text drafted for each one
 - One sentence under each figure saying what it shows
-- A `.qmd` that renders start to finish without error
+- A `.qmd` that renders start to finish
 
-## Before next time
+## Before Next Time
 
-- **Describing Data [R] is due this week**, 75 points
-- Read **Chapter 13**, "Making the call," before Tuesday
-- Tuesday we answer the question your figures could only frame: is the gap real?
-- Bring the summary table you built today. We test the difference in it.
-- No new math to learn in advance. Come rested, come curious.
+- **Due this week:** Describing Data [R], 75 points
+- **Read** Chapter 13, "Making the call," before Tuesday
+- **Tuesday we answer what your figures only framed**
+    - Bring the summary table you built today
+    - No new math to learn in advance
+
+## Questions?

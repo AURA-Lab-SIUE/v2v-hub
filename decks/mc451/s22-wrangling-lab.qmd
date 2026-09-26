@@ -83,7 +83,7 @@ nongaming_categories <- c(
 )
 ```
 
-`c()` builds a list of values, here every category this study treats as not a game.
+`c()` builds a list, here every category treated as not a game.
 
 This is a **judgment**, so it belongs in the code, not buried in prose.
 
