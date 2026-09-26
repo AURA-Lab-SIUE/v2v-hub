@@ -194,7 +194,7 @@ Counting is how you check the data is what you were told it is.
 
 - **R will return an error instead of a result**
     - A misspelling, a package not loaded, a stray bracket
-    - This happens to everyone. It is not a verdict on you.
+    - This happens to everyone, and is no verdict on you
 - **The Hub keeps a common-errors cheat sheet**
 - **An error message is information**, so read it first
 

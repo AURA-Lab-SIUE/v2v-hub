@@ -59,8 +59,8 @@ chat %>% select(message) %>% head(3)
 
 The same move, narrowed to the one column both remaining variables read from.
 
-- **Message length:** the character count. Supported.
-- **Contains emote:** read from the same column. Supported.
+- **Message length:** the character count, so supported
+- **Contains emote:** the same column, so supported
 - Three variables, three confirmations, and the study is buildable
 
 ## Your Turn {.discuss}
@@ -96,7 +96,7 @@ Your codebook has to meet the data as it is.
 - **A rule keyed on the channel name will miss it**
 - Two coders resolve this differently unless you decide
 
-## Turning a Wrinkle into a Rule
+## Turning a Wrinkle Into a Rule
 
 - **Write it down now**, while the codebook is still living
     - At-mentions are matched **ignoring capitalization**
