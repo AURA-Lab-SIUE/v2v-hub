@@ -100,6 +100,6 @@ Three tools work together throughout the course. Each serves a distinct role, an
 
 **Instructor:** Dr. Alex P. Leith
 **Office:** Dunham Hall 1017
-**Office Hours:** TuTh 12:30 to 1:45 PM and 3:30 to 5:00 PM (or by appointment)
+**Office Hours:** TuTh 12:30 to 2:45 PM in person, or remote Tu/W/Th 3:00 to 5:00 PM by appointment
 
 [View MC 451 syllabus](syllabus.qmd){.btn .btn-primary} [View MC 501 syllabus](mc501-syllabus.qmd){.btn .btn-secondary} [How it works](how-it-works.qmd){.btn .btn-secondary}

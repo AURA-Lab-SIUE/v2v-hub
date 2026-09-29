@@ -145,5 +145,5 @@ That is expected, and it is never because you are bad at this.
 2. Try the step again. Some failures are a slow network, not a real fault.
 3. Email me the **exact** text of the error, or a screenshot, plus which step number you were
    on. Do not paraphrase the error; the wording is the diagnosis.
-4. Office hours: Tuesday and Thursday, 12:30 to 1:45 and 3:30 to 5:00, Dunham Hall 1017.
+4. Office hours: Tuesday and Thursday, 12:30 to 2:45 in person, or remote Tu/W/Th 3:00 to 5:00 by appointment, Dunham Hall 1017.
    Drop in, no appointment.

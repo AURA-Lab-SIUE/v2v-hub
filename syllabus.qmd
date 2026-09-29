@@ -43,7 +43,7 @@ White Paper at a public address anyone can open.
 </li>
 <li>
   <span class="syl-fact-label">Office hours</span>
-  <span class="syl-fact-value"><strong>Tu / Th, 12:30 to 1:45 and 3:30 to 5:00 PM</strong></span>
+  <span class="syl-fact-value"><strong>Tu / Th, 12:30 to 2:45 in person, or remote Tu/W/Th 3:00 to 5:00 PM by appointment</strong></span>
   <span class="syl-fact-note">Dunham Hall 1017, drop in, or by appointment</span>
 </li>
 <li>

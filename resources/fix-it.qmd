@@ -129,8 +129,7 @@ green ticks down the **Required R packages** list.
 ## None of this fixed it
 
 Send me the exact wording of what you see rather than a description of it. A screenshot of
-the whole console is ideal. Office hours are Tuesday and Thursday, 12:30 to 1:45 and 3:30 to
-5:00, in Dunham Hall 1017, and you are welcome to bring the laptop.
+the whole console is ideal. Office hours are Tuesday and Thursday, 12:30 to 2:45 in person, or remote Tu/W/Th 3:00 to 5:00 by appointment, in Dunham Hall 1017, and you are welcome to bring the laptop.
 
 The longer guides have more detail if you want it: [Install R](install-r.qmd),
 [Install VS Code](install-vscode.qmd), [Install the v2v package](install-v2v.qmd), and

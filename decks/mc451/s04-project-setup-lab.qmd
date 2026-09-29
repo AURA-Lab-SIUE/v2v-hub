@@ -207,8 +207,7 @@ that never works.
 
 - **[Project Setup](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#project-setup)**,
   25 points, is due Friday, September 11, 11:59 PM. Submit your repository URL.
-- If the check still fails, come to office hours. Tuesday and Thursday, 12:30 to 1:45 and
-  3:30 to 5:00, Dunham Hall 1017. Drop in.
+- If the check still fails, come to office hours. Tuesday and Thursday, 12:30 to 2:45 in person, or remote Tu/W/Th 3:00 to 5:00 by appointment, Dunham Hall 1017. Drop in.
 - Saving your work back to GitHub is the first thing we do next time. Everything you need
   is on the [Hub](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html).
 - Read **Chapter 3, Knowing and Knowing Well**, before we meet
