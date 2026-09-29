@@ -246,7 +246,7 @@ question, the procedure, the finding, and the meaning.
 | Methods | 60 | Says exactly what was done, in enough detail that another researcher could repeat it: the codebook, the sampling procedure, the reliability check, and the wrangling steps. |
 | Results | 50 | Reports what was found, plainly and without interpretation: distributions, group means, the test statistic with its degrees of freedom, its p-value, and its effect size. Figures are labeled and captioned. |
 | Discussion | 50 | Says what the results mean, answers the question the Introduction asked, and states the study's limits honestly. Effect size is characterised accurately rather than inflated. |
-| Abstract and references | 20 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
+| Abstract and references | 20 | The abstract summarises all four sections. References are complete, in one consistently applied citation style of the student's choosing, and carry enough detail to find each source. |
 | Reproducibility and publication | 25 | The document renders from source with no pasted numbers, and is live at a public address. A paper nobody can open scores nothing. |
 | Reflection | 15 | One specific paragraph naming what proved harder than expected, where a rule was ambiguous in practice, what the data could not answer, and what a second attempt would change. |
 
