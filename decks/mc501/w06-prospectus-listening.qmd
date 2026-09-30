@@ -211,7 +211,8 @@ Roughly 250 words. One page, with every sentence carrying weight.
     - Each message is the unit of analysis
 - **Coding and reliability:** three codes, one check
     - Directed, broadcast, or unclassifiable
-    - Second coder on a 10 percent subsample, Krippendorff's alpha
+    - No second coder, so a 20 percent re-code after 48 hours
+    - Reported as stability, not as agreement
 - **Contribution:** does a survey finding leave a coded trace?
 
 ## Prospectus as Pre-Registration
