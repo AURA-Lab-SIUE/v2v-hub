@@ -1,7 +1,6 @@
 ---
 title: "Coding the Codebook and First Contact in R"
-subtitle: "Week 9 · Chapter 9 · MC 501 Research Methods for Mass Communications"
-author: "Dr. Alex Leith"
+subtitle: "Week 9 · Chapter 9"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

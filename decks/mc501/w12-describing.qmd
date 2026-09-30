@@ -1,7 +1,6 @@
 ---
 title: "Describing the Data [R]"
-subtitle: "Week 12 · Chapter 12 · MC 501 Research Methods for Mass Communications"
-author: "Dr. Alex Leith"
+subtitle: "Week 12 · Chapter 12"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

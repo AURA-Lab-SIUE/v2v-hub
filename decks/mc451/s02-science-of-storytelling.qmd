@@ -1,7 +1,6 @@
 ---
 title: "The Science of Storytelling"
-subtitle: "S2 · Chapter 1 · MC 451 Research Methods in Mass Media"
-author: "Dr. Alex Leith"
+subtitle: "S2 · Chapter 1"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

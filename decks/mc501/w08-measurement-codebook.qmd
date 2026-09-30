@@ -1,7 +1,6 @@
 ---
 title: "Measurement, Reliability, and the Codebook"
-subtitle: "Week 8 · Chapter 8 · MC 501 Research Methods for Mass Communications"
-author: "Dr. Alex Leith"
+subtitle: "Week 8 · Chapter 8"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

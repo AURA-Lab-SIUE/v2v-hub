@@ -1,7 +1,6 @@
 ---
 title: "Annotating the Literature and Theory as a Lens"
-subtitle: "Week 4 · Chapters 4 and 5 · MC 501 Research Methods for Mass Communications"
-author: "Dr. Alex Leith"
+subtitle: "Week 4 · Chapters 4 and 5"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

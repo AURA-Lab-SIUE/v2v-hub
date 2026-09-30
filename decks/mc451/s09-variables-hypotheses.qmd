@@ -1,7 +1,6 @@
 ---
 title: "Variables and Hypotheses"
-subtitle: "S9 · Chapter 5 · MC 451 Research Methods in Mass Media"
-author: "Dr. Alex Leith"
+subtitle: "S9 · Chapter 5"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

@@ -1,7 +1,6 @@
 ---
 title: "Inference Lab"
-subtitle: "S26 · Chapter 13 · MC 451 Research Methods in Mass Media"
-author: "Dr. Alex Leith"
+subtitle: "S26 · Chapter 13"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

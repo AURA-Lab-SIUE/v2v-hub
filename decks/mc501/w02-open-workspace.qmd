@@ -1,7 +1,6 @@
 ---
 title: "The Open Workspace"
-subtitle: "Week 2 · Chapter 2 · MC 501 Research Methods for Mass Communications"
-author: "Dr. Alex Leith"
+subtitle: "Week 2 · Chapter 2"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

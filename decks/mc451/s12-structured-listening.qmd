@@ -1,7 +1,6 @@
 ---
 title: "Structured Listening"
-subtitle: "S12 · Chapter 7 · MC 451 Research Methods in Mass Media"
-author: "Dr. Alex Leith"
+subtitle: "S12 · Chapter 7"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

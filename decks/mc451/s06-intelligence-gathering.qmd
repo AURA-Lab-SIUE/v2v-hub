@@ -1,7 +1,6 @@
 ---
 title: "Intelligence Gathering"
-subtitle: "S6 · Chapter 4 · MC 451 Research Methods in Mass Media"
-author: "Dr. Alex Leith"
+subtitle: "S6 · Chapter 4"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]

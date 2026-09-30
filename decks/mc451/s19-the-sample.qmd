@@ -1,7 +1,6 @@
 ---
 title: "The Sample"
-subtitle: "S19 · Chapter 10 · MC 451 Research Methods in Mass Media"
-author: "Dr. Alex Leith"
+subtitle: "S19 · Chapter 10"
 format:
   revealjs:
     theme: [default, ../aura-reveal.scss]
