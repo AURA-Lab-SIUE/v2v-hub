@@ -486,29 +486,33 @@ Decide what you will code, then prove the codebook survives contact with it.
 
 **Where it comes from.** Sessions 19 and 20, Chapter 10. **What it feeds:** the full coding run, and the methods section of the White Paper, which is this document rewritten in past tense.
 
-**How this loses points.** A size with no arithmetic behind it. "About 200 messages" is a wish; 200 items at 45 seconds each is two and a half hours, and that is a plan.
+**How this loses points.** A size with no arithmetic behind it. "About 200 messages" is a wish; 250 items at 45 seconds each is three and an eighth hours, and that is a plan.
 
 **How big should your corpus be**
 
-Corpora are not comparable by count, because a chat message and a news article are not the same amount of work. Size yours by **coding time rather than by items**. Budget **two to four hours of coding in total**, split across the two stages: roughly the first third building and revising the codebook on an immersion subset, and the remaining two thirds applying the frozen codebook to the full corpus.
+Corpora are not comparable by count, because a chat message and a news article are not the same amount of work. Size yours by **coding time rather than by items**, and budget **two to four hours of coding in total**, split across the two stages: roughly the first third building and revising the codebook on an immersion subset, and the remaining two thirds applying the frozen codebook to the full corpus.
+
+The baseline is **250 chat messages at 45 seconds each, which is three and an eighth hours**. Every other row below is scaled from that one, holding the time constant and changing only the seconds a single unit costs you.
+
+| Unit of analysis | Typical length | Seconds each | Corpus target |
+|---|---|---|---|
+| Chat or stream messages, short comments | under 20 words | 45 | 250 |
+| Short posts, captions, headlines | 20 to 60 words | 75 | 150 |
+| Survey open ends, product or media reviews | 50 to 150 words | 110 | 100 |
+| Long comments, forum posts, letters | 150 to 400 words | 220 | 50 |
+| News articles, blog posts, press releases | 400 to 1,200 words | 450 | 25 |
+| Video or audio coded in one-minute slices | one minute | 180 | 60 minutes of material |
+| Images, thumbnails, advertisements | not applicable | 90 | 125 |
 
 Calibrate against your own rate rather than against the table. Code twenty items, time it, divide, and use that number.
 
-| Unit of analysis | Typical length | Roughly per hour | Corpus target |
-|---|---|---|---|
-| Chat or stream messages, short comments | under 20 words | 250 | 500 |
-| Short posts, captions, headlines | 20 to 60 words | 150 | 300 |
-| Survey open ends, product or media reviews | 50 to 150 words | 50 | 100 |
-| Long comments, forum posts, letters | 150 to 400 words | 25 | 50 |
-| News articles, blog posts, press releases | 400 to 1,200 words | 12 | 25 |
-| Video or audio coded in one-minute slices | one minute | 30 | 60 minutes of material |
-| Images, thumbnails, advertisements | not applicable | 120 | 240 |
-
 Two rules override the table.
 
-**Fifty coded units is the floor.** If the time budget puts you under fifty, do not shrink the corpus further. Change the unit of analysis instead and code paragraphs or sentences inside documents rather than whole documents. Twenty-five articles is a reading project; five hundred paragraphs drawn from those articles is a sample.
+**Fifty coded units is the floor.** If your rate puts you under fifty, do not shrink the corpus further. Change the unit of analysis instead and code paragraphs or sentences inside documents rather than whole documents. Twenty-five articles is a reading project; five hundred paragraphs drawn from those articles is a sample.
 
 **More variables cost more time.** These rates assume three to six coded variables per unit. Ten variables roughly halves the rate, so either halve the corpus or cut variables, and say in the plan which you chose.
+
+**This table is a planning estimate, not your final number.** Your exact sample size gets set with me once your topic and questions are in, and it is confirmed at the prospectus. Until then, plan from the table and say in the document which row you used.
 
 **Note.** This is due the same day as Data Wrangling. Draft it during Week 10.
 
@@ -640,7 +644,7 @@ The final deliverable: your study written up in IMRaD, rendered to PDF and publi
 3. **Results**, reported without interpretation, carrying the descriptive numbers, the test, the effect size and the figures.
 4. **Discussion**, interpreting the findings, distinguishing statistical significance from practical size, and stating the limits honestly. The single-coder design is one of those limits, and the discussion carries **the second-coder counterfactual**: what double-coding would have added, and which finding would be most at risk if a second coder had disagreed with you.
 5. **Abstract**, summarizing all four sections in 150 to 250 words.
-6. **At least eight sources**, of which **at least five are peer-reviewed articles reporting original research**. Textbooks, industry reports and trade coverage count toward the eight but not toward the five.
+6. **At least twelve sources**, of which **at least eight are peer-reviewed articles reporting original research**. Textbooks, industry reports and trade coverage count toward the twelve but not toward the eight.
 7. **References in one citation style of your choosing**, named on the first page and applied consistently throughout. APA, MLA, Chicago and IEEE are all acceptable. This is a white paper rather than a journal submission, so the style is yours. Consistency is not: every in-text citation appears in the list, every entry in the list is cited, and each entry carries enough detail to find the source.
 8. **It renders from source with no pasted numbers.** Every figure and every statistic in the text comes from the code that produced it.
 9. **It is live at a public address.**
@@ -665,7 +669,7 @@ The final deliverable: your study written up in IMRaD, rendered to PDF and publi
 - [ ] At least two figures and one table, each numbered, captioned, and referred to in the text by number
 - [ ] Every figure, table and number is generated from code in the source document, with nothing pasted
 - [ ] Alt text on every figure
-- [ ] At least eight sources, of which at least five are peer-reviewed articles reporting original research
+- [ ] At least twelve sources, of which at least eight are peer-reviewed articles reporting original research
 - [ ] One citation style, named on the first page and applied consistently, with the reference list matching the in-text citations in both directions
 - [ ] Discussion separating statistical significance from practical size
 - [ ] Limitations: the single-coder design, and the second-coder counterfactual
