@@ -48,5 +48,13 @@ $code-block-font-size: 0.8em;
 .reveal .discuss { border-left: 4px solid #e5182d; padding-left: 0.7em; }
 .reveal .discuss h2 { color: #c41425; }
 
+// closing title card: the last slide is a prompt, not a heading over empty space
+.reveal section.titlecard { display: flex; align-items: center; justify-content: center;
+  height: 100%; text-align: center; }
+.reveal section.titlecard h2 { font-size: 2.6em; font-weight: 700; margin: 0;
+  letter-spacing: -0.02em; }
+.reveal section.titlecard h2::after { content: " C6"; color: #e5182d; font-size: 0.4em;
+  vertical-align: middle; }
+
 // keep code ligature-free (the <- / |> arrow bug in the book)
 .reveal code { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
