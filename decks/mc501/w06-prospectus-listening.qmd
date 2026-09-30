@@ -254,8 +254,9 @@ Familiarize, then focus, then analyze. The sequence holds for any medium.
     - "Chat moved in bursts, a flood at every question"
 - **Methodological:** a measurement problem
     - "A coder reading the log cannot see the question"
-- **Theoretical and comparative:** framework, then difference
-    - An observation connected to something you have read
+- **Theoretical:** an observation connected to a framework
+    - Something you saw that the reading already named
+- **Comparative:** the difference between two cases
     - "Gaming and non-gaming chat are not the same object"
 
 One dated plain-text document, with a note every fifteen or twenty minutes.
