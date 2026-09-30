@@ -13,22 +13,14 @@ format:
 
 ## Today's Agenda
 
+[Chapters 6 and 7]{.eyebrow}
+
 - From a question to a one-page plan
 - Defending the number of cases
 - Structured listening, and why it comes first
 - Field notes a codebook can be built from
 
-## Tonight
-
-[Week 6 · Chapters 6 and 7]{.eyebrow}
-
-- **Two things happen tonight**
-    - Your question becomes a one-page plan
-    - The plan carries a defended number
-- **Then we watch Twitch on purpose**
-    - Everything you code comes from what you notice
-    - A coder who has never watched cannot see it
-- **Due tonight:** Topic Selection and Research Questions
+**Due tonight:** Topic Selection and Research Questions
 
 ## The Paralysis
 
