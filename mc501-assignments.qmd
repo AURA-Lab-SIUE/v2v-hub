@@ -186,6 +186,9 @@ Submit as PDF: `Lastname_ArchivistReport.pdf`
 
 Complete the CITI Program's Social and Behavioral Research training, and draft the determination you would actually file.
 
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 **What you submit:** two files. The CITI completion certificate as a PDF, and your non-human-subjects determination draft.
 
 **Where it lives:** `04_Resources/` for the certificate, `03_Project/01_Prospectus/` for the determination. The determination is the first draft of the ethics paragraph in your methods section.
@@ -203,11 +206,16 @@ Complete the CITI Program's Social and Behavioral Research training, and draft t
 
 **How this loses points.** Concluding "not human subjects" without naming the definition you applied. The determination is an argument from a rule, not a verdict, and a reviewer will ask which rule.
 
+</details>
+
 ### Annotated Manuscripts, three articles {#annotated-manuscripts-three-articles}
 
 **25 points. Due Monday, September 28, 11:59 PM.** *(Week 5)*
 
 Annotate three peer-reviewed articles, then write the paragraph that makes them one body of work rather than three summaries.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **What you submit:** the three annotated PDFs, plus one document holding the per-article notes and the synthesis.
 
@@ -228,11 +236,16 @@ Annotate three peer-reviewed articles, then write the paragraph that makes them 
 
 **How this loses points.** Three good summaries and a weak synthesis is the failure this assignment is designed to expose, and it is worth 8 of 25. Picking three articles that agree with each other is the other: convergence with nothing to qualify it gives you nothing to argue with.
 
+</details>
+
 ### Topic Selection and Research Questions {#topic-selection-and-research-questions}
 
 **25 points. Due Monday, October 5, 11:59 PM.** *(Week 6)*
 
 Commit to a topic and write the questions your study will answer.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **What you submit:** one document, roughly one page.
 
@@ -249,8 +262,12 @@ Commit to a topic and write the questions your study will answer.
 
 **How it is graded.** Topic 3, questions 5, hypotheses with justification 5, variable preview 5, justification 4, five-criteria check 3.
 
-<details class="syl-policy">
-<summary>The five criteria, in full</summary>
+
+**Where it comes from.** Weeks 5 and 6, Chapters 5 and 6. **What it feeds:** the Research Proposal, which is these questions with a method and a sampling plan attached.
+
+**How this loses points.** A directional hypothesis with no theory behind it costs the justification points even when the direction turns out right. Submitting a subject rather than a question is the other common one.
+
+**The five criteria, in full**
 
 **Run every question past these before you submit it:**
 
@@ -269,14 +286,6 @@ Two of these you can check yourself. **Not already answered** and **it matters**
 judgments you make from your reading, and the check asks you to state the judgment and
 the evidence behind it.
 
-</details>
-
-**Where it comes from.** Weeks 5 and 6, Chapters 5 and 6. **What it feeds:** the Research Proposal, which is these questions with a method and a sampling plan attached.
-
-**How this loses points.** A directional hypothesis with no theory behind it costs the justification points even when the direction turns out right. Submitting a subject rather than a question is the other common one.
-
-<details class="syl-policy">
-<summary>Full requirements</summary>
 
 **Run every question past the five criteria before you submit it:**
 
@@ -299,6 +308,9 @@ the evidence behind it.
 
 A structured sentence outline that could serve as the front half of a conference paper.
 
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 **What you submit:** one document, 1,200 to 1,800 words, in outline form. Every point is a full sentence carrying a claim, never a topic label. "Parasocial interaction and chat" is a label; "Viewers of smaller channels report stronger parasocial bonds, which should leave a visible trace in how they address the streamer" is a point.
 
 **Where it lives:** `03_Project/01_Prospectus/`. This outline is the front half of the White Paper in skeleton form. Every point becomes a sentence or a paragraph in December.
@@ -320,9 +332,16 @@ A structured sentence outline that could serve as the front half of a conference
 
 **How this loses points.** Topic labels instead of sentences is the failure this assignment is named for. The second is a design section that names no analysis, which quietly defers every hard decision until after you have seen the data, which is exactly what this term has been arguing against.
 
+</details>
+
 ### Definitions Practice {#definitions-practice}
 
 **25 points. Due Monday, October 19, 11:59 PM.** *(Week 8)*
+
+Turn your constructs into definitions a stranger could apply without asking you what you meant.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **What you submit:** one document, one entry per variable, at least four variables.
 
@@ -345,9 +364,6 @@ A structured sentence outline that could serve as the front half of a conference
 
 Define at least four variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge-case decision rules.
 
-<details class="syl-policy">
-<summary>Full requirements</summary>
-
 **Each variable needs both kinds of definition, written side by side.**
 
 A **conceptual definition** says what the variable means in the abstract: what is this
@@ -367,9 +383,14 @@ nobody wanted to know.
 
 **75 points. Due Monday, October 26, 11:59 PM.** *(Week 9)*
 
+Build the instrument, then write the protocol that says how you will know it stayed consistent.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 **What you submit:** the codebook and the protocol, as one document with two headed parts.
 
-**Where it lives:** `03_Project/02_Codebook/`, starting from `_templates/codebook.md`. The protocol becomes the intercoder reliability report that the paper's methods section is graded on.
+**Where it lives:** `03_Project/02_Codebook/`, starting from `_templates/codebook.md`. The protocol becomes the coder reliability report that the paper's methods section is graded on.
 
 **The codebook**
 
@@ -381,23 +402,24 @@ nobody wanted to know.
 
 **The reliability protocol**
 
-6. **The statistic you will report**, named, with one sentence on why it rather than another. Percent agreement alone is not acceptable and the protocol should say why.
-7. **The threshold you will treat as adequate**, with the source of that threshold.
-8. **The training procedure**: how the second coder learns the instrument.
-9. **A fresh reliability sample**, separate from the training set, with its size and how it is drawn.
-10. **What happens when it fails**: the revision rule, and how the codebook changes without quietly fitting itself to one coder's habits.
-11. **What you will report even if the number is disappointing.**
+**You are the only coder.** No second coder is available in this course, which is a real limitation rather than a detail to leave out. Every reliability claim you make is a claim about your own consistency, and the assignment is graded partly on whether you say so in those words.
 
-**How it is graded.** Codebook 40, protocol 35, weighted toward points 6, 9 and 10.
+6. **The statistic you will report**, named, with one sentence on why it rather than another. What you are reporting is **intracoder reliability, or stability**, not intercoder agreement, and the protocol uses those words. Percent agreement alone is not acceptable and the protocol should say why.
+7. **The threshold you will treat as adequate**, with the source of that threshold, and one sentence acknowledging that a stability figure is a weaker claim than an agreement figure and cannot be reported as though it were one.
+8. **The stability procedure**: at least twenty percent of your coded items, re-coded by you after a gap of **at least 48 hours**, with your original codes hidden while you re-code.
+9. **A fresh reliability sample**, separate from the items you used to build and revise the codebook, with its size and how it is drawn.
+10. **What happens when it fails**: the revision rule, and how the codebook changes without quietly fitting itself to your own habits.
+11. **What you will report even if the number is disappointing.**
+12. **The single-coder safeguards you are actually using**, at least three, named and described. Choose from: writing every category's inclusion and exclusion rule before coding begins; two or three prototypical examples per category drawn from the corpus; freezing the codebook before the full pass and logging every later change with its date and reason; keeping an ambiguous-case memo and adjudicating against the written rule rather than by feel; coding in a fixed order with source metadata hidden wherever that is possible.
+13. **The second-coder counterfactual**, one paragraph: how many items you would have double-coded, which statistic you would have reported, how you would have trained and adjudicated, and which of your findings would be most at risk if a second coder had disagreed with you.
+
+**How it is graded.** Codebook 40, protocol 35, weighted toward points 6, 9, 10, 12 and 13.
 
 **Where it comes from.** Week 8, Chapter 8 and the Lombard reading. **What it feeds:** the pilot, and the transparency markers the White Paper methods section is graded on.
 
-**How this loses points.** A protocol that reports agreement from the training set. The training set is contaminated by the conversation that reconciled it, and reporting from it is a common and serious error rather than a technicality.
+**How this loses points.** A protocol that reports stability from the same items used to build the codebook. Those items are contaminated by the revisions they caused, and reporting from them is a common and serious error rather than a technicality. The other is a protocol that still describes a second coder: read what you wrote and make sure it describes the study you are actually running.
 
 Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a qualitative memo describing the patterns you observed during immersion.
-
-<details class="syl-policy">
-<summary>Full requirements</summary>
 
 Your codebook adds a **formal reliability protocol**: the planned sample size for the reliability subset, the target alpha threshold, the coder training procedure, and the revision triggers that say in advance what you will do if the threshold is missed.
 
@@ -407,6 +429,11 @@ Your codebook adds a **formal reliability protocol**: the planned sample size fo
 
 **75 points. Due Monday, November 2, 11:59 PM.** *(Week 10)*
 
+Design your sampling strategy (search terms, date range, method) and pilot test your codebook on **20 to 30 items**, a large enough subset to compute a meaningful reliability statistic. Document edge cases, coding decisions, the alpha you obtained, and any revisions the pilot forced.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 **What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure.
 
 **Where it lives:** `03_Project/03_Data/`. The plan becomes the methods section in past tense, and the reliability computation becomes one of the three transparency markers.
@@ -415,9 +442,10 @@ Your codebook adds a **formal reliability protocol**: the planned sample size fo
 
 1. **Population, frame, and the gap between them**, stated rather than assumed.
 2. **The sampling method**, named and justified, including what it makes estimable and what it does not.
-3. **The size, with its justification.** Either an effect-size estimate borrowed from a named study, a smallest effect of interest argued from consequence, or a resource constraint stated as a constraint and paired with a sensitivity analysis. Name which of the three you are using.
+3. **The size, with its justification.** Either an effect-size estimate borrowed from a named study, a smallest effect of interest argued from consequence, or a resource constraint stated as a constraint and paired with a sensitivity analysis. Name which of the three you are using. The coding-time budget below is a resource constraint, and it is the one most of you will use.
+4. **The time calibration**: your measured rate from a timed twenty-item trial, the corpus target it produces, and the row of the sizing table you land closest to.
 4. **Twenty to thirty items coded**, submitted as data.
-5. **A reliability figure computed on those items**, with the code that produced it.
+5. **A stability figure computed on those items**, with the code that produced it. You are the only coder, so this is a re-code of your own decisions after at least 48 hours, not an agreement statistic.
 6. **Every edge case**, with the decision made and the rule added.
 7. **The revisions the pilot forced**, before and after.
 8. **One paragraph on what the pilot tells you about the full run**: how long it will take, and what you will change.
@@ -428,7 +456,29 @@ Your codebook adds a **formal reliability protocol**: the planned sample size fo
 
 **How this loses points.** A sample size justified by convention rather than by argument. "Eighty percent power" is a convention, and Lakens spends a paper on why that is not a justification by itself.
 
-Design your sampling strategy (search terms, date range, method) and pilot test your codebook on **20 to 30 items**, a large enough subset to compute a meaningful reliability statistic. Document edge cases, coding decisions, the alpha you obtained, and any revisions the pilot forced.
+**How big should your corpus be**
+
+Corpora are not comparable by count, because a chat message and a news article are not the same amount of work. Size yours by **coding time rather than by items**. Budget **two to four hours of coding in total**, split across the two stages: roughly the first third building and revising the codebook on an immersion subset, and the remaining two thirds applying the frozen codebook to the full corpus.
+
+Calibrate against your own rate rather than against the table. Code twenty items, time it, divide, and use that number.
+
+| Unit of analysis | Typical length | Roughly per hour | Corpus target |
+|---|---|---|---|
+| Chat or stream messages, short comments | under 20 words | 250 | 500 |
+| Short posts, captions, headlines | 20 to 60 words | 150 | 300 |
+| Survey open ends, product or media reviews | 50 to 150 words | 50 | 100 |
+| Long comments, forum posts, letters | 150 to 400 words | 25 | 50 |
+| News articles, blog posts, press releases | 400 to 1,200 words | 12 | 25 |
+| Video or audio coded in one-minute slices | one minute | 30 | 60 minutes of material |
+| Images, thumbnails, advertisements | not applicable | 120 | 240 |
+
+Two rules override the table.
+
+**Fifty coded units is the floor.** If the time budget puts you under fifty, do not shrink the corpus further. Change the unit of analysis instead and code paragraphs or sentences inside documents rather than whole documents. Twenty-five articles is a reading project; five hundred paragraphs drawn from those articles is a sample.
+
+**More variables cost more time.** These rates assume three to six coded variables per unit. Ten variables roughly halves the rate, so either halve the corpus or cut variables, and say in the plan which you chose.
+
+</details>
 
 ---
 
@@ -439,6 +489,11 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 ### Data Wrangling in R {#data-wrangling-in-r}
 
 **50 points. Due Monday, November 9, 11:59 PM.** *(Week 11)*
+
+Build the analysis-ready table from the raw one, in code that runs start to finish.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **What you submit:** your script, and `twitch_analysis.RDS`.
 
@@ -464,9 +519,6 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 
 Using the Twitch data from the `v2v` package:
 
-<details class="syl-policy">
-<summary>Full requirements</summary>
-
 1. **Hand-code** a variable for a 30-message sample drawn with `sample_messages()`
 2. **Load and clean** the chat and stream tables (timestamps, message length, factors, missing values)
 3. **Join** the stream-level information back onto the chat messages
@@ -479,6 +531,11 @@ This assignment teaches the full data pipeline, from raw input to analysis-ready
 ### Describing Data in R {#describing-data-in-r}
 
 **100 points. Due Monday, November 16, 11:59 PM.** *(Week 12)*
+
+Say what is in the data before you test anything.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **What you submit:** your Quarto document and its rendered output.
 
@@ -503,9 +560,6 @@ This assignment teaches the full data pipeline, from raw input to analysis-ready
 
 Using `twitch_analysis.RDS`:
 
-<details class="syl-policy">
-<summary>Full requirements</summary>
-
 1. Create **frequency tables** for key categorical variables
 2. Build **ggplot2 visualizations** (bar charts, trend lines) with professional formatting
 3. Create a **cross-tabulation** showing the relationship between two variables
@@ -518,6 +572,11 @@ Using `twitch_analysis.RDS`:
 ### Inferencing Data in R {#inferencing-data-in-r}
 
 **100 points. Due Monday, November 23, 11:59 PM.** *(Week 13)*
+
+Test the relationship, and report how big it is.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
 
 **What you submit:** your Quarto document and its rendered output.
 
@@ -543,9 +602,6 @@ Using `twitch_analysis.RDS`:
 
 Using `twitch_analysis.RDS`:
 
-<details class="syl-policy">
-<summary>Full requirements</summary>
-
 1. **State your hypothesis** in plain English before running any code
 2. **Select the appropriate test** based on your variable types:
    - Two categorical variables: **chi-square** test of independence
@@ -569,6 +625,11 @@ Using `twitch_analysis.RDS`:
 
 **200 points. Due Friday, December 18, 11:59 PM.**
 
+The final deliverable: your study written up in IMRaD, rendered to PDF, published to the web, and carried onto a conference poster.
+
+<details class="syl-policy">
+<summary>Full requirements</summary>
+
 **What you submit:** three things. The paper as `Lastname_WhitePaper.pdf`, the poster as a PDF, and the live URL. All three are required for the submission to be complete.
 
 **Where it lives:** `03_Project/04_Drafts/`. Every section has a source file above it by now; the poster is built from the same figures rather than from new ones.
@@ -576,7 +637,7 @@ Using `twitch_analysis.RDS`:
 **The paper carries the three transparency markers**, and they are graded as such:
 
 1. **A data provenance statement**: where the corpus came from, what was excluded and why.
-2. **An intercoder reliability report** giving the statistic, its value, the training protocol and the threshold applied.
+2. **A coder reliability report** giving the statistic, its value, the procedure that produced it and the threshold applied. This study has a single coder, so the statistic is intracoder stability, the report says so plainly, and the limitation is carried into the discussion rather than buried.
 3. **The pre-registration disclosure with its OSF URL**, and an honest account of anything that departed from the plan.
 
 **The rest of the paper**
@@ -597,20 +658,30 @@ Using `twitch_analysis.RDS`:
 
 The final deliverable: your study written up in IMRaD, rendered to PDF and published to the web. Graduate students also submit a conference poster.
 
-<details class="syl-policy">
-<summary>Full requirements and what to submit</summary>
+**Submission.** To Blackboard by Friday, December 18, 2026 at 11:59 PM: the PDF renamed `Lastname_WhitePaper.pdf`, the live GitHub Pages URL, and the poster renamed `Lastname_Poster.pdf`. All three must be present for the submission to count as complete. The full rubric, the project structure and the recommended writing order are on the [Phase V page](https://aura-lab.siue.edu/v2v-hub/modules/05_publisher/?edition=mc501).
 
-## Submission (MC 501)
+**Before you submit, check every box.** Each one is a graded component, and the list is the fastest way to find the one you forgot.
 
-Submit to Blackboard by Friday, December 18, 2026 at 11:59 PM:
-
-1. **PDF file**, renamed to `Lastname_WhitePaper.pdf`
-2. **Live URL**, your GitHub Pages link
-3. **Poster PDF**, renamed to `Lastname_Poster.pdf`
-
-**Important:** All three must be present for the submission to be considered complete.
-
-The full rubric, the project structure, and the recommended writing order are on the [Phase V page](https://aura-lab.siue.edu/v2v-hub/modules/05_publisher/?edition=mc501).
+- [ ] Abstract, 150 to 250 words, carrying question, method, finding and implication
+- [ ] Introduction: the phenomenon, why it matters now, and the gap
+- [ ] Theory section naming your lens and one rival lens
+- [ ] Research questions or hypotheses stated formally, each traceable to the theory section
+- [ ] Methods: unit of analysis, population and frame, sampling method, corpus size with its justification
+- [ ] Data provenance statement: source, date range, what was excluded and why
+- [ ] Coder reliability report: the statistic, its value, the procedure, the threshold, and the single-coder limitation named as such
+- [ ] Pre-registration disclosure with its OSF URL, and every departure from the plan
+- [ ] Qualitative results: at least three themes, each with exemplars drawn from the corpus
+- [ ] Quantitative results: descriptive statistics for every coded variable, one inferential test per research question, and one robustness or alternative-specification check
+- [ ] Every inferential result carries an effect size and its confidence interval, not only a p value
+- [ ] At least two figures and one table, each numbered, captioned, and referred to in the text by number
+- [ ] Every figure, table and number is generated from code in the source document, with nothing pasted
+- [ ] Alt text on every figure
+- [ ] At least fifteen sources, of which at least ten are peer-reviewed articles reporting original research
+- [ ] APA 7 throughout, claim-first citations, and the reference list matching the in-text citations in both directions
+- [ ] Limitations: the single-coder design, and the second-coder counterfactual
+- [ ] Reflection: what was harder than expected, what the data could not answer, what a second attempt would change
+- [ ] Poster: question, method, one figure, the finding with its effect size, the limitation
+- [ ] Renders from source to PDF with no errors, and is live at a public address
 
 </details>
 
