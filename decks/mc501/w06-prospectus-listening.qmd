@@ -245,10 +245,7 @@ Roughly 250 words. One page, with every sentence carrying weight.
 - **Focused watching:** one dimension at a time
     - Chat behavior, viewer trajectories, host moves
     - Brief notes after each pass
-
-## Three Modes of Attention (cont.)
-
-- **Analytical watching:** pattern recognition across more streams
+- **Analytical watching:** pattern recognition across streams
     - What recurs, and what clusters with what
     - What resists description entirely
 
