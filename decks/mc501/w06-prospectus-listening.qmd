@@ -185,9 +185,6 @@ structure, the other is individual expression.
 1. A **descriptive title** hinting at the key variables
 2. One to three **focused questions or hypotheses**, not ten
 3. A **theoretical framework**, two to three sentences, naming the theory
-
-## Six Components (cont.)
-
 4. A **gap statement**, two to three sentences, citing a few key sources
 5. A **method overview**, three to four sentences: data, coding, number of cases
 6. An **expected contribution**, one to two sentences
@@ -271,9 +268,6 @@ One dated plain-text document, with a note every fifteen or twenty minutes.
     - A 200-viewer and a 20,000-viewer chat differ
 - **First pass is casual**
     - Do not code, and resist deciding what matters
-
-## Watching This Week (cont.)
-
 - **Second pass, watch chat only**
     - Note what you cannot explain
 - **Bring the confusing bits to Week 7**
