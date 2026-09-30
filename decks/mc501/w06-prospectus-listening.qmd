@@ -51,14 +51,11 @@ format:
     - Your Chapter 4 search is what shows it is open
 - **It matters:** Tuesday against Thursday is trivia
 
-## The Narrowing Funnel
+## The Narrowing Funnel {.smaller}
 
 1. "I am interested in Twitch chat." Too broad. What aspect? Which streams?
 2. "How viewers participate in chat." Better, still vast.
 3. "Whether chat participation differs across kinds of streams." Which kinds? Measured how?
-
-## The Narrowing Funnel (cont.)
-
 4. "Whether chat message volume differs between gaming and non-gaming streams."
 5. "Draw a stratified sample from the 50-channel working corpus, code each message as
    directed at the streamer or broadcast to the room, and test whether the proportion of
