@@ -53,6 +53,8 @@ format:
 
 ## The Narrowing Funnel {.smaller}
 
+[Recap from Week 5]{.eyebrow}
+
 1. "I am interested in Twitch chat." Too broad. What aspect? Which streams?
 2. "How viewers participate in chat." Better, still vast.
 3. "Whether chat participation differs across kinds of streams." Which kinds? Measured how?
@@ -65,6 +67,8 @@ Version 5 fits a semester. It answers something rather than everything.
 
 ## Three Ways Narrowing Fails
 
+[Recap from Week 5]{.eyebrow}
+
 - **Impossible comparison:** viewers against non-viewers
     - The groups differ in many ways besides yours
 - **Circular question:** popular because people watch
@@ -73,6 +77,8 @@ Version 5 fits a semester. It answers something rather than everything.
     - Ask how much each contributes, and whether they interact
 
 ## Choosing an Operationalization
+
+[Recap from Week 5]{.eyebrow}
 
 **Parasocial relationship** (Horton & Wohl, 1956) is not directly observable.
 
@@ -87,6 +93,8 @@ There is no right answer. You defend the proxy you chose.
 
 ## Three Research Goals
 
+[Recap from Week 5]{.eyebrow}
+
 - **Exploratory:** "what is going on here?"
     - Generates hypotheses, and its output is patterns
 - **Descriptive:** "what does the landscape look like?"
@@ -99,6 +107,8 @@ must know which one you are attempting.
 
 ## Question, Hypothesis, Null
 
+[Recap from Week 5]{.eyebrow}
+
 - **Research question:** interrogative and open
     - Use it when exploring, or when the literature conflicts
 - **Hypothesis:** declarative and predictive
@@ -109,6 +119,8 @@ must know which one you are attempting.
 
 ## Defending the Number
 
+[Recap from Week 5]{.eyebrow}
+
 - **Statistical power:** the chance of detecting a real effect
     - At 50% power it is a coin flip
 - **The conventional minimum is 80%**
@@ -117,6 +129,8 @@ must know which one you are attempting.
 - In your prospectus the number is defended, not asserted
 
 ## Lakens on the Convention
+
+[Recap from Week 5]{.eyebrow}
 
 > "the default recommendation to aim for 80% power lacks a solid justification."
 >
@@ -127,6 +141,8 @@ must know which one you are attempting.
 - Which sets up tonight's argument
 
 ## Computing the Required n
+
+[Recap from Week 5]{.eyebrow}
 
 Take an effect size from your Chapter 4 reading, set *α* = .05, and ask:
 
@@ -152,6 +168,8 @@ the sampling-plan justification your method section carries.
 - One coder, one semester: where does that leave you?
 
 ## Topic, Theory, and Data
+
+[Recap from Week 5]{.eyebrow}
 
 - **Topic** is bounded by population, time, or medium
     - "Livestreaming" is not a topic
