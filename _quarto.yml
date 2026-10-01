@@ -223,7 +223,29 @@ format:
             var q = new URLSearchParams(window.location.search).get('edition');
             if (q === 'grad' || q === 'mc501') { localStorage.setItem(KEY, '1'); }
             if (q === 'ug'   || q === 'mc451') { localStorage.setItem(KEY, '0'); }
+
+            /* single-course-page-2026-09-30: the syllabi and the assignment pages
+               were split into one page per course, so on those pages there is
+               nothing to toggle and the control was lying. A graduate student on
+               mc501-assignments.html saw a floating button reading "Showing
+               MC 451 (undergraduate)", which says they are on the wrong course
+               when they are not. The page itself now decides the edition, the
+               same way the ?edition= parameter does, and shows no button. */
+            var path = window.location.pathname;
+            if (/\/mc501-/.test(path))                           localStorage.setItem(KEY, '1');
+            else if (/\/mc451-|\/syllabus\.html$/.test(path))    localStorage.setItem(KEY, '0');
+
             var on = localStorage.getItem(KEY) === '1';
+
+            /* Render the control only where it controls something. On a page with
+               no .graduate-extension and no .undergraduate-only block it is a
+               switch wired to nothing. apply() still runs, so the body class stays
+               correct for any page that does carry gated content. */
+            if (!document.querySelector('.graduate-extension, .undergraduate-only')) {
+              apply(on);
+              return;
+            }
+
             var btn = document.createElement('button');
             btn.id = 'v2v-edition-toggle';
             btn.type = 'button';
