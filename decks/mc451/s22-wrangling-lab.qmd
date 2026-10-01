@@ -200,4 +200,4 @@ You should now have:
 - **Due this week:** Sampling Plan and Pilot, and Data Wrangling
 - **Read** Chapter 12, Describing the Data
 
-## Questions?
+## Questions, Comments, or Concerns? {.titlecard}

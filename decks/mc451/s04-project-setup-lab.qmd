@@ -210,3 +210,5 @@ that never works.
 - Saving your work back to GitHub is the first thing we do next time. Everything you need
   is on the [Hub](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html).
 - Read **Chapter 3, Knowing and Knowing Well**, before we meet
+
+## Questions, Comments, or Concerns? {.titlecard}

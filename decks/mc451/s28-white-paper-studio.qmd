@@ -176,4 +176,4 @@ Before you leave today you should have:
 - You began with a curiosity and no tools, and you finish with a published,
   reproducible study at a public address
 
-## Questions?
+## Questions, Comments, or Concerns? {.titlecard}

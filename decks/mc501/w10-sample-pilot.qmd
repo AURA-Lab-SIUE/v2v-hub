@@ -272,4 +272,4 @@ Pilot, diagnose, revise, repeat, until it clears your threshold.
 - **Write** a journal entry, 450 to 500 words
 - **Bring a laptop** with R, VS Code and `v2v` working
 
-## Questions?
+## Questions, Comments, or Concerns? {.titlecard}

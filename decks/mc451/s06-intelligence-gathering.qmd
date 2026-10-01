@@ -186,3 +186,5 @@ commit stays on your laptop; the push is what sends it. You need both, every tim
 - Install **Zotero** and connect it to your browser if you have not yet
 - Read the rest of **Chapter 4** on the literature map before Tuesday
 - Tuesday we turn a pile of sources into a map, and a map into an argument
+
+## Questions, Comments, or Concerns? {.titlecard}

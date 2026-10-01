@@ -390,3 +390,5 @@ why complete training for human subjects research?
   The graduate extension this week: take whichever of Nosek's three answers you found
   weakest and argue it against your own design, not against preregistration in general
 - Start the search log tonight. Backfilling it later is guesswork and it shows.
+
+## Questions, Comments, or Concerns? {.titlecard}

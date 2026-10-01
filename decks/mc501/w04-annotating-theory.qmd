@@ -317,3 +317,5 @@ Four messages from one stretch of a real broadcast. Read them once before we cod
 - Read the assigned article: **Gelman and Loken (2014)**, "The statistical crisis in science"
 - Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
 - Start CITI early. It takes longer than anyone expects.
+
+## Questions, Comments, or Concerns? {.titlecard}

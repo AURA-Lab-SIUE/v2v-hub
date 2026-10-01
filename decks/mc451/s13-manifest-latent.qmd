@@ -101,9 +101,6 @@ Features you cannot read off the surface:
     - Gaming and non-gaming, crowded and nearly empty
 - **That range is the principle, not the assignment**
     - Span whatever source you settled on with the librarian
-
-## Match Your Source's Range (cont.)
-
 - **On Twitch:** big channels and small, gaming and art
 - **On a subreddit:** busy threads and dead ones
 - **On a news site:** the front page and the unlinked pages
@@ -185,4 +182,4 @@ Those four are the raw material of a codebook, which is what you build next.
     - Grounded in what you saw, not what you assumed
 - **Read** Chapter 8, through how operationalization fails
 
-## Questions?
+## Questions, Comments, or Concerns? {.titlecard}

@@ -204,3 +204,5 @@ sort from most to least. **That is all code is: instructions in order.**
 - Skim **Chapter 1** on the course site: [aura-lab.siue.edu/v2v](https://aura-lab.siue.edu/v2v/)
 - Start the software setup if you can. We will troubleshoot together in Week 2.
 - Bring questions. The first three weeks are the ones where asking pays off most.
+
+## Questions, Comments, or Concerns? {.titlecard}

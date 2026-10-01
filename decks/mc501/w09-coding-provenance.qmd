@@ -301,4 +301,4 @@ You should now have:
     - Bring the revisions first contact prompted, committed
 - **Write** a journal entry, 450 to 500 words
 
-## Questions?
+## Questions, Comments, or Concerns? {.titlecard}

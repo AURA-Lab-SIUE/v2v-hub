@@ -283,4 +283,4 @@ You should now have:
 
 The histogram left a precise question. Week 13 answers it.
 
-## Questions?
+## Questions, Comments, or Concerns? {.titlecard}

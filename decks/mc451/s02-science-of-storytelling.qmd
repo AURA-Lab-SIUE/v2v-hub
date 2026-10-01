@@ -116,3 +116,5 @@ Research is disciplined because the process **exposes bias to scrutiny**.
 - **Chapter 2, The Open Workspace**: the tools that make research reproducible, VS Code, R, Quarto, Git
 - You meet the dataset for the first time: ten real rows from one minute in November 2018
 - **Before then:** sign the Syllabus Contract, and skim Chapter 2's setup walkthrough on the course site
+
+## Questions, Comments, or Concerns? {.titlecard}

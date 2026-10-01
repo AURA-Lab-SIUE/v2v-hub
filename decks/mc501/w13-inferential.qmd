@@ -315,4 +315,4 @@ found, cast as a baseline plus an adjustment.
     - Plus the assigned article: **Wasserstein and Lazar (2016)**
 - **Bring an outline and a poster sketch** to Week 15
 
-## Questions?
+## Questions, Comments, or Concerns? {.titlecard}

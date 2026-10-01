@@ -162,3 +162,5 @@ Load a fixture with `data(twitch_chat_sample, package = "v2v")`.
 - Read **Chapter 3** on ethics before Tuesday
 - **GitHub Profile** is worth 25 points and is due at the end of Week 2
 - **Project Setup** is worth 25 points and follows at the end of Week 3
+
+## Questions, Comments, or Concerns? {.titlecard}

@@ -238,3 +238,5 @@ These are not add-ons. They are entailments of the epistemology you are adopting
   scientific computing" (open access, linked in the syllabus)
 - Write your journal entry, 450 to 500 words, engaging both
 - Attempt the software setup. We troubleshoot together next week.
+
+## Questions, Comments, or Concerns? {.titlecard}

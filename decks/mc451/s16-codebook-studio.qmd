@@ -160,9 +160,6 @@ variable needs an operational definition too, and this is it in executable form.
     - You wrote a concept, not a recipe
 - **Six variables:** cut to three
     - Each is a reliability check and a results paragraph
-
-## Common Problems Today (cont.)
-
 - **A catch-all doing all the work**
     - Expecting a third unclassifiable means the scheme is wrong
 - **Rules that restate the category**
@@ -189,4 +186,4 @@ You should now have a file containing:
     - Note every hesitation, which is a missing rule
 - **Codebook and Qual Memo** is what this draft becomes
 
-## Questions?
+## Questions, Comments, or Concerns? {.titlecard}

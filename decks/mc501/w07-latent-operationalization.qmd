@@ -115,9 +115,6 @@ Found after coding, it is a reason to start again. This is the cheapest moment.
     - Identifying **where two coders will disagree**
 - **Notes that mark your own uncertainty**
     - They are the earliest record of the reliability problem
-
-## Reliability Starts in the Notes (cont.)
-
 - **Most codebook failures are boundary failures**
     - Underspecified decision rules, not bad categories
 - **The shape of it**
@@ -269,4 +266,4 @@ Those expected disagreements are next week's decision rules, so write them down 
     - Bring three contested categories and a rule for each
 - **Write** a journal entry, 450 to 500 words
 
-## Questions?
+## Questions, Comments, or Concerns? {.titlecard}
