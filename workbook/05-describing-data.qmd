@@ -363,7 +363,7 @@ Numbers and charts don't speak for themselves. Your assignment requires a 2 to 3
 
 **Paragraph 1: What the data contains**
 
-> "The sample includes 35,267 chat messages drawn from 50 Twitch channels over five and a half days in November 2018, alongside 32,276 stream snapshots. Gaming channels account for 31,309 messages and non-gaming channels for 3,457, with a further 501 messages coming from channels whose category was never recorded and which are therefore excluded from the comparison."
+> "The sample includes 35,267 chat messages drawn from 50 Twitch channels from November 18 to 24, 2018, alongside 32,276 stream snapshots. Gaming channels account for 31,309 messages and non-gaming channels for 3,457, with a further 501 messages coming from channels whose category was never recorded and which are therefore excluded from the comparison."
 
 **Paragraph 2: Key patterns**
 

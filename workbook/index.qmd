@@ -14,7 +14,7 @@ Seven chapters take you from building a codebook to publishing a professional Wh
 
 ## What You'll Learn
 
-This workbook is your companion for the R programming portion of the course (Phases III--V). Each chapter builds on the previous one, following the same dataset through the full research pipeline: the Twitch corpus that ships inside the course `v2v` package, 35,267 chat messages and 32,276 stream snapshots drawn from fifty channels over five and a half days of November 2018.
+This workbook is your companion for the R programming portion of the course (Phases III--V). Each chapter builds on the previous one, following the same dataset through the full research pipeline: the Twitch corpus that ships inside the course `v2v` package, 35,267 chat messages and 32,276 stream snapshots drawn from fifty channels between November 18 and 24, 2018.
 
 | Chapter | Title | What You'll Do |
 |---------|-------|---------------|

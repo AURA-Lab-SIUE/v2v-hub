@@ -23,7 +23,7 @@ A codebook is a **measurement manual**. It tells you (and anyone else) exactly h
 
 ### Example: Twitch Dataset
 
-The class dataset is the Twitch collection that ships inside the `v2v` package: chat messages and stream snapshots from fifty channels recorded across five and a half days of November 2018. In that dataset, the variable `is_gaming` works like this:
+The class dataset is the Twitch collection that ships inside the `v2v` package: chat messages and stream snapshots from fifty channels recorded from November 18 to 24, 2018. In that dataset, the variable `is_gaming` works like this:
 
 | Element | Value |
 |---------|-------|

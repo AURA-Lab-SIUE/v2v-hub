@@ -24,7 +24,7 @@ format:
 ## From a single snapshot to a corpus
 
 - One **snapshot** is one row, six columns: channel, title, game, viewers, timestamp, key
-- Multiply by half a million (590,876 snapshots, 5.5 days) and you have a **corpus**
+- Multiply by half a million (590,876 snapshots over six days) and you have a **corpus**
 - A corpus is *a body of evidence that licenses some questions and refuses others*
 - Your first job is to respect what a given corpus can and cannot answer
 

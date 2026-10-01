@@ -53,7 +53,7 @@ was.
     - Here it takes the form of **structured listening**
     - Watch, read chat, take notes, with an ethnographer's discipline
 - **The data is historical, the platform is live**
-    - 5.5 days in 2018, and the site is open right now
+    - November 18 to 24, 2018, and the site is open right now
     - The behaviors it recorded are still there to watch
 
 ## Skipping It Costs You
@@ -76,7 +76,7 @@ A coder who has never watched Twitch reads the log as plain text and:
 
 - **Thick description** captures meaning, not only events (Geertz, 1973)
     - Rich enough to say what it meant to those present
-- **Thin counts messages, thick knows the count**
+- **Thin counts the messages; thick explains them**
     - Raids, inside jokes, and reflexive replies
 - Structured listening is how thin becomes thick
 
