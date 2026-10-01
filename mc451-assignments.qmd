@@ -277,13 +277,13 @@ Commit to a topic and write the questions your study will answer.
 **Requirements**
 
 1. **A topic statement** of two to three sentences naming the phenomenon, the population and the context.
-2. **One to three research questions or hypotheses**, numbered. Three is a maximum, not a target. Which of the two forms you use is your choice, and you justify it.
+2. **One to three research questions or hypotheses**, numbered. Three is a maximum, not a target.
 3. **Why that form**, two to three sentences. Write **hypotheses** (H1, H2, each stated as a directional relationship between two variables) when a theory predicts the direction, and name the theory and what it predicts. Write **research questions** when you are describing or exploring, or when the literature will not support a direction. Neither form is the better answer. An unjustified hypothesis and a question that ducks a clear theoretical prediction lose the same points.
 4. **A variable preview**: for each question, name what you would measure and on which unit. Two columns is enough.
 5. **A justification**, 100 to 150 words, of why the answer would matter to someone who is not you.
-6. **The five-criteria check**, applied in writing to each question. One line per criterion per question.
+6. **The five-criteria check** for criteria 1 through 4, one line per criterion per question. Criterion 5 is what your justification above already answers, so do not write it twice.
 
-**How it is graded.** Topic 3, questions or hypotheses 6, the justification of which form you chose 3, variable preview 5, justification 4, five-criteria check 4.
+**How it is graded.** Topic 3, questions or hypotheses 6, why that form 3, variable preview 5, why it matters 4, five-criteria check 4.
 
 
 **Where it comes from.** Sessions 9 and 10, Chapters 5 and 6. **What it feeds:** the Prospectus a week later, which is these questions with a method attached.
@@ -308,20 +308,6 @@ Commit to a topic and write the questions your study will answer.
 Two of these you can check yourself. **Not already answered** and **it matters** are
 judgments you make from your reading, and the check asks you to state the judgment, not
 to prove it.
-
-
-**Run every question past the five criteria before you submit it:**
-
-1. **Specific.** Name the platform, specify the outcome, bound the population. "How does
-   social media influence politics?" leaves all three undefined.
-2. **Measurable.** Some concepts resist operationalization. "Do authentic streamers build
-   better communities?" cannot be studied until *authentic* and *better* become something
-   you can record.
-3. **Answerable within your constraints.** Decades of data or hundreds of interviews is
-   not a semester project.
-4. **Not already answered.** Your literature review tells you whether the question is
-   genuinely open.
-5. **It matters.** A question can be answerable and still be trivia.
 
 </details>
 

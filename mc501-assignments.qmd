@@ -258,9 +258,9 @@ Commit to a topic and write the questions your study will answer.
 3. **Hypotheses where you have a directional prediction**, labeled H1, H2, each a stated relationship between two variables, each with **one sentence of theoretical justification** for the direction. A prediction with no reason behind it is a guess.
 4. **A variable preview**: for each question, the construct, what you would measure, the unit of analysis and the expected level of measurement.
 5. **A justification**, 100 to 150 words, of why the answer matters, written for a reader in your field rather than for me.
-6. **The five-criteria check**, applied in writing to each question.
+6. **The five-criteria check** for criteria 1 through 4, one line per criterion per question. Criterion 5 is what your justification above already answers, so do not write it twice.
 
-**How it is graded.** Topic 3, questions 5, hypotheses with justification 5, variable preview 5, justification 4, five-criteria check 3.
+**How it is graded.** Topic 3, questions 5, hypotheses with justification 5, variable preview 5, why it matters 4, five-criteria check 3.
 
 
 **Where it comes from.** Weeks 5 and 6, Chapters 5 and 6. **What it feeds:** the Research Proposal, which is these questions with a method and a sampling plan attached.
@@ -285,20 +285,6 @@ Commit to a topic and write the questions your study will answer.
 Two of these you can check yourself. **Not already answered** and **it matters** are
 judgments you make from your reading, and the check asks you to state the judgment and
 the evidence behind it.
-
-
-**Run every question past the five criteria before you submit it:**
-
-1. **Specific.** Name the platform, specify the outcome, bound the population. "How does
-   social media influence politics?" leaves all three undefined.
-2. **Measurable.** Some concepts resist operationalization. "Do authentic streamers build
-   better communities?" cannot be studied until *authentic* and *better* become something
-   you can record.
-3. **Answerable within your constraints.** Decades of data or hundreds of interviews is
-   not a semester project.
-4. **Not already answered.** Your literature review tells you whether the question is
-   genuinely open.
-5. **It matters.** A question can be answerable and still be trivia.
 
 </details>
 
