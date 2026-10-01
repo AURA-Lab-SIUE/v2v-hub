@@ -27,18 +27,19 @@ format:
 - **The symptom:** thirty articles, notes everywhere
     - The project feels too small and too large at once
     - A shortage of focus rather than of ideas
-- **A prospectus is roughly one page**
-    - The topic, the reason, the method
-    - Cannot state it on one page, cannot begin it
+- **The proposal is where it resolves**
+    - Cannot write the design, cannot run the study
+    - Every later document is this one, expanded
 
 ## Two Questions
 
 - **A:** "How does livestreaming affect people?"
-- **B:** "Does the rate of chat messages per viewer differ between gaming and non-gaming
-  streams?"
-- **Why B is workable**
-    - A is a career-spanning program in disguise
-    - B names the measure, the comparison, the evidence
+    - A career-spanning research program in disguise
+    - Nothing in it tells you what to collect
+- **B:** "Does the rate of chat messages per viewer differ
+  between gaming and non-gaming streams?"
+    - Names the measure, the comparison, the evidence
+    - You could start collecting on Monday
 
 ## What a Strong Question Does
 
@@ -50,6 +51,113 @@ format:
     - Decades of data is not a semester project
     - Your Chapter 4 search is what shows it is open
 - **It matters:** Tuesday against Thursday is trivia
+
+## What Is Due
+
+- **The Research Proposal**, a structured sentence outline
+    - 1,200 to 1,800 words, in outline form
+    - It is the front half of your White Paper in skeleton
+- **Not a one-page prospectus**
+    - Chapter 6 describes the short form
+    - Yours carries the argument, not only the plan
+
+## A Point Is a Claim
+
+- **Every point is a full sentence that asserts something**
+- **A topic label:** "Parasocial interaction and chat"
+    - Names a subject and commits to nothing
+- **A claim:** "Viewers of smaller channels report stronger
+  parasocial bonds, which should leave a visible trace in how
+  they address the streamer"
+    - Can be argued with, cited, and tested
+- Labels instead of sentences is the failure this is named for
+
+## Eight Sections
+
+1. **Framing**, three to five points
+2. **Theoretical positioning**, four to six points
+3. **The literature**, six to ten points
+4. **The gap**, two to three points
+5. **Questions or hypotheses**, stated formally
+6. **The design**, eight to twelve points
+7. **Contribution**, two to three points
+8. **References** in APA 7
+
+## Framing First
+
+[Section 1, three to five points]{.eyebrow}
+
+- **The phenomenon**, named concretely
+- **Why it matters now**, with something that changed
+- **What is at stake in getting it wrong**
+    - A wrong answer costs someone something
+    - Name who, and what it costs them
+
+## Theory Needs A Rival
+
+[Section 2, four to six points]{.eyebrow}
+
+- **Name the lens** and what it predicts here
+- **Name a competing lens** and what it predicts instead
+    - Where the two diverge is your empirical bite
+- **A framework with no rival is a decoration**
+    - It explains the result whatever the result is
+    - Unfalsifiable framing reads as unserious
+
+## Literature By Theme
+
+[Section 3, six to ten points]{.eyebrow}
+
+- **Organize by theme, never by author**
+    - "Smith found... Jones found..." is a bibliography
+- **Carry three things through**
+    - What the studies converge on
+    - Where they qualify or contradict each other
+    - The limitation they share
+- This is your synthesis paragraph expanded
+
+## The Gap
+
+[Section 4, two to three points]{.eyebrow}
+
+- **It rests on the shared limitation**, not on absence
+    - "Nobody has studied X" is usually false
+    - "Everyone measured X by self-report" is a gap
+- **Name what your study does about it**
+- A gap nobody would want filled is not a gap
+
+## Questions, Stated Formally
+
+[Section 5]{.eyebrow}
+
+- **One to three**, not ten
+- **Each traceable to a point in your theory section**
+    - If the lens does not predict it, why ask it?
+- **Hypothesis when theory gives you a direction**
+    - Question when it does not, and say which
+- Null stated explicitly where you hypothesize
+
+## The Design
+
+[Section 6, eight to twelve points]{.eyebrow}
+
+- **Unit of analysis**, stated exactly
+- **Population and sampling frame**, and the gap between
+- **Sampling method**, named and justified
+- **Measurement**, each variable operationalized
+- **The reliability protocol** you intend
+- **The analysis you will run**, chosen now
+    - Before you have seen a single result
+
+## Commit Before Data
+
+- **Pre-registration** fixes the plan before the evidence
+    - Hypotheses, measures and analysis, timestamped
+    - The Open Science Framework does this free
+- **Without a fixed plan the choices drift**
+    - Adjust until something reaches significance (Simmons et al., 2011)
+    - The source of **researcher degrees of freedom**
+- Your proposal is an informal pre-registration
 
 ## Justified, Not Conventional {.discuss}
 
@@ -63,47 +171,43 @@ format:
 - He ranks resource constraints last. Fair?
 - One coder, one semester: where does that leave you?
 
-## Six Components
+## Model Proposal, Theory
 
-1. A **descriptive title** hinting at the key variables
-2. One to three **focused questions or hypotheses**, not ten
-3. A **theoretical framework**, two to three sentences, naming the theory
-4. A **gap statement**, two to three sentences, citing a few key sources
-5. A **method overview**, three to four sentences: data, coding, number of cases
-6. An **expected contribution**, one to two sentences
+> **Framing.** Livestreaming collapses broadcast and conversation into one channel, so the
+> same message may be addressed to a person or performed for a room.
 
-Roughly 250 words. One page, with every sentence carrying weight.
+> **Theoretical positioning.** Uses and gratifications (Katz, Blumler, & Gurevitch, 1973)
+> predicts that viewers seeking social connection will address the streamer directly.
+> A parasocial account predicts the opposite: that the bond is satisfied by watching,
+> so direct address should not track with it.
 
-## Model Prospectus, Question and Frame
+## Model Proposal, Design
 
-> **Research question.** Does the proportion of chat messages directed at the streamer
-> differ between streams in gaming categories and streams in non-gaming categories, among
-> the 50 channels in the Twitch working corpus?
-
-> **Theoretical framework.** Uses and gratifications theory (Katz, Blumler, & Gurevitch,
-> 1973) holds that audiences actively select media to satisfy specific needs, including
-> social ones.
-
-## Model Prospectus, the Method
-
+- **Unit:** one chat message
+- **Frame:** the 50-channel working corpus, balanced by category
 - **Sample:** 1,500 messages, stratified
-    - Balanced across gaming and non-gaming streams
-    - Each message is the unit of analysis
-- **Coding and reliability:** three codes, one check
-    - Directed, broadcast, or unclassifiable
-    - No second coder, so a 20 percent re-code after 48 hours
-    - Reported as stability, not as agreement
-- **Contribution:** does a survey finding leave a coded trace?
+- **Measurement:** directed, broadcast, or unclassifiable
+- **Reliability:** one coder, so a 20 percent re-code after 48 hours
+    - Reported as stability, never as agreement
+- **Analysis, committed now:** proportions compared by category, with effect size
 
-## Prospectus as Pre-Registration
+## Contribution, For The Field
 
-- **Pre-registration** commits the plan before the data
-    - Hypotheses, methods, and analysis plan, publicly
-    - The Open Science Framework timestamps it
-- **Without a fixed plan, the choices drift**
-    - Adjust until a result reaches significance (Simmons et al., 2011)
-    - The source of **researcher degrees of freedom**
-- Your prospectus is an informal pre-registration
+[Section 7, two to three points]{.eyebrow}
+
+- **Write it for your discipline, not for this course**
+    - Never "I will learn content analysis"
+- **Say what someone could do with the answer**
+- **Among the first to**, if that is honestly true
+- Methodological contributions count, if you name them
+
+## How It Is Graded
+
+- **Theory 15, literature 15, design 15** carry the weight
+- **Questions 10, framing 8, gap 8, contribution 4**
+- **Two ways this loses points**
+    - Topic labels where sentences belong
+    - A design section naming no analysis
 
 ## What a Coder Cannot See
 
