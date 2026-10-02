@@ -238,7 +238,7 @@ Find and annotate one peer-reviewed research article related to your topic, then
 <details class="syl-policy">
 <summary>Full requirements</summary>
 
-**What you submit:** one PDF of the article carrying your highlights and comments, plus a one-page document holding the six items below. Two files, or one file if your annotations and notes are in the same PDF.
+**What you submit:** one PDF of the article carrying your highlights and comments, plus a one-page document holding items 2 through 8 below. Two files, or one file if your annotations and notes are in the same PDF.
 
 **Where it lives:** `02_Literature/`, one file per source named `author-year-slug.md`, with the reference added to a running `02_Literature/references.md` in the citation style you have chosen for the White Paper. Your literature review is written from this folder, and the paper's reference list is that file.
 
