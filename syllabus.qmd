@@ -394,7 +394,7 @@ assignment. Plan for it from Week 1, and draft the sampling plan during Week 10.
 | 11 | Nov 3 / 5 | S21 · Ch 11 [R] Wrangling the Data | S22 · Ch 11 [R] wrangling lab | Sampling Plan & Pilot · Data Wrangling [R] · **125 pts, the heaviest week** |
 | 12 | Nov 10 / 12 | S23 · Ch 12 [R] Describing: descriptive statistics + graphics | S24 · Ch 12 [R] describing lab | Describing Data [R] |
 | 13 | Nov 17 / 19 | S25 · Ch 13 [R] Inferential: t-test, ANOVA, regression | S26 · Ch 13 [R] inference lab; *White Paper assigned* | Inferencing Data [R] |
-| 14 | Nov 23–27 | **Thanksgiving Break, no class** | | |
+| 14 | Nov 23–29 | **Thanksgiving Break, no class** | | |
 | 15 | Dec 1 / 3 | S27 · Ch 14 The Publisher; assemble your paper | S28 · White-paper studio: peer review; the reflection | |
 | 16 | Dec 8–12 | **Work Session: open lab / support** | | |
 | 17 | Dec 14–18 | **Finals Week** | | White Paper |

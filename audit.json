@@ -1,0 +1,540 @@
+[
+{
+"f": "s01-orientation.qmd",
+"course": "mc451",
+"n": 19,
+"cont": 0,
+"coder": 1,
+"foreign": {},
+"close_ok": false,
+"close": "Before Thursday",
+"mismatch": [],
+"long": 29
+},
+{
+"f": "s02-science-of-storytelling.qmd",
+"course": "mc451",
+"n": 12,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Looking ahead to Thursday",
+"mismatch": [],
+"long": 25
+},
+{
+"f": "s03-open-workspace.qmd",
+"course": "mc451",
+"n": 16,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Looking ahead",
+"mismatch": [
+"Four tools, one ecology 4/5"
+],
+"long": 24
+},
+{
+"f": "s04-project-setup-lab.qmd",
+"course": "mc451",
+"n": 17,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Before next time",
+"mismatch": [],
+"long": 14
+},
+{
+"f": "s05-ethics.qmd",
+"course": "mc451",
+"n": 24,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Before next time",
+"mismatch": [],
+"long": 40
+},
+{
+"f": "s06-intelligence-gathering.qmd",
+"course": "mc451",
+"n": 17,
+"cont": 0,
+"coder": 1,
+"foreign": {},
+"close_ok": false,
+"close": "Before next time",
+"mismatch": [],
+"long": 42
+},
+{
+"f": "s07-reading-annotating.qmd",
+"course": "mc451",
+"n": 17,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Before next time",
+"mismatch": [],
+"long": 42
+},
+{
+"f": "s08-theory-as-a-lens.qmd",
+"course": "mc451",
+"n": 16,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Looking ahead to Tuesday",
+"mismatch": [
+"Two readings 2/3"
+],
+"long": 28
+},
+{
+"f": "s09-variables-hypotheses.qmd",
+"course": "mc451",
+"n": 16,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Before next time",
+"mismatch": [],
+"long": 35
+},
+{
+"f": "s10-research-questions.qmd",
+"course": "mc451",
+"n": 14,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Before next time",
+"mismatch": [
+"Three goals, three kinds of  3/4"
+],
+"long": 29
+},
+{
+"f": "s11-prospectus-prereg.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 4,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [
+"One Page, Six Decisions 6/3",
+"The Six Components 6/3",
+"Method in Four Sentences 4/3"
+],
+"long": 0
+},
+{
+"f": "s12-structured-listening.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 1
+},
+{
+"f": "s13-manifest-latent.qmd",
+"course": "mc451",
+"n": 20,
+"cont": 1,
+"coder": 4,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [
+"Two Layers in Every Message 2/4"
+],
+"long": 2
+},
+{
+"f": "s14-operationalization-gap.qmd",
+"course": "mc451",
+"n": 19,
+"cont": 0,
+"coder": 1,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [
+"Two Definitions, Working Tog 2/3"
+],
+"long": 4
+},
+{
+"f": "s15-measurement-reliability.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 5,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 3
+},
+{
+"f": "s16-codebook-studio.qmd",
+"course": "mc451",
+"n": 19,
+"cont": 1,
+"coder": 3,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 1
+},
+{
+"f": "s17-coding-the-codebook.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 2
+},
+{
+"f": "s18-reading-data-qual-memo.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 2,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 3
+},
+{
+"f": "s19-the-sample.qmd",
+"course": "mc451",
+"n": 17,
+"cont": 0,
+"coder": 2,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 1
+},
+{
+"f": "s20-pilot-kappa-alpha.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 10,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 2
+},
+{
+"f": "s21-wrangling-data.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 1
+},
+{
+"f": "s22-wrangling-lab.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 2
+},
+{
+"f": "s23-describing-data.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 5
+},
+{
+"f": "s24-describing-lab.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 2
+},
+{
+"f": "s25-inferential-stats.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 6
+},
+{
+"f": "s26-inference-lab.qmd",
+"course": "mc451",
+"n": 17,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 3
+},
+{
+"f": "s27-the-publisher.qmd",
+"course": "mc451",
+"n": 18,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 1
+},
+{
+"f": "s28-white-paper-studio.qmd",
+"course": "mc451",
+"n": 19,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 5
+},
+{
+"f": "w01-orientation-storytelling.qmd",
+"course": "mc501",
+"n": 22,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Before Week 2",
+"mismatch": [],
+"long": 30
+},
+{
+"f": "w02-open-workspace.qmd",
+"course": "mc501",
+"n": 27,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Before Week 3",
+"mismatch": [],
+"long": 31
+},
+{
+"f": "w03-ethics-intelligence.qmd",
+"course": "mc501",
+"n": 34,
+"cont": 0,
+"coder": 1,
+"foreign": {},
+"close_ok": false,
+"close": "Before Week 4",
+"mismatch": [
+"Three cases that would be hu 3/4"
+],
+"long": 92
+},
+{
+"f": "w04-annotating-theory.qmd",
+"course": "mc501",
+"n": 30,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Before Week 5",
+"mismatch": [
+"Four kinds of gap 4/5",
+"Three paradigms 3/4"
+],
+"long": 61
+},
+{
+"f": "w05-variables-questions.qmd",
+"course": "mc501",
+"n": 32,
+"cont": 0,
+"coder": 1,
+"foreign": {},
+"close_ok": false,
+"close": "Before Week 6",
+"mismatch": [
+"Five Criteria For Questions 5/3"
+],
+"long": 10
+},
+{
+"f": "w06-prospectus-listening.qmd",
+"course": "mc501",
+"n": 25,
+"cont": 0,
+"coder": 1,
+"foreign": {},
+"close_ok": true,
+"close": "Questions, Comments, or Concerns?",
+"mismatch": [],
+"long": 0
+},
+{
+"f": "w07-latent-operationalization.qmd",
+"course": "mc501",
+"n": 29,
+"cont": 1,
+"coder": 10,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [
+"Four Failures, Conflating Co 4/3",
+"Four Failures, the Unjustifi 4/2",
+"Four Failures, Oversimplific 4/3",
+"Four Failures, the Unmeasura 4/3"
+],
+"long": 1
+},
+{
+"f": "w08-measurement-codebook.qmd",
+"course": "mc501",
+"n": 27,
+"cont": 0,
+"coder": 8,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [
+"The Two Are Independent 2/3"
+],
+"long": 6
+},
+{
+"f": "w09-coding-provenance.qmd",
+"course": "mc501",
+"n": 27,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 8
+},
+{
+"f": "w10-sample-pilot.qmd",
+"course": "mc501",
+"n": 26,
+"cont": 0,
+"coder": 12,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 2
+},
+{
+"f": "w11-wrangling.qmd",
+"course": "mc501",
+"n": 26,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 4
+},
+{
+"f": "w12-describing.qmd",
+"course": "mc501",
+"n": 25,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [],
+"long": 4
+},
+{
+"f": "w13-inferential.qmd",
+"course": "mc501",
+"n": 30,
+"cont": 0,
+"coder": 0,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [
+"Four Groups, Four Means 4/2",
+"One Framework, Three Faces 3/5"
+],
+"long": 3
+},
+{
+"f": "w15-publisher-studio.qmd",
+"course": "mc501",
+"n": 26,
+"cont": 0,
+"coder": 1,
+"foreign": {},
+"close_ok": false,
+"close": "Questions?",
+"mismatch": [
+"Two Payoffs That Matter 2/3",
+"The Three Pre-Flight Checks 3/4"
+],
+"long": 6
+}
+]
