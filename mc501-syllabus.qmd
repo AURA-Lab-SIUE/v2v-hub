@@ -471,7 +471,7 @@ The one exception is the White Paper and poster in finals week.
 | 10 | Oct 28 | Ch 10 The Sample; the pilot; kappa / alpha (Reading: Hayes & Krippendorff (2007), revisit)| Sampling Plan & Pilot |
 | 11 | Nov 4 | Ch 11 [R] Wrangling the Data (Reading: Wickham (2014))| Data Wrangling [R] |
 | 12 | Nov 11 | Ch 12 [R] Describing: descriptive statistics + graphics (Reading: Lakens (2013))| Describing Data [R] |
-| 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* (Reading: Lakens et al. (2018))| Inferencing Data [R] *(due Nov 30, after break)* |
+| 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* (Reading: Lakens et al. (2018))| Inferencing Data [R] |
 | 14 | Nov 25 | **Thanksgiving Break, Nov 23 to 29, no class** | |
 | 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio (Reading: Wasserstein & Lazar (2016))| |
 | 16 | Dec 9 | **Work Session: open lab / support** | |

@@ -54,7 +54,7 @@ makes the methods section writable in December, because by then the trail is alr
 | Monday, November 2 | [Sampling Plan and Pilot, 20 to 30 items](#sampling-plan-and-pilot-20-to-30-items) | Phase III | 75 |
 | Monday, November 9 | [Data Wrangling in R](#data-wrangling-in-r) | Phase IV | 50 |
 | Monday, November 16 | [Describing Data in R](#describing-data-in-r) | Phase IV | 100 |
-| Monday, November 30 | [Inferencing Data in R](#inferencing-data-in-r) | Phase IV | 100 |
+| Monday, November 23 | [Inferencing Data in R](#inferencing-data-in-r) | Phase IV | 100 |
 | Friday, December 18 | [White Paper and conference poster](#white-paper-and-conference-poster) | Phase V | 200 |
 | Every week | [Weekly reading journal](#weekly-reading-journal), 14 entries | Phase I | 140 |
 | End of term | Journal consistency | Phase I | 10 |
@@ -123,7 +123,7 @@ There is **no Week 14** -- that is Thanksgiving.
 | Week 10 | Monday, November 2 |
 | Week 11 | Monday, November 9 |
 | Week 12 | Monday, November 16 |
-| Week 13 | Monday, November 30 |
+| Week 13 | Monday, November 23 |
 | Week 15 | Monday, December 7 |
 
 </details>
@@ -561,7 +561,12 @@ Using `twitch_analysis.RDS`:
 
 ### Inferencing Data in R {#inferencing-data-in-r}
 
-**100 points. Due Monday, November 30, 11:59 PM.** *(Week 13)*
+**100 points. Due Monday, November 23, 11:59 PM.** *(Week 13)*
+
+<!-- DELIBERATE, owner 2026-10-01: November 23 is the Monday of Thanksgiving Break
+     (Nov 23 to 29). The MC 501 students agreed to this deadline. Do not 'fix' it. The
+     Week 13 reading journal is due the same day for the same reason. MC 451 keeps
+     nothing due inside the break. -->
 
 Test the relationship, and report how big it is.
 
