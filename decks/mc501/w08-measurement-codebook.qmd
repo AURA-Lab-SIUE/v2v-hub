@@ -15,7 +15,7 @@ format:
 
 - NOIR, and what each level permits
 - Reliability and validity, kept apart
-- The four-step reliability protocol
+- The reliability protocol, the standard one and yours
 - The codebook, and its five parts
 
 ## Tonight
@@ -105,9 +105,10 @@ A coder can only do that consistently from written instructions.
 
 - **Consistency: the same result under the same conditions**
     - A scale reading 150, then 162, then 147 is worthless
-- **Here it means inter-coder reliability**
-    - Two trained coders, same messages, applied independently
-- **Kappa and alpha correct for chance agreement**
+- **Here it means coder reliability**, in one of two forms
+    - **Intercoder:** two coders, same messages, applied independently
+    - **Intracoder, or stability:** one coder, same messages, twice
+- **Kappa and alpha correct for chance agreement**, either way
 
 ## Validity
 
@@ -124,13 +125,14 @@ Validity is a claim you argue for, not a statistic you compute.
     - The same every time, and wrong every time
 - **Valid and unreliable:** accurate on average
     - So inconsistent a single reading is unusable
-- **Reliability is necessary, not sufficient**
 
-You get reliability first, because the codebook produces it.
+Reliability is necessary and not sufficient, and you get it first, because the codebook is
+what produces it.
 
-## The Protocol, First Half
+## The Standard Protocol, First Half
 
-A complete protocol has four steps, and the order is not optional.
+With two coders, a complete protocol has four steps and the order is not optional. You are
+describing this one in your second-coder counterfactual, so it is worth knowing exactly.
 
 1. The second coder receives the **codebook alone**, with no walk-through, and codes a
    training set of 20 to 30 units independently.
@@ -139,7 +141,7 @@ A complete protocol has four steps, and the order is not optional.
 
 The urge to explain what you meant is what the protocol forbids.
 
-## The Protocol, Second Half
+## The Standard Protocol, Second Half
 
 3. The **codebook is revised**, adding a decision rule for every disagreement.
 4. The second coder codes a **fresh reliability sample**, separate from the training set.
@@ -149,13 +151,25 @@ The urge to explain what you meant is what the protocol forbids.
     - It is contaminated by the reconciliation conversation
 - **Report more than one statistic** (Lombard et al., 2002)
 
+## The Protocol You Will Run
+
+No second coder is available, so you report **stability**, and you say that word.
+
+1. **Re-code at least 20 percent** of your coded items, **48 hours or more** later, with your
+   first codes **hidden**
+2. Draw that sample **fresh**, from items you did not use to build or revise the codebook
+3. **Report the statistic even if it disappoints you**, with the revision rule you would apply
+4. Name **three safeguards** against your own drift, and write the second-coder counterfactual
+
+Stability is a weaker claim than agreement. The protocol is what makes it an honest one.
+
 ## Why the Protocol Exists
 
 > "Conclusions from such data can be trusted only after demonstrating their reliability."
 >
 > Hayes and Krippendorff (2007, p. 77)
 
-- **The four steps are the demonstration that sentence demands**
+- **Either protocol is the demonstration that sentence demands**
 - **Nothing downstream outranks this dependency**
 - A finding on an untested codebook is a number without a warrant
 
@@ -192,7 +206,7 @@ The urge to explain what you meant is what the protocol forbids.
     - For rare codes, 100 or more are preferred
 - **`v2v::reliability()` computes kappa with labels**
 
-Two coders agreeing on 40 of 50: does that clear the bar?
+Your two passes agreeing on 40 of 50: does that clear the bar?
 
 ## The Codebook Is the Instrument
 
@@ -200,7 +214,7 @@ Two coders agreeing on 40 of 50: does that clear the bar?
 - **The useful analogy is source code**
     - If coding were a program, the codebook is the program
     - It specifies every operation and every conditional
-    - Two coders running it on one input agree
+    - The same input, run twice, gives the same output
 - The heart of a content analysis (Neuendorf, 2017)
 
 ## Five Parts of a Codebook
