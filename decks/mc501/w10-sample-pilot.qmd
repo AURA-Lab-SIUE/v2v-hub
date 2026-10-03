@@ -127,25 +127,28 @@ them gives a study that is coherent and indefensible.
 
 - **A trial run before the real coding begins**
     - A hundred messages is a reasonable size
-    - Two people, the same codebook, then a comparison
+    - The same codebook applied twice, then a comparison
 - **The question it answers**
     - Applied independently, do these rules give the same codes?
 
-Reliability is the property that the codebook answers the same whoever holds it.
+Reliability is the property that the codebook answers the same whoever holds it, and the
+same when you come back to it.
 
 ## Independence Carries the Logic
 
-- **No conferring, no comparing, no checking as they go**
+- **No conferring, no comparing, no checking against the first pass**
     - Not suspicion: the pilot measures the codebook
-- **Discuss a hard message and you measure their memory**
+- **Read your earlier codes and you measure your memory**
     - Not the clarity of the written rules
+- **Coding yourself twice, the isolation is the gap and the blind**
+    - At least 48 hours, with the first codes out of sight
 - **The rules must carry a classification alone**
 
 Build the isolation into your protocol, and say so in the write-up.
 
 ## Why Raw Agreement Is Not Enough
 
-- **Two coders match on 74 of 100, which sounds respectable**
+- **The two passes match on 74 of 100, which sounds respectable**
 - **Cohen's 1960 example:** two clinicians assigning blindly
     - At the observed rates, they still agree often
 - **That reflects the number of categories, not judgment**
@@ -176,7 +179,8 @@ Few categories, or one dominant category, and coincidences pile up fast.
 
 ## Cohen's Kappa
 
-- **Built for two coders and a nominal codebook** (Cohen, 1960)
+- **Built for two sets of codes and a nominal codebook** (Cohen, 1960)
+    - Two coders, or one coder twice. The arithmetic does not care
 - **Observed agreement, less chance, over the room left**
     - `kappa = (observed - expected) / (1 - expected)`
 - **No better than chance:** kappa is zero, whatever the raw rate
@@ -201,13 +205,13 @@ pilot <- coding_sample %>%
   slice_head(n = 100)
 
 v2v::reliability(
-  pilot$coder_a,
-  pilot$coder_b,
+  pilot$pass_1,
+  pilot$pass_2,
   method = "alpha"
 )
 ```
 
-Take the first hundred messages, hand the two coders' columns to `reliability()`, and ask
+Take the first hundred messages, hand your two columns of codes to `reliability()`, and ask
 for alpha rather than kappa.
 
 ## A Worked Failure
@@ -218,7 +222,7 @@ for alpha rather than kappa.
 - **Both readings are reasonable**, and both believed they coded one variable
 
 ```
-Inter-coder reliability: Cohen's kappa
+Reliability: Cohen's kappa
 
   Messages coded   100
   Cohen's kappa    0.236
@@ -247,7 +251,7 @@ Name your threshold in advance, not after seeing the number.
 ## When Reliability Fails
 
 - **0.236 is an instruction, not a result**
-    - The coders finally meet and walk every disagreement
+    - Walk every disagreement with the written rule in front of you
     - **The disagreements are the data**
 - **Repair: state operationally what counts**
 - **Then pilot again**, on fresh messages
@@ -260,7 +264,7 @@ Pilot, diagnose, revise, repeat, until it clears your threshold.
 
 - **The sampling frame and strata**, and why each matters
 - **The target n per stratum**, the floor rule, and the seed
-- **The pilot protocol:** how many units, how coders were isolated
+- **The pilot protocol:** how many units, and how the passes were kept blind
 - **The coefficient**, which one, and the threshold set beforehand
 - **If it failed:** the diagnosis and the revision it produced
 

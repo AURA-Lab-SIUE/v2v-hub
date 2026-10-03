@@ -61,7 +61,8 @@ format:
 - **R:** the language that does the counting and the statistics
 - **Quarto:** the publishing system that turns source into finished output
 - **Git and GitHub:** version control and a home for the history
-- Each produces a **plain-text record** of what you did
+
+Each of the four produces a plain-text record of what you did.
 
 ## Why R, why Quarto
 

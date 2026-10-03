@@ -36,8 +36,8 @@ format:
 - **Content analysis** is the method: turning messages into countable, defensible data
 - **Phase one is qualitative.** You read real chat closely until you can say what is
   there, and write the memo that becomes your codebook
-- **Phase two is quantitative.** You and a second coder apply that codebook, prove you
-  agree on the numbers, and test relationships in R
+- **Phase two is quantitative.** You apply that codebook, re-code a share of it later to
+  show your own coding held steady, and test relationships in R
 - Every assignment this term is one piece of that study, in the order you need it
 
 ## The road from curiosity to claim

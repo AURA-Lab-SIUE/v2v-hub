@@ -281,10 +281,12 @@ found, cast as a baseline plus an adjustment.
 
 - **A t-test is a regression with one two-level predictor**
 - **An ANOVA is one with a many-level predictor**
-- **All three are the general linear model**
-- **The regression's `t` differs from Welch's** because it pools the spreads
+- **A regression is the general form**
+    - Its `t` differs from Welch's because it pools the spreads
     - The coefficient itself is identical
-- **R² is about 0.001**, so gaming status explains almost nothing
+    - **R² is about 0.001**, so gaming status explains almost nothing
+
+All three are the general linear model, wearing three different names.
 
 ## Residuals, and Earning a Predictor
 

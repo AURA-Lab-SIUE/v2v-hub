@@ -33,21 +33,22 @@ This session can send you back to Chapter 8, and that is fine.
 
 - **A trial run before any real coding begins**
     - Take a subset of the sample, a hundred messages
-    - Two people code it from the **same codebook**
-    - Then their codes are compared
+    - Code it from the **same codebook**, twice
+    - Then the two sets of codes are compared
 - **The question:** do the same rules produce the same classifications?
 
 ## Independently, and Why
 
-- **Genuine isolation: no conferring, no comparing**
-    - Not suspicion: the pilot measures the codebook, not the coders
-- **Discuss a hard message and you measure memory**
+- **Genuine isolation: no conferring, no comparing, no looking back**
+    - Not suspicion: the pilot measures the codebook, not the coder
+- **Reread your first codes and you measure memory**
     - Only independent coding tests the written rules
-- **Reliability is consistency**, whoever holds the codebook
+    - Coding it yourself twice, that means a gap and a blind
+- **Reliability is consistency**, whoever holds the codebook and whenever
 
 ## The Obvious Number
 
-- **The two coders agreed on 74 of 100**
+- **The two passes agreed on 74 of 100**
     - Seventy-four percent sounds respectable
 - **It is also misleading**
     - Seeing why is the key idea of the chapter
@@ -56,7 +57,7 @@ This session can send you back to Chapter 8, and that is fine.
 ## Your Turn {.discuss}
 
 - Is 74 percent good enough to start on? Commit to an answer
-- Two coders flipping coins on two categories agree how often?
+- Two coin flips on two categories agree how often?
 - What if both use one category 90 percent of the time?
 - What number would satisfy you, and where did it come from?
 
@@ -80,7 +81,8 @@ produced, and credits the codebook only with the difference.
 
 - **No better than chance:** the numerator is zero, so kappa is zero
 - **Perfect agreement:** kappa is one
-- **Built for two coders and nominal categories**
+- **Built for two sets of codes and nominal categories**
+    - Two coders, or one coder twice
 
 ## Krippendorff's Alpha
 
@@ -94,10 +96,10 @@ produced, and credits the codebook only with the difference.
 ## Running the Check
 
 ```r
-v2v::reliability(pilot$coder_a, pilot$coder_b, method = "kappa")
+v2v::reliability(pilot$pass_1, pilot$pass_2, method = "kappa")
 ```
 
-`reliability()` takes the two coders' columns of codes and returns the coefficient, with
+`reliability()` takes two columns of codes and returns the coefficient, with
 `method = "kappa"` or `method = "alpha"` selecting which one.
 
 The `$` pulls a single named column out of a table.
@@ -105,7 +107,7 @@ The `$` pulls a single named column out of a table.
 ## The Result
 
 ```
-Inter-coder reliability: Cohen's kappa
+Reliability: Cohen's kappa
 
   Messages coded   100
   Cohen's kappa    0.236
@@ -142,8 +144,8 @@ on, with **0.80** a comfortable floor.
 ## Diagnose, Revise, Re-Pilot
 
 - **A kappa of 0.236 is an instruction, not a result**
-- **The two coders finally meet**
-    - They walk the messages they classified differently
+- **Go back to the messages that split**
+    - Walk each one with the written rule in front of you
     - **The disagreements are the data**
 - **Repair the rule in writing**, then pilot again
 
@@ -163,10 +165,10 @@ Run `?v2v::common_errors` for the ones specific to this data.
 
 You should now have:
 
-- A hundred-message pilot, coded independently by two people
+- A hundred-message pilot, coded independently twice
 - A `v2v::reliability()` call that runs and returns a number
 - A written note on whether it clears **0.70**
-- The list of messages the coders split on, your revision list
+- The list of messages the two passes split on, your revision list
 - If you failed, a revised rule for each disagreement
 
 ## Before Next Time

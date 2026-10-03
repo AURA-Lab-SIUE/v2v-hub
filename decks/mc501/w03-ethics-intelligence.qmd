@@ -199,8 +199,8 @@ Change one thing about the data and the answer flips. Then the tiers apply.
   private, even though those people chat publicly elsewhere.
 - **An internal moderation log with platform flags on users.** Classifications attached to
   identified people. Full board, most likely.
-- The narrowness of our corpus is what keeps it outside the definition, and that narrowness
-  was designed rather than lucky
+The narrowness of our corpus is what keeps it outside the definition, and that narrowness
+was designed rather than lucky.
 
 ## When the reporting goes wrong
 

@@ -159,7 +159,8 @@ On Cohen (1992), "A power primer":
 - **Methodological gap**: studied, but with methods carrying an important limitation
 - **Contradiction**: two well-designed studies reaching opposite conclusions
 - **Theoretical gap**: explained through one lens where another would show more
-- One caution on the void: what looks novel is usually covered under other terminology
+
+One caution on the void: what looks novel is usually covered under other terminology.
 
 ## Articulating the gap
 
@@ -242,8 +243,9 @@ The theory does not change. The domain does. That is what makes it testable.
   Asks "what does X mean to the people who experience it?"
 - **Critical and cultural**: power shapes what counts as knowledge. Asks "whose interests
   does X serve, and whose voices are silenced?"
-- Each treats theory differently: as a source of predictions, as an outcome of observation,
-  or as a tool for exposing structure
+
+Each treats theory differently: as a source of predictions, as an outcome of observation,
+or as a tool for exposing structure.
 
 ## Grand and middle-range
 

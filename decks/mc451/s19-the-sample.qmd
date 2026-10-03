@@ -156,7 +156,7 @@ The number 409 is arbitrary. What matters is that one is set and recorded.
 
 - **You have a sample, and an untested codebook**
 - **Thursday is the pilot**
-    - Two coders, the same hundred messages, no conferring
+    - The same hundred messages coded twice, your first codes hidden
     - We compute **Cohen's kappa** and watch a codebook fail
 - **Read** Chapter 10's second half before Thursday
 - **Bring your codebook**, because it is what goes on trial

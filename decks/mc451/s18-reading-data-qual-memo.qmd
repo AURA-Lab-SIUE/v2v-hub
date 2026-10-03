@@ -93,7 +93,7 @@ Your codebook has to meet the data as it is.
 - **Same name, different casing**
     - The display name typed against the stored login name
 - **A rule keyed on the channel name will miss it**
-- Two coders resolve this differently unless you decide
+- You will resolve this two ways on two days unless you decide now
 
 ## Turning a Wrinkle Into a Rule
 
@@ -174,6 +174,6 @@ You should now have:
     - Render the codebook before you submit it
 - **Read** Chapter 10, The Sample
 - **Next Tuesday:** why you cannot code all 35,267 messages
-    - Then your codebook goes on trial, two coders, one number
+    - Then your codebook goes on trial, coded twice, one number
 
 ## Questions, Comments, or Concerns? {.titlecard}

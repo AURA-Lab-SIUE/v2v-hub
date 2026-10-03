@@ -78,11 +78,9 @@ time rather than pasted in.
 - **The report cannot drift**, because it is the analysis
 - **The report can be checked**
     - Anyone with the source and data renders the same results (Peng, 2011)
-- **The idea predates Quarto and R**
-    - Runnable code and its prose in one document
-    - Knuth named it **literate programming** in 1984
 
-The "one click" is the render button.
+The idea predates Quarto and R. Runnable code and its prose in one document is what Knuth
+named literate programming in 1984, and the "one click" is the render button.
 
 ## IMRaD, and What Each Section Owes
 
@@ -107,7 +105,7 @@ Converting results into IMRaD costs something. Ask what is lost, and what must b
 ## Methods, Three Transparency Markers
 
 1. A **data provenance** statement: where the data came from, and how
-2. An **intercoder reliability** report: coefficient, protocol, threshold
+2. A **reliability** report: coefficient, protocol, threshold, and which kind it is
 3. The **pre-registration disclosure**, with its OSF URL
 
 Each signals that the study meets the standard it claims. Anything beyond the plan is
@@ -199,10 +197,9 @@ Live at: https://username.github.io/twitch-chat-study/
 - **renv in sync:** built with the versions the source declares
 - **No uncommitted changes:** live matches what is saved
 - **`_quarto.yml` valid:** the render will not fail partway
-- **Each heads off a demoralizing failure**
-    - The last being a collapse the night a portfolio is due
 
-The checks exist so the last step of a long study is the calm one.
+Each heads off a demoralizing failure, the last being a collapse the night a portfolio is
+due. The checks exist so the last step of a long study is the calm one.
 
 ## The Poster
 

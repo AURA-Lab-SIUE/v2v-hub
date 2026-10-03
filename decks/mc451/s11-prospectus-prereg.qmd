@@ -19,7 +19,7 @@ format:
 - A failed draft, and the feasibility test
 - Pre-registration, and what it binds
 
-## One Page, Six Decisions
+## One Page, Due Next Week
 
 [The prospectus]{.eyebrow}
 
@@ -33,11 +33,13 @@ format:
 
 ## The Six Components
 
-- **Title and questions:** one line, then one to three
+- **Title:** one line, hinting at the key variables
+- **Questions:** one to three
     - Not ten questions
-    - The title hints at the key variables
-- **Framework and gap:** two to three sentences each
-- **Method and contribution:** three to four, then one to two
+- **Framework:** two to three sentences
+- **Gap:** two to three sentences
+- **Method:** three to four sentences
+- **Contribution:** one to two sentences
 
 ## Title and Question
 
@@ -63,12 +65,12 @@ Between them they have already ruled out most of what you could have done, which
 ## Method in Four Sentences
 
 - **Sample and unit:** 1,500 messages, stratified
-    - Balanced across gaming and non-gaming
-    - The unit of analysis is each message
-- **Coding and reliability:** three categories, one check
+    - Balanced across gaming and non-gaming, each message a case
+- **Coding:** three categories
     - Directed, broadcast, or unclassifiable
-    - Second coder on 10 percent, Krippendorff's alpha
-- Then the directed proportion gets compared
+- **Reliability:** stability on 20 percent, re-coded after 48 hours
+    - Krippendorff's alpha, with the threshold set first
+- **Comparison:** the directed proportion, between the two groups
 
 ## Your Turn {.discuss}
 
@@ -94,7 +96,7 @@ Same corpus. Different study entirely.
 - **Three markers, coded present or absent**
     - Second-person address, familiarity, emotional disclosure
 - **Reliability and comparison**
-    - Second coder on 10 percent, Krippendorff's alpha
+    - Stability on 20 percent re-coded after 48 hours, Krippendorff's alpha
     - Each marker's rate compared between groups
 
 ## Pick the Workload
