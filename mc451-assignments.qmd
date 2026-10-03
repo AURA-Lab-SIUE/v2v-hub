@@ -400,6 +400,8 @@ measure; an operational definition with no conceptual definition is a procedure 
 lost track of why it exists. That is how a study ends up precisely measuring something
 nobody wanted to know.
 
+**Check it before you submit.** [Codebook Check](https://aura-lab.siue.edu/codebook-check/) reads a pasted definition block and reports which variables are missing a conceptual or an operational definition, a level of measurement, or a catch-all category. It checks structure, it does not grade, and nothing you paste leaves your machine.
+
 </details>
 
 ### Codebook and Qualitative Memo {#codebook-and-qualitative-memo}
@@ -437,6 +439,8 @@ Build the instrument, and write down what watching taught you.
 **The qualitative memo** is **200 to 300 words** describing the patterns you observed
 during immersion. It is the written record of what your Chapter 7 watching actually
 taught you, and it explains *why* your codebook has the categories it has.
+
+**Check it before you submit.** [Codebook Check](https://aura-lab.siue.edu/codebook-check/) reads a pasted codebook and reports what this assignment asks for that your draft does not have yet: a unit of analysis stated once, both definitions on every variable, a declared level of measurement, a catch-all category so the scheme is exhaustive, a description on every category, category pairs that may overlap, decision rules, and examples. It checks structure, it does not grade, and nothing you paste leaves your machine.
 
 </details>
 
@@ -501,6 +505,10 @@ Two rules override the table.
 **This table is a planning estimate, not your final number.** Your exact sample size gets set with me once your topic and questions are in, and it is confirmed at the prospectus. Until then, plan from the table and say in the document which row you used.
 
 **Note.** This is due the same day as Data Wrangling. Draft it during Week 10.
+
+**Check it before you submit.** [Sampling Check](https://aura-lab.siue.edu/sampling-check/) turns your own coding rate and available hours into the corpus size they support, sizes the reliability subset from your rarest category rather than from a flat percentage, and reports the smallest effect a sample that size could detect, which is a limitation worth knowing before you collect rather than after. Nothing you enter leaves your machine.
+
+**And once the pilot is coded twice,** [Agreement Check](https://aura-lab.siue.edu/agreement-check/) takes your two passes as two columns and returns percent agreement, the statistic with its threshold, and the list of items the two passes disagree on, which is what your revision rule acts on. Set it to one coder, two passes. It does not grade, and nothing you paste leaves your machine.
 
 </details>
 
@@ -601,6 +609,8 @@ Test the relationship, and report how big it is.
 **Where it comes from.** Sessions 25 and 26, Chapter 13. **What it feeds:** the Results and Discussion sections.
 
 **How this loses points.** Reporting p and stopping. The effect size is worth twice the test statistic here, on purpose: a p-value says something happened, and only the effect size says whether it matters.
+
+**Check it before you submit.** [Inferential Check](https://aura-lab.siue.edu/inferential-check/) recomputes a chi-square or a t test from your own table or group figures and returns the statistic, the degrees of freedom, p, the effect size, the assumptions your data may be breaking, and the APA sentence to compare against what you wrote. It is a second opinion on your R output, not a replacement for it, and nothing you enter leaves your machine.
 
 </details>
 

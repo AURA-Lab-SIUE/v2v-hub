@@ -198,6 +198,24 @@ Reach out to Dr. Leith early. The phases are structured but timelines can flex.
 
 ---
 
+## Check your own work
+
+Four pages built for this course. Each one runs in your browser: no account, no install, nothing
+uploaded, and nothing you paste is seen by anyone. They check structure and arithmetic, they never
+grade, and using one is not required.
+
+- [Codebook Check](https://aura-lab.siue.edu/codebook-check/) reports what your codebook is missing
+  against what the assignment asks for, including category pairs that may overlap.
+- [Agreement Check](https://aura-lab.siue.edu/agreement-check/) takes two columns of codes and
+  returns percent agreement, the reliability statistic, and the items the two passes split on. It
+  handles one coder at two times, which is the stability this course asks for.
+- [Sampling Check](https://aura-lab.siue.edu/sampling-check/) turns your own coding rate into a
+  corpus size, sizes the reliability subset, and reports the smallest effect that sample could find.
+- [Inferential Check](https://aura-lab.siue.edu/inferential-check/) recomputes your chi-square or t
+  test from your own numbers and gives you the APA sentence to check your write-up against.
+
+---
+
 ## Third-party learning resources
 
 - [R for Data Science](https://r4ds.hadley.nz/) is a free, well-written R guide.
