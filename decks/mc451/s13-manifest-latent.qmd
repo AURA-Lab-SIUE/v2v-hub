@@ -20,9 +20,9 @@ format:
 
 ## The Argument You Will Have
 
-- **You and a second coder will disagree**
-    - Same chat message, two readings
-    - Neither of you is wrong, exactly
+- **You will disagree with yourself**
+    - Same chat message, two readings, a week apart
+    - Neither reading is wrong, exactly
 - **Today is about seeing it coming**
     - Build the codebook that settles it in advance
     - Not at eleven at night in November
@@ -33,11 +33,13 @@ You leave having sorted your field notes into the easy half and the hard half.
 
 [Krippendorff, 2018]{.eyebrow}
 
-- **The split sits at the center of codebook design**
 - **Manifest content:** what is explicitly on the surface
+    - Countable almost mechanically, given one clear rule
 - **Latent content:** the underlying meaning
     - It takes interpretation to reach
-- Most first codebooks treat a latent variable as manifest
+
+The split sits at the center of codebook design, and most first codebooks treat a latent
+variable as manifest.
 
 ## Manifest Content
 
@@ -74,7 +76,7 @@ Features you cannot read off the surface:
 ## Your Turn {.discuss}
 
 - From your field notes, name one clearly **manifest** thing
-- Name one clearly **latent**, and how a second coder might differ
+- Name one clearly **latent**, and how you might code it two ways
 - What surface feature could stand as evidence for the latent one?
 
 ## Sorting Your Notes
@@ -177,7 +179,7 @@ Those four are the raw material of a codebook, which is what you build next.
 - **Finish your notes and edge-case log**
     - Three or more sessions, big and small, gaming and not
     - Mark each entry manifest or latent
-    - Star the three a second coder will fight you on
+    - Star the three you expect to argue with yourself about
 - **Write two or three candidate questions**
     - Grounded in what you saw, not what you assumed
 - **Read** Chapter 8, through how operationalization fails

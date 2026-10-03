@@ -78,7 +78,7 @@ Then the coder meets real messages:
 - A viewer types "no way that just happened."
 
 Each could be aimed at the streamer, the room, or another viewer. The coder guesses, and
-two coders guess differently.
+the same coder guesses differently on a different day.
 
 ## The Better Attempt
 
@@ -100,11 +100,14 @@ Specify observable criteria:
 
 ## Two Definitions, Working Together
 
-- **A conceptual definition says what it means**
+- **The conceptual definition says what it means**
     - What is this variable meant to capture?
-- **For message target:** the intended addressee of a message
+    - For message target: the intended addressee of a message
     - Participation with the streamer, the collective, or one viewer
-- That is clear about the idea, and **not yet a recipe**
+- **The operational definition says what a coder does**
+    - The recipe, which is the next slide
+
+The conceptual half is clear about the idea, and **not yet a recipe**.
 
 ## The Operational Definition Is the Recipe
 
