@@ -114,20 +114,23 @@ For the second kind, operationalization is most of the work.
 - **Reliability is consistency:** same conditions, same result
     - A scale reading 150, then 162, then 147 is worthless
     - Whatever you actually weigh
-- **Here it means inter-coder reliability**
-    - Two trained coders, same messages, independently
+- **Here it means coder reliability**, and it comes in two forms
+    - **Intercoder:** two coders, same messages, independently
+    - **Intracoder, or stability:** one coder, same messages, twice
+- **You are the only coder**, so stability is the one you can report
+    - A weaker claim than agreement, and you say so in those words
 - Without it, nothing downstream repairs the codebook
 
 ## Correcting for Chance
 
 - **Agreement statistics correct for luck**
-    - Two coders agree sometimes by chance alone
+    - Any two passes land on the same code sometimes by chance
 - **Cohen's kappa and Krippendorff's alpha**
     - The two you will meet
 - **Raw percent agreement flatters you**
     - Especially when one category is common
 
-A codebook's job is to make independent coders agree.
+A codebook's job is to make independent passes agree, whoever makes them.
 
 ## Validity
 

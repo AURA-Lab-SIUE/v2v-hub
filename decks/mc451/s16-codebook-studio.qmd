@@ -35,10 +35,10 @@ format:
     - Not paperwork assembled afterward
 - **Think of it as source code**
     - It specifies every operation and every conditional
-    - Two coders running it on one input agree
+    - The same input, run twice, gives the same output
 - The heart of a content analysis (Neuendorf, 2017)
 
-Its clarity is the strongest predictor of whether coders agree.
+Its clarity is the strongest predictor of whether two passes agree.
 
 ## Five Parts
 
@@ -121,7 +121,7 @@ From the model codebook:
     - Format: the ambiguous case, then the single action
     - "Use your judgment" is not a rule
 - **Start with the three you starred**
-    - The ones most likely to split two coders
+    - The ones most likely to go two ways on two different days
 - Aim for four to six rules
 
 ## Step 4, Examples and Special Cases
@@ -129,7 +129,7 @@ From the model codebook:
 - **Two or three prototypical cases per category**
     - Invented is fine, real messages are better
 - **Examples do double duty**
-    - A reference for coding, and training for a second coder
+    - A reference while you code, and a check when you re-code
 - **Special cases stays thin today**
     - Leave the heading in the file, empty, as a reminder
 
