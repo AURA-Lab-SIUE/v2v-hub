@@ -43,8 +43,8 @@ White Paper at a public address anyone can open.
 </li>
 <li>
   <span class="syl-fact-label">Office hours</span>
-  <span class="syl-fact-value"><strong>Tu / Th, 12:30 to 2:45 in person, or remote Tu/W/Th 3:00 to 5:00 PM by appointment</strong></span>
-  <span class="syl-fact-note">Dunham Hall 1017, drop in, or by appointment</span>
+  <span class="syl-fact-value"><strong>In person Tu / Th, 12:30 to 1:45 PM; remote Tu / W / Th, 3:30 to 5:00 PM</strong></span>
+  <span class="syl-fact-note">Dunham Hall 1017, drop in; remote over Teams by appointment</span>
 </li>
 <li>
   <span class="syl-fact-label">Email</span>
@@ -82,8 +82,10 @@ walkthrough.</p>
 
 ## How to reach me
 
-- **Office hours** are the primary support channel. Drop in during the times
-  above in Dunham Hall 1017, or schedule an appointment.
+- **Office hours** are the primary support channel. In person Tuesday and
+  Thursday, 12:30 to 1:45 p.m., Dunham Hall 1017, drop in. Remote Tuesday,
+  Wednesday and Thursday, 3:30 to 5:00 p.m. over Teams, by appointment through
+  Microsoft Bookings or by email.
 - **Email** ([aleith@siue.edu](mailto:aleith@siue.edu)) is preferred for
   time-insensitive and confidential communication, such as grades or
   accommodations. Expect a response within 24 hours on weekdays.
