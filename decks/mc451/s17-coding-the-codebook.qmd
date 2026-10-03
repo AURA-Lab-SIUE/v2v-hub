@@ -138,6 +138,8 @@ $ date    <dbl> 1542578127023, 1542578135562, 1542578143610, …
 
 ## Looking, the Stream Table
 
+[The table from week 2, now through R]{.eyebrow}
+
 ```r
 glimpse(streams)
 ```
