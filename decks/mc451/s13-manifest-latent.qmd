@@ -22,10 +22,11 @@ format:
 
 - **Both rounds of this study are content analysis**
     - You build a codebook, then you apply it
-    - No surveys, no interviews, no focus groups
+- **This project collects no survey or interview data**
+    - So your unit is an artifact that already exists
+    - Content analysis itself can code interview text; we just have none
 - **If your unit is a person, the question needs rewriting**
-    - You cannot ask them anything
-    - Move the unit from the person to the message
+    - Move the unit from the person to the thing they made
 - **Three questions is a ceiling, not a target**
     - Eight questions means none has been chosen yet
 - **One coder means stability, not agreement**
