@@ -72,6 +72,19 @@ Between them they have already ruled out most of what you could have done, which
     - Krippendorff's alpha, with the threshold set first
 - **Comparison:** the directed proportion, between the two groups
 
+## Two Scales, One Set of Mechanics
+
+- **1,500 messages is what a publishable study of this kind costs**
+    - That is the scale these worked examples are written at
+    - It is why the method paragraph reads the way it does
+- **Your project runs the same mechanics at a smaller scale**
+    - Two to four hours of coding, 250 items at 45 seconds
+    - Fifty coded units is the floor
+- **Nothing about the method changes with the number**
+    - Same stratification, same codebook, same stability check
+
+Read the examples for their moving parts, and take your own size from your budget.
+
 ## Your Turn {.discuss}
 
 - Name the single comparison you will make

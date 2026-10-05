@@ -45,7 +45,8 @@ The stream table is close to a census: roughly 32,000 snapshots, all kept.
     - The ordinary condition of content analysis
 - **A sample makes the work finite**
     - Without making the conclusions worthless
-- **1,500 messages can be sound or misleading**
+- **A sample of any size can be sound or misleading**
+    - 1,500 messages or 250, the method is what decides it
 
 The difference is method, which means you decide it rather than get lucky.
 
@@ -140,7 +141,10 @@ coding_sample <- v2v::sample_messages(chat, by = channel, n = 30)
 `by = channel` makes each channel a stratum and `n = 30` asks for thirty messages from each,
 which across fifty channels aims at roughly 1,500 messages.
 
-That is large enough to support the study and small enough to code by hand.
+That is a professional-scale draw: large enough to support the study, and hand-codeable by a team
+working at that scale. Yours is the same draw at your own budget. At 45 seconds a message 1,500 is
+over eighteen hours, so lower `n` until the arithmetic fits: `n = 5` across fifty channels is 250
+messages, about three hours, and it is still stratified.
 
 ## Why `set.seed()` Is Not Optional
 
