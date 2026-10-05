@@ -164,7 +164,7 @@ A codebook is the instrument that produces it.
 
 - **Due this week:** Definitions Practice
     - Include the level of measurement for every variable
-- **Bring** your three variables, categories, and edge-case log
+- **Bring** your four variables, categories, and edge-case log
     - We meet as a **studio**, and you leave with a draft codebook
 - **Re-read** the model codebook in Chapter 8
 - Have your field notes open and searchable

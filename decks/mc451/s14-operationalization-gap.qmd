@@ -169,7 +169,7 @@ The conceptual half is clear about the idea, and **not yet a recipe**.
 
 ## Before Next Time
 
-- **Pick three variables** from your field notes
+- **Pick four variables** from your field notes
     - Write conceptual and operational definitions side by side
     - Run each past the four failures and name the closest
 - **Due this week:** the Project Prospectus

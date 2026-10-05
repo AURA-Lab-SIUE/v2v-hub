@@ -24,7 +24,7 @@ format:
 - Every source goes in as you find it, with the PDF attached
 - **Tag freely.** Tags cost nothing and they are how themes surface later.
 - Notes go on the item itself, not in a separate document you will lose
-- Zotero writes your citations and reference list in APA when you get there
+- Zotero writes your citations and reference list in whichever style you pick, and keeps it consistent
 - Being casual about this now costs you a week of re-finding sources in November
 
 ## The literature map

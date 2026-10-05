@@ -84,7 +84,7 @@ For each variable, write both, in this order:
 - **Level:** nominal, ordinal, interval, or ratio
 - **Categories:** each with a one-line description
 
-Aim for three variables. Three is the floor for a workable study.
+Aim for four variables. Four done properly is the assignment, and more earns no extra credit.
 
 ## Model Codebook, Variable 1
 
@@ -172,7 +172,7 @@ Every one of these turns up today, which is why this is a studio and not a readi
 You should now have a file containing:
 
 - One unambiguous **unit of analysis**
-- **Three variables**, each defined twice, with a level and categories
+- **Four variables**, each defined twice, with a level and categories
 - Categories that are exhaustive and mutually exclusive
 - **Four to six decision rules**, each traceable to an observation
 - Two or three **examples** per category, and an empty heading

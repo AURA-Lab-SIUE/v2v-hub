@@ -32,7 +32,7 @@ This session can send you back to Chapter 8, and that is fine.
 ## What a Pilot Test Is
 
 - **A trial run before any real coding begins**
-    - Take a subset of the sample, a hundred messages
+    - Take a subset of the sample, ten to twenty items
     - Code it from the **same codebook**, twice
     - Then the two sets of codes are compared
 - **The question:** do the same rules produce the same classifications?

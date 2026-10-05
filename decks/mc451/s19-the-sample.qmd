@@ -18,12 +18,12 @@ format:
 - Strata, and choosing ones that matter
 - Drawing the sample reproducibly
 
-## A Hundred Hours of Coding
+## Four Hundred Hours of Coding
 
 [Do the arithmetic first]{.eyebrow}
 
-- **One message every ten seconds, by hand**
-    - The 35,267 in the working sample take a hundred hours
+- **One message every forty-five seconds, by hand**
+    - The 35,267 in the working sample take over four hundred hours
     - The full 2018 collection would outlast your degree
 - **So you will code a sample**
 
@@ -160,7 +160,7 @@ The number 409 is arbitrary. What matters is that one is set and recorded.
 
 - **You have a sample, and an untested codebook**
 - **Thursday is the pilot**
-    - The same hundred messages coded twice, your first codes hidden
+    - Ten to twenty items coded twice, your first codes hidden
     - We compute **Cohen's kappa** and watch a codebook fail
 - **Read** Chapter 10's second half before Thursday
 - **Bring your codebook**, because it is what goes on trial
