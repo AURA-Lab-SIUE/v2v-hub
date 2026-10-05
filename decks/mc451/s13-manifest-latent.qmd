@@ -235,6 +235,8 @@ Those four are the raw material of a codebook, which is what you build next.
     - Budget two to four hours of coding
     - 250 chat messages at 45 seconds is about three hours
     - Fifty coded units is the floor
+- **The table is a planning estimate, not your final number**
+    - Say which row you used; we set the real one together
 - **Going over one page is a diagnostic, not a formatting error**
 
 Full requirements, with the sizing table: `aura-lab.siue.edu/v2v-hub/mc451-assignments.html`
