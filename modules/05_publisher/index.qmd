@@ -22,7 +22,7 @@ By the end of Phase V, you will:
 :::{.learning-objectives}
 - Assemble a complete IMRaD research report from the work of the previous four phases
 - Render your report from source, with no pasted numbers, to both a PDF and a live web address
-- Manage citations in APA 7th edition
+- Manage citations in one consistently applied style (MC 501: APA 7th edition)
 - Deploy your paper to GitHub Pages
 - Write honestly about what your study could and could not establish
 :::
@@ -119,7 +119,7 @@ Both must be present for the submission to be considered complete.
 | Methods | 60 | Says exactly what was done, in enough detail that another researcher could repeat it: the codebook, the sampling procedure, the reliability check, and the wrangling steps. |
 | Results | 50 | Reports what was found, plainly and without interpretation: distributions, group means, the test statistic with its degrees of freedom, its p-value, and its effect size. Figures are labeled and captioned. |
 | Discussion | 50 | Says what the results mean, answers the question the introduction asked, and states the study's limits honestly. Effect size is characterised accurately rather than inflated. |
-| Abstract and references | 20 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
+| Abstract and references | 20 | The abstract summarises all four sections. References are complete, in one consistently applied citation style of the student's choosing, and carry enough detail to find each source. |
 | Reproducibility and publication | 25 | The document renders from source with no pasted numbers, and is live at a public address. |
 | Reflection | 15 | One specific paragraph naming what proved harder than expected, where a rule was ambiguous in practice, what the data could not answer, and what a second attempt would change. |
 
@@ -138,7 +138,7 @@ You produce a **white paper plus an academic conference poster**. The white pape
 - an **explicit limitations analysis**, not a limitations sentence
 - professional formatting suitable for conference submission or client delivery
 
-The paper carries the three transparency markers a reviewer looks for: a **data provenance statement**, an **intercoder reliability report** giving the kappa value with the training protocol and the threshold applied, and the **pre-registration disclosure** with its OSF URL.
+The paper carries the three transparency markers a reviewer looks for: a **data provenance statement**, a **coder reliability report** giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the **pre-registration disclosure** with its OSF URL.
 
 ### The conference poster
 
@@ -161,7 +161,7 @@ All three must be present for the submission to be considered complete.
 | Component | Points | Full marks means |
 |:--|:--|:--|
 | Introduction and framing | 25 | States the question and why it is worth asking, and situates it in the theoretical literature rather than gesturing at it. |
-| Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, an intercoder reliability report giving the kappa value with the training protocol and threshold applied, and the pre-registration disclosure with its OSF URL. |
+| Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, a coder reliability report giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the pre-registration disclosure with its OSF URL. |
 | Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labeled and captioned. |
 | Discussion | 40 | Interprets the findings, situates them within the theoretical literature, distinguishes statistical significance from practical size, and states the limits. |
 | Abstract and references | 15 | The abstract summarises all four sections. References are complete and in APA 7th edition. |

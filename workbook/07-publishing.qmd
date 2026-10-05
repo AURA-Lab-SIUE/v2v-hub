@@ -144,7 +144,7 @@ Aim for roughly 400 to 600 words. Methods carries the single largest block of po
 Methods carries three **transparency markers**, and each is checked explicitly:
 
 1. **A data provenance statement**: the source, the access method, and the collection window, stated so a reader can reconstruct the dataset.
-2. **An intercoder reliability report**: the kappa value, the training protocol that produced it, and the threshold you applied before coding the full sample.
+2. **A coder reliability report**: your intracoder stability figure, the re-code procedure that produced it, and the threshold you applied before coding the full sample. You are the only coder, so name the single-coder limitation as such.
 3. **A pre-registration disclosure with its OSF URL**, including anything you changed after registering and why.
 
 A Methods section missing any of the three is incomplete regardless of how well the rest reads.

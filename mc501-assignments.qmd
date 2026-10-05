@@ -409,7 +409,7 @@ Build the instrument, then write the protocol that says how you will know it sta
 
 Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a qualitative memo describing the patterns you observed during immersion.
 
-Your codebook adds a **formal reliability protocol**: the planned sample size for the reliability subset, the target alpha threshold, the coder training procedure, and the revision triggers that say in advance what you will do if the threshold is missed.
+Your codebook adds a **formal reliability protocol**: the planned sample size for the reliability subset, the target threshold, the stability procedure (your own re-code after a 48-hour gap, with your first codes hidden), and the revision triggers that say in advance what you will do if the threshold is missed.
 
 **Check it before you submit.** [Codebook Check](https://aura-lab.siue.edu/codebook-check/) reads a pasted codebook and reports what this assignment asks for that your draft does not have yet: a unit of analysis stated once, both definitions on every variable, a declared level of measurement, a catch-all category so the scheme is exhaustive, a description on every category, category pairs that may overlap, decision rules, and examples. It checks structure, it does not grade, and nothing you paste leaves your machine.
 

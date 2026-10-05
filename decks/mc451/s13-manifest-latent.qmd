@@ -18,6 +18,33 @@ format:
 - Sampling what you observe
 - Edge cases, and the rules they become
 
+## Four Corrections From Your Topics
+
+- **Both rounds of this study are content analysis**
+    - You build a codebook, then you apply it
+    - No surveys, no interviews, no focus groups
+- **If your unit is a person, the question needs rewriting**
+    - You cannot ask them anything
+    - Move the unit from the person to the message
+- **Three questions is a ceiling, not a target**
+    - Eight questions means none has been chosen yet
+- **One coder means stability, not agreement**
+    - You re-code your own work after 48 hours
+
+Six of you proposed a method this course does not run. That is fixable this week.
+
+## Numbers You Look Up
+
+- **Retrieved counts are welcome**
+    - Box office, Rotten Tomatoes, view counts, stream counts
+- **They cannot be the whole study**
+    - Something in it has to be coded by you
+- **Pair them**
+    - Code the thumbnails, compare to the view counts
+    - Code the reviews, compare to the box office
+
+A study made only of numbers you looked up gives the codebook nothing to do.
+
 ## The Argument You Will Have
 
 - **You will disagree with yourself**
@@ -183,5 +210,19 @@ Those four are the raw material of a codebook, which is what you build next.
 - **Write two or three candidate questions**
     - Grounded in what you saw, not what you assumed
 - **Read** Chapter 8, through how operationalization fails
+
+## Due Friday: The Prospectus
+
+- **One page, 250 to 400 words, six headed sections**
+    - Descriptive title, questions, theoretical framework
+    - The gap, method overview, expected contribution
+    - Plus a rough timeline by assignment
+- **The method overview names how much data**
+    - Budget two to four hours of coding
+    - 250 chat messages at 45 seconds is about three hours
+    - Fifty coded units is the floor
+- **Going over one page is a diagnostic, not a formatting error**
+
+Full requirements, with the sizing table: `aura-lab.siue.edu/v2v-hub/mc451-assignments.html`
 
 ## Questions, Comments, or Concerns? {.titlecard}

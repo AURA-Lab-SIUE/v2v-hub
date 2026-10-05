@@ -146,7 +146,7 @@ Define at least four variables with conceptual definitions, operational definiti
 
 Submit your complete codebook (study overview, unit of analysis, all variables with decision rules) plus a qualitative memo describing the patterns you observed during immersion.
 
-Your codebook adds a **formal reliability protocol**: the planned sample size for the reliability subset, the target alpha threshold, the coder training procedure, and the revision triggers that say in advance what you will do if the threshold is missed.
+Your codebook adds a **formal reliability protocol**: the planned sample size for the reliability subset, the target threshold, the stability procedure (your own re-code after a 48-hour gap, with your first codes hidden), and the revision triggers that say in advance what you will do if the threshold is missed.
 
 ---
 
