@@ -24,15 +24,14 @@ format:
     - You build a codebook, then you apply it
 - **This project collects no survey or interview data**
     - So your unit is an artifact that already exists
-    - Content analysis itself can code interview text; we just have none
 - **If your unit is a person, the question needs rewriting**
     - Move the unit from the person to the thing they made
 - **Three questions is a ceiling, not a target**
-    - Eight questions means none has been chosen yet
+    - A long list means none has been chosen yet
 - **One coder means stability, not agreement**
     - You re-code your own work after 48 hours
 
-If your topic points to a method this course does not run, that is fixable this week.
+A method this course does not run is fixable this week.
 
 ## Which Scale Is Yours
 
@@ -230,7 +229,6 @@ Those four are the raw material of a codebook, which is what you build next.
 - **One page, 250 to 400 words, six headed sections**
     - Descriptive title, questions, theoretical framework
     - The gap, method overview, expected contribution
-    - Plus a rough timeline by assignment
 - **The method overview names how much data**
     - Budget two to four hours of coding
     - 250 chat messages at 45 seconds is about three hours
@@ -239,6 +237,6 @@ Those four are the raw material of a codebook, which is what you build next.
     - Say which row you used; we set the real one together
 - **Going over one page is a diagnostic, not a formatting error**
 
-Full requirements, with the sizing table: `aura-lab.siue.edu/v2v-hub/mc451-assignments.html`
+Full requirements and the sizing table are on the assignments page.
 
 ## Questions, Comments, or Concerns? {.titlecard}
