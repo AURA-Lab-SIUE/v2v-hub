@@ -33,8 +33,8 @@ format:
 
 ## How the term is built
 
-**The Journalist** runs the whole way through: a weekly journal across the
-14 teaching weeks in Weeks 1 to 15, worth **150 points**. It is the habit, not a stage.
+**The Journalist** runs the whole way through: a weekly journal across the 14 teaching
+weeks, worth **150 points**. It is the habit, not a stage.
 
 The project moves through four stages, each tracking a part of the textbook:
 

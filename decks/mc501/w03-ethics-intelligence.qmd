@@ -165,8 +165,7 @@ information either through **intervention or interaction** with them, or in the 
 - Beneficence: risk is minimal, and nothing we do aggregates toward identifying anyone
 - Justice: the sample spans channels broadly, including non-gaming categories
 
-That is the worked example. **You run the same walkthrough on the source you choose**, and
-the answers will not all be identical to these.
+**You run the same walkthrough on the source you choose**, and your answers will differ.
 
 ## This determination has already been made twice
 

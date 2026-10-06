@@ -165,7 +165,7 @@ variable needs an operational definition too, and this is it in executable form.
 - **Rules that restate the category**
     - A rule resolves a conflict, it does not repeat a definition
 
-Every one of these turns up today, which is why this is a studio and not a reading.
+Every one of these turns up today. That is why this is a studio.
 
 ## Checkpoint
 
