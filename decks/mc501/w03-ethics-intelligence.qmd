@@ -160,9 +160,9 @@ information either through **intervention or interaction** with them, or in the 
 
 - Chat came from the **public IRC interface**, streams from the **public API**
 - No IP addresses, no emails, no internal user IDs, no payment data, no whispers
-- Usernames are **pseudonymous**: chosen handles, usually not tied to an offline identity
-- Respect for persons here rests on public broadcast, because consent was never asked
-- Beneficence: risk is minimal, and nothing we do aggregates toward identifying anyone
+- Usernames are **pseudonymous**: handles, usually not tied to an offline identity
+- Respect for persons rests on public broadcast; consent was never asked
+- Beneficence: risk is minimal, and nothing aggregates toward identifying anyone
 - Justice: the sample spans channels broadly, including non-gaming categories
 
 **You run the same walkthrough on the source you choose**, and your answers will differ.

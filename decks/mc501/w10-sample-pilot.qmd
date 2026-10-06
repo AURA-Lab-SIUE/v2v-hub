@@ -105,7 +105,7 @@ What matters is that one is set and recorded, so the draw is frozen.
 ## Where Power Meets the Data
 
 - **Sampling is not only about capturing variation**
-    - Your prospectus specified a minimum *n*
+    - Your Research Proposal specified a minimum *n*
     - This is the week that number meets your dataset
 - **Need 128 and the data gives 10,000:** stratification solves it
 - **Need 128 and the data gives 80:** the study is underpowered

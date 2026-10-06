@@ -72,11 +72,10 @@ Nothing here is a detour. Each row hands the next one its materials.
 
 ## How the term is built
 
-**The Journalist** runs the whole way through: a weekly reading journal, 10 points a
-week across the 14 teaching weeks, plus 10 for consistency, **150 points**. It is the
-habit, not a stage.
+**The Journalist** runs the whole way through: a weekly reading journal, 10 points a week
+across the 14 teaching weeks, plus 10 for consistency, **150 points**. The habit, not a stage.
 
-The project itself moves through four stages, and each hands you the materials for the next:
+The project moves through four stages, each handing you the materials for the next:
 
 | Stage | Weeks | Book part | Points |
 |---|---|---|---|

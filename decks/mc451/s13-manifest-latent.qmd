@@ -71,7 +71,7 @@ You leave having sorted your field notes into the easy half and the hard half.
 
 ## Two Layers in Every Message
 
-[Krippendorff, 2018]{.eyebrow}
+[Chapter 7]{.eyebrow}
 
 - **Manifest content:** what is explicitly on the surface
     - Countable almost mechanically, given one clear rule

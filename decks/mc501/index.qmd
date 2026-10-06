@@ -14,7 +14,7 @@ One deck per weekly meeting. Each deck folds the week's material together with t
 | Week 3 | Ethics and Intelligence Gathering | [Open](w03-ethics-intelligence.html) |
 | Week 4 | Annotating the Literature and Theory as a Lens | [Open](w04-annotating-theory.html) |
 | Week 5 | Variables, Hypotheses, and the Research Question | [Open](w05-variables-questions.html) |
-| Week 6 | The Prospectus and Structured Listening | [Open](w06-prospectus-listening.html) |
+| Week 6 | The Research Proposal and Structured Listening | [Open](w06-prospectus-listening.html) |
 | Week 7 | Manifest, Latent, and the Move to Variables | [Open](w07-latent-operationalization.html) |
 | Week 8 | Measurement, Reliability, and the Codebook | [Open](w08-measurement-codebook.html) |
 | Week 9 | Coding the Codebook and First Contact in R | [Open](w09-coding-provenance.html) |

@@ -84,7 +84,7 @@ named literate programming in 1984, and the "one click" is the render button.
 
 ## IMRaD, and What Each Section Owes
 
-- **Introduction:** the question and why it matters, your prospectus
+- **Introduction:** the question and why it matters, your Research Proposal
 - **Methods:** what was done, in enough detail to repeat
     - Codebook, sampling, reliability, wrangling
 - **Results:** what was found, without interpretation

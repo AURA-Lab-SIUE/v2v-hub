@@ -1,5 +1,5 @@
 ---
-title: "The Prospectus and Structured Listening"
+title: "The Research Proposal and Structured Listening"
 subtitle: "Week 6 · Chapters 6 and 7"
 format:
   revealjs:

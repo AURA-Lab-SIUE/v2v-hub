@@ -20,7 +20,7 @@ First half: variables, hypotheses, and what it costs to decide what you were tes
 you have already seen the data. Second half: writing the question, which is the hardest
 single thing in this course.
 
-Everything here feeds the prospectus you draft next week.
+Everything here feeds the Research Proposal you draft next week.
 
 ## Fair Warning, Second Half
 
@@ -318,10 +318,10 @@ question needs: a comment section, a subreddit, a news archive, a set of TikToks
 - **The usual fix:** move the construct to its visible trace
     - Not felt closeness, but expressions of closeness in the thread.
 
-This is the constraint your prospectus inherits. A question you cannot code is a question you
+This is the constraint your Research Proposal inherits. A question you cannot code is a question you
 cannot answer with this method.
 
-## What The Prospectus Commits
+## What The Research Proposal Commits
 
 - **Title and questions:** descriptive, hinting at the key variables
     - One to three focused questions or hypotheses, not ten.
