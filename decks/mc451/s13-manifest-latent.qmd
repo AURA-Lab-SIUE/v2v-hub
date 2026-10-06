@@ -32,7 +32,7 @@ format:
 - **One coder means stability, not agreement**
     - You re-code your own work after 48 hours
 
-Six of you proposed a method this course does not run. That is fixable this week.
+If your topic points to a method this course does not run, that is fixable this week.
 
 ## Which Scale Is Yours
 
