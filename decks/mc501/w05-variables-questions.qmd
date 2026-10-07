@@ -366,7 +366,7 @@ state the limitation explicitly. Those are the only three honest options.
 
 ## Before Week 6
 
-- **Due tonight:** **Annotated Manuscripts (3)** and **CITI Certification**
+- **Due Monday, September 28, 11:59 PM:** **Annotated Manuscripts (3)** and **CITI Certification**
 - **Read:** Chapter 6 on the prospectus, Chapter 7 on Structured Listening
     - Keep the edition toggle on.
     - The assigned article: **Lakens (2022)**, "Sample size justification".

@@ -183,6 +183,13 @@ Every slide must fit without overflowing at a 33px root font. In practice:
 3. A closing **"Before next time"** slide with concrete preparation (what to read,
    what is due), then **`## Questions?` with an empty body as the final slide**
    (owner, 2026-09-25, applying DECK-CONSTRUCTION.md section 3 to v2v).
+   **Every due line carries a date:** `Due Monday, October 12, 11:59 PM`. Never
+   "due tonight", "due today", "due this week", "due next week" or a bare "Due
+   Monday:". A deck outlives its class night, so a relative deadline is wrong on
+   every later reading, and MC 501 work is due the Monday AFTER class, so "tonight"
+   was wrong on the night as well (owner, 2026-10-07, reported more than once).
+   Take the date from the course's assignments page, never from the schedule row
+   alone.
 4. **`## Today's Agenda` as the first content slide**, naming the parts of the
    session (owner, 2026-09-25, DECK-CONSTRUCTION.md section 2). The deck title and
    subtitle are the topic plus source anchor, so they satisfy slide 1 already.
@@ -225,4 +232,5 @@ or quotes.
 
 Run `python3 decks/qa_decks.py` before committing any deck. It checks em-dashes,
 the native pipe, cross-course references, level labels, discussion count and
-placement, front matter, theme path, and the slide-count bands above.
+placement, front matter, theme path, the slide-count floor, and any due date written
+without a date.

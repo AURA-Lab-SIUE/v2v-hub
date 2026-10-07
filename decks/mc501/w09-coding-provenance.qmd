@@ -22,7 +22,7 @@ format:
 
 [Week 9 · Chapter 9 · working session]{.eyebrow}
 
-- **Due tonight:** Extended Codebook and Reliability Protocol
+- **Due Monday, October 26, 11:59 PM:** Extended Codebook and Reliability Protocol
 - **A project workspace holding the study in one folder**
     - Your codebook installed as the rendered rulebook
     - The Twitch data loaded and inspected
@@ -297,7 +297,7 @@ You should now have:
 
 - **Read** Chapter 10, on sampling and the codebook on trial
     - Re-read **Lakens (2022)**, with your reliability sample in mind
-- **Due next week:** the Sampling Plan and Pilot
+- **Due Monday, November 2, 11:59 PM:** the Sampling Plan and Pilot
     - Bring the revisions first contact prompted, committed
 - **Write** a journal entry, 450 to 500 words
 

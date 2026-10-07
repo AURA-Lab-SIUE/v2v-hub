@@ -20,7 +20,7 @@ format:
 - Structured listening, and why it comes first
 - Field notes a codebook can be built from
 
-**Due tonight:** Topic Selection and Research Questions
+**Due Monday, October 5, 11:59 PM:** Topic Selection and Research Questions
 
 ## The Paralysis
 
@@ -266,7 +266,7 @@ One dated plain-text document, with a note every fifteen or twenty minutes.
 - **Read** Chapter 7 in full, and Chapter 8
     - "From vibes to variables"
     - The assigned article: **Hayes & Krippendorff (2007)**
-- **Due next week:** the Research Proposal
+- **Due Monday, October 12, 11:59 PM:** the Research Proposal
     - A structured sentence outline
 - **Write** a journal entry, 450 to 500 words
     - Engage both the chapters and the reading

@@ -30,21 +30,42 @@ if hasattr(sys.stdout, "reconfigure"):
 
 EM_DASH = "\u2014"
 CONTRAST_FLOOR = 5.0          # house floor. AA (4.5) is NOT the bar. See memory: contrast-floor-5to1
+HERE = pathlib.Path(__file__).resolve().parent
+
+# Owner 2026-10-07, reported more than once: "Due tonight" is a persistent defect. A deck
+# outlives its class night, so a relative deadline is wrong on every later reading, and it
+# was wrong on the night too (MC 501 work is due the Monday AFTER class). A due line names
+# the weekday, the date and the time: "Due Monday, September 7, 11:59 PM". Each entry is a
+# regex fragment matched case-insensitively after "due" (optionally "due by/before/on").
+UNDATED_DUE = [
+    r"tonight", r"today", r"tomorrow", r"this evening",
+    r"this week", r"next week", r"next class", r"next time",
+    r"end of (?:the )?(?:week|class)",
+]
+# A bold due LABEL with no date: "**Due:**" or "**Due Monday:**".
+UNDATED_DUE_LABEL = re.compile(
+    r"\*\*Due(?: (?:Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day)?:\*\*", re.I)
 
 # --------------------------------------------------------------------------- profiles
-# roots: first path that exists wins, so the same file runs on m4 and on Pythia.
+# roots: first path that exists wins, so the same file runs on m4 and on Pythia. A qmd
+# profile looks beside this script first, so a fresh clone or worktree checks ITS OWN
+# decks rather than m4's clone.
 PROFILES = {
     "mc451": dict(
         fmt="qmd", glob="*.qmd", skip={"index.qmd"},
-        roots=["/Volumes/One Touch/20-research/aura-lab/v2v-hub/decks/mc451"],
+        roots=[str(HERE / "mc451"),
+               "/Volumes/One Touch/20-research/aura-lab/v2v-hub/decks/mc451"],
         bands=(12, 26), other_course="MC 501",
         theme_marker="default, ../aura-reveal.scss",
+        undated_due=UNDATED_DUE,
     ),
     "mc501": dict(
         fmt="qmd", glob="*.qmd", skip={"index.qmd"},
-        roots=["/Volumes/One Touch/20-research/aura-lab/v2v-hub/decks/mc501"],
+        roots=[str(HERE / "mc501"),
+               "/Volumes/One Touch/20-research/aura-lab/v2v-hub/decks/mc501"],
         bands=(20, 36), other_course="MC 451",
         theme_marker="default, ../aura-reveal.scss",
+        undated_due=UNDATED_DUE,
     ),
     "fst101": dict(
         fmt="marp", glob="*.md", skip=set(),
@@ -59,6 +80,7 @@ PROFILES = {
         discussion_not_in_last_fraction=1/3,
         forbid_phrases=["as we discussed Tuesday", "as we discussed Thursday",
                         "last class", "on Tuesday we", "on Thursday we"],
+        undated_due=UNDATED_DUE,
     ),
 }
 
@@ -157,6 +179,35 @@ def british_spellings(t):
     return out
 
 
+def undated_due(t, prof):
+    """(line number, phrase) for each deadline a student cannot put on a calendar.
+
+    HTML comments are skipped (Marp presenter notes are the instructor's run sheet, not
+    the slide); they are blanked rather than removed so line numbers stay true.
+    """
+    frags = prof.get("undated_due")
+    if not frags:
+        return []
+    t = re.sub(r"<!--.*?-->", lambda m: re.sub(r"[^\n]", " ", m.group(0)), t, flags=re.S)
+    rx = re.compile(r"\bdue\s+(?:by\s+|before\s+|on\s+)?(?:" + "|".join(frags) + r")\b",
+                    re.I)
+    out = []
+    for i, line in enumerate(t.split("\n"), 1):
+        for m in rx.finditer(line):
+            out.append((i, m.group(0)))
+        for m in UNDATED_DUE_LABEL.finditer(line):
+            out.append((i, m.group(0)))
+    return out
+
+
+def undated_due_issue(t, prof):
+    hits = undated_due(t, prof)
+    if not hits:
+        return []
+    return ["UNDATED due date x%d (%s): write 'Due <Weekday>, <Month> <day>, 11:59 PM'" %
+            (len(hits), ", ".join("%r:%d" % (w, ln) for ln, w in hits[:4]))]
+
+
 # --------------------------------------------------------------------------- qmd rules
 def check_qmd(p, t, prof):
     """Unchanged semantics from the 2026-07-30 script."""
@@ -198,6 +249,7 @@ def check_qmd(p, t, prof):
     if brit:
         issues.append("British spelling x%d (%s)" %
                       (len(brit), ", ".join("%s:%d" % (w, ln) for ln, w in brit[:4])))
+    issues += undated_due_issue(t, prof)
     return n, dpos, issues
 
 
@@ -261,6 +313,7 @@ def check_marp(p, t, prof):
     for ph in prof.get("forbid_phrases", []):
         if re.search(re.escape(ph), t, re.I):
             issues.append(f"cross-section ref: {ph!r}")
+    issues += undated_due_issue(t, prof)
 
     # slides, presenter notes, discussion position
     slides = re.split(r"(?m)^---\s*$", t.split("---", 2)[2] if t.startswith("---") else t)

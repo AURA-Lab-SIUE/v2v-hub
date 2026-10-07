@@ -27,7 +27,7 @@ format:
     - By then recoding two thousand messages is not an option
 - **Then the codebook**
     - The instrument the back half of this course runs on
-- **Due tonight:** Definitions Practice
+- **Due Monday, October 19, 11:59 PM:** Definitions Practice
 
 ## NOIR
 
@@ -267,7 +267,7 @@ Two manifest measures, one latent. The mix is deliberate.
 
 - **Read** Chapter 9, and bring a laptop with R installed
     - Re-read **Munafo et al. (2017)** on reporting and usability
-- **Due next week:** Extended Codebook and Reliability Protocol
+- **Due Monday, October 26, 11:59 PM:** Extended Codebook and Reliability Protocol
     - Planned sample size, thresholds, and revision triggers
     - Have your three variables written out with rules
 - **Write** a journal entry, 450 to 500 words

@@ -30,7 +30,7 @@ format:
     - Reliability is designed in while you are watching
     - It is not repaired afterwards
     - By the time your second pass disagrees with your first, prevention has passed
-- **Due Monday:** the Research Proposal
+- **Due Monday, October 12, 11:59 PM:** the Research Proposal
 
 ## Corrections From Your Topics
 
@@ -381,7 +381,7 @@ Full requirements: `aura-lab.siue.edu/v2v-hub/mc501-assignments.html`
 
 ## Before Week 8
 
-- **Due Monday:** the Research Proposal
+- **Due Monday, October 12, 11:59 PM:** the Research Proposal
     - And the Topic Selection revision, if you revise
 - **Read** Chapter 8 in full
     - Levels of measurement, and the codebook
@@ -390,7 +390,7 @@ Full requirements: `aura-lab.siue.edu/v2v-hub/mc501-assignments.html`
 
 ## Before Week 8 (cont.)
 
-- **Due Monday, October 19:** Definitions Practice
+- **Due Monday, October 19, 11:59 PM:** Definitions Practice
     - Conceptual and operational pairs for your variables
     - Bring three contested categories and a rule for each
 
