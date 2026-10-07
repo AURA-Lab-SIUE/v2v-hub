@@ -11,21 +11,12 @@ format:
     transition: none
 ---
 
-## Today's Agenda
-
-- Corrections from your topics
-- Manifest and latent, and why the split matters
-- The edge-case log, and the rules it becomes
-- The gap between a field note and a variable
-- Four ways operationalization fails
-- Drift, and a codebook that holds still
-- What the Research Proposal asks for Monday
-
 ## Tonight
 
 [Week 7 · Chapters 7 and 8]{.eyebrow}
 
 - **Your notes become instructions somebody could follow**
+    - First from field notes to rules, then from concepts to variables
 - **The argument underneath the evening**
     - Reliability is designed in while you are watching
     - It is not repaired afterwards
@@ -170,9 +161,15 @@ findings do not count for anything at all.
 
 ## One Standard Measure
 
-- **They want one measure, not a menu**
-- **What does standardization buy a field?**
-- **What does it cost a study with an unusual unit?**
+- Report **one reliability measure**, alpha (Hayes & Krippendorff, 2007)
+- What one measure buys
+    - Any study's figure reads against any other's
+    - Any number of coders, any measurement level, missing codes
+- What it costs
+    - Agreement is judged against chance, set by how often each code is used
+    - A rare code pulls alpha down even when agreement is high
+- The case: you code 100 messages twice, and "hostile" is rare
+    - Your two passes agree on 96 of 100, and alpha is 0.32
 
 ## The Field Note That Is Useless
 
