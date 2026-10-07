@@ -17,6 +17,7 @@ format:
 - The edge-case log, and the rules it becomes
 - The gap between a field note and a variable
 - Four ways operationalization fails
+- Drift, and a codebook that holds still
 
 ## Tonight
 
@@ -245,10 +246,42 @@ Write the two side by side for every variable.
     - If not, nothing downstream repairs that
 - **No second coder is available in this course**
     - So what you demonstrate is **stability**, your own consistency
+    - Re-code a sample later, first codes hidden, and compare
     - It is a weaker claim than agreement, and it is named as one
 - **Kappa and alpha quantify it**, correcting for chance
 
 Next week is that machinery, and the codebook built to satisfy it.
+
+## Drift
+
+- **Your reading of a category moves during a long pass**
+    - Faster, looser, or stricter as the hours go on
+    - Item 900 is not judged quite like item 40
+- **Two coders would expose it as disagreement**
+    - Coding alone, nothing does
+    - Every code still feels right when you assign it
+- **A check at the start says nothing about the end**
+
+## Catching Your Own Drift
+
+- **Anchor items:** a few settled cases, re-coded each sitting
+    - If your code changes, stop and find out why
+- **A mid-pass check:** re-code a slice of your earliest items
+    - Partway through, not only at the start and the end
+- **Shuffled order:** never all of one group, then the next
+    - Otherwise drift looks like a difference between groups
+- **A new judgment is a rule:** write it down that sitting
+
+## Freeze the Codebook, Then Version It
+
+- **Freeze it before the real coding begins**
+    - Every code is then applied under one fixed set of rules
+- **A rule added later is a new version**
+    - Numbered and dated, with what changed and why
+    - Items it could affect are re-coded under it
+- **The write-up names the version behind the data**
+
+A reader holding your source can see which rules every number rests on.
 
 ## Checking Your Proposal
 
