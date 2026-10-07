@@ -13,11 +13,13 @@ format:
 
 ## Today's Agenda
 
+- Corrections from your topics
 - Manifest and latent, and why the split matters
 - The edge-case log, and the rules it becomes
 - The gap between a field note and a variable
 - Four ways operationalization fails
 - Drift, and a codebook that holds still
+- What the Research Proposal asks for Monday
 
 ## Tonight
 
@@ -28,7 +30,29 @@ format:
     - Reliability is designed in while you are watching
     - It is not repaired afterwards
     - By the time your second pass disagrees with your first, prevention has passed
-- **Due tonight:** the Research Proposal
+- **Due Monday:** the Research Proposal
+
+## Corrections From Your Topics
+
+- **Bound the topic:** name the population and the period
+- **Ask about what content can show**
+    - Feelings and decisions are not in content; their traces are
+- **Causal verbs claim more than coding can show**
+    - "Impact" and "leads to" need a design that supports them
+- **A hypothesis needs a theory behind its direction**
+    - Naming a lens is not yet using it
+
+Each of these is fixable in the revision, and each carries into the proposal.
+
+## The Preview and the Check
+
+- **One unit of analysis per variable:** the thing you code once
+- **A level of measurement for each variable**, matched to what you record
+- **Numbers you look up can sit beside coded ones**
+    - The codebook still needs variables you code yourself
+- **The five-criteria check runs once per question**
+    - "Not already answered" names the closest studies
+- **"Why it matters" is written for your field**
 
 ## Where the Codebook Comes From
 
@@ -292,14 +316,82 @@ A reader holding your source can see which rules every number rests on.
 
 Those expected disagreements are next week's decision rules, so write them down tonight.
 
+## Due Monday, Two Separate Pieces
+
+- **The Topic Selection revision, if you choose to**
+    - Revise for a higher grade, and the two grades are averaged
+    - Your feedback attachment says what to change
+- **The Research Proposal, 75 points, new work**
+    - A sentence outline built on those questions
+    - Due whether or not you revise
+- Both are due at 11:59 PM, Monday, October 12
+
+## The Research Proposal
+
+- **A sentence outline, 1,200 to 1,800 words**
+- **The front half of a conference paper**
+    - Each point becomes a sentence or paragraph in the White Paper
+- **Every point is a full sentence carrying a claim**
+    - Never a topic label
+- **References in APA 7** for everything cited
+
+Full requirements: `aura-lab.siue.edu/v2v-hub/mc501-assignments.html`
+
+## A Label Versus a Point
+
+- **A label:** "Parasocial interaction and chat"
+- **A point:** "Viewers of smaller channels report stronger parasocial bonds, which should leave a visible trace in how they address the streamer"
+- The label names a subject, and the point could turn out wrong
+- That is what makes it a claim
+
+## The Argument Half
+
+| Section | Points in the outline | Graded |
+|---|---|---|
+| Framing | 3 to 5: the phenomenon, why now, the stakes | 8 |
+| Theory | 4 to 6: the lens, its prediction, a rival lens | 15 |
+| Literature | 6 to 10, by theme rather than author | 15 |
+| Gap | 2 to 3, resting on a shared limitation | 8 |
+
+## The Study Half
+
+- **Questions or hypotheses** (10), stated formally
+    - Each traceable to a point in the theory section
+- **Design** (15), eight to twelve points
+    - Unit, population and frame, sampling, measurement
+    - The reliability protocol, and the analysis planned before data
+- **Contribution** (4), two to three points for your field
+
+## Where Proposals Lose Points
+
+- **Topic labels instead of sentences**
+    - The failure this assignment is named for
+- **A design that names no analysis**
+    - Every hard decision deferred until after the data
+- **A theory with no rival**
+    - A framework with no rival is a decoration
+
+## From Questions to Proposal
+
+- **Your research questions** become the questions section
+- **Each hypothesis justification** grows into the theory section
+- **The variable preview** becomes the design's measurement
+- **The five-criteria check** seeds the gap
+    - "Not already answered" is a gap claim, with evidence
+
 ## Before Week 8
 
+- **Due Monday:** the Research Proposal
+    - And the Topic Selection revision, if you revise
 - **Read** Chapter 8 in full
     - Levels of measurement, and the codebook
     - The assigned article: **Lombard, Snyder-Duch, & Campanella Bracken (2002)**
-- **Due next week:** Definitions Practice
+- **Write** a journal entry, 450 to 500 words
+
+## Before Week 8 (cont.)
+
+- **Due Monday, October 19:** Definitions Practice
     - Conceptual and operational pairs for your variables
     - Bring three contested categories and a rule for each
-- **Write** a journal entry, 450 to 500 words
 
 ## Questions, Comments, or Concerns? {.titlecard}
