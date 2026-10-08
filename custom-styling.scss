@@ -343,6 +343,37 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 .callout-warning   { border-left-color: var(--v2v-coral-mark) !important; }
 .callout-caution   { border-left-color: var(--v2v-danger) !important; }
 
+// Collapsible template sections (2026-10-08). Native <details>/<summary>, not a
+// collapsed Quarto callout: Quarto 1.9 renders that header as a div with a click
+// handler and no tabindex, so a keyboard user cannot open it. Pattern:
+//   <details class="tmpl-section" id="tmpl-x"><summary>Name: <span class="tmpl-points">3 points</span></summary>
+//   (blank line, markdown, blank line) </details>
+details.tmpl-section {
+  background: var(--v2v-raised);
+  border: 1px solid var(--v2v-rule);
+  border-left: 4px solid var(--v2v-info);
+  border-radius: 0 8px 8px 0;
+  padding: 0 1.25rem;
+  margin: 0.6rem 0;
+  > summary {
+    display: list-item;
+    cursor: pointer;
+    min-height: 44px;
+    padding: 0.7rem 1.25rem;
+    margin: 0 -1.25rem;
+    font-weight: 700;
+    color: var(--v2v-ink);
+    line-height: 1.4;
+  }
+  > summary .tmpl-points { font-weight: 400; color: var(--v2v-ink); }
+  &[open] > summary { border-bottom: 1px solid var(--v2v-rule); margin-bottom: 1rem; }
+  &[open] { padding-bottom: 0.25rem; }
+  blockquote { margin-left: 0; }
+}
+@media print {
+  details.tmpl-section { break-inside: auto; }
+}
+
 // ============================================================================
 // Phase header / navigation
 // ============================================================================

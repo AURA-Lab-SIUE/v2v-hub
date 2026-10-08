@@ -1,29 +1,21 @@
 ---
-title: "MC 501 Research Proposal Template"
+# No `title:` on purpose: the .phase-header h1 below IS the page title, and a
+# Quarto title block would emit a second <h1> above it (same fix as syllabus.qmd).
+toc: false
+pagetitle: "MC 501 Research Proposal Template"
 ---
 
 :::{.phase-header}
 # MC 501 Research Proposal Template
 
 **What you submit:** one document of 1,200 to 1,800 words in outline form, with seven headed sections plus References. **75 points. Due Monday, October 12, 11:59 PM, in Blackboard.**
-
-This template shows you, section by section, what each part is worth, the question it answers, and the checks that cost points on Topic Selection, which carry directly into this outline. It is not a form to fill in. An outline that fills each slot without answering the question underneath it will lose the same points a blank page would.
 :::
 
 ::: {.callout-note}
-## A printable copy
+## The printable template
 
-The same template is available as an accessible PDF for printing or reading offline: [MC 501 Research Proposal template (PDF, 11 pages)](resources/MC501-Research-Proposal-Template.pdf). The full requirements are on the [assignments page](mc501-assignments.qmd).
+[MC 501 Research Proposal template (PDF, 2 pages)](resources/MC501-Research-Proposal-Framework.pdf) is the structure to write into: the section names in order, what each is worth, and what it has to contain. The checks and the examples are on this page, in the sections below. The full requirements are on the [assignments page](mc501-assignments.qmd).
 :::
-
-## How to use this template
-
-- Each section below gives you its points, the question it answers, the expected number of outline points, what the section has to contain, a short list of checks, and a weaker and a stronger version of the same section.
-- **The counts and the word range are a coverage check, not a box to fit inside.** Each count comes with the list of things that section has to contain. If a section comes in short, one of those things is usually missing: add the missing piece rather than more words. Writing more than the range is not penalized; material that belongs to a later assignment, such as the codebook, can move there.
-- **Every outline point is a full sentence that makes a claim, never a topic label.** "Sponsorship and trust" is a label. "Viewers who recognize a sponsor read as advertising should write about the product more skeptically" is a point. Labels instead of sentences is the failure this assignment is named for.
-- Answer each question in your own words, about your own study. The examples follow one made-up study, sponsor disclosure in YouTube tech reviews and the comments under those videos, so you can watch one project develop section by section. Your topic and your data source are your own choice.
-- Do not copy this template's questions, checks or instructions into your document.
-- Anything in square brackets, such as [Study A, 2021], marks the place where your outline names a real source you read. The example study, and every finding attributed to [Study A], [Study B] or [Study C], is invented for illustration. Do not cite it. The two theories named in the examples are real.
 
 ## Points at a glance
 
@@ -39,7 +31,22 @@ The same template is available as an accessible PDF for printing or reading offl
 | References | every source cited | required | Can a reader find every source you cite, in APA 7? |
 | **Total** | | **75** | |
 
-## The three habits that cost the most points on Topic Selection
+<details class="tmpl-section" id="tmpl-how-to-use-this-template">
+<summary>How to use this template</summary>
+
+This template shows you, section by section, what each part is worth, the question it answers, and the checks that cost points on Topic Selection, which carry directly into this outline. It is not a form to fill in. An outline that fills each slot without answering the question underneath it will lose the same points a blank page would.
+
+- Each section below gives you its points, the question it answers, the expected number of outline points, what the section has to contain, a short list of checks, and a weaker and a stronger version of the same section.
+- **The counts and the word range are a coverage check, not a box to fit inside.** Each count comes with the list of things that section has to contain. If a section comes in short, one of those things is usually missing: add the missing piece rather than more words. Writing more than the range is not penalized; material that belongs to a later assignment, such as the codebook, can move there.
+- **Every outline point is a full sentence that makes a claim, never a topic label.** "Sponsorship and trust" is a label. "Viewers who recognize a sponsor read as advertising should write about the product more skeptically" is a point. Labels instead of sentences is the failure this assignment is named for.
+- Answer each question in your own words, about your own study. The examples follow one made-up study, sponsor disclosure in YouTube tech reviews and the comments under those videos, so you can watch one project develop section by section. Your topic and your data source are your own choice.
+- Do not copy this template's questions, checks or instructions into your document.
+- Anything in square brackets, such as [Study A, 2021], marks the place where your outline names a real source you read. The example study, and every finding attributed to [Study A], [Study B] or [Study C], is invented for illustration. Do not cite it. The two theories named in the examples are real.
+
+</details>
+
+<details class="tmpl-section" id="tmpl-the-three-habits-that-cost-the-most-points-on-topic-selection">
+<summary>The three habits that cost the most points on Topic Selection</summary>
 
 All three come back in this outline: in the theory, questions and design sections, and in the literature, gap and contribution sections.
 
@@ -47,7 +54,10 @@ All three come back in this outline: in the theory, questions and design section
 2. **Variables without their unit or their kind of answer.** For each variable, say what one thing you code at a time (the unit of analysis) and what kind of answer it records: named categories with no order (nominal), categories with an order (ordinal), or a count or amount (ratio). Most of the variables on Topic Selection were missing one or both.
 3. **Claims with no named studies behind them, written for the wrong reader.** "Previous research exists" and "I have not seen much research" lost points: name the closest studies. Justifications written for a campaign, a brand or consumers also lost points. Write for a researcher in your field.
 
-## Framing: 8 points
+</details>
+
+<details class="tmpl-section" id="tmpl-framing-8-points">
+<summary>Framing: <span class="tmpl-points">8 points</span></summary>
 
 **The question it answers:** what is happening, among whom and where, and what goes wrong if we get the answer wrong?
 
@@ -76,7 +86,10 @@ All three come back in this outline: in the theory, questions and design section
 >
 > *Why it is stronger:* the phenomenon comes first, the population and period are fixed, and the stakes are stated in both directions.
 
-## Theoretical positioning: 15 points
+</details>
+
+<details class="tmpl-section" id="tmpl-theoretical-positioning-15-points">
+<summary>Theoretical positioning: <span class="tmpl-points">15 points</span></summary>
 
 **The question it answers:** which lens predicts what you will see and why, and what would a rival lens predict instead?
 
@@ -107,7 +120,10 @@ All three come back in this outline: in the theory, questions and design section
 >
 > *Why it is stronger:* one lens carries the prediction and the reason behind it, the rival predicts something different, and point 6 says how the design decides between them.
 
-## The literature: 15 points
+</details>
+
+<details class="tmpl-section" id="tmpl-the-literature-15-points">
+<summary>The literature: <span class="tmpl-points">15 points</span></summary>
 
 **The question it answers:** where do the studies agree, where do they differ, and what do they all leave out?
 
@@ -137,7 +153,10 @@ All three come back in this outline: in the theory, questions and design section
 >
 > *Why it is stronger:* each point is a claim about the research as a whole, the disagreement is stated, and the last point names the limitation the studies share. A full section would run six to ten points.
 
-## The gap: 8 points
+</details>
+
+<details class="tmpl-section" id="tmpl-the-gap-8-points">
+<summary>The gap: <span class="tmpl-points">8 points</span></summary>
 
 **The question it answers:** what does that shared limitation leave unanswered?
 
@@ -160,7 +179,10 @@ All three come back in this outline: in the theory, questions and design section
 >
 > *Why it is stronger:* both points rest on the shared limitation, and the open question is the one this study asks.
 
-## Research questions or hypotheses: 10 points
+</details>
+
+<details class="tmpl-section" id="tmpl-research-questions-or-hypotheses-10-points">
+<summary>Research questions or hypotheses: <span class="tmpl-points">10 points</span></summary>
 
 **The question it answers:** what will you find out, and which theory point does each one come from?
 
@@ -196,7 +218,10 @@ All three come back in this outline: in the theory, questions and design section
 >
 > *Why it is stronger:* every answer comes from coding videos and comments, H1 links two coded things in a stated direction as a tendency, and each item points back to the theory point it tests.
 
-## The proposed design: 15 points
+</details>
+
+<details class="tmpl-section" id="tmpl-the-proposed-design-15-points">
+<summary>The proposed design: <span class="tmpl-points">15 points</span></summary>
 
 **The question it answers:** what will you code, from where, how, how consistently, and with what analysis, all decided before you see the data?
 
@@ -237,7 +262,10 @@ All three come back in this outline: in the theory, questions and design section
 >
 > *Why it is stronger:* every element the section asks for is present, every variable has its unit and its kind of answer, the sample can be rebuilt from the notes, the time adds up, and every analysis is named before any data exist.
 
-## Contribution: 4 points
+</details>
+
+<details class="tmpl-section" id="tmpl-contribution-4-points">
+<summary>Contribution: <span class="tmpl-points">4 points</span></summary>
 
 **The question it answers:** what will researchers in your field know afterward that they do not know now?
 
@@ -260,11 +288,17 @@ All three come back in this outline: in the theory, questions and design section
 >
 > *Why it is stronger:* it is written for researchers, and each claim follows from what the design actually codes.
 
-## References
+</details>
+
+<details class="tmpl-section" id="tmpl-references">
+<summary>References</summary>
 
 **Required:** APA 7 for every source cited in the outline, and only sources you cited.
 
-## Before you submit
+</details>
+
+<details class="tmpl-section" id="tmpl-before-you-submit">
+<summary>Before you submit</summary>
 
 - At least 1,200 words. Under 1,200 usually means something a section has to contain is missing, or some points are labels rather than sentences: go back through each section's list and find it. Writing more is not penalized.
 - Seven headed sections in the order above, plus References.
@@ -273,3 +307,5 @@ All three come back in this outline: in the theory, questions and design section
 - Each research question or hypothesis names the theory point it comes from.
 - The design names one unit per kind of material, the kind of answer for every variable, a one-coder reliability plan and an analysis for every question.
 - Submitted in Blackboard. Committing to GitHub is not submitting.
+
+</details>

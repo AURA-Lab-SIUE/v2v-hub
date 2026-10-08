@@ -1,28 +1,21 @@
 ---
-title: "MC 451 Project Prospectus Template"
+# No `title:` on purpose: the .phase-header h1 below IS the page title, and a
+# Quarto title block would emit a second <h1> above it (same fix as syllabus.qmd).
+toc: false
+pagetitle: "MC 451 Project Prospectus Template"
 ---
 
 :::{.phase-header}
 # MC 451 Project Prospectus Template
 
 **What you submit:** one document of about one page, 250 to 400 words: a title, then six headed sections. **25 points. Due Friday, October 9, 11:59 PM, in Blackboard.**
-
-This template shows you, section by section, what each part is worth, the question it answers, and the checks that cost points on Topic Selection. It is not a form to fill in. A prospectus that fills in blanks without answering the questions underneath them will lose the same points a blank page would.
 :::
 
 ::: {.callout-note}
-## A printable copy
+## The printable template
 
-The same template is available as an accessible PDF for printing or reading offline: [MC 451 Project Prospectus template (PDF, 9 pages)](resources/MC451-Project-Prospectus-Template.pdf). The full requirements are on the [assignments page](mc451-assignments.qmd).
+[MC 451 Project Prospectus template (PDF, 2 pages)](resources/MC451-Project-Prospectus-Framework.pdf) is the structure to write into: the section names in order, what each is worth, and what it has to contain. The checks and the examples are on this page, in the sections below. The full requirements are on the [assignments page](mc451-assignments.qmd).
 :::
-
-## How to use this template
-
-- Each section below gives you its points, the question it answers, what it has to contain, a short list of checks, and a weaker and a stronger version of the same section.
-- **The lengths are a coverage check, not a box to fit inside.** Each length comes with the list of things that section has to contain. If a section comes in short, one of those things is usually missing: add the missing piece rather than more words. Writing more than the suggested length is not penalized.
-- Answer each question in your own words, about your own study. The examples follow one made-up study, restaurant owners' replies to negative Google reviews, so you can watch a single project develop section by section. Your topic and your data source are your own choice.
-- Do not copy this template's questions, checks or instructions into your document. Your document carries your section headings and your answers, nothing else. Instruction text left in a submission cost points on Topic Selection.
-- Anything in square brackets, such as [Study A, 2022], marks the place where your paper names a real source you annotated. The example study, and anything said about [Study A] or [Study B], is invented for illustration. Do not cite it. The two theories named in the examples are real.
 
 ## Points at a glance
 
@@ -37,7 +30,21 @@ The same template is available as an accessible PDF for printing or reading offl
 | Timeline | 3 | What will you have finished by each remaining due date? |
 | **Total** | **25** | |
 
-## The three habits that cost the most points on Topic Selection
+<details class="tmpl-section" id="tmpl-how-to-use-this-template">
+<summary>How to use this template</summary>
+
+This template shows you, section by section, what each part is worth, the question it answers, and the checks that cost points on Topic Selection. It is not a form to fill in. A prospectus that fills in blanks without answering the questions underneath them will lose the same points a blank page would.
+
+- Each section below gives you its points, the question it answers, what it has to contain, a short list of checks, and a weaker and a stronger version of the same section.
+- **The lengths are a coverage check, not a box to fit inside.** Each length comes with the list of things that section has to contain. If a section comes in short, one of those things is usually missing: add the missing piece rather than more words. Writing more than the suggested length is not penalized.
+- Answer each question in your own words, about your own study. The examples follow one made-up study, restaurant owners' replies to negative Google reviews, so you can watch a single project develop section by section. Your topic and your data source are your own choice.
+- Do not copy this template's questions, checks or instructions into your document. Your document carries your section headings and your answers, nothing else. Instruction text left in a submission cost points on Topic Selection.
+- Anything in square brackets, such as [Study A, 2022], marks the place where your paper names a real source you annotated. The example study, and anything said about [Study A] or [Study B], is invented for illustration. Do not cite it. The two theories named in the examples are real.
+
+</details>
+
+<details class="tmpl-section" id="tmpl-the-three-habits-that-cost-the-most-points-on-topic-selection">
+<summary>The three habits that cost the most points on Topic Selection</summary>
 
 These carry straight into the prospectus, mostly into the questions and the method overview, which are worth 8 of the 25 points together.
 
@@ -45,7 +52,10 @@ These carry straight into the prospectus, mostly into the questions and the meth
 2. **Only numbers you look up.** Star ratings, view counts, box office and sales figures are welcome, but only beside at least one thing you code yourself. Without one, your codebook has nothing to work on.
 3. **A unit nobody could pin down.** "Reviews and replies" is two things. Name the one thing you will code at a time.
 
-## Title: 3 points
+</details>
+
+<details class="tmpl-section" id="tmpl-title-3-points">
+<summary>Title: <span class="tmpl-points">3 points</span></summary>
 
 **The question it answers:** could a reader guess your key variables from the title alone?
 
@@ -64,7 +74,10 @@ These carry straight into the prospectus, mostly into the questions and the meth
 >
 > *Why it is stronger:* a reader can see what is coded (the repair strategy) and where it comes from (owners' replies to low-rated reviews).
 
-## Research questions or hypotheses: 4 points
+</details>
+
+<details class="tmpl-section" id="tmpl-research-questions-or-hypotheses-4-points">
+<summary>Research questions or hypotheses: <span class="tmpl-points">4 points</span></summary>
 
 **The question it answers:** what will your study find out, and could you answer it by examining something people made?
 
@@ -96,7 +109,10 @@ These carry straight into the prospectus, mostly into the questions and the meth
 >
 > *Why it is stronger:* every answer comes from reading the review and the reply. H1 links two coded things, what the review blames and whether the reply apologizes, in a stated direction, and the theory section below gives the reason.
 
-## Theoretical framework: 4 points
+</details>
+
+<details class="tmpl-section" id="tmpl-theoretical-framework-4-points">
+<summary>Theoretical framework: <span class="tmpl-points">4 points</span></summary>
 
 **The question it answers:** which lens are you using, and what does it predict you will see in your data?
 
@@ -116,7 +132,10 @@ These carry straight into the prospectus, mostly into the questions and the meth
 >
 > *Why it is stronger:* one lens supplies the coding categories and the other supplies H1's direction, and both are used again in the method.
 
-## The gap: 4 points
+</details>
+
+<details class="tmpl-section" id="tmpl-the-gap-4-points">
+<summary>The gap: <span class="tmpl-points">4 points</span></summary>
 
 **The question it answers:** which sources did you read, and what did they leave open that your study answers?
 
@@ -135,7 +154,10 @@ These carry straight into the prospectus, mostly into the questions and the meth
 >
 > *Why it is stronger:* it names what was read, says what those studies did, and the difference it points to is what this study codes.
 
-## Method overview: 4 points
+</details>
+
+<details class="tmpl-section" id="tmpl-method-overview-4-points">
+<summary>Method overview: <span class="tmpl-points">4 points</span></summary>
 
 **The question it answers:** what one thing will you code at a time, where does it come from, roughly how many, and how will you measure your key idea?
 
@@ -157,7 +179,10 @@ These carry straight into the prospectus, mostly into the questions and the meth
 >
 > *Why it is stronger:* all four parts are there, the amount is tied to a row of the sizing table, and something is coded rather than only looked up.
 
-## Expected contribution: 3 points
+</details>
+
+<details class="tmpl-section" id="tmpl-expected-contribution-3-points">
+<summary>Expected contribution: <span class="tmpl-points">3 points</span></summary>
 
 **The question it answers:** once you have the answer, what will someone outside this class know that they do not know now?
 
@@ -176,7 +201,10 @@ These carry straight into the prospectus, mostly into the questions and the meth
 >
 > *Why it is stronger:* it names who learns something and claims only what coded replies can show.
 
-## Timeline: 3 points
+</details>
+
+<details class="tmpl-section" id="tmpl-timeline-3-points">
+<summary>Timeline: <span class="tmpl-points">3 points</span></summary>
 
 **The question it answers:** what will you have finished by each remaining due date?
 
@@ -203,7 +231,10 @@ These carry straight into the prospectus, mostly into the questions and the meth
 >
 > *Why it is stronger:* every line has an assignment, a date and a result you could point to.
 
-## Before you submit
+</details>
+
+<details class="tmpl-section" id="tmpl-before-you-submit">
+<summary>Before you submit</summary>
 
 - At least 250 words, about one page. Under 250 usually means something a section has to contain is missing: go back through each section's list and find it. Writing more is not penalized; if part of what you wrote belongs to a later assignment, such as the codebook or the sampling plan, move it there.
 - A title, then the six sections, each under its own heading.
@@ -212,7 +243,10 @@ These carry straight into the prospectus, mostly into the questions and the meth
 - Every source named in the gap is one you annotated.
 - Saved in `03_Project/01_Prospectus/` and committed, **and** submitted in Blackboard. Committing is not submitting.
 
-## The stronger examples, put together
+</details>
+
+<details class="tmpl-section" id="tmpl-the-stronger-examples-put-together">
+<summary>The stronger examples, put together</summary>
 
 This is what the stronger examples above look like as one document. It runs about 385 words including its headings, inside the 250-to-400-word range, which shows that every section fits on one page.
 
@@ -229,3 +263,5 @@ This is what the stronger examples above look like as one document. It runs abou
 > **Expected contribution.** The study shows whether the reply patterns found at chain hotels hold for independent owners writing in their own voice, which tells crisis communication researchers whether their strategy categories fit the smallest organizations.
 >
 > **Timeline.** Definitions Practice, October 16: both key terms defined. Codebook, October 23: categories from 30 replies. Pilot, November 6: 20 replies coded and timed, pilot codes in R. Describing Data, November 13: all 150 coded. Inferencing Data, November 20: H1 tested. White Paper, December 18.
+
+</details>
