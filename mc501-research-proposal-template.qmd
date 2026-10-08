@@ -1,0 +1,275 @@
+---
+title: "MC 501 Research Proposal Template"
+---
+
+:::{.phase-header}
+# MC 501 Research Proposal Template
+
+**What you submit:** one document of 1,200 to 1,800 words in outline form, with seven headed sections plus References. **75 points. Due Monday, October 12, 11:59 PM, in Blackboard.**
+
+This template shows you, section by section, what each part is worth, the question it answers, and the checks that cost points on Topic Selection, which carry directly into this outline. It is not a form to fill in. An outline that fills each slot without answering the question underneath it will lose the same points a blank page would.
+:::
+
+::: {.callout-note}
+## A printable copy
+
+The same template is available as an accessible PDF for printing or reading offline: [MC 501 Research Proposal template (PDF, 11 pages)](resources/MC501-Research-Proposal-Template.pdf). The full requirements are on the [assignments page](mc501-assignments.qmd).
+:::
+
+## How to use this template
+
+- Each section below gives you its points, the question it answers, the expected number of outline points, what the section has to contain, a short list of checks, and a weaker and a stronger version of the same section.
+- **The counts and the word range are a coverage check, not a box to fit inside.** Each count comes with the list of things that section has to contain. If a section comes in short, one of those things is usually missing: add the missing piece rather than more words. Writing more than the range is not penalized; material that belongs to a later assignment, such as the codebook, can move there.
+- **Every outline point is a full sentence that makes a claim, never a topic label.** "Sponsorship and trust" is a label. "Viewers who recognize a sponsor read as advertising should write about the product more skeptically" is a point. Labels instead of sentences is the failure this assignment is named for.
+- Answer each question in your own words, about your own study. The examples follow one made-up study, sponsor disclosure in YouTube tech reviews and the comments under those videos, so you can watch one project develop section by section. Your topic and your data source are your own choice.
+- Do not copy this template's questions, checks or instructions into your document.
+- Anything in square brackets, such as [Study A, 2021], marks the place where your outline names a real source you read. The example study, and every finding attributed to [Study A], [Study B] or [Study C], is invented for illustration. Do not cite it. The two theories named in the examples are real.
+
+## Points at a glance
+
+| Section | Outline points | Points | The question it answers |
+|---|---|---:|---|
+| Framing | 3 to 5 | 8 | What is happening, among whom and where, and what goes wrong if we get the answer wrong? |
+| Theoretical positioning | 4 to 6 | 15 | Which lens predicts what you will see and why, and what would a rival lens predict instead? |
+| The literature | 6 to 10 | 15 | Where do the studies agree, where do they differ, and what do they all leave out? |
+| The gap | 2 to 3 | 8 | What does that shared limitation leave unanswered? |
+| Research questions or hypotheses | as needed | 10 | What will you find out, and which theory point does each one come from? |
+| The proposed design | 8 to 12 | 15 | What will you code, from where, how, how consistently, and with what analysis, all decided before you see the data? |
+| Contribution | 2 to 3 | 4 | What will researchers in your field know afterward? |
+| References | every source cited | required | Can a reader find every source you cite, in APA 7? |
+| **Total** | | **75** | |
+
+## The three habits that cost the most points on Topic Selection
+
+All three come back in this outline: in the theory, questions and design sections, and in the literature, gap and contribution sections.
+
+1. **Hypotheses that predict one thing, or rest on what earlier studies found.** A hypothesis links two things you can record and says which way the link runs. The reason for the direction comes from a theory's account of why it should happen. "Earlier studies found it" is evidence, not a reason, and whether earlier patterns carry over to your setting is often what your study tests.
+2. **Variables without their unit or their kind of answer.** For each variable, say what one thing you code at a time (the unit of analysis) and what kind of answer it records: named categories with no order (nominal), categories with an order (ordinal), or a count or amount (ratio). Most of the variables on Topic Selection were missing one or both.
+3. **Claims with no named studies behind them, written for the wrong reader.** "Previous research exists" and "I have not seen much research" lost points: name the closest studies. Justifications written for a campaign, a brand or consumers also lost points. Write for a researcher in your field.
+
+## Framing: 8 points
+
+**The question it answers:** what is happening, among whom and where, and what goes wrong if we get the answer wrong?
+
+**Write:** three to five points. **It has to contain four things:** the phenomenon, the population (platform, accounts or outlets, and period), why it matters now, and what is at stake in getting the answer wrong.
+
+**Check before you submit:**
+
+- **The population is bounded here, not later.** Name the platform, the accounts or outlets, and the period in this section. On Topic Selection, populations that appeared only in a later section lost points.
+- **The first point is about the phenomenon, not about earlier studies.** What prior research found belongs in the literature section.
+- **No sentence that would be true of any topic.** "This deserves further research" says nothing about yours.
+
+> **Weaker:**
+>
+> 1. Research has shown that sponsorships affect consumer attitudes.
+> 2. YouTube is a very popular platform.
+> 3. This is an important topic that deserves more research.
+>
+> *Why it is weaker:* the first point reports earlier studies instead of the phenomenon, nothing is bounded, and the last point would fit any topic.
+
+> **Stronger:**
+>
+> 1. Tech reviewers on YouTube increasingly fund their videos through sponsor reads, in which the host delivers an advertiser's message inside a video presented as independent advice.
+> 2. This study examines English-language tech review channels with more than 100,000 subscribers, and the comments under their videos uploaded between January and June 2026.
+> 3. Where in a video the sponsor read appears is left to the creator, so viewers can meet it in the first minute or only after the verdict.
+> 4. If placement changes how viewers respond, then guidance that treats any disclosure as equal overlooks something viewers notice; if it does not, early-disclosure advice rests on an assumption no one has checked against what viewers actually write.
+>
+> *Why it is stronger:* the phenomenon comes first, the population and period are fixed, and the stakes are stated in both directions.
+
+## Theoretical positioning: 15 points
+
+**The question it answers:** which lens predicts what you will see and why, and what would a rival lens predict instead?
+
+**Write:** four to six points. **It has to contain five things:** the lens, what it predicts you will see, why it predicts that, a competing lens with what it predicts instead, and how your design can tell the two apart. The competing lens is required; a framework with no rival is a decoration.
+
+**Check before you submit:**
+
+- **One main lens, used, not a list of lenses that "could apply".** On Topic Selection, listing two or three theories without saying why any of them predicts the direction lost points.
+- **The lens explains the arrow you are predicting.** A theory about what media do to audiences does not explain what causes the coverage in the first place. Check that your lens points the same way your hypothesis does.
+- **The rival predicts something different in your data**, and the design can tell the two apart.
+- **Number the points**, so each research question or hypothesis can say which point it comes from.
+
+> **Weaker:**
+>
+> 1. Persuasion knowledge, parasocial relationships, and uses and gratifications could all provide a lens for this study.
+> 2. Previous studies found that disclosure lowers trust, so this study expects the same.
+>
+> *Why it is weaker:* three lenses are listed and none is used, and the direction rests on earlier findings rather than on a reason it should happen.
+
+> **Stronger:**
+>
+> 1. The persuasion knowledge model (Friestad & Wright, 1994) holds that once people recognize a message as an attempt to persuade them, they draw on what they know about persuasion to cope with it, often by discounting it.
+> 2. A sponsor read placed before the review is easier to recognize as advertising than one placed after the verdict, because the viewer meets the sales pitch before deciding whether to trust the advice.
+> 3. The model therefore predicts that early disclosure should produce more skepticism toward the product in what viewers write.
+> 4. A competing lens, parasocial interaction (Horton & Wohl, 1956), holds that viewers who feel they know a host extend that host personal trust.
+> 5. On that account, regular viewers forgive a sponsor read wherever it appears, so placement should make little difference to skepticism.
+> 6. Comparing videos by placement, while recording whether commenters address the host as someone they know, lets the data favor one account over the other.
+>
+> *Why it is stronger:* one lens carries the prediction and the reason behind it, the rival predicts something different, and point 6 says how the design decides between them.
+
+## The literature: 15 points
+
+**The question it answers:** where do the studies agree, where do they differ, and what do they all leave out?
+
+**Write:** six to ten points, organized by theme rather than by author. **It has to contain three things:** where the studies agree, where they differ or qualify each other, and the limitation they share, each with its citations. This is your synthesis paragraph from Annotated Manuscripts, expanded.
+
+**Check before you submit:**
+
+- **Organized by what the studies show, not by who wrote them.** A point that starts with an author's name and summarizes one study is a summary, not a synthesis.
+- **Each point cites the studies behind it**, usually two or more.
+- **It ends on the limitation the studies share**, because the gap in the next section rests on it.
+- **Nothing repeats the theory section.** Material that appears twice adds length and no points.
+
+> **Weaker:**
+>
+> 1. [Study A, 2019] looked at Instagram sponsorship and found that disclosure lowered trust.
+> 2. [Study B, 2021] studied YouTube and found something similar.
+> 3. [Study C, 2023] also studied disclosure.
+>
+> *Why it is weaker:* it walks through studies one at a time, says nothing about where they differ, and never names what they have in common as a limitation.
+
+> **Stronger:**
+>
+> 1. Across platforms, an explicit disclosure makes viewers more likely to recognize sponsored content as advertising [Study A, 2019; Study B, 2021].
+> 2. Recognition does not always lower trust: viewers who already follow a creator rated sponsored posts about as credible as unsponsored ones [Study C, 2023].
+> 3. The studies disagree on whether timing matters, with one finding stronger effects for disclosure at the start of a video and another finding none [Study B, 2021; Study D, 2024].
+> 4. Nearly all of this work measures reactions by showing participants a sponsored post and asking them about it, in a lab or an online survey [Study A, 2019; Study C, 2023; Study D, 2024].
+>
+> *Why it is stronger:* each point is a claim about the research as a whole, the disagreement is stated, and the last point names the limitation the studies share. A full section would run six to ten points.
+
+## The gap: 8 points
+
+**The question it answers:** what does that shared limitation leave unanswered?
+
+**Write:** two to three points. **It has to contain three things:** the shared limitation from the literature section, the closest studies it applies to, and the question it leaves open, which is the one your study asks.
+
+**Check before you submit:**
+
+- **It follows from the limitation you named,** not from a fresh claim that nobody has studied the topic.
+- **It names the closest studies** and says what they did not do.
+- **What it leaves open is what your questions answer.**
+
+> **Weaker:** 1. There has not been much research on sponsorship disclosure on YouTube.
+>
+> *Why it is weaker:* it makes a claim about a whole body of research with no source behind it, and the literature section above shows it is untrue.
+
+> **Stronger:**
+>
+> 1. Because the studies above asked people how they would react, none of them observed what viewers write, unprompted, under real sponsored videos.
+> 2. The one finding on timing comes from a survey, so whether placement matters in viewers' own words is still open.
+>
+> *Why it is stronger:* both points rest on the shared limitation, and the open question is the one this study asks.
+
+## Research questions or hypotheses: 10 points
+
+**The question it answers:** what will you find out, and which theory point does each one come from?
+
+**Write:** your research questions and hypotheses, stated formally. **Each one has to contain:** the question or the predicted relationship, and the theory point it comes from. These are your Topic Selection questions, revised by your feedback.
+
+**Check before you submit:**
+
+- **You can answer it from what you code.** Decisions made inside a company, what fans feel, and what "the public" thinks are not visible in posts. Ask about what is visible.
+- **It names the people you can actually see.** You can code commenters, not "audiences": the people who comment are a small group who chose to speak up.
+- **One question asks one thing.** "How much coverage, and about what?" is two questions.
+- **Each hypothesis links two things you can record and says which way the link runs.** One that describes only how often something appears is a research question.
+- **State a tendency, not a certainty.** "More likely to" rather than "will".
+- **Every term can be recorded.** A word like "trust" or "esteemed" needs to become something you can mark in your data, and the design section says how.
+- **Each one matches your design.** On Topic Selection, a question that compared two groups when the design covered only one of them lost points.
+
+> **Weaker:**
+>
+> RQ1: How do viewers feel about sponsored tech reviews?
+>
+> RQ2: How much do reviewers disclose, and what do they say?
+>
+> H1: Early disclosure will make viewers trust the reviewer less.
+>
+> *Why it is weaker:* RQ1 needs viewers to tell you how they feel, RQ2 asks two questions, and H1 claims a cause as a certainty about "trust", which is never defined as something you could record.
+
+> **Stronger:**
+>
+> RQ1: Where in the video, and how explicitly, do tech reviewers in this population disclose a sponsor? (Theory point 2.)
+>
+> H1: Comments under videos that disclose a sponsor in the first minute are more likely to express skepticism about the reviewed product than comments under videos that disclose later or not at all. (Theory points 1 to 3.)
+>
+> RQ2: Is the link in H1 weaker among comments that address the host as someone the commenter knows, for example by first name or with "we"? (Theory points 4 to 6.)
+>
+> *Why it is stronger:* every answer comes from coding videos and comments, H1 links two coded things in a stated direction as a tendency, and each item points back to the theory point it tests.
+
+## The proposed design: 15 points
+
+**The question it answers:** what will you code, from where, how, how consistently, and with what analysis, all decided before you see the data?
+
+**Write:** eight to twelve points. **It has to contain six things:** the unit of analysis, the population and frame, the sampling method, the measurement of each variable, the reliability protocol you intend, and the analysis you plan before you see the data. Fewer than eight points usually means one of the six is missing or a variable has no measurement.
+
+**Check before you submit:**
+
+- **One unit of analysis per kind of material.** "Posts, pages, titles and comments" is four things. Name one thing coded at a time for each kind of material, for example one video and one comment.
+- **For each variable, what it records and what kind of answer it is**: named categories with no order (nominal), ordered categories (ordinal), or a count or amount (ratio).
+- **At least one variable you code yourself.** Followers, views and vote totals are welcome beside coded variables but cannot replace them. An outcome measured once per campaign or per team gives you two or three data points, not a variable you can analyze.
+- **A sample someone else could rebuild.** Record capture dates and the sort order you used, because what a platform shows changes by viewer and over time. If a hypothesis says one thing comes before another, capture at two points in time.
+- **Sized to your coding time.** Budget two to four hours of coding in total and say which row of the sizing table under Sampling Plan and Pilot you used. Splitting the budget across two kinds of material is fine; say how.
+- **A reliability protocol for one coder.** You are the only coder in this course. Plan to re-code at least 20 percent of your items yourself after a gap of at least 48 hours, with your first codes hidden. A plan that relies on a second coder does not fit this course.
+- **An analysis named now.** For each question, say which comparison or test answers it. A design that names no analysis is the second failure the [assignments page](mc501-assignments.qmd#research-proposal-sentence-outline) names.
+
+> **Weaker:**
+>
+> 1. I will collect videos, comments, and channel statistics from popular tech YouTubers.
+> 2. I will analyze them for disclosure and audience reactions.
+> 3. A second coder will check my coding.
+> 4. I will decide on the analysis once I see what the data looks like.
+>
+> *Why it is weaker:* no unit, no population, no measurement, a second coder this course does not have, and the analysis is deferred until after the data are in.
+
+> **Stronger:**
+>
+> 1. The design uses two units of analysis: one video, coded for its sponsor read, and one comment, coded for its response.
+> 2. The population is English-language tech review videos uploaded January to June 2026 by channels with more than 100,000 subscribers; the frame is a list of such channels built from YouTube searches on five fixed product terms, recorded with the search date.
+> 3. I will draw 20 sponsored and unsponsored videos from that frame at random, and from each video take the first 10 comments under "Newest first", captured seven days after upload so every video has had the same time to collect comments.
+> 4. For each video I will code where the sponsor read starts (first minute, later, or none: nominal) and whether the host names the sponsor and states the payment (yes or no: nominal).
+> 5. For each comment I will code whether it expresses skepticism about the product (yes or no: nominal) and whether it addresses the host as someone the commenter knows, by first name, "we" or "us" (yes or no: nominal).
+> 6. View counts will be recorded beside the coded variables as a looked-up number.
+> 7. Comments sit on the 45-seconds-each row of the sizing table, so 200 comments is about 2.5 hours; locating and coding each video's sponsor read adds about 40 minutes, for about 3.2 hours in all.
+> 8. I am the only coder, so I will re-code a random 20 percent of comments and videos at least 48 hours after my first pass, with my first codes hidden, and report how often I agreed with myself.
+> 9. For H1 I will compare the share of skeptical comments by disclosure placement with a chi-square test (a test of whether two sets of categories are related).
+> 10. Because comments under the same video tend to resemble each other, I will repeat the comparison on the percentage of skeptical comments per video.
+> 11. For RQ2 I will run the H1 comparison separately for comments that do and do not address the host as someone they know.
+>
+> *Why it is stronger:* every element the section asks for is present, every variable has its unit and its kind of answer, the sample can be rebuilt from the notes, the time adds up, and every analysis is named before any data exist.
+
+## Contribution: 4 points
+
+**The question it answers:** what will researchers in your field know afterward that they do not know now?
+
+**Write:** two to three points, written for your field rather than for this course. **It has to contain two things:** who in your field learns something, and what they learn that your data can actually show.
+
+**Check before you submit:**
+
+- **Written for a researcher in your field**, not for a campaign, a brand, consumers or me.
+- **It claims only what your data can show.** If you code videos and comments, you cannot speak to how a platform's algorithm works or whether anyone bought the product.
+- **Nothing promised that the design never uses.** A coding tool or distinction offered here has to appear in a variable.
+
+> **Weaker:** 1. This study will help YouTubers earn more from sponsors and show how the algorithm rewards honest creators.
+>
+> *Why it is weaker:* it is written for creators, and it claims results about earnings and an algorithm that the data never touch.
+
+> **Stronger:**
+>
+> 1. The study tests the persuasion knowledge model on what viewers write unprompted rather than on what they report in a survey, which shows whether the model's prediction holds outside the lab.
+> 2. It tells disclosure researchers whether placement, and not only the presence of a disclosure, is worth measuring in future work.
+>
+> *Why it is stronger:* it is written for researchers, and each claim follows from what the design actually codes.
+
+## References
+
+**Required:** APA 7 for every source cited in the outline, and only sources you cited.
+
+## Before you submit
+
+- At least 1,200 words. Under 1,200 usually means something a section has to contain is missing, or some points are labels rather than sentences: go back through each section's list and find it. Writing more is not penalized.
+- Seven headed sections in the order above, plus References.
+- Every point is a full sentence that makes a claim. No topic labels.
+- No template text, instructions or bracketed placeholders left in your document.
+- Each research question or hypothesis names the theory point it comes from.
+- The design names one unit per kind of material, the kind of answer for every variable, a one-coder reliability plan and an analysis for every question.
+- Submitted in Blackboard. Committing to GitHub is not submitting.

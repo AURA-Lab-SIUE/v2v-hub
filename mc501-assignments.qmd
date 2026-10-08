@@ -294,6 +294,8 @@ the evidence behind it.
 
 A structured sentence outline that could serve as the front half of a conference paper.
 
+The [Research Proposal template](mc501-research-proposal-template.qmd) goes through each section with its points, the checks that cost points on Topic Selection, and a weaker and a stronger example.
+
 <details class="syl-policy">
 <summary>Full requirements</summary>
 

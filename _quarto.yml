@@ -37,8 +37,12 @@ website:
         menu:
           - text: "MC 451 (Fall 2026)"
             href: mc451-assignments.qmd
+          - text: "MC 451 Prospectus template"
+            href: mc451-prospectus-template.qmd
           - text: "MC 501 (Fall 2026)"
             href: mc501-assignments.qmd
+          - text: "MC 501 Research Proposal template"
+            href: mc501-research-proposal-template.qmd
       - text: "Resources"
         href: resources/index.qmd
       - text: "Course Workspace"

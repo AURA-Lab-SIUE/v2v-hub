@@ -1,0 +1,231 @@
+---
+title: "MC 451 Project Prospectus Template"
+---
+
+:::{.phase-header}
+# MC 451 Project Prospectus Template
+
+**What you submit:** one document of about one page, 250 to 400 words: a title, then six headed sections. **25 points. Due Friday, October 9, 11:59 PM, in Blackboard.**
+
+This template shows you, section by section, what each part is worth, the question it answers, and the checks that cost points on Topic Selection. It is not a form to fill in. A prospectus that fills in blanks without answering the questions underneath them will lose the same points a blank page would.
+:::
+
+::: {.callout-note}
+## A printable copy
+
+The same template is available as an accessible PDF for printing or reading offline: [MC 451 Project Prospectus template (PDF, 9 pages)](resources/MC451-Project-Prospectus-Template.pdf). The full requirements are on the [assignments page](mc451-assignments.qmd).
+:::
+
+## How to use this template
+
+- Each section below gives you its points, the question it answers, what it has to contain, a short list of checks, and a weaker and a stronger version of the same section.
+- **The lengths are a coverage check, not a box to fit inside.** Each length comes with the list of things that section has to contain. If a section comes in short, one of those things is usually missing: add the missing piece rather than more words. Writing more than the suggested length is not penalized.
+- Answer each question in your own words, about your own study. The examples follow one made-up study, restaurant owners' replies to negative Google reviews, so you can watch a single project develop section by section. Your topic and your data source are your own choice.
+- Do not copy this template's questions, checks or instructions into your document. Your document carries your section headings and your answers, nothing else. Instruction text left in a submission cost points on Topic Selection.
+- Anything in square brackets, such as [Study A, 2022], marks the place where your paper names a real source you annotated. The example study, and anything said about [Study A] or [Study B], is invented for illustration. Do not cite it. The two theories named in the examples are real.
+
+## Points at a glance
+
+| Section | Points | The question it answers |
+|---|---:|---|
+| Title | 3 | Could a reader guess your key variables from the title alone? |
+| Research questions or hypotheses | 4 | What will your study find out, and could you answer it by examining something people made? |
+| Theoretical framework | 4 | Which lens are you using, and what does it predict you will see? |
+| The gap | 4 | Which sources did you read, and what did they leave open? |
+| Method overview | 4 | What one thing will you code at a time, where does it come from, roughly how many, and how will you measure your key idea? |
+| Expected contribution | 3 | What will someone outside this class know once you have the answer? |
+| Timeline | 3 | What will you have finished by each remaining due date? |
+| **Total** | **25** | |
+
+## The three habits that cost the most points on Topic Selection
+
+These carry straight into the prospectus, mostly into the questions and the method overview, which are worth 8 of the 25 points together.
+
+1. **A question only a person could answer.** Feelings, opinions, ratings and plans need a survey or an interview, and this project collects neither. Your study examines something people already made: a post, a comment, a reply, a video, an ad, a review.
+2. **Only numbers you look up.** Star ratings, view counts, box office and sales figures are welcome, but only beside at least one thing you code yourself. Without one, your codebook has nothing to work on.
+3. **A unit nobody could pin down.** "Reviews and replies" is two things. Name the one thing you will code at a time.
+
+## Title: 3 points
+
+**The question it answers:** could a reader guess your key variables from the title alone?
+
+**Write:** one line.
+
+**Check before you submit:**
+
+- It names at least two of the things you will code or compare.
+- It could not be the title of any other study on your topic.
+
+> **Weaker:** Restaurant Reviews Project
+>
+> *Why it is weaker:* it names a subject and no variables.
+
+> **Stronger:** Apology or Argument? Repair Strategies in Owners' Replies to One-Star and Two-Star Google Reviews
+>
+> *Why it is stronger:* a reader can see what is coded (the repair strategy) and where it comes from (owners' replies to low-rated reviews).
+
+## Research questions or hypotheses: 4 points
+
+**The question it answers:** what will your study find out, and could you answer it by examining something people made?
+
+**Write:** one to three, numbered, carried over from Topic Selection and revised if your reading or your feedback changed them. Three is a maximum, not a target.
+
+**Check before you submit:**
+
+- **You can answer it without asking anyone anything.** If the answer depends on what someone feels, thinks or plans, move the question to something they wrote or made.
+- **It is a question or a prediction, not a claim.** "Owners respond defensively to criticism" is a statement. Rewrite it as a question (RQ1) or as a hypothesis (H1).
+- **A hypothesis links two things you can record and says which way the link runs.** Your theory section supplies the reason for that direction. If you have no reason from a theory, write a research question instead. Neither form scores higher.
+- **It does not claim a cause.** Words like "influence", "impact" and "drive" claim that one thing made another happen, and coding can show only what appears together. Ask what appears, how often, and alongside what.
+- **It matches your topic.** Questions and a topic statement that described two different studies lost points.
+
+> **Weaker:**
+>
+> RQ1: How do restaurant owners feel about negative reviews?
+>
+> RQ2: How do Google reviews influence a restaurant's business?
+>
+> H1: Owners respond defensively to criticism.
+>
+> *Why it is weaker:* RQ1 needs owners to tell you how they feel. RQ2 claims a cause and a business result that no coded reply can show. H1 is a claim about one thing, with no second thing for it to relate to.
+
+> **Stronger:**
+>
+> RQ1: Which repair strategies (apology, explanation, denial, an offer to make it right, or an attack on the reviewer) appear most often in owners' replies to one-star and two-star Google reviews?
+>
+> H1: Replies to reviews that blame staff behavior will include an apology more often than replies to reviews that blame price or wait time.
+>
+> *Why it is stronger:* every answer comes from reading the review and the reply. H1 links two coded things, what the review blames and whether the reply apologizes, in a stated direction, and the theory section below gives the reason.
+
+## Theoretical framework: 4 points
+
+**The question it answers:** which lens are you using, and what does it predict you will see in your data?
+
+**Write:** two to three sentences. **It has to contain three things:** the lens, what it predicts you will see, and how that prediction connects to your questions (the reason for a hypothesis's direction, or why you chose research questions instead). One sentence usually means one of these is missing.
+
+**Check before you submit:**
+
+- **It says what the theory predicts, not only its name.**
+- **The lens comes back later:** in a hypothesis's direction, in the categories you code, or in the contribution. Naming a theory here and never using it again is one of the two ways the [assignments page](mc451-assignments.qmd#project-prospectus) says this prospectus loses points.
+- **If you wrote a hypothesis, this section gives the reason for its direction.** If you wrote only research questions, one sentence says why: you are describing or exploring, or your reading does not support a direction.
+
+> **Weaker:** This study uses image repair theory, which is about how organizations repair their image.
+>
+> *Why it is weaker:* it names and defines a lens but predicts nothing, and nothing later in the prospectus depends on it.
+
+> **Stronger:** Image repair theory sorts the ways an accused party defends itself into a small set of strategies, from denial to apology, and those strategies become my categories for RQ1. Situational crisis communication theory holds that the more blame an audience places on an organization, the more accommodating its response should be. A complaint about staff behavior places more blame on the restaurant than a complaint about prices, so if owners follow that logic, H1 predicts more apologies in replies to staff complaints.
+>
+> *Why it is stronger:* one lens supplies the coding categories and the other supplies H1's direction, and both are used again in the method.
+
+## The gap: 4 points
+
+**The question it answers:** which sources did you read, and what did they leave open that your study answers?
+
+**Write:** two to three sentences, resting on the sources you annotated. **It has to contain three things:** the closest sources you annotated, what they did, and what they left open that your study answers.
+
+**Check before you submit:**
+
+- **It names the closest studies you read.** The assignment asks for a gap that rests on the sources you annotated, not on an assertion that nobody has studied this. Say what you read and what it did not do.
+- **The gap matches your study.** What those sources left open is what your questions answer.
+
+> **Weaker:** There is not much research on how restaurants reply to online reviews, so this study will fill that gap.
+>
+> *Why it is weaker:* it makes a claim about a whole body of research with no source behind it.
+
+> **Stronger:** The studies I annotated on review replies [Study A, 2019; Study B, 2022] coded replies written by managers at chain hotels, where trained staff answer on the brand's behalf. Neither looked at independent restaurants, where the owner usually writes the reply personally and the complaint is often about people the owner hired.
+>
+> *Why it is stronger:* it names what was read, says what those studies did, and the difference it points to is what this study codes.
+
+## Method overview: 4 points
+
+**The question it answers:** what one thing will you code at a time, where does it come from, roughly how many, and how will you measure your key idea?
+
+**Write:** three to four sentences. **It has to contain four things:** the unit of analysis, the data source, the rough amount, and how you will measure your key idea. Fewer than three sentences usually means one of the four is missing.
+
+**Check before you submit:**
+
+- **Unit of analysis.** Name one thing coded at a time ("one owner reply"), not a list ("reviews, replies and ratings"). If two questions use different units, name each one.
+- **At least one thing you code.** At least one variable comes from you reading and sorting your material into categories. Looked-up numbers sit beside it.
+- **A source with a boundary.** Name the platform and a defined set (which accounts, which dates), not "wherever I find them". Record the date you collect, because what a platform shows changes over time.
+- **A rough amount, sized by time.** Budget two to four hours of coding in total. Use the sizing table under [Sampling Plan and Pilot](mc451-assignments.qmd#sampling-plan-and-pilot) on the assignments page and say which row you used. Sample sizes copied from published studies are written at professional scale and are usually far too large for this project.
+- **You code alone.** There is no second coder in this course, so do not plan one.
+
+> **Weaker:** I will look at Google reviews for restaurants and see how owners respond to them, and compare star ratings to how busy the restaurants are.
+>
+> *Why it is weaker:* there is no unit, no boundary and no amount, and the only comparison is between two numbers looked up rather than coded.
+
+> **Stronger:** The unit of analysis is one owner reply to a one-star or two-star Google review. I will collect 150 replies from 25 independent restaurants in one metropolitan area, logging each restaurant's listing and the date I collected it. Short replies sit on the 75-seconds-each row of the sizing table, so 150 replies is about three hours of coding. I will code each reply for its main repair strategy and each review for what it blames (staff, food, price, wait time, other), with the star rating recorded beside them as a looked-up number.
+>
+> *Why it is stronger:* all four parts are there, the amount is tied to a row of the sizing table, and something is coded rather than only looked up.
+
+## Expected contribution: 3 points
+
+**The question it answers:** once you have the answer, what will someone outside this class know that they do not know now?
+
+**Write:** one to two sentences. **It has to contain two things:** who learns something from your answer, and what they learn.
+
+**Check before you submit:**
+
+- **It is written for a reader in your area**, a researcher or a practitioner, rather than for yourself or for me.
+- **It claims only what your data can show.** If you code replies, you can say what owners write, not whether their replies win customers back.
+
+> **Weaker:** This research will help restaurants get better reviews.
+>
+> *Why it is weaker:* it promises a result that the study never measures.
+
+> **Stronger:** The study shows whether the reply patterns found at chain hotels hold for independent owners writing in their own voice, which tells crisis communication researchers whether their strategy categories fit the smallest organizations.
+>
+> *Why it is stronger:* it names who learns something and claims only what coded replies can show.
+
+## Timeline: 3 points
+
+**The question it answers:** what will you have finished by each remaining due date?
+
+**Write:** a short list by assignment, not by week, from now to the White Paper.
+
+**Check before you submit:**
+
+- **One line per remaining assignment**, with its due date and what you will have done for it.
+- **Each line names something you could check off.** "Keep working on the project" cannot be checked off.
+
+> **Weaker:** Weeks 8 to 15: collect data, code it, and write the paper.
+>
+> *Why it is weaker:* it is organized by week rather than by assignment, and nothing in it could be checked off.
+
+> **Stronger:**
+>
+> - Definitions Practice, Friday, October 16: written definitions of repair strategy and of what a review blames.
+> - Codebook and Qualitative Memo, Friday, October 23: categories with rules and examples, built from the first 30 replies I read.
+> - Sampling Plan and Pilot, Friday, November 6: restaurant list fixed, collection dates logged, 20 replies coded and timed.
+> - Data Wrangling in R, Friday, November 6: pilot codes loaded and cleaned in R.
+> - Describing Data in R, Friday, November 13: full set of 150 replies coded; counts of each strategy by what the review blames.
+> - Inferencing Data in R, Friday, November 20: the test of H1.
+> - White Paper, Friday, December 18: this prospectus revised into the introduction, plus method, results and discussion.
+>
+> *Why it is stronger:* every line has an assignment, a date and a result you could point to.
+
+## Before you submit
+
+- At least 250 words, about one page. Under 250 usually means something a section has to contain is missing: go back through each section's list and find it. Writing more is not penalized; if part of what you wrote belongs to a later assignment, such as the codebook or the sampling plan, move it there.
+- A title, then the six sections, each under its own heading.
+- No template text, instructions or bracketed placeholders left in your document.
+- One to three questions or hypotheses, each answerable from something you code.
+- Every source named in the gap is one you annotated.
+- Saved in `03_Project/01_Prospectus/` and committed, **and** submitted in Blackboard. Committing is not submitting.
+
+## The stronger examples, put together
+
+This is what the stronger examples above look like as one document. It runs about 385 words including its headings, inside the 250-to-400-word range, which shows that every section fits on one page.
+
+> **Apology or Argument? Repair Strategies in Owners' Replies to One-Star and Two-Star Google Reviews**
+>
+> **Research questions and hypotheses.** RQ1: Which repair strategies (apology, explanation, denial, an offer to make it right, or an attack on the reviewer) appear most often in owners' replies to one-star and two-star Google reviews? H1: Replies to reviews that blame staff behavior will include an apology more often than replies to reviews that blame price or wait time.
+>
+> **Theoretical framework.** Image repair theory sorts the ways an accused party defends itself into a small set of strategies, from denial to apology, and those strategies become my categories for RQ1. Situational crisis communication theory holds that the more blame an audience places on an organization, the more accommodating its response should be. A complaint about staff behavior places more blame on the restaurant than a complaint about prices, so if owners follow that logic, H1 predicts more apologies in replies to staff complaints.
+>
+> **The gap.** The studies I annotated on review replies [Study A, 2019; Study B, 2022] coded replies written by managers at chain hotels, where trained staff answer on the brand's behalf. Neither looked at independent restaurants, where the owner usually writes the reply personally and the complaint is often about people the owner hired.
+>
+> **Method overview.** The unit of analysis is one owner reply to a one-star or two-star Google review. I will collect 150 replies from 25 independent restaurants in one metropolitan area, logging each restaurant's listing and the date I collected it. Short replies sit on the 75-seconds-each row of the sizing table, so 150 replies is about three hours of coding. I will code each reply for its main repair strategy and each review for what it blames (staff, food, price, wait time, other), with the star rating recorded beside them as a looked-up number.
+>
+> **Expected contribution.** The study shows whether the reply patterns found at chain hotels hold for independent owners writing in their own voice, which tells crisis communication researchers whether their strategy categories fit the smallest organizations.
+>
+> **Timeline.** Definitions Practice, October 16: both key terms defined. Codebook, October 23: categories from 30 replies. Pilot, November 6: 20 replies coded and timed, pilot codes in R. Describing Data, November 13: all 150 coded. Inferencing Data, November 20: H1 tested. White Paper, December 18.

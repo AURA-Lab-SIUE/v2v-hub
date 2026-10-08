@@ -26,6 +26,14 @@ An example of a properly annotated research article, showing the critical readin
 [Download (PDF)](annotation-example.pdf){.btn .btn-sm .btn-secondary}
 :::
 
+:::{.resource-card}
+#### Assignment Templates
+
+Section-by-section guides with the points, the checks that cost points, and a weaker and a stronger example for each section.
+
+[MC 451 Project Prospectus](../mc451-prospectus-template.qmd){.btn .btn-sm .btn-secondary} [MC 501 Research Proposal](../mc501-research-proposal-template.qmd){.btn .btn-sm .btn-secondary}
+:::
+
 ---
 
 ## Get the course workspace

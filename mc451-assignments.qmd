@@ -317,6 +317,8 @@ to prove it.
 
 Put the whole study on one page.
 
+The [Project Prospectus template](mc451-prospectus-template.qmd) goes through each section with its points, the checks that cost points on Topic Selection, and a weaker and a stronger example.
+
 <details class="syl-policy">
 <summary>Full requirements</summary>
 
