@@ -472,7 +472,7 @@ Two rules override the table.
 
 **More variables cost more time.** These rates assume three to six coded variables per unit. Ten variables roughly halves the rate, so either halve the corpus or cut variables, and say in the plan which you chose.
 
-**This table is a planning estimate, not your final number.** Your exact sample size gets set with me once your topic and questions are in, and it is confirmed at the prospectus. Until then, plan from the table and say in the document which row you used.
+**This table is a planning estimate, not your final number.** Your exact sample size gets set with me once your topic and questions are in, and it is confirmed at the Research Proposal. Until then, plan from the table and say in the document which row you used.
 
 **Check it before you submit.** [Sampling Check](https://aura-lab.siue.edu/sampling-check/) turns your own coding rate and available hours into the corpus size they support, sizes the reliability subset from your rarest category rather than from a flat percentage, and reports the smallest effect a sample that size could detect, which is a limitation worth knowing before you collect rather than after. Nothing you enter leaves your machine.
 
