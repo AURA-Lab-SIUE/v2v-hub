@@ -358,14 +358,14 @@ analysis <- analysis %>%
       TRUE ~ NA_character_
     ),
     channel_type = factor(channel_type),
-    viewer_band  = factor(viewer_band, levels = c("small", "mid", "large"))
+    viewer_band  = factor(viewer_band, levels = c("small", "medium", "large"))
   )
 
 levels(analysis$channel_type)
 levels(analysis$viewer_band)
 ```
 
-Setting `levels` explicitly for `viewer_band` matters. Without it R sorts alphabetically and you get large, mid, small, which puts your bands in a nonsense order on every chart you draw.
+Setting `levels` explicitly for `viewer_band` matters. Without it R sorts alphabetically and you get large, medium, small, which puts your bands in a nonsense order on every chart you draw.
 
 ## Step 4: Export
 
@@ -429,7 +429,7 @@ analysis <- chat %>%
   left_join(channel_size, by = "channel") %>%
   mutate(
     channel_type = factor(if_else(is_gaming, "gaming", "non-gaming")),
-    viewer_band  = factor(viewer_band, levels = c("small", "mid", "large"))
+    viewer_band  = factor(viewer_band, levels = c("small", "medium", "large"))
   )
 
 saveRDS(analysis, "data/twitch_analysis.RDS")

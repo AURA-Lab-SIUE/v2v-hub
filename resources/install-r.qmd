@@ -90,6 +90,7 @@ Start R again (`R` in the terminal) and install the analysis packages, one at a 
 
 ```r
 install.packages("tidyverse")   # ggplot2, dplyr, readr, tidyr, and more
+install.packages("janitor")     # clean_names(), used from the first wrangling practice on
 install.packages("likert")      # Likert-scale survey analysis
 install.packages("rmarkdown")   # reports from your analysis
 ```
