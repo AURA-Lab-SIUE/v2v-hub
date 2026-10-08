@@ -438,11 +438,11 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 2. **The sampling method**, named and justified, including what it makes estimable and what it does not.
 3. **The size, with its justification.** Either an effect-size estimate borrowed from a named study, a smallest effect of interest argued from consequence, or a resource constraint stated as a constraint and paired with a sensitivity analysis. Name which of the three you are using. The coding-time budget below is a resource constraint, and it is the one most of you will use.
 4. **The time calibration**: your measured rate from a timed twenty-item trial, the corpus target it produces, and the row of the sizing table you land closest to.
-4. **Twenty to thirty items coded**, submitted as data.
-5. **A stability figure computed on those items**, with the code that produced it. You are the only coder, so this is a re-code of your own decisions after at least 48 hours, not an agreement statistic.
-6. **Every edge case**, with the decision made and the rule added.
-7. **The revisions the pilot forced**, before and after.
-8. **One paragraph on what the pilot tells you about the full run**: how long it will take, and what you will change.
+5. **Twenty to thirty items coded**, submitted as data.
+6. **A stability figure computed on those items**, with the code that produced it. You are the only coder, so this is a re-code of your own decisions after at least 48 hours, not an agreement statistic.
+7. **Every edge case**, with the decision made and the rule added.
+8. **The revisions the pilot forced**, before and after.
+9. **One paragraph on what the pilot tells you about the full run**: how long it will take, and what you will change.
 
 **How it is graded.** Plan 25, size justification 15, pilot data and reliability computation 20, edge cases and revisions 15.
 

@@ -322,7 +322,7 @@ The [Project Prospectus template](mc451-prospectus-template.qmd) goes through ea
 <details class="syl-policy">
 <summary>Full requirements</summary>
 
-**What you submit:** one document, about one page, roughly 250 to 400 words. Six headed sections.
+**What you submit:** one document, about one page, roughly 250 to 400 words. Seven headed sections.
 
 **Where it lives:** `03_Project/01_Prospectus/`. This is the first draft of the paper's introduction, not a separate document. In December you revise it; you do not start it again.
 
@@ -471,8 +471,8 @@ Decide what you will code, then prove the codebook survives contact with it.
 
 6. **Ten to twenty items coded** with your own codebook, submitted as data.
 7. **A stability check**: re-code at least a quarter of those items after a gap of at least 48 hours with your first codes hidden, report how often you agreed with yourself, and say what you changed in the codebook as a result. You are the only coder, so this is the only reliability evidence the study will have.
-7. **Every edge case you hit**, listed, with the decision you made.
-8. **The revisions the pilot forced**, with before and after. A pilot that changed nothing almost always means the pilot was too easy.
+8. **Every edge case you hit**, listed, with the decision you made.
+9. **The revisions the pilot forced**, with before and after. A pilot that changed nothing almost always means the pilot was too easy.
 
 **How it is graded.** Plan 35, pilot data 15, edge cases 10, revisions 15. The stability check is graded inside pilot data.
 

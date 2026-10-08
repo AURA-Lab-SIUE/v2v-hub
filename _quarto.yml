@@ -19,6 +19,12 @@ project:
     # Starter files students DOWNLOAD and open in VS Code. Deliberately outside the
     # render list above: they are source to be handed over, not pages to be built.
     - "starters/*.qmd"
+    # The 9- and 11-page PDFs that WERE the student templates until 2026-10-08. Nothing
+    # links them now that the pages point at the 2-page frameworks, and Quarto copies only
+    # what a page references, so dropping the link 404'd URLs already in students' hands.
+    # Listed here to keep them served. Remove once a term has passed.
+    - "resources/MC451-Project-Prospectus-Template.pdf"
+    - "resources/MC501-Research-Proposal-Template.pdf"
 
 website:
   title: "V2V Hub"
