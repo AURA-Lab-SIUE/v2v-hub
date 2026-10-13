@@ -56,16 +56,19 @@ format:
 ## Interval
 
 - **Equal distances, arbitrary zero**
-    - `date` is milliseconds since January 1, 1970
+    - The posting date and time of each message
     - Minute-to-minute distance is constant across the column
 - **1970 does not mean "no time"**, it is a convention
-- Subtract two timestamps for a duration, never a ratio
+    - `date` stores it as milliseconds counted from 1970
+- No message is "twice as late" as another
 
 ## Ratio
 
 - **Equal intervals and a true zero**
     - `viewers` is ratio: zero means nobody is watching
     - So 28,000 really is twice the audience of 14,000
+- **Elapsed time is ratio:** hours since the stream started
+    - Subtract two timestamps and the duration is ratio
 - **The full range of arithmetic is permitted**
 - Most counts are ratio: viewers, characters, messages
 
