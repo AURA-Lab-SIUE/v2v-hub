@@ -234,7 +234,7 @@ All three come back in this outline: in the theory, questions and design section
 - **At least one variable you code yourself.** Followers, views and vote totals are welcome beside coded variables but cannot replace them. An outcome measured once per campaign or per team gives you two or three data points, not a variable you can analyze.
 - **A sample someone else could rebuild.** Record capture dates and the sort order you used, because what a platform shows changes by viewer and over time. If a hypothesis says one thing comes before another, capture at two points in time.
 - **Sized to your coding time.** Budget two to four hours of coding in total and say which row of the sizing table under Sampling Plan and Pilot you used. Splitting the budget across two kinds of material is fine; say how.
-- **A reliability protocol for one coder.** You are the only coder in this course. Plan to re-code at least 20 percent of your items yourself after a gap of at least 48 hours, with your first codes hidden. A plan that relies on a second coder does not fit this course.
+- **A reliability protocol for one coder.** You are the only coder in this course. Plan to re-code at least 10 percent of your items yourself after a gap of at least 48 hours, with your first codes hidden. In this course about 10 percent is enough to practice the mechanics; a study meant for publication re-codes 10 to 20 percent of its items. A plan that relies on a second coder does not fit this course.
 - **An analysis named now.** For each question, say which comparison or test answers it. A design that names no analysis is the second failure the [assignments page](mc501-assignments.qmd#research-proposal-sentence-outline) names.
 
 > **Weaker:**
@@ -255,7 +255,7 @@ All three come back in this outline: in the theory, questions and design section
 > 5. For each comment I will code whether it expresses skepticism about the product (yes or no: nominal) and whether it addresses the host as someone the commenter knows, by first name, "we" or "us" (yes or no: nominal).
 > 6. View counts will be recorded beside the coded variables as a looked-up number.
 > 7. Comments sit on the 45-seconds-each row of the sizing table, so 200 comments is about 2.5 hours; locating and coding each video's sponsor read adds about 40 minutes, for about 3.2 hours in all.
-> 8. I am the only coder, so I will re-code a random 20 percent of comments and videos at least 48 hours after my first pass, with my first codes hidden, and report how often I agreed with myself.
+> 8. I am the only coder, so I will re-code a random 10 percent of comments and videos at least 48 hours after my first pass, with my first codes hidden, and report how often I agreed with myself.
 > 9. For H1 I will compare the share of skeptical comments by disclosure placement with a chi-square test (a test of whether two sets of categories are related).
 > 10. Because comments under the same video tend to resemble each other, I will repeat the comparison on the percentage of skeptical comments per video.
 > 11. For RQ2 I will run the H1 comparison separately for comments that do and do not address the host as someone they know.

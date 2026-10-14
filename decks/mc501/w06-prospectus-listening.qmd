@@ -187,7 +187,7 @@ format:
 - **Frame:** the 50-channel working corpus, balanced by category
 - **Sample:** 1,500 messages, stratified
 - **Measurement:** directed, broadcast, or unclassifiable
-- **Reliability:** one coder, so a 20 percent re-code after 48 hours
+- **Reliability:** one coder, so a 10 percent re-code after 48 hours
     - Reported as stability, never as agreement
 - **Analysis, committed now:** proportions compared by category, with effect size
 

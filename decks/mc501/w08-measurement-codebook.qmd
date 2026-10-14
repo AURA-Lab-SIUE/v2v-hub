@@ -26,7 +26,7 @@ Each student's own version of these points, with examples from their own topic, 
 ## Research Proposals: What Most of Us Still Owe (cont.)
 
 - **What you code:** one unit at a time (one post, one comment) and the fixed categories for each item
-- **A recode check:** about 20 percent again, 48 or more hours later, first codes hidden; rewrite any rule that changed
+- **A recode check:** about 10 percent again, 48 or more hours later, first codes hidden; rewrite any rule that changed
 - **The comparison:** for each question, what you will compare, tied to the kind of answer each item records
 - **The sample:** rules someone else could follow to collect the same set, not items picked because they fit
 - **The amount:** a count you can finish coding before Describing Data on November 16
@@ -183,13 +183,19 @@ The urge to explain what you meant is what the protocol forbids.
 
 No second coder is available, so you report **stability**, and you say that word.
 
-1. **Re-code at least 20 percent** of your coded items, **48 hours or more** later, with your
+1. **Re-code at least 10 percent** of your coded items, **48 hours or more** later, with your
    first codes **hidden**
 2. Draw that sample **fresh**, from items you did not use to build or revise the codebook
 3. **Report the statistic even if it disappoints you**, with the revision rule you would apply
 4. Name **three safeguards** against your own drift, and write the second-coder counterfactual
 
+Here, 10 percent is practice; published studies re-code 10 to 20 percent.
+
 Stability is a weaker claim than agreement. The protocol is what makes it an honest one.
+
+::: {.notes}
+In this course about 10 percent is enough to practice the mechanics; a study meant for publication re-codes 10 to 20 percent of its items. The commonly cited floor for a reliability subsample is 10 percent (Lombard, Snyder-Duch, and Bracken, 2002).
+:::
 
 ## Why the Protocol Exists
 
