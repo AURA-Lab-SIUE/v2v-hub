@@ -42,6 +42,7 @@ Each student's own version of these points, with examples from their own topic, 
 - Reliability and validity, kept apart
 - The reliability protocol, the standard one and yours
 - The codebook, and its five parts
+- Definitions Practice, the six elements
 
 ## Tonight
 
@@ -110,6 +111,29 @@ You cannot average it. The mean of Fortnite and Art is not a category.
 
 One column, three levels, depending entirely on how you operationalize it.
 
+## Which Level?
+
+Name the level of each, and say what gave it away.
+
+1. Whether a comment contains a question: yes or no
+2. A product review's star rating, one to five
+3. The date and time a post went up
+4. The number of words in a headline
+5. Minutes since the stream began
+
+The medium changes and the test does not: order, equal gaps, and a true zero.
+
+## What Each Level Permits
+
+| Level | Describe it with | Compare it with |
+|---|---|---|
+| Nominal | Counts and the most common value | Chi-square test of association |
+| Ordinal | The median and the ranks | Rank-based comparisons |
+| Interval | The mean and standard deviation | t-test, ANOVA, and correlation |
+| Ratio | All of the above, plus ratios | The same tests, plus "twice as many" |
+
+Definitions Practice asks for one sentence per variable: the level, and what it permits and forbids.
+
 ## The Cost of Choosing Low
 
 - **Nominal where ratio was available narrows the study**
@@ -129,6 +153,19 @@ One column, three levels, depending entirely on how you operationalize it.
 
 A coder can only do that consistently from written instructions.
 
+## Four Definitions, Four Failures
+
+[Recap from Week 7]{.eyebrow}
+
+Each operational definition below breaks the promise in one of the four ways. Name which.
+
+1. **Community strength** in a subreddit: posts per day
+2. **Sincerity** of a review: coded sincere when the writer means it
+3. **Article quality**: how many times it was shared
+4. **Engagement** with a video: the comment count, and nothing else
+
+The four: conflating concepts, the unjustified proxy, oversimplification, and the unmeasurable definition.
+
 ## Reliability
 
 - **Consistency: the same result under the same conditions**
@@ -143,7 +180,7 @@ A coder can only do that consistently from written instructions.
 - **Accuracy: does it capture what it claims?**
 - **Face validity:** does it look like the right instrument?
 - **Content validity:** does it cover the whole concept?
-- **Construct validity:** does it behave as theory predicts?
+- **Construct validity:** does it behave as theory says it should?
 
 Validity is a claim you argue for, not a statistic you compute.
 
@@ -157,55 +194,17 @@ Validity is a claim you argue for, not a statistic you compute.
 Reliability is necessary and not sufficient, and you get it first, because the codebook is
 what produces it.
 
-## The Standard Protocol, First Half
+## Doubting a Variable
 
-With two coders, a complete protocol has four steps and the order is not optional. You are
-describing this one in your second-coder counterfactual, so it is worth knowing exactly.
+- **Definitions Practice asks for one validity sentence per variable**
+    - What would make you doubt it measures the idea you named?
+- **The test is the rival reading of your indicator**
+    - Message length as engagement: a pasted block is long and disengaged
+    - Share count as quality: outrage gets shared as readily as quality
+- **Write the doubt, not a reassurance**
+    - "This measures what I say" is a claim, not a sentence of doubt
 
-1. The second coder receives the **codebook alone**, with no walk-through, and codes a
-   training set of 20 to 30 units independently.
-2. The two coders **compare and discuss every disagreement**. No production data is coded
-   at this stage.
-
-The urge to explain what you meant is what the protocol forbids.
-
-## The Standard Protocol, Second Half
-
-3. The **codebook is revised**, adding a decision rule for every disagreement.
-4. The second coder codes a **fresh reliability sample**, separate from the training set.
-   That agreement is the kappa you report.
-
-- **Reporting the training set's agreement is a serious error**
-    - It is contaminated by the reconciliation conversation
-- **Report more than one statistic** (Lombard et al., 2002)
-
-## The Protocol You Will Run
-
-No second coder is available, so you report **stability**, and you say that word.
-
-1. **Re-code at least 10 percent** of your coded items, **48 hours or more** later, with your
-   first codes **hidden**
-2. Draw that sample **fresh**, from items you did not use to build or revise the codebook
-3. **Report the statistic even if it disappoints you**, with the revision rule you would apply
-4. Name **three safeguards** against your own drift, and write the second-coder counterfactual
-
-Here, 10 percent is practice; published studies re-code 10 to 20 percent.
-
-Stability is a weaker claim than agreement. The protocol is what makes it an honest one.
-
-::: {.notes}
-In this course about 10 percent is enough to practice the mechanics; a study meant for publication re-codes 10 to 20 percent of its items. The commonly cited floor for a reliability subsample is 10 percent (Lombard, Snyder-Duch, and Bracken, 2002).
-:::
-
-## Why the Protocol Exists
-
-> "Conclusions from such data can be trusted only after demonstrating their reliability."
->
-> Hayes and Krippendorff (2007, p. 77)
-
-- **Either protocol is the demonstration that sentence demands**
-- **Nothing downstream outranks this dependency**
-- A finding on an untested codebook is a number without a warrant
+A validity sentence names the case where the number is right and the idea is wrong.
 
 ## Never Considered Valid {.discuss}
 
@@ -230,17 +229,116 @@ In this course about 10 percent is enough to practice the mechanics; a study mea
 
 - You are both. Name the specific risk
 - What would catch it if it happened?
-- Their rule of thumb for a reliability sample is 30 units
+- Their pilot rule of thumb is 30 units
+- Their reported reliability sample is at least 50, or 10 percent, and rarely over 300
+
+## The Standard Protocol, First Half
+
+With two coders, a complete protocol has four steps and the order is not optional. You are
+describing this one in your second-coder counterfactual, so it is worth knowing exactly.
+
+1. The second coder receives the **codebook alone**, with no walk-through, and codes a
+   training set of 20 to 30 units independently.
+2. The two coders **compare and discuss every disagreement**. No production data is coded
+   at this stage.
+
+The urge to explain what you meant is what the protocol forbids.
+
+## The Standard Protocol, Second Half
+
+3. The **codebook is revised**, adding a decision rule for every disagreement.
+4. The second coder codes a **fresh reliability sample**, separate from the training set.
+   That agreement is the kappa you report.
+
+- **Reporting the training set's agreement is a serious error**
+    - It is contaminated by the reconciliation conversation
+- **Report more than one statistic** (Lombard et al., 2002)
+
+## One Statistic or Two
+
+- **Percent agreement alone is out**, and the protocol says why
+    - Two coders guessing on a yes-or-no variable agree half the time
+    - Kappa and alpha subtract what luck would have done
+- **One standard measure, alpha** (Hayes & Krippendorff, 2007)
+    - Any number of coders, any level of measurement, missing codes
+- **Two or more indices, with a decision rule** (Lombard et al., 2002)
+    - A conservative index at a moderate level, or a liberal one high
+- Your protocol names the statistic you report, and why that one
 
 ## The Threshold and the Sample
 
-- **The standard for kappa is 0.70 or higher** (Landis & Koch, 1977)
-    - Below it the codebook needs revision, not a caveat
+- **Name the threshold before you see the number, with its source**
+    - Kappa of 0.70 or higher is the course floor (Landis & Koch, 1977)
+    - 0.90 nearly always acceptable, 0.80 in most situations, 0.70 in some exploratory studies (Lombard et al., 2002)
+    - Alpha of 0.80, or 0.667 for tentative conclusions (Krippendorff, 2018)
+- **Below your threshold the codebook needs revision, not a caveat**
 - **At least 50 coded units in the reliability sample**
     - For rare codes, 100 or more are preferred
 - **`v2v::reliability()` computes kappa with labels**
 
 Your two passes agreeing on 40 of 50: does that clear the bar?
+
+## The Protocol You Will Run
+
+No second coder is available, so you report **stability**, and you say that word.
+
+1. **Re-code at least 10 percent** of your coded items, **48 hours or more** later, with your
+   first codes **hidden**
+2. Draw that sample **fresh**, at random from items you did not use to build or revise the codebook
+3. **Report the statistic even if it disappoints you**, with the revision rule you would apply
+4. Name **three safeguards** against your own drift, and write the second-coder counterfactual
+
+Here, 10 percent is practice; published studies re-code 10 to 20 percent.
+
+Stability is a weaker claim than agreement. The protocol is what makes it an honest one.
+
+::: {.notes}
+In this course about 10 percent is enough to practice the mechanics; a study meant for publication re-codes 10 to 20 percent of its items. The reported reliability sample is no fewer than 50 units or 10 percent of the full sample (Lombard, Snyder-Duch, & Bracken, 2002).
+:::
+
+## When the Number Misses
+
+- **Write the rule now, before there is a number to protect**
+    - Which categories you revise, and how
+- **The disagreement list is the evidence**
+    - Rewrite the rule each split item fell through
+    - Never re-read your first codes to settle it by feel
+- **The guard against bending the codebook to your habits**
+    - Every change logged with its date and reason
+    - Changed items re-coded under the new version
+- **Report the first number anyway**, and say what it told you
+
+## Five Safeguards to Choose From
+
+The protocol names at least three you are actually using, each described as what you do.
+
+1. **Inclusion and exclusion rules** for every category, written before coding begins
+2. **Prototypical examples**, two or three per category, drawn from your corpus
+3. **A frozen codebook**, with every later change logged by date and reason
+4. **An ambiguous-case memo**, adjudicated against the written rule rather than by feel
+5. **A fixed coding order**, with source metadata hidden wherever that is possible
+
+## The Second-Coder Counterfactual
+
+One paragraph describing the study you did not get to run.
+
+1. **How many items** you would have double-coded
+2. **Which statistic** you would have reported
+3. **How you would have trained** the second coder and settled disagreements
+4. **Which finding is most at risk** if the second coder had disagreed with you
+
+The standard protocol on the earlier slides is the material. The fourth part is the one that
+takes thought.
+
+## Why the Protocol Exists
+
+> "Conclusions from such data can be trusted only after demonstrating their reliability."
+>
+> Hayes and Krippendorff (2007, p. 77)
+
+- **Either protocol is the demonstration that sentence demands**
+- **Nothing downstream outranks this dependency**
+- A finding on an untested codebook is a number without a warrant
 
 ## The Codebook Is the Instrument
 
@@ -256,7 +354,7 @@ Your two passes agreeing on 40 of 50: does that clear the bar?
 1. **Unit of analysis:** exactly what one coded case is
 2. **Variables and categories:** both definitions, and each value
 3. **Decision rules:** what to do when a case will not sort
-4. **Examples:** two or three prototypes per category
+4. **Examples:** two or three prototypes per category, from your own material
 5. **Special cases:** recurring complications, thin at first
 
 ## Exhaustive and Mutually Exclusive
@@ -297,13 +395,40 @@ Two manifest measures, one latent. The mix is deliberate.
 4. **Non-English:** code target if structure determines it
 5. **Bot accounts:** unclassifiable, noted for possible exclusion
 
+## Rule or Intention?
+
+A rule is something a coder can apply without you in the room. Sort these.
+
+1. Be careful with sarcasm
+2. A message made only of emotes is coded broadcast to the room
+3. Use judgment on posts in a language you do not read
+4. A reply that quotes an earlier comment is coded directed at another viewer
+
+Definitions Practice asks for two per variable, and an intention earns no credit as a rule.
+
+## Definitions Practice, Six Elements
+
+Due Monday, October 19, 11:59 PM. At least four variables, each carrying all six, written in
+the form the codebook needs.
+
+1. **Conceptual definition**, with a citation to where the construct comes from
+    - A construct you invented needs a sentence of defense
+2. **Operational definition:** an action a coder performs, never the conceptual one reworded
+3. **Level of measurement**, with the sentence on what it permits and forbids
+4. **Coded values** in full, with what each means, and a catch-all
+5. **Two edge-case decision rules**, each written as a rule
+6. **One validity sentence:** what would make you doubt it
+
 ## Before Week 9
 
 - **Read** Chapter 9, and bring a laptop with R installed
     - Re-read **Munafo et al. (2017)** on reporting and usability
+- **Due Monday, October 19, 11:59 PM:** Definitions Practice
+    - Run it through Codebook Check on the Hub before you submit
 - **Due Monday, October 26, 11:59 PM:** Extended Codebook and Reliability Protocol
     - Planned sample size, thresholds, and revision triggers
     - Have your three variables written out with rules
+- **Time your first twenty coded items.** Week 10 turns that rate into your sample size
 - **Write** a journal entry, 450 to 500 words
 
 ## Questions, Comments, or Concerns? {.titlecard}

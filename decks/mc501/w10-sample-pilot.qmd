@@ -38,6 +38,16 @@ format:
 
 A sample makes the work finite without making conclusions worthless.
 
+## Population, Frame, and the Gap
+
+- **Population:** everything your claim will cover
+    - The platform, the accounts or outlets, and the period
+- **Sampling frame:** the list you can actually draw from
+    - An API window, a search result, an archive, a channel list
+- **The gap:** where the two differ, stated rather than assumed
+    - Deleted posts, private accounts, a rate limit, a search that misses synonyms
+- Your plan names all three, and the gap is the one students leave out
+
 ## Unbiased Is Not Representative
 
 - **Simple random sampling gives every message equal chance**
@@ -112,6 +122,28 @@ What matters is that one is set and recorded, so the draw is frozen.
 
 Then you change the design, or justify the limitation explicitly.
 
+## Three Ways to Justify the Size
+
+The plan names which one you are using, and carries it through.
+
+1. **An effect size borrowed from a named study**, the one your annotations recorded
+2. **A smallest effect of interest**, argued from what a smaller difference would cost anyone
+3. **A resource constraint**, stated as a constraint and paired with a sensitivity analysis
+    - What the sample could and could not detect, said plainly
+
+"Eighty percent power" on its own is a convention, not a justification (Lakens, 2022).
+
+## Sizing by Coding Time
+
+- **Budget two to four hours of coding in total**
+    - A third building and revising the codebook, two thirds applying it frozen
+- **Time twenty items, divide, and use that rate**
+    - The table on the assignment page is a planning estimate, not your number
+- **Fifty coded units is the floor**
+    - Under it, change the unit of analysis rather than shrink the corpus
+- **More variables cost time:** ten roughly halves the rate
+- **Sampling Check on the Hub** turns your rate and hours into a corpus size
+
 ## Lakens on What Honesty Demands
 
 > "Do not try to spin a story where it looks like a study was highly informative when it
@@ -126,7 +158,7 @@ them gives a study that is coherent and indefensible.
 ## The Pilot Test
 
 - **A trial run before the real coding begins**
-    - A hundred messages is a reasonable size
+    - Twenty to thirty items in this course, Lombard's rule of thumb being 30
     - The same codebook applied twice, then a comparison
 - **The question it answers**
     - Applied independently, do these rules give the same codes?
@@ -202,7 +234,7 @@ The codebook is credited only for what luck did not do.
 
 ```r
 pilot <- coding_sample %>%
-  slice_head(n = 100)
+  slice_head(n = 30)
 
 v2v::reliability(
   pilot$pass_1,
@@ -211,8 +243,8 @@ v2v::reliability(
 )
 ```
 
-Take the first hundred messages, hand your two columns of codes to `reliability()`, and ask
-for alpha rather than kappa.
+Take the first thirty messages, hand your two columns of codes to `reliability()`, and ask
+for alpha rather than kappa. Agreement Check on the Hub does the same from two pasted columns.
 
 ## A Worked Failure
 
@@ -258,15 +290,25 @@ Name your threshold in advance, not after seeing the number.
 
 Pilot, diagnose, revise, repeat, until it clears your threshold.
 
-## The Deliverable
+## The Plan, Four Parts
 
-[Sampling Plan and Pilot · 75 points]{.eyebrow}
+Due Monday, November 2, 11:59 PM, with the pilot, as one document.
 
-- **The sampling frame and strata**, and why each matters
-- **The target n per stratum**, the floor rule, and the seed
-- **The pilot protocol:** how many units, and how the passes were kept blind
-- **The coefficient**, which one, and the threshold set beforehand
-- **If it failed:** the diagnosis and the revision it produced
+1. **Population, frame, and the gap** between them, stated rather than assumed
+2. **The sampling method**, named and justified, with what it can and cannot estimate
+3. **The size, with its justification:** which of the three routes, carried through
+4. **The time calibration:** your timed twenty-item rate, the corpus it produces, and the nearest table row
+
+## The Pilot, Five Parts
+
+5. **Twenty to thirty items coded**, submitted as data
+6. **A stability figure** on those items, with the code that produced it
+    - Your own re-code after 48 hours or more, named as stability, never as agreement
+7. **Every edge case**, with the decision made and the rule added
+8. **The revisions the pilot forced**, before and after wording
+9. **One paragraph on the full run:** how long it will take, and what you will change
+
+A pilot that changes nothing was usually too easy.
 
 ## Before Week 11
 
