@@ -68,8 +68,9 @@ Between them they have already ruled out most of what you could have done, which
     - Balanced across gaming and non-gaming, each message a case
 - **Coding:** three categories
     - Directed, broadcast, or unclassifiable
-- **Reliability:** stability on 20 percent, re-coded after 48 hours
+- **Reliability:** stability on 10 percent, re-coded after 48 hours
     - Krippendorff's alpha, with the threshold set first
+    - Here, 10 percent is practice; published studies re-code 10 to 20 percent
 - **Comparison:** the directed proportion, between the two groups
 
 ## Two Scales, One Set of Mechanics
@@ -109,7 +110,7 @@ Same corpus. Different study entirely.
 - **Three markers, coded present or absent**
     - Second-person address, familiarity, emotional disclosure
 - **Reliability and comparison**
-    - Stability on 20 percent re-coded after 48 hours, Krippendorff's alpha
+    - Stability on 10 percent re-coded after 48 hours, Krippendorff's alpha
     - Each marker's rate compared between groups
 
 ## Pick the Workload
