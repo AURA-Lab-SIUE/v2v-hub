@@ -408,3 +408,119 @@ details.syl-policy {
 @media print {
   .schedule-table tbody td:last-child:not(:empty)::before { color: #000; }
 }
+
+// --- Print layout (2026-10-14) ----------------------------------------------
+// The owner, on the 10-14 prints: the tables ignored the margins, and the
+// header took two thirds of page 1. Three fixes, print only, so the web page
+// is untouched:
+// 1. One column, inside real margins. On screen the prose is held to a 72ch
+//    measure while tables run the full grid width, so on paper the tables
+//    reached past the text and almost to the edge. Print drops the grid and
+//    the measure: prose and tables share one width, inside a 0.6in page
+//    margin. Long cells and printed URLs wrap rather than push a table wider.
+// 2. A plain, compact header: title, one line, and the six facts in three
+//    columns of label over value. No cards, no tinted boxes.
+// 3. "Start here" tightened to fit under it, so page 1 is the whole
+//    first-week orientation.
+// The named page scopes the margin to syllabus pages; other hub pages keep
+// the browser default.
+@page syllabus { margin: 0.6in; }
+
+@media print {
+  // Quarto pads the body for its fixed navbar; the navbar does not print, so
+  // the padding was a blank band above the title.
+  body:has(.syl-hero) { page: syllabus; padding-top: 0 !important; }
+
+  body:has(.syl-hero) {
+    #quarto-content.page-columns { display: block; }
+    #quarto-content, .quarto-container, main.content,
+    #quarto-document-content {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    #TOC, nav[role="doc-toc"], #quarto-margin-sidebar { display: none !important; }
+    main p, main ul, main ol, main dl { max-width: none; }
+
+    main table {
+      width: 100% !important;
+      max-width: 100%;
+      table-layout: auto;
+    }
+    main th, main td {
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+    main a[href^="http"]::after { overflow-wrap: anywhere; }
+  }
+
+  .syl-hero {
+    margin: 0 0 6pt;
+    padding: 0 0 5pt;
+    border-bottom: 1px solid #000;
+
+    .syl-course {
+      font-size: 7.5pt;
+      letter-spacing: 0.08em;
+      margin-bottom: 1pt;
+      color: #000;
+    }
+    h1 {
+      font-size: 17pt;
+      margin: 0 0 2pt;
+      border: none;
+      padding: 0;
+    }
+    .syl-tagline {
+      max-width: none;
+      font-size: 9.5pt;
+      line-height: 1.35;
+    }
+  }
+
+  .syl-facts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5pt 14pt;
+    margin: 0 0 8pt;
+
+    > li {
+      border: none;
+      padding: 0;
+      background: transparent;
+    }
+    .syl-fact-label {
+      font-size: 7pt;
+      letter-spacing: 0.06em;
+      margin-bottom: 0;
+      color: #000;
+    }
+    .syl-fact-value {
+      font-size: 9pt;
+      line-height: 1.3;
+    }
+    .syl-fact-note {
+      margin-top: 0;
+      font-size: 8pt;
+      line-height: 1.3;
+    }
+  }
+
+  .syl-first-week {
+    margin: 0 0 10pt;
+    padding: 6pt 10pt;
+    border: 1px solid #999;
+    border-left: 3px solid #000;
+    border-radius: 0;
+    font-size: 9.5pt;
+
+    > h2, > h3 {
+      font-size: 12pt;
+      margin: 0 0 3pt;
+      padding: 0;
+      border: none;
+    }
+    p { margin-bottom: 3pt; }
+    li { margin-bottom: 2pt; line-height: 1.35; }
+  }
+}
