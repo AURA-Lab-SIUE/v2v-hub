@@ -7,13 +7,13 @@ title: "MC 501 Assignments"
 
 **Every assignment in this course, grouped by phase, with what it asks for and when it is due.**
 
-Each assignment shows a short description. Open **Full requirements** for the detail: what to include, how long, and what earns full credit.
+Each assignment shows a short description. Open the section under it for what to submit and the printable rubric, which lists what to include, how long, and what earns full credit.
 :::
 
 ::: {.callout-note}
 ## How to turn work in
 
-**Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting** -- grading happens from the Blackboard submission. Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it.
+**Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting**: grading happens from the Blackboard submission. Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it.
 
 Everything is due at **11:59 PM** on the **Monday** listed. You are welcome to submit any assignment early. Attempts are unlimited, so an early submission can still be revised right up to the deadline.
 
@@ -24,19 +24,7 @@ Submissions are **unlimited**. If you upload the wrong file, or want to revise b
 ## Every assignment is a part of the paper
 
 Almost nothing here is submitted and then finished. Each assignment builds a component the next one
-consumes, and the White Paper is those components assembled and argued. That is why the workspace
-has the folders it has:
-
-| Folder | What accumulates there |
-|---|---|
-| `02_Literature/` | one file per source, named `author-year-slug.md` |
-| `03_Project/01_Prospectus/` | the question, the design, the justification |
-| `03_Project/02_Codebook/` | definitions, then the instrument itself |
-| `03_Project/03_Data/` | the sampling plan, the pilot, the coded data, the scripts |
-| `03_Project/04_Drafts/` | figures, drafts, and the White Paper |
-
-Each assignment below says where its artifact lives. Keeping it there is not bookkeeping: it is what
-makes the methods section writable in December, because by then the trail is already on disk.
+consumes, and the White Paper is those components assembled and argued.
 
 ## Everything at a glance
 
@@ -71,66 +59,18 @@ makes the methods section writable in December, because by then the trail is alr
 
 **10 points each, 14 entries, plus 10 points for consistency. 150 points total.** Due every Monday at 11:59 PM.
 
-Each week, write a reflection on the assigned reading. Choose one of three thinking paths:
+Each week, write a 450 to 500 word reflection on the assigned chapter, its graduate extension and the week's assigned article, using one of three thinking paths: the Connector, the Troubleshooter, or the Critic.
 
 <details class="syl-policy">
-<summary>Full requirements, including length and the fourteen due dates</summary>
+<summary>What to submit, the rubric, and the fourteen due dates</summary>
 
-1. **The Connector**: link the reading to your project, other concepts, or real-world examples
-2. **The Troubleshooter**: document a challenge you encountered and how you worked through it
-3. **The Critic**: ask critical questions, challenge assumptions, or explore implications
+**What you submit:** one entry each week, uploaded to Blackboard under that week's journal.
 
-#### MC 501 requirements
-
-**Length:** 450 to 500 words per entry.
-
-You read the textbook with the **Graduate edition toggle on**, which reveals a required graduate extension in every chapter. Each week also carries an assigned peer-reviewed article, listed in the [MC 501 schedule](https://aura-lab.siue.edu/v2v-hub/mc501-syllabus.html).
-
-Your entry must explicitly engage that week's assigned graduate reading, not only the chapter. **An entry that addresses chapter content alone receives a maximum of 7 of 10 points.**
-
-#### Submission
-
-Write your journal entry in your course workspace (`01_Journal/`) by copying the journal template (`_templates/journal-entry.md`) into that folder, then submit via Blackboard.
-
-#### How it is graded
-
-See the rubric below, also available as a [printable rubric (PDF)](resources/rubrics/MC501-rubric-weekly-reading-journal.pdf). Add the points from each row; the total is out of 10. A first attempt is graded forgivingly: a part that is there but incomplete earns partial credit, and 0 is kept for a part that is missing. Writing more than the word range asks for never costs points. Attempts are unlimited, so you can revise an early submission right up to the deadline.
-
-- Each entry is scored out of 10. The three thinking paths (Connector, Troubleshooter, Critic) are equal; none scores higher than another.
-
-::: {.rubric-grid tabindex="0" role="region" aria-label="Weekly reading journal rubric, 10 points"}
-
-| Criterion | Exemplary | Proficient | Developing | Beginning |
-|:--|:--|:--|:--|:--|
-| **Works with the assigned article** (3 points) | **3 points.** Works with a specific claim, method or finding from this week's assigned peer-reviewed article, named so a reader could find it. | **2 points.** Engages the article, but in general terms; a reader cannot tell which part you mean. | **1 point.** Mentions the article without using it; the entry would read the same without it. | **0 points.** Addresses the chapter only. This row is then 0, which is how a chapter-only entry reaches its maximum of 7 of 10. |
-| **Depth, through the path you chose** (4 points) | **4 points.** Works one or two ideas all the way through, using the chapter, its graduate extension and the article together. A Connector explains the link, a Troubleshooter shows the problem and how it was solved, a Critic asks the question and says why it matters. | **3 points.** Develops one idea, but stops before saying what follows from it. | **2 points.** Several ideas with a sentence or two each. An entry under 450 words usually lands here: the idea is named but not argued, so add what the reading claims, what that claim rests on, and where you agree or not. | **0 to 1 points.** No idea is developed past naming it, or the entry summarizes the readings. |
-| **Connection** (3 points) | **3 points.** Ties the readings to your own project or an earlier reading, and says what the tie shows. | **2 points.** Names a link to your project or an earlier reading, without saying what it shows. | **1 point.** The link is one that could be written without having done the reading. | **0 points.** No link to your project or an earlier reading. |
-
-: Weekly reading journal rubric, 10 points {tbl-colwidths="[16,21,21,21,21]"}
-
-:::
-
-**Journal consistency, 10 points.** End of term. Scored once, at the end of the term, from the dates your entries came in.
-
-::: {.rubric-grid tabindex="0" role="region" aria-label="Journal consistency rubric, 10 points"}
-
-| Criterion | Exemplary | Proficient | Developing | Beginning |
-|:--|:--|:--|:--|:--|
-| **Entries across the term** (10 points) | **10 points.** All 14 entries submitted, each by its due date. | **8 to 9 points.** 12 or 13 entries submitted by their due dates. | **5 to 7 points.** 9 to 11 entries submitted by their due dates. | **0 to 4 points.** 8 or fewer entries submitted by their due dates. |
-
-: Journal consistency rubric, 10 points {tbl-colwidths="[16,21,21,21,21]"}
-
-:::
-
----
-
-#### If you used AI
-
-If AI shaped any work you submit that week, note in the entry what you used it for and how you checked its output. This is required by the syllabus.
+**Rubric:** [Weekly reading journal rubric (PDF)](resources/rubrics/MC501-rubric-weekly-reading-journal.pdf). It describes the three thinking paths, the length and the graduate reading, and gives the points for each entry and for consistency across the term.
 
 #### The fourteen entries
 
-There is **no Week 14** -- that is Thanksgiving.
+There is **no Week 14**, because of Thanksgiving.
 
 | Week | Due |
 |---|---|
@@ -193,7 +133,7 @@ Meet with a SIUE librarian to identify and evaluate a data archive for your rese
 3. **Feasibility**: can this source answer your research questions?
 4. **Librarian consultation**: what did the librarian recommend?
 
-Submit as PDF: `Lastname_ArchivistReport.pdf`
+Submit it as a PDF.
 
 </details>
 
@@ -213,8 +153,6 @@ Complete the CITI Program's Social and Behavioral Research training, and draft t
 <summary>Full requirements</summary>
 
 **What you submit:** two files. The CITI completion certificate as a PDF, and your non-human-subjects determination draft.
-
-**Where it lives:** `04_Resources/` for the certificate, `03_Project/01_Prospectus/` for the determination. The determination is the first draft of the ethics paragraph in your methods section.
 
 **Requirements**
 
@@ -241,8 +179,6 @@ Annotate three peer-reviewed articles, then write the paragraph that makes them 
 <summary>Full requirements</summary>
 
 **What you submit:** the three annotated PDFs, plus one document holding the per-article notes and the synthesis.
-
-**Where it lives:** `02_Literature/`, one file per source named `author-year-slug.md`, with the APA references added to a running `02_Literature/references.md`. The synthesis paragraph is the first draft of a paragraph in your Research Proposal.
 
 **Requirements**
 
@@ -271,8 +207,6 @@ Commit to a topic and write the questions your study will answer.
 <summary>Full requirements</summary>
 
 **What you submit:** one document, roughly one page.
-
-**Where it lives:** `03_Project/01_Prospectus/`. These are the questions the paper answers, edited in place rather than rewritten.
 
 **Requirements**
 
@@ -324,8 +258,6 @@ The [Research Proposal template](mc501-research-proposal-template.qmd) goes thro
 
 **What you submit:** one document, 1,200 to 1,800 words, in outline form. Every point is a full sentence carrying a claim, never a topic label. "Parasocial interaction and chat" is a label; "Viewers of smaller channels report stronger parasocial bonds, which should leave a visible trace in how they address the streamer" is a point.
 
-**Where it lives:** `03_Project/01_Prospectus/`. This outline is the front half of the White Paper in skeleton form. Every point becomes a sentence or a paragraph in December.
-
 **Requirements**
 
 1. **Framing**, three to five points: the phenomenon, why it matters now, and what is at stake in getting the answer wrong.
@@ -352,58 +284,11 @@ The [Research Proposal template](mc501-research-proposal-template.qmd) goes thro
 Turn your constructs into definitions a stranger could apply without asking you what you meant.
 
 <details class="syl-policy">
-<summary>Full requirements</summary>
+<summary>What to submit, and the rubric</summary>
 
-**What you submit:** one document, one entry per variable, at least four variables.
+**What you submit:** one document with one entry per variable, at least four variables, uploaded to Blackboard under Definitions Practice.
 
-**Where it lives:** `03_Project/02_Codebook/`. Written in the form the Extended Codebook needs next week.
-
-**Requirements.** Each variable carries all six:
-
-1. **A conceptual definition**, with a citation to where the construct comes from. At this level a construct you invented needs more defense than one you borrowed.
-2. **An operational definition**: exactly what a coder does to assign a value.
-3. **The level of measurement**, named, with one sentence on what that permits and forbids in analysis.
-4. **The coded values**, in full, with what each means.
-5. **At least two edge-case decision rules**, written as rules.
-6. **One sentence on validity**: what would make you doubt this measures the construct you named in point 1.
-
-**How it is graded.** See the rubric below, also available as a [printable rubric (PDF)](resources/rubrics/MC501-rubric-definitions-practice.pdf). Add the points from each row; the total is out of 25. A first attempt is graded forgivingly: a part that is there but incomplete earns partial credit, and 0 is kept for a part that is missing. Attempts are unlimited, so you can revise an early submission right up to the deadline.
-
-- Each row looks across all of your variables. Four variables done fully is the assignment.
-
-::: {.rubric-grid tabindex="0" role="region" aria-label="Definitions Practice rubric, 25 points"}
-
-| Criterion | Exemplary | Proficient | Developing | Beginning |
-|:--|:--|:--|:--|:--|
-| **Conceptual definition, with its source** (3 points) | **3 points.** Every variable says what it means in the abstract and cites where the idea comes from; an idea you invented gets a sentence defending it. | **2 points.** Defined for every variable, but a citation is missing, or an invented idea goes undefended. | **1 point.** Some definitions missing, or definitions that list examples instead of saying what the variable captures. | **0 points.** Missing. |
-| **Operational definition** (6 points) | **6 points.** Every variable says exactly what a coder does to assign a value, with an action a coder performs, clear enough that a stranger could follow it and reach your answer. | **5 points.** A procedure for every variable, but one leaves a step to the coder's judgment. | **3 to 4 points.** At least one repeats the conceptual definition in other words, the mistake this assignment exists to catch. If it has no action a coder performs, it is not an operational definition yet. | **0 to 2 points.** No procedures. |
-| **Level of measurement, and what it allows** (3 points) | **3 points.** Named for every variable, with one sentence on what it allows and rules out in analysis (for example, no mean of a nominal variable). | **2 points.** Named for every variable, but the sentence on what it allows is missing or wrong for one. | **1 point.** Named for some variables only. | **0 points.** Missing. |
-| **Coded values** (3 points) | **3 points.** Every value is listed with what it means, and every item fits exactly one value. | **2 points.** Listed with meanings, but there is no place for items that fit none of them, or two values overlap. | **1 point.** Values listed without meanings, or the list trails off ("etc."). | **0 points.** Missing. |
-| **Edge-case decision rules** (5 points) | **5 points.** At least two per variable, each a rule a coder can apply, drawn from cases that come up in your material. | **4 points.** Two per variable, but one is an intention ("be careful with sarcasm") instead of a rule. | **3 points.** Fewer than two for some variables. | **0 to 2 points.** None, or intentions only. |
-| **Validity sentence** (5 points) | **5 points.** One sentence per variable naming what would make you doubt it measures the idea in its conceptual definition, specific to that variable. | **4 points.** Present for every variable, but the same general sentence is reused. | **3 points.** Present for some variables only. | **0 to 2 points.** Missing. |
-
-: Definitions Practice rubric, 25 points {tbl-colwidths="[16,21,21,21,21]"}
-
-:::
-
-**Where it comes from.** Week 7, Chapter 8. **What it feeds:** the Extended Codebook a week later.
-
-Define at least four variables with conceptual definitions, operational definitions, levels of measurement, coded values, and edge-case decision rules.
-
-**Each variable needs both kinds of definition, written side by side.**
-
-A **conceptual definition** says what the variable means in the abstract: what is this
-meant to capture? An **operational definition** is the recipe -- exactly what a coder
-does to assign a value, detailed enough that a stranger could follow it and measure the
-same thing you measured.
-
-Conceptual tells you what the variable is *for*. Operational tells you what counts as
-*evidence*. A conceptual definition with no operational definition is an idea you cannot
-measure; an operational definition with no conceptual definition is a procedure that has
-lost track of why it exists. That is how a study ends up precisely measuring something
-nobody wanted to know.
-
-**Check it before you submit.** [Codebook Check](https://aura-lab.siue.edu/codebook-check/) reads a pasted definition block and reports which variables are missing a conceptual or an operational definition, a level of measurement, or a catch-all category. It checks structure, it does not grade, and nothing you paste leaves your machine.
+**Rubric:** [Definitions Practice rubric (PDF)](resources/rubrics/MC501-rubric-definitions-practice.pdf). It lists the six parts every variable needs and the points for each.
 
 </details>
 
@@ -414,66 +299,11 @@ nobody wanted to know.
 Build the instrument, then write the protocol that says how you will know it stayed consistent.
 
 <details class="syl-policy">
-<summary>Full requirements</summary>
+<summary>What to submit, and the rubric</summary>
 
-**What you submit:** the codebook and the protocol, as one document with two headed parts.
+**What you submit:** the codebook and the reliability protocol, as one document with two headed parts, uploaded to Blackboard under Extended Codebook and Reliability Protocol.
 
-**Where it lives:** `03_Project/02_Codebook/`, starting from `_templates/codebook.md`. The protocol becomes the coder reliability report that the paper's methods section is graded on.
-
-**The codebook**
-
-1. **Study overview**, the question, the corpus, the period.
-2. **The unit of analysis**, stated exactly.
-3. **Every variable** with the six elements from Definitions Practice.
-4. **Decision rules** for cases that do not sort themselves.
-5. **Two or three prototypical examples per category**, drawn from your corpus.
-
-**The reliability protocol**
-
-**You are the only coder.** No second coder is available in this course, which is a real limitation rather than a detail to leave out. Every reliability claim you make is a claim about your own consistency, and the assignment is graded partly on whether you say so in those words.
-
-6. **The statistic you will report**, named, with one sentence on why it rather than another. What you are reporting is **intracoder reliability, or stability**, not intercoder agreement, and the protocol uses those words. Percent agreement alone is not acceptable and the protocol should say why.
-7. **The threshold you will treat as adequate**, with the source of that threshold, and one sentence acknowledging that a stability figure is a weaker claim than an agreement figure and cannot be reported as though it were one.
-8. **The stability procedure**: at least 10 percent of your coded items, re-coded by you after a gap of **at least 48 hours**, with your original codes hidden while you re-code. In this course about 10 percent is enough to practice the mechanics; a study meant for publication re-codes 10 to 20 percent of its items.
-9. **A fresh reliability sample**, separate from the items you used to build and revise the codebook, with its size and how it is drawn.
-10. **What happens when it fails**: the revision rule, and how the codebook changes without quietly fitting itself to your own habits.
-11. **What you will report even if the number is disappointing.**
-12. **The single-coder safeguards you are actually using**, at least three, named and described. Choose from: writing every category's inclusion and exclusion rule before coding begins; two or three prototypical examples per category drawn from the corpus; freezing the codebook before the full pass and logging every later change with its date and reason; keeping an ambiguous-case memo and adjudicating against the written rule rather than by feel; coding in a fixed order with source metadata hidden wherever that is possible.
-13. **The second-coder counterfactual**, one paragraph: how many items you would have double-coded, which statistic you would have reported, how you would have trained and adjudicated, and which of your findings would be most at risk if a second coder had disagreed with you.
-
-**How it is graded.** See the rubric below, also available as a [printable rubric (PDF)](resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf). Add the points from each row; the total is out of 75. A first attempt is graded forgivingly: a part that is there but incomplete earns partial credit, and 0 is kept for a part that is missing. Attempts are unlimited, so you can revise an early submission right up to the deadline.
-
-- The codebook rows total 40 and the protocol rows 35. Numbered rows match the numbered points on the assignment page.
-
-::: {.rubric-grid tabindex="0" role="region" aria-label="Extended Codebook and Reliability Protocol rubric, 75 points"}
-
-| Criterion | Exemplary | Proficient | Developing | Beginning |
-|:--|:--|:--|:--|:--|
-| **Codebook: study overview** (4 points) | **4 points.** Names the question, the material you are coding, and the time period. | **3 points.** Names two of the three. | **2 points.** Present, but a reader still could not say what is coded or from when. | **0 to 1 points.** Missing. |
-| **Codebook: unit of analysis** (10 points) | **10 points.** States exactly what one coded item is, once, and every variable is coded on that item. | **8 to 9 points.** Stated, but a variable is coded on something else (for example, the unit is one post but a variable describes the whole account). | **5 to 7 points.** Stated loosely, so a reader could not tell where one item ends and the next begins. | **0 to 4 points.** Not stated. |
-| **Codebook: every variable** (10 points) | **10 points.** Every variable carries all six elements from Definitions Practice. | **8 to 9 points.** Every variable is here, but one or two are missing an element. | **5 to 7 points.** Several variables are missing elements, or a variable is listed by name only. | **0 to 4 points.** Variables are named without definitions. |
-| **Codebook: decision rules** (8 points) | **8 points.** Rules for the cases that do not sort themselves, each written as a rule, covering the hard calls you actually met. | **6 to 7 points.** Rules are there, but at least one is an intention instead of a rule. | **4 to 5 points.** One or two rules for the whole codebook. | **0 to 3 points.** None. |
-| **Codebook: examples** (8 points) | **8 points.** Two or three examples per category, drawn from your own material. | **6 to 7 points.** Examples for every category, but some are invented or there is only one per category. | **4 to 5 points.** Examples for some categories only. | **0 to 3 points.** No examples. |
-| **6. The statistic** (6 points) | **6 points.** Names the statistic with one sentence on why it and not another, calls it intracoder reliability (stability), not intercoder agreement, and says why percent agreement alone is not enough. | **5 points.** Named and justified, but the weakness of percent agreement is not addressed, or the wording slips into "intercoder". | **3 to 4 points.** Percent agreement alone, or a statistic named with no reason. | **0 to 2 points.** Missing. |
-| **7. The threshold** (3 points) | **3 points.** A threshold with its source, and one sentence saying a stability figure is a weaker claim than agreement between two coders and cannot be reported as if it were one. | **2 points.** A threshold with its source, without the weaker-claim sentence. | **1 point.** A threshold with no source. | **0 points.** Missing. |
-| **8. The stability procedure** (3 points) | **3 points.** At least 10 percent of your coded items, re-coded by you after at least 48 hours, with your first codes hidden. | **2 points.** One of those three conditions is missing. | **1 point.** Two are missing. | **0 points.** Missing. |
-| **9. A fresh reliability sample** (5 points) | **5 points.** A sample kept separate from the items you used to build and revise the codebook, with its size and how it is drawn. | **4 points.** Separate, but the size or how it is drawn is missing. | **3 points.** It is unclear whether the sample is separate. | **0 to 2 points.** Uses the items the codebook was built on, which makes the stability figure read higher than it should. |
-| **10. When it fails** (5 points) | **5 points.** Says in advance what you do if the figure misses the threshold: which categories you revise, how, and what keeps the codebook from bending toward your habits. | **4 points.** A revision rule, but nothing guards against fitting the codebook to your habits. | **3 points.** "I will revise the codebook," with no rule. | **0 to 2 points.** Missing. |
-| **11. Reporting a disappointing number** (3 points) | **3 points.** Commits to reporting the figure even if it is disappointing, and says what you will say about it. | **2 points.** Commits to reporting it, without saying what you would say about a low figure. | **1 point.** Mentioned in passing, with no commitment. | **0 points.** Missing. |
-| **12. Single-coder safeguards** (5 points) | **5 points.** At least three safeguards you are actually using, each named and described as what you do. | **4 points.** Three named, but one is not described. | **3 points.** One or two safeguards. | **0 to 2 points.** None. |
-| **13. Second-coder counterfactual** (5 points) | **5 points.** One paragraph: how many items you would double-code, which statistic you would report, how you would train and settle disagreements, and which finding is most at risk. | **4 points.** Three of the four. | **3 points.** Two or fewer, or the protocol describes a second coder as if one were part of your study. | **0 to 2 points.** Missing. |
-
-: Extended Codebook and Reliability Protocol rubric, 75 points {tbl-colwidths="[16,21,21,21,21]"}
-
-:::
-
-**Where it comes from.** Week 8, Chapter 8 and the Lombard reading. **What it feeds:** the pilot, and the transparency markers the White Paper methods section is graded on.
-
-Your codebook adds a **formal reliability protocol**: the planned sample size for the reliability subset, the target threshold, the stability procedure (your own re-code after a 48-hour gap, with your first codes hidden), and the revision triggers that say in advance what you will do if the threshold is missed.
-
-**Check it before you submit.** [Codebook Check](https://aura-lab.siue.edu/codebook-check/) reads a pasted codebook and reports what this assignment asks for that your draft does not have yet: a unit of analysis stated once, both definitions on every variable, a declared level of measurement, a catch-all category so the scheme is exhaustive, a description on every category, category pairs that may overlap, decision rules, and examples. It checks structure, it does not grade, and nothing you paste leaves your machine.
-
-**And when you re-code your 10 percent after the 48-hour gap,** [Agreement Check](https://aura-lab.siue.edu/agreement-check/) takes your two passes as two columns and returns percent agreement, the statistic with its threshold, and the list of items the two passes disagree on, which is what your revision rule acts on. Set it to one coder, two passes. It does not grade, and nothing you paste leaves your machine.
+**Rubric:** [Extended Codebook and Reliability Protocol rubric (PDF)](resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf). It lists the five parts of the codebook, the eight parts of the protocol, and the points for each.
 
 </details>
 
@@ -484,77 +314,11 @@ Your codebook adds a **formal reliability protocol**: the planned sample size fo
 Design your sampling strategy (search terms, date range, method) and pilot test your codebook on **20 to 30 items**, a large enough subset to compute a meaningful reliability statistic. Document edge cases, coding decisions, the alpha you obtained, and any revisions the pilot forced.
 
 <details class="syl-policy">
-<summary>Full requirements</summary>
+<summary>What to submit, and the rubric</summary>
 
-**What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure.
+**What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure, uploaded to Blackboard under Sampling Plan and Pilot, 20 to 30 items.
 
-**Where it lives:** `03_Project/03_Data/`. The plan becomes the methods section in past tense, and the reliability computation becomes one of the three transparency markers.
-
-**Requirements**
-
-1. **Population, frame, and the gap between them**, stated rather than assumed.
-2. **The sampling method**, named and justified, including what it makes estimable and what it does not.
-3. **The size, with its justification.** Either an effect-size estimate borrowed from a named study, a smallest effect of interest argued from consequence, or a resource constraint stated as a constraint and paired with a sensitivity analysis. Name which of the three you are using. The coding-time budget below is a resource constraint, and it is the one most of you will use.
-4. **The time calibration**: your measured rate from a timed twenty-item trial, the corpus target it produces, and the row of the sizing table you land closest to.
-5. **Twenty to thirty items coded**, submitted as data.
-6. **A stability figure computed on those items**, with the code that produced it. You are the only coder, so this is a re-code of your own decisions after at least 48 hours, not an agreement statistic.
-7. **Every edge case**, with the decision made and the rule added.
-8. **The revisions the pilot forced**, before and after.
-9. **One paragraph on what the pilot tells you about the full run**: how long it will take, and what you will change.
-
-**How it is graded.** See the rubric below, also available as a [printable rubric (PDF)](resources/rubrics/MC501-rubric-sampling-plan-and-pilot.pdf). Add the points from each row; the total is out of 75. A first attempt is graded forgivingly: a part that is there but incomplete earns partial credit, and 0 is kept for a part that is missing. Attempts are unlimited, so you can revise an early submission right up to the deadline.
-
-- The plan rows total 25, size justification 15, pilot data and the reliability computation 20, and edge cases and revisions 15.
-
-::: {.rubric-grid tabindex="0" role="region" aria-label="Sampling Plan and Pilot, 20 to 30 items rubric, 75 points"}
-
-| Criterion | Exemplary | Proficient | Developing | Beginning |
-|:--|:--|:--|:--|:--|
-| **Plan: population, frame, and the gap** (12 points) | **12 points.** Defines the population, names the frame you draw from, and states where the two differ instead of assuming they match. | **9 to 11 points.** Population and frame defined, with the gap named in a phrase but not located. | **6 to 8 points.** The frame is treated as the population. | **0 to 5 points.** Missing. |
-| **Plan: method** (13 points) | **13 points.** Names and justifies the method, and says what it lets you estimate and what it does not. | **10 to 12 points.** Named and justified, without what it can and cannot estimate. | **7 to 9 points.** Named with no reason. | **0 to 6 points.** Missing. |
-| **Size: the justification** (10 points) | **10 points.** Names which of the three justifications you use (an effect size from a named study, a smallest effect worth detecting argued from its consequences, or a resource limit stated as one and paired with a sensitivity analysis) and carries it through. | **8 to 9 points.** Names one, but it is incomplete; a resource limit with no sensitivity analysis is the usual gap. | **5 to 7 points.** Justified by convention ("eighty percent power") instead of by argument. | **0 to 4 points.** No justification. |
-| **Size: the time calibration** (5 points) | **5 points.** Your measured rate from a timed twenty-item trial, the corpus size it produces, and the nearest row of the sizing table. | **4 points.** The rate is measured, but one of the other two is missing. | **3 points.** The rate is copied from the table instead of timed. | **0 to 2 points.** Missing. |
-| **Pilot: items coded** (8 points) | **8 points.** Twenty to thirty items coded and submitted as data. | **6 to 7 points.** Coded and submitted, but fewer than twenty. | **4 to 5 points.** Coding described, but no data file. | **0 to 3 points.** No pilot coding. |
-| **Pilot: the stability figure** (12 points) | **12 points.** A stability figure from re-coding your own pilot items after at least 48 hours, computed by code you submit, and described as stability, not agreement between coders. | **9 to 11 points.** Computed and submitted, but the gap or the code is missing, or it is called agreement between coders. | **6 to 8 points.** A figure with no code behind it, or percent agreement alone. | **0 to 5 points.** None. |
-| **Edge cases** (6 points) | **6 points.** Every edge case, with the decision made and the rule added. | **5 points.** Listed with decisions, but some rules were not added. | **3 to 4 points.** Listed without the decisions. | **0 to 2 points.** None listed. |
-| **Revisions the pilot forced** (6 points) | **6 points.** The before and after wording for each change the pilot forced. | **5 points.** Changes described, without the before and after. | **3 to 4 points.** Reports that nothing changed. A pilot that changes nothing was usually too easy. | **0 to 2 points.** Missing. |
-| **What the pilot says about the full run** (3 points) | **3 points.** One paragraph on how long the full run will take and what you will change. | **2 points.** One of the two. | **1 point.** Mentioned without a time or a change. | **0 points.** Missing. |
-
-: Sampling Plan and Pilot, 20 to 30 items rubric, 75 points {tbl-colwidths="[16,21,21,21,21]"}
-
-:::
-
-**Where it comes from.** Week 10, Chapter 10 and the Hayes and Krippendorff reading. **What it feeds:** the full coding run and the methods section.
-
-**How big should your corpus be**
-
-Corpora are not comparable by count, because a chat message and a news article are not the same amount of work. Size yours by **coding time rather than by items**, and budget **two to four hours of coding in total**, split across the two stages: roughly the first third building and revising the codebook on an immersion subset, and the remaining two thirds applying the frozen codebook to the full corpus.
-
-The baseline is **250 chat messages at 45 seconds each, which is three and an eighth hours**. Every other row below is scaled from that one, holding the time constant and changing only the seconds a single unit costs you.
-
-| Unit of analysis | Typical length | Seconds each | Corpus target |
-|---|---|---|---|
-| Chat or stream messages, short comments | under 20 words | 45 | 250 |
-| Short posts, captions, headlines | 20 to 60 words | 75 | 150 |
-| Survey open ends, product or media reviews | 50 to 150 words | 110 | 100 |
-| Long comments, forum posts, letters | 150 to 400 words | 220 | 50 |
-| News articles, blog posts, press releases | 400 to 1,200 words | 450 | 25 |
-| Video or audio coded in one-minute slices | one minute | 180 | 60 minutes of material |
-| Images, thumbnails, advertisements | not applicable | 90 | 125 |
-
-Calibrate against your own rate rather than against the table. Code twenty items, time it, divide, and use that number.
-
-Two rules override the table.
-
-**Fifty coded units is the floor.** If your rate puts you under fifty, do not shrink the corpus further. Change the unit of analysis instead and code paragraphs or sentences inside documents rather than whole documents. Twenty-five articles is a reading project; five hundred paragraphs drawn from those articles is a sample.
-
-**More variables cost more time.** These rates assume three to six coded variables per unit. Ten variables roughly halves the rate, so either halve the corpus or cut variables, and say in the plan which you chose.
-
-**This table is a planning estimate, not your final number.** Your exact sample size gets set with me once your topic and questions are in, and it is confirmed at the Research Proposal. Until then, plan from the table and say in the document which row you used.
-
-**Check it before you submit.** [Sampling Check](https://aura-lab.siue.edu/sampling-check/) turns your own coding rate and available hours into the corpus size they support, sizes the reliability subset from your rarest category rather than from a flat percentage, and reports the smallest effect a sample that size could detect, which is a limitation worth knowing before you collect rather than after. Nothing you enter leaves your machine.
-
-**And once the pilot is coded twice,** [Agreement Check](https://aura-lab.siue.edu/agreement-check/) takes your two passes as two columns and returns percent agreement, the statistic with its threshold, and the list of items the two passes disagree on, which is what your revision rule acts on. Set it to one coder, two passes. It does not grade, and nothing you paste leaves your machine.
+**Rubric:** [Sampling Plan and Pilot rubric (PDF)](resources/rubrics/MC501-rubric-sampling-plan-and-pilot.pdf). It lists each part of the plan and the pilot with its points, and carries the table for sizing your corpus.
 
 </details>
 
@@ -571,56 +335,11 @@ Two rules override the table.
 Build the analysis-ready table from the raw one, in code that runs start to finish.
 
 <details class="syl-policy">
-<summary>Full requirements</summary>
+<summary>What to submit, and the rubric</summary>
 
-**What you submit:** your script, and `twitch_analysis.RDS`.
+**What you submit:** your script and the exported dataset, saved as `twitch_analysis.RDS` because Describing Data and Inferencing Data both read that file, uploaded to Blackboard under Data Wrangling in R.
 
-**Where it lives:** `03_Project/03_Data/`. The three reviewer-facing comments are the raw material of the provenance statement the paper has to carry.
-
-**Requirements**
-
-1. **Hand-code** one variable for a 30-message sample drawn with `sample_messages()`.
-2. **Load** the chat and stream tables.
-3. **Convert the timestamps** from epoch milliseconds, dividing by 1,000 first.
-4. **Derive message length.**
-5. **Join** the stream-level information on, naming the key in a comment.
-6. **Handle missing values explicitly**, reporting the count and the decision.
-7. **Export** as `twitch_analysis.RDS`.
-8. **Three comments naming decisions a reviewer could challenge**, each stating the rule and its justification. This is the graduate half of the assignment: the script is a methods section in executable form.
-9. The script runs start to finish in a clean session.
-
-**How it is graded.** See the rubric below, also available as a [printable rubric (PDF)](resources/rubrics/MC501-rubric-data-wrangling-in-r.pdf). Add the points from each row; the total is out of 50. A first attempt is graded forgivingly: a part that is there but incomplete earns partial credit, and 0 is kept for a part that is missing. Attempts are unlimited, so you can revise an early submission right up to the deadline.
-
-- Before you submit: restart R, run the script top to bottom, and see what breaks.
-
-::: {.rubric-grid tabindex="0" role="region" aria-label="Data Wrangling in R rubric, 50 points"}
-
-| Criterion | Exemplary | Proficient | Developing | Beginning |
-|:--|:--|:--|:--|:--|
-| **1. Hand-code** (4 points) | **4 points.** One variable hand-coded for a 30-message sample drawn with `sample_messages()`. | **3 points.** Hand-coded, but not drawn with `sample_messages()` or not 30 messages. | **2 points.** Codes described but not saved. | **0 to 1 points.** No hand-coding. |
-| **2. Load** (4 points) | **4 points.** The chat and stream tables loaded inside the script. | **3 points.** Loaded from a file on your own computer, so the script fails anywhere else. | **2 points.** Only one table loaded. | **0 to 1 points.** Not loaded in the script. |
-| **3. Timestamps** (4 points) | **4 points.** Converted from epoch milliseconds to a date-time, dividing by 1,000 first. | **3 points.** Converted, with a small error left, such as the time zone. | **2 points.** Converted without dividing by 1,000. | **0 to 1 points.** Not converted. |
-| **4. Message length** (4 points) | **4 points.** A new column holding each message's length. | **3 points.** Computed on the wrong field. | **2 points.** Computed but not saved as a column. | **0 to 1 points.** Missing. |
-| **5. Join** (4 points) | **4 points.** Stream information joined on, with a comment naming the key. | **3 points.** Joined, but no comment names the key. | **2 points.** The join matches nothing or multiplies the rows, unnoticed. | **0 to 1 points.** No join. |
-| **6. Missing values** (4 points) | **4 points.** The count reported, and the decision stated. | **3 points.** Handled, but the count is not reported. | **2 points.** Dropped without saying how many. | **0 to 1 points.** Not handled. |
-| **7. Export** (4 points) | **4 points.** Saved as `twitch_analysis.RDS`. | **3 points.** Saved under another name or in another folder. | **2 points.** Saved in a format that loses the column types. | **0 to 1 points.** Not exported. |
-| **8. Three reviewer-facing comments** (15 points) | **15 points.** Three comments, each naming a decision a reviewer could challenge, the rule you applied, and why. | **11 to 14 points.** Three comments, but one states the rule without the reason, or names a decision nobody would question. | **8 to 10 points.** One or two comments, or comments that describe what the code does instead of a decision you made. | **0 to 7 points.** None. |
-| **9. Clean-session run** (7 points) | **7 points.** Runs start to finish after restarting R. | **5 to 6 points.** Runs after one small fix, such as a missing `library()` line. | **4 points.** Stops partway in a fresh session. | **0 to 3 points.** Runs only with objects already in your environment, or not at all. |
-
-: Data Wrangling in R rubric, 50 points {tbl-colwidths="[16,21,21,21,21]"}
-
-:::
-
-**Where it comes from.** Week 11, Chapter 11 and the Wickham reading. **What it feeds:** both remaining R assignments.
-
-Using the Twitch data from the `v2v` package:
-
-1. **Hand-code** a variable for a 30-message sample drawn with `sample_messages()`
-2. **Load and clean** the chat and stream tables (timestamps, message length, factors, missing values)
-3. **Join** the stream-level information back onto the chat messages
-4. **Export** a clean dataset as `twitch_analysis.RDS`
-
-This assignment teaches the full data pipeline, from raw input to analysis-ready output.
+**Rubric:** [Data Wrangling in R rubric (PDF)](resources/rubrics/MC501-rubric-data-wrangling-in-r.pdf). It lists the nine requirements, including the three reviewer-facing comments, and the points for each.
 
 </details>
 
@@ -631,51 +350,11 @@ This assignment teaches the full data pipeline, from raw input to analysis-ready
 Say what is in the data before you test anything.
 
 <details class="syl-policy">
-<summary>Full requirements</summary>
+<summary>What to submit, and the rubric</summary>
 
-**What you submit:** your Quarto document and its rendered output.
+**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Describing Data in R.
 
-**Where it lives:** `03_Project/03_Data/` for the script, and figures are **written to `03_Project/04_Drafts/figures/` by the code that makes them**, because the paper renders them rather than re-creating them.
-
-**Requirements**
-
-1. **Frequency tables** for the key categorical variables.
-2. **Mean, median and standard deviation** for every continuous variable you report.
-3. **At least two ggplot2 figures**, labeled, titled and captioned.
-4. **A cross-tabulation** of two variables.
-5. **Alt text on every figure.**
-6. **Distributional diagnostics behind each figure**: the shape of the variable, whether the assumptions of the test you are heading toward look tenable, and where the outliers are. This is where the extra 25 points over the undergraduate version sit.
-7. **Two to three sentences interpreting each output.**
-8. **Every display choice disclosed**: bin width, axis caps, collapsed categories.
-
-**How it is graded.** See the rubric below, also available as a [printable rubric (PDF)](resources/rubrics/MC501-rubric-describing-data-in-r.pdf). Add the points from each row; the total is out of 100. A first attempt is graded forgivingly: a part that is there but incomplete earns partial credit, and 0 is kept for a part that is missing. Attempts are unlimited, so you can revise an early submission right up to the deadline.
-
-::: {.rubric-grid tabindex="0" role="region" aria-label="Describing Data in R rubric, 100 points"}
-
-| Criterion | Exemplary | Proficient | Developing | Beginning |
-|:--|:--|:--|:--|:--|
-| **Tables and the three numbers** (20 points) | **20 points.** Frequency tables for the key categorical variables, and the mean, median and standard deviation for every continuous variable you report. | **15 to 19 points.** All there, but a table is unlabeled or one variable is missing a number. | **10 to 14 points.** The mean alone, or tables for only some variables. | **0 to 9 points.** None. |
-| **Figures** (20 points) | **20 points.** At least two ggplot2 figures, labeled, titled and captioned, written to `03_Project/04_Drafts/figures/` by the code that makes them. | **15 to 19 points.** Two figures, but one is missing a label, the title or the caption. | **10 to 14 points.** One figure, or figures saved by hand instead of by the code. | **0 to 9 points.** No figures. |
-| **Cross-tabulation** (10 points) | **10 points.** A cross-tabulation of two variables, labeled so a reader can tell the rows from the columns. | **8 to 9 points.** Present, but the labels are missing. | **5 to 7 points.** Built on the wrong columns. | **0 to 4 points.** Missing. |
-| **Alt text** (5 points) | **5 points.** Every figure has alt text that says what the figure shows. | **4 points.** Alt text on every figure, but one repeats the caption. | **3 points.** Alt text on some figures only. | **0 to 2 points.** None. |
-| **Diagnostics behind each figure** (25 points) | **25 points.** For each figure: the shape of the variable, whether the assumptions of the test you are heading toward look reasonable, and where the outliers are, with the check shown. | **19 to 24 points.** Shape and outliers reported, but the assumptions are not tied to the test you plan to run. | **13 to 18 points.** Diagnostics for some figures only, or stated without being shown. | **0 to 12 points.** Figures without diagnostics. The figure is the claim; the diagnostic is whether you are allowed to make it. |
-| **Interpretation** (15 points) | **15 points.** Two to three sentences after each output. | **11 to 14 points.** Sentences after each output, but they describe the output without saying what it cannot show. | **8 to 10 points.** Interpretation for some outputs only, or a single line each. | **0 to 7 points.** None. |
-| **Display choices disclosed** (5 points) | **5 points.** Every display choice disclosed: bin width, axis caps, merged categories. | **4 points.** One choice is not disclosed. | **3 points.** One disclosure across all the figures. | **0 to 2 points.** None. |
-
-: Describing Data in R rubric, 100 points {tbl-colwidths="[16,21,21,21,21]"}
-
-:::
-
-**Where it comes from.** Week 12, Chapter 12 and the Lakens reading. **What it feeds:** the Results section and next week's test.
-
-Using `twitch_analysis.RDS`:
-
-1. Create **frequency tables** for key categorical variables
-2. Build **ggplot2 visualizations** (bar charts, trend lines) with professional formatting
-3. Create a **cross-tabulation** showing the relationship between two variables
-4. Write **two to three sentences of narrative** interpreting each output
-
-**MC 501:** this assignment is worth 100 points rather than 75, and the extra weight is in the diagnostics. Report the distributional checks behind each figure, not only the figure: what the shape of the variable is, whether the assumptions of the test you are heading toward look tenable, and what the outliers are.
+**Rubric:** [Describing Data in R rubric (PDF)](resources/rubrics/MC501-rubric-describing-data-in-r.pdf). It lists the tables, figures, diagnostics, and interpretation it asks for, and the points for each.
 
 </details>
 
@@ -691,60 +370,11 @@ Using `twitch_analysis.RDS`:
 Test the relationship, and report how big it is.
 
 <details class="syl-policy">
-<summary>Full requirements</summary>
+<summary>What to submit, and the rubric</summary>
 
-**What you submit:** your Quarto document and its rendered output.
+**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Inferencing Data in R.
 
-**Where it lives:** `03_Project/03_Data/`. The paper calls this script for its numbers.
-
-**Requirements**
-
-1. **State the hypothesis in plain English** before any code.
-2. **Choose the test** from your variable types and justify the choice against one alternative you rejected.
-3. **Check and report the assumptions**, with the diagnostics shown rather than asserted.
-4. **Run the test.**
-5. **Report it in APA format** with statistic, degrees of freedom, p and n.
-6. **Report the effect size**, expressed in the units of your data as well as by its conventional label.
-7. **Report the power statistics behind the design**: what effect this sample could detect, and what that means for a null result.
-8. **Distinguish statistical significance from practical size explicitly**, in a paragraph that would survive a reviewer.
-9. **One paragraph on what the result does not license.**
-
-**How it is graded.** See the rubric below, also available as a [printable rubric (PDF)](resources/rubrics/MC501-rubric-inferencing-data-in-r.pdf). Add the points from each row; the total is out of 100. A first attempt is graded forgivingly: a part that is there but incomplete earns partial credit, and 0 is kept for a part that is missing. Attempts are unlimited, so you can revise an early submission right up to the deadline.
-
-- Go deep on one test instead of wide across several. Further tests earn nothing extra, and three tests reported thinly score below one reported with its assumptions, diagnostics, effect size and power.
-
-::: {.rubric-grid tabindex="0" role="region" aria-label="Inferencing Data in R rubric, 100 points"}
-
-| Criterion | Exemplary | Proficient | Developing | Beginning |
-|:--|:--|:--|:--|:--|
-| **Hypothesis** (8 points) | **8 points.** Stated in plain English before any code, naming the two variables and the relationship you expect. | **6 to 7 points.** Stated before the code, but one variable is vague. | **4 to 5 points.** Stated after the results, or as a topic instead of a relationship. | **0 to 3 points.** Missing. |
-| **Test selection and the rejected alternative** (15 points) | **15 points.** A test that fits your variable types, justified against one alternative you rejected and why. | **11 to 14 points.** The right test, but the rejected alternative or the reason is missing. | **8 to 10 points.** A test that does not fit the variable types. | **0 to 7 points.** No test chosen. |
-| **Assumptions and diagnostics** (20 points) | **20 points.** Each assumption of the test checked, with the diagnostic shown, and what you did about any that fail. | **15 to 19 points.** Checked and shown, but nothing said about one that fails. | **10 to 14 points.** Assumptions listed or asserted ("the data are normal") without being shown. | **0 to 9 points.** Missing. |
-| **APA reporting** (15 points) | **15 points.** The test runs in your document and is reported in APA format with the statistic, degrees of freedom, p and n. | **11 to 14 points.** One of the four is missing. | **8 to 10 points.** The statistic and p only, or numbers pasted in instead of produced by the code. | **0 to 7 points.** Not reported. |
-| **Effect size** (15 points) | **15 points.** Expressed in the units of your data as well as by its conventional label. | **11 to 14 points.** The label only. | **8 to 10 points.** Computed but not explained, or the wrong measure for the test. | **0 to 7 points.** Missing. |
-| **Power** (15 points) | **15 points.** Reports what effect this sample could detect, and what that means for a null result. | **11 to 14 points.** The detectable effect, without what it means for a null result. | **8 to 10 points.** A power figure with no link to your own design (a generic eighty percent). | **0 to 7 points.** Missing. |
-| **Significance against size, and the limit** (12 points) | **12 points.** A paragraph that would survive a reviewer, separating statistical significance from practical size, and one paragraph on what the result does not let you claim. | **9 to 11 points.** Separates the two, but the paragraph on what the result does not license is generic. | **6 to 8 points.** Treats a small p as a large effect, or the paragraph on what it does not license is missing. | **0 to 5 points.** Missing. |
-
-: Inferencing Data in R rubric, 100 points {tbl-colwidths="[16,21,21,21,21]"}
-
-:::
-
-**Where it comes from.** Week 13, Chapter 13 and the Lakens et al. reading. **What it feeds:** Results and Discussion.
-
-Using `twitch_analysis.RDS`:
-
-1. **State your hypothesis** in plain English before running any code
-2. **Select the appropriate test** based on your variable types:
-   - Two categorical variables: **chi-square** test of independence
-   - One categorical (two groups) by one continuous: **independent t-test**
-   - Two continuous variables: **Pearson correlation**
-3. **Run the test** in R and report it in APA format
-4. **Interpret** the result in plain English
-5. **Calculate** and report the effect size
-
-**MC 501:** go deeper on the same test rather than adding more tests. Report and check the assumptions, show the diagnostics, and give the power statistics behind the design. Distinguish statistical significance from practical size explicitly.
-
-**Check it before you submit.** [Inferential Check](https://aura-lab.siue.edu/inferential-check/) recomputes a chi-square or a t test from your own table or group figures and returns the statistic, the degrees of freedom, p, the effect size, the assumptions your data may be breaking, and the APA sentence to compare against what you wrote. It is a second opinion on your R output, not a replacement for it, and nothing you enter leaves your machine.
+**Rubric:** [Inferencing Data in R rubric (PDF)](resources/rubrics/MC501-rubric-inferencing-data-in-r.pdf). It lists each step from the hypothesis to what the result does not license, and the points for each.
 
 </details>
 
@@ -761,76 +391,11 @@ Using `twitch_analysis.RDS`:
 The final deliverable: your study written up in IMRaD, rendered to PDF, published to the web, and carried onto a conference poster.
 
 <details class="syl-policy">
-<summary>Full requirements</summary>
+<summary>What to submit, and the rubric</summary>
 
-**What you submit:** three things. The paper as `Lastname_WhitePaper.pdf`, the poster as a PDF, and the live URL. All three are required for the submission to be complete.
+**What you submit:** three things, all required: the paper as a PDF, the poster as a PDF, and the live URL of your GitHub Pages site. Upload both PDFs and paste the URL into the Blackboard submission for White Paper and conference poster; the submission is incomplete without each.
 
-**Where it lives:** `03_Project/04_Drafts/`. Every section has a source file above it by now; the poster is built from the same figures rather than from new ones.
-
-**The paper carries the three transparency markers**, and they are graded as such:
-
-1. **A data provenance statement**: where the corpus came from, what was excluded and why.
-2. **A coder reliability report** giving the statistic, its value, the procedure that produced it and the threshold applied. This study has a single coder, so the statistic is intracoder stability, the report says so plainly, and the limitation is carried into the discussion rather than buried.
-3. **The pre-registration disclosure with its OSF URL**, and an honest account of anything that departed from the plan.
-
-**The rest of the paper**
-
-4. **Introduction and framing**, situating the question in the theoretical literature.
-5. **Methods**, repeatable in detail.
-6. **Results**, without interpretation, carrying effect sizes and the power statistics.
-7. **Discussion**, interpreting, distinguishing significance from size, and stating the limits.
-8. **Abstract** summarizing all four sections, and complete APA 7 references.
-9. **It renders from source with no pasted numbers, and is live at a public address.**
-10. **Reflection**, one specific paragraph naming what proved harder than expected, what the data could not answer, and what a second attempt would change.
-
-**The poster** carries the study at a glance: question, method, one figure that does real work, the finding with its effect size, and the limitation. It is read standing up from three feet away, so it is not the paper shrunk.
-
-**How it is graded.** See the rubric below, also available as a [printable rubric (PDF)](resources/rubrics/MC501-rubric-white-paper-and-conference-poster.pdf). Add the points from each row; the total is out of 200. A first attempt is graded forgivingly: a part that is there but incomplete earns partial credit, and 0 is kept for a part that is missing. Attempts are unlimited, so you can revise an early submission right up to the deadline.
-
-- Submit all three: Lastname_WhitePaper.pdf, Lastname_Poster.pdf, and the live GitHub Pages URL; the submission is incomplete without each. The poster is graded as a separate requirement shared with MC 500 (Phase V page), so this grid scores the paper. The row weights are the same as the White Paper rubric on the Phase V page.
-
-::: {.rubric-grid tabindex="0" role="region" aria-label="White Paper and conference poster rubric, 200 points"}
-
-| Criterion | Exemplary | Proficient | Developing | Beginning |
-|:--|:--|:--|:--|:--|
-| **Introduction and framing** (25 points) | **25 points.** States the question, why it matters now, and the gap, situated in the theoretical literature: your lens, one rival lens, and research questions or hypotheses each traceable to the theory section. | **19 to 24 points.** Clear question and lens, but the rival lens is missing or a question cannot be traced to the theory. | **13 to 18 points.** The literature is gestured at instead of used. | **0 to 12 points.** No clear question. |
-| **Methods** (55 points) | **55 points.** Repeatable in detail (unit of analysis, population and frame, sampling method, corpus size with its justification) and carries the three transparency markers: data provenance (source, date range, what was excluded and why); the reliability report (the statistic, its value, the procedure, the threshold, and the single-coder limitation named as such); and the pre-registration disclosure with its OSF URL and every departure from the plan. | **41 to 54 points.** Repeatable, with all three markers, but one is thin, most often the account of departures from the plan. | **28 to 40 points.** One transparency marker is missing (Methods cannot reach full credit without all three), or the design is too loose to repeat. | **0 to 27 points.** Two or more markers missing. |
-| **Results** (40 points) | **40 points.** Without interpretation: descriptive statistics for every coded variable; one inferential test per research question, each with its effect size, confidence interval and power statistics; one robustness or alternative-specification check; at least three qualitative themes with examples from your material; at least two figures and one table, numbered, captioned, given alt text, and referred to by number. | **30 to 39 points.** All there, but one element is thin: a missing confidence interval, a figure never referred to, or interpretation creeping in. | **20 to 29 points.** The effect sizes, the robustness check or the themes are missing. | **0 to 19 points.** Results are missing, or described in words without the numbers. |
-| **Discussion** (40 points) | **40 points.** Interprets the findings within the theoretical literature, separates statistical significance from practical size, and states the limits, including the single-coder design and the second-coder counterfactual. | **30 to 39 points.** Interprets and states limits, but the counterfactual or the significance-versus-size point is thin. | **20 to 29 points.** Restates the results without interpreting them, or inflates a small effect. | **0 to 19 points.** Missing. |
-| **Abstract and references** (15 points) | **15 points.** An abstract of 150 to 250 words carrying the question, method, finding and implication; at least fifteen sources, at least ten of them peer-reviewed articles reporting original research; APA 7 throughout with claim-first citations, and the list and in-text citations matching both ways. | **11 to 14 points.** One gap: the abstract skips a part, or the list and the in-text citations disagree in a few places. | **8 to 10 points.** Fewer than fifteen sources or fewer than ten peer-reviewed articles, or an abstract under 150 words, which usually means the finding or its implication is missing. | **0 to 7 points.** No abstract or no reference list. |
-| **Reproducibility and publication** (15 points) | **15 points.** Renders from source with no errors, every number, figure and table comes from the code, and it is live at a public address. | **11 to 14 points.** Renders and is live, but one number is typed in instead of produced by the code. | **8 to 10 points.** Several numbers or a figure pasted in. | **0 to 7 points.** Does not render from source. |
-| **Reflection** (10 points) | **10 points.** One specific paragraph naming what proved harder than expected, what the data could not answer, and what a second attempt would change. | **8 to 9 points.** Specific, but skips one of the three. | **5 to 7 points.** General ("I learned a lot"). | **0 to 4 points.** Missing. |
-
-: White Paper and conference poster rubric, 200 points {tbl-colwidths="[16,21,21,21,21]"}
-
-:::
-
-The final deliverable: your study written up in IMRaD, rendered to PDF and published to the web. Graduate students also submit a conference poster.
-
-**Submission.** To Blackboard by Friday, December 18, 2026 at 11:59 PM: the PDF renamed `Lastname_WhitePaper.pdf`, the live GitHub Pages URL, and the poster renamed `Lastname_Poster.pdf`. All three must be present for the submission to count as complete. The full rubric, the project structure and the recommended writing order are on the [Phase V page](https://aura-lab.siue.edu/v2v-hub/modules/05_publisher/?edition=mc501).
-
-**Before you submit, check every box.** Each one is a graded component, and the list is the fastest way to find the one you forgot.
-
-- [ ] Abstract, 150 to 250 words, carrying question, method, finding and implication
-- [ ] Introduction: the phenomenon, why it matters now, and the gap
-- [ ] Theory section naming your lens and one rival lens
-- [ ] Research questions or hypotheses stated formally, each traceable to the theory section
-- [ ] Methods: unit of analysis, population and frame, sampling method, corpus size with its justification
-- [ ] Data provenance statement: source, date range, what was excluded and why
-- [ ] Coder reliability report: the statistic, its value, the procedure, the threshold, and the single-coder limitation named as such
-- [ ] Pre-registration disclosure with its OSF URL, and every departure from the plan
-- [ ] Qualitative results: at least three themes, each with exemplars drawn from the corpus
-- [ ] Quantitative results: descriptive statistics for every coded variable, one inferential test per research question, and one robustness or alternative-specification check
-- [ ] Every inferential result carries an effect size and its confidence interval, not only a p value
-- [ ] At least two figures and one table, each numbered, captioned, and referred to in the text by number
-- [ ] Every figure, table and number is generated from code in the source document, with nothing pasted
-- [ ] Alt text on every figure
-- [ ] At least fifteen sources, of which at least ten are peer-reviewed articles reporting original research
-- [ ] APA 7 throughout, claim-first citations, and the reference list matching the in-text citations in both directions
-- [ ] Limitations: the single-coder design, and the second-coder counterfactual
-- [ ] Reflection: what was harder than expected, what the data could not answer, what a second attempt would change
-- [ ] Poster: question, method, one figure, the finding with its effect size, the limitation
-- [ ] Renders from source to PDF with no errors, and is live at a public address
+**Rubric:** [White Paper and conference poster rubric (PDF)](resources/rubrics/MC501-rubric-white-paper-and-conference-poster.pdf). It lists what each section of the paper carries, including the three transparency markers, what the poster shows, and the points for each.
 
 </details>
 
