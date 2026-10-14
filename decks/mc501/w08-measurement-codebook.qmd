@@ -11,6 +11,31 @@ format:
     transition: none
 ---
 
+## Research Proposals: What Most of Us Still Owe
+
+- **Framing:** three to five one-sentence points that name the platform, the accounts, and the dates
+- **Theory:** numbered points that say what the theory leads you to expect in your own material
+- **Literature:** grouped by theme, saying what the studies show together, not one study at a time
+- **Gap:** the two or three closest studies, what each did not do, and the question still open
+- **Hypotheses:** two things you record that go together ("is associated with"), never "will" or "leads to"
+
+::: {.notes}
+Each student's own version of these points, with examples from their own topic, is in their written feedback.
+:::
+
+## Research Proposals: What Most of Us Still Owe (cont.)
+
+- **What you code:** one unit at a time (one post, one comment) and the fixed categories for each item
+- **A recode check:** about 20 percent again, 48 or more hours later, first codes hidden; rewrite any rule that changed
+- **The comparison:** for each question, what you will compare, tied to the kind of answer each item records
+- **The sample:** rules someone else could follow to collect the same set, not items picked because they fit
+- **The amount:** a count you can finish coding before Describing Data on November 16
+- **The claims:** only what your coded material can show, with no causes and no predictions
+
+::: {.notes}
+Each student's own version of these points, with examples from their own topic, is in their written feedback.
+:::
+
 ## Today's Agenda
 
 - NOIR, and what each level permits
