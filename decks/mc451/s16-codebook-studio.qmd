@@ -15,15 +15,16 @@ format:
 
 - What a codebook is, and its five parts
 - Your unit of analysis, in one sentence
-- Three variables, defined twice each
+- Four variables, defined twice each
 - Decision rules out of your edge-case log
+- The single-coder note, and the memo
 
 ## What We Build Today
 
 [Studio session]{.eyebrow}
 
 - **A draft codebook, in a file, saved**
-    - Three variables, not notes about codebooks
+    - Four variables, not notes about codebooks
     - It becomes the Codebook and Qual Memo
     - Later it becomes your White Paper method
 - **Every number traces to a rule you write today**
@@ -77,14 +78,27 @@ Do this first, right now, in one sentence.
 
 ## Step 2, Definitions Side by Side
 
-For each variable, write both, in this order:
+For each variable, write all five, in this order:
 
 - **Conceptual:** what it is meant to capture, in the abstract
 - **Operational:** exactly what a coder does to assign a value
-- **Level:** nominal, ordinal, interval, or ratio
-- **Categories:** each with a one-line description
+- **Level:** nominal, ordinal, interval, or ratio, matching the values
+- **Coded values:** every one, with what it means, and a catch-all
+- **Two edge-case rules**, each written as a rule
 
-Aim for four variables. Four done properly is the assignment, and more earns no extra credit.
+Four variables done properly is the assignment, and a fifth earns nothing extra.
+
+## Which Level?
+
+Name the level of each, and say what gave it away.
+
+1. Whether a comment contains a question: yes or no
+2. A product review's star rating, one to five
+3. The date and time a post went up
+4. The number of words in a headline
+5. Minutes since the stream began
+
+The level has to match the coded values: ordered values called nominal is the common slip.
 
 ## Model Codebook, Variable 1
 
@@ -105,6 +119,20 @@ Aim for four variables. Four done properly is the assignment, and more earns no 
 > *Operational:* yes if it contains at least one token from the project's emote list.
 > *Level:* nominal.
 
+## Run Each Variable Past the Four Failures
+
+[Recap from S14]{.eyebrow}
+
+Each operational definition below breaks the promise in one of the four ways. Name which, then
+check your own four.
+
+1. **Community strength** in a subreddit: posts per day
+2. **Sincerity** of a review: coded sincere when the writer means it
+3. **Article quality**: how many times it was shared
+4. **Engagement** with a video: the comment count, and nothing else
+
+The four: conflating concepts, the unjustified proxy, oversimplification, and the unmeasurable definition.
+
 ## Step 3, The Five Decision Rules
 
 From the model codebook:
@@ -119,15 +147,17 @@ From the model codebook:
 
 - **Open the edge-case log, and every entry becomes a rule**
     - Format: the ambiguous case, then the single action
-    - "Use your judgment" is not a rule
+    - "Emote-only messages are coded 0" is a rule
+    - "Be careful with emotes" is an intention, and earns nothing
 - **Start with the three you starred**
     - The ones most likely to go two ways on two different days
-- Aim for four to six rules
+- Aim for four to six rules, and at least two per variable
 
 ## Step 4, Examples and Special Cases
 
 - **Two or three prototypical cases per category**
-    - Invented is fine, real messages are better
+    - Taken from your own material, not invented
+    - An invented example is the gap between Exemplary and Proficient
 - **Examples do double duty**
     - A reference while you code, and a check when you re-code
 - **Special cases stays thin today**
@@ -139,7 +169,7 @@ Message length and emote presence are computed, not judged:
 
 ```r
 library(v2v)
-library(dplyr)
+library(tidyverse)
 
 chat <- twitch_chat()
 
@@ -152,13 +182,69 @@ chat %>%
 Add a character count to every message, then report the average and the count. A derived
 variable needs an operational definition too, and this is it in executable form.
 
+## From Draft to Deliverable
+
+The Codebook and Qual Memo carries six parts. Four are on your screen already.
+
+1. **Study overview**, three to four sentences: the question, the corpus, the period
+2. **Unit of analysis**, from Step 1
+3. **Every variable**, from Step 2, with its five elements
+4. **Decision rules**, from Step 3
+5. **Examples**, from Step 4
+6. **The single-coder note**, three short paragraphs
+
+Special cases stays in the file as the empty heading. The memo is a separate part.
+
+## Step 5, The Single-Coder Note
+
+- **Paragraph one: you are the only coder, said in those words**
+    - Every reliability claim is a claim about your own consistency
+    - **Stability**, one coder twice, not agreement between two
+    - A weaker claim than agreement, and named as one
+- **Paragraph two: at least three safeguards against your own drift**
+- **Paragraph three: the second-coder counterfactual**
+
+Leaving the limitation out does not hide it. Naming it is part of the grade.
+
+## Four Safeguards to Choose From
+
+Name at least three you are actually using, each described as what you do.
+
+1. **Inclusion and exclusion rules** for every category, written before coding begins
+2. **A frozen codebook**, with every later change logged by date and reason
+3. **An ambiguous-case memo**, adjudicated against the written rule rather than by feel
+4. **A fixed coding order**, with source metadata hidden wherever that is possible
+
+Each one is something a reader can check in your repository.
+
+## The Second-Coder Counterfactual
+
+One paragraph describing the study you did not get to run.
+
+1. **How many items** you would have double-coded
+2. **What number** you would have reported, and from which statistic
+3. **How you would have trained** the second coder and settled disagreements
+4. **Which finding is most at risk** if the second coder had disagreed with you
+
+The fourth part is the one that takes thought. It names where your own reading carries the
+result.
+
+## The Qualitative Memo
+
+- **200 to 300 words** on the patterns you saw during immersion
+- **Its one job:** explain why the codebook has the categories it has
+    - Each category traces back to something the memo describes seeing
+    - A category you cannot trace back is a category you guessed
+- **Source:** your field notes from Chapter 7, not the topic in general
+- It becomes the qualitative half of your results
+
 ## Common Problems Today
 
 - **Categories that overlap**
     - Hesitating between two means they are not exclusive yet
 - **A latent variable with no observable criteria**
     - You wrote a concept, not a recipe
-- **Six variables:** cut to three
+- **Six variables:** cut to four
     - Each is a reliability check and a results paragraph
 - **A catch-all doing all the work**
     - Expecting a third unclassifiable means the scheme is wrong
@@ -172,18 +258,23 @@ Every one of these turns up today. That is why this is a studio.
 You should now have a file containing:
 
 - One unambiguous **unit of analysis**
-- **Four variables**, each defined twice, with a level and categories
+- **Four variables**, each defined twice, with a level, coded values, and two rules
 - Categories that are exhaustive and mutually exclusive
 - **Four to six decision rules**, each traceable to an observation
-- Two or three **examples** per category, and an empty heading
+- Two or three **examples** per category from your material, and an empty heading
+- A first draft of the **single-coder note**
 
 ## Before Next Time
 
+- **Due Friday, October 16, 11:59 PM:** Definitions Practice
+    - Run it through Codebook Check on the Hub before you submit
+- **Due Friday, October 23, 11:59 PM:** Codebook and Qual Memo
+    - Start from `_templates/codebook.md` in your workspace
 - **Finish and commit the codebook tonight**
     - While today's decisions are still in your head
 - **Hand it to someone who was not here**
     - No walk-through, and ask for ten coded messages
-    - Note every hesitation, which is a missing rule
-- **Codebook and Qual Memo** is what this draft becomes
+    - A clarity test, not your reliability figure; every hesitation is a missing rule
+- **Read** Chapter 9, and bring a laptop with R installed
 
 ## Questions, Comments, or Concerns? {.titlecard}
