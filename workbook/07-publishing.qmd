@@ -299,7 +299,7 @@ Test in incognito before submitting.
 - [ ] PDF and website are in the `docs/` folder and display all sections
 - [ ] GitHub repo is public and contains the `docs/` folder
 - [ ] GitHub Pages is enabled and the site loads in an incognito window
-- [ ] PDF renamed to `Lastname_WhitePaper.pdf` and uploaded to Blackboard
+- [ ] PDF uploaded to Blackboard
 - [ ] GitHub Pages URL pasted into Blackboard submission text
 
 ::: {.graduate-extension}

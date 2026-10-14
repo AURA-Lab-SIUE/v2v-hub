@@ -241,7 +241,7 @@ These carry straight into the prospectus, mostly into the questions and the meth
 - No template text, instructions or bracketed placeholders left in your document.
 - One to three questions or hypotheses, each answerable from something you code.
 - Every source named in the gap is one you annotated.
-- Saved in `03_Project/01_Prospectus/` and committed, **and** submitted in Blackboard. Committing is not submitting.
+- Submitted in Blackboard. Committing to GitHub is not submitting.
 
 </details>
 

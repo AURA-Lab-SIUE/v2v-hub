@@ -81,7 +81,7 @@ Your entry must explicitly engage that week's assigned graduate reading, not onl
 
 ### Submission
 
-Write your journal entry in your course workspace (`01_Journal/`) by copying the journal template (`_templates/journal-entry.md`) into that folder, then submit via Blackboard.
+Write your journal entry, then submit it via Blackboard.
 
 ### What Makes a Strong Entry
 

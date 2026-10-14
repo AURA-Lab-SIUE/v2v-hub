@@ -104,7 +104,7 @@ The starter project includes pre-written R code for all three. Keep the one that
 
 Submit both to Blackboard by Friday, December 18, 2026 at 11:59 PM:
 
-1. **PDF file**, renamed to `Lastname_WhitePaper.pdf`
+1. **PDF file** of the paper
 2. **Live URL**, your GitHub Pages link
 
 ::: callout-warning
@@ -148,9 +148,9 @@ The poster is a separate requirement shared with MC 500, rendered at 36 by 24 in
 
 Submit to Blackboard by Friday, December 18, 2026 at 11:59 PM:
 
-1. **PDF file**, renamed to `Lastname_WhitePaper.pdf`
+1. **PDF file** of the paper
 2. **Live URL**, your GitHub Pages link
-3. **Poster PDF**, renamed to `Lastname_Poster.pdf`
+3. **Poster PDF**
 
 ::: callout-warning
 All three must be present for the submission to be considered complete.
