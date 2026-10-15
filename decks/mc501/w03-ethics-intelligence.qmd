@@ -11,39 +11,42 @@ format:
     transition: none
 ---
 
-## Tonight
+## Today's Agenda
 
-Two halves. First, what you owe the people whose messages you are about to analyze.
-Second, how to find out what has already been said about your topic, so that when you sit
-down with a librarian you arrive with something worth their time.
+- The Facebook study, and three older cases that produced today's rules
+- The Belmont principles, consent, and whether this is human subjects research
+- Honest reporting, prediction, and postdiction
+- The assigned article, Nosek et al. (2018), and the discussion built on it
+- Searching the literature in three phases, and your librarian
+- CITI, and what is due before Week 4
 
-You leave with three things: a non-human-subjects determination you could actually file, a
-preregistration stub for your own project, and a search log that becomes part of your
-methods section.
+## What Tonight Covers
 
-**Bring a topic to the second half.** You will search it live.
+- Tonight has two halves
+    - First, what you owe the people whose messages you are about to analyze
+    - Second, how to find out what has already been said about your topic, so you arrive at your librarian meeting with something worth their time
+- You leave with three things: a non-human-subjects determination you could actually file, a preregistration stub for your own project, and a search log that becomes part of your methods section
+- **Bring a topic to the second half.** You will search it live
 
-## The part worth saying plainly
+## The Part Worth Saying Plainly
 
-Some of tonight is grim. The cases we teach ethics with are cases where people were hurt.
-The rest of it is paperwork. Neither half is decoration, and you are not here to feel
-guilty about your project. You are here to be able to defend it.
+- Some of tonight is grim. The cases we teach ethics with are cases where people were hurt
+- The rest of it is paperwork. Neither half is decoration
+- You are not here to feel guilty about your project. You are here to be able to defend it
+- You are about to analyze messages that thousands of strangers typed in public without ever being asked
+- Whether that is all right depends on several things, and the first half of tonight names them
 
-Which matters, because you are about to analyze messages that thousands of strangers typed
-in public without ever being asked. **Is that all right?** It depends, and the rest of the
-first half is about what it depends on.
-
-## Nearly 700,000 people
+## Facebook Manipulated 700,000 News Feeds
 
 [Kramer, Guillory, and Hancock, 2014]{.eyebrow}
 
 - For one week in January 2012, Facebook manipulated the News Feeds of nearly **700,000 users**
-- Some saw fewer positive posts from friends, others saw fewer negative posts
+- Some saw fewer positive posts from friends, and others saw fewer negative posts
 - Researchers then measured what those users went on to post themselves
 - Fewer positive posts produced slightly more negative content, and the reverse held
-- Published in *PNAS* as evidence of "massive-scale emotional contagion"
+- The result was published in *PNAS* as evidence of "massive-scale emotional contagion"
 
-## Why that one still gets argued about
+## Why That Study Still Gets Argued About
 
 - Nobody was told their emotional environment was being manipulated, and nobody could decline
 - Facebook pointed at terms of service authorizing data use for "research"
@@ -55,252 +58,203 @@ Keep this one in mind. Of everything tonight, it sits closest to what you are ab
 
 ## Tuskegee, 1932 to 1972
 
-- The U.S. Public Health Service studied untreated syphilis in **399 Black men** in
-  Macon County, Alabama, for forty years
+- The U.S. Public Health Service studied untreated syphilis in **399 Black men** in Macon County, Alabama, for forty years
 - The men were told they were being treated for "bad blood"
-- Penicillin became the standard treatment in the 1940s. The researchers withheld it.
-- **28 men** died of syphilis directly, **100** of related complications, **40 wives**
-  were infected, **19 children** were born with congenital syphilis
-- Federally funded, credentialed staff, published for decades without objection
+- Penicillin became the standard treatment in the 1940s, and the researchers withheld it
+- **28 men** died of syphilis directly, **100** died of related complications, **40 wives** were infected, and **19 children** were born with congenital syphilis
+- The study was federally funded, run by credentialed staff, and published for decades without objection
 
 ## Milgram, 1961
 
-- Recruited by newspaper advertisement, and told it was a study of memory and learning
-- Cast as the "teacher"; a confederate played the "learner" in the next room
-- Instructed to deliver escalating shocks for wrong answers, up to a switch at **450 volts**
-- The shocks were not real. The belief that they were real, and the distress, were.
+- Participants were recruited by newspaper advertisement and told it was a study of memory and learning
+- Each was cast as the "teacher," while a confederate played the "learner" in the next room
+- They were instructed to deliver escalating shocks for wrong answers, up to a switch at **450 volts**
+- The shocks were not real. The belief that they were real, and the distress, were
 - **26 of 40** participants in the baseline condition went to the maximum voltage
-- Hesitation was met with scripted prods, "the experiment requires that you continue",
-  rather than with permission to stop
+- Hesitation was met with scripted prods, "the experiment requires that you continue," rather than with permission to stop
 
-## Milgram, what it cost
+## Milgram, What It Cost
 
-- Milgram reported participants sweating, trembling, and stuttering, and in one case a
-  seizure violent enough to stop the session
+- Milgram reported participants sweating, trembling, and stuttering, and in one case a seizure violent enough to stop the session
 - Participants were debriefed, and the deception was total until that point
-- The findings reshaped how the field understands obedience to authority, and they are
-  still taught in every introductory course
+- The findings reshaped how the field understands obedience to authority, and they are still taught in every introductory course
 - The argument about whether the knowledge justified the distress has never closed
-- Which is the point: this is not a case where the researcher was careless or malicious
+- That is the point: this is not a case where the researcher was careless or malicious, and people were still harmed
 
 ## Humphreys, 1970
 
-- Doctoral research on anonymous sexual encounters between men in public restrooms
-- He took the role of **watchqueen**, the lookout, which let him observe without
-  participating and without disclosing that he was a researcher
+- Humphreys's doctoral research studied anonymous sexual encounters between men in public restrooms
+- He took the role of **watchqueen**, the lookout, which let him observe without participating and without disclosing that he was a researcher
 - He recorded the **license plate numbers** of the men he observed
-- He traced those plates to home addresses through motor vehicle records, obtained via a
-  contact in the police
-- About a year later he changed his appearance and his car, and interviewed the men in
-  their own homes, posing as an interviewer on an unrelated health survey
+- He traced those plates to home addresses through motor vehicle records, obtained via a contact in the police
+- About a year later he changed his appearance and his car, and interviewed the men in their own homes, posing as a health-survey interviewer
 
-## Humphreys, what it cost
+## Humphreys, What It Cost
 
 - Most of the men were married and living otherwise conventional lives
 - In 1970 exposure meant criminal prosecution, loss of employment, and destroyed families
-- He kept the data secure and argued the work reduced stigma by showing who these men
-  actually were
-- The book won a major award in sociology, and his own department fought over whether to
-  strip his doctorate
+- He kept the data secure, and he argued the work reduced stigma by showing who these men actually were
+- The book won a major award in sociology, and his own department fought over whether to strip his doctorate
 - Both halves of that sentence are true at once, which is why the case is still assigned
 
-## The common thread
+## The Common Thread
 
 - In each case people were harmed, deceived, or exposed
 - In each case the researcher had institutional backing and sincere motives
-- **Good intentions never were a protection.** That is the whole lesson.
-- Ethics is a disposition rather than a form: how you treat the people you study, and how
-  honestly you report what you found
+- **Good intentions never were a protection.** That is the whole lesson
+- Ethics is a disposition rather than a form: how you treat the people you study, and how honestly you report what you found
 - What follows from that is outside accountability, which is where Belmont comes in
 
-## Belmont: respect for persons
+## Belmont: Respect for Persons
 
 [National Commission, 1979]{.eyebrow}
 
 - People are capable of deciding for themselves what happens to them
 - **Informed consent** means understanding the study, the risks, and the right to walk away
-- **Protection of vulnerable populations**: children, prisoners, and anyone whose capacity
-  to consent freely is diminished
+- **Vulnerable populations** get extra protection: children, prisoners, and anyone whose capacity to consent freely is diminished
 - Survey a listener about a podcast and consent is simple
-- Analyze public posts and it gets hard fast, which is your situation
+- Analyze public posts and consent gets hard fast, which is your situation
 
-## Belmont: beneficence and justice
+## Belmont: Beneficence and Justice
 
-- **Beneficence** carries two duties: do no harm, and maximise benefit against risk
+- **Beneficence** carries two duties: do no harm, and maximize benefit against risk
 - Harm counts as physical, psychological, social, or economic
 - Content analysis usually carries minimal risk, because you work with texts and not people
 - **Justice** asks whether benefits and burdens fall fairly across groups
-- Tuskegee failed justice: all of the risk sat on one marginalised population while the
-  knowledge accrued to everybody
+- Tuskegee failed justice: all of the risk sat on one marginalized population while the knowledge accrued to everybody
 
-## Consent in practice
+## Consent in Practice
 
-- Valid consent covers the study, the risks, that participation is voluntary, who to
-  contact, and how the data will be stored
-- **Deception** is sometimes defensible, but always paired with mandatory **debriefing**
+- Valid consent covers the study, the risks, that participation is voluntary, who to contact, and how the data will be stored
+- **Deception** is sometimes defensible, and it is always paired with mandatory **debriefing**
 - **Passive consent**, the terms-of-service move Facebook made, is generally not enough
-- **Active consent** needs an affirmative act: a signature, a click, a spoken yes
-- **Secondary analysis** raises whether the original consent covered your use, and that
-  question is still genuinely unsettled
+- **Active consent** needs an affirmative act: a signature, a click, or a spoken yes
+- **Secondary analysis** raises whether the original consent covered your use, and that question is still genuinely unsettled
 
-## The question that comes first
+## The Question That Comes First
 
-Before anyone asks which level of review a study needs, there is a prior question:
-**is this human subjects research at all?**
+Before anyone asks which level of review a study needs, there is a prior question: **is this
+human subjects research at all?**
 
-Federal regulation defines a **human subject** as a living person about whom you obtain
-information either through **intervention or interaction** with them, or in the form of
-**identifiable private information**.
-
-- You never interact with anyone. The messages were sent before you arrived.
-- They were **broadcast publicly**, so they are not private information.
+- Federal regulation defines a **human subject** as a living person about whom you obtain information in one of two ways
+    - Through **intervention or interaction** with them
+    - In the form of **identifiable private information**
+- You never interact with anyone, because the messages were sent before you arrived
+- The messages were **broadcast publicly**, so they are not private information
 - Neither limb is met, so this is **not human subjects research**
 
-## Walking the class dataset through Belmont
+## The Example Dataset Through Belmont
 
-- Chat came from the **public IRC interface**, streams from the **public API**
-- No IP addresses, no emails, no internal user IDs, no payment data, no whispers
-- Usernames are **pseudonymous**: handles, usually not tied to an offline identity
-- Respect for persons rests on public broadcast; consent was never asked
-- Beneficence: risk is minimal, and nothing aggregates toward identifying anyone
-- Justice: the sample spans channels broadly, including non-gaming categories
+- Chat came from the **public IRC interface** and streams from the **public API**, with no IP addresses, emails, user IDs, payment data, or whispers
+- Usernames are **pseudonymous** handles, usually not tied to an offline identity
+- **Respect for persons** rests on public broadcast, because consent was never asked
+- **Beneficence:** risk is minimal, and nothing aggregates toward identifying anyone
+- **Justice:** the sample spans channels broadly, including non-gaming categories
+- **You run the same walkthrough on the source you choose**, and your answers will differ
 
-**You run the same walkthrough on the source you choose**, and your answers will differ.
+## This Determination Has Been Made Twice
 
-## This determination has already been made twice
+- **This is not hypothetical.** Michigan State University formally determined the Twitch data **not human subjects research**, and SIUE determined the Twitter data from the NSF work the same way
+- **Your project is expected to land in the same place:** a content analysis of public broadcast content is not human subjects research
+- You still write and submit the determination. **The office decides, not you**, and that is true even when the answer looks obvious
+- You still complete CITI, because the training is what lets you make the argument, and because the next dataset you meet may not be this clean
 
-- **Not hypothetical.** The Twitch data in front of you was formally determined **not human
-  subjects research** by Michigan State University, and the Twitter data from the NSF work
-  was determined the same way by SIUE.
-- **Your project is expected to land in the same place**: a content analysis of public
-  broadcast content is not human subjects research.
-- You still write and submit the determination. **The office decides, not you**, and that
-  is true even when the answer looks obvious.
-- You still complete CITI, because the training is what lets you make the argument, and
-  because the next dataset you meet may not be this clean
+## Public Is Not the End of the Question
 
-## Public is not the end of the question
+- Researchers have argued for years that "public" does not settle the ethics (Markham & Buchanan, 2012)
+- In practice that obligation comes down to three rules
+    - Do not aggregate in ways that could **re-identify** an individual
+    - Do not republish whole chat logs verbatim
+    - Do not amplify messages whose senders expected obscurity more than broadcast
 
-- Researchers have argued for years that "public" does not settle the ethics
-  (Markham & Buchanan, 2012)
-- In practice that obligation comes down to three things
-- Do not aggregate in ways that could **re-identify** an individual
-- Do not republish whole chat logs verbatim
-- Do not amplify messages whose senders expected obscurity more than broadcast
+## Three Cases That Would Be Human Subjects Research
 
-## Three cases that would be human subjects research
+Change one thing about the data and the answer flips, and then the review tiers apply:
 
-Change one thing about the data and the answer flips. Then the tiers apply.
+- **Twitch whispers** are private messages, so they are identifiable private information and need expedited or full board review
+- **A private Discord with the same people in it** has closed membership, which makes the same words private even though those people chat publicly elsewhere
+- **An internal moderation log with platform flags on users** attaches classifications to identified people, so it most likely needs full board review
 
-- **Twitch whispers.** Private messages, so identifiable private information. Expedited or
-  full board.
-- **A private Discord with the same people in it.** Closed membership makes the same words
-  private, even though those people chat publicly elsewhere.
-- **An internal moderation log with platform flags on users.** Classifications attached to
-  identified people. Full board, most likely.
 The narrowness of our corpus is what keeps it outside the definition, and that narrowness
 was designed rather than lucky.
 
-## When the reporting goes wrong
+## When the Reporting Goes Wrong
 
-- **Fabrication**: inventing data that do not exist
-- **Falsification**: manipulating data or results to change the outcome
-- **Selective reporting**: running many analyses and reporting only the ones that worked
-- **HARKing**: forming the hypothesis after seeing the results, then writing it up as
-  though you predicted it all along
+- **Fabrication** is inventing data that do not exist
+- **Falsification** is manipulating data or results to change the outcome
+- **Selective reporting** is running many analyses and reporting only the ones that worked
+- **HARKing** is forming the hypothesis after seeing the results, then writing it up as though you predicted it all along
 - HARKing turns exploratory work, which is perfectly legitimate, into fake confirmatory work
 
-## Prediction and postdiction
+## Prediction and Postdiction
 
 [Nosek et al., 2018]{.eyebrow}
 
-The paper draws a sharper line than "exploratory versus confirmatory".
+The paper draws a sharper line than "exploratory versus confirmatory":
 
-- **Prediction** commits to the outcome before the data can inform it. The test can fail,
-  which is the only reason passing it means anything.
-- **Postdiction** explains a result you have already seen. It is legitimate, often the most
-  creative part of the work, and it is where the next prediction comes from.
-- The error is never doing postdiction. The error is reporting it as prediction.
+- **Prediction** commits to the outcome before the data can inform it. The test can fail, which is the only reason passing it means anything
+- **Postdiction** explains a result you have already seen. It is legitimate, often the most creative part of the work, and it is where the next prediction comes from
+- The error is never doing postdiction. The error is reporting it as prediction
 
-## What preregistration actually does
+## What Preregistration Does
 
 > "Preregistration of an analysis plan is committing to analytic steps without advance knowledge of the research outcomes."
 >
 > Nosek et al. (2018, p. 2601)
 
-It does not forbid exploration, and it does not ask you to know the answer in advance. It
-timestamps **which of the two you were doing**, so a reader can tell a prediction that
-survived a real test from an explanation built after the fact.
+- Preregistration does not forbid exploration, and it does not ask you to know the answer in advance
+- It timestamps **which of the two you were doing**, so a reader can tell a prediction that survived a real test from an explanation built after the fact
 
-## The objections, and what the paper says back
-
-[Nosek et al., 2018]{.eyebrow}
-
-Read it for its argument, not its conclusion. Nosek anticipates three objections. Decide
-whether the answers actually hold.
-
-- **"It is a straitjacket."** Depart from the plan when the work demands it, and disclose
-  the departure. A plan you deviated from in the open still tells a reader more than no
-  plan at all.
-- **"It does not fit exploratory or qualitative work."** The answer offered is that
-  preregistration marks which claims were predicted, so work making no predictions gives up
-  nothing by saying so.
-- **"It slows everything down."** It front-loads decisions you were going to make anyway,
-  later, under worse conditions, with the results already in view.
-
-## Registered Reports, and what this cannot fix
+## Three Objections, and the Paper's Answers
 
 [Nosek et al., 2018]{.eyebrow}
 
-- A **Registered Report** sends the plan to peer review *before* the data exist, and the
-  acceptance stands whatever the results turn out to be
-- It aims at the incentive rather than the person: whether you get published stops depending
-  on whether the finding came out positive
-- That is the same move Belmont makes. Outside accountability, not private virtue.
-- **It would not have saved Kramer.** That failure happened at consent, before any analysis
-  began. Preregistration disciplines what you do with data you already had the right to
-  hold, and says nothing about whether you had the right.
+Nosek anticipates three objections. Read the paper for its argument, and decide whether the
+answers hold:
 
-## Discussion {.discuss}
+- **"It is a straitjacket."** The answer: depart from the plan when the work demands it, and disclose the departure. A plan you deviated from in the open still tells a reader more than no plan at all
+- **"It does not fit exploratory or qualitative work."** The answer: preregistration marks which claims were predicted, so work making no predictions gives up nothing by saying so
+- **"It slows everything down."** The answer: it front-loads decisions you were going to make anyway, later, under worse conditions, with the results already in view
 
-On Nosek et al. (2018), "The preregistration revolution":
+## Registered Reports, and What This Cannot Fix
 
-- They call it a revolution. Is the mechanism strong enough to change behavior on its own,
-  or does it rest on incentives the authors do not control?
-- The paper separates prediction from postdiction. Where does that line blur most easily,
-  and would you catch yourself crossing it?
-- Is preregistration compatible with grounded theory or thematic analysis? Argue it on
-  epistemological grounds rather than practical ones.
-- What does a Registered Report protect that a preregistration does not?
+- A **Registered Report** sends the plan to peer review *before* the data exist, and the acceptance stands whatever the results turn out to be
+- It aims at the incentive rather than the person: whether you get published stops depending on whether the finding came out positive
+- That is the same move Belmont makes: outside accountability, not private virtue
+- **It would not have saved the Facebook study.** That failure happened at consent, before any analysis began
+    - Preregistration disciplines what you do with data you already had the right to hold, and it says nothing about whether you had the right
 
-*A few minutes to think, then we take it as a group.*
+## Discussion: The Preregistration Revolution {.discuss}
 
-## The second half: the conversation you are joining
+On Nosek et al. (2018), "The preregistration revolution," answer each in writing:
 
-Say your piece cold in an argument that has run for years and you get dismissed as naive,
-or told it was settled in 2012. A **literature review** is the disciplined act of listening
-before speaking, and it is how you earn the right to ask your question. Concretely it:
+- They call it a revolution. State whether the mechanism is strong enough to change behavior on its own, or whether it rests on incentives the authors do not control
+- The paper separates prediction from postdiction. Name where that line blurs most easily, and say whether you would catch yourself crossing it
+- State whether preregistration is compatible with grounded theory or thematic analysis, and argue it on epistemological grounds rather than practical ones
+- Name one thing a Registered Report protects that a preregistration does not
 
-- **Situates your work** in a context you can show you understand
-- **Identifies a gap**, which is what answers "so what?"
-- **Hands you methods**: validated measures, sampling strategies, documented limitations
-  (Krippendorff, 2018; Neuendorf, 2017)
-- **Sharpens your question** from a vague curiosity into something you can actually do
+## The Second Half: The Conversation You Are Joining
 
-## Phase one: exploratory searching
+- Say your piece cold in an argument that has run for years and you get dismissed as naive, or told it was settled in 2012
+- A **literature review** is the disciplined act of listening before speaking, and it is how you earn the right to ask your question
+- Concretely, a review does four things
+    - **It situates your work** in a context you can show you understand
+    - **It identifies a gap**, which is what answers "so what?"
+    - **It hands you methods**: validated measures, sampling strategies, and documented limitations (Krippendorff, 2018; Neuendorf, 2017)
+    - **It sharpens your question** from a vague curiosity into something you can actually do
 
-- Start broad. You are learning the terminology, the names, and which journals publish this.
-- **Google Scholar** first. Less comprehensive than the databases, but fast and free.
+## Phase One: Exploratory Searching
+
+- Start broad. You are learning the terminology, the names, and which journals publish this
+- **Google Scholar** comes first. It is less comprehensive than the databases, and it is fast and free
 - Wikipedia is not citable, and its reference list is still a map to real scholarship
-- Any good article's reference list is a map too. Repeated names mark the foundations.
-- Collect everything promising in **Zotero** and tag freely. Organizing comes later.
+- Any good article's reference list is a map too, and repeated names mark the foundations
+- Collect everything promising in **Zotero** and tag freely. Organizing comes later
 
-## Phase two: systematic searching
+## Phase Two: Systematic Searching
 
-Communication & Mass Media Complete, PsycINFO, Web of Science, Scopus.
-
-**Boolean operators** are the syntax these databases expect: AND narrows, OR widens,
-NOT excludes, and `*` catches word variants.
+- The real databases are Communication & Mass Media Complete, PsycINFO, Web of Science, and Scopus
+- **Boolean operators** are the syntax these databases expect: AND narrows, OR widens, NOT excludes, and `*` catches word variants
 
 ```
 (livestream* OR "live streaming" OR Twitch) AND
@@ -308,19 +262,18 @@ NOT excludes, and `*` catches word variants.
 (viewer* OR audience* OR chat)
 ```
 
-Log every search: date, database, the exact string, limiters, results, how many you kept.
-That log is a methods disclosure, not a private note.
+- Log every search: the date, the database, the exact string, the limiters, the results, and how many you kept
+- That log is a methods disclosure, not a private note
 
-## Phase three: citation chaining
+## Phase Three: Citation Chaining
 
-- **Backward chaining**: read the references inside an article that matters
-- **Forward chaining**: use "Cited by" to find who has built on it since
-- It snowballs, but strategically, following the network out from the work that counts most
-- Ad hoc searching cannot support a later claim about the literature, because you cannot say
-  whether what you found is representative of it
+- **Backward chaining:** read the references inside an article that matters
+- **Forward chaining:** use "Cited by" to find who has built on it since
+- The search snowballs strategically, following the network out from the work that counts most
+- Ad hoc searching cannot support a later claim about the literature, because you cannot say whether what you found is representative of it
 - A systematic search can be reproduced, and updated, by somebody who is not you
 
-## Knowing when to stop
+## Knowing When to Stop
 
 **Saturation** is the point where more searching stops changing your understanding. You
 recognize it three ways:
@@ -329,9 +282,9 @@ recognize it three ways:
 - New articles keep citing the same eight or ten sources you have already read
 - You can predict what an article says from its title and abstract
 
-It does not mean you read everything. It means the map stopped changing.
+Saturation does not mean you read everything. It means the map stopped changing.
 
-## Worth asking your librarian
+## Worth Asking Your Librarian
 
 - Which database actually indexes the journals in my area, and what does it miss?
 - How do I set an alert so new work on my topic finds me instead of the other way round?
@@ -339,55 +292,43 @@ It does not mean you read everything. It means the map stopped changing.
 - Can Zotero pull straight from this database, and how do I fix broken metadata?
 - What would you search that I would never have thought to search?
 
-## CITI, and what it actually is
+## CITI, and What It Is
 
-**CITI** is the Collaborative Institutional Training Initiative, the research ethics
-training nearly every American university runs. You complete the **Social and Behavioral
-Research** course and submit the completion certificate.
-
-- The modules cover the ground of this first half: the history, the principles, informed
-  consent, privacy and confidentiality, assessing risk, vulnerable populations
+- **CITI** is the Collaborative Institutional Training Initiative, the research ethics training nearly every American university runs
+- You complete the **Social and Behavioral Research** course and submit the completion certificate
+- The modules cover the ground of this first half: the history, the principles, informed consent, privacy and confidentiality, assessing risk, and vulnerable populations
 - Each module ends in a quiz you have to pass to earn the certificate
-- It takes hours rather than minutes, and it saves your place, so do it across several
-  sittings rather than one
-- **Due Monday, September 28**, 25 points
+- It takes hours rather than minutes, and it saves your place, so do it across several sittings rather than one
+- **CITI Ethics Certification**, 25 points, is due Monday, September 28, 11:59 PM
 
-## Where to actually go
+## Where to Register
 
 Two pages, and the order matters:
 
-1. **[SIUE Compliance Training](https://www.siue.edu/compliance/training/)** first. This is
-   the route in, and it tells you how to attach your account to SIUE.
-2. **[CITI Program](https://www.citiprogram.org/index.cfm?pageID=668)** to register and work
-   through the modules.
+1. **[SIUE Compliance Training](https://www.siue.edu/compliance/training/)** first. This is the route in, and it tells you how to attach your account to SIUE
+2. **[CITI Program](https://www.citiprogram.org/index.cfm?pageID=668)** second, to register and work through the modules
 
-**Register through SIUE, not as an "independent learner."** The independent route charges
-you money and the certificate does not come back to the university, so it will not count.
-If you have already made an account that way, say so and we will sort it out.
+- **Register through SIUE, not as an "independent learner."** The independent route charges you money, and the certificate does not come back to the university, so it will not count
+- If you have already made an account that way, say so and we will sort it out
 
-## Why it applies to you anyway
+## Why CITI Applies to You Anyway
 
-A fair question after the last half hour: if your project is not human subjects research,
-why complete training for human subjects research?
+If your project is not human subjects research, why complete training for human subjects
+research?
 
-- Because "this is not human subjects research" is an **argument you have to be able to
-  make**, and CITI is where the vocabulary for making it comes from
+- Because "this is not human subjects research" is an **argument you have to be able to make**, and CITI is where the vocabulary for making it comes from
 - Because the moment any project touches people directly, no IRB will look at you without it
-- Because it travels. Doctoral programs and research positions ask to see the certificate.
-- Because your non-human-subjects determination is a document you write, and writing it
-  well is easier once you have done the training that explains what it is arguing against
+- Because it travels: doctoral programs and research positions ask to see the certificate
+- Because your non-human-subjects determination is a document you write, and writing it well is easier once you have done the training that explains what it argues against
 
 ## Before Week 4
 
-- **Due Monday, September 21, 11:59 PM:** the **Librarian Visit Report**, built from
-  tonight's searching plus your own visit. **No librarian comes to this class.** You meet ours in **MC 500**; if you need
-  more, book a subject librarian at [Lovejoy](https://www.siue.edu/lovejoy-library/).
-- Read **Chapter 4** (annotating) and **Chapter 5** (Theory as a Lens), with the
-  edition toggle on
+- **Due Monday, September 21, 11:59 PM:** the **Librarian Visit Report**, 50 points, built from tonight's searching plus your own visit
+    - **No librarian comes to this class.** You meet ours in **MC 500**, or book a subject librarian at [Lovejoy](https://www.siue.edu/lovejoy-library/)
+- Read **Chapter 4** (annotating) and **Chapter 5** (Theory as a Lens) with the edition toggle on
 - Read the assigned article: **Cohen (1992)**, "A power primer"
-- Write your journal entry, 450 to 500 words, engaging both the chapters and the reading.
-  The graduate extension this week: take whichever of Nosek's three answers you found
-  weakest and argue it against your own design, not against preregistration in general
-- Start the search log tonight. Backfilling it later is guesswork and it shows.
+- Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
+    - Extension: argue the weakest of Nosek's three answers against your own design, not against preregistration in general
+- Start the search log tonight. Backfilling it later is guesswork, and it shows
 
 ## Questions, Comments, or Concerns? {.titlecard}

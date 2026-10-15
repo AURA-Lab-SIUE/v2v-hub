@@ -11,77 +11,86 @@ format:
     transition: none
 ---
 
-## Two numbers, one week on Twitch
+## Today's Agenda
+
+- Two numbers from one week on Twitch, and what makes them data
+- From a snapshot to a corpus, and the three roles one dataset plays
+- Why stories and science share one machinery
+- Four everyday ways of knowing, and why research is different
+- A study is a story told with discipline
+
+## Two Numbers From One Week on Twitch
 
 [November 2018]{.eyebrow}
 
 - **Bob Ross:** 3,178 average viewers, streaming under *Art*, and dead since 1995
-- **xQc:** 17,363 average, a live variety streamer
+- **xQc:** 17,363 average viewers, a live variety streamer
 - Same platform, same week, very different audiences
-- The move a social scientist makes: ask not what those numbers *mean*, but what they *are*
-- They are **data:** collected on purpose, so a claim can be defended later
+- A social scientist asks not what those numbers *mean* but what they *are*
+- They are **data:** numbers collected on purpose, so a claim can be defended later
 
-## From a single snapshot to a corpus
+## From a Snapshot to a Corpus
 
-- One **snapshot** is one row, six columns: channel, title, game, viewers, timestamp, key
+- One **snapshot** is one row with six columns: channel, title, game, viewers, timestamp, and key
 - Multiply by half a million (590,876 snapshots over six days) and you have a **corpus**
-- A corpus is *a body of evidence that licenses some questions and refuses others*
+- A corpus is a body of evidence that licenses some questions and refuses others
 - Your first job is to respect what a given corpus can and cannot answer
 
-## One dataset, three roles
+## One Dataset, Three Roles
 
-The same data wears three hats, and conflating them is where first projects go wrong:
+The same data plays three roles, and mixing them up is where first projects go wrong:
 
 - **Population:** the 1,690 channels present in both the chat and stream logs
 - **Working corpus:** 50 channels, stratified by chat volume, that you load into R
 - **Anchor set:** 8 channels that recur as named examples (xqcow, forsen, bobross)
 
-## Your turn {.discuss}
+This dataset is the shared example for the class. The same three roles apply to any source
+you choose for your own study.
 
-- Pick a number from your own media life: followers, watch time, a like count
-- Is it **data**? What claim would it let you defend, and what would it refuse?
-- Where did it come from, and who decided what got counted?
+## Exercise: Is Your Number Data? {.discuss}
 
-*Two minutes to think, then we take it as a group.*
+Answer each in writing:
 
-## We are hypothesis-testing organisms
+- Pick a number from your own media life: a follower count, a watch time, or a like count
+- State whether it is **data**, then name one claim it would let you defend and one it would refuse
+- Say where the number came from, and who decided what got counted
 
-[Why stories matter for science]{.eyebrow}
+## Stories and Science Share One Machinery
 
-- Barrett: the brain is a **prediction machine**, updating its models when predictions fail
-- Storr: **stories** are cognitive tools for modeling cause and effect
-- Science is not the opposite of storytelling; it is the same machinery under **rigor**
-- Stories without data are anecdotes. Data without stories is a spreadsheet.
+- **Barrett:** the brain is a **prediction machine** that updates its models when predictions fail
+- **Storr:** **stories** are cognitive tools for modeling cause and effect
+- Science is not the opposite of storytelling. It is the same machinery under **rigor**
+- Stories without data are anecdotes, and data without stories is a spreadsheet
 
-## Four everyday ways of knowing
+## Four Everyday Ways of Knowing
 
-Earl Babbie's shortcuts work for Tuesday, and fail when others must trust the result:
+Babbie's four shortcuts work on an ordinary Tuesday and fail when others must trust the result:
 
-- **Tradition:** stable, but resists updating
-- **Authority:** efficient, only as reliable as the expertise behind it
-- **Common sense:** feels obvious, yet culturally bound and self-contradictory
-- **Intuition:** fast, but shaped by bias and recent examples
+- **Tradition** is stable, but it resists updating
+- **Authority** is efficient, but only as reliable as the expertise behind it
+- **Common sense** feels obvious, yet it is culturally bound and often self-contradictory
+- **Intuition** is fast, but shaped by bias and by recent examples
 
 Research is disciplined because the process **exposes bias to scrutiny**.
 
-## The sacred flaw and the null hypothesis
+## The Sacred Flaw and the Null Hypothesis
 
-- Storr's **sacred flaw**: a false belief the protagonist clings to as evidence mounts
-- The **null hypothesis** plays that role: *nothing interesting is happening here*
+- Storr's **sacred flaw** is a false belief the protagonist clings to as evidence mounts
+- The **null hypothesis** plays that role in a study: it says *nothing interesting is happening here*
 - To **reject the null** is to force the data to tell a different story than you assumed
 - A *p*-value of 0.001 means the old story is so incompatible with the evidence that keeping it takes willful blindness
 
-## When the established story is wrong
+## When the Established Story Was Wrong
 
 [Reinhart and Rogoff, 2010]{.eyebrow}
 
-- A famous finding: public debt above 90% of GDP crushes growth. It shaped austerity policy.
+- A famous finding said public debt above 90% of GDP crushes growth, and it shaped austerity policy
 - In 2013 a doctoral student replicating it *for a class* could not match the numbers
-- The original spreadsheet held an Excel error excluding several countries
+- The original spreadsheet held an Excel error that excluded several countries
 - Corrected, growth above the threshold was **+2.2%**, not −0.1%
 - The error was caught because the work was **transparent enough to retrace**
 
-## A study is a story, told with discipline
+## A Study Is a Story Told With Discipline
 
 | In a story | In a study |
 |---|---|
@@ -93,28 +102,27 @@ Research is disciplined because the process **exposes bias to scrutiny**.
 | Falling action | Interpretation and limitations |
 | Resolution | Implications and future research |
 
-## Anecdote and data are partners
+## Anecdote and Data Are Partners
 
-- **Journalism** makes the abstract concrete, humanizes, makes audiences care
-- **Science** establishes generalizability: does the pattern hold across many cases?
-- Anecdotes generate hypotheses; data test them
+- **Journalism** makes the abstract concrete, humanizes it, and makes audiences care
+- **Science** establishes generalizability: it asks whether the pattern holds across many cases
+- Anecdotes generate hypotheses, and data test them
 - A significant result without human context is true and unpersuasive
 - The best work holds both in tension
 
-## What this course teaches
+## What This Course Teaches
 
-[One week of Twitch]{.eyebrow}
+- The shared example is one week of Twitch: **21,964,296 chat messages**, 1,695 channels, and 590,876 stream snapshots
+- You do original research end to end and publish a **White Paper**
+- The example dataset is the vehicle, and the destination is **methodological literacy**
+- The book has five parts: Foundations, Planning, Operationalization, Execution, and Publication
+- This course works in the social scientific paradigm, and interpretive and critical work are legitimate too
 
-- **21,964,296 chat messages**, 1,695 channels, 590,876 stream snapshots
-- You do original research on this real dataset, end to end, and publish a **White Paper**
-- The dataset is the vehicle; the destination is **methodological literacy**
-- Five parts: Foundations, Planning, Operationalization, Execution, Publication
-- One paradigm here (social scientific), but interpretive and critical work are legitimate too
+## Looking Ahead to Thursday
 
-## Looking ahead to Thursday
-
-- **Chapter 2, The Open Workspace**: the tools that make research reproducible, VS Code, R, Quarto, Git
-- You meet the dataset for the first time: ten real rows from one minute in November 2018
-- **Before then:** sign the Syllabus Contract, and skim Chapter 2's setup walkthrough on the course site
+- Thursday covers **Chapter 2, The Open Workspace**: the tools that make research reproducible, VS Code, R, Quarto, and Git
+- You meet the example dataset for the first time: ten real rows from one minute in November 2018
+- **Sign the Syllabus Contract**, 25 points, due Friday, August 28, 11:59 PM
+- Skim Chapter 2's setup walkthrough on the course site before Thursday
 
 ## Questions, Comments, or Concerns? {.titlecard}

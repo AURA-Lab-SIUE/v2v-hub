@@ -11,80 +11,78 @@ format:
     transition: none
 ---
 
-## Today
+## Today's Agenda
 
-You walk out with a topic, a set of search terms that actually work, and the start of a
-search log. That log is most of the Librarian Visit Report.
+- What you walk out with today: a topic, search terms, and a search log
+- Why a literature review is a map, not a reading list
+- Three phases of searching: broad, systematic, and by citation
+- Booking your librarian meeting, and what to ask
+- Searching in here, then committing your work to GitHub
 
-**No librarian is coming to us.** You book your own appointment at Lovejoy and go to them,
-and that meeting is the assignment. Today is how you arrive there with something worth
-their time.
+## What You Walk Out With Today
 
-**Have a topic in mind.** Rough is fine.
+- A topic, a set of search terms that actually work, and the start of a search log
+- That log is most of the Librarian Visit Report
+- **No librarian is coming to us.** You book your own appointment at Lovejoy and go to them, and that meeting is the assignment
+- Today is how you arrive there with something worth their time
+- **Have a topic in mind.** A rough one is fine
 
-## Thirty sources in an hour
+## Thirty Sources in an Hour
 
-- You find one article that looks right. It cites twelve others.
-- You chase three of those. Each cites fifteen more.
+- You find one article that looks right, and it cites twelve others
+- You chase three of those, and each cites fifteen more
 - An hour later you have thirty sources open and no idea which one to read first
-- The instinct is to retreat: narrow the topic, keep three recent articles, hope
-- That instinct is completely reasonable, and following it is what makes the next
-  three weeks harder than they need to be
+- The instinct is to retreat: narrow the topic, keep three recent articles, and hope
+- That instinct is reasonable, and following it is what makes the next three weeks harder than they need to be
 
-## It is a map, not a reading list
+## A Review Is a Map, Not a Reading List
 
-A **literature review** is not evidence that you read enough articles. It is a map of who
-has said what, and where the arguments are.
+- A **literature review** is not evidence that you read enough articles
+- It is a map of who has said what, and where the arguments are
+- Think of it as walking into a debate that has been running for years
+    - Say your piece cold and you get told it was answered in 2012
+    - Knowing the terrain is how you earn the right to ask your question
+- You cannot map terrain from three landmarks, which is why retreating to three articles fails
 
-Think of it as walking into a debate that has been running for years. Say your piece cold
-and you get told it was answered in 2012. Knowing the terrain is how you earn the right to
-ask your question.
+## What a Review Does for You
 
-You cannot map terrain from three landmarks, which is why retreating to three articles
-fails.
-
-## What a review does for you
-
-- **It shows where your work sits.** You are not the first person to wonder this.
+- **It shows where your work sits.** You are not the first person to wonder this
 - **It finds the gap**, which is your answer to "so what?"
-- **It stops you rebuilding something that already exists.** Your original idea may be
-  somebody's dissertation from five years ago.
-- **It hands you methods**: measures that have been validated, sampling strategies, and
-  other people's documented limitations (Krippendorff, 2018; Neuendorf, 2017)
-- **It sharpens the question** from "something about Twitch chat" into something you can
-  actually answer
+- **It stops you rebuilding something that already exists.** Your original idea may be somebody's dissertation from five years ago
+- **It hands you methods**: validated measures, sampling strategies, and other people's documented limitations (Krippendorff, 2018; Neuendorf, 2017)
+- **It sharpens the question** from "something about Twitch chat" into something you can actually answer
 
-## Your turn {.discuss}
+## Exercise: Write Your Search Terms {.discuss}
+
+Answer each in writing, because your librarian will ask you for them:
 
 - Name a media topic you are curious about, in one sentence
-- What words would a scholar use for it that you would not?
-- Where would you look first, and how would you know if you had missed the main body of work?
+- List the words a scholar would use for it that you would not
+- Name where you would look first, and state how you would know if you had missed the main body of work
 
-*Two minutes to get your terms down. Your librarian will ask you for them, so this is not a
-warm-up exercise.*
+## Phase One: Search Broadly
 
-## Phase one: search broadly
-
-- Start wide. You are answering basic questions, not finding your final sources.
-- What words do scholars use for this? Who keeps coming up? Which journals publish it?
-- **Google Scholar** first. Less thorough than the real databases, and fast and free.
+- Start wide. You are answering basic questions, not finding your final sources
+- Ask which words scholars use for this, who keeps coming up, and which journals publish it
+- **Google Scholar** comes first. It is less thorough than the real databases, and it is fast and free
 - **Wikipedia** is not citable, and its reference list is still a doorway
-- Collect anything promising in **Zotero** and tag freely. Do not tidy yet.
+- Collect anything promising in **Zotero** and tag freely. Do not tidy yet
 
-## Phase two: search systematically
+## Phase Two: Search Systematically
 
 Now you want coverage rather than speed, which means the real databases:
 
-- **Communication & Mass Media Complete**, the main one for our field
-- **PsycINFO** if your question touches emotion, persuasion, or cognition
-- **Web of Science** and **Scopus** for tracking citations across disciplines
+- **Communication & Mass Media Complete** is the main one for our field
+- **PsycINFO** fits a question that touches emotion, persuasion, or cognition
+- **Web of Science** and **Scopus** track citations across disciplines
 
-These do not work like Google. They expect **Boolean operators**, which is the next slide.
+These databases do not work like Google. They expect **Boolean operators**, which the next
+slide explains.
 
-## Building a search string
+## Building a Search String
 
-**AND** narrows, so both terms must appear. **OR** widens. **NOT** excludes. An asterisk is
-a wildcard: `stream*` catches stream, streams, streaming, and streamer.
+- **AND** narrows, so both terms must appear. **OR** widens. **NOT** excludes
+- An asterisk is a wildcard: `stream*` catches stream, streams, streaming, and streamer
 
 ```
 (livestream* OR "live streaming" OR Twitch) AND
@@ -92,97 +90,86 @@ a wildcard: `stream*` catches stream, streams, streaming, and streamer.
 (viewer* OR audience* OR chat)
 ```
 
-Three concept blocks joined with AND, each holding its own synonyms. Build yours the same
-way and take it with you: a librarian can fix a string like this in seconds.
+- The string has three concept blocks joined with AND, each holding its own synonyms
+- Build yours the same way and take it with you: a librarian can fix a string like this in seconds
 
-## Keep a search log
+## Keep a Search Log
 
-Plain text, in your repository. For every search you run, write down:
+Keep it as plain text in your repository. For every search you run, write down:
 
 - The date and which database
 - The exact string, copied and pasted, never remembered
 - The limiters you set and how many results came back
-- How many you kept
+- How many results you kept
 
-**You should see** it getting boring to write, which is the point. It lets you defend the
-strategy later, and it shows you fast which searches are not working.
+**You should see** it getting boring to write, which is the point. The log lets you defend
+the strategy later, and it shows you fast which searches are not working.
 
-## Phase three: follow the citations
+## Phase Three: Follow the Citations
 
 - Pick a few **keystone articles**, the ones that clearly sit at the center
 - **Backward chaining:** read what they cite, which takes you to the foundations
-- **Forward chaining:** use Google Scholar's "Cited by" to see who has cited them since,
-  which shows you how the argument moved
-- It snowballs, but on purpose, following the network out from what matters most rather
-  than wandering
+- **Forward chaining:** use Google Scholar's "Cited by" to see who has cited them since, which shows you how the argument moved
+- The search snowballs on purpose, following the network out from what matters most rather than wandering
 
-## Knowing when to stop
+## Knowing When to Stop
 
-**Saturation** is the point where more searching stops changing your understanding. You
-will recognize it three ways:
+**Saturation** is the point where more searching stops changing your understanding. You will
+recognize it three ways:
 
 - Three database searches in a row turn up nothing new that is relevant
 - New articles keep citing the same eight or ten sources you have already read
 - You can guess what an article says from its title and abstract
 
-It does not mean you read everything. It means stop searching and start synthesizing.
+Saturation does not mean you read everything. It means you stop searching and start
+synthesizing.
 
-## Book your librarian appointment
+## Book Your Librarian Appointment Today
 
-[Do this today, not Thursday]{.eyebrow}
+- Go to [Lovejoy Library](https://www.siue.edu/lovejoy-library/) and ask for the **Mass Communications subject librarian** by name. That is what they are there for
+- Book it **this week**, because the report is due Friday, September 18, and their calendar is not yours
+- Bring your topic, your terms, and your search log
+    - A consultation with nothing in hand wastes the half hour and gives you nothing to write up
+- The librarian gives you what a chapter cannot: the interface, the limiters, and the tricks that only come from using these every day
 
-- Go to [Lovejoy Library](https://www.siue.edu/lovejoy-library/) and ask for the
-  **Mass Communications subject librarian** by name. That is what they are there for.
-- Book it **this week**. The report is due Friday and their calendar is not yours.
-- Bring your topic, your terms, and your search log. A consultation with nothing in hand
-  wastes the half hour and gives you nothing to write up.
-- This is the part a chapter cannot give you: the interface, the limiters, and the tricks
-  that only come from using these every day.
-
-## What to ask while you are there
+## What to Ask While You Are There
 
 - Which database is actually right for **my** question?
 - How do I get the full text when the library does not subscribe?
 - How do I set up a saved search and an alert for new results?
 - What is the fastest way to push a batch of results into Zotero?
-- Interlibrary loan is free and much faster than you expect. Ask how to use it.
+- How do I use interlibrary loan? It is free and much faster than you expect
 
-## The rest of today: search, in here, now
+## Search in Here, Now
 
-- Open a database and run your first real string. I am walking the room.
+- Open a database and run your first real string
 - Start the search log on your **first** search, not once you have something good
-- Before you leave: a topic, one string that works, and three sources in Zotero
-- Bring me the search that returns 40,000 hits, or the one that returns none. Both are
-  normal and both are fixable in about a minute.
+- Before you leave, have a topic, one string that works, and three sources in Zotero
+- Bring me the search that returns 40,000 hits, or the one that returns none. Both are normal, and both are fixable in about a minute
 
-## Last part of today: commit your work
+## Last Part of Today: Commit Your Work
 
-You have a topic, a working string, and the start of a search log. None of it is anywhere
-but your laptop.
+- You have a topic, a working string, and the start of a search log, and none of it is anywhere but your laptop
+- Download this file into the **top folder** of your workspace, beside `README.md`:
+  [aura-lab.siue.edu/v2v-hub/starters/01-commit-your-work.qmd](https://aura-lab.siue.edu/v2v-hub/starters/01-commit-your-work.qmd)
+- **Getting that file onto GitHub is the check.** It is not in the template, so if I can see it in your repository, you put it there yourself
 
-Download this into the **top folder** of your workspace, beside `README.md`:
+## Save, Stage, Commit, Push
 
-[aura-lab.siue.edu/v2v-hub/starters/01-commit-your-work.qmd](https://aura-lab.siue.edu/v2v-hub/starters/01-commit-your-work.qmd)
-
-**Getting that file onto GitHub is the check.** It is not in the template, so if I can see it
-in your repository, you put it there yourself.
-
-## Save, stage, commit, push
-
-1. **Save** it, `Ctrl+S`. The dot in the tab turns back into an X.
-2. **Source Control** in the left bar, or `Ctrl+Shift+G`. Your file is listed with a **U**.
-3. **Stage** it: hover over the name, click the **+**. It moves to Staged Changes.
-4. Type a **message** a stranger could read, then click **Commit**. Never "update".
-5. Click **Sync Changes**. The first time from a folder it says **Publish Branch** instead.
+1. **Save** it with `Ctrl+S`. The dot in the tab turns back into an X
+2. Open **Source Control** in the left bar, or press `Ctrl+Shift+G`. Your file is listed with a **U**
+3. **Stage** it: hover over the name and click the **+**. It moves to Staged Changes
+4. Type a **message** a stranger could read, then click **Commit**. Never write "update"
+5. Click **Sync Changes**. The first time from a folder it says **Publish Branch** instead
 
 **You should see** the file on your repository page at github.com when you refresh it. A
-commit stays on your laptop; the push is what sends it. You need both, every time.
+commit stays on your laptop, and the push is what sends it. You need both, every time.
 
-## Before next time
+## Before Next Time
 
-- **The Librarian Visit Report is due Friday, September 18**, 50 points. You cannot write
-  it without the meeting, so book the meeting today.
-- It wants your search log: databases, strings, results, and what you kept
+- **The Librarian Visit Report**, 50 points, is due Friday, September 18, 11:59 PM
+    - You cannot write it without the meeting, so book the meeting today
+    - It wants your search log: databases, strings, results, and what you kept
 - Install **Zotero** and connect it to your browser if you have not yet
 - Read the rest of **Chapter 4** on the literature map before Tuesday
 - Tuesday we turn a pile of sources into a map, and a map into an argument

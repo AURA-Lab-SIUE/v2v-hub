@@ -11,67 +11,64 @@ format:
     transition: none
 ---
 
-## Tonight
+## Today's Agenda
 
-Tonight is about what you are looking for, before you go looking for it.
+- What to extract from every manuscript, decided before the pile exists
+- Summary versus synthesis, with a worked paragraph
+- Effect sizes: the number you are really reading for
+- The assigned article, Cohen (1992), and the discussion built on it
+- Four kinds of gap, and the literature map
+- Theory as a lens: paradigms, middle-range theories, and a catalogue
+- Two lenses on four real chat messages, and what is due before Week 5
 
-First half: what makes an article worth keeping, and what to pull out of one when you read
-it, including a number you will need long before you expect to. Second half: theory, which
-decides what you look at and what you ignore.
+## What Tonight Covers
 
-You do not need a stack of articles yet. You need to know what you are reading for, because
-three annotated manuscripts are due the Monday after next.
+- Tonight is about what you are looking for, before you go looking for it
+- First half: what makes an article worth keeping, and what to pull out of one when you read it, including a number you will need long before you expect to
+- Second half: theory, which decides what you look at and what you ignore
+- You do not need a stack of articles yet. You need to know what you are reading for, because three annotated manuscripts are due Monday, September 28
 
-## This is a heavy evening
+## This Is a Heavy Evening
 
-- Two chapters, a statistics primer, and a catalogue of theories
-- The middle section involves effect sizes, and it will feel like a math class for
-  about fifteen minutes
-- You are not being asked to derive anything. You are being asked to find a number in
-  somebody else's paper and write it down.
-- If the theory half feels abstract, hold on until the last two slides, where we read
-  four real chat messages through two lenses
+- Tonight covers two chapters, a statistics primer, and a catalogue of theories
+- The middle section involves effect sizes, and it will feel like a math class for about fifteen minutes
+- You are not being asked to derive anything. You are being asked to find a number in somebody else's paper and write it down
+- If the theory half feels abstract, the last slides read four real chat messages through two lenses
 
-## Decide this before the pile exists
+## Decide the List Before the Pile Exists
 
-Reading for annotation is a different act from reading for interest. You are extracting a
-fixed set of things from every manuscript, and extracting the same things every time is what
-makes the sources comparable to each other.
+- Reading for annotation is a different act from reading for interest
+- You extract a fixed set of things from every manuscript
+- Extracting the same things every time is what makes the sources comparable to each other
+- So the list comes first. Downloading twenty PDFs and deciding later what mattered gives you twenty documents you have to open twice
 
-Which means the list comes first. Downloading twenty PDFs and deciding later what mattered
-gives you twenty documents you have to open twice.
-
-## What a weak review sounds like
+## What a Weak Review Sounds Like
 
 > Hamilton, Garretson, and Kerne (2014) studied Twitch as a participatory community.
 > Sjöblom and Hamari (2017) examined viewer motivations. Hilvert-Bruce and colleagues
 > (2018) studied social motivations for engagement.
 
-- Three disconnected summaries, and nothing about how they relate
+- These are three disconnected summaries, with nothing about how they relate
 - Every sentence is driven by **who wrote the study** instead of by what is known
 - This is what annotation without synthesis produces
-- Most first drafts look exactly like it. It is a stage, not a verdict.
+- Most first drafts look exactly like it. It is a stage, not a verdict
 
-## Where the citation goes
+## Where the Citation Goes
 
-- Default: make the **claim** the subject and put the citation at the **end**, in
-  parentheses, as (Sjöblom & Hamari, 2017)
-- Lead with the name only when that study is the point: a landmark, a definition you
-  are adopting, or a finding you are about to argue with
-- An author-led sentence announces a **study**. A claim-led sentence states a **finding**.
-- A page of "X (2014) found, Y (2017) found" is an annotated bibliography wearing the
-  clothes of a review
+- By default, make the **claim** the subject and put the citation at the **end** in parentheses, as (Sjöblom & Hamari, 2017)
+- Lead with the name only when that study is the point: a landmark, a definition you are adopting, or a finding you are about to argue with
+- An author-led sentence announces a **study**, and a claim-led sentence states a **finding**
+- A page of "X (2014) found, Y (2017) found" is an annotated bibliography wearing the clothes of a review
 
-## What a strong review does
+## What a Strong Review Does
 
-- **Groups** sources by theme rather than by author or date
-- **Names the convergence**: what these studies together have established
-- **Adds nuance**: where they disagree, or where one qualifies another
-- **Names a shared limitation**, which is usually where your gap lives
-- Worked: survey research converges on livestream viewing being socially motivated, but
-  all of it is self-report, so nobody has checked the behavioral trace
+- **It groups** sources by theme rather than by author or date
+- **It names the convergence:** what these studies together have established
+- **It adds nuance:** where they disagree, or where one qualifies another
+- **It names a shared limitation**, which is usually where your gap lives
+- Worked: survey research converges on livestream viewing being socially motivated, but all of it is self-report, so nobody has checked the behavioral trace
 
-## The same thing, written out
+## The Same Thing, Written Out
 
 > Livestream viewing is motivated less by what is on screen than by the social experience
 > around it. Twitch streams function as virtual third places where informal communities
@@ -80,36 +77,31 @@ gives you twenty documents you have to open twice.
 > watching but chatting and subscribing (Hilvert-Bruce et al., 2018). All three rely on
 > self-report, leaving open whether the same patterns appear in behavioral chat-log data.
 
-## Why that version works
+## Why That Version Works
 
 - The **claim leads**, and the citations arrive behind it as support
 - Sources are grouped by what they argue, not by the year they appeared
-- The limitation is shared across the group, which makes it structural rather than a
-  complaint about one paper
-- The gap is never asserted. It falls out of the limitation on its own.
-- Notice where it points: at a content analysis of a real chat log
+- The limitation is shared across the group, which makes it structural rather than a complaint about one paper
+- The gap is never asserted. It falls out of the limitation on its own
+- The paragraph points at a content analysis of a real chat log
 
-## What to mark in a manuscript
+## What to Mark in a Manuscript
 
 - The **research question**, in the authors' own words, and the theory behind it
-- The **design**: unit of analysis, sample, how the key construct was measured
+- The **design**: the unit of analysis, the sample, and how the key construct was measured
 - The **finding** in one sentence, and the **gap** the authors claim to fill
 - The **effect size** and the sample size used to detect it
 - The **limitation the authors admit**, and the one they do not
 - One sentence you would be willing to quote in your own methods section
 
-## The number you are really there for
+## The Number You Are Really There For
 
-An **effect size** is a number saying how big a difference or relationship actually is,
-as opposed to whether it cleared a significance threshold.
+- An **effect size** is a number saying how big a difference or relationship actually is, as opposed to whether it cleared a significance threshold
+- You need one because before you can justify how much data to collect, you need a defensible estimate of the effect you expect to find
+- The most defensible source for that estimate is research that already measured it
+- So you copy it out of their paper. That is the whole task
 
-You need one because before you can justify how much data to collect, you need a
-defensible estimate of the effect you expect to find. The most defensible source for that
-estimate is research that already measured it.
-
-So you copy it out of their paper. That is the whole task.
-
-## What to write down
+## What to Write Down
 
 - Cohen's *d*, Cramer's *V*, or a correlation *r*, whichever the authors report
 - The *n* they used, because an effect size without a sample size is not much use
@@ -117,70 +109,61 @@ So you copy it out of their paper. That is the whole task.
 - Those numbers become the inputs to your own **power analysis** later in the term
 - A review that cannot supply an effect size estimate has not finished its job
 
-## Cohen on the hard part
+## Cohen on the Hard Part
 
 > "Researchers find specifying the ES the most difficult part of power analysis."
 >
 > Cohen (1992, p. 156)
 
-ES is his abbreviation for effect size, and notice what he is conceding: the hardest part
-is not the arithmetic.
+- ES is his abbreviation for effect size
+- He is conceding that the hardest part is not the arithmetic
+- The literature review is how that difficulty becomes tractable: you are not inventing an estimate, you are borrowing one from people who already did the measuring
 
-The literature review is how that difficulty becomes tractable. You are not inventing an
-estimate. You are borrowing one from people who already did the measuring.
-
-## What that looks like when you read
+## What That Looks Like When You Read
 
 - Start with one study close to the kind of thing you want to do
 - Find its primary effect size, and note whether the authors ran a power analysis themselves
-- Later in the term you hand those numbers to the `pwr` package, which turns them into the
-  sample size you need
+- Later in the term you hand those numbers to the `pwr` package, which turns them into the sample size you need
 - The harder case is coming: nobody has reported an effect for your question
 - We will build **two** strategies for justifying a sample size anyway
 
-## Discussion {.discuss}
+## Discussion: A Power Primer {.discuss}
 
-On Cohen (1992), "A power primer":
+On Cohen (1992), "A power primer," answer each in writing:
 
-- Cohen offers conventions for small, medium, and large effects. Conventions make a field
-  legible. What do they cost it?
-- He says specifying the effect size is the hardest part. Why does that step, and not the
-  arithmetic, stall people?
-- A paper this short has shaped decades of practice. What does its brevity buy, and what
-  does it leave to the reader to get wrong?
-- Where would you expect to find an effect size for a question like yours, and what would
-  you do if nobody has reported one?
+- Cohen offers conventions for small, medium, and large effects. Conventions make a field legible. Name one thing they cost it
+- He says specifying the effect size is the hardest part. Give one reason that step, and not the arithmetic, stalls people
+- A paper this short has shaped decades of practice. Name one thing its brevity buys and one thing it leaves the reader to get wrong
+- Name where you would expect to find an effect size for a question like yours, and say what you would do if nobody has reported one
 
-*Two minutes to think, then we take it as a group.*
+## Four Kinds of Gap
 
-## Four kinds of gap
-
-- **Topical void**: a phenomenon, population, or context nobody has studied
-- **Methodological gap**: studied, but with methods carrying an important limitation
-- **Contradiction**: two well-designed studies reaching opposite conclusions
-- **Theoretical gap**: explained through one lens where another would show more
+- **Topical void:** a phenomenon, population, or context nobody has studied
+- **Methodological gap:** a topic studied, but with methods carrying an important limitation
+- **Contradiction:** two well-designed studies reaching opposite conclusions
+- **Theoretical gap:** a phenomenon explained through one lens where another would show more
 
 One caution on the void: what looks novel is usually covered under other terminology.
 
-## Articulating the gap
+## Articulating the Gap
 
-1. **Establish what is known.** Show you understand the conversation.
-2. **Identify the limitation.** What is missing, contradictory, or unexplained.
-3. **Argue for your study.** How your design addresses exactly that.
+1. **Establish what is known.** Show you understand the conversation
+2. **Identify the limitation.** Say what is missing, contradictory, or unexplained
+3. **Argue for your study.** Say how your design addresses exactly that
 
-Known, then limitation, then what this study does. The topic changes. The hinge does not.
+The order is known, then limitation, then what this study does. The topic changes, and the
+hinge does not.
 
-## The literature map
+## The Literature Map
 
 - A markdown file in your project, organized by **theme** rather than alphabetically
 - One heading per theme, sources beneath it, plus a running section for gaps
 - It shows at a glance which themes are well covered and which are thin
 - It makes you decide how sources relate, which is where synthesis starts
 - Its structure usually becomes the structure of the written review
-- Start it this week with the first article you read. Three headings and one source
-  under one of them is already a map.
+- Start it this week with the first article you read. Three headings and one source under one of them is already a map
 
-## If that feels out of reach
+## If That Feels Out of Reach
 
 Start here. This is a floor, not a compromise:
 
@@ -189,93 +172,82 @@ Start here. This is a floor, not a compromise:
 - Source C, one sentence: what did this study find?
 - The gap, one sentence: what do these three together leave unexplored?
 
-Four sentences, three citations, one gap. Enough to anchor a Research Proposal, and the full
-synthesis paragraph is what it grows into rather than where you start.
+Four sentences, three citations, and one gap are enough to anchor a Research Proposal. The
+full synthesis paragraph is what it grows into, not where you start.
 
-## Citation is ethical, not clerical
+## Citation Is Ethical, Not Clerical
 
 - Cite specific empirical findings, theoretical concepts, and methodological approaches
-- Direct quotes always. Paraphrased ideas unless genuinely common knowledge.
-- No citation needed for "Twitch is a livestreaming platform", for your own
-  interpretations, or for your own data and analysis
-- Nobody is criticised for citing too much. Under-citation damages credibility.
-- In its serious forms it is plagiarism, which is a breach of trust before it is a rule
+- Cite direct quotes always, and paraphrased ideas unless they are genuinely common knowledge
+- No citation is needed for "Twitch is a livestreaming platform," for your own interpretations, or for your own data and analysis
+- Nobody is criticized for citing too much. Under-citation damages credibility
+- In its serious forms under-citation is plagiarism, which is a breach of trust before it is a rule
 
-## One finding, three explanations
+## One Finding, Three Explanations
 
 Chapter 4 ended on a finding: livestream viewing looks more socially motivated than content
-motivated. Three research programs would explain that differently.
+motivated. Three research programs explain that differently:
 
-- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): viewers are active agents
-  meeting a social need a finished video cannot meet
-- **Parasocial interaction** (Horton & Wohl, 1956): viewers form one-sided bonds, and the
-  social feeling is that bond being felt
-- **Social identity** (Tajfel & Turner, 1979): the community is a group, and chat is a
-  space of belonging
+- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): viewers are active agents meeting a social need a finished video cannot meet
+- **Parasocial interaction** (Horton & Wohl, 1956): viewers form one-sided bonds, and the social feeling is that bond being felt
+- **Social identity** (Tajfel & Turner, 1979): the community is a group, and chat is a space of belonging
 
-## Theory is not speculation
+## Theory Is Not Speculation
 
-A **theory** is a formal, systematic explanation of relationships between concepts. Good
-ones are logically coherent, generalizable, falsifiable, and generative.
+- A **theory** is a formal, systematic explanation of relationships between concepts
+- A good theory is logically coherent, generalizable, falsifiable, and generative
+- Social identity theory predicts that viewers rate their own community above rivals on subjective dimensions like authenticity, and that they respond defensively when the streamer or community is criticized
+- Change the domain and it predicts partisans rating aligned outlets as more credible
+- The theory does not change. The domain does, and that is what makes it testable
 
-Social identity theory predicts that viewers rate their own community above rivals on
-subjective dimensions like authenticity, and that they respond defensively when the
-streamer or community is criticized. Change the domain and it predicts partisans rating
-aligned outlets as more credible.
-
-The theory does not change. The domain does. That is what makes it testable.
-
-## The lens metaphor
+## The Lens Metaphor
 
 - A theory brings some things into focus and pushes others out of the frame
-- **Appraisal theory** points at individual cognitive evaluation, so you build surveys and
-  experiments measuring individual reaction
-- **Social identity theory** points at group meaning, so you analyze how members talk about
-  the stream and how boundaries get policed
-- Same phenomenon, different designs, neither one wrong
-- You cannot use every lens at once. That produces blur rather than richness.
+- **Appraisal theory** points at individual cognitive evaluation, so you build surveys and experiments measuring individual reaction
+- **Social identity theory** points at group meaning, so you analyze how members talk about the stream and how boundaries get policed
+- The same phenomenon gets different designs, and neither one is wrong
+- You cannot use every lens at once. That produces blur rather than richness
 
-## Three paradigms
+## Three Paradigms
 
-- **Social scientific**: an objective reality, observable and measurable. Deductive.
-  Asks "does X cause Y?"
-- **Interpretive**: reality socially constructed through interaction. Inductive.
-  Asks "what does X mean to the people who experience it?"
-- **Critical and cultural**: power shapes what counts as knowledge. Asks "whose interests
-  does X serve, and whose voices are silenced?"
+- **Social scientific:** an objective reality is observable and measurable
+    - The work is deductive. It asks "does X cause Y?"
+- **Interpretive:** reality is socially constructed through interaction
+    - The work is inductive. It asks "what does X mean to the people who experience it?"
+- **Critical and cultural:** power shapes what counts as knowledge
+    - It asks "whose interests does X serve, and whose voices are silenced?"
+- Each treats theory differently: as a source of predictions, as an outcome of observation, or as a tool for exposing structure
 
-Each treats theory differently: as a source of predictions, as an outcome of observation,
-or as a tool for exposing structure.
+## Grand and Middle-Range Theories
 
-## Grand and middle-range
+- **Grand theories** explain human behavior across all contexts: Marxism, psychoanalysis, and structuralism
+    - They are intellectually powerful, and too broad to design a study that could disprove them
+- **Middle-range theories** are specific enough to generate testable hypotheses and broad enough to travel beyond one case
+    - Merton named the zone, and most communication research lives in it
+    - Every theory in the catalogue ahead is middle-range
 
-- **Grand theories** explain human behavior across all contexts: Marxism, psychoanalysis,
-  structuralism
-- Intellectually powerful, and too broad to design a study that could disprove them
-- **Middle-range theories** are specific enough to generate testable hypotheses and broad
-  enough to travel beyond one case
-- Merton named the zone, and most communication research lives in it
-- Every theory in the catalogue ahead is middle-range
+## The Catalogue, Part One
 
-## The catalogue, part one
+- **Parasocial interaction** (Horton & Wohl, 1956): one-sided bonds that feel intimate without reciprocity
+    - It explains donating to a streamer you have never met
+- **Social identity** (Tajfel & Turner, 1979): group membership shapes self-concept
+    - It produces in-group favoritism and boundary policing through emotes and slang
+- **Agenda setting** (McCombs & Shaw, 1972): media do not tell people what to think, but what to think about
+    - The front page and the category rankings set an agenda
 
-- **Parasocial interaction** (Horton & Wohl, 1956): one-sided bonds that feel intimate
-  without reciprocity. Explains donating to a streamer you have never met.
-- **Social identity** (Tajfel & Turner, 1979): group membership shapes self-concept,
-  producing in-group favoritism and boundary policing through emotes and slang
-- **Agenda setting** (McCombs & Shaw, 1972): media do not tell people what to think, but
-  what to think about. The front page and the category rankings set an agenda.
+## The Catalogue, Part Two
 
-## The catalogue, part two
+- **Framing** (Goffman, 1974; Entman, 1993): the same facts, differently emphasized, produce different conclusions
+    - It is visible in how streamers title their own broadcasts
+- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): audiences actively select media to meet needs
+    - It is the lens behind most viewer-motivation research
+- **Cultivation** (Gerbner & Gross, 1976): cumulative exposure shapes perceptions of social reality
+    - It is strongest where audiences lack direct experience
 
-- **Framing** (Goffman, 1974; Entman, 1993): the same facts, differently emphasized,
-  produce different conclusions. Visible in how streamers title their own broadcasts.
-- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): audiences actively select
-  media to meet needs. The lens behind most viewer-motivation research.
-- **Cultivation** (Gerbner & Gross, 1976): cumulative exposure shapes perceptions of social
-  reality, most strongly where audiences lack direct experience
+## Two Lenses, Four Messages
 
-## Two lenses, four messages
+Here are four messages from one stretch of a real broadcast. Read them once before we code
+them:
 
 > **DragoBoi89:** xQc actually playing well today wtf
 >
@@ -285,39 +257,30 @@ or as a tool for exposing structure.
 >
 > **streamfan22:** chat is this real
 
-Four messages from one stretch of a real broadcast. Read them once before we code them.
+## What Each Lens Foregrounds
 
-## What each lens foregrounds
+- **Uses and gratifications** asks what need each viewer is meeting: evaluative commentary, collective emotional expression, direct acknowledgment, and group sense-making
+    - All four viewers are equally interesting, because each one shows a different gratification
+- **Parasocial interaction** asks what the bond looks like
+    - realnamedfan's @-address plus a memory claim is the textbook case
+    - emotelord and streamfan22 never address the streamer, so this lens pushes them aside
+- The same data tells two stories, and your Research Proposal commits to one of them
 
-- **Uses and gratifications** asks what need each viewer is meeting: evaluative commentary,
-  collective emotional expression, direct acknowledgment, group sense-making
-- All four viewers are equally interesting, because each one shows a different gratification
-- **Parasocial interaction** asks what the bond looks like: realnamedfan's @-address plus a
-  memory claim is the textbook case
-- emotelord and streamfan22 never address the streamer, so this lens pushes them aside
-- Same data, two stories. Your Research Proposal commits to one of them.
-
-## Choosing what to read
+## Choosing What to Read
 
 - Start from the **keystone articles**: the ones your other sources keep citing
-- Prefer studies close to your **design**, not only your topic. A content analysis of chat
-  is worth more to you than a survey about streaming.
+- Prefer studies close to your **design**, not only your topic. A content analysis of chat is worth more to you than a survey about streaming
 - Take one that disagrees with the others if you can find it, because contradiction is a gap
-- Fit beats recency. A 2016 study measuring what you want to measure beats a 2024 one that
-  does not.
+- Fit beats recency. A 2016 study measuring what you want to measure beats a 2024 one that does not
 - Three is the floor, not the target
 
 ## Before Week 5
 
-- **Read three articles on your topic this week.** They become the **Annotated
-  Manuscripts**, due **Monday, September 28**, with **CITI**.
-- **Monday, September 21:** the **Librarian Visit Report**. Tonight is the last class
-  before it is due, and you arrange the meeting yourself: ours is in **MC 500**, or book
-  a subject librarian at [Lovejoy](https://www.siue.edu/lovejoy-library/).
-- Read **Chapter 5** (variables and hypotheses) and **Chapter 6** (research questions),
-  with the edition toggle on
+- **Annotated Manuscripts**, 25 points, due Monday, September 28, 11:59 PM: read three articles on your topic this week
+- **CITI Ethics Certification**, 25 points, due the same night. Start it early, because it takes longer than anyone expects
+- **Librarian Visit Report**, 50 points, due Monday, September 21, 11:59 PM. You arrange the meeting: ours is in **MC 500**, or book a librarian at [Lovejoy](https://www.siue.edu/lovejoy-library/)
+- Read **Chapter 5** and **Chapter 6** with the edition toggle on
 - Read the assigned article: **Gelman and Loken (2014)**, "The statistical crisis in science"
 - Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
-- Start CITI early. It takes longer than anyone expects.
 
 ## Questions, Comments, or Concerns? {.titlecard}

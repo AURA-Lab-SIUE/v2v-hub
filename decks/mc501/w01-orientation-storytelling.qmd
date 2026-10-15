@@ -11,32 +11,39 @@ format:
     transition: none
 ---
 
+## Today's Agenda
+
+- Who I am, where to find me, and what you will produce
+- How the term is built, stage by stage, with points
+- The shared example dataset and the four tools
+- Chapter 1: why stories and science share one machinery
+- The assigned article, Munafò et al. (2017), and the discussion built on it
+- What makes a scholarly contribution, and what is due before Week 2
+
 ## Welcome
 
 [MC 501 · Fall 2026]{.eyebrow}
 
 - **Dr. Alex Leith**, Dunham Hall 1017, aleith@siue.edu
-- Office hours TuTh 12:30 to 1:45 in person, or remote Tu/W/Th 3:00 to 5:00 by appointment
-- We meet **Wednesdays 6:00 to 8:50**, Dunham Hall 1015
-- The textbook is a free OER. Read it with the **Graduate edition toggle on**.
+- Office hours are TuTh 12:30 to 1:45 in person, or remote Tu/W/Th 3:00 to 5:00 by appointment
+- We meet **Wednesdays 6:00 to 8:50** in Dunham Hall 1015
+- The textbook is a free OER. Read it with the **edition toggle on**
 - That toggle reveals a required extension in every chapter, plus the assigned reading
 
-## What you will produce
+## What You Will Produce
 
-- An original **two-part content analysis**: a qualitative phase that builds coding
-  variables through immersion, then a quantitative phase that tests relationships
-- A **Research Proposal** as a structured sentence outline
-- An **Extended Codebook and Reliability Protocol** with planned sample size,
-  target thresholds, and revision triggers
+- An original **two-part content analysis**
+    - A qualitative phase that builds coding variables through immersion
+    - A quantitative phase that tests relationships
+- A **Research Proposal** written as a structured sentence outline
+- An **Extended Codebook and Reliability Protocol** with a planned sample size, target thresholds, and revision triggers
 - A conference-ready **White Paper**, paired with an **academic poster**
 - Work at a level approaching publishable quality
 
-## How the term is built
+## How the Term Is Built
 
-**The Journalist** runs the whole way through: a weekly journal across the 14 teaching
-weeks, worth **150 points**. It is the habit, not a stage.
-
-The project moves through four stages, each tracking a part of the textbook:
+- **The Journalist runs the whole way through:** a weekly journal across the 14 teaching weeks, worth **150 points**. It is the habit, not a stage
+- **The project moves through four stages, each tracking a part of the textbook**
 
 | Stage | Weeks | Book part | Points |
 |---|---|---|---|
@@ -47,56 +54,53 @@ The project moves through four stages, each tracking a part of the textbook:
 
 **1,025 points total.**
 
-## What each stage asks of you
+## What Each Stage Asks of You
 
-- **Journalist**: a weekly journal, 450 to 500 words, engaging both the chapter and
-  the assigned reading. Entries that address only the chapter cap at 7 of 10.
-- **Architect**: Syllabus Contract, GitHub Profile, Librarian Visit Report
-- **Builder**: Annotated Manuscripts, Research Proposal (75), Topic and RQs,
-  Definitions Practice, Extended Codebook (75), Sampling Plan and Pilot (75), CITI
-- **Analyst**: Wrangling (50), Describing (100), Inferencing (100)
-- **Publisher**: the White Paper (200) and its poster
+- **Journalist:** a weekly journal of 450 to 500 words engaging both the chapter and the assigned reading
+    - Entries that address only the chapter cap at 7 of 10
+- **Architect:** Syllabus Contract, GitHub Profile, and Librarian Visit Report
+- **Builder:** Annotated Manuscripts, Research Proposal (75), Topic and RQs, Definitions Practice, Extended Codebook (75), Sampling Plan and Pilot (75), and CITI
+- **Analyst:** Wrangling (50), Describing (100), and Inferencing (100)
+- **Publisher:** the White Paper (200) and its poster
 
-## The 500-level commitment
+## What This Course Asks Beyond the Chapters
 
-- At least one third of our meeting time is **500-level activity**: the assigned
-  readings and the discussion built on them, and the heavier deliverables
-- Your ethics work includes the **non-human-subjects IRB determination** you would
-  actually file, which is the protocol experience doctoral work assumes
-- Statistics go deeper rather than broader: assumptions, diagnostics, interpretation
+- At least one third of each meeting goes to the assigned readings, the discussion built on them, and the heavier deliverables
+- Your ethics work includes the **non-human-subjects IRB determination** you would actually file, which is the protocol experience later research work assumes
+- Statistics go deeper rather than broader: assumptions, diagnostics, and interpretation
 - Each week has **one required reading**, listed in the syllabus with access links
 
-## The dataset
+## The Shared Example Dataset
 
 [One week of Twitch, November 2018]{.eyebrow}
 
 - **21,964,296 chat messages** across 1,695 channels
 - **590,876 stream snapshots**: who streamed what, to how many people
-- Public, messy, and real, collected by automated process across six days
-- Three roles you must not conflate: the **population** (1,690 channels in both
-  logs), the **working corpus** (50, stratified by chat volume), the **anchor set** (8)
-- Which role a claim rests on determines what the claim can say
+- The data is public, messy, and real, collected by an automated process across six days
+- It plays three roles you must not conflate, and which role a claim rests on determines what the claim can say
+    - The **population**: 1,690 channels in both logs
+    - The **working corpus**: 50 channels, stratified by chat volume
+    - The **anchor set**: 8 channels used as named examples
+- This dataset is the shared example for the class. Your own study uses the source your question needs
 
-## Mark Weeks 5 and 9 now
+## Mark Weeks 5, 9, and 11 Now
 
-Two weeks carry the term's weight, and both are visible from here:
+Three weeks carry the term's weight, and all three are visible from here:
 
 - **Week 5** stacks the **Annotated Manuscripts** with **CITI Certification**
-- **Week 9** carries the **Extended Codebook and Reliability Protocol**, 75 points,
-  one week before the **Sampling Plan and Pilot**, also 75
-- Those four middle weeks hold **200 points** between them
-- **Start CITI in Week 1.** It is the one item that is pure clock time, and it is the
-  only one you can finish before it is needed.
+- **Week 9** carries the **Extended Codebook and Reliability Protocol**, 75 points
+- **Week 11** carries the **Sampling Plan and Pilot**, also 75 points
+- Those three weeks hold **200 points** between them
+- **Start CITI in Week 1.** It is the one item that is pure clock time, and the only one you can finish before it is needed
 
-## The tools
+## The Four Tools
 
-- **R** for the analysis, **VS Code** as the editor, **Quarto** for the documents,
-  **Git and GitHub** for version control and publication
-- All free. Setup walkthroughs are on the course site.
+- **R** does the analysis, **VS Code** is the editor, **Quarto** builds the documents, and **Git and GitHub** handle version control and publication
+- All four are free, and setup walkthroughs are on the course site
 - Your White Paper and your poster will both be built from Quarto sources
-- Version control is not a convenience here. It is your audit trail.
+- Version control is not a convenience here. It is your audit trail
 
-## What R looks like
+## What R Looks Like
 
 A full analysis, start to finish:
 
@@ -106,61 +110,58 @@ chat <- twitch_chat()
 
 chat %>%
   group_by(channel) %>%
-  summarise(messages = n()) %>%
+  summarize(messages = n()) %>%
   arrange(desc(messages))
 ```
 
-Take the chat data, group by channel, count messages, sort descending. Code is
-instructions in order, and you will read far more of it than you write.
+Read it as: take the chat data, group it by channel, count the messages, and sort from most
+to least. Code is instructions in order, and you will read far more of it than you write.
 
-## Two numbers, one week on Twitch
+## Two Numbers From One Week on Twitch
 
 [Chapter 1]{.eyebrow}
 
-- **Bob Ross**: 3,178 average viewers, streaming under *Art*, dead since 1995
-- **xQc**: 17,363 average, live variety, the highest chat volume in the collection
-- The move a social scientist makes: ask not what the numbers *mean*, but what they *are*
+- **Bob Ross:** 3,178 average viewers, streaming under *Art*, and dead since 1995
+- **xQc:** 17,363 average viewers, live variety, and the highest chat volume in the collection
+- A social scientist asks not what the numbers *mean* but what they *are*
 - They are **data**, collected on purpose so a claim can be defended later
 - A **corpus** is a body of evidence that licenses some questions and refuses others
 
-## We are hypothesis-testing organisms
+## Stories and Science Share One Machinery
 
-- Barrett: the brain is a **prediction machine**, updating its models on error
-- Storr: **stories** are cognitive tools for cause-and-effect simulation
+- **Barrett:** the brain is a **prediction machine** that updates its models on error
+- **Storr:** **stories** are cognitive tools for simulating cause and effect
 - Science is the same narrative machinery under **rigor** and a public record
-- Babbie's everyday ways of knowing, tradition, authority, common sense, and
-  intuition, each serve daily life and each break when others must trust the result
+- Babbie's everyday ways of knowing are tradition, authority, common sense, and intuition
+    - Each serves daily life, and each breaks when others must trust the result
 
-## The sacred flaw and the null
+## The Sacred Flaw and the Null Hypothesis
 
-- The **null hypothesis** is research's sacred flaw: *nothing is happening here*
+- The **null hypothesis** is research's sacred flaw: it says *nothing is happening here*
 - To reject it is to force the data to tell a different story than you assumed
 - A *p* of 0.001 says the old story is untenable, not merely unlikely
-- The framing matters because it puts the burden where it belongs: on the evidence,
-  not on the elegance of your argument
+- The framing puts the burden where it belongs: on the evidence, not on the elegance of your argument
 
-## The cliff that wasn't
+## The Debt Cliff That Was Not There
 
 [Reinhart and Rogoff, 2010]{.eyebrow}
 
-- Public debt above 90% of GDP crushes growth, a finding that shaped austerity policy
+- Their finding said public debt above 90% of GDP crushes growth, and it shaped austerity policy
 - In 2013 a doctoral student replicating it for a class could not match the numbers
 - The original spreadsheet held an Excel error that excluded several countries
 - Corrected, growth above the threshold was **+2.2%**, not −0.1%
-- The error was caught because the work was **transparent enough to retrace**.
-  That is the mechanism working, not failing.
+- The error was caught because the work was **transparent enough to retrace**, which is the mechanism working, not failing
 
-## Discussion {.discuss}
+## Discussion: A Manifesto for Reproducible Science {.discuss}
 
-On Munafò et al. (2017), "A manifesto for reproducible science":
+On Munafò et al. (2017), "A manifesto for reproducible science," answer each in writing:
 
-- Of its threats, low power, analytic flexibility, publication bias, poor reporting,
-  which most endangers a content-analysis study like the ones we are building?
-- The authors argue the fixes must change **incentives**, not just habits. Do you buy it?
-- Is pre-registration always appropriate, or are there questions it constrains unfairly?
-- Bring one sentence you would quote in your own methods section.
+- The paper names four threats: low power, analytic flexibility, publication bias, and poor reporting. Name the one that most endangers a content analysis study like the ones we are building, and give one reason
+- The authors argue the fixes must change **incentives**, not just habits. State whether you accept that, and why
+- State whether pre-registration is always appropriate, or name one kind of question it constrains unfairly
+- Write down one sentence from the paper you would quote in your own methods section
 
-## What makes a scholarly contribution
+## What Makes a Scholarly Contribution
 
 A contribution in communication research does one of four things:
 
@@ -169,38 +170,37 @@ A contribution in communication research does one of four things:
 3. **Resolves a conflict** between findings in the literature
 4. **Introduces a testable construct**
 
-Before you design a study, name which one you are doing. If you cannot say
-precisely, the research question is not ready yet.
+Before you design a study, name which one you are doing. If you cannot say precisely, the
+research question is not ready yet.
 
-## The reproducibility crisis is a design problem
+## The Reproducibility Crisis Is a Design Problem
 
-- The **garden of forking paths** (Gelman and Loken, 2014): the many defensible
-  analytic choices that inflate false positives, with no conscious fishing at all
+- The **garden of forking paths** is the many defensible analytic choices that inflate false positives, with no conscious fishing at all (Gelman & Loken, 2014)
 - Munafò and colleagues locate a related danger in underpowered designs:
 
 > "Low statistical power increases the likelihood of obtaining both false-positive and false-negative results, meaning that it offers no advantage if the purpose is to accumulate knowledge."
 >
 > Munafò et al. (2017, p. 2)
 
-## Four pillars this course builds
+## Four Pillars This Course Builds
 
-- **A priori power**: committing to a sample size before collection
-- **Pre-registration**: committing to hypotheses, measures, and analysis plan first
-- **Two-coder reliability**: verifying the codebook works regardless of who applies it
-- **An audit trail**: a version-controlled record from raw data to published figure
+- **A priori power:** committing to a sample size before collection
+- **Pre-registration:** committing to hypotheses, measures, and an analysis plan first
+- **Coding reliability:** re-coding a subsample after a gap to show the codebook holds regardless of when it is applied
+- **An audit trail:** a version-controlled record from raw data to published figure
 
-These are not add-ons. They are entailments of the epistemology you are adopting.
+These are not add-ons. They follow from the epistemology you are adopting.
 
-## Pre-registration, precisely
+## Pre-Registration, Precisely
 
 > "The strongest form of pre-registration involves both registering the study ... and closely pre-specifying the study design, primary outcome and analysis plan in advance of conducting the study or knowing the outcomes of the research."
 >
 > Munafò et al. (2017, p. 3)
 
-- It is what separates **confirmatory** from **exploratory** work
-- Exploratory research is legitimate. Presenting it as confirmatory is not.
+- Pre-registration is what separates **confirmatory** from **exploratory** work
+- Exploratory research is legitimate. Presenting it as confirmatory is not
 
-## A study is a story, told with discipline
+## A Study Is a Story Told With Discipline
 
 | In a story | In a study |
 |---|---|
@@ -212,31 +212,29 @@ These are not add-ons. They are entailments of the epistemology you are adopting
 | Falling action | Interpretation and limitations |
 | Resolution | Implications and future research |
 
-## Anecdote and data
+## Anecdote and Data Are Partners
 
-- **Journalism** makes the abstract concrete, and makes an audience care
-- **Science** establishes generalizability: does the pattern hold across many cases?
-- Anecdotes generate hypotheses; data test them. Data find patterns; anecdotes
-  explain why they matter.
+- **Journalism** makes the abstract concrete and makes an audience care
+- **Science** establishes generalizability: it asks whether the pattern holds across many cases
+- Anecdotes generate hypotheses, and data test them. Data find patterns, and anecdotes explain why they matter
 - A significant finding without human context is true and unpersuasive
 - Your White Paper has to do both, which is harder than it sounds
 
-## A note on paradigms
+## Three Paradigms
 
 - We work in a **social scientific** paradigm: hypotheses tested against data
 - **Interpretive** work asks how people make meaning, through interviews and ethnography
 - **Critical** work exposes and challenges structures of power
 - All three have produced foundational communication scholarship
-- Where would you place your own research question on the **ontology to epistemology**
-  axis, and what obligations follow from that placement?
+- Place your own research question on the axis from ontology (what exists) to epistemology (how we can know it), and name one obligation that follows from that placement
 
 ## Before Week 2
 
-- **Sign the Syllabus Contract** and set up your **GitHub profile**
-- Read **Chapter 2** with the graduate toggle on
-- Read the assigned article: **Wilson et al. (2017)**, "Good enough practices in
-  scientific computing" (open access, linked in the syllabus)
-- Write your journal entry, 450 to 500 words, engaging both
-- Attempt the software setup. We troubleshoot together next week.
+- **Sign the Syllabus Contract**, 25 points, due Monday, August 31, 11:59 PM
+- **Set up your GitHub Profile**, 25 points, due Monday, September 7, 11:59 PM
+- Read **Chapter 2** with the edition toggle on
+- Read the assigned article: **Wilson et al. (2017)**, "Good enough practices in scientific computing" (open access, linked in the syllabus)
+- Write your journal entry, 450 to 500 words, engaging both the chapter and the reading
+- Attempt the software setup. We troubleshoot together next week
 
 ## Questions, Comments, or Concerns? {.titlecard}

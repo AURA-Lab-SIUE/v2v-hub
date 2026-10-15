@@ -11,83 +11,82 @@ format:
     transition: none
 ---
 
-## Nearly 700,000 people
+## Today's Agenda
 
-[Facebook and Cornell, published June 2014]{.eyebrow}
+- The Facebook emotional contagion study, and the reaction to it
+- Three cases that produced today's rules: Tuskegee, Milgram, and Humphreys
+- The Belmont principles and institutional review
+- Whether the example dataset is human subjects research
+- Honest reporting, and the CITI training that is due
+
+## Facebook Manipulated 700,000 News Feeds
+
+[Kramer, Guillory, and Hancock, 2014]{.eyebrow}
 
 - For one week in January 2012, Facebook manipulated users' News Feeds
-- Some saw fewer positive posts from friends. Others saw fewer negative posts.
+- Some users saw fewer positive posts from friends, and others saw fewer negative posts
 - Researchers then measured what those users posted themselves
-- It worked: less positive input produced slightly more negative output
-- Published in *PNAS* as evidence of **massive-scale emotional contagion**
+- The manipulation worked: less positive input produced slightly more negative output
+- The result was published in *PNAS* as evidence of **massive-scale emotional contagion**
 
-## The reaction
+## The Reaction to the Study
 
 - Nearly 700,000 people were enrolled with **no informed consent**
-- No one was told. No one could decline.
+- No one was told, and no one could decline
 - Facebook argued its terms of service authorized "research"
-- Researchers argued the effect was tiny and the knowledge valuable
+- The researchers argued the effect was tiny and the knowledge valuable
 - *PNAS* appended an **editorial expression of concern**, an unusual step
 
-## Ethics is a disposition, not a form
+## Ethics Is a Disposition, Not a Form
 
-- It is tempting to treat ethics as a training module between you and the data
-- It shapes how you think about your relationship to the people you study
+- It is tempting to treat ethics as a training module standing between you and the data
+- Ethics shapes how you think about your relationship to the people you study
 - It governs how honestly you report what you find
 - The protections exist because researchers **caused real harm**, systematically
-- Reasonable people still disagree about the Facebook study. That is the point.
+- Reasonable people still disagree about the Facebook study, and that disagreement is the point
 
 ## Tuskegee, 1932 to 1972
 
 - The U.S. Public Health Service studied untreated syphilis in **399 Black men**
 - The men were told they were receiving free treatment for "bad blood"
-- Penicillin became standard in the 1940s. The researchers **withheld it.**
-- 28 died directly of syphilis, 100 of complications, 40 wives were infected,
-  19 children were born with congenital syphilis
-- Federally funded, peer-reviewed, and unchallenged for forty years
+- Penicillin became the standard treatment in the 1940s, and the researchers **withheld it**
+- 28 men died directly of syphilis, 100 died of complications, 40 wives were infected, and 19 children were born with congenital syphilis
+- The study was federally funded, peer-reviewed, and unchallenged for forty years
 
 ## Milgram, 1961
 
-- Recruited by newspaper advertisement, told it was a study of memory and learning
-- Cast as the "teacher"; a confederate played the "learner" in the next room
-- Told to deliver escalating shocks for wrong answers, up to a switch marked **450 volts**
-- The shocks were not real. The belief that they were, and the distress, were.
-- **26 of 40** in the baseline condition went all the way to the maximum
-- Hesitating got a scripted prod, "the experiment requires that you continue",
-  rather than permission to stop
+- Participants were recruited by newspaper advertisement and told it was a study of memory and learning
+- Each was cast as the "teacher," while a confederate played the "learner" in the next room
+- They were told to deliver escalating shocks for wrong answers, up to a switch marked **450 volts**
+- The shocks were not real. The belief that they were, and the distress, were real
+- **26 of 40** participants in the baseline condition went all the way to the maximum
+- Hesitation got a scripted prod, "the experiment requires that you continue," rather than permission to stop
 
-## Milgram, what it cost
+## Milgram, What It Cost
 
-- Milgram reported participants sweating, trembling, stuttering, and one seizure
-  violent enough to stop the session
-- The deception was total until the debriefing afterwards
-- The findings reshaped how the field understands obedience to authority, and
-  they are still taught in every introductory course
+- Milgram reported participants sweating, trembling, and stuttering, and one seizure violent enough to stop the session
+- The deception was total until the debriefing afterward
+- The findings reshaped how the field understands obedience to authority, and they are still taught in every introductory course
 - Whether that knowledge justified the distress has never been settled
-- Which is the point: he was neither careless nor malicious
+- That is the point: Milgram was neither careless nor malicious, and people were still harmed
 
 ## Humphreys, 1970
 
-- Doctoral research on anonymous sexual encounters between men in public restrooms
-- He took the role of **watchqueen**, the lookout, which let him observe without
-  taking part and without saying he was a researcher
+- Humphreys's doctoral research studied anonymous sexual encounters between men in public restrooms
+- He took the role of **watchqueen**, the lookout, which let him observe without taking part and without saying he was a researcher
 - He wrote down the **license plates** of the men he observed
-- He traced those plates to home addresses through motor vehicle records, reached
-  through a contact in the police
-- About a year later he changed his appearance and his car, and interviewed those
-  men in their own homes, posing as an interviewer on an unrelated health survey
+- He traced those plates to home addresses through motor vehicle records, reached through a contact in the police
+- About a year later he changed his appearance and his car, and interviewed those men in their own homes, posing as a health-survey interviewer
 
-## Humphreys, what it cost
+## Humphreys, What It Cost
 
 - Most of the men were married and living otherwise conventional lives
 - In 1970 exposure meant criminal prosecution, lost jobs, and ruined families
-- He kept the data secure, and argued the work reduced stigma by showing who
-  these men actually were
-- The book won a major award in sociology, and his own department fought over
-  whether to take his doctorate away
-- Both of those are true at once, which is why it is still assigned
+- He kept the data secure, and he argued the work reduced stigma by showing who these men actually were
+- The book won a major award in sociology, and his own department fought over whether to take his doctorate away
+- Both of those are true at once, which is why the case is still assigned
 
-## The common thread
+## The Common Thread
 
 - Every one of these researchers believed the work served a greater good
 - Every one produced participants who were harmed, deceived, or exploited
@@ -95,166 +94,132 @@ format:
 - Researchers need external accountability and formal principles
 - Tuskegee's exposure in 1972 produced the framework we use today
 
-## Your turn {.discuss}
+## Exercise: Was It Consent? {.discuss}
 
-- Facebook says the terms of service covered it. Is that consent?
-- If the effect really was tiny, does that change your answer?
-- Where is the line between a company's A/B test and a psychology experiment?
+Answer each in writing:
 
-*Two minutes to think, then we take it as a group.*
+- Facebook says the terms of service covered the study. State whether that counts as consent, and give one reason
+- Say whether a tiny effect changes your answer, and why
+- Name one feature that separates a company's A/B test from a psychology experiment
 
-## Belmont: respect for persons
+## Belmont: Respect for Persons
 
 [National Commission, 1979]{.eyebrow}
 
 - People are **autonomous agents** capable of making their own decisions
-- **Informed consent:** understand the research, the risks, and the right to
-  withdraw without penalty
-- **Protection of vulnerable populations:** children, prisoners, people with
-  cognitive impairments, whose voluntary consent is compromised
-- Public social media complicates this, and we come back to it
+- **Informed consent** means the person understands the research, the risks, and the right to withdraw without penalty
+- **Vulnerable populations** get extra protection: children, prisoners, and people with cognitive impairments, whose voluntary consent is compromised
+- Public social media complicates this principle, and the slides on the example dataset come back to it
 
-## Belmont: beneficence and justice
+## Belmont: Beneficence and Justice
 
-- **Beneficence, do no harm:** no physical, psychological, social, or economic
-  injury to participants
-- **And maximize the benefit-to-risk ratio:** the knowledge must justify the risk
-- **Justice:** benefits and burdens distributed fairly across groups
-- Tuskegee violated justice directly: all risk on a marginalized population, the
-  knowledge accruing to everyone else
+- **Beneficence** starts with do no harm: no physical, psychological, social, or economic injury to participants
+- Beneficence also means maximizing the benefit-to-risk ratio, so the knowledge must justify the risk
+- **Justice** means benefits and burdens are distributed fairly across groups
+- Tuskegee violated justice directly: all the risk fell on a marginalized population, and the knowledge accrued to everyone else
 
-## Institutional review
+## Institutional Review
 
-- An **IRB** reviews a study **before** data collection: risk minimization,
-  equitable selection, consent, privacy and confidentiality
-- **Expedited:** no more than minimal risk. Many surveys and interview studies
-  with adults.
-- **Full board:** more than minimal risk, vulnerable populations, or deception
-- **Exempt:** minimal risk, inside categories federal regulation names
-- **The IRB makes the determination, not you.** You submit. The board decides.
+- An **IRB** reviews a study **before** data collection for risk minimization, equitable selection, consent, privacy, and confidentiality
+- **Expedited review** is for studies with no more than minimal risk, such as many surveys and interview studies with adults
+- **Full board review** is for more than minimal risk, vulnerable populations, or deception
+- **Exempt** status is for minimal-risk studies inside categories that federal regulation names
+- **The IRB makes the determination, not you.** You submit, and the board decides
 
-## The question that comes first
+## The Question That Comes First
 
-Before any of that, there is a prior question: **is this human subjects research
-at all?**
+Before any of that, there is a prior question: **is this human subjects research at all?**
 
-Federal regulation defines a **human subject** as a living person about whom you
-obtain information either through **intervention or interaction** with them, or as
-**identifiable private information**.
+- Federal regulation defines a **human subject** as a living person about whom you obtain information in one of two ways
+    - Through **intervention or interaction** with them
+    - As **identifiable private information**
+- You never interact with anyone, because the messages were sent before you arrived
+- The messages were **broadcast publicly**, so they are not private information
+- Neither part is met, so this is **not human subjects research**, and the three review levels never come into it
 
-- You never interact with anyone. The messages were sent before you arrived.
-- They were **broadcast publicly**, so they are not private information.
-- Neither part is met, so this is **not human subjects research**, and the three
-  levels above never come into it
+## The Example Dataset Through Belmont
 
-## The Twitch data through Belmont
-
-- Collected from Twitch's **public IRC interface** and **public API**
-- No IP addresses, no emails, no user IDs, no payment data, no whispers
+- The data was collected from Twitch's **public IRC interface** and **public API**
+- It holds no IP addresses, no emails, no user IDs, no payment data, and no whispers
 - Usernames are present but **pseudonymous**: chosen handles, not legal names
-- **Respect:** the case rests on public broadcast, not on consent
-- **Beneficence:** minimal risk. **Justice:** no group bears disproportionate burden
+- **Respect for persons:** the case rests on public broadcast, not on consent
+- **Beneficence:** the risk is minimal. **Justice:** no group bears a disproportionate burden
+- You run the same walkthrough on the source you choose, and your answers may differ
 
-## This determination has been made twice already
+## This Determination Has Been Made Twice
 
-- **Not hypothetical.** The Twitch data in front of you was formally determined
-  **not human subjects research** by Michigan State University, and the Twitter
-  data from the NSF work was determined the same way by SIUE.
-- **Your project is expected to land in the same place:** a content analysis of
-  public broadcast content is not human subjects research.
-- **The university makes that call, never the researcher.** You do not file anything
-  for this course, because the determination already exists for this data.
-- Carry work like this past the course, into a thesis or a job, and requesting the
-  determination becomes your job
-- You still do CITI, because the training is what lets you make the argument, and
-  because the next dataset you meet may not be this clean
+- **This is not hypothetical.** Michigan State University formally determined the Twitch data **not human subjects research**, and SIUE determined the Twitter data from the NSF work the same way
+- **Your project is expected to land in the same place:** a content analysis of public broadcast content is not human subjects research
+- **The university makes that call, never the researcher.** You file nothing for this course, because the determination already exists for this data
+- If you carry work like this past the course, into a thesis or a job, requesting the determination becomes your job
+- You still complete CITI, because the training is what lets you make the argument, and because the next dataset you meet may not be this clean
 
-## Public does not mean fair game
+## Public Does Not Mean Fair Game
 
-- AoIR has long argued that public accessibility is not automatic permission
-  (Markham & Buchanan, 2012)
-- So: do not aggregate in ways that re-identify individual users
+- Public accessibility is not automatic permission (Markham & Buchanan, 2012)
+- Do not aggregate in ways that re-identify individual users
 - Do not republish entire chat logs verbatim
 - Do not amplify messages whose senders expected obscurity more than broadcast
 - The cleanness of this dataset is a starting point, not a license
 
-## Three cases that would be human subjects research
+## Three Cases That Would Be Human Subjects Research
 
-Same research question, different data, different determination:
+The same research question with different data gets a different determination:
 
-- **Twitch whispers.** Private messages, reasonable expectation of privacy.
-  Expedited or full review.
-- **A private Discord server**, same people. Closed membership, stronger privacy
-  expectation. Expedited or full.
-- **An internal moderation log** with platform flags on named users. Risk of harm
-  to identified individuals. **Full board likely.**
+- **Twitch whispers** are private messages with a reasonable expectation of privacy, so they need expedited or full review
+- **A private Discord server** with the same people has closed membership and a stronger privacy expectation, so it needs expedited or full review
+- **An internal moderation log** with platform flags on named users risks harm to identified individuals, so it most likely needs **full board** review
 
-## Consent gets complicated
+## Consent Gets Complicated
 
-- **Deception** is sometimes justified, and always paired with mandatory
-  **debriefing** plus the option to withdraw your data
-- **Passive consent**, the terms-of-service move, is generally insufficient.
-  Ethicists prefer **active consent**: an affirmative act.
-- **Secondary analysis** of someone else's data raises whether the original
-  consent covered your use. Generally acceptable when de-identified.
-- This last one is where research ethics is still actively evolving
+- **Deception** is sometimes justified, and it is always paired with mandatory **debriefing** plus the option to withdraw your data
+- **Passive consent**, the terms-of-service move, is generally insufficient, and ethicists prefer **active consent**: an affirmative act
+- **Secondary analysis** of someone else's data raises whether the original consent covered your use, and it is generally acceptable when the data is de-identified
+- Secondary analysis is where research ethics is still actively evolving
 
-## Honest reporting is an ethical obligation
+## Honest Reporting Is an Ethical Obligation
 
-- **Fabrication:** inventing data. **Falsification:** manipulating results.
-  Both are fraud and both are career-ending.
-- **Selective reporting:** running many analyses, publishing only the ones that
-  worked. This distorts the literature.
-- **HARKing:** Hypothesizing After the Results are Known, then writing as though
-  you predicted it. A postdiction carries none of a prediction's weight.
-- "Our results suggest" quietly becomes "our results demonstrate." Watch for it.
+- **Fabrication** is inventing data, and **falsification** is manipulating results. Both are fraud, and both end careers
+- **Selective reporting** is running many analyses and publishing only the ones that worked, which distorts the literature
+- **HARKing** is Hypothesizing After the Results are Known, then writing as though you predicted the result. A postdiction carries none of a prediction's weight
+- Watch for "our results suggest" quietly becoming "our results demonstrate"
 
-## CITI, and what it actually is
+## CITI, and What It Is
 
-**CITI** is the Collaborative Institutional Training Initiative, the research ethics
-training nearly every American university runs. You complete the **Social and
-Behavioral Research** course and submit the completion certificate.
-
-- The modules walk the ground we just walked: the history, the principles, consent,
-  privacy and confidentiality, assessing risk, vulnerable populations
+- **CITI** is the Collaborative Institutional Training Initiative, the research ethics training nearly every American university runs
+- You complete the **Social and Behavioral Research** course and submit the completion certificate
+- The modules walk the ground we just walked: the history, the principles, consent, privacy and confidentiality, assessing risk, and vulnerable populations
 - Each module ends in a quiz you have to pass
 - It takes hours rather than minutes, and it saves your place, so do it in pieces
-- **Due Friday, September 25**, 25 points
+- **CITI Ethics Certification**, 25 points, is due Friday, September 25, 11:59 PM
 
-## Where to actually go
+## Where to Register
 
 Two pages, and the order matters:
 
-1. **[SIUE Compliance Training](https://www.siue.edu/compliance/training/)** first. This is
-   the route in, and it tells you how to attach your account to SIUE.
-2. **[CITI Program](https://www.citiprogram.org/index.cfm?pageID=668)** to register and work
-   through the modules.
+1. **[SIUE Compliance Training](https://www.siue.edu/compliance/training/)** first. This is the route in, and it tells you how to attach your account to SIUE
+2. **[CITI Program](https://www.citiprogram.org/index.cfm?pageID=668)** second, to register and work through the modules
 
-**Register through SIUE, not as an "independent learner."** The independent route charges
-you money and the certificate does not come back to the university, so it will not count.
-If you have already made an account that way, say so and we will sort it out.
+- **Register through SIUE, not as an "independent learner."** The independent route charges you money, and the certificate does not come back to the university, so it will not count
+- If you have already made an account that way, say so and we will sort it out
 
-## Why it applies to you anyway
+## Why CITI Applies to You Anyway
 
-A fair question, given the last ten minutes: if your project is not human subjects
-research, why train for human subjects research?
+If your project is not human subjects research, why train for human subjects research?
 
-- Because "this is not human subjects research" is an **argument you have to be able
-  to make**, and CITI is where you learn to make it
-- Because the moment a project touches people directly, no IRB will look at you
-  without it
-- Because it travels. Graduate programs and research jobs ask to see it.
-- Start it this week. Somebody every term starts the night before and discovers it
-  is not a twenty-minute task.
+- Because "this is not human subjects research" is an **argument you have to be able to make**, and CITI is where you learn to make it
+- Because the moment a project touches people directly, no IRB will look at you without it
+- Because it travels: graduate programs and research jobs ask to see it
+- Start it this week. Somebody every term starts the night before and discovers it is not a twenty-minute task
 
-## Before next time
+## Before Next Time
 
 - Read **Chapter 4, Intelligence Gathering**, before Thursday
-- Thursday is database searching. **No librarian visits us**, so you book your own at
-  Lovejoy and that meeting is the assignment. Bring a laptop and a topic you are
-  curious about.
+- Thursday is database searching
+    - **No librarian visits us.** You book your own meeting at Lovejoy, and that meeting is the assignment
+    - Bring a laptop and a topic you are curious about
 - Bring one thing you want to be able to find in the literature
-- **CITI Ethics Certification** is coming. Start it early, it takes real hours.
-- Journal entry on Chapter 3 closes the week
+- **CITI Ethics Certification** is due Friday, September 25, 11:59 PM. Start it early, because it takes real hours
+- The journal entry on Chapter 3 closes the week
 
 ## Questions, Comments, or Concerns? {.titlecard}

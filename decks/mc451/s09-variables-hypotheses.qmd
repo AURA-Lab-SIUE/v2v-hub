@@ -11,17 +11,22 @@ format:
     transition: none
 ---
 
-## Today
+## Today's Agenda
 
-This is the translation step: taking an idea you believe and turning it into something a
-computer could check.
+- From a lens to a test: what a variable is
+- Independent and dependent variables, with a worked hypothesis
+- Mediators and moderators
+- Five steps for choosing a theory
+- Hypothesis versus research question, and why the hypothesis comes first
 
-It sounds like the mathematical part of the course and it is not. Nothing today involves
-arithmetic. It involves being specific, which is harder.
+## What You Leave With Today
 
-You leave with a hypothesis or a research question written down, with its parts named.
+- Today is the translation step: taking an idea you believe and turning it into something a computer could check
+- It sounds like the mathematical part of the course, and it is not. Nothing today involves arithmetic
+- It involves being specific, which is harder
+- You leave with a hypothesis or a research question written down, with its parts named
 
-## From a lens to a test
+## From a Lens to a Test
 
 - Last time: theory tells you what to look for and what would count as evidence
 - A lens on its own cannot be right or wrong, because there is nothing to check it against
@@ -29,80 +34,75 @@ You leave with a hypothesis or a research question written down, with its parts 
 - A **variable** is a measurable concept that can take different values
 - Everything today is about getting from something you believe to something you can count
 
-## The independent variable
+## The Independent Variable
 
 - The **independent variable** is the proposed cause
-- In an experiment it is what you manipulate. In a study like yours it is what you measure
-  as the predictor.
+- In an experiment it is what you manipulate. In a study like yours it is what you measure as the predictor
 - In livestreaming research it might be:
-  - the stream's category type, gaming or non-gaming
-  - the streamer's tenure on the platform
-  - the stream's concurrent viewer count
+    - the stream's category type, gaming or non-gaming
+    - the streamer's tenure on the platform
+    - the stream's concurrent viewer count
 
-## The dependent variable
+## The Dependent Variable
 
 - The **dependent variable** is the outcome, the thing you think gets influenced
 - In livestreaming research it might be:
-  - chat messages per minute
-  - viewer retention across a broadcast
-  - the rate of subscriptions and donations
-- If you cannot say which of your two variables is doing the influencing, you do not have
-  a hypothesis yet. You have a pair of interesting things.
+    - chat messages per minute
+    - viewer retention across a broadcast
+    - the rate of subscriptions and donations
+- If you cannot say which of your two variables is doing the influencing, you do not have a hypothesis yet. You have a pair of interesting things
 
-## A worked hypothesis
+## A Worked Hypothesis
 
 > In non-gaming streams, a higher proportion of chat messages are directed at the streamer
 > than in gaming streams.
 
 - **Independent variable:** category type, gaming or non-gaming
 - **Dependent variable:** whether a message is aimed at the streamer or at the room
-- Both are things you can actually see in the dataset you already have
+- Both are things you can see in the shared example dataset
 
-## Your turn {.discuss}
+## Exercise: Split Your Prediction {.discuss}
 
-- Take the theory you are leaning toward. What is one thing it predicts?
-- Which half of that prediction is the cause, and which is the outcome?
-- Could you see both of them in a chat log, or would you have to ask somebody?
+Answer each in writing:
 
-*Two minutes to think, then we take it as a group.*
+- Take the theory you are leaning toward and write one thing it predicts
+- Name which half of that prediction is the cause and which is the outcome
+- State whether you could see both of them in a chat log or a comment thread, or whether you would have to ask somebody
 
-## What testing it actually looks like
+## What Testing It Looks Like
 
 - Classify streams by category, gaming or non-gaming
 - Code a sample of messages for whether each one addresses the streamer
 - Run a statistical test to see whether the predicted relationship holds
-- Notice how much of that is **coding** rather than statistics
+- Most of that work is **coding** rather than statistics
 - The codebook is where a hypothesis gets its teeth, and that is Chapters 7 and 8
 
-## The same structure, a different domain
+## The Same Structure in a Different Domain
 
 > News stories framed around individual human interest will generate more social media
 > engagement than stories framed around systemic data.
 
 - **Independent variable:** frame type
 - **Dependent variable:** engagement
-- Different topic, identical logic
+- The topic is different, and the logic is identical
 
 Learn the structure once, carefully, and it carries to anything you study later.
 
-## Mediators: how and why
+## Mediators Explain How and Why
 
 - A **mediator** explains **how** an independent variable affects a dependent one
 - It is the mechanism sitting in between the two
-- If category affects the rate of directed messages, the mediator might be the perceived
-  **pace** of the stream
-- Non-gaming streams may feel more conversational, and that conversational feel may be
-  what invites viewers to speak to the streamer directly
+- If category affects the rate of directed messages, the mediator might be the perceived **pace** of the stream
+- Non-gaming streams may feel more conversational, and that conversational feel may be what invites viewers to speak to the streamer directly
 
-## Moderators: under what conditions
+## Moderators Set the Conditions
 
 - A **moderator** changes the **strength or direction** of a relationship
 - It answers "under what conditions?"
-- The category-to-directed-message relationship might be moderated by **audience size**:
-  holding on small streams and weakening on large ones
-- A moderator is not a nuisance to be controlled away. Often it is the finding.
+- The category-to-directed-message relationship might be moderated by **audience size**: holding on small streams and weakening on large ones
+- A moderator is not a nuisance to be controlled away. Often it is the finding
 
-## The ladder
+## The Ladder of Claims
 
 - **"X relates to Y"** is where a first project starts, and that is a real result
 - **"X relates to Y, through this mechanism"** adds a mediator
@@ -110,54 +110,39 @@ Learn the structure once, carefully, and it carries to anything you study later.
 - You do not need all three rungs for a good White Paper
 - Knowing the ladder exists is what stops you claiming rung three from rung one
 
-## Choosing a theory: the first three steps
+## Choosing a Theory: Steps 1 to 3
 
-1. **Get specific about the question.** "Livestreaming and community" is too broad. "Does
-   the proportion of chat messages directed at the streamer differ between gaming and
-   non-gaming streams?" is something you can act on.
-2. **Map the question to a theoretical domain.** Group processes point toward social
-   identity or uses and gratifications. Perception effects point toward cultivation,
-   agenda setting, or framing.
-3. **See how others studied similar questions.** Repeated use of one theory in a domain
-   is a signal it has been productive there.
+1. **Get specific about the question.** "Livestreaming and community" is too broad. "Does the proportion of chat messages directed at the streamer differ between gaming and non-gaming streams?" is something you can act on
+2. **Map the question to a theoretical domain.** Group processes point toward social identity or uses and gratifications. Perception effects point toward cultivation, agenda setting, or framing
+3. **See how others studied similar questions.** Repeated use of one theory in a domain is a signal it has been productive there
 
-## Choosing a theory: the last two
+## Choosing a Theory: Steps 4 and 5
 
-4. **Let the theory produce the prediction.** Derive the hypothesis from the theory, rather
-   than picking a theory afterwards to decorate a hunch you already had.
-5. **Design measures for the concepts.** Turn abstractions like identity or salience into
-   variables somebody could actually record.
+4. **Let the theory produce the prediction.** Derive the hypothesis from the theory, rather than picking a theory afterward to decorate a hunch you already had
+5. **Design measures for the concepts.** Turn abstractions like identity or salience into variables somebody could record
 
 Step 5 has a name, **operationalization**, and it is most of the next two chapters.
 
-## Hypothesis or research question?
+## Hypothesis Versus Research Question
 
-- State a **hypothesis** when your theory is precise enough to predict a direction: more,
-  less, higher, lower
-- Ask a **research question** when the theory supports expecting a difference but not
-  which way it goes
-- A research question is not a weaker hypothesis. It is an honest one.
-- What you must not do is ask a question, look at the data, and then write it up as though
-  you had predicted the answer
+- State a **hypothesis** when your theory is precise enough to predict a direction: more, less, higher, or lower
+- Ask a **research question** when the theory supports expecting a difference but not which way it goes
+- A research question is not a weaker hypothesis. It is an honest one
+- Never ask a question, look at the data, and then write it up as though you had predicted the answer
 
-## Why the hypothesis comes first
+## Why the Hypothesis Comes First
 
 - **HARKing** is Hypothesizing After the Results are Known
 - You look at data, spot a pattern, then write as though you called it in advance
-- The *p*-value still prints. It just no longer means what it says, because the hypothesis
-  came out of the data instead of preceding it.
-- Writing your prediction down before you look takes five minutes and protects every
-  inference that comes after it
+- The *p*-value still prints, but it no longer means what it says, because the hypothesis came out of the data instead of preceding it
+- Writing your prediction down before you look takes five minutes and protects every inference that comes after it
 
-## Before next time
+## Before Next Time
 
-- **The Annotated Manuscript is due Friday, September 25, 11:59 PM**, 25 points
-- **CITI Ethics Certification is due Friday, September 25, 11:59 PM**, 25 points. If you have not started it,
-  do that tonight.
-- Write your working hypothesis or research question into your project repository, with
-  the independent and dependent variables named
+- **The Annotated Manuscript**, 25 points, is due Friday, September 25, 11:59 PM
+- **CITI Ethics Certification**, 25 points, is due Friday, September 25, 11:59 PM. If you have not started it, do that tonight
+- Write your working hypothesis or research question into your project repository, with the independent and dependent variables named
 - Read **Chapter 6** before Thursday
-- Thursday is research questions: when a question is the honest choice, and how to write
-  one that can actually be answered
+- Thursday covers research questions: when a question is the honest choice, and how to write one that can actually be answered
 
 ## Questions, Comments, or Concerns? {.titlecard}

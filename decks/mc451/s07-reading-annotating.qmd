@@ -11,143 +11,134 @@ format:
     transition: none
 ---
 
-## You have dozens of sources
+## Today's Agenda
 
-- After a week of searching your Zotero library is full and shapeless
-- The problem is no longer finding more. It is making sense of what you have.
+- Zotero as a working tool
+- The literature map, organized by theme
+- Four kinds of research gap, and how to state yours
+- Summary versus synthesis, with a worked paragraph
+- Where the citation goes, and why citing is ethics
+
+## You Have Dozens of Sources
+
+- After a week of searching, your Zotero library is full and shapeless
+- The problem is no longer finding more. It is making sense of what you have
 - This is the part that feels impossible, and it is a skill rather than a talent
-- Today: from a pile, to a map, to an argument
+- Today moves from a pile, to a map, to an argument
 - You leave with a literature map file started in your own repository
 
-## Zotero as a working tool
+## Zotero as a Working Tool
 
 - Every source goes in as you find it, with the PDF attached
-- **Tag freely.** Tags cost nothing and they are how themes surface later.
+- **Tag freely.** Tags cost nothing, and they are how themes surface later
 - Notes go on the item itself, not in a separate document you will lose
 - Zotero writes your citations and reference list in whichever style you pick, and keeps it consistent
 - Being casual about this now costs you a week of re-finding sources in November
 
-## The literature map
+## The Literature Map
 
 - A **literature map** organizes sources **by theme**, not by date or alphabet
 - Build it as a markdown file in your repository, one heading per theme
-- For livestreaming: viewer motivations, community and social dynamics, streamer
-  labor, content analysis methods
+- For livestreaming the themes might be viewer motivations, community and social dynamics, streamer labor, and content analysis methods
 - Keep a running section for the **gaps** you notice while reading
-- Your topic will have different themes. The shape is identical.
+- Your topic will have different themes, and the shape is identical
 
-## What the map does for you
+## What the Map Does for You
 
 - It shows at a glance which themes are well covered and which are thin
 - It makes you decide how sources **relate**, which is where synthesis starts
 - Its structure usually becomes the structure of your written review
-- A thin theme is not a failure. It may be your gap.
+- A thin theme is not a failure. It may be your gap
 
-## Your turn {.discuss}
+## Exercise: Name Your Themes {.discuss}
 
-- Look at the sources you have so far. What are two themes you can already name?
-- Which theme is thinnest, and is that because the work is missing or because your
-  searching is?
-- What is one thing all of your sources seem to agree on?
+Answer each in writing, using the sources you have so far:
 
-*Two minutes to think, then we take it as a group.*
+- Name two themes you can already see in your sources
+- Name the thinnest theme, and state whether it is thin because the work is missing or because your searching is
+- Write one thing all of your sources seem to agree on
 
-## A gap is not just an absence
+## A Gap Is Not Just an Absence
 
-"Nobody studied this" is not a gap on its own. Plenty of things are unstudied because
-nobody needed them studied.
+- "Nobody studied this" is not a gap on its own. Plenty of things are unstudied because nobody needed them studied
+- A **research gap** is a space where the inquiry is *justified*
+    - Either the missing knowledge creates a problem
+    - Or existing findings contradict each other and something has to resolve them
+- Gaps come in four recognizable shapes, and naming yours sharpens the argument you are about to make
 
-A **research gap** is a space where the inquiry is *justified*: either the missing knowledge
-creates a problem, or existing findings contradict each other and something has to resolve
-them.
+## Topical and Methodological Gaps
 
-They come in four recognizable shapes, and naming which one you have sharpens the argument
-you are about to make.
+- A **topical void** is a phenomenon, population, or context nobody has looked at
+    - There is a lot on why people watch livestreams, and much less on how chat differs between gaming and non-gaming streams
+    - Be careful: what looks unstudied is often studied under words you did not search
+- A **methodological gap** is a topic studied only with methods that have limits
+    - Most livestream motivation work is self-report survey, so behavioral trace data like a chat log could show whether what viewers do matches what they say
 
-## Topical and methodological gaps
+## Contradictions and Theoretical Gaps
 
-- A **topical void:** a phenomenon, population, or context nobody has looked at. There is a
-  lot on why people watch livestreams, and much less on how chat differs between gaming and
-  non-gaming streams.
-- Be careful. What looks unstudied is often studied under words you did not search.
-- A **methodological gap:** studied, but with methods that have limits. Most livestream
-  motivation work is self-report survey, so behavioral trace data like a chat log could
-  show whether what viewers do matches what they say.
+- A **contradiction** is two well-designed studies reaching opposite conclusions
+    - That is not embarrassing to report. It is an opening, and often the best one
+- A **theoretical gap** is work that explains the phenomenon through one lens when another would show more
+    - If engagement research is dominated by uses and gratifications, a parasocial-interaction framework (Horton & Wohl, 1956) may light a corner nobody has looked into
 
-## Contradictions and theoretical gaps
+## Articulating the Gap
 
-- A **contradiction:** two well-designed studies reaching opposite conclusions
-- That is not embarrassing to report. It is an opening, and often the best one.
-- A **theoretical gap:** the work explains the phenomenon through one lens when another
-  would show more
-- If engagement research is dominated by uses and gratifications, a parasocial-interaction
-  framework (Horton & Wohl, 1956) may light a corner nobody has looked into
+The gap is the hinge the whole argument turns on. Make three moves, always in this order:
 
-## Articulating the gap
+1. **Establish what is known.** Show you understand the conversation
+2. **Identify the limitation.** Say what is missing, contradictory, or unexplained
+3. **Argue for your study.** Say how your work addresses that
 
-The gap is the hinge the whole argument turns on. Three moves, always in this order:
+The template reads: research has established X, however most studies share limitation Y,
+and this study addresses that by doing Z.
 
-1. **Establish what is known.** Show you understand the conversation.
-2. **Identify the limitation.** What is missing, contradictory, or unexplained?
-3. **Argue for your study.** How does your work address that?
-
-Research has established X, however most studies share limitation Y, and this study
-addresses that by doing Z.
-
-## This is what summary looks like
+## What Summary Looks Like
 
 > Hamilton, Garretson, and Kerne (2014) studied Twitch as a participatory community.
 > Sjöblom and Hamari (2017) examined viewer motivations. Hilvert-Bruce and colleagues
 > (2018) studied social motivations for engagement.
 
-- Three disconnected summaries, and nothing whatsoever about how they fit together
+- These are three disconnected summaries, with nothing about how they fit together
 - Every sentence is driven by **who wrote the study** instead of by what is known
-- Most first drafts look like this. It is a stage, not a verdict.
+- Most first drafts look like this. It is a stage, not a verdict
 
-## Where the citation goes
+## Where the Citation Goes
 
-- Default: make the **claim** the subject and put the citation at the **end**, in
-  parentheses, as (Sjöblom & Hamari, 2017)
-- Lead with the name only when that study is the point: a landmark, a definition you
-  are adopting, or a finding you are about to argue with
-- An author-led sentence announces a **study**. A claim-led sentence states a **finding**.
-- A page of "X (2014) found, Y (2017) found" is an annotated bibliography wearing the
-  clothes of a review
+- By default, make the **claim** the subject and put the citation at the **end** in parentheses, as (Sjöblom & Hamari, 2017)
+- Lead with the name only when that study is the point: a landmark, a definition you are adopting, or a finding you are about to argue with
+- An author-led sentence announces a **study**, and a claim-led sentence states a **finding**
+- A page of "X (2014) found, Y (2017) found" is an annotated bibliography wearing the clothes of a review
 
-## This is what synthesis looks like
+## What Synthesis Looks Like
 
 The strong version does five things instead:
 
-- **Names the convergence first:** viewing is motivated less by what is on screen than by
-  the social experience around it
-- **Groups the sources under it:** ethnography (2014), survey test (2017), extension to
-  engagement (2018)
-- **Adds the nuance:** viewers of smaller channels were more socially motivated
-- **Names a shared limitation:** all of it is self-report
-- **Points at the gap:** would behavioral traces in a chat log back it up?
+- **It names the convergence first:** viewing is motivated less by what is on screen than by the social experience around it
+- **It groups the sources under that claim:** an ethnography (2014), a survey test (2017), and an extension to engagement (2018)
+- **It adds the nuance:** viewers of smaller channels were more socially motivated
+- **It names a shared limitation:** all of it is self-report
+- **It points at the gap:** behavioral traces in a chat log could test whether the pattern holds
 
-## Why that works
+## Why That Works
 
-- The claim comes first, and the citations sit at the end supporting it instead of
-  driving it
+- The claim comes first, and the citations sit at the end supporting it instead of driving it
 - Sources are grouped by what they argue, not by the year they appeared
-- The limitation is shared across the group, which makes it structural rather than a
-  complaint about one paper
-- The gap is never asserted. It falls out of the limitation on its own.
-- Notice where it points: at a content analysis of a real chat log
+- The limitation is shared across the group, which makes it structural rather than a complaint about one paper
+- The gap is never asserted. It falls out of the limitation on its own
+- The paragraph points at a content analysis of a real chat log
 
-## If that feels out of reach
+## If That Feels Out of Reach
 
 Start with three sources and four sentences. This is a floor, not a compromise:
 
-1. Source A, one sentence. What did it find?
-2. Source B, one sentence. What did it find?
-3. Source C, one sentence. What did it find?
-4. **The gap**, one sentence. What do these three, together, leave unexplored?
+1. Source A, one sentence: what did it find?
+2. Source B, one sentence: what did it find?
+3. Source C, one sentence: what did it find?
+4. **The gap**, one sentence: what do these three, together, leave unexplored?
 
-Four sentences, three citations, one gap. That is enough to anchor a prospectus.
+Four sentences, three citations, and one gap are enough to anchor a prospectus.
 
-## The same thing, written out
+## The Same Thing, Written Out
 
 > Livestream viewing is motivated less by what is on screen than by the social experience
 > around it. Twitch streams function as virtual third places where informal communities
@@ -156,24 +147,21 @@ Four sentences, three citations, one gap. That is enough to anchor a prospectus.
 > but chatting and subscribing (Hilvert-Bruce et al., 2018). All three rely on self-report
 > surveys, leaving open whether the same patterns appear in behavioral chat-log data.
 
-## The ethics of citation
+## The Ethics of Citation
 
-- Citation is not bureaucracy. It is ethics.
-- **Cite:** specific empirical findings, theoretical concepts, methodological approaches,
-  direct quotes, and paraphrased ideas
-- **You do not need to cite:** genuine common knowledge ("Twitch is a livestreaming
-  platform"), your own interpretations, your own data and analysis
-- Nobody has ever been criticised for citing too much. Under-citation damages credibility,
-  and in its serious forms it is plagiarism.
+- Citation is not bureaucracy. It is ethics
+- **Cite** specific empirical findings, theoretical concepts, methodological approaches, direct quotes, and paraphrased ideas
+- **You do not need to cite** genuine common knowledge ("Twitch is a livestreaming platform"), your own interpretations, or your own data and analysis
+- Nobody has ever been criticized for citing too much
+- Under-citation damages credibility, and in its serious forms it is plagiarism
 
-## Before next time
+## Before Next Time
 
-- **The Librarian Visit Report is due Friday, September 18, 11:59 PM**, 50 points.
-- **The Annotated Manuscript is due Friday, September 25, 11:59 PM**, 25 points. Pick your article now.
-- **CITI Ethics Certification** is also due Friday, September 25, 11:59 PM. It takes hours rather than minutes,
-  so start it tonight.
+- **The Librarian Visit Report**, 50 points, is due Friday, September 18, 11:59 PM
+- **The Annotated Manuscript**, 25 points, is due Friday, September 25, 11:59 PM. Pick your article now
+- **CITI Ethics Certification**, 25 points, is also due Friday, September 25, 11:59 PM. It takes hours rather than minutes, so start it tonight
 - Start your literature map file in your repository, even with four sources in it
 - Read **Chapter 5, Theory as a Lens**, before Thursday
-- Thursday: why three researchers can look at one finding and see three different studies
+- Thursday explains why three researchers can look at one finding and see three different studies
 
 ## Questions, Comments, or Concerns? {.titlecard}

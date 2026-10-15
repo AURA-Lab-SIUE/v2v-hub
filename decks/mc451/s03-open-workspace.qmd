@@ -11,64 +11,71 @@ format:
     transition: none
 ---
 
-## Only 36 percent
+## Today's Agenda
+
+- Why only 36 percent of studies could be redone
+- Why clicking through menus loses the record, and why code keeps it
+- The four tools, and the order to install them
+- The setup check
+- Your first look at the example data
+
+## Only 36 Percent of Studies Replicated
 
 [Open Science Collaboration, 2015]{.eyebrow}
 
 - 270 researchers set out to redo **100 published psychology studies**
-- Same methods, similar participants, same analyses
+- They used the same methods, similar participants, and the same analyses
 - Only **36 percent** replicated at conventional thresholds
-- Among those that did, effect sizes were on average **half** the original magnitude
-- Published in *Science*, and one of the decade's most cited findings
+- Among those that did, effect sizes were on average **half** the original size
+- The result was published in *Science* and is one of the decade's most cited findings
 
-## Not fraud. Friction.
+## The Cause Was Friction, Not Fraud
 
 - Methods sections did not contain enough detail to re-run the analysis
-- Researchers had to email original authors for clarification
-- Some authors had moved. Some had lost the data.
+- Researchers had to email the original authors for clarification
+- Some authors had moved, and some had lost the data
 - Some had used software whose menus had since changed
 - The work was never **built to be retraceable** in the first place
 
-## The point-and-click problem
+## Menus Leave No Record
 
 - SPSS, Excel, and JMP work through menus and dialog boxes
 - You click Analyze, then Compare Means, then One-Way ANOVA
-- The result appears. **The click history vanishes.**
+- The result appears, and **the click history vanishes**
 - To verify your work, a collaborator needs a prose description of every click
-- Almost no one does this well, and almost no one wants to
+- Almost no one writes that description well, and almost no one wants to
 
-## Code as documentation
+## Code Is the Methods Section
 
 - A script is a description of every step, in a language a computer can re-run
 - **When you write your analysis as code, the code is the methods section**
 - Reinhart and Rogoff was caught because the spreadsheet was eventually shared
 - It would have been caught faster if the analysis had been code from the start
-- **Reproducibility:** the analysis can be re-run and produce the same result
+- **Reproducibility** means the analysis can be re-run and produce the same result
 
-## Your turn {.discuss}
+## Exercise: Could You Rebuild Your Number? {.discuss}
 
-- Think of a number you produced for a class: an average, a count, a percentage
-- Could you reconstruct exactly how you got it, six months from now?
-- What would you need to have written down at the time?
+Answer each in writing:
 
-*Two minutes to think, then we take it as a group.*
+- Think of a number you produced for a class: an average, a count, or a percentage
+- State whether you could reconstruct exactly how you got it six months from now
+- List what you would have needed to write down at the time
 
-## Four tools, one ecology
+## Four Tools, One Ecology
 
-[Free, open, cross-platform]{.eyebrow}
+- **VS Code** is the editor, where prose, code, and notes all live in tabs
+- **R** is the language that does the counting and the statistics
+- **Quarto** is the publishing system that turns source into finished output
+- **Git and GitHub** are version control and a home for the history
 
-- **VS Code:** the editor, where prose, code, and notes all live in tabs
-- **R:** the language that does the counting and the statistics
-- **Quarto:** the publishing system that turns source into finished output
-- **Git and GitHub:** version control and a home for the history
+All four are free, open, and cross-platform, and each produces a plain-text record of what
+you did.
 
-Each of the four produces a plain-text record of what you did.
+## Why R and Why Quarto
 
-## Why R, why Quarto
-
-- R dominates social science: communication, sociology, political science
-- Its packages for content analysis, reliability, and regression are the deepest
-- Python is also excellent. The skills transfer both ways.
+- R dominates social science: communication, sociology, and political science
+- Its packages for content analysis, reliability, and regression are the deepest available
+- Python is also excellent, and the skills transfer both ways
 - Quarto takes one `.qmd` source and produces HTML, PDF, Word, or slides
 - The source mixes prose with code, and **the code runs when you render**
 
@@ -80,40 +87,40 @@ Each of the four produces a plain-text record of what you did.
 - Students get the **GitHub Student Developer Pack** at no cost
 - This is the standard workflow in research labs and industry data teams
 
-## Install order, part one
+## Install Order, Part One
 
-Order matters. Do these first:
+Order matters. Install these first:
 
-1. **R**, from cran.r-project.org, installer defaults
+1. **R**, from cran.r-project.org, with installer defaults
 2. **VS Code**, from code.visualstudio.com
 3. **The R extension** for VS Code, by REditorSupport
-4. **Quarto**, from quarto.org, install with defaults
+4. **Quarto**, from quarto.org, installed with defaults
 
-R has no interface of its own. It is a backend other tools call.
+R has no interface of its own. It is a backend that other tools call.
 
-## Install order, part two
+## Install Order, Part Two
 
 5. **The Quarto extension** for VS Code, for live preview of `.qmd` files
-6. **Git**, from git-scm.com, default options are fine
+6. **Git**, from git-scm.com, with default options
 7. **A GitHub account**, with a professional username you will link work to
-8. **The `v2v` package**, install command on the V2V Hub
+8. **The `v2v` package**, with the install command on the V2V Hub
 
 Click-by-click walkthroughs with screenshots live on the Hub.
 
-## The setup check
+## The Setup Check
 
-Create a file named `setup-check.qmd` and add one chunk:
+The starter file `00-check-your-setup.qmd` on the Hub ends by running one chunk:
 
 ```r
 library(v2v)
 v2v::setup()
 ```
 
-The validator confirms that R, Quarto, Git, and the `v2v` package are all
-present at acceptable versions. Success prints **"V2V setup complete"**.
-Anything else, and the Hub has a troubleshooting page.
+- The validator confirms that R, Quarto, Git, and the `v2v` package are all present at acceptable versions
+- Success prints **"V2V setup complete"**
+- Anything else means the Hub's troubleshooting page is your next stop
 
-## First contact with the data
+## First Contact With the Data
 
 [stream_log, first ten rows]{.eyebrow}
 
@@ -126,42 +133,41 @@ Anything else, and the Hub has a troubleshooting page.
 | sodapoppin | Marble It Up! | 28,076 | 1542578261145 |
 | xqcow | Just Chatting | 19,231 | 1542578261186 |
 
-## The data moves
+## The Data Moves
 
-- This is a **time series**, not a snapshot. Four channels repeat across ten rows.
-- Sodapoppin climbs 27,934, then 28,076, then 28,203
+- This is a **time series**, not a snapshot: four channels repeat across ten rows
+- Sodapoppin climbs from 27,934 to 28,076 to 28,203
 - That is **269 viewers gained in 122 seconds**
-- xQc lost 150 and then held steady. Forsen lost 120. Giantwaffle gained 3.
-- Each number is a real moment: a clip going viral, a raid arriving
+- xQc lost 150 viewers and then held steady, Forsen lost 120, and Giantwaffle gained 3
+- Each number is a real moment: a clip going viral, or a raid arriving
 
-## Three more things to notice
+## Three More Things to Notice
 
-- **The timestamps look like nonsense.** 1542578200214 is **Unix epoch time**,
-  milliseconds since January 1, 1970. Chapter 11 fixes it.
-- **There is a hidden newline** inside sodapoppin's title. Real data is messy in
-  exactly this way.
-- **Titles are themselves data.** "No Smoking in Chat" performs etiquette.
-  Chapter 12 returns to title content.
+- **The timestamps look like nonsense**
+    - 1542578200214 is **Unix epoch time**, milliseconds since January 1, 1970
+    - Chapter 11 shows how to convert it
+- **There is a hidden newline** inside sodapoppin's title
+    - Real data is messy in exactly this way
+- **Titles are themselves data**
+    - "No Smoking in Chat" performs etiquette, and Chapter 12 returns to title content
 
-## The v2v package
+## The v2v Package
 
-The course companion ships three things:
+The course companion package ships three things:
 
-- **Two fixtures:** `twitch_chat_sample`, roughly 35,000 messages, and
-  `twitch_streams_sample`, roughly 32,000 rows across 50 channels
-- **Helper functions** for loading data, codebook skeletons, reliability, plots
+- **Two fixtures:** `twitch_chat_sample`, roughly 35,000 messages, and `twitch_streams_sample`, roughly 32,000 rows across 50 channels
+- **Helper functions** for loading data, codebook skeletons, reliability, and plots
 - **The setup validator**, `v2v::setup()`, which you can rerun any time
 
 Load a fixture with `data(twitch_chat_sample, package = "v2v")`.
 
-## Looking ahead
+## Looking Ahead to Thursday
 
-- **Thursday is a lab.** Bring a laptop with as much of the stack installed as
-  you managed. We troubleshoot together.
-- You will build your project repository and make your first commit
-- **Before then:** finish the installs, or get far enough to know where you stuck
+- **Thursday's session is a recorded lab video.** Work along with it on your own laptop, with as much of the stack installed as you managed
+- You build your project repository and make your first commit
+- Before then, finish the installs, or get far enough to know where you are stuck
 - Read **Chapter 3** on ethics before Tuesday
-- **GitHub Profile** is worth 25 points and is due at the end of Week 2
-- **Project Setup** is worth 25 points and follows at the end of Week 3
+- **GitHub Profile**, 25 points, is due Friday, September 4, 11:59 PM
+- **Project Setup**, 25 points, is due Friday, September 11, 11:59 PM
 
 ## Questions, Comments, or Concerns? {.titlecard}

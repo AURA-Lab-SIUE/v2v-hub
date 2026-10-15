@@ -11,111 +11,99 @@ format:
     transition: none
 ---
 
-## Tonight
+## Today's Agenda
 
-By the time you leave this room you will have four programs installed, talking to each
-other, and one file that proves it.
+- What tonight is for, and why it is the least enjoyable evening of the semester
+- Why only 36 percent of studies could be redone
+- Reproducibility defined, and why code beats clicking
+- The four tools, one at a time, and the order to install them
+- Your GitHub account, your workspace folder, and the setup check
+- The assigned article, Wilson et al. (2017), and the discussion built on it
+- First contact with the example data
 
-That is the whole goal. Everything else on these slides is me explaining why we bother.
+## What Tonight Is For
 
-## Let me be honest about tonight
+- By the time you leave this room you will have four programs installed and talking to each other, and one file that proves it
+- That is the whole goal. Everything else on these slides explains why we bother
 
-- This is the least enjoyable evening of the semester. I am not going to pretend otherwise.
-- Installing software is not research. It is the tedious part that makes research possible.
-- **Something will break for somebody in this room.** It happens every section, every term.
-- When it breaks it is not a verdict on you. It is one version number disagreeing with another.
-- We fix it together, tonight, in the room. That is why we do it here and not at home.
+## The Least Enjoyable Evening of the Semester
 
-## The reason, in one sentence
+- Installing software is not research. It is the tedious part that makes research possible
+- **Something will break for somebody in this room.** It happens every section, every term
+- When it breaks it is not a verdict on you. It is one version number disagreeing with another
+- We fix it together, tonight, in the room. That is why we do it here and not at home
 
-Six weeks from now you will look at a number in your own draft and not remember where it came from.
+## The Reason, in One Sentence
+
+Six weeks from now you will look at a number in your own draft and not remember where it
+came from.
 
 Everything tonight exists to make that impossible.
 
-## What that looks like at scale
+## What That Looks Like at Scale
 
 [Open Science Collaboration, 2015]{.eyebrow}
 
 - 270 researchers set out to redo **100 published psychology studies**
-- Same published methods, similar participants, same analyses
+- They used the same published methods, similar participants, and the same analyses
 - Only **36 percent** replicated at conventional thresholds
 - Among those that did, effect sizes averaged about **half** the original
-- These were not careless people. Their work simply was not built to be retraced.
+- These were not careless people. Their work simply was not built to be retraced
 
-## What actually blocked them
+## What Blocked Them Was Friction, Not Fraud
 
-- Not fraud. Ordinary friction.
 - Methods sections did not say enough to re-run the analysis
 - Researchers had to email the original authors to ask
-- Some authors had moved. Some had lost the data.
+- Some authors had moved, and some had lost the data
 - Some had used software whose menus had since changed
 
-## Reproducibility, defined
+## Reproducibility, Defined
 
-**Reproducibility** means the analysis can be re-run, by you or by anyone else, and it
-produces the same result.
+- **Reproducibility** means the analysis can be re-run, by you or by anyone else, and it produces the same result
+- It is not a virtue. It is a property of how you stored your work
+- The test is small and personal: can you recover, six months from now, exactly what produced a number?
 
-It is not a virtue. It is a property of how you stored your work.
-
-The test is small and personal: can you recover, six months from now, exactly what produced
-a number?
-
-## Why clicking loses
+## Why Clicking Loses
 
 - SPSS, Excel, and JMP work through menus and dialog boxes
-- You click Analyze, then Compare Means, then One-Way ANOVA. The result appears.
-- **The click history vanishes.**
+- You click Analyze, then Compare Means, then One-Way ANOVA, and the result appears
+- **The click history vanishes**
 - Redoing it next month means remembering which menus, in what order, with which options
-- Writing it down means describing every click in prose. Nobody does this well.
+- Writing it down means describing every click in prose, and nobody does this well
 
-## Why code wins
+## Why Code Wins
 
-A script is a description of every step, in a language a computer can re-run.
-
-**The code is the methods section.** That is the entire argument for everything we install
-tonight.
-
-Reinhart and Rogoff, the spreadsheet error from last week, was caught only because the file
-was eventually shared. Written as code, it would have been visible from the first day.
+- A script is a description of every step, in a language a computer can re-run
+- **The code is the methods section.** That is the entire argument for everything we install tonight
+- Reinhart and Rogoff, the spreadsheet error from last week, was caught only because the file was eventually shared
+- Written as code, it would have been visible from the first day
 
 ## Tool 1 of 4: VS Code
 
-**What it is:** a text editor. Free, from Microsoft.
-
-**What it does for you:** it is the one window where everything lives. Your writing, your
-code, your files, your output. You stop alt-tabbing between five programs.
-
-You will spend more time in this than in anything else this term. It is the desk, not the work.
+- **What it is:** a text editor, free, from Microsoft
+- **What it does for you:** it is the one window where everything lives
+    - Your writing, your code, your files, and your output, so you stop alt-tabbing between five programs
+- You will spend more time in this than in anything else this term. It is the desk, not the work
 
 ## Tool 2 of 4: R
 
-**What it is:** a programming language built for data and statistics.
-
-**What it does for you:** it counts things, tests things, and draws charts, and it leaves a
-written record of having done so.
-
-You are not becoming a programmer. You are learning to drive one tool for one job, the way
-you learned to drive a citation manager.
+- **What it is:** a programming language built for data and statistics
+- **What it does for you:** it counts things, tests things, and draws charts, and it leaves a written record of having done so
+- You are not becoming a programmer. You are learning to drive one tool for one job, the way you learned to drive a citation manager
 
 ## Tool 3 of 4: Quarto
 
-**What it is:** a publishing system.
-
-**What it does for you:** you write one file holding both your prose and your code, press
-render, and it produces a finished document with the charts already in place.
-
-No more pasting a chart into Word, finding an error, redoing the chart, and pasting it again.
+- **What it is:** a publishing system
+- **What it does for you:** you write one file holding both your prose and your code, press render, and it produces a finished document with the charts already in place
+- You never again paste a chart into Word, find an error, redo the chart, and paste it again
 
 ## Tool 4 of 4: Git and GitHub
 
-**What it is:** Git records every change you make. GitHub keeps that record online.
+- **What it is:** Git records every change you make, and GitHub keeps that record online
+- **What it does for you:** an undo button that reaches back months, and proof of when you did what
+- It is also the closest thing our field has to a portfolio. Employers look, so use a professional username
 
-**What it does for you:** an undo button that reaches back months, and proof of when you did what.
-
-It is also the closest thing our field has to a portfolio. Employers look. Use a professional
-username.
-
-## Install in this order
+## Install in This Order
 
 1. **[R](https://cran.r-project.org/)**, from cran.r-project.org
 2. **[VS Code](https://code.visualstudio.com/)**, from code.visualstudio.com
@@ -124,12 +112,10 @@ username.
 5. **The Quarto extension** inside VS Code
 6. **[Git](https://git-scm.com/downloads)**, from git-scm.com
 
-Click a name to open its download page. Steps 3 and 5 happen inside VS Code, not in a browser.
+- Click a name to open its download page. Steps 3 and 5 happen inside VS Code, not in a browser
+- The order is not decorative. Each one looks for the one before it and gets confused when it is missing
 
-The order is not decorative. Each one looks for the one before it and gets confused when it
-is missing.
-
-## Every link from tonight
+## Every Link From Tonight
 
 Every page below is on the Hub, under **Resources** in the top menu.
 
@@ -144,49 +130,38 @@ Every page below is on the Hub, under **Resources** in the top menu.
 
 Bookmark the Resources page tonight. Everything else is one click from there.
 
-## Make your GitHub account
+## Make Your GitHub Account
 
-**GitHub** is a website that stores your files and their history. Git is the program on your
-laptop; GitHub is the copy online. You need the account before Git is any use to you.
+- **GitHub** is a website that stores your files and their history. Git is the program on your laptop, and GitHub is the copy online
+- You need the account before Git is any use to you
 
-1. Sign up at [github.com/signup](https://github.com/signup). Choose a **professional
-   username**, because employers will read it.
-2. Add a profile photo and a short profile README saying who you are and what you study.
-3. Claim the free [Student Developer Pack](https://education.github.com/pack) with your
-   SIUE email.
+1. Sign up at [github.com/signup](https://github.com/signup). Choose a **professional username**, because employers will read it
+2. Add a profile photo and a short profile README saying who you are and what you study
+3. Claim the free [Student Developer Pack](https://education.github.com/pack) with your SIUE email
 
-Walked through one step at a time: [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
+The Hub walks through it one step at a time: [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
 
-## Make your workspace folder
+## Make Your Workspace Folder
 
-One folder holds everything you write this term. You copy ours. You do not build it.
+One folder holds everything you write this term. You copy ours rather than building it.
 
 1. Open the [v2v-workspace template](https://github.com/AURA-Lab-SIUE/v2v-workspace)
-2. Click the green **Use this template**, then **Create a new repository**. Name it
-   `mc501-workspace` and leave it **Public**
-3. In VS Code press `Ctrl+Shift+P`, or `Cmd+Shift+P` on a Mac, type **Git: Clone**, press
-   Enter, and paste your new repository's URL
+2. Click the green **Use this template**, then **Create a new repository**. Name it `mc501-workspace` and leave it **Public**
+3. In VS Code press `Ctrl+Shift+P`, or `Cmd+Shift+P` on a Mac, type **Git: Clone**, press Enter, and paste your new repository's URL
 
 **You should see:** your folder names down the left side of VS Code.
 
-Walked through with more detail: [Workspace Setup](https://aura-lab.siue.edu/v2v-hub/resources/workspace-setup.html)
+The Hub walks through it in more detail: [Workspace Setup](https://aura-lab.siue.edu/v2v-hub/resources/workspace-setup.html)
 
-## Now open the setup file
+## Now Open the Setup File
 
-**It is already in your workspace**, in the top folder: `00-check-your-setup.qmd`. Click it.
+- **It is already in your workspace**, in the top folder: `00-check-your-setup.qmd`. Click it
+- If you have no workspace yet, download the file on its own from the [Resources page](https://aura-lab.siue.edu/v2v-hub/resources/index.html), or click it here:
+  [aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd](https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd)
+- It walks you through the rest, one gray box at a time, and it tells you what each box should print
+- Work through it, and ask the moment something looks wrong, not at the end
 
-No workspace yet? Download the file on its own from the
-[Resources page](https://aura-lab.siue.edu/v2v-hub/resources/index.html), or click it here:
-
-[aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd](https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd)
-
-It walks you through the rest, one gray box at a time, and it tells you what each box
-should print.
-
-Work through it. I am coming round the room. Raise a hand the moment something looks wrong,
-not at the end.
-
-## What "working" looks like
+## What "Working" Looks Like
 
 The file finishes by running a checker we wrote for this course:
 
@@ -195,34 +170,29 @@ library(v2v)
 setup()
 ```
 
-You want a list of green check marks under **Required R packages**.
+- You want a list of green check marks under **Required R packages**
+- Red marks next to Quarto or Git are expected tonight if you have not finished those steps
+- Red under Required is the one that needs me
 
-Red marks next to Quarto or Git are expected tonight if you have not finished those steps.
-Red under Required is the one that needs me.
+## When It Breaks
 
-## When it breaks
+- **Red text in R is not automatically an error.** R prints ordinary progress in red, so read the last line, not the color
+- Close VS Code completely and reopen it. This genuinely fixes a lot
+- If R asks "which would you like to update," choose **3: None**. The install command on the Hub already skips that prompt
+- Send me the exact wording of the error, not a paraphrase. The wording is the diagnosis
+- Ask after fifteen minutes stuck, not after two hours
 
-- **Red text in R is not automatically an error.** R prints ordinary progress in red. Read
-  the last line, not the color.
-- Close VS Code completely and reopen it. This genuinely fixes a lot.
-- If R asks "which would you like to update", type 1 and press Enter.
-- Send me the exact wording of the error, not a paraphrase. The wording is the diagnosis.
-- Fifteen minutes stuck, then ask. Not two hours.
+## Discussion: Good Enough Practices {.discuss}
 
-## Discussion {.discuss}
+On Wilson et al. (2017), "Good enough practices in scientific computing," answer each in
+writing:
 
-On Wilson et al. (2017), "Good enough practices in scientific computing":
+- The title concedes something. State what work "good enough" is doing in it, and who it is for
+- Name one of their practices that would survive contact with your actual working habits, and one you would quietly abandon by October
+- They write for the researcher with no formal computing training. State whether that framing makes the advice more usable or lowers the ceiling, and why
+- Name one practice in the paper you think is oversold
 
-- The title concedes something. What work is "good enough" doing, and who is it for?
-- Which of their practices would survive contact with your actual working habits, and which
-  would you quietly abandon by October?
-- They write for the researcher with no formal computing training. Does that framing make the
-  advice more usable, or does it lower the ceiling?
-- Bring one practice you think is oversold.
-
-*Two minutes to think, then we take it as a group.*
-
-## First contact with the data
+## First Contact With the Data
 
 [stream_log, November 2018]{.eyebrow}
 
@@ -235,52 +205,50 @@ On Wilson et al. (2017), "Good enough practices in scientific computing":
 | sodapoppin | Marble It Up! | 28,076 | 1542578261145 |
 | xqcow | Just Chatting | 19,231 | 1542578261186 |
 
-Look before you read on. Resist doing anything with it.
+Look at the rows before reading on.
 
-## The data moves
+## The Data Moves
 
-- This is a **time series**, not a snapshot. Four channels recur across these rows.
-- Sodapoppin climbs 27,934, then 28,076, then 28,203
+- This is a **time series**, not a snapshot: four channels recur across these rows
+- Sodapoppin climbs from 27,934 to 28,076 to 28,203
 - That is **269 viewers in 122 seconds**, an audience growing close to real time
-- xQc lost 150 between the first two snapshots, then held. Forsen lost 120.
-- Each number is a real moment: a clip went viral, a raid arrived, bandwidth dropped
+- xQc lost 150 between the first two snapshots and then held, and Forsen lost 120
+- Each number is a real moment: a clip went viral, a raid arrived, or bandwidth dropped
 
-## The timestamps are not dates
+## The Timestamps Are Not Dates
 
-- That date column is a thirteen-digit integer: 1542578200214
+- The date column is a thirteen-digit integer: 1542578200214
 - The next row, 26 milliseconds later, reads 1542578200240
-- **Unix epoch time**: milliseconds since midnight, January 1, 1970
-- The gap between sodapoppin's first two rows is 60,931, about a minute
-- Converting it is a wrangling step, not a research question. Chapter 11 handles it.
+- That is **Unix epoch time**: milliseconds since midnight on January 1, 1970
+- The gap between sodapoppin's first two rows is 60,931 milliseconds, about a minute
+- Converting it is a wrangling step, not a research question, and Chapter 11 handles it
 
-## Titles are themselves data
+## Titles Are Themselves Data
 
-- xQc: "RANK 1 GAMER ~ NO PLAN (help me)", which is a joke
-- Forsen is giving away keys for a card game called Artifact
-- Giantwaffle performs etiquette: "No Smoking in Chat"
-- One title even carries a literal line break, because the streamer's software let it through
+- xQc's title is "RANK 1 GAMER ~ NO PLAN (help me)," which is a joke
+- Forsen's title says he is giving away keys for a card game called Artifact
+- Giantwaffle's title performs etiquette: "No Smoking in Chat"
+- One title carries a literal line break, because the streamer's software let it through
 - These are content analysis opportunities sitting in a column you might dismiss as metadata
 
-## What the package gives you
+## What the Package Gives You
 
-- `twitch_chat_sample`: roughly **35,000** chat messages from a 50-channel corpus
-- `twitch_streams_sample`: the stream snapshots for those channels, about **32,000** rows
-- Helpers that wrap loading, codebook skeletons, reliability metrics, and diagnostics
-- The helpers are not magic. They keep the concept from being buried under setup code.
+- `twitch_chat_sample` holds roughly **35,000** chat messages from a 50-channel corpus
+- `twitch_streams_sample` holds the stream snapshots for those channels, about **32,000** rows
+- Helper functions wrap loading, codebook skeletons, reliability metrics, and diagnostics
+- The helpers are not magic. They keep the concept from being buried under setup code
 - `setup()` re-runs any time you suspect an installation problem
 
-## Lock the versions
+## Lock the Versions
 
-`renv.lock` is a file recording the exact version of every package your analysis used.
-
-Without it, someone re-running your work next year may get different numbers, because a
-package changed underneath them and nobody noticed.
+- `renv.lock` is a file recording the exact version of every package your analysis used
+- Without it, someone re-running your work next year may get different numbers, because a package changed underneath them
 
 ```r
 renv::init()
 ```
 
-Run it before your first line of analysis code. Commit it before you collect your first data point.
+- Run it before your first line of analysis code, and commit it before you collect your first data point
 
 > "Back up (almost) everything created by a human being as soon as it is created. This includes scripts and programs of all kinds, software packages that your project depends on, and documentation."
 >
@@ -288,12 +256,10 @@ Run it before your first line of analysis code. Commit it before you collect you
 
 ## Before Week 3
 
-- **Due Monday, September 7, 11:59 PM:** your
-  [GitHub Profile](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#github-profile),
-  25 points, with the stack installed and `setup()` passing
-- Read **Chapter 3** (Ethics) and **Chapter 4** (Intelligence Gathering), graduate edition toggle on
+- **Due Monday, September 7, 11:59 PM:** your [GitHub Profile](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#github-profile), 25 points, with the stack installed and `setup()` passing
+- Read **Chapter 3** (Ethics) and **Chapter 4** (Intelligence Gathering) with the edition toggle on
 - Read the assigned article: **Nosek et al. (2018)**, "The preregistration revolution"
 - Write your journal entry, 450 to 500 words, engaging both the chapters and the reading
-- Next week is searching. Bring a topic you might actually search.
+- Next week is searching. Bring a topic you might actually search
 
 ## Questions, Comments, or Concerns? {.titlecard}
