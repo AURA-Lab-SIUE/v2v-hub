@@ -122,8 +122,8 @@ By the end of this course, students will be able to:
   questions and applying appropriate methodologies at a level approaching
   publishable quality.
 - Build an extended codebook with a reliability protocol for a single coder,
-  report your own stability as an agreement figure from a hidden re-code with
-  the threshold applied, and draw a sample the study can defend.
+  report your own intracoder (test-retest) stability from a hidden re-code
+  against the threshold applied, and draw a sample the study can defend.
 - Apply ethical principles in conducting and presenting research, ensuring that
   all research practices adhere to standards of truth, accuracy, fairness, and
   respect for diversity.
@@ -279,7 +279,7 @@ the transparency markers a reviewer looks for.
 | Component | Points | Full marks means |
 |:---------------------|:-----------|:---------------------------------------------------------------|
 | Introduction and framing | 25 | States the question and why it is worth asking, and situates it in the theoretical literature rather than gesturing at it. |
-| Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, a coder reliability report giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the pre-registration disclosure with its OSF URL. |
+| Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, a coder reliability report giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the pre-registration disclosure: the dated pre-registration file in your project repository, cited by path and commit, and every departure from it. |
 | Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labeled and captioned. |
 | Discussion | 40 | Interprets the findings, situates them within the theoretical literature, distinguishes statistical significance from practical size, and states the limits. |
 | Abstract and references | 15 | The abstract summarizes all four sections. References are complete and in APA 7th edition. |
@@ -475,7 +475,7 @@ The one exception is the White Paper and poster in finals week.
 | 12 | Nov 11 | Ch 12 [R] Describing: descriptive statistics + graphics (Reading: Lakens (2013))| Data Wrangling [R] |
 | 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* (Reading: Lakens et al. (2018))| Describing Data [R] |
 | 14 | Nov 25 | **Thanksgiving Break, Nov 23 to 29, no class** | |
-| 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio (Reading: Wasserstein & Lazar (2016))| Inferencing Data [R] |
+| 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio (Reading: Wasserstein & Lazar (2016))| Inferencing Data [R]; coded corpus and stability check pushed (Mon Dec 7, dated step) |
 | 16 | Dec 9 | **Work Session: open lab / support** | |
 | 17 | Dec 16 | **Finals Week** | White Paper (+ conference poster) |
 

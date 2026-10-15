@@ -70,9 +70,9 @@ current.
    this page most likely to change how you plan your semester.
 3. **Sign the Syllabus Contract** in Blackboard. It is due at the end of Week 1
    and it is worth 25 points.
-4. **Look at Week 11** on the schedule now, not in November. It carries 125
-   points and it is the single most common way students lose ground in this
-   course.
+4. **Look at Weeks 12 to 15** on the schedule now, not in November. Each R
+   assignment is due the week after it is taught, and that stretch is the single
+   most common way students lose ground in this course.
 5. **Bookmark this page.** It is the live syllabus. A printed copy goes stale;
    this does not.
 
@@ -397,7 +397,7 @@ sampling plan during Week 10.
 | 12 | Nov 10 / 12 | S23 · Ch 12 [R] Describing: descriptive statistics + graphics | S24 · Ch 12 [R] describing lab | Data Wrangling [R] |
 | 13 | Nov 17 / 19 | S25 · Ch 13 [R] Inferential: t-test, ANOVA, regression | S26 · Ch 13 [R] inference lab; *White Paper assigned* | Describing Data [R] |
 | 14 | Nov 23–29 | **Thanksgiving Break, no class** | | |
-| 15 | Dec 1 / 3 | S27 · Ch 14 The Publisher; assemble your paper | S28 · White-paper studio: peer review; the reflection | Inferencing Data [R] |
+| 15 | Dec 1 / 3 | S27 · Ch 14 The Publisher; assemble your paper | S28 · White-paper studio: peer review; the reflection | Inferencing Data [R]; coded corpus and stability check pushed (Fri Dec 4, dated step) |
 | 16 | Dec 8–12 | **Work Session: open lab / support** | | |
 | 17 | Dec 14–18 | **Finals Week** | | White Paper |
 

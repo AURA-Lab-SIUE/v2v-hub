@@ -305,7 +305,7 @@ All three are the general linear model, wearing three different names.
 [Both assigned this week · 200 points]{.eyebrow}
 
 - **The White Paper:** IMRaD in APA 7, with effect sizes, confidence intervals, and power statistics
-    - Its Methods carry three transparency markers: data provenance, the reliability report, and the pre-registration disclosure with its OSF URL
+    - Its Methods carry three transparency markers: data provenance, the reliability report, and the pre-registration disclosure, citing the dated file in your repository
     - Its Discussion situates the finding in your theoretical literature
 - **The poster:** 36 by 24 inches, landscape, from title to implications
     - A QR code to your pre-registration or portfolio

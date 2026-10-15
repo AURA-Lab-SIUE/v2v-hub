@@ -145,7 +145,7 @@ Methods carries three **transparency markers**, and each is checked explicitly:
 
 1. **A data provenance statement**: the source, the access method, and the collection window, stated so a reader can reconstruct the dataset.
 2. **A coder reliability report**: your intracoder stability figure, the re-code procedure that produced it, and the threshold you applied before coding the full sample. You are the only coder, so name the single-coder limitation as such.
-3. **A pre-registration disclosure with its OSF URL**, including anything you changed after registering and why.
+3. **A pre-registration disclosure**: the dated pre-registration file in your project repository, cited by path and commit, including anything you changed after committing it and why.
 
 A Methods section missing any of the three is incomplete regardless of how well the rest reads.
 :::
@@ -313,7 +313,7 @@ If `v2v::deploy_portfolio()` stops with a message the two fixes above do not cov
 ::: {.graduate-extension}
 - [ ] Executive summary included alongside the abstract
 - [ ] Literature review draws on 15 or more sources
-- [ ] Methods carries all three transparency markers, including the OSF pre-registration URL
+- [ ] Methods carries all three transparency markers, including the pre-registration file cited by path and commit
 - [ ] Power statistics reported with the effect sizes
 - [ ] **Conference poster** submitted (a separate requirement, shared with MC 500)
 :::

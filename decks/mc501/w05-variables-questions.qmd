@@ -89,7 +89,8 @@ anything.
 - **A V2V entry carries** question, design, and criteria
     - Directional hypotheses; unit of analysis, platform, collection window.
     - Codebook or extracted variables; planned tests; sample size justification.
-- OSF's standard template walks you through each section
+- The pre-registration is a dated file committed to your project repository
+    - The Research Proposal's sections are its template
 
 ## The Garden Of Forking Paths
 

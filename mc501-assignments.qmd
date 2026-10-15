@@ -397,6 +397,8 @@ Test four relationships, one per test, and report how big each is.
 
 The final deliverable: your study written up in IMRaD, rendered to PDF, published to the web, and carried onto a conference poster.
 
+**Dated step, Monday, December 7, 11:59 PM:** push the full coded dataset and a re-code of a fresh subsample to your project repository. The stability figure in Methods earns its points only if that commit is dated on or before December 7; the rubric carries the subsample rule. Nothing about your analysis is due that day.
+
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 

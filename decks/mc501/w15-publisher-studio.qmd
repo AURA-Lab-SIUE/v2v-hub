@@ -106,7 +106,7 @@ Converting your results into IMRaD costs something. Ask what is lost in the conv
 
 1. A **data provenance** statement: where the data came from, the date range, and what was excluded and why
 2. A **reliability** report: the statistic, its value, the procedure, the threshold, and the single-coder limitation named as such
-3. The **pre-registration disclosure**, with its OSF URL and every departure from the plan
+3. The **pre-registration disclosure**: the dated file in your project repository, cited by path and commit, and every departure from it
 
 Each marker signals that the study meets the standard it claims. Any analysis beyond the
 plan is labeled **exploratory**.

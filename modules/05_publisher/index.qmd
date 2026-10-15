@@ -50,7 +50,7 @@ Your paper reports a two-part study:
 
 | Week | Focus | Deliverable |
 |:--|:--|:--|
-| 15 | Ch 14: The Publisher; assemble your paper | |
+| 15 | Ch 14: The Publisher; assemble your paper | Dated step: the full coded corpus and its stability check pushed to your project repository (MC 451 Friday, December 4; MC 501 Monday, December 7) |
 | 16 | Work session: open lab and support | |
 | 17 | Finals week | White paper due |
 
@@ -139,7 +139,7 @@ You produce a **white paper plus an academic conference poster**. The white pape
 - an **explicit limitations analysis**, not a limitations sentence
 - professional formatting suitable for conference submission or client delivery
 
-The paper carries the three transparency markers a reviewer looks for: a **data provenance statement**, a **coder reliability report** giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the **pre-registration disclosure** with its OSF URL.
+The paper carries the three transparency markers a reviewer looks for: a **data provenance statement**, a **coder reliability report** giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the **pre-registration disclosure**: the dated pre-registration file in your project repository, cited by path and commit, and every departure from it.
 
 ### The conference poster
 
@@ -162,7 +162,7 @@ All three must be present for the submission to be considered complete.
 | Component | Points | Full marks means |
 |:--|:--|:--|
 | Introduction and framing | 25 | States the question and why it is worth asking, and situates it in the theoretical literature rather than gesturing at it. |
-| Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, a coder reliability report giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the pre-registration disclosure with its OSF URL. |
+| Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, a coder reliability report giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the pre-registration disclosure: the dated pre-registration file in your project repository, cited by path and commit, and every departure from it. |
 | Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labeled and captioned. |
 | Discussion | 40 | Interprets the findings, situates them within the theoretical literature, distinguishes statistical significance from practical size, and states the limits. |
 | Abstract and references | 15 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
