@@ -75,7 +75,7 @@ Nothing here is a detour. Each row hands the next one its materials.
 **The Journalist** runs the whole way through: a weekly reading journal, 10 points a week
 across the 14 teaching weeks, plus 10 for consistency, **150 points**. The habit, not a stage.
 
-The project moves through four stages, each handing you the materials for the next:
+The project moves through four stages, each one feeding the next:
 
 | Stage | Weeks | Book part | Points |
 |---|---|---|---|
@@ -88,8 +88,7 @@ The project moves through four stages, each handing you the materials for the ne
 
 ## Mark the R deadlines now
 
-The last Builder assignment and the three Analyst assignments are each due the
-Friday after the week that teaches them:
+Each is due the Friday after the week that teaches it:
 
 - **Sampling Plan and Pilot**, 75 points, due Friday, November 6
 - **Data Wrangling**, 50 points, due Friday, November 13
