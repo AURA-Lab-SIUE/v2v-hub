@@ -408,14 +408,14 @@ Say what is in the data before you test anything.
 
 **100 points. Due Friday, December 4, 11:59 PM.** *(Week 15)*
 
-Test the relationship, and report how big it is.
+Test four relationships, one per test, and report how big each is.
 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
 **What you submit:** your script or Quarto document and the rendered output, uploaded to Blackboard under Inferencing Data in R.
 
-**Rubric:** [Inferencing Data in R rubric (PDF)](resources/rubrics/MC451-rubric-inferencing-data-in-r.pdf). It lists each step from the hypothesis to what the result does not license, and the points for each.
+**Rubric:** [Inferencing Data in R rubric (PDF)](resources/rubrics/MC451-rubric-inferencing-data-in-r.pdf). It lists each step from the four hypotheses to what the results do not license, and the points for each.
 
 </details>
 

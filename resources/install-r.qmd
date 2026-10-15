@@ -99,6 +99,7 @@ For later phases you may also want:
 
 ```r
 install.packages("lm.beta")      # standardized regression coefficients
+install.packages("effectsize")   # confidence intervals on effect sizes (MC 501 Inferencing Data)
 install.packages("car")          # post-hoc tests and diagnostics
 install.packages("ggstatsplot")  # statistical plots with test results
 ```

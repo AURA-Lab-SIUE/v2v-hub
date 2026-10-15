@@ -77,7 +77,7 @@ Using `twitch_analysis.RDS`:
 
 1. Create **frequency tables** for key categorical variables
 2. Build **ggplot2 visualizations** (bar charts, trend lines) with professional formatting
-3. Create a **cross-tabulation** showing the relationship between two variables
+3. Create a **cross-tabulation** showing the relationship between two variables, the table the chi-square tests in Inferencing Data
 4. Write **two to three sentences of narrative** interpreting each output
 
 ::: {.graduate-extension}
@@ -90,17 +90,18 @@ Using `twitch_analysis.RDS`:
 
 Using `twitch_analysis.RDS`:
 
-1. **State your hypothesis** in plain English before running any code
-2. **Select the appropriate test** based on your variable types:
+1. **State four hypotheses** in plain English before running any code, one for each test
+2. **Match each test to its variable types**, and say why that test and not another:
    - Two categorical variables: **chi-square** test of independence
    - One categorical (two groups) by one continuous: **independent t-test**
-   - Two continuous variables: **Pearson correlation**
-3. **Run the test** in R and report it in APA format
-4. **Interpret** the result in plain English
-5. **Calculate** and report the effect size
+   - One categorical (three or more groups) by one continuous: **one-way ANOVA**
+   - One continuous outcome by one continuous predictor: **linear regression**
+3. **Run all four** in R and report each in APA format
+4. **Report each effect size** (Cramér's V, Cohen's d, eta-squared, R-squared) in the units of the data
+5. **Interpret** each result in plain English, and say what the results do not license
 
 ::: {.graduate-extension}
-**MC 501:** go deeper on the same test rather than adding more tests. Report and check the assumptions, show the diagnostics, and give the power statistics behind the design. Distinguish statistical significance from practical size explicitly.
+**MC 501:** the same four tests, deeper rather than wider. Check and show the assumptions behind each, give each effect size with its confidence interval (omega-squared beside eta-squared, the standardized coefficient beside the slope), report the power behind one focal test, and distinguish statistical significance from practical size across all four.
 :::
 
 ---
