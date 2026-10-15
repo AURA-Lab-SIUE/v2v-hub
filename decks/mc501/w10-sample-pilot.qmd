@@ -13,30 +13,31 @@ format:
 
 ## Today's Agenda
 
-- Why unbiased is not the same as representative
-- Stratified sampling, and where power meets the data
-- The pilot, and why independence carries it
-- Kappa, alpha, and what a failure instructs
+- Why an unbiased sample is not the same as a representative one
+- Stratified sampling, and how your planned sample size meets the data
+- The pilot test, and why the two coding passes must be independent
+- Kappa and alpha, and what a failed pilot tells you to fix
 
 ## Two Jobs This Week
 
 [Chapter 10]{.eyebrow}
 
-- **Draw the sample:** the messages you will actually code
-- **Test the codebook:** the pilot that makes it an instrument
-    - It has standing to send you back to Chapter 8
+- **Draw the sample: the items you will actually code**
+- **Test the codebook with a pilot, which is what makes it an instrument**
+    - The pilot can send you back to Chapter 8 to rewrite rules
     - Being sent back is the pilot working
-- **Both are due together** as the Sampling Plan and Pilot
+- **Both are due together as the Sampling Plan and Pilot, Monday, November 2, 11:59 PM**
 
 ## Why You Sample
 
-- **A hundred hours for 35,267 messages**, at ten seconds each
+- **Coding one message by hand takes about forty-five seconds**
+    - The 35,267 messages in the example working sample would take over four hundred hours
     - The full 2018 collection would outlast your degree
-- **A census is right when the population is small**
-    - The stream fixture ships whole, at 32,000 snapshots
-- **Chat is the opposite, and the ordinary condition**
+- **A census (coding every case) is right only when the population is small**
+    - The example stream table ships whole, at about 32,000 snapshots
+- **Chat is the opposite case, and that is the ordinary condition of content analysis**
 
-A sample makes the work finite without making conclusions worthless.
+A sample makes the work finite without making the conclusions worthless.
 
 ## Population, Sampling Frame, and the Gap Between Them
 
@@ -50,77 +51,78 @@ A sample makes the work finite without making conclusions worthless.
 
 ## Unbiased Is Not Representative
 
-- **Simple random sampling gives every message equal chance**
+- **Simple random sampling gives every message an equal chance of being drawn**
     - Its virtue is real: no researcher tilt is built in
-- **Chat volume is severely right-skewed**
-    - The busiest channel logged over a million that week
-    - The median about 1,440, the quietest one
-- **Forty-three of the fifty are gaming channels**
+- **Chat volume in the example data is severely right-skewed**
+    - The busiest channel logged over a million messages that week
+    - The median channel logged about 1,440, and the quietest logged one
+- **Forty-three of the fifty example channels are gaming channels**
 
-Draw at random and you get giant gaming channels.
+Draw at random and almost every message comes from giant gaming channels.
 
 ## Stratified Sampling
 
-- **Divide into subgroups, then draw within each**
-    - Every stratum gets a place, in the proportion you decide
-- **The strata must matter for the question**
-    - Here the stratifying variable is the **channel**
-- **Gaming status is a property of the channel**
-    - So every non-gaming channel is in by construction
+- **Divide the population into subgroups (strata), then draw within each one**
+    - Every stratum gets a place in the sample, in the proportion you decide
+- **The strata must matter for the research question**
+    - In the example study the stratifying variable is the **channel**
+- **Whether a channel is a gaming channel is a property of the channel**
+    - So stratifying by channel puts every non-gaming channel in the sample by construction
+- For your own source, the stratum is whatever group your question compares: an account, a subreddit, a month, an outlet
 
-## The Corpus Is a Stratified Design
+## The Example Corpus Is a Stratified Design
 
-- **Its fifty were not the fifty busiest**
+- **Its fifty channels were not the fifty busiest**
     - Eight were fixed anchors chosen for variety
-    - Bob Ross among them, the deliberate non-gaming case
+    - Bob Ross was among them, the deliberate non-gaming case
 - **The other 42 came from ten volume bands**
     - Every band was sampled
 
 The skew was not sampled away. It was sampled across, on purpose.
 
-## Small Strata, Take All of It
+## Small Strata: Take All of It
 
-- **Ask 30 of a channel that produced 9, and there is no 30**
-    - The rule the tools follow: take everything it has
-- **Nineteen of the fifty hold fewer than a thousand**
-- **A stratum gives its full weight, or its full self**
+- **Ask for 30 messages from a channel that produced 9, and there is no 30 to take**
+    - The rule the tools follow: take everything that stratum has
+- **Nineteen of the fifty example channels hold fewer than a thousand messages**
+- **A stratum gives either its full share or everything it has**
 
-Document this in your sampling plan. It is a decision, not an accident.
+Document this rule in your sampling plan. It is a decision, not an accident.
 
 ## Drawing the Sample
 
 ```r
-set.seed(409)
-
 coding_sample <- v2v::sample_messages(
   chat,
-  by = channel,
-  n  = 30
+  n_per_channel = 30,
+  seed = 409
 )
 ```
 
-`by = channel` makes each channel a stratum and `n = 30` asks for thirty from each, aiming
-at roughly 1,500 messages across fifty channels.
+`sample_messages()` treats each channel as a stratum. `n_per_channel = 30` asks for thirty
+messages from each channel, which aims at roughly 1,500 messages across fifty channels, and
+`seed = 409` fixes the draw so it can be repeated. Your own draw uses the same command with
+your own stratum column and your own number per stratum.
 
-## `set.seed()` Is Not Optional
+## The Seed Is Not Optional
 
-- **A draw is random: run it twice, get two samples**
-    - `set.seed()` fixes the generator's starting point
-- **Without it your sample is unreproducible**
+- **A random draw differs every time you run it**
+    - The `seed` argument fixes the starting point of the random number generator, because `sample_messages()` calls `set.seed()` with it before drawing
+- **Without a seed your sample cannot be reproduced**
     - Nobody can check your results, including you
-- **The number is arbitrary**, and 409 means nothing
+- **The number itself is arbitrary. 409 means nothing**
 
-What matters is that one is set and recorded, so the draw is frozen.
+What matters is that a seed is set and recorded, so the draw is frozen.
 
-## Where Power Meets the Data
+## Where Your Planned Sample Size Meets the Data
 
 - **Sampling is not only about capturing variation**
-    - Your Research Proposal specified a minimum *n*
+    - Your Research Proposal specified a minimum sample size, *n*
     - This is the week that number meets your dataset
-- **Need 128 and the data gives 10,000:** stratification solves it
-- **Need 128 and the data gives 80:** the study is underpowered
+- **If you need 128 and the data offers 10,000, stratification solves the problem**
+- **If you need 128 and the data offers 80, the study is underpowered**
 
-Then you change the design, or justify the limitation explicitly.
+Then you change the design, or you justify the limitation explicitly in the plan.
 
 ## Three Ways to Justify Your Sample Size
 
@@ -155,52 +157,52 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 >
 > Lakens (2022, p. 11)
 
-Purposive sampling improves **construct validity** and does nothing for power. Conflating
-them gives a study that is coherent and indefensible.
+Purposive sampling (choosing cases on purpose) improves **construct validity** and does
+nothing for statistical power. Confusing the two gives a study that is coherent and indefensible.
 
 ## The Pilot Test
 
-- **A trial run before the real coding begins**
+- **A trial run of the codebook before the real coding begins**
     - In this course the pilot is twenty to thirty items; about 30 is the usual rule of thumb (Lombard et al., 2002)
-    - The same codebook applied twice, then a comparison
-- **The question it answers**
-    - Applied independently, do these rules give the same codes?
+    - The same codebook is applied twice, then the two passes are compared
+- **The question the pilot answers:** applied independently, do these rules give the same codes?
 
-Reliability is the property that the codebook answers the same whoever holds it, and the
-same when you come back to it.
+Reliability is the property that the codebook gives the same answer whoever holds it, and the
+same answer when you come back to it.
 
 ## Independence Carries the Logic
 
-- **No conferring, no comparing, no checking against the first pass**
-    - Not suspicion: the pilot measures the codebook
-- **Read your earlier codes and you measure your memory**
-    - Not the clarity of the written rules
-- **Coding yourself twice, the isolation is the gap and the blind**
-    - At least 48 hours, with the first codes out of sight
-- **The rules must carry a classification alone**
+- **No conferring, no comparing, and no checking against the first pass**
+    - This is not suspicion of the coder: the pilot measures the codebook
+- **If you read your earlier codes, you measure your memory, not the clarity of the written rules**
+- **When you code twice yourself, the isolation is a time gap and a blind**
+    - At least 48 hours between passes, with the first codes out of sight
+- **The written rules must carry each classification on their own**
 
 Build the isolation into your protocol, and say so in the write-up.
 
 ## Why Raw Agreement Is Not Enough
 
-- **The two passes match on 74 of 100, which sounds respectable**
-- **Cohen's 1960 example:** two clinicians assigning blindly
-    - At the observed rates, they still agree often
-- **That reflects the number of categories, not judgment**
+- **In the example pilot the two passes match on 74 of 100 items, which sounds respectable**
+- **Cohen's 1960 example: two clinicians assigning categories blindly**
+    - At the observed rates for each category, they still agree often
+- **That agreement reflects the number of categories, not judgment**
 
-Few categories, or one dominant category, and coincidences pile up fast.
+With few categories, or one dominant category, coincidental agreement piles up fast.
 
-## Reliability First {.discuss}
+## Exercise: Reliability First {.discuss}
 
-[Returning to Hayes and Krippendorff]{.eyebrow}
+[Hayes and Krippendorff (2007)]{.eyebrow}
 
 > "Conclusions from such data can be trusted only after demonstrating their reliability."
 >
 > Hayes and Krippendorff (2007, p. 77)
 
-- You have a number now. Does it clear the bar?
-- What would you report if it does not?
-- Whose trust is the standard protecting?
+Answer each question in writing:
+
+- You have a reliability number for your pilot. Does it clear the threshold you named in your protocol? Answer yes or no
+- If it does not clear the threshold, write the sentence you would put in the report
+- Name whose trust the reliability standard protects: the reader's, the coder's, or the field's, and say why
 
 ## Informative, Not Impressive
 
@@ -209,29 +211,29 @@ Few categories, or one dominant category, and coincidences pile up fast.
 >
 > Lakens (2022, p. 11)
 
-- Say what your pilot could not settle
-- What does that cost the White Paper?
+- Write down one thing your pilot could not settle
+- Name the White Paper claim that becomes weaker because of it
 
 ## Cohen's Kappa
 
-- **Built for two sets of codes and a nominal codebook** (Cohen, 1960)
-    - Two coders, or one coder twice. The arithmetic does not care
-- **Observed agreement, less chance, over the room left**
+- **Kappa is built for two sets of codes and a nominal codebook** (Cohen, 1960)
+    - Two coders, or one coder twice. The arithmetic does not care which
+- **Kappa is observed agreement, minus chance agreement, divided by the room left above chance**
     - `kappa = (observed - expected) / (1 - expected)`
-- **No better than chance:** kappa is zero, whatever the raw rate
+- **Agreement no better than chance:** kappa is zero, whatever the raw rate
 - **Perfect agreement:** kappa is one
 
-The codebook is credited only for what luck did not do.
+The codebook is credited only for the agreement that luck did not produce.
 
 ## Krippendorff's Alpha
 
-- **The more general instrument** (Krippendorff, 2018)
+- **Alpha is the more general instrument** (Krippendorff, 2018)
     - Any number of coders, any level of measurement
     - Datasets with missing codes
-- **Three coders, or an ordinal variable:** alpha
-- **For a two-coder nominal pilot they agree**
+- **Three coders, or an ordinal variable: use alpha**
+- **For a pilot with two passes and nominal categories, kappa and alpha agree**
 
-`v2v::reliability()` computes either, selected by `method`.
+`v2v::reliability()` computes either one, selected by `method`.
 
 ## Computing Alpha for Your Pilot
 
@@ -252,10 +254,10 @@ result when you paste in the two columns.
 
 ## A Worked Failure
 
-- **The codebook said "high-energy" and never defined it**
+- **The example codebook said "high-energy" and never defined it**
     - **Coder A** flagged messages carrying a Twitch emote
-    - **Coder B** flagged messages containing all capitals
-- **Both readings are reasonable**, and both believed they coded one variable
+    - **Coder B** flagged messages written in all capitals
+- **Both readings are reasonable, and both coders believed they were coding one variable**
 
 ```
 Reliability: Cohen's kappa
@@ -266,33 +268,34 @@ Reliability: Cohen's kappa
 
 ## What 0.236 Diagnoses
 
-- **Observed 0.74, chance 0.66, kappa 0.24**
-- **Emote and all-caps messages overlap in Twitch chat**
-    - Two coders keying on different features often land together
+- **Observed agreement 0.74, chance agreement 0.66, kappa 0.24**
+- **Emote messages and all-caps messages overlap in Twitch chat**
+    - Two coders keying on different features often land on the same code by accident
     - They never coded the same concept
-- **A loose codebook let two careful people measure two things**
+- **A loose codebook let two careful people measure two different things**
 
-That is what kappa exposed and raw agreement concealed.
+That is what kappa exposed and raw agreement concealed. One coder working twice fails the
+same way when a rule is undefined.
 
 ## Reading Against a Standard
 
-- **The Landis and Koch labels** (1977)
+- **Published labels for kappa values (Landis and Koch, 1977):**
     - 0.0 to 0.2 slight, 0.2 to 0.4 fair, 0.4 to 0.6 moderate
     - 0.6 to 0.8 substantial, above 0.8 almost perfect
 - **Those labels are a vocabulary, not a law**
-- **Published work treats below 0.70 as too low**, with 0.80 comfortable
+- **Published work treats a value below 0.70 as too low to proceed on, with 0.80 comfortable**
 
-Name your threshold in advance, not after seeing the number.
+Name your threshold in your protocol before you see the number, not after.
 
 ## When Reliability Fails
 
-- **0.236 is an instruction, not a result**
-    - Walk every disagreement with the written rule in front of you
-    - **The disagreements are the data**
-- **Repair: state operationally what counts**
-- **Then pilot again**, on fresh messages
+- **A kappa of 0.236 is an instruction to fix the codebook, not a final result**
+    - Walk through every disagreement with the written rule in front of you
+    - **The disagreements are the data:** each one points at an unclear rule
+- **Repair the rule by stating operationally what counts**
+- **Then pilot again, on fresh items**
 
-Pilot, diagnose, revise, repeat, until it clears your threshold.
+Pilot, diagnose, revise, and repeat until the number clears your threshold.
 
 ## Sampling Plan and Pilot: The Four Parts of the Plan
 
@@ -316,10 +319,10 @@ If your pilot led to no codebook changes, the items you piloted were probably to
 
 ## Before Week 11
 
-- **Submit** the Sampling Plan and Pilot, with the computation
-- **Read** Chapter 11 with the graduate toggle on
+- **Submit the Sampling Plan and Pilot by Monday, November 2, 11:59 PM, with the reliability computation**
+- **Read Chapter 11**
     - Plus the assigned article: **Wickham (2014)**, "Tidy data"
-- **Write** a journal entry, 450 to 500 words
-- **Bring a laptop** with R, VS Code and `v2v` working
+- **Write a journal entry, 450 to 500 words**
+- **Bring a laptop with R, VS Code, and `v2v` working**
 
 ## Questions, Comments, or Concerns? {.titlecard}

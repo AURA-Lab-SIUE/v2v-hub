@@ -13,30 +13,31 @@ format:
 
 ## Today's Agenda
 
-- A project workspace that holds the whole study
-- Provenance as a methodological disclosure
-- The data loaded and inspected, column by column
-- Reading the data against your codebook
+- Build a project workspace that holds the whole study
+- Write a provenance statement: a disclosure of where your data came from
+- Load the shared example data and inspect it column by column
+- Read the data against your codebook
 
 ## What We Build Today
 
 [Week 9 · Chapter 9 · working session]{.eyebrow}
 
 - **Due Monday, October 26, 11:59 PM:** Extended Codebook and Reliability Protocol
-- **A project workspace holding the study in one folder**
+- **A project workspace that holds the study in one folder**
     - Your codebook installed as the rendered rulebook
-    - The Twitch data loaded and inspected
+    - The shared Twitch example data loaded and inspected
 - **Assigned reading:** Munafo et al. (2017)
 
-The gentlest possible evening in R: you load data and look at it.
+Tonight is the gentlest possible evening in R: you load data and look at it. Every step you
+practice on the example data is a step you repeat on your own source.
 
 ## Why the Workspace Comes First
 
-- **Reproducible research lives on traceability**
-    - Files in known places, not commands typed once
+- **Reproducible research depends on traceability**
+    - Files live in known places, not in commands typed once
 - **A project is one folder for one study**
-    - Data, code, codebook, report, travelling together
-    - Nothing depends on a file only on your laptop
+    - Data, code, codebook, and report travel together
+    - Nothing depends on a file that exists only on your laptop
 - Your Week 15 White Paper renders from this folder
 
 ## Scaffolding the Project
@@ -45,26 +46,30 @@ The gentlest possible evening in R: you load data and look at it.
 v2v::new_portfolio("twitch-portfolio")
 ```
 
-Create a complete, correctly wired study folder in one call.
+This one call creates a complete, correctly wired study folder.
 
 The `v2v::` prefix is not decoration. It tells R, and you, that the function comes from
 this book's package, so the package never becomes a hidden assumption.
+
+The example project is named `twitch-portfolio`. Name your own project after your own study.
 
 ## What the Scaffold Contains
 
 ```
 twitch-portfolio/
-├── twitch-portfolio.Rproj
 ├── _quarto.yml
-├── README.md
-├── codebook.qmd
-├── analysis.qmd
-├── data/
-└── .Rprofile
+├── index.qmd
+├── 01-introduction.qmd ... 05-reflection.qmd
+├── references.qmd, references.bib
+├── codebook/codebook.qmd
+├── journals/week-01.qmd
+├── data/raw/, data/derived/
+└── figures/
 ```
 
-You did not decide where files go or what to name them. An hour lost to file layout is an
-hour not spent on the study.
+The scaffold decides where every file goes and what it is named. The five numbered files are
+the sections of your White Paper, already in order. An hour lost to file layout is an hour not
+spent on the study.
 
 ## Confirming the Stack
 
@@ -72,19 +77,19 @@ hour not spent on the study.
 v2v::setup()
 ```
 
-Check that R, the packages this book depends on, and the project environment are present
-and agree on versions.
+`setup()` checks that R, the packages this book depends on, and the project environment are
+present and agree on versions.
 
-- **You met `setup()` in Chapter 2**, at installation
-- **It returns as a habit:** run it when you open a project
-- You learn about a missing piece before it interrupts you
+- **You met `setup()` in Chapter 2, at installation**
+- **Run it as a habit, every time you open a project**
+- It reports a missing piece before that piece interrupts you
 
-## The Rulebook Becomes a Document
+## The Codebook Becomes a Document
 
-- **One scaffolded file is `codebook.qmd`**
-    - Move your Chapter 8 draft in, with a version line and date
+- **One of the scaffolded files is `codebook/codebook.qmd`**
+    - Move your Chapter 8 draft into it, with a version line and a date
     - A codebook that renders has no broken structure
-- **What changes today is the status, not the content**
+- **What changes tonight is the codebook's status, not its content**
     - It stops being a sketch and becomes the instrument
 
 ## Loading the Data
@@ -96,26 +101,27 @@ chat <- v2v::twitch_chat()
 streams <- v2v::twitch_streams()
 ```
 
-Load the tidyverse, then pull in the two tables and name each one.
+Line one loads the tidyverse. The next two lines pull in the two example tables and name each one.
 
-The arrow `<-` assigns, so `chat` and `streams` now refer to the tables for this session.
-Called with no arguments, each returns the full working sample.
+The arrow `<-` assigns a name, so `chat` and `streams` now refer to the two tables for this
+session. Called with no arguments, each function returns the full working sample.
 
-## Why a Call, Not a File Path
+## Why a Function Call, Not a File Path
 
-- **A new user's first data encounter is a pile of path errors**
+- **A new user's first encounter with data is usually a pile of file-path errors**
     - These functions reach inside the package and hand the data back
     - There is no path for you to get wrong
-- **"Everything" is not the entire 2018 collection**
-    - That runs to tens of millions of rows
-    - What ships is a working sample: real, and fast
+- **The working sample is not the entire 2018 collection**
+    - The full collection runs to tens of millions of rows
+    - What ships with the package is a working sample: real, and fast
+- Your own source will be loaded from a file, with a path. Every step after loading is the same
 
 ## Provenance Is a Disclosure
 
-- **First contact rests on documenting where data came from**
-    - Before the first line of analysis runs
+- **First contact begins with documenting where the data came from**
+    - That record is written before the first line of analysis runs
 - **"I collected Twitch chat data" is not a methods section**
-- **Replication requires exact knowledge of what was done**
+- **Replication requires exact knowledge of what was done, and the provenance record is that knowledge**
 
 ## What a Provenance Sentence Looks Like
 
@@ -124,6 +130,7 @@ Called with no arguments, each returns the full working sample.
 > JSON responses to `data/raw/` before any processing.
 
 Every clause in that sentence is something a replicator would otherwise have to guess.
+Write the same kind of sentence for your own source, whatever the platform.
 
 ## Munafo on Usability
 
@@ -133,10 +140,10 @@ Every clause in that sentence is something a replicator would otherwise have to 
 >
 > Munafo et al. (2017, p. 4)
 
-- **Discoverable is not the same as usable**
-- A study can be public, cited, and impossible to evaluate
+- **A study that can be found is not the same as a study that can be used**
+- A study can be public, cited, and still impossible to evaluate
 
-## Usability, Not Discoverability {.discuss}
+## Exercise: Usability, Not Discoverability {.discuss}
 
 [Munafo et al. (2017)]{.eyebrow}
 
@@ -146,23 +153,25 @@ Every clause in that sentence is something a replicator would otherwise have to 
 >
 > Munafo et al. (2017, p. 4)
 
-- Which is worse: unfindable, or unevaluable?
-- Your provenance statement owes a stranger what?
-- Name one thing in your workflow that fails today
+Answer each question in writing:
 
-## What the Record Includes
+- Which failure is worse for the field: a study nobody can find, or a study nobody can evaluate? Give one reason
+- Name one thing your provenance statement owes a stranger who wants to repeat your study
+- Name one step in your own workflow that a stranger could not repeat today
 
-For fresh API data the record must name:
+## What the Provenance Record Includes
 
-1. Data source and **API version**
-2. Date and **time range** of collection
-3. Any **filters, keywords, or channel selectors** applied
-4. The **format** in which raw data was saved
-5. The **git commit** at which raw data was frozen
+For data collected from a platform, whether through an API or by export, the record names:
 
-Item 5 is the audit trail: never re-run collection over a file a script uses.
+1. The data source and the **API version** or export tool
+2. The date and **time range** of collection
+3. Any **filters, keywords, or account selectors** applied
+4. The **format** in which the raw data was saved
+5. The **git commit** at which the raw data was frozen
 
-## Looking, the Chat Table
+Item 5 is the audit trail: never re-run collection over a file a script already uses.
+
+## Looking at the Chat Table
 
 ```r
 glimpse(chat)
@@ -178,19 +187,19 @@ $ message <chr> "???????????????????????", "TriEasy Clap TriEasy Clap …
 $ date    <dbl> 1542578127023, 1542578135562, 1542578143610, …
 ```
 
-Print every column, its type, and its first values, without changing anything.
+`glimpse()` prints every column, its type, and its first values, without changing anything.
 
 ## Reading the Chat Glimpse
 
-- **35,267 rows**, one chat message per row
-- **The values are real and not tidy**
-    - Twenty-three question marks, then repeated "TriEasy Clap"
-    - Not errors: your codebook must meet them as they are
-- **`date` is milliseconds since 1970**, and unreadable as it stands
+- **The table has 35,267 rows, one chat message per row**
+- **The values are real, and they are not tidy**
+    - Twenty-three question marks, then "TriEasy Clap" repeated
+    - These are not errors. Your codebook must meet messages like these as they are
+- **`date` counts milliseconds since 1970, and it is unreadable as it stands**
 
-Converting it is Chapter 11's headline.
+Converting it is Chapter 11's headline task.
 
-## Looking, the Stream Table
+## Looking at the Stream Table
 
 ```r
 glimpse(streams)
@@ -209,13 +218,13 @@ $ date    <dbl> 1542578200214, 1542578200240, 1542578200273, …
 
 ## Reading the Stream Glimpse
 
-- **32,276 rows**, one snapshot of one stream each
-- **Row 1 is the row Chapter 2 opened with**, at 27,934 viewers
-    - Row 5 is the same channel minutes later, at 28,076
+- **The table has 32,276 rows, one snapshot of one stream in each**
+- **Row 1 is the row Chapter 2 opened with, at 27,934 viewers**
+    - Row 5 is the same channel minutes later, at 28,076 viewers
 - **`title` is as messy as chat**
-    - A line break inside the string, and a long run of digits
+    - One title holds a line break inside the string and a long run of digits
 
-Noticing this before any analysis is the reason for first contact.
+Noticing this before any analysis is the reason first contact exists.
 
 ## Counting
 
@@ -231,14 +240,14 @@ streams %>% count(game, sort = TRUE)
  4 Hearthstone       2157
 ```
 
-The `%>%` is the tidyverse **pipe**: it feeds the thing on its left to the function on its
+The `%>%` is the tidyverse **pipe**: it feeds the thing on its left into the function on its
 right, so the line reads as an instruction in order.
 
 ## What the Count Tells You
 
-- **Sixty distinct games**, more than a study can examine one by one
-- **A handful hold most snapshots**, and fifty more hold the rest
-- **Art tops the list**, on a platform mostly playing games
+- **The example streams cover sixty distinct games, more than a study can examine one by one**
+- **A handful of games hold most of the snapshots, and fifty more hold the rest**
+- **Art tops the list, on a platform that is mostly about playing games**
     - That shape matters when you draw a chart in Chapter 12
 
 `count()` is looking, not changing. The table is exactly as loaded.
@@ -255,50 +264,55 @@ n_distinct(chat$channel)
 
 - **Chapter 1 described fifty channels, and here they are**
 - **`n_distinct(streams$channel)` returns the same fifty**
-- The data you loaded is the corpus described, no more and no less
+- The data you loaded is the corpus the book described, no more and no less
 
-## Reading Data Against the Codebook
+Run the same counts on your own source to confirm that it is what you were told it is.
 
-Open the codebook beside the `glimpse()` output and ask a blunt question.
+## Reading the Data Against the Codebook
 
-- **Message target:** message text plus sender. Both exist, so supported
+Open the codebook beside the `glimpse()` output and check, variable by variable, whether the
+data contains what each variable needs. For the book's example codebook:
+
+- **Message target:** coded from the message text plus the sender. Both columns exist, so the variable is supported
 - **Message length:** a character count of `message`, so supported
 - **Contains emote:** read from the same column, so supported
 
-Far better to confirm now than to find a missing column mid-coding.
+Then run the same check for every variable in your own codebook against your own source.
+It is far better to confirm now than to find a missing column in the middle of coding.
 
-## The Wrinkle Worth Carrying
+## The Wrinkle Worth Carrying Into the Codebook
 
-- **A message begins "@xQcOW"**, and `channel` reads "xqcow"
-    - The display name typed against the stored login name
-- **Your rule keys on the channel name**, so it must allow for casing
-- **Fix it in the codebook now**, before a case is coded
+- **A message begins "@xQcOW", and the `channel` column on that row reads "xqcow"**
+    - The display name the viewer typed differs from the stored login name
+- **A rule that matches on the channel name must allow for differences in capitalization**
+- **Fix the rule in the codebook now, before a single case is coded**
 
 ## When a Line Breaks
 
 - **`could not find function "glimpse"`:** the tidyverse is not loaded
-- **`object 'chat' not found`:** the assignment has not run
-- **`no package called 'v2v'`:** installation, not syntax
-- **The Hub keeps a common-errors cheat sheet**
+- **`object 'chat' not found`:** the assignment line has not run
+- **`no package called 'v2v'`:** an installation problem, not a syntax problem
+- **The Hub keeps a cheat sheet of common errors**
 
-An error is information, not a verdict. Run `?v2v::common_errors` for this data's own.
+An error is information, not a verdict. Run `?v2v::common_errors` for the errors specific to the example data.
 
 ## Checkpoint
 
 You should now have:
 
-- A `twitch-portfolio/` folder that `v2v::setup()` reports as sound
-- `codebook.qmd` versioned, dated, and rendering cleanly
+- A project folder that `v2v::setup()` reports as sound
+- `codebook/codebook.qmd` versioned, dated, and rendering cleanly
 - `chat` and `streams` loaded in your session
-- A written provenance statement, four sentences
+- A written provenance statement for your own source, covering the five items of the record
 - At least one codebook revision prompted by first contact
 
 ## Before Week 10
 
-- **Read** Chapter 10, on sampling and the codebook on trial
-    - Re-read **Lakens (2022)**, with your reliability sample in mind
-- **Due Monday, November 2, 11:59 PM:** the Sampling Plan and Pilot
-    - Bring the revisions first contact prompted, committed
-- **Write** a journal entry, 450 to 500 words
+- **Due Monday, October 26, 11:59 PM:** Extended Codebook and Reliability Protocol
+- **Read Chapter 10, on sampling and on testing the codebook with a pilot**
+    - Re-read **Hayes and Krippendorff (2007)**, with your pilot in mind
+- **Due Monday, November 2, 11:59 PM:** Sampling Plan and Pilot
+    - Bring the codebook revisions first contact prompted, committed to your project
+- **Write a journal entry, 450 to 500 words**
 
 ## Questions, Comments, or Concerns? {.titlecard}

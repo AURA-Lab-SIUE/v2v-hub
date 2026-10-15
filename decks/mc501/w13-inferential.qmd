@@ -13,57 +13,57 @@ format:
 
 ## Today's Agenda
 
-- The t-test that settles the central question
+- The t-test that settles the example study's central question
 - What a p-value does and does not say
-- ANOVA, regression, and the assumptions underneath
-- The White Paper and its poster, both assigned
+- ANOVA, regression, and the assumptions underneath them
+- The White Paper and its poster, both assigned tonight
 
 ## What We Build Today
 
 [Working session]{.eyebrow}
 
-- **The t-test that settles the study's question**
-    - Then an ANOVA, and a regression containing both
+- **The t-test that settles the example study's question**
+    - Then an ANOVA, and a regression that contains both
     - Then the checks that decide whether any of it holds
-- **Two deliverables open this week**, the paper and the poster
-- **You leave with the sentence for your Results**
+- **Two deliverables open this week: the paper and the poster**
+- **You leave with the sentence that goes in your Results**
 
 The doing is one function call. The thinking around it takes the evening.
 
 ## The Gap and the Doubt
 
-- **Gaming averaged 28.49 characters, non-gaming 33.70**
-    - A difference of a little over five characters
-- **The doubt is not idle**
-    - Split any group in two at random and the averages differ
-- **The gap could be real, or ordinary wobble**
+- **In the example data, gaming channels averaged 28.49 characters per message, non-gaming channels 33.70**
+    - That is a difference of a little over five characters
+- **The doubt about that gap is not idle**
+    - Split any group in two at random and the two averages differ
+- **The gap could be real, or it could be ordinary sampling wobble**
 
-The histogram cannot tell them apart, because both produce a gap.
+The histogram cannot tell the two apart, because both produce a gap.
 
 ## What a Test Actually Asks
 
-- **Nobody cares about those 34,766 messages as such**
+- **Nobody cares about those 34,766 example messages as such**
     - They were measured to learn about chat in general
-- **The honest question is not whether a gap exists**
-    - It is whether chance is an unconvincing explanation
+- **The honest question is not whether a gap exists in the sample**
+    - It is whether chance is an unconvincing explanation for that gap
 - **The test starts from the null hypothesis**
-    - That the two groups share one true mean length
+    - The null hypothesis says the two groups share one true mean length
 
 ## The Coin Analogy
 
 - **Assume the coin is fair**
 - **Work out how often a fair coin lands this lopsided**
-- **Judge the assumption by how surprising the data are**
+- **Judge the assumption by how surprising the data are under it**
 
-That is the whole logic, applied to two groups instead of one coin.
+That is the whole logic of a test, applied to two groups instead of one coin.
 
 ## The Variables Choose the Test
 
-- **Message length is ratio**, an exact count of characters
-- **Gaming status is nominal**, with two values
-- **A continuous outcome across two groups is the t-test**
-- **Two categorical variables instead:** chi-square
-- **The Hub keeps a test-decision tree**, so consult it first
+- **Message length is a ratio variable: an exact count of characters**
+- **Gaming status is a nominal variable with two values**
+- **A numeric outcome compared across two groups calls for the t-test**
+- **Two categorical variables call for chi-square instead**
+- **Write down the level of measurement of each variable first. The test follows from those two levels**
 
 A test on the wrong kind of data produces a meaningless number.
 
@@ -98,29 +98,29 @@ message_length by is_gaming
 
 ## Why Welch, and Not Student
 
-- **The ordinary t-test assumes equal spread**
-    - Week 12 showed sd of 60.68 against 38.47
-    - Welch drops the assumption, so it is the safer default
-- **`t` of -4.95 measures the gap in units of its own noise**
-    - The sign is direction only
-- **`df` is not round** because Welch computes it from both groups
+- **The ordinary (Student) t-test assumes the two groups have equal spread**
+    - Week 12 showed standard deviations of 60.68 against 38.47
+    - The Welch version drops that assumption, so it is the safer default
+- **A `t` of -4.95 measures the gap in units of its own noise**
+    - The minus sign shows direction only
+- **`df` is not a round number because Welch computes it from both groups**
 
 ## Reading the p-value
 
-- **If the two truly shared a mean length**
-    - A gap this large occurs less than once in a thousand
-- **The data are surprising under that assumption**
-- **Below .05 counts as significant, and this clears it easily**
+- **If the two groups truly shared one mean length,**
+    - a gap this large would occur in fewer than one sample in a thousand
+- **So the data are surprising under that assumption**
+- **A p-value below .05 counts as significant, and this one clears it easily**
 
-Chance alone is an unconvincing explanation. That is the entire content.
+Chance alone is an unconvincing explanation for the gap. That is the entire content of the p-value.
 
 ## What the p-value Does Not Say
 
-- **Not** the probability the null is true
-    - The null is true or false; this is a statement about data
-- **Not** the probability the result is a fluke
-- **Not** a measure of how large the difference is
-- **Not** a measure of how much it matters
+- **It is not** the probability that the null hypothesis is true
+    - The null is either true or false. The p-value is a statement about the data
+- **It is not** the probability that the result is a fluke
+- **It is not** a measure of how large the difference is
+- **It is not** a measure of how much the difference matters
 
 ## On the Threshold Itself
 
@@ -129,11 +129,11 @@ Chance alone is an unconvincing explanation. That is the entire content.
 >
 > Wasserstein & Lazar (2016, p. 131)
 
-- **.049 and .051 describe almost identical evidence**
-- **Ten uncorrected tests expect one false positive**
-- **Declare the tests and the correction in advance**
+- **A p-value of .049 and one of .051 describe almost identical evidence**
+- **Ten tests run without correction produce one false positive on average**
+- **Declare your tests and your correction for multiple tests in advance**
 
-## Justify, Not Redefine {.discuss}
+## Exercise: Justify, Not Redefine {.discuss}
 
 [Lakens et al. (2018)]{.eyebrow}
 
@@ -142,9 +142,11 @@ Chance alone is an unconvincing explanation. That is the entire content.
 >
 > Lakens et al. (2018, p. 168)
 
-- Which choice in your study is least justified?
-- They answer a threshold with a demand. Enough?
-- Eighty-eight authors signed this. Does that matter?
+Answer each in writing:
+
+- Name the one design choice in your own study that is least justified so far, and say what a justification would need to contain
+- Lakens and colleagues answer a proposed stricter threshold with a demand for justification. Is a justification enough to replace a threshold? Give one reason either way
+- Eighty-eight authors signed this paper. Say whether that number should change how much weight you give it, and why
 
 ## Retiring the Phrase
 
@@ -152,46 +154,47 @@ Chance alone is an unconvincing explanation. That is the entire content.
 >
 > Lakens et al. (2018)
 
-- Write your result without the phrase
-- What did you lose, and what did you gain?
+- Write your own result in one sentence without the phrase "statistically significant"
+- Then write down one thing the sentence lost and one thing it gained
 
 ## How Big Is the Difference
 
-- **The p-value hands the question to an effect size**
-    - Between two means that is **Cohen's *d***, here -0.13
-    - It states the gap in units of natural variation
-- **About 0.2 small, 0.5 medium, 0.8 large** (Cohen, 1988)
-- **0.13 is below small**, and the word is negligible
+- **The p-value hands the question of size to an effect size**
+    - For a gap between two means, the effect size is **Cohen's *d***, here -0.13
+    - It states the gap in units of the natural variation in the data
+- **Cohen's benchmarks: about 0.2 is small, 0.5 is medium, 0.8 is large** (Cohen, 1988)
+- **A *d* of 0.13 is below small, and the word for it is negligible**
 
-## Why It Reached Significance
+## Why a Negligible Gap Reached Significance
 
-- **The raw gap is fifteen percent of the non-gaming mean**
-    - Which does not sound negligible
-- **But *d* measures it against sds of 38 and 61**
-- **n = 34,766**
+- **The raw gap is fifteen percent of the non-gaming mean, which does not sound negligible**
+- **But *d* measures that gap against standard deviations of 38 and 61 characters**
+- **And the sample held 34,766 messages**
 
 A large enough sample detects a difference far too small to care about.
 
-## Seeing It
+## Seeing the Gap and Its Uncertainty
 
 ```r
 means_ci <- analysis %>%
   filter(!is.na(is_gaming)) %>%
   group_by(is_gaming) %>%
-  summarise(mean = mean(message_length, na.rm = TRUE),
-            se   = sd(message_length, na.rm = TRUE) / sqrt(n()),
-            .groups = "drop") %>%
+  summarize(
+    mean = mean(message_length, na.rm = TRUE),
+    se   = sd(message_length, na.rm = TRUE) / sqrt(n()),
+    .groups = "drop"
+  ) %>%
   mutate(lower = mean - 1.96 * se,
          upper = mean + 1.96 * se)
 ```
 
-Compute each group's mean and standard error, then turn the error into a ninety-five
-percent interval you can plot.
+This code computes each group's mean and standard error, then turns the standard error into
+a ninety-five percent confidence interval you can plot.
 
 ## Writing the Result Up
 
-- **The intervals nearly vanish, and they do not overlap**
-    - That is the visual signature of significance
+- **The two confidence intervals are tiny, and they do not overlap**
+    - That is the visual signature of statistical significance
 - **Both points still sit close together, far above zero**
     - That is the negligible effect size made visible
 
@@ -200,8 +203,8 @@ percent interval you can plot.
 
 ## Then Say It Plainly
 
-The two kinds of channel do differ, but so slightly that they are better thought of as
-alike than as different.
+The two kinds of channel do differ in message length, but so slightly that they are better
+thought of as alike than as different.
 
 A reader who cannot follow the notation still has to be able to follow the claim.
 
@@ -215,8 +218,8 @@ Just Chatting     2429       39.03
 League of Legends 4000       22.63
 ```
 
-- **A t-test compares two means, and there are four**
-- **Six pairwise tests each carry a false-positive chance**, and those pile up
+- **A t-test compares two means, and here there are four**
+- **Six pairwise t-tests would each carry their own false-positive chance, and those chances pile up**
 
 ## ANOVA
 
@@ -236,31 +239,31 @@ Residuals  13429  26552407     1977
 
 ## Reading F, Then Eta Squared
 
-- **F compares variation between means against within groups**
-    - A shared mean would put F near one
-    - Here **F(3, 13429) = 92.26**, with a minuscule p
-- **League of Legends at 22.63 runs visibly shorter** than 39.03
-- **Eta squared is 0.02**: category explains two percent
+- **F compares the variation between the group means against the variation within the groups**
+    - If all four groups shared one mean, F would sit near one
+    - Here **F(3, 13429) = 92.26**, with a minuscule p-value
+- **League of Legends at 22.63 characters runs visibly shorter than Just Chatting at 39.03**
+- **Eta squared is 0.02:** game category accounts for two percent of the variation in message length
 
 ## The Assumptions Underneath
 
-- **ANOVA and ordinary regression assume homoscedasticity**
-    - Week 12 showed these groups plainly do not share variance
-    - Which is why the two-group test used Welch
-- **`oneway.test()` is the safer choice** over pooled `aov()`
-- **Run both and compare**
+- **ANOVA and ordinary regression assume homoscedasticity: equal spread in every group**
+    - Week 12 showed these groups plainly do not share one spread
+    - That is why the two-group test used the Welch version
+- **`oneway.test()` is the safer choice over pooled `aov()`, because it drops that assumption**
+- **Run both and compare the results**
 
-If they disagree, the assumption was doing real work. Report the robust one.
+If the two disagree, the assumption was doing real work. Report the robust one.
 
 ## Which Pair Actually Differs
 
-- **A significant ANOVA says some pair differs, not which**
-- **Naming pairs takes post-hoc comparisons**, and `TukeyHSD()` is standard
-    - It corrects for the multiple looks you are taking
-    - Six ad-hoc t-tests would lack that correction
+- **A significant ANOVA says that some pair of groups differs, not which pair**
+- **Naming the pairs takes post-hoc comparisons, and `TukeyHSD()` is the standard one**
+    - It corrects for the multiple comparisons you are making
+    - Six separate t-tests would lack that correction
 - **Report the adjusted p-values, not the raw ones**
 
-With eta squared at 0.02, expect clean separations that matter little.
+With eta squared at 0.02, expect clean separations between pairs that matter little in size.
 
 ## Regression Re-Derives the t-test
 
@@ -275,46 +278,47 @@ is_gamingTRUE   -5.22       0.74      -7.08   < .001
 ```
 
 The intercept is the non-gaming mean, and the coefficient is exactly the gap the t-test
-found, cast as a baseline plus an adjustment.
+found, written as a baseline plus an adjustment.
 
 ## One Framework, Three Faces
 
-- **A t-test is a regression with one two-level predictor**
-- **An ANOVA is one with a many-level predictor**
-- **A regression is the general form**
-    - Its `t` differs from Welch's because it pools the spreads
+- **A t-test is a regression with one two-level explanatory variable**
+- **An ANOVA is a regression with one many-level explanatory variable**
+- **Regression is the general form of both**
+    - Its `t` differs from Welch's because regression pools the two spreads
     - The coefficient itself is identical
-    - **R² is about 0.001**, so gaming status explains almost nothing
+    - **R² is about 0.001**, so gaming status accounts for almost none of the variation
 
 All three are the general linear model, wearing three different names.
 
-## Residuals, and Earning a Predictor
+## Residuals, and Whether a Variable Earns Its Place
 
-- **Credibility rests on the residuals**, and `plot(model)` draws four
-    - Residuals against fitted: linearity and equal spread
-    - A Q-Q plot: are the residuals normal?
-    - Leverage: is one point carrying the result?
-- **Whether a predictor earns its place is model comparison**
-    - Adjusted R², AIC, or a nested F-test, never raw R²
+- **A model's credibility rests on its residuals, and `plot(model)` draws four diagnostic plots**
+    - Residuals against fitted values: checks linearity and equal spread
+    - A Q-Q plot: checks whether the residuals are normally distributed
+    - Leverage: checks whether one point is carrying the result
+- **Whether an added variable earns its place in the model is a model-comparison question**
+    - Compare adjusted R², AIC, or a nested F-test, never raw R²
 
 ## The White Paper and Its Poster
 
 [Both assigned this week · 200 points]{.eyebrow}
 
-- **The White Paper:** IMRaD, APA 7th, effect sizes and power
-    - Plus a pre-registration disclosure in the Methods
-    - Its Discussion situates the finding in your literature
-- **The poster:** 36 by 24 inches, landscape, title to implications
+- **The White Paper:** IMRaD in APA 7, with effect sizes, confidence intervals, and power statistics
+    - Its Methods carry three transparency markers: data provenance, the reliability report, and the pre-registration disclosure with its OSF URL
+    - Its Discussion situates the finding in your theoretical literature
+- **The poster:** 36 by 24 inches, landscape, from title to implications
     - A QR code to your pre-registration or portfolio
     - Your ninety-second pitch, built from one or two figures
+- **Due Friday, December 18, 11:59 PM: the paper as a PDF, the poster as a PDF, and the live URL of your site**
 
 ## Before Week 15
 
-- **Submit** Inferencing Data [R], 100 points
-    - The test, the checks, the effect sizes, the interpretation
-- **No class Week 14**, for Thanksgiving break
-- **Read** Chapter 14 with the graduate toggle on
+- **Due Monday, November 23, 11:59 PM:** Inferencing Data in R, 100 points
+    - The test, the assumption checks, the effect sizes, and the interpretation
+- **No class in Week 14, for Thanksgiving break**
+- **Read Chapter 14**
     - Plus the assigned article: **Wasserstein and Lazar (2016)**
-- **Bring an outline and a poster sketch** to Week 15
+- **Bring an outline of the paper and a sketch of the poster to Week 15**
 
 ## Questions, Comments, or Concerns? {.titlecard}

@@ -13,29 +13,29 @@ format:
 
 ## Today's Agenda
 
-- The grammar of graphics, in three parts
-- A line, a bar, and a histogram
-- Effect sizes, and the choices a figure discloses
+- The grammar of graphics: every plot is built from the same three parts
+- Three chart types: a line chart, a bar chart, and a histogram
+- Effect sizes, and the design choices a figure must disclose
 - Figures other people can actually read
 
 ## What We Build Today
 
 [Working session]{.eyebrow}
 
-- **Three figures and one descriptives table**
-    - A line for change, a bar for counts, a histogram for shape
-    - Each geometry chosen for a different kind of question
-- **They go into your Results and onto your poster**
-- **Plus the rule that turns a picture into a claim**
+- **Three figures and one table of descriptive statistics, built on the example data**
+    - A line chart for change over time, a bar chart for counts, a histogram for shape
+    - Each chart type fits a different kind of question
+- **The same figures, built on your own data, go into your Results and onto your poster**
+- **Plus the rule that turns a picture into a claim: report the effect size**
 
 Expect every first version to look wrong. The fix is usually one line.
 
 ## Rows You Cannot Read
 
 - **The analysis table is complete and unreadable**
-    - Nobody scrolls 35,267 rows and learns anything
-    - The numbers are present, the pattern is not visible
-- **A figure turns a long column into a shape**
+    - Nobody scrolls through 35,267 rows and learns anything
+    - The numbers are present, but the pattern is not visible
+- **A figure turns a long column of numbers into a shape you can see**
 
 Visualization is not decoration applied afterwards. It is part of the analysis.
 
@@ -49,19 +49,18 @@ ggplot(data, aes(x = ..., y = ...)) +
 ```
 
 - **Data:** the table being shown
-- **Aesthetic mappings:** which column goes to which property
-- **Geometry:** the mark used to draw it
+- **Aesthetic mappings:** which column goes to which visual property, such as the x axis or the color
+- **Geometry:** the kind of mark used to draw the data, such as a line or a bar
 
-Swap `geom_line()` for `geom_col()` and the same data becomes bars.
+Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
 
-## Figure 1, a Line for Change
+## Figure 1, a Line Chart for Change Over Time
 
-- **The question:** how did viewership move across the week?
-    - And how was it split across games?
-- **Time on x, a rising and falling y, so a line chart**
-    - A line implies sequence, and real space between points
-    - Right for time, wrong for unordered categories
-- **The data needs shaping first**
+- **The question:** how did viewership move across the week, and how was it split across games?
+- **Time goes on the x axis and a rising and falling value on the y axis, so this is a line chart**
+    - A line implies a sequence, and real distance between the points
+    - A line is right for time and wrong for unordered categories
+- **The data needs shaping before it can be drawn**
 
 ## Shaping the Data
 
@@ -75,17 +74,18 @@ viewers_over_time <- streams %>%
     category  = fct_lump_n(game, n = 5)
   ) %>%
   group_by(six_hour, category) %>%
-  summarise(total_viewers = sum(viewers), .groups = "drop")
+  summarize(total_viewers = sum(viewers), .groups = "drop")
 ```
 
-Bucket into six-hour windows, lump everything past the top five into "Other", and sum
-viewers inside each bucket.
+This code groups the snapshots into six-hour windows, lumps everything past the top five
+games into "Other", and adds up the viewers inside each window.
 
-## Drawing the Line
+## Drawing the Line Chart
 
 ```r
 ggplot(viewers_over_time,
-       aes(x = six_hour, y = total_viewers, color = category)) +
+       aes(x = six_hour, y = total_viewers,
+           color = category)) +
   geom_line(linewidth = 0.9) +
   labs(title = "Concurrent viewers by game category",
        x = "Date (UTC, six-hour buckets)",
@@ -95,27 +95,27 @@ ggplot(viewers_over_time,
   v2v::theme_v2v()
 ```
 
-`theme_v2v()` applies publication-ready fonts, spacing and gridlines in one call.
+`theme_v2v()` applies publication-ready fonts, spacing, and gridlines in one call.
 
-## What Dominates, and Why
+## What Dominates the Chart, and Why
 
-- **The towering line is "Other"**, the catch-all beyond the top five
-    - Substantively: viewership really is spread across a long tail
-    - As a caution: lumping fifty categories guarantees that result
+- **The towering line is "Other", the catch-all for everything beyond the top five games**
+    - As a finding: viewership really is spread across a long tail of games
+    - As a caution: lumping fifty categories into one guarantees that result
 - **There is a plain design cost too**
-    - The five named lines press into the bottom of the panel
+    - The five named lines are pressed into the bottom of the panel
 
-A dominant series crowds out the rest. Noticing that is reading honestly.
+A dominant series crowds out the rest. Noticing that is reading the chart honestly.
 
-## Figure 2, a Bar for Counts
+## Figure 2, a Bar Chart for Counts
 
-- **The question:** when across the day are channels busiest?
-- **Hour of day is 24 discrete categories**, not a continuous sweep
-- **What is measured is a simple count of messages**
-- **Counts across categories call for the bar chart**
-    - One bar each, height is the count, side by side
+- **The question:** at which hours of the day are channels busiest?
+- **Hour of day is 24 separate categories, not a continuous sweep**
+- **What is measured is a simple count of messages in each hour**
+- **Counts across categories call for a bar chart**
+    - One bar per category, the height is the count, the bars sit side by side
 
-## The Code
+## The Code for the Bar Chart
 
 ```r
 chat_by_hour <- analysis %>%
@@ -129,16 +129,16 @@ ggplot(chat_by_hour, aes(x = hour, y = messages)) +
   v2v::theme_v2v()
 ```
 
-`geom_col()` draws a bar whose height is a value already computed.
+`geom_col()` draws a bar whose height is a value you already computed.
 
 ## The Daily Pulse
 
-- **Busiest through UTC midday**, peaking at 13:00 with 2,201
-- **Quietest in the small hours**, bottoming at 03:00 with 833
-- **A swing of well over two to one**
-- **Not mysterious:** the 2018 audience sat in the Americas and Europe
+- **The example chat is busiest through UTC midday, peaking at 13:00 with 2,201 messages**
+- **It is quietest in the small hours, bottoming out at 03:00 with 833 messages**
+- **That is a swing of well over two to one**
+- **The pattern is not mysterious: the 2018 audience sat in the Americas and Europe**
 
-Twenty-four numbers become a rhythm in one glance.
+Twenty-four numbers become a rhythm you can read in one glance.
 
 ## Effect Sizes, and Their Standing
 
@@ -146,11 +146,11 @@ Twenty-four numbers become a rhythm in one glance.
 >
 > Lakens (2013, p. 1)
 
-- **Every figure showing a comparison must report its effect size**
+- **Every figure that shows a comparison must report its effect size**
 - **A taller bar is a visual impression, not a claim**
-- **The effect size gives magnitude in a scale-invariant unit**
+- **The effect size states the magnitude of a difference in a unit that does not depend on the scale**
 
-## The Most Important Outcome {.discuss}
+## Exercise: The Most Important Outcome {.discuss}
 
 [Lakens (2013)]{.eyebrow}
 
@@ -158,20 +158,21 @@ Twenty-four numbers become a rhythm in one glance.
 >
 > Lakens (2013, p. 1)
 
-- Most important to whom?
-- Your field reports *p* first. Why?
-- What would change if journals inverted that?
+Answer each in writing:
+
+- Lakens says effect sizes are the most important outcome. Name the reader for whom that is true, and say why
+- Articles in your field usually report *p* before the effect size. Give one reason that habit persists
+- Describe one thing that would change in your field if journals required the effect size first
 
 ## Figure 3, a Histogram for Shape
 
-- **The central question:** how long is a chat message?
-    - And does the answer depend on the kind of channel?
-- **Not a total and not a trend, but a distribution**
-    - Where values cluster, and where they thin
-- **The histogram slices the range into equal bins**
-- **Two overlaid**, so the shapes compare directly
+- **The central question of the example study:** how long is a chat message, and does the answer depend on the kind of channel?
+- **The answer is not a total and not a trend. It is a distribution**
+    - Where the values cluster, and where they thin out
+- **A histogram slices the range of a numeric variable into equal bins and counts the values in each**
+- **Two histograms overlaid let the two shapes be compared directly**
 
-## The Code
+## The Code for the Histogram
 
 ```r
 msglen <- analysis %>%
@@ -179,41 +180,43 @@ msglen <- analysis %>%
   mutate(length_shown = pmin(message_length, 120))
 
 ggplot(msglen, aes(x = length_shown, fill = is_gaming)) +
-  geom_histogram(binwidth = 5, position = "identity", alpha = 0.55) +
+  geom_histogram(binwidth = 5, position = "identity",
+                 alpha = 0.55) +
   labs(x = "Message length (characters, capped at 120)",
        y = "Messages", fill = "Gaming channel") +
   v2v::scale_fill_v2v() +
   v2v::theme_v2v()
 ```
 
-Drop the unlabeled messages, cap the displayed length, overlay at partial transparency.
+The code drops the unlabeled messages, caps the displayed length at 120 characters, and
+overlays the two groups at partial transparency.
 
 ## Two Choices You Must Disclose
 
-- **`binwidth = 5` covers five characters per bar**
-    - Wider smooths the shape, narrower roughens it
-    - The number is a judgment you report
-- **`pmin(message_length, 120)` caps the display**
-    - Twitch's real limit is 500, so the last bar is a pile-up
-    - Capping keeps the bulk legible
+- **`binwidth = 5` makes each bar cover five characters**
+    - A wider bin smooths the shape and a narrower bin roughens it
+    - The bin width is a judgment, so you report it
+- **`pmin(message_length, 120)` caps the display at 120 characters**
+    - Twitch's real limit is 500 characters, so the last bar is a pile-up of everything longer
+    - Capping keeps the bulk of the data legible
 
-An unannounced cap is a quiet distortion. The axis label says so.
+An unannounced cap is a quiet distortion. The axis label states the cap.
 
 ## What the Shape Shows
 
 - **Both groups share one shape: heavily right-skewed**
     - A tall stack of very short messages on the left
-    - A long thin tail to the right
-- **Twitch chat is mostly brief**, a word or an emote
+    - A long thin tail of longer messages to the right
+- **Most Twitch chat messages are brief: a word or an emote**
 
-The most important thing the histogram reveals, and invisible in any summary number.
+The skew is the most important thing the histogram reveals, and no summary number can show it.
 
-## The Descriptives
+## The Descriptive Statistics
 
 ```r
 msglen %>%
   group_by(is_gaming) %>%
-  summarise(
+  summarize(
     n      = n(),
     mean   = mean(message_length, na.rm = TRUE),
     median = median(message_length, na.rm = TRUE),
@@ -223,7 +226,8 @@ msglen %>%
   v2v::pretty_table()
 ```
 
-Split by gaming status and compute the four numbers a Results section needs.
+This code splits the messages by gaming status and computes the four numbers a Results
+section needs: the count (n), the mean, the median, and the standard deviation (sd).
 
 ## The Numbers
 
@@ -231,56 +235,56 @@ Split by gaming status and compute the four numbers a Results section needs.
 - **Gaming:** n 31,309, mean 28.49, median 17, sd 38.47
 
 Read the **means** and non-gaming chat is longer. Read the **medians**, 16 against 17, and
-they are all but identical, pointing the other way.
+the two groups are all but identical, pointing the other way.
 
-## When Mean and Median Disagree
+## When the Mean and the Median Disagree
 
-- **The mean is sensitive to a long tail, the median is not**
+- **The mean is sensitive to a long tail; the median is not**
     - A few very long messages lift the average
-    - The middle value is untouched
-- **Non-gaming has the heavier tail**, and its sd records it
-- **The gap in means is the tail's work**
+    - The middle value is untouched by them
+- **Non-gaming chat has the heavier tail, and its larger standard deviation records that**
+- **The gap in means is the work of the tail, not of the typical message**
 
-Lean on the mean alone and you misreport a typical message.
+Report the mean alone and you misreport what a typical message looks like.
 
-## What to Report, and When
+## Which Effect Size to Report
 
-- **Two group means:** **Cohen's *d*** with a 95% confidence interval
-- **A cross-tabulation:** **Cramer's *V***
-- **A correlation:** ***r*** and its confidence interval
-- **`run_t_test()` and `run_chi_square()` return caption-ready output**
+- **A difference between two group means:** **Cohen's *d*** with a 95% confidence interval
+- **A cross-tabulation of two categorical variables:** **Cramer's *V***
+- **A correlation between two numeric variables:** ***r*** and its confidence interval
+- **`run_t_test()` and `run_chi_square()` return output ready to paste into a caption**
 
-Put the effect size in the caption or a companion table, never a footnote.
+Put the effect size in the caption or in a companion table, never in a footnote.
 
 ## Figures Other People Can Read
 
 - **Roughly one in twelve men has a color-vision deficiency**
-    - Choose a colorblind-safe palette
+    - Choose a colorblind-safe palette, such as `scale_colour_v2v()`
     - Do not let color carry the message alone
-    - Vary line type, or split into panels
-- **Alt text is what a screen-reader user gets instead**
-    - With none, the figure is simply missing
+    - Vary the line type, or split the groups into panels
+- **Alt text is what a screen-reader user gets instead of the figure**
+    - With no alt text, the figure is simply missing for that reader
 
-State the chart type, the axes, and the takeaway, in `fig-alt`.
+Alt text states the chart type, the axes, and the takeaway. In Quarto it goes in `fig-alt`.
 
 ## Checkpoint
 
 You should now have:
 
 - Three rendered figures, each ending in `v2v::theme_v2v()`
-- A descriptives table with n, mean, median, and sd
-- `fig-alt` text written for all three
-- The binwidth and the cap named in your labels or captions
-- One sentence per figure, ready to paste into Results
+- A table of descriptive statistics with n, mean, median, and sd
+- `fig-alt` text written for all three figures
+- The bin width and the cap named in your labels or captions
+- One sentence per figure, ready to paste into your Results
 
 ## Before Week 13
 
-- **Submit** Describing Data [R], 100 points
-    - Figures, descriptives, alt text, and the disclosed choices
-- **Read** Chapter 13 with the graduate toggle on
+- **Due Monday, November 16, 11:59 PM:** Describing Data in R, 100 points
+    - The figures, the descriptive statistics, the alt text, and the disclosed choices
+- **Read Chapter 13**
     - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"
-- **Write** a journal entry, 450 to 500 words
+- **Write a journal entry, 450 to 500 words**
 
-The histogram left a precise question. Week 13 answers it.
+The histogram left a precise question: is the gap between the groups real or chance? Week 13 answers it.
 
 ## Questions, Comments, or Concerns? {.titlecard}

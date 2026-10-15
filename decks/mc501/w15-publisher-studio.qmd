@@ -13,37 +13,37 @@ format:
 
 ## Today's Agenda
 
-- A report that rebuilds itself
-- IMRaD, and the three transparency markers
+- A report that rebuilds itself from the code
+- IMRaD, and the three transparency markers the Methods must carry
 - Two studio blocks: the paper, then the poster
-- Publishing, and the checks that run first
+- Publishing the site, and the checks that run before it goes live
 
 ## The Last Meeting
 
 [Studio session]{.eyebrow}
 
-- **Two working blocks:** the White Paper, then the poster
-    - Short input from me between them, the rest is yours
-    - I am circulating all evening
-- **What we build today is what you submit**
-- **Leave with a rendered site, a layout, and a reflection**
+- **Two working blocks: the White Paper, then the poster**
+    - Short input between them; the rest of the evening is your working time
+    - Help is in the room all evening
+- **What you build tonight is what you submit**
+- **Leave with a rendered site, a poster layout, and a draft reflection**
 
 ## Done, and Not Finished
 
 - **The study has every hard part behind it**
-    - A question, a theory, a reliability-tested codebook
-    - A defensible sample, a clean dataset, three figures, a finding
-- **And it lives in pieces**
+    - A question, a theory, and a reliability-tested codebook
+    - A defensible sample, a clean dataset, three figures, and a finding
+- **And it still lives in pieces**
     - A codebook here, a script there, output that scrolled past
 
-A study scattered across a dozen files is raw material. Today gives it a form.
+A study scattered across a dozen files is raw material. Tonight gives it a form.
 
 ## A Report That Rebuilds Itself
 
-- **The ordinary way is quietly fragile**
-    - Run, copy numbers, screenshot figures, write around them
-    - Change one rule and every pasted number is stale
-    - Nothing in the document says so
+- **The ordinary way to write up a study is quietly fragile**
+    - Run the analysis, copy the numbers, screenshot the figures, write around them
+    - Change one coding rule and every pasted number is stale
+    - Nothing in the document tells you so
 - **The alternative: put the analysis inside the document**
     - A **Quarto document** interleaves prose with live code chunks
 
@@ -75,41 +75,41 @@ time rather than pasted in.
 
 ## Two Payoffs That Matter
 
-- **The report cannot drift**, because it is the analysis
+- **The report cannot drift from the analysis, because the report is the analysis**
 - **The report can be checked**
-    - Anyone with the source and data renders the same results (Peng, 2011)
+    - Anyone with the source files and the data renders the same results (Peng, 2011)
 
 The idea predates Quarto and R. Runnable code and its prose in one document is what Knuth
 named literate programming in 1984, and the "one click" is the render button.
 
-## IMRaD, and What Each Section Owes
+## IMRaD, and What Each Section Owes the Reader
 
-- **Introduction:** the question and why it matters, your Research Proposal
-- **Methods:** what was done, in enough detail to repeat
-    - Codebook, sampling, reliability, wrangling
+- **Introduction:** the question and why it matters, built from your Research Proposal
+- **Methods:** what was done, in enough detail for someone else to repeat it
+    - The codebook, the sampling, the reliability check, and the wrangling
 - **Results:** what was found, without interpretation
-    - Figures, means, the statistic with df, p, and effect size
-- **Discussion:** what it means, plus the honest limits
+    - The figures, the means, and the test statistic with its df, p-value, and effect size
+- **Discussion:** what the result means, plus the honest limits
 
-An abstract in front, references at the back.
+An abstract goes in front, and the references at the back.
 
 ## The White Paper, Specifically
 
-- **IMRaD structure, APA 7th edition throughout**
-- **Effect sizes and power statistics**, not only p-values
-- **A pre-registration disclosure** in the Methods
-- **A Discussion that situates the finding** in your literature
+- **IMRaD structure, in APA 7 throughout**
+- **Effect sizes, confidence intervals, and power statistics, not only p-values**
+- **A pre-registration disclosure in the Methods**
+- **A Discussion that situates the finding in your theoretical literature**
 
-Converting results into IMRaD costs something. Ask what is lost, and what must be added.
+Converting your results into IMRaD costs something. Ask what is lost in the conversion, and what must be added.
 
 ## Methods, Three Transparency Markers
 
-1. A **data provenance** statement: where the data came from, and how
-2. A **reliability** report: coefficient, protocol, threshold, and which kind it is
-3. The **pre-registration disclosure**, with its OSF URL
+1. A **data provenance** statement: where the data came from, the date range, and what was excluded and why
+2. A **reliability** report: the statistic, its value, the procedure, the threshold, and the single-coder limitation named as such
+3. The **pre-registration disclosure**, with its OSF URL and every departure from the plan
 
-Each signals that the study meets the standard it claims. Anything beyond the plan is
-labeled **exploratory**.
+Each marker signals that the study meets the standard it claims. Any analysis beyond the
+plan is labeled **exploratory**.
 
 ## What Preregistration Is For
 
@@ -118,9 +118,9 @@ labeled **exploratory**.
 >
 > Nosek et al. (2018, p. 2600)
 
-- **Not a promise of virtue**, but a way of making a distinction legible
-- **Draft your disclosure sentence today**
-    - List your deviations, and say how you report each
+- **Preregistration is not a promise of virtue. It makes one distinction legible: what was planned and what was found afterwards**
+- **Draft your disclosure sentence tonight**
+    - List every departure from your plan, and say how you report each one
 
 ## Where the 200 Points Sit
 
@@ -132,9 +132,9 @@ labeled **exploratory**.
 - **Reproducibility and publication:** 15
 - **Reflection:** 10
 
-Methods carries the most weight because it carries the transparency markers.
+Methods carries the most weight because it carries the three transparency markers.
 
-## Not Only a Threshold {.discuss}
+## Exercise: Not Only a Threshold {.discuss}
 
 [Wasserstein and Lazar (2016)]{.eyebrow}
 
@@ -143,38 +143,40 @@ Methods carries the most weight because it carries the transparency markers.
 >
 > Wasserstein and Lazar (2016, p. 131)
 
-- The word doing the work is *only*
-- What else does your White Paper put beside it?
-- A reader who ignores your p: what convinces them?
+The word doing the work in that sentence is *only*. Answer each in writing:
 
-## One Site, Many Pages
+- Name two things your White Paper reports beside the p-value, such as the effect size or the confidence interval
+- Describe what would convince a reader who ignores your p-value entirely
+
+## One Book, Many Chapters
 
 ```yaml
 project:
-  type: website
-
-website:
-  title: "Twitch Chat Study"
-  navbar:
-    left:
-      - text: "Report"
-        href: index.qmd
-      - text: "Codebook"
-        href: codebook.qmd
+  type: book
+book:
+  title: "White Paper"
+  chapters:
+    - index.qmd
+    - 01-introduction.qmd
+    - 02-methods.qmd
+    - 03-results.qmd
+    - 04-discussion.qmd
+    - 05-reflection.qmd
+    - references.qmd
 ```
 
-`_quarto.yml` names the site and lists its pages, turning a folder of `.qmd` files into
-one navigable site.
+`_quarto.yml` lists the chapters in order. `new_portfolio()` wrote it for you, with the
+codebook and the journal as appendices. Set the title to your own.
 
 ## Studio Block One
 
 [White Paper]{.eyebrow}
 
-- **Get `index.qmd` rendering**, even if it is mostly headings
-- **Move your Results in first**, since you already have it
-- **Replace every pasted number** with an inline `r` expression
-- **Replace every pasted figure** with a chunk that produces it
-- **Then write the Discussion paragraph** reporting size and significance
+- **Get `index.qmd` rendering, even if it is mostly headings**
+- **Move your Results section into `03-results.qmd` first, since you already have it**
+- **Replace every pasted number with an inline `r` expression**
+- **Replace every pasted figure with a chunk that produces it**
+- **Then write the Discussion paragraph that reports both the size and the significance of your result**
 
 ## Going Live
 
@@ -183,39 +185,39 @@ v2v::deploy_portfolio()
 ```
 
 ```
-Pre-flight checks
-  renv library in sync ......... ok
-  no uncommitted changes ....... ok
-  _quarto.yml valid ............ ok
-
-Rendering 4 pages ... done
-Live at: https://username.github.io/twitch-chat-study/
+── Pre-flight checks ──
+✔ renv library in sync
+✔ no uncommitted changes
+✔ _quarto.yml valid
+ℹ Rendering 9 pages ... done
+ℹ Publishing to GitHub Pages ... done
+✔ Portfolio live on GitHub Pages.
 ```
 
 ## The Three Pre-Flight Checks
 
-- **renv in sync:** built with the versions the source declares
-- **No uncommitted changes:** live matches what is saved
-- **`_quarto.yml` valid:** the render will not fail partway
+- **renv in sync:** the site is built with the package versions the source declares
+- **No uncommitted changes:** the live site matches what is saved
+- **`_quarto.yml` valid:** the render will not fail partway through
 
-Each heads off a demoralizing failure, the last being a collapse the night a portfolio is
-due. The checks exist so the last step of a long study is the calm one.
+Each check heads off one demoralizing failure, the worst being a collapse the night the
+portfolio is due. The checks exist so the last step of a long study is the calm one.
 
 ## The Poster
 
-- **36 by 24 inches**, landscape orientation
-- **Title, authors, institution**, and a 100-word abstract
-- **Background and hypotheses**, then condensed methods
-- **Key results** with one or two `theme_v2v()` figures
-- **Discussion and implications**, plus a **QR code**
+- **36 by 24 inches, in landscape orientation**
+- **Title, authors, and institution, plus a 100-word abstract**
+- **Background and hypotheses, then the methods in condensed form**
+- **Key results, with one or two `theme_v2v()` figures**
+- **Discussion and implications, plus a QR code to your pre-registration or portfolio**
 
 ## What Earns Space on a Poster
 
-- **A ninety-second pitch**, not a paper at a larger font
+- **A poster is a ninety-second pitch, not a paper at a larger font**
 - **Pick the one figure that lands the finding in thirty seconds**
-    - Give it the most space on the board
+    - Give that figure the most space on the board
 - **Cut every sentence that shows effort rather than result**
-- **Numbers survive, hedges do not**
+- **Numbers survive the cut. Hedges do not**
 
 Your reader is standing up, holding a drink, four feet away.
 
@@ -223,29 +225,29 @@ Your reader is standing up, holding a drink, four feet away.
 
 [Poster]{.eyebrow}
 
-- **Sketch the layout on paper first**, in blocks, before software
-- **Place your chosen figure**, then build the text around it
-- **Write the 100-word abstract last**, once the blocks exist
-- **Generate the QR code** from the URL the deploy gave you
-- **Read your title aloud**, and cut it if it takes two breaths
+- **Sketch the layout on paper first, in blocks, before opening any software**
+- **Place your chosen figure, then build the text around it**
+- **Write the 100-word abstract last, once the blocks exist**
+- **Generate the QR code from the URL the deploy gave you**
+- **Read your title aloud, and cut it if it takes two breaths**
 
 ## Common Failures in the Last Week
 
-- **Rendering on your machine and nowhere else**, because renv drifted
-- **A figure that vanishes in the site**
-    - Its chunk depends on an object made in your console
-- **A poster exported at screen resolution**, printed at 36 inches
-- **A QR code pointing at a private repository**
+- **The site renders on your machine and nowhere else, because renv drifted**
+- **A figure vanishes from the site**
+    - Its chunk depends on an object that exists only in your console
+- **The poster is exported at screen resolution and printed at 36 inches, so it is blurry**
+- **The QR code points at a private repository**
 
-Test the whole chain today, on a machine you did not build it on.
+Test the whole chain tonight, on a machine you did not build it on.
 
 ## The Reflection
 
 - **One paragraph, and the portfolio is incomplete without it**
     - What turned out harder than expected
-    - Where a coding rule proved ambiguous in practice
     - What the dataset could not answer, and why
-- **Resist the bland version and the anxious one**
+    - What a second attempt would change
+- **Avoid both the bland version ("it went well") and the anxious version ("it all went wrong")**
 
 A reflection is evidence of judgment, not an apology.
 
@@ -261,10 +263,10 @@ You should have:
 
 ## From Vibes to Variables
 
-- **A question became a design, and a design became data**
-- **Data became figures and a test**
+- **A question became a design, and the design became data**
+- **The data became figures and a test**
 - **All of it became a site another person can check and extend**
-- **The dataset happened to be Twitch chat**, and nothing depended on that
+- **The shared example happened to be Twitch chat. Nothing in the method depended on that, and your own study proves it**
 
 The distance from vibes to variables is the whole of research methods, and you have now
 walked it once.
@@ -273,10 +275,10 @@ walked it once.
 
 [Final deadline]{.eyebrow}
 
-- **The White Paper and its poster**, submitted together, 200 points
-- **The published portfolio URL**, live and public
-- **Your reflection paragraph**, included in the portfolio
+- **Due Friday, December 18, 11:59 PM: the White Paper and its poster, 200 points**
+    - The paper as a PDF, the poster as a PDF, and the live URL of your site, all three required
+- **Your reflection paragraph, included in the paper**
 - **Your final journal entry**
-- **My office hours run through finals week**, so bring a draft early
+- **Office hours run through finals week, so bring a draft early**
 
 ## Questions, Comments, or Concerns? {.titlecard}
