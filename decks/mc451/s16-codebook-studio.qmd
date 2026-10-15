@@ -13,179 +13,170 @@ format:
 
 ## Today's Agenda
 
-- What a codebook is, and its five parts
-- Your unit of analysis, in one sentence
-- Four variables, defined twice each
-- Decision rules out of your edge-case log
-- The single-coder note, and the memo
+- What a codebook is, and its six parts
+- One complete codebook, built part by part from the Twitch chat example
+- The mistake each part usually has
+- The single-coder note and the memo
+- What the Codebook and Qualitative Memo contains on October 23
 
-## What We Build Today
+## What Today Is
 
-[Studio session]{.eyebrow}
-
-- **A draft codebook, in a file, saved**
-    - Four variables, not notes about codebooks
-    - It becomes the Codebook and Qual Memo
-    - Later it becomes your White Paper method
-- **Every number traces to a rule you write today**
-- Open your field notes and edge-case log now
+- **Today is a demonstration, not a work session**
+    - You watch one complete codebook get built, one part at a time
+    - Every part is shown as finished text you can copy the shape of
+- **The example is the shared Twitch chat corpus**
+    - Your own codebook uses the same six parts on your own material
+- **Your codebook is written at home, not in this room**
+    - It is due Friday, October 23
 
 ## The Codebook Is the Instrument
 
 - **The complete set of instructions for coding**
     - Not paperwork assembled afterward
-- **Think of it as source code**
-    - It specifies every operation and every conditional
-    - The same input, run twice, gives the same output
+- **Think of it as a recipe**
+    - It states every step and every exception
+    - The same message, coded twice, gets the same value
 - The heart of a content analysis (Neuendorf, 2017)
 
-Its clarity is the strongest predictor of whether two passes agree.
+Its clarity is the strongest predictor of whether two coding passes agree.
 
-## Five Parts
+## The Six Parts
 
-- **Unit of analysis:** what exactly one coded case is
-- **Variables and categories:** what you measure, and the values
+- **Study overview:** the question, the material, and the time period
+- **Unit of analysis:** what exactly one coded item is
+- **Variables:** each defined twice, with a level, values, and edge-case rules
 - **Decision rules:** what to do when a case will not sort
-- **Examples:** two or three prototypes per category
-- **Special cases:** recurring complications, thin at first
+- **Examples:** two or three real cases per category
+- **Single-coder note:** the limitation, the safeguards, and the counterfactual
+
+These six parts are the six graded rows of the codebook. The memo is graded separately.
 
 ## Two Rules for Every Variable
 
 - **Exhaustive:** every case can be coded
     - An "unclassifiable" catch-all guarantees it
-- **Mutually exclusive:** every case fits exactly one
-    - Honest overlap destroys reliability
-- **The fix:** sharper definitions, or a precedence rule
+- **Mutually exclusive:** every case fits exactly one value
+    - Overlap between two values destroys reliability
+- **The fix for overlap:** sharper definitions, or a precedence rule
 
-More than one case in ten in the catch-all means the scheme is incomplete.
+More than one case in ten landing in the catch-all means the scheme is incomplete.
 
-## Step 1, Your Unit of Analysis
+## Part 1, Study Overview
 
-Do this first, right now, in one sentence.
+Three to four sentences. The finished text:
 
-- **"Code the chat" is not a unit of analysis**
-- **This is:** one chat message, one row of `chat_log`
-    - One sender, one message string, one timestamp
-- **A vague unit makes every later count vague**
-- Add the independence clause for each unit
+> This study asks who viewers address when they write in a live Twitch chat. The material
+> is the chat log of one channel's streams. The period is the first two weeks of
+> September 2026. Each message is coded for its target, its length, whether it uses an
+> emote, and whether it asks a question.
 
-## Your Turn {.discuss}
+**The usual mistake:** the overview names the topic but not the time period, so a reader
+cannot say what is being coded or from when.
 
-- We read a few aloud
-- Can the room point at exactly one thing in the data?
-- If your unit is a stream or an hour, how many cases?
-- Is that enough cases to compare two groups?
+## Part 2, Unit of Analysis
 
-## Step 2, Definitions Side by Side
+One sentence, stated once. The finished text:
 
-For each variable, write all five, in this order:
+> The unit of analysis is one chat message: one sender, one message text, one timestamp.
+> Every variable is coded on that one message and on nothing larger.
 
-- **Conceptual:** what it is meant to capture, in the abstract
-- **Operational:** exactly what a coder does to assign a value
-- **Level:** nominal, ordinal, interval, or ratio, matching the values
+- "The chat" is not a unit of analysis
+- "One stream" and "one hour" are units, but each gives very few cases
+- A vague unit makes every later count vague
+
+**The usual mistake:** the unit is one message, but a variable describes the whole stream.
+
+## Part 3, Every Variable Has Five Elements
+
+For each variable, in this order:
+
+- **Conceptual definition:** what it is meant to capture, in the abstract
+- **Operational definition:** exactly what the coder does to assign a value
+- **Level of measurement:** nominal, ordinal, interval, or ratio, matching the values
 - **Coded values:** every one, with what it means, and a catch-all
-- **Two edge-case rules**, each written as a rule
+- **Edge-case rules:** two per variable, each written as a rule
 
-Four variables done properly is the assignment, and a fifth earns nothing extra.
+Four variables done properly is the assignment. A fifth earns nothing extra.
 
-## Which Level?
+## Part 3, Variable 1
 
-Name the level of each, and say what gave it away.
+> **Message target.** *Conceptual:* the intended addressee of the message.
+> *Operational:* the coder reads the message and assigns one value by the address cues
+> it contains. *Level:* nominal. *Values:* **1 streamer** (an at-mention of the channel
+> name, or a second-person reply to something the streamer said); **2 another viewer**
+> (an at-mention of a non-streamer account, or a reply to a specific earlier message);
+> **3 the room** (no specific addressee); **9 unclassifiable**.
+> *Edge cases:* a message with two at-mentions is coded by the first; an emote with no
+> words is coded 3.
 
-1. Whether a comment contains a question: yes or no
-2. A product review's star rating, one to five
-3. The date and time a post went up
-4. The number of words in a headline
-5. Minutes since the stream began
+## Part 3, Variables 2 and 3
 
-The level has to match the coded values: ordered values called nominal is the common slip.
+> **Message length.** *Conceptual:* the verbal extent of the message. *Operational:*
+> the number of characters in the message text, counting spaces and emote names.
+> *Level:* ratio. *Values:* any whole number from 1 upward.
+> *Edge cases:* a deleted message is left blank; a repeated message is counted each time.
 
-## Model Codebook, Variable 1
+> **Contains emote.** *Conceptual:* whether the message uses the channel's emote
+> vocabulary. *Operational:* 1 if the message contains at least one emote name from
+> the project's emote list, otherwise 0. *Level:* nominal. *Values:* 0 no, 1 yes.
+> *Edge cases:* a misspelled emote name counts as 0; an emote inside a quoted message
+> counts as 1.
 
-> **Message target.** *Conceptual:* the intended addressee of the message. *Operational:*
-> after reading the message, the coder assigns one category. *Categories:* **directed at
-> streamer** (at-mention of the channel name, or second-person address responding to the
-> streamer); **directed at another viewer** (at-mention of a non-streamer account, or a
-> reply to a specific prior message); **broadcast to the room** (no specific addressee);
-> **unclassifiable**. *Level:* nominal.
+## Part 3, Variable 4
 
-## Model Codebook, Variables 2 and 3
+> **Asks a question.** *Conceptual:* whether the message requests information from
+> someone. *Operational:* 1 if the message ends with a question mark or opens with who,
+> what, when, where, why, or how, otherwise 0. *Level:* nominal. *Values:* 0 no, 1 yes.
+> *Edge cases:* a question mark used as an emote stands in for is coded 0; a message
+> with a question and a statement is coded 1.
 
-> **Message length.** *Conceptual:* the verbal extent of the message. *Operational:* count
-> of characters in the message string, including spaces and emote tokens. Derived, computed
-> rather than judged. *Level:* ratio.
->
-> **Contains emote.** *Conceptual:* whether the message uses Twitch's emote vocabulary.
-> *Operational:* yes if it contains at least one token from the project's emote list.
-> *Level:* nominal.
+**The usual mistake in Part 3:** the conceptual and operational definitions say the
+same thing, or ordered values are called nominal.
 
-## Run Each Variable Past the Four Failures
+## Part 4, Decision Rules
 
-[Recap from S14]{.eyebrow}
+Rules for the cases that do not sort themselves. The finished text:
 
-Each operational definition below breaks the promise in one of the four ways. Name which, then
-check your own four.
+- **Precedence:** if a message both names the streamer and names a viewer, code the one named first
+- **Emote-only:** an emote with no words is coded 3 the room, unless it carries an at-mention
+- **Copypasta:** a copied block is coded by its content like any other message
+- **Non-English:** a message in another language is coded for target only when an at-mention settles it; otherwise 9
+- **Bots:** a message from a known bot account is coded 9 and listed for possible exclusion
 
-1. **Community strength** in a subreddit: posts per day
-2. **Sincerity** of a review: coded sincere when the writer means it
-3. **Article quality**: how many times it was shared
-4. **Engagement** with a video: the comment count, and nothing else
+## Part 4, A Rule Is Not an Intention
 
-The four: conflating concepts, the unjustified proxy, oversimplification, and the unmeasurable definition.
-
-## Step 3, The Five Decision Rules
-
-From the model codebook:
-
-- **Precedence:** explicit address wins over performance
-- **Emote-only:** broadcast, unless it carries an at-mention
-- **Copypasta:** code by content, like any other message
-- **Non-English:** code target if structure determines it
-- **Bots:** unclassifiable, and noted for possible exclusion
-
-## Write Your Own Rules Now
-
-- **Open the edge-case log, and every entry becomes a rule**
-    - Format: the ambiguous case, then the single action
-    - "Emote-only messages are coded 0" is a rule
+- **A rule names the case, then the single action**
+    - "An emote with no words is coded 3" is a rule
     - "Be careful with emotes" is an intention, and earns nothing
-- **Start with the three you starred**
-    - The ones most likely to go two ways on two different days
-- Aim for four to six rules, and at least two per variable
+- **Every hard case you mention anywhere in the codebook has a rule**
+- **Four to six rules** is the working range, at least two per variable
 
-## Step 4, Examples and Special Cases
+**The usual mistake:** one or two rules for the whole codebook, or a rule that restates a
+definition instead of resolving a conflict.
 
-- **Two or three prototypical cases per category**
-    - Taken from your own material, not invented
-    - An invented example is the gap between Exemplary and Proficient
-- **Examples do double duty**
-    - A reference while you code, and a check when you re-code
-- **Special cases stays thin today**
-    - Leave the heading in the file, empty, as a reminder
+## Part 5, Examples
 
-## Deriving the Manifest Variables
+Two or three real messages per value, copied from the material. The finished text for
+message target:
 
-Message length and emote presence are computed, not judged:
+- **1 streamer:** "@channelname that jump was clean" · "you should try the other route next time"
+- **2 another viewer:** "@viewer22 same, I missed it too" · "replying to the mod: yes it works"
+- **3 the room:** "LETS GO" · "anyone else lagging"
+- **9 unclassifiable:** "ok but" · a single emote posted by a bot
 
-- **Message length** is the number of characters in the message. The operational definition is the count itself; no coder judgment is involved.
-- **Emote presence** is whether the message contains at least one Twitch emote: yes or no.
-- A derived variable still needs an operational definition in the codebook, written as the rule that produces the number.
-- The computing happens later in the course, in R, from the rule you write now.
+Examples do double duty: a reference while coding, and a check when re-coding.
 
-## From Draft to Deliverable
+## Part 5, The Usual Mistake
 
-The Codebook and Qual Memo carries six parts. Four are on your screen already.
+- **An invented example**
+    - A made-up message is the gap between Exemplary and Proficient
+    - The example must come from your own material
+- **One example per value**
+    - One case shows what fits; two or three show where the edge is
+- **Examples for some values only**
+    - A rule without examples is hard to use for anyone who was not in your head
 
-1. **Study overview**, three to four sentences: the question, the corpus, the period
-2. **Unit of analysis**, from Step 1
-3. **Every variable**, from Step 2, with its five elements
-4. **Decision rules**, from Step 3
-5. **Examples**, from Step 4
-6. **The single-coder note**, three short paragraphs
-
-Special cases stays in the file as the empty heading. The memo is a separate part.
-
-## Step 5, The Single-Coder Note
+## Part 6, The Single-Coder Note
 
 - **Paragraph one: you are the only coder, said in those words**
     - Every reliability claim is a claim about your own consistency
@@ -200,12 +191,12 @@ Leaving the limitation out does not hide it. Naming it is part of the grade.
 
 Name at least three you are actually using, each described as what you do.
 
-1. **Inclusion and exclusion rules** for every category, written before coding begins
+1. **Inclusion and exclusion rules** for every value, written before coding begins
 2. **A frozen codebook**, with every later change logged by date and reason
-3. **An ambiguous-case memo**, adjudicated against the written rule rather than by feel
-4. **A fixed coding order**, with source metadata hidden wherever that is possible
+3. **An ambiguous-case memo**, settled against the written rule rather than by feel
+4. **A fixed coding order**, with sender names hidden wherever that is possible
 
-Each one is something a reader can check in your repository.
+Each one is something a reader can check in your project.
 
 ## The Second-Coder Counterfactual
 
@@ -219,52 +210,88 @@ One paragraph describing the study you did not get to run.
 The fourth part is the one that takes thought. It names where your own reading carries the
 result.
 
+## Part 6, The Finished Text
+
+> I am the only coder on this study, so every reliability figure is a measure of my own
+> consistency, not agreement between two people. I re-code ten percent of the messages
+> after a week and report the agreement between my two passes.
+>
+> I wrote inclusion and exclusion rules for every value before coding, froze the codebook
+> before the full pass, and keep an ambiguous-case memo settled against the written rules.
+>
+> With a second coder I would have double-coded 50 messages, trained the coder on 20
+> practice messages, settled disagreements by the written rule, and reported
+> Krippendorff's alpha. Message target is the finding most at risk, because it depends
+> on reading address cues.
+
+**The usual mistake:** describing a second coder as if one were part of the study.
+
 ## The Qualitative Memo
 
 - **200 to 300 words** on the patterns you saw during immersion
-- **Its one job:** explain why the codebook has the categories it has
-    - Each category traces back to something the memo describes seeing
-    - A category you cannot trace back is a category you guessed
+- **Its one job:** explain why the codebook has the values it has
+    - Each value traces back to something the memo describes seeing
+    - A value you cannot trace back is a value you guessed
 - **Source:** your field notes from Chapter 7, not the topic in general
 - It becomes the qualitative half of your results
 
-## Common Problems Today
+**The usual mistake:** a summary of the topic or the plan, with no patterns from your own
+watching or reading.
 
-- **Categories that overlap**
+## Your Unit of Analysis {.discuss}
+
+On paper or in a file, for your own project:
+
+- Write the unit of analysis in one sentence, following the Part 2 shape
+- Name the one thing in your material a coder could point at
+- Keep the sentence; it is the second row of the October 23 codebook
+
+## Common Problems
+
+- **Values that overlap**
     - Hesitating between two means they are not exclusive yet
 - **A latent variable with no observable criteria**
-    - You wrote a concept, not a recipe
+    - A concept was written instead of a recipe
 - **Six variables:** cut to four
-    - Each is a reliability check and a results paragraph
+    - Each one is a reliability check and a results paragraph
 - **A catch-all doing all the work**
-    - Expecting a third unclassifiable means the scheme is wrong
-- **Rules that restate the category**
+    - A third of the cases unclassifiable means the scheme is wrong
+- **Rules that restate the value**
     - A rule resolves a conflict, it does not repeat a definition
-
-Every one of these turns up today. That is why this is a studio.
 
 ## Checkpoint
 
-You should now have a file containing:
+You can now:
 
-- One unambiguous **unit of analysis**
-- **Four variables**, each defined twice, with a level, coded values, and two rules
-- Categories that are exhaustive and mutually exclusive
-- **Four to six decision rules**, each traceable to an observation
-- Two or three **examples** per category from your material, and an empty heading
-- A first draft of the **single-coder note**
+- Name the **six parts** of a codebook and what each one contains
+- Tell a **unit of analysis** from a topic
+- List the **five elements** every variable carries
+- Tell a **decision rule** from an intention
+- Say what the **single-coder note** and the **memo** each have to do
+
+## The Deliverable, October 23
+
+Codebook and Qualitative Memo, 50 points, due Friday, October 23, 11:59 PM, on Blackboard.
+
+| Row | Points |
+|---|---|
+| Codebook: study overview | 3 |
+| Codebook: unit of analysis | 8 |
+| Codebook: every variable, five elements each | 5 |
+| Codebook: decision rules | 7 |
+| Codebook: examples | 5 |
+| Codebook: single-coder note | 7 |
+| Qualitative memo, 200 to 300 words | 15 |
+
+The rubric PDF is on the Hub: aura-lab.siue.edu/v2v-hub/resources/rubrics/MC451-rubric-codebook-and-qualitative-memo.pdf
 
 ## Before Next Time
 
 - **Due Friday, October 16, 11:59 PM:** Definitions Practice
     - Run it through Codebook Check on the Hub before you submit
-- **Due Friday, October 23, 11:59 PM:** Codebook and Qual Memo
-    - Start from `_templates/codebook.md` in your workspace
-- **Finish and commit the codebook tonight**
-    - While today's decisions are still in your head
-- **Hand it to someone who was not here**
-    - No walk-through, and ask for ten coded messages
-    - A clarity test, not your reliability figure; every hesitation is a missing rule
-- **Read** Chapter 9, and bring a laptop with R installed
+- **Due Friday, October 23, 11:59 PM:** Codebook and Qualitative Memo
+    - Write it in the six parts shown today, then the memo
+    - Run it through Codebook Check on the Hub before you submit
+- **Read** Chapter 9
 
 ## Questions, Comments, or Concerns? {.titlecard}
