@@ -279,7 +279,8 @@ You should now have:
 
 ## Before Week 13
 
-- **Due Monday, November 16, 11:59 PM:** Describing Data in R, 100 points
+- **Due Monday, November 16, 11:59 PM:** Data Wrangling in R, 50 points
+- **Due Monday, November 23, 11:59 PM:** Describing Data in R, 100 points
     - The figures, the descriptive statistics, the alt text, and the disclosed choices
 - **Read Chapter 13**
     - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"

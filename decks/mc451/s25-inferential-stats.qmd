@@ -20,7 +20,7 @@ format:
 
 ## Where We Left Off
 
-[Inferencing Data, 100 points, due Friday, November 20, 11:59 PM]{.eyebrow}
+[Inferencing Data, 100 points, due Friday, December 4, 11:59 PM]{.eyebrow}
 
 - **In the example data, gaming channels averaged 28.49 characters per message**
 - **Non-gaming channels averaged 33.70, a gap of about five characters**
@@ -183,7 +183,8 @@ You should now be able to:
 
 ## Before Next Time
 
-- **Due Friday, November 20, 11:59 PM: Inferencing Data in R, 100 points**
+- **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
+- **Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points**
 - **Thursday is a lab: you run your own test with help in the room**
     - Bring your `analysis` table and last week's summary table
 - **Re-read the Chapter 13 section on significance against importance**

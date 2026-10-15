@@ -448,9 +448,9 @@ poster are assigned Week 13 and due at Finals.
 ## Week 5 and Week 9 are the pinch points
 
 Week 5 stacks the Annotated Manuscripts with CITI Certification, and Week 9
-carries the Extended Codebook and Reliability Protocol (75 pts) one week before
-the Sampling Plan and Pilot (75 pts). Those four weeks in the middle of the term
-carry 200 points between them. Start the CITI certification in Week 1; it is the
+carries the Extended Codebook and Reliability Protocol (75 pts) two weeks before
+the Sampling Plan and Pilot (75 pts). Weeks 5, 9, and 11 carry 200 points between
+them. Start the CITI certification in Week 1; it is the
 one item here that is pure clock time and can be finished early.
 :::
 
@@ -470,12 +470,12 @@ The one exception is the White Paper and poster in finals week.
 | 7 | Oct 7 | Ch 7 manifest vs. latent; Ch 8 operationalization (Reading: Hayes & Krippendorff (2007))| Research Proposal |
 | 8 | Oct 14 | Ch 8 measurement, reliability & validity; building the codebook (Reading: Lombard et al. (2002))| Definitions Practice |
 | 9 | Oct 21 | Ch 9 [R] coding the codebook; reading data vs. the codebook (Reading: Munafo et al. (2017), revisit)| Extended Codebook & Reliability Protocol |
-| 10 | Oct 28 | Ch 10 The Sample; the pilot; kappa / alpha (Reading: Hayes & Krippendorff (2007), revisit)| Sampling Plan & Pilot |
-| 11 | Nov 4 | Ch 11 [R] Wrangling the Data (Reading: Wickham (2014))| Data Wrangling [R] |
-| 12 | Nov 11 | Ch 12 [R] Describing: descriptive statistics + graphics (Reading: Lakens (2013))| Describing Data [R] |
-| 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* (Reading: Lakens et al. (2018))| Inferencing Data [R] |
+| 10 | Oct 28 | Ch 10 The Sample; the pilot; kappa / alpha (Reading: Hayes & Krippendorff (2007), revisit)| |
+| 11 | Nov 4 | Ch 11 [R] Wrangling the Data (Reading: Wickham (2014))| Sampling Plan & Pilot |
+| 12 | Nov 11 | Ch 12 [R] Describing: descriptive statistics + graphics (Reading: Lakens (2013))| Data Wrangling [R] |
+| 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* (Reading: Lakens et al. (2018))| Describing Data [R] |
 | 14 | Nov 25 | **Thanksgiving Break, Nov 23 to 29, no class** | |
-| 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio (Reading: Wasserstein & Lazar (2016))| |
+| 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio (Reading: Wasserstein & Lazar (2016))| Inferencing Data [R] |
 | 16 | Dec 9 | **Work Session: open lab / support** | |
 | 17 | Dec 16 | **Finals Week** | White Paper (+ conference poster) |
 

@@ -170,6 +170,7 @@ Before you leave today you should have:
 
 ## Before Finals Week
 
+- **Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points**
 - **Due Friday, December 18, 11:59 PM: White Paper, the PDF and the live URL**
 - **Work the must-fix list first. The rest is optional**
 - **Re-render after every change, so every number stays computed, not typed**

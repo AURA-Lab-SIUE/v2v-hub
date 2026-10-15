@@ -311,7 +311,8 @@ You should now have:
 
 ## Before Week 12
 
-- **Due Monday, November 9, 11:59 PM:** Data Wrangling in R, 50 points
+- **Due Monday, November 9, 11:59 PM:** Sampling Plan and Pilot, 75 points
+- **Due Monday, November 16, 11:59 PM:** Data Wrangling in R, 50 points
     - The script, its comments, and three justifications
 - **Read Chapter 12**
     - Plus the assigned article: **Lakens (2013)** on effect sizes

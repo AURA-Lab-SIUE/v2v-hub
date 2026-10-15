@@ -20,7 +20,7 @@ format:
 
 ## Today's Job
 
-[Inferencing Data, 100 points, due Friday, November 20, 11:59 PM]{.eyebrow}
+[Inferencing Data, 100 points, due Friday, December 4, 11:59 PM]{.eyebrow}
 
 - **Tuesday the test ran on the example data; today you run it on your own data**
     - One test, correctly chosen, correctly read, honestly reported
@@ -170,7 +170,8 @@ You should now have, saved in your project:
 
 ## Before Next Time
 
-- **Due Friday, November 20, 11:59 PM: Inferencing Data in R, 100 points**
+- **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
+- **Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points**
 - **Read Chapter 14, "The one-click report," before Tuesday**
 - **Tuesday is The Publisher: assembling the whole study into one document**
     - Bring your figures and your test output

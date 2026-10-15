@@ -184,6 +184,7 @@ You should now have:
 - **Read Chapter 11, Wrangling the Data**
 - **Next week you work in R on the data itself**
     - Unreadable timestamps, missing variables, and two tables that need joining
-- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, and Data Wrangling in R**
+- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points**
+- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
 
 ## Questions, Comments, or Concerns? {.titlecard}

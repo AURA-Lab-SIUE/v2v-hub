@@ -311,7 +311,7 @@ You should now have:
 - **Due Monday, October 26, 11:59 PM:** Extended Codebook and Reliability Protocol
 - **Read Chapter 10, on sampling and on testing the codebook with a pilot**
     - Re-read **Hayes and Krippendorff (2007)**, with your pilot in mind
-- **Due Monday, November 2, 11:59 PM:** Sampling Plan and Pilot
+- **Due Monday, November 9, 11:59 PM:** Sampling Plan and Pilot
     - Bring the codebook revisions first contact prompted, committed to your project
 - **Write a journal entry, 450 to 500 words**
 

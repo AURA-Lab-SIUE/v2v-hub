@@ -271,10 +271,11 @@ You should have:
 The distance from vibes to variables is the whole of research methods, and you have now
 walked it once.
 
-## Due in Finals Week
+## Before Finals Week
 
-[Final deadline]{.eyebrow}
+[Two deadlines left]{.eyebrow}
 
+- **Due Monday, December 7, 11:59 PM: Inferencing Data in R, 100 points**
 - **Due Friday, December 18, 11:59 PM: the White Paper and its poster, 200 points**
     - The paper as a PDF, the poster as a PDF, and the live URL of your site, all three required
 - **Your reflection paragraph, included in the paper**

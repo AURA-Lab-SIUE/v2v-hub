@@ -184,6 +184,7 @@ A researcher who can say where their study is weak understands it.
 - **Bring a rendered draft, not notes toward one**
     - It does not have to be finished. It has to render
 - **Bring your public URL, or the error message that is stopping you**
+- **Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points**
 - **Due Friday, December 18, 11:59 PM: White Paper, 250 points**
 
 ## Questions, Comments, or Concerns? {.titlecard}

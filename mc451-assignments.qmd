@@ -41,9 +41,9 @@ consumes, and the White Paper is those components assembled and argued.
 | Friday, October 16 | [Definitions Practice](#definitions-practice) | Phase III | 25 |
 | Friday, October 23 | [Codebook and Qualitative Memo](#codebook-and-qualitative-memo) | Phase III | 50 |
 | Friday, November 6 | [Sampling Plan and Pilot](#sampling-plan-and-pilot) | Phase III | 75 |
-| Friday, November 6 | [Data Wrangling in R](#data-wrangling-in-r) | Phase IV | 50 |
-| Friday, November 13 | [Describing Data in R](#describing-data-in-r) | Phase IV | 75 |
-| Friday, November 20 | [Inferencing Data in R](#inferencing-data-in-r) | Phase IV | 100 |
+| Friday, November 13 | [Data Wrangling in R](#data-wrangling-in-r) | Phase IV | 50 |
+| Friday, November 20 | [Describing Data in R](#describing-data-in-r) | Phase IV | 75 |
+| Friday, December 4 | [Inferencing Data in R](#inferencing-data-in-r) | Phase IV | 100 |
 | Friday, December 18 | [White Paper](#white-paper) | Phase V | 250 |
 | Every week | [Weekly reading journal](#weekly-reading-journal), 14 entries | Phase I | 140 |
 | End of term | Journal consistency | Phase I | 10 |
@@ -283,6 +283,8 @@ The [Project Prospectus template](mc451-prospectus-template.qmd) goes through ea
 
 **What you submit:** one document, about one page, roughly 250 to 400 words. Seven headed sections.
 
+**Worked example:** [Project Prospectus worked example (PDF)](resources/examples/MC451-example-project-prospectus.pdf). A finished submission, so you can see the form before you write yours.
+
 **Requirements**
 
 1. **A descriptive title** that hints at your key variables.
@@ -332,6 +334,8 @@ Turn your constructs into things a stranger could measure.
 
 **Rubric:** [Definitions Practice rubric (PDF)](resources/rubrics/MC451-rubric-definitions-practice.pdf). It lists the five parts every variable needs and the points for each.
 
+**Worked example:** [Definitions Practice worked example (PDF)](resources/examples/MC451-example-definitions-practice.pdf). A finished submission, so you can see the form before you write yours.
+
 </details>
 
 ### Codebook and Qualitative Memo {#codebook-and-qualitative-memo}
@@ -372,7 +376,7 @@ Decide what you will code, then prove the codebook survives contact with it.
 
 ### Data Wrangling in R {#data-wrangling-in-r}
 
-**50 points. Due Friday, November 6, 11:59 PM.** *(Week 11)*
+**50 points. Due Friday, November 13, 11:59 PM.** *(Week 12)*
 
 Build the analysis-ready table from the raw one.
 
@@ -387,7 +391,7 @@ Build the analysis-ready table from the raw one.
 
 ### Describing Data in R {#describing-data-in-r}
 
-**75 points. Due Friday, November 13, 11:59 PM.** *(Week 12)*
+**75 points. Due Friday, November 20, 11:59 PM.** *(Week 13)*
 
 Say what is in the data before you test anything.
 
@@ -402,7 +406,7 @@ Say what is in the data before you test anything.
 
 ### Inferencing Data in R {#inferencing-data-in-r}
 
-**100 points. Due Friday, November 20, 11:59 PM.** *(Week 13)*
+**100 points. Due Friday, December 4, 11:59 PM.** *(Week 15)*
 
 Test the relationship, and report how big it is.
 

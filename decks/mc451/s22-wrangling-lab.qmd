@@ -203,7 +203,8 @@ You should now have:
 - **Rerun your script from a clean session and confirm it reproduces the same table**
 - **Comment your wrangling decisions in the script**
     - A reviewer will ask why you excluded what you excluded
-- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, and Data Wrangling in R**
+- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points**
+- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
 - **Read Chapter 12, Describing the Data**
 
 ## Questions, Comments, or Concerns? {.titlecard}

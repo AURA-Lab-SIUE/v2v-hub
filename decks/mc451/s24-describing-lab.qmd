@@ -20,7 +20,7 @@ format:
 
 ## Today's Job
 
-[Describing Data, 75 points, due Friday, November 13, 11:59 PM]{.eyebrow}
+[Describing Data, 75 points, due Friday, November 20, 11:59 PM]{.eyebrow}
 
 - **Tuesday you watched three figures being built on the example data**
 - **Today you build three figures on your own variables, with help in the room**
@@ -194,7 +194,8 @@ You should now have, saved in your project:
 
 ## Before Next Time
 
-- **Due Friday, November 13, 11:59 PM: Describing Data in R, 75 points**
+- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
+- **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
 - **Read Chapter 13, "Making the call," before Tuesday**
 - **Tuesday we answer the questions your figures only framed**
     - Bring the summary table you built today

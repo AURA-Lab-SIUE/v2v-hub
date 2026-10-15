@@ -48,7 +48,7 @@ The qualitative work you do here, immersing yourself in the data and noticing pa
 | Ch 9: The rulebook and first workspace | Building and coding the codebook in R |
 | Ch 10: The sample | Sampling strategies; the pilot; kappa and alpha |
 
-Your course schedule is the authority on which week each chapter lands: [MC 451](../../syllabus.qmd), [MC 501](../../mc501-syllabus.qmd). Every assignment is due Friday of the week listed, by 11:59 PM.
+Your course schedule is the authority on which week each chapter lands: [MC 451](../../syllabus.qmd), [MC 501](../../mc501-syllabus.qmd). In MC 451 every assignment is due Friday of the week listed, by 11:59 PM. In MC 501 it is due the Monday after that week, by 11:59 PM.
 
 ---
 
@@ -95,12 +95,6 @@ Submit your complete codebook (study overview, unit of analysis, all variables w
 ### Sampling Plan and Pilot (75 pts), Week 11
 
 Design your sampling strategy (search terms, date range, method) and pilot test your codebook on 10 to 20 items. Document edge cases, coding decisions, and any revisions.
-
-::: {.callout-important}
-## Week 11 carries 125 points in MC 451
-
-This assignment is due the same Friday as **Data Wrangling** (50 pts) in the Analyst phase, so Week 11 is the heaviest week of the term. The extra week exists so the pilot is real work rather than rushed work. Draft the sampling plan during Week 10.
-:::
 
 :::
 
@@ -150,7 +144,7 @@ Your codebook adds a **formal reliability protocol**: the planned sample size fo
 
 ---
 
-### Sampling Plan and Pilot, 20 to 30 items (75 pts), Week 10
+### Sampling Plan and Pilot, 20 to 30 items (75 pts), Week 11
 
 Design your sampling strategy (search terms, date range, method) and pilot test your codebook on **20 to 30 items**, a large enough subset to compute a meaningful reliability statistic. Document edge cases, coding decisions, the alpha you obtained, and any revisions the pilot forced.
 

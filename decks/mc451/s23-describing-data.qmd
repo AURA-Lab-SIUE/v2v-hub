@@ -20,7 +20,7 @@ format:
 
 ## What We Build Today
 
-[Describing Data, 75 points, due Friday, November 13, 11:59 PM]{.eyebrow}
+[Describing Data, 75 points, due Friday, November 20, 11:59 PM]{.eyebrow}
 
 - **Chapter 11 left you an `analysis` table of about 35,000 rows**
     - Nobody reads 35,000 rows, so a figure is how you make the data visible
@@ -200,7 +200,8 @@ If a figure will not render, check that every `+` ends the line above it.
 
 ## Before Next Time
 
-- **Due Friday, November 13, 11:59 PM: Describing Data in R, 75 points**
+- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
+- **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
 - **Thursday is a lab: you build these three figures on your own variables**
     - Bring your `analysis` table and your research question
 - **Read Chapter 12, especially the section on readable figures**

@@ -198,7 +198,8 @@ Still missing: the gaming label. That is Thursday.
 ## Before Thursday
 
 - **Run today's transformations on your own project, then save the script**
-- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, and Data Wrangling in R**
+- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points**
+- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
 - **Thursday: the gaming label, the join, and the rows a join leaves behind**
 - **Bring your script, because Thursday picks it up where it stops**
 

@@ -224,9 +224,9 @@ These carry straight into the prospectus, mostly into the questions and the meth
 > - Definitions Practice, Friday, October 16: written definitions of repair strategy and of what a review blames.
 > - Codebook and Qualitative Memo, Friday, October 23: categories with rules and examples, built from the first 30 replies I read.
 > - Sampling Plan and Pilot, Friday, November 6: restaurant list fixed, collection dates logged, 20 replies coded and timed.
-> - Data Wrangling in R, Friday, November 6: pilot codes loaded and cleaned in R.
-> - Describing Data in R, Friday, November 13: full set of 150 replies coded; counts of each strategy by what the review blames.
-> - Inferencing Data in R, Friday, November 20: the test of H1.
+> - Data Wrangling in R, Friday, November 13: pilot codes loaded and cleaned in R.
+> - Describing Data in R, Friday, November 20: full set of 150 replies coded; counts of each strategy by what the review blames.
+> - Inferencing Data in R, Friday, December 4: the test of H1.
 > - White Paper, Friday, December 18: this prospectus revised into the introduction, plus method, results and discussion.
 >
 > *Why it is stronger:* every line has an assignment, a date and a result you could point to.
@@ -262,6 +262,6 @@ This is what the stronger examples above look like as one document. It runs abou
 >
 > **Expected contribution.** The study shows whether the reply patterns found at chain hotels hold for independent owners writing in their own voice, which tells crisis communication researchers whether their strategy categories fit the smallest organizations.
 >
-> **Timeline.** Definitions Practice, October 16: both key terms defined. Codebook, October 23: categories from 30 replies. Pilot, November 6: 20 replies coded and timed, pilot codes in R. Describing Data, November 13: all 150 coded. Inferencing Data, November 20: H1 tested. White Paper, December 18.
+> **Timeline.** Definitions Practice, October 16: both key terms defined. Codebook, October 23: categories from 30 replies. Pilot, November 6: 20 replies coded and timed. Data Wrangling, November 13: pilot codes in R. Describing Data, November 20: all 150 coded. Inferencing Data, December 4: H1 tested. White Paper, December 18.
 
 </details>

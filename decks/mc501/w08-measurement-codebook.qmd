@@ -36,7 +36,7 @@ Each student's own version of these points, with examples from their own topic, 
 ## Research Proposals: Fixes for Your Sample and Claims
 
 - **Sample:** write selection rules someone else could follow to collect the same set, rather than picking items because they fit
-- **Sample size:** choose a number of items you can finish coding before Describing Data on November 16
+- **Sample size:** choose a number of items you can finish coding before Describing Data on November 23
 - **Claims:** claim only what your coded material can show; make no claims about causes and no predictions
 
 ::: {.notes}

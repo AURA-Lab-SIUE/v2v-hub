@@ -42,13 +42,13 @@ This phase is where your research becomes quantitative. Weeks 11 to 13 work thro
 | Ch 12: Visualizing the narrative | Frequency tables, cross-tabulation, ggplot2 grammar of graphics |
 | Ch 13: Making the call | Chi-square, t-test, correlation, ANOVA, regression; APA reporting; effect sizes |
 
-Every assignment is due Friday of the week listed, by 11:59 PM.
+In MC 451 every assignment is due Friday of the week listed, by 11:59 PM. In MC 501 it is due the Monday after that week, by 11:59 PM.
 
 ---
 
 ## Assignments
 
-### Data Wrangling in R (50 pts), Week 11
+### Data Wrangling in R (50 pts), Week 12
 
 Using the Twitch data from the `v2v` package:
 
@@ -59,14 +59,6 @@ Using the Twitch data from the `v2v` package:
 
 This assignment teaches the full data pipeline, from raw input to analysis-ready output.
 
-::: {.undergraduate-only}
-::: {.callout-important}
-## Week 11 carries 125 points
-
-MC 451 collects the **Sampling Plan and Pilot** (75 pts) in this same week, so Week 11 is the heaviest week of the term at 125 points. The Sampling Plan is given an extra week so the pilot is real work rather than rushed work. Draft it during Week 10.
-:::
-:::
-
 ::: {.graduate-extension}
 **MC 501:** your wrangling script carries a **data provenance statement**: where each field came from, every transformation applied, and every row dropped with the reason. It is the same 50 points, but it has to survive being read by someone reproducing your work.
 :::
@@ -74,11 +66,11 @@ MC 451 collects the **Sampling Plan and Pilot** (75 pts) in this same week, so W
 ---
 
 ::: {.undergraduate-only}
-### Describing Data in R (75 pts), Week 12
+### Describing Data in R (75 pts), Week 13
 :::
 
 ::: {.graduate-extension}
-### Describing Data in R (100 pts), Week 12
+### Describing Data in R (100 pts), Week 13
 :::
 
 Using `twitch_analysis.RDS`:
@@ -94,7 +86,7 @@ Using `twitch_analysis.RDS`:
 
 ---
 
-### Inferencing Data in R (100 pts), Week 13
+### Inferencing Data in R (100 pts), Week 15
 
 Using `twitch_analysis.RDS`:
 

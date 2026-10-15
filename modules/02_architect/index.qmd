@@ -33,7 +33,7 @@ By the end of Phase II, you will:
 
 As an architect designs blueprints before construction, you design your research infrastructure. This phase runs concurrently with Phase I. While you are reading and reflecting, you are also setting up the tools you will use all semester and scouting your data source.
 
-Read Chapters 1 to 3 alongside this phase. Every assignment is due Friday of the week listed, by 11:59 PM.
+Read Chapters 1 to 3 alongside this phase. In MC 451 every assignment is due Friday of the week listed, by 11:59 PM. In MC 501 it is due the Monday after that week, by 11:59 PM.
 
 ---
 

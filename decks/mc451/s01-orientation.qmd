@@ -86,16 +86,17 @@ The project moves through four stages, each handing you the materials for the ne
 
 **1,000 points total.**
 
-## Mark Week 11 now
+## Mark the R deadlines now
 
-Two assignments land in the same week, on purpose:
+The last Builder assignment and the three Analyst assignments are each due the
+Friday after the week that teaches them:
 
-- **Sampling Plan and Pilot**, 75 points, the last Builder assignment
-- **Data Wrangling**, 50 points, the first Analyst assignment
+- **Sampling Plan and Pilot**, 75 points, due Friday, November 6
+- **Data Wrangling**, 50 points, due Friday, November 13
+- **Describing Data**, 75 points, due Friday, November 20
+- **Inferencing Data**, 100 points, due Friday, December 4, after Thanksgiving Break
 
-That is **125 points due Friday, November 6**, the heaviest week of the term.
-The Sampling Plan gets an extra week because a pilot done properly takes one.
-Put Week 11 in your calendar today and draft the sampling plan during Week 10.
+Put all four dates in your calendar today and draft the sampling plan during Week 10.
 
 ## The Architect (Weeks 1 to 4)
 

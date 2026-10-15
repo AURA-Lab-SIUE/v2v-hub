@@ -34,6 +34,14 @@ Section-by-section guides with the points, the checks that cost points, and a we
 [MC 451 Project Prospectus](../mc451-prospectus-template.qmd){.btn .btn-sm .btn-secondary} [MC 501 Research Proposal](../mc501-research-proposal-template.qmd){.btn .btn-sm .btn-secondary}
 :::
 
+:::{.resource-card}
+#### Worked Examples
+
+A finished submission for four assignments, so you can see the form before you write yours. Each assignment's page links its own example beside the rubric.
+
+[MC 451 Definitions Practice (PDF)](examples/MC451-example-definitions-practice.pdf){.btn .btn-sm .btn-secondary} [MC 451 Project Prospectus (PDF)](examples/MC451-example-project-prospectus.pdf){.btn .btn-sm .btn-secondary} [MC 501 Definitions Practice (PDF)](examples/MC501-example-definitions-practice.pdf){.btn .btn-sm .btn-secondary} [MC 501 Research Proposal (PDF)](examples/MC501-example-research-proposal.pdf){.btn .btn-sm .btn-secondary}
+:::
+
 ---
 
 ## Get the course workspace
