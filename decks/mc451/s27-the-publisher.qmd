@@ -14,21 +14,21 @@ format:
 ## Today's Agenda
 
 - Why a copy-and-paste write-up is fragile
-- A report that rebuilds itself
-- IMRaD, and what each section owes the reader
-- Publishing, and the checks that run first
+- A report that rebuilds itself from the code
+- IMRaD: the four sections of a report, and what each owes the reader
+- Publishing the site, and the checks that run before it goes live
 
 ## Where the Study Stands
 
 [The Publisher]{.eyebrow}
 
-- **A question, a theory, a tested codebook**
-- **A defensible sample and a clean dataset**
-- **Three figures, and a finding interpreted honestly**
-- **Every hard part is finished, and the study is not done**
-    - It lives in a script, a folder of images, scrolled-past output
+- **You have a question, a theory, and a tested codebook**
+- **You have a defensible sample and a clean dataset**
+- **You have three figures and a finding you interpreted honestly**
+- **Every hard part is finished, and the study is still not done**
+    - It lives in a script, a folder of images, and output you scrolled past
 
-Scattered across a dozen files, that is raw material.
+Scattered across a dozen files, the study is raw material, not a report.
 
 ## The Fragile Way to Write It Up
 
@@ -38,26 +38,27 @@ Scattered across a dozen files, that is raw material.
 - **Write the prose around them**
 
 This works, and it is quietly fragile. Change one coding rule and every pasted number is
-silently out of date, with nothing saying so.
+silently out of date, with nothing to tell you so.
 
 ## A Report That Rebuilds Itself
 
-- **Stop copying: put the analysis inside the document**
+- **Stop copying. Put the analysis inside the document**
     - A **Quarto document** interleaves prose with **code chunks**
-    - Rendering runs every chunk and drops output where it sat
-- **Tables, figures and statistics all arrive from the code**
+    - Rendering runs every chunk and places its output where the chunk sits
+- **Tables, figures, and statistics all arrive from the code**
 
 Nothing is typed by hand, so nothing can fall out of date.
 
 ## Numbers Computed Inline
 
-```r
-The analysis dataset held `r nrow(analysis)` coded messages, of which
-`r sum(!is.na(analysis$is_gaming))` carried a gaming-status label.
+```markdown
+The analysis dataset held `r nrow(analysis)` coded messages,
+of which `r sum(!is.na(analysis$is_gaming))` carried a
+gaming-status label.
 ```
 
 Those backtick expressions become the actual counts in the rendered report. Add a hundred
-messages, re-render, and the sentence updates itself.
+messages to the data, re-render, and the sentence updates itself.
 
 ## Figures Produced, Not Pasted
 
@@ -71,70 +72,73 @@ ggplot(msglen, aes(message_length, fill = is_gaming)) +
   v2v::theme_v2v()
 ```
 
-The histogram is a chunk that redraws itself every render. `echo: false` hides the code and
-shows the plot.
+The histogram is a chunk that redraws itself on every render. `echo: false` hides the code
+and shows only the plot.
 
-## Your Turn {.discuss}
+## Exercise: Find Your Own Pasted Numbers {.discuss}
 
-- Where have you already pasted a number by hand?
-- What would break if your data changed tomorrow?
-- Which figure could you produce from code inside the report today?
+Answer in writing, from your own draft:
 
-## Why This Matters
+- Name one place where you have already typed a number by hand instead of computing it
+- Name one thing in your draft that would break if your data changed tomorrow
+- Name one figure you could produce from code inside the report today
 
-- **The report cannot drift, because it is the analysis**
-- **Anyone with your source and data can render your results**
+## Why a Reproducible Report Matters
+
+- **The report cannot drift from the analysis, because the report is the analysis**
+- **Anyone with your source files and your data can render your results**
     - That is the standard a scientific claim is meant to meet
-- **Knuth named the idea literate programming in 1984**
-    - Runnable code and its prose belong in one document
+- **Knuth named this idea literate programming in 1984**
+    - Runnable code and the prose that explains it belong in one document
 
 ## IMRaD, the Shape of a Report
 
-**I**ntroduction, **M**ethods, **R**esults, **D**iscussion, in that fixed order, and the
-order is itself an argument.
+**I**ntroduction, **M**ethods, **R**esults, **D**iscussion, in that fixed order. The order is
+itself an argument.
 
-- **It carries a reader from why, to what, to what it means**
-- **An abstract sits in front, and references close it**
-- **The Hub ships an `imrad-template.qmd`**
+- **It carries a reader from why, to what was done, to what was found, to what it means**
+- **An abstract sits in front, and the references close it**
+- **`new_portfolio()` already created the section files: `01-introduction.qmd` through `05-reflection.qmd`, with `index.qmd` for the abstract and `references.qmd`**
 
-Not bureaucracy: a contract about where to look.
+IMRaD is not bureaucracy. It is a contract with the reader about where to look.
 
 ## Introduction and Methods
 
-**Introduction** states the question and why it is worth asking. For the chat study that is
-the prospectus: do the two kinds of channel differ, and what would theory predict.
+**Introduction** states the question and why it is worth asking. For the example chat study
+that is the prospectus: do the two kinds of channel differ in message length, and what does
+theory lead you to expect?
 
-**Methods** says exactly what was done, in enough detail to repeat it: codebook, sampling,
-reliability check, wrangling.
+**Methods** says exactly what was done, in enough detail for someone else to repeat it: the
+codebook, the sampling, the reliability check, and the wrangling.
 
-Methods earns trust, and a reproducible document supports it best.
+Methods is the section that earns the reader's trust, and a reproducible document supports it best.
 
 ## Results and Discussion
 
-**Results** reports what was found, plainly and without interpretation: figures,
-distributions, group means, the test with its degrees of freedom, *p*, and effect size.
+**Results** reports what was found, plainly and without interpretation: the figures, the
+distributions, the group means, and the test with its degrees of freedom, *p*, and effect size.
 
-**Discussion** says what it means, here that the difference is real but negligible, and
-what that implies for the opening question.
+**Discussion** says what the result means. For the example study, the difference is real but
+negligible, and the Discussion says what that implies for the opening question.
 
 Discussion is also where an honest study states its limits.
 
-## One Site, Many Pages
+## One Book, Many Chapters
 
 - **The report is not the only document the study produced**
-    - The codebook, the sampling record, the wrangling log
-- **They become pages of one site**, not one enormous file
-- **`_quarto.yml` names the site, its pages and its navigation**
-- **`quarto render` builds every page into a website**
+    - The codebook, the sampling record, and the wrangling log are documents too
+- **They become chapters of one Quarto book, not one enormous file**
+- **`_quarto.yml` lists the chapters in order: the five section files, the references, and the codebook and journal as appendices**
+- **`quarto render` builds every chapter into one website**
 
 ## Going Live
 
 - **A site in a folder on a laptop is still private**
-    - Publishing means giving it a public address
+    - Publishing means giving the site a public address
 - **The standard free option is GitHub Pages**
-- **`v2v::deploy_portfolio()` runs the checks, then publishes**
+- **`v2v::deploy_portfolio()` runs the checks, then publishes the site**
 
-What it hands back is a URL, and that URL is your White Paper.
+When it finishes, your paper is live at your repository's GitHub Pages address. That URL, with the PDF, is what you submit for the White Paper.
 
 ## The Pre-Flight Checks
 
@@ -143,43 +147,43 @@ v2v::deploy_portfolio()
 ```
 
 ```
-Pre-flight checks
-  renv library in sync ......... ok
-  no uncommitted changes ....... ok
-  _quarto.yml valid ............ ok
-
-Rendering 4 pages ... done
-Live at: https://username.github.io/twitch-chat-study/
+── Pre-flight checks ──
+✔ renv library in sync
+✔ no uncommitted changes
+✔ _quarto.yml valid
+ℹ Rendering 9 pages ... done
+ℹ Publishing to GitHub Pages ... done
+✔ Portfolio live on GitHub Pages.
 ```
 
-Three checks run first, and only if all three pass does it deploy.
+Three checks run first. Only if all three pass does the book render and publish.
 
 ## Why the Checks Exist
 
-- **renv in sync:** built with the versions your source declares
-- **No uncommitted changes:** live matches what you saved
-- **Valid `_quarto.yml`:** the render will not collapse halfway
-- **Each heads off a specific, demoralizing failure**
+- **renv in sync:** the site is built with the package versions your source declares
+- **No uncommitted changes:** the live site matches what you saved
+- **A valid `_quarto.yml`:** the render will not collapse halfway through
+- **Each check heads off one specific, demoralizing failure**
 
 The last step of a long study should be the calm one.
 
 ## The Reflection
 
-- **One paragraph, and not part of IMRaD**
-    - Your own candid account, not a result
+- **The Reflection is one paragraph, and it is not part of IMRaD**
+    - It is your own candid account of the study, not a result
 - **Name what was harder than expected**
-    - Where a coding rule went ambiguous
+    - Where a coding rule turned out to be ambiguous in practice
     - What the dataset could not answer
-- **Resist both easy failures**, all well and all wrong
+- **Avoid both easy failures: "everything went well" and "everything went wrong"**
 
 A researcher who can say where their study is weak understands it.
 
 ## Before Next Time
 
-- **Thursday is a studio:** peer review, and the reflection
-- **Bring a rendered draft**, not notes toward one
-    - It does not have to be finished, it has to render
-- **Bring your public URL**, or the error stopping you
-- **The White Paper is due finals week**
+- **Thursday is a studio: peer review, and the reflection**
+- **Bring a rendered draft, not notes toward one**
+    - It does not have to be finished. It has to render
+- **Bring your public URL, or the error message that is stopping you**
+- **Due Friday, December 18, 11:59 PM: White Paper, 250 points**
 
 ## Questions, Comments, or Concerns? {.titlecard}

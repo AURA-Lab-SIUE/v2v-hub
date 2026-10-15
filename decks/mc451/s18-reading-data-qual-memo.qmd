@@ -13,32 +13,34 @@ format:
 
 ## Today's Agenda
 
-- Can this data carry the study you designed?
-- The messages that will fight your rules
-- One wrinkle, turned into a decision rule
-- The qualitative memo, due with the codebook
+- Check whether the data contains what each variable in the codebook needs
+- Find the messages that will fight your coding rules
+- Turn one wrinkle in the data into a written decision rule
+- Write the qualitative memo, which is due with the codebook
 
 ## What We Are Doing Today
 
 [Lab session]{.eyebrow}
 
-- **Tuesday we loaded the data, today we hold it next to the codebook**
-- **One question: can the data carry your study?**
-- **Then the messages that will fight your rules**
-- **Then the qualitative memo**, due with the codebook
+- **Tuesday we loaded the data; today we hold the data next to the codebook**
+- **The question for today: does the data contain what your study needs?**
+- **Then we find the messages that will fight your rules**
+- **Then we write the qualitative memo, which is due with the codebook**
 
-Open `codebook.qmd` and your R session side by side.
+We check the book's example codebook against the example data first. Then you repeat each step
+with your own codebook and your own source.
 
-## The Blunt Question
+Open `codebook/codebook.qmd` and your R session side by side.
 
-- **Does the data contain what each variable needs?**
-    - Open the codebook next to your `glimpse()` output
-    - Answer it now, not a thousand messages in
-- **Walk the variables one at a time, and do not skim**
+## Check That the Data Contains What Each Variable Needs
 
-A missing column found today is a good result. Found in three weeks it costs you weeks.
+- **Open the codebook next to your `glimpse()` output**
+- **Walk through the variables one at a time, and check each one against the columns**
+- **Answer the question now, not a thousand messages into coding**
 
-## Variable 1, Message Target
+A missing column found today is a good result. The same missing column found in three weeks costs you weeks.
+
+## Example Variable 1, Message Target
 
 ```r
 chat %>% select(channel, sender, message) %>% head(5)
@@ -47,63 +49,65 @@ chat %>% select(channel, sender, message) %>% head(5)
 `select()` keeps only the columns you name, and `head(5)` shows the first five rows, so you
 read what a coder would actually be looking at.
 
-Message target is coded from the **message text**, plus **sender** for at-mentions and
-replies. Both columns exist. Supported.
+In the example codebook, message target is coded from the **message text**, plus the **sender**
+for at-mentions and replies. Both columns exist in the data, so the variable is supported.
 
-## Variables 2 and 3
+## Example Variables 2 and 3
 
 ```r
 chat %>% select(message) %>% head(3)
 ```
 
-The same move, narrowed to the one column both remaining variables read from.
+The same command, narrowed to the one column the two remaining example variables read from.
 
-- **Message length:** the character count, so supported
-- **Contains emote:** the same column, so supported
-- Three variables, three confirmations, and the study is buildable
+- **Message length** is the character count of the message, so the message column supports it
+- **Contains emote** is read from the same column, so it is supported too
+- Three example variables, three confirmations: the example study can be built from this data
 
-## Your Turn {.discuss}
+Your own codebook has at least four variables. Check each one the same way against your own source.
 
-- If the chat table had **no `sender` column**, which rule stops working?
-- Your codebook allows "a reply to a specific prior message"
-- Does this data let a coder see that? Check
-- What does your codebook assume that you have not verified?
+## Exercise: Check Your Codebook Against the Data {.discuss}
+
+Answer each question in writing, one line each:
+
+- If the example chat table had **no `sender` column**, which example rule would stop working?
+- The example codebook allows the category "a reply to a specific prior message". Does the example data let a coder see which message a reply answers? Check the columns and answer yes or no
+- Name one thing your own codebook assumes about your own data that you have not yet checked
 
 ## What First Contact Confirmed
 
-- **The columns your variables need are present**
-- **The messiness the book warned about is visible in row one**
-    - Your Chapter 7 edge cases are not hypothetical
-    - Twenty-three question marks: no obvious target
-    - "TriEasy Clap" repeated: copypasta, already Rule 3
+- **The columns the example variables need are present**
+- **The messiness the book warned about is visible in the first row**
+    - The edge cases you wrote in Chapter 7 are real messages, not hypothetical ones
+    - Twenty-three question marks has no obvious target
+    - "TriEasy Clap" repeated many times is copypasta, which the example codebook's Rule 3 already covers
 
 ## What the Data Makes Harder
 
-- **Short emote-only tokens are everywhere**, which is Rule 2
-- **A wall of punctuation has no addressee**, hence "unclassifiable"
-- **Stream titles carry line breaks and long digit strings**
-- **None of this is broken data**, it is what people type
+- **Short messages made only of emotes are everywhere; the example codebook's Rule 2 covers them**
+- **A wall of punctuation has no addressee, so it is coded "unclassifiable"**
+- **Stream titles contain line breaks and long strings of digits**
+- **None of this is broken data. It is what people type**
 
-Your codebook has to meet the data as it is.
+Your codebook has to meet the data as it is. Every source has its own version of this mess.
 
 ## One Genuine Wrinkle
 
 - **A message begins "@xQcOW"**
-    - The `channel` column on that row reads "xqcow"
-- **Same name, different casing**
-    - The display name typed against the stored login name
-- **A rule keyed on the channel name will miss it**
-- You will resolve this two ways on two days unless you decide now
+    - The `channel` column on that same row reads "xqcow"
+- **The two are the same name written with different capitalization**
+    - The display name the viewer typed differs from the stored login name
+- **A rule that matches on the exact channel name will miss this message**
+- Unless you decide the rule now, you will resolve this case two different ways on two different days
 
 ## Turning a Wrinkle Into a Rule
 
-- **Write it down now**, while the codebook is still living
-    - At-mentions are matched **ignoring capitalization**
-- **State it in the decision rules, numbered**
-    - Next to Rules 1 through 5
-- This is what special cases is for, and yours stops being thin
+- **Write the rule down now, while the codebook is still being revised**
+    - The rule: at-mentions are matched **ignoring capitalization**
+- **State it in the decision rules, numbered, next to Rules 1 through 5**
+- This is what the special-cases section is for, and your special-cases section stops being empty
 
-Every rule you add is a disagreement you will not arbitrate later.
+Every rule you add now is a disagreement you will not have to settle later.
 
 ## Hunting Your Own Edge Cases
 
@@ -114,66 +118,64 @@ chat %>%
   head(10)
 ```
 
-`filter()` keeps only rows meeting a condition, here messages containing an at-sign, so you
-can read ten real at-mentions and see how they behave.
+`filter()` keeps only the rows that meet a condition. Here the condition is "the message contains
+an at-sign", so you can read ten real at-mentions and see how they behave.
 
-Swap the `"@"` for anything your rules depend on and read what comes back.
+Replace the `"@"` with any text your own rules depend on, then read what comes back.
 
 ## The Qualitative Memo
 
-[Due with the codebook]{.eyebrow}
+- **Write 200 to 300 words on the patterns you observed while watching your source**
+    - The memo is the written record of what watching taught you
+    - It explains **why** your codebook has the categories it has
+- **The memo is graded with the codebook as one 50-point assignment, due Friday, October 23, 11:59 PM**
 
-- **200 to 300 words** on the patterns you observed
-    - The written record of what your watching taught you
-    - It explains **why** your codebook has these categories
-- **Graded with the codebook as one 50-point assignment**
-
-Short does not mean easy. Every sentence should point at something you saw.
+Short does not mean easy. Every sentence should point at something you actually saw.
 
 ## The Four Kinds of Field Note
 
-Your memo is assembled from notes you already have:
+Your memo is assembled from the field notes you already have:
 
-- **Observational:** what you saw, with times and counts
-- **Methodological:** a measurement problem you noticed
-- **Theoretical:** an observation tied to a framework
-- **Comparative:** how two cases differed
+- **Observational notes:** what you saw, with times and counts
+- **Methodological notes:** a measurement problem you noticed
+- **Theoretical notes:** an observation tied to a framework
+- **Comparative notes:** how two cases differed
 
 ## From Notes to Memo
 
-- **Name the dimensions that mattered** for your question
-- **Name the edge cases** that drove your rules, with examples
+- **Name the dimensions that mattered** for your research question
+- **Name the edge cases that drove your rules, with an example of each**
 - **Say where you are still uncertain**
-    - Uncertainty is a finding, not a weakness
+    - Uncertainty you can name is a finding, not a weakness
 - **Connect at least one pattern to your theory**
 
-Do not summarize Twitch. Write what changed your codebook.
+Do not summarize your source. Write what changed your codebook.
 
 ## Common Errors Today
 
-- **`could not find function "str_detect"`:** no `library(tidyverse)`
-- **`object 'chat' not found`:** the data is not loaded here
-- **`object 'message' not found`:** a column name outside a verb
-- **`filter()` returning zero rows:** usually the condition, not the data
+- **`could not find function "str_detect"`:** you have not run `library(tidyverse)`
+- **`object 'chat' not found`:** the data is not loaded in this session
+- **`object 'message' not found`:** you used a column name outside a tidyverse verb
+- **`filter()` returns zero rows:** the condition is usually wrong, not the data
 
-Run `?v2v::common_errors` for the ones specific to this data.
+Run `?v2v::common_errors` for the errors specific to the example data.
 
 ## Checkpoint
 
 You should now have:
 
-- Written confirmation that each variable has the data it needs
-- At least one new decision rule, traceable to a real message
+- Written confirmation that each variable in your codebook has the data it needs
+- At least one new decision rule, traceable to a real message in your source
 - A special-cases section that is no longer empty
-- Field notes sorted into the four types
+- Your field notes sorted into the four types
 - A draft memo between 200 and 300 words
 
 ## Before Next Time
 
-- **Due this week:** Codebook and Qual Memo
+- **Due Friday, October 23, 11:59 PM: Codebook and Qualitative Memo**
     - Render the codebook before you submit it
-- **Read** Chapter 10, The Sample
-- **Next Tuesday:** why you cannot code all 35,267 messages
-    - Then your codebook goes on trial, coded twice, one number
+- **Read Chapter 10, The Sample**
+- **Next Tuesday we cover why you cannot code every message in your source, and how to draw a sample**
+    - The Thursday after that, your codebook is tested: the same items coded twice, compared as one number
 
 ## Questions, Comments, or Concerns? {.titlecard}

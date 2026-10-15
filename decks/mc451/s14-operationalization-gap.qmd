@@ -172,8 +172,8 @@ The conceptual half is clear about the idea, and **not yet a recipe**.
 - **Pick four variables** from your field notes
     - Write conceptual and operational definitions side by side
     - Run each past the four failures and name the closest
-- **Due this week:** the Project Prospectus
-- **Due next week:** Definitions Practice
+- **Due Friday, October 9, 11:59 PM:** the Project Prospectus
+- **Due Friday, October 16, 11:59 PM:** Definitions Practice
     - Those three pairs are most of it
 - **Read** the rest of Chapter 8
 

@@ -13,62 +13,67 @@ format:
 
 ## Today's Agenda
 
-- What a pilot test is, and why coders work alone
-- Why raw agreement flatters a codebook
-- Kappa, alpha, and reading the number
-- Diagnosing a failure and re-piloting
+- What a pilot test is, and why the two coding passes must be independent
+- Why raw agreement makes a codebook look better than it is
+- Kappa and alpha: two reliability statistics, and how to read the number
+- How to diagnose a failed pilot and run it again
 
 ## Putting the Codebook on Trial
 
 [Lab session]{.eyebrow}
 
-- **Tuesday you drew a sample, today the codebook earns its status**
-- **We run a pilot and turn agreement into a number**
-    - We watch a real codebook fail, and diagnose why
-    - You leave with a coefficient for your own instrument
+- **Tuesday you drew a sample; today the codebook is tested against real items**
+- **We run a pilot and turn agreement between two coding passes into one number**
+    - We watch an example codebook fail, and diagnose why
+    - You leave with a reliability coefficient for your own instrument
 
-This session can send you back to Chapter 8, and that is fine.
+A pilot can send you back to Chapter 8 to rewrite rules, and that is a normal result.
 
 ## What a Pilot Test Is
 
-- **A trial run before any real coding begins**
-    - Take a subset of the sample, ten to twenty items
-    - Code it from the **same codebook**, twice
-    - Then the two sets of codes are compared
-- **The question:** do the same rules produce the same classifications?
+- **A trial run of the codebook before any real coding begins**
+    - Take a subset of your sample: ten to twenty items
+    - Code them from the **same codebook**, twice
+    - Then compare the two sets of codes
+- **The question the pilot answers:** do the same written rules produce the same classifications?
+- **In this course you are the only coder, so you code the items twice yourself**
+    - At least 48 hours apart, with your first codes hidden
+    - Re-code at least a quarter of the pilot items on the second pass
 
-## Independently, and Why
+## The Two Passes Must Be Independent
 
-- **Genuine isolation: no conferring, no comparing, no looking back**
-    - Not suspicion: the pilot measures the codebook, not the coder
-- **Reread your first codes and you measure memory**
+- **Independent means no conferring, no comparing, and no looking back at the first pass**
+    - This is not suspicion of the coder: the pilot measures the codebook, not the coder
+- **If you reread your first codes before the second pass, you measure your memory, not the rules**
     - Only independent coding tests the written rules
-    - Coding it yourself twice, that means a gap and a blind
-- **Reliability is consistency**, whoever holds the codebook and whenever
+- **For one coder, independence means a time gap and a blind: 48 hours, first codes hidden**
+- **Reliability is consistency:** the same rules give the same codes, whoever applies them and whenever
 
-## The Obvious Number
+## The Obvious Number Is Raw Agreement
 
-- **The two passes agreed on 74 of 100**
-    - Seventy-four percent sounds respectable
-- **It is also misleading**
+- **In the example pilot, the two passes agreed on 74 of 100 items**
+    - Seventy-four percent agreement sounds respectable
+- **That number is misleading**
     - Seeing why is the key idea of the chapter
-- Some agreement happens for no good reason at all
+- Some agreement happens by coincidence, for no good reason at all
 
-## Your Turn {.discuss}
+## Exercise: Judge the Example Pilot {.discuss}
 
-- Is 74 percent good enough to start on? Commit to an answer
-- Two coin flips on two categories agree how often?
-- What if both use one category 90 percent of the time?
-- What number would satisfy you, and where did it come from?
+Answer each question in writing, with one reason:
+
+- Is 74 percent agreement good enough to start coding for real? Answer yes or no
+- Two coders who flip coins to choose between two categories will agree how often?
+- If both coders use one category 90 percent of the time, how often will they agree by chance?
+- What agreement number would satisfy you, and where does that number come from?
 
 ## Why Raw Agreement Misleads
 
-- **Cohen's 1960 paper used two clinicians sorting patients**
-    - Each assigns categories blindly, at the observed rates
-    - Coordinating on nothing, they still agree often
-- **That agreement reflects the number of categories**
+- **Cohen's 1960 paper imagined two clinicians sorting patients into categories**
+    - Each assigns categories blindly, at the rates those categories occur
+    - Without coordinating at all, they still agree often
+- **That agreement comes from the number of categories and how often each is used**
     - It reflects no judgment at all
-- Raw agreement counts coincidence and insight alike
+- Raw agreement counts coincidence and genuine agreement alike
 
 ## Cohen's Kappa
 
@@ -76,22 +81,22 @@ This session can send you back to Chapter 8, and that is fine.
 kappa = (observed agreement - expected agreement) / (1 - expected agreement)
 ```
 
-Kappa starts from the agreement you observed, subtracts what chance alone would have
+Kappa starts from the agreement you observed, subtracts the agreement chance alone would have
 produced, and credits the codebook only with the difference.
 
-- **No better than chance:** the numerator is zero, so kappa is zero
+- **Agreement no better than chance:** the numerator is zero, so kappa is zero
 - **Perfect agreement:** kappa is one
-- **Built for two sets of codes and nominal categories**
+- **Kappa is built for two sets of codes and nominal categories**
     - Two coders, or one coder twice
 
 ## Krippendorff's Alpha
 
-- **The general instrument, when kappa will not fit**
-    - Any number of coders, not just two
+- **Alpha is the general reliability statistic, for the cases kappa does not fit**
+    - Any number of coding passes, not just two
     - Any level of measurement, nominal through ratio
     - Datasets with missing codes
-- **For a two-coder nominal pilot they agree**
-    - Kappa is the more familiar choice
+- **For a pilot with two passes and nominal categories, kappa and alpha agree**
+    - Kappa is the more familiar choice, so it is the one we report
 
 ## Running the Check
 
@@ -114,23 +119,25 @@ Reliability: Cohen's kappa
 ```
 
 - **Observed agreement was 0.74**, the respectable-looking number
-- **Chance alone predicts about 0.66**, given the flag rates
+- **Chance alone would produce about 0.66**, given how often each category was used
 - **The formula returns 0.236**
 
-The raw agreement was almost all coincidence.
+Almost all of the raw agreement was coincidence.
 
-## Two Rules, One Name
+## Why the Example Failed: Two Rules Under One Name
 
-- **The codebook said "high-energy" and never defined it**
-    - **Coder A** read it as carrying a Twitch emote
-    - **Coder B** read it as shouting, so all capitals
+- **The example codebook said "high-energy" and never defined it**
+    - **Coder A** read it as "the message carries a Twitch emote"
+    - **Coder B** read it as "the message is shouted, in all capitals"
 - **Both readings are reasonable**
-    - Both coders believed they coded one variable
-    - Emotes and all-caps overlap enough to agree by accident
+    - Both coders believed they were coding one variable
+    - Emotes and all-caps overlap often enough to agree by accident
+
+The example is a published two-coder illustration. One coder working twice fails the same way when a rule is undefined.
 
 ## Reading the Number
 
-Labels have long been attached to ranges (Landis & Koch, 1977):
+Published ranges attach labels to kappa values (Landis and Koch, 1977):
 
 - **0.0 to 0.2:** slight
 - **0.2 to 0.4:** fair
@@ -138,45 +145,45 @@ Labels have long been attached to ranges (Landis & Koch, 1977):
 - **0.6 to 0.8:** substantial
 - **Above 0.8:** almost perfect
 
-By these labels 0.236 is "fair." Published work treats below **0.70** as too low to proceed
-on, with **0.80** a comfortable floor.
+By these labels 0.236 is "fair." Published work treats a kappa below **0.70** as too low to
+proceed on, and **0.80** as a comfortable floor.
 
 ## Diagnose, Revise, Re-Pilot
 
-- **A kappa of 0.236 is an instruction, not a result**
-- **Go back to the messages that split**
-    - Walk each one with the written rule in front of you
-    - **The disagreements are the data**
-- **Repair the rule in writing**, then pilot again
+- **A kappa of 0.236 is an instruction to fix the codebook, not a final result**
+- **Go back to the items the two passes coded differently**
+    - Walk through each one with the written rule in front of you
+    - **The disagreements are the data:** each one points at a rule that is unclear
+- **Repair the rule in writing, then pilot again**
 
-Fresh messages, independent coding, another coefficient.
+The second pilot uses fresh items, independent coding passes, and produces another coefficient.
 
 ## Common Errors Today
 
-- **`object 'pilot' not found`:** the codes are not in one table
-- **Columns of different lengths:** someone skipped a message
+- **`object 'pilot' not found`:** the two sets of codes are not in one table
+- **Columns of different lengths:** one pass skipped an item
 - **Kappa of exactly 1:** you passed the same column twice
-- **Kappa near 0 with high agreement:** the loose-definition signature
-- **`NA` in the result:** missing codes, so use alpha
+- **Kappa near 0 with high agreement:** the signature of a loosely defined rule
+- **`NA` in the result:** some codes are missing, so use alpha instead
 
-Run `?v2v::common_errors` for the ones specific to this data.
+Run `?v2v::common_errors` for the errors specific to the example data.
 
 ## Checkpoint
 
 You should now have:
 
-- A hundred-message pilot, coded independently twice
+- A pilot of ten to twenty items from your sample, with at least a quarter coded twice
 - A `v2v::reliability()` call that runs and returns a number
-- A written note on whether it clears **0.70**
-- The list of messages the two passes split on, your revision list
-- If you failed, a revised rule for each disagreement
+- A written note on whether your number clears **0.70**
+- The list of items your two passes coded differently, which is your revision list
+- If the pilot failed, a revised rule for each disagreement
 
 ## Before Next Time
 
-- **Revise against your disagreement list, then re-pilot**
-- **Read** Chapter 11, Wrangling the Data
-- **Next week is R for real**
-    - Unreadable timestamps, missing variables, two tables apart
-- **Due next week:** Sampling Plan and Pilot, and Data Wrangling
+- **Revise the codebook against your disagreement list, then re-pilot**
+- **Read Chapter 11, Wrangling the Data**
+- **Next week you work in R on the data itself**
+    - Unreadable timestamps, missing variables, and two tables that need joining
+- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, and Data Wrangling in R**
 
 ## Questions, Comments, or Concerns? {.titlecard}

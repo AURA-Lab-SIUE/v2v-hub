@@ -168,9 +168,9 @@ Four sentences, three citations, one gap. That is enough to anchor a prospectus.
 
 ## Before next time
 
-- **The Librarian Visit Report is due this week**, 50 points.
-- **The Annotated Manuscript is due next week**, 25 points. Pick your article now.
-- **CITI Ethics Certification** is also due next week. It takes hours rather than minutes,
+- **The Librarian Visit Report is due Friday, September 18, 11:59 PM**, 50 points.
+- **The Annotated Manuscript is due Friday, September 25, 11:59 PM**, 25 points. Pick your article now.
+- **CITI Ethics Certification** is also due Friday, September 25, 11:59 PM. It takes hours rather than minutes,
   so start it tonight.
 - Start your literature map file in your repository, even with four sources in it
 - Read **Chapter 5, Theory as a Lens**, before Thursday

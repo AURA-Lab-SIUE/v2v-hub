@@ -13,30 +13,30 @@ format:
 
 ## Today's Agenda
 
-- A summary table before any picture
-- Three figures on your own variables
-- Labels, color, and alt text
-- Saving figures the paper can use
+- Build a summary table before drawing any picture
+- Build three figures on your own variables
+- Add labels, colorblind-safe color, and alt text to every figure
+- Save the figures in a form the paper can use
 
 ## Today's Job
 
-[Describing Data, 75 points, due this week]{.eyebrow}
+[Describing Data, 75 points, due Friday, November 13, 11:59 PM]{.eyebrow}
 
-- **Tuesday you watched me build three figures**
-- **Today you build three on yours**, with me in the room
-    - Everything you make lands in your Results section
-- **Work in a `.qmd` in your project**, not the console
+- **Tuesday you watched three figures being built on the example data**
+- **Today you build three figures on your own variables, with help in the room**
+    - Everything you make today lands in your Results section
+- **Work in a `.qmd` file inside your project, not in the console**
 
-Get stuck out loud. That is what the room is for.
+Say out loud when you are stuck. That is what this session is for.
 
 ## Where You Should Be Starting
 
 - **Your project opens and your `.qmd` renders**
-- **You have a tidy `analysis` table** from the wrangling assignment
+- **You have a tidy `analysis` table from the wrangling assignment**
 - **You know which one variable the paper is about**
-- **You know which column splits it into groups**
+- **You know which column splits that variable into groups**
 
-If any of those is missing, say so now and we fix it first.
+If any of those four is missing, say so now and we fix it first.
 
 ## Loading and Looking
 
@@ -44,7 +44,7 @@ If any of those is missing, say so now and we fix it first.
 library(tidyverse)
 library(v2v)
 
-analysis <- readRDS("data/analysis.rds")
+analysis <- readRDS("data/twitch_analysis.RDS")
 
 glimpse(analysis)
 ```
@@ -57,7 +57,7 @@ anything, look at what you actually have.
 ```r
 analysis %>%
   group_by(is_gaming) %>%
-  summarise(
+  summarize(
     n      = n(),
     mean   = mean(message_length, na.rm = TRUE),
     median = median(message_length, na.rm = TRUE),
@@ -66,17 +66,19 @@ analysis %>%
   )
 ```
 
-Swap in your grouping column and your variable. Read the mean against the median before you
-draw anything.
+The code shows the example columns. Swap in your own grouping column and your own variable.
+Read the mean against the median before you draw anything.
 
-## Your Turn {.discuss}
+## Exercise: Read Your Own Summary Table {.discuss}
 
-- Do your mean and median agree, or pull apart?
-- If they pull apart, in which direction?
-- What does that predict about the shape?
-- Which single number would you put in an abstract, and why?
+Answer in writing from the table you just built:
 
-## Figure One, the Shape
+- Do your mean and median agree, or do they pull apart?
+- If they pull apart, which one is larger?
+- A mean larger than the median means a tail of large values. What shape do you expect the histogram to show?
+- Which single number would you put in an abstract, and why that one?
+
+## Figure One, the Shape of One Variable
 
 ```r
 ggplot(analysis, aes(x = message_length)) +
@@ -85,16 +87,16 @@ ggplot(analysis, aes(x = message_length)) +
   v2v::theme_v2v()
 ```
 
-One variable, one histogram. Change `binwidth` and watch the shape change, which is why the
-number has to be reported rather than hidden.
+One variable, one histogram. Change `binwidth` and watch the shape change. That is why the
+bin width has to be reported rather than hidden.
 
 ## Reading Your Own Histogram
 
-- **Where is the tall stack?** That is the typical case
-- **Is there a long thin tail, and in which direction?**
-    - **Right-skewed** means most values small, a few very large
-    - A skewed variable is why mean and median disagreed
-- **If you capped the axis with `pmin()`, say so in the label**
+- **Find the tall stack. That is the typical case**
+- **Look for a long thin tail, and note which direction it runs**
+    - **Right-skewed** means most values are small and a few are very large
+    - A skewed variable is the reason the mean and the median disagreed
+- **If you capped the axis with `pmin()`, say so in the axis label**
 
 ## Figure Two, Counts by Category
 
@@ -108,22 +110,23 @@ analysis %>%
   v2v::theme_v2v()
 ```
 
-Count, keep the top eight, sort the bars, then flip so long names are readable. Unsorted
-bars are much harder to compare.
+Count the messages per category, keep the top eight, sort the bars by size, then flip the
+chart so long category names are readable. Unsorted bars are much harder to compare.
 
-## Figure Three, Groups Side by Side
+## Figure Three, Two Groups Side by Side
 
 ```r
 analysis %>%
   filter(!is.na(is_gaming)) %>%
   ggplot(aes(x = message_length, fill = is_gaming)) +
-  geom_histogram(binwidth = 5, position = "identity", alpha = 0.55) +
+  geom_histogram(binwidth = 5, position = "identity",
+                 alpha = 0.55) +
   v2v::scale_fill_v2v() +
   v2v::theme_v2v()
 ```
 
-`position = "identity"` with `alpha` overlays the two groups so the shapes compare. Stacked
-bars would hide exactly the comparison you want.
+`position = "identity"` with `alpha` overlays the two groups so their shapes can be
+compared. Stacked bars would hide exactly the comparison you want.
 
 ## Labels Are Not Optional
 
@@ -137,35 +140,35 @@ last_plot() +
   )
 ```
 
-Default labels are column names, which mean nothing to a reader. Every axis gets units, and
-every cap gets named.
+Default labels are column names, which mean nothing to a reader. Every axis gets its units,
+and every cap is named in the label.
 
 ## Colorblind-Safe by Default
 
-- **Roughly one man in twelve** has a color-vision deficiency
-    - Red against green is notorious, and not the only pair
-- **Use `scale_colour_v2v()` and `scale_fill_v2v()`**
+- **Roughly one man in twelve has a color-vision deficiency**
+    - Red against green is the notorious pair, and not the only one
+- **Use `scale_colour_v2v()` and `scale_fill_v2v()`, which are built to be safe**
 - **Do not let color carry the message alone**
-    - Add a linetype, or split into panels
-- If it fails in grayscale, it fails for some readers
+    - Add a line type, or split the groups into panels
+- If the figure fails in grayscale, it fails for some readers
 
 ## Alt Text, Written Not Skipped
 
 - **A screen-reader user gets the alt text instead of the figure**
-    - With none, the figure is simply missing
+    - With no alt text, the figure is simply missing for that reader
 - **Alt text is not the caption repeated**
-- **Say the chart type, the axes, and what it shows**
+- **Alt text says the chart type, the axes, and what the chart shows**
 - In Quarto it goes in the figure's `fig-alt` attribute
 
-## Common Errors and Meanings
+## Common Errors and What They Mean
 
 - **`object 'analysis' not found`:** you never ran the load line
 - **`could not find function "ggplot"`:** the tidyverse has not loaded
-- **Blank gray panel:** `aes()` names a column that does not exist
-- **`Error in +`:** a `+` is missing, or one is trailing
-- **Everything on one bar:** your x is a character, not a number
+- **A blank gray panel:** `aes()` names a column that does not exist
+- **`Error in +`:** a `+` is missing, or one is trailing at the end
+- **Everything piles onto one bar:** your x column is text, not a number
 
-Run `?v2v::common_errors` for the ones specific to this data.
+Run `?v2v::common_errors` for the errors specific to the example data.
 
 ## Saving Figures for the Paper
 
@@ -177,24 +180,24 @@ ggsave(
 ```
 
 `ggsave()` writes the last plot to a file at a size and resolution you control. Fixed
-dimensions mean the figure looks the same everywhere.
+dimensions mean the figure looks the same everywhere it appears.
 
 ## Checkpoint
 
 You should now have, saved in your project:
 
 - A grouped summary with n, mean, median, and sd
-- Three figures on `theme_v2v()`, all fully labeled
-- Alt text drafted for each one
+- Three figures using `theme_v2v()`, all fully labeled
+- Alt text drafted for each figure
 - One sentence under each figure saying what it shows
-- A `.qmd` that renders start to finish
+- A `.qmd` that renders from start to finish
 
 ## Before Next Time
 
-- **Due this week:** Describing Data [R], 75 points
-- **Read** Chapter 13, "Making the call," before Tuesday
-- **Tuesday we answer what your figures only framed**
+- **Due Friday, November 13, 11:59 PM: Describing Data in R, 75 points**
+- **Read Chapter 13, "Making the call," before Tuesday**
+- **Tuesday we answer the questions your figures only framed**
     - Bring the summary table you built today
-    - No new math to learn in advance
+    - There is no new math to learn in advance
 
 ## Questions, Comments, or Concerns? {.titlecard}

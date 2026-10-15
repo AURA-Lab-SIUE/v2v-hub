@@ -14,38 +14,38 @@ format:
 ## Today's Agenda
 
 - Three rounds of peer review
-- Turning two reviews into a revision list
-- Drafting the reflection paragraph
-- Deploying before you leave
+- Turn the two reviews you receive into a revision list
+- Draft the reflection paragraph
+- Deploy your site before you leave
 
 ## Today Is a Working Session
 
 [Last class of the term]{.eyebrow}
 
-- **No lecture: three rounds of review, then your revision list**
-    - You read two papers, two people read yours
-- **Then you draft the reflection**, in class, while it is fresh
-- **I am here the whole time** for rendering and deployment
+- **There is no lecture: three rounds of review, then your revision list**
+    - You read two papers, and two people read yours
+- **Then you draft the reflection in class, while the study is fresh**
+- **Help with rendering and deployment is in the room the whole session**
 
 Leave today knowing exactly what is left to do.
 
 ## What You Should Have in Hand
 
-- **A rendered draft**, even if sections are thin
-    - Thin is expected, and a rough draft is the point
-- **Your three figures**, produced by code in the document
-- **Your test output:** means, statistic, *p*, and effect size
+- **A rendered draft, even if some sections are thin**
+    - Thin is expected. A rough draft is the point of today
+- **Your three figures, produced by code inside the document**
+- **Your test output: the means, the statistic, *p*, and the effect size**
 - **A project that builds without error**
 
-If your render is broken, raise your hand now.
+If your render is broken, say so now.
 
 ## The White Paper, 250 Points
 
-- **The largest piece of the course, due finals week**
-- **Abstract, Introduction, Methods, Results, Discussion, References**
-    - Plus your one-paragraph reflection
-- **Published at a public URL through GitHub Pages**
-- **Graded on the study, the writing, and whether it reproduces**
+- **The largest piece of the course, due Friday, December 18, 11:59 PM**
+- **Abstract, Introduction, Methods, Results, Discussion, and References**
+    - Plus your one-paragraph Reflection
+- **You submit two things, both required: the PDF, and the live URL of your GitHub Pages site**
+- **It is graded on the study, the writing, and whether it reproduces from the code**
 
 ## Where the 250 Points Sit
 
@@ -59,88 +59,90 @@ If your render is broken, raise your hand now.
 
 ## Reading the Rubric
 
-The full rubric, with what earns full marks in each row, is in the syllabus. Read it as
-five questions:
+The full rubric, with what earns full marks in each row, is linked from the White Paper
+entry on the Assignments page. Read it as five questions:
 
-- **Does it answer its own question?**
-- **Could someone repeat it?**
-- **Are the numbers complete?**
-- **Is it honest about limits?**
-- **Does it deploy?**
+- **Does the paper answer its own question?**
+- **Could someone else repeat the study from the Methods?**
+- **Are the numbers complete: means, test, *p*, and effect size?**
+- **Is the paper honest about its limits?**
+- **Does the site deploy?**
 
-## Your Turn {.discuss}
+## Exercise: State Your Claim in One Sentence {.discuss}
 
-- What is the one sentence your paper is actually claiming?
-- Say it out loud without the words significant or *p*-value
-- If it takes more than one sentence, which part are you unsure of?
+Answer in writing:
+
+- Write the one sentence your paper is actually claiming
+- Rewrite it without the words "significant" or "*p*-value"
+- If it takes you more than one sentence, name the part you are unsure of
 
 ## Round One, the Introduction
 
-Read your partner's Introduction only. Fifteen minutes. Answer in writing:
+Read your partner's Introduction only. Answer each question in writing:
 
-- **After one paragraph, do you know the question?**
-- **Is the theory doing work, or is it decoration?**
-- **Does it promise what the study can deliver?**
+- **After the first paragraph, do you know what the question is?**
+- **Is the theory doing work in the argument, or is it decoration?**
+- **Does the Introduction promise only what the study can deliver?**
 - **Name one sentence that could be cut with no loss**
 
 ## Round Two, the Methods
 
-Fifteen minutes, Methods only. Answer in writing:
+Read the Methods only. Answer each question in writing:
 
-- **Could you repeat this study? Where would you stall?**
-- **Is the sample described:** how many, drawn how, from what?
-- **Is the coding rule clear enough to code the same way?**
-- **Are the choices disclosed:** bins, caps, filters, dropped cases?
+- **Could you repeat this study? Name the first place you would stall**
+- **Is the sample described: how many cases, drawn how, from what population?**
+- **Is each coding rule clear enough that you would code the same way?**
+- **Are the choices disclosed: bins, caps, filters, and dropped cases?**
 
-## Round Three, the Results
+## Round Three, the Results and Discussion
 
-Fifteen minutes, Results and Discussion. Answer in writing:
+Read the Results and Discussion. Answer each question in writing:
 
-- **Does every figure have a label, units, and a sentence?**
+- **Does every figure have a label, units, and a sentence saying what it shows?**
 - **Is the test reported in full, with the effect size?**
 - **Does the Discussion claim more than the Results support?**
-- **Are the limits real limits, or apologies?**
+- **Are the stated limits real limits, or apologies?**
 
 ## What a Useful Review Sounds Like
 
-- **Not useful:** "this is good, maybe add more detail"
-- **Useful:** "I could not tell whether your cases were drawn at random"
-    - "Say which, in paragraph two"
-- **Point at a location, name the problem, suggest one fix**
-- **You are not grading**, you are the first reader who is not the author
+- **Not useful:** "This is good, maybe add more detail"
+- **Useful:** "I could not tell whether your cases were drawn at random. Say which, in paragraph two"
+- **Point at a location, name the problem, and suggest one fix**
+- **You are not grading. You are the first reader who is not the author**
 
 ## Common Problems Reviewers Find
 
 - **The Introduction and the Results answer different questions**
-- **The effect size is missing**, so "significant" overreaches
-- **Default axis labels**, still reading `message_length`
-- **A cap or filter in the code and never in the prose**
-- **The Discussion says "proves."** Nothing here proves anything
+- **The effect size is missing, so "significant" claims more than it should**
+- **Default axis labels, still reading `message_length`**
+- **A cap or filter that is in the code and never mentioned in the prose**
+- **The Discussion says "proves." Nothing in a study like this proves anything**
 
 ## Back at Your Own Paper
 
-Take fifteen minutes and turn the two reviews into a list:
+Turn the two reviews you received into one list with three parts:
 
 - **Must fix:** anything that makes the paper wrong or unreadable
-- **Should fix:** clarity, labels, tighter prose
-- **Disagree, and here is why:** you are the author
+- **Should fix:** clarity, labels, and tighter prose
+- **Disagree, and here is why:** you are the author, and you may decline a suggestion with a reason
 
-Put the list in your project as a plain file. It is your plan for finals week.
+Save the list in your project as a plain text file. It is your plan for finals week.
 
 ## The Reflection Paragraph
 
-- **One paragraph, not part of IMRaD and not a result**
-- **Your candid account of what the study taught you**
+- **One paragraph. It is not part of IMRaD and it is not a result**
+- **It is your candid account of what the study taught you**
     - What turned out harder than expected
     - Where a coding rule proved ambiguous in practice
     - What the dataset could not answer, and why
+    - What a second attempt would change
 
 ## What a Good Reflection Avoids
 
-- **The bland version:** everything went well and I learned a lot
-- **The anxious version:** everything went wrong and I am sorry
+- **The bland version:** "Everything went well and I learned a lot"
+- **The anxious version:** "Everything went wrong and I am sorry"
 - **A reflection is evidence of judgment, not an apology**
-- **Saying precisely where a study is weak is understanding it**
+- **Saying precisely where a study is weak is proof that you understand it**
 
 One honest paragraph beats a page of hedging.
 
@@ -150,11 +152,11 @@ One honest paragraph beats a page of hedging.
 v2v::deploy_portfolio()
 ```
 
-Run it today, even on an unfinished draft. Deployment failures are the classic finals-week
-disaster, and they are much easier to fix with me in the room.
+Run it today, even on an unfinished draft. A deployment failure is the classic finals-week
+disaster, and it is much easier to fix with help in the room.
 
 If the pre-flight checks stop you, that is the function working. Read which of the three
-failed and fix that one thing.
+checks failed and fix that one thing.
 
 ## Checkpoint
 
@@ -164,16 +166,15 @@ Before you leave today you should have:
 - Two reviews of your own paper, in hand
 - A three-part revision list saved in your project
 - A first draft of your reflection paragraph
-- A successful deploy, or a specific error and a plan
+- A successful deploy, or a specific error message and a plan to fix it
 
 ## Before Finals Week
 
-[The White Paper is due finals week]{.eyebrow}
-
-- **Work the must-fix list first**, and the rest is optional
-- **Re-render after every change**, so the numbers stay yours
-- **Deploy early**, and not the night before
-- You began with a curiosity and no tools, and you finish with a published,
+- **Due Friday, December 18, 11:59 PM: White Paper, the PDF and the live URL**
+- **Work the must-fix list first. The rest is optional**
+- **Re-render after every change, so every number stays computed, not typed**
+- **Deploy early, not the night before**
+- You began the term with a curiosity and no tools. You finish with a published,
   reproducible study at a public address
 
 ## Questions, Comments, or Concerns? {.titlecard}

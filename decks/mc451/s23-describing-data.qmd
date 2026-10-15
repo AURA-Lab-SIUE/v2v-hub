@@ -13,33 +13,33 @@ format:
 
 ## Today's Agenda
 
-- The grammar of graphics, in three parts
-- A line, a bar, and a histogram
-- The choices a figure has to disclose
-- Why your mean and median disagree
+- The grammar of graphics: every plot is built from the same three parts
+- Three chart types: a line chart, a bar chart, and a histogram
+- The design choices a figure has to disclose to its reader
+- Why the mean and the median of the same variable disagree
 
 ## What We Build Today
 
-[Describing Data, 75 points, due this week]{.eyebrow}
+[Describing Data, 75 points, due Friday, November 13, 11:59 PM]{.eyebrow}
 
-- **Chapter 11 left `analysis`, about 35,000 rows**
-    - Nobody reads 35,000 rows, so a figure makes it visible
-- **Three figures and one summary table**
-    - Each chart type chosen to fit a different question
-    - They become the Results section of your White Paper
+- **Chapter 11 left you an `analysis` table of about 35,000 rows**
+    - Nobody reads 35,000 rows, so a figure is how you make the data visible
+- **Today we build three figures and one summary table from the example data**
+    - Each chart type fits a different kind of question
+    - The same three figures, built from your own data, become the Results section of your White Paper
 
-Your first version of each will look wrong. Fixing it is three lines.
+Your first version of each figure will look wrong. Fixing it takes about three lines.
 
 ## The Grammar of Graphics
 
 **ggplot2** is not a catalog of chart types. It is one idea from Wilkinson's *The Grammar of
-Graphics*: every plot is the same few parts.
+Graphics*: every plot is built from the same few parts.
 
 - **Data:** the table being shown
-- **Aesthetic mappings:** which column goes to x, y, or color
-- **Geometry:** the mark used to draw it
+- **Aesthetic mappings:** which column goes to the x axis, the y axis, or the color
+- **Geometry:** the kind of mark used to draw the data, such as a line or a bar
 
-Choose those three and the plot is specified.
+Choose those three parts and the plot is fully specified.
 
 ## The Skeleton in Code
 
@@ -49,38 +49,43 @@ ggplot(data, aes(x = ..., y = ...)) +
 ```
 
 `ggplot()` names the data and, inside `aes()`, says which column maps to which visual
-property. `geom_line()` says what mark to draw, and `+` stacks layers.
+property. `geom_line()` says what mark to draw, and `+` stacks layers on top of each other.
 
 Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
 
-## Your Turn {.discuss}
+## Exercise: Choose a Chart for Your Own Variable {.discuss}
 
-- You have a variable to describe. What **shape** do you expect?
-- Would a line, a bar, or a histogram answer your question best?
-- What would surprise you if you saw it?
+Pick one variable from your own codebook and answer in writing:
 
-## A Line for Change Over Time
+- What **shape** do you expect its values to have: a few large values and many small ones, an even spread, or a daily rhythm?
+- Which chart answers your question best: a line chart (change over time), a bar chart (a count per category), or a histogram (the shape of a numeric variable)?
+- Describe one result that would surprise you if the chart showed it
+
+## A Line Chart Shows Change Over Time
 
 ```r
 viewers_over_time <- streams %>%
   filter(!is.na(game)) %>%
   mutate(
-    timestamp = as.POSIXct(date / 1000, origin = "1970-01-01", tz = "UTC"),
+    timestamp = as.POSIXct(date / 1000,
+                           origin = "1970-01-01",
+                           tz = "UTC"),
     six_hour  = floor_date(timestamp, "6 hours"),
     category  = fct_lump_n(game, n = 5)
   ) %>%
   group_by(six_hour, category) %>%
-  summarise(total_viewers = sum(viewers), .groups = "drop")
+  summarize(total_viewers = sum(viewers), .groups = "drop")
 ```
 
-Bucket the snapshots into six-hour blocks, keep the top five games and lump the rest into
-"Other," then sum the viewers in each bucket.
+This code groups the snapshots into six-hour blocks, keeps the top five games and lumps the
+rest into "Other," then adds up the viewers in each block.
 
-## Drawing the Line
+## Drawing the Line Chart
 
 ```r
 ggplot(viewers_over_time,
-       aes(x = six_hour, y = total_viewers, color = category)) +
+       aes(x = six_hour, y = total_viewers,
+           color = category)) +
   geom_line(linewidth = 0.9) +
   labs(title = "Concurrent viewers by game category",
        x = "Date (UTC, six-hour buckets)",
@@ -89,22 +94,22 @@ ggplot(viewers_over_time,
   v2v::theme_v2v()
 ```
 
-Time on x, summed viewers on y, category to color. `theme_v2v()` gives every figure in the
-set one consistent look.
+Time goes on the x axis, summed viewers on the y axis, and category to color. `theme_v2v()`
+gives every figure in the set one consistent look.
 
 ## What the Line Chart Shows
 
-- **"Other" dominates**, spiking above 20 million viewers
-    - One reading: viewership really does have a long tail
-    - The other: lumping fifty categories guarantees that bucket wins
-- **The design cost is real**
-    - The five named lines press flat against the axis
+- **The "Other" category dominates, spiking above 20 million viewers**
+    - One reading: viewership really does have a long tail of small categories
+    - The other reading: lumping fifty categories into one guarantees that one wins
+- **That design choice has a real cost**
+    - The five named lines are pressed flat against the bottom axis
 
-A dominant series crowds out the rest. Notice that, and say so.
+A dominant series crowds out the rest. Notice that in your own figure, and say so in the caption.
 
-## A Bar for Counts
+## A Bar Chart Shows a Count per Category
 
-Hour of day is 24 discrete categories, and we want a count per category.
+Hour of day is 24 separate categories, and we want a count of messages in each one.
 
 ```r
 chat_by_hour <- analysis %>%
@@ -117,20 +122,20 @@ ggplot(chat_by_hour, aes(x = hour, y = messages)) +
   v2v::theme_v2v()
 ```
 
-`geom_col()` draws a bar whose height you already computed.
+`geom_col()` draws a bar whose height is a number you already computed.
 
 ## What the Bar Chart Shows
 
 [Twitch, November 2018]{.eyebrow}
 
-- **A clear daily pulse**, busiest through UTC midday
-- **Peak at 13:00 with 2,201 messages**
-- **Floor at 03:00 with 833**, a swing of over two to one
-- **Not mysterious:** the audience sat in the Americas and Europe
+- **The example chat has a clear daily pulse, busiest through UTC midday**
+- **The peak is 13:00 UTC, with 2,201 messages**
+- **The low point is 03:00 UTC, with 833 messages, a swing of more than two to one**
+- **The pattern is not mysterious: the audience sat in the Americas and Europe**
 
-Twenty-four numbers become a rhythm you read in one glance.
+Twenty-four numbers become a rhythm you can read in one glance.
 
-## A Histogram for Shape
+## A Histogram Shows the Shape of a Numeric Variable
 
 ```r
 msglen <- analysis %>%
@@ -138,68 +143,67 @@ msglen <- analysis %>%
   mutate(length_shown = pmin(message_length, 120))
 
 ggplot(msglen, aes(x = length_shown, fill = is_gaming)) +
-  geom_histogram(binwidth = 5, position = "identity", alpha = 0.55) +
+  geom_histogram(binwidth = 5, position = "identity",
+                 alpha = 0.55) +
   v2v::scale_fill_v2v() +
   v2v::theme_v2v()
 ```
 
-A **histogram** slices a numeric variable into equal bins and draws a bar for how many
-values land in each. Two groups overlaid, so the shapes compare.
+A **histogram** slices a numeric variable into equal bins and draws a bar for how many values
+land in each bin. Here two groups are overlaid, so their shapes can be compared.
 
 ## Two Choices You Must Disclose
 
-- **`binwidth = 5` sets each bar to five characters**
-    - Wider smooths, narrower roughens, so report it
-- **`pmin(message_length, 120)` caps the display**
-    - Twitch's real limit is 500, so the last bar is a pile-up
-    - Capping keeps the bulk legible
+- **`binwidth = 5` makes each bar five characters wide**
+    - A wider bin smooths the shape and a narrower bin roughens it, so report the width you used
+- **`pmin(message_length, 120)` caps the display at 120 characters**
+    - Twitch's real limit is 500 characters, so the last bar is a pile-up of everything longer
+    - Capping keeps the bulk of the data legible
 
-An unannounced cap is a quiet distortion. Label the axis.
+An unannounced cap is a quiet distortion. Label the axis with the cap.
 
 ## What the Histogram Shows
 
 - **Both groups are heavily right-skewed**
-    - A tall stack of very short messages, then a long tail
-    - Twitch chat is mostly brief, a word or an emote
+    - A tall stack of very short messages, then a long thin tail of longer ones
+    - Most Twitch chat messages are brief: a word or an emote
 - **A minority of long messages stretches the range**
 
-This is the most important thing the figure reveals, and it is invisible in any single
-summary number.
+The skew is the most important thing the figure reveals, and no single summary number can show it.
 
 ## Mean and Median Disagree
 
-Group by `is_gaming`, then `summarise()` n, mean, median, and sd:
+Group by `is_gaming`, then `summarize()` the count (n), the mean, the median, and the standard deviation (sd):
 
 - **Non-gaming:** n 3,457, mean 33.70, median 16, sd 60.68
 - **Gaming:** n 31,309, mean 28.49, median 17, sd 38.47
 
-## Why They Disagree
+## Why the Mean and the Median Disagree
 
-- **The mean says non-gaming chat is longer**, 33.70 to 28.49
-- **The median collapses the story**, 16 against 17
-    - Near identical, and pointing the other way
-- **The mean is pulled by a long tail, the median is not**
-    - Non-gaming has the heavier tail, and its sd records it
+- **The mean says non-gaming chat is longer:** 33.70 characters to 28.49
+- **The median says the two groups are nearly identical:** 16 against 17, and pointing the other way
+- **The mean is pulled upward by a long tail of long messages; the median is not**
+    - Non-gaming chat has the heavier tail, and its larger standard deviation records that
 
-The gap in means is real arithmetic, but it is the tail's work.
+The gap in means is real arithmetic, but it is the work of the tail, not of the typical message.
 
 ## Checkpoint
 
 You should now have:
 
-- A line chart, a bar chart, and a histogram, all on `theme_v2v()`
+- A line chart, a bar chart, and a histogram, all using `theme_v2v()`
 - A grouped summary with n, mean, median, and sd
-- The binwidth and any cap written into your axis labels
+- The bin width and any cap written into your axis labels
 - One sentence per figure saying what it shows
 
 If a figure will not render, check that every `+` ends the line above it.
 
 ## Before Next Time
 
-- **Due this week:** Describing Data [R], 75 points
-- **Thursday is a lab**, building these three on your own variables
+- **Due Friday, November 13, 11:59 PM: Describing Data in R, 75 points**
+- **Thursday is a lab: you build these three figures on your own variables**
     - Bring your `analysis` table and your research question
-- **Read** Chapter 12, especially on readable figures
+- **Read Chapter 12, especially the section on readable figures**
 
 A figure can frame the question. It cannot answer it.
 

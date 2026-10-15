@@ -151,8 +151,8 @@ Step 5 has a name, **operationalization**, and it is most of the next two chapte
 
 ## Before next time
 
-- **The Annotated Manuscript is due this week**, 25 points
-- **CITI Ethics Certification is due this week**, 25 points. If you have not started it,
+- **The Annotated Manuscript is due Friday, September 25, 11:59 PM**, 25 points
+- **CITI Ethics Certification is due Friday, September 25, 11:59 PM**, 25 points. If you have not started it,
   do that tonight.
 - Write your working hypothesis or research question into your project repository, with
   the independent and dependent variables named

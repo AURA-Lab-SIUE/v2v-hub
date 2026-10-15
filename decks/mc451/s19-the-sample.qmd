@@ -13,156 +13,159 @@ format:
 
 ## Today's Agenda
 
-- Why a census is off the table
-- What simple random sampling cannot fix
-- Strata, and choosing ones that matter
-- Drawing the sample reproducibly
+- Why coding every message (a census) is not an option
+- What simple random sampling can and cannot fix
+- Strata: dividing the population into groups, and choosing groups that matter
+- Drawing the sample so that anyone can reproduce it
 
-## Four Hundred Hours of Coding
+## Coding by Hand Takes Four Hundred Hours
 
-[Do the arithmetic first]{.eyebrow}
-
-- **One message every forty-five seconds, by hand**
-    - The 35,267 in the working sample take over four hundred hours
+- **Coding one message by hand takes about forty-five seconds**
+    - The 35,267 messages in the example working sample would take over four hundred hours
     - The full 2018 collection would outlast your degree
-- **So you will code a sample**
+- **So you will code a sample, not the whole set**
+- Time your own coding on a few items, then multiply by the number of items in your source
 
-Drawing it well is the whole of today.
+Drawing the sample well is the whole of today.
 
 ## Population, Sample, Census
 
-- **Population:** the full set your conclusions are about
-    - Here, every message in the corpus that week
-    - In your study, whatever your prospectus said
-- **Sample:** the subset you actually examine
-- **Census:** every case, right when the population is small
+- **Population:** the full set of cases your conclusions are about
+    - In the example, every message posted in the fifty channels that week
+    - In your study, whatever your prospectus named
+- **Sample:** the subset of the population you actually examine
+- **Census:** every case in the population, which is practical only when the population is small
 
-The stream table is close to a census: roughly 32,000 snapshots, all kept.
+The example stream table is close to a census: roughly 32,000 snapshots, all kept.
 
-## Chat Is the Opposite Case
+## The Chat Table Is the Opposite Case
 
-- **Far too much to code, so no census**
-    - The ordinary condition of content analysis
-- **A sample makes the work finite**
-    - Without making the conclusions worthless
+- **There is far too much chat to code, so a census is impossible**
+    - This is the ordinary condition of content analysis
+- **A sample makes the work finite without making the conclusions worthless**
 - **A sample of any size can be sound or misleading**
-    - 1,500 messages or 250, the method is what decides it
+    - 1,500 messages or 250, the sampling method decides which
 
-The difference is method, which means you decide it rather than get lucky.
+The method is what you decide. A good sample is designed, not lucky.
 
 ## Simple Random Sampling
 
-- **Every message has an equal chance**
+- **Every message has an equal chance of being drawn**
     - Draw the number you need, and stop
 - **Its virtue is that it is unbiased**
     - No message is favored over any other
-    - The sample carries no tilt built in by the researcher
-- A real guarantee, and for Twitch chat not enough
+    - The researcher builds no tilt into the sample
+- Being unbiased is a real guarantee, and for the example data it is not enough
 
-## Why That Is Not Enough
+## Why Equal Chances Are Not Enough
 
-[The shape of the data]{.eyebrow}
-
-- **Chat volume is severely concentrated**
+- **Chat volume is heavily concentrated in a few channels**
     - Busiest channel: more than a million messages that week
-    - Median channel: about 1,440
-    - Quietest channel: one
-- **That shape is right-skewed**, a long thin tail
+    - Median channel: about 1,440 messages
+    - Quietest channel: one message
+- **That distribution is right-skewed: a few giants and a long thin tail of small channels**
 
-Draw at random and almost everything comes from the giants.
+Draw at random and almost every message comes from the giants.
 
-## Your Turn {.discuss}
+## Exercise: A Random Draw From the Example Data {.discuss}
 
-- Draw 1,000 at random: how many from the one-message channel?
-- Is that sample **biased**? Is it **representative**?
-- Are those the same question?
-- Your study has a comparison at its center. Which side is rare?
+Answer each question in writing:
 
-## The Second Dimension
+- If you draw 1,000 messages at random, about how many come from the channel that posted one message? Give a number
+- Is that sample **biased**? Is it **representative**? Answer each separately, with one reason
+- If your own study compares two groups, name the group that is rarer in your source
 
-- **Forty-three of the fifty channels are gaming channels**
+## The Second Dimension: Gaming and Non-Gaming Channels
+
+- **Forty-three of the fifty example channels are gaming channels**
     - Bob Ross's painting channel is the clearest exception
 - **A random sample would be almost all gaming chat**
-    - Not from bias, but because that is where the messages are
-- For a study comparing the two, that is close to fatal
+    - Not because the draw is biased, but because that is where the messages are
+- For a study comparing gaming and non-gaming chat, a random draw is close to fatal
 
-## The Trap, Stated Plainly
+## Unbiased and Still Unrepresentative
 
-- **Unbiased and still unrepresentative**
-    - It faithfully reproduces the imbalance at sample size
-- **The study needs enough of every group to compare**
-- **Unbiased is a property of the procedure**
-    - It is not a guarantee about the result
+- **A random sample faithfully reproduces the imbalance of the population, at sample size**
+- **A comparison needs enough cases from every group being compared**
+- **Unbiased is a property of the procedure, not a guarantee about the result**
 
 Noticing this before you draw is the difference between a study and a mess.
 
 ## Stratified Sampling
 
 - **Do not draw from one undifferentiated pool**
-    - Divide the population into subgroups called **strata**
+    - Divide the population into subgroups, called **strata**
     - Draw from within each stratum separately
 - **Every stratum gets a place in the sample**
-    - In the proportion you decide, not the one handed to you
+    - In the proportion you decide, not the proportion the population hands you
 
 ## Choosing Strata That Matter
 
-- **Strata follow the question, not convenience**
-    - For the chat study that is the **channel**
-    - A fixed number per channel admits small channels fully
-- **Gaming status is a property of the channel**
-    - So stratifying by channel rescues the comparison
-    - Every non-gaming channel is in by construction
+- **Strata follow the research question, not convenience**
+    - For the example chat study the stratum is the **channel**
+    - A fixed number of messages per channel admits the small channels fully
+- **Whether a channel is a gaming channel is a property of the channel**
+    - So stratifying by channel rescues the gaming versus non-gaming comparison
+    - Every non-gaming channel is in the sample by construction
+- For your own source, the stratum is whatever group your question compares: an account, a subreddit, a month, an outlet
 
-## The Corpus Is Itself Stratified
+## The Example Corpus Is Itself Stratified
 
-- **The fifty were not the fifty busiest**
+- **The fifty channels were not the fifty busiest**
     - Eight were fixed anchors chosen for variety
-    - Bob Ross among them, the deliberate non-gaming case
-- **The other forty-two came from ten volume bands**
-    - Every band was sampled
-- The skew was not sampled away, it was sampled **across**
+    - Bob Ross was one of them, the deliberate non-gaming case
+- **The other forty-two came from ten volume bands, and every band was sampled**
+- The skew was not sampled away. It was sampled **across**
 
 ## When a Stratum Is Too Small
 
-- **Ask thirty of a channel that produced nine**
-    - The rule the tools follow: take everything it has
-- **Nineteen of the fifty hold fewer than a thousand**
-    - A few hold only a handful
-- A stratum contributes its full weight, or its full self
+- **If you ask for thirty messages from a channel that produced nine, the tools take all nine**
+- **Nineteen of the fifty example channels hold fewer than a thousand messages, and a few hold only a handful**
+- A stratum contributes either its full share or everything it has
 
 ## Drawing the Sample
 
 ```r
-set.seed(409)
-
-coding_sample <- v2v::sample_messages(chat, by = channel, n = 30)
+coding_sample <- v2v::sample_messages(
+  chat,
+  n_per_channel = 30,
+  seed = 409
+)
 ```
 
-`by = channel` makes each channel a stratum and `n = 30` asks for thirty messages from each,
-which across fifty channels aims at roughly 1,500 messages.
+`sample_messages()` treats each channel as a stratum. `n_per_channel = 30` asks for thirty
+messages from each channel, and `seed = 409` fixes the random draw so it can be repeated.
+Across fifty channels that aims at roughly 1,500 messages.
 
-That is a professional-scale draw: large enough to support the study, and hand-codeable by a team
-working at that scale. Yours is the same draw at your own budget. At 45 seconds a message 1,500 is
-over eighteen hours, so lower `n` until the arithmetic fits: `n = 5` across fifty channels is 250
-messages, about three hours, and it is still stratified.
+1,500 messages is a professional-scale draw: large enough to support the study, and hand-codeable
+by a team. Your draw uses the same command at your own budget.
 
-## Why `set.seed()` Is Not Optional
+## Sizing the Draw to Your Time Budget
 
-- **A draw is random: run it twice, get two samples**
-- **`set.seed()` fixes the generator's starting point**
-    - The draw then comes out identically every time
-- **Without it nobody can check your results**
-    - Including you, in six months
+- **At 45 seconds a message, 1,500 messages take over eighteen hours**
+- **Lower `n_per_channel` until the arithmetic fits the time you have**
+    - `n_per_channel = 5` across fifty channels is 250 messages, about three hours
+    - The sample is still stratified, so the comparison still holds
+- **Write the arithmetic into your sampling plan: seconds per item, number of items, total hours**
 
-The number 409 is arbitrary. What matters is that one is set and recorded.
+## Why the Seed Is Not Optional
+
+- **A random draw differs every time you run it**
+- **The `seed` argument fixes the starting point of the random number generator**
+    - `sample_messages()` calls `set.seed()` with that number before it draws
+    - The draw then comes out identical every time
+- **Without a seed, nobody can check your results, including you in six months**
+
+The number 409 is arbitrary. What matters is that a seed is set and recorded in your sampling plan.
 
 ## Looking Ahead to Thursday
 
-- **You have a sample, and an untested codebook**
+- **You now have a sample and an untested codebook**
 - **Thursday is the pilot**
-    - Ten to twenty items coded twice, your first codes hidden
-    - We compute **Cohen's kappa** and watch a codebook fail
-- **Read** Chapter 10's second half before Thursday
-- **Bring your codebook**, because it is what goes on trial
+    - Ten to twenty items coded twice, with your first codes hidden
+    - We compute **Cohen's kappa** and watch an example codebook fail
+- **Read the second half of Chapter 10 before Thursday**
+- **Bring your codebook, because it is the thing being tested**
+- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot**
 
 ## Questions, Comments, or Concerns? {.titlecard}

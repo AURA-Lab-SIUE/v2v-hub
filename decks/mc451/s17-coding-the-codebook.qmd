@@ -13,32 +13,30 @@ format:
 
 ## Today's Agenda
 
-- A project folder that holds the whole study
-- Your codebook installed as a real document
-- The data loaded, and looked at for the first time
-- What to do when a line breaks
+- Build a project folder that holds the whole study
+- Install your codebook in that folder as a real document
+- Load the shared example data and look at it for the first time
+- Learn what to do when a line of R returns an error
 
 ## What We Build Today
 
 [Lab session]{.eyebrow}
 
-- **A project folder holding the whole study**
+- **One project folder that holds the whole study**
     - Your Chapter 8 codebook, installed as a document
-    - The Twitch data, loaded and looked at
-- **No analysis today**
-    - We open, we load, we look
-- Everything here becomes your White Paper method
+    - The shared Twitch example data, loaded and looked at
+- **No analysis today: we open the project, load the data, and look**
+- The steps you practice today on the example data are the steps you repeat on your own source
+- Your White Paper's method section will describe these same steps
 
 ## Why the Folder Comes First
 
-- **You designed a study and never saw the data**
-- **Reproducible work lives in files in known places**
-    - Not in commands typed once
-- **A project is one folder**
-    - Data, code, codebook, and report together
-    - Nothing depends on a file only you have
+- **You designed a study and have not yet seen the data in R**
+- **Reproducible work lives in files in known places, not in commands typed once**
+- **A project is one folder that holds the data, the code, the codebook, and the report**
+    - Nothing in the study depends on a file only you have
 
-Deciding where files go is friction, so we skip that decision.
+Deciding where each file goes is a decision you do not need to make. The scaffold makes it for you.
 
 ## Scaffolding the Project
 
@@ -46,25 +44,29 @@ Deciding where files go is friction, so we skip that decision.
 v2v::new_portfolio("twitch-portfolio")
 ```
 
-That one line creates the whole folder, already named and already wired together.
+This one line creates the whole project folder, already named and already wired together.
 
-Note the `v2v::` prefix. It says the function comes from this book's package, so the
-package never becomes a hidden assumption.
+The `v2v::` prefix says the function comes from this book's package, so you always know where
+a function came from.
+
+The example project is named `twitch-portfolio`. Name your own project after your own study.
 
 ## What the Scaffold Gives You
 
 ```
 twitch-portfolio/
-├── twitch-portfolio.Rproj
 ├── _quarto.yml
-├── README.md
-├── codebook.qmd
-├── analysis.qmd
-├── data/
-└── .Rprofile
+├── index.qmd
+├── 01-introduction.qmd ... 05-reflection.qmd
+├── references.qmd, references.bib
+├── codebook/codebook.qmd
+├── journals/week-01.qmd
+├── data/raw/, data/derived/
+└── figures/
 ```
 
-You did not decide where anything goes or what to name it, which is the point.
+The scaffold decides where every file goes and what each file is named, so you do not have to.
+The five numbered files are the sections of your White Paper, already in order.
 
 ## Confirming the Stack
 
@@ -75,25 +77,26 @@ v2v::setup()
 `setup()` checks that R, the packages this book depends on, and the project environment are
 all present and agree on versions.
 
-- **You met it once, when you installed the stack**
+- **You ran it once, when you installed the stack**
 - **Run it every time you open the project**
-- You learn about a missing piece before it interrupts you
+- It reports a missing piece before that piece interrupts your work
 
-## The Rulebook Becomes a Document
+## The Codebook Becomes a Document
 
-- **One file in the scaffold is `codebook.qmd`**
-    - In Chapter 8 your codebook was an argument on paper
-    - Now it is the reference every later step answers to
-- **Move the draft in, add a version line and a date**
-- A codebook that renders cleanly is one a coder can read
+- **The scaffold includes a file named `codebook/codebook.qmd`**
+    - In Chapter 8 your codebook was a plan on paper
+    - From today it is the reference document every later step follows
+- **Move your draft codebook into that file, then add a version line and a date**
+- A codebook that renders cleanly is a codebook a coder can read
 
-## Your Turn {.discuss}
+## Exercise: Guess the Columns Before You Look {.discuss}
 
-We are about to run `glimpse(chat)`, which prints every column.
+We are about to run `glimpse(chat)`, which prints every column in the example chat table.
+Answer these three questions in writing before we run it:
 
-- What columns do you **predict** are in there? Name three
-- Your codebook needs message text and sender. What if one is missing?
-- What would you do if a column your study depends on is absent?
+- Name three columns you expect to find in a table of chat messages
+- The book's example codebook needs the message text and the sender. Which columns does your own codebook need from your own source?
+- If a column your study depends on turns out to be missing from your data, what is your plan: find another source, or change the variable?
 
 ## Loading the Data
 
@@ -104,12 +107,13 @@ chat <- v2v::twitch_chat()
 streams <- v2v::twitch_streams()
 ```
 
-Line one loads the tidyverse; the next two fetch each table and name it with `<-`.
+Line one loads the tidyverse. The next two lines fetch each example table and name it with `<-`.
 
-The data arrives through a **function call**, not a file path, which removes a whole
+The example data arrives through a **function call**, not a file path, which removes a whole
 category of beginner error. You get the **working sample**, not the full 2018 collection.
+Loading your own source from a file uses a different first line; every step after it is the same.
 
-## Looking, the Chat Table
+## Looking at the Chat Table
 
 ```r
 glimpse(chat)
@@ -129,14 +133,14 @@ $ date    <dbl> 1542578127023, 1542578135562, 1542578143610, …
 
 ## Reading That Output
 
-- **35,267 rows, five columns**, one message per row
+- **The table has 35,267 rows and five columns, one message per row**
 - **The first two messages are not errors**
-    - Twenty-three question marks, then copypasta
-    - That is what Twitch chat contains
-- **`date` is a `<dbl>` and completely unreadable**
-    - Milliseconds since 1970, fixed in Chapter 11
+    - One is twenty-three question marks, and one is copypasta (a block of text pasted over and over)
+    - Messages like these are normal in Twitch chat, and every source has its own version of them
+- **The `date` column is a number (`<dbl>`) and is unreadable as it stands**
+    - It counts milliseconds since 1970; Chapter 11 converts it into a readable date and time
 
-## Looking, the Stream Table
+## Looking at the Stream Table
 
 [The table from week 2, now through R]{.eyebrow}
 
@@ -172,7 +176,7 @@ streams %>% count(game, sort = TRUE)
 # ℹ 50 more rows
 ```
 
-`count()` tallies how often each value appears, and `sort = TRUE` puts the biggest first.
+`count()` tallies how often each value appears, and `sort = TRUE` puts the most common value first.
 
 ## Confirming the Corpus
 
@@ -184,40 +188,39 @@ n_distinct(chat$channel)
 [1] 50
 ```
 
-- **Fifty channels**, the corpus described since Chapter 1
+- **The example corpus has fifty channels, as the book has said since Chapter 1**
 - **`n_distinct(streams$channel)` returns the same fifty**
-- **Sixty game categories across fifty channels**
-    - So most channels move around
+- **The fifty channels streamed sixty different game categories, so most channels move between games**
 
-Counting is how you check the data is what you were told it is.
+Counting is how you check that the data is what you were told it is. Run the same checks on your own source.
 
 ## When a Line Breaks
 
-- **R will return an error instead of a result**
-    - A misspelling, a package not loaded, a stray bracket
-    - This happens to everyone, and is no verdict on you
-- **The Hub keeps a common-errors cheat sheet**
-- **An error message is information**, so read it first
+- **R returns an error message instead of a result**
+    - The usual causes are a misspelling, a package that is not loaded, or a stray bracket
+    - This happens to everyone, and it says nothing about your ability
+- **The Hub keeps a cheat sheet of common errors**
+- **An error message is information, so read it before you retype anything**
 
-Run `?v2v::common_errors` for the ones specific to this data.
+Run `?v2v::common_errors` for the errors specific to the example data.
 
 ## Checkpoint
 
 You should now have:
 
-- A `twitch-portfolio` folder, from `new_portfolio()`
+- A project folder created by `new_portfolio()`
 - A clean `v2v::setup()` result
-- Your codebook in `codebook.qmd`, versioned and rendered
-- `chat` and `streams` loaded, and a `glimpse()` of each
+- Your codebook in `codebook/codebook.qmd`, versioned and rendered
+- The `chat` and `streams` example tables loaded, and a `glimpse()` of each
 
 Nothing changed in the data. Looking is all we did.
 
 ## Before Thursday
 
-- **Finish moving your codebook into `codebook.qmd`** and render it
-- **Due this week:** Codebook and Qual Memo
+- **Finish moving your codebook into `codebook/codebook.qmd`, then render it**
+- **Due Friday, October 23, 11:59 PM: Codebook and Qualitative Memo**
     - The full codebook plus a 200 to 300 word memo
 - **Bring your `glimpse()` output on Thursday**
-    - We read the data against your codebook
+    - On Thursday we read the data against your codebook
 
 ## Questions, Comments, or Concerns? {.titlecard}

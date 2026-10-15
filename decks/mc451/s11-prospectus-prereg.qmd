@@ -19,7 +19,7 @@ format:
 - A failed draft, and the feasibility test
 - Pre-registration, and what it binds
 
-## One Page, Due Next Week
+## One Page, Due Friday, October 9, 11:59 PM
 
 [The prospectus]{.eyebrow}
 
@@ -187,7 +187,7 @@ That draft was not lazy. It was ambition before discipline.
 
 ## Before Next Time
 
-- **Due:** Topic Selection and Research Questions, this week
+- **Due Friday, October 2, 11:59 PM:** Topic Selection and Research Questions
 - **Next week:** the Project Prospectus
     - Draft all six components badly, then cut
 - **Read** Chapter 7 on structured listening
