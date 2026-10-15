@@ -167,20 +167,10 @@ From the model codebook:
 
 Message length and emote presence are computed, not judged:
 
-```r
-library(v2v)
-library(tidyverse)
-
-chat <- twitch_chat()
-
-chat %>%
-  mutate(msg_length = nchar(message)) %>%
-  summarise(mean_length = mean(msg_length),
-            n_messages  = n())
-```
-
-Add a character count to every message, then report the average and the count. A derived
-variable needs an operational definition too, and this is it in executable form.
+- **Message length** is the number of characters in the message. The operational definition is the count itself; no coder judgment is involved.
+- **Emote presence** is whether the message contains at least one Twitch emote: yes or no.
+- A derived variable still needs an operational definition in the codebook, written as the rule that produces the number.
+- The computing happens later in the course, in R, from the rule you write now.
 
 ## From Draft to Deliverable
 
