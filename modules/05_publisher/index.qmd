@@ -65,7 +65,7 @@ A **Quarto project** that renders to two outputs from the same source files:
 - **A live website** hosted on GitHub Pages
 - **A print-ready PDF** submitted to Blackboard
 
-A paper nobody can open scores nothing, so both are required for the submission to count. Test your URL in a private or incognito browser window before you submit.
+A paper nobody can open scores nothing, so both are required for the submission to count. The website goes live with one command from the project root, `v2v::deploy_portfolio()`; workbook 07 walks it step by step. Test your URL in a private or incognito browser window before you submit.
 
 ### Project structure
 
@@ -76,6 +76,7 @@ A paper nobody can open scores nothing, so both are required for the submission 
 | `02-methods.qmd` | Design, data source, codebook, sampling, reliability, wrangling | No |
 | `03-results.qmd` | Study 1 themes; Study 2 descriptives, figures, the test | Yes |
 | `04-discussion.qmd` | Interpretation, limits, conclusion | No |
+| `05-reflection.qmd` | What proved harder than expected, what the data could not answer, what a second attempt would change | No |
 | `references.qmd` | Auto-generated bibliography | No |
 
 ### Choosing your statistical test
@@ -86,7 +87,7 @@ A paper nobody can open scores nothing, so both are required for the submission 
 | One categorical (two groups) by one continuous (for example, tone by word count) | Independent t-test |
 | Two continuous variables (for example, word count by shares) | Pearson correlation |
 
-The starter project includes pre-written R code for all three. Keep the one that matches your variables and delete the other two.
+Your Inferencing Data assignment already holds the working code for the test you chose; paste that chunk into `03-results.qmd`.
 
 ### Recommended writing order
 

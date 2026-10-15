@@ -89,7 +89,7 @@ install.packages(c("tidyverse", "knitr", "kableExtra", "scales"))
 
 ### Step 3: Place Your Data
 
-Copy your cleaned `.RDS` file (from Chapter 4 and the Data Wrangling assignment) into `data/derived/`. The starter `03-results.qmd` expects a file called `coding_data_clean.RDS`, so rename yours to match, or update the filename in the code.
+Copy your cleaned `.RDS` file (from Chapter 4 and the Data Wrangling assignment) into `data/derived/`. Keep the name the Data Wrangling assignment gave it, `twitch_analysis.RDS`; `03-results.qmd` will read it with `readRDS("data/derived/twitch_analysis.RDS")`.
 
 ### Step 4: First Render
 
@@ -133,7 +133,7 @@ The rubric standard is repeatability: enough detail that another researcher coul
 1. **Data provenance** (1 paragraph): what media content did you analyze, where did it come from, and over what time period?
 2. **Sampling strategy** (1 paragraph): how did you select your sample? What was the population, and what was the final sample size?
 3. **Variables** (1 to 2 paragraphs): define each variable, conceptually and operationally. This comes directly from your codebook.
-4. **Reliability** (1 paragraph): report your pilot, the agreement statistic you computed, and any codebook changes it prompted.
+4. **Reliability** (1 paragraph): you are the only coder, so report your own stability check: how many items you re-coded after a gap with your first codes hidden (about 10 percent in this course), the agreement figure that re-code produced, the threshold you applied before coding the full sample, and any codebook changes the pilot prompted. Name the single-coder limitation as such; a second coder is not part of this course.
 5. **Wrangling** (1 paragraph): the steps between raw file and analysis-ready data.
 
 ::: {.undergraduate-only}
@@ -156,10 +156,10 @@ A Methods section missing any of the three is incomplete regardless of how well 
 
 Report what you found, plainly and without interpretation. Interpretation belongs in the Discussion, and moving it there is worth points in both sections.
 
-The starter file includes pre-written R code with placeholder variable names. You need to:
+The scaffold's `03-results.qmd` holds guidance text and no code. You build it from code you have already written and had graded:
 
-1. Replace `var1` and `var2` with your actual variable names
-2. Update the `readRDS()` call to point to your `.RDS` file
+1. Open with a chunk that reads your data: `dat <- readRDS("data/derived/twitch_analysis.RDS")`
+2. Paste the chunks from your Describing Data and Inferencing Data assignments, one chunk per table, figure, or test
 3. Add your reporting paragraphs between the code chunks
 
 | Component | What to Include | Source Assignment |
@@ -181,7 +181,7 @@ Report the **power statistics behind the design** alongside your effect sizes: t
 ::: {.callout-tip}
 ## Don't Reinvent the Wheel
 
-The R code in your graded assignments is the foundation. Copy your working code from the Describing Data and Inferencing Data assignments into the starter file and adjust the variable names. The scaffold is a starting point, but your tested code is more reliable.
+The R code in your graded assignments is the foundation. Copy your working code from the Describing Data and Inferencing Data assignments into `03-results.qmd`; it already uses your variable names and your data file.
 :::
 
 ### Discussion (04-discussion.qmd)
@@ -236,6 +236,8 @@ If you retype a number and later re-run the analysis on a corrected dataset, the
 
 ## Publishing to GitHub Pages
 
+Publishing is one command from the course package, `v2v::deploy_portfolio()`. It checks your project, renders it, and pushes the rendered site to GitHub Pages. It needs two things in place first: your project is a GitHub repository, and everything in it is committed.
+
 ### Step 1: Create a GitHub Repository
 
 1. Go to [github.com](https://github.com) and sign in
@@ -244,6 +246,8 @@ If you retype a number and later re-run the analysis on a corrected dataset, the
 4. Set it to **Public** (GitHub Pages requires a public repo on free accounts)
 5. Do NOT add a README, .gitignore, or license (the scaffold already has these)
 6. Click **Create Repository**
+
+It worked if GitHub shows an empty repository page with a "Quick setup" box and your repository's URL in it.
 
 ### Step 2: Push Your Project
 
@@ -258,14 +262,24 @@ git remote add origin https://github.com/YOUR-USERNAME/mc451-whitepaper.git
 git push -u origin main
 ```
 
-### Step 3: Enable GitHub Pages
+It worked if reloading your repository page on GitHub shows `_quarto.yml`, `index.qmd`, and the numbered `.qmd` files.
 
-1. Go to your repository on GitHub
-2. Click **Settings** (tab at the top)
-3. Scroll down to **Pages** (in the left sidebar)
-4. Under "Source," select **Deploy from a branch**
-5. Set Branch to `main` and Folder to `/docs`
-6. Click **Save**
+### Step 3: Run the Publish Command
+
+In an R session inside VS Code's terminal, with the project folder open as your working directory, run:
+
+```r
+v2v::deploy_portfolio()
+```
+
+The command prints a short pre-flight list and stops if something is wrong:
+
+- **uncommitted changes detected**: save your files, then in the terminal run `git add .`, `git commit -m "update"`, and `git push`, and run the command again.
+- **_quarto.yml not found**: your R session is not in the project folder. Open the folder with **File, Open Folder** and run the command again.
+
+When the checks pass it renders every page, asks `Publish to GitHub Pages? [y/N]`, and you type `y` and press Enter.
+
+It worked if the last line reads **Portfolio live on GitHub Pages.**
 
 ### Step 4: Wait and Test
 
@@ -278,15 +292,9 @@ https://YOUR-USERNAME.github.io/mc451-whitepaper/
 Test it in an **incognito or private window** to make sure it works for someone who is not logged into your GitHub account. The rubric is explicit that a paper nobody can open scores nothing, and "it worked on my laptop" is the most common way to discover that too late.
 
 ::: {.callout-warning}
-## The Most Common Last-Minute Problem
+## If It Does Not Work
 
-Broken GitHub Pages link. This usually happens because:
-
-1. The `docs/` folder was not pushed (run `git add docs/ && git commit -m "add docs" && git push`)
-2. GitHub Pages source is set wrong (should be `main` branch, `/docs` folder)
-3. You have not waited long enough (give it 2 minutes)
-
-Test in incognito before submitting.
+If `v2v::deploy_portfolio()` stops with a message the two fixes above do not cover, or the address still shows a 404 page after five minutes, stop and tell me. Send the full text the command printed; do not try to publish by hand through the GitHub settings pages.
 :::
 
 ## Submission Checklist
@@ -296,9 +304,9 @@ Test in incognito before submitting.
 - [ ] Test results include the statistic, its degrees of freedom, the p-value, and the effect size
 - [ ] `references.bib` contains all your citations (exported from Zotero) and renders in APA 7th edition
 - [ ] `quarto render` produces both PDF and HTML without errors
-- [ ] PDF and website are in the `docs/` folder and display all sections
-- [ ] GitHub repo is public and contains the `docs/` folder
-- [ ] GitHub Pages is enabled and the site loads in an incognito window
+- [ ] The PDF in the `docs/` folder displays all sections
+- [ ] GitHub repo is public and every change is committed and pushed
+- [ ] `v2v::deploy_portfolio()` ended with "Portfolio live on GitHub Pages." and the site loads in an incognito window
 - [ ] PDF uploaded to Blackboard
 - [ ] GitHub Pages URL pasted into Blackboard submission text
 
@@ -315,9 +323,9 @@ Test in incognito before submitting.
 1. **Scaffold the project** with `v2v::new_portfolio()` and open the folder in VS Code.
 2. **Run `quarto render`** without making any changes. Does it produce output in the `docs/` folder?
 3. **Read each `.qmd` file** and identify which of your prior assignments provides the content for each section.
-4. **Replace one placeholder** in `03-results.qmd` with a real variable name from your dataset. Re-render and check the output.
+4. **Paste one graded chunk** from your Describing Data assignment into `03-results.qmd`, after a chunk that reads `data/derived/twitch_analysis.RDS`. Re-render and check the output.
 5. **Convert one retyped number** in your prose into inline R and re-render to confirm it still reads correctly.
-6. **Set up a GitHub repository**, push, enable Pages, and verify the site loads in an incognito window.
+6. **Set up a GitHub repository**, push, run `v2v::deploy_portfolio()`, and verify the site loads in an incognito window.
 
 ::: {.callout-tip}
 ## Connection to Your Project

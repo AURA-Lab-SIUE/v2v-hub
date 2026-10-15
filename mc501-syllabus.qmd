@@ -121,9 +121,9 @@ By the end of this course, students will be able to:
 - Design and execute original research independently, developing robust research
   questions and applying appropriate methodologies at a level approaching
   publishable quality.
-- Build an extended codebook with a reliability protocol, report intercoder
-  agreement as a kappa value with the training protocol and threshold applied,
-  and draw a sample the study can defend.
+- Build an extended codebook with a reliability protocol for a single coder,
+  report your own stability as an agreement figure from a hidden re-code with
+  the threshold applied, and draw a sample the study can defend.
 - Apply ethical principles in conducting and presenting research, ensuring that
   all research practices adhere to standards of truth, accuracy, fairness, and
   respect for diversity.
