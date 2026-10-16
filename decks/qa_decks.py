@@ -208,6 +208,61 @@ def undated_due_issue(t, prof):
             (len(hits), ", ".join("%r:%d" % (w, ln) for ln, w in hits[:4]))]
 
 
+# Owner 2026-09-23, BINDING in every course: no duration and no "how to run this" instruction on a
+# slide, in the body or the eyebrow. He paces in the room. Content durations stay legal ("fifteen
+# minutes stuck", "messages per minute"), so the body patterns are the slide-timing IDIOMS only: an
+# abbreviated "5 min" / "10-15 min", or a duration in parentheses or brackets. An eyebrow carries a
+# source or a URL, so ANY duration there fails. Speaker notes and code are not on the slide.
+DURATION = r"(?:\d+|one|two|three|five|ten|fifteen|twenty|thirty)\s*(?:(?:-|–|to)\s*\d+\s*)?(?:minutes?|mins?|hours?|hrs?)\b"
+TIMING_BODY = [
+    re.compile(r"(?<![\w.])~?\d+\s*(?:(?:-|–|to)\s*\d+\s*)?mins?\b(?!\w)", re.I),
+    re.compile(r"[(\[]\s*~?" + DURATION + r"[^)\]]*[)\]]", re.I),
+]
+EYEBROW = re.compile(r"\[([^\]]*)\]\{\.eyebrow\}")
+FACILITATION = re.compile(
+    r"\b(?:pair up|turn to (?:a|your) (?:neighbou?r|partner)|think[- ]pair[- ]share|"
+    r"break into (?:small )?groups|set a timer|share out|report back to the (?:room|class)|"
+    r"go around the room|take (?:a|one|two|three|five|ten|\d+) minutes? to)\b", re.I)
+
+
+def _slide_text(t):
+    """The deck minus speaker notes (::: notes ... :::) and fenced code, line numbers kept."""
+    out, in_notes, in_code = [], False, False
+    for line in t.split("\n"):
+        s = line.strip()
+        if s.startswith("```"):
+            in_code = not in_code
+            out.append("")
+            continue
+        if not in_code and re.match(r"^:::+\s*\{?\.?notes\}?\s*$", s):
+            in_notes = True
+            out.append("")
+            continue
+        if in_notes and re.match(r"^:::+\s*$", s):
+            in_notes = False
+            out.append("")
+            continue
+        out.append("" if (in_notes or in_code) else line)
+    return out
+
+
+def timing_directive_issues(t):
+    hits = []
+    for ln, line in enumerate(_slide_text(t), 1):
+        for m in EYEBROW.finditer(line):
+            if re.search(DURATION, m.group(1), re.I):
+                hits.append(("eyebrow duration", ln))
+        body = EYEBROW.sub("", line)
+        if any(rx.search(body) for rx in TIMING_BODY):
+            hits.append(("timing", ln))
+        if FACILITATION.search(body):
+            hits.append(("facilitation directive", ln))
+    if not hits:
+        return []
+    return ["TIMING/DIRECTIVE on slide x%d (%s): pacing belongs to the room, not the slide" %
+            (len(hits), ", ".join("%s:%d" % h for h in hits[:4]))]
+
+
 # --------------------------------------------------------------------------- qmd rules
 def check_qmd(p, t, prof):
     """Unchanged semantics from the 2026-07-30 script."""
@@ -250,6 +305,7 @@ def check_qmd(p, t, prof):
         issues.append("British spelling x%d (%s)" %
                       (len(brit), ", ".join("%s:%d" % (w, ln) for ln, w in brit[:4])))
     issues += undated_due_issue(t, prof)
+    issues += timing_directive_issues(t)
     return n, dpos, issues
 
 
