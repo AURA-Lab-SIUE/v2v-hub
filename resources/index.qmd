@@ -88,6 +88,16 @@ template, so if it appears in your repository, you put it there.
 
 ---
 
+## Coding the codebook (Chapter 9)
+
+`09-coding-the-codebook.qmd` walks you through creating your White Paper project, moving your
+codebook into it, and taking a first look at the example data, with what each step should
+print. Save it into the **top folder** of your workspace, next to `README.md`.
+
+[Download 09-coding-the-codebook.qmd](../starters/09-coding-the-codebook.qmd){.btn .btn-primary}
+
+---
+
 ## Required software
 
 Install these before Phase I. All are free.

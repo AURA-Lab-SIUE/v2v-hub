@@ -1,0 +1,225 @@
+---
+title: "Coding the Codebook"
+subtitle: "MC 451 / MC 501 · Chapter 9 · Run this file in class"
+format: html
+execute:
+  eval: false
+---
+
+## What this file is
+
+This file walks you through the first session where R does real work on your project. You
+will create your White Paper project folder, check your setup, move your codebook into it,
+and take a first look at the example data.
+
+Every gray box below is a **code chunk**. Click **Run Cell** at its top left corner, or click
+inside the box and press **Ctrl+Enter** (Windows) or **Cmd+Enter** (Mac). Under each box this
+file tells you what should appear and what to do when it does not.
+
+Save this file in the **top folder** of your workspace, next to `README.md`, and open it from
+there. Nothing in it changes the example data. Looking is all we do today.
+
+## Step 1: Switch the course package on
+
+`library()` switches a package on for this R session. You do this every time you open R, not
+only once.
+
+```{r}
+library(v2v)
+```
+
+**What you should see:** nothing, or a short startup message. Silence means success.
+
+**If you see `there is no package called 'v2v'`,** the course package is not installed on this
+computer yet. Open `00-check-your-setup.qmd` and run its Step 3, then come back here.
+
+## Step 2: Check your setup
+
+`setup()` looks over your whole installation and prints a checklist. Run it every time you
+open a project; it finds a missing piece before that piece interrupts your work.
+
+```{r}
+setup()
+```
+
+**What you should see:** green check marks under **Required R packages**, and green checks
+for the Quarto CLI and Git under **Command-line tools**.
+
+**If anything is red,** `setup()` prints the exact command that fixes it under **What to do
+next**. Copy that command, paste it into the R console, press Enter, then run this chunk
+again. If it tells you to quit R and open it again, do that: R only notices a newly installed
+program when it starts.
+
+## Step 3: Allow the project to live inside your workspace
+
+Your workspace folder is already a project, because it came from the course template. The
+tool that builds your White Paper folder notices that and stops to ask whether you really
+want one project inside another. You do, so this line answers that question ahead of time.
+
+```{r}
+options(usethis.allow_nested_project = TRUE)
+```
+
+**What you should see:** nothing at all. This line only changes a setting for the current R
+session; it creates no files.
+
+## Step 4: Create your White Paper project
+
+This one line creates the whole project folder, already named and already wired together.
+The `v2v::` in front says the function comes from the course package.
+
+The example below is named `twitch-portfolio`. **Change the name inside the quotes on the
+first line to something about your own study** before you run it, using lowercase letters and
+hyphens, no spaces. For example, `"podcast-ads-portfolio"`.
+
+The second line is a safety check. If the folder already exists, it leaves it alone, because
+building the project again would replace your files with blank ones.
+
+```{r}
+project <- "twitch-portfolio"
+if (dir.exists(project)) message("Already made: using the folder you have.") else v2v::new_portfolio(project)
+```
+
+**What you should see:** a green check and the line `V2V White Paper scaffolded at`, followed
+by the folder it made. A new folder with your project's name appears in the VS Code
+**Explorer** panel on the left.
+
+**If you see `Already made: using the folder you have.`,** you built this folder before. That
+is fine: nothing was changed. Carry on to Step 5.
+
+**If R asks "Do you want to create anyway?"** and lists numbered answers, you skipped Step 3.
+Type the number next to the answer that means **yes** (the order changes every time, so read
+the words), press Enter, and carry on.
+
+## Step 5: See what the scaffold gave you
+
+Click the small arrow next to your new folder in the **Explorer** panel to open it. You
+should see these, every one already created for you:
+
+- `index.qmd`, the abstract you write last
+- `01-introduction.qmd` through `05-reflection.qmd`, one file per White Paper section
+- `codebook/codebook.qmd`, the file you fill in today
+- `journals/`, `data/raw/`, `data/derived/`, and `figures/`
+
+**If the folder looks empty,** click the **Refresh Explorer** button (a circular arrow) at the
+top of the Explorer panel.
+
+## Step 6: Move your codebook into the project
+
+This step has no code. In Chapter 8 your codebook was a plan; from today it is the document
+every later step follows.
+
+1. In the Explorer panel, open `codebook/codebook.qmd` inside your new project folder.
+2. Paste your draft codebook below the line that says `title: "Codebook"` and the `---`
+   under it. Every variable needs its conceptual definition, its operational definition, and
+   its coding rules.
+3. Under the title, add a version line and today's date, for example
+   `Version 1.0, October 20, 2026`.
+4. Save the file with **Ctrl+S** (Windows) or **Cmd+S** (Mac).
+
+## Step 7: Render the codebook
+
+Rendering turns the `.qmd` file into a page a coder can read. A codebook that renders
+cleanly is a codebook another person can follow.
+
+With `codebook/codebook.qmd` open, click the **Preview** button at the top right of the
+editor (an icon of a page with a magnifying glass), or press **Ctrl+Shift+K** (Windows) or
+**Cmd+Shift+K** (Mac).
+
+**What you should see:** after a few seconds, a preview pane opens beside your file showing
+your codebook as a formatted page.
+
+**If the render fails,** look at the last red lines in the **Terminal** panel. The usual cause
+is a missing or extra `---` at the top of the file. The file must begin with exactly three
+lines: `---`, `title: "Codebook"`, and `---`.
+
+## Step 8: Load the example data
+
+The tidyverse is the set of tools we use for every data step. The next two lines fetch the
+two example tables and give each one a name with `<-`, which you read as "gets."
+
+```{r}
+library(tidyverse)
+
+chat <- v2v::twitch_chat()
+streams <- v2v::twitch_streams()
+```
+
+**What you should see:** a short list of attached packages after the first line, then nothing
+for the other two. `chat` and `streams` now appear in the **R** panel's list of objects.
+
+**If you see `there is no package called 'tidyverse'`,** run `install.packages("tidyverse")`
+in the R console, wait for it to finish, then run this chunk again.
+
+The example data arrives through a function, not a file path. Loading your own source from a
+file uses a different first line; every step after it is the same.
+
+## Step 9: Look at the chat table
+
+`glimpse()` prints every column in a table, its type, and its first few values. Before you
+run it, write down three columns you expect to find in a table of chat messages.
+
+```{r}
+glimpse(chat)
+```
+
+**What you should see:** `Columns: 5`, then five lines starting with `$ id`, `$ channel`,
+`$ sender`, `$ message`, and `$ date`.
+
+**If you see `object 'chat' not found`,** Step 8 did not run. Run Step 8 again, then this one.
+
+## Step 10: Look at the streams table
+
+```{r}
+glimpse(streams)
+```
+
+**What you should see:** `Columns: 6`, including `channel`, `title`, `game`, and `viewers`.
+
+## Step 11: Count what channels stream
+
+`count()` tallies how often each value appears. `sort = TRUE` puts the most common first.
+The `%>%` symbol passes the table on the left into the function on the right; read it as
+"and then."
+
+```{r}
+streams %>% count(game, sort = TRUE)
+```
+
+**What you should see:** a two-column table of game categories and counts, largest first,
+ending in a line like `# ℹ 51 more rows`.
+
+## Step 12: Confirm the corpus
+
+Counting is how you check that the data is what you were told it is. The book says the
+example corpus has fifty channels. Check it.
+
+```{r}
+n_distinct(chat$channel)
+n_distinct(streams$channel)
+```
+
+**What you should see:** `[1] 50`, twice.
+
+## When a line breaks
+
+R returns an error message instead of a result. The usual causes are a misspelling, a package
+that is not switched on, or a stray bracket. It happens to everyone and it says nothing about
+your ability. Read the message before you retype anything; the wording is the diagnosis.
+
+For errors specific to the example data, run this in the R console:
+
+```{r}
+?v2v::common_errors
+```
+
+If you are still stuck after fifteen minutes, email me the **exact** text of the error, or a
+screenshot, and the step number you were on.
+
+## You are done when
+
+- Your project folder exists and `setup()` is all green
+- `codebook/codebook.qmd` holds your codebook, with a version line and a date, and renders
+- You have a `glimpse()` of both `chat` and `streams`
+
+Bring your `glimpse()` output to the next class, where we read the data against your codebook.

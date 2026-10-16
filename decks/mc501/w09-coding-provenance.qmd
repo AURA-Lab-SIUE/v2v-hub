@@ -53,6 +53,9 @@ this book's package, so the package never becomes a hidden assumption.
 
 The example project is named `twitch-portfolio`. Name your own project after your own study.
 
+Today's steps, with what each should print, are in the starter file:
+[aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd](https://aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd)
+
 ## What the Scaffold Contains
 
 ```
@@ -245,7 +248,7 @@ right, so the line reads as an instruction in order.
 
 ## What the Count Tells You
 
-- **The example streams cover sixty distinct games, more than a study can examine one by one**
+- **The example streams cover sixty-one distinct games, more than a study can examine one by one**
 - **A handful of games hold most of the snapshots, and fifty more hold the rest**
 - **Art tops the list, on a platform that is mostly about playing games**
     - That shape matters when you draw a chart in Chapter 12
