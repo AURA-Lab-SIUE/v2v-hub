@@ -350,7 +350,7 @@ Library (Lovejoy) with your student login; everything else is open access. Weeks
 | 10 | Hayes & Krippendorff (2007), revisit: computing alpha for your pilot. | [Library](https://doi.org/10.1080/19312450709336664) |
 | 11 | Wickham, H. (2014). Tidy data. *Journal of Statistical Software*, *59*(10), 1-23. | [Open](https://doi.org/10.18637/jss.v059.i10) |
 | 12 | Lakens, D. (2013). Calculating and reporting effect sizes to facilitate cumulative science. *Frontiers in Psychology*, *4*, 863. | [Open](https://doi.org/10.3389/fpsyg.2013.00863) |
-| 13 | Lakens, D., et al. (2018). Justify your alpha. *Nature Human Behaviour*, *2*, 168-171. | [Open](https://doi.org/10.1038/s41562-018-0311-x) |
+| 13 | Lakens, D., et al. (2018). Justify your alpha. *Nature Human Behaviour*, *2*, 168-171. | [Open](https://eprints.whiterose.ac.uk/id/eprint/128599/8/Justify%20Your%20Alpha.pdf) |
 | 15 | Wasserstein, R. L., & Lazar, N. A. (2016). The ASA's statement on p-values. *The American Statistician*, *70*(2), 129-133. | [Open](https://doi.org/10.1080/00031305.2016.1154108) |
 
 :::
