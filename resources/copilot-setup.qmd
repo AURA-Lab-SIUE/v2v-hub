@@ -9,7 +9,7 @@ GitHub Copilot suggests code inside VS Code as you type. For first-time coders i
 :::{.callout-important}
 ## The one rule
 
-You are responsible for understanding every line you keep. If Copilot writes something you cannot explain, do not submit it. Disclose AI assistance in your journal, the same way you would cite any other source of help.
+You are responsible for understanding every line you keep. If Copilot writes something you cannot explain, do not submit it. Disclose AI assistance in your AI-use log, the same way you would cite any other source of help.
 :::
 
 ---
@@ -78,7 +78,7 @@ Copilot will confidently suggest R functions that do not exist, or the wrong arg
 
 ## Disclosing AI use
 
-Whenever Copilot (or any AI tool) shaped work you submit, note it in your weekly journal: what you used it for, and how you checked its output. A short line is enough.
+Whenever Copilot (or any AI tool) shaped work you submit, add an entry to the [AI-use log (.docx)](MC451-501-AI-use-log.docx) you submit with that assignment: the tool, what you asked, what it gave you, and what you did with it and why. One entry per use is enough.
 
 ::: {.ai-note}
 Used Copilot to scaffold the `ggplot()` call for Figure 2. I edited the aesthetics and verified each layer against Chapter 12 before keeping it.

@@ -349,6 +349,10 @@ Build the instrument, and write down what watching taught you. The qualitative r
 
 **What you submit:** the codebook and a 200 to 300 word qualitative memo, as two documents or one document with two headed parts, uploaded to Blackboard under Codebook and Qualitative Memo.
 
+**Length:** The codebook 1,500 to 3,000 words and the memo 200 to 300 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+
 **Rubric:** [Codebook and Qualitative Memo rubric (PDF)](resources/rubrics/MC451-rubric-codebook-and-qualitative-memo.pdf). It lists the six parts of the codebook, what the memo has to show, and the points for each.
 
 </details>
@@ -363,6 +367,10 @@ Decide what you will code, then prove the codebook survives contact with it. The
 <summary>What to submit, and the rubric</summary>
 
 **What you submit:** one document with two parts, the sampling plan and the pilot, plus your coded pilot data as a spreadsheet or CSV, uploaded to Blackboard under Sampling Plan and Pilot.
+
+**Length:** 700 to 1,200 words across the plan and the pilot write-up, plus 10 to 20 coded items in the spreadsheet. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Sampling Plan and Pilot rubric (PDF)](resources/rubrics/MC451-rubric-sampling-plan-and-pilot.pdf). It lists each part of the plan and the pilot with its points, and carries the table for sizing your corpus.
 
@@ -385,6 +393,10 @@ Build the analysis-ready table from the raw one.
 
 **What you submit:** your script and the exported dataset, saved as `twitch_analysis.RDS` because Describing Data and Inferencing Data both read that file, uploaded to Blackboard under Data Wrangling in R.
 
+**Length:** One script of 40 to 120 lines, comments included, plus the 30-row coding form. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+
 **Rubric:** [Data Wrangling in R rubric (PDF)](resources/rubrics/MC451-rubric-data-wrangling-in-r.pdf). It lists the eight steps the script carries and the points for each.
 
 </details>
@@ -400,6 +412,10 @@ Say what is in the data before you test anything.
 
 **What you submit:** your script or Quarto document and the rendered output carrying the figures, uploaded to Blackboard under Describing Data in R.
 
+**Length:** 300 to 600 words of your own writing (interpretation and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+
 **Rubric:** [Describing Data in R rubric (PDF)](resources/rubrics/MC451-rubric-describing-data-in-r.pdf). It lists the tables, numbers, figures, and interpretation it asks for, and the points for each.
 
 </details>
@@ -414,6 +430,10 @@ Test four relationships, one per test, and report how big each is.
 <summary>What to submit, and the rubric</summary>
 
 **What you submit:** your script or Quarto document and the rendered output, uploaded to Blackboard under Inferencing Data in R.
+
+**Length:** 500 to 900 words of your own writing (hypotheses, the four reports, interpretation and the limits paragraph), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Inferencing Data in R rubric (PDF)](resources/rubrics/MC451-rubric-inferencing-data-in-r.pdf). It lists each step from the four hypotheses to what the results do not license, and the points for each.
 
@@ -437,6 +457,10 @@ The final deliverable: your study written up in IMRaD, reporting the quantitativ
 <summary>What to submit, and the rubric</summary>
 
 **What you submit:** two things, both required: the paper as a PDF, and the live URL of your GitHub Pages site. Upload the PDF and paste the URL into the Blackboard submission for White Paper; one without the other is incomplete.
+
+**Length:** 3,500 to 5,000 words from the introduction through the reflection. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [White Paper rubric (PDF)](resources/rubrics/MC451-rubric-white-paper.pdf). It lists what each section carries, the source and citation requirements, and the points for each.
 

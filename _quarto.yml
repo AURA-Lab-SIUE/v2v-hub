@@ -25,6 +25,9 @@ project:
     # Listed here to keep them served. Remove once a term has passed.
     - "resources/MC451-Project-Prospectus-Template.pdf"
     - "resources/MC501-Research-Proposal-Template.pdf"
+    # The AI-use log students download and submit with every assignment (2026-10-17). Blackboard links
+    # its published URL directly, so it stays served even if a page link to it changes.
+    - "resources/MC451-501-AI-use-log.docx"
 
 website:
   title: "V2V Hub"

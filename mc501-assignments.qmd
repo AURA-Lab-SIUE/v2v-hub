@@ -290,6 +290,8 @@ Turn your constructs into definitions a stranger could apply without asking you 
 
 **What you submit:** one document with one entry per variable, at least four variables, uploaded to Blackboard under Definitions Practice.
 
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+
 **Rubric:** [Definitions Practice rubric (PDF)](resources/rubrics/MC501-rubric-definitions-practice.pdf). It lists the six parts every variable needs and the points for each.
 
 **Worked example:** [Definitions Practice worked example (PDF)](resources/examples/MC501-example-definitions-practice.pdf). A finished submission, so you can see the form before you write yours.
@@ -307,6 +309,10 @@ Build the instrument, then write the protocol that says how you will know it sta
 
 **What you submit:** the codebook and the reliability protocol, as one document with two headed parts, uploaded to Blackboard under Extended Codebook and Reliability Protocol.
 
+**Length:** The codebook 2,000 to 3,500 words and the reliability protocol 800 to 1,400 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+
 **Rubric:** [Extended Codebook and Reliability Protocol rubric (PDF)](resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf). It lists the five parts of the codebook, the eight parts of the protocol, and the points for each.
 
 </details>
@@ -321,6 +327,10 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 <summary>What to submit, and the rubric</summary>
 
 **What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure, uploaded to Blackboard under Sampling Plan and Pilot, 20 to 30 items.
+
+**Length:** 1,000 to 1,600 words across the plan and the pilot write-up, plus 20 to 30 coded items. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Sampling Plan and Pilot rubric (PDF)](resources/rubrics/MC501-rubric-sampling-plan-and-pilot.pdf). It lists each part of the plan and the pilot with its points, and carries the table for sizing your corpus.
 
@@ -342,6 +352,10 @@ Build the analysis-ready table from the raw one, in code that runs start to fini
 <summary>What to submit, and the rubric</summary>
 
 **What you submit:** your script and the exported dataset, saved as `twitch_analysis.RDS` because Describing Data and Inferencing Data both read that file, uploaded to Blackboard under Data Wrangling in R.
+
+**Length:** One script of 50 to 150 lines, comments included, with each of the three reviewer-facing comments 40 to 100 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Data Wrangling in R rubric (PDF)](resources/rubrics/MC501-rubric-data-wrangling-in-r.pdf). It lists the nine requirements, including the three reviewer-facing comments, and the points for each.
 
@@ -366,6 +380,10 @@ Say what is in the data before you test anything.
 
 **What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Describing Data in R.
 
+**Length:** 600 to 1,200 words of your own writing (interpretation, diagnostics and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+
 **Rubric:** [Describing Data in R rubric (PDF)](resources/rubrics/MC501-rubric-describing-data-in-r.pdf). It lists the tables, figures, diagnostics, and interpretation it asks for, and the points for each.
 
 </details>
@@ -380,6 +398,10 @@ Test four relationships, one per test, and report how big each is.
 <summary>What to submit, and the rubric</summary>
 
 **What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Inferencing Data in R.
+
+**Length:** 900 to 1,500 words of your own writing (hypotheses, justifications, diagnostics, the four reports and the two paragraphs), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Inferencing Data in R rubric (PDF)](resources/rubrics/MC501-rubric-inferencing-data-in-r.pdf). It lists each step from the four hypotheses to what the results do not license, and the points for each.
 
@@ -403,6 +425,10 @@ The final deliverable: your study written up in IMRaD, rendered to PDF, publishe
 <summary>What to submit, and the rubric</summary>
 
 **What you submit:** three things, all required: the paper as a PDF, the poster as a PDF, and the live URL of your GitHub Pages site. Upload both PDFs and paste the URL into the Blackboard submission for White Paper and conference poster; the submission is incomplete without each.
+
+**Length:** The paper 5,000 to 7,000 words from the introduction through the reflection, plus the 150 to 250 word abstract; the poster one page of 400 to 800 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [White Paper and conference poster rubric (PDF)](resources/rubrics/MC501-rubric-white-paper-and-conference-poster.pdf). It lists what each section of the paper carries, including the three transparency markers, what the poster shows, and the points for each.
 

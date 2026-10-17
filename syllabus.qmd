@@ -273,6 +273,12 @@ points for each item that is incorrect or missing. You are welcome to raise poin
 disputes during office hours. In special cases, opportunities to address mistakes
 for partial credit are provided.
 
+**Curve adjustment.** From Definitions Practice on, scores on work that shows
+effort are adjusted: your final percentage is 25 percent plus 75 percent of your
+rubric percentage, rounded to the nearest half point, so 50 of 100 on the rubric
+becomes 62.5. Each assignment after Definitions Practice posts a length range, and work
+at two-thirds or more of its minimum counts as showing effort.
+
 **Feedback timeline.** Grades with feedback are posted within one week of the due
 date for most assignments. Find your grades under **My Grades** in the Blackboard
 course menu.
@@ -330,8 +336,10 @@ prohibited.
 - **Permitted:** using AI to remember syntax, scaffold code you understand, or
   draft prose you then revise, provided you can explain everything you submit and
   you disclose the assistance.
-- **Disclosure is required:** when AI shaped work you submit, note in your weekly
-  journal what you used it for and how you checked its output.
+- **Disclosure is required:** from the Codebook and Qualitative Memo on, submit the
+  [AI-use log (.docx)](https://aura-lab.siue.edu/v2v-hub/resources/MC451-501-AI-use-log.docx)
+  with every assignment: one entry for each time AI shaped the work (the tool, what you
+  asked, what it gave you, and what you did with it and why), or the no-AI box checked.
 - **Not permitted:** submitting AI-generated work as your own without disclosure;
   using AI to fabricate citations, data, or results; or using AI to circumvent a
   learning objective. These are academic dishonesty.
