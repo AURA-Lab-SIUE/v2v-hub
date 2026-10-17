@@ -199,7 +199,7 @@ most to least. **Code is instructions in order, and that is all it is.**
 ## The Rules on Using AI
 
 - AI tools are **permitted as a supervised aid**, and you must disclose their use
-- Note in your journal what you used it for and how you **checked its output**
+- Log every use in the **AI-use log** and submit it with each assignment: the tool, what you used it for, and how you **checked its output**
 - You are responsible for every claim and every line of code you submit
 - Using it to avoid learning R will show in the Analyst weeks, when the code gets harder
 - Ask me if you are unsure whether a use is appropriate
