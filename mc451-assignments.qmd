@@ -342,7 +342,7 @@ Turn your constructs into things a stranger could measure.
 
 **50 points. Due Friday, October 23, 11:59 PM.** *(Week 9)*
 
-Build the instrument, and write down what watching taught you. This is the qualitative half of your study: the patterns you notice while immersed become the categories the quantitative half counts.
+Build the instrument, and write down what watching taught you. The qualitative reading looks different for every project, depending on your platform and your variables, and it is how you build and solidify the categories, definitions, and edge rules of your quantitative codebook.
 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
@@ -357,7 +357,7 @@ Build the instrument, and write down what watching taught you. This is the quali
 
 **75 points. Due Friday, November 6, 11:59 PM.** *(Week 11)*
 
-Decide what you will code, then prove the codebook survives contact with it. The pilot is your first quantitative pass: the frozen categories applied to real items, with a check on your own consistency.
+Decide what you will code, then prove the codebook survives contact with it. The pilot is your first quantitative pass: the codebook your close reading built, frozen and applied to real items, with a check on your own consistency.
 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
@@ -429,7 +429,7 @@ Test four relationships, one per test, and report how big each is.
 
 **250 points. Due Friday, December 18, 11:59 PM.**
 
-The final deliverable: your study written up in IMRaD, with the qualitative themes from your immersion and the quantitative results from your coded sample side by side, rendered to PDF and published to the web.
+The final deliverable: your study written up in IMRaD, reporting the quantitative results from your coded sample along with the qualitative themes from the close reading that built your codebook, rendered to PDF and published to the web.
 
 **Dated step, Friday, December 4, 11:59 PM:** push the full coded dataset and a re-code of a fresh subsample to your project repository. The stability figure in Methods earns its points only if that commit is dated on or before December 4; the rubric carries the subsample rule. Nothing about your analysis is due that day.
 
