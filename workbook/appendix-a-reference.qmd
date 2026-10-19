@@ -69,6 +69,9 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 | `scale_fill_brewer()` | Colorblind-friendly color palette | `+ scale_fill_brewer(palette = "Set2")` |
 | `labs()` | Add title, subtitle, axis labels, caption | `+ labs(title = "My Chart")` |
 | `theme_minimal()` | Clean, minimal chart theme | `+ theme_minimal()` |
+| `v2v::theme_v2v()` | The course chart theme | `+ v2v::theme_v2v()` |
+| `v2v::scale_fill_v2v()` | The course fill palette (up to 8 colors) | `+ v2v::scale_fill_v2v()` |
+| `ggsave()` | Save the last chart to a file | `ggsave("figures/fig1.png", width = 7, height = 5)` |
 
 ## Statistical Testing
 
@@ -81,6 +84,17 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 | `$parameter` | n/a | Extract degrees of freedom | `result$parameter` |
 | `$p.value` | n/a | Extract p-value | `result$p.value` |
 | `$stdres` | n/a | Extract standardized residuals | `result$stdres` |
+| `xtabs()` | base R | Build a contingency table from a formula | `xtabs(~ cat_a + cat_b, data = df)` |
+| `broom::tidy()` | broom | Turn a test or model result into a one-row-per-term table | `t.test(y ~ g, data = df) %>% broom::tidy()` |
+| `broom::glance()` | broom | One row of model-level numbers, including `nobs` | `fit %>% broom::glance()` |
+| `t.test()` | base R | Welch t-test of a numeric outcome across two groups | `t.test(y ~ g, data = df)` |
+| `effectsize::cohens_d()` | effectsize | Cohen's d with its interval | `effectsize::cohens_d(y ~ g, data = df)` |
+| `effectsize::cramers_v()` | effectsize | Cramér's V for a contingency table | `effectsize::cramers_v(tbl, adjust = FALSE)` |
+| `aov()` | base R | One-way ANOVA, then `summary()` for the F table | `summary(aov(y ~ g3, data = df))` |
+| `lm()` | base R | Linear regression, then `summary()` for the coefficients | `summary(lm(y ~ x, data = df))` |
+| `cor.test()` | base R | Pearson correlation with its interval | `cor.test(~ x + y, data = df)` |
+| `v2v::run_chi_square()` | v2v | The chi-square test and Cramér's V in one labeled block (a check on the lines above) | `v2v::run_chi_square(df, x = cat_a, y = cat_b)` |
+| `v2v::run_t_test()` | v2v | The Welch t-test and Cohen's d in one labeled block (a check) | `v2v::run_t_test(df, value = y, group = g)` |
 
 ## Exporting Data
 

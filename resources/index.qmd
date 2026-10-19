@@ -257,6 +257,9 @@ grade, and using one is not required.
   corpus size, sizes the reliability subset, and reports the smallest effect that sample could find.
 - [Inferential Check](https://aura-lab.siue.edu/inferential-check/) recomputes your chi-square or t
   test from your own numbers and gives you the APA sentence to check your write-up against.
+- Inside VS Code, the Test group of the R Companion's **Write R code** runs the four tests in your script, and its
+  **APA numbers to check your sentence** prints the numbers in APA form. Inferential Check stays a second
+  opinion on the numbers.
 
 ---
 

@@ -21,7 +21,7 @@ This is what statistical inference answers. We set up a test, let the math run, 
 ::: {.callout-note}
 ## The Variables Choose the Test
 
-There is not one hypothesis test. There are many, and which one applies depends on the kind of data in hand. Two categorical variables call for a chi-square test, which is what this chapter runs. One continuous outcome across two groups calls for a t-test, which appears later in the chapter. Three or more groups call for an ANOVA. A test applied to the wrong kind of data still produces a number, and the number is meaningless. The V2V Hub keeps a test decision tree. Consult it before you run anything.
+There is not one hypothesis test. There are many, and which one applies depends on the kind of data in hand. Two categorical variables call for a chi-square test, which is what this chapter runs. One continuous outcome across two groups calls for a t-test, which appears later in the chapter. Three or more groups call for an ANOVA. A test applied to the wrong kind of data still produces a number, and the number is meaningless. The V2V Hub keeps a test decision tree. Consult it before you run anything. The R Companion's **Check my test choice** checks the test you chose against these rules; the reason is yours to write.
 :::
 
 ## Step 1: State Your Hypotheses (Before Any Code)
@@ -187,6 +187,12 @@ if (cramers_v < .10) {
 ## The Shortcut
 
 `v2v::run_chi_square()` runs the test and computes Cramér's V for you, returning formatted output ready to paste into a caption. Compute it by hand once, so you know what the shortcut is doing, then use the shortcut.
+:::
+
+::: {.callout-note}
+## Or use the R Companion
+
+The Test group of **Write R code** writes the chi-square with Cramér's V, the Welch t-test with Cohen's d, the ANOVA with eta squared, and the regression into your script: the plain R call first (`chisq.test()` or `t.test()` with `broom::tidy()`, and the `effectsize` package), then the `v2v` wrapper as a check that prints the same numbers. Compute Cramér's V by hand once first, as above. Its **APA numbers to check your sentence** prints a test's numbers in APA form; the sentence, and the journalist translation, are yours to write.
 :::
 
 ::: {.callout-important}

@@ -328,7 +328,7 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure, uploaded to Blackboard under Sampling Plan and Pilot, 20 to 30 items. Optional: the R Companion's **Reliability grid** takes your pass 1 and pass 2 codes, saves them as a CSV, and writes the `v2v::reliability()` call into your script; that call counts as the code that computed the figure.
+**What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure, uploaded to Blackboard under Sampling Plan and Pilot, 20 to 30 items. Optional: the R Companion's **Reliability grid** takes your pass 1 and pass 2 codes, saves them as a CSV, and writes the `v2v::reliability()` call into your script; that call counts as the code that computed the figure. To code the pilot items in VS Code instead of a spreadsheet, **AURA: Open the data viewer** opens your CSV in a grid where you add your coding columns and code each row; your codes save to `data/derived/`, the original file is never changed, and **Insert rebuild code** writes the lines that join the codes back on. Excel and Google Sheets still work.
 
 **Length:** 1,000 to 1,600 words across the plan and the pilot write-up, plus 20 to 30 coded items. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -380,7 +380,7 @@ Say what is in the data before you test anything.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Describing Data in R.
+**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Describing Data in R. Optional: the Describe group of the R Companion's **Write R code** writes frequency tables, crosstabs with proportions, grouped summaries, and bar, histogram, and boxplot charts in `theme_v2v()`, each chart saved with `ggsave()` and carrying an alt-text line marked YOUR TURN. The alt text and the interpretation stay your own writing. The diagnostics behind each figure are yours to run and report.
 
 **Length:** 600 to 1,200 words of your own writing (interpretation, diagnostics and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -399,7 +399,7 @@ Test four relationships, one per test, and report how big each is.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Inferencing Data in R.
+**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Inferencing Data in R. Optional: the Test group of the R Companion's **Write R code** writes the four tests for your settings-block variables, the plain R call first and the `v2v` wrapper after it as a check, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, and the interpretation are your own writing. Assumption checks and the power analysis are not generated.
 
 **Length:** 900 to 1,500 words of your own writing (hypotheses, justifications, diagnostics, the four reports and the two paragraphs), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 

@@ -226,7 +226,7 @@ msglen %>%
 ```
 
 This code splits the messages by gaming status and computes the four numbers a Results
-section needs: the count (n), the mean, the median, and the standard deviation (sd).
+section needs: the count (n), the mean, the median, and the standard deviation (sd). The Companion's **Summary by group** writes this grouped summary for any variable you pick, without `pretty_table()`.
 
 ## The Numbers
 
@@ -264,7 +264,7 @@ Put the effect size in the caption or in a companion table, never in a footnote.
 - **Alt text is what a screen-reader user gets instead of the figure**
     - With no alt text, the figure is simply missing for that reader
 
-Alt text states the chart type, the axes, and the takeaway. In Quarto it goes in `fig-alt`.
+Alt text states the chart type, the axes, and the takeaway. In Quarto it goes in `fig-alt`. The Companion's chart code leaves an `alt =` line marked YOUR TURN inside `labs()`: write the sentence there, and put the same sentence in `fig-alt`.
 
 ## Checkpoint
 

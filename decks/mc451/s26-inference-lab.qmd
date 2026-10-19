@@ -41,6 +41,8 @@ Fill in these three lines before you touch the keyboard:
 A numeric outcome and two groups: **t-test**. A numeric outcome and three or more groups:
 **ANOVA**. Two categorical variables: **chi-square**.
 
+The Companion's **Check my test choice** checks the third line against the first two; it does not write it.
+
 ## Running Your Test
 
 ```r
@@ -49,15 +51,16 @@ library(v2v)
 
 analysis <- read_rds("data/twitch_analysis.RDS")
 
-run_t_test(
-  analysis,
-  value = message_length,
-  group = is_gaming
-)
+t.test(message_length ~ is_gaming, data = analysis) %>%
+  broom::tidy()
+
+effectsize::cohens_d(message_length ~ is_gaming, data = analysis)
+
+run_t_test(analysis, value = message_length, group = is_gaming)
 ```
 
 The code shows the example columns. Swap `message_length` for your outcome variable and
-`is_gaming` for your two-level grouping column. Everything else stays exactly as written.
+`is_gaming` for your two-level grouping column. Everything else stays exactly as written. The last line is the `v2v` check: it prints the same `t`, df, `p`, and d in one labeled block. The Test group of the Companion's **Write R code** writes all of this for the names in your Settings block.
 
 ## Exercise: Read Your Own Output {.discuss}
 
@@ -72,11 +75,11 @@ Answer in writing from your own output:
 This is the compact form journals expect, written with the example study's numbers:
 
 > Gaming channels produced shorter chat messages on average than non-gaming channels
-> (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.95, *p* < .001,
+> (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.94, *p* < .001,
 > Cohen's *d* = -0.13.
 
 Every element earns its place: both means, the test with its degrees of freedom, the
-*p*-value, and the effect size. Never report *p* alone.
+*p*-value, and the effect size. Never report *p* alone. The Companion's **APA numbers to check your sentence** prints these numbers from your own run; check your sentence against it.
 
 ## Then Say It Again in Plain English
 
@@ -84,6 +87,7 @@ Every element earns its place: both means, the test with its degrees of freedom,
     - Write a second sentence a reader with no statistics can understand
 - **For the example study:** the two kinds of channel do differ in message length, and the difference is so small that the two are better thought of as alike
 - **That second sentence is the call:** it reports the result without inflating it
+- **The Companion's APA numbers fill in the statistics line; the plain-English sentence is yours to write**
 
 If you cannot write that sentence, you do not yet understand your result.
 
@@ -116,7 +120,7 @@ summary(lm(message_length ~ is_gaming, data = analysis))
 ```
 
 The intercept is the mean of your reference group, 33.70 in the example. The coefficient,
-**-5.22**, is the gap itself, written as a baseline plus an adjustment.
+**-5.21**, is the gap itself, written as a baseline plus an adjustment.
 
 A t-test is a regression with one two-level grouping variable. An ANOVA is a regression with
 one many-level grouping variable. Same framework, different shape.
@@ -129,7 +133,7 @@ one many-level grouping variable. Same framework, different shape.
 - **`NA` for the mean:** add `na.rm = TRUE`, then ask why values are missing
 - **An impossibly large *t*:** you compared a variable to itself
 
-Run `?v2v::common_errors` for the errors specific to the example data.
+Run `?v2v::common_errors` for the errors specific to the example data. Or select the error and run **Explain an R error** from the Command Palette.
 
 ## The White Paper, 250 Points
 

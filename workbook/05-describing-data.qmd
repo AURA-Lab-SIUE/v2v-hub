@@ -147,6 +147,12 @@ Each piece:
 
 Think of it like building a sandwich: you start with the bread (the canvas), add the main ingredient (the geometry), then add toppings (labels, colors, themes).
 
+::: {.callout-note}
+## Or use the R Companion
+
+The Describe group of **Write R code** writes `count()`, crosstab, and `ggplot()` code with `theme_v2v()` into your script, saves each chart with `ggsave()`, and leaves an `alt =` line marked YOUR TURN inside `labs()` for your alt text. The code stays in your script, which is the difference from Excel's menus.
+:::
+
 ## Bar Chart: Game Category Distribution
 
 Let's build a chart in stages, from basic to publication-ready. The question: which categories dominate the collection?

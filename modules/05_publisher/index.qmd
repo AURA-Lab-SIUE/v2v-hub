@@ -86,6 +86,10 @@ A paper nobody can open scores nothing, so both are required for the submission 
 | Two categorical variables (for example, tone by outlet) | Chi-square |
 | One categorical (two groups) by one continuous (for example, tone by word count) | Independent t-test |
 | Two continuous variables (for example, word count by shares) | Pearson correlation |
+| One categorical (three or more groups) by one continuous (for example, tone by outlet type) | One-way ANOVA |
+| One continuous outcome by one continuous predictor (for example, shares predicted by word count) | Linear regression |
+
+The Test group of the R Companion's **Write R code** covers all five, including `cor.test()` for correlation.
 
 Your Inferencing Data assignment already holds the working code for the test you chose; paste that chunk into `03-results.qmd`.
 

@@ -129,6 +129,8 @@ If **Check my setup** in the AURA Lab R Companion reports `cannot remove prior i
 
 ---
 
+Run **Explain an R error** on the message first, and paste its output with the error when you write to me.
+
 ## 4. Nothing installs and you need R for class
 
 **What you would see:** an install that fails every way you try it, and a class or a deadline that

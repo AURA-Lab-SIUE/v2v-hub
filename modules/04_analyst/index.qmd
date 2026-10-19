@@ -80,6 +80,8 @@ Using `twitch_analysis.RDS`:
 3. Create a **cross-tabulation** showing the relationship between two variables, the table the chi-square tests in Inferencing Data
 4. Write **two to three sentences of narrative** interpreting each output
 
+The Describe group of the R Companion's **Write R code** (optional) writes the tables and charts; the narrative after each output is yours.
+
 ::: {.graduate-extension}
 **MC 501:** this assignment is worth 100 points rather than 75, and the extra weight is in the diagnostics. Report the distributional checks behind each figure, not only the figure: what the shape of the variable is, whether the assumptions of the test you are heading toward look tenable, and what the outliers are.
 :::
@@ -96,6 +98,8 @@ Using `twitch_analysis.RDS`:
    - One categorical (two groups) by one continuous: **independent t-test**
    - One categorical (three or more groups) by one continuous: **one-way ANOVA**
    - One continuous outcome by one continuous predictor: **linear regression**
+
+   The R Companion's **Check my test choice** checks a choice you have made; the "say why" is yours and is graded.
 3. **Run all four** in R and report each in APA format
 4. **Report each effect size** (Cramér's V, Cohen's d, eta-squared, R-squared) in the units of the data
 5. **Interpret** each result in plain English, and say what the results do not license

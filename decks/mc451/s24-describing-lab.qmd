@@ -160,6 +160,7 @@ and every cap is named in the label.
 - **Alt text is not the caption repeated**
 - **Alt text says the chart type, the axes, and what the chart shows**
 - In Quarto it goes in the figure's `fig-alt` attribute
+- **The Companion's chart code leaves an `alt =` line marked YOUR TURN inside `labs()`:** write the sentence there, and put the same sentence in `fig-alt`
 
 ## Common Errors and What They Mean
 
