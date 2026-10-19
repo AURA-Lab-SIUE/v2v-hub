@@ -350,6 +350,9 @@ prohibited.
   not log them in the AI-use log, but you answer for Companion-written code the same way: you
   can explain every line you submit. Copilot, including any answer Copilot gives using the
   Companion's tools, is AI and is logged.
+- **Copilot Chat may call three Companion tools** (check my R setup, explain an R error, and check my
+  test choice). A test check is advice on a test you already chose: the reason you give for each test
+  is graded and must be your own.
 
 You are accountable for everything you submit, including whatever role AI played
 in producing it. See the

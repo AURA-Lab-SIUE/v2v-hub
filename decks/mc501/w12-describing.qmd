@@ -264,7 +264,7 @@ Put the effect size in the caption or in a companion table, never in a footnote.
 - **Alt text is what a screen-reader user gets instead of the figure**
     - With no alt text, the figure is simply missing for that reader
 
-Alt text states the chart type, the axes, and the takeaway. In Quarto it goes in `fig-alt`. The Companion's chart code leaves an `alt =` line marked YOUR TURN inside `labs()`: write the sentence there, and put the same sentence in `fig-alt`.
+Alt text states the chart type, the axes, and the takeaway. In Quarto it goes in `fig-alt`. The Companion's chart code leaves an `alt =` line marked YOUR TURN inside `labs()`, and a `fig-alt` line when it opens a new chunk: write the sentence in both.
 
 ## Checkpoint
 
