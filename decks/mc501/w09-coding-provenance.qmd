@@ -81,7 +81,7 @@ v2v::setup()
 ```
 
 `setup()` checks that R, Quarto, Git, and the packages this course uses are present.
-**Check my setup** in the AURA Lab R Companion runs the same check and installs anything missing.
+**Check my setup** in the AURA Lab R Companion runs the same check; its **Install what is missing** action installs anything it flags.
 
 - **You met `setup()` in Chapter 2, at installation**
 - **Run it as a habit, every time you open a project**
@@ -249,8 +249,8 @@ right, so the line reads as an instruction in order.
 
 ## What the Count Tells You
 
-- **The example streams cover sixty-one distinct games, more than a study can examine one by one**
-- **A handful of games hold most of the snapshots, and fifty more hold the rest**
+- **The example streams cover sixty distinct games, more than a study can examine one by one**
+- **A handful of games hold most of the snapshots, and the long tail holds the rest**
 - **Art tops the list, on a platform that is mostly about playing games**
     - That shape matters when you draw a chart in Chapter 12
 

@@ -380,7 +380,7 @@ Say what is in the data before you test anything.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Describing Data in R. Optional: the Describe group of the R Companion's **Write R code** writes frequency tables, crosstabs with proportions, grouped summaries, and bar, histogram, and boxplot charts in `theme_v2v()`, each chart saved with `ggsave()` and carrying an alt-text line marked YOUR TURN. The alt text and the interpretation stay your own writing. The diagnostics behind each figure are yours to run and report.
+**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Describing Data in R. Optional: the Describe group of the R Companion's **Write R code** writes frequency tables, crosstabs with proportions, grouped summaries, and the bar chart, histogram, histogram comparing two groups, line chart over time, and boxplot in `theme_v2v()`, each chart saved with `ggsave()` and carrying an alt-text line marked YOUR TURN. The alt text and the interpretation stay your own writing. The diagnostics behind each figure are yours to run and report.
 
 **Length:** 600 to 1,200 words of your own writing (interpretation, diagnostics and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -399,7 +399,7 @@ Test four relationships, one per test, and report how big each is.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Inferencing Data in R. Optional: the Test group of the R Companion's **Write R code** writes the four tests for your settings-block variables, the plain R call first and the `v2v` wrapper after it as a check, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, and the interpretation are your own writing. Assumption checks and the power analysis are not generated.
+**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Inferencing Data in R. Optional: the Test group of the R Companion's **Write R code** writes the four tests for your settings-block variables, the plain R call first and the `v2v` wrapper after it as a check, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, and the interpretation are your own writing. Assumption checks are not generated; the Test group's **Power analysis for your sample size** writes the `pwr.t.test()` call for your design, and what its answer means for your study stays your own writing.
 
 **Length:** 900 to 1,500 words of your own writing (hypotheses, justifications, diagnostics, the four reports and the two paragraphs), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 

@@ -264,7 +264,7 @@ The test is a **Welch** t-test, and the choice is deliberate. The ordinary t-tes
 
 The p-value is below .001. If the two kinds of channel truly had the same mean message length, a gap this large would turn up less than one time in a thousand. Chance is an unconvincing explanation.
 
-And the effect size, Cohen's *d* of -0.13, says the difference is negligible. Cohen's benchmarks put a *d* of 0.2 at small, 0.5 at medium, and 0.8 at large, so 0.13 does not even reach small. The raw gap is about five characters, roughly fifteen percent of the non-gaming average, and fifteen percent does not *sound* negligible. But Cohen's *d* measures the gap against how much the data naturally vary, and message lengths vary enormously, with standard deviations of thirty-eight and sixty-one characters. Five characters set against that much variation is a ripple.
+And the effect size, Cohen's *d* of 0.13, says the difference is negligible. Cohen's benchmarks put a *d* of 0.2 at small, 0.5 at medium, and 0.8 at large, so 0.13 does not even reach small. The raw gap is about five characters, roughly fifteen percent of the non-gaming average, and fifteen percent does not *sound* negligible. But Cohen's *d* measures the gap against how much the data naturally vary, and message lengths vary enormously, with standard deviations of thirty-eight and sixty-one characters. Five characters set against that much variation is a ripple.
 
 So how did a negligible difference come back significant? Sample size. The test ran on 34,762 messages, every labeled message with a length. A large enough sample will make almost any difference, however tiny, statistically significant. Both halves of the finding are true, and a report giving only the first half would mislead.
 
@@ -295,7 +295,7 @@ cat(sprintf(
 
 A t-test result is written up the same compact way. Here is the message-length finding, in the form a journal expects:
 
-> Gaming channels produced shorter chat messages on average than non-gaming channels (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.95, *p* < .001, Cohen's *d* = -0.13.
+> Gaming channels produced shorter chat messages on average than non-gaming channels (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.94, *p* < .001, Cohen's *d* = -0.13.
 
 ## Step 7: The Journalist Translation
 

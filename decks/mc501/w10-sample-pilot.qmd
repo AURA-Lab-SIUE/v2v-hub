@@ -251,7 +251,9 @@ v2v::reliability(
 This code takes the first thirty messages, passes your two columns of codes to
 `reliability()`, and asks for alpha instead of kappa. Agreement Check on the Hub gives the same
 result when you paste in the two columns. The Companion's **Reliability grid** saves your two passes
-as a CSV and writes this call, with `method = "alpha"` or `"kappa"`.
+as a CSV and writes this call, with `method = "alpha"` or `"kappa"`. To enter the codes themselves,
+the Companion's data viewer (**Open the data viewer**) adds coding columns beside your sampled CSV,
+like the spreadsheet, and never changes the original file.
 
 ## A Worked Failure
 
@@ -309,7 +311,7 @@ Due Monday, November 9, 11:59 PM. Submit the plan and the pilot together as one 
 
 ## Sampling Plan and Pilot: The Five Parts of the Pilot
 
-5. **Twenty to thirty coded items**, submitted as a data file
+5. **Twenty to thirty coded items**, submitted as a data file (a spreadsheet export, or the codes file the Companion's data viewer keeps under `data/derived/`)
 6. **A stability statistic** for those items, with the code that computed it
     - It comes from your own re-code 48 hours or more later; call it stability, never agreement
 7. **Every edge case you met**, the decision you made, and the rule you added to the codebook

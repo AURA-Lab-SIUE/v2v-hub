@@ -87,7 +87,7 @@ Search for **GitLens** and install. It shows who changed each line and when, mak
 
 ### 4. AURA Lab R Companion, recommended
 
-Search for **AURA Lab R Companion** and click **Install**. Once R is installed ([Install R](install-r.qmd)), run **Check my setup** from the Command Palette: it installs the course packages and confirms that each one loads. Its **Explain an R error** command gives a plain-English reading of an R error message.
+Search for **AURA Lab R Companion** and click **Install**. It needs VS Code 1.95 or newer; VS Code updates itself, so this only matters on a locked-down or offline machine. Once R is installed ([Install R](install-r.qmd)), run **Check my setup** from the Command Palette: it confirms that each course package loads, and its **Install what is missing** action installs any that are not. Its **Explain an R error** command gives a plain-English reading of an R error message.
 
 ### Optional extras
 

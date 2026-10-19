@@ -33,7 +33,7 @@ Today we settle that question. There are no formulas to memorize, only questions
 Split a group of people in half at random and the two halves' average heights still differ
 a little. Samples wobble.
 
-- **We measured 34,766 example messages to learn about chat in general**
+- **We measured 34,762 example messages to learn about chat in general**
     - The sample is the means to an end, and the population is the point
 - **The honest question is not whether there is a gap in the sample**
     - It is whether chance alone is a convincing explanation for that gap
@@ -137,7 +137,7 @@ A small *p* says the gap is probably not zero. It says nothing about the gap's s
 
 - **Five characters is fifteen percent of the non-gaming mean**
     - Against standard deviations of 38 and 61 characters, five is a ripple
-- **The gap was significant because the sample was large: 34,766 messages**
+- **The gap was significant because the sample was large: 34,762 messages**
     - A large enough sample makes almost any gap significant
 
 Significance and size are different questions, and big samples pull them apart.

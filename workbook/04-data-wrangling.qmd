@@ -135,7 +135,7 @@ streams %>% count(game, sort = TRUE)
 ```
 
 ```
-# A tibble: 60 × 2
+# A tibble: 61 × 2
    game                                   n
    <chr>                              <int>
  1 Art                                 5298
@@ -151,7 +151,7 @@ streams %>% count(game, sort = TRUE)
 # ℹ 50 more rows
 ```
 
-Sixty categories, with a handful of games accounting for most of the snapshots and a long tail of fifty more accounting for the rest. That shape matters: sixty is far too many lines to put on one chart, and Chapter 5 will have to do something about it.
+Sixty categories, with a handful of games accounting for most of the snapshots and a long tail accounting for the rest. That shape matters: sixty is far too many lines to put on one chart, and Chapter 5 will have to do something about it.
 
 `count()` is also a way to confirm the data is the corpus you expect. A related function, `n_distinct()`, counts how many different values a column holds:
 
@@ -270,7 +270,7 @@ Each message now carries the `game` and `viewers` of the latest snapshot before 
 ::: {.callout-note}
 ## Or Use the R Companion
 
-The AURA Lab R Companion's Data menu writes the `clean_dates()` and `join_chat_streams()` calls, and the filter, select, mutate, and count steps, into your script with a comment above each block. Build each step by hand once first, as above, so you know what the generated code is doing.
+The Data group of the AURA Lab R Companion's **Write R code** writes the `clean_dates()` and `join_chat_streams()` calls, and the filter, select, mutate, and count steps, into your script with a comment above each block. Build each step by hand once first, as above, so you know what the generated code is doing.
 :::
 
 ### 3d: Label Gaming and Non-Gaming

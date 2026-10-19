@@ -74,12 +74,12 @@ You need your data collection complete before the R assignments begin. Let's cal
 | Sessions needed (remaining ÷ 35) | ______ |
 | Sessions per day you can realistically do | ______ |
 | Days needed | ______ |
-| **Target completion date** | **______ (aim for Friday, April 3)** |
+| **Target completion date** | **______ (aim for Friday, November 6 in MC 451; Monday, November 9 in MC 501)** |
 
 ::: {.callout-warning}
 ## The Hard Deadline
 
-Your Data Wrangling [R] assignment is due **April 10**. You need a completed, clean dataset in CSV format *before* you can start that assignment. Working backward: finish coding by April 3, spend April 4–5 cleaning and checking your spreadsheet, and start the R assignment on April 6.
+Your Data Wrangling in R assignment is due **Friday, November 13 (MC 451)** or **Monday, November 16 (MC 501)**. You need a completed, clean dataset in CSV format *before* you can start that assignment. Working backward: finish coding a week ahead, spend the next two days cleaning and checking your spreadsheet, and start the R assignment with most of the week still open.
 :::
 
 ## Quality Self-Check

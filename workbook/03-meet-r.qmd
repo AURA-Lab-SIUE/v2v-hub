@@ -45,7 +45,7 @@ With the R extension installed (see [Install R](../resources/install-r.qmd)), VS
 - **Editor** (center): Where you write and edit your `.qmd` and `.R` files. This is where most of your work happens. Press `Ctrl/Cmd+Enter` to send a line to R.
 - **R terminal** (bottom panel): Where R actually runs your code. You can type commands here directly, but usually you'll send code from the editor.
 - **Workspace** (R extension sidebar): Shows what data and variables R currently has loaded. When you import a dataset, it appears here.
-- **Plots panel:** Opens automatically when you draw a chart.
+- **Plots panel:** Opens automatically when you draw a chart. A chart written by the R Companion's Describe menus also opens as a saved picture in an editor tab after **Run it**.
 
 There is no separate "project file." In VS Code you open your **workspace folder**, and that folder is your working directory.
 
@@ -153,7 +153,7 @@ Note the `v2v::` in front of the function name. It tells R, and tells you, that 
 ::: {.callout-tip}
 ## Optional: the AURA Lab R Companion
 
-**Check my setup** (Command Palette) does Steps 1, 2, and 5 in one command: it finds R, installs the course packages, and runs the same checklist. Its **Explain an R error** command gives a plain-English reading of an error message.
+**Check my setup** (Command Palette) covers Steps 1, 2, and 5: it finds R and runs the same checklist, and its **Install what is missing** action installs the course packages. Its **Explain an R error** command gives a plain-English reading of an error message.
 :::
 
 ## Quarto documents (.qmd)

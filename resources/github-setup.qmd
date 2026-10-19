@@ -109,7 +109,7 @@ I'm a Communication Liaison at SIUE exploring research methodologies and data st
 - 📊 Interested in data visualization and storytelling
 
 ## My Current Projects
-- MC 451: Open Methods Hub (Research Methods)
+- MC 451: V2V Hub (Research Methods)
 - Learning Git and GitHub
 - Building data analysis skills
 

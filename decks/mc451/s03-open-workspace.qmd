@@ -122,7 +122,7 @@ v2v::setup()
 
 - The validator confirms that R, Quarto, Git, and the packages the course needs are present
 - Success prints **Everything the course needs is installed.**
-- Then open the Command Palette and run **Check my setup**. It runs the same checklist and installs any package that is missing
+- Then open the Command Palette and run **Check my setup**. It runs the same checklist, and its **Install what is missing** action installs any package it flags
 - Anything else means the Hub's troubleshooting page is your next stop
 
 ## First Contact With the Data

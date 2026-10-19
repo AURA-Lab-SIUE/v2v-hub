@@ -78,7 +78,7 @@ v2v::setup()
 ```
 
 `setup()` checks that R, Quarto, Git, and the packages this course uses are present.
-**Check my setup** in the AURA Lab R Companion runs the same check and installs anything missing.
+**Check my setup** in the AURA Lab R Companion runs the same check; its **Install what is missing** action installs anything it flags.
 
 - **You ran it once, when you installed the stack**
 - **Run it every time you open the project**
@@ -195,7 +195,7 @@ n_distinct(chat$channel)
 
 - **The example corpus has fifty channels, as the book has said since Chapter 1**
 - **`n_distinct(streams$channel)` returns the same fifty**
-- **The fifty channels streamed sixty-one different game categories, so most channels move between games**
+- **The fifty channels streamed sixty different game categories, so most channels move between games**
 
 Counting is how you check that the data is what you were told it is. Run the same checks on your own source.
 

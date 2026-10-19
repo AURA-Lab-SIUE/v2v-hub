@@ -95,15 +95,16 @@ install.packages("tidyverse")   # ggplot2, dplyr, readr, tidyr, and more
 install.packages("janitor")     # clean_names(), used from the first wrangling practice on
 install.packages("likert")      # Likert-scale survey analysis
 install.packages("rmarkdown")   # reports from your analysis
+install.packages("effectsize")  # effect sizes in the tests (all courses)
 ```
 
-For later phases you may also want:
+MC 501 needs two more, which the Companion's **Install what is missing** also installs; `car` and `ggstatsplot` are optional extras:
 
 ```r
-install.packages("lm.beta")      # standardized regression coefficients
-install.packages("effectsize")   # confidence intervals on effect sizes (MC 501 Inferencing Data)
-install.packages("car")          # post-hoc tests and diagnostics
-install.packages("ggstatsplot")  # statistical plots with test results
+install.packages("lm.beta")      # standardized slope in the regression (required in MC 501)
+install.packages("pwr")          # power analysis for your sample size (required in MC 501)
+install.packages("car")          # post-hoc tests and diagnostics (optional)
+install.packages("ggstatsplot")  # statistical plots with test results (optional)
 ```
 
 **Wait for each to finish** (you'll see a blank `>` prompt when done).

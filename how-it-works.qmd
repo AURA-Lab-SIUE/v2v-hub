@@ -89,7 +89,7 @@ Each teaching week follows the same pattern:
 
 | Weeks | Primary Tools |
 |-------|--------------|
-| 1 to 8 | VS Code, Git/GitHub, Zotero, this website |
+| 1 to 8 | VS Code, Git/GitHub, this website |
 | 9 to 13 | VS Code, R, the v2v package (plus VS Code for journals) |
 | 15 to 17 | Quarto, GitHub Pages (assembling the White Paper) |
 

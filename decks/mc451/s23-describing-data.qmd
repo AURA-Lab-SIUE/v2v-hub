@@ -194,7 +194,7 @@ You should now have:
 - The bin width and any cap written into your axis labels
 - One sentence per figure saying what it shows
 
-The Describe group of the Companion's **Write R code** writes a first version of the bar chart and the histogram, ending in `theme_v2v()`, into your script; the line chart you write by hand.
+The Describe group of the Companion's **Write R code** writes a first version of each figure, ending in `theme_v2v()`, into your script: **Bar chart**, **Histogram**, **Histogram comparing two groups**, and **Line chart over time**.
 
 If a figure will not render, check that every `+` ends the line above it.
 

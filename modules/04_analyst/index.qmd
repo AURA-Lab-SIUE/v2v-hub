@@ -136,9 +136,7 @@ streams <- twitch_streams()
 
 There is no file to download and no path to get wrong.
 
-**Required packages:** `tidyverse`, `v2v`, `knitr`, `scales`
-
-**Check my setup** in the AURA Lab R Companion installs and confirms these for your course.
+**Required packages:** the course set the R Companion's **Check my setup** confirms and **Install what is missing** installs: `tidyverse`, `janitor`, `likert`, `rmarkdown`, `languageserver`, `httpgd`, `remotes`, `v2v`, and `effectsize`; MC 501 adds `lm.beta` and `pwr`. (`knitr` and `scales` arrive with `tidyverse` and `rmarkdown`.)
 
 ---
 

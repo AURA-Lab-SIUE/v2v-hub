@@ -38,7 +38,7 @@ streams %>% count(game, sort = TRUE)
 ```
 
 ```
-# A tibble: 60 × 2
+# A tibble: 61 × 2
    game                                   n
    <chr>                              <int>
  1 Art                                 5298
@@ -68,7 +68,7 @@ game_counts <- streams %>%
 game_counts
 ```
 
-Two things in that table are worth saying out loud. First, Art leads, which is not what most people would predict about Twitch. That is Bob Ross, streaming continuously through the collection week. Second, sixty categories is a lot, and most of them are tiny. A handful of games account for most of the snapshots and a long tail of fifty more accounts for the rest. That shape is going to constrain every chart in this chapter.
+Two things in that table are worth saying out loud. First, Art leads, which is not what most people would predict about Twitch. That is Bob Ross, streaming continuously through the collection week. Second, sixty categories is a lot, and most of them are tiny. A handful of games account for most of the snapshots and a long tail accounts for the rest. That shape is going to constrain every chart in this chapter.
 
 The message-level equivalent is the gaming split you built in Chapter 4:
 

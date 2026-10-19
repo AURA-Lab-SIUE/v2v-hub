@@ -89,7 +89,10 @@ ggplot(analysis, aes(x = message_length)) +
 ```
 
 One variable, one histogram. Change `binwidth` and watch the shape change. That is why the
-bin width has to be reported rather than hidden.
+bin width has to be reported rather than hidden. The Describe group of the Companion's
+**Write R code** writes a first version of this figure, and of Figures Two and Three and the
+line chart (**Histogram comparing two groups**, **Line chart over time**); after **Run it**
+the saved chart opens in a VS Code tab.
 
 ## Reading Your Own Histogram
 

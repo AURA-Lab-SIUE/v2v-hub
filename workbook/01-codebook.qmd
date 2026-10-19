@@ -99,12 +99,13 @@ Open Excel, Google Sheets, or any spreadsheet program, or code inside VS Code wi
 - **No merged cells**, no colors-as-data, no blank rows in the middle
 - **One column for notes**, which is your decision log for ambiguous cases
 
+- Variable names: lowercase, no spaces, use underscores (`word_count`, not `Word Count`)
+
 ::: {.callout-note}
 ## Coding in the R Companion's data viewer
 
 In VS Code, run **AURA: Open the data viewer** on your CSV of sampled items. Add one coding column per variable (a dropdown of the numeric codes from your codebook, or free text for `coder_notes`), then type a code per row; Enter moves down. Your codes save by themselves to `data/derived/<name>-codes.csv`, one row per coded cell, and the original file is never changed. **Insert rebuild code** writes the tidyverse chunk that joins the codes back onto the data, so the coded dataset is reproducible. Excel and Google Sheets remain fine; the viewer is an option, not a requirement.
 :::
-- Variable names: lowercase, no spaces, use underscores (`word_count`, not `Word Count`)
 
 ::: {.callout-tip}
 ## Connection to Your Project
@@ -147,7 +148,7 @@ Before you start collecting your full dataset, verify:
 
 ## Try It Yourself
 
-Look at the `game` column in the Twitch stream table. It records the category a stream was filed under, and the sample holds sixty of them: Art, Fortnite, Just Chatting, Hearthstone, League of Legends, and a long tail of fifty more.
+Look at the `game` column in the Twitch stream table. It records the category a stream was filed under, and the sample holds sixty of them: Art, Fortnite, Just Chatting, Hearthstone, League of Legends, and a long tail of fifty-five more.
 
 1. Write a conceptual definition for `game` (what does a Twitch category mean in this context?).
 2. Write an operational definition. The streamer picks the category in the Twitch dashboard, and the collection records whatever was set at the moment of the snapshot.

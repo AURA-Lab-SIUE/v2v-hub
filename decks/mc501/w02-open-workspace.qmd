@@ -182,14 +182,14 @@ setup()
 - You want a list of green check marks under **Required R packages**
 - Red marks next to Quarto or Git are expected tonight if you have not finished those steps
 - Red under Required is the one that needs me
-- Then open the Command Palette and run **Check my setup**. It runs the same checklist and installs any package that is missing
+- Then open the Command Palette and run **Check my setup**. It runs the same checklist, and its **Install what is missing** action installs any package it flags
 
 ## When It Breaks
 
 - **Red text in R is not automatically an error.** R prints ordinary progress in red, so read the last line, not the color
 - Close VS Code completely and reopen it. This genuinely fixes a lot
 - If R asks "which would you like to update," choose **3: None**. The install command on the Hub already skips that prompt
-- Run **Check my setup** from the Command Palette. It installs any missing package without the update question
+- Run **Check my setup** from the Command Palette. Its **Install what is missing** action installs any missing package without the update question
 
 ## When It Still Breaks
 

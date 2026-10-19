@@ -42,7 +42,7 @@ The histogram cannot tell the two apart, because both produce a gap.
 
 ## What a Test Actually Asks
 
-- **Nobody cares about those 34,766 example messages as such**
+- **Nobody cares about those 34,762 example messages as such**
     - They were measured to learn about chat in general
 - **The honest question is not whether a gap exists in the sample**
     - It is whether chance is an unconvincing explanation for that gap
@@ -118,7 +118,7 @@ One call, one labeled block, the same numbers. The Companion writes the two plai
 - **The ordinary (Student) t-test assumes the two groups have equal spread**
     - Week 12 showed standard deviations of 60.68 against 38.47
     - The Welch version drops that assumption, so it is the safer default
-- **A `t` of -4.95 measures the gap in units of its own noise**
+- **A `t` of -4.94 measures the gap in units of its own noise**
     - The minus sign shows direction only
 - **`df` is not a round number because Welch computes it from both groups**
 
@@ -186,7 +186,7 @@ Answer each in writing:
 
 - **The raw gap is fifteen percent of the non-gaming mean, which does not sound negligible**
 - **But *d* measures that gap against standard deviations of 38 and 61 characters**
-- **And the sample held 34,766 messages**
+- **And the sample held 34,762 messages**
 
 A large enough sample detects a difference far too small to care about.
 

@@ -88,7 +88,7 @@ Output goes to `docs/`. Open `docs/index.html` in your browser. Use `quarto prev
 
 ## Design
 
-The Hub uses the **moderated AURA Lab design system** (`custom-styling.scss`): the lab's violet + amber palette and Fraunces / Instrument Sans / JetBrains Mono type on a warm chalk reading surface, with the AURA dark canvas as a toggle. It is a calmer variant of the lab's public identity, tuned for long reading and daily coursework, and every color pair meets **WCAG 2.1/2.2 AA**. Tokens are kept in sync with the textbook's `_brand.yml`.
+The Hub uses the **moderated AURA Lab design system** (`custom-styling.scss`): the lab's violet + amber palette and Source Sans 3 / Source Serif 4 type on a warm chalk reading surface, with the AURA dark canvas as a toggle. It is a calmer variant of the lab's public identity, tuned for long reading and daily coursework, and every color pair meets **WCAG 2.1/2.2 AA**. Tokens are kept in sync with the textbook's `_brand.yml`.
 
 ---
 

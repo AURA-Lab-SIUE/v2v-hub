@@ -148,14 +148,14 @@ setup()
 - **Red next to Quarto or Git** is fine if you have not reached those steps yet
 - **Red under Required** is the one that needs me
     - Email me that whole block of output exactly as it appears, rather than describing it
-- Then open the Command Palette and run **Check my setup**. It runs the same checklist and installs any package that is missing
+- Then open the Command Palette and run **Check my setup**. It runs the same checklist, and its **Install what is missing** action installs any package it flags
 
 ## When It Breaks
 
 - **`quarto: command not found`** means that terminal opened before Quarto finished installing
     - Close it and open a new one. This is the single most common problem in the whole setup
 - **`there is no package called 'v2v'`** means R is fine and the package is not there yet
-    - Rerun the install step inside the check file, or run **Check my setup**, which installs it for you
+    - Rerun the install step inside the check file, or run **Check my setup** and choose **Install what is missing**
 
 ## When It Still Breaks
 

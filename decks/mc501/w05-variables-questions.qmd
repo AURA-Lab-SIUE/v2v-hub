@@ -360,7 +360,8 @@ pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.80, type = "two.sample")
 ```
 
 **You should see** *n* = 64 per group. That is what a sampling plan justification looks
-like when it is finished.
+like when it is finished. The Test group of the Companion's **Write R code** has
+**Power analysis for your sample size**, which writes this call into your script.
 
 If you cannot collect that many, you revise the question, redesign for greater power, or
 state the limitation explicitly. Those are the only three honest options.

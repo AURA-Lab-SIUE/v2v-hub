@@ -31,7 +31,7 @@ By the end of Phase I, you will:
 
 ## Phase I Overview
 
-The Journalist is a throughline, not a stage. While the other four roles hand you the materials for the next one in sequence, this phase runs alongside all of them from week 1 to week 14.
+The Journalist is a throughline, not a stage. While the other four roles hand you the materials for the next one in sequence, this phase runs alongside all of them from week 1 to week 15.
 
 In this phase you develop the habits of a research journalist: reading critically, reflecting thoughtfully, and documenting consistently. Each week you engage with a chapter of [From Vibes to Variables](https://aura-lab.siue.edu/v2v/) and write a reflection that builds your understanding over time.
 
@@ -53,7 +53,7 @@ The reading for each week is set by your course schedule, which is the authority
 
 ## Assignment: Weekly Reading Journal (150 pts total)
 
-**Due:** every Friday by 11:59 PM | **Scoring:** 10 pts per week across 14 teaching weeks, plus 10 pts for consistency across the semester
+**Due:** every Friday (MC 451) or Monday (MC 501) by 11:59 PM | **Scoring:** 10 pts per week across 14 teaching weeks, plus 10 pts for consistency across the semester
 
 Each week, write a reflection on the assigned reading. Choose one of three thinking paths:
 

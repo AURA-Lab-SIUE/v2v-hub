@@ -226,7 +226,7 @@ msglen %>%
 ```
 
 This code splits the messages by gaming status and computes the four numbers a Results
-section needs: the count (n), the mean, the median, and the standard deviation (sd). The Companion's **Summary by group** writes this grouped summary for any variable you pick, without `pretty_table()`.
+section needs: the count (n), the mean, the median, and the standard deviation (sd). The Companion's **Summary by group** writes this grouped summary for any variable you pick, without `pretty_table()`; its Describe group also writes this week's figures (**Bar chart**, **Histogram**, **Histogram comparing two groups**, **Line chart over time**), and after **Run it** the saved chart opens in a VS Code tab.
 
 ## The Numbers
 

@@ -17,7 +17,7 @@ MC 451 / MC 501 syllabi returned 404:
 and three more redirected rather than resolving directly:
   siue.edu/counseling/          -> siue.edu/counseling-health/ (offices merged)
   siue.edu/policies/3cN.shtml   -> siue.edu/policies/table-of-contents/3cN.shtml
-RE-VERIFY before each term. `tools/check_links.py` in this repo does the sweep.
+RE-VERIFY before each term.
 -->
 
 ## Getting help

@@ -3,7 +3,7 @@ title: "About Dr. Leith"
 ---
 
 ## Alex P. Leith, PhD
-**Associate Professor & Director, SIM Lab**  
+**Associate Professor & Director, AURA Lab**  
 Department of Mass Communications  
 Southern Illinois University Edwardsville
 
@@ -11,7 +11,7 @@ Southern Illinois University Edwardsville
 
 ## Background
 
-I'm an Associate Professor of Mass Communications at SIUE, where I direct the Social Interaction & Media Lab (SIM Lab). My research focuses on how people communicate, connect, and collaborate through digital platforms, from video games and streaming to virtual reality and remote work environments.
+I'm an Associate Professor of Mass Communications at SIUE, where I direct the Avatars, Users, Relationships, and Affect Lab (AURA Lab). My research focuses on how people communicate, connect, and collaborate through digital platforms, from video games and streaming to virtual reality and remote work environments.
 
 Before joining SIUE, I completed my PhD in Information and Media at Michigan State University, where I studied gameplay livestreaming and how audiences build relationships with streamers. My master's degree in Speech Communication from SIUE examined parasocial relationships on social media platforms like Facebook.
 
@@ -42,7 +42,7 @@ I'm committed to:
 
 ## Current Projects
 
-**SIM Lab** focuses on:
+**AURA Lab** focuses on:
 - Improving equity and wellbeing in virtual classrooms
 - Understanding play and professionalism in remote environments  
 - Designing AI-enhanced tools for better virtual interaction

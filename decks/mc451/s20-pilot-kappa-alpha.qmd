@@ -108,7 +108,9 @@ v2v::reliability(pull(pilot, pass_1), pull(pilot, pass_2), method = "kappa")
 `method = "kappa"` or `method = "alpha"` selecting which one. `pull()` takes one named column out of a table.
 
 Or type your two passes into the Companion's **Reliability grid**. It saves them as a CSV and writes
-this same call into your script, after the `irr` calls it stands for.
+this same call into your script, after the `irr` calls it stands for. To enter the codes themselves,
+the Companion's data viewer (**Open the data viewer**) adds coding columns beside your sampled CSV,
+like the spreadsheet, and never changes the original file.
 
 ## The Result
 
