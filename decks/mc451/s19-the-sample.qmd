@@ -135,14 +135,14 @@ coding_sample <- v2v::sample_messages(
 
 `sample_messages()` treats each channel as a stratum. `n_per_channel = 30` asks for thirty
 messages from each channel, and `seed = 409` fixes the random draw so it can be repeated.
-Across fifty channels that aims at roughly 1,500 messages.
+Across fifty channels that draw returns 1,350 messages.
 
-1,500 messages is a professional-scale draw: large enough to support the study, and hand-codeable
+1,350 messages is a professional-scale draw: large enough to support the study, and hand-codeable
 by a team. Your draw uses the same command at your own budget.
 
 ## Sizing the Draw to Your Time Budget
 
-- **At 45 seconds a message, 1,500 messages take over eighteen hours**
+- **At 45 seconds a message, 1,350 messages take nearly seventeen hours**
 - **Lower `n_per_channel` until the arithmetic fits the time you have**
     - `n_per_channel = 5` across fifty channels is 250 messages, about three hours
     - The sample is still stratified, so the comparison still holds

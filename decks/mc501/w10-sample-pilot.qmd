@@ -100,7 +100,7 @@ coding_sample <- v2v::sample_messages(
 ```
 
 `sample_messages()` treats each channel as a stratum. `n_per_channel = 30` asks for thirty
-messages from each channel, which aims at roughly 1,500 messages across fifty channels, and
+messages from each channel, which returns 1,350 messages across fifty channels, and
 `seed = 409` fixes the draw so it can be repeated. Your own draw uses the same command with
 your own stratum column and your own number per stratum.
 
