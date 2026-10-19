@@ -101,21 +101,25 @@ produced, and credits the codebook only with the difference.
 ## Running the Check
 
 ```r
-v2v::reliability(pilot$pass_1, pilot$pass_2, method = "kappa")
+v2v::reliability(pull(pilot, pass_1), pull(pilot, pass_2), method = "kappa")
 ```
 
 `reliability()` takes two columns of codes and returns the coefficient, with
-`method = "kappa"` or `method = "alpha"` selecting which one.
+`method = "kappa"` or `method = "alpha"` selecting which one. `pull()` takes one named column out of a table.
 
-The `$` pulls a single named column out of a table.
+Or type your two passes into the Companion's **Reliability grid**. It saves them as a CSV and writes
+this same call into your script, after the `irr` calls it stands for.
 
 ## The Result
 
 ```
 Reliability: Cohen's kappa
 
-  Messages coded   100
-  Cohen's kappa    0.236
+  Items coded          100
+  Observed agreement   0.74
+  Cohen's kappa        0.236  (fair (Landis & Koch 1977))
+
+  The same number, without v2v: irr::kappa2(data.frame(pass_1, pass_2))
 ```
 
 - **Observed agreement was 0.74**, the respectable-looking number

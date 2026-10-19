@@ -45,6 +45,8 @@ format:
 - To verify your work, a collaborator needs a prose description of every click
 - Almost no one writes that description well, and almost no one wants to
 
+The course's VS Code menus are different: each one writes its R code into your script, so the record stays.
+
 ## Code Is the Methods Section
 
 - A script is a description of every step, in a language a computer can re-run

@@ -133,21 +133,21 @@ Significance and size are different questions, and big samples pull them apart.
 
 ```r
 four_games <- analysis %>%
-  filter(game %in% c("Fortnite", "Hearthstone",
-                     "Just Chatting", "League of Legends"))
+  filter(main_game %in% c("Fortnite", "Hearthstone",
+                          "Just Chatting", "League of Legends"))
 
-summary(aov(message_length ~ game, data = four_games))
+summary(aov(message_length ~ main_game, data = four_games))
 ```
 
-Four means, so a t-test will not do. Comparing four groups two at a time would take six
+`main_game` is the channel's usual category. Four means, so a t-test will not do. Comparing four groups two at a time would take six
 tests, each with its own chance of a false positive. ANOVA runs one test instead.
 
 ## Reading the F Table
 
 ```
-              Df    Sum Sq  Mean Sq  F value  Pr(>F)
-game           3    547281   182427    92.26  < 2e-16
-Residuals  13429  26552407     1977
+               Df   Sum Sq Mean Sq F value Pr(>F)
+main_game       3   547281  182427   92.26 <2e-16 ***
+Residuals   13429 26552407    1977
 ```
 
 **F** compares the variation between the group means against the variation within the

@@ -51,7 +51,7 @@ The chi-square test evaluates how much the observed data differs from what you'd
 library(tidyverse)
 library(v2v)
 
-analysis <- readRDS("data/twitch_analysis.RDS")
+analysis <- read_rds("data/twitch_analysis.RDS")
 
 tested <- analysis %>%
   filter(!is.na(channel_type), !is.na(viewer_band))
@@ -237,19 +237,20 @@ v2v::run_t_test(analysis, value = message_length, group = is_gaming)
 ```
 Welch two-sample t-test
 message_length by is_gaming
-
-  Mean, gaming         28.49 characters
-  Mean, non-gaming     33.70 characters
-  Difference           -5.22 characters
-
-  t                    -4.95
-  df                   3768.7
-  p-value              < .001
-  Cohen's d            -0.13  (negligible)
-
-  Gaming and non-gaming channels differ in mean message length by a
-  statistically significant but negligible amount.
+  FALSE                  n = 3457, mean = 33.70, SD = 60.68
+  TRUE                   n = 31305, mean = 28.49, SD = 38.47
+  Difference             5.21
+  t                      4.94
+  df                     3768.7
+  p-value                < .001
+  Cohen's d              0.13  (negligible)
+  FALSE and TRUE differ by a statistically significant, negligible amount.
+  The same test without v2v:
+    t.test(message_length ~ is_gaming, data = analysis)
+    effectsize::cohens_d(message_length ~ is_gaming, data = analysis)
 ```
+
+`FALSE` is the non-gaming group and `TRUE` the gaming group, printed in the order R sorts them, so the difference is non-gaming minus gaming. The last two lines name the plain R calls the wrapper stands for; the R Companion's Test menu writes those calls first and this one as a check.
 
 Read that output slowly, because it is the whole lesson of this chapter in one block.
 
@@ -259,14 +260,14 @@ The p-value is below .001. If the two kinds of channel truly had the same mean m
 
 And the effect size, Cohen's *d* of -0.13, says the difference is negligible. Cohen's benchmarks put a *d* of 0.2 at small, 0.5 at medium, and 0.8 at large, so 0.13 does not even reach small. The raw gap is about five characters, roughly fifteen percent of the non-gaming average, and fifteen percent does not *sound* negligible. But Cohen's *d* measures the gap against how much the data naturally vary, and message lengths vary enormously, with standard deviations of thirty-eight and sixty-one characters. Five characters set against that much variation is a ripple.
 
-So how did a negligible difference come back significant? Sample size. The test ran on 34,766 messages. A large enough sample will make almost any difference, however tiny, statistically significant. Both halves of the finding are true, and a report giving only the first half would mislead.
+So how did a negligible difference come back significant? Sample size. The test ran on 34,762 messages, every labeled message with a length. A large enough sample will make almost any difference, however tiny, statistically significant. Both halves of the finding are true, and a report giving only the first half would mislead.
 
 ::: {.callout-note}
 ## Two More Tests You Will Meet
 
-**ANOVA**, when the split has more than two groups. Restrict the data to its four largest game categories and `summary(aov(message_length ~ game, data = four_games))` returns *F*(3, 13429) = 92.26, p < 2e-16. The categories do not all share a mean. And the effect size, eta-squared, is 0.02: category explains about two percent of the variation in message length. The same honest pair of facts the t-test forced.
+**ANOVA**, when the split has more than two groups. Restrict the data to the four largest values of `main_game`, the channel's usual category, and `summary(aov(message_length ~ main_game, data = four_games))` returns *F*(3, 13429) = 92.26, p < 2e-16. Group by `game`, the category at each message, and you get a different and wrong answer with no error. The categories do not all share a mean. And the effect size, eta-squared, is 0.02: category explains about two percent of the variation in message length. The same honest pair of facts the t-test forced.
 
-**Linear regression**, when you want a model rather than a comparison. `summary(lm(message_length ~ is_gaming, data = analysis))` returns an intercept of 33.70, the mean for the reference group (non-gaming), and a coefficient on `is_gamingTRUE` of -5.22, which is exactly the gap the t-test found. That is not a coincidence: a t-test is a regression with one two-level predictor, and an ANOVA is a regression with one many-level predictor. All three belong to one framework, the general linear model.
+**Linear regression**, when you want a model rather than a comparison. `summary(lm(message_length ~ is_gaming, data = analysis))` returns an intercept of 33.70, the mean for the reference group (non-gaming), and a coefficient on `is_gamingTRUE` of -5.21, which is exactly the gap the t-test found. That is not a coincidence: a t-test is a regression with one two-level predictor, and an ANOVA is a regression with one many-level predictor. All three belong to one framework, the general linear model.
 :::
 
 ## Step 6: Write It Up, APA Format

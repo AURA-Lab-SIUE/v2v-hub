@@ -115,6 +115,7 @@ Line one loads the tidyverse. The next two lines fetch each example table and na
 The example data arrives through a **function call**, not a file path, which removes a whole
 category of beginner error. You get the **working sample**, not the full 2018 collection.
 Loading your own source from a file uses a different first line; every step after it is the same.
+The Companion's **Import a CSV file** command writes that first line for you.
 
 ## Looking at the Chat Table
 

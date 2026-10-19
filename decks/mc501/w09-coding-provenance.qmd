@@ -118,6 +118,7 @@ session. Called with no arguments, each function returns the full working sample
     - The full collection runs to tens of millions of rows
     - What ships with the package is a working sample: real, and fast
 - Your own source will be loaded from a file, with a path. Every step after loading is the same
+    - The Companion's **Import a CSV file** command picks the file and writes the loading line into your script
 
 ## Provenance Is a Disclosure
 

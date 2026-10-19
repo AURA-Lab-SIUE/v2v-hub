@@ -44,13 +44,14 @@ If any of those four is missing, say so now and we fix it first.
 library(tidyverse)
 library(v2v)
 
-analysis <- readRDS("data/twitch_analysis.RDS")
+analysis <- read_rds("data/twitch_analysis.RDS")
 
 glimpse(analysis)
 ```
 
 `glimpse()` prints every column with its type and its first few values. Before you plot
-anything, look at what you actually have.
+anything, look at what you actually have. The Companion's **Save a table as an RDS file** wrote
+this file at the end of the wrangle, and **Load your saved analysis (RDS)** writes these lines.
 
 ## A Summary Table First
 
@@ -102,9 +103,9 @@ bin width has to be reported rather than hidden.
 
 ```r
 analysis %>%
-  count(game, name = "messages") %>%
+  count(main_game, name = "messages") %>%
   slice_max(messages, n = 8) %>%
-  ggplot(aes(x = reorder(game, messages), y = messages)) +
+  ggplot(aes(x = reorder(main_game, messages), y = messages)) +
   geom_col(fill = "#2f7d8a") +
   coord_flip() +
   v2v::theme_v2v()

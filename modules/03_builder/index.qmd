@@ -94,7 +94,7 @@ Submit your complete codebook (study overview, unit of analysis, all variables w
 
 ### Sampling Plan and Pilot (75 pts), Week 11
 
-Design your sampling strategy (search terms, date range, method) and pilot test your codebook on 10 to 20 items. Document edge cases, coding decisions, and any revisions.
+Design your sampling strategy (search terms, date range, method) and pilot test your codebook on 10 to 20 items. Document edge cases, coding decisions, and any revisions. The R Companion's **Reliability grid** (optional) computes your stability figure from pass 1 and pass 2.
 
 :::
 
@@ -146,7 +146,7 @@ Your codebook adds a **formal reliability protocol**: the planned sample size fo
 
 ### Sampling Plan and Pilot, 20 to 30 items (75 pts), Week 11
 
-Design your sampling strategy (search terms, date range, method) and pilot test your codebook on **20 to 30 items**, a large enough subset to compute a meaningful reliability statistic. Document edge cases, coding decisions, the alpha you obtained, and any revisions the pilot forced.
+Design your sampling strategy (search terms, date range, method) and pilot test your codebook on **20 to 30 items**, a large enough subset to compute a meaningful reliability statistic. Document edge cases, coding decisions, the alpha you obtained, and any revisions the pilot forced. The R Companion's **Reliability grid** (optional) computes your stability figure from pass 1 and pass 2.
 
 :::
 

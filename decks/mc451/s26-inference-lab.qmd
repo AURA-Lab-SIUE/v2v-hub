@@ -44,9 +44,10 @@ A numeric outcome and two groups: **t-test**. A numeric outcome and three or mor
 ## Running Your Test
 
 ```r
+library(tidyverse)
 library(v2v)
 
-analysis <- readRDS("data/twitch_analysis.RDS")
+analysis <- read_rds("data/twitch_analysis.RDS")
 
 run_t_test(
   analysis,
@@ -99,10 +100,10 @@ If you cannot write that sentence, you do not yet understand your result.
 
 ```r
 four_games <- analysis %>%
-  filter(game %in% c("Fortnite", "Hearthstone",
-                     "Just Chatting", "League of Legends"))
+  filter(main_game %in% c("Fortnite", "Hearthstone",
+                          "Just Chatting", "League of Legends"))
 
-summary(aov(message_length ~ game, data = four_games))
+summary(aov(message_length ~ main_game, data = four_games))
 ```
 
 ANOVA asks one question of all the groups at once. The example returned

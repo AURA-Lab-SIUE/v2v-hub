@@ -68,9 +68,8 @@ Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
 viewers_over_time <- streams %>%
   filter(!is.na(game)) %>%
   mutate(
-    timestamp = as.POSIXct(date / 1000,
-                           origin = "1970-01-01", tz = "UTC"),
-    six_hour  = floor_date(timestamp, "6 hours"),
+    ts        = clean_dates(date),
+    six_hour  = floor_date(ts, "6 hours"),
     category  = fct_lump_n(game, n = 5)
   ) %>%
   group_by(six_hour, category) %>%
@@ -119,7 +118,7 @@ A dominant series crowds out the rest. Noticing that is reading the chart honest
 
 ```r
 chat_by_hour <- analysis %>%
-  mutate(hour = hour(timestamp)) %>%
+  mutate(hour = hour(ts)) %>%
   count(hour, name = "messages")
 
 ggplot(chat_by_hour, aes(x = hour, y = messages)) +

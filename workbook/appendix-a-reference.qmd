@@ -13,8 +13,9 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 | Function | Package | What It Does | Example |
 |----------|---------|-------------|---------|
 | `read_csv()` | tidyverse | Imports a CSV file into R | `df <- read_csv("data.csv")` |
-| `readRDS()` | base R | Loads a saved .RDS file | `df <- readRDS("data.RDS")` |
+| `read_rds()` | tidyverse | Loads a saved .RDS file | `df <- read_rds("data.RDS")` |
 | `clean_names()` | janitor | Converts column names to lowercase_with_underscores | `df <- df %>% clean_names()` |
+| `clean_dates()` | v2v | Turns epoch milliseconds into a date-time, dividing by 1,000 for you | `mutate(ts = clean_dates(date))` |
 
 ## Exploring Data
 
@@ -37,6 +38,8 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 | `case_when()` | tidyverse | Recode values with if/then logic | `case_when(x == 1 ~ "yes", TRUE ~ "no")` |
 | `str_to_lower()` | tidyverse | Convert text to lowercase | `str_to_lower("POP")` → `"pop"` |
 | `is.na()` | base R | Check for missing values | `filter(!is.na(column))` |
+| `join_chat_streams()` | v2v | Attaches each message's nearest earlier stream snapshot (a rolling join) | `join_chat_streams(chat, streams)` |
+| `reliability()` | v2v | Cohen's kappa or Krippendorff's alpha from two columns of codes | `reliability(pull(pilot, pass_1), pull(pilot, pass_2), method = "kappa")` |
 | `factor()` | base R | Convert column to a categorical factor | `factor(df$genre)` |
 | `levels()` | base R | Show factor levels | `levels(df$genre)` |
 
@@ -83,7 +86,7 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 
 | Function | What It Does | Example |
 |----------|-------------|---------|
-| `saveRDS()` | Save data as .RDS (preserves factors) | `saveRDS(df, "clean.RDS")` |
+| `write_rds()` | Save data as .RDS (preserves factors and date-times) | `write_rds(df, "clean.RDS")` |
 | `write_csv()` | Save data as CSV | `write_csv(df, "output.csv")` |
 
 ## Publishing (Quarto)

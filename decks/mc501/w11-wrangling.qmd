@@ -23,7 +23,7 @@ format:
 [Working session]{.eyebrow}
 
 - **One analysis-ready table, built from the raw example chat and stream tables**
-    - A readable timestamp, a message length, a gaming label, and a join
+    - A readable timestamp, a message length, a stream join, and a gaming label
 - **Weeks 12 and 13 compute everything from this table**
 - **Your Methods section is largely this script**
 - The example data is the shared practice case. You run the same steps on your own source
@@ -67,16 +67,16 @@ three columns and drops the rest.
 
 ```r
 chat <- chat %>%
-  mutate(
-    timestamp = as.POSIXct(
-      date / 1000,
-      origin = "1970-01-01",
-      tz = "UTC"
-    )
-  )
+  mutate(ts = clean_dates(date))
+streams <- streams %>%
+  mutate(ts = clean_dates(date))
 ```
 
-`as.POSIXct()` turns a number into a date-time value, counting from the origin you give it.
+`clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count
+seconds, then turns the result into a date and time, stored in a new `ts` column. The same step without
+the course package is `as_datetime(date / 1000)`, from lubridate, which the tidyverse loads.
+
+The Companion's **Write R code** menu writes this same block: **Turn the date column into a time**.
 
 ## The Millisecond Trap
 
@@ -84,14 +84,15 @@ chat <- chat %>%
     - That starting moment is the **Unix epoch**
 - **`as.POSIXct()` expects seconds, which are a thousand times coarser**
 - **Hand it the raw number and every message lands tens of thousands of years in the future**
+- **`clean_dates()` does the division for you**, and prints the lubridate line it stands for the first time you call it
 
-`date / 1000` converts milliseconds to seconds first. Skipping that step is how this fails.
+`date / 1000` converts milliseconds to seconds first. Skipping that step is how a hand conversion fails.
 
 ## The Type Change Is the Payoff
 
 ```
 # A tibble: 3 × 2
-           date timestamp
+           date ts
           <dbl> <dttm>
 1 1542578127023 2018-11-18 21:55:27
 2 1542578135562 2018-11-18 21:55:35
@@ -109,7 +110,7 @@ chat <- chat %>%
 
 chat %>%
   select(message, message_length) %>%
-  head(3)
+  slice_head(n = 3)
 ```
 
 `str_length()` counts the characters in a string, and `mutate()` writes the count into a
@@ -155,7 +156,34 @@ Answer each in writing, about your own table:
 - Name one place where your table's structure fights that meaning, such as two values in one cell
 - Is tidiness a property of the data, or of the question you ask of it? Give one reason
 
-## Step 1, Find What a Channel Mostly Streams
+## Step 1, Match Each Message to Its Stream
+
+```r
+chat_streams <- join_chat_streams(chat, streams)
+
+chat_streams %>%
+  count(no_snapshot = is.na(viewers))
+```
+
+```
+  no_snapshot     n
+1 FALSE       35256
+2 TRUE           11
+```
+
+`join_chat_streams()` gives each message the `game` and `viewers` of the latest stream snapshot taken
+at or before it, on the same channel. Both tables need the `ts` column from Transformation 1. Eleven
+messages arrived before their channel's first snapshot, so they get `NA`.
+
+## A Rolling Join, Named
+
+- **The same join without the course package is a `left_join()` with a rolling key**
+    - `join_by(channel, closest(ts >= snapshot_ts))`: same channel, nearest earlier snapshot
+    - `join_chat_streams()` prints that line the first time you call it
+- **It is a rolling join because snapshots come every few minutes and messages every second**
+- The Companion's Data menu writes this step as **Match each message to its stream**
+
+## Step 2, Find What a Channel Mostly Streams
 
 ```r
 channel_type <- streams %>%
@@ -169,7 +197,7 @@ channel_type <- streams %>%
 Drop the snapshots with no category, count how often each channel streamed each category,
 then keep each channel's **modal** category (its most frequent one), one row per channel.
 
-## Step 2, Name the Non-Gaming Categories
+## Step 3, Name the Non-Gaming Categories
 
 ```r
 nongaming_categories <- c(
@@ -185,19 +213,20 @@ nongaming_categories <- c(
 Listing the categories states the rule, so the judgment is visible in the code where a
 reader can check it.
 
-## Step 3, the Join
+## Step 4, the Join
 
 ```r
 channel_type <- channel_type %>%
   mutate(is_gaming = !(game %in% nongaming_categories)) %>%
-  select(channel, is_gaming)
+  select(channel, main_game = game, is_gaming)
 
-chat <- chat %>%
+chat_streams <- chat_streams %>%
   left_join(channel_type, by = "channel")
 ```
 
-`left_join()` keeps every chat row and attaches the matching `is_gaming` value, matching on
-the shared `channel` key.
+`select()` renames the category `main_game`, because `chat_streams` already has a `game` column, the
+category streaming at that moment. `left_join()` keeps every row and attaches each channel's
+`main_game` and `is_gaming`, matching on the shared `channel` key. Later analyses use `main_game`.
 
 ## Joins Fail Silently When Keys Disagree
 
@@ -213,7 +242,7 @@ When a join returns nothing, check the keys first.
 ## Always Inspect a Derived Column
 
 ```r
-chat %>% count(is_gaming)
+chat_streams %>% count(is_gaming)
 ```
 
 ```
@@ -241,33 +270,38 @@ Those messages sit the comparison out rather than being guessed into one side.
 ## The Whole Pipeline in One Place
 
 ```r
-chat <- v2v::twitch_chat() %>%
-  mutate(
-    timestamp = as.POSIXct(date / 1000,
-                           origin = "1970-01-01",
-                           tz = "UTC"),
-    message_length = str_length(message)
-  ) %>%
+chat <- twitch_chat() %>%
+  mutate(ts = clean_dates(date),
+         message_length = str_length(message))
+streams <- twitch_streams() %>%
+  mutate(ts = clean_dates(date))
+
+analysis <- join_chat_streams(chat, streams) %>%
   left_join(channel_type, by = "channel")
+
+write_rds(analysis, "data/twitch_analysis.RDS")
 ```
 
-Four transformations, run in sequence from the raw data, rebuild the table that every later
-result depends on.
+With `channel_type` built as above, two transformations and two joins rebuild the table that every
+later result depends on, and `write_rds()` saves it with every column type intact.
 
 ## The Analysis-Ready Table
 
 ```
 Rows: 35,267
-Columns: 8
-$ id             <int> 89, 551, 1033, 2094, 2803, …
-$ channel        <chr> "sodapoppin", "xqcow", "forsen", …
-$ sender         <chr> "madzee", "prometheanow", …
-$ message        <chr> "???????????????????????", …
-$ date           <dbl> 1542578127023, 1542578135562, …
-$ timestamp      <dttm> 2018-11-18 21:55:27, …
-$ message_length <int> 23, 441, 8, 12, 206, …
-$ is_gaming      <lgl> TRUE, FALSE, TRUE, TRUE, FALSE, …
+Columns: 12
+$ id, channel, sender, message, date: the five raw columns
+$ ts             <dttm> 2018-11-24 15:01:02, …
+$ message_length <int> 11, 7, 5, …
+$ snapshot_ts    <dttm> 2018-11-24 15:00:09, …
+$ game           <chr> NA, NA, NA, …
+$ viewers        <int> 13628, 14902, 16978, …
+$ main_game      <chr> NA, NA, NA, …
+$ is_gaming      <lgl> NA, NA, NA, …
 ```
+
+The first rows shown belong to `704cb1fgnty`, one of the two channels with no category, so its
+labels print `NA`.
 
 ## Your Script Is a Methods Section
 
@@ -278,11 +312,12 @@ $ is_gaming      <lgl> TRUE, FALSE, TRUE, TRUE, FALSE, …
     - The answer is in the script, if the script is commented and committed
 
 Identify **three** decisions in your script that a reviewer could challenge, and write a comment on each.
+A comment the Companion wrote does not count as one of your three. Write your own justification beside it.
 
 ## Never Overwrite Raw Data
 
 - **`data/raw/` is read-only after the first commit**
-    - Your script reads from it and writes to `data/derived/`
+    - Your script reads from it and writes new files, such as `data/twitch_analysis.RDS`, never back into it
 - **That separation lets you rebuild everything from unchanged raw data**
     - Overwriting the raw data breaks that guarantee, quietly and permanently
 - **Test it: re-run the script in a fresh session**
@@ -291,7 +326,7 @@ If the script does not reproduce the table without your intervention, it has a h
 
 ## Common Errors and What They Mean
 
-- **Timestamps in the year 51,000:** you forgot `/ 1000`
+- **Timestamps in the year 51,000:** you converted by hand and forgot `/ 1000`
 - **`could not find function "%>%"`:** the tidyverse never loaded
 - **Every joined column is `NA`:** the keys disagree, often because of a `#`
 - **The row count grew after a join:** the lookup table has duplicate keys
@@ -304,8 +339,8 @@ Or copy the error and run **Explain an R error** from the Command Palette.
 
 You should now have:
 
-- A `chat` object with **8 columns** and **35,267 rows**
-- A `timestamp` column of type `<dttm>` and a `message_length` column of type `<int>`
+- An `analysis` table with **12 columns** and **35,267 rows**, saved as `data/twitch_analysis.RDS`
+- A `ts` column of type `<dttm>` and a `message_length` column of type `<int>`
 - An `is_gaming` column with 3,457 `FALSE`, 31,309 `TRUE`, and 501 `NA`
 - A commented script that runs top to bottom in a clean session
 - The processed dataset written out, with the raw data untouched
@@ -315,6 +350,7 @@ You should now have:
 - **Due Monday, November 9, 11:59 PM:** Sampling Plan and Pilot, 75 points
 - **Due Monday, November 16, 11:59 PM:** Data Wrangling in R, 50 points
     - The script, its comments, and three justifications
+    - The three justifications are yours; a comment the Companion wrote does not count
 - **Read Chapter 12**
     - Plus the assigned article: **Lakens (2013)** on effect sizes
 - **Write a journal entry, 450 to 500 words**

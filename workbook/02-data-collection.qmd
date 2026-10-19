@@ -98,7 +98,7 @@ Before you move to R, run through this checklist on your completed spreadsheet:
 - **Excel:** File → Save As → choose "CSV (Comma delimited)" from the format dropdown
 - **Google Sheets:** File → Download → Comma Separated Values (.csv)
 
-Name your file descriptively: `my_coding_data_raw.csv` (the "raw" reminds you this is pre-cleaning).
+Name your file descriptively: `my_coding_data_raw.csv` (the "raw" reminds you this is pre-cleaning). To read the CSV into R, the R Companion's Data menu, **Import a CSV file**, writes the `read_csv()` lines for you; change the file name inside the quotation marks to yours.
 
 ## Try It Yourself
 

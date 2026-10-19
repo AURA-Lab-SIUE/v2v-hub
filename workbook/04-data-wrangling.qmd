@@ -99,7 +99,7 @@ Look at the data types:
 - `<chr>` = text (character)
 - `<int>` = whole number (integer)
 - `<dbl>` = number (double/decimal)
-- `<dttm>` = date-time (you don't have one yet, but you will)
+- `<dttm>` = date-time (you do not have one yet, but you will)
 
 Two things in that output already tell you what the cleaning will involve. The `date` column is a run of enormous numbers marked `<dbl>`, not a date anyone can read. And there is no column anywhere saying how long a message is, or whether it came from a gaming channel. Those are variables your codebook named and the raw data does not contain.
 
@@ -186,22 +186,26 @@ Now build what the analysis needs. The order matters: make the timestamps readab
 
 ### 3a: Make the Timestamp Readable
 
-The `date` column holds a count of milliseconds elapsed since midnight on the first of January, 1970. That reference moment is the **Unix epoch**, the zero point nearly all computers use to keep time. The number is precise and entirely unreadable. `mutate()` is the verb that fixes it:
+The `date` column holds a count of milliseconds elapsed since midnight on the first of January, 1970. That reference moment is the **Unix epoch**, the zero point nearly all computers use to keep time. The number is precise and entirely unreadable. `mutate()` is the verb that fixes it, and the course package's `clean_dates()` does the conversion. Both tables get the new column, because the join in step 3c needs it on each side:
 
 ```r
 
-analysis <- chat %>%
-  mutate(timestamp = as.POSIXct(date / 1000, origin = "1970-01-01", tz = "UTC"))
+chat <- chat %>%
+  mutate(ts = clean_dates(date))
+streams <- streams %>%
+  mutate(ts = clean_dates(date))
 ```
 
+`clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count seconds, then turns the result into a date and time, stored in a new `ts` column. The same step without the course package is `as_datetime(date / 1000)`, from lubridate, which the tidyverse loads.
+
 ```r
 
-analysis %>% select(date, timestamp) %>% head(3)
+chat %>% select(date, ts) %>% slice_head(n = 3)
 ```
 
 ```
 # A tibble: 3 × 2
-           date timestamp
+           date ts
           <dbl> <dttm>
 1 1542578127023 2018-11-18 21:55:27
 2 1542578135562 2018-11-18 21:55:35
@@ -211,7 +215,7 @@ analysis %>% select(date, timestamp) %>% head(3)
 ::: {.callout-important}
 ## Divide by 1,000 or Land in the Year 50,000
 
-`as.POSIXct()` expects a count of **seconds**. The `date` column is a count of **milliseconds**, a thousand times finer. Hand it the raw number and every message lands tens of thousands of years in the future. `date / 1000` converts milliseconds to seconds first. This is the single most common way this conversion fails, and it fails quietly: you get dates, they are just absurd ones.
+A date-time function expects a count of **seconds**. The `date` column is a count of **milliseconds**, a thousand times finer. Hand it the raw number and every message lands tens of thousands of years in the future. `date / 1000` converts milliseconds to seconds first. `clean_dates()` does that division for you, and prints the lubridate line it stands for the first time you call it. Doing the conversion by hand, this is the single most common way it fails, and it fails quietly: you get dates, they are just absurd ones.
 :::
 
 The column type changed too, from `<dbl>` to `<dttm>`. That new type is what makes the column useful. From a real date-time you can pull the hour of day, the day of week, or the calendar date, none of which can be read off the raw integer.
@@ -222,13 +226,13 @@ The column type changed too, from `<dbl>` to `<dttm>`. That new type is what mak
 
 ```r
 
-analysis <- analysis %>%
+chat <- chat %>%
   mutate(message_length = str_length(message))
 ```
 
 ```r
 
-analysis %>% select(message, message_length) %>% head(3)
+chat %>% select(message, message_length) %>% slice_head(n = 3)
 ```
 
 ```
@@ -242,9 +246,34 @@ analysis %>% select(message, message_length) %>% head(3)
 
 A single-word message at eight characters, a row of punctuation at twenty-three, and a block of copy-pasted text at 441 are all real Twitch chat. The distance between them is large, and that spread is the raw material of the analysis.
 
-### 3c: Label Gaming and Non-Gaming
+### 3c: Match Each Message to Its Stream
 
-This is the transformation the research question turns on, and it takes the most work, because the information lives in the *other* table.
+The information the research question turns on lives in the *other* table, so the chat and stream tables have to meet. The first join attaches to each message the stream snapshot taken at or before it, on the same channel. `join_chat_streams()` does it in one call:
+
+```r
+
+chat_streams <- join_chat_streams(chat, streams)
+
+chat_streams %>% count(no_snapshot = is.na(viewers))
+```
+
+```
+# A tibble: 2 × 2
+  no_snapshot     n
+  <lgl>       <int>
+1 FALSE       35256
+2 TRUE           11
+```
+
+Each message now carries the `game` and `viewers` of the latest snapshot before it, and `snapshot_ts`, the time of that snapshot. Eleven messages arrived before their channel's first snapshot, so they carry `NA`. The same join without the course package is `left_join(chat, streams, by = join_by(channel, closest(ts >= snapshot_ts)))`, a **rolling join**: snapshots come every few minutes and messages every second, so the key is "the nearest earlier snapshot," not an exact match. `join_chat_streams()` prints that line the first time you call it.
+
+::: {.callout-note}
+## Or Use the R Companion
+
+The AURA Lab R Companion's Data menu writes the `clean_dates()` and `join_chat_streams()` calls, and the filter, select, mutate, and count steps, into your script with a comment above each block. Build each step by hand once first, as above, so you know what the generated code is doing.
+:::
+
+### 3d: Label Gaming and Non-Gaming
 
 Gaming or non-gaming is a property of the channel, fixed by what the channel mostly streams. So build it in three moves: find what each channel mostly streams, decide whether that counts as gaming, and attach the decision to every message from that channel.
 
@@ -273,16 +302,16 @@ nongaming_categories <- c(
 
 channel_type <- channel_type %>%
   mutate(is_gaming = !(game %in% nongaming_categories)) %>%
-  select(channel, game, is_gaming)
+  select(channel, main_game = game, is_gaming)
 ```
 
-`game %in% nongaming_categories` asks whether a channel's dominant category is on the non-gaming list, and the `!` negates it, so `is_gaming` is `TRUE` for every channel whose main category is a game.
+`game %in% nongaming_categories` asks whether a channel's dominant category is on the non-gaming list, and the `!` negates it, so `is_gaming` is `TRUE` for every channel whose main category is a game. `select()` also renames the category `main_game`, because `chat_streams` already has a `game` column, the category the channel was streaming when each message was sent. `main_game` is the channel's usual category. The study labels by channel, so Chapters 5 and 6 group by `main_game`; grouping by `game` runs without an error and gives different numbers.
 
-Third, the **join**. A join brings columns from one table onto another by matching on a shared key, here the channel name. `left_join()` keeps every row of the chat table and attaches the matching values:
+Third, the second **join**. A join brings columns from one table onto another by matching on a shared key, here the channel name. `left_join()` keeps every row of `chat_streams` and attaches the matching values:
 
 ```r
 
-analysis <- analysis %>%
+analysis <- chat_streams %>%
   left_join(channel_type, by = "channel")
 ```
 
@@ -310,13 +339,7 @@ Two channels in the corpus streamed without ever having a category recorded, so 
 Twitch's chat protocol writes channel names with a leading `#`, so the same channel can appear as `#bobross` in one source and `bobross` in another. Join two tables whose keys disagree like that and every row fails to match, silently, with no error message. The `v2v` data has already been normalized, but raw Twitch data would need that cleaning step first. When a join returns nothing, mismatched keys are the first thing to check.
 :::
 
-::: {.callout-tip}
-## The Shortcut
-
-`v2v::join_chat_streams()` performs this chat-to-stream join for you in one call. Build it by hand once, so you know what the shortcut is doing, then use the shortcut.
-:::
-
-### 3d: Band the Channels by Audience Size
+### 3e: Band the Channels by Audience Size
 
 You'll want a second categorical variable for Chapter 6's chi-square test. Audience size is a good one, and `case_when()` is the tool. It works like a series of if/then rules:
 
@@ -341,10 +364,10 @@ analysis %>% count(viewer_band)
 
 `case_when()` checks conditions from top to bottom. The first condition that's TRUE determines the result. The `TRUE ~` at the end is a catch-all: it handles anything that didn't match the earlier rules. Think of it as "if none of the above, then..."
 
-The cutoffs above (1,000 and 10,000 median concurrent viewers) are a decision *you* are making, not a fact about the data. Write them into your codebook. A reader who disagrees with the cutoffs needs to be able to see them.
+The cutoffs above (5,000 and 20,000 median concurrent viewers) are a decision *you* are making, not a fact about the data. Write them into your codebook. A reader who disagrees with the cutoffs needs to be able to see them.
 :::
 
-### 3e: Convert to Factors
+### 3f: Convert to Factors
 
 A **factor** is R's way of storing a categorical variable. It remembers both the values and their labels, which matters for visualization and statistical tests. Give the gaming split readable labels while you're at it:
 
@@ -373,16 +396,16 @@ Save your cleaned data as an `.RDS` file. RDS is R's native format: it preserves
 
 ```r
 
-saveRDS(analysis, "data/twitch_analysis.RDS")
+write_rds(analysis, "data/twitch_analysis.RDS")
 
-verify <- readRDS("data/twitch_analysis.RDS")
-cat("Saved successfully:", nrow(verify), "rows,", ncol(verify), "columns\n")
+read_rds("data/twitch_analysis.RDS") %>%
+  nrow()
 ```
 
 ::: {.callout-important}
 ## Why `.RDS` Instead of `.csv`?
 
-When you save as CSV, R forgets which columns are factors and what their levels are. It also flattens your `<dttm>` timestamp back into text. When you save as RDS, everything is preserved. Since you just spent time converting timestamps and setting up factors, you don't want to lose that work. Always save your *cleaned* data as RDS.
+When you save as CSV, R forgets which columns are factors and what their levels are. It also flattens your `<dttm>` timestamp back into text. When you save as RDS, everything is preserved. Since you just spent time converting timestamps and setting up factors, you do not want to lose that work. Always save your *cleaned* data as RDS. If you export from the R Companion, choose **Save a table as an RDS file**; it offers this file name.
 :::
 
 ## The Complete Pipeline (Summary)
@@ -404,6 +427,14 @@ nongaming_categories <- c(
   "Sports & Fitness", "Talk Shows & Podcasts", "Travel & Outdoors"
 )
 
+chat <- chat %>%                                     # readable time, message length
+  mutate(
+    ts             = clean_dates(date),
+    message_length = str_length(message)
+  )
+streams <- streams %>%
+  mutate(ts = clean_dates(date))
+
 channel_type <- streams %>%                         # what each channel mostly streams
   filter(!is.na(game)) %>%
   count(channel, game) %>%
@@ -411,46 +442,45 @@ channel_type <- streams %>%                         # what each channel mostly s
   slice_max(n, n = 1, with_ties = FALSE) %>%
   ungroup() %>%
   mutate(is_gaming = !(game %in% nongaming_categories)) %>%
-  select(channel, game, is_gaming)
+  select(channel, main_game = game, is_gaming)
 
 channel_size <- streams %>%                          # how big each channel's audience is
   group_by(channel) %>%
   summarize(median_viewers = median(viewers, na.rm = TRUE)) %>%
   mutate(viewer_band = cut(median_viewers, breaks = c(0, 5000, 20000, Inf),
-                           labels = c("small", "medium", "large"))) %>%
-  select(channel, viewer_band)
+                           labels = c("small", "medium", "large")))
 
-analysis <- chat %>%
-  mutate(
-    timestamp      = as.POSIXct(date / 1000, origin = "1970-01-01", tz = "UTC"),
-    message_length = str_length(message)
-  ) %>%
-  left_join(channel_type, by = "channel") %>%
-  left_join(channel_size, by = "channel") %>%
-  mutate(
-    channel_type = factor(if_else(is_gaming, "gaming", "non-gaming")),
-    viewer_band  = factor(viewer_band, levels = c("small", "medium", "large"))
-  )
+analysis <- join_chat_streams(chat, streams) %>%    # join key: channel, nearest earlier snapshot
+  left_join(channel_type, by = "channel") %>%       # join key: channel
+  left_join(channel_size, by = "channel") %>%       # join key: channel
+  mutate(channel_type = factor(if_else(is_gaming, "gaming", "non-gaming")))
 
-saveRDS(analysis, "data/twitch_analysis.RDS")
+write_rds(analysis, "data/twitch_analysis.RDS")
 ```
 
-A `glimpse()` of the core table shows what the transformations bought you. This is the eight-column version the textbook builds; your pipeline adds `game`, `viewer_band`, and `channel_type` on top of it:
+A `glimpse()` of the finished table shows what the transformations bought you. The first twelve columns are the table the textbook builds; your pipeline adds `median_viewers`, `viewer_band`, and `channel_type` on top of it:
 
 ```
 Rows: 35,267
-Columns: 8
-$ id             <int> 89, 551, 1033, 2094, 2803, …
-$ channel        <chr> "sodapoppin", "xqcow", "forsen", "sodapoppin", "xqcow…
-$ sender         <chr> "madzee", "prometheanow", "spectre155", "itsjer", "la…
-$ message        <chr> "???????????????????????", "TriEasy Clap TriEasy Cla…
-$ date           <dbl> 1542578127023, 1542578135562, 1542578143610, 1542578…
-$ timestamp      <dttm> 2018-11-18 21:55:27, 2018-11-18 21:55:35, 2018-11-18…
-$ message_length <int> 23, 441, 8, 12, 206, …
-$ is_gaming      <lgl> TRUE, FALSE, TRUE, TRUE, FALSE, …
+Columns: 15
+$ id             <int> 21503485, 21505722, 21506809, 21507051, 21507140, 21507…
+$ channel        <chr> "704cb1fgnty", "704cb1fgnty", "704cb1fgnty", "704cb1fgn…
+$ sender         <chr> "cheezehammer", "lacari_myfave_trihard1", "lacari_myfav…
+$ message        <chr> "FBtouchdown", "TriHard", "ANELE", "TriHard", "TriHard …
+$ date           <dbl> 1.543072e+12, 1.543072e+12, 1.543072e+12, 1.543072e+12,…
+$ ts             <dttm> 2018-11-24 15:01:02, 2018-11-24 15:02:26, 2018-11-24 1…
+$ message_length <int> 11, 7, 5, 7, 15, 23, 31, 23, 15, 5, 7, 8, 22, 10, 4, 8,…
+$ snapshot_ts    <dttm> 2018-11-24 15:00:09, 2018-11-24 15:01:23, 2018-11-24 1…
+$ game           <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ viewers        <int> 13628, 14902, 16978, 16978, 16978, 16978, 16978, 16978,…
+$ main_game      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ is_gaming      <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ median_viewers <dbl> 16978, 16978, 16978, 16978, 16978, 16978, 16978, 16978,…
+$ viewer_band    <fct> medium, medium, medium, medium, medium, medium, medium,…
+$ channel_type   <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
 ```
 
-The table is now **tidy**: each row is one observation, one chat message; each column is one variable; and everything the analysis needs sits in one place. The unreadable integers have become timestamps. Message length and gaming status, named in the codebook and absent from the raw data, are now columns. The chat and stream tables, once disconnected, are joined.
+`join_chat_streams()` sorts the table by channel and then by time, so the first rows shown belong to `704cb1fgnty`, one of the two channels with no category; that is why its labels print `NA`. The table is now **tidy**: each row is one observation, one chat message; each column is one variable; and everything the analysis needs sits in one place. The unreadable integers have become timestamps. Message length and gaming status, named in the codebook and absent from the raw data, are now columns. The chat and stream tables, once disconnected, are joined twice: once to the snapshot nearest each message, once to the channel's label.
 
 None of this was analysis. Not one result has been computed. But every figure in Chapter 5 and every test in Chapter 6 comes out of this table, which is why the care spent building it is not optional. A wrangling mistake does not announce itself. It travels quietly into every chart downstream.
 
@@ -462,9 +492,9 @@ These exercises directly prepare you for the Data Wrangling [R] assignment:
 
 2. **Practice `case_when()`:** The `viewer_band` cutoffs above are arbitrary. Build a second version using tertiles instead (`quantile()` will find them for you), and compare how many channels land in each band under the two schemes.
 
-3. **Check your join:** After running the full pipeline, run `analysis %>% filter(is.na(is_gaming)) %>% count(channel)`. Which channels came back `NA`, and what does the stream table say about them?
+3. **Check your joins:** After running the full pipeline, run `analysis %>% filter(is.na(is_gaming)) %>% count(channel)`. Which channels came back `NA`, and what does the stream table say about them? Then run `analysis %>% filter(is.na(viewers)) %>% count(channel)` for the messages the stream join could not place.
 
-4. **Run the full pipeline:** Starting from `twitch_chat()`, apply all four steps to produce a clean `.RDS` file. Verify it loads correctly with `readRDS()` and that `nrow()` still reports 35,267.
+4. **Run the full pipeline:** Starting from `twitch_chat()`, apply all four steps to produce a clean `.RDS` file. Verify it loads correctly with `read_rds()` and that `nrow()` still reports 35,267.
 
 ::: {.callout-tip}
 ## Connection to Your Project

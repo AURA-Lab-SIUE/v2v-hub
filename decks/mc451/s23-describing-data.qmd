@@ -67,10 +67,8 @@ Pick one variable from your own codebook and answer in writing:
 viewers_over_time <- streams %>%
   filter(!is.na(game)) %>%
   mutate(
-    timestamp = as.POSIXct(date / 1000,
-                           origin = "1970-01-01",
-                           tz = "UTC"),
-    six_hour  = floor_date(timestamp, "6 hours"),
+    ts        = clean_dates(date),
+    six_hour  = floor_date(ts, "6 hours"),
     category  = fct_lump_n(game, n = 5)
   ) %>%
   group_by(six_hour, category) %>%
@@ -113,7 +111,7 @@ Hour of day is 24 separate categories, and we want a count of messages in each o
 
 ```r
 chat_by_hour <- analysis %>%
-  mutate(hour = hour(timestamp)) %>%
+  mutate(hour = hour(ts)) %>%
   count(hour, name = "messages")
 
 ggplot(chat_by_hour, aes(x = hour, y = messages)) +

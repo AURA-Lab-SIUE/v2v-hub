@@ -57,7 +57,7 @@ Using the Twitch data from the `v2v` package:
 3. **Join** the stream-level information back onto the chat messages
 4. **Export** a clean dataset as `twitch_analysis.RDS`
 
-This assignment teaches the full data pipeline, from raw input to analysis-ready output.
+This assignment teaches the full data pipeline, from raw input to analysis-ready output. The R Companion's Data menu (optional) writes the import, cleaning, join, and export code into your script; export to RDS.
 
 ::: {.graduate-extension}
 **MC 501:** your wrangling script carries a **data provenance statement**: where each field came from, every transformation applied, and every row dropped with the reason. It is the same 50 points, but it has to survive being read by someone reproducing your work.

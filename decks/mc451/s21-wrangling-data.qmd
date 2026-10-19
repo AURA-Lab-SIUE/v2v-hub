@@ -110,15 +110,16 @@ Chapter 8 called this interval data, with a catch. This conversion is the catch.
 
 ```r
 chat <- chat %>%
-  mutate(
-    timestamp = as.POSIXct(date / 1000,
-                           origin = "1970-01-01",
-                           tz = "UTC")
-  )
+  mutate(ts = clean_dates(date))
+streams <- streams %>%
+  mutate(ts = clean_dates(date))
 ```
 
-`as.POSIXct()` turns a number into a date-time value, given the origin to count from, and
-`mutate()` writes the result into a new `timestamp` column.
+`clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count
+seconds, then turns the result into a date and time, stored in a new `ts` column. The same step without
+the course package is `as_datetime(date / 1000)`, from lubridate, which the tidyverse loads.
+
+The Companion's **Write R code** menu writes this same block: **Turn the date column into a time**.
 
 ## The Factor of a Thousand That Breaks It
 
@@ -126,17 +127,18 @@ chat <- chat %>%
     - `date` counts milliseconds, which is a thousand times finer
 - **Hand it the raw number and every message lands tens of thousands of years in the future**
 - **`date / 1000` converts milliseconds to seconds first**
+- **`clean_dates()` does the division for you**, and prints the lubridate line it stands for the first time you call it
 
-This one arithmetic step is the most common way the conversion fails.
+This one arithmetic step is the most common way a hand conversion fails.
 
 ## Seeing the Conversion
 
 ```r
-chat %>% select(date, timestamp) %>% head(3)
+chat %>% select(date, ts) %>% slice_head(n = 3)
 ```
 
 ```
-           date timestamp
+           date ts
           <dbl> <dttm>
 1 1542578127023 2018-11-18 21:55:27
 2 1542578135562 2018-11-18 21:55:35
@@ -161,7 +163,7 @@ column. Your codebook named this variable; the data did not contain it until now
 ## What the Lengths Show
 
 ```r
-chat %>% select(message, message_length) %>% head(3)
+chat %>% select(message, message_length) %>% slice_head(n = 3)
 ```
 
 ```
@@ -176,7 +178,7 @@ A single word is 8 characters, the punctuation wall is 23, and the copypasta is 
 
 ## Common Errors Today
 
-- **Every message is dated in the year 50000:** you forgot `/ 1000`
+- **Every message is dated in the year 50000:** you converted by hand and forgot `/ 1000`
 - **`could not find function "str_length"`:** you have not run `library(tidyverse)`
 - **`object 'message_length' not found`:** you never assigned the result back to `chat`
     - `<-` is what makes a change stick
@@ -189,10 +191,11 @@ Or copy the error and run **Explain an R error** from the Command Palette.
 
 You should now have:
 
-- A `chat` object with a working `timestamp` column, typed `<dttm>`
-- A `message_length` column, typed `<int>`
+- A `chat` object and a `streams` object, each with a working `ts` column, typed `<dttm>`
+- A `message_length` column on `chat`, typed `<int>`
 - Output showing dates in November 2018
 - A saved script, not lines typed into the console
+- Any step you built with the Companion's Data menu, sitting in that script as commented code
 
 Still missing: the gaming label. That is Thursday.
 

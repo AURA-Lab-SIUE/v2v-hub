@@ -225,17 +225,19 @@ League of Legends 4000       22.63
 
 ```r
 four_games <- analysis %>%
-  filter(game %in% c("Fortnite", "Hearthstone",
-                     "Just Chatting", "League of Legends"))
+  filter(main_game %in% c("Fortnite", "Hearthstone",
+                          "Just Chatting", "League of Legends"))
 
-summary(aov(message_length ~ game, data = four_games))
+summary(aov(message_length ~ main_game, data = four_games))
 ```
 
 ```
-              Df    Sum Sq  Mean Sq  F value  Pr(>F)
-game           3    547281   182427    92.26  < 2e-16 ***
-Residuals  13429  26552407     1977
+               Df   Sum Sq Mean Sq F value Pr(>F)
+main_game       3   547281  182427   92.26 <2e-16 ***
+Residuals   13429 26552407    1977
 ```
+
+`main_game` is the channel's usual category, the one the gaming label was built from.
 
 ## Reading F, Then Eta Squared
 

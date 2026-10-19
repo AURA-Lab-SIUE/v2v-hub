@@ -71,6 +71,8 @@ Everything tonight exists to make that impossible.
 - Redoing it next month means remembering which menus, in what order, with which options
 - Writing it down means describing every click in prose, and nobody does this well
 
+The course's VS Code menus are different: each one writes its R code into your script, so the record stays.
+
 ## Why Code Wins
 
 - A script is a description of every step, in a language a computer can re-run

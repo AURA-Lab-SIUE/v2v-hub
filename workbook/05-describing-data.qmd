@@ -19,7 +19,7 @@ Describing data is not just a technical step. It is **communication**. Every tab
 library(tidyverse)
 library(v2v)
 
-analysis <- readRDS("data/twitch_analysis.RDS")
+analysis <- read_rds("data/twitch_analysis.RDS")
 
 streams <- twitch_streams()   # still useful: some questions are about streams, not messages
 ```
@@ -179,14 +179,13 @@ ggplot(top_games, aes(x = fct_reorder(game, n), y = n)) +
   coord_flip()  # horizontal bars are easier to read for long category labels
 ```
 
-### Stage 3: Add Color and Labels
+### Stage 3: Add Labels and a Theme
 
 ```r
 
-ggplot(top_games, aes(x = fct_reorder(game, n), y = n, fill = game)) +
-  geom_col(show.legend = FALSE) +           # hide legend (redundant with axis)
+ggplot(top_games, aes(x = fct_reorder(game, n), y = n)) +
+  geom_col(fill = "#2f7d8a") +              # one color: the axis already names each bar
   coord_flip() +
-  scale_fill_brewer(palette = "Set2") +     # colorblind-friendly palette
   labs(
     title = "Most-Streamed Categories",
     subtitle = "Top 10 of 60 categories, Twitch stream snapshots (n = 32,276)",
@@ -200,12 +199,11 @@ ggplot(top_games, aes(x = fct_reorder(game, n), y = n, fill = game)) +
 
 ```r
 
-ggplot(top_games, aes(x = fct_reorder(game, n), y = n, fill = game)) +
-  geom_col(show.legend = FALSE, width = 0.7) +
+ggplot(top_games, aes(x = fct_reorder(game, n), y = n)) +
+  geom_col(fill = "#2f7d8a", width = 0.7) +
   geom_text(aes(label = paste0(n, " (", percent, "%)")),  # add count labels
             hjust = -0.1, size = 3.5) +
   coord_flip() +
-  v2v::scale_fill_v2v() +
   scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +  # room for labels
   labs(
     title = "Most-Streamed Categories",
@@ -223,7 +221,7 @@ ggplot(top_games, aes(x = fct_reorder(game, n), y = n, fill = game)) +
 
 That's the difference between a homework chart and a professional one. Every element serves a purpose: the sort order aids comparison, the labels provide exact values, and the clean theme reduces visual noise.
 
-`v2v::theme_v2v()` and `v2v::scale_fill_v2v()` apply the course's house style in one call each, so that every figure in your White Paper looks like a member of one set rather than a pile of unrelated charts. `scale_fill_brewer(palette = "Set2")` is a perfectly good alternative when you're working outside this course.
+`v2v::theme_v2v()` applies the course's house style in one call, so that every figure in your White Paper looks like a member of one set rather than a pile of unrelated charts. The bars here share one color on purpose: the axis already names each category, and a color per bar would add nothing a reader can use. When color does carry meaning, as in the stacked bars below, `v2v::scale_fill_v2v()` supplies the course palette for up to eight categories, and `scale_fill_brewer(palette = "Set2")` is a perfectly good alternative outside this course.
 
 ## Bar Chart: Counts Across Time
 
@@ -232,7 +230,7 @@ A second bar chart, and a different question: across the hours of the day, when 
 ```r
 
 chat_by_hour <- analysis %>%
-  mutate(hour = hour(timestamp)) %>%
+  mutate(hour = hour(ts)) %>%
   count(hour, name = "messages")
 
 ggplot(chat_by_hour, aes(x = hour, y = messages)) +
@@ -330,7 +328,7 @@ A figure sets up a comparison. A summary table gives the numbers behind it:
 analysis %>%
   filter(!is.na(is_gaming)) %>%
   group_by(is_gaming) %>%
-  summarise(
+  summarize(
     n      = n(),
     mean   = mean(message_length, na.rm = TRUE),
     median = median(message_length, na.rm = TRUE),

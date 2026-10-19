@@ -164,6 +164,8 @@ This is typical. Not every dataset has dramatic errors. Sometimes cleaning is ju
 
 Everything below this line is yours. The downloaded `.qmd` file has empty code chunks for each step. Fill them in, render, and verify your output.
 
+Type this practice by hand, without the R Companion's menus: the point is to find out what you can write on your own. Afterward, rebuild one step with the Data menu and compare its code to yours.
+
 ---
 
 ## Clean the Data

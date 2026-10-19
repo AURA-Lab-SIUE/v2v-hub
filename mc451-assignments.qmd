@@ -368,7 +368,7 @@ Decide what you will code, then prove the codebook survives contact with it. The
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** one document with two parts, the sampling plan and the pilot, plus your coded pilot data as a spreadsheet or CSV, uploaded to Blackboard under Sampling Plan and Pilot.
+**What you submit:** one document with two parts, the sampling plan and the pilot, plus your coded pilot data as a spreadsheet or CSV, uploaded to Blackboard under Sampling Plan and Pilot. Optional: the R Companion's **Reliability grid** takes your pass 1 and pass 2 codes, saves them as a CSV, and writes the `v2v::reliability()` call into your script.
 
 **Length:** 700 to 1,200 words across the plan and the pilot write-up, plus 10 to 20 coded items in the spreadsheet. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -393,7 +393,7 @@ Build the analysis-ready table from the raw one.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** your script and the exported dataset, saved as `twitch_analysis.RDS` because Describing Data and Inferencing Data both read that file, uploaded to Blackboard under Data Wrangling in R.
+**What you submit:** your script and the exported dataset, saved as `twitch_analysis.RDS` because Describing Data and Inferencing Data both read that file, uploaded to Blackboard under Data Wrangling in R. You may build steps with the R Companion's Data menu. What it writes lands in your script, and the script is what is graded. Export to RDS, not CSV.
 
 **Length:** One script of 40 to 120 lines, comments included, plus the 30-row coding form. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 

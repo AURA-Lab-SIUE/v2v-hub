@@ -242,15 +242,16 @@ pilot <- coding_sample %>%
   slice_head(n = 30)
 
 v2v::reliability(
-  pilot$pass_1,
-  pilot$pass_2,
+  pull(pilot, pass_1),
+  pull(pilot, pass_2),
   method = "alpha"
 )
 ```
 
 This code takes the first thirty messages, passes your two columns of codes to
 `reliability()`, and asks for alpha instead of kappa. Agreement Check on the Hub gives the same
-result when you paste in the two columns.
+result when you paste in the two columns. The Companion's **Reliability grid** saves your two passes
+as a CSV and writes this call, with `method = "alpha"` or `"kappa"`.
 
 ## A Worked Failure
 

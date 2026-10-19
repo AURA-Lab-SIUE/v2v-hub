@@ -203,6 +203,7 @@ most to least. **Code is instructions in order, and that is all it is.**
 - You are responsible for every claim and every line of code you submit
 - The course workspace tells GitHub Copilot to remind you to log each exchange. The reminder does not replace the log
 - Using it to avoid learning R will show in the Analyst weeks, when the code gets harder
+- Code the AURA Lab R Companion's menus write is not AI. Keep the comment it adds, and you answer for that line like any other
 - Ask me if you are unsure whether a use is appropriate
 
 ## Before Thursday
