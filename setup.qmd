@@ -65,9 +65,15 @@ When VS Code prompts you to install the recommended extensions, accept them. The
 - **Quarto**: authoring and rendering Quarto documents
 - **R**: running and editing R code
 - **GitLens**: seeing your Git history inside the editor
+- **AURA Lab R Companion**: a **Check my setup** command that installs the course packages and
+  confirms they load, and an **Explain an R error** command
 
 These are the front ends. If you skipped Step 3, install R and Quarto themselves now, or
 the Render button will do nothing.
+
+**Check your setup:** open the Command Palette (Ctrl+Shift+P, or Cmd+Shift+P on a Mac), run
+**AURA: Check my setup**, and choose your course. It finds R, installs any course package that is
+missing, and confirms that each one loads. `00-check-your-setup.qmd` runs the same check by hand.
 
 ---
 
@@ -97,7 +103,7 @@ Once you complete these steps, move to **[Phase I: The Journalist](modules/01_jo
 ## Troubleshooting
 
 **Q: VS Code won't open my workspace folder**
-- Make sure you opened the folder you cloned in Step 3, not a parent folder
+- Make sure you opened the folder you cloned in Step 4, not a parent folder
 - Use **File > Open Folder** and select the cloned workspace folder directly
 
 **Q: Where do I put my weekly journal entries?**
@@ -106,6 +112,10 @@ Once you complete these steps, move to **[Phase I: The Journalist](modules/01_jo
 
 **Q: Can I share my workspace with classmates?**
 - Yes. Because the workspace is a Git repository, you can share its GitHub URL or collaborate through GitHub
+
+**Q: The install will not finish and I need R for class.**
+- Open your own workspace copy as a Codespace: on github.com, open your repository, click **Code**, then **Codespaces**, then **Create codespace on main**.
+- R, the course packages, and the R Companion are already installed there. Work in it, and bring the laptop to office hours
 
 ---
 

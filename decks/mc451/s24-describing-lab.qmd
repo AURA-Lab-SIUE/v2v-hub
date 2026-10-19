@@ -169,6 +169,7 @@ and every cap is named in the label.
 - **Everything piles onto one bar:** your x column is text, not a number
 
 Run `?v2v::common_errors` for the errors specific to the example data.
+Or copy the error and run **Explain an R error** from the Command Palette.
 
 ## Saving Figures for the Paper
 

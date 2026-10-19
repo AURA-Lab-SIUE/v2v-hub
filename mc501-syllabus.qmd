@@ -380,6 +380,8 @@ the [setup pages](https://aura-lab.siue.edu/v2v-hub/resources/index.html).
 - **Quarto**: scientific and technical publishing
 - **Git and GitHub**: version control and your White Paper
 - **GitHub Desktop** (optional): a visual Git interface
+- **AURA Lab R Companion** (optional VS Code extension): a setup check that installs the course
+  packages, and a plain-English explainer for R errors
 
 **What you need to have.** A reliable computer and internet connection are
 required.
@@ -414,6 +416,11 @@ prohibited.
 - **Not permitted:** submitting AI-generated work as your own without disclosure;
   using AI to fabricate citations, data, or results; or using AI to circumvent a
   learning objective. These are academic dishonesty.
+- **The AURA Lab R Companion is not an AI tool.** Its setup check, its error explanations,
+  and any code its menus write come from fixed templates, not from a language model. You do
+  not log them in the AI-use log, but you answer for Companion-written code the same way: you
+  can explain every line you submit. Copilot, including any answer Copilot gives using the
+  Companion's tools, is AI and is logged.
 
 You are accountable for everything you submit, including whatever role AI played
 in producing it. See the

@@ -48,8 +48,11 @@ When the workspace opens, VS Code shows a prompt in the bottom-right: **"This wo
 | **Quarto** | Preview and render `.qmd` documents |
 | **R** (REditorSupport) | Run R code and view data inside VS Code |
 | **GitLens** | See who changed what, and when, in your Git history |
+| **AURA Lab R Companion** | **Check my setup**, which installs the course packages, and **Explain an R error** |
 
 If you miss the prompt, open the Extensions view (`Ctrl/Cmd+Shift+X`), type `@recommended`, and install from there.
+
+Then run **Check my setup** from the Command Palette (`Ctrl/Cmd+Shift+P`) and choose your course.
 
 ---
 
@@ -217,9 +220,10 @@ Use **File > Open Folder** and select the workspace folder you cloned, not a par
 1. Install VS Code, R, and Git.
 2. Create your copy from the template and clone it.
 3. Install the recommended extensions.
-4. Read `README.md`.
-5. Start your first journal entry from the template.
-6. Begin [Phase I: The Journalist](../modules/01_journalist/index.qmd).
+4. Run Check my setup.
+5. Read `README.md`.
+6. Start your first journal entry from the template.
+7. Begin [Phase I: The Journalist](../modules/01_journalist/index.qmd).
 
 ---
 

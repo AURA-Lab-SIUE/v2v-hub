@@ -323,6 +323,6 @@ If your pilot led to no codebook changes, the items you piloted were probably to
 - **Read Chapter 11**
     - Plus the assigned article: **Wickham (2014)**, "Tidy data"
 - **Write a journal entry, 450 to 500 words**
-- **Bring a laptop with R, VS Code, and `v2v` working**
+- **Bring a laptop with R, VS Code, and `v2v` working, and Check my setup reporting everything installed**
 
 ## Questions, Comments, or Concerns? {.titlecard}

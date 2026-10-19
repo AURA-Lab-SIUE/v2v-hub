@@ -80,8 +80,8 @@ spent on the study.
 v2v::setup()
 ```
 
-`setup()` checks that R, the packages this book depends on, and the project environment are
-present and agree on versions.
+`setup()` checks that R, Quarto, Git, and the packages this course uses are present.
+**Check my setup** in the AURA Lab R Companion runs the same check and installs anything missing.
 
 - **You met `setup()` in Chapter 2, at installation**
 - **Run it as a habit, every time you open a project**
@@ -294,10 +294,11 @@ It is far better to confirm now than to find a missing column in the middle of c
 
 - **`could not find function "glimpse"`:** the tidyverse is not loaded
 - **`object 'chat' not found`:** the assignment line has not run
-- **`no package called 'v2v'`:** an installation problem, not a syntax problem
+- **`no package called 'v2v'`:** an installation problem, so run **Check my setup**
 - **The Hub keeps a cheat sheet of common errors**
 
 An error is information, not a verdict. Run `?v2v::common_errors` for the errors specific to the example data.
+Or copy the error and run **Explain an R error** from the Command Palette.
 
 ## Checkpoint
 

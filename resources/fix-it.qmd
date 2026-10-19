@@ -2,11 +2,11 @@
 title: "Fix It"
 ---
 
-Three problems have come up across the course this week. None of them mean you did anything
+Four problems have come up across the course. None of them mean you did anything
 wrong, and none of them mean your computer is broken. Each one below has what you would see,
 what to do about it, and how to tell it worked.
 
-The first one applies to everybody. The other two only matter if you have actually run into
+The first one applies to everybody. The other three only matter if you have actually run into
 them.
 
 ---
@@ -124,11 +124,31 @@ had, and the course package then refused to build because one of them was too ol
 **How to tell it worked:** `library(v2v)` returns without complaint, and `setup()` prints
 green ticks down the **Required R packages** list.
 
+If **Check my setup** in the AURA Lab R Companion reports `cannot remove prior installation` or
+`restored`, it hit this same problem: follow steps 1 to 6 above, then run Check my setup again.
+
+---
+
+## 4. Nothing installs and you need R for class
+
+**What you would see:** an install that fails every way you try it, and a class or a deadline that
+will not wait.
+
+**What to do:** work in a Codespace, which is VS Code running in your browser with R, the course
+packages, and the R Companion already installed.
+
+1. Sign in to [github.com](https://github.com/) and open your own workspace repository.
+2. Click **Code**, then **Codespaces**, then **Create codespace on main**.
+3. Keep working there until the install on your laptop is sorted out. Bring the laptop to office
+   hours.
+
+**How to tell it worked:** VS Code opens in the browser with your workspace folders down the left side.
+
 ---
 
 ## None of this fixed it
 
-Send me the exact wording of what you see rather than a description of it. A screenshot of
+Run **Check my setup** and include its output. Send me the exact wording of what you see rather than a description of it. A screenshot of
 the whole console is ideal. Office hours are Tuesday and Thursday, 12:30 to 1:45 in person in Dunham Hall 1017, where you are welcome to bring the laptop, or remote Tu/W/Th 3:00 to 5:00 by appointment.
 
 The longer guides have more detail if you want it: [Install R](install-r.qmd),

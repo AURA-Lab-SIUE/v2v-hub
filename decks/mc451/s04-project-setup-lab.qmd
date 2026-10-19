@@ -122,8 +122,8 @@ Answer each in your journal this week:
 
 - A box appears in the bottom right: **"This workspace has extension recommendations."**
 - Click **Install All**
-    - That installs Quarto, R, and GitLens, so everyone in the course works in the same environment
-- If the box already vanished, press `Ctrl+Shift+X` and search for **Quarto** and for **R** by REditorSupport
+    - That installs Quarto, R, GitLens, and the **AURA Lab R Companion**, so everyone in the course works in the same environment
+- If the box already vanished, press `Ctrl+Shift+X` and search for **Quarto**, for **R** by REditorSupport, and for **AURA Lab R Companion**
 - If you are stuck, the Hub page [Install VS Code](https://aura-lab.siue.edu/v2v-hub/resources/install-vscode.html) walks through it
 
 ## Step 4: Open the File We Wrote for You
@@ -148,16 +148,21 @@ setup()
 - **Red next to Quarto or Git** is fine if you have not reached those steps yet
 - **Red under Required** is the one that needs me
     - Email me that whole block of output exactly as it appears, rather than describing it
+- Then open the Command Palette and run **Check my setup**. It runs the same checklist and installs any package that is missing
 
 ## When It Breaks
 
 - **`quarto: command not found`** means that terminal opened before Quarto finished installing
     - Close it and open a new one. This is the single most common problem in the whole setup
 - **`there is no package called 'v2v'`** means R is fine and the package is not there yet
-    - Rerun the install step inside the check file
+    - Rerun the install step inside the check file, or run **Check my setup**, which installs it for you
+
+## When It Still Breaks
+
 - **Red text in R is not automatically an error.** R prints ordinary progress in red, so read the last line, not the color
 - **GitHub asks for a password and refuses it.** That is not your mistake: it wants a token now
     - Click through VS Code's sign-in and it never asks again
+- **Still stuck after fifteen minutes?** On github.com open your workspace repository, click **Code**, **Codespaces**, then **Create codespace on main**. R, the packages, and the Companion are already installed there
 
 ## Checkpoint
 
@@ -167,6 +172,7 @@ Every line should be true before you stop:
 - Your own `mc451-workspace` exists on GitHub and is cloned into VS Code
 - The extensions are installed
 - `00-check-your-setup.qmd` runs and `setup()` comes back green
+- **Check my setup** reports every course package installed
 
 If any line is not true, do not leave it there. Email me the exact wording of the error, or
 bring the laptop to office hours. Closing the laptop and hoping is the one approach that

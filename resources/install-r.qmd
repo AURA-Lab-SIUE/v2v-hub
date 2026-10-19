@@ -69,6 +69,8 @@ sudo apt install r-base
 2. Search for **R** by REditorSupport and click **Install**.
 3. If you cloned the [course workspace](workspace-setup.qmd), this extension is already in the recommended list, so the workspace will prompt you to install it.
 
+Optional: install the **AURA Lab R Companion** the same way (Extensions view, search **AURA Lab R Companion**, **Install**). Its **Check my setup** command finds R even on Windows, where R is not on your command line.
+
 ---
 
 ## Step 3: Install the helper packages
@@ -105,6 +107,8 @@ install.packages("ggstatsplot")  # statistical plots with test results
 ```
 
 **Wait for each to finish** (you'll see a blank `>` prompt when done).
+
+Or run **Check my setup** from the Command Palette and choose your course: it installs any course package that is missing and confirms that each one loads.
 
 ---
 
@@ -222,8 +226,9 @@ If you're still stuck, reach out during office hours.
 1. Installed R.
 2. Installed the R extension in VS Code.
 3. Installed the helper and course packages.
-4. Ran your first R code from the editor.
-5. Next: learn R basics in the [R Workbook](../workbook/index.qmd).
+4. Ran Check my setup (optional).
+5. Ran your first R code from the editor.
+6. Next: learn R basics in the [R Workbook](../workbook/index.qmd).
 
 ---
 

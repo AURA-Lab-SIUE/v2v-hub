@@ -18,6 +18,8 @@ Each assignment shows a short description. Open the section under it for what to
 Everything is due at **11:59 PM** on the **Monday** listed. You are welcome to submit any assignment early. Attempts are unlimited, so an early submission can still be revised right up to the deadline.
 
 Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, submit again.
+
+**AI-use log:** where an assignment asks for it, the AURA Lab R Companion's output (its setup check, its error explanations, and any code its menus write) is not AI use and is not logged; Copilot is, including any answer Copilot gives using the Companion's tools.
 :::
 
 

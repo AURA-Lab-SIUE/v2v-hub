@@ -159,6 +159,7 @@ Do not summarize your source. Write what changed your codebook.
 - **`filter()` returns zero rows:** the condition is usually wrong, not the data
 
 Run `?v2v::common_errors` for the errors specific to the example data.
+Or copy the error and run **Explain an R error** from the Command Palette.
 
 ## Checkpoint
 

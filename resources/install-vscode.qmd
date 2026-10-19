@@ -85,6 +85,10 @@ Install the program: [Install Quarto](install-quarto.qmd).
 
 Search for **GitLens** and install. It shows who changed each line and when, making your Git history easy to read as you learn version control.
 
+### 4. AURA Lab R Companion, recommended
+
+Search for **AURA Lab R Companion** and click **Install**. Once R is installed ([Install R](install-r.qmd)), run **Check my setup** from the Command Palette: it installs the course packages and confirms that each one loads. Its **Explain an R error** command gives a plain-English reading of an R error message.
+
 ### Optional extras
 
 - **Markdown All in One** adds a table of contents, shortcuts, and list editing for Markdown.
@@ -258,7 +262,7 @@ so they should reappear once VS Code opens.
 ## Next steps
 
 1. Installed VS Code.
-2. Installed the R, Quarto, and GitLens extensions.
+2. Installed the R, Quarto, GitLens, and AURA Lab R Companion extensions.
 3. Connected GitHub.
 4. Opened a workspace and ran R from the editor.
 5. Next: finish [Install R](install-r.qmd), then set up your [course workspace](workspace-setup.qmd).

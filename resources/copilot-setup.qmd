@@ -45,7 +45,15 @@ Verification can take a day or two. If it does not come through, you can still c
 1. In VS Code, open the Extensions view (`Ctrl/Cmd+Shift+X`).
 2. Search for **GitHub Copilot** and click **Install**.
 3. When prompted, **Sign in to GitHub** and authorize Copilot in your browser.
-4. A Copilot icon appears in the status bar (bottom). If it is not greyed out, you are connected.
+4. A Copilot icon appears in the status bar (bottom). If it is not grayed out, you are connected.
+
+---
+
+## Course instructions for Copilot
+
+Your course workspace contains `.github/copilot-instructions.md`. Copilot Chat reads it, so its answers use the tidyverse with `%>%`, the course's `v2v` functions, and the course style, and it reminds you to log the exchange in your AI-use log. Leave the file in place. Suggestions as you type do not read the file; it steers Copilot Chat and agent mode.
+
+If your workspace was created before the file was added, run **Add the course's Copilot instructions to this folder** from the Command Palette (AURA Lab R Companion), or download the file from the [workspace template](https://github.com/AURA-Lab-SIUE/v2v-workspace) on GitHub.
 
 ---
 

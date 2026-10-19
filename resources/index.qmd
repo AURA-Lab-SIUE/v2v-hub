@@ -57,9 +57,12 @@ Your VS Code course workspace holds your journals, notes, and project files in o
 
 ## Something broken?
 
-Three problems have come up across the course. The **Fix It** page has each one in plain
-steps: strange characters when you run a cell, a missing `Git: Clone` command, and an install
-that ends in "there is no package called v2v".
+Four problems have come up across the course. The **Fix It** page has each one in plain
+steps: strange characters when you run a cell, a missing `Git: Clone` command, an install
+that ends in "there is no package called v2v", and an install that will not finish when you need R
+for class. For that last one, open your own workspace repository on github.com and click **Code**,
+then **Codespaces**, then **Create codespace on main**: R, the course packages, and the R Companion
+are already installed there.
 
 [Fix It](fix-it.qmd){.btn .btn-primary}
 
@@ -70,6 +73,9 @@ that ends in "there is no package called v2v".
 `00-check-your-setup.qmd` walks you through every install, one gray box at a time, and
 tells you what each box should print. Save it into your workspace folder and open it in
 VS Code. Run it whenever something stops working, not only in week one.
+
+With the AURA Lab R Companion installed, run **Check my setup** from the Command Palette instead;
+the file still works without it.
 
 [Download 00-check-your-setup.qmd](../starters/00-check-your-setup.qmd){.btn .btn-primary}
 
@@ -152,6 +158,16 @@ A visual Git interface if you prefer buttons to the command line.
 
 [Download](https://desktop.github.com/){.btn .btn-sm .btn-secondary}
 [Setup guide](github-desktop-setup.qmd){.btn .btn-sm}
+:::
+
+::: card
+### AURA Lab R Companion (optional)
+A one-command setup check that installs the course packages, and a plain-English explainer for R errors. Install from the Extensions view: search **AURA Lab R Companion**.
+
+<span class="resource-badge">Free</span>
+
+[Marketplace listing](https://marketplace.visualstudio.com/items?itemName=aura-lab-siue.r-companion){.btn .btn-sm .btn-secondary}
+[Install guide](install-vscode.qmd){.btn .btn-sm}
 :::
 
 ::::::

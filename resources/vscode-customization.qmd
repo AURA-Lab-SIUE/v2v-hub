@@ -97,7 +97,7 @@ VS Code has a terminal built in, so you can run R, Git, and Quarto without leavi
 
 ## Extensions and profiles
 
-- **Extensions** add features. The course workspace recommends Quarto, R, and GitLens. Beyond those, add whatever helps you (spell-checkers, a prettier theme), but you do not need many.
+- **Extensions** add features. The course workspace recommends Quarto, R, GitLens, and the AURA Lab R Companion. Beyond those, add whatever helps you (spell-checkers, a prettier theme), but you do not need many.
 - **Profiles** let you keep different setups for different contexts (for example, a lean "course" profile and a separate one for a personal project). The Command Palette then **Profiles: Create Profile**. Most students never need this, but it is there when you do.
 
 ---

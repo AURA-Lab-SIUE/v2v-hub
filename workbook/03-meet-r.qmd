@@ -146,9 +146,15 @@ The course package carries its own diagnostic:
 v2v::setup()
 ```
 
-This verifies your environment: R, the packages the workbook depends on, and whether the versions agree. Fix anything it flags. Run it again any time you suspect an installation problem rather than a code problem.
+This verifies your environment: R, Quarto, Git, and the packages the course needs are present. Success prints **Everything the course needs is installed.** Fix anything it flags. Run it again any time you suspect an installation problem rather than a code problem.
 
 Note the `v2v::` in front of the function name. It tells R, and tells you, that `setup()` comes from the course package specifically. Functions you have loaded with `library(v2v)` work without the prefix, but writing it out makes clear which tools are the course's and which are R's own.
+
+::: {.callout-tip}
+## Optional: the AURA Lab R Companion
+
+**Check my setup** (Command Palette) does Steps 1, 2, and 5 in one command: it finds R, installs the course packages, and runs the same checklist. Its **Explain an R error** command gives a plain-English reading of an error message.
+:::
 
 ## Quarto documents (.qmd)
 

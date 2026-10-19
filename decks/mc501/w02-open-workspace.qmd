@@ -111,13 +111,16 @@ Everything tonight exists to make that impossible.
 4. **[Quarto](https://quarto.org/docs/get-started/)**, from quarto.org
 5. **The Quarto extension** inside VS Code
 6. **[Git](https://git-scm.com/downloads)**, from git-scm.com
+7. **The AURA Lab R Companion** inside VS Code: Extensions view > search AURA Lab R Companion > Install
 
-- Click a name to open its download page. Steps 3 and 5 happen inside VS Code, not in a browser
+## Why This Order
+
+- Click a name on the previous slide to open its download page. Steps 3, 5, and 7 happen inside VS Code, not in a browser
 - The order is not decorative. Each one looks for the one before it and gets confused when it is missing
 
 ## Every Link From Tonight
 
-Every page below is on the Hub, under **Resources** in the top menu.
+Every page below is on the Hub, under **Resources** in the top menu. The R Companion link opens the VS Code Marketplace.
 
 | For this | Open this |
 |---|---|
@@ -126,6 +129,7 @@ Every page below is on the Hub, under **Resources** in the top menu.
 | Making a GitHub account | [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html) |
 | Installing the course package | [Install v2v](https://aura-lab.siue.edu/v2v-hub/resources/install-v2v.html) |
 | Building your workspace folder | [Workspace Setup](https://aura-lab.siue.edu/v2v-hub/resources/workspace-setup.html) |
+| Installing the R Companion | [Install the R Companion](https://marketplace.visualstudio.com/items?itemName=aura-lab-siue.r-companion) |
 | All of it in one place | [Resources](https://aura-lab.siue.edu/v2v-hub/resources/index.html) |
 
 Bookmark the Resources page tonight. Everything else is one click from there.
@@ -139,6 +143,8 @@ Bookmark the Resources page tonight. Everything else is one click from there.
 2. Add a profile photo and a short profile README saying who you are and what you study
 3. Claim the free [Student Developer Pack](https://education.github.com/pack) with your SIUE email
 
+The pack includes **GitHub Copilot**. The course workspace tells Copilot Chat to write tidyverse code with `%>%` and to remind you to log each exchange in your AI-use log.
+
 The Hub walks through it one step at a time: [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
 
 ## Make Your Workspace Folder
@@ -148,6 +154,7 @@ One folder holds everything you write this term. You copy ours rather than build
 1. Open the [v2v-workspace template](https://github.com/AURA-Lab-SIUE/v2v-workspace)
 2. Click the green **Use this template**, then **Create a new repository**. Name it `mc501-workspace` and leave it **Public**
 3. In VS Code press `Ctrl+Shift+P`, or `Cmd+Shift+P` on a Mac, type **Git: Clone**, press Enter, and paste your new repository's URL
+4. When VS Code offers the workspace's recommended extensions, click **Install All**. That includes the AURA Lab R Companion
 
 **You should see:** your folder names down the left side of VS Code.
 
@@ -173,14 +180,20 @@ setup()
 - You want a list of green check marks under **Required R packages**
 - Red marks next to Quarto or Git are expected tonight if you have not finished those steps
 - Red under Required is the one that needs me
+- Then open the Command Palette and run **Check my setup**. It runs the same checklist and installs any package that is missing
 
 ## When It Breaks
 
 - **Red text in R is not automatically an error.** R prints ordinary progress in red, so read the last line, not the color
 - Close VS Code completely and reopen it. This genuinely fixes a lot
 - If R asks "which would you like to update," choose **3: None**. The install command on the Hub already skips that prompt
+- Run **Check my setup** from the Command Palette. It installs any missing package without the update question
+
+## When It Still Breaks
+
 - Send me the exact wording of the error, not a paraphrase. The wording is the diagnosis
 - Ask after fifteen minutes stuck, not after two hours
+- **Still stuck?** On github.com open your workspace repository, click **Code**, **Codespaces**, then **Create codespace on main**. R, the packages, and the Companion are already installed there
 
 ## Discussion: Good Enough Practices {.discuss}
 

@@ -42,7 +42,7 @@ v2v-workspace/
 └── .vscode/                 # Recommended extensions and shared settings
 ```
 
-Because the notes are plain Markdown, they open in any editor and read fine on GitHub. The `.vscode/` folder ships a short list of **recommended extensions**, so everyone in the course works in the same environment: the Quarto extension, the R extension, and GitLens. VS Code prompts you to install them the first time you open the folder.
+Because the notes are plain Markdown, they open in any editor and read fine on GitHub. The `.vscode/` folder ships a short list of **recommended extensions**, so everyone in the course works in the same environment: the Quarto extension, the R extension, GitLens, and the AURA Lab R Companion. VS Code prompts you to install them the first time you open the folder.
 
 ---
 
@@ -60,7 +60,7 @@ In VS Code, open the Command Palette (`Ctrl/Cmd+Shift+P`), run **Git: Clone**, p
 
 ### 3. Install the recommended extensions
 
-When VS Code opens the workspace, it prompts you to install the **recommended extensions** (Quarto, R, and GitLens). Click **Install**. They are listed in `.vscode/extensions.json` so the whole class shares one setup.
+When VS Code opens the workspace, it prompts you to install the **recommended extensions** (Quarto, R, GitLens, and the AURA Lab R Companion). Click **Install**. They are listed in `.vscode/extensions.json` so the whole class shares one setup.
 
 ### 4. Read the README
 
@@ -79,6 +79,7 @@ Committing your workspace gives you a backup, a full history of your work, and a
 | Tool | Role | Relationship to the workspace |
 |------|------|-------------------------------|
 | **Course Workspace** (VS Code) | Think, plan, reflect | Your primary writing and project folder |
+| **AURA Lab R Companion** (VS Code) | Optional point-and-click help | Checks your setup, installs the course packages, and explains R errors |
 | **`v2v` R package** | Access course data | Loads the Twitch practice corpus you analyze, then reflect on in your journal |
 | **R Workbook** | Learn R skills | Work through the [workbook labs](workbook/index.qmd) directly in VS Code |
 | **Textbook** | Conceptual foundation | Read online or alongside your workspace |

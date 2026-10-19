@@ -89,6 +89,9 @@ you have installed the build tools below.
 
 ## When it fails
 
+With the AURA Lab R Companion installed, copy the error text and run **Explain an R error** from
+the Command Palette. It recognizes the messages on this page and on the [Fix It](fix-it.qmd) page.
+
 ### `package 'v2v' is not available`
 
 You used `install.packages()`. It only looks at CRAN. Use the `install_github()` line.
@@ -201,6 +204,9 @@ That page is worth reading once early rather than searching for at midnight.
 Quarto and Git on your PATH. It prints a green check for each thing present and a red x
 with a copy-paste install hint for each thing missing. A red x next to Quarto means the
 program is missing, not the VS Code extension: see [Install Quarto](install-quarto.qmd).
+
+The AURA Lab R Companion's **Check my setup** runs this check for you, installs what is missing
+for your course, and confirms the result from your library.
 
 Run it at the end of Chapter 2 to confirm your setup before any code chapters begin, and
 run it again any time something feels wrong. Paste its output when you ask for help; it

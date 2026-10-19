@@ -188,6 +188,7 @@ The table is now **tidy**: one row per observation, one column per variable.
 - **A script that fails in a fresh session** depends on something you have not written down
 
 Run `?v2v::common_errors` for the errors specific to the example data.
+Or copy the error and run **Explain an R error** from the Command Palette.
 
 ## Checkpoint
 

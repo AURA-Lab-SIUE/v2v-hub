@@ -159,6 +159,7 @@ your PATH and VS Code cannot use it. Install Quarto properly with Step 1.
 ## Next steps
 
 - [Install the v2v package](install-v2v.qmd) and run `v2v::setup()` for a full toolchain check
+- Or run **Check my setup** from the AURA Lab R Companion; `quarto check` still covers the Quarto program itself
 - [Set up your workspace](workspace-setup.qmd)
 
 ---

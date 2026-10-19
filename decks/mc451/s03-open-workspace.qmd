@@ -85,6 +85,7 @@ you did.
 - GitHub hosts that history on the web, publicly by default
 - You get a permanent audit trail and the ability to roll back to any state
 - Students get the **GitHub Student Developer Pack** at no cost
+- The pack includes **GitHub Copilot**. The course workspace tells Copilot Chat to write tidyverse code with `%>%` and to remind you to log each exchange in your AI-use log
 - This is the standard workflow in research labs and industry data teams
 
 ## Install Order, Part One
@@ -104,6 +105,7 @@ R has no interface of its own. It is a backend that other tools call.
 6. **Git**, from git-scm.com, with default options
 7. **A GitHub account**, with a professional username you will link work to
 8. **The `v2v` package**, with the install command on the V2V Hub
+9. **The AURA Lab R Companion**, inside VS Code: Extensions view > search AURA Lab R Companion > Install
 
 Click-by-click walkthroughs with screenshots live on the Hub.
 
@@ -116,8 +118,9 @@ library(v2v)
 v2v::setup()
 ```
 
-- The validator confirms that R, Quarto, Git, and the `v2v` package are all present at acceptable versions
-- Success prints **"V2V setup complete"**
+- The validator confirms that R, Quarto, Git, and the packages the course needs are present
+- Success prints **Everything the course needs is installed.**
+- Then open the Command Palette and run **Check my setup**. It runs the same checklist and installs any package that is missing
 - Anything else means the Hub's troubleshooting page is your next stop
 
 ## First Contact With the Data

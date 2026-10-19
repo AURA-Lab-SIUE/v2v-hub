@@ -38,6 +38,12 @@ This course uses four connected tools. Each one has a specific job, and they all
 If you enable [GitHub Education Copilot](resources/copilot-setup.qmd), it suggests code inside VS Code as you type. Treat it as an autocomplete you supervise, not another platform to manage. You are responsible for understanding every line you keep.
 :::
 
+:::{.callout-note}
+## The R Companion is a helper too
+
+The AURA Lab R Companion is a VS Code extension, not another tool to learn. Its **Check my setup** command confirms that R and your course packages work, and its **Explain an R error** command gives a plain-English reading of an error message.
+:::
+
 ---
 
 ### The Weekly Rhythm
@@ -93,8 +99,9 @@ You do not need to learn everything at once. Each tool is introduced when you ne
 
 ### Getting Help
 
-1. **Check this website first.** Most questions are answered in the module pages or setup guides.
-2. **Check the textbook.** The relevant chapter usually explains the concept.
-3. **Ask a classmate.** Someone else probably had the same issue.
-4. **Email Dr. Leith** at aleith@siue.edu (allow 24 hours Mon-Fri).
-5. **Office hours:** TuTh 12:30-1:45 PM in person, Dunham Hall 1017, or remote Tu/W/Th 3:00-5:00 PM by appointment.
+1. **Run Check my setup** (Command Palette) if the problem is an install or a package.
+2. **Check this website first.** Most questions are answered in the module pages or setup guides.
+3. **Check the textbook.** The relevant chapter usually explains the concept.
+4. **Ask a classmate.** Someone else probably had the same issue.
+5. **Email Dr. Leith** at aleith@siue.edu (allow 24 hours Mon-Fri).
+6. **Office hours:** TuTh 12:30-1:45 PM in person, Dunham Hall 1017, or remote Tu/W/Th 3:00-5:00 PM by appointment.

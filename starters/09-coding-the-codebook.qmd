@@ -45,6 +45,8 @@ setup()
 **What you should see:** green check marks under **Required R packages**, and green checks
 for the Quarto CLI and Git under **Command-line tools**.
 
+Or run **Check my setup** from the Command Palette if you installed the AURA Lab R Companion.
+
 **If anything is red,** `setup()` prints the exact command that fixes it under **What to do
 next**. Copy that command, paste it into the R console, press Enter, then run this chunk
 again. If it tells you to quit R and open it again, do that: R only notices a newly installed

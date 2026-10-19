@@ -77,8 +77,8 @@ The five numbered files are the sections of your White Paper, already in order.
 v2v::setup()
 ```
 
-`setup()` checks that R, the packages this book depends on, and the project environment are
-all present and agree on versions.
+`setup()` checks that R, Quarto, Git, and the packages this course uses are present.
+**Check my setup** in the AURA Lab R Companion runs the same check and installs anything missing.
 
 - **You ran it once, when you installed the stack**
 - **Run it every time you open the project**
@@ -205,6 +205,7 @@ Counting is how you check that the data is what you were told it is. Run the sam
     - This happens to everyone, and it says nothing about your ability
 - **The Hub keeps a cheat sheet of common errors**
 - **An error message is information, so read it before you retype anything**
+- **Copy the error text and run Explain an R error** from the Command Palette for a plain-English reading
 
 Run `?v2v::common_errors` for the errors specific to the example data.
 
