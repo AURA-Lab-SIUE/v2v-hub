@@ -397,6 +397,24 @@ and **Inferencing Data** Friday, December 4, after Thanksgiving Break. Draft the
 sampling plan during Week 10.
 :::
 
+::: {.callout-note}
+## Lab weeks, Weeks 9 to 13
+
+Tuesday teaches the week's concept to the whole class. Before Thursday, watch the R
+Companion walkthrough for that week (linked here and in Blackboard) and follow along in
+your own project. Thursday opens with a shorter lesson, and the rest of the session is lab
+time for your own work, with me in the room to help. You can also meet with me
+one-on-one, in person or on Teams.
+
+| Week | Walkthrough to watch before Thursday |
+|:-----|:-------------------------------------|
+| 9 | Setup, then the data viewer and coding sheet |
+| 10 | Wrangling and the reliability grid: the grid part |
+| 11 | Wrangling and the reliability grid: the wrangling part |
+| 12 | Describing data |
+| 13 | Tests |
+:::
+
 ::: {.schedule-table}
 
 | Week | Dates | Tuesday | Thursday | Due |

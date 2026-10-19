@@ -472,6 +472,22 @@ them. Start the CITI certification in Week 1; it is the
 one item here that is pure clock time and can be finished early.
 :::
 
+::: {.callout-note}
+## Lab time, Weeks 9 to 13
+
+Each class teaches for most of the evening and ends in self-directed lab time: work through
+that week's R Companion walkthrough (linked here and in Blackboard) in your own project and
+troubleshoot as you go. I am available in person or on Teams before each Monday due date.
+
+| Week | Walkthrough for the lab time |
+|:-----|:-----------------------------|
+| 9 | Setup, then the data viewer and coding sheet |
+| 10 | Wrangling and the reliability grid: the grid part |
+| 11 | Wrangling and the reliability grid: the wrangling part |
+| 12 | Describing data |
+| 13 | Tests, including the power analysis |
+:::
+
 **Everything in the Due column is due the Monday after that week's class, at 11:59 PM.**
 The one exception is the White Paper and poster in finals week.
 
