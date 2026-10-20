@@ -209,7 +209,8 @@ Each row is one snapshot of one stream at one moment.
 ## Counting What Channels Stream
 
 ```r
-streams %>% count(game, sort = TRUE)
+streams %>%
+  count(game, sort = TRUE)
 ```
 
 ```

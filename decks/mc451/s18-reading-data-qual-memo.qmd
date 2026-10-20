@@ -41,7 +41,9 @@ A missing column found today is a good result. The same missing column found in 
 ## Example Variable 1, Message Target
 
 ```r
-chat %>% select(channel, sender, message) %>% head(5)
+chat %>%
+  select(channel, sender, message) %>%
+  head(5)
 ```
 
 `select()` keeps only the columns you name, and `head(5)` shows the first five rows, so you
@@ -53,7 +55,9 @@ for at-mentions and replies. Both columns exist in the data, so the variable is 
 ## Example Variables 2 and 3
 
 ```r
-chat %>% select(message) %>% head(3)
+chat %>%
+  select(message) %>%
+  head(3)
 ```
 
 The same command, narrowed to the one column the two remaining example variables read from.

@@ -251,7 +251,8 @@ Noticing this before any analysis is the reason first contact exists.
 ## Counting
 
 ```r
-streams %>% count(game, sort = TRUE)
+streams %>%
+  count(game, sort = TRUE)
 ```
 
 ```
