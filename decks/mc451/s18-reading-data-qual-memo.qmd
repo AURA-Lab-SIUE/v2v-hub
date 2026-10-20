@@ -13,6 +13,7 @@ format:
 
 ## Today's Agenda
 
+- Read the data in the R Companion's data viewer
 - Check whether the data contains what each variable in the codebook needs
 - Find the messages that will fight your coding rules
 - Turn one wrinkle in the data into a written decision rule
@@ -28,11 +29,11 @@ format:
 We check the book's example codebook against the example data first. Then you repeat each step
 with your own codebook and your own source.
 
-Open `codebook/codebook.qmd` and your R session side by side.
+Open `codebook/codebook.qmd` beside the R Companion's data viewer (**AURA: Open the data viewer**), or beside your R session.
 
 ## Check That the Data Contains What Each Variable Needs
 
-- **Open the codebook next to your `glimpse()` output**
+- **Open the codebook next to the data viewer or your `glimpse()` output**
 - **Walk through the variables one at a time, and check each one against the columns**
 - **Answer the question now, not a thousand messages into coding**
 
