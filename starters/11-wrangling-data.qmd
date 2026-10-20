@@ -1,0 +1,297 @@
+---
+title: "Data Wrangling"
+subtitle: "MC 451 / MC 501 · Chapter 11 · Run this file alongside the chapter"
+format: html
+execute:
+  eval: false
+---
+
+## What this file is
+
+This file walks you through Chapter 11 one step at a time. You will import the two example
+tables, diagnose what is wrong with them, build the variables the codebook names, join the
+tables together, and save one clean file for the chapters that follow.
+
+Every gray box below is a **code chunk**. Click **Run Cell** at its top left corner, or click
+inside the box and press **Ctrl+Enter** (Windows) or **Cmd+Enter** (Mac). Under each box this
+file tells you what should appear and what to do when it does not.
+
+Save this file in the **top folder** of your workspace, next to `README.md`, and open it from
+there. Run the steps in order: each one uses what the step before it made.
+
+Lines that start with `#` inside a chunk are **comments**. R skips them. They are there to
+tell you what the line under them does.
+
+## Step 1: Switch the packages on
+
+```{r}
+library(tidyverse)  # the tools for every data step
+library(v2v)        # the course package: the example data and helpers
+```
+
+**What you should see:** a short list of attached packages, then a line like
+`v2v 0.3.4 loaded.` The lines about "conflicts" are normal and harmless.
+
+**If you see `there is no package called 'v2v'`** or `'tidyverse'`, open
+`00-check-your-setup.qmd` and run its Step 3, then come back here.
+
+## Step 2: Import the two tables
+
+These two lines fetch the example data and give each table a name with `<-`, which you read
+as "gets." There is no file path to get wrong: the data ships inside the course package.
+
+```{r}
+chat <- twitch_chat()        # one row per chat message
+streams <- twitch_streams()  # one row per snapshot of a stream
+```
+
+**What you should see:** nothing in the console. `chat` and `streams` now appear in the **R**
+panel's list of objects.
+
+## Step 3: Diagnose the structure
+
+`glimpse()` prints every column, its type, and its first few values.
+
+```{r}
+glimpse(chat)
+glimpse(streams)
+```
+
+**What you should see:** `Rows: 35,267` and `Columns: 5` for `chat`, then `Rows: 32,276` and
+`Columns: 6` for `streams`. Notice that `date` is marked `<dbl>`: a run of huge numbers, not
+a date anyone can read. Step 6 fixes that.
+
+**If you see `object 'chat' not found`,** Step 2 did not run. Run Step 2, then this one.
+
+## Step 4: Diagnose missing values
+
+Each `%>%` passes the table on its left into the line below it; read it as "and then." Read
+this chunk top to bottom: take `chat`, and then count the missing values in every column, and
+then turn that into one row per column, and then keep only the columns with any missing.
+
+```{r}
+chat %>%
+  summarize(across(everything(), ~ sum(is.na(.)))) %>%  # missing values per column
+  pivot_longer(everything(),
+               names_to = "column",
+               values_to = "missing") %>%               # one row per column
+  filter(missing > 0) %>%                               # only columns with gaps
+  arrange(desc(missing))                                # most missing first
+```
+
+**What you should see:** one row, `message` with `4` missing. Four chat messages have no text.
+
+Now run the same check on `streams`:
+
+```{r}
+streams %>%
+  summarize(across(everything(), ~ sum(is.na(.)))) %>%
+  pivot_longer(everything(),
+               names_to = "column",
+               values_to = "missing") %>%
+  filter(missing > 0) %>%
+  arrange(desc(missing))
+```
+
+**What you should see:** two rows, `title` and `game`, each with `96` missing. Those 96
+snapshots have no category, which matters in Step 9.
+
+## Step 5: Diagnose the categories
+
+`count()` tallies how often each value appears. `sort = TRUE` puts the most common first.
+
+```{r}
+streams %>%
+  count(game, sort = TRUE)  # how many snapshots per category
+```
+
+**What you should see:** a two-column table that starts with `Art`, then `Fortnite`, then
+`Just Chatting`, and ends in a line like `# ℹ 51 more rows`.
+
+```{r}
+n_distinct(chat$channel)  # how many different channels?
+```
+
+**What you should see:** `[1] 50`. Fifty channels, which is the corpus the chapter describes.
+
+## Step 6: Make the timestamp readable
+
+`mutate()` adds a column, or changes one. `clean_dates()` turns the raw `date` number into a
+real date and time, in a new column called `ts`. Both tables get it, because the join in
+Step 8 needs it on each side.
+
+```{r}
+chat <- chat %>%
+  mutate(ts = clean_dates(date))  # milliseconds -> date and time
+
+streams <- streams %>%
+  mutate(ts = clean_dates(date))
+
+chat %>%
+  select(date, ts) %>%  # just these two columns
+  slice_head(n = 3)     # just the first three rows
+```
+
+**What you should see:** a three-row table whose `ts` column reads `2018-11-18 21:55:27` and
+the two times after it. The first time you call `clean_dates()` it also prints the lubridate
+line it stands for.
+
+**If `ts` shows a year in the tens of thousands,** the conversion skipped dividing by 1,000.
+Use `clean_dates()` exactly as written above.
+
+## Step 7: Derive message length
+
+`message_length` is a variable the codebook names and the raw data does not contain.
+`str_length()` counts the characters in each message.
+
+```{r}
+chat <- chat %>%
+  mutate(message_length = str_length(message))  # characters per message
+
+chat %>%
+  select(message, message_length) %>%
+  slice_head(n = 3)
+```
+
+**What you should see:** three messages with lengths `23`, `441`, and `8`.
+
+## Step 8: Match each message to its stream
+
+`join_chat_streams()` attaches to each message the stream snapshot taken at or just before
+it, on the same channel. That is how each message learns what game was on and how many
+people were watching.
+
+```{r}
+chat_streams <- join_chat_streams(chat, streams)
+
+chat_streams %>%
+  count(no_snapshot = is.na(viewers))  # messages with no earlier snapshot
+```
+
+**What you should see:** first a line saying what `join_chat_streams()` is the same as in plain
+tidyverse code, then two rows: `FALSE` with `35256` and `TRUE` with `11`. Eleven messages
+arrived before their channel's first snapshot, so they have nothing to match.
+
+## Step 9: Label gaming and non-gaming channels
+
+Gaming or non-gaming belongs to the channel, so this step works out what each channel mostly
+streams and then decides whether that counts as gaming. The list of non-gaming categories is
+a judgment call, which is why it is written out where a reader can see it.
+
+```{r}
+nongaming_categories <- c(
+  "Art", "ASMR", "Beauty & Body Art", "Creative", "Food & Drink",
+  "IRL", "Just Chatting", "Makers & Crafting", "Music",
+  "Music & Performing Arts", "Science & Technology",
+  "Sports & Fitness", "Talk Shows & Podcasts", "Travel & Outdoors"
+)
+
+channel_type <- streams %>%
+  filter(!is.na(game)) %>%                                # drop snapshots with no category
+  count(channel, game) %>%                                # snapshots per channel per category
+  group_by(channel) %>%
+  slice_max(n, n = 1, with_ties = FALSE) %>%              # keep each channel's top category
+  ungroup() %>%
+  mutate(is_gaming = !(game %in% nongaming_categories)) %>%  # TRUE unless it is on the list
+  select(channel, main_game = game, is_gaming)            # rename game to main_game
+
+analysis <- chat_streams %>%
+  left_join(channel_type, by = "channel")  # attach the label to every message
+
+analysis %>%
+  count(is_gaming)
+```
+
+**What you should see:** three rows: `FALSE` with `3457`, `TRUE` with `31309`, and `NA` with
+`501`. The 501 come from two channels that never recorded a category. An honest `NA` is the
+right answer there, not a bug.
+
+**If every row says `NA`,** the join found no matching channel names. Check that you ran
+Step 2 and did not rename `channel` anywhere.
+
+## Step 10: Band the channels by audience size
+
+This builds a second category for the chi-square test later in the course: small, medium, or large, by each channel's
+median viewer count. The cutoffs, 5,000 and 20,000, are a decision you are making. Write them
+into your codebook.
+
+```{r}
+channel_size <- streams %>%
+  group_by(channel) %>%
+  summarize(median_viewers = median(viewers, na.rm = TRUE)) %>%  # typical audience
+  mutate(viewer_band = cut(median_viewers,
+                           breaks = c(0, 5000, 20000, Inf),
+                           labels = c("small", "medium", "large")))
+
+analysis <- analysis %>%
+  left_join(channel_size, by = "channel")
+
+analysis %>%
+  count(viewer_band)
+```
+
+**What you should see:** a table with a row each for `small`, `medium`, and `large`, plus a
+count for each.
+
+## Step 11: Turn the labels into factors
+
+A **factor** is how R stores a category. It keeps the labels in the order you set, which is
+the order every chart and test will use.
+
+```{r}
+analysis <- analysis %>%
+  mutate(
+    channel_type = case_when(
+      is_gaming == TRUE  ~ "gaming",
+      is_gaming == FALSE ~ "non-gaming",
+      TRUE ~ NA_character_                 # anything else stays missing
+    ),
+    channel_type = factor(channel_type),
+    viewer_band  = factor(viewer_band, levels = c("small", "medium", "large"))
+  )
+
+levels(analysis$channel_type)
+levels(analysis$viewer_band)
+```
+
+**What you should see:** `[1] "gaming"     "non-gaming"`, then
+`[1] "small"  "medium" "large"`.
+
+## Step 12: Save the clean table
+
+`.RDS` is R's own file format. Unlike a `.csv`, it keeps your timestamps and factor levels
+exactly as you built them. The first line makes a `data` folder if you do not have one yet.
+
+```{r}
+dir.create("data", showWarnings = FALSE)        # make the folder if it is missing
+
+write_rds(analysis, "data/twitch_analysis.RDS")  # save
+
+read_rds("data/twitch_analysis.RDS") %>%         # load it back
+  nrow()                                         # and count the rows
+```
+
+**What you should see:** `[1] 35267`. Every message survived the cleaning. A file called
+`twitch_analysis.RDS` now sits in the `data` folder in the **Explorer** panel.
+
+## When a line breaks
+
+R returns an error message instead of a result. The usual causes are a misspelling, a step
+skipped, or a stray bracket. It happens to everyone and it says nothing about your ability.
+Read the message before you retype anything; the wording is the diagnosis.
+
+For errors specific to the example data, run this in the R console:
+
+```{r}
+?v2v::common_errors
+```
+
+If you are still stuck after fifteen minutes, email me the **exact** text of the error, or a
+screenshot, and the step number you were on.
+
+## You are done when
+
+- `analysis %>% count(is_gaming)` shows the three rows from Step 9
+- `data/twitch_analysis.RDS` exists and loads back with 35,267 rows
+
+Chapter 12 starts from that file.

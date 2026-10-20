@@ -118,6 +118,15 @@ print. Save it into the **top folder** of your workspace, next to `README.md`.
 
 [Download 09-coding-the-codebook.qmd](../starters/09-coding-the-codebook.qmd){.btn .btn-primary}
 
+## Wrangling the data (Chapter 11)
+
+`11-wrangling-data.qmd` walks you through the Chapter 11 pipeline one step at a time: import the
+example data, diagnose it, build the variables your codebook names, join the two tables, and save
+one clean `.RDS` file, with what each step should print. Save it into the **top folder** of your
+workspace, next to `README.md`.
+
+[Download 11-wrangling-data.qmd](../starters/11-wrangling-data.qmd){.btn .btn-primary}
+
 ---
 
 ## Codebook templates
