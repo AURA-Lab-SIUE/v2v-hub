@@ -481,11 +481,11 @@ troubleshoot as you go. I am available in person or on Teams before each Monday 
 
 | Week | Walkthrough for the lab time |
 |:-----|:-----------------------------|
-| 9 | Setup, then the data viewer and coding sheet |
-| 10 | Wrangling and the reliability grid: the grid part |
-| 11 | Wrangling and the reliability grid: the wrangling part |
-| 12 | Describing data |
-| 13 | Tests, including the power analysis |
+| 9 | [Setup](https://siue.yuja.com/V/Video?v=17489654&a=114591092), then [the data viewer and coding sheet](https://siue.yuja.com/V/Video?v=17489997&a=123495612) |
+| 10 | [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025): the grid part |
+| 11 | [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025): the wrangling part |
+| 12 | [Describing data](https://siue.yuja.com/V/Video?v=17490672&a=193714265) |
+| 13 | [Tests, including the power analysis](https://siue.yuja.com/V/Video?v=17490908&a=168993969) |
 :::
 
 **Everything in the Due column is due the Monday after that week's class, at 11:59 PM.**
