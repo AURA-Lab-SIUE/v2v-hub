@@ -20,8 +20,6 @@ format:
 
 ## What We Are Doing Today
 
-[Lab session]{.eyebrow}
-
 - **Tuesday we loaded the data; today we hold the data next to the codebook**
 - **The question for today: does the data contain what your study needs?**
 - **Then we find the messages that will fight your rules**
@@ -64,7 +62,7 @@ The same command, narrowed to the one column the two remaining example variables
 - **Contains emote** is read from the same column, so it is supported too
 - Three example variables, three confirmations: the example study can be built from this data
 
-Your own codebook has at least four variables. Check each one the same way against your own source.
+Check every variable in your own codebook the same way against your own source.
 
 ## Exercise: Check Your Codebook Against the Data {.discuss}
 
@@ -91,6 +89,16 @@ Answer each question in writing, one line each:
 
 Your codebook has to meet the data as it is. Every source has its own version of this mess.
 
+## The Same Mess in Other Sources
+
+- **Comments under influencer posts:** emoji-only comments, and replies that answer another commenter
+- **Short-form videos built on a trending sound:** a sped-up or slowed version of the official audio
+- **Film reviews:** a review that talks about the director's YouTube channel and never the film
+- **Comments on targeted ads:** one comment that raises privacy and asks where to buy
+- **Reality TV episodes:** two arguments running in the same scene
+
+Each of these needs a written rule before coding starts.
+
 ## One Genuine Wrinkle
 
 - **A message begins "@xQcOW"**
@@ -99,6 +107,13 @@ Your codebook has to meet the data as it is. Every source has its own version of
     - The display name the viewer typed differs from the stored login name
 - **A rule that matches on the exact channel name will miss this message**
 - Unless you decide the rule now, you will resolve this case two different ways on two different days
+
+## The Wrinkle in the Data Viewer
+
+![](images/companion-data-viewer.png){fig-alt="The R Companion data viewer showing the Twitch chat sample, 35,267 rows. Row 5 has channel xqcow and a message beginning @xQcOW PLAY JACKBOX. Row 1 is a string of question marks and row 2 repeats TriEasy Clap." width="100%"}
+
+- **Open the data viewer** in the R Companion to read the rows as a grid
+- **Row 5: the message says "@xQcOW" and the channel says "xqcow"**
 
 ## Turning a Wrinkle Into a Rule
 
