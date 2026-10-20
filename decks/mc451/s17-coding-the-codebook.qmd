@@ -13,10 +13,30 @@ format:
 
 ## Today's Agenda
 
+- Install the AURA Lab R Companion and check your setup
 - Build a project folder that holds the whole study
 - Install your codebook in that folder as a real document
 - Load the shared example data and look at it for the first time
 - Learn what to do when a line of R returns an error
+
+## Meet the R Companion
+
+- **A free VS Code extension built for this course**
+    - Checks your setup and installs what is missing
+    - Writes commented R code into your own script from menus
+    - Explains R error messages in plain language
+- **Everything it writes is ordinary R you can read and explain**
+- It is not an AI tool, so using it needs no AI-use log entry
+
+## Installing the Companion
+
+- **Open the Extensions view:** Ctrl+Shift+X, or Cmd+Shift+X on a Mac
+- **Search for AURA Lab R Companion, then select Install**
+- **Select View, then Command Palette, and run AURA: Check my setup**
+    - Pick MC 451 when it asks for your course
+    - If a line says MISSING, run **AURA: Install what is missing**
+- Every Companion command starts with **AURA:** in the Command Palette
+- The setup walkthrough video is linked in today's Blackboard announcement
 
 ## What We Build Today
 
@@ -77,8 +97,8 @@ The `R/` folder holds the scripts you write.
 v2v::setup()
 ```
 
-`setup()` checks that R, Quarto, Git, and the packages this course uses are present.
-**Check my setup** in the AURA Lab R Companion runs the same check; its **Install what is missing** action installs anything it flags.
+**AURA: Check my setup** in the R Companion checks R, Quarto, Git, and every package this course uses, and **AURA: Install what is missing** installs anything it flags.
+`v2v::setup()` runs the course package's own version of the same check from the console.
 
 - **You ran it once, when you installed the stack**
 - **Run it every time you open the project**
