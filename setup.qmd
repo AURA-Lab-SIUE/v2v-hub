@@ -98,6 +98,8 @@ Once you complete these steps, move to **[Phase I: The Journalist](modules/01_jo
 
 [Start Phase I →](modules/01_journalist/index.qmd){.btn .btn-primary .btn-lg}
 
+For numbered click paths with screenshots, from checking your setup to publishing your site, use your course's step-by-step guides: [MC 451 guides](guides/mc451/index.md) or [MC 501 guides](guides/mc501/index.md).
+
 ---
 
 ## Troubleshooting

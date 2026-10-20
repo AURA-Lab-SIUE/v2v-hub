@@ -44,6 +44,14 @@ A finished submission for four assignments, so you can see the form before you w
 
 ---
 
+## Step-by-step guides
+
+Numbered click paths with screenshots for the R Companion, Quarto, Git, and publishing your site. Each guide pairs with a walkthrough video where one exists.
+
+[MC 451 guides](../guides/mc451/index.md){.btn .btn-secondary} [MC 501 guides](../guides/mc501/index.md){.btn .btn-secondary}
+
+---
+
 ## Get the course workspace
 
 Your VS Code course workspace holds your journals, notes, and project files in one Git-tracked folder. You do not download a ZIP: open the template on GitHub, click **Use this template** to create your own copy, then clone it into VS Code.

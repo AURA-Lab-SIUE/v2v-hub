@@ -7,6 +7,8 @@ project:
     - "modules/**/*.qmd"
     - "!modules/**/pokemon-practice.qmd"
     - "resources/*.qmd"
+    # Step-by-step guides, one set per course; the Markdown source lives in each teaching workspace on O:.
+    - "guides/**/*.md"
     - "workbook/*.qmd"
     - "decks/**/*.qmd"
     # Starter files are handed to students as SOURCE, never built. Listing them under
