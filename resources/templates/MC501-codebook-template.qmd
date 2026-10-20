@@ -1,0 +1,116 @@
+---
+title: "Extended Codebook and Reliability Protocol"
+subtitle: "MC 501 template"
+---
+
+How to use this template: replace every line in italics with your own writing, then delete the italics. Use it as it is, or as inspiration for your own layout. The headings follow the rubric, so each part maps to one grading row.
+
+# Part 1: Codebook
+
+## Study overview
+
+*Name your research question or hypotheses, the material you are coding (platform, language, what was collected and how), and the time period (first and last date).*
+
+## Unit of analysis
+
+*State exactly what one coded item is (one post, one message, one minute of video), and say what is not part of it (replies, links, images). State it once. Every variable below is coded on this item.*
+
+*List any fields you look up rather than code (an ID, a date, a count), and any measure you compute in R from your coded variables.*
+
+## Variables
+
+Repeat the table below once per variable, as many times as your study has variables. Delete any copy you do not use.
+
+### Variable 1: *name*
+
+| Element | Your entry |
+|:--|:--|
+| Conceptual definition and source | *What the concept means, in a sentence or two, with the source you took it from (author, year). If the definition is your own, say so and say why.* |
+| Operational definition | *What the coder does: what to read, what to look for, and which value to mark. Write it as steps a stranger could follow.* |
+| Level of measurement, and what it allows | *Nominal, ordinal, interval, or ratio. One sentence on what it allows (counts, a median, a mean, which test) and one on what it rules out.* |
+| Coded values | *Each value with its meaning (0 = ..., 1 = ...). Include an other value or a none value so every item has somewhere to go.* |
+| Edge-case decision rules | *At least two rules for this variable, each written as a rule: "If ..., code ...".* |
+| Validity sentence | *One sentence: what result would make you doubt this variable measures what you say it measures.* |
+
+### Variable 2: *name*
+
+| Element | Your entry |
+|:--|:--|
+| Conceptual definition and source | *Definition, with its source.* |
+| Operational definition | *Coder actions, as steps.* |
+| Level of measurement, and what it allows | *Level, what it allows, and what it rules out.* |
+| Coded values | *Each value with its meaning, including other or none.* |
+| Edge-case decision rules | *At least two rules: "If ..., code ...".* |
+| Validity sentence | *What would make you doubt this variable.* |
+
+## Decision rules for the whole codebook
+
+*Rules for the cases that do not sort themselves and apply across variables (an item off topic, a duplicate, an item that fits two categories, an item with missing text). Write each as a rule, and cover the hard calls you actually met while reading your material.*
+
+1. *If ..., code ...*
+2. *If ..., code ...*
+3. *If ..., code ...*
+
+## Examples
+
+*Two or three examples for every value of every variable, drawn from your own material. Paraphrase rather than quote anything that could lead back to a private person.*
+
+| Variable and value | Two or three examples from your material |
+|:--|:--|
+| *Variable 1, value 0* | *(a) ... (b) ...* |
+| *Variable 1, value 1* | *(a) ... (b) ...* |
+| *Variable 2, value 0* | *(a) ... (b) ...* |
+
+# Part 2: Reliability protocol
+
+*Open with one sentence: you are the only coder, so every reliability claim here is about your own consistency over time, intracoder reliability (stability), not agreement between two coders.*
+
+## 6. The statistic
+
+*Name the statistic (for example, Krippendorff's alpha) and the metric for each variable, with one sentence on why this statistic and not another. Call it intracoder reliability (stability). Say why percent agreement alone is not enough.*
+
+## 7. The threshold
+
+*Give the threshold with its source (author, year). Add one sentence saying a stability figure is a weaker claim than agreement between two coders and will not be reported as if it were one.*
+
+## 8. The stability procedure
+
+*Say how many items you will re-code (at least 10 percent of your coded items), that you will re-code them yourself at least 48 hours after the first pass, and that your first codes will be hidden while you do.*
+
+*Name the dated file in your repository that records this plan before the re-code (for example, `codebook/stability-plan.md`), committed before you start the second pass.*
+
+## 9. A fresh reliability sample
+
+*Describe a sample kept separate from the items you used to build and revise the codebook: its size, and how it is drawn (for example, a seeded random draw in R).*
+
+```r
+# a seeded draw of re-code items, kept apart from the items that built the codebook
+set.seed(2026)
+recode_items <- coded_items |>
+  filter(!item_id %in% build_items$item_id) |>
+  slice_sample(n = 15)
+```
+
+## 10. When it fails
+
+*Say in advance what you do if a variable misses the threshold: which categories you revise, how, and what keeps the codebook from bending toward your own habits (for example, revising only from written rules and re-testing on a new sample).*
+
+## 11. Reporting a disappointing number
+
+*Commit to reporting the figure even if it is low, and write what you will say about it.*
+
+## 12. Single-coder safeguards
+
+*Name at least three safeguards you are actually using, each described as what you do. Choose from the rubric's list or add your own.*
+
+1. *Safeguard, and what you do.*
+2. *Safeguard, and what you do.*
+3. *Safeguard, and what you do.*
+
+## 13. Second-coder counterfactual
+
+*One paragraph, written as what you would do if this study had a second coder: how many items you would double-code, which statistic you would report, how you would train the coder and settle disagreements, and which finding is most at risk.*
+
+## References
+
+*Every source cited above, in APA 7.*

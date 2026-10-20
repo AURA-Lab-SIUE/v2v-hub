@@ -112,6 +112,17 @@ print. Save it into the **top folder** of your workspace, next to `README.md`.
 
 ---
 
+## Codebook templates
+
+One template per course, with a heading for every part the rubric grades and a fill-in table you repeat for each variable. Use it directly as your `codebook/codebook.qmd` or as inspiration for your own layout.
+
+- [MC 451 template (.qmd)](templates/MC451-codebook-template.qmd)
+- [MC 451 template (.docx)](templates/MC451-codebook-template.docx)
+- [MC 501 template (.qmd)](templates/MC501-codebook-template.qmd)
+- [MC 501 template (.docx)](templates/MC501-codebook-template.docx)
+
+---
+
 ## Required software
 
 Install these before Phase I. All are free.

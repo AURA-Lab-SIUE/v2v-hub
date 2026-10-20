@@ -359,6 +359,8 @@ Build the instrument, and write down what watching taught you. The qualitative r
 
 **Worked example:** [Codebook and Qualitative Memo worked example (PDF)](resources/examples/MC451-example-codebook-and-qualitative-memo.pdf). A finished submission, so you can see the form before you write yours.
 
+**Template:** [Codebook and Qualitative Memo template (Quarto .qmd)](resources/templates/MC451-codebook-template.qmd) or [the same template (Word .docx)](resources/templates/MC451-codebook-template.docx). Use it directly as your `codebook/codebook.qmd` or as inspiration for your own layout.
+
 </details>
 
 ### Sampling Plan and Pilot {#sampling-plan-and-pilot}

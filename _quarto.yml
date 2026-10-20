@@ -16,6 +16,8 @@ project:
     # render target, tries the knitr engine on its R chunks, and the CI runner has no
     # R installed. Build failed exactly that way 2026-09-01.
     - "!starters/*.qmd"
+    # Codebook templates are handed over as source like the starters (2026-10-20).
+    - "!resources/templates/*.qmd"
   resources:
     - "modules/04_analyst/pokemon-practice.qmd"
     # Starter files students DOWNLOAD and open in VS Code. Deliberately outside the
@@ -30,6 +32,8 @@ project:
     # The AI-use log students download and submit with every assignment (2026-10-17). Blackboard links
     # its published URL directly, so it stays served even if a page link to it changes.
     - "resources/MC451-501-AI-use-log.docx"
+    # Codebook templates students download (2026-10-20): source to hand over, never rendered.
+    - "resources/templates/*"
 
 website:
   title: "V2V Hub"

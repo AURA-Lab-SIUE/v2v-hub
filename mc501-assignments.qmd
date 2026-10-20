@@ -319,6 +319,8 @@ Build the instrument, then write the protocol that says how you will know it sta
 
 **Worked example:** [Extended Codebook and Reliability Protocol worked example (PDF)](resources/examples/MC501-example-extended-codebook-and-reliability-protocol.pdf). A finished submission, so you can see the form before you write yours.
 
+**Template:** [Extended Codebook and Reliability Protocol template (Quarto .qmd)](resources/templates/MC501-codebook-template.qmd) or [the same template (Word .docx)](resources/templates/MC501-codebook-template.docx). Use it directly as your `codebook/codebook.qmd` or as inspiration for your own layout.
+
 </details>
 
 ### Sampling Plan and Pilot, 20 to 30 items {#sampling-plan-and-pilot-20-to-30-items}

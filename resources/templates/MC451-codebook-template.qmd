@@ -1,0 +1,74 @@
+---
+title: "Codebook and Qualitative Memo"
+subtitle: "MC 451 template"
+---
+
+How to use this template: replace every line in italics with your own writing, then delete the italics. Use it as it is, or as inspiration for your own layout. The headings follow the rubric, so each part maps to one grading row.
+
+# Part 1: Codebook
+
+## Study overview
+
+*Three to four sentences naming your research question, the material you are coding (platform, language, what was collected), and the time period (first and last date).*
+
+## Unit of analysis
+
+*State exactly what one coded item is (one message, one post, one minute of video), and say what is not part of it (replies, links, images). State it once. Every variable below is coded on this item.*
+
+## Variables
+
+Repeat the table below once per variable, as many times as your study has variables. Delete any copy you do not use.
+
+### Variable 1: *name*
+
+| Element | Your entry |
+|:--|:--|
+| Conceptual definition and source | *What the concept means, in a sentence or two, with the source you took it from (author, year).* |
+| Operational definition | *What the coder does: what to read, what to look for, and which value to mark. Write it as steps a stranger could follow.* |
+| Level of measurement, and what it allows | *Nominal, ordinal, interval, or ratio. One sentence on what it allows (counts, a median, a mean) and one on what it rules out.* |
+| Coded values | *Each value with its meaning (0 = ..., 1 = ...). Include an other value or a none value so every item has somewhere to go.* |
+| Edge-case decision rules | *At least two rules for this variable, each written as a rule: "If ..., code ...".* |
+
+### Variable 2: *name*
+
+| Element | Your entry |
+|:--|:--|
+| Conceptual definition and source | *Definition, with its source.* |
+| Operational definition | *Coder actions, as steps.* |
+| Level of measurement, and what it allows | *Level, what it allows, and what it rules out.* |
+| Coded values | *Each value with its meaning, including other or none.* |
+| Edge-case decision rules | *At least two rules: "If ..., code ...".* |
+
+## Decision rules for the whole codebook
+
+*Rules for the cases that do not sort themselves and apply across variables (an item off topic, a duplicate, an item that fits two categories). Write each as a rule, and cover the hard calls you actually met while reading your material.*
+
+1. *If ..., code ...*
+2. *If ..., code ...*
+3. *If ..., code ...*
+
+## Examples
+
+*Two or three examples for every value of every variable, taken from your own material, each one clearly belonging to its category. Paraphrase rather than quote anything that could lead back to a private person.*
+
+| Variable and value | Two or three examples from your material |
+|:--|:--|
+| *Variable 1, value 0* | *(a) ... (b) ...* |
+| *Variable 1, value 1* | *(a) ... (b) ...* |
+| *Variable 2, value 0* | *(a) ... (b) ...* |
+
+## Single-coder note
+
+*Paragraph 1: say in plain words that you are the only coder, so every reliability claim is about your own consistency.*
+
+*Paragraph 2: name at least three safeguards you are using (from the rubric's list or your own), each as what you do.*
+
+*Paragraph 3: the second-coder counterfactual, written as what you would do if this study had a second coder: how many items you would double-code, what number you would report, how you would train the coder and settle disagreements, and which finding is most at risk.*
+
+# Part 2: Qualitative memo
+
+*200 to 300 words on the patterns you saw while reading or watching your material. Describe what you saw, not the topic in general. Name the pattern behind each codebook category, so every category traces back to something here.*
+
+## References
+
+*Every source cited above, in APA 7.*
