@@ -104,7 +104,9 @@ There is **no Week 14**, because of Thanksgiving.
 
 **25 points. Due Friday, August 28, 11:59 PM.** *(Week 1)*
 
-Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
+Download the [Syllabus Contract (PDF)](resources/Syllabus_Contract_MC451.pdf), fill it in, sign it, and upload it to Blackboard.
+
+**What you submit:** the completed and signed Syllabus Contract as one file: the PDF, or a photo or scan of a printed copy.
 
 ### GitHub Profile {#github-profile}
 

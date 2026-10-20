@@ -43,7 +43,9 @@ Read Chapters 1 to 3 alongside this phase. In MC 451 every assignment is due Fri
 
 ### Syllabus Contract (25 pts), Week 1
 
-Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
+Download the [Syllabus Contract (PDF)](../../resources/Syllabus_Contract_MC451.pdf), fill it in, sign it, and upload it to Blackboard.
+
+**What you submit:** the completed and signed Syllabus Contract as one file: the PDF, or a photo or scan of a printed copy.
 
 ---
 
@@ -93,7 +95,9 @@ Submit it as a PDF.
 
 ### Syllabus Contract (25 pts), Week 1
 
-Open the syllabus contract template in VS Code, fill in the acknowledgment fields, and render it to PDF. This confirms your software (R, VS Code, Quarto) is installed and working.
+Download the [Syllabus Contract (PDF)](../../resources/Syllabus_Contract_MC501.pdf), fill it in, sign it, and upload it to Blackboard.
+
+**What you submit:** the completed and signed Syllabus Contract as one file: the PDF, or a photo or scan of a printed copy.
 
 ---
 

@@ -12,7 +12,7 @@ Everything you need to set up, run, and get help with the course. If you are jus
 #### Syllabus Contract
 <span class="resource-badge time">5 min</span>
 
-Review and sign to confirm you understand course policies, grading, and academic integrity.
+Download the PDF for your course, fill it in, sign it, and upload it to Blackboard. A photo or scan of a printed copy is fine.
 
 [MC 451 (PDF)](Syllabus_Contract_MC451.pdf){.btn .btn-sm .btn-primary} [MC 501 (PDF)](Syllabus_Contract_MC501.pdf){.btn .btn-sm .btn-primary}
 :::
