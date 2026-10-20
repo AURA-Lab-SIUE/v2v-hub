@@ -6,8 +6,6 @@ execute:
 ---
 
 
-{{< video videos/02-data-collection.mp4 >}}
-
 Your codebook is ready. Your spreadsheet is set up. Now you need to code your full sample, somewhere between 50 and 200 items, depending on your sampling plan. This chapter covers the practical realities of doing that well.
 
 ## The Coder Drift Problem

@@ -34,7 +34,7 @@ Students in this course are first-time researchers and first-time coders. To kee
 | **Home** | Course overview, quick-start cards, ecosystem map |
 | **Syllabus** | MC 451 and MC 501 (Fall 2026) |
 | **Phases** | Five progressive modules: Journalist, Architect, Builder, Analyst, Publisher |
-| **Workbook** | 7-lab R workbook with narrated video walkthroughs (embedded) |
+| **Workbook** | 7-lab R workbook (embedded) |
 | **Course Workspace** | VS Code template repo: journals, project folders, Git |
 | **Resources** | Software install guides, VS Code customization, Copilot, FAQ |
 
@@ -50,7 +50,7 @@ Students in this course are first-time researchers and first-time coders. To kee
 
 ### R workbook (embedded)
 
-The workbook lives inside the site at `workbook/` with a docked sidebar. Each lab opens with a narrated video walkthrough. The labs use the **`v2v`** R package and its sampled **Twitch chat/stream corpus**.
+The workbook lives inside the site at `workbook/` with a docked sidebar. The labs use the **`v2v`** R package and its sampled **Twitch chat/stream corpus**.
 
 | Lab | Title |
 |-----|-------|

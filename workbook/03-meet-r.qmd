@@ -6,8 +6,6 @@ execute:
 ---
 
 
-{{< video videos/03-meet-r.mp4 >}}
-
 You have a codebook. You have (or will soon have) a dataset. Now you need a tool to analyze it. That tool is R, a free, open-source programming language built for data analysis and statistics. This chapter gets you set up and comfortable before the real work begins. You will run R inside **VS Code**, the same editor you use for the rest of the course.
 
 ## Why R?

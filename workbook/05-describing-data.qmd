@@ -6,8 +6,6 @@ execute:
 ---
 
 
-{{< video videos/05-describing-data.mp4 >}}
-
 You have clean data. Now you need to describe it. What's in the dataset? What patterns are visible? This chapter teaches you to build frequency tables and publication-ready charts using the same Twitch dataset you wrangled in Chapter 4.
 
 Describing data is not just a technical step. It is **communication**. Every table and chart in this chapter answers a question that a reader would have about your data.

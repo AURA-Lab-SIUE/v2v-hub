@@ -7,7 +7,7 @@ title: "R Workbook: Novice to Social Scientist"
 
 **A hands-on guide to R for content analysis research**
 
-Seven chapters take you from building a codebook to publishing a professional White Paper, with narrated video walkthroughs for every chapter.
+Seven chapters take you from building a codebook to publishing a professional White Paper.
 :::
 
 ---
@@ -30,16 +30,9 @@ This workbook is your companion for the R programming portion of the course (Pha
 
 ## How to Use This Workbook
 
-:::{.callout-tip}
-## Watch, Then Do
-
-Every chapter opens with a **narrated video walkthrough**. Watch it first to get the big picture, then work through the written content at your own pace. The video and text cover the same material, so use whichever format helps you learn.
-:::
-
-1. **Watch the video** at the top of each chapter
-2. **Follow along in VS Code**, the code blocks are designed to run in order
-3. **Use the class dataset** for practice: `library(v2v)`, then `twitch_chat()` and `twitch_streams()`, with no file to download
-4. **Apply to your own data** for the White Paper
+1. **Read the chapter**, then follow along in VS Code; the code blocks are designed to run in order
+2. **Use the class dataset** for practice: `library(v2v)`, then `twitch_chat()` and `twitch_streams()`, with no file to download
+3. **Apply to your own data** for the White Paper
 
 ---
 

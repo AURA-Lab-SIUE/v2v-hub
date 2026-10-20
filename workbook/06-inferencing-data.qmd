@@ -6,8 +6,6 @@ execute:
 ---
 
 
-{{< video videos/06-inferencing-data.mp4 >}}
-
 Describing data tells you what *is*. Inferencing tells you what it *means*, specifically, whether the patterns you see are real or could have happened by chance.
 
 This chapter walks you through a **chi-square test of independence**, the statistical test you'll use to determine whether two categorical variables are related. You'll also learn to calculate effect size (Cramér's V), interpret standardized residuals, and write your findings in two registers: formal APA and plain-English "journalist translation."

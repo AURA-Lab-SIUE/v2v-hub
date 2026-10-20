@@ -33,7 +33,7 @@ This gives you your own copy of the course workspace on GitHub.
 
 ## Step 3: Install R, Quarto, and Git
 
-Three more programs. R and Quarto are the two people most often miss, and Git is what makes **Git: Clone** in Step 4 work. Install them in this order.
+Three more programs. R and Quarto are the two people most often miss, and Git is what lets you clone your workspace in Step 4. Install them in this order.
 
 1. **R**, the language that runs your analysis: [Install R](resources/install-r.qmd)
 2. **Quarto**, which turns your `.qmd` files into finished documents: [Install Quarto](resources/install-quarto.qmd)
@@ -52,14 +52,9 @@ and run `quarto check`. Green check marks under **Quarto** and under **R** mean 
 
 ---
 
-## Step 4: Clone the Workspace and Open It in VS Code
+## Step 4: Open the Workspace in VS Code
 
-1. In VS Code, open the Command Palette (Ctrl+Shift+P on Windows/Linux, Cmd+Shift+P on Mac)
-2. Run **Git: Clone** and paste the URL of the repository you created in Step 1
-3. Choose a folder to clone into (for example, your `Documents` folder)
-4. When prompted, open the cloned workspace folder in VS Code
-
-**Your workspace will open with folders, the journal template, and a start guide ready to go.**
+Open the copy you made in Step 1 with the course picker: in VS Code, open the Command Palette (Ctrl+Shift+P on Windows/Linux, Cmd+Shift+P on Mac) and run **AURA: Open my course workspace**. Choose **Clone your copy from GitHub** (or open it if it is already on your computer), then trust the folder when VS Code asks, so R can run. For the full click path with screenshots, follow your course's guide: [MC 451](guides/mc451/02-open-your-course-workspace.md) or [MC 501](guides/mc501/02-open-your-course-workspace.md).
 
 When VS Code prompts you to install the recommended extensions, accept them. They include:
 

@@ -6,8 +6,6 @@ execute:
 ---
 
 
-{{< video videos/04-data-wrangling.mp4 >}}
-
 Real data is messy. The Twitch dataset you're about to work with has missing values, unreadable timestamps, messages that are twenty-three question marks long, and the information you most need sitting in a second table that the first one has no link to. This chapter teaches you how to find and fix these problems using R.
 
 This is the single most practical R skill you'll learn: every dataset needs cleaning before analysis, and the cleaning process is the same regardless of the topic.

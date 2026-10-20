@@ -48,23 +48,7 @@ Because the notes are plain Markdown, they open in any editor and read fine on G
 
 ## Set it up
 
-The short version is below. For a step-by-step walkthrough with screenshots, follow the [Course Workspace setup guide](resources/workspace-setup.qmd).
-
-### 1. Create your copy from the template
-
-On the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace), click **Use this template**, then **Create a new repository**. Name it `mc451-workspace` or `mc501-workspace`, and leave it **Public**. Your graded submission is the repository URL, so it has to be one anyone can open.
-
-### 2. Clone it into VS Code
-
-In VS Code, open the Command Palette (`Ctrl/Cmd+Shift+P`), run **Git: Clone**, paste your new repository URL, and choose a location you will remember (for example, `Documents/MC451/`). VS Code offers to open the folder.
-
-### 3. Install the recommended extensions
-
-When VS Code opens the workspace, it prompts you to install the **recommended extensions** (Quarto, R, GitLens, and the AURA Lab R Companion). Click **Install**. They are listed in `.vscode/extensions.json` so the whole class shares one setup.
-
-### 4. Read the README
-
-Open `README.md`. It walks you through the folder structure and how to start a journal entry from the template.
+Open your workspace with the course picker: in VS Code, run **AURA: Open my course workspace** from the Command Palette (`Ctrl/Cmd+Shift+P`), which makes your copy on GitHub, clones it, and opens the folder in one flow. Install the **recommended extensions** when VS Code prompts you (Quarto, R, GitLens, and the AURA Lab R Companion), then open `README.md` to see the folder structure. For the full click path with screenshots, follow your course's guide: [MC 451](guides/mc451/02-open-your-course-workspace.md) or [MC 501](guides/mc501/02-open-your-course-workspace.md).
 
 :::{.callout-tip}
 ## Why commit to GitHub?

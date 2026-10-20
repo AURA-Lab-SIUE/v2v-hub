@@ -4,6 +4,8 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
+    # about.qmd is unpublished (2026-10-20): an unlinked bio page. Source kept, excluded from render.
+    - "!about.qmd"
     - "modules/**/*.qmd"
     - "!modules/**/pokemon-practice.qmd"
     - "resources/*.qmd"
@@ -23,12 +25,6 @@ project:
     # Starter files students DOWNLOAD and open in VS Code. Deliberately outside the
     # render list above: they are source to be handed over, not pages to be built.
     - "starters/*.qmd"
-    # The superseded 1-page template PDFs, replaced 2026-10-08 by the 2-page frameworks. Nothing
-    # links them now that the pages point at the 2-page frameworks, and Quarto copies only
-    # what a page references, so dropping the link 404'd URLs already in students' hands.
-    # Listed here to keep them served. Remove once a term has passed.
-    - "resources/MC451-Project-Prospectus-Template.pdf"
-    - "resources/MC501-Research-Proposal-Template.pdf"
     # The AI-use log students download and submit with every assignment (2026-10-17). Blackboard links
     # its published URL directly, so it stays served even if a page link to it changes.
     - "resources/MC451-501-AI-use-log.docx"
@@ -132,12 +128,8 @@ website:
               href: https://aura-lab.siue.edu/v2v/chapters/chapter07.html
             - text: "Ch 8: From Vibes to Variables"
               href: https://aura-lab.siue.edu/v2v/chapters/chapter08.html
-            - text: "[R] Codebook Lab"
-              href: workbook/01-codebook.qmd
             - text: "Ch 9: The Rulebook and First Workspace"
               href: https://aura-lab.siue.edu/v2v/chapters/chapter09.html
-            - text: "[R] Data Collection Lab"
-              href: workbook/02-data-collection.qmd
 
         - section: "Part IV: Execution"
           contents:
@@ -145,16 +137,10 @@ website:
               href: modules/04_analyst/index.qmd
             - text: "Ch 10: The Sample"
               href: https://aura-lab.siue.edu/v2v/chapters/chapter10.html
-            - text: "Meet R"
-              href: workbook/03-meet-r.qmd
             - text: "Ch 11: Wrangling the Data"
               href: https://aura-lab.siue.edu/v2v/chapters/chapter11.html
-            - text: "[R] Data Wrangling Lab"
-              href: workbook/04-data-wrangling.qmd
             - text: "Ch 12: Visualizing the Narrative"
               href: https://aura-lab.siue.edu/v2v/chapters/chapter12.html
-            - text: "[R] Describing Data Lab"
-              href: workbook/05-describing-data.qmd
             - text: "Practice: Pokemon Wrangling"
               href: modules/04_analyst/practice-wrangling.qmd
 
@@ -164,12 +150,8 @@ website:
               href: modules/05_publisher/index.qmd
             - text: "Ch 13: Making the Call"
               href: https://aura-lab.siue.edu/v2v/chapters/chapter13.html
-            - text: "[R] Inferencing Data Lab"
-              href: workbook/06-inferencing-data.qmd
             - text: "Ch 14: The One-Click Report"
               href: https://aura-lab.siue.edu/v2v/chapters/chapter14.html
-            - text: "[R] Publishing Lab"
-              href: workbook/07-publishing.qmd
 
         - text: "---"
 

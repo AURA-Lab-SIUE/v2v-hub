@@ -6,8 +6,6 @@ execute:
 ---
 
 
-{{< video videos/01-codebook.mp4 >}}
-
 You've spent weeks immersed in your media source, reading articles, watching videos, scrolling through posts. You've noticed patterns. You've written about them in your qualitative memo. Now it's time to turn those observations into something you can count.
 
 This chapter walks you through the process of building a **quantitative codebook**, the document that translates your qualitative insights into numeric codes that R can analyze.

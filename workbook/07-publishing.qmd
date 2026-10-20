@@ -6,8 +6,6 @@ execute:
 ---
 
 
-{{< video videos/07-publishing.mp4 >}}
-
 You have collected data, cleaned it, visualized it, and tested a hypothesis. Now you assemble everything into your **White Paper**, published simultaneously as a PDF and a live website.
 
 The White Paper is the graded deliverable. A **Quarto Book** is the format it takes: a collection of `.qmd` files that Quarto renders into a single, cohesive document. Two words, one artifact. When the syllabus says White Paper and this chapter says Quarto Book, they are describing the same thing from two angles: what you wrote, and how it is built.

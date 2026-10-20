@@ -16,30 +16,13 @@ If you have not already, follow the [Install VS Code](install-vscode.qmd) guide.
 
 ---
 
-## Step 2: Create your copy from the template
+## Step 2: Open your workspace
 
-1. Go to the [v2v-workspace repository](https://github.com/AURA-Lab-SIUE/v2v-workspace).
-2. Click **Use this template**, then **Create a new repository**.
-3. Name it `mc451-workspace` or `mc501-workspace`, and leave it **Public**. Your graded
-   submission is the repository URL, so it has to be one anyone can open.
-4. Click **Create repository**.
-
-You now have your own copy of the workspace on GitHub.
+The course picker does the whole open for you in one step: in VS Code, open the Command Palette (`Ctrl+Shift+P` on Windows, `Cmd+Shift+P` on a Mac) and run **AURA: Open my course workspace**. It lets you make your copy on GitHub, clone it, and open it, then trusts the folder so R can run. For the full click path with screenshots, follow your course's guide: [MC 451](../guides/mc451/02-open-your-course-workspace.md) or [MC 501](../guides/mc501/02-open-your-course-workspace.md).
 
 ---
 
-## Step 3: Clone it into VS Code
-
-1. Copy your new repository's URL (the green **Code** button).
-2. In VS Code, open the Command Palette: `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac).
-3. Type **Git: Clone** and press Enter.
-4. Paste your repository URL.
-5. Choose a folder you will remember, for example `Documents/MC451/`.
-6. When VS Code asks, click **Open** to open the cloned workspace.
-
----
-
-## Step 4: Install the recommended extensions
+## Step 3: Install the recommended extensions
 
 When the workspace opens, VS Code shows a prompt in the bottom-right: **"This workspace has extension recommendations."** Click **Install All**. These are defined in `.vscode/extensions.json` so the whole class shares one environment:
 
@@ -56,7 +39,7 @@ Then run **Check my setup** from the Command Palette (`Ctrl/Cmd+Shift+P`) and ch
 
 ---
 
-## Step 5: Read the README
+## Step 4: Read the README
 
 Open `README.md` in the file explorer (left sidebar). It explains the folder structure and how to start a journal entry.
 
@@ -76,7 +59,7 @@ Follow this structure to stay organized.
 
 ---
 
-## Step 6: Start a journal entry from the template
+## Step 5: Start a journal entry from the template
 
 1. In the file explorer, open `_templates/journal-entry.md`.
 2. Right-click it and choose **Copy**, then right-click the `01_Journal/` folder and choose **Paste**.
@@ -91,7 +74,7 @@ Name files in lower case with hyphens instead of spaces (`week-02-curiosity.md`,
 
 ---
 
-## Step 7: Basic Markdown syntax
+## Step 6: Basic Markdown syntax
 
 Notes use Markdown. The essentials:
 
@@ -111,7 +94,7 @@ VS Code shows a live preview with `Ctrl/Cmd+Shift+V`.
 
 ---
 
-## Step 8: Commit and push your work back to your repository
+## Step 7: Commit and push your work back to your repository
 
 Your workspace is a copy of the course template that belongs to **you**. Sending your work
 back up to it is how you get a backup, a history you can walk through, and the version
@@ -218,7 +201,7 @@ Use **File > Open Folder** and select the workspace folder you cloned, not a par
 ## Next steps
 
 1. Install VS Code, R, and Git.
-2. Create your copy from the template and clone it.
+2. Open your workspace with the course picker (**AURA: Open my course workspace**).
 3. Install the recommended extensions.
 4. Run Check my setup.
 5. Read `README.md`.
