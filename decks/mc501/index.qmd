@@ -7,7 +7,7 @@ One deck per weekly meeting. Each deck folds the week's material together with t
 
 ::: {.schedule-table}
 
-| Session | Topic | Deck |
+| Week | Topic | Deck |
 |---|---|---|
 | Week 1 | Orientation and The Science of Storytelling | [Open](w01-orientation-storytelling.html) |
 | Week 2 | The Open Workspace | [Open](w02-open-workspace.html) |

@@ -748,3 +748,10 @@ body.show-grad-ext .undergraduate-only { display: none; }
 .rubric-grid { overflow-x: auto; margin-bottom: 1rem; }
 .rubric-grid table { min-width: 44rem; }
 .rubric-grid:focus-visible { outline: 3px solid var(--v2v-red); outline-offset: 2px; }
+
+// Breadcrumbs (pages inside a sidebar section): Bootstrap's #6c757d measures about 4.5:1 on the
+// warm-paper surface, under the 5:1 house floor. #545b62 clears it.
+.quarto-title-breadcrumbs .breadcrumb-item,
+.quarto-title-breadcrumbs .breadcrumb-item a,
+.quarto-title-breadcrumbs .breadcrumb-item + .breadcrumb-item::before,
+.quarto-title-breadcrumbs .breadcrumb li:last-of-type a { color: #545b62; }

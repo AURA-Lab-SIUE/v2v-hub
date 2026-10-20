@@ -21,7 +21,7 @@ The sidebar on the left follows the textbook (*Vibes to Variables*, 3rd Edition)
 ::: card
 ### Set up your workspace
 
-Install R, VS Code, and GitHub, then clone the course workspace. One folder holds everything.
+Install R, Quarto, VS Code, and Git, then clone the course workspace. One folder holds everything.
 
 [Get started](setup.qmd){.btn .btn-primary}
 :::
@@ -48,6 +48,14 @@ Seven chapters with narrated video walkthroughs, from codebook to published Whit
 Your VS Code workspace: journals, project folders, and templates in one Git repository.
 
 [Get the workspace](workspace.qmd){.btn .btn-secondary}
+:::
+
+::: card
+### Step-by-step guides
+
+Numbered click paths with screenshots, from checking your setup to publishing your site.
+
+[MC 451 guides](guides/mc451/index.md){.btn .btn-secondary} [MC 501 guides](guides/mc501/index.md){.btn .btn-secondary}
 :::
 :::::
 
@@ -88,13 +96,14 @@ Over one semester you build a complete content analysis from scratch, moving fro
 
 ## The ecosystem
 
-Three tools work together throughout the course. Each serves a distinct role, and all three live inside one VS Code workspace.
+Four tools work together throughout the course. Each serves a distinct role, and they all live inside VS Code or link out from it.
 
 | Tool | What it does | When you use it |
 |------|-------------|-----------------|
 | [**Course Workspace**](workspace.qmd) | VS Code workspace for journals, notes, and project files | Every week, as your personal research archive |
-| [**R Workbook**](workbook/index.qmd) | Hands-on R tutorials with narrated videos | Parts III to V, learning R for data analysis |
+| **v2v R package** | Sets up your environment, checks that everything works, and provides the practice corpus | Installed in Week 2, used through the applied weeks |
 | [**Textbook**](https://aura-lab.siue.edu/v2v/) | *Vibes to Variables* (3rd Edition, 14 chapters) | Every week, for the conceptual foundation of each part |
+| **This website (V2V Hub)** | Syllabus, schedule, assignments, the [R Workbook](workbook/index.qmd), and setup guides | Whenever you need to know what is due or how to do something |
 
 ## Course information
 

@@ -339,7 +339,7 @@ prohibited.
   draft prose you then revise, provided you can explain everything you submit and
   you disclose the assistance.
 - **Disclosure is required:** from the Codebook and Qualitative Memo on, submit the
-  [AI-use log (.docx)](https://aura-lab.siue.edu/v2v-hub/resources/MC451-501-AI-use-log.docx)
+  [AI-use log (.docx)](https://aura-lab.siue.edu/v2v-hub/resources/AI-use-log.docx)
   with every assignment: one entry for each time AI shaped the work (the tool, what you
   asked, what it gave you, and what you did with it and why), or the no-AI box checked.
 - **Not permitted:** submitting AI-generated work as your own without disclosure;
@@ -406,36 +406,41 @@ your own project. Thursday opens with a shorter lesson, and the rest of the sess
 time for your own work, with me in the room to help. You can also meet with me
 one-on-one, in person or on Teams.
 
+Install the AURA Lab R Companion first: [Marketplace listing](https://marketplace.visualstudio.com/items?itemName=aura-lab-siue.r-companion) or [install guide](resources/install-vscode.qmd#aura-lab-r-companion-recommended)
+
 | Week | Walkthrough to watch before Thursday | Step-by-step guide |
 |:-----|:-------------------------------------|:-------------------|
-| 9 | [Setup](https://siue.yuja.com/V/Video?v=17489654&a=114591092), then [the data viewer and coding sheet](https://siue.yuja.com/V/Video?v=17489997&a=123495612) | [Check your setup](guides/mc451/01-check-your-setup.md), [Data viewer](guides/mc451/05-data-viewer-and-coding-columns.md) |
-| 10 | [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025): the grid part | [Reliability grid](guides/mc451/07-reliability-grid.md) |
+| 9 | [Setup](https://siue.yuja.com/V/Video?v=17489654&a=114591092), then [the data viewer and coding sheet](https://siue.yuja.com/V/Video?v=17489997&a=123495612) | [Check your setup](guides/mc451/01-check-your-setup.md), [Data viewer](guides/mc451/05-data-viewer-and-coding-columns.md), [Starter: coding the codebook](starters/09-coding-the-codebook.qmd) |
+| 10 | [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025): the grid part | [Draw your coding sample](guides/mc451/06-draw-your-coding-sample.md), [Reliability grid](guides/mc451/07-reliability-grid.md) |
 | 11 | [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025): the wrangling part | [Load the data](guides/mc451/04-load-the-course-data.md), [Wrangling](guides/mc451/08-wrangling.md) |
 | 12 | [Describing data](https://siue.yuja.com/V/Video?v=17490672&a=193714265) | [Tables and charts](guides/mc451/09-describing-tables-and-charts.md) |
 | 13 | [Tests](https://siue.yuja.com/V/Video?v=17490908&a=168993969) | [Tests](guides/mc451/10-tests-and-check-my-test-choice.md) |
+| 15 | Render, commit, publish (no video) | [Render](guides/mc451/11-render-a-quarto-document.md), [Commit and push](guides/mc451/12-commit-and-push-with-git.md), [Publish your site](guides/mc451/13-publish-your-site.md) |
+
+All guides: [MC 451 guides](guides/mc451/index.md)
 :::
 
 ::: {.schedule-table}
 
 | Week | Dates | Tuesday | Thursday | Due |
 |:--------|:--------------|:--------------------------|:--------------------------|:---------------------|
-| 1 | Aug 25 / 27 | S1 · Orientation: syllabus, the five phases, your project | S2 · Ch 1 The Science of Storytelling | Syllabus Contract |
-| 2 | Sep 1 / 3 | S3 · Ch 2 The Open Workspace (R, VS Code, Git/GitHub) | S4 · Ch 2 project-setup lab | GitHub Profile |
-| 3 | Sep 8 / 10 | S5 · Ch 3 Ethics (Belmont, IRB, consent) | S6 · Ch 4 Intelligence Gathering | Project Setup |
-| 4 | Sep 15 / 17 | S7 · Ch 4 reading & annotating; the literature map | S8 · Ch 5 Theory as a Lens | Librarian Visit Report |
-| 5 | Sep 22 / 24 | S9 · Ch 5 variables & hypotheses | S10 · Ch 6 Research questions | Annotated Manuscript · CITI Certification |
-| 6 | Sep 29 / Oct 1 | S11 · Ch 6 the prospectus; pre-registration | S12 · Ch 7 Structured Listening; field notes | Topic Selection & RQs |
-| 7 | Oct 6 / 8 | S13 · Ch 7 manifest vs. latent; sampling observation | S14 · Ch 8 the operationalization gap | Project Prospectus |
-| 8 | Oct 13 / 15 | S15 · Ch 8 levels of measurement; reliability & validity | S16 · Ch 8 building the codebook [studio] | Definitions Practice |
-| 9 | Oct 20 / 22 | S17 · Ch 9 [R] coding the codebook | S18 · Ch 9 [R] reading data vs. the codebook; qual memo | Codebook & Qual Memo |
+| 1 | Aug 25 / 27 | S1 · Orientation: syllabus, the five phases, your project | S2 · Ch 1 The Science of Storytelling | [Syllabus Contract](mc451-assignments.qmd#syllabus-contract) |
+| 2 | Sep 1 / 3 | S3 · Ch 2 The Open Workspace (R, VS Code, Git/GitHub) | S4 · Ch 2 project-setup lab | [GitHub Profile](mc451-assignments.qmd#github-profile) |
+| 3 | Sep 8 / 10 | S5 · Ch 3 Knowing and Knowing Well: ethics (Belmont, IRB, consent) | S6 · Ch 4 Intelligence Gathering | [Project Setup](mc451-assignments.qmd#project-setup) |
+| 4 | Sep 15 / 17 | S7 · Ch 4 reading & annotating; the literature map | S8 · Ch 5 Theory as a Lens | [Librarian Visit Report](mc451-assignments.qmd#librarian-visit-report) |
+| 5 | Sep 22 / 24 | S9 · Ch 5 variables & hypotheses | S10 · Ch 6 Research questions | [Annotated Manuscript](mc451-assignments.qmd#annotated-manuscript) · [CITI Certification](mc451-assignments.qmd#citi-ethics-certification) |
+| 6 | Sep 29 / Oct 1 | S11 · Ch 6 the prospectus; pre-registration | S12 · Ch 7 Structured Listening; field notes | [Topic Selection & RQs](mc451-assignments.qmd#topic-selection-and-research-questions) |
+| 7 | Oct 6 / 8 | S13 · Ch 7 manifest vs. latent; sampling observation | S14 · Ch 8 the operationalization gap | [Project Prospectus](mc451-assignments.qmd#project-prospectus) |
+| 8 | Oct 13 / 15 | S15 · Ch 8 levels of measurement; reliability & validity | S16 · Ch 8 building the codebook [studio] | [Definitions Practice](mc451-assignments.qmd#definitions-practice) |
+| 9 | Oct 20 / 22 | S17 · Ch 9 [R] coding the codebook | S18 · Ch 9 [R] reading data vs. the codebook; qual memo | [Codebook & Qual Memo](mc451-assignments.qmd#codebook-and-qualitative-memo) |
 | 10 | Oct 27 / 29 | S19 · Ch 10 The Sample: SRS, stratified, drawing | S20 · Ch 10 [R] the pilot; kappa / alpha | |
-| 11 | Nov 3 / 5 | S21 · Ch 11 [R] Wrangling the Data | S22 · Ch 11 [R] wrangling lab | Sampling Plan & Pilot |
-| 12 | Nov 10 / 12 | S23 · Ch 12 [R] Describing: descriptive statistics + graphics | S24 · Ch 12 [R] describing lab | Data Wrangling [R] |
-| 13 | Nov 17 / 19 | S25 · Ch 13 [R] Inferential: t-test, ANOVA, regression | S26 · Ch 13 [R] inference lab; *White Paper assigned* | Describing Data [R] |
+| 11 | Nov 3 / 5 | S21 · Ch 11 [R] Wrangling the Data | S22 · Ch 11 [R] wrangling lab | [Sampling Plan & Pilot](mc451-assignments.qmd#sampling-plan-and-pilot) |
+| 12 | Nov 10 / 12 | S23 · Ch 12 [R] Describing: descriptive statistics + graphics | S24 · Ch 12 [R] describing lab | [Data Wrangling [R]](mc451-assignments.qmd#data-wrangling-in-r) |
+| 13 | Nov 17 / 19 | S25 · Ch 13 [R] Inferential: t-test, ANOVA, regression | S26 · Ch 13 [R] inference lab; *White Paper assigned* | [Describing Data [R]](mc451-assignments.qmd#describing-data-in-r) |
 | 14 | Nov 23–29 | **Thanksgiving Break, no class** | | |
-| 15 | Dec 1 / 3 | S27 · Ch 14 The Publisher; assemble your paper | S28 · White-paper studio: peer review; the reflection | Inferencing Data [R]; coded corpus and stability check pushed (Fri Dec 4, dated step) |
+| 15 | Dec 1 / 3 | S27 · Ch 14 The Publisher; assemble your paper | S28 · White-paper studio: peer review; the reflection | [Inferencing Data [R]](mc451-assignments.qmd#inferencing-data-in-r); coded corpus and stability check pushed (Fri Dec 4, dated step) |
 | 16 | Dec 8–12 | **Work Session: open lab / support** | | |
-| 17 | Dec 14–18 | **Finals Week** | | White Paper |
+| 17 | Dec 14–18 | **Finals Week** | | [White Paper](mc451-assignments.qmd#white-paper) |
 
 :::
 

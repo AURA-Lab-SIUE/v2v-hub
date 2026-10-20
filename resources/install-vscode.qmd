@@ -196,7 +196,7 @@ page about adjusting your PATH, and the right choice is the middle option, *Git 
 command line and also from 3rd-party software*. If you picked *Use Git from Git Bash only*,
 VS Code cannot see it. Run the Git installer again and choose the middle option.
 
-**3. Mac: the developer tools prompt was cancelled.** Open Terminal and run `git --version`.
+**3. Mac: the developer tools prompt was canceled.** Open Terminal and run `git --version`.
 If a box offers to install the command line developer tools, click **Install** and let it
 finish, then quit and reopen VS Code.
 
@@ -274,6 +274,6 @@ so they should reappear once VS Code opens.
 - **VS Code docs:** [code.visualstudio.com/docs](https://code.visualstudio.com/docs)
 - **R in VS Code:** [REditorSupport wiki](https://github.com/REditorSupport/vscode-R/wiki)
 - **Git in VS Code:** [code.visualstudio.com/docs/sourcecontrol/overview](https://code.visualstudio.com/docs/sourcecontrol/overview)
-- **Keyboard shortcuts:** [code.visualstudio.com/shortcuts](https://code.visualstudio.com/shortcuts)
+- **Keyboard shortcuts:** [code.visualstudio.com/docs/configure/keybindings](https://code.visualstudio.com/docs/configure/keybindings)
 
 Questions? Press **F1** for the Command Palette, check the docs, or come to office hours.

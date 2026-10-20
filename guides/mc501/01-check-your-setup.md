@@ -6,6 +6,7 @@ Prefer to watch first? The walkthrough video [Setup](https://siue.yuja.com/V/Vid
 
 ## Steps
 
+0. Install AURA Lab R Companion from the Extensions view ([Marketplace listing](https://marketplace.visualstudio.com/items?itemName=aura-lab-siue.r-companion)).
 1. Open VS Code.
 2. Open the Command Palette: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac).
 3. Type `AURA: Pick my course` and press **Enter**. Select **MC 501 Research Methods (graduate)**.

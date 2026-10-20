@@ -60,7 +60,7 @@ Access, and Title IX Coordination ([EOA](https://www.siue.edu/eoa/)).
 <summary>Technology and privacy</summary>
 
 This course uses Blackboard; review the
-[Anthology Blackboard Privacy Statement](https://www.anthology.com/privacy-statement)
+[Blackboard Privacy Statement](https://www.blackboard.com/trust-center/privacy-statement)
 for how your data is handled. The course also uses GitHub; review GitHub's
 privacy policy before creating an account.
 

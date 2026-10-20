@@ -101,7 +101,8 @@ You do not need to learn everything at once. Each tool is introduced when you ne
 
 1. **Run Check my setup** (Command Palette) if the problem is an install or a package.
 2. **Check this website first.** Most questions are answered in the module pages or setup guides.
-3. **Check the textbook.** The relevant chapter usually explains the concept.
-4. **Ask a classmate.** Someone else probably had the same issue.
-5. **Email Dr. Leith** at aleith@siue.edu (allow 24 hours Mon-Fri).
-6. **Office hours:** TuTh 12:30-1:45 PM in person, Dunham Hall 1017, or remote Tu/W/Th 3:00-5:00 PM by appointment.
+3. **Follow your course's step-by-step guides** for numbered click paths with screenshots: [MC 451 guides](guides/mc451/index.md) or [MC 501 guides](guides/mc501/index.md).
+4. **Check the textbook.** The relevant chapter usually explains the concept.
+5. **Ask a classmate.** Someone else probably had the same issue.
+6. **Email Dr. Leith** at aleith@siue.edu (allow 24 hours Mon-Fri).
+7. **Office hours:** TuTh 12:30 to 1:45 PM in person, Dunham Hall 1017, or remote Tu/W/Th 3:00 to 5:00 PM by appointment.

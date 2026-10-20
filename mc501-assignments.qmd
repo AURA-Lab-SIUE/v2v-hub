@@ -13,9 +13,9 @@ Each assignment shows a short description. Open the section under it for what to
 ::: {.callout-note}
 ## How to turn work in
 
-**Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting**: grading happens from the Blackboard submission. Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it.
+**Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting**: grading happens from the Blackboard submission. Get the AURA Lab R Companion from its [Marketplace listing](https://marketplace.visualstudio.com/items?itemName=aura-lab-siue.r-companion). Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it.
 
-Everything is due at **11:59 PM** on the **Monday** listed. You are welcome to submit any assignment early. Attempts are unlimited, so an early submission can still be revised right up to the deadline.
+Everything is due at **11:59 PM** on the **Monday** listed. The one exception is the White Paper and poster, due Friday, December 18. You are welcome to submit any assignment early. Attempts are unlimited, so an early submission can still be revised right up to the deadline.
 
 Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, submit again.
 
@@ -180,6 +180,8 @@ Annotate three peer-reviewed articles, then write the paragraph that makes them 
 <details class="syl-policy">
 <summary>Full requirements</summary>
 
+**Worked example:** [Annotated manuscript example (PDF)](resources/annotation-example.pdf).
+
 **What you submit:** the three annotated PDFs, plus one document holding the per-article notes and the synthesis.
 
 **Requirements**
@@ -253,7 +255,7 @@ the evidence behind it.
 
 A structured sentence outline that could serve as the front half of a conference paper.
 
-The [Research Proposal template](mc501-research-proposal-template.qmd) goes through each section with its points, the checks that cost points on Topic Selection, and a weaker and a stronger example.
+The [Research Proposal template](mc501-research-proposal-template.qmd) goes through each section with its points, the checks that cost points on Topic Selection, and a weaker and a stronger example. The template's section-by-section points are the rubric.
 
 <details class="syl-policy">
 <summary>Full requirements</summary>
@@ -292,7 +294,7 @@ Turn your constructs into definitions a stranger could apply without asking you 
 
 **What you submit:** one document with one entry per variable, at least four variables, uploaded to Blackboard under Definitions Practice.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Definitions Practice rubric (PDF)](resources/rubrics/MC501-rubric-definitions-practice.pdf). It lists the six parts every variable needs and the points for each.
 
@@ -313,9 +315,11 @@ Build the instrument, then write the protocol that says how you will know it sta
 
 **Length:** The codebook 2,000 to 3,500 words and the reliability protocol 800 to 1,400 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Extended Codebook and Reliability Protocol rubric (PDF)](resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf). It lists the five parts of the codebook, the eight parts of the protocol, and the points for each.
+
+**Starter:** [09-coding-the-codebook.qmd](starters/09-coding-the-codebook.qmd), the Week 9 starter file for coding your codebook in R.
 
 **Worked example:** [Extended Codebook and Reliability Protocol worked example (PDF)](resources/examples/MC501-example-extended-codebook-and-reliability-protocol.pdf). A finished submission, so you can see the form before you write yours.
 
@@ -336,9 +340,11 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 
 **Length:** 1,000 to 1,600 words across the plan and the pilot write-up, plus 20 to 30 coded items. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Sampling Plan and Pilot rubric (PDF)](resources/rubrics/MC501-rubric-sampling-plan-and-pilot.pdf). It lists each part of the plan and the pilot with its points, and carries the table for sizing your corpus.
+
+**How-to:** the [Draw your coding sample](guides/mc501/06-draw-your-coding-sample.md) and [Reliability grid](guides/mc501/07-reliability-grid.md) step-by-step guides.
 
 </details>
 
@@ -361,9 +367,11 @@ Build the analysis-ready table from the raw one, in code that runs start to fini
 
 **Length:** One script of 50 to 150 lines, comments included, with each of the three reviewer-facing comments 40 to 100 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Data Wrangling in R rubric (PDF)](resources/rubrics/MC501-rubric-data-wrangling-in-r.pdf). It lists the nine requirements, including the three reviewer-facing comments, and the points for each.
+
+**How-to:** [Wrangling](guides/mc501/08-wrangling.md) step-by-step guide, and the [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025) walkthrough video.
 
 </details>
 
@@ -388,9 +396,11 @@ Say what is in the data before you test anything.
 
 **Length:** 600 to 1,200 words of your own writing (interpretation, diagnostics and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Describing Data in R rubric (PDF)](resources/rubrics/MC501-rubric-describing-data-in-r.pdf). It lists the tables, figures, diagnostics, and interpretation it asks for, and the points for each.
+
+**How-to:** [Tables and charts](guides/mc501/09-describing-tables-and-charts.md) step-by-step guide, and the [Describing data](https://siue.yuja.com/V/Video?v=17490672&a=193714265) walkthrough video.
 
 </details>
 
@@ -407,9 +417,11 @@ Test four relationships, one per test, and report how big each is.
 
 **Length:** 900 to 1,500 words of your own writing (hypotheses, justifications, diagnostics, the four reports and the two paragraphs), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Inferencing Data in R rubric (PDF)](resources/rubrics/MC501-rubric-inferencing-data-in-r.pdf). It lists each step from the four hypotheses to what the results do not license, and the points for each.
+
+**How-to:** [Tests](guides/mc501/10-tests-and-check-my-test-choice.md) step-by-step guide, and the [Tests](https://siue.yuja.com/V/Video?v=17490908&a=168993969) walkthrough video.
 
 </details>
 
@@ -434,7 +446,7 @@ The final deliverable: your study written up in IMRaD, rendered to PDF, publishe
 
 **Length:** The paper 5,000 to 7,000 words from the introduction through the reflection, plus the 150 to 250 word abstract; the poster one page of 400 to 800 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [White Paper and conference poster rubric (PDF)](resources/rubrics/MC501-rubric-white-paper-and-conference-poster.pdf). It lists what each section of the paper carries, including the three transparency markers, what the poster shows, and the points for each.
 

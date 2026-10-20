@@ -4,7 +4,7 @@ title: "Getting Started"
 
 ## Welcome to the V2V Hub
 
-Complete these six steps to set up your course workspace. **Time needed:** 30-45 minutes, most of it waiting on downloads.
+Complete these six steps to set up your course workspace. **Time needed:** 30 to 45 minutes, most of it waiting on downloads.
 
 :::{.callout-important}
 ## Before You Begin
@@ -31,12 +31,13 @@ This gives you your own copy of the course workspace on GitHub.
 
 ---
 
-## Step 3: Install R and Quarto
+## Step 3: Install R, Quarto, and Git
 
-Two more programs, and they are the two people most often miss. Install them in this order.
+Three more programs. R and Quarto are the two people most often miss, and Git is what makes **Git: Clone** in Step 4 work. Install them in this order.
 
 1. **R**, the language that runs your analysis: [Install R](resources/install-r.qmd)
 2. **Quarto**, which turns your `.qmd` files into finished documents: [Install Quarto](resources/install-quarto.qmd)
+3. **Git**, which tracks your work and copies the workspace to your computer: [Install Git](resources/github-setup.qmd#install-git)
 
 :::{.callout-warning}
 ## Installing the VS Code extensions is not the same as installing these
@@ -113,7 +114,7 @@ For numbered click paths with screenshots, from checking your setup to publishin
 - Rename the copy something like `week-01-yourname.md` and fill it out
 
 **Q: Can I share my workspace with classmates?**
-- Yes. Because the workspace is a Git repository, you can share its GitHub URL or collaborate through GitHub
+- Your workspace is yours; share the GitHub URL only when an assignment asks for it.
 
 **Q: The install will not finish and I need R for class.**
 - Open your own workspace copy as a Codespace: on github.com, open your repository, click **Code**, then **Codespaces**, then **Create codespace on main**.

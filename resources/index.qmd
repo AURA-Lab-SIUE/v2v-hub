@@ -18,6 +18,14 @@ Review and sign to confirm you understand course policies, grading, and academic
 :::
 
 :::{.resource-card}
+#### AI-use Log
+
+The log you submit with each assignment that asks for it, with an entry for each time an AI tool shaped the work.
+
+[Download (.docx)](AI-use-log.docx){.btn .btn-sm .btn-secondary}
+:::
+
+:::{.resource-card}
 #### Annotated Manuscript Example
 <span class="resource-badge time">15 min</span>
 
@@ -37,9 +45,9 @@ Section-by-section guides with the points, the checks that cost points, and a we
 :::{.resource-card}
 #### Worked Examples
 
-A finished submission for four assignments, so you can see the form before you write yours. Each assignment's page links its own example beside the rubric.
+A finished submission for six assignments, so you can see the form before you write yours. Each assignment's page links its own example beside the rubric.
 
-[MC 451 Definitions Practice (PDF)](examples/MC451-example-definitions-practice.pdf){.btn .btn-sm .btn-secondary} [MC 451 Project Prospectus (PDF)](examples/MC451-example-project-prospectus.pdf){.btn .btn-sm .btn-secondary} [MC 501 Definitions Practice (PDF)](examples/MC501-example-definitions-practice.pdf){.btn .btn-sm .btn-secondary} [MC 501 Research Proposal (PDF)](examples/MC501-example-research-proposal.pdf){.btn .btn-sm .btn-secondary}
+[MC 451 Definitions Practice (PDF)](examples/MC451-example-definitions-practice.pdf){.btn .btn-sm .btn-secondary} [MC 451 Project Prospectus (PDF)](examples/MC451-example-project-prospectus.pdf){.btn .btn-sm .btn-secondary} [MC 451 Codebook and Qualitative Memo (PDF)](examples/MC451-example-codebook-and-qualitative-memo.pdf){.btn .btn-sm .btn-secondary} [MC 501 Definitions Practice (PDF)](examples/MC501-example-definitions-practice.pdf){.btn .btn-sm .btn-secondary} [MC 501 Research Proposal (PDF)](examples/MC501-example-research-proposal.pdf){.btn .btn-sm .btn-secondary} [MC 501 Extended Codebook and Reliability Protocol (PDF)](examples/MC501-example-extended-codebook-and-reliability-protocol.pdf){.btn .btn-sm .btn-secondary}
 :::
 
 ---
@@ -125,7 +133,7 @@ One template per course, with a heading for every part the rubric grades and a f
 
 ## Required software
 
-Install these before Phase I. All are free.
+Install these in Week 2. All are free.
 
 :::::: card-grid
 
@@ -186,7 +194,7 @@ A one-command setup check that installs the course packages, and a plain-English
 <span class="resource-badge">Free</span>
 
 [Marketplace listing](https://marketplace.visualstudio.com/items?itemName=aura-lab-siue.r-companion){.btn .btn-sm .btn-secondary}
-[Install guide](install-vscode.qmd){.btn .btn-sm}
+[Install guide](install-vscode.qmd#aura-lab-r-companion-recommended){.btn .btn-sm}
 :::
 
 ::::::
@@ -240,10 +248,10 @@ This course standardizes on VS Code so everyone shares one environment and one s
 No. Your notes live as Markdown files in the course workspace. Keeping everything in VS Code is the whole point.
 
 **Q: Where do I turn in my work?**
-Graded deliverables live in your workspace under `03_project/` and are pushed to GitHub. Dr. Leith collects via GitHub or Blackboard as noted in the syllabus.
+Submit everything in Blackboard. Committing to GitHub is your backup, not your submission.
 
 **Q: Can I work with classmates?**
-Yes. Pair programming and collaborative analysis are encouraged. Document who contributed what.
+You may talk through ideas with classmates, but your coding, analysis, and writing are your own. You are the only coder on your project.
 
 **Q: What if I fall behind?**
 Reach out to Dr. Leith early. The phases are structured but timelines can flex.
@@ -252,7 +260,7 @@ Reach out to Dr. Leith early. The phases are structured but timelines can flex.
 
 ## More help
 
-- **Setup:** [Getting Started](../setup.qmd) walks through the whole install in about 15 minutes.
+- **Setup:** [Getting Started](../setup.qmd) walks through the whole install in 30 to 45 minutes.
 - **Concepts:** the relevant [textbook](https://aura-lab.siue.edu/v2v/) chapter usually explains it.
 - **Email:** aleith@siue.edu (allow 24 hours Mon-Fri).
 - **Office hours:** TuTh 12:30 to 1:45 PM in person, Dunham Hall 1017, or remote Tu/W/Th 3:00 to 5:00 PM by appointment.

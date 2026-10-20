@@ -88,7 +88,7 @@ Copilot will confidently suggest R functions that do not exist, or the wrong arg
 
 ## Disclosing AI use
 
-Whenever Copilot (or any AI tool) shaped work you submit, add an entry to the [AI-use log (.docx)](MC451-501-AI-use-log.docx) you submit with that assignment: the tool, what you asked, what it gave you, and what you did with it and why. One entry per use is enough.
+Whenever Copilot (or any AI tool) shaped work you submit, add an entry to the [AI-use log (.docx)](AI-use-log.docx) you submit with that assignment: the tool, what you asked, what it gave you, and what you did with it and why. One entry per use is enough.
 
 ::: {.ai-note}
 Used Copilot to scaffold the `ggplot()` call for Figure 2. I edited the aesthetics and verified each layer against Chapter 12 before keeping it.

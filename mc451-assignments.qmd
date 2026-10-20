@@ -13,7 +13,7 @@ Each assignment shows a short description. Open the section under it for what to
 ::: {.callout-note}
 ## How to turn work in
 
-**Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting**: grading happens from the Blackboard submission. Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it.
+**Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting**: grading happens from the Blackboard submission. Get the AURA Lab R Companion from its [Marketplace listing](https://marketplace.visualstudio.com/items?itemName=aura-lab-siue.r-companion). Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it.
 
 Everything is due at **11:59 PM** on the **Friday** listed.
 
@@ -203,6 +203,8 @@ Find and annotate one peer-reviewed research article related to your topic, then
 <details class="syl-policy">
 <summary>Full requirements</summary>
 
+**Worked example:** [Annotated manuscript example (PDF)](resources/annotation-example.pdf).
+
 **What you submit:** one PDF of the article carrying your highlights and comments, plus a one-page document holding items 2 through 8 below. Two files, or one file if your annotations and notes are in the same PDF.
 
 **Requirements**
@@ -278,7 +280,7 @@ to prove it.
 
 Put the whole study on one page.
 
-The [Project Prospectus template](mc451-prospectus-template.qmd) goes through each section with its points, the checks that cost points on Topic Selection, and a weaker and a stronger example.
+The [Project Prospectus template](mc451-prospectus-template.qmd) goes through each section with its points, the checks that cost points on Topic Selection, and a weaker and a stronger example. The template's section-by-section points are the rubric.
 
 <details class="syl-policy">
 <summary>Full requirements</summary>
@@ -353,9 +355,11 @@ Build the instrument, and write down what watching taught you. The qualitative r
 
 **Length:** The codebook 1,500 to 3,000 words and the memo 200 to 300 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Codebook and Qualitative Memo rubric (PDF)](resources/rubrics/MC451-rubric-codebook-and-qualitative-memo.pdf). It lists the six parts of the codebook, what the memo has to show, and the points for each.
+
+**Starter:** [09-coding-the-codebook.qmd](starters/09-coding-the-codebook.qmd), the Week 9 starter file for coding your codebook in R.
 
 **Worked example:** [Codebook and Qualitative Memo worked example (PDF)](resources/examples/MC451-example-codebook-and-qualitative-memo.pdf). A finished submission, so you can see the form before you write yours.
 
@@ -376,9 +380,11 @@ Decide what you will code, then prove the codebook survives contact with it. The
 
 **Length:** 700 to 1,200 words across the plan and the pilot write-up, plus 10 to 20 coded items in the spreadsheet. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Sampling Plan and Pilot rubric (PDF)](resources/rubrics/MC451-rubric-sampling-plan-and-pilot.pdf). It lists each part of the plan and the pilot with its points, and carries the table for sizing your corpus.
+
+**How-to:** the [Draw your coding sample](guides/mc451/06-draw-your-coding-sample.md) and [Reliability grid](guides/mc451/07-reliability-grid.md) step-by-step guides.
 
 </details>
 
@@ -401,9 +407,11 @@ Build the analysis-ready table from the raw one.
 
 **Length:** One script of 40 to 120 lines, comments included, plus the 30-row coding form. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Data Wrangling in R rubric (PDF)](resources/rubrics/MC451-rubric-data-wrangling-in-r.pdf). It lists the eight steps the script carries and the points for each.
+
+**How-to:** [Wrangling](guides/mc451/08-wrangling.md) step-by-step guide, and the [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025) walkthrough video.
 
 </details>
 
@@ -420,9 +428,11 @@ Say what is in the data before you test anything.
 
 **Length:** 300 to 600 words of your own writing (interpretation and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Describing Data in R rubric (PDF)](resources/rubrics/MC451-rubric-describing-data-in-r.pdf). It lists the tables, numbers, figures, and interpretation it asks for, and the points for each.
+
+**How-to:** [Tables and charts](guides/mc451/09-describing-tables-and-charts.md) step-by-step guide, and the [Describing data](https://siue.yuja.com/V/Video?v=17490672&a=193714265) walkthrough video.
 
 </details>
 
@@ -439,9 +449,11 @@ Test four relationships, one per test, and report how big each is.
 
 **Length:** 500 to 900 words of your own writing (hypotheses, the four reports, interpretation and the limits paragraph), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Inferencing Data in R rubric (PDF)](resources/rubrics/MC451-rubric-inferencing-data-in-r.pdf). It lists each step from the four hypotheses to what the results do not license, and the points for each.
+
+**How-to:** [Tests](guides/mc451/10-tests-and-check-my-test-choice.md) step-by-step guide, and the [Tests](https://siue.yuja.com/V/Video?v=17490908&a=168993969) walkthrough video.
 
 </details>
 
@@ -466,7 +478,7 @@ The final deliverable: your study written up in IMRaD, reporting the quantitativ
 
 **Length:** 3,500 to 5,000 words from the introduction through the reflection. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**AI-use log:** submit the [AI-use log (.docx)](resources/MC451-501-AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
+**AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [White Paper rubric (PDF)](resources/rubrics/MC451-rubric-white-paper.pdf). It lists what each section carries, the source and citation requirements, and the points for each.
 
