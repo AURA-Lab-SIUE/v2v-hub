@@ -317,6 +317,8 @@ Build the instrument, then write the protocol that says how you will know it sta
 
 **Rubric:** [Extended Codebook and Reliability Protocol rubric (PDF)](resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf). It lists the five parts of the codebook, the eight parts of the protocol, and the points for each.
 
+**Worked example:** [Extended Codebook and Reliability Protocol worked example (PDF)](resources/examples/MC501-example-extended-codebook-and-reliability-protocol.pdf). A finished submission, so you can see the form before you write yours.
+
 </details>
 
 ### Sampling Plan and Pilot, 20 to 30 items {#sampling-plan-and-pilot-20-to-30-items}

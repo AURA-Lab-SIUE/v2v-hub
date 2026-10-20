@@ -357,6 +357,8 @@ Build the instrument, and write down what watching taught you. The qualitative r
 
 **Rubric:** [Codebook and Qualitative Memo rubric (PDF)](resources/rubrics/MC451-rubric-codebook-and-qualitative-memo.pdf). It lists the six parts of the codebook, what the memo has to show, and the points for each.
 
+**Worked example:** [Codebook and Qualitative Memo worked example (PDF)](resources/examples/MC451-example-codebook-and-qualitative-memo.pdf). A finished submission, so you can see the form before you write yours.
+
 </details>
 
 ### Sampling Plan and Pilot {#sampling-plan-and-pilot}
