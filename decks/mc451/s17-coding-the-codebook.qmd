@@ -20,8 +20,6 @@ format:
 
 ## What We Build Today
 
-[Lab session]{.eyebrow}
-
 - **One project folder that holds the whole study**
     - Your Chapter 8 codebook, installed as a document
     - The shared Twitch example data, loaded and looked at
@@ -63,6 +61,7 @@ twitch-portfolio/
 ├── 01-introduction.qmd ... 05-reflection.qmd
 ├── references.qmd, references.bib
 ├── codebook/codebook.qmd
+├── R/
 ├── journals/week-01.qmd
 ├── data/raw/, data/derived/
 └── figures/
@@ -70,6 +69,7 @@ twitch-portfolio/
 
 The scaffold decides where every file goes and what each file is named, so you do not have to.
 The five numbered files are the sections of your White Paper, already in order.
+The `R/` folder holds the scripts you write.
 
 ## Confirming the Stack
 
@@ -83,6 +83,8 @@ v2v::setup()
 - **You ran it once, when you installed the stack**
 - **Run it every time you open the project**
 - It reports a missing piece before that piece interrupts your work
+
+![](images/companion-check-setup-result.png){fig-alt="The R Companion's Output panel after Check my setup. Two lines read: RESULT: everything this course needs is installed. SETUP OK: R and the course packages are working." width="100%"}
 
 ## The Codebook Becomes a Document
 
@@ -114,8 +116,14 @@ Line one loads the tidyverse. The next two lines fetch each example table and na
 
 The example data arrives through a **function call**, not a file path, which removes a whole
 category of beginner error. You get the **working sample**, not the full 2018 collection.
-Loading your own source from a file uses a different first line; every step after it is the same.
-The Companion's **Import a CSV file** command writes that first line for you.
+Loading your own source from a file uses a different first line, `read_csv()`; every step after it is the same.
+
+## The Companion Writes This Block
+
+![](images/companion-write-r-code-load.png){fig-alt="VS Code editor showing a script named wrangle.R. The R Companion inserted a commented block: library(tidyverse), library(v2v), chat <- twitch_chat(), streams <- twitch_streams(), glimpse(chat), and glimpse(streams)." width="100%"}
+
+- **Write R code** in the R Companion, then **Load the course Twitch corpus**
+- The block arrives with its comments, ready to run
 
 ## Looking at the Chat Table
 
@@ -130,7 +138,7 @@ $ id      <int> 89, 551, 1033, 2094, 2803, …
 $ channel <chr> "sodapoppin", "xqcow", "forsen", …
 $ sender  <chr> "madzee", "prometheanow", "spectre155", …
 $ message <chr> "???????????????????????", "TriEasy Clap TriEasy…
-$ date    <dbl> 1542578127023, 1542578135562, 1542578143610, …
+$ date    <dbl> 1.542578e+12, 1.542578e+12, 1.542578e+12, …
 ```
 
 `glimpse()` prints every column, its type, and its first few values.
@@ -144,9 +152,22 @@ $ date    <dbl> 1542578127023, 1542578135562, 1542578143610, …
 - **The `date` column is a number (`<dbl>`) and is unreadable as it stands**
     - It counts milliseconds since 1970; Chapter 11 converts it into a readable date and time
 
-## Looking at the Stream Table
+## One Row in Your Own Data
 
-[The table from week 2, now through R]{.eyebrow}
+- **In the example, one row is one chat message**
+- **Decide what one row is in your own study before you load anything**
+    - A study of influencer posts on YouTube and Instagram: one row per comment
+    - A study of debut films by YouTube creators: one row per review, with its film attached
+    - A study of comments on targeted Instagram ads: one row per comment, with its ad
+    - A study of conflict in a reality TV franchise: one row per scene
+
+## One Row in Your Own Data (cont.)
+
+- **Every source has its own odd rows**
+    - Emoji-only comments, replies to replies, deleted reviews, and scenes with no speaker
+    - Your codebook says what happens to each one
+
+## Looking at the Stream Table
 
 ```r
 glimpse(streams)
@@ -155,11 +176,12 @@ glimpse(streams)
 ```
 Rows: 32,276
 Columns: 6
+$ id      <int> 4, 10, 18, 61, 105, …
 $ channel <chr> "sodapoppin", "xqcow", "forsen", "giantwaffle", …
 $ title   <chr> "Hello truckers\n44835158804929_2115841973", …
 $ game    <chr> "Marble It Up!", "Just Chatting", "Artifact", …
 $ viewers <int> 27934, 19381, 15300, 4697, 28076, …
-$ date    <dbl> 1542578200214, 1542578200240, 1542578200273, …
+$ date    <dbl> 1.542578e+12, 1.542578e+12, 1.542578e+12, …
 ```
 
 Each row is one snapshot of one stream at one moment.
@@ -171,13 +193,15 @@ streams %>% count(game, sort = TRUE)
 ```
 
 ```
-   game                     n
- 1 Art                   5298
- 2 Fortnite              3682
- 3 Just Chatting         2474
- 4 Hearthstone           2157
- 5 Pokemon: Let's Go     1967
- 6 League of Legends     1952
+# A tibble: 61 × 2
+  game                                   n
+  <chr>                              <int>
+1 Art                                 5298
+2 Fortnite                            3682
+3 Just Chatting                       2474
+4 Hearthstone                         2157
+5 Pokemon: Let's Go, Pikachu!/Eevee!  1967
+6 League of Legends                   1952
 # ℹ 55 more rows
 ```
 
@@ -195,7 +219,7 @@ n_distinct(chat$channel)
 
 - **The example corpus has fifty channels, as the book has said since Chapter 1**
 - **`n_distinct(streams$channel)` returns the same fifty**
-- **The fifty channels streamed sixty different game categories, so most channels move between games**
+- **The fifty channels streamed 61 different game categories, so most channels move between games**
 
 Counting is how you check that the data is what you were told it is. Run the same checks on your own source.
 
@@ -209,6 +233,13 @@ Counting is how you check that the data is what you were told it is. Run the sam
 - **Copy the error text and run Explain an R error** from the Command Palette for a plain-English reading
 
 Run `?v2v::common_errors` for the errors specific to the example data.
+
+## What Explain an R Error Shows
+
+![](images/companion-explain-error.png){fig-alt="An R Companion panel titled cannot open file: No such file or directory. It quotes the error, then gives three sections: Why this happens (R looks for files in the folder VS Code has open), What to do (check the spelling, run list.files()), and Still stuck (after 15 minutes, email your instructor with the exact message)." width="72%"}
+
+- **The panel quotes your error, says why it happens, and lists what to do**
+- In this example, the file name in the code is spelled differently from the file
 
 ## Checkpoint
 
