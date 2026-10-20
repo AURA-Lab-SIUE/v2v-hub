@@ -20,8 +20,6 @@ format:
 
 ## What We Build Today
 
-[Week 9 · Chapter 9 · working session]{.eyebrow}
-
 - **Due Monday, October 26, 11:59 PM:** Extended Codebook and Reliability Protocol
 - **A project workspace that holds the study in one folder**
     - Your codebook installed as the rendered rulebook
@@ -65,6 +63,7 @@ twitch-portfolio/
 ├── 01-introduction.qmd ... 05-reflection.qmd
 ├── references.qmd, references.bib
 ├── codebook/codebook.qmd
+├── R/
 ├── journals/week-01.qmd
 ├── data/raw/, data/derived/
 └── figures/
@@ -86,6 +85,8 @@ v2v::setup()
 - **You met `setup()` in Chapter 2, at installation**
 - **Run it as a habit, every time you open a project**
 - It reports a missing piece before that piece interrupts you
+
+![](images/companion-check-setup-result.png){fig-alt="The R Companion's Output panel after Check my setup. Two lines read: RESULT: everything this course needs is installed. SETUP OK: R and the course packages are working." width="100%"}
 
 ## The Codebook Becomes a Document
 
@@ -117,8 +118,15 @@ session. Called with no arguments, each function returns the full working sample
 - **The working sample is not the entire 2018 collection**
     - The full collection runs to tens of millions of rows
     - What ships with the package is a working sample: real, and fast
-- Your own source will be loaded from a file, with a path. Every step after loading is the same
-    - The Companion's **Import a CSV file** command picks the file and writes the loading line into your script
+- Your own source will be loaded from a file, with a path, using `read_csv()`
+    - Every step after loading is the same
+
+## The Companion Writes the Loading Block
+
+![](images/companion-write-r-code-load.png){fig-alt="VS Code editor showing a script named wrangle.R. The R Companion inserted a commented block: library(tidyverse), library(v2v), chat <- twitch_chat(), streams <- twitch_streams(), glimpse(chat), and glimpse(streams)." width="100%"}
+
+- **Write R code** in the R Companion, then **Load the course Twitch corpus**
+- The block arrives with its comments, so it can sit in a graded script
 
 ## Provenance Is a Disclosure
 
@@ -163,6 +171,16 @@ Answer each question in writing:
 - Name one thing your provenance statement owes a stranger who wants to repeat your study
 - Name one step in your own workflow that a stranger could not repeat today
 
+## Provenance for Other Kinds of Studies
+
+- **A study of match analysis videos on YouTube**
+    - The channels, the upload window, the date you collected, and how you chose each video
+- **A study of post-game interviews and fan comments on X**
+    - The interviews' source, the search terms for the comments, and the date range
+- **A study of campaign posts on Instagram and their comments**
+    - The accounts, the posting dates, how many comments per post, and their sort order
+- Each clause answers a question a replicator would otherwise have to guess
+
 ## What the Provenance Record Includes
 
 For data collected from a platform, whether through an API or by export, the record names:
@@ -188,7 +206,7 @@ $ id      <int> 89, 551, 1033, 2094, 2803, …
 $ channel <chr> "sodapoppin", "xqcow", "forsen", …
 $ sender  <chr> "madzee", "prometheanow", "spectre155", …
 $ message <chr> "???????????????????????", "TriEasy Clap TriEasy Clap …
-$ date    <dbl> 1542578127023, 1542578135562, 1542578143610, …
+$ date    <dbl> 1.542578e+12, 1.542578e+12, 1.542578e+12, …
 ```
 
 `glimpse()` prints every column, its type, and its first values, without changing anything.
@@ -217,7 +235,7 @@ $ channel <chr> "sodapoppin", "xqcow", "forsen", "giantwaffle", …
 $ title   <chr> "Hello truckers\n44835158804929_2115841973", …
 $ game    <chr> "Marble It Up!", "Just Chatting", "Artifact", …
 $ viewers <int> 27934, 19381, 15300, 4697, 28076, …
-$ date    <dbl> 1542578200214, 1542578200240, 1542578200273, …
+$ date    <dbl> 1.542578e+12, 1.542578e+12, 1.542578e+12, …
 ```
 
 ## Reading the Stream Glimpse
@@ -237,11 +255,14 @@ streams %>% count(game, sort = TRUE)
 ```
 
 ```
-   game                 n
- 1 Art               5298
- 2 Fortnite          3682
- 3 Just Chatting     2474
- 4 Hearthstone       2157
+# A tibble: 61 × 2
+  game                                   n
+  <chr>                              <int>
+1 Art                                 5298
+2 Fortnite                            3682
+3 Just Chatting                       2474
+4 Hearthstone                         2157
+# ℹ 57 more rows
 ```
 
 The `%>%` is the tidyverse **pipe**: it feeds the thing on its left into the function on its
@@ -249,7 +270,7 @@ right, so the line reads as an instruction in order.
 
 ## What the Count Tells You
 
-- **The example streams cover sixty distinct games, more than a study can examine one by one**
+- **The example streams cover 61 distinct games, more than a study can examine one by one**
 - **A handful of games hold most of the snapshots, and the long tail holds the rest**
 - **Art tops the list, on a platform that is mostly about playing games**
     - That shape matters when you draw a chart in Chapter 12
@@ -284,6 +305,17 @@ data contains what each variable needs. For the book's example codebook:
 Then run the same check for every variable in your own codebook against your own source.
 It is far better to confirm now than to find a missing column in the middle of coding.
 
+## The Same Check on Other Studies
+
+- **Video and comments as two tables**
+    - Post-game interviews with fan comments, or a documentary series with its viewers' comments
+    - Which column links each comment to the video it answers?
+- **Coding from a video timeline**
+    - Match analysis videos on YouTube
+    - Does your record hold the time of each segment, or only the video's length?
+- **Comments under campaign posts**
+    - Does each comment row carry the post it sits under, and whether it is a reply?
+
 ## The Wrinkle Worth Carrying Into the Codebook
 
 - **A message begins "@xQcOW", and the `channel` column on that row reads "xqcow"**
@@ -300,6 +332,13 @@ It is far better to confirm now than to find a missing column in the middle of c
 
 An error is information, not a verdict. Run `?v2v::common_errors` for the errors specific to the example data.
 Or copy the error and run **Explain an R error** from the Command Palette.
+
+## What Explain an R Error Shows
+
+![](images/companion-explain-error.png){fig-alt="An R Companion panel titled cannot open file: No such file or directory. It quotes the error, then gives three sections: Why this happens (R looks for files in the folder VS Code has open), What to do (check the spelling, run list.files()), and Still stuck (after 15 minutes, email your instructor with the exact message)." width="72%"}
+
+- **The panel quotes your error, says why it happens, and lists what to do**
+- In this example, the file name in the code is spelled differently from the file
 
 ## Checkpoint
 
