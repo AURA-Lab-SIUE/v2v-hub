@@ -236,10 +236,10 @@ Run `?v2v::common_errors` for the errors specific to the example data.
 
 ## What Explain an R Error Shows
 
-![](images/companion-explain-error.png){fig-alt="An R Companion panel titled cannot open file: No such file or directory. It quotes the error, then gives three sections: Why this happens (R looks for files in the folder VS Code has open), What to do (check the spelling, run list.files()), and Still stuck (after 15 minutes, email your instructor with the exact message)." width="72%"}
+![](images/companion-explain-error.png){fig-alt="An R Companion panel titled object not found. It quotes the message object chat_dta not found, then explains why this happens (R has no value stored under that name: the line that creates it never ran, the name is misspelled, or text was typed without quotation marks) and what to do (run the line that creates it first, check the spelling and capital letters against the name you assigned, or put text in quotation marks)." width="40%"}
 
 - **The panel quotes your error, says why it happens, and lists what to do**
-- In this example, the file name in the code is spelled differently from the file
+- In this example, `chat_dta` is a misspelling of a name R never stored
 
 ## Checkpoint
 
