@@ -111,8 +111,8 @@ Repeat the table below once per variable, as many times as your study has variab
 ```r
 # a seeded draw of re-code items, kept apart from the items that built the codebook
 set.seed(2026)
-recode_items <- coded_items |>
-  filter(!item_id %in% build_items$item_id) |>
+recode_items <- coded_items %>%
+  filter(!item_id %in% build_items$item_id) %>%
   slice_sample(n = 15)
 ```
 

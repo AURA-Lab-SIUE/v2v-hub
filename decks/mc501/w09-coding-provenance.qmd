@@ -112,6 +112,16 @@ spent on the study.
 - **What changes tonight is the codebook's status, not its content**
     - It stops being a sketch and becomes the instrument
 
+## What Monday Asks For
+
+- **One document, two headed parts:** Extended Codebook and Reliability Protocol
+    - The codebook, 2,000 to 3,500 words
+    - The reliability protocol, 800 to 1,400 words
+- **The protocol's eight parts:** the statistic, the threshold, the stability procedure, a fresh reliability sample, when it fails, reporting a disappointing number, single-coder safeguards, and the second-coder counterfactual
+- **The template carries every part as a heading:** [Word](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC501-codebook-template.docx) or [Quarto](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC501-codebook-template.qmd)
+    - The Quarto version can serve as your `codebook/codebook.qmd`
+- [Rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf), [worked example](https://aura-lab.siue.edu/v2v-hub/resources/examples/MC501-example-extended-codebook-and-reliability-protocol.pdf), and the [AI-use log](https://aura-lab.siue.edu/v2v-hub/resources/AI-use-log.docx)
+
 ## Loading the Data
 
 - **Run AURA: Write R code, then pick Load the course Twitch corpus under R2 Data**
