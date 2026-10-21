@@ -30,8 +30,7 @@ format:
 
 Wrangling is the least rewarding evening of the term, and it is where researchers spend most of their hours.
 
-Today's steps, with what each should print, are in the starter file:
-[aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
+Starter file, with what each step prints: [aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
 
 ## The Gap You Are Closing
 
