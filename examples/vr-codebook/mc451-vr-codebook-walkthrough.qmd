@@ -1,0 +1,160 @@
+---
+title: "Worked Example: A Codebook for VR Experiences"
+subtitle: "Foxman et al. (2022), IEEE Transactions on Games"
+format:
+  revealjs:
+    theme: [default, ../../decks/aura-reveal.scss]
+    slide-number: c/t
+    embed-resources: true
+    incremental: false
+    center: false
+    transition: none
+---
+
+## Today's Agenda
+
+- Follow one real study from raw store pages to a published finding
+- Read its codebook as the ideal, and see where practice fell short
+- Code with the example data and count a variable with the R Companion
+- Write one decision rule of your own
+
+## From Store Page to Finding
+
+1. **Raw items:** Steam store pages for popular VR-only titles
+2. **Qualitative stage:** notes on a first batch of pages, grouped into categories
+3. **Codebook:** variables, values, and decision rules
+4. **Coded data:** one row per title, one column per variable
+5. **Finding:** Action, Shooter, and Simulation were the most common VR-only genres
+
+The study was published as Foxman et al. (2022) in *IEEE Transactions on Games*.
+
+## The Study
+
+- **Question: which kinds of VR experience are most common among popular VR-only titles?**
+- **Material: Steam store pages, the place a buyer decides**
+    - VR-only titles with an estimated 50,000 or more owners
+- **This is public data, so anyone can check the coding**
+
+## The Unit of Analysis
+
+- **One item is one store page for one title**
+    - The short description, every screenshot, and every trailer
+- **Not part of the item: reviews, forums, or playing the game**
+- In practice, unsure coders also watched YouTube gameplay, which quietly changed the unit for some titles
+
+## Before the Codebook: Open Coding
+
+*An illustrative reconstruction of this stage, not the project's record*
+
+- **Read a first batch of pages and write a note on each**
+    - "You see your own hands", "a small character you watch", "a film you sit inside", "it is only a video player"
+- **The notes group into three questions**
+    - Does the user act? Whose eyes? What activity fills the time?
+- **Each question becomes a variable, or a family of variables**
+
+## Three Kinds of Variable
+
+- **Interactivity:** `yes`, `no`, or `unsure`
+- **Perspective:** `first`, `third`, or `unsure`
+- **Genre:** sixteen yes, maybe, or no variables, one per genre
+    - Adopted from Lucas and Sherry (2004) rather than invented
+- **Plus fields looked up, not coded:** Steam ID, title, and ownership range
+
+## One Variable in Full: Interactivity
+
+- **Definition:** the user acts on the environment, rather than watching
+- **`yes`:** hands, controllers, tools, or weapons act on the world
+- **`no`:** the only action shown is turning the head
+- **`unsure`:** the page does not show enough to decide
+- **Rule I1:** hands that only point at a menu are `no`
+- **Rule I2:** a claim in the description with nothing on screen is `unsure`
+
+## The Rule That Was Written Backwards
+
+> "Game includes ANY of these genres as a major focus (<20% of the player's experience)."
+
+- **The sign is backwards: the same document later says "more than 20%"**
+- **The typo was printed in the published appendix**
+- Write each rule once, in one place, and read it back before coding
+
+## A Blank Is Not a Code
+
+- **The real sheet left a genre blank when it did not apply**
+- **A blank cannot be told apart from a cell nobody coded**
+- **The ideal codebook writes `no`, so every cell holds a decision**
+
+## The Catch-All Genre
+
+- **Simulation was defined as imitating a real-world activity**
+- **The team debated splitting it: a flight simulator is not a city builder**
+- **In the recorded data, one coder gave Simulation to video players such as YouTube VR**
+- **The ideal adds rule G3: a title that is not a game gets `no` for every genre**
+
+## The Example Data
+
+- **`vr-sample.csv`: 20 real titles, coded with the ideal codebook's labels**
+- **`vr-sample-as-recorded.csv`: the same titles, as the team recorded them**
+- **Run AURA: Open the data viewer, then Pick a CSV file**
+    - Compare a title such as YouTube VR across the two files
+- [Download the files](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/)
+
+## Counting a Variable
+
+- **Save `vr-sample.csv` in your project's `data/raw/` folder**
+- **Run AURA: Write R code, then pick Import a CSV file under R2 Data**
+    - On its `read_csv()` line, change the file to `"data/raw/vr-sample.csv"` and the name to `vr`
+- **Then pick Count rows per group (count), and choose `vr` and `interactive`**
+
+What the Companion writes for you:
+
+```r
+vr %>%
+  count(interactive, sort = TRUE)
+```
+
+```
+  interactive     n
+1 yes            16
+2 no              4
+```
+
+## From Codes to a Finding
+
+| Genre | Teaching sample (20 titles) | Published (VR only) |
+|:--|--:|--:|
+| Action | 35% | 45% |
+| Shooter | 30% | 30% |
+| Simulation | 20% | 22% |
+
+- **The same three genres lead in both**
+- The teaching sample was chosen to show edge cases, so its percentages are for practice, not for citing
+
+## Your Codebook, Same Shape
+
+- **The worked example uses this course's codebook template, section for section**
+    - Study overview, unit of analysis, variables, decision rules, and examples
+- **Its qualitative memo shows the stage before the variables existed**
+- Download the [worked codebook (.docx)](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/MC451-vr-codebook-example.docx) and the [template](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC451-codebook-template.docx)
+
+## Exercise: Write the Missing Rule {.discuss}
+
+[Foxman et al. (2022)]{.eyebrow}
+
+A store page shows a social space: avatars talking in a virtual room, with no goal and no score.
+
+Answer each question in writing:
+
+- Which Interactivity and Perspective values does the codebook give it?
+- Which genres, if any, does it receive under rules G1 to G4?
+- Write one new decision rule, in the form "If ..., code ...", that settles the next case like it
+
+## Checkpoint
+
+You should now have:
+
+- The worked codebook open beside your own
+- A count of one variable from `vr-sample.csv`, made with the R Companion
+- One decision rule of your own, written as "If ..., code ..."
+- One place where your own plan and your own practice may differ, written down before you code
+
+## Questions, Comments, or Concerns? {.titlecard}

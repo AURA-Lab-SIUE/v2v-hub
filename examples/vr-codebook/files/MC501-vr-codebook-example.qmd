@@ -1,0 +1,159 @@
+---
+title: "VR Experiences Codebook and Reliability Protocol"
+subtitle: "MC 501 worked example"
+---
+
+This is a worked example built from a real, published content analysis of virtual reality titles on Steam, using public data (Foxman et al., 2022). It shows what a finished codebook looks like in this course's template. The codebook is written as the ideal. Panels marked **In practice** say where the real project differed and why, so you can see the gap between a plan and a project.
+
+Data files that go with it: `vr-sample.csv` (20 titles, coded with this codebook's labels) and `vr-sample-as-recorded.csv` (the same 20 titles as the research team recorded them).
+
+# Part 1: Codebook
+
+## Study overview
+
+Research question: which kinds of virtual reality experience are most common among popular VR-only titles on Steam, judged by what a buyer can see on the store page? The material is the Steam store page of each VR-only title with an estimated 50,000 or more owners (a SteamSpy estimate): the short description, the screenshots, and the trailers.
+
+## Unit of analysis
+
+One coded item is **one Steam store page for one title**, as a buyer sees it: the short description, every screenshot, and every trailer. Reviews, forums, the long description below the media, and the game itself are not part of the item. Nothing is coded from playing the title.
+
+Fields looked up, not coded: `steam_appid` (Steam's ID for the title), `title`, `url`, and `owners_low` and `owners_high` (SteamSpy's ownership range).
+
+::: {.callout-note}
+## In practice
+The coders sometimes went past the store page. The instructions told them to search YouTube for gameplay whenever they were unsure and to paste the link in a notes column. That helps a hard case, but it changes the unit for some items and not for others. In the ideal codebook the unit stays the store page, and an item the page cannot settle is coded `unsure`.
+:::
+
+## Variables
+
+### Variable 1: Interactivity (`interactive`)
+
+| Element | Entry |
+|:--|:--|
+| Conceptual definition and source | Whether the user acts on the virtual environment, rather than watching events unfold. Interactivity is one of the defining dimensions of virtual reality (Steuer, 1992). |
+| Operational definition | Read the short description, then view every screenshot and trailer from left to right. Look for hands, controllers, tools, or weapons that the user moves, or for objects that respond to the user. |
+| Level of measurement, and what it allows | Nominal. It allows counts, percentages, and a chi-square test against another nominal variable; it rules out a mean or a ranking. |
+| Coded values | `yes` = the user's hands, controllers, tools, or weapons act on the environment. `no` = the only user action shown is turning the head to look around. `unsure` = the page does not show enough to decide. |
+| Edge-case decision rules | I1. If hands appear but only point at a menu, code `no`: a menu is not the environment. I2. If the description says the title is interactive but no screenshot or trailer shows it, code `unsure`. I3. If a trailer shows both a passive film and an interactive part, code `yes`. |
+| Validity sentence | If titles coded `no` turned out to need controllers to play, this variable would be measuring how a page is marketed rather than what the experience offers. |
+
+### Variable 2: Perspective (`perspective`)
+
+| Element | Entry |
+|:--|:--|
+| Conceptual definition and source | Whose point of view the experience presents: the user's own eyes (first person) or a camera following a separate character (third person). |
+| Operational definition | In the screenshots and trailers, check where the camera sits and whether a main character is seen from outside. |
+| Level of measurement, and what it allows | Nominal. Counts and percentages, and a crosstab with Interactivity; it rules out a mean. |
+| Coded values | `first` = the view is at eye level and the user's hands, tools, or weapons appear, or characters address the camera. `third` = a recurring main character is seen from outside and the camera follows that character. `unsure` = no clear sign either way. |
+| Edge-case decision rules | P1. If the page shows both views, code the view in most of the screenshots and trailers, and write a note. P2. If there is no camera position at all (a menu tool or a video player), code `unsure`. P3. If the evidence is thin, code `unsure`; never guess `first` because most titles are first person. |
+| Validity sentence | If `first` matched almost every title whatever the page showed, the variable would be recording the medium, not the title. |
+
+### Variables 3 to 18: Genre (`genre_*`, one variable per genre)
+
+Each genre is its own variable, so one title can carry several. The genre set follows the Lucas and Sherry (2004) game-genre system, with minor changes.
+
+| Element | Entry |
+|:--|:--|
+| Conceptual definition and source | Whether an activity typical of that genre is a **major focus** of the experience (Lucas & Sherry, 2004). |
+| Operational definition | For each genre, judge whether its activity fills more than 20 percent of what the page shows, counting the screenshots and the trailer time that show it. Use the definitions in the table below. |
+| Level of measurement, and what it allows | Nominal, one per genre. Counts and percentages per genre, and comparisons between groups of titles; it rules out adding genres into a score. |
+| Coded values | `yes` = the activity is a major focus (more than 20 percent). `maybe` = it appears but may fall below 20 percent. `no` = it does not appear, or appears only in passing. Every genre gets a value; a blank cell is never a code. |
+| Edge-case decision rules | G1. A title may have any number of `yes` genres, including none. G2. If two genres describe the same activity, code the more specific one as well (shooting at enemies is Shooter, and Action only if reflexes are the focus). G3. If the title is not a game (a video player, a 360-degree film, a social space), code `no` for every genre and write "not a game" in the notes. G4. Code `maybe` only with a note naming what you saw. |
+| Validity sentence | If one genre absorbed the titles that fit nowhere else, it would stop measuring that genre and start measuring "everything else". |
+
+| Variable | Genre | Definition | Counts as | Does not count as |
+|:--|:--|:--|:--|:--|
+| `genre_action` | Action | The experience relies on the player's reflexes, coordination, or reaction time. | Timed dodging, blocking, or hitting targets as they arrive. | A slow walk through a scene with nothing to react to. |
+| `genre_adventure` | Adventure | The player solves problems to move forward, usually through exploration and story. | Finding a key to open the next room. | A puzzle with no world around it (code Puzzle). |
+| `genre_fighter` | Fighter | The experience centers on hand-to-hand or melee combat. | Sword duels; boxing against an opponent. | Combat only at a distance (code Shooter). |
+| `genre_shooter` | Shooter | The player shoots at other players or at non-player characters. | Guns, bows, or spells fired at enemies. | Shooting at targets with no opponent (code Shooter only if targets stand in for opponents; add a note). |
+| `genre_rpg` | Role-Playing Game | The player takes on a character role: creates a persona, has a background story, or builds a story by interacting with other characters. | Character creation; dialogue choices. | A named character the player only watches. |
+| `genre_simulation` | Simulation | The experience closely imitates a real-world activity or system: driving, flying, working a job, or running a city. | A job to do; a vehicle cockpit. | A video player or a 360-degree film (rule G3). |
+| `genre_turn_based_strategy` | Turn-Based Strategy | Strategic planning in which players take turns. | Moving units on a map, one side at a time. | Real-time planning (code Strategy). |
+| `genre_strategy` | Strategy | Strategic planning in real time, not in turns. | Building defenses while waves arrive. | Turn-taking play. |
+| `genre_racing_speed` | Racing/Speed | The player competes to move faster or better than others, on foot or in a vehicle. | A lap timer; opponents on a track. | Driving with no competition (code Simulation). |
+| `genre_sports` | Sports | The experience is built around an athletic sport, a team, or a sporting event. | A ball game with rules and a score. | Exercise with no sport. |
+| `genre_classic_board_games` | Classic Board Games | A digital version of a board, card, or table game. | Chess or poker at a virtual table. | An original puzzle with board-game art (code Puzzle). |
+| `genre_puzzle` | Puzzle | The player solves a puzzle with little or no element of chance. | Opening a locked box by working out its mechanism. | A guessing game of chance (code Dice). |
+| `genre_dice` | Dice | Chance drives the experience: dice, random events, or randomly generated levels. | Maps that change every run. | A fixed level that only looks random. |
+| `genre_quiz_trivia` | Quiz/Trivia | The experience tests the player's knowledge. | Timed questions with right and wrong answers. | Learning content with no questions. |
+| `genre_flight` | Flight | The player flies through the environment: an aircraft, a spacecraft, or a creature. | A cockpit view over terrain. | Floating in place to look around. |
+| `genre_music_rhythm` | Music/Rhythm | The player plays an instrument or acts in time to music. | Hitting blocks on the beat. | Background music only. |
+
+::: {.callout-note}
+## In practice
+The real instructions said a genre counts when it is a major focus "(<20% of the player's experience)". The sign is backwards: the same document later says "more than 20%". The typo survived into the published appendix. Write the rule once, in one place, and read it back.
+
+The real sheet also left a genre **blank** when it did not apply. A blank cannot be told apart from a cell nobody coded. The ideal codebook writes `no`.
+
+Simulation became a catch-all. The team debated it in the document's margins: a *simulator* (flying, driving) and a *simulation* (running a city or a life) seemed like different genres. The published study kept one Simulation code. In the recorded data, one coder gave Simulation to video players such as YouTube VR, which is why rule G3 exists.
+:::
+
+## Decision rules for the whole codebook
+
+1. If the store page is not in English, code from the screenshots and trailers only, and write a note.
+2. If a title appears twice (a demo and a full version), code the full version only.
+3. If a screenshot or trailer will not load, code from the rest of the page; if nothing loads, code `unsure` for Interactivity and Perspective, `no` for every genre, and write "page did not load".
+4. Code the page as it was on the collection date; if you revisit it, record the date you looked.
+
+## Examples
+
+All from `vr-sample.csv`, with the codes it records.
+
+| Variable and value | Examples from the material |
+|:--|:--|
+| Interactivity, `yes` | SUPERHOT VR; Beat Saber |
+| Interactivity, `no` | theBlu; Allumette |
+| Perspective, `first` | SUPERHOT VR; Job Simulator |
+| Perspective, `third` | Moss; Allumette |
+| Genre, Music/Rhythm `yes` | Beat Saber |
+| Genre, Simulation `yes` | Job Simulator; theBlu |
+| Rule G3, not a game | YouTube VR (every genre `no`) |
+
+# Part 2: Qualitative memo
+
+::: {.callout-important}
+## An illustrative reconstruction
+The research team did not record a qualitative stage, because they did not treat it as a separate study. This memo reconstructs what that stage would likely have looked like, to show the step. It is not the project's record.
+:::
+
+**Open coding.** Twenty store pages are read before any variable exists, with a short note on each. Notes that keep coming back: "you see your own hands", "a small character you watch", "a film you sit inside", "waves of enemies", "you paint", and "it is only a video player".
+
+**Emerging categories.** The notes group into three questions. Does the user *do* anything (hands, tools, things that respond)? *Whose eyes* is the user looking through? *What kind of activity* fills the time (fighting, solving, imitating real work, watching)?
+
+**From categories to variables.** The first question becomes Interactivity. The second becomes Perspective. The third matches an existing genre system, so the codebook adopts Lucas and Sherry (2004) instead of inventing genres, and adds Music/Rhythm after notes on titles like Beat Saber. "It is only a video player" fits no genre, and becomes decision rule G3.
+
+**What the memo carries forward.** A list of hard cases (titles that are films, tools, or social spaces) to test the first draft of the codebook against.
+
+# Part 3: Reliability protocol
+
+You are the only coder, so every reliability claim here is about your own consistency over time: intracoder reliability (stability).
+
+## The statistic
+
+Krippendorff's alpha for each variable, computed on a re-code of the same titles.
+
+## The threshold
+
+Alpha of .80 or higher for each variable; .67 to .79 is reported as tentative.
+
+## The stability procedure
+
+Code a seeded random sample of 20 titles, wait at least one week without looking at the first codes, then code the same 20 again from the store pages. Compare the two passes variable by variable.
+
+## When it fails
+
+Revise the decision rules for the failing variable, write down what changed, and re-code a fresh seeded sample of 20.
+
+::: {.callout-note}
+## In practice
+The published study used three trained coders who were not the authors, and two of them coded each VR title. The sheet keeps both coders' genre codes and a column that flags each disagreement. The paper reports that every variable met an alpha of .70. The rule used to settle disagreements was not written down, and the reported genre percentages cannot be rebuilt from the two coders' columns with any single rule: for Action, one coder's codes give 50 of the 139 titles and the other's give 67, while the paper reports 45 percent. In your protocol, write the reconciliation rule before you code, and keep the settled column.
+:::
+
+## References
+
+Foxman, M., Beyea, D., Leith, A. P., Ratan, R. A., Chen, V. H. H., & Klebig, B. (2022). Beyond genre: Classifying virtual reality experiences. *IEEE Transactions on Games, 14*(3), 466-477. https://doi.org/10.1109/TG.2021.3119521
+
+Lucas, K., & Sherry, J. L. (2004). Sex differences in video game play: A communication-based explanation. *Communication Research, 31*(5), 499-523. https://doi.org/10.1177/0093650204267930
+
+Steuer, J. (1992). Defining virtual reality: Dimensions determining telepresence. *Journal of Communication, 42*(4), 73-93. https://doi.org/10.1111/j.1460-2466.1992.tb00812.x
