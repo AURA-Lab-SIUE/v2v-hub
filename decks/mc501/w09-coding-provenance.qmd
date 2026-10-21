@@ -106,7 +106,8 @@ spent on the study.
 ## The Codebook Becomes a Document
 
 - **One of the scaffolded files is `codebook/codebook.qmd`**
-    - Move your Chapter 8 draft into it, with a version line and a date
+    - Start it from your Definitions Practice: each variable's definitions and decision rules
+    - Add a version line and a date
     - A codebook that renders has no broken structure
 - **What changes tonight is the codebook's status, not its content**
     - It stops being a sketch and becomes the instrument

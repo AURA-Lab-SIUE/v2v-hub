@@ -38,19 +38,22 @@ that file is not in your workspace, download it from
 
 ## Step 2: Check your setup
 
-`setup()` looks over your whole installation and prints a checklist. Run it every time you
-open a project; it finds a missing piece before that piece interrupts your work.
+Run **AURA: Check my setup** from the Command Palette. It looks over your whole installation and
+prints a checklist. Run it every time you open a project; it finds a missing piece before that
+piece interrupts your work.
+
+If you do not have the AURA Lab R Companion, run this chunk instead:
 
 ```{r}
 setup()
 ```
 
-**What you should see:** green check marks under **Required R packages**, and green checks
+**What you should see:** the Companion prints `RESULT: everything this course needs is
+installed.` The chunk shows green check marks under **Required R packages**, and green checks
 for the Quarto CLI and Git under **Command-line tools**.
 
-Or run **Check my setup** from the Command Palette if you installed the AURA Lab R Companion.
-
-**If anything is red,** `setup()` prints the exact command that fixes it under **What to do
+**If something is missing,** run **AURA: Install what is missing** from the Command Palette. Without
+the Companion, `setup()` prints the exact command that fixes it under **What to do
 next**. Copy that command, paste it into the R console, press Enter, then run this chunk
 again. If it tells you to quit R and open it again, do that: R only notices a newly installed
 program when it starts.
@@ -115,11 +118,12 @@ top of the Explorer panel.
 
 ## Step 6: Move your codebook into the project
 
-This step has no code. In Chapter 8 your codebook was a plan; from today it is the document
+This step has no code. Until now your variables lived in your planning work; from today the codebook is the document
 every later step follows.
 
 1. In the Explorer panel, open `codebook/codebook.qmd` inside your new project folder.
-2. Paste your draft codebook below the line that says `title: "Codebook"` and the `---`
+2. Paste in what you have so far, your draft codebook or the definitions and decision rules
+   from Definitions Practice, below the line that says `title: "Codebook"` and the `---`
    under it. Every variable needs its conceptual definition, its operational definition, and
    its coding rules.
 3. Under the title, add a version line and today's date, for example
