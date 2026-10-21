@@ -315,6 +315,9 @@ Due Monday, November 9, 11:59 PM. Submit the plan and the pilot together as one 
 6. **A stability statistic** for those items, with the code that computed it
     - It comes from your own re-code 48 hours or more later; call it stability, never agreement
 7. **Every edge case you met**, the decision you made, and the rule you added to the codebook
+
+## Sampling Plan and Pilot: The Five Parts of the Pilot (cont.)
+
 8. **Every codebook revision the pilot required**, with the wording before and after
 9. **One paragraph on the full coding run:** how long it will take and what you will change
 
