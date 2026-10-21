@@ -149,7 +149,7 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
     - If your rate allows fewer than fifty, change the unit of analysis instead of coding fewer units
 - **Each added variable slows you down:** coding ten variables per item roughly halves your rate
 
-## Lakens on What Honesty Demands
+## Lakens: Report How Informative a Study Was
 
 > "Do not try to spin a story where it looks like a study was highly informative when it
 > was not. Instead, transparently evaluate how informative the study was given effect sizes
@@ -158,7 +158,7 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 > Lakens (2022, p. 11)
 
 Purposive sampling (choosing cases on purpose) improves **construct validity** and does
-nothing for statistical power. Confusing the two gives a study that is coherent and indefensible.
+nothing for statistical power. A study that confuses the two can be internally consistent and still unable to defend its claims.
 
 ## The Pilot Test
 
@@ -204,7 +204,7 @@ Answer each question in writing:
 - If it does not clear the threshold, write the sentence you would put in the report
 - Name whose trust the reliability standard protects: the reader's, the coder's, or the field's, and say why
 
-## Informative, Not Impressive
+## Report What Your Pilot Could Not Settle
 
 > "Do not try to spin a story where it looks like a study was highly informative when it
 > was not."
@@ -269,7 +269,7 @@ Reliability: Cohen's kappa
   Cohen's kappa    0.236
 ```
 
-## What 0.236 Diagnoses
+## What a Kappa of 0.236 Means
 
 - **Observed agreement 0.74, chance agreement 0.66, kappa 0.24**
 - **Emote messages and all-caps messages overlap in Twitch chat**

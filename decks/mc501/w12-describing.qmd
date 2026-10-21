@@ -30,9 +30,9 @@ format:
 
 Expect every first version to look wrong. The fix is usually one line.
 
-## Rows You Cannot Read
+## A Table Too Long to Read
 
-- **The analysis table is complete and unreadable**
+- **The analysis table is complete, but too long to read**
     - Nobody scrolls through 35,267 rows and learns anything
     - The numbers are present, but the pattern is not visible
 - **A figure turns a long column of numbers into a shape you can see**
@@ -130,14 +130,14 @@ ggplot(chat_by_hour, aes(x = hour, y = messages)) +
 
 `geom_col()` draws a bar whose height is a value you already computed.
 
-## The Daily Pulse
+## Chat Volume by Hour of Day
 
 - **The example chat is busiest through UTC midday, peaking at 13:00 with 2,201 messages**
 - **It is quietest in the small hours, bottoming out at 03:00 with 833 messages**
 - **That is a swing of well over two to one**
-- **The pattern is not mysterious: the 2018 audience sat in the Americas and Europe**
+- **The 2018 audience was mostly in the Americas and Europe, which explains the pattern**
 
-Twenty-four numbers become a rhythm you can read in one glance.
+The chart shows all twenty-four hourly counts at once.
 
 ## Effect Sizes, and Their Standing
 

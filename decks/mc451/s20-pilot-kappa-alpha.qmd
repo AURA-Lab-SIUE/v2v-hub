@@ -18,7 +18,7 @@ format:
 - Kappa and alpha: two reliability statistics, and how to read the number
 - How to diagnose a failed pilot and run it again
 
-## Putting the Codebook on Trial
+## Testing the Codebook With a Pilot
 
 [Lab session]{.eyebrow}
 

@@ -78,7 +78,7 @@ the course package is `as_datetime(date / 1000)`, from lubridate, which the tidy
 
 The Companion's **Write R code** menu writes this same block: **Turn the date column into a time**.
 
-## The Millisecond Trap
+## Dates Are Stored in Milliseconds
 
 - **`date` counts milliseconds since 1 January 1970**
     - That starting moment is the **Unix epoch**
@@ -88,7 +88,7 @@ The Companion's **Write R code** menu writes this same block: **Turn the date co
 
 `date / 1000` converts milliseconds to seconds first. Skipping that step is how a hand conversion fails.
 
-## The Type Change Is the Payoff
+## The Column Type Changes to a Date-Time
 
 ```
 # A tibble: 3 × 2

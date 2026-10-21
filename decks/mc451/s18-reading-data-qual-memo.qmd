@@ -15,15 +15,15 @@ format:
 
 - Read the data in the R Companion's data viewer
 - Check whether the data contains what each variable in the codebook needs
-- Find the messages that will fight your coding rules
-- Turn one wrinkle in the data into a written decision rule
+- Find the messages your coding rules do not yet cover
+- Turn one edge case in the data into a written decision rule
 - Write the qualitative memo, which is due with the codebook
 
 ## What We Are Doing Today
 
 - **Tuesday we loaded the data; today we hold the data next to the codebook**
 - **The question for today: does the data contain what your study needs?**
-- **Then we find the messages that will fight your rules**
+- **Then we find the messages your rules do not yet cover**
 - **Then we write the qualitative memo, which is due with the codebook**
 
 We check the book's example codebook against the example data first. Then you repeat each step
@@ -92,9 +92,9 @@ Answer each question in writing, one line each:
 - **Stream titles contain line breaks and long strings of digits**
 - **None of this is broken data. It is what people type**
 
-Your codebook has to meet the data as it is. Every source has its own version of this mess.
+Your codebook has to meet the data as it is. Every source has its own edge cases like these.
 
-## The Same Mess in Other Sources
+## The Same Kinds of Edge Cases in Other Sources
 
 - **Comments under influencer posts:** emoji-only comments, and replies that answer another commenter
 - **Short-form videos built on a trending sound:** a sped-up or slowed version of the official audio
@@ -104,7 +104,7 @@ Your codebook has to meet the data as it is. Every source has its own version of
 
 Each of these needs a written rule before coding starts.
 
-## One Genuine Wrinkle
+## One Edge Case in the Example Data
 
 - **A message begins "@xQcOW"**
     - The `channel` column on that same row reads "xqcow"
@@ -113,14 +113,14 @@ Each of these needs a written rule before coding starts.
 - **A rule that matches on the exact channel name will miss this message**
 - Unless you decide the rule now, you will resolve this case two different ways on two different days
 
-## The Wrinkle in the Data Viewer
+## The Edge Case in the Data Viewer
 
 ![](images/companion-data-viewer.png){fig-alt="The R Companion data viewer showing the Twitch chat sample, 35,267 rows. Row 5 has channel xqcow and a message beginning @xQcOW PLAY JACKBOX. Row 1 is a string of question marks and row 2 repeats TriEasy Clap." width="100%"}
 
 - **Open the data viewer** in the R Companion to read the rows as a grid
 - **Row 5: the message says "@xQcOW" and the channel says "xqcow"**
 
-## Turning a Wrinkle Into a Rule
+## Turning an Edge Case Into a Coding Rule
 
 - **Write the rule down now, while the codebook is still being revised**
     - The rule: at-mentions are matched **ignoring capitalization**
