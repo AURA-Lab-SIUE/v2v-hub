@@ -463,7 +463,7 @@ def render_contrast(prof, decks, themedir):
         cmd = [marp, str(p), "--images", "png", "--image-scale", "1",
                "--allow-local-files", "-o", str(od / "s.png")]
         if themedir:
-            cmd[1:1] = ["--theme-set", str(themedir)]
+            cmd += ["--theme-set", str(themedir)]  # array option: it must come LAST or it swallows the deck and -o
         r = subprocess.run(cmd, capture_output=True, text=True)
         pngs = sorted(od.glob("*.png"))
         if r.returncode != 0 or not pngs:
