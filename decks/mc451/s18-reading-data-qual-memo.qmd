@@ -158,6 +158,14 @@ Your memo is assembled from the field notes you already have:
 
 Do not summarize your source. Write what changed your codebook.
 
+## A Second Worked Example: The VR Codebook
+
+- **One real study, from store pages to a published finding (Foxman et al., 2022)**
+    - The codebook as it should be written, beside where practice fell short
+- [Walkthrough slides](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/mc451-vr-codebook-walkthrough.html)
+- **Codebook and Qualitative Memo:** [Word](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/MC451-vr-codebook-example.docx) or [Quarto](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/MC451-vr-codebook-example.qmd)
+- **Coded sample, 20 titles:** [vr-sample.csv](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/vr-sample.csv), and the same titles [as recorded](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/vr-sample-as-recorded.csv)
+
 ## Common Errors Today
 
 - **`could not find function "str_detect"`:** you have not run `library(tidyverse)`

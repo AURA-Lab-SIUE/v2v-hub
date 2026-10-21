@@ -338,6 +338,14 @@ It is far better to confirm now than to find a missing column in the middle of c
 - **A rule that matches on the channel name must allow for differences in capitalization**
 - **Fix the rule in the codebook now, before a single case is coded**
 
+## A Second Worked Example: The VR Codebook
+
+- **One real study, from store pages to a published finding (Foxman et al., 2022)**
+    - The codebook as it should be written, beside where practice fell short
+- [Walkthrough slides](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/mc501-vr-codebook-walkthrough.html)
+- **Extended Codebook and Reliability Protocol:** [Word](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/MC501-vr-codebook-example.docx) or [Quarto](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/MC501-vr-codebook-example.qmd)
+- **Coded sample, 20 titles:** [vr-sample.csv](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/vr-sample.csv), and the same titles [as recorded](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/vr-sample-as-recorded.csv)
+
 ## When a Line Breaks
 
 - **`could not find function "glimpse"`:** the tidyverse is not loaded
