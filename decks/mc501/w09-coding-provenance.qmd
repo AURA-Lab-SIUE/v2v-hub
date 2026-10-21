@@ -351,10 +351,9 @@ It is far better to confirm now than to find a missing column in the middle of c
 - **`could not find function "glimpse"`:** the tidyverse is not loaded
 - **`object 'chat' not found`:** the assignment line has not run
 - **`no package called 'v2v'`:** an installation problem, so run **Check my setup**
-- **The Hub keeps a cheat sheet of common errors**
 
-An error is information, not a verdict. Run `?v2v::common_errors` for the errors specific to the example data.
-Or copy the error and run **Explain an R error** from the Command Palette.
+An error is information, not a verdict.
+Copy the error and run **AURA: Explain an R error** from the Command Palette.
 
 ## What Explain an R Error Shows
 

@@ -133,7 +133,7 @@ one many-level grouping variable. Same framework, different shape.
 - **`NA` for the mean:** add `na.rm = TRUE`, then ask why values are missing
 - **An impossibly large *t*:** you compared a variable to itself
 
-Run `?v2v::common_errors` for the errors specific to the example data. Or select the error and run **Explain an R error** from the Command Palette.
+Select the error and run **AURA: Explain an R error** from the Command Palette.
 
 ## The White Paper, 250 Points
 

@@ -334,8 +334,7 @@ If the script does not reproduce the table without your intervention, it has a h
 - **The row count grew after a join:** the lookup table has duplicate keys
 - **`object 'channel_type' not found`:** the chunks ran out of order
 
-Run `?v2v::common_errors` for the errors specific to the example data.
-Or copy the error and run **Explain an R error** from the Command Palette.
+Copy the error and run **AURA: Explain an R error** from the Command Palette.
 
 ## Checkpoint
 

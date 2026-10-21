@@ -172,8 +172,7 @@ The second pilot uses fresh items, independent coding passes, and produces anoth
 - **Kappa near 0 with high agreement:** the signature of a loosely defined rule
 - **`NA` in the result:** some codes are missing, so use alpha instead
 
-Run `?v2v::common_errors` for the errors specific to the example data.
-Or copy the error and run **Explain an R error** from the Command Palette.
+Copy the error and run **AURA: Explain an R error** from the Command Palette.
 
 ## Checkpoint
 

@@ -249,11 +249,9 @@ Counting is how you check that the data is what you were told it is. Run the sam
 - **R returns an error message instead of a result**
     - The usual causes are a misspelling, a package that is not loaded, or a stray bracket
     - This happens to everyone, and it says nothing about your ability
-- **The Hub keeps a cheat sheet of common errors**
 - **An error message is information, so read it before you retype anything**
-- **Copy the error text and run Explain an R error** from the Command Palette for a plain-English reading
+- **Copy the error text and run AURA: Explain an R error** from the Command Palette for a plain-English reading
 
-Run `?v2v::common_errors` for the errors specific to the example data.
 
 ## What Explain an R Error Shows
 

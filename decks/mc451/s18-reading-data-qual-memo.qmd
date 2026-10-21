@@ -173,8 +173,7 @@ Do not summarize your source. Write what changed your codebook.
 - **`object 'message' not found`:** you used a column name outside a tidyverse verb
 - **`filter()` returns zero rows:** the condition is usually wrong, not the data
 
-Run `?v2v::common_errors` for the errors specific to the example data.
-Or copy the error and run **AURA: Explain an R error** from the Command Palette ([guide](https://aura-lab.siue.edu/v2v-hub/guides/mc451/03-explain-an-r-error.html)).
+Copy the error and run **AURA: Explain an R error** from the Command Palette ([guide](https://aura-lab.siue.edu/v2v-hub/guides/mc451/03-explain-an-r-error.html)).
 
 ## Checkpoint
 

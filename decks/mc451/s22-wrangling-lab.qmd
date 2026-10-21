@@ -223,8 +223,7 @@ belong to `704cb1fgnty`, one of the two channels with no category, so its labels
 - **A misspelled category name** silently mislabels a channel
 - **A script that fails in a fresh session** depends on something you have not written down
 
-Run `?v2v::common_errors` for the errors specific to the example data.
-Or copy the error and run **Explain an R error** from the Command Palette.
+Copy the error and run **AURA: Explain an R error** from the Command Palette.
 
 ## Checkpoint
 
