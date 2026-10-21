@@ -31,6 +31,8 @@ project:
     - "resources/AI-use-log.docx"
     # Codebook templates students download (2026-10-20): source to hand over, never rendered.
     - "resources/templates/*"
+    # VR codebook worked example downloads (2026-10-21): the walkthrough decks link these.
+    - "examples/vr-codebook/files/*"
 
 website:
   title: "V2V Hub"
