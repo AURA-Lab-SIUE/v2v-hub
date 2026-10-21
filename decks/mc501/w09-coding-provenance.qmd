@@ -33,10 +33,10 @@ format:
 - **Open the Extensions view:** Ctrl+Shift+X, or Cmd+Shift+X on a Mac
 - **Search for AURA Lab R Companion, then select Install**
 - **Select View, then Command Palette, and run AURA: Check my setup**
-    - Pick MC 501 when it asks for your course
+    - If it asks which course you are in, pick **MC 501 Research Methods (graduate)**
     - If a line says MISSING, run **AURA: Install what is missing**
 - Every Companion command starts with **AURA:** in the Command Palette
-- The setup walkthrough video is linked in this week's Blackboard announcement
+- Step-by-step guide: [Check your setup](https://aura-lab.siue.edu/v2v-hub/guides/mc501/01-check-your-setup.html)
 
 ## What We Build Today
 
@@ -61,17 +61,22 @@ practice on the example data is a step you repeat on your own source.
 ## Scaffolding the Project
 
 ```r
-v2v::new_portfolio("twitch-portfolio")
+options(usethis.allow_nested_project = TRUE)
+
+project <- "twitch-portfolio"
+if (dir.exists(project)) {
+  message("Already made: using the folder you have.")
+} else {
+  v2v::new_portfolio(project)
+}
 ```
 
-This one call creates a complete, correctly wired study folder.
+The first line lets the project sit inside your workspace. The `if` block builds the study
+folder once and leaves an existing one alone. The `v2v::` prefix says the function comes from
+this book's package. Name your own project after your own study.
 
-The `v2v::` prefix is not decoration. It tells R, and you, that the function comes from
-this book's package, so the package never becomes a hidden assumption.
-
-The example project is named `twitch-portfolio`. Name your own project after your own study.
-
-Today's steps, with what each should print, are in the starter file:
+Today's steps, with what each should print, are in the starter file. Download it and save it
+in the top folder of your workspace, next to `README.md`:
 [aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd](https://aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd)
 
 ## What the Scaffold Contains
@@ -145,8 +150,9 @@ session. Called with no arguments, each function returns the full working sample
 
 ![](images/companion-write-r-code-load.png){fig-alt="VS Code editor showing a script named wrangle.R. The R Companion inserted a commented block: library(tidyverse), library(v2v), chat <- twitch_chat(), streams <- twitch_streams(), glimpse(chat), and glimpse(streams)." width="100%"}
 
-- **Write R code** in the R Companion, then **Load the course Twitch corpus**
+- **Run AURA: Write R code** from the Command Palette, then pick **Load the course Twitch corpus** under **R2 Data**
 - The block arrives with its comments, so it can sit in a graded script
+- Step-by-step guide: [Load the course data](https://aura-lab.siue.edu/v2v-hub/guides/mc501/04-load-the-course-data.html)
 
 ## Provenance Is a Disclosure
 
@@ -277,14 +283,17 @@ streams %>%
 
 ```
 # A tibble: 61 × 2
-  game                                   n
-  <chr>                              <int>
-1 Art                                 5298
-2 Fortnite                            3682
-3 Just Chatting                       2474
-4 Hearthstone                         2157
-# ℹ 57 more rows
+   game                                   n
+   <chr>                              <int>
+ 1 Art                                 5298
+ 2 Fortnite                            3682
+ 3 Just Chatting                       2474
+ 4 Hearthstone                         2157
+ 5 Pokemon: Let's Go, Pikachu!/Eevee!  1967
+…
 ```
+
+R prints ten rows, then `# ℹ 51 more rows`.
 
 The `%>%` is the tidyverse **pipe**: it feeds the thing on its left into the function on its
 right, so the line reads as an instruction in order.
@@ -360,6 +369,7 @@ Or copy the error and run **Explain an R error** from the Command Palette.
 
 - **The panel quotes your error, says why it happens, and lists what to do**
 - In this example, `chat_dta` is a misspelling of a name R never stored
+- Step-by-step guide: [Explain an R error](https://aura-lab.siue.edu/v2v-hub/guides/mc501/03-explain-an-r-error.html)
 
 ## Checkpoint
 

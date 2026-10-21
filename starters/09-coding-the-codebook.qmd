@@ -31,7 +31,10 @@ library(v2v)
 **What you should see:** nothing, or a short startup message. Silence means success.
 
 **If you see `there is no package called 'v2v'`,** the course package is not installed on this
-computer yet. Open `00-check-your-setup.qmd` and run its Step 3, then come back here.
+computer yet. Open `00-check-your-setup.qmd` and run its Step 3, then come back here. If
+that file is not in your workspace, download it from
+<https://aura-lab.siue.edu/v2v-hub/starters/00-check-your-setup.qmd> and save it next to
+`README.md`.
 
 ## Step 2: Check your setup
 
@@ -74,12 +77,16 @@ The example below is named `twitch-portfolio`. **Change the name inside the quot
 first line to something about your own study** before you run it, using lowercase letters and
 hyphens, no spaces. For example, `"podcast-ads-portfolio"`.
 
-The second line is a safety check. If the folder already exists, it leaves it alone, because
+The lines after it are a safety check. If the folder already exists, it leaves it alone, because
 building the project again would replace your files with blank ones.
 
 ```{r}
 project <- "twitch-portfolio"
-if (dir.exists(project)) message("Already made: using the folder you have.") else v2v::new_portfolio(project)
+if (dir.exists(project)) {
+  message("Already made: using the folder you have.")
+} else {
+  v2v::new_portfolio(project)
+}
 ```
 
 **What you should see:** a green check and the line `V2V White Paper scaffolded at`, followed
@@ -185,7 +192,8 @@ The `%>%` symbol passes the table on the left into the function on the right; re
 "and then."
 
 ```{r}
-streams %>% count(game, sort = TRUE)
+streams %>%
+  count(game, sort = TRUE)
 ```
 
 **What you should see:** a two-column table of game categories and counts, largest first,
