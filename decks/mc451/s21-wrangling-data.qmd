@@ -30,7 +30,7 @@ format:
 
 Wrangling is the least rewarding part of the term, and it is what professionals spend most of their time on.
 
-Starter file, with what each step prints: [aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
+Today's steps and what each prints: [Chapter 11 starter file](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
 
 ## What the Table Cannot Answer
 
