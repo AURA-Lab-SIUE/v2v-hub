@@ -60,24 +60,18 @@ practice on the example data is a step you repeat on your own source.
 
 ## Scaffolding the Project
 
+- **Download the starter and save it in the top folder of your workspace, next to `README.md`**
+    - [aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd](https://aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd)
+- **In Step 4, change the name inside the quotes to one about your own study**
+    - Lowercase letters and hyphens, no spaces
+- **Click Run Cell on Step 3, then on Step 4**
+    - A green check appears, and a folder with your project's name joins the Explorer
+
+What Step 4 runs for you:
+
 ```r
-options(usethis.allow_nested_project = TRUE)
-
-project <- "twitch-portfolio"
-if (dir.exists(project)) {
-  message("Already made: using the folder you have.")
-} else {
-  v2v::new_portfolio(project)
-}
+v2v::new_portfolio("twitch-portfolio")
 ```
-
-The first line lets the project sit inside your workspace. The `if` block builds the study
-folder once and leaves an existing one alone. The `v2v::` prefix says the function comes from
-this book's package. Name your own project after your own study.
-
-Today's steps, with what each should print, are in the starter file. Download it and save it
-in the top folder of your workspace, next to `README.md`:
-[aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd](https://aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd)
 
 ## What the Scaffold Contains
 
@@ -100,16 +94,12 @@ spent on the study.
 
 ## Confirming the Stack
 
-```r
-v2v::setup()
-```
-
-**AURA: Check my setup** in the R Companion checks R, Quarto, Git, and every package this course uses, and **AURA: Install what is missing** installs anything it flags.
-`v2v::setup()` runs the course package's own version of the same check from the console.
-
-- **You met `setup()` in Chapter 2, at installation**
+- **Run AURA: Check my setup from the Command Palette**
+    - It checks R, Quarto, Git, and every package this course uses
+    - If a line says MISSING, run **AURA: Install what is missing**
+- **You met this check in Chapter 2, at installation**
 - **Run it as a habit, every time you open a project**
-- It reports a missing piece before that piece interrupts you
+    - It reports a missing piece before that piece interrupts you
 
 ![](images/companion-check-setup-result.png){fig-alt="The R Companion's Output panel after Check my setup. Two lines read: RESULT: everything this course needs is installed. SETUP OK: R and the course packages are working." width="100%"}
 
@@ -123,17 +113,18 @@ v2v::setup()
 
 ## Loading the Data
 
+- **Run AURA: Write R code, then pick Load the course Twitch corpus under R2 Data**
+- **The Companion writes a commented block into your script and runs it**
+    - It loads the tidyverse and the two example tables, named `chat` and `streams`
+- Starter Step 8 holds the same block, with what it should print
+
+What the Companion writes for you:
+
 ```r
 library(tidyverse)
-
 chat <- v2v::twitch_chat()
 streams <- v2v::twitch_streams()
 ```
-
-Line one loads the tidyverse. The next two lines pull in the two example tables and name each one.
-
-The arrow `<-` assigns a name, so `chat` and `streams` now refer to the two tables for this
-session. Called with no arguments, each function returns the full working sample.
 
 ## Why a Function Call, Not a File Path
 
@@ -150,8 +141,8 @@ session. Called with no arguments, each function returns the full working sample
 
 ![](images/companion-write-r-code-load.png){fig-alt="VS Code editor showing a script named wrangle.R. The R Companion inserted a commented block: library(tidyverse), library(v2v), chat <- twitch_chat(), streams <- twitch_streams(), glimpse(chat), and glimpse(streams)." width="100%"}
 
-- **Run AURA: Write R code** from the Command Palette, then pick **Load the course Twitch corpus** under **R2 Data**
-- The block arrives with its comments, so it can sit in a graded script
+- **The block arrives with its comments, so it can sit in a graded script**
+- It ends with `glimpse()` on each table, the look at the data the next slides read
 - Step-by-step guide: [Load the course data](https://aura-lab.siue.edu/v2v-hub/guides/mc501/04-load-the-course-data.html)
 
 ## Provenance Is a Disclosure
@@ -276,6 +267,9 @@ Noticing this before any analysis is the reason first contact exists.
 
 ## Counting
 
+- **Run AURA: Write R code, then pick Count rows per group (count) under R2 Data**
+- **Choose the `streams` table, then the `game` column.** The Companion writes:
+
 ```r
 streams %>%
   count(game, sort = TRUE)
@@ -288,37 +282,28 @@ streams %>%
  1 Art                                 5298
  2 Fortnite                            3682
  3 Just Chatting                       2474
- 4 Hearthstone                         2157
- 5 Pokemon: Let's Go, Pikachu!/Eevee!  1967
 …
 ```
 
-R prints ten rows, then `# ℹ 51 more rows`.
-
-The `%>%` is the tidyverse **pipe**: it feeds the thing on its left into the function on its
-right, so the line reads as an instruction in order.
+R prints ten rows, then `# ℹ 51 more rows`. Read `%>%` as "then".
 
 ## What the Count Tells You
 
 - **The example streams cover 61 distinct games, more than a study can examine one by one**
 - **A handful of games hold most of the snapshots, and the long tail holds the rest**
-- **Art tops the list, on a platform that is mostly about playing games**
-    - That shape matters when you draw a chart in Chapter 12
+- **Art tops the list, and one channel produced all of it**
+    - All 5,298 Art snapshots come from bobross, a channel restreaming old episodes of *The Joy of Painting*
+    - So the count shows one popular channel in one week of November 2018, not that Art is popular in general
+- **A category total can be one source in disguise: check who produced it before you report it**
 
 `count()` is looking, not changing. The table is exactly as loaded.
 
 ## Checking the Corpus
 
-```r
-n_distinct(chat$channel)
-```
-
-```
-[1] 50
-```
-
-- **Chapter 1 described fifty channels, and here they are**
-- **`n_distinct(streams$channel)` returns the same fifty**
+- **Run Count rows per group again, this time on the `chat` table and the `channel` column**
+- **The result has 50 rows, one per channel**
+    - Chapter 1 described fifty channels, and here they are
+- **The same count on `streams` gives the same fifty**
 - The data you loaded is the corpus the book described, no more and no less
 
 Run the same counts on your own source to confirm that it is what you were told it is.
@@ -375,7 +360,7 @@ Or copy the error and run **Explain an R error** from the Command Palette.
 
 You should now have:
 
-- A project folder that `v2v::setup()` reports as sound
+- A project folder that **Check my setup** reports as sound
 - `codebook/codebook.qmd` versioned, dated, and rendering cleanly
 - `chat` and `streams` loaded in your session
 - A written provenance statement for your own source, covering the five items of the record

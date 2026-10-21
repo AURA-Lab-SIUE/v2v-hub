@@ -41,29 +41,16 @@ A missing column found today is a good result. The same missing column found in 
 
 ## Example Variable 1, Message Target
 
-```r
-chat %>%
-  select(channel, sender, message) %>%
-  head(5)
-```
-
-`select()` keeps only the columns you name, and `head(5)` shows the first five rows, so you
-read what a coder would actually be looking at. If `chat` is not loaded, run Step 8 of the
-[starter file](https://aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd) first.
-
-In the example codebook, message target is coded from the **message text**, plus the **sender**
-for at-mentions and replies. Both columns exist in the data, so the variable is supported.
+- **Run AURA: Open the data viewer, then pick Twitch chat (the course sample)**
+    - Each row is one message, with its `channel`, `sender`, and `message` side by side
+    - This is what a coder would actually be looking at
+- **In the example codebook, message target is coded from the message text**
+    - Plus the sender, for at-mentions and replies
+- Both columns exist in the data, so the variable is supported
 
 ## Example Variables 2 and 3
 
-```r
-chat %>%
-  select(message) %>%
-  head(3)
-```
-
-The same command, narrowed to the one column the two remaining example variables read from.
-
+- **Stay in the data viewer and read down the `message` column**
 - **Message length** is the character count of the message, so the message column supports it
 - **Contains emote** is read from the same column, so it is supported too
 - Three example variables, three confirmations: the example study can be built from this data
@@ -133,17 +120,15 @@ Every rule you add now is a disagreement you will not have to settle later.
 
 ## Hunting Your Own Edge Cases
 
+- **In the data viewer, select the `message` header to sort by it**
+    - Messages that begin with "@" sort together, so you can read real at-mentions in a row
+- **Read for the cases your own rules depend on, and note each one you find**
+- To list every message that contains a piece of text anywhere, copy this block into your script and change the `"@"` to your text
+
 ```r
 chat %>%
-  filter(str_detect(message, "@")) %>%
-  select(channel, sender, message) %>%
-  head(10)
+  filter(str_detect(message, "@"))
 ```
-
-`filter()` keeps only the rows that meet a condition. Here the condition is "the message contains
-an at-sign", so you can read ten real at-mentions and see how they behave.
-
-Replace the `"@"` with any text your own rules depend on, then read what comes back.
 
 ## The Qualitative Memo
 
