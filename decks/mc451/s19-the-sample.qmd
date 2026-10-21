@@ -158,6 +158,15 @@ by a team. Your draw uses the same command at your own budget.
 
 The number 409 is arbitrary. What matters is that a seed is set and recorded in your sampling plan.
 
+## One Codebook or Two?
+
+- **Write one codebook per unit of analysis, not one per platform**
+- **Different units, different codebooks, joined by a key variable**
+    - Spotify numbers and TikTok videos: a song and a video, linked by the song
+    - Box office and reviews: a film and a review, linked by the film
+- **Same unit on every source: one codebook, with a source variable**
+- The codebook template's linking section records the key and how records match: [codebook template](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC451-codebook-template.docx)
+
 ## Looking Ahead to Thursday
 
 - **You now have a sample and an untested codebook**

@@ -15,6 +15,31 @@ How to use this template: replace every line in italics with your own writing, t
 
 *State exactly what one coded item is (one message, one post, one minute of video), and say what is not part of it (replies, links, images). State it once. Every variable below is coded on this item.*
 
+## If your study uses more than one source
+
+*Skip this section if all your material comes from one source.*
+
+Write one codebook for each **unit of analysis**, not one for each platform. Two sources that share a unit share a codebook. Two sources with different units each get their own codebook, joined by a key.
+
+| Your study | Units | Codebooks |
+|:--|:--|:--|
+| Spotify streaming numbers and TikTok videos that use the same songs | A song (Spotify) and a video (TikTok) | Two, linked by the song |
+| Box office figures and published reviews of the same films | A film (box office) and a review (reviews) | Two, linked by the film |
+| TikTok videos and Instagram Reels on the same topic, coded the same way | A short video, on both platforms | One, with a `platform` variable |
+
+When you need two codebooks, repeat Part 1 for each one, then add a linking section:
+
+### Linking the codebooks
+
+| Element | Your entry |
+|:--|:--|
+| Key variable | *The variable that appears in both codebooks and names the same thing in each (for example, `song_id` or `film_title`). Define it in both codebooks, word for word.* |
+| How records match | *Write the matching rule: spelling, capitalization, and how you treat remixes, re-releases, or two films with the same title. Write it as a rule: "If ..., match ...".* |
+| How many to how many | *How many items in one codebook match one item in the other (one song to many TikTok videos; one film to many reviews).* |
+| Records that do not match | *What you do with an item that has no partner in the other source: keep it, drop it, or code it separately. Say which and why.* |
+
+The key is what lets you put the two sources side by side in R later: one table per codebook, joined on the key.
+
 ## Variables
 
 Repeat the table below once per variable, as many times as your study has variables. Delete any copy you do not use.

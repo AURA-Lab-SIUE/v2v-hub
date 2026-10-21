@@ -323,6 +323,15 @@ Due Monday, November 9, 11:59 PM. Submit the plan and the pilot together as one 
 
 If your pilot led to no codebook changes, the items you piloted were probably too easy.
 
+## One Codebook or Two?
+
+- **Write one codebook per unit of analysis, not one per platform**
+- **Different units, different codebooks, joined by a key variable**
+    - Spotify numbers and TikTok videos: a song and a video, linked by the song
+    - Box office and reviews: a film and a review, linked by the film
+- **Same unit on every source: one codebook, with a source variable**
+- The codebook template's linking section records the key and how records match: [codebook template](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC501-codebook-template.docx)
+
 ## Before Week 11
 
 - **Submit the Sampling Plan and Pilot by Monday, November 9, 11:59 PM, with the reliability computation**
