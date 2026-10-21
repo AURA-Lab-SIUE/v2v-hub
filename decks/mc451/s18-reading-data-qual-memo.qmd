@@ -29,7 +29,7 @@ format:
 We check the book's example codebook against the example data first. Then you repeat each step
 with your own codebook and your own source.
 
-Open `codebook/codebook.qmd` beside the R Companion's data viewer (**AURA: Open the data viewer**), or beside your R session.
+Open `codebook/codebook.qmd` beside the R Companion's data viewer: run **AURA: Open the data viewer**, then pick **Twitch chat (the course sample)**.
 
 ## Check That the Data Contains What Each Variable Needs
 
@@ -48,7 +48,8 @@ chat %>%
 ```
 
 `select()` keeps only the columns you name, and `head(5)` shows the first five rows, so you
-read what a coder would actually be looking at.
+read what a coder would actually be looking at. If `chat` is not loaded, run Step 8 of the
+[starter file](https://aura-lab.siue.edu/v2v-hub/starters/09-coding-the-codebook.qmd) first.
 
 In the example codebook, message target is coded from the **message text**, plus the **sender**
 for at-mentions and replies. Both columns exist in the data, so the variable is supported.
@@ -117,8 +118,9 @@ Each of these needs a written rule before coding starts.
 
 ![](images/companion-data-viewer.png){fig-alt="The R Companion data viewer showing the Twitch chat sample, 35,267 rows. Row 5 has channel xqcow and a message beginning @xQcOW PLAY JACKBOX. Row 1 is a string of question marks and row 2 repeats TriEasy Clap." width="100%"}
 
-- **Open the data viewer** in the R Companion to read the rows as a grid
+- **Run AURA: Open the data viewer, then pick Twitch chat (the course sample)**
 - **Row 5: the message says "@xQcOW" and the channel says "xqcow"**
+- Step-by-step guide: [The data viewer](https://aura-lab.siue.edu/v2v-hub/guides/mc451/05-data-viewer-and-coding-columns.html)
 
 ## Turning an Edge Case Into a Coding Rule
 
@@ -179,7 +181,7 @@ Do not summarize your source. Write what changed your codebook.
 - **`filter()` returns zero rows:** the condition is usually wrong, not the data
 
 Run `?v2v::common_errors` for the errors specific to the example data.
-Or copy the error and run **Explain an R error** from the Command Palette.
+Or copy the error and run **AURA: Explain an R error** from the Command Palette ([guide](https://aura-lab.siue.edu/v2v-hub/guides/mc451/03-explain-an-r-error.html)).
 
 ## Checkpoint
 
