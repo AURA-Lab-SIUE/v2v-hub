@@ -357,6 +357,8 @@ Build the instrument, and write down what watching taught you. The qualitative r
 
 **Length:** The codebook 800 to 1,500 words, counting its variable and example tables, and the memo 200 to 300 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
+**Part of the White Paper:** the codebook is a draft of the Methods section's measures, and the memo a draft of the qualitative themes its Results section reports.
+
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Codebook and Qualitative Memo rubric (PDF)](resources/rubrics/MC451-rubric-codebook-and-qualitative-memo.pdf). It lists the six parts of the codebook, what the memo has to show, and the points for each.
@@ -364,6 +366,8 @@ Build the instrument, and write down what watching taught you. The qualitative r
 **Starter:** [09-coding-the-codebook.qmd](starters/09-coding-the-codebook.qmd), the Week 9 starter file for coding your codebook in R.
 
 **Worked example:** [Codebook and Qualitative Memo worked example (PDF)](resources/examples/MC451-example-codebook-and-qualitative-memo.pdf). A finished submission, so you can see the form before you write yours.
+
+**Second example:** [the VR codebook](examples/vr-codebook/mc451-vr-codebook-walkthrough.html), a real published study with its downloads.
 
 **Template:** [Codebook and Qualitative Memo template (Quarto .qmd)](resources/templates/MC451-codebook-template.qmd) or [the same template (Word .docx)](resources/templates/MC451-codebook-template.docx). Use it directly as your `codebook/codebook.qmd` or as inspiration for your own layout.
 
@@ -380,7 +384,9 @@ Decide what you will code, then prove the codebook survives contact with it. The
 
 **What you submit:** one document with two parts, the sampling plan and the pilot, plus your coded pilot data as a spreadsheet or CSV, uploaded to Blackboard under Sampling Plan and Pilot. Optional: the R Companion's **Reliability grid** takes your pass 1 and pass 2 codes, saves them as a CSV, and writes the `v2v::reliability()` call into your script. To code the pilot items in VS Code instead of a spreadsheet, **AURA: Open the data viewer** opens your CSV in a grid where you add your coding columns and code each row; your codes save to `data/derived/`, the original file is never changed, and **Insert rebuild code** writes the lines that join the codes back on. Excel and Google Sheets still work.
 
-**Length:** 700 to 1,200 words across the plan and the pilot write-up, plus 10 to 20 coded items in the spreadsheet. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+**Length:** 500 to 900 words across the plan and the pilot write-up, plus 10 to 20 coded items in the spreadsheet. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**Part of the White Paper:** a draft of the Methods section's sampling plan and reliability report.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
@@ -430,6 +436,8 @@ Say what is in the data before you test anything.
 
 **Length:** 300 to 600 words of your own writing (interpretation and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
+**Part of the White Paper:** a draft of the Results section's descriptive tables and figures. The paper reruns these calls on your own variables; the Twitch numbers stay here.
+
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Describing Data in R rubric (PDF)](resources/rubrics/MC451-rubric-describing-data-in-r.pdf). It lists the tables, numbers, figures, and interpretation it asks for, and the points for each.
@@ -449,7 +457,9 @@ Test four relationships, one per test, and report how big each is.
 
 **What you submit:** your script or Quarto document and the rendered output, uploaded to Blackboard under Inferencing Data in R. Optional: the Test group of the R Companion's **Write R code** writes the four tests for your settings-block variables, the plain R call first and the `v2v` wrapper after it as a check, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, and the interpretation are your own writing.
 
-**Length:** 500 to 900 words of your own writing (hypotheses, the four reports, interpretation and the limits paragraph), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+**Length:** 400 to 700 words of your own writing (hypotheses, the four reports, interpretation and the limits paragraph), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**Part of the White Paper:** a draft of the Results section's tests, with the limits paragraph a draft of part of the Discussion. The paper reruns this script on your own variables; the Twitch numbers stay here.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 

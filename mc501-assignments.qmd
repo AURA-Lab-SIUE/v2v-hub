@@ -317,6 +317,8 @@ Build the instrument, then write the protocol that says how you will know it sta
 
 **Length:** The codebook 1,200 to 2,000 words, counting its variable and example tables, and the reliability protocol 500 to 900 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
+**Part of the White Paper:** the codebook and the reliability protocol are a draft of the Methods section's measures and reliability plan.
+
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Extended Codebook and Reliability Protocol rubric (PDF)](resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf). It lists the five parts of the codebook, the five parts of the protocol, and the points for each.
@@ -324,6 +326,8 @@ Build the instrument, then write the protocol that says how you will know it sta
 **Starter:** [09-coding-the-codebook.qmd](starters/09-coding-the-codebook.qmd), the Week 9 starter file for coding your codebook in R.
 
 **Worked example:** [Extended Codebook and Reliability Protocol worked example (PDF)](resources/examples/MC501-example-extended-codebook-and-reliability-protocol.pdf). A finished submission, so you can see the form before you write yours.
+
+**Second example:** [the VR codebook](examples/vr-codebook/mc501-vr-codebook-walkthrough.html), a real published study with its downloads.
 
 **Template:** [Extended Codebook and Reliability Protocol template (Quarto .qmd)](resources/templates/MC501-codebook-template.qmd) or [the same template (Word .docx)](resources/templates/MC501-codebook-template.docx). Use it directly as your `codebook/codebook.qmd` or as inspiration for your own layout.
 
@@ -340,7 +344,9 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 
 **What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure, uploaded to Blackboard under Sampling Plan and Pilot, 20 to 30 items. Optional: the R Companion's **Reliability grid** takes your pass 1 and pass 2 codes, saves them as a CSV, and writes the `v2v::reliability()` call into your script; that call counts as the code that computed the figure. To code the pilot items in VS Code instead of a spreadsheet, **AURA: Open the data viewer** opens your CSV in a grid where you add your coding columns and code each row; your codes save to `data/derived/`, the original file is never changed, and **Insert rebuild code** writes the lines that join the codes back on. Excel and Google Sheets still work.
 
-**Length:** 1,000 to 1,600 words across the plan and the pilot write-up, plus 20 to 30 coded items. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+**Length:** 700 to 1,200 words across the plan and the pilot write-up, plus 20 to 30 coded items. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**Part of the White Paper:** a draft of the Methods section's sampling plan and reliability report.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
@@ -396,7 +402,9 @@ Say what is in the data before you test anything.
 
 **What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Describing Data in R. Optional: the Describe group of the R Companion's **Write R code** writes frequency tables, crosstabs with proportions, grouped summaries, and the bar chart, histogram, histogram comparing two groups, line chart over time, and boxplot in `theme_v2v()`, each chart saved with `ggsave()` and carrying an alt-text line marked YOUR TURN. The alt text and the interpretation stay your own writing. The diagnostics behind each figure are yours to run and report.
 
-**Length:** 600 to 1,200 words of your own writing (interpretation, diagnostics and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+**Length:** 500 to 900 words of your own writing (interpretation, diagnostics and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**Part of the White Paper:** a draft of the Results section's descriptive tables and figures. The paper reruns these calls on your own variables; the Twitch numbers stay here.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
@@ -417,7 +425,9 @@ Test four relationships, one per test, and report how big each is.
 
 **What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Inferencing Data in R. Optional: the Test group of the R Companion's **Write R code** writes the four tests for your settings-block variables, the plain R call first and the `v2v` wrapper after it as a check, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, and the interpretation are your own writing. Assumption checks are not generated; the Test group's **Power analysis for your sample size** writes the `pwr.t.test()` call for your design, and what its answer means for your study stays your own writing.
 
-**Length:** 900 to 1,500 words of your own writing (hypotheses, justifications, diagnostics, the four reports and the two paragraphs), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+**Length:** 700 to 1,100 words of your own writing (hypotheses, justifications, diagnostics, the four reports and the two paragraphs), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+
+**Part of the White Paper:** a draft of the Results section's tests, with the limits paragraph a draft of part of the Discussion. The paper reruns this script on your own variables; the Twitch numbers stay here.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
