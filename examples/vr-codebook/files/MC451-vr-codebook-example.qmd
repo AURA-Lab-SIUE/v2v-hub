@@ -15,7 +15,7 @@ Research question: which kinds of virtual reality experience are most common amo
 
 ## Unit of analysis
 
-One coded item is **one Steam store page for one title**, as a buyer sees it: the short description, every screenshot, and every trailer. Reviews, forums, the long description below the media, and the game itself are not part of the item. Nothing is coded from playing the title.
+One coded item is **one Steam store page for one title**, as a buyer sees it: the short description, every screenshot, and every trailer. Reviews, forums, the long description below the media, and the game itself are not part of the item.
 
 Fields looked up, not coded: `steam_appid` (Steam's ID for the title), `title`, `url`, and `owners_low` and `owners_high` (SteamSpy's ownership range).
 
@@ -31,21 +31,21 @@ The coders sometimes went past the store page. The instructions told them to sea
 | Element | Entry |
 |:--|:--|
 | Conceptual definition and source | Whether the user acts on the virtual environment, rather than watching events unfold. Interactivity is one of the defining dimensions of virtual reality (Steuer, 1992). |
-| Operational definition | Read the short description, then view every screenshot and trailer from left to right. Look for hands, controllers, tools, or weapons that the user moves, or for objects that respond to the user. |
-| Level of measurement, and what it allows | Nominal. It allows counts, percentages, and a chi-square test against another nominal variable; it rules out a mean or a ranking. |
+| Operational definition | Read the short description and view every screenshot and trailer. Look for hands, controllers, tools, or weapons the user moves, or objects that respond to the user. |
+| Level of measurement, and what it allows | Nominal. It allows counts, percentages, and a chi-square test; it rules out a mean or a ranking. |
 | Coded values | `yes` = the user's hands, controllers, tools, or weapons act on the environment. `no` = the only user action shown is turning the head to look around. `unsure` = the page does not show enough to decide. |
-| Edge-case decision rules | I1. If hands appear but only point at a menu, code `no`: a menu is not the environment. I2. If the description says the title is interactive but no screenshot or trailer shows it, code `unsure`. I3. If a trailer shows both a passive film and an interactive part, code `yes`. |
-| Validity sentence | If titles coded `no` turned out to need controllers to play, this variable would be measuring how a page is marketed rather than what the experience offers. |
+| Edge-case decision rules | I1. Hands that only point at a menu are `no`. I2. If only the description claims interactivity, code `unsure`. I3. If a trailer shows both a passive film and an interactive part, code `yes`. |
+| Validity sentence | If titles coded `no` turned out to need controllers, this variable would measure marketing, not the experience. |
 
 ### Variable 2: Perspective (`perspective`)
 
 | Element | Entry |
 |:--|:--|
 | Conceptual definition and source | Whose point of view the experience presents: the user's own eyes (first person) or a camera following a separate character (third person). |
-| Operational definition | In the screenshots and trailers, check where the camera sits and whether a main character is seen from outside. |
+| Operational definition | Check where the camera sits and whether a main character is seen from outside. |
 | Level of measurement, and what it allows | Nominal. Counts and percentages, and a crosstab with Interactivity; it rules out a mean. |
 | Coded values | `first` = the view is at eye level and the user's hands, tools, or weapons appear, or characters address the camera. `third` = a recurring main character is seen from outside and the camera follows that character. `unsure` = no clear sign either way. |
-| Edge-case decision rules | P1. If the page shows both views, code the view in most of the screenshots and trailers, and write a note. P2. If there is no camera position at all (a menu tool or a video player), code `unsure`. P3. If the evidence is thin, code `unsure`; never guess `first` because most titles are first person. |
+| Edge-case decision rules | P1. If the page shows both views, code the majority view and write a note. P2. If there is no camera position at all (a menu tool or a video player), code `unsure`. P3. If the evidence is thin, code `unsure`; never guess `first` because most titles are first person. |
 | Validity sentence | If `first` matched almost every title whatever the page showed, the variable would be recording the medium, not the title. |
 
 ### Variables 3 to 18: Genre (`genre_*`, one variable per genre)
@@ -55,29 +55,29 @@ Each genre is its own variable, so one title can carry several. The genre set fo
 | Element | Entry |
 |:--|:--|
 | Conceptual definition and source | Whether an activity typical of that genre is a **major focus** of the experience (Lucas & Sherry, 2004). |
-| Operational definition | For each genre, judge whether its activity fills more than 20 percent of what the page shows, counting the screenshots and the trailer time that show it. Use the definitions in the table below. |
-| Level of measurement, and what it allows | Nominal, one per genre. Counts and percentages per genre, and comparisons between groups of titles; it rules out adding genres into a score. |
+| Operational definition | For each genre, judge whether its activity fills more than 20 percent of the screenshots and trailer time. Use the definitions below. |
+| Level of measurement, and what it allows | Nominal, one per genre. Counts, percentages, and group comparisons; it rules out adding genres into a score. |
 | Coded values | `yes` = the activity is a major focus (more than 20 percent). `maybe` = it appears but may fall below 20 percent. `no` = it does not appear, or appears only in passing. Every genre gets a value; a blank cell is never a code. |
 | Edge-case decision rules | G1. A title may have any number of `yes` genres, including none. G2. If two genres describe the same activity, code the more specific one as well (shooting at enemies is Shooter, and Action only if reflexes are the focus). G3. If the title is not a game (a video player, a 360-degree film, a social space), code `no` for every genre and write "not a game" in the notes. G4. Code `maybe` only with a note naming what you saw. |
 | Validity sentence | If one genre absorbed the titles that fit nowhere else, it would stop measuring that genre and start measuring "everything else". |
 
 | Variable | Genre | Definition | Counts as | Does not count as |
 |:--|:--|:--|:--|:--|
-| `genre_action` | Action | The experience relies on the player's reflexes, coordination, or reaction time. | Timed dodging, blocking, or hitting targets as they arrive. | A slow walk through a scene with nothing to react to. |
+| `genre_action` | Action | Play relies on reflexes, coordination, or reaction time. | Timed dodging, blocking, or hitting targets as they arrive. | A slow walk through a scene with nothing to react to. |
 | `genre_adventure` | Adventure | The player solves problems to move forward, usually through exploration and story. | Finding a key to open the next room. | A puzzle with no world around it (code Puzzle). |
-| `genre_fighter` | Fighter | The experience centers on hand-to-hand or melee combat. | Sword duels; boxing against an opponent. | Combat only at a distance (code Shooter). |
-| `genre_shooter` | Shooter | The player shoots at other players or at non-player characters. | Guns, bows, or spells fired at enemies. | Shooting at targets with no opponent (code Shooter only if targets stand in for opponents; add a note). |
-| `genre_rpg` | Role-Playing Game | The player takes on a character role: creates a persona, has a background story, or builds a story by interacting with other characters. | Character creation; dialogue choices. | A named character the player only watches. |
-| `genre_simulation` | Simulation | The experience closely imitates a real-world activity or system: driving, flying, working a job, or running a city. | A job to do; a vehicle cockpit. | A video player or a 360-degree film (rule G3). |
+| `genre_fighter` | Fighter | Play centers on hand-to-hand or melee combat. | Sword duels; boxing against an opponent. | Combat only at a distance (code Shooter). |
+| `genre_shooter` | Shooter | The player shoots at other players or at non-player characters. | Guns, bows, or spells fired at enemies. | Targets with no opponent, unless they stand in for opponents (add a note). |
+| `genre_rpg` | Role-Playing Game | The player takes on a character role: a persona, a background story, or a story built with other characters. | Character creation; dialogue choices. | A named character the player only watches. |
+| `genre_simulation` | Simulation | The experience imitates a real-world activity or system: driving, working a job, running a city. | A job to do; a vehicle cockpit. | A video player or a 360-degree film (rule G3). |
 | `genre_turn_based_strategy` | Turn-Based Strategy | Strategic planning in which players take turns. | Moving units on a map, one side at a time. | Real-time planning (code Strategy). |
 | `genre_strategy` | Strategy | Strategic planning in real time, not in turns. | Building defenses while waves arrive. | Turn-taking play. |
-| `genre_racing_speed` | Racing/Speed | The player competes to move faster or better than others, on foot or in a vehicle. | A lap timer; opponents on a track. | Driving with no competition (code Simulation). |
-| `genre_sports` | Sports | The experience is built around an athletic sport, a team, or a sporting event. | A ball game with rules and a score. | Exercise with no sport. |
+| `genre_racing_speed` | Racing/Speed | The player races others, on foot or in a vehicle. | A lap timer; opponents on a track. | Driving with no competition (code Simulation). |
+| `genre_sports` | Sports | Built around an athletic sport, team, or event. | A ball game with rules and a score. | Exercise with no sport. |
 | `genre_classic_board_games` | Classic Board Games | A digital version of a board, card, or table game. | Chess or poker at a virtual table. | An original puzzle with board-game art (code Puzzle). |
-| `genre_puzzle` | Puzzle | The player solves a puzzle with little or no element of chance. | Opening a locked box by working out its mechanism. | A guessing game of chance (code Dice). |
-| `genre_dice` | Dice | Chance drives the experience: dice, random events, or randomly generated levels. | Maps that change every run. | A fixed level that only looks random. |
-| `genre_quiz_trivia` | Quiz/Trivia | The experience tests the player's knowledge. | Timed questions with right and wrong answers. | Learning content with no questions. |
-| `genre_flight` | Flight | The player flies through the environment: an aircraft, a spacecraft, or a creature. | A cockpit view over terrain. | Floating in place to look around. |
+| `genre_puzzle` | Puzzle | The player solves a puzzle with little or no element of chance. | Working out a locked box's mechanism. | A guessing game of chance (code Dice). |
+| `genre_dice` | Dice | Chance drives play: dice, random events, or generated levels. | Maps that change every run. | A fixed level that only looks random. |
+| `genre_quiz_trivia` | Quiz/Trivia | Play tests the player's knowledge. | Timed questions with right and wrong answers. | Learning content with no questions. |
+| `genre_flight` | Flight | The player flies an aircraft, a spacecraft, or a creature. | A cockpit view over terrain. | Floating in place to look around. |
 | `genre_music_rhythm` | Music/Rhythm | The player plays an instrument or acts in time to music. | Hitting blocks on the beat. | Background music only. |
 
 ::: {.callout-note}
@@ -86,7 +86,7 @@ The real instructions said a genre counts when it is a major focus "(<20% of the
 
 The real sheet also left a genre **blank** when it did not apply. A blank cannot be told apart from a cell nobody coded. The ideal codebook writes `no`.
 
-Simulation became a catch-all. The team debated it in the document's margins: a *simulator* (flying, driving) and a *simulation* (running a city or a life) seemed like different genres. The published study kept one Simulation code. In the recorded data, one coder gave Simulation to video players such as YouTube VR, which is why rule G3 exists.
+Simulation became a catch-all. In the recorded data, one coder gave Simulation to video players such as YouTube VR, which is why rule G3 exists.
 :::
 
 ## Decision rules for the whole codebook

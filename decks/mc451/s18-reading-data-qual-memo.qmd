@@ -188,6 +188,7 @@ You should now have:
 ## Before Next Time
 
 - **Due Friday, October 30, 11:59 PM: Codebook and Qualitative Memo**
+    - The codebook, 800 to 1,500 words; the memo, 200 to 300 words
     - Render the codebook before you submit it
 - **Read Chapter 10, The Sample**
 - **Next Tuesday we cover why you cannot code every message in your source, and how to draw a sample**

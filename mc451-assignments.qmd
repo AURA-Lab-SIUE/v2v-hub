@@ -355,7 +355,7 @@ Build the instrument, and write down what watching taught you. The qualitative r
 
 **What you submit:** the codebook and a 200 to 300 word qualitative memo, as two documents or one document with two headed parts, uploaded to Blackboard under Codebook and Qualitative Memo.
 
-**Length:** The codebook 1,500 to 3,000 words and the memo 200 to 300 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+**Length:** The codebook 800 to 1,500 words, counting its variable and example tables, and the memo 200 to 300 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
