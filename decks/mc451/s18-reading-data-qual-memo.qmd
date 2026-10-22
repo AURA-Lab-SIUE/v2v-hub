@@ -26,10 +26,10 @@ format:
 - **Then we find the messages your rules do not yet cover**
 - **Then we write the qualitative memo, which is due with the codebook**
 
-We check the book's example codebook against the example data first. Then you repeat each step
+We check the book's [example codebook](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study) against the example data first. Then you repeat each step
 with your own codebook and your own source.
 
-Open `codebook/codebook.qmd` beside the R Companion's data viewer: run **AURA: Open the data viewer**, then pick **Twitch chat (the course sample)**.
+Open `codebook/codebook.qmd` ([template](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC451-codebook-template.docx)) beside the R Companion's data viewer: run **AURA: Open the data viewer**, then pick **Twitch chat (the course sample)**.
 
 ## Check That the Data Contains What Each Variable Needs
 
@@ -44,7 +44,7 @@ A missing column found today is a good result. The same missing column found in 
 - **Run AURA: Open the data viewer, then pick Twitch chat (the course sample)**
     - Each row is one message, with its `channel`, `sender`, and `message` side by side
     - This is what a coder would actually be looking at
-- **In the example codebook, message target is coded from the message text**
+- **In the [example codebook](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study), message target is coded from the message text**
     - Plus the sender, for at-mentions and replies
 - Both columns exist in the data, so the variable is supported
 
@@ -59,23 +59,23 @@ Check every variable in your own codebook the same way against your own source.
 
 ## Exercise: Check Your Codebook Against the Data {.discuss}
 
-Answer each question in writing, one line each:
+Answer each question in writing about your own codebook and your own source, one line each:
 
-- If the example chat table had **no `sender` column**, which example rule would stop working?
-- The example codebook allows the category "a reply to a specific prior message". Does the example data let a coder see which message a reply answers? Check the columns and answer yes or no
-- Name one thing your own codebook assumes about your own data that you have not yet checked
+- Which variable in your codebook needs information your data does not show? Name the column or detail that is missing
+- Which of your decision rules depends on something you have not yet looked at in your own data?
+- Name one thing your codebook assumes about your source that you have not checked, and say how you will check it
 
 ## What First Contact Confirmed
 
 - **The columns the example variables need are present**
 - **The messiness the book warned about is visible in the first row**
-    - The edge cases you wrote in Chapter 7 are real messages, not hypothetical ones
+    - The edge cases you wrote in [Chapter 7](https://aura-lab.siue.edu/v2v/chapters/chapter07.html) are real messages, not hypothetical ones
     - Twenty-three question marks has no obvious target
-    - "TriEasy Clap" repeated many times is copypasta, which the example codebook's Rule 3 already covers
+    - "TriEasy Clap" repeated many times is copypasta, which the [example codebook's Rule 3](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study) already covers
 
 ## What the Data Makes Harder
 
-- **Short messages made only of emotes are everywhere; the example codebook's Rule 2 covers them**
+- **Short messages made only of emotes are everywhere; the [example codebook's Rule 2](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study) covers them**
 - **A wall of punctuation has no addressee, so it is coded "unclassifiable"**
 - **Stream titles contain line breaks and long strings of digits**
 - **None of this is broken data. It is what people type**
@@ -113,7 +113,7 @@ Each of these needs a written rule before coding starts.
 
 - **Write the rule down now, while the codebook is still being revised**
     - The rule: at-mentions are matched **ignoring capitalization**
-- **State it in the decision rules, numbered, next to Rules 1 through 5**
+- **State it in the decision rules, numbered, next to [Rules 1 through 5](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study)**
 - This is what the special-cases section is for, and your special-cases section stops being empty
 
 Every rule you add now is a disagreement you will not have to settle later.
@@ -138,6 +138,7 @@ chat %>%
 - **The memo is graded with the codebook as one 50-point assignment, due Friday, October 30, 11:59 PM**
 
 Short does not mean easy. Every sentence should point at something you actually saw.
+[Assignment](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo), [rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC451-rubric-codebook-and-qualitative-memo.pdf), and [worked example](https://aura-lab.siue.edu/v2v-hub/resources/examples/MC451-example-codebook-and-qualitative-memo.pdf)
 
 ## The Four Kinds of Field Note
 
@@ -187,10 +188,10 @@ You should now have:
 
 ## Before Next Time
 
-- **Due Friday, October 30, 11:59 PM: Codebook and Qualitative Memo**
+- **Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo)**
     - The codebook, 800 to 1,500 words; the memo, 200 to 300 words
     - Render the codebook before you submit it
-- **Read Chapter 10, The Sample**
+- **Read [Chapter 10, The Sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html)**
 - **Next Tuesday we cover why you cannot code every message in your source, and how to draw a sample**
     - The Thursday after that, your codebook is tested: the same items coded twice, compared as one number
 
