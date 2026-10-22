@@ -392,6 +392,8 @@ Decide what you will code, then prove the codebook survives contact with it. The
 
 **Rubric:** [Sampling Plan and Pilot rubric (PDF)](resources/rubrics/MC451-rubric-sampling-plan-and-pilot.pdf). It lists each part of the plan and the pilot with its points, and carries the table for sizing your corpus.
 
+**Worked example:** [Sampling Plan and Pilot worked example (PDF)](resources/examples/MC451-example-sampling-plan-and-pilot.pdf), with its [coded pilot data (CSV)](resources/examples/MC451-sampling-pilot/MC451-pilot-codes.csv) and [stability script (R)](resources/examples/MC451-sampling-pilot/02-pilot-stability.R). A finished submission, so you can see the form before you write yours.
+
 **How-to:** the [Draw your coding sample](guides/mc451/06-draw-your-coding-sample.md) and [Reliability grid](guides/mc451/07-reliability-grid.md) step-by-step guides.
 
 </details>
