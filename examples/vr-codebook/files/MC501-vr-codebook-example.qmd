@@ -131,17 +131,33 @@ You are the only coder, so every reliability claim here is about your own consis
 
 ## The statistic and its threshold
 
-Krippendorff's alpha for each variable, computed on a re-code of the same titles.
+Krippendorff's alpha for each variable, computed on a re-code of the same titles. This is intracoder reliability (stability): both passes are yours. Report percent agreement beside it, never alone, because most titles are `no` on most genres, so two passes would agree on `no` often by chance.
 
-Alpha of .80 or higher for each variable; .67 to .79 is reported as tentative.
+Alpha of .80 or higher for each variable, the level Lombard et al. (2002) call acceptable in most situations; .67 to .79 is reported as tentative. A stability figure is a weaker claim than agreement between two coders, so it is reported as stability and never as intercoder agreement.
 
 ## The stability procedure and a fresh sample
 
-Code a seeded random sample of 20 titles, wait at least one week without looking at the first codes, then code the same 20 again from the store pages. Compare the two passes variable by variable.
+Code a seeded random sample of 20 titles, wait at least one week without looking at the first codes, then code the same 20 again from the store pages on a fresh copy of the sheet with no code columns. Compare the two passes variable by variable. Twenty is about 14 percent of the 139 titles, above the 10 percent minimum.
+
+Draw the 20 after the codebook is frozen, from titles that played no part in building it: the 20 store pages read for the memo are excluded. Write the seed in the script so the draw can be repeated.
 
 ## When it fails, and reporting a disappointing number
 
-Revise the decision rules for the failing variable, write down what changed, and re-code a fresh seeded sample of 20.
+Revise the decision rules for the failing variable, write down what changed, and re-code a fresh seeded sample of 20. Change only the rules, never a genre's definition, and date the revised rules before opening any new page, so the codebook does not bend toward your own habits.
+
+Report every alpha, for every variable and every round, including any below .80. For a low figure, say that your own reading of that variable shifted between passes, name the result that rests on it, and call that result tentative.
+
+## Single-coder safeguards
+
+1. Rules before coding: every genre definition, with its counts-as and does-not-count-as columns, is written before the sample is coded.
+2. Examples from the material: each value carries titles from `vr-sample.csv`, and a hard case is checked against them before it is coded.
+3. A frozen codebook with a change log: after the freeze, every change is logged with its date, the rule changed, and the reason.
+4. No blank cells: every genre gets `yes`, `maybe`, or `no`, and every `maybe` carries a note, so an uncoded cell can always be told from a coded one.
+5. The store page only: nothing is coded from gameplay videos found elsewhere, so every code can be checked against a page a reader can open.
+
+## Second-coder counterfactual
+
+With a second coder, double-code 28 titles, 20 percent of the 139, drawn the same way as the stability sample, and report Krippendorff's alpha for each variable as intercoder agreement. Train the coder on this codebook with 10 practice titles from outside the sample, compare codes, and settle each disagreement against the written rule. Write the reconciliation rule down before coding starts, and keep the settled column beside both coders' columns. The finding most at risk is the genre profile, Action and Simulation above all, because whether an activity fills more than 20 percent of a page is the judgment two coders would most often part on.
 
 ::: {.callout-note}
 ## In practice
@@ -151,6 +167,8 @@ The published study used three trained coders who were not the authors, and two 
 ## References
 
 Foxman, M., Beyea, D., Leith, A. P., Ratan, R. A., Chen, V. H. H., & Klebig, B. (2022). Beyond genre: Classifying virtual reality experiences. *IEEE Transactions on Games, 14*(3), 466-477. https://doi.org/10.1109/TG.2021.3119521
+
+Lombard, M., Snyder-Duch, J., & Bracken, C. C. (2002). Content analysis in mass communication: Assessment and reporting of intercoder reliability. *Human Communication Research, 28*(4), 587-604. https://doi.org/10.1111/j.1468-2958.2002.tb00826.x
 
 Lucas, K., & Sherry, J. L. (2004). Sex differences in video game play: A communication-based explanation. *Communication Research, 31*(5), 499-523. https://doi.org/10.1177/0093650204267930
 
