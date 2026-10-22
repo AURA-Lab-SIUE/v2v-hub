@@ -22,10 +22,12 @@ there. Nothing in it changes the example data. Looking is all we do today.
 ## Step 1: Switch the course package on
 
 `library()` switches a package on for this R session. You do this every time you open R, not
-only once.
+only once. The second line stops R from printing long numbers in scientific notation, which
+would turn a timestamp such as `1603406400` into `1.6034e+09`.
 
 ```{r}
 library(v2v)
+options(scipen = 999)  # show whole numbers, never scientific notation
 ```
 
 **What you should see:** nothing, or a short startup message. Silence means success.

@@ -41,7 +41,7 @@ consumes, and the White Paper is those components assembled and argued.
 | Friday, October 2 | [Topic Selection and Research Questions](#topic-selection-and-research-questions) | Phase III | 25 |
 | Friday, October 9 | [Project Prospectus](#project-prospectus) | Phase III | 25 |
 | Friday, October 16 | [Definitions Practice](#definitions-practice) | Phase III | 25 |
-| Friday, October 23 | [Codebook and Qualitative Memo](#codebook-and-qualitative-memo) | Phase III | 50 |
+| Friday, October 30 | [Codebook and Qualitative Memo](#codebook-and-qualitative-memo) | Phase III | 50 |
 | Friday, November 6 | [Sampling Plan and Pilot](#sampling-plan-and-pilot) | Phase III | 75 |
 | Friday, November 13 | [Data Wrangling in R](#data-wrangling-in-r) | Phase IV | 50 |
 | Friday, November 20 | [Describing Data in R](#describing-data-in-r) | Phase IV | 75 |
@@ -346,7 +346,7 @@ Turn your constructs into things a stranger could measure.
 
 ### Codebook and Qualitative Memo {#codebook-and-qualitative-memo}
 
-**50 points. Due Friday, October 23, 11:59 PM.** *(Week 9)*
+**50 points. Due Friday, October 30, 11:59 PM.** *(Week 10)*
 
 Build the instrument, and write down what watching taught you. The qualitative reading looks different for every project, depending on your platform and your variables, and it is how you build and solidify the categories, definitions, and edge rules of your quantitative codebook.
 

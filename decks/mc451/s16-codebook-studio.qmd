@@ -17,7 +17,7 @@ format:
 - One complete codebook, built part by part from the Twitch chat example
 - The mistake each part usually has
 - The single-coder note and the memo
-- What the Codebook and Qualitative Memo contains on October 23
+- What the Codebook and Qualitative Memo contains on October 30
 
 ## What Today Is
 
@@ -27,7 +27,7 @@ format:
 - **The example is the shared Twitch chat corpus**
     - Your own codebook uses the same six parts on your own material
 - **Your codebook is written at home, not in this room**
-    - It is due Friday, October 23
+    - It is due Friday, October 30
 
 ## The Codebook Is the Instrument
 
@@ -244,7 +244,7 @@ On paper or in a file, for your own project:
 
 - Write the unit of analysis in one sentence, following the Part 2 shape
 - Name the one thing in your material a coder could point at
-- Keep the sentence; it is the second row of the October 23 codebook
+- Keep the sentence; it is the second row of the October 30 codebook
 
 ## Common Problems
 
@@ -269,9 +269,9 @@ You can now:
 - Tell a **decision rule** from an intention
 - Say what the **single-coder note** and the **memo** each have to do
 
-## The Deliverable, October 23
+## The Deliverable, October 30
 
-Codebook and Qualitative Memo, 50 points, due Friday, October 23, 11:59 PM, on Blackboard.
+Codebook and Qualitative Memo, 50 points, due Friday, October 30, 11:59 PM, on Blackboard.
 
 | Row | Points |
 |---|---|
@@ -289,7 +289,7 @@ The rubric PDF is on the Hub: aura-lab.siue.edu/v2v-hub/resources/rubrics/MC451-
 
 - **Due Friday, October 16, 11:59 PM:** Definitions Practice
     - Run it through Codebook Check on the Hub before you submit
-- **Due Friday, October 23, 11:59 PM:** Codebook and Qualitative Memo
+- **Due Friday, October 30, 11:59 PM:** Codebook and Qualitative Memo
     - Write it in the six parts shown today, then the memo
     - Run it through Codebook Check on the Hub before you submit
 - **Read** Chapter 9

@@ -274,7 +274,7 @@ Nothing changed in the data. Looking is all we did.
 ## Before Thursday
 
 - **Finish moving your codebook into `codebook/codebook.qmd`, then render it**
-- **Due Friday, October 23, 11:59 PM: Codebook and Qualitative Memo**
+- **Due Friday, October 30, 11:59 PM: Codebook and Qualitative Memo**
     - The full codebook plus a 200 to 300 word memo
 - **Bring your `glimpse()` output on Thursday**
     - On Thursday we read the data against your codebook

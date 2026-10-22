@@ -334,6 +334,7 @@ If your pilot led to no codebook changes, the items you piloted were probably to
 
 ## Before Week 11
 
+- **Submit the Extended Codebook and Reliability Protocol by Monday, November 2, 11:59 PM**
 - **Submit the Sampling Plan and Pilot by Monday, November 9, 11:59 PM, with the reliability computation**
 - **Read Chapter 11**
     - Plus the assigned article: **Wickham (2014)**, "Tidy data"

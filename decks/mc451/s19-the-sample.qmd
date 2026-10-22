@@ -175,6 +175,7 @@ The number 409 is arbitrary. What matters is that a seed is set and recorded in 
     - We compute **Cohen's kappa** and watch an example codebook fail
 - **Read the second half of Chapter 10 before Thursday**
 - **Bring your codebook, because it is the thing being tested**
+- **Due Friday, October 30, 11:59 PM: Codebook and Qualitative Memo**
 - **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot**
 
 ## Questions, Comments, or Concerns? {.titlecard}

@@ -135,7 +135,7 @@ chat %>%
 - **Write 200 to 300 words on the patterns you observed while watching your source**
     - The memo is the written record of what watching taught you
     - It explains **why** your codebook has the categories it has
-- **The memo is graded with the codebook as one 50-point assignment, due Friday, October 23, 11:59 PM**
+- **The memo is graded with the codebook as one 50-point assignment, due Friday, October 30, 11:59 PM**
 
 Short does not mean easy. Every sentence should point at something you actually saw.
 
@@ -187,7 +187,7 @@ You should now have:
 
 ## Before Next Time
 
-- **Due Friday, October 23, 11:59 PM: Codebook and Qualitative Memo**
+- **Due Friday, October 30, 11:59 PM: Codebook and Qualitative Memo**
     - Render the codebook before you submit it
 - **Read Chapter 10, The Sample**
 - **Next Tuesday we cover why you cannot code every message in your source, and how to draw a sample**

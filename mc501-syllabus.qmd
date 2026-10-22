@@ -508,8 +508,8 @@ The one exception is the White Paper and poster in finals week.
 | 6 | Sep 30 | Ch 6 the prospectus; Ch 7 Structured Listening (Reading: Lakens (2022))| [Topic Selection / RQs](mc501-assignments.qmd#topic-selection-and-research-questions) |
 | 7 | Oct 7 | Ch 7 manifest vs. latent; Ch 8 operationalization (Reading: Hayes & Krippendorff (2007))| [Research Proposal](mc501-assignments.qmd#research-proposal-sentence-outline) |
 | 8 | Oct 14 | Ch 8 measurement, reliability & validity; building the codebook (Reading: Lombard et al. (2002))| [Definitions Practice](mc501-assignments.qmd#definitions-practice) |
-| 9 | Oct 21 | Ch 9 [R] coding the codebook; reading data vs. the codebook (Reading: Munafo et al. (2017), revisit)| [Extended Codebook & Reliability Protocol](mc501-assignments.qmd#extended-codebook-and-reliability-protocol) |
-| 10 | Oct 28 | Ch 10 The Sample; the pilot; kappa / alpha (Reading: Hayes & Krippendorff (2007), revisit)| |
+| 9 | Oct 21 | Ch 9 [R] coding the codebook; reading data vs. the codebook (Reading: Munafo et al. (2017), revisit)| |
+| 10 | Oct 28 | Ch 10 The Sample; the pilot; kappa / alpha (Reading: Hayes & Krippendorff (2007), revisit)| [Extended Codebook & Reliability Protocol](mc501-assignments.qmd#extended-codebook-and-reliability-protocol) |
 | 11 | Nov 4 | Ch 11 [R] Wrangling the Data (Reading: Wickham (2014))| [Sampling Plan & Pilot](mc501-assignments.qmd#sampling-plan-and-pilot-20-to-30-items) |
 | 12 | Nov 11 | Ch 12 [R] Describing: descriptive statistics + graphics (Reading: Lakens (2013))| [Data Wrangling [R]](mc501-assignments.qmd#data-wrangling-in-r) |
 | 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* (Reading: Lakens et al. (2018))| [Describing Data [R]](mc501-assignments.qmd#describing-data-in-r) |

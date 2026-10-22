@@ -460,7 +460,7 @@ elements, written the way they will appear in your codebook.
     - Re-read **Munafo et al. (2017)** on reporting and usability
 - **Due Monday, October 19, 11:59 PM:** Definitions Practice
     - Run it through Codebook Check on the Hub before you submit
-- **Due Monday, October 26, 11:59 PM:** Extended Codebook and Reliability Protocol
+- **Due Monday, November 2, 11:59 PM:** Extended Codebook and Reliability Protocol
     - It includes your planned sample size, thresholds, and revision triggers
     - Have three variables written out with their decision rules
 - **Time your first twenty coded items;** Week 10 uses that rate to set your sample size

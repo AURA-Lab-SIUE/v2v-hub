@@ -27,6 +27,7 @@ tell you what the line under them does.
 ```{r}
 library(tidyverse)  # the tools for every data step
 library(v2v)        # the course package: the example data and helpers
+options(scipen = 999)  # whole numbers, never scientific notation, so timestamps stay readable
 ```
 
 **What you should see:** a short list of attached packages, then a line like

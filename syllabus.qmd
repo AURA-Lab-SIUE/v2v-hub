@@ -432,8 +432,8 @@ All guides: [MC 451 guides](guides/mc451/index.md)
 | 6 | Sep 29 / Oct 1 | S11 · Ch 6 the prospectus; pre-registration | S12 · Ch 7 Structured Listening; field notes | [Topic Selection & RQs](mc451-assignments.qmd#topic-selection-and-research-questions) |
 | 7 | Oct 6 / 8 | S13 · Ch 7 manifest vs. latent; sampling observation | S14 · Ch 8 the operationalization gap | [Project Prospectus](mc451-assignments.qmd#project-prospectus) |
 | 8 | Oct 13 / 15 | S15 · Ch 8 levels of measurement; reliability & validity | S16 · Ch 8 building the codebook [studio] | [Definitions Practice](mc451-assignments.qmd#definitions-practice) |
-| 9 | Oct 20 / 22 | S17 · Ch 9 [R] coding the codebook | S18 · Ch 9 [R] reading data vs. the codebook; qual memo | [Codebook & Qual Memo](mc451-assignments.qmd#codebook-and-qualitative-memo) |
-| 10 | Oct 27 / 29 | S19 · Ch 10 The Sample: SRS, stratified, drawing | S20 · Ch 10 [R] the pilot; kappa / alpha | |
+| 9 | Oct 20 / 22 | S17 · Ch 9 [R] coding the codebook | S18 · Ch 9 [R] reading data vs. the codebook; qual memo | |
+| 10 | Oct 27 / 29 | S19 · Ch 10 The Sample: SRS, stratified, drawing | S20 · Ch 10 [R] the pilot; kappa / alpha | [Codebook & Qual Memo](mc451-assignments.qmd#codebook-and-qualitative-memo) |
 | 11 | Nov 3 / 5 | S21 · Ch 11 [R] Wrangling the Data | S22 · Ch 11 [R] wrangling lab | [Sampling Plan & Pilot](mc451-assignments.qmd#sampling-plan-and-pilot) |
 | 12 | Nov 10 / 12 | S23 · Ch 12 [R] Describing: descriptive statistics + graphics | S24 · Ch 12 [R] describing lab | [Data Wrangling [R]](mc451-assignments.qmd#data-wrangling-in-r) |
 | 13 | Nov 17 / 19 | S25 · Ch 13 [R] Inferential: t-test, ANOVA, regression | S26 · Ch 13 [R] inference lab; *White Paper assigned* | [Describing Data [R]](mc451-assignments.qmd#describing-data-in-r) |

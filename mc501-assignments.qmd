@@ -40,7 +40,7 @@ consumes, and the White Paper is those components assembled and argued.
 | Monday, October 5 | [Topic Selection and Research Questions](#topic-selection-and-research-questions) | Phase III | 25 |
 | Monday, October 12 | [Research Proposal, sentence outline](#research-proposal-sentence-outline) | Phase III | 75 |
 | Monday, October 19 | [Definitions Practice](#definitions-practice) | Phase III | 25 |
-| Monday, October 26 | [Extended Codebook and Reliability Protocol](#extended-codebook-and-reliability-protocol) | Phase III | 75 |
+| Monday, November 2 | [Extended Codebook and Reliability Protocol](#extended-codebook-and-reliability-protocol) | Phase III | 75 |
 | Monday, November 9 | [Sampling Plan and Pilot, 20 to 30 items](#sampling-plan-and-pilot-20-to-30-items) | Phase III | 75 |
 | Monday, November 16 | [Data Wrangling in R](#data-wrangling-in-r) | Phase IV | 50 |
 | Monday, November 23 | [Describing Data in R](#describing-data-in-r) | Phase IV | 100 |
@@ -306,7 +306,7 @@ Turn your constructs into definitions a stranger could apply without asking you 
 
 ### Extended Codebook and Reliability Protocol {#extended-codebook-and-reliability-protocol}
 
-**75 points. Due Monday, October 26, 11:59 PM.** *(Week 9)*
+**75 points. Due Monday, November 2, 11:59 PM.** *(Week 10)*
 
 Build the instrument, then write the protocol that says how you will know it stayed consistent.
 
