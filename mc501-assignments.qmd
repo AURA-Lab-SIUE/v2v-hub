@@ -315,11 +315,11 @@ Build the instrument, then write the protocol that says how you will know it sta
 
 **What you submit:** the codebook and the reliability protocol, as one document with two headed parts, uploaded to Blackboard under Extended Codebook and Reliability Protocol.
 
-**Length:** The codebook 2,000 to 3,500 words and the reliability protocol 800 to 1,400 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+**Length:** The codebook 1,200 to 2,000 words, counting its variable and example tables, and the reliability protocol 500 to 900 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
-**Rubric:** [Extended Codebook and Reliability Protocol rubric (PDF)](resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf). It lists the five parts of the codebook, the eight parts of the protocol, and the points for each.
+**Rubric:** [Extended Codebook and Reliability Protocol rubric (PDF)](resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf). It lists the five parts of the codebook, the five parts of the protocol, and the points for each.
 
 **Starter:** [09-coding-the-codebook.qmd](starters/09-coding-the-codebook.qmd), the Week 9 starter file for coding your codebook in R.
 

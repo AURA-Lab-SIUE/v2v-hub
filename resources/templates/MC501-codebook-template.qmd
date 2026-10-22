@@ -90,21 +90,17 @@ Repeat the table below once per variable, as many times as your study has variab
 
 *Open with one sentence: you are the only coder, so every reliability claim here is about your own consistency over time, intracoder reliability (stability), not agreement between two coders.*
 
-## 6. The statistic
+## 6. The statistic and its threshold
 
 *Name the statistic (for example, Krippendorff's alpha) and the metric for each variable, with one sentence on why this statistic and not another. Call it intracoder reliability (stability). Say why percent agreement alone is not enough.*
 
-## 7. The threshold
-
 *Give the threshold with its source (author, year). Add one sentence saying a stability figure is a weaker claim than agreement between two coders and will not be reported as if it were one.*
 
-## 8. The stability procedure
+## 7. The stability procedure and a fresh sample
 
 *Say how many items you will re-code (at least 10 percent of your coded items), that you will re-code them yourself at least 48 hours after the first pass, and that your first codes will be hidden while you do.*
 
 *Name the dated file in your repository that records this plan before the re-code (for example, `codebook/stability-plan.md`), committed before you start the second pass.*
-
-## 9. A fresh reliability sample
 
 *Describe a sample kept separate from the items you used to build and revise the codebook: its size, and how it is drawn (for example, a seeded random draw in R).*
 
@@ -116,15 +112,13 @@ recode_items <- coded_items %>%
   slice_sample(n = 15)
 ```
 
-## 10. When it fails
+## 8. When it fails, and reporting a disappointing number
 
 *Say in advance what you do if a variable misses the threshold: which categories you revise, how, and what keeps the codebook from bending toward your own habits (for example, revising only from written rules and re-testing on a new sample).*
 
-## 11. Reporting a disappointing number
-
 *Commit to reporting the figure even if it is low, and write what you will say about it.*
 
-## 12. Single-coder safeguards
+## 9. Single-coder safeguards
 
 *Name at least three safeguards you are actually using, each described as what you do. Choose from the rubric's list or add your own.*
 
@@ -132,7 +126,7 @@ recode_items <- coded_items %>%
 2. *Safeguard, and what you do.*
 3. *Safeguard, and what you do.*
 
-## 13. Second-coder counterfactual
+## 10. Second-coder counterfactual
 
 *One paragraph, written as what you would do if this study had a second coder: how many items you would double-code, which statistic you would report, how you would train the coder and settle disagreements, and which finding is most at risk.*
 
