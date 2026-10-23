@@ -406,7 +406,7 @@ Say what is in the data before you test anything.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** your Quarto document and its rendered output, uploaded to Blackboard under Describing Data in R. Optional: the Describe group of the R Companion's **Write R code** writes frequency tables, crosstabs with proportions, grouped summaries, and the bar chart, histogram, histogram comparing two groups, line chart over time, and boxplot in `theme_v2v()`, each chart saved with `ggsave()` and carrying an alt-text line marked YOUR TURN. The alt text and the interpretation stay your own writing. The diagnostics behind each figure are yours to run and report.
+**What you submit:** the filled worksheet and the HTML it renders to, which carries the figures, uploaded to Blackboard under Describing Data in R. The worksheet is part 2 of the Twitch job: it loads `twitch_analysis.RDS` with your hand-coded variable inside, writes the code that is not the point, and leaves blanks for the tables, figures, and diagnostics and a prompt after each output for your interpretation. Optional: the Describe group of the R Companion's **Write R code** writes frequency tables, crosstabs with proportions, grouped summaries, and the bar chart, histogram, histogram comparing two groups, line chart over time, and boxplot in `theme_v2v()`, each chart saved with `ggsave()` and carrying an alt-text line marked YOUR TURN. The alt text and the interpretation stay your own writing. The diagnostics behind each figure are yours to run and report.
 
 **Length:** 500 to 900 words of your own writing (interpretation, diagnostics and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -415,6 +415,10 @@ Say what is in the data before you test anything.
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Describing Data in R rubric (PDF)](resources/rubrics/MC501-rubric-describing-data-in-r.pdf). It lists the tables, figures, diagnostics, and interpretation it asks for, and the points for each.
+
+**Worksheet:** [12-describing-data-mc501.qmd](starters/12-describing-data-mc501.qmd), the worksheet you fill in and submit.
+
+**Risks guide:** [Describing Data risks guide](resources/risks/describing-data.qmd). The traps on this job, what each looks like, and how to check for it. It shows no answers.
 
 **How-to:** [Tables and charts](guides/mc501/09-describing-tables-and-charts.md) step-by-step guide, and the [Describing data](https://siue.yuja.com/V/Video?v=17490672&a=193714265) walkthrough video.
 

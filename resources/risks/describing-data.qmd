@@ -1,0 +1,149 @@
+---
+title: "Describing Data: risks guide"
+subtitle: "MC 451 and MC 501 · the traps on worksheet 2 of the Twitch job"
+---
+
+This guide goes with the Describing Data worksheet
+([MC 451](../../starters/12-describing-data-mc451.qmd), [MC 501](../../starters/12-describing-data-mc501.qmd)).
+It does not fill in the worksheet. Each section names a trap, shows what it looks like on the
+Twitch data, and gives you a check. Every output below is real.
+
+Words such as median, skew, outlier, and cross-tabulation are defined in plain English in the
+worksheet's **Key terms** table.
+
+## 1. A table that is mostly `NA`
+
+**What it looks like.** Only your thirty messages carry a code, so counting the hand-coded
+variable across the whole table puts almost everything in an `NA` row:
+
+```
+  reaction_only     n
+1 commentary       17
+2 reaction         13
+3 <NA>          35237
+```
+
+A summary of the whole table has the same problem in a different form: `mean()` of a column with
+any missing value returns `NA`.
+
+**How to check.** Before you describe a variable, ask which rows have it. For your code, the
+groups in any table or summary must add to 30. For a mean, median, or standard deviation, report
+the `n` it was computed on.
+
+## 2. A mean that hides the shape
+
+**What it looks like.** Message length has a mean of 29.0 characters and a median of 17. A few
+very long messages (the longest is 501 characters) pull the mean far above the typical message.
+Reported alone, the mean describes a message almost nobody sent.
+
+**How to check.** Report the mean, the median, and the standard deviation together. When the
+mean and median disagree, say so in a sentence and say what it means about the distribution.
+
+## 3. Counts that measure the sampling, not the platform
+
+**What it looks like.** The corpus took up to 1,000 messages from each of fifty channels. So
+Fortnite and League of Legends each have exactly 4,000 messages: four channels each, not four
+thousand people choosing them. Hearthstone has 3,004 messages from eleven channels.
+
+**How to check.** Next to any count of messages by category, count the channels behind it with
+`n_distinct(channel)`. Then write the interpretation about this corpus, not about Twitch.
+
+## 4. A variable that belongs to the channel
+
+**What it looks like.** `viewer_band` and `channel_type` are one value per channel, copied onto
+every message. The large band holds 2,000 messages, but only two channels:
+
+```
+  viewer_band     n
+1 small          41
+2 medium          7
+3 large           2
+```
+
+That is a count of channels per band, and it is the number that limits what the band can show.
+
+**How to check.** Count distinct channels per category (`distinct(channel, viewer_band)`, then
+`count()`), and say how many channels stand behind any comparison you describe.
+
+## 5. An empty cell that reads as missing
+
+**What it looks like.** No large-band channel is non-gaming, so that combination never occurs.
+`pivot_wider()` has nothing to put there and writes `NA`:
+
+```
+  viewer_band gaming `non-gaming`
+3 large         2000           NA
+```
+
+A reader takes `NA` to mean "unknown". Here the true count is zero.
+
+**How to check.** Read every `NA` in a cross-tabulation and ask whether the value is unknown or
+is zero. A combination that never occurs is a zero, and the table should say so.
+
+## 6. A chart that drops rows without saying
+
+**What it looks like.** Capping the x axis at 200 characters removes the messages beyond it.
+ggplot2 mentions it once, as a warning that is easy to miss:
+
+```
+Removed 365 rows containing non-finite outside the scale range (`stat_bin()`).
+```
+
+That is 361 long messages plus the 4 with no text. The chart looks complete.
+
+**How to check.** Read every warning a chart prints. Then count what you left out and disclose
+it, in the caption and in your disclosure sentence.
+
+## 7. Proportions that hide sizes
+
+**What it looks like.** A bar chart with `position = "fill"` makes every bar the same height, so
+the small band (27,766 messages) and the large band (2,000) look equally weighty.
+
+**How to check.** If a chart shows shares, give the counts somewhere a reader will see them: the
+caption, the table beside it, or your interpretation.
+
+## 8. Every point drawn twice
+
+**What it looks like.** A boxplot draws its outliers as dots. Adding `geom_jitter()` to show every
+message draws those same messages a second time, so the longest message appears as two dots side
+by side.
+
+**How to check.** Count the dots above the box against the number of outliers you expect. When
+you add your own points, turn the boxplot's off.
+
+## 9. Alt text that repeats the title
+
+**What it looks like.** Alt text that says "Bar chart of channel type by viewer band" tells a
+reader who cannot see the chart only what the title already said, and nothing about what the
+chart shows.
+
+**How to check.** Read your alt text without looking at the chart. Does it say what pattern a
+sighted reader would see, such as which group is larger and by roughly how much? If not, it is a
+label, not a description.
+
+## 10. A figure saved by hand
+
+**What it looks like.** A chart exported with a button or a screenshot exists once. Change one
+line and the file in `figures/` no longer matches the code.
+
+**How to check.** Delete the `figures` folder and render the worksheet. Every chart should come
+back.
+
+## 11. Bars in an order that means nothing
+
+**What it looks like.** Categories plot in alphabetical order unless you set another one, so a
+bar chart of games runs from A to Z instead of from most to least.
+
+**How to check.** Look at the order of the bars and ask whether it carries information. If not,
+order them by size or by their natural order.
+
+## MC 501: diagnostics shown, not asserted
+
+**What it looks like.** "The data look roughly normal" is an assertion. Message length is
+strongly right-skewed in every viewer band, and the spread differs a great deal across bands (a
+standard deviation of 53.9 characters in the medium band against 31.1 in the large one), so a
+sentence like that would be wrong as well as unsupported.
+
+**How to check.** For each claim about shape, spread, an assumption, or an outlier, point to the
+output that shows it: the histogram, the group standard deviations, the expected counts, or the
+values `boxplot.stats()` lists.

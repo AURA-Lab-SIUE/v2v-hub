@@ -1,0 +1,325 @@
+---
+title: "Describing Data worksheet"
+subtitle: "MC 451 · Chapter 12 · Part 2 of 3 of the Twitch job"
+format:
+  html:
+    embed-resources: true
+    toc: true
+execute:
+  echo: true
+---
+
+## What this worksheet is
+
+This is part 2 of the Twitch job. Worksheet 1 left you `data/twitch_analysis.RDS`, with your
+thirty hand-coded messages inside it. Here you say what is in that table before anything is
+tested: how often each category occurs, how long messages run, how two categories line up, and
+what the distributions look like. Worksheet 3 tests what you describe here.
+
+**How it works.** As in worksheet 1: code that is not the point of the assignment is written for
+you, the steps the assignment is about have blanks shown as `___`, and **What you should see**
+follows each chunk. **Write:** marks a response in your own words. Your interpretation and your
+alt text are the writing this assignment grades, so they are never filled in for you.
+
+**Where to save it.** In the top folder of your workspace, beside worksheet 1, so that
+`data/twitch_analysis.RDS` is where this file looks for it.
+
+**What you submit** (Blackboard, under Describing Data in R): this worksheet with every blank and
+every **Write:** filled, and the HTML it renders to. The figures are saved in `figures/` by the
+code that makes them, and the HTML carries them.
+
+**Before you start,** read the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html).
+
+## Key terms
+
+| Term | What it means |
+|---|---|
+| **Frequency table** | A count of how many rows fall in each category, often with each count as a percent of the total. |
+| **Mean** | The average: add up the values and divide by how many there are. A few very large values pull it up. |
+| **Median** | The middle value once the values are sorted. Half the messages are shorter, half are longer. |
+| **Standard deviation (sd)** | How far values typically sit from the mean. A bigger sd means the values are more spread out. |
+| **Skew** | A lopsided shape. Message length is skewed right: most messages are short and a few are very long, which puts the mean above the median. |
+| **Outlier** | A value far from the rest, such as one 441-character message among messages of 10 or 20. |
+| **Cross-tabulation** | A table that counts every combination of two categories, such as viewer band by channel type. |
+| **Proportion** | A share of a whole, written as a decimal: 0.2 is 20 percent. |
+| **Boxplot** | A chart of a variable's middle half (the box), its median (the line), and its outliers (points beyond the whiskers). |
+| **Histogram** | A bar chart of a number variable, where each bar counts the values that fall in one range, such as 0 to 5 characters. |
+| **Alt text** | A sentence that says what a chart shows, for a reader who cannot see it. A screen reader reads it aloud. |
+
+## Setup
+
+```{r}
+#| label: setup
+library(tidyverse)     # tables and charts
+library(v2v)           # theme_v2v() and the course palette
+options(scipen = 999)  # whole numbers, never scientific notation
+
+analysis <- read_rds("data/twitch_analysis.RDS")  # the table worksheet 1 saved
+dir.create("figures", showWarnings = FALSE)        # where every chart is saved
+
+analysis %>%
+  count(reaction_only)  # your hand-coded variable made it through
+```
+
+Or with the R Companion: **AURA: Write R code**, then **R2 Data**, then **Load your saved
+analysis (RDS)**.
+
+**What you should see:** your two coded groups adding to `30`, and `NA` with `35237`. With the
+instructor's codes that is `commentary` `17` and `reaction` `13`.
+
+**If you see `cannot open the connection`,** this file is not in the same folder as the `data`
+folder from worksheet 1. Move it there.
+
+## Part 1: Frequency tables
+
+### Task 1.1: Channel type
+
+A frequency table says how often each category occurs. This one is done for you as the model.
+
+```{r}
+#| label: freq-channel-type
+analysis %>%
+  count(channel_type) %>%                  # messages per category
+  mutate(percent = round(100 * n / sum(n), 1))  # and as a share of all messages
+```
+
+**What you should see:** `gaming` `31309` (88.8%), `non-gaming` `3457` (9.8%), and `NA` `501`
+(1.4%).
+
+### Task 1.2: Viewer band
+
+Build the same table for `viewer_band`.
+
+```{r}
+#| label: freq-viewer-band
+analysis %>%
+  ___(___) %>%
+  mutate(percent = round(100 * n / sum(n), 1))
+```
+
+Or with the R Companion: **R3 Describe**, then **Frequency table**.
+
+**What you should see:** `small` `27766` (78.7%), `medium` `5501` (15.6%), `large` `2000` (5.7%).
+
+### Task 1.3: Your hand-coded variable
+
+Only thirty messages carry a code. Keep those rows first, or the table is mostly `NA`.
+
+```{r}
+#| label: freq-reaction
+analysis %>%
+  filter(!is.na(___)) %>%  # only the thirty coded messages
+  count(reaction_only) %>%
+  mutate(percent = round(100 * n / sum(n), 1))
+```
+
+**What you should see:** two rows adding to `30`. With the instructor's codes, `commentary` `17`
+(56.7%) and `reaction` `13` (43.3%).
+
+**Write:** two to three sentences on the three tables: what they show, and what they do not.
+Name the numbers.
+
+*Your answer:*
+
+## Part 2: The three numbers
+
+### Task 2.1: Message length, all messages
+
+```{r}
+#| label: length-all
+analysis %>%
+  summarize(
+    n      = sum(!is.na(message_length)),
+    mean   = mean(message_length, na.rm = TRUE),
+    median = median(message_length, na.rm = TRUE),
+    sd     = sd(message_length, na.rm = TRUE)
+  )
+```
+
+**What you should see:** `n` `35263`, `mean` `29.0`, `median` `17`, `sd` `41.2`.
+
+### Task 2.2: By channel type, and by your code
+
+Fill the grouping variable, then the filter that keeps only your coded messages.
+
+```{r}
+#| label: length-by-group
+analysis %>%
+  filter(!is.na(channel_type)) %>%
+  ___(___) %>%
+  summarize(
+    n      = n(),
+    mean   = mean(message_length, na.rm = TRUE),
+    median = median(message_length, na.rm = TRUE),
+    sd     = sd(message_length, na.rm = TRUE)
+  )
+
+analysis %>%
+  filter(!is.na(___)) %>%
+  group_by(___) %>%
+  summarize(
+    n      = n(),
+    mean   = mean(message_length),
+    median = median(message_length),
+    sd     = sd(message_length),
+    max    = max(message_length)
+  )
+```
+
+Or with the R Companion: **R3 Describe**, then **Summary by group**.
+
+**What you should see:** `gaming` n `31309`, mean `28.5`, median `17`, sd `38.5`; `non-gaming`
+n `3457`, mean `33.7`, median `16`, sd `60.7`. Then, with the instructor's codes, `commentary`
+n `17`, mean `29.2`, median `21`, sd `27.9`, max `119`; `reaction` n `13`, mean `15.6`, median
+`9`, sd `23.5`, max `90`.
+
+**Write:** two to three sentences. Where do the mean and the median disagree, and what does the
+gap tell you about the shape of message length?
+
+*Your answer:*
+
+## Part 3: The cross-tabulation
+
+### Task 3.1: Viewer band by channel type
+
+This is the table worksheet 3 runs the chi-square test on. Count the combinations, then spread
+`channel_type` across the columns.
+
+```{r}
+#| label: crosstab
+analysis %>%
+  filter(!is.na(channel_type)) %>%                  # the 501 with no type cannot be placed
+  count(___, ___) %>%      # one row per combination
+  ___(names_from = channel_type,
+              values_from = n,
+              values_fill = 0)                      # a combination that never occurs is 0, not NA
+```
+
+Or with the R Companion: **R3 Describe**, then **Crosstab with proportions**.
+
+**What you should see:** three rows. `small`: `25309` gaming, `2457` non-gaming. `medium`:
+`4000` and `1000`. `large`: `2000` and `0`.
+
+### Task 3.2: As proportions of each band
+
+```{r}
+#| label: crosstab-prop
+analysis %>%
+  filter(!is.na(channel_type)) %>%
+  count(viewer_band, channel_type) %>%
+  group_by(viewer_band) %>%
+  mutate(share = round(n / sum(n), 3)) %>%  # share of each band's messages
+  ungroup() %>%
+  select(-n) %>%
+  pivot_wider(names_from = channel_type,
+              values_from = share,
+              values_fill = 0)
+```
+
+**What you should see:** non-gaming is `0.088` of the small band, `0.2` of the medium band, and
+`0` of the large band.
+
+**Write:** two to three sentences on the cross-tabulation. What does it show, and what can it not
+show yet?
+
+*Your answer:*
+
+## Part 4: Figures
+
+Each figure is built, saved to `figures/` by the code that makes it, and carries alt text you
+write on its `#| fig-alt:` line. After each one, **Write:** one sentence disclosing a choice you
+made in it (a cap on an axis, which categories you kept, a bin width), and two to three
+sentences of interpretation.
+
+### Task 4.1: Channel type within each viewer band
+
+A proportion bar chart of the cross-tabulation. Fill the fill aesthetic and the position that
+makes every bar the same height.
+
+```{r}
+#| label: fig-band-type
+#| fig-alt: "YOUR TURN: one sentence saying what this chart shows."
+fig_band_type <- analysis %>%
+  filter(!is.na(channel_type)) %>%
+  ggplot(aes(x = viewer_band, fill = ___)) +
+  geom_bar(position = "___") +                        # every bar scaled to 100%
+  scale_y_continuous(labels = scales::percent_format()) +
+  scale_fill_v2v() +
+  labs(title   = "Channel type within each viewer band",
+       x       = "Viewer band (channel's median viewers)",
+       y       = "Share of messages",
+       fill    = "Channel type",
+       caption = "Source: v2v Twitch corpus, November 18 to 24, 2018. 501 messages with no channel type left out.") +
+  theme_v2v()
+
+fig_band_type
+ggsave("figures/band-by-type.png", fig_band_type, width = 7, height = 4.5, dpi = 300)
+```
+
+**What you should see:** three bars of equal height, the non-gaming part shrinking from small to
+medium to none at all in large, and `band-by-type.png` in `figures/`.
+
+**Write:** the disclosure sentence, then two to three sentences of interpretation.
+
+*Your answer:*
+
+### Task 4.2: Message length by your code
+
+The thirty coded messages, as a boxplot. Fill the variable on the x axis and the geom.
+
+```{r}
+#| label: fig-length-reaction
+#| fig-alt: "YOUR TURN: one sentence saying what this chart shows."
+fig_length_reaction <- analysis %>%
+  filter(!is.na(reaction_only)) %>%
+  ggplot(aes(x = ___, y = message_length)) +
+  ___(outlier.shape = NA) +   # no outlier dots here; the points below show every message
+  geom_jitter(width = 0.15, alpha = 0.6) +   # every one of the thirty, shown as a point
+  labs(title   = "Message length by message type",
+       x       = "Hand-coded message type",
+       y       = "Characters",
+       caption = "Source: 30 hand-coded messages, 15 each from bobross and giantwaffle.") +
+  theme_v2v()
+
+fig_length_reaction
+ggsave("figures/length-by-reaction.png", fig_length_reaction, width = 6, height = 4.5, dpi = 300)
+```
+
+Or with the R Companion: **R3 Describe**, then **Boxplot**.
+
+**What you should see:** two boxes, the commentary box higher, a point far above each box (119
+and 90 with the instructor's codes), and `length-by-reaction.png` in `figures/`.
+
+**Write:** the disclosure sentence, then two to three sentences of interpretation.
+
+*Your answer:*
+
+### Task 4.3: A figure of your own choice
+
+Choose the variable and the chart. Two that suit this table: a histogram of `message_length`
+(decide where to cap the axis, since 361 messages run past 200 characters), or a line chart of
+messages per hour. Then say why you chose it.
+
+```{r}
+#| label: fig-own
+#| fig-alt: "YOUR TURN: one sentence saying what this chart shows."
+fig_own <- analysis %>%
+  ___  # YOUR TURN: your chart, with labs() for the title, axes, and caption, and + theme_v2v()
+
+fig_own
+ggsave("figures/own-choice.png", fig_own, width = 7, height = 4.5, dpi = 300)
+```
+
+Or with the R Companion: **R3 Describe**, then **Histogram** or **Line chart over time**.
+
+**Write:** one sentence on why you chose this chart for this variable, the disclosure sentence,
+and two to three sentences of interpretation.
+
+*Your answer:*
+
+## Before you submit
+
+- [ ] No `___` and no `YOUR TURN` is left anywhere in the file.
+- [ ] Every figure has its own alt text, a disclosure sentence, and an interpretation.
+- [ ] `figures/` holds the three saved charts.
+- [ ] You restarted R and rendered the worksheet from the top without an error.

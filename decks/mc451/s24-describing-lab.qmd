@@ -14,7 +14,7 @@ format:
 ## Today's Agenda
 
 - Build a summary table before drawing any picture
-- Build three figures on your own variables
+- Fill the Describing Data worksheet: tables first, then three figures
 - Add labels, colorblind-safe color, and alt text to every figure
 - Save the figures in a form the paper can use
 
@@ -23,20 +23,21 @@ format:
 [Describing Data, 75 points, due Friday, November 20, 11:59 PM]{.eyebrow}
 
 - **Tuesday you watched three figures being built on the example data**
-- **Today you build three figures on your own variables, with help in the room**
-    - Everything you make today lands in your Results section
-- **Work in a `.qmd` file inside your project, not in the console**
+- **Today you fill the Describing Data worksheet, with help in the room**
+    - The same moves on your own data become your White Paper's Results section
+- **Work in the worksheet, not in the console**
+
+[MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc451.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
 Say out loud when you are stuck. That is what this session is for.
 
 ## Where You Should Be Starting
 
-- **Your project opens and your `.qmd` renders**
-- **You have a tidy `analysis` table from the wrangling assignment**
-- **You know which one variable the paper is about**
-- **You know which column splits that variable into groups**
+- **Your workspace opens and the Data Wrangling worksheet renders**
+- **`data/twitch_analysis.RDS` is in your `data` folder, with your thirty codes inside**
+- **The Describing Data worksheet is saved beside the Data Wrangling worksheet**
 
-If any of those four is missing, say so now and we fix it first.
+If any of those three is missing, say so now and we fix it first.
 
 ## Loading and Looking
 
@@ -67,8 +68,8 @@ analysis %>%
   )
 ```
 
-The code shows the example columns. Swap in your own grouping column and your own variable.
-Read the mean against the median before you draw anything.
+The worksheet runs this summary by channel type and by your hand-coded variable. Read the mean
+against the median before you draw anything.
 
 ## Exercise: Read Your Own Summary Table {.discuss}
 
@@ -158,8 +159,11 @@ and every cap is named in the label.
 
 ## Alt Text, Written Not Skipped
 
-- **A screen-reader user gets the alt text instead of the figure**
-    - With no alt text, the figure is simply missing for that reader
+::: {.define}
+**Alt text:** a sentence that says what a chart shows, for a reader who cannot see it. A screen reader reads it aloud.
+:::
+
+- **With no alt text, the figure is simply missing for a screen-reader user**
 - **Alt text is not the caption repeated**
 - **Alt text says the chart type, the axes, and what the chart shows**
 - In Quarto it goes in the figure's `fig-alt` attribute
@@ -168,6 +172,7 @@ and every cap is named in the label.
 ## Common Errors and What They Mean
 
 - **`object 'analysis' not found`:** you never ran the load line
+- **`cannot open the connection`:** the worksheet is not in the folder that holds `data/`
 - **`could not find function "ggplot"`:** the tidyverse has not loaded
 - **A blank gray panel:** `aes()` names a column that does not exist
 - **`Error in +`:** a `+` is missing, or one is trailing at the end
@@ -189,18 +194,19 @@ dimensions mean the figure looks the same everywhere it appears.
 
 ## Checkpoint
 
-You should now have, saved in your project:
+You should now have, in your worksheet:
 
 - A grouped summary with n, mean, median, and sd
 - Three figures using `theme_v2v()`, all fully labeled
 - Alt text drafted for each figure
 - One sentence under each figure saying what it shows
-- A `.qmd` that renders from start to finish
+- A worksheet that renders from start to finish
 
 ## Before Next Time
 
 - **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
 - **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
+- **Check your worksheet against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)**
 - **Read Chapter 13, "Making the call," before Tuesday**
 - **Tuesday we answer the questions your figures only framed**
     - Bring the summary table you built today

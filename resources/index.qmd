@@ -130,6 +130,20 @@ print. Save it into the **top folder** of your workspace, next to `README.md`. T
 
 ---
 
+## Describing the data (Chapter 12)
+
+The Describing Data worksheet is part 2 of the Twitch job. It loads the `twitch_analysis.RDS`
+file you saved in part 1, with your thirty hand-coded messages inside, and walks you through
+frequency tables, means and medians, a cross-tabulation, and three figures. The routine code is
+written for you, the core steps are blanks you fill, and each step says what it should print.
+Save it in the same folder as the Data Wrangling worksheet. Download the one for your course. The
+[Describing Data risks guide](risks/describing-data.qmd) shows the traps on this job.
+
+[Download the MC 451 worksheet](../starters/12-describing-data-mc451.qmd){.btn .btn-primary}
+[Download the MC 501 worksheet](../starters/12-describing-data-mc501.qmd){.btn .btn-primary}
+
+---
+
 ## Codebook templates
 
 One template per course, with a heading for every part the rubric grades and a fill-in table you repeat for each variable. Use it directly as your `codebook/codebook.qmd` or as inspiration for your own layout.

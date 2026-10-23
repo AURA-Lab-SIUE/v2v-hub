@@ -13,6 +13,7 @@ format:
 
 ## Today's Agenda
 
+- The Twitch job, part 2: the Describing Data worksheet
 - The grammar of graphics: every plot is built from the same three parts
 - Three chart types: a line chart, a bar chart, and a histogram
 - The design choices a figure has to disclose to its reader
@@ -29,6 +30,15 @@ format:
     - The same three figures, built from your own data, become the Results section of your White Paper
 
 Your first version of each figure will look wrong. Fixing it takes about three lines.
+
+## The Twitch Job, Part 2
+
+- **The Describing Data worksheet is part 2 of the Twitch job**
+    - It loads `data/twitch_analysis.RDS`, with your thirty codes inside
+- **Frequency tables, mean, median, and sd, a cross-tabulation, and three figures**
+- **Your interpretation and your alt text are never filled in for you**
+
+[MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc451.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
 ## The Grammar of Graphics
 
@@ -147,8 +157,11 @@ ggplot(msglen, aes(x = length_shown, fill = is_gaming)) +
   v2v::theme_v2v()
 ```
 
-A **histogram** slices a numeric variable into equal bins and draws a bar for how many values
-land in each bin. Here two groups are overlaid, so their shapes can be compared.
+::: {.define}
+**Histogram:** a bar chart of a number variable, where each bar counts the values in one range. Example: one bar counts the messages 0 to 5 characters long.
+:::
+
+Here two groups are overlaid, so their shapes can be compared.
 
 ## Two Choices You Must Disclose
 
@@ -162,6 +175,10 @@ An unannounced cap is a quiet distortion. Label the axis with the cap.
 
 ## What the Histogram Shows
 
+::: {.define}
+**Skew:** a lopsided shape. Right-skewed means most values are small and a few are very large, like message length here.
+:::
+
 - **Both groups are heavily right-skewed**
     - A tall stack of very short messages, then a long thin tail of longer ones
     - Most Twitch chat messages are brief: a word or an emote
@@ -171,12 +188,20 @@ The skew is the most important thing the figure reveals, and no single summary n
 
 ## Mean and Median Disagree
 
+::: {.define}
+**Mean:** the average, the total divided by the count. **Median:** the middle value once the values are sorted. Example: the mean message is 29.0 characters long, the median 17.
+:::
+
 Group by `is_gaming`, then `summarize()` the count (n), the mean, the median, and the standard deviation (sd):
 
 - **Non-gaming:** n 3,457, mean 33.70, median 16, sd 60.68
 - **Gaming:** n 31,309, mean 28.49, median 17, sd 38.47
 
 ## Why the Mean and the Median Disagree
+
+::: {.define}
+**Standard deviation (sd):** how far values typically sit from the mean. Example: non-gaming chat's sd of 60.68 says its lengths are more spread out than gaming chat's 38.47.
+:::
 
 - **The mean says non-gaming chat is longer:** 33.70 characters to 28.49
 - **The median says the two groups are nearly identical:** 16 against 17, and pointing the other way
@@ -194,7 +219,7 @@ You should now have:
 - The bin width and any cap written into your axis labels
 - One sentence per figure saying what it shows
 
-The Describe group of the Companion's **Write R code** writes a first version of each figure, ending in `theme_v2v()`, into your script: **Bar chart**, **Histogram**, **Histogram comparing two groups**, and **Line chart over time**.
+The Describe group of the Companion's **Write R code** writes a first version of each figure, ending in `theme_v2v()`, into your worksheet: **Bar chart**, **Histogram**, **Histogram comparing two groups**, and **Line chart over time**.
 
 If a figure will not render, check that every `+` ends the line above it.
 
@@ -202,8 +227,8 @@ If a figure will not render, check that every `+` ends the line above it.
 
 - **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
 - **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
-- **Thursday is a lab: you build these three figures on your own variables**
-    - Bring your `analysis` table and your research question
+- **Thursday is a lab: you fill the Describing Data worksheet**
+    - Bring `data/twitch_analysis.RDS` from the Data Wrangling worksheet
 - **Read Chapter 12, especially the section on readable figures**
 
 A figure can frame the question. It cannot answer it.

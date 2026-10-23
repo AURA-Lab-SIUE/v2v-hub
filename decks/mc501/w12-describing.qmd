@@ -13,6 +13,7 @@ format:
 
 ## Today's Agenda
 
+- The Twitch job, part 2: the Describing Data worksheet
 - The grammar of graphics: every plot is built from the same three parts
 - Three chart types: a line chart, a bar chart, and a histogram
 - Effect sizes, and the design choices a figure must disclose
@@ -29,6 +30,16 @@ format:
 - **Plus the rule that turns a picture into a claim: report the effect size**
 
 Expect every first version to look wrong. The fix is usually one line.
+
+## The Twitch Job, Part 2
+
+- **The Describing Data worksheet is part 2 of the Twitch job**
+    - It loads `data/twitch_analysis.RDS`, with your thirty codes inside
+- **Frequency tables, mean, median, and sd, a cross-tabulation, and three figures**
+- **Part 5: the diagnostics behind each figure**
+- **Your interpretation and your alt text are never filled in for you**
+
+[MC 501 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc501.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
 ## A Table Too Long to Read
 
@@ -165,10 +176,13 @@ Answer each in writing:
 
 ## Figure 3, a Histogram for Shape
 
+::: {.define}
+**Histogram:** a bar chart of a number variable, where each bar counts the values in one range. Example: one bar counts the messages 0 to 5 characters long.
+:::
+
 - **The central question of the example study:** how long is a chat message, and does the answer depend on the kind of channel?
 - **The answer is not a total and not a trend. It is a distribution**
     - Where the values cluster, and where they thin out
-- **A histogram slices the range of a numeric variable into equal bins and counts the values in each**
 - **Two histograms overlaid let the two shapes be compared directly**
 
 ## The Code for the Histogram
@@ -203,6 +217,10 @@ An unannounced cap is a quiet distortion. The axis label states the cap.
 
 ## What the Shape Shows
 
+::: {.define}
+**Skew:** a lopsided shape. Right-skewed means most values are small and a few are very large, like message length here.
+:::
+
 - **Both groups share one shape: heavily right-skewed**
     - A tall stack of very short messages on the left
     - A long thin tail of longer messages to the right
@@ -225,10 +243,14 @@ msglen %>%
   v2v::pretty_table()
 ```
 
-This code splits the messages by gaming status and computes the four numbers a Results
-section needs: the count (n), the mean, the median, and the standard deviation (sd). The Companion's **Summary by group** writes this grouped summary for any variable you pick, without `pretty_table()`; its Describe group also writes this week's figures (**Bar chart**, **Histogram**, **Histogram comparing two groups**, **Line chart over time**), and after **Run it** the saved chart opens in a VS Code tab.
+This code computes, for each gaming status, the four numbers a Results section needs: n,
+mean, median, and sd. The Companion's **Summary by group** writes this grouped summary for any variable you pick, without `pretty_table()`; its Describe group also writes this week's figures (**Bar chart**, **Histogram**, **Histogram comparing two groups**, **Line chart over time**), and after **Run it** the saved chart opens in a VS Code tab.
 
 ## The Numbers
+
+::: {.define}
+**Mean:** the average, the total divided by the count. **Median:** the middle value once the values are sorted. Example: the mean message is 29.0 characters long, the median 17.
+:::
 
 - **Non-gaming:** n 3,457, mean 33.70, median 16, sd 60.68
 - **Gaming:** n 31,309, mean 28.49, median 17, sd 38.47
@@ -237,6 +259,10 @@ Read the **means** and non-gaming chat is longer. Read the **medians**, 16 again
 the two groups are all but identical, pointing the other way.
 
 ## When the Mean and the Median Disagree
+
+::: {.define}
+**Standard deviation (sd):** how far values typically sit from the mean. Example: non-gaming chat's sd of 60.68 says its lengths are more spread out than gaming chat's 38.47.
+:::
 
 - **The mean is sensitive to a long tail; the median is not**
     - A few very long messages lift the average
@@ -247,6 +273,10 @@ the two groups are all but identical, pointing the other way.
 Report the mean alone and you misreport what a typical message looks like.
 
 ## Which Effect Size to Report
+
+::: {.define}
+**Effect size:** how big a difference or a relationship is, on a scale that does not grow with the sample. Example: Cramer's *V* of 0.15 for viewer band by channel type.
+:::
 
 - **A difference between two group means:** **Cohen's *d*** with a 95% confidence interval
 - **A cross-tabulation of two categorical variables:** **Cramer's *V***
@@ -280,7 +310,8 @@ You should now have:
 
 - **Due Monday, November 16, 11:59 PM:** Data Wrangling in R, 50 points
 - **Due Monday, November 23, 11:59 PM:** Describing Data in R, 100 points
-    - The figures, the descriptive statistics, the alt text, and the disclosed choices
+    - The worksheet: tables, figures, diagnostics, alt text, and the disclosed choices
+    - Check it against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 - **Read Chapter 13**
     - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"
 - **Write a journal entry, 450 to 500 words**
