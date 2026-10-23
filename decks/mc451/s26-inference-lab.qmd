@@ -22,17 +22,18 @@ format:
 
 [Inferencing Data, 100 points, due Friday, December 4, 11:59 PM]{.eyebrow}
 
-- **Tuesday the test ran on the example data; today you run it on your own data**
-    - One test, correctly chosen, correctly read, honestly reported
-    - Then the two sentences that go in your paper
+- **Tuesday the test ran on the example data; today you fill the Inferencing Data worksheet**
+    - Each test correctly chosen, correctly read, honestly reported
+    - The same settings block, changed, runs on your own data for the paper
 - **The White Paper is assigned today**
-- **Work in your `.qmd` file, not in the console**
+- **Work in the worksheet, not in the console**
 
-The job is smaller than it has felt: one function call and two sentences.
+[MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
+
 
 ## Pick Your Test First
 
-Fill in these three lines before you touch the keyboard:
+For each pair in the worksheet's Part 0, fill in these three lines before you touch the keyboard:
 
 - **My outcome variable is ______**, and it is numeric or categorical
 - **My grouping variable is ______**, and it has ______ levels
@@ -59,8 +60,8 @@ effectsize::cohens_d(message_length ~ is_gaming, data = analysis)
 run_t_test(analysis, value = message_length, group = is_gaming)
 ```
 
-The code shows the example columns. Swap `message_length` for your outcome variable and
-`is_gaming` for your two-level grouping column. Everything else stays exactly as written. The last line is the `v2v` check: it prints the same `t`, df, `p`, and d in one labeled block. The Test group of the Companion's **Write R code** writes all of this for the names in your Settings block.
+The code shows the example columns. In the worksheet the settings block renames them:
+`outcome` for message length, and `group2` for your hand-coded variable. The last line is the `v2v` check: it prints the same `t`, df, `p`, and d in one labeled block. The Test group of the Companion's **Write R code** writes all of this for the names in your Settings block.
 
 ## Exercise: Read Your Own Output {.discuss}
 
@@ -165,7 +166,7 @@ The work left is assembly and honesty, not starting over.
 
 ## Checkpoint
 
-You should now have, saved in your project:
+You should now have, in your worksheet:
 
 - A chosen test, with a written reason for choosing it
 - Output showing the means, the test statistic, *p*, and the effect size
@@ -177,6 +178,7 @@ You should now have, saved in your project:
 
 - **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
 - **Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points**
+- **Check your worksheet against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)**
 - **Read Chapter 14, "The one-click report," before Tuesday**
 - **Tuesday is The Publisher: assembling the whole study into one document**
     - Bring your figures and your test output

@@ -465,7 +465,7 @@ Test four relationships, one per test, and report how big each is.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** your script or Quarto document and the rendered output, uploaded to Blackboard under Inferencing Data in R. Optional: the Test group of the R Companion's **Write R code** writes the four tests for your settings-block variables, the plain R call first and the `v2v` wrapper after it as a check, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, and the interpretation are your own writing.
+**What you submit:** the filled worksheet and the HTML it renders to, uploaded to Blackboard under Inferencing Data in R. The worksheet is part 3 of the Twitch job: four hypotheses written before any code, then four tests, one of them on the thirty messages you hand-coded in Data Wrangling. Optional: the Test group of the R Companion's **Write R code** writes the four tests for your settings-block variables, the plain R call first and the `v2v` wrapper after it as a check, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, and the interpretation are your own writing.
 
 **Length:** 400 to 700 words of your own writing (hypotheses, the four reports, interpretation and the limits paragraph), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -474,6 +474,10 @@ Test four relationships, one per test, and report how big each is.
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Inferencing Data in R rubric (PDF)](resources/rubrics/MC451-rubric-inferencing-data-in-r.pdf). It lists each step from the four hypotheses to what the results do not license, and the points for each.
+
+**Worksheet:** [13-inferencing-data-mc451.qmd](starters/13-inferencing-data-mc451.qmd), the worksheet you fill in and submit.
+
+**Risks guide:** [Inferencing Data risks guide](resources/risks/inferencing-data.qmd). The traps on this job, what each looks like, and how to check for it. It shows no answers.
 
 **How-to:** [Tests](guides/mc451/10-tests-and-check-my-test-choice.md) step-by-step guide, and the [Tests](https://siue.yuja.com/V/Video?v=17490908&a=168993969) walkthrough video.
 

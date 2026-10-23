@@ -1,0 +1,148 @@
+---
+title: "Inferencing Data: risks guide"
+subtitle: "MC 451 and MC 501 · the traps on worksheet 3 of the Twitch job"
+---
+
+This guide goes with the Inferencing Data worksheet
+([MC 451](../../starters/13-inferencing-data-mc451.qmd), [MC 501](../../starters/13-inferencing-data-mc501.qmd)).
+It does not fill in the worksheet or report any test for you. Each section names a trap, shows
+what it looks like on the Twitch data, and gives you a check. Every output below is real.
+
+Words such as p-value, effect size, and confidence interval are defined in plain English in
+the worksheet's **Key terms** table.
+
+## 1. A hypothesis written after the result
+
+**What it looks like.** The test comes back, and the hypothesis is written to match it. It now
+predicts what already happened, so the test cannot fail.
+
+**How to check.** Write all four hypotheses in Part 0 before you run anything below it, and do
+not edit them afterward. If a result surprises you, say so in the interpretation.
+
+## 2. A test on the wrong kind of variable
+
+**What it looks like.** The variable types decide the test, and R does not always stop you when
+they do not fit. Asking a t-test to compare three viewer bands fails loudly:
+
+```
+grouping factor must have exactly 2 levels
+```
+
+The quiet version is worse. If the viewer bands are stored as the numbers 1, 2, and 3 instead of
+a factor, an ANOVA treats them as one continuous predictor and runs a regression without telling
+you. The giveaway is the degrees of freedom: three groups should give 2, and this gives 1:
+
+```
+               Df   Sum Sq Mean Sq F value               Pr(>F)
+band_num        1   109509  109509    64.7 0.000000000000000899 ***
+```
+
+The same thing happens to a hand-coded `0` and `1` left as numbers.
+
+**How to check.** `glimpse()` the settings block's output: every grouping variable must say
+`<fct>`. Then check the degrees of freedom: a test across k groups has k - 1.
+
+## 3. The test runs on fewer rows than you think
+
+**What it looks like.** Your table has 35,267 messages, but `group2` holds a value for only your
+thirty. The t-test drops every row where either variable is missing, and does not say so. It
+runs on thirty messages.
+
+**How to check.** For every test, count the rows it can use (the rows where both of its
+variables are present) and report that n. Thirty is the right n for the t-test; 35,267 is not.
+
+## 4. Reading which group is which
+
+**What it looks like.** R orders a factor's groups by its levels, and the t-test subtracts the
+second from the first. Your groups are `commentary`, then `reaction`, so `estimate1` is the
+commentary mean and a positive t means commentary messages were longer. Flip the levels and the
+same data give a negative t and a negative d.
+
+**How to check.** Before you write the sentence, name the group behind each mean.
+`run_t_test()` prints the group names beside their means; use it as the check.
+
+## 5. A small p read as a big effect
+
+**What it looks like.** With about 35,000 messages, almost any difference clears p < .05. The
+chi-square on viewer band and channel type has a p far below .001, and its effect size is small:
+
+```
+Cramer's V |       95% CI
+-------------------------
+0.15       | [0.14, 1.00]
+```
+
+**How to check.** Never report p without the effect size beside it, and say what the effect size
+means in the units of the data: characters, shares of messages, characters per hour. A p-value
+says a difference is unlikely to be chance; only the effect size says whether it matters.
+
+## 6. A large p read as "no difference"
+
+**What it looks like.** A test on thirty messages can miss a real difference of medium size. A
+non-significant result from a small sample means the study could not tell, not that the groups
+are the same.
+
+**How to check.** Report the effect size even when p is above .05, and say what the sample could
+have detected. MC 501 does this with a power analysis.
+
+## 7. Thousands of messages, a handful of channels
+
+**What it looks like.** `viewer_band` and `channel_type` are one value per channel, copied onto
+every message. A test on them counts 35,000 messages as independent observations, but the
+information comes from 48 channels, and the large band is two of them. So every test on a
+channel-level variable reports a p-value smaller than the evidence behind it supports.
+
+**How to check.** For each test, count the channels behind each group with `n_distinct(channel)`.
+Say in the limits paragraph which tests rest on channel-level variables, and how many channels.
+
+## 8. An hour that is in the wrong time zone, on a line it does not follow
+
+**What it looks like.** `hour(ts)` is the hour in UTC. A message sent at 9 PM in St. Louis is hour
+3 the next day. And a regression treats hour as a straight line from 0 to 23, though 23 and 0 are
+one hour apart.
+
+**How to check.** Say which time zone your hours are in. Look at the residual plots before you
+trust the slope, and say what a straight line cannot represent.
+
+## 9. Expected counts too small for a chi-square
+
+**What it looks like.** The chi-square test needs every **expected** count to be at least 5. On
+this table the smallest is 198.9, so it holds, but on your own data, with fewer items or more
+categories, it often does not. A zero in the observed table is not the problem; a small expected
+count is.
+
+**How to check.** Pull the expected counts from the test (`pluck("expected")`) and look at the
+smallest.
+
+## 10. Numbers copied wrong into the APA sentence
+
+**What it looks like.** The console prints `0.158`; APA writes `p = .158`, with no leading zero
+because p cannot exceed 1. Welch's t-test has a decimal df, `27.7`, which belongs in the sentence
+as it is. A p printed as `< 0.00000000000000022` is reported as `p < .001`.
+
+**How to check.** Write your sentence first, then run **R4 Test**, **APA numbers to check your
+sentence** in the R Companion and compare each number with what you wrote.
+
+## MC 501: an interval that looks wrong
+
+**What it looks like.** `effectsize` gives Cramér's V, eta-squared, and omega-squared a one-sided
+interval, so the upper bound is always 1.00:
+
+```
+- One-sided CIs: upper bound fixed at [1.00].
+```
+
+That is not a failed computation. These effect sizes cannot fall below zero, so the interval
+asks only how small the effect could be.
+
+**How to check.** Report the lower bound and say it is a one-sided interval. Cohen's d has an
+ordinary two-sided interval; report both ends.
+
+## MC 501: equal spread assumed, not checked
+
+**What it looks like.** The classic ANOVA assumes every group spreads about the same. The viewer
+bands do not: standard deviations of 38.7, 53.9, and 31.1 characters. The classic F and Welch's F
+can then disagree in size even when both are significant.
+
+**How to check.** Put the group standard deviations beside the ANOVA, run Welch's version with
+`oneway.test()`, and say which one you report and why.

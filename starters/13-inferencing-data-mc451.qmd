@@ -1,0 +1,251 @@
+---
+title: "Inferencing Data worksheet"
+subtitle: "MC 451 · Chapter 13 · Part 3 of 3 of the Twitch job"
+format:
+  html:
+    embed-resources: true
+    toc: true
+execute:
+  echo: true
+---
+
+## What this worksheet is
+
+This is the last part of the Twitch job. You described the table in worksheet 2; here you test
+four relationships in it, one test each, and say how big each relationship is. One of the four
+runs on the variable you coded by hand in worksheet 1.
+
+**How it works.** As before: the code that is not the point is written for you, the core steps
+have blanks shown as `___`, and **What you should see** follows each chunk. **Write:** marks your
+own writing. The hypotheses, the reason for each test, the four reports, and the interpretation
+are graded, so none of them is filled in for you.
+
+**The order matters.** Write the four hypotheses in Part 0 **before** you run any chunk below
+it. A hypothesis written after the result is a description of the result.
+
+**What you submit** (Blackboard, under Inferencing Data in R): this worksheet with every blank
+and every **Write:** filled, and the HTML it renders to.
+
+**Before you start,** read the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html).
+
+## Key terms
+
+| Term | What it means |
+|---|---|
+| **Hypothesis** | A sentence, written before you look, that says what you expect to find about two variables. |
+| **Statistical test** | A calculation that asks whether a pattern in the data is bigger than chance alone would produce. |
+| **p-value** | How likely a pattern at least this big would be if the two variables were really unrelated. Below .05 is called *statistically significant*. |
+| **Statistically significant** | The p-value is under .05. It says a pattern is unlikely to be chance. It does not say the pattern is big or important. |
+| **Effect size** | How big a difference or relationship is, on a scale that does not grow with the number of messages. |
+| **Chi-square test** | The test for two categories, such as viewer band and channel type. It compares the real counts with the counts you would expect if the two were unrelated. |
+| **t-test** | The test for a number across two groups, such as message length for commentary and reaction. |
+| **ANOVA** | The test for a number across three or more groups, such as message length across the three viewer bands. |
+| **Linear regression** | The test for two numbers. It fits a straight line and reports its slope: how much one number changes when the other goes up by one. |
+| **Degrees of freedom (df)** | A number each test reports beside its result, set by how many groups and rows went into it. You copy it into the report. |
+| **Confidence interval** | A range of values the true effect probably falls in. A wide interval means the estimate is uncertain. |
+| **Null result** | A test that is not significant. It means the data could not tell the pattern apart from chance, not that there is no pattern. |
+
+## Part 0: Four hypotheses, before any code
+
+The job tests these four pairs of variables:
+
+| | First variable | Second variable |
+|---|---|---|
+| 1 | `viewer_band` (small, medium, large) | `channel_type` (gaming, non-gaming) |
+| 2 | `message_length` (characters) | `reaction_only`, your thirty hand-coded messages |
+| 3 | `message_length` | `viewer_band` |
+| 4 | `message_length` | the hour of the day the message was sent (0 to 23) |
+
+**Write:** for each pair, a hypothesis in plain English naming both variables and the
+relationship you expect. Then name the test the two variables' types call for and say in one
+sentence why that test and not another.
+
+*H1:*
+
+*H2:*
+
+*H3:*
+
+*H4:*
+
+*Tests and reasons:*
+
+## Part 1: The settings block
+
+Every test below uses six short names instead of the Twitch column names. Only this block knows
+the column names, so the same code runs on your own data for the White Paper when you change this
+block and nothing else. Give `group2` your hand-coded variable.
+
+```{r}
+#| label: settings
+library(tidyverse)     # data steps, tests, and hour()
+library(v2v)           # run_chi_square() and run_t_test(), the checks
+options(scipen = 999)  # whole numbers, never scientific notation
+
+# Load the analysis file, then keep the columns the tests use under the names they use.
+# outcome is a number; group2 has two groups; group3 has three or more; predictor is a
+# number; cat_a and cat_b are categories. factor() makes a column a category.
+analysis <- read_rds("data/twitch_analysis.RDS") %>%
+  transmute(
+    outcome   = message_length,
+    group2    = ___,        # your thirty hand-coded messages
+    group3    = factor(viewer_band),
+    predictor = hour(ts),             # hour of the day, 0 to 23, in UTC
+    cat_a     = factor(viewer_band),
+    cat_b     = factor(channel_type)
+  )
+
+glimpse(analysis)
+```
+
+Or with the R Companion: **AURA: Write R code**, then **R4 Test**, then **Settings block (name the
+test variables)**. It writes this block with `group2 = factor(channel_type)`; change that one line
+to your hand-coded variable.
+
+**What you should see:** `Rows: 35,267` and six columns: `outcome` `<int>`, `group2`, `group3`,
+`cat_a`, and `cat_b` `<fct>`, `predictor` `<int>`.
+
+**If you see `there is no package called 'effectsize'`** later on, run **AURA: Check my setup**,
+then **Install what is missing**, and run the chunk again.
+
+## Part 2: Test 1, the chi-square test
+
+### Task 2.1: The test and its effect size
+
+Build the table of counts the test reads, run the test, and compute Cramér's V.
+
+```{r}
+#| label: chi-square
+counts <- xtabs(~ ___ + ___, data = analysis)  # the cross-tabulation, as the test reads it
+counts
+
+counts %>%
+  ___() %>%
+  broom::tidy()                                       # statistic = chi-square, parameter = df
+
+effectsize::___(counts, adjust = FALSE)      # Cramer's V with its 95% interval
+
+sum(counts)                                           # N, the messages in the test
+
+run_chi_square(analysis, x = cat_a, y = cat_b)        # the same numbers in one block, as a check
+```
+
+Or with the R Companion: **R4 Test** writes the chi-square block for `cat_a` and `cat_b`.
+
+**What you should see:** the table from worksheet 2 (`25309` `2457` / `4000` `1000` / `2000`
+`0`); then `statistic` `823.` (822.66 in the check), `parameter` `2`, and a `p.value` far below
+.001; then `Cramer's V` `0.15`; then `[1] 34766`.
+
+**Write:** the APA report of Test 1 (statistic, df, N, p, Cramér's V), then two to three sentences
+on what it means for H1, with the effect size in words.
+
+*Your answer:*
+
+## Part 3: Test 2, the t-test on your hand-coded variable
+
+### Task 3.1: How many messages the test uses
+
+The table has 35,267 rows, but only your thirty have a value of `group2`. Every other row is
+dropped from this test.
+
+```{r}
+#| label: t-test-n
+analysis %>%
+  filter(!is.na(group2)) %>%
+  count(group2)
+```
+
+**What you should see:** your two groups adding to `30`. With the instructor's codes,
+`commentary` `17` and `reaction` `13`.
+
+### Task 3.2: The test and its effect size
+
+```{r}
+#| label: t-test
+t.test(outcome ~ ___, data = analysis) %>%      # Welch's t-test: R's default
+  broom::tidy()                                       # estimate1 and estimate2 are the two means
+
+effectsize::___(outcome ~ group2, data = analysis)  # Cohen's d with its 95% interval
+
+run_t_test(analysis, value = outcome, group = group2)  # the same numbers in one block, as a check
+```
+
+Or with the R Companion: **R4 Test**, then **Welch t-test, dropping missing values**.
+
+**What you should see,** with the instructor's codes: `estimate1` `29.2` (commentary),
+`estimate2` `15.6` (reaction), `statistic` `1.45`, `p.value` `0.158`, `parameter` `27.7`; then
+`Cohen's d` `0.52` with the interval `[-0.22, 1.25]`; then the check, with SDs `27.93` and
+`23.46`. Your numbers differ wherever your codes do.
+
+**Write:** the APA report of Test 2 (both means and SDs, t, df, p, n, Cohen's d), then two to three
+sentences on what it means for H2. Say the size of the difference in characters.
+
+*Your answer:*
+
+## Part 4: Test 3, the one-way ANOVA
+
+### Task 4.1: The test and its effect size
+
+```{r}
+#| label: anova
+model_anova <- ___(outcome ~ ___, data = analysis)
+
+summary(model_anova)                               # F, both dfs, p, and the sums of squares
+
+effectsize::___(model_anova)            # sum of squares for the groups / total
+
+analysis %>%
+  group_by(group3) %>%
+  summarize(n = sum(!is.na(outcome)),
+            mean = mean(outcome, na.rm = TRUE),
+            sd = sd(outcome, na.rm = TRUE))         # the means the F compares
+```
+
+Or with the R Companion: **R4 Test**, then **One-way ANOVA with eta squared**.
+
+**What you should see:** `F value` `66.2` on `2` and `35260` degrees of freedom, `Pr(>F)` far
+below .001, with sums of squares `223665` and `59566023`; then `Eta2` `3.74e-03`, which is .004;
+then means of `29.5`, `30.1`, and `18.8` characters for small, medium, and large.
+
+**Write:** the APA report of Test 3 (F, both dfs, p, N, eta-squared), then two to three
+sentences on what it means for H3, with the effect size in words.
+
+*Your answer:*
+
+## Part 5: Test 4, the linear regression
+
+### Task 5.1: The test and its effect size
+
+```{r}
+#| label: regression
+model_lm <- ___(outcome ~ ___, data = analysis)
+
+summary(model_lm)  # the slope (predictor), its p, R-squared, and the F
+```
+
+Or with the R Companion: **R4 Test**, then **Linear regression**.
+
+**What you should see:** the `predictor` estimate `0.05360` with `Pr(>|t|)` `0.102`;
+`Multiple R-squared` `7.603e-05`; `F-statistic: 2.681 on 1 and 35261 DF`.
+
+**Write:** the APA report of Test 4 (b, t, df, p, R-squared), then two to three sentences on what
+it means for H4, with the slope in characters per hour.
+
+*Your answer:*
+
+## Part 6: What the results do not license
+
+**Write:** one paragraph. A significant test on this sample is not a claim about Twitch. Say why,
+and say what changes when a variable belongs to the channel (its type, its audience) rather than
+to the message.
+
+*Your answer:*
+
+## Before you submit
+
+- [ ] The four hypotheses in Part 0 were written before you ran Part 1.
+- [ ] No `___` is left anywhere in the file.
+- [ ] Each test has its APA report, its effect size in words, and its interpretation. The R
+      Companion's **R4 Test**, **APA numbers to check your sentence** prints a test's numbers so
+      you can check the sentence you wrote.
+- [ ] You restarted R and rendered the worksheet from the top without an error.

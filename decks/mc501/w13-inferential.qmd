@@ -13,6 +13,7 @@ format:
 
 ## Today's Agenda
 
+- The Twitch job, part 3: the Inferencing Data worksheet
 - The t-test that settles the example study's central question
 - What a p-value does and does not say
 - ANOVA, regression, and the assumptions underneath them
@@ -29,6 +30,17 @@ format:
 - **You leave with the sentence that goes in your Results**
 
 The doing is one function call. The thinking around it takes the evening.
+
+## The Twitch Job, Part 3
+
+- **The Inferencing Data worksheet is part 3 of the Twitch job**
+- **Four hypotheses first, written before any code**
+- **Then four tests: chi-square, t-test, ANOVA, and regression**
+    - The t-test runs on the thirty messages you hand-coded
+- **Plus assumptions, intervals, Welch's ANOVA, Tukey's HSD, and power**
+- **Every test is reported with its effect size**
+
+[MC 501 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc501.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
 ## The Gap and the Doubt
 
@@ -124,6 +136,10 @@ One call, one labeled block, the same numbers. The Companion writes the two plai
 
 ## Reading the p-value
 
+::: {.define}
+**p-value:** how likely a gap at least this big would be if the null hypothesis were true. Below .05 is called *statistically significant*.
+:::
+
 - **If the two groups truly shared one mean length,**
     - a gap this large would occur in fewer than one sample in a thousand
 - **So the data are surprising under that assumption**
@@ -176,8 +192,11 @@ Answer each in writing:
 
 ## How Big Is the Difference
 
-- **The p-value hands the question of size to an effect size**
-    - For a gap between two means, the effect size is **Cohen's *d***, here -0.13
+::: {.define}
+**Effect size:** how big a difference is, on a scale that does not grow with the sample. Example: Cohen's *d* of -0.13 for gaming against non-gaming message length.
+:::
+
+- **For a gap between two means, the effect size is Cohen's *d***
     - It states the gap in units of the natural variation in the data
 - **Cohen's benchmarks: about 0.2 is small, 0.5 is medium, 0.8 is large** (Cohen, 1988)
 - **A *d* of 0.13 is below small, and the word for it is negligible**
@@ -191,6 +210,10 @@ Answer each in writing:
 A large enough sample detects a difference far too small to care about.
 
 ## Seeing the Gap and Its Uncertainty
+
+::: {.define}
+**Confidence interval:** a range the true value probably falls in. Example: a group's mean plus or minus 1.96 standard errors gives its 95% interval.
+:::
 
 ```r
 means_ci <- analysis %>%
@@ -314,6 +337,10 @@ All three are the general linear model, wearing three different names.
 
 ## Residuals, and Whether a Variable Earns Its Place
 
+::: {.define}
+**Residual:** the gap between a real value and the value the model predicts for it. Example: if the model predicts 29 characters and the message has 400, the residual is 371.
+:::
+
 - **A model's credibility rests on its residuals, and `plot(model)` draws four diagnostic plots**
     - Residuals against fitted values: checks linearity and equal spread
     - A Q-Q plot: checks whether the residuals are normally distributed
@@ -337,7 +364,8 @@ All three are the general linear model, wearing three different names.
 
 - **Due Monday, November 23, 11:59 PM:** Describing Data in R, 100 points
 - **Due Monday, December 7, 11:59 PM:** Inferencing Data in R, 100 points
-    - The test, the assumption checks, the effect sizes, and the interpretation
+    - The worksheet: four tests, their assumption checks, effect sizes, and interpretation
+    - Check it against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 - **No class in Week 14, for Thanksgiving break**
 - **Read Chapter 14**
     - Plus the assigned article: **Wasserstein and Lazar (2016)**

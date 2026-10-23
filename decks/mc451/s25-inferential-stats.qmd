@@ -13,6 +13,7 @@ format:
 
 ## Today's Agenda
 
+- The Twitch job, part 3: the Inferencing Data worksheet
 - What a hypothesis test actually asks
 - How your variables choose the test
 - How to read a p-value, and what it does not tell you
@@ -28,6 +29,16 @@ format:
 
 Today we settle that question. There are no formulas to memorize, only questions to ask.
 
+## The Twitch Job, Part 3
+
+- **The Inferencing Data worksheet is part 3 of the Twitch job**
+- **Four hypotheses first, written before any code**
+- **Then four tests: chi-square, t-test, ANOVA, and regression**
+    - The t-test runs on the thirty messages you hand-coded
+- **Every test is reported with its effect size**
+
+[MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
+
 ## What a Test Actually Asks
 
 Split a group of people in half at random and the two halves' average heights still differ
@@ -40,8 +51,11 @@ a little. Samples wobble.
 
 ## The Skeptic's Move
 
+::: {.define}
+**Null hypothesis:** the claim that there is no real difference or relationship, only chance. Example: gaming and non-gaming messages have the same average length.
+:::
+
 - **A test starts from the opposite of what you suspect**
-    - The **null hypothesis:** there is no real difference, and the gap is noise
     - Then it asks: if that were true, how surprising is the gap we saw?
 - **Testing a coin works the same way**
     - Assume the coin is fair, flip it a hundred times, and ask how often a fair coin looks this lopsided
@@ -110,6 +124,10 @@ The Test group of the Companion's **Write R code** writes the plain calls first 
 
 ## What the p-value Means
 
+::: {.define}
+**p-value:** how likely a gap at least this big would be if the null hypothesis were true. Below .05 is called *statistically significant*.
+:::
+
 - **If the two groups truly had the same mean length,**
     - a gap this large would appear in fewer than one sample in a thousand
     - so the data are surprising if nothing is going on
@@ -126,6 +144,10 @@ The Test group of the Companion's **Write R code** writes the plain calls first 
 A small *p* says the gap is probably not zero. It says nothing about the gap's size.
 
 ## How Big Is the Difference
+
+::: {.define}
+**Effect size:** how big a difference is, on a scale that does not grow with the sample. Example: Cohen's *d* of -0.13 for gaming against non-gaming message length.
+:::
 
 - **To report size you need an effect size**
     - For a gap between two means, the effect size is **Cohen's d**
@@ -200,8 +222,8 @@ You should now be able to:
 
 - **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
 - **Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points**
-- **Thursday is a lab: you run your own test with help in the room**
-    - Bring your `analysis` table and last week's summary table
+- **Thursday is a lab: you fill the Inferencing Data worksheet with help in the room**
+    - Write its four hypotheses before Thursday, and bring `data/twitch_analysis.RDS`
 - **Re-read the Chapter 13 section on significance against importance**
 - **Thursday the White Paper (250 points) is assigned**
 
