@@ -42,8 +42,9 @@ $headings-font-family:   $font-family-sans-serif;
 $headings-font-weight:   800;
 
 // Bootstrap semantic colours mapped to AURA so stock components inherit brand.
-// $primary is a button-fill red (white text passes AA at 4.9:1).
-$primary:          #E5182D;
+// $primary is a button-fill red: SIUE-family #C8102E, white text 5.88:1, above the 5:1 house floor
+// (#E5182D measured 4.67:1 and failed it; web_qa 2026-10-22).
+$primary:          #C8102E;
 $secondary:        #6B6357;
 $body-color:       #2B2A28;
 $body-bg:          #FCFBF7;
@@ -70,7 +71,7 @@ $link-hover-color: #E5182D;
 
   // Brand red: interactive TEXT uses the deep variant; -fill/-mark for solids
   --v2v-red:      #B0301F;  // link/label TEXT, 5.6:1 on paper
-  --v2v-red-fill: #E5182D;  // button/mark/accent fill (white text 4.9:1)
+  --v2v-red-fill: #C8102E;  // button/accent fill (white text 5.88:1); the mark below stays #E5182D
   --v2v-red-mark: #E5182D;  // the diamond, rules, dots
   --v2v-red-tint: rgba(229, 24, 45, 0.07);
 
@@ -109,7 +110,7 @@ $link-hover-color: #E5182D;
   --v2v-muted: #A6A9AE;     // 7.3:1 on canvas
 
   --v2v-red:      #F08072;  // coral-red TEXT, 6.4:1 on canvas
-  --v2v-red-fill: #E5182D;
+  --v2v-red-fill: #C8102E;
   --v2v-red-mark: #E5182D;
   --v2v-red-tint: rgba(229, 24, 45, 0.18);
 
@@ -227,7 +228,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible,
 .btn-lg { padding: 0.75rem 1.5rem; font-size: 1.05rem; }
 .btn-primary {
   background: var(--v2v-red-fill); border: 1.5px solid var(--v2v-red-fill); color: #fff;
-  &:hover, &:focus { background: #B0301F; border-color: #B0301F; color: #fff; }
+  &:hover, &:focus { background: #A50F26; border-color: #A50F26; color: #fff; }  // darker still: white 7.79:1
 }
 .btn-secondary, .btn-outline-secondary {
   background: transparent; color: var(--v2v-red) !important;
