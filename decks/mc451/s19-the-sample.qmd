@@ -13,12 +13,29 @@ format:
 
 ## Today's Agenda
 
+- A recap: what a variable is
 - Why coding every message (a census) is not an option
 - What simple random sampling can and cannot fix
 - Strata: dividing the population into groups, and choosing groups that matter
 - Drawing the sample so that anyone can reproduce it
 
+## What a Variable Is
+
+::: {.define}
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
+:::
+
+- **A column in the data:** `game` says Fortnite for one stream and Just Chatting for another
+- **A category you code:** message target, where you decide if a message speaks to the streamer, to another viewer, or to the whole room
+- **A number you count:** messages a channel posted that week, one for the quietest example channel and about 1,440 for the middle one
+
+Your codebook is a list of variables. Today you choose which messages to code them on.
+
 ## Coding by Hand Takes Four Hundred Hours
+
+::: {.define}
+**Coding:** reading one item and writing down its value for each variable, following your codebook's rules. Example: reading a message and marking it "directed at the streamer."
+:::
 
 - **Coding one message by hand takes about forty-five seconds**
     - The 35,267 messages in the example working sample would take over four hundred hours
@@ -26,17 +43,28 @@ format:
 - **So you will code a sample, not the whole set**
 - Time your own coding on a few items, then multiply by the number of items in your source
 
+## Population and Sample
+
+::: {.define}
+**Population:** every case your conclusions are about. Example: every message posted in the fifty example channels that week.
+:::
+
+::: {.define}
+**Sample:** the smaller set of cases you actually look at. Example: thirty messages from each of those fifty channels.
+:::
+
+- In your study, the population is whatever your prospectus named
+
 Drawing the sample well is the whole of today.
 
-## Population, Sample, Census
+## Census
 
-- **Population:** the full set of cases your conclusions are about
-    - In the example, every message posted in the fifty channels that week
-    - In your study, whatever your prospectus named
-- **Sample:** the subset of the population you actually examine
-- **Census:** every case in the population, which is practical only when the population is small
+::: {.define}
+**Census:** looking at every case in the population, which works only when the population is small. Example: the example stream table keeps all of its roughly 32,000 snapshots.
+:::
 
-The example stream table is close to a census: roughly 32,000 snapshots, all kept.
+- **A snapshot is one record of one stream at one moment:** its title, its game, its viewer count, and the date
+- A census needs no sampling plan, because nothing is left out
 
 ## The Chat Table Is the Opposite Case
 
@@ -50,22 +78,40 @@ The method is what you decide. A good sample is designed, not lucky.
 
 ## Simple Random Sampling
 
-- **Every message has an equal chance of being drawn**
-    - Draw the number you need, and stop
-- **Its virtue is that it is unbiased**
-    - No message is favored over any other
-    - The researcher builds no tilt into the sample
+::: {.define}
+**Simple random sampling:** every message has the same chance of being picked, like drawing names from a hat. Example: R picks 1,000 messages from the whole chat table at random.
+:::
+
+::: {.define}
+**Unbiased:** the way you pick favors no message over any other. Example: a message from a quiet channel has the same chance as one from a giant channel.
+:::
+
 - Being unbiased is a real guarantee, and for the example data it is not enough
 
 ## Why Equal Chances Are Not Enough
 
 - **Chat volume is heavily concentrated in a few channels**
     - Busiest channel: more than a million messages that week
-    - Median channel: about 1,440 messages
+    - Median channel (the middle one when all fifty are lined up by size): about 1,440 messages
     - Quietest channel: one message
-- **That distribution is right-skewed: a few giants and a long thin tail of small channels**
+
+::: {.define}
+**Right-skewed:** most values are small and a few are huge, so a chart of them has a long tail to the right. Example: a few giant channels and a long, thin tail of small ones.
+:::
 
 Draw at random and almost every message comes from the giants.
+
+## Biased Versus Representative
+
+::: {.define}
+**Biased:** a way of picking that favors some cases over others. Example: keeping only the messages that made you laugh.
+:::
+
+::: {.define}
+**Representative:** a sample that gives a fair picture of every group your question is about. Example: a sample with enough Bob Ross messages to say something about non-gaming chat.
+:::
+
+- A sample can avoid one problem and still have the other
 
 ## Exercise: A Random Draw From the Example Data {.discuss}
 
@@ -93,9 +139,11 @@ Noticing this before you draw is the difference between a study and a mess.
 
 ## Stratified Sampling
 
+::: {.define}
+**Stratified sampling:** split the population into groups, called **strata** (one group is a **stratum**), then draw from each group separately. Example: draw thirty messages from each of the fifty channels.
+:::
+
 - **Do not draw from one undifferentiated pool**
-    - Divide the population into subgroups, called **strata**
-    - Draw from within each stratum separately
 - **Every stratum gets a place in the sample**
     - In the proportion you decide, not the proportion the population hands you
 
@@ -112,9 +160,10 @@ Noticing this before you draw is the difference between a study and a mess.
 ## The Example Corpus Is Itself Stratified
 
 - **The fifty channels were not the fifty busiest**
-    - Eight were fixed anchors chosen for variety
+    - Eight were fixed anchors: channels picked on purpose for variety
     - Bob Ross was one of them, the deliberate non-gaming case
 - **The other forty-two came from ten volume bands, and every band was sampled**
+    - A volume band is a group of channels with similar amounts of chat
 - The skew was not sampled away. It was sampled **across**
 
 ## When a Stratum Is Too Small
@@ -150,13 +199,30 @@ by a team. Your draw uses the same command at your own budget.
 
 ## Why the Seed Is Not Optional
 
+::: {.define}
+**Seed:** a number that fixes a random draw so it comes out the same every time. Example: `seed = 409` gives you the same 1,350 messages on every run.
+:::
+
 - **A random draw differs every time you run it**
-- **The `seed` argument fixes the starting point of the random number generator**
+- **The seed fixes the starting point of R's random number generator**
     - `sample_messages()` calls `set.seed()` with that number before it draws
-    - The draw then comes out identical every time
 - **Without a seed, nobody can check your results, including you in six months**
 
-The number 409 is arbitrary. What matters is that a seed is set and recorded in your sampling plan.
+## The Seed Itself Is Arbitrary
+
+- **The number 409 means nothing**
+- **What matters is that a seed is set**
+- **And that it is recorded in your sampling plan**
+
+## Unit of Analysis and Key
+
+::: {.define}
+**Unit of analysis:** the one kind of thing each row of your coding sheet describes. Example: one chat message, or one TikTok video.
+:::
+
+::: {.define}
+**Key variable:** a column two tables share, used to match their rows. Example: the song title links a Spotify table to a table of TikTok videos.
+:::
 
 ## One Codebook or Two?
 
@@ -170,12 +236,12 @@ The number 409 is arbitrary. What matters is that a seed is set and recorded in 
 ## Looking Ahead to Thursday
 
 - **You now have a sample and an untested codebook**
-- **Thursday is the pilot**
-    - Ten to twenty items coded twice, with your first codes hidden
-    - We compute **Cohen's kappa** and watch an example codebook fail
-- **Read the second half of Chapter 10 before Thursday**
+- **Thursday is the pilot: ten to twenty items coded twice, with your first codes hidden**
+- **Cohen's kappa:** a score for how much your two coding passes agree beyond what luck alone would give
+- **Read the second half of [Chapter 10](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#the-pilot-test) before Thursday**
 - **Bring your codebook, because it is the thing being tested**
-- **Due Friday, October 30, 11:59 PM: Codebook and Qualitative Memo**
-- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot**
+- **Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo)**
+- **Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot)**
+- **Check yourself on this week's terms:** [Week 10 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc451-week10.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}

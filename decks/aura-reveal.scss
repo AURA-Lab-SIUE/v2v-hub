@@ -62,3 +62,12 @@ $code-block-font-size: 0.8em;
 // the highlighter's argument-name token (#657422) sits at 4.98:1 on the page and lower on the
 // code-block background, under the 5:1 house floor; darken it (measured 2026-10-15, web_qa)
 .reveal code span.at { color: #4f5c1a; }
+
+// plain-English definition box: every key term is defined ON the slide, one sentence plus an
+// example from the course data (owner 2026-10-22). Dark ink on a pale panel, no red text inside.
+.reveal .define { border: 2px solid #101113; border-radius: 6px; background: #f3efe4;
+  padding: 0.25em 0.6em; margin: 0.35em 0; }
+.reveal .define p { margin: 0.12em 0; }
+.reveal .define em { color: #101113; }
+// two plain diagrams built from SVG shapes (mediator, moderator); never an image file
+.reveal svg.diagram { display: block; width: 100%; height: auto; margin: 0.2em 0 0.5em; }

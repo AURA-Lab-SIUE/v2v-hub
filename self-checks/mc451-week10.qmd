@@ -1,0 +1,138 @@
+---
+title: "Week 10 Self-Check"
+subtitle: "MC 451 · The Sample and the Pilot"
+---
+
+Eight questions on this week's terms. **Nothing here is graded and nothing is recorded.** Answer
+each question in your head or on paper first, then open the answer under it.
+
+Every term is defined on the slides: [S19, The Sample](../decks/mc451/s19-the-sample.html) and
+[S20, The Pilot](../decks/mc451/s20-pilot-kappa-alpha.html). The full explanation is in
+[Chapter 10](https://aura-lab.siue.edu/v2v/chapters/chapter10.html).
+
+## 1. What a variable is
+
+Which of these is a **variable** in the example chat study?
+
+- **A.** One chat message from Bob Ross's channel
+- **B.** Message target: whether a message speaks to the streamer, to another viewer, or to the whole room
+- **C.** The R function `sample_messages()`
+- **D.** The week the chat was collected, which is the same for every message
+
+<details class="tmpl-section"><summary>Show the answer to question 1</summary>
+
+**B.** A variable is something about a case that can change from one case to the next. Message
+target changes from one message to the next. A is a case, one thing you study. C is a tool. D is
+the same for every message, so it does not vary.
+
+</details>
+
+## 2. A category you code
+
+Which of these is a **category you code** yourself, rather than a column already in the data?
+
+- **A.** `viewers`, the viewer count in the stream table
+- **B.** `game`, the game a stream was filed under
+- **C.** Message target: streamer, another viewer, or the whole room
+- **D.** `date`, the date of a stream snapshot
+
+<details class="tmpl-section"><summary>Show the answer to question 2</summary>
+
+**C.** The data already holds `viewers`, `game`, and `date`. Nobody labeled messages by who they
+speak to, so you read each message and decide, using the rules in your codebook. That reading and
+deciding is what **coding** means.
+
+</details>
+
+## 3. Population and sample
+
+A study is about every message posted in the fifty example channels during one week. You code
+thirty messages from each channel. What is the **population**, and what is the **sample**?
+
+<details class="tmpl-section"><summary>Show the answer to question 3</summary>
+
+The **population** is every message posted in the fifty channels that week: everything your
+conclusions are about. The **sample** is the 1,350 messages you actually code, thirty from each
+of the fifty channels, except where a channel had fewer than thirty to give.
+
+</details>
+
+## 4. Biased or representative
+
+You draw 1,000 messages at random from the whole chat table. Almost all of them come from giant
+gaming channels, and only one or two come from Bob Ross's channel. Is the sample **biased**? Is it
+**representative** of non-gaming chat?
+
+<details class="tmpl-section"><summary>Show the answer to question 4</summary>
+
+**Not biased, and not representative.** The draw is unbiased because every message had the same
+chance of being picked. It is still not representative of non-gaming chat, because one or two
+messages cannot give a fair picture of that group. A sample can avoid one problem and still have
+the other.
+
+</details>
+
+## 5. Stratified sampling
+
+Your study compares gaming chat with non-gaming chat. Which draw puts **every** non-gaming channel
+in the sample?
+
+- **A.** 1,350 messages drawn at random from the whole chat table
+- **B.** Thirty messages drawn from each of the fifty channels
+- **C.** 1,350 messages from the busiest channel
+- **D.** The first 1,350 messages, in time order
+
+<details class="tmpl-section"><summary>Show the answer to question 5</summary>
+
+**B.** That is **stratified sampling**: split the population into groups (strata), here the
+channels, then draw from each group separately. Because every channel is a stratum, every
+non-gaming channel is in the sample by construction, not by luck. A would be almost all gaming
+chat.
+
+</details>
+
+## 6. The seed
+
+Why does `seed = 409` matter when you draw your sample?
+
+- **A.** 409 is the best number for drawing samples
+- **B.** It makes the same random draw come out every time, so anyone can check your work
+- **C.** It makes the sample bigger
+- **D.** It removes bias from the sample
+
+<details class="tmpl-section"><summary>Show the answer to question 6</summary>
+
+**B.** A **seed** fixes a random draw so it comes out the same on every run. The number itself
+means nothing; what matters is that a seed is set and written into your sampling plan. Without it,
+nobody can check your results, including you in six months.
+
+</details>
+
+## 7. Independent passes
+
+In your pilot you code the same items twice. Why must your first-pass codes stay hidden until the
+second pass is finished?
+
+<details class="tmpl-section"><summary>Show the answer to question 7</summary>
+
+The two passes must be **independent**. If you look at your first codes, the second pass measures
+your memory, not your codebook's rules. The pilot tests whether the written rules alone give the
+same answer, which is why the passes are at least 48 hours apart with the first codes out of
+sight.
+
+</details>
+
+## 8. Raw agreement and kappa
+
+Your two passes give the same code on 74 of 100 items, but **Cohen's kappa** comes out at 0.236.
+What does that tell you, and what do you do next?
+
+<details class="tmpl-section"><summary>Show the answer to question 8</summary>
+
+**Most of the agreement was luck.** Raw agreement was 74 percent, but chance alone would have
+produced about 66 percent, so kappa credits the codebook only with the small difference. A kappa
+of 0.236 is well under the 0.70 that published work treats as the lowest acceptable value. Go
+back to the items your passes coded differently, rewrite each unclear rule, and pilot again on
+fresh items.
+
+</details>

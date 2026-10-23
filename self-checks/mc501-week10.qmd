@@ -1,0 +1,125 @@
+---
+title: "Week 10 Self-Check"
+subtitle: "MC 501 · The Sample and the Pilot"
+---
+
+Eight questions on this week's terms. **Nothing here is graded and nothing is recorded.** Answer
+each question in your head or on paper first, then open the answer under it.
+
+Every term is defined on the slides: [Week 10, The Sample and the Pilot](../decks/mc501/w10-sample-pilot.html).
+Variables, mediators, and moderators are explained in
+[Chapter 5](https://aura-lab.siue.edu/v2v/chapters/chapter05.html#variables-the-building-blocks-of-hypotheses),
+and sampling and reliability in [Chapter 10](https://aura-lab.siue.edu/v2v/chapters/chapter10.html).
+
+## 1. Independent and dependent variables
+
+Hypothesis: "Non-gaming streams draw a higher share of chat messages aimed at the streamer than
+gaming streams do." Which is the **independent variable (IV)** and which is the **dependent
+variable (DV)**?
+
+<details class="tmpl-section"><summary>Show the answer to question 1</summary>
+
+The **IV** is stream type, gaming or non-gaming: the proposed cause. The **DV** is the share of
+chat messages aimed at the streamer: the outcome you think stream type changes. Both are
+**variables** because each can change from one case to the next.
+
+</details>
+
+## 2. A mediator
+
+A researcher argues that non-gaming streams feel more like a conversation, and that this feeling
+is what invites viewers to message the streamer. What role does "feels like a conversation" play?
+
+- **A.** Independent variable
+- **B.** Dependent variable
+- **C.** Mediator
+- **D.** Moderator
+
+<details class="tmpl-section"><summary>Show the answer to question 2</summary>
+
+**C, a mediator.** A mediator sits in the middle and explains how or why the IV changes the DV:
+stream type, then the conversational feel, then messages to the streamer.
+
+</details>
+
+## 3. A moderator
+
+The link between stream type and messages to the streamer holds on small streams and fades on
+large ones. What role does audience size play?
+
+- **A.** Independent variable
+- **B.** Dependent variable
+- **C.** Mediator
+- **D.** Moderator
+
+<details class="tmpl-section"><summary>Show the answer to question 3</summary>
+
+**D, a moderator.** A moderator changes how strong the IV's effect is, or its direction. It
+answers "under what conditions?" Audience size does not sit between stream type and the outcome;
+it changes how strongly the two are linked.
+
+</details>
+
+## 4. Population, sampling frame, and the gap
+
+You plan to study every post in one subreddit during 2025. You collect posts through a search tool
+that skips deleted posts. Name the **population**, the **sampling frame**, and one **gap**.
+
+<details class="tmpl-section"><summary>Show the answer to question 4</summary>
+
+The **population** is every post in that subreddit during 2025. The **sampling frame** is the list
+of posts the search tool actually returns. One **gap** is the deleted posts, which belong to the
+population but never reach the frame. Your Sampling Plan states all three in writing.
+
+</details>
+
+## 5. Sampling for a moderator
+
+You expect audience size to moderate the effect of stream type. How should you draw your sample?
+
+<details class="tmpl-section"><summary>Show the answer to question 5</summary>
+
+**Stratify by audience size**, so small streams and large streams both appear in the sample. A
+simple random draw of messages would come mostly from the busiest channels and leave too few small
+streams to see the moderator at work. To test a moderator, the sample needs cases at every level
+of it.
+
+</details>
+
+## 6. The seed
+
+Why does `seed = 409` matter when you draw your sample?
+
+<details class="tmpl-section"><summary>Show the answer to question 6</summary>
+
+A **seed** fixes a random draw so it comes out the same on every run. The number itself is
+arbitrary; what matters is that a seed is set and recorded in your plan. Without it, nobody can
+reproduce your sample or check your results, including you.
+
+</details>
+
+## 7. Raw agreement and kappa
+
+Your two passes give the same code on 74 of 100 items, but **Cohen's kappa** comes out at 0.236.
+What does that tell you?
+
+<details class="tmpl-section"><summary>Show the answer to question 7</summary>
+
+**Most of the agreement was luck.** Chance agreement alone would have been about 66 percent, and
+kappa credits the codebook only with agreement beyond chance. A value of 0.236 is well under 0.70,
+so the codebook needs its unclear rules repaired and a fresh pilot.
+
+</details>
+
+## 8. Kappa or alpha
+
+Three coders rate how heated each message is on a scale from 1 to 5, and a few items are missing a
+code. Should you report Cohen's kappa or Krippendorff's alpha?
+
+<details class="tmpl-section"><summary>Show the answer to question 8</summary>
+
+**Krippendorff's alpha.** Kappa is built for two sets of codes and **nominal** categories, which
+are only names with no order. Alpha works with any number of coders, with ranked or numeric codes
+such as a 1 to 5 scale, and with missing codes.
+
+</details>

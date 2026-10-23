@@ -26,35 +26,54 @@ format:
 - **We run a pilot and turn agreement between two coding passes into one number**
     - We watch an example codebook fail, and diagnose why
     - You leave with a reliability coefficient for your own instrument
+- **A reliability coefficient is a single score, usually between 0 and 1, for how consistent your coding was**
 
-A pilot can send you back to Chapter 8 to rewrite rules, and that is a normal result.
+A pilot can send you back to [Chapter 8](https://aura-lab.siue.edu/v2v/chapters/chapter08.html) to rewrite rules, and that is a normal result.
 
 ## What a Pilot Test Is
 
-- **A trial run of the codebook before any real coding begins**
-    - Take a subset of your sample: ten to twenty items
-    - Code them from the **same codebook**, twice
-    - Then compare the two sets of codes
+::: {.define}
+**Pilot test:** a practice round, before any real coding, where you code a few items twice to see if your codebook's rules give the same answer both times. Example: code twenty sampled messages on Monday, then again on Wednesday with Monday's codes hidden.
+:::
+
+- **Take a subset of your sample: ten to twenty items**
+- **Code them from the same codebook, twice, then compare the two sets of codes**
 - **The question the pilot answers:** do the same written rules produce the same classifications?
+
+## Coding Twice by Yourself
+
 - **In this course you are the only coder, so you code the items twice yourself**
     - At least 48 hours apart, with your first codes hidden
     - Re-code at least a quarter of the pilot items on the second pass
+- **Each round of coding is called a pass:** pass 1 and pass 2
+
+## What Reliability Means
+
+::: {.define}
+**Reliability:** your codebook gives the same code to the same item every time, whoever applies it and whenever. Example: on both passes, a message that tags the streamer is coded "directed at the streamer."
+:::
+
+- **The pilot is how reliability stops being a hope and becomes a number**
+- **A codebook that is not reliable gives different answers to the same message**
 
 ## The Two Passes Must Be Independent
 
-- **Independent means no conferring, no comparing, and no looking back at the first pass**
-    - This is not suspicion of the coder: the pilot measures the codebook, not the coder
+::: {.define}
+**Independent:** each coding pass is done without seeing, discussing, or remembering the other. Example: your Monday codes stay in a hidden file until Wednesday's pass is finished.
+:::
+
+- **This is not suspicion of the coder: the pilot measures the codebook, not the coder**
 - **If you reread your first codes before the second pass, you measure your memory, not the rules**
-    - Only independent coding tests the written rules
 - **For one coder, independence means a time gap and a blind: 48 hours, first codes hidden**
-- **Reliability is consistency:** the same rules give the same codes, whoever applies them and whenever
 
 ## The Obvious Number Is Raw Agreement
 
-- **In the example pilot, the two passes agreed on 74 of 100 items**
-    - Seventy-four percent agreement sounds respectable
-- **That number is misleading**
-    - Seeing why is the key idea of the chapter
+::: {.define}
+**Raw agreement:** the share of items where your two passes gave the same code. Example: 74 of 100 items match, so raw agreement is 74 percent.
+:::
+
+- **Seventy-four percent agreement sounds respectable**
+- **That number is misleading, and seeing why is the key idea of the chapter**
 - Some agreement happens by coincidence, for no good reason at all
 
 ## Exercise: Judge the Example Pilot {.discuss}
@@ -68,7 +87,11 @@ Answer each question in writing, with one reason:
 
 ## Why Raw Agreement Misleads
 
-- **Cohen's 1960 paper imagined two clinicians sorting patients into categories**
+::: {.define}
+**Chance agreement:** matches that happen by luck, even when nobody follows a rule. Example: two people flipping coins to sort messages into two categories agree about half the time.
+:::
+
+- **The founding paper on kappa imagined two clinicians sorting patients blindly** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
     - Each assigns categories blindly, at the rates those categories occur
     - Without coordinating at all, they still agree often
 - **That agreement comes from the number of categories and how often each is used**
@@ -77,38 +100,54 @@ Answer each question in writing, with one reason:
 
 ## Cohen's Kappa
 
+::: {.define}
+**Cohen's kappa:** a score for how much two coding passes agree beyond what luck alone would give. Example: the example pilot scores 0.236, so most of its agreement was luck.
+:::
+
 ```
-kappa = (observed agreement - expected agreement) / (1 - expected agreement)
+kappa = (observed - expected) / (1 - expected)
 ```
 
-Kappa starts from the agreement you observed, subtracts the agreement chance alone would have
-produced, and credits the codebook only with the difference.
+- **Observed:** the raw agreement your two passes produced
+- **Expected:** the chance agreement, what luck alone would produce
+- **Kappa credits the codebook only with the difference** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
 
-- **Agreement no better than chance:** the numerator is zero, so kappa is zero
+## Kappa From Zero to One
+
+- **Agreement no better than chance:** the top of the formula is zero, so kappa is zero
 - **Perfect agreement:** kappa is one
 - **Kappa is built for two sets of codes and nominal categories**
     - Two coders, or one coder twice
 
+::: {.define}
+**Nominal:** categories that are only names, with no order. Example: "directed at the streamer" is not more or less than "broadcast to the room."
+:::
+
 ## Krippendorff's Alpha
 
-- **Alpha is the general reliability statistic, for the cases kappa does not fit**
-    - Any number of coding passes, not just two
-    - Any level of measurement, nominal through ratio
-    - Datasets with missing codes
+::: {.define}
+**Krippendorff's alpha:** a reliability score like kappa that also works with more than two passes, ranked or numeric codes, and missing codes. Example: three coders rating how heated a message is from 1 to 5 ([Krippendorff, 2018](https://doi.org/10.4135/9781071878781)).
+:::
+
 - **For a pilot with two passes and nominal categories, kappa and alpha agree**
     - Kappa is the more familiar choice, so it is the one we report
+- **If a pass skipped an item, alpha can still run**
 
 ## Running the Check
 
 ```r
-v2v::reliability(pull(pilot, pass_1), pull(pilot, pass_2), method = "kappa")
+v2v::reliability(
+  pull(pilot, pass_1),
+  pull(pilot, pass_2),
+  method = "kappa"
+)
 ```
 
 `reliability()` takes two columns of codes and returns the coefficient, with
 `method = "kappa"` or `method = "alpha"` selecting which one. `pull()` takes one named column out of a table.
 
-Or type your two passes into the Companion's **Reliability grid**. It saves them as a CSV and writes
-this same call into your script, after the `irr` calls it stands for. To enter the codes themselves,
+Or type your two passes into the Companion's **Reliability grid**. It saves them as a CSV (a plain
+spreadsheet file) and writes this same call into your script, after the `irr` calls it stands for. To enter the codes themselves,
 the Companion's data viewer (**Open the data viewer**) adds coding columns beside your sampled CSV,
 like the spreadsheet, and never changes the original file.
 
@@ -136,14 +175,14 @@ Almost all of the raw agreement was coincidence.
     - **Coder A** read it as "the message carries a Twitch emote"
     - **Coder B** read it as "the message is shouted, in all capitals"
 - **Both readings are reasonable**
-    - Both coders believed they were coding one variable
+    - Both coders believed they were coding one variable, one trait of each message
     - Emotes and all-caps overlap often enough to agree by accident
 
 The example is a published two-coder illustration. One coder working twice fails the same way when a rule is undefined.
 
 ## Reading the Number
 
-Published ranges attach labels to kappa values (Landis and Koch, 1977):
+Published ranges attach labels to kappa values ([Landis and Koch, 1977](https://doi.org/10.2307/2529310)):
 
 - **0.0 to 0.2:** slight
 - **0.2 to 0.4:** fair
@@ -187,11 +226,12 @@ You should now have:
 ## Before Next Time
 
 - **Revise the codebook against your disagreement list, then re-pilot**
-- **Read Chapter 11, Wrangling the Data**
+- **Read [Chapter 11, Wrangling the Data](https://aura-lab.siue.edu/v2v/chapters/chapter11.html)**
 - **Next week you work in R on the data itself**
     - Unreadable timestamps, missing variables, and two tables that need joining
-- **Due Friday, October 30, 11:59 PM: Codebook and Qualitative Memo, 50 points**
-- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points**
-- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
+- **Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo), 50 points**
+- **Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot), 75 points**
+- **Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points**
+- **Check yourself on this week's terms:** [Week 10 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc451-week10.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}
