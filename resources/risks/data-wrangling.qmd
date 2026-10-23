@@ -1,0 +1,166 @@
+---
+title: "Data Wrangling: risks guide"
+subtitle: "MC 451 and MC 501 · the traps on worksheet 1 of the Twitch job"
+---
+
+This guide goes with the [Data Wrangling worksheet](../../starters/11-wrangling-data.qmd). It
+does not fill in the worksheet. Each section names a trap this job sets, shows what it looks like
+when you fall into it, and gives you a check that tells you whether you did. Every output below
+is real: it is what the Twitch data in `v2v` prints when the mistake is made.
+
+Words such as key, join, factor, and missing value are defined in plain English in the
+worksheet's **Key terms** table.
+
+Run the check after the step it belongs to, not at the end. A wrong join in Part 4 still runs,
+and everything after it inherits the error.
+
+## 1. A key that matches the wrong things
+
+**What it looks like.** Both tables have a column called `id`. In `chat` it numbers messages;
+in `streams` it numbers snapshots. Thirty-one numbers happen to appear in both, so a join on
+`id` between the two tables runs without an error and pairs 31 messages with snapshots that have
+nothing to do with them:
+
+```
+matched rows: 31
+```
+
+**How to check.** Before any join, say in a comment what one row of each table is, and what the
+key column means in each. If the same column name means different things in the two tables, it
+is not a key between them. Then count the matches you expect: every message should find its
+stream, not 31 of them.
+
+## 2. A join that multiplies the rows
+
+**What it looks like.** Joining the stream snapshots onto the messages by `channel` alone gives
+every message every snapshot from its channel. dplyr stops to warn you:
+
+```
+Detected an unexpected many-to-many relationship between `x` and `y`.
+ℹ Row 1 of `x` matches multiple rows in `y`.
+```
+
+If that warning is silenced, the table grows from 35,267 rows to 31,565,309.
+
+**How to check.** A join that adds columns to messages must leave one row per message. Run
+`nrow()` before the join and after it; the two numbers must be equal. The same check catches a
+coding form that lists one message twice: a single duplicated `id` in your codes turns 35,267
+rows into 35,268.
+
+## 3. Codes that do not find their message
+
+**What it looks like.** Your thirty codes join on, but `count(reaction_only)` shows the coded
+groups adding to fewer than 30. Some codes found no message, usually because the `id` column was
+changed when the coding form was saved: a spreadsheet reformatted it, a row was sorted on its
+own, or an `id` was typed over.
+
+**How to check.** `anti_join()` returns the rows of its first table that have no match in the
+second. Run it from your codes to the analysis table on the key you joined by. It should return
+0 rows. Each row it returns is a code that did not land.
+
+## 4. Timestamps that are still numbers
+
+**What it looks like.** `date` is stored as milliseconds since 1970, a thirteen-digit number.
+Converting it as if it were seconds puts every message nearly 49,000 years in the future:
+
+```
+[1] "50852-05-09 12:10:23 UTC" "50852-05-09 14:32:42 UTC"
+```
+
+**How to check.** Print `range()` of your new time column. Every message in this corpus was
+sent between November 18 and November 24, 2018. Anything else means the milliseconds were read
+as seconds.
+
+**One more thing to know.** The times are in UTC. A message sent at 9 PM in St. Louis shows as
+3 AM the next day. That matters in worksheet 3, where the hour of the day is a variable.
+
+## 5. Missing values dropped by accident
+
+**What it looks like.** `drop_na()` with nothing inside the brackets drops every row with a
+missing value in **any** column. Your hand-coded variable is missing on every message you did not
+code, so this one line shrinks the table from 35,267 rows to 30:
+
+```
+rows after drop_na(): 30
+```
+
+Nothing warns you. Describing and Inferencing then run on thirty messages.
+
+**How to check.** Count the rows before and after anything that removes rows, and write down
+how many went and why. If you decide to drop rows, name the columns that decide it. The rubric
+asks you to report the count; a silent drop is the error this step exists to catch.
+
+## 6. Codes that turn into `NA`
+
+**What it looks like.** `factor()` with `levels = c(0, 1)` keeps only values that are exactly 0
+or 1. A code typed as `1 ` (with a space), `yes`, or left blank becomes `NA`, with no warning:
+
+```
+[1] commentary reaction   <NA>       <NA>
+Levels: commentary reaction
+```
+
+**How to check.** Run `count()` on the variable right after `factor()`. The groups must add to
+30 and there must be no `NA` row. If there is one, find the cell in the coding form and fix it
+there, not in the script.
+
+## 7. Factor levels in the wrong order
+
+**What it looks like.** `factor()` without `levels =` sorts the labels alphabetically, so the
+viewer bands come out in an order that means nothing:
+
+```
+[1] "large"  "medium" "small"
+```
+
+Every table, chart, and test after this uses that order.
+
+**How to check.** Print `levels()` of every factor you make and read it as a sentence. Small,
+medium, large is an order; large, medium, small is the alphabet.
+
+## 8. A coding form overwritten, or saved as something else
+
+**What it looks like.** Running a line that writes the coding form again replaces your thirty
+codes with an empty form. Saving from a spreadsheet as `.xlsx`, or under a new name, leaves
+`read_csv()` reading the old empty file, or failing to find one. Spreadsheets can also show a
+message that starts with `@`, `=`, or `-` as a formula; the worksheet joins only `id` and your code
+back, so the message text in the form does not have to survive.
+
+**How to check.** Open `data/coding-form.csv` after you save it and look: thirty rows, your codes
+in their column, `id` unchanged. Keep the line in Task 0.2 that writes the form only when it does
+not exist.
+
+## 9. A different thirty messages
+
+**What it looks like.** Drawing fifteen messages per channel from all fifty channels and keeping
+`bobross` and `giantwaffle` afterward gives a different thirty from keeping the two channels first
+and drawing second. The two draws share no messages at all.
+
+**How to check.** Your Task 0.1 count shows 15 and 15, and your messages match a classmate's.
+If they do not, compare the order of the two lines.
+
+## 10. Saved in a format that forgets
+
+**What it looks like.** A `.csv` stores only text and numbers. Written to CSV and read back,
+`viewer_band` comes back as plain text with no levels, and sorts as large, medium, small. A file
+saved under any name other than `twitch_analysis.RDS` is one the next two worksheets cannot find.
+
+**How to check.** Read the file back with `read_rds()` and `glimpse()` it: `channel_type`,
+`viewer_band`, and your code should say `<fct>`, and `ts` should say `<dttm>`.
+
+## 11. A step done in the console
+
+**What it looks like.** A line run once in the console, and never written into the worksheet,
+leaves an object that exists now and will not exist tomorrow. The worksheet runs for you today
+and fails for anyone else.
+
+**How to check.** Restart R and render the worksheet from the top. If it renders, every step is
+in the file.
+
+## MC 501: the three reviewer-facing comments
+
+**What it looks like.** A comment that says what the code does ("join the channel labels") is a
+description, and the R Companion writes those for you. It does not count as one of the three.
+
+**How to check.** Read each comment and ask whether a reviewer could disagree with it. Each one
+should name a decision, the rule you applied, and why you chose it over the alternative.

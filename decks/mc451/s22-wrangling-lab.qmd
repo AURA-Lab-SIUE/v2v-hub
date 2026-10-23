@@ -27,7 +27,7 @@ format:
 - **Today we build the transformation the example question depends on**
     - The stream join, the gaming label, and the rows a join leaves unlabeled
     - Then one pipeline you can rerun from scratch
-- Open Tuesday's script. We continue from its last line
+- Open your worksheet. We continue from Part 4
 
 ## What Is Still Missing
 
@@ -139,12 +139,19 @@ chat_streams <- chat_streams %>%
   left_join(channel_type, by = "channel")
 ```
 
-A **join** brings columns from one table onto another by matching a shared key. `left_join()`
-keeps every row of `chat_streams` and attaches each channel's `main_game` and `is_gaming`.
+::: {.define}
+**Join:** putting two tables together by matching a shared key, so each row picks up the other table's columns. Example: every message picks up its channel's `main_game` and `is_gaming`.
+:::
+
+`left_join()` keeps every row of `chat_streams` and attaches each channel's `main_game` and `is_gaming`.
 
 `by = "channel"` names the key column both tables share.
 
 ## Joins Fail When the Keys Do Not Match
+
+::: {.define}
+**Key:** the column two tables share, which says which row in one goes with which row in the other. Example: `channel`, which reads `bobross` in both tables.
+:::
 
 - **A join is only as good as the match between its keys**
     - Twitch's chat protocol writes channel names with a leading "#"
@@ -170,6 +177,10 @@ Running `count()` on a new column is the cheapest check there is. Here it turns 
 value nobody asked for.
 
 ## The 501 Unlabeled Messages
+
+::: {.define}
+**Missing value (`NA`):** a cell with nothing in it, which R prints as `NA`. Example: the 501 messages from the two channels with no recorded category.
+:::
 
 - **Two channels never had a category recorded**
     - Every snapshot of those channels had a missing `game`, so there was no most frequent category
@@ -221,7 +232,7 @@ belong to `704cb1fgnty`, one of the two channels with no category, so its labels
 - **`object 'channel_type' not found`:** you ran the join before building the lookup table
 - **`slice_max` errors:** you skipped `group_by()`
 - **A misspelled category name** silently mislabels a channel
-- **A script that fails in a fresh session** depends on something you have not written down
+- **A worksheet that will not render in a fresh session** depends on something you have not written down
 
 Copy the error and run **AURA: Explain an R error** from the Command Palette.
 
@@ -230,14 +241,16 @@ Copy the error and run **AURA: Explain an R error** from the Command Palette.
 You should now have:
 
 - A `channel_type` lookup table, one row per channel, with `main_game` and `is_gaming`
-- An `analysis` table of 12 columns, saved as `data/twitch_analysis.RDS`
+- An `analysis` table of 12 columns
 - A `count(is_gaming)` result you have actually looked at
-- A script that rebuilds all of it from the raw data in one run
+- Worksheet Parts 4 to 7 filled: viewer band, your thirty codes joined on, `data/twitch_analysis.RDS` saved
+- A worksheet that rebuilds all of it from the raw data when you render it
 
 ## Before Next Time
 
-- **Rerun your script from a clean session and confirm it reproduces the same table**
-- **Comment your wrangling decisions in the script**
+- **Restart R, render your worksheet, and confirm it rebuilds the same table**
+- **Check it against the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)**
+- **Comment your wrangling decisions in the worksheet**
     - A reviewer will ask why you excluded what you excluded
     - A comment the Companion writes says what a step does. Your comment says why you chose it
 - **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points**

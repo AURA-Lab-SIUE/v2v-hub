@@ -120,10 +120,11 @@ print. Save it into the **top folder** of your workspace, next to `README.md`.
 
 ## Wrangling the data (Chapter 11)
 
-`11-wrangling-data.qmd` walks you through the Chapter 11 pipeline one step at a time: import the
-example data, diagnose it, build the variables your codebook names, join the two tables, and save
-one clean `.RDS` file, with what each step should print. Save it into the **top folder** of your
-workspace, next to `README.md`.
+`11-wrangling-data.qmd` is the Data Wrangling worksheet, part 1 of the Twitch job: you hand-code
+thirty messages, then import, diagnose, convert, join, and save one clean `.RDS` file. The routine
+code is written for you, the core steps are blanks you fill, and each step says what it should
+print. Save it into the **top folder** of your workspace, next to `README.md`. The
+[Data Wrangling risks guide](risks/data-wrangling.qmd) shows the traps on this job.
 
 [Download 11-wrangling-data.qmd](../starters/11-wrangling-data.qmd){.btn .btn-primary}
 

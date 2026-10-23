@@ -13,6 +13,7 @@ format:
 
 ## Today's Agenda
 
+- The Twitch job: three worksheets, one study
 - Why the table you loaded cannot answer your research question yet
 - The five dplyr verbs that reshape a table
 - Converting timestamps into readable dates, and the factor of a thousand that breaks the conversion
@@ -30,7 +31,22 @@ format:
 
 Wrangling is the least rewarding part of the term, and it is what professionals spend most of their time on.
 
-Today's steps and what each prints: [Chapter 11 starter file](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
+Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
+
+## The Twitch Job
+
+::: {.define}
+**Hand-coding:** reading each message yourself and recording its value by a written rule. Example: `LULW` alone is coded 1, a reaction; `BIG TREE` is coded 0, commentary.
+:::
+
+- **Data Wrangling, Describing, and Inferencing are three parts of one Twitch study**
+- **Each part is a worksheet: routine code written, core steps left blank**
+    - Under each step: what you should see
+- **Part 0: hand-code thirty messages as reaction or commentary**
+    - Inferencing tests the variable you build here
+- **Each worksheet has a risks guide: the traps, and how to check for them**
+
+[Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd) · [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
 
 ## What the Table Cannot Answer
 
@@ -77,6 +93,10 @@ These five verbs carry almost all the wrangling you will ever do.
 
 ## Why the Verbs Chain Together
 
+::: {.define}
+**Pipe (`%>%`):** read it as "and then"; it hands the result of one line to the next. Example: `chat %>% filter(channel == "bobross")` takes the chat table, then keeps Bob Ross's messages.
+:::
+
 - **Each verb takes a data frame and returns a data frame**
     - That shared design is what lets `%>%` string them together
     - One verb's output is the next verb's input
@@ -99,6 +119,10 @@ Write down your answers before running the code:
 - What happens if you type `channel = "bobross"` with one equals sign instead of two?
 
 ## The Unreadable Timestamp
+
+::: {.define}
+**Timestamp:** the date and time something happened. Example: `1542578127023` is the first message's timestamp, 9:55 PM on November 18, 2018 (UTC).
+:::
 
 - **`date` is a column of very large numbers, typed `<dbl>`**
     - Each number counts milliseconds since midnight on 1 January 1970
@@ -195,17 +219,17 @@ You should now have:
 - A `chat` object and a `streams` object, each with a working `ts` column, typed `<dttm>`
 - A `message_length` column on `chat`, typed `<int>`
 - Output showing dates in November 2018
-- A saved script, not lines typed into the console
-- Any step you built with the Companion's Data menu, sitting in that script as commented code
+- Today's steps filled in your worksheet, not typed into the console
+- Any step you built with the Companion's Data menu, sitting in the worksheet as commented code
 
 Still missing: the gaming label. That is Thursday.
 
 ## Before Thursday
 
-- **Run today's transformations on your own project, then save the script**
+- **Code your thirty messages in the worksheet's Part 0, and fill Parts 1 to 3**
 - **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points**
 - **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
 - **Thursday: the gaming label, the join, and the rows a join leaves behind**
-- **Bring your script, because Thursday picks it up where it stops**
+- **Bring your worksheet, because Thursday picks it up where it stops**
 
 ## Questions, Comments, or Concerns? {.titlecard}

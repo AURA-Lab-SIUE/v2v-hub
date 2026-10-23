@@ -9,6 +9,8 @@ project:
     - "modules/**/*.qmd"
     - "!modules/**/pokemon-practice.qmd"
     - "resources/*.qmd"
+    # Risks guides for the three R worksheets (2026-10-22): static code only, no R chunks, so CI renders them.
+    - "resources/risks/*.qmd"
     # Step-by-step guides, one set per course; the Markdown source lives in each teaching workspace on O:.
     - "guides/**/*.md"
     - "workbook/*.qmd"

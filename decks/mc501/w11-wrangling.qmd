@@ -13,6 +13,7 @@ format:
 
 ## Today's Agenda
 
+- The Twitch job: three worksheets, one study
 - The gap between the data you have and the question you asked
 - Four transformations, built one at a time
 - Joins, and how they fail without an error message
@@ -30,7 +31,20 @@ format:
 
 Wrangling is the least rewarding evening of the term, and it is where researchers spend most of their hours.
 
-Today's steps and what each prints: [Chapter 11 starter file](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
+Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
+
+## The Twitch Job
+
+::: {.define}
+**Hand-coding:** reading each message yourself and recording its value by a written rule. Example: `LULW` alone is coded 1, a reaction; `BIG TREE` is coded 0, commentary.
+:::
+
+- **Data Wrangling, Describing, and Inferencing are three parts of one Twitch study**
+- **Each part is a worksheet: routine code written, core steps left blank**
+- **Part 0: hand-code thirty messages; Inferencing tests that variable**
+- **The worksheet marks where your three reviewer-facing comments go**
+
+[Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd) · [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
 
 ## The Gap You Are Closing
 
@@ -53,6 +67,10 @@ Today's steps and what each prints: [Chapter 11 starter file](https://aura-lab.s
 Each verb takes a data frame and returns a data frame, which is what lets the pipe chain them.
 
 ## Two Verbs, Seen
+
+::: {.define}
+**Pipe (`%>%`):** read it as "and then"; it hands the result of one line to the next. Example: `chat %>% filter(channel == "bobross")` takes the chat table, then keeps Bob Ross's messages.
+:::
 
 ```r
 chat %>%
@@ -82,13 +100,17 @@ The Companion's **Write R code** menu writes this same block: **Turn the date co
 
 ## Dates Are Stored in Milliseconds
 
+::: {.define}
+**Timestamp:** the date and time something happened. Example: `1542578127023` is the first message's timestamp, 9:55 PM on November 18, 2018 (UTC).
+:::
+
 - **`date` counts milliseconds since 1 January 1970**
     - That starting moment is the **Unix epoch**
 - **`as.POSIXct()` expects seconds, which are a thousand times coarser**
 - **Hand it the raw number and every message lands tens of thousands of years in the future**
 - **`clean_dates()` does the division for you**, and prints the lubridate line it stands for the first time you call it
 
-`date / 1000` converts milliseconds to seconds first. Skipping that step is how a hand conversion fails.
+`date / 1000` converts milliseconds to seconds first.
 
 ## The Column Type Changes to a Date-Time
 
@@ -217,6 +239,10 @@ reader can check it.
 
 ## Step 4, the Join
 
+::: {.define}
+**Join:** putting two tables together by matching a shared key, so each row picks up the other table's columns. Example: every message picks up its channel's `main_game` and `is_gaming`.
+:::
+
 ```r
 channel_type <- channel_type %>%
   mutate(is_gaming = !(game %in% nongaming_categories)) %>%
@@ -232,14 +258,16 @@ category streaming at that moment. `left_join()` keeps every row and attaches ea
 
 ## Joins Fail Silently When Keys Disagree
 
+::: {.define}
+**Key:** the column two tables share, which says which row in one goes with which row in the other. Example: `channel`, which reads `bobross` in both tables.
+:::
+
 - **A join is only as good as the match between its keys**
     - Twitch writes channel names with a leading `#`
     - So one source says `#bobross` and another says `bobross`
 - **Keys that disagree fail on every row, and R reports no error**
 - **The `v2v` example data has normalized keys. Raw data does not**
 - Check the key column in your own source before every join
-
-When a join returns nothing, check the keys first.
 
 ## Always Inspect a Derived Column
 
@@ -261,13 +289,17 @@ not anticipate.
 
 ## The `NA` Is the Correct Outcome
 
+::: {.define}
+**Missing value (`NA`):** a cell with nothing in it, which R prints as `NA`. Example: the 501 messages from the two channels with no recorded category.
+:::
+
 - **Two channels never had a category recorded**
     - No categories means no modal category, which means no row in the lookup table
     - The join left their messages as `NA`
 - **The data genuinely does not say whether those 501 messages came from gaming channels**
 - **An honest `NA` records that the study cannot classify them**
 
-Those messages sit the comparison out rather than being guessed into one side.
+Those messages sit the comparison out, not guessed into one side.
 
 ## The Whole Pipeline in One Place
 
@@ -313,7 +345,7 @@ labels print `NA`.
 - **A reviewer will ask how you handled something**
     - The answer is in the script, if the script is commented and committed
 
-Identify **three** decisions in your script that a reviewer could challenge, and write a comment on each.
+Identify **three** decisions a reviewer could challenge, and write a comment on each at the three places the worksheet marks.
 A comment the Companion wrote does not count as one of your three. Write your own justification beside it.
 
 ## Never Overwrite Raw Data
@@ -340,17 +372,19 @@ Copy the error and run **AURA: Explain an R error** from the Command Palette.
 
 You should now have:
 
-- An `analysis` table with **12 columns** and **35,267 rows**, saved as `data/twitch_analysis.RDS`
+- An `analysis` table with **12 columns** and **35,267 rows**
+- The worksheet adds viewer band and your thirty codes, then saves `data/twitch_analysis.RDS`
 - A `ts` column of type `<dttm>` and a `message_length` column of type `<int>`
 - An `is_gaming` column with 3,457 `FALSE`, 31,309 `TRUE`, and 501 `NA`
-- A commented script that runs top to bottom in a clean session
+- A commented worksheet that renders top to bottom in a clean session
 - The processed dataset written out, with the raw data untouched
 
 ## Before Week 12
 
 - **Due Monday, November 9, 11:59 PM:** Sampling Plan and Pilot, 75 points
 - **Due Monday, November 16, 11:59 PM:** Data Wrangling in R, 50 points
-    - The script, its comments, and three justifications
+    - The worksheet, your thirty codes, and three justifications
+    - Check it against the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
     - The three justifications are yours; a comment the Companion wrote does not count
 - **Read Chapter 12**
     - Plus the assigned article: **Lakens (2013)** on effect sizes

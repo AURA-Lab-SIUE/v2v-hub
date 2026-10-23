@@ -413,13 +413,17 @@ Build the analysis-ready table from the raw one.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** your script and the exported dataset, saved as `twitch_analysis.RDS` because Describing Data and Inferencing Data both read that file, uploaded to Blackboard under Data Wrangling in R. You may build steps with the R Companion's Data menu. What it writes lands in your script, and the script is what is graded. Export to RDS, not CSV.
+**What you submit:** the filled worksheet and the HTML it renders to, your coded `data/coding-form.csv`, and the exported dataset, saved as `twitch_analysis.RDS` because Describing Data and Inferencing Data both read that file, uploaded to Blackboard under Data Wrangling in R. The worksheet is part 1 of one Twitch job in three worksheets: the code that is not the point is written for you, the core steps are blanks you fill, and the thirty messages you hand-code in its Part 0 are tested in Inferencing Data. Where an R Companion menu writes a step, the worksheet names it, and what the menu writes counts as your code. Export to RDS, not CSV.
 
-**Length:** One script of 40 to 120 lines, comments included, plus the 30-row coding form. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+**Length:** The worksheet's code, 40 to 120 lines with its comments, plus the 30-row coding form. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
-**Rubric:** [Data Wrangling in R rubric (PDF)](resources/rubrics/MC451-rubric-data-wrangling-in-r.pdf). It lists the eight steps the script carries and the points for each.
+**Rubric:** [Data Wrangling in R rubric (PDF)](resources/rubrics/MC451-rubric-data-wrangling-in-r.pdf). It lists the eight steps the worksheet carries and the points for each.
+
+**Worksheet:** [11-wrangling-data.qmd](starters/11-wrangling-data.qmd), the worksheet you fill in and submit.
+
+**Risks guide:** [Data Wrangling risks guide](resources/risks/data-wrangling.qmd). The traps on this job, what each looks like, and how to check for it. It shows no answers.
 
 **How-to:** [Wrangling](guides/mc451/08-wrangling.md) step-by-step guide, and the [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025) walkthrough video.
 
