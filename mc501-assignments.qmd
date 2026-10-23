@@ -310,6 +310,8 @@ Turn your constructs into definitions a stranger could apply without asking you 
 
 Build the instrument, then write the protocol that says how you will know it stayed consistent.
 
+**Your coding sheet.** A codebook has two parts that work together: the codebook document, which says what each variable means and which values it can take, and the coding sheet, the spreadsheet you actually code in. Start your coding sheet now so it is ready for the pilot. It has one row for each item you will code (a message, a post, an article) and one column for each variable, named exactly as the variable is named in your codebook. Keep an `id` column so every code can be matched back to its item, and a `coder_notes` column for anything you were unsure about. Download the [coding sheet template (CSV)](resources/templates/coding-sheet-template.csv), rename the `variable_` columns to your own variables (add or delete columns until there is one per variable), and save it in your workspace as `data/coding-sheet.csv`. For the reliability check you code each pilot item twice, so the pilot version adds a second column for each variable (for example `tone_p1` and `tone_p2`), as in the Sampling Plan and Pilot worked example's coded data. The coding sheet is not graded with this assignment; you fill it in for the Sampling Plan and Pilot. For a finished one, open `vr-sample.csv` in [the VR codebook](examples/vr-codebook/mc501-vr-codebook-walkthrough.html).
+
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
