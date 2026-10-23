@@ -22,4 +22,21 @@ The Output panel reads **RESULT: everything this course needs is installed** and
 
 ## If it does not work
 
+::: {.callout-important}
+## When VS Code asks to install "sess", click Install
+
+The first time R opens in VS Code, a notice appears in the bottom-right corner: **vscode-R needs bundled sess to attach the session watcher.** Click **Install bundled sess** and wait about a minute. You must say yes: if you click **Not now** or **Don't ask again**, R will not connect to VS Code, and the bottom bar keeps saying **R: (not attached)**.
+
+**Missed it?** Click the bell icon in the bottom-right corner of VS Code to find the notice again. If it is not there, close VS Code, open R itself (from the Start menu on Windows, or Applications on a Mac), and run these three lines one at a time:
+
+```r
+install.packages(c("processx", "later", "jsonlite", "rstudioapi"), repos = "https://cloud.r-project.org")
+p <- tail(Sys.glob(file.path(Sys.getenv(if (.Platform$OS.type == "windows") "USERPROFILE" else "HOME"), ".vscode", "extensions", "reditorsupport.r-3*", "dist", "resources", "sess")), 1)
+install.packages(p, repos = NULL, type = "source")
+```
+
+Then open VS Code again and start R. The bottom bar should show your R version.
+:::
+
+
 If the list says R was not found, close VS Code completely, open it again, and run **AURA: Check my setup** once more. A new VS Code window picks up an R you installed after it opened.

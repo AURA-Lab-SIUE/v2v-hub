@@ -115,6 +115,23 @@ Or run **Check my setup** from the Command Palette and choose your course: it in
 
 ## Step 5: Run your first R code in VS Code
 
+::: {.callout-important}
+## When VS Code asks to install "sess", click Install
+
+The first time R opens in VS Code, a notice appears in the bottom-right corner: **vscode-R needs bundled sess to attach the session watcher.** Click **Install bundled sess** and wait about a minute. You must say yes: if you click **Not now** or **Don't ask again**, R will not connect to VS Code, and the bottom bar keeps saying **R: (not attached)**.
+
+**Missed it?** Click the bell icon in the bottom-right corner of VS Code to find the notice again. If it is not there, close VS Code, open R itself (from the Start menu on Windows, or Applications on a Mac), and run these three lines one at a time:
+
+```r
+install.packages(c("processx", "later", "jsonlite", "rstudioapi"), repos = "https://cloud.r-project.org")
+p <- tail(Sys.glob(file.path(Sys.getenv(if (.Platform$OS.type == "windows") "USERPROFILE" else "HOME"), ".vscode", "extensions", "reditorsupport.r-3*", "dist", "resources", "sess")), 1)
+install.packages(p, repos = NULL, type = "source")
+```
+
+Then open VS Code again and start R. The bottom bar should show your R version.
+:::
+
+
 1. In your workspace, create a new file called `hello.R`.
 2. Type:
 
