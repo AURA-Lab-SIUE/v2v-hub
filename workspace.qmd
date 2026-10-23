@@ -53,7 +53,7 @@ Open your workspace with the course picker: in VS Code, run **AURA: Open my cour
 :::{.callout-tip}
 ## Why commit to GitHub?
 
-Committing your workspace gives you a backup, a full history of your work, and a way for Dr. Leith to see your journal entries. It also builds the version-control habit you use again in the White Paper.
+Committing your workspace gives you a backup and a full history of your work. It does not submit anything: journal entries and assignments are submitted in Blackboard. It also builds the version-control habit you use again in the White Paper.
 :::
 
 ---
