@@ -97,6 +97,7 @@ ggplot(viewers_over_time,
        aes(x = six_hour, y = total_viewers,
            color = category)) +
   geom_line(linewidth = 0.9) +
+  scale_y_continuous(labels = scales::label_comma()) +
   labs(title = "Concurrent viewers by game category",
        x = "Date (UTC, six-hour buckets)",
        y = "Total viewers in bucket",
@@ -105,7 +106,8 @@ ggplot(viewers_over_time,
   v2v::theme_v2v()
 ```
 
-`theme_v2v()` applies publication-ready fonts, spacing, and gridlines in one call.
+`label_comma()` writes 20,000,000 instead of 2.0e+07, and `theme_v2v()` applies
+publication-ready fonts, spacing, and gridlines in one call.
 
 ## What Dominates the Chart, and Why
 
@@ -192,17 +194,20 @@ msglen <- analysis %>%
   filter(!is.na(is_gaming)) %>%
   mutate(length_shown = pmin(message_length, 120))
 
-ggplot(msglen, aes(x = length_shown, fill = is_gaming)) +
+ggplot(msglen, aes(x = length_shown,
+                   y = after_stat(density),
+                   fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
                  alpha = 0.55) +
   labs(x = "Message length (characters, capped at 120)",
-       y = "Messages", fill = "Gaming channel") +
+       y = "Share of the group's messages",
+       fill = "Gaming channel") +
   v2v::scale_fill_v2v() +
   v2v::theme_v2v()
 ```
 
-The code drops the unlabeled messages, caps the displayed length at 120 characters, and
-overlays the two groups at partial transparency.
+The code drops unlabeled messages, caps the shown length at 120, and overlays the two groups.
+`after_stat(density)` draws each group as shares, so the small group still shows.
 
 ## Two Choices You Must Disclose
 

@@ -145,7 +145,8 @@ chat_streams <- chat_streams %>%
 
 `left_join()` keeps every row of `chat_streams` and attaches each channel's `main_game` and `is_gaming`.
 
-`by = "channel"` names the key column both tables share.
+`by = "channel"` names the key column both tables share. For your own tables, the Companion's
+**Join two tables by a shared column** writes a join like this one, plus two checks.
 
 ## Joins Fail When the Keys Do Not Match
 

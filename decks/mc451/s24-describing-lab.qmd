@@ -123,7 +123,8 @@ chart so long category names are readable. Unsorted bars are much harder to comp
 ```r
 analysis %>%
   filter(!is.na(is_gaming)) %>%
-  ggplot(aes(x = message_length, fill = is_gaming)) +
+  ggplot(aes(x = message_length, y = after_stat(density),
+             fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
                  alpha = 0.55) +
   v2v::scale_fill_v2v() +
@@ -131,7 +132,8 @@ analysis %>%
 ```
 
 `position = "identity"` with `alpha` overlays the two groups so their shapes can be
-compared. Stacked bars would hide exactly the comparison you want.
+compared, and `after_stat(density)` draws each group as shares, so the small group still shows.
+Stacked bars would hide exactly the comparison you want.
 
 ## Labels Are Not Optional
 
@@ -140,7 +142,7 @@ last_plot() +
   labs(
     title = "Message length by channel type",
     x = "Message length (characters, capped at 120)",
-    y = "Messages",
+    y = "Share of the group's messages",
     fill = "Gaming channel"
   )
 ```

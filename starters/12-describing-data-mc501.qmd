@@ -56,7 +56,7 @@ code that makes them, and the HTML carries them.
 #| label: setup
 library(tidyverse)     # tables and charts
 library(v2v)           # theme_v2v() and the course palette
-options(scipen = 999)  # whole numbers, never scientific notation
+options(scipen = 10)  # long numbers such as timestamps print in full; p-values keep the usual form
 
 analysis <- read_rds("data/twitch_analysis.RDS")  # the table worksheet 1 saved
 dir.create("figures", showWarnings = FALSE)        # where every chart is saved

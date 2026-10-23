@@ -95,6 +95,7 @@ ggplot(viewers_over_time,
        aes(x = six_hour, y = total_viewers,
            color = category)) +
   geom_line(linewidth = 0.9) +
+  scale_y_continuous(labels = scales::label_comma()) +
   labs(title = "Concurrent viewers by game category",
        x = "Date (UTC, six-hour buckets)",
        y = "Total viewers in bucket", color = "Category") +
@@ -102,8 +103,8 @@ ggplot(viewers_over_time,
   v2v::theme_v2v()
 ```
 
-Time goes on the x axis, summed viewers on the y axis, and category to color. `theme_v2v()`
-gives every figure in the set one consistent look.
+Time goes on the x axis, summed viewers on the y axis, and category to color. `label_comma()`
+writes 20,000,000 instead of 2.0e+07, and `theme_v2v()` gives every figure in the set one consistent look.
 
 ## What the Line Chart Shows
 
@@ -150,7 +151,9 @@ msglen <- analysis %>%
   filter(!is.na(is_gaming)) %>%
   mutate(length_shown = pmin(message_length, 120))
 
-ggplot(msglen, aes(x = length_shown, fill = is_gaming)) +
+ggplot(msglen, aes(x = length_shown,
+                   y = after_stat(density),
+                   fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
                  alpha = 0.55) +
   v2v::scale_fill_v2v() +
@@ -161,7 +164,7 @@ ggplot(msglen, aes(x = length_shown, fill = is_gaming)) +
 **Histogram:** a bar chart of a number variable, where each bar counts the values in one range. Example: one bar counts the messages 0 to 5 characters long.
 :::
 
-Here two groups are overlaid, so their shapes can be compared.
+Two groups are overlaid. `after_stat(density)` draws each as **shares**, so the small group still shows.
 
 ## Two Choices You Must Disclose
 

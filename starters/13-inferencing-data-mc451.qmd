@@ -80,7 +80,7 @@ block and nothing else. Give `group2` your hand-coded variable.
 #| label: settings
 library(tidyverse)     # data steps, tests, and hour()
 library(v2v)           # run_chi_square() and run_t_test(), the checks
-options(scipen = 999)  # whole numbers, never scientific notation
+options(scipen = 10)  # long numbers such as timestamps print in full; p-values keep the usual form
 
 # Load the analysis file, then keep the columns the tests use under the names they use.
 # outcome is a number; group2 has two groups; group3 has three or more; predictor is a

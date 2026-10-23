@@ -255,6 +255,7 @@ chat_streams <- chat_streams %>%
 `select()` renames the category `main_game`, because `chat_streams` already has a `game` column, the
 category streaming at that moment. `left_join()` keeps every row and attaches each channel's
 `main_game` and `is_gaming`, matching on the shared `channel` key. Later analyses use `main_game`.
+For your own tables, the Companion's **Join two tables by a shared column** writes this kind of join.
 
 ## Joins Fail Silently When Keys Disagree
 

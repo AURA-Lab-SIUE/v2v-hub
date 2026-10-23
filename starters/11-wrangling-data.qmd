@@ -74,7 +74,7 @@ them stops making sense.
 library(tidyverse)     # the tools for every data step
 library(janitor)       # clean_names(), for the coding form's column names
 library(v2v)           # the course package: the Twitch data and helpers
-options(scipen = 999)  # whole numbers, never scientific notation, so ids and timestamps stay readable
+options(scipen = 10)  # long numbers such as timestamps print in full; p-values keep the usual form
 ```
 
 **What you should see:** a list of attached packages and a line naming the `v2v` version. The
