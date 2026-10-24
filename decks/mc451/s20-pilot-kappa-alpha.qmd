@@ -47,6 +47,29 @@ A pilot can send you back to [Chapter 8](https://aura-lab.siue.edu/v2v/chapters/
     - Re-code at least a quarter of the pilot items on the second pass
 - **Each round of coding is called a pass:** pass 1 and pass 2
 
+## Variables, Revisited
+
+[Recap from Session 19]{.eyebrow}
+
+::: {.define}
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
+:::
+
+- **Message target is a variable: its value changes from one message to the next**
+- **In the pilot you record that value for each item, once per pass**
+
+## Where the Codes Go
+
+::: {.define}
+**Coding sheet:** the form where you record each item's code for every variable, also called a coding form. Example: a spreadsheet with one row per sampled message and one column per variable, such as message target.
+:::
+
+- **The codebook says how to decide each code; the coding sheet is where you write it down**
+- **An `id` column matches every code back to its item**
+- **For the pilot, each pass on a variable gets its own column, `pass_1` and `pass_2`, which the reliability check compares**
+
+Start from the [coding sheet template (CSV)](https://aura-lab.siue.edu/v2v-hub/resources/templates/coding-sheet-template.csv).
+
 ## What Reliability Means
 
 ::: {.define}

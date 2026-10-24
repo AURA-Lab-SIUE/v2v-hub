@@ -58,14 +58,38 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
     - Whether a channel was gaming sits in the other table, not yet linked
 - Your own source will be missing its own columns. The same steps build them
 
+## Variables, Revisited
+
+[Recap from Session 19]{.eyebrow}
+
+::: {.define}
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
+:::
+
+- **The example study's two variables are the gaming label and message length**
+- **An analysis-ready table gives each variable its own column and each case its own row**
+
 ## Data Wrangling, Defined
 
-- **Data wrangling is turning the data you collected into data you can analyze**
-    - Reshaping, cleaning, computing new columns, and joining tables
+::: {.define}
+**Data wrangling:** getting data into a form you can analyze, by tidying it (one row per case, one column per variable) and transforming it (keeping rows, adding columns, summarizing, joining tables). Example: turning the chat table's timestamp digits into dates and adding a message length column.
+:::
+
 - **It is unglamorous, rarely described in the paper, and most of the work**
     - It looks like small technical steps
     - It builds the table every result rests on
-- The tidyverse does it with five **dplyr verbs**
+
+## Packages and the Tidyverse
+
+::: {.define}
+**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course's v2v package adds the example Twitch data and `clean_dates()`.
+:::
+
+::: {.define}
+**Tidyverse:** a collection of R packages for data science that share one design and are built to work together. Example: `library(tidyverse)` loads its core packages at once, including dplyr for tables and ggplot2 for charts.
+:::
+
+- **dplyr, one of those packages, supplies today's five verbs**
 
 ## The Verbs: filter() and select()
 
@@ -160,7 +184,9 @@ This one arithmetic step is the most common way a hand conversion fails.
 ## Seeing the Conversion
 
 ```r
-chat %>% select(date, ts) %>% slice_head(n = 3)
+chat %>%
+  select(date, ts) %>%
+  slice_head(n = 3)
 ```
 
 ```
@@ -189,7 +215,9 @@ column. Your codebook named this variable; the data did not contain it until now
 ## What the Lengths Show
 
 ```r
-chat %>% select(message, message_length) %>% slice_head(n = 3)
+chat %>%
+  select(message, message_length) %>%
+  slice_head(n = 3)
 ```
 
 ```
