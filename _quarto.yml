@@ -40,6 +40,8 @@ project:
 
 website:
   title: "V2V Hub"
+  page-footer:
+    center: "© 2026 Alex P. Leith. Text and course materials are licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) unless noted."
   navbar:
     background: primary
     left:
