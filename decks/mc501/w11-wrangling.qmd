@@ -56,6 +56,38 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 - **The gaming information is in the other table entirely**
 - Your own source will be missing its own columns. The same four moves build them
 
+## Variables, Revisited
+
+[Recap from Week 10]{.eyebrow}
+
+::: {.define}
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
+:::
+
+- **The example study's two variables are the gaming label and message length**
+- **An analysis-ready table gives each variable its own column and each case its own row**
+
+## Data Wrangling, Defined
+
+::: {.define}
+**Data wrangling:** getting data into a form you can analyze, by tidying it (one row per case, one column per variable) and transforming it (keeping rows, adding columns, summarizing, joining tables). Example: turning the chat table's timestamp digits into dates and adding a message length column.
+:::
+
+- **It is most of the work, and the paper rarely describes it**
+- **Every result in Weeks 12 and 13 rests on the table it builds**
+
+## Packages and the Tidyverse
+
+::: {.define}
+**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course's v2v package adds the example Twitch data and `clean_dates()`.
+:::
+
+::: {.define}
+**Tidyverse:** a collection of R packages for data science that share one design and are built to work together. Example: `library(tidyverse)` loads its core packages at once, including dplyr for tables and ggplot2 for charts.
+:::
+
+- **dplyr, one of those packages, supplies the verbs on the next slide**
+
 ## The Verbs of Data Wrangling
 
 - **`filter()`** keeps the rows that meet a condition
@@ -180,6 +212,16 @@ Answer each in writing, about your own table:
 - Name one place where your table's structure fights that meaning, such as two values in one cell
 - Is tidiness a property of the data, or of the question you ask of it? Give one reason
 
+## Joins, Defined
+
+::: {.define}
+**Join:** putting two tables together by matching a shared key, so each row picks up the other table's columns. Example: every message picks up the `game` and `viewers` of its channel's latest stream snapshot.
+:::
+
+- **Steps 1 and 4 below are both joins**
+- **Step 4 matches rows on `channel` alone**
+- **Step 1 matches on `channel` and on time:** the nearest snapshot at or before each message
+
 ## Step 1, Match Each Message to Its Stream
 
 ```r
@@ -239,13 +281,11 @@ reader can check it.
 
 ## Step 4, the Join
 
-::: {.define}
-**Join:** putting two tables together by matching a shared key, so each row picks up the other table's columns. Example: every message picks up its channel's `main_game` and `is_gaming`.
-:::
-
 ```r
 channel_type <- channel_type %>%
-  mutate(is_gaming = !(game %in% nongaming_categories)) %>%
+  mutate(
+    is_gaming = !(game %in% nongaming_categories)
+  ) %>%
   select(channel, main_game = game, is_gaming)
 
 chat_streams <- chat_streams %>%
