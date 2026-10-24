@@ -1,0 +1,342 @@
+---
+title: "Publishing Your White Paper"
+subtitle: "MC 451 / MC 501 · Chapter 14 · Run this file in class"
+format: html
+execute:
+  eval: false
+---
+
+## What this file is
+
+This file walks you through turning your White Paper project into the two things you submit:
+a PDF and a live website. You will give your Results chapter its data, write a sentence whose
+numbers come from the code, add a figure that redraws itself, render the whole paper, and
+publish it.
+
+Every gray box below is a **code chunk**. Click **Run Cell** at its top left corner, or click
+inside the box and press **Ctrl+Enter** (Windows) or **Cmd+Enter** (Mac). Under each box this
+file tells you what should appear and what to do when it does not.
+
+Some boxes are not for running here. Those are marked **Paste this into
+`03-results.qmd`**: they are written for your Results chapter, and they only work there.
+
+Save this file in the **top folder** of your workspace, next to `README.md`, and open it from
+there. Your White Paper project is the folder you made with the Chapter 9 file
+(`09-coding-the-codebook.qmd`).
+
+The examples below use the Twitch data from the three worksheets, so you can see each step
+work before you change it. Your paper reports your own study: wherever a box names
+`twitch_analysis.RDS`, `message_length`, or `channel_type`, use your own file and your own
+variables.
+
+## Step 1: Switch the course package on and check its version
+
+Publishing needs version 0.3.6 of the course package or newer. Earlier versions stop at the
+last step with `Publish failed:` and nothing after it.
+
+```{r}
+library(v2v)
+packageVersion("v2v")
+```
+
+**What you should see:** a short startup message, then `[1] '0.3.6'` or a higher number.
+
+**If the number is lower than 0.3.6,** close VS Code, open plain R (the R program itself, not
+VS Code), and run the line below. Answer no to any question about updating other packages,
+then open VS Code again and rerun this step.
+
+```{r}
+remotes::install_github("AURA-Lab-SIUE/v2v-r", upgrade = "never")
+```
+
+## Step 2: Point R at your White Paper project
+
+This names your project folder once, so every later step can use it. **Change the name inside
+the quotes to the name you used in the Chapter 9 file.** If you do not remember it, it is the
+folder holding `_quarto.yml` and `01-introduction.qmd` in the **Explorer** panel.
+
+```{r}
+project <- "twitch-portfolio"                      # your project folder's name
+file.exists(file.path(project, "_quarto.yml"))     # TRUE means R found it
+```
+
+**What you should see:** `[1] TRUE`.
+
+**If you see `[1] FALSE`,** the name in the quotes does not match your folder. Check the
+spelling against the Explorer panel, including capital letters and hyphens, and run the step
+again.
+
+## Step 3: Install the PDF tool
+
+Your paper renders to a website and a PDF. The website needs nothing new. The PDF needs a
+typesetting program called **TinyTeX**, which most computers do not have. Without it, the
+render stops with `No TeX installation was detected`.
+
+This step is not R code. Open the **Terminal** panel in VS Code (**Terminal**, then **New
+Terminal**), type this line, and press Enter:
+
+```bash
+quarto install tinytex
+```
+
+It downloads for a few minutes. When it finishes, quit VS Code completely and open it again,
+then run this line in the same Terminal:
+
+```bash
+quarto check
+```
+
+**What you should see:** under **Checking LaTeX**, a `Version:` line with a year.
+
+**If it says `Tex: (not detected)`,** the install did not finish. Run `quarto install tinytex`
+again and read the last lines it prints; if they show an error, email me that text.
+
+Then come back to this file and run Step 1 and Step 2 again, since quitting VS Code ended the R
+session. Last, check for the small R package that hands your project to Quarto:
+
+```{r}
+if (!requireNamespace("quarto", quietly = TRUE)) {
+  install.packages("quarto")                       # only if it is missing
+}
+```
+
+**What you should see:** nothing if you already had it, or an install that ends with a line
+about the downloaded packages.
+
+## Step 4: Put your analysis file inside the project
+
+Your Results chapter renders from inside the project folder, so the file it reads has to be
+inside that folder too. The Data Wrangling worksheet saved `twitch_analysis.RDS` in the `data`
+folder at the top of your workspace. This copies it into the project's `data/derived` folder.
+
+```{r}
+file.copy(
+  from = "data/twitch_analysis.RDS",                         # where the worksheet saved it
+  to   = file.path(project, "data", "derived"),              # where the paper reads it
+  overwrite = TRUE                                           # replace an older copy
+)
+
+list.files(file.path(project, "data", "derived"))            # what is there now
+```
+
+**What you should see:** `[1] TRUE`, then `[1] "twitch_analysis.RDS"`.
+
+**If you see `[1] FALSE` and a warning that begins `problem copying`,** R could not find the file to copy. Check that `twitch_analysis.RDS`
+is in the `data` folder next to your worksheets, or change the `from` line to where it is.
+
+## Step 5: Load the data the way your Results chapter will
+
+Before you write anything in the paper, check that the copy loads and has the rows you expect.
+
+```{r}
+library(tidyverse)
+
+analysis <- readRDS(file.path(project, "data", "derived", "twitch_analysis.RDS"))
+nrow(analysis)                                   # one row per message
+```
+
+**What you should see:** the list of attached packages, then `[1] 35267`.
+
+**If you see `cannot open the connection`,** Step 4 did not copy the file. Run Step 4 again.
+
+## Step 6: Give your Results chapter its own setup chunk
+
+Each chapter of the paper starts from nothing when it renders, so `03-results.qmd` needs its
+own lines that switch the packages on and load the data. `include: false` runs the chunk
+but leaves both the code and its output out of the paper.
+
+**Paste this into `03-results.qmd`,** on a new line under the guidance text, then save the
+file:
+
+````markdown
+```{r}
+#| label: setup
+#| include: false
+library(tidyverse)
+library(v2v)
+analysis <- readRDS("data/derived/twitch_analysis.RDS")
+```
+````
+
+The path here is shorter than the one in Step 5, because the chapter runs from inside the
+project folder, where `data` sits at the top.
+
+## Step 7: Write a sentence whose numbers come from the code
+
+A number you type by hand goes stale the moment your data changes. A number written as inline
+code is computed again on every render. `format(..., big.mark = ",")` prints `35267` as
+`35,267`, the way a reader expects to see it.
+
+**Paste this into `03-results.qmd`,** under the setup chunk, then save the file:
+
+```markdown
+The analysis dataset held `r format(nrow(analysis), big.mark = ",")` messages,
+of which `r format(sum(!is.na(analysis$channel_type)), big.mark = ",")`
+carried a channel type.
+```
+
+You will see the result in Step 9. In the rendered paper it reads: *The analysis dataset held
+35,267 messages, of which 34,766 carried a channel type.*
+
+Now find one number in your own Results that you typed by hand, and replace it the same way.
+
+## Step 8: Add a figure that redraws itself
+
+A figure made by a chunk in the paper is drawn again on every render, so it always matches the
+data. The `label` must start with `fig-`; that is what lets you refer to the figure by number.
+`echo: false` shows the figure without the code that made it.
+
+**Paste this into `03-results.qmd`,** under the sentence from Step 7, then save the file:
+
+````markdown
+```{r}
+#| label: fig-length
+#| echo: false
+#| fig-cap: "Message length by channel type."
+analysis %>%
+  filter(!is.na(channel_type), message_length <= 200) %>%   # the longest messages left off the axis
+  ggplot(aes(x = message_length, fill = channel_type)) +
+  geom_histogram(binwidth = 5) +
+  scale_fill_v2v() +
+  labs(x = "Characters per message", y = "Messages", fill = "Channel type") +
+  theme_v2v()
+```
+
+@fig-length shows how long messages run in each kind of channel.
+````
+
+The last line refers to the figure by its label. In the rendered paper `@fig-length` becomes a
+link with the figure's number in it, and Quarto keeps the numbers right as you add figures.
+
+## Step 9: Preview the Results chapter
+
+With `03-results.qmd` open, click the **Preview** button at the top right of the editor, or
+press **Ctrl+Shift+K** (Windows) or **Cmd+Shift+K** (Mac).
+
+**What you should see:** after a few seconds, a preview pane with the guidance text, your
+sentence with the real counts in it, and the histogram with its caption underneath.
+
+**If you see `object 'analysis' not found`,** the setup chunk from Step 6 is missing or sits
+below the sentence. It has to come first.
+
+**If you see `cannot open the connection`,** the data file is not inside the project. Run Step 4
+again.
+
+## Step 10: Render the whole paper
+
+Preview shows one chapter. Rendering builds every chapter into the website and the PDF in one
+pass. Close the preview pane first.
+
+```{r}
+quarto::quarto_render(project)
+```
+
+**What you should see:** a stream of lines about each chapter, a section headed `Rendering
+PDF`, and last `Output created: docs/index.html`. A `docs` folder appears inside your project,
+and inside it a PDF named after your paper's title (`White-Paper.pdf` until you change the
+title in `_quarto.yml`).
+
+**If you see `No TeX installation was detected`,** TinyTeX is missing. Go back to Step 3.
+
+**If it stops at one chapter with an error,** the error names the chapter and the line. Fix
+that line, save, and run this step again.
+
+## Step 11: Read the PDF
+
+The PDF is what you upload, so read it the way a grader will. This opens it in your PDF reader.
+
+```{r}
+browseURL(file.path(project, "docs", "White-Paper.pdf"))
+```
+
+**What you should see:** a title page and a table of contents, then the abstract, every section
+in order, the references, and the codebook and journal as appendices.
+
+**If you see an error that the file does not exist,** your title is no longer "White Paper," so
+the PDF has another name. Open the `docs` folder in the Explorer panel to find it.
+
+## Step 12: Commit and push
+
+Publishing sends what you last committed, so commit first. In the **Source Control** panel,
+write a message such as `Results chapter and first full render`, click **Commit**, then click
+**Sync Changes**. `01-commit-your-work.qmd` walks through this panel step by step.
+
+Your commit includes the project's `.gitignore`, which Quarto edits on the first render, and
+the `docs` folder. Commit both.
+
+**What you should see:** the Source Control panel empties, and the files appear on your
+repository's page on GitHub.
+
+## Step 13: Publish
+
+This runs three checks, renders the paper again, and sends the site to GitHub Pages. Your
+project already sits inside your workspace repository, which is already on GitHub, so the site
+is published from that repository.
+
+```{r}
+v2v::deploy_portfolio(project)
+```
+
+Partway through it asks `Publish to GitHub Pages? [y/N]`. Click in the R console, type `y`, and
+press Enter. If a GitHub sign-in window opens, sign in; it is the same sign-in as your first
+push.
+
+**What you should see:** under **Pre-flight checks**, green check marks beside `no uncommitted
+changes` and `_quarto.yml valid` (the line saying no `renv.lock` was found is normal), a render,
+then `Publishing to GitHub Pages` and last `Portfolio live on GitHub Pages.`
+
+**If you see `uncommitted changes detected`,** the files listed under it are saved but not
+committed. Do Step 12 again, then this step.
+
+**If you see `Render failed`,** read the lines above it. `No TeX installation was detected`
+means Step 3; anything else names the chapter and line to fix.
+
+**If you see `not connected to a GitHub repository`,** your workspace was never pushed to
+GitHub. Do `01-commit-your-work.qmd` first.
+
+## Step 14: Open your site in a private window
+
+Your address is `https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY-NAME/`, with your GitHub
+username and the name of your workspace repository. GitHub takes a minute or two to put it up.
+
+Open that address in a **private** or **incognito** window. That is how a reader without your
+GitHub account sees it, and a paper nobody can open scores nothing.
+
+**What you should see:** your paper as a website, one chapter per page, with the chapters listed
+down the left side.
+
+**If you still see a 404 page after five minutes,** stop and email me the full text Step 13
+printed. Do not try to publish by hand through the GitHub settings pages.
+
+## Every time you change the paper
+
+Save, commit and push (Step 12), then publish again (Step 13). The site updates within a minute
+or two. You do not need Steps 1 to 4 again unless you open a new R session; then run Step 1 and
+Step 2 first.
+
+## When a line breaks
+
+R returns an error message instead of a result. The usual causes are a misspelling, a package
+that is not switched on, or a path that points at the wrong folder. It happens to everyone and
+it says nothing about your ability. Read the message before you retype anything; the wording is
+the diagnosis.
+
+For errors specific to the course package, run this in the R console:
+
+```{r}
+?v2v::common_errors
+```
+
+If you are still stuck after fifteen minutes, email me the **exact** text of the error, or a
+screenshot, and the step number you were on.
+
+## You are done when
+
+- `03-results.qmd` reads its data in a setup chunk, and at least one sentence takes its numbers
+  from inline code
+- At least one figure in the paper is made by a chunk, not pasted in
+- The `docs` folder holds a PDF with every section in it
+- `v2v::deploy_portfolio()` ended with `Portfolio live on GitHub Pages.`, and your address opens
+  in a private window
+
+What you submit, and where, is on your course's assignments page under **White Paper**.

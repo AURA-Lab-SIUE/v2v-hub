@@ -16,7 +16,7 @@ format:
 - Three rounds of peer review
 - Turn the two reviews you receive into a revision list
 - Draft the reflection paragraph
-- Deploy your site before you leave
+- Deploy your site before you leave, with the [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd)
 
 ## Today Is a Working Session
 

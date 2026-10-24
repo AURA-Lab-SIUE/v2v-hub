@@ -158,6 +158,17 @@ as the other two worksheets. Download the one for your course. The
 
 ---
 
+## Publishing your White Paper (Chapter 14)
+
+`14-publishing-your-paper.qmd` walks you through giving your Results chapter its data, writing
+numbers and a figure that come from the code, installing the PDF tool, rendering the whole
+paper, and publishing it to GitHub Pages, with what each step should print. Save it into the
+**top folder** of your workspace, next to `README.md`.
+
+[Download 14-publishing-your-paper.qmd](../starters/14-publishing-your-paper.qmd){.btn .btn-primary}
+
+---
+
 ## Codebook templates
 
 One template per course, with a heading for every part the rubric grades and a fill-in table you repeat for each variable. Use it directly as your `codebook/codebook.qmd` or as inspiration for your own layout.

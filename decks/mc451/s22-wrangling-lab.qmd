@@ -27,7 +27,7 @@ format:
 - **Today we build the transformation the example question depends on**
     - The stream join, the gaming label, and the rows a join leaves unlabeled
     - Then one pipeline you can rerun from scratch
-- Open your worksheet. We continue from Part 4
+- Open your [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd). We continue from Part 4
 
 ## What Is Still Missing
 

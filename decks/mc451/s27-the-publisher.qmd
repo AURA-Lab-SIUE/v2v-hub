@@ -18,6 +18,8 @@ format:
 - IMRaD: the four sections of a report, and what each owes the reader
 - Publishing the site, and the checks that run before it goes live
 
+Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd)
+
 ## Where the Study Stands
 
 [The Publisher]{.eyebrow}
