@@ -21,6 +21,8 @@ format:
 
 ## What a Variable Is
 
+[Recap from Session 9]{.eyebrow}
+
 ::: {.define}
 **Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
 :::
@@ -55,7 +57,7 @@ Your codebook is a list of variables. Today you choose which messages to code th
 
 - In your study, the population is whatever your prospectus named
 
-Drawing the sample well is the whole of today.
+Today is about how to draw that sample well.
 
 ## Census
 
@@ -69,12 +71,12 @@ Drawing the sample well is the whole of today.
 ## The Chat Table Is the Opposite Case
 
 - **There is far too much chat to code, so a census is impossible**
-    - This is the ordinary condition of content analysis
+    - Most content analysis studies face the same problem
 - **A sample makes the work finite without making the conclusions worthless**
 - **A sample of any size can be sound or misleading**
     - 1,500 messages or 250, the sampling method decides which
 
-The method is what you decide. A good sample is designed, not lucky.
+You choose the sampling method, and the method decides whether the sample is sound.
 
 ## Simple Random Sampling
 
@@ -131,11 +133,11 @@ Answer each question in writing:
 
 ## Unbiased and Still Unrepresentative
 
-- **A random sample faithfully reproduces the imbalance of the population, at sample size**
+- **A random sample copies the population's imbalance into a smaller set**
 - **A comparison needs enough cases from every group being compared**
 - **Unbiased is a property of the procedure, not a guarantee about the result**
 
-Noticing this before you draw is the difference between a study and a mess.
+Check your population for this imbalance before you draw the sample.
 
 ## Stratified Sampling
 
@@ -164,7 +166,8 @@ Noticing this before you draw is the difference between a study and a mess.
     - Bob Ross was one of them, the deliberate non-gaming case
 - **The other forty-two came from ten volume bands, and every band was sampled**
     - A volume band is a group of channels with similar amounts of chat
-- The skew was not sampled away. It was sampled **across**
+- The skew is kept: small, middle, and giant channels are all in the corpus
+- How the corpus was built: [Chapter 10, Stratified sampling](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#stratified-sampling)
 
 ## When a Stratum Is Too Small
 
@@ -182,12 +185,11 @@ coding_sample <- v2v::sample_messages(
 )
 ```
 
-`sample_messages()` treats each channel as a stratum. `n_per_channel = 30` asks for thirty
-messages from each channel, and `seed = 409` fixes the random draw so it can be repeated.
-Across fifty channels that draw returns 1,350 messages.
-
-1,350 messages is a professional-scale draw: large enough to support the study, and hand-codeable
-by a team. Your draw uses the same command at your own budget.
+- **`sample_messages()` treats each channel as a stratum**
+- **`n_per_channel = 30` asks for thirty messages from each channel**
+    - Across the fifty channels, this draw returns 1,350 messages
+- **`seed = 409` fixes the random draw so it can be repeated**
+- 1,350 messages is a size for a team of coders; your draw uses the same command at your own budget ([Chapter 10, Drawing the sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#drawing-the-sample))
 
 ## Sizing the Draw to Your Time Budget
 
@@ -212,7 +214,7 @@ by a team. Your draw uses the same command at your own budget.
 
 - **The number 409 means nothing**
 - **What matters is that a seed is set**
-- **And that it is recorded in your sampling plan**
+- **And that it is recorded in your [sampling plan](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot)**
 
 ## Unit of Analysis and Key
 
@@ -235,11 +237,11 @@ by a team. Your draw uses the same command at your own budget.
 
 ## Looking Ahead to Thursday
 
-- **You now have a sample and an untested codebook**
+- **Today showed how to draw a sample; Thursday tests your draft codebook on items from it**
 - **Thursday is the pilot: ten to twenty items coded twice, with your first codes hidden**
 - **Cohen's kappa:** a score for how much your two coding passes agree beyond what luck alone would give
 - **Read the second half of [Chapter 10](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#the-pilot-test) before Thursday**
-- **Bring your codebook, because it is the thing being tested**
+- **Bring your draft codebook, because it is the thing being tested**
 - **Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo)**
 - **Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot)**
 - **Check yourself on this week's terms:** [Week 10 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc451-week10.html), ungraded, with the answer after each question
