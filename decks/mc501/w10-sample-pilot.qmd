@@ -26,10 +26,12 @@ format:
 - **Draw the sample: the items you will actually code**
 - **Test the codebook with a pilot, which is what makes it an instrument**
     - The pilot can send you back to [Chapter 8](https://aura-lab.siue.edu/v2v/chapters/chapter08.html) to rewrite rules
-    - Being sent back is the pilot working
+    - Being sent back is a normal result, and it means the pilot did its job
 - **Both are due together as the [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items), Monday, November 9, 11:59 PM**
 
 ## Variables, Revisited
+
+[Recap from Week 5]{.eyebrow}
 
 ::: {.define}
 **Variable:** something about a case that can change from one case to the next. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
@@ -46,6 +48,8 @@ format:
 All three come from [Chapter 5](https://aura-lab.siue.edu/v2v/chapters/chapter05.html#variables-the-building-blocks-of-hypotheses).
 
 ## Mediators and Moderators
+
+[Recap from Week 5]{.eyebrow}
 
 ::: {.define}
 **Mediator:** a variable in the middle that explains how or why the IV changes the DV.
@@ -102,9 +106,9 @@ All three come from [Chapter 5](https://aura-lab.siue.edu/v2v/chapters/chapter05
 **Census:** coding every case in the population, which works only when the population is small. Example: the example stream table ships whole, about 32,000 snapshots of one stream at one moment.
 :::
 
-- **Chat is the opposite case, and that is the ordinary condition of content analysis**
+- **Chat is the opposite case: far too much to code, which is true of most content analysis studies**
 
-A sample makes the work finite without making the conclusions worthless.
+A well-drawn sample makes the work finishable and still supports the conclusions.
 
 ## Population and Sample
 
@@ -134,7 +138,7 @@ A sample makes the work finite without making the conclusions worthless.
 **Unbiased:** the way you pick favors no message over any other. Example: a message from a quiet channel has the same chance as one from a giant channel.
 :::
 
-- Its virtue is real: no researcher tilt is built in
+- Its strength is real: the researcher cannot tilt the draw
 
 ## Chat Volume Is Right-Skewed
 
@@ -189,7 +193,7 @@ A sample makes the work finite without making the conclusions worthless.
 - **The other 42 came from ten volume bands, groups of channels with similar amounts of chat**
     - Every band was sampled
 
-The skew was not sampled away. It was sampled across, on purpose.
+The skew is kept on purpose: small, middle, and giant channels are all in the corpus ([Chapter 10, Stratified sampling](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#stratified-sampling)).
 
 ## Small Strata: Take All of It
 
@@ -198,7 +202,7 @@ The skew was not sampled away. It was sampled across, on purpose.
 - **Nineteen of the fifty example channels hold fewer than a thousand messages**
 - **A stratum gives either its full share or everything it has**
 
-Document this rule in your sampling plan. It is a decision, not an accident.
+Write this rule into your sampling plan, because it is a choice you made.
 
 ## Drawing the Sample
 
@@ -210,10 +214,10 @@ coding_sample <- v2v::sample_messages(
 )
 ```
 
-`sample_messages()` treats each channel as a stratum. `n_per_channel = 30` asks for thirty
-messages from each channel, which returns 1,350 messages across fifty channels, and
-`seed = 409` fixes the draw so it can be repeated. Your own draw uses the same command with
-your own stratum column and your own number per stratum.
+- **`sample_messages()` treats each channel as a stratum**
+- **`n_per_channel = 30` asks for thirty messages from each channel:** 1,350 across fifty channels
+- **`seed = 409` fixes the draw so it can be repeated**
+- Your own draw uses the same command with your own stratum column and number per stratum ([Chapter 10, Drawing the sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#drawing-the-sample))
 
 ## The Seed Is Not Optional
 
@@ -228,7 +232,7 @@ your own stratum column and your own number per stratum.
 
 ## The Seed Itself Is Arbitrary
 
-- **The number itself is arbitrary. 409 means nothing**
+- **The number itself is arbitrary: 409 means nothing**
 - **What matters is that a seed is set and recorded, so the draw is frozen**
 
 ## What Power Means
@@ -286,9 +290,9 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 >
 > [Lakens (2022, p. 11)](https://doi.org/10.1525/collabra.33267)
 
-Purposive sampling (choosing cases on purpose) improves **construct validity** (whether you
-measure the thing you mean to measure) and does nothing for statistical power. A study that
-confuses the two can be internally consistent and still unable to defend its claims.
+- **Purposive sampling:** choosing cases on purpose
+- **Construct validity:** whether you measure the thing you mean to measure
+- Purposive sampling can improve construct validity; it does nothing for statistical power
 
 ## The Pilot Test
 
@@ -306,9 +310,9 @@ confuses the two can be internally consistent and still unable to defend its cla
 :::
 
 - **Each round of coding is a pass:** pass 1 and pass 2
-- **The pilot is how reliability stops being a hope and becomes a number**
+- **The pilot turns reliability into a number you can report**
 
-## Independence Carries the Logic
+## Independent Coding Passes
 
 ::: {.define}
 **Independent:** each coding pass is done without seeing, discussing, or remembering the other. Example: your first-pass codes stay in a hidden file until the second pass is finished.
@@ -346,8 +350,8 @@ With few categories, or one dominant category, coincidental agreement piles up f
 
 Answer each question in writing:
 
-- You have a reliability number for your pilot. Does it clear the threshold you named in your protocol? Answer yes or no
-- If it does not clear the threshold, write the sentence you would put in the report
+- A pilot scores a kappa of 0.62, and the threshold named before coding was 0.70. Does it clear the threshold? Answer yes or no
+- Write the sentence you would put in the report about that result
 - Name whose trust the reliability standard protects: the reader's, the coder's, or the field's, and say why
 
 ## Report What Your Pilot Could Not Settle
@@ -357,8 +361,8 @@ Answer each question in writing:
 >
 > [Lakens (2022, p. 11)](https://doi.org/10.1525/collabra.33267)
 
-- Write down one thing your pilot could not settle
-- Name the White Paper claim that becomes weaker because of it
+- **When you write up your pilot, state one thing it could not settle**
+- **Name the White Paper claim that becomes weaker because of it**
 
 ## Chance Agreement
 
@@ -374,8 +378,8 @@ Answer each question in writing:
 **Cohen's kappa:** a score for how much two coding passes agree beyond what luck alone would give. Example: the example pilot scores 0.236, so most of its agreement was luck.
 :::
 
-- **Kappa is built for two sets of codes and a nominal codebook** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
-    - Two coders, or one coder twice. The arithmetic does not care which
+- **Kappa is built for two sets of codes and nominal categories (names with no order)** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
+    - Two coders, or one coder twice: the arithmetic is the same
 - **Kappa is observed agreement, minus chance agreement, divided by the room left above chance**
     - `kappa = (observed - expected) / (1 - expected)`
 
@@ -415,17 +419,21 @@ v2v::reliability(
 )
 ```
 
-This code takes the first thirty messages, passes your two columns of codes to
-`reliability()`, and asks for alpha instead of kappa. [Agreement Check](https://aura-lab.siue.edu/agreement-check/) on the Hub gives the same
-result when you paste in the two columns. The Companion's **Reliability grid** saves your two passes
-as a CSV and writes this call, with `method = "alpha"` or `"kappa"`. To enter the codes themselves,
-the Companion's data viewer (**Open the data viewer**) adds coding columns beside your sampled CSV,
-like the spreadsheet, and never changes the original file.
+- **The code takes the first thirty messages and passes your two columns of codes to `reliability()`, asking for alpha**
+- **[Agreement Check](https://aura-lab.siue.edu/agreement-check/) on the Hub gives the same result when you paste in the two columns**
+
+## Entering Codes in the Companion
+
+- **Open the data viewer** (**AURA: Open the data viewer**) to code in a grid, like a spreadsheet
+    - It adds your coding columns beside the sampled CSV and never changes the original file
+- **Reliability grid:** saves your two passes as a CSV and writes the `reliability()` call, with `method = "alpha"` or `"kappa"`
+
+![](images/companion-data-viewer.png){fig-alt="The R Companion data viewer showing the Twitch chat sample, 35,267 rows. Row 5 has channel xqcow and a message beginning @xQcOW PLAY JACKBOX. Row 1 is a string of question marks and row 2 repeats TriEasy Clap." width="62%"}
 
 ## A Worked Failure
 
 - **The example codebook said "high-energy" and never defined it**
-    - **Coder A** flagged messages carrying a Twitch emote
+    - **Coder A** flagged messages carrying a Twitch emote (a small image posted with a text code)
     - **Coder B** flagged messages written in all capitals
 - **Both readings are reasonable, and both coders believed they were coding one variable**
 
@@ -444,15 +452,14 @@ Reliability: Cohen's kappa
     - They never coded the same concept
 - **A loose codebook let two careful people measure two different things**
 
-That is what kappa exposed and raw agreement concealed. One coder working twice fails the
-same way when a rule is undefined.
+Kappa exposed what raw agreement hid. One coder working twice fails the same way when a rule is undefined ([Chapter 10, A worked reliability check](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#a-worked-reliability-check)).
 
 ## Reading Against a Standard
 
 - **Published labels for kappa values** ([Landis and Koch, 1977](https://doi.org/10.2307/2529310))**:**
     - 0.0 to 0.2 slight, 0.2 to 0.4 fair, 0.4 to 0.6 moderate
     - 0.6 to 0.8 substantial, above 0.8 almost perfect
-- **Those labels are a vocabulary, not a law**
+- **Those labels are a convention; no rule requires them**
 - **Published work treats a value below 0.70 as too low to proceed on, with 0.80 comfortable**
 
 Name your threshold in your protocol before you see the number, not after.
@@ -463,7 +470,7 @@ Name your threshold in your protocol before you see the number, not after.
     - Walk through every disagreement with the written rule in front of you
     - **The disagreements are the data:** each one points at an unclear rule
 - **Repair the rule by stating operationally what counts**
-- **Then pilot again, on fresh items**
+- **Then pilot again, on fresh items** ([Chapter 10, When reliability fails](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#when-reliability-fails-revising-the-codebook))
 
 Pilot, diagnose, revise, and repeat until the number clears your threshold.
 
