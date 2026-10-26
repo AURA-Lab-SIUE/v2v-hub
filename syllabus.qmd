@@ -284,9 +284,11 @@ date for most assignments. Find your grades under **My Grades** in the Blackboar
 course menu.
 
 **Late work.** Late submissions (after Friday 11:59 PM) lose 10% of the
-assignment grade per business day, for up to one week. After one week, the
-assignment receives a zero unless an accommodation has been arranged in writing
-before the original due date. Non-emergency extensions must be requested before
+assignment's maximum points per business day late (one business day late on a 10-point assignment costs 1 point).
+Late work is accepted for up to 10 business days, and work more than 5
+business days late is capped at 50% of the maximum points. Work more than 10
+business days late receives feedback but 0 points unless an accommodation has
+been arranged in writing before the original due date. Non-emergency extensions must be requested before
 the deadline. If you are experiencing an emergency, contact me as early as
 possible; I work with students case by case when contacted proactively, but I
 cannot extend deadlines retroactively.
