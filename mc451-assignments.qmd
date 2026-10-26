@@ -13,7 +13,7 @@ Each assignment shows a short description. Open the section under it for what to
 ::: {.callout-note}
 ## How to turn work in
 
-**Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting**: grading happens from the Blackboard submission. Get the AURA Lab R Companion from its [Marketplace listing](https://marketplace.visualstudio.com/items?itemName=aura-lab-siue.r-companion). Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it.
+**Submit everything in Blackboard**, under the assignment for that week. Keep your work in your course workspace and commit it to GitHub as usual for the backup and the history, but **committing is not submitting**: grading happens from the Blackboard submission. Get the AURA Lab R Companion from its [Marketplace listing](https://marketplace.visualstudio.com/items?itemName=aura-lab-siue.r-companion). Two assignments also ask you to paste a GitHub link into the submission; the link goes in the submission, it does not replace it. If you share a link to a file instead of uploading it (Google Docs, Sheets, Slides, OneDrive, or a video), set it so I can open, download, and copy it; I save a copy of every submission, and a link I cannot download cannot be graded.
 
 Everything is due at **11:59 PM** on the **Friday** listed.
 
