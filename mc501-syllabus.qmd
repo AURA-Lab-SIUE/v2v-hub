@@ -315,6 +315,8 @@ at two-thirds or more of its minimum counts as showing effort.
 date for most assignments. Find your grades under **My Grades** in the Blackboard
 course menu.
 
+**Shared links.** Submit files by uploading them. If you share a link instead (Google Docs, Sheets, Slides, OneDrive, or a video), set it so I can open, download, and copy it; I save a copy of every submission, and a link I cannot download cannot be graded.
+
 **Late work.** Late submissions (after Monday 11:59 PM) lose 10% of the
 assignment's maximum points per business day late (one business day late on a 10-point assignment costs 1 point).
 Late work is accepted for up to 10 business days, and work more than 5
