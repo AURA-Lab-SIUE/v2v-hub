@@ -50,6 +50,16 @@ Everything tonight exists to make that impossible.
 - Among those that did, effect sizes averaged about **half** the original
 - These were not careless people. Their work simply was not built to be retraced
 
+## Two Words From That Study
+
+::: {.define}
+**Replication:** running a study again with new data to see whether it reaches the same answer. Example: the 270 researchers redid each study with new participants.
+:::
+
+::: {.define}
+**Effect size:** how big a difference or a relationship is, on a scale that does not grow with the sample. Example: the replications found effects about half the size the originals reported.
+:::
+
 ## What Blocked Them Was Friction, Not Fraud
 
 - Methods sections did not say enough to re-run the analysis
@@ -59,7 +69,10 @@ Everything tonight exists to make that impossible.
 
 ## Reproducibility, Defined
 
-- **Reproducibility** means the analysis can be re-run, by you or by anyone else, and it produces the same result
+::: {.define}
+**Reproducibility:** getting the same results again from the same data, the same code, and the same steps. Example: anyone who renders your file on the example data gets your exact message counts.
+:::
+
 - It is not a virtue. It is a property of how you stored your work
 - The test is small and personal: can you recover, six months from now, exactly what produced a number?
 
@@ -82,26 +95,43 @@ The course's VS Code menus are different: each one writes its R code into your s
 
 ## Tool 1 of 4: VS Code
 
-- **What it is:** a text editor, free, from Microsoft
+::: {.define}
+**VS Code:** a free code editor from Microsoft, where you write code and prose in one place.
+:::
+
 - **What it does for you:** it is the one window where everything lives
     - Your writing, your code, your files, and your output, so you stop alt-tabbing between five programs
 - You will spend more time in this than in anything else this term. It is the desk, not the work
 
 ## Tool 2 of 4: R
 
-- **What it is:** a programming language built for data and statistics
+::: {.define}
+**R:** a free language and environment for statistical computing and graphics.
+:::
+
 - **What it does for you:** it counts things, tests things, and draws charts, and it leaves a written record of having done so
 - You are not becoming a programmer. You are learning to drive one tool for one job, the way you learned to drive a citation manager
 
 ## Tool 3 of 4: Quarto
 
-- **What it is:** a publishing system
+::: {.define}
+**Quarto:** an open-source publishing system that turns one file of text and code into a finished website, PDF, or paper.
+:::
+
 - **What it does for you:** you write one file holding both your prose and your code, press render, and it produces a finished document with the charts already in place
+
+::: {.define}
+**Render:** telling Quarto to run the code in your document and build the finished file from it. Example: rendering your White Paper redraws every chart from the current data.
+:::
+
 - You never again paste a chart into Word, find an error, redo the chart, and paste it again
 
 ## Tool 4 of 4: Git and GitHub
 
-- **What it is:** Git records every change you make, and GitHub keeps that record online
+::: {.define}
+**Git:** a program that tracks every change to the files in a project, so you can see or return to any earlier version. **GitHub:** a website that hosts those Git projects online.
+:::
+
 - **What it does for you:** an undo button that reaches back months, and proof of when you did what
 - It is also the closest thing our field has to a portfolio. Employers look, so use a professional username
 
@@ -148,6 +178,34 @@ Bookmark the Resources page tonight. Everything else is one click from there.
 The pack includes **GitHub Copilot**. The course workspace tells Copilot Chat to write tidyverse code with `%>%` and to remind you to log each exchange in your AI-use log.
 
 The Hub walks through it one step at a time: [GitHub Setup](https://aura-lab.siue.edu/v2v-hub/resources/github-setup.html)
+
+## Packages, the Tidyverse, and the Pipe
+
+::: {.define}
+**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course's v2v package adds the example Twitch data and `setup()`.
+:::
+
+::: {.define}
+**Tidyverse:** a collection of R packages for data science that share one design and are built to work together. Example: `library(tidyverse)` loads its core packages at once, including dplyr for tables and ggplot2 for charts.
+:::
+
+::: {.define}
+**Pipe (`%>%`):** read it as "and then"; it hands the result of one line to the next. Example: `chat %>% filter(channel == "bobross")` takes the chat table, then keeps Bob Ross's messages.
+:::
+
+## Three Git Words
+
+::: {.define}
+**Repository (repo):** a project folder that Git tracks, holding your files and the full history of every change to them. Example: the `mc501-workspace` folder you make tonight.
+:::
+
+::: {.define}
+**Clone:** a copy of a repository that lives on your own computer, linked to the copy on GitHub. Example: the `mc501-workspace` folder that **Git: Clone** puts on your laptop.
+:::
+
+::: {.define}
+**Commit:** a saved change to your files in Git, recorded with who made it, when, and a short message saying what changed. Example: "Add the first draft of my research questions."
+:::
 
 ## Make Your Workspace Folder
 
@@ -224,19 +282,42 @@ Look at the rows before reading on.
 
 ## The Data Moves
 
-- This is a **time series**, not a snapshot: four channels recur across these rows
+::: {.define}
+**Time series:** a set of measurements of the same thing taken one after another over time. Example: four channels recur across these rows, so each one's viewer count can be followed minute by minute.
+:::
+
 - Sodapoppin climbs from 27,934 to 28,076 to 28,203
 - That is **269 viewers in 122 seconds**, an audience growing close to real time
+
+## What Moves the Numbers
+
 - xQc lost 150 between the first two snapshots and then held, and Forsen lost 120
 - Each number is a real moment: a clip went viral, a raid arrived, or bandwidth dropped
 
+::: {.define}
+**Raid:** on Twitch, a streamer ending a stream by sending their viewers to another live channel. Example: a viewer count that jumps by hundreds in one minute.
+:::
+
 ## The Timestamps Are Not Dates
+
+::: {.define}
+**Timestamp:** the date and time something happened. Example: `1542578200214` is the first row's timestamp, 9:56 PM on November 18, 2018 (UTC).
+:::
 
 - The date column is a thirteen-digit integer: 1542578200214
 - The next row, 26 milliseconds later, reads 1542578200240
-- That is **Unix epoch time**: milliseconds since midnight on January 1, 1970
-- The gap between sodapoppin's first two rows is 60,931 milliseconds, about a minute
-- Converting it is a wrangling step, not a research question, and Chapter 11 handles it
+
+## Reading Epoch Time
+
+::: {.define}
+**Unix epoch time:** time counted from midnight UTC on January 1, 1970; this data counts it in milliseconds. Example: the gap between sodapoppin's first two rows is 60,931 milliseconds, about a minute.
+:::
+
+::: {.define}
+**Data wrangling:** getting data into a form you can analyze, by tidying it (one row per case, one column per variable) and transforming it (keeping rows, adding columns, summarizing, joining tables). Example: turning these timestamp digits into dates, which Chapter 11 shows.
+:::
+
+- Converting the timestamps is a wrangling step, not a research question
 
 ## Titles Are Themselves Data
 
@@ -256,12 +337,17 @@ Look at the rows before reading on.
 
 ## Lock the Versions
 
-- `renv.lock` is a file recording the exact version of every package your analysis used
-- Without it, someone re-running your work next year may get different numbers, because a package changed underneath them
+::: {.define}
+**renv:** an R package that records the exact version of every package your project uses in a file called `renv.lock`, so those same versions can be installed again later. Example: a classmate who clones your workspace next year can rebuild your setup from `renv.lock`.
+:::
+
+- Without `renv.lock`, someone re-running your work next year may get different numbers, because a package changed underneath them
 
 ```r
 renv::init()
 ```
+
+## When to Lock Them
 
 - Run it before your first line of analysis code, and commit it before you collect your first data point
 

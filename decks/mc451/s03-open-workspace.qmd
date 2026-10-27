@@ -29,6 +29,16 @@ format:
 - Among those that did, effect sizes were on average **half** the original size
 - The result was published in *Science* and is one of the decade's most cited findings
 
+## Two Words From That Study
+
+::: {.define}
+**Replication:** running a study again with new data to see whether it reaches the same answer. Example: the 270 researchers redid each study with new participants.
+:::
+
+::: {.define}
+**Effect size:** how big a difference is, on a scale that does not grow with the sample. Example: the replications found effects about half the size the originals reported.
+:::
+
 ## The Cause Was Friction, Not Fraud
 
 - Methods sections did not contain enough detail to re-run the analysis
@@ -53,7 +63,10 @@ The course's VS Code menus are different: each one writes its R code into your s
 - **When you write your analysis as code, the code is the methods section**
 - Reinhart and Rogoff was caught because the spreadsheet was eventually shared
 - It would have been caught faster if the analysis had been code from the start
-- **Reproducibility** means the analysis can be re-run and produce the same result
+
+::: {.define}
+**Reproducibility:** getting the same results again from the same data, the same code, and the same steps. Example: anyone who renders your file on the example data gets your exact message counts.
+:::
 
 ## Exercise: Could You Rebuild Your Number? {.discuss}
 
@@ -89,6 +102,26 @@ you did.
 - Students get the **GitHub Student Developer Pack** at no cost
 - The pack includes **GitHub Copilot**. The course workspace tells Copilot Chat to write tidyverse code with `%>%` and to remind you to log each exchange in your AI-use log
 - This is the standard workflow in research labs and industry data teams
+
+## Two Git Words
+
+::: {.define}
+**Repository (repo):** a project folder that Git tracks, holding your files and the full history of every change to them. Example: the `mc451-workspace` folder you build on Thursday.
+:::
+
+::: {.define}
+**Commit:** a saved change to your files in Git, recorded with who made it, when, and a short message saying what changed. Example: "Add my research question to the prospectus."
+:::
+
+## Packages and the Tidyverse
+
+::: {.define}
+**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course's v2v package adds the example Twitch data and `clean_dates()`.
+:::
+
+::: {.define}
+**Tidyverse:** a collection of R packages for data science that share one design and are built to work together. Example: `library(tidyverse)` loads its core packages at once, including dplyr for tables and ggplot2 for charts.
+:::
 
 ## Install Order, Part One
 
@@ -140,17 +173,30 @@ v2v::setup()
 
 ## The Data Moves
 
-- This is a **time series**, not a snapshot: four channels repeat across ten rows
+::: {.define}
+**Time series:** a set of measurements of the same thing taken one after another over time. Example: four channels repeat across these ten rows, so each one's viewer count can be followed minute by minute.
+:::
+
 - Sodapoppin climbs from 27,934 to 28,076 to 28,203
 - That is **269 viewers gained in 122 seconds**
+
+## What Moves the Numbers
+
 - xQc lost 150 viewers and then held steady, Forsen lost 120, and Giantwaffle gained 3
 - Each number is a real moment: a clip going viral, or a raid arriving
 
+::: {.define}
+**Raid:** on Twitch, a streamer ending a stream by sending their viewers to another live channel. Example: a viewer count that jumps by hundreds in one minute.
+:::
+
 ## Three More Things to Notice
 
-- **The timestamps look like nonsense**
-    - 1542578200214 is **Unix epoch time**, milliseconds since January 1, 1970
-    - Chapter 11 shows how to convert it
+- **The timestamps look like nonsense:** Chapter 11 shows how to convert them
+
+::: {.define}
+**Unix epoch time:** time counted from midnight UTC on January 1, 1970; this data counts it in milliseconds. Example: 1542578200214 is a moment on November 18, 2018.
+:::
+
 - **There is a hidden newline** inside sodapoppin's title
     - Real data is messy in exactly this way
 - **Titles are themselves data**

@@ -46,7 +46,11 @@ format:
 - **Phase one is qualitative:** you read real messages closely until you can say what is there
 - **Phase two is quantitative:** you count what you found and test relationships in R
 
-## Two Words You Will Use All Term
+## Three Words You Will Use All Term
+
+::: {.define}
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
+:::
 
 ::: {.define}
 **Codebook:** the written rules that tell a coder what each variable means and which value to give each item; in this course the word also covers the coding sheet where you record those values. Example: the rule that a message tagging the streamer is coded "directed at the streamer."
@@ -55,6 +59,8 @@ format:
 ::: {.define}
 **Sample:** the smaller set of cases you actually look at. Example: a few thousand messages drawn from the week's 21,964,296.
 :::
+
+## How the Two Phases Connect
 
 - Phase one ends in the memo that becomes your codebook; phase two applies it to a sample, then re-codes a share later to show your coding held steady
 - Every assignment this term is one piece of that study, in the order you need it
@@ -81,6 +87,12 @@ Nothing here is a detour. Each row hands the next one its materials.
 - Bob Ross averaged 3,178 concurrent viewers that week, and xQc averaged 17,363
 - This dataset is the shared example the whole class works from
     - Your own study uses whatever source your question needs
+
+## What a Snapshot Is
+
+::: {.define}
+**Snapshot:** one record of one stream at one moment, taken about once a minute: its channel, title, game, viewer count, and time. Example: xQc streaming Just Chatting to 19,381 viewers at one moment on November 18, 2018.
+:::
 
 ## Exercise: Name a Curiosity {.discuss}
 

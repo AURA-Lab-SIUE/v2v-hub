@@ -99,9 +99,18 @@ Answer each in your journal this week:
 - Think of the last time software failed you. Say whether you assumed the software was broken or that you were, and what made you pick that one
 - Write down what you would need to see to believe this setup is going to be worth it
 
+## Two Words Before You Start
+
+::: {.define}
+**Repository (repo):** a project folder that Git tracks, holding your files and the full history of every change to them. Example: the course workspace, which already has the course folder structure in it.
+:::
+
+::: {.define}
+**Clone:** a copy of a repository that lives on your own computer, linked to the copy on GitHub. Example: in Step 2 you clone `mc451-workspace` into a folder on your laptop.
+:::
+
 ## Step 1: Make Your Own Copy of the Workspace
 
-- A **repository**, or repo, is a folder that Git is watching, and ours already has the course folder structure in it
 - Go to [github.com/AURA-Lab-SIUE/v2v-workspace](https://github.com/AURA-Lab-SIUE/v2v-workspace)
 - Click the green **Use this template**, then **Create a new repository**
 - Name it `mc451-workspace` and leave it **Public**

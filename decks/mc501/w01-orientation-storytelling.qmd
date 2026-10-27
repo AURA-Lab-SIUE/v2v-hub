@@ -40,18 +40,24 @@ format:
 - A conference-ready **White Paper**, paired with an **academic poster**
 - Work at a level approaching publishable quality
 
-## Three Words From That List
+## Two Words From That List
 
 ::: {.define}
-**Content analysis:** the systematic study of messages; in its quantitative form, the one this course uses, you sort each message into categories by written rules so the results can be counted.
+**Content analysis:** the systematic study of messages; in its quantitative form, the one this course uses, you sort each message into categories by written rules so the results can be counted. Example: marking each chat message as aimed at the streamer, at another viewer, or at the whole room, then counting each kind.
 :::
 
 ::: {.define}
 **Immersion:** spending sustained time with your material, watching and reading it closely, before you analyze it. Example: hours of one channel's streams and chat before you write a single category.
 :::
 
+## Two Words for What You Build
+
 ::: {.define}
-**Codebook:** the written rules that tell a coder what each variable means and which value to give each item; in this course the word also covers the coding sheet where you record those values.
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
+:::
+
+::: {.define}
+**Codebook:** the written rules that tell a coder what each variable means and which value to give each item; in this course the word also covers the coding sheet where you record those values. Example: the rule that a message tagging the streamer is coded "directed at the streamer."
 :::
 
 ## How the Term Is Built
@@ -103,11 +109,17 @@ format:
     - The **anchor set**: 8 channels used as named examples
 - This dataset is the shared example for the class. Your own study uses the source your question needs
 
-## Three Words for the Example Data
+## Two Words for the Example Data
+
+::: {.define}
+**Snapshot:** one record of one stream at one moment, taken about once a minute: its channel, title, game, viewer count, and time. Example: xQc streaming Just Chatting to 19,381 viewers at one moment on November 18, 2018.
+:::
 
 ::: {.define}
 **Population:** everything your conclusions will apply to, defined by the platform, the accounts or outlets, and the time period. Example: the 1,690 channels in both logs, that November week.
 :::
+
+## Two More Words for the Example Data
 
 ::: {.define}
 **Corpus:** a collection of texts or records gathered to be studied as a set. Example: the working corpus, the chat and snapshots of 50 channels.
@@ -238,6 +250,12 @@ A contribution in communication research does one of four things:
 
 Before you design a study, name which one you are doing. If you cannot say precisely, the
 research question is not ready yet.
+
+## What a Construct Is
+
+::: {.define}
+**Construct:** an abstract idea that a theory uses to explain something, and that a study has to find a way to measure. Example: parasocial attachment, a viewer's one-sided sense of closeness to a streamer, which you can only measure through what viewers write.
+:::
 
 ## The Reproducibility Crisis Is a Design Problem
 
