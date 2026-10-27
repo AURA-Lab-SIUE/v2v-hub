@@ -41,7 +41,13 @@ The same pattern, under three research programs, becomes three different studies
 ## Theory Is Not Speculation
 
 - In casual use "theory" means a guess. In research it means the opposite of a guess
-- A **theory** is a formal, systematic explanation of relationships between concepts
+
+::: {.define}
+**Theory:** a set of connected ideas that explains and predicts why something happens, within stated limits. Example: parasocial interaction explains why viewers talk to a streamer as if they knew them.
+:::
+
+## What a Good Theory Does
+
 - A good theory is **logically coherent**: its parts fit together without contradiction
 - It is **generalizable**: it applies across contexts rather than to one case
 - It is **falsifiable**: it makes predictions that could turn out wrong
@@ -86,32 +92,73 @@ Answer each in writing:
 
 - **Grand theories** explain human behavior across every context: Marxism, psychoanalysis, and structuralism
     - They are intellectually powerful and close to untestable, because the scope is too wide and the predictions too general to be proven wrong
-- **Middle-range theories** are specific enough to generate testable hypotheses and broad enough to travel past one case
-    - Robert Merton named the zone, and every theory in the catalogue ahead sits in it
 
-## Catalogue: Relationship and Group Theories
+::: {.define}
+**Middle-range theory:** a theory specific enough to produce hypotheses you can test and general enough to apply beyond a single case. Example: social identity theory, which predicts how fans treat a rival community.
+:::
 
-- **Parasocial interaction** (Horton & Wohl, 1956) is one-sided bonds with media figures that feel intimate but are not reciprocated
-    - It predicts stronger connection with more consumption, and a sense of betrayal when a scandal breaks
-    - It is the lens for donations to strangers and for influencer marketing
-- **Social identity** (Tajfel & Turner, 1979) says group membership shapes self-concept
-    - It predicts in-group favoritism and symbolic boundary keeping
-    - It is foundational in political communication and sports fandom
+- Robert Merton named the zone, and every theory in the catalogue ahead sits in it
 
-## Catalogue: Media and Message Theories
+## Catalogue: Parasocial Interaction
 
-- **Agenda setting** (McCombs & Shaw, 1972) says media do not tell people what to think, but they tell people what to think about
-    - On Twitch the front page, the recommendations, and the category rankings all set an agenda
-- **Framing** (Goffman, 1974; Entman, 1993) says how information is presented shapes how it is read
-    - Episodic framing pushes blame toward individuals, and thematic framing pushes it toward structures
-    - You can see framing in how streamers title their own broadcasts
+[Horton & Wohl, 1956]{.eyebrow}
 
-## Catalogue: Audience and Exposure Theories
+::: {.define}
+**Parasocial interaction:** an audience member's one-sided sense of a social relationship with a media figure, experienced as if it ran both ways. Example: a viewer who feels they know a streamer they have never met.
+:::
 
-- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973) says audiences are active and pick media to meet needs
-    - It is the lens behind most research on why people watch other people play video games (Sjöblom & Hamari, 2017)
-- **Cultivation** (Gerbner & Gross, 1976) says long-term cumulative exposure shapes how people perceive social reality
-    - Heavy consumers overestimate what they keep seeing, most strongly where they have no direct experience to check it against
+- It predicts stronger connection with more consumption, and a sense of betrayal when a scandal breaks
+- It is the lens for donations to strangers and for influencer marketing
+
+## Catalogue: Social Identity
+
+[Tajfel & Turner, 1979]{.eyebrow}
+
+::: {.define}
+**Social identity:** the part of a person's sense of self that comes from belonging to a group, which leads people to favor their own group over others. Example: regulars who defend their streamer's community against a rival's.
+:::
+
+- It predicts in-group favoritism and symbolic boundary keeping
+- It is foundational in political communication and sports fandom
+
+## Catalogue: Agenda Setting
+
+[McCombs & Shaw, 1972]{.eyebrow}
+
+::: {.define}
+**Agenda setting:** the theory that media do not tell people what to think, but do shape what they think about, by choosing which issues get attention. Example: Twitch's front page, recommendations, and category rankings, which decide what viewers see first.
+:::
+
+## Catalogue: Framing
+
+[Goffman, 1974; Entman, 1993]{.eyebrow}
+
+::: {.define}
+**Framing:** selecting some aspects of an issue and making them more prominent, which steers how an audience interprets and judges it. Example: titling the same broadcast "chill vibes" or "RAGE QUIT RUN" invites two different readings of it.
+:::
+
+- Episodic framing pushes blame toward individuals, and thematic framing pushes it toward structures
+- You can see framing in how streamers title their own broadcasts
+
+## Catalogue: Uses and Gratifications
+
+[Katz, Blumler, & Gurevitch, 1973]{.eyebrow}
+
+::: {.define}
+**Uses and gratifications:** a theory that audiences actively choose media to meet their own needs, such as information, relaxation, or social connection. Example: a viewer who opens Twitch to feel part of a crowd.
+:::
+
+- It is the lens behind most research on why people watch other people play video games (Sjöblom & Hamari, 2017)
+
+## Catalogue: Cultivation
+
+[Gerbner & Gross, 1976]{.eyebrow}
+
+::: {.define}
+**Cultivation:** the theory that heavy, long-term exposure to media gradually shapes people's beliefs about the real world toward what the media show. Example: a heavy viewer of crime shows who overestimates how common crime is.
+:::
+
+- Heavy consumers overestimate what they keep seeing, most strongly where they have no direct experience to check it against
 
 ## Two Lenses on the Same Chat
 

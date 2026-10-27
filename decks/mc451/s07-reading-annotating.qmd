@@ -61,7 +61,7 @@ Answer each in writing, using the sources you have so far:
 ## A Gap Is Not Just an Absence
 
 - "Nobody studied this" is not a gap on its own. Plenty of things are unstudied because nobody needed them studied
-- A **research gap** is a space where the inquiry is *justified*
+- A **research gap** worth filling is one where the inquiry is *justified*
     - Either the missing knowledge creates a problem
     - Or existing findings contradict each other and something has to resolve them
 - Gaps come in four recognizable shapes, and naming yours sharpens the argument you are about to make
@@ -74,12 +74,30 @@ Answer each in writing, using the sources you have so far:
 - A **methodological gap** is a topic studied only with methods that have limits
     - Most livestream motivation work is self-report survey, so behavioral trace data like a chat log could show whether what viewers do matches what they say
 
+## What Self-Report Leaves Out
+
+::: {.define}
+**Self-report:** data in which people describe their own feelings, attitudes, or behavior, usually in a survey or an interview. Example: a viewer answering "I watch to feel part of a community" on a questionnaire.
+:::
+
+- **Behavioral trace data**, such as a chat log, records what people did rather than what they say they did
+
 ## Contradictions and Theoretical Gaps
 
 - A **contradiction** is two well-designed studies reaching opposite conclusions
     - That is not embarrassing to report. It is an opening, and often the best one
 - A **theoretical gap** is work that explains the phenomenon through one lens when another would show more
     - If engagement research is dominated by uses and gratifications, a parasocial-interaction framework (Horton & Wohl, 1956) may light a corner nobody has looked into
+
+## Two Theories in That Example
+
+::: {.define}
+**Uses and gratifications:** a theory that audiences actively choose media to meet their own needs, such as information, relaxation, or social connection. Example: a viewer who opens Twitch to feel part of a crowd.
+:::
+
+::: {.define}
+**Parasocial interaction:** an audience member's one-sided sense of a social relationship with a media figure, experienced as if it ran both ways. Example: a viewer who feels they know a streamer they have never met.
+:::
 
 ## Articulating the Gap
 
