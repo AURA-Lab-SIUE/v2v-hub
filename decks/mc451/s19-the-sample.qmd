@@ -119,7 +119,7 @@ Draw at random and almost every message comes from the giants.
 
 Answer each question in writing:
 
-- If you draw 1,000 messages at random, about how many come from the channel that posted one message? Give a number
+- The quietest example channel posted one message all week. If you draw 1,000 messages at random, would you expect that channel to show up at all? Why or why not?
 - Is that sample **biased**? Is it **representative**? Answer each separately, with one reason
 - If your own study compares two groups, name the group that is rarer in your source
 
