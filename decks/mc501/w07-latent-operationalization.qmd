@@ -56,18 +56,22 @@ Each of these is fixable in the revision, and each carries into the proposal.
 
 ## Manifest Content
 
-- **The surface:** features explicitly present
-    - Identifiable at the same value whoever codes it, and whenever
+::: {.define}
+**Manifest content:** what a message says or shows on its surface, which any trained coder can identify the same way by following one clear rule. Example: whether a message contains an `@` mention.
+:::
+
 - **What that looks like in a chat log**
     - An `@` mention, or under ten characters
     - A known emote token, or a word count
-- Countable almost mechanically, given one clear rule
 
 The split sits at the center of codebook design (Krippendorff, 2018).
 
 ## Latent Content
 
-- **The underlying meaning**, which takes interpretation
+::: {.define}
+**Latent content:** the meaning beneath a message's surface, which a coder has to interpret to reach. Example: whether a message is friendly or hostile.
+:::
+
 - **What that looks like here**
     - Friendly or hostile? Aimed at the streamer or the room?
     - Is "first" a genuine claim or a running joke?
@@ -94,6 +98,10 @@ That is the definition of latent, not a sign somebody was careless.
     - A joke for the room wearing the streamer's name
 
 Log the case, what makes it ambiguous, and how a codebook could handle it.
+
+::: {.define}
+**Bot:** an account run by software that posts automatically, often imitating a person. Example: an account that posts the same reminder message every half hour.
+:::
 
 ## Edge Cases Become Rules
 
@@ -198,10 +206,19 @@ anyone else can apply, and "more conversational" is not something you can count.
 
 Observable criteria, defined categories, and the same verdict from you twice.
 
+## The At-Mention
+
+::: {.define}
+**At-mention:** tagging an account in a message by typing @ before its name, to get that account's attention or to reply to it. Example: "@sodapoppin same."
+:::
+
+- The first two rules lean on it, because it is visible on the surface of the message
+
 ## Conceptual Definitions
 
-A **conceptual definition** says what the variable means in the abstract. It draws on your
-reading and answers one question: what is this meant to capture?
+::: {.define}
+**Conceptual definition:** a statement of what a variable means in the abstract, the idea it is meant to capture. Example: the definition of message target below, drawn from reading.
+:::
 
 > The intended addressee of a chat message, reflecting whether it functions as
 > participation with the streamer, with the chat collective, or with one other viewer.
@@ -210,9 +227,10 @@ Clear about the idea. Not yet a recipe.
 
 ## Operational Definitions
 
-- **The recipe: exactly what a coder does**
-    - Detailed enough for a stranger to repeat you
-    - The at-mention, second-person and reply rules
+::: {.define}
+**Operational definition:** the exact steps a coder follows to measure a variable, detailed enough that a stranger would get the same result. Example: the at-mention, second-person, and reply rules.
+:::
+
 - **Conceptual tells you what it is for**
 - **Operational tells you what counts as evidence**
 
@@ -248,7 +266,11 @@ Write the two side by side for every variable.
 - **"Sincere if the viewer genuinely means it"**
     - Sincerity defined by nothing a coder can observe
 - **The fix:** use **observable indicators**
-    - The best surface evidence for what you cannot see
+
+::: {.define}
+**Observable indicator:** something a coder can see in the content that stands as evidence for an idea that cannot be seen directly. Example: an at-mention, as evidence that a message is aimed at the streamer.
+:::
+
 - Each failure breaks the same promise, in its own way
 
 ## The Promise You Are Making
