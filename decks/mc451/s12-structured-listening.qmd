@@ -49,9 +49,11 @@ was.
 
 ## Immersion and Structured Listening
 
-- **Immersion:** sustained attention before analysis begins
-    - Here it takes the form of **structured listening**
-    - Watch, read chat, take notes, with an ethnographer's discipline
+::: {.define}
+**Immersion:** spending sustained time with your material, watching and reading it closely, before you analyze it. Example: hours of one channel's streams and chat before you write a single category.
+:::
+
+- Here it takes the form of **structured listening**: watch, read chat, and take notes, with an ethnographer's discipline
 - **The data is historical, the platform is live**
     - November 18 to 24, 2018, and the site is open right now
     - The behaviors it recorded are still there to watch
@@ -65,6 +67,10 @@ A coder who has never watched Twitch reads the log as plain text and:
 - Sees "@sodapoppin same" and cannot tell agreement from reflex
 - Sorts everything confidently into buckets that mislead
 
+::: {.define}
+**Copypasta:** a block of text that people copy and paste again and again, often as a joke. Example: thirty viewers posting the same long message in a row.
+:::
+
 ## Your Turn {.discuss}
 
 - **Name a convention an outsider would misread**
@@ -74,8 +80,12 @@ A coder who has never watched Twitch reads the log as plain text and:
 
 ## Thick Description
 
-- **Thick description** captures meaning, not only events (Geertz, 1973)
-    - Rich enough to say what it meant to those present
+[Geertz, 1973]{.eyebrow}
+
+::: {.define}
+**Thick description:** a description of what people did that also records what it meant to them in context, so an outsider can understand it. Example: noting that a wave of identical greetings was a raid arriving, not spam.
+:::
+
 - **Thin counts the messages; thick explains them**
     - Raids, inside jokes, and reflexive replies
 - Structured listening is how thin becomes thick
@@ -113,9 +123,12 @@ Brief notes after each pass. You are still describing, not coding.
 ## Field Notes Exist or Not
 
 - **Observation without a record is watching television**
-- **Field notes** are written, dated, and specific
-    - Not polished prose, but thinking on paper
-    - They catch an observation while it is still fresh
+
+::: {.define}
+**Field notes:** written, dated notes an observer makes during or right after watching, recording what they saw and what they made of it. Example: "Chat went quiet while the streamer talked, then flooded at every pause."
+:::
+
+- Not polished prose, but thinking on paper, caught while it is still fresh
 - The notes do not need to be good, they need to **exist**
 
 ## Observational and Methodological Notes

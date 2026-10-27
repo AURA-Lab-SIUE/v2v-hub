@@ -69,9 +69,23 @@ Between them they have already ruled out most of what you could have done, which
 - **Coding:** three categories
     - Directed, broadcast, or unclassifiable
 - **Reliability:** stability on 10 percent, re-coded after 48 hours
-    - Krippendorff's alpha, with the threshold set first
+    - Scored with Krippendorff's alpha, a reliability statistic, with the threshold set first
     - Here, 10 percent is practice; published studies re-code 10 to 20 percent
 - **Comparison:** the directed proportion, between the two groups
+
+## Three Words From the Method
+
+::: {.define}
+**Unit of analysis:** the one kind of thing each row of your coding sheet describes. Example: in this method, one chat message.
+:::
+
+::: {.define}
+**Reliability:** your codebook gives the same code to the same item every time, whoever applies it and whenever. Example: on both passes, a message that tags the streamer is coded "directed at the streamer."
+:::
+
+::: {.define}
+**Stability:** how closely your own codes match when you code the same items a second time, after a gap. Example: re-coding 10 percent of the messages 48 hours later and comparing the two passes.
+:::
 
 ## Two Scales, One Set of Mechanics
 
@@ -168,13 +182,24 @@ That draft was not lazy. It was ambition before discipline.
 
 ## Prospectus as Pre-Registration
 
-- **Pre-registration** commits the plan before the data
-    - Hypotheses, methods, and analysis plan, publicly
-    - The Open Science Framework timestamps it
+::: {.define}
+**Pre-registration:** writing down your research plan, including hypotheses, measures, and analysis, and filing it with a registry before you study the data. Example: a dated plan stating which test you will run on which variables.
+:::
+
+- The Open Science Framework timestamps it
+
+## Why the Plan Drifts
+
+[Simmons et al., 2011]{.eyebrow}
+
 - **Without a fixed plan, the plan drifts**
-    - Researchers adjust until something crosses significance (Simmons et al., 2011)
-    - The source of **researcher degrees of freedom**
-- It closes them by making the plan inspectable
+    - Researchers adjust until something crosses significance
+
+::: {.define}
+**Researcher degrees of freedom:** the choices a researcher is free to make while collecting, analyzing, and reporting data, which, made after seeing the results, make it easy to find a significant result that is not real. Example: deciding, after a comparison fails, to drop the shortest streams and run it again.
+:::
+
+- Pre-registration closes them by making the plan inspectable
 
 ## Your Prospectus Is Your Record
 
