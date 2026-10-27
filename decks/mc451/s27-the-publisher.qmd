@@ -160,6 +160,12 @@ v2v::deploy_portfolio()
 
 Three checks run first. Only if all three pass does the book render and publish.
 
+## What renv Is
+
+::: {.define}
+**renv:** an R package that records the exact version of every package your project uses in a file called `renv.lock`, so those same versions can be installed again later. Example: the first pre-flight check compares your installed packages against `renv.lock`.
+:::
+
 ## Why the Checks Exist
 
 - **renv in sync:** the site is built with the package versions your source declares

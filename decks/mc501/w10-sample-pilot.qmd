@@ -34,7 +34,7 @@ format:
 [Recap from Week 5]{.eyebrow}
 
 ::: {.define}
-**Variable:** something about a case that can change from one case to the next. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
 :::
 
 ::: {.define}
@@ -242,7 +242,7 @@ coding_sample <- v2v::sample_messages(
 :::
 
 ::: {.define}
-**Effect size:** how big a difference or link is. Example: how many more percentage points of messages are aimed at the streamer in non-gaming streams than in gaming ones.
+**Effect size:** how big a difference or a relationship is, on a scale that does not grow with the sample. Example: how many more percentage points of messages are aimed at the streamer in non-gaming streams than in gaming ones.
 :::
 
 - **Underpowered:** a sample too small to give the study a good chance of detecting the effect it looks for
@@ -290,8 +290,14 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 >
 > [Lakens (2022, p. 11)](https://doi.org/10.1525/collabra.33267)
 
-- **Purposive sampling:** choosing cases on purpose
-- **Construct validity:** whether you measure the thing you mean to measure
+
+## Purposive Sampling
+
+::: {.define}
+**Purposive sampling:** choosing cases on purpose, because you judge them the most useful for the question, rather than at random. Example: picking the channels where viewers most often address the streamer.
+:::
+
+- **Construct validity:** whether a measure behaves the way theory says the idea should
 - Purposive sampling can improve construct validity; it does nothing for statistical power
 
 ## The Pilot Test

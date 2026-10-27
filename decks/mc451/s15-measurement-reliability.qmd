@@ -56,7 +56,7 @@ format:
 - You can rank and find the **median**, but not a true mean
 
 ::: {.define}
-**Median:** the middle value once every value is lined up in order, with half above it and half below. Example: the middle category when every title is lined up from short to long.
+**Median:** the middle value once the values are sorted. Example: the middle category when every title is lined up from short to long.
 :::
 
 ## Interval

@@ -94,7 +94,7 @@ You cannot average a nominal variable: there is no average of Fortnite and Art.
 - You can rank cases and report the **median**, but a mean is not meaningful
 
 ::: {.define}
-**Median:** the middle value once every value is lined up in order, with half above it and half below. Example: the middle category when every title is lined up from short to long.
+**Median:** the middle value once the values are sorted. Example: the middle category when every title is lined up from short to long.
 :::
 
 ## Interval

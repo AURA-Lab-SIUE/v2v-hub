@@ -233,6 +233,12 @@ An unannounced cap is a quiet distortion. The axis label states the cap.
 
 The skew is the most important thing the histogram reveals, and no summary number can show it.
 
+## What Descriptive Statistics Are
+
+::: {.define}
+**Descriptive statistics:** numbers that summarize a set of data, such as how many cases there are, where the middle sits, and how spread out the values are. Example: n, mean, median, and sd of message length for each group.
+:::
+
 ## The Descriptive Statistics
 
 ```r
@@ -289,6 +295,20 @@ Report the mean alone and you misreport what a typical message looks like.
 - **`run_t_test()` and `run_chi_square()` return output ready to paste into a caption**
 
 Put the effect size in the caption or in a companion table, never in a footnote.
+
+## Three Terms From That List
+
+::: {.define}
+**Confidence interval:** a range around an estimate, built by a method that captures the true value in a stated share of repeated samples, such as 95 in 100. Example: *d* with its 95% interval shows how far the true gap could plausibly sit from the measured one.
+:::
+
+::: {.define}
+**Categorical variable:** a variable whose values are categories rather than measured amounts. Example: channel type, gaming or non-gaming.
+:::
+
+::: {.define}
+**Cross-tabulation:** a table that counts how often each combination of two categorical variables occurs. Example: viewer band by channel type.
+:::
 
 ## Figures Other People Can Read
 
