@@ -33,6 +33,13 @@ format:
 
 - Nearly 700,000 people were enrolled with **no informed consent**
 - No one was told, and no one could decline
+
+::: {.define}
+**Informed consent:** a person's voluntary agreement to take part in a study, given after they are told what it involves, its risks, and that they can stop at any time without penalty. Example: a viewer reads what your interview study involves, including that they can quit, and then agrees to take part.
+:::
+
+## Two Sides of the Argument
+
 - Facebook argued its terms of service authorized "research"
 - The researchers argued the effect was tiny and the knowledge valuable
 - *PNAS* appended an **editorial expression of concern**, an unusual step
@@ -106,33 +113,60 @@ Answer each in writing:
 
 [National Commission, 1979]{.eyebrow}
 
-- People are **autonomous agents** capable of making their own decisions
-- **Informed consent** means the person understands the research, the risks, and the right to withdraw without penalty
+::: {.define}
+**Respect for persons:** treating people as able to make their own decisions, and giving extra protection to people whose ability to decide is limited. Example: the Facebook users were never asked whether they wanted to take part.
+:::
+
+- **Informed consent** is how a study puts that respect into practice
 - **Vulnerable populations** get extra protection: children, prisoners, and people with cognitive impairments, whose voluntary consent is compromised
 - Public social media complicates this principle, and the slides on the example dataset come back to it
 
-## Belmont: Beneficence and Justice
+## Belmont: Beneficence
 
-- **Beneficence** starts with do no harm: no physical, psychological, social, or economic injury to participants
-- Beneficence also means maximizing the benefit-to-risk ratio, so the knowledge must justify the risk
-- **Justice** means benefits and burdens are distributed fairly across groups
+::: {.define}
+**Beneficence:** the duty to do no harm, and to make a study's possible benefits as large, and its possible harms as small, as you can. Example: quoting chat messages without usernames, so no viewer is singled out.
+:::
+
+- Harm here means physical, psychological, social, or economic injury to participants
+- The knowledge a study produces must justify the risk it creates
+
+## Belmont: Justice
+
+::: {.define}
+**Justice:** sharing the burdens and the benefits of research fairly, so no group carries the risk while others gain the knowledge. Example: recruiting from one group only because it is easy to reach would raise a justice question.
+:::
+
 - Tuskegee violated justice directly: all the risk fell on a marginalized population, and the knowledge accrued to everyone else
 
 ## Institutional Review
 
-- An **IRB** reviews a study **before** data collection for risk minimization, equitable selection, consent, privacy, and confidentiality
-- **Expedited review** is for studies with no more than minimal risk, such as many surveys and interview studies with adults
-- **Full board review** is for more than minimal risk, vulnerable populations, or deception
-- **Exempt** status is for minimal-risk studies inside categories that federal regulation names
+::: {.define}
+**Institutional Review Board (IRB):** the committee that oversees research involving people, reviewing each study before it starts to protect the people in it. Example: SIUE's IRB decides whether a study of public chat counts as human subjects research.
+:::
+
+- It reviews a study **before** data collection for risk minimization, equitable selection, consent, privacy, and confidentiality
 - **The IRB makes the determination, not you.** You submit, and the board decides
+
+## Three Levels of Review
+
+::: {.define}
+**Expedited review:** review by the IRB chair or an experienced member, rather than the whole board, for research with no more than minimal risk in categories federal rules list. Example: many surveys and interview studies with adults.
+:::
+
+::: {.define}
+**Full board review:** review at a meeting with a majority of the IRB's members present, for research that is neither exempt nor eligible for expedited review. Example: a study that carries more than minimal risk to its participants.
+:::
+
+- **Exempt** status is for minimal-risk studies inside categories that federal regulation names
 
 ## The Question That Comes First
 
 Before any of that, there is a prior question: **is this human subjects research at all?**
 
-- Federal regulation defines a **human subject** as a living person about whom you obtain information in one of two ways
-    - Through **intervention or interaction** with them
-    - As **identifiable private information**
+::: {.define}
+**Human subject:** under federal rules, a living person about whom a researcher gets information by interacting with them or intervening in their lives, or gets identifiable private information. Example: a viewer you interview.
+:::
+
 - You never interact with anyone, because the messages were sent before you arrived
 - The messages were **broadcast publicly**, so they are not private information
 - Neither part is met, so this is **not human subjects research**, and the three review levels never come into it
@@ -172,23 +206,54 @@ The same research question with different data gets a different determination:
 
 ## Consent Gets Complicated
 
-- **Deception** is sometimes justified, and it is always paired with mandatory **debriefing** plus the option to withdraw your data
+::: {.define}
+**Deception:** giving participants false or incomplete information about a study's purpose or procedures. Example: Milgram told participants the study was about memory and learning.
+:::
+
+::: {.define}
+**Debriefing:** telling participants, right after data collection, what the study's real purpose was and what risks it posed to them. Example: Milgram's participants learned afterward that the shocks were not real.
+:::
+
+- Deception is sometimes justified, and it is always paired with mandatory debriefing plus the option to withdraw your data
+
+## Passive Consent and Secondary Analysis
+
 - **Passive consent**, the terms-of-service move, is generally insufficient, and ethicists prefer **active consent**: an affirmative act
 - **Secondary analysis** of someone else's data raises whether the original consent covered your use, and it is generally acceptable when the data is de-identified
 - Secondary analysis is where research ethics is still actively evolving
 
 ## Honest Reporting Is an Ethical Obligation
 
-- **Fabrication** is inventing data, and **falsification** is manipulating results. Both are fraud, and both end careers
-- **Selective reporting** is running many analyses and publishing only the ones that worked, which distorts the literature
-- **HARKing** is Hypothesizing After the Results are Known, then writing as though you predicted the result. A postdiction carries none of a prediction's weight
+::: {.define}
+**Fabrication:** making up data or results and reporting them. **Falsification:** manipulating research materials or processes, or changing or leaving out data or results, so the research record is no longer accurate. Example: inventing coded messages, or quietly dropping the ones that weaken your result.
+:::
+
+- Both are fraud, and both end careers
+
+## Two Quieter Distortions
+
+::: {.define}
+**Selective reporting:** running many analyses and reporting only the ones that came out the way you hoped, which distorts the literature. Example: testing ten channels and writing up only the two that showed a difference.
+:::
+
+::: {.define}
+**HARKing:** Hypothesizing After the Results are Known, then writing the hypothesis up as if you had predicted it. Example: finding that emote spam peaks during raids, then presenting that as your prediction from the start.
+:::
+
+- A postdiction carries none of a prediction's weight
 - Watch for "our results suggest" quietly becoming "our results demonstrate"
 
 ## CITI, and What It Is
 
-- **CITI** is the Collaborative Institutional Training Initiative, the research ethics training nearly every American university runs
-- You complete the **Social and Behavioral Research** course and submit the completion certificate
+::: {.define}
+**CITI:** the Collaborative Institutional Training Initiative, an online program of research ethics training that SIUE students, faculty, and staff reach through the university. Example: the Social and Behavioral Research course you complete for this class.
+:::
+
+- You submit the completion certificate when you finish
 - The modules walk the ground we just walked: the history, the principles, consent, privacy and confidentiality, assessing risk, and vulnerable populations
+
+## Working Through CITI
+
 - Each module ends in a quiz you have to pass
 - It takes hours rather than minutes, and it saves your place, so do it in pieces
 - **CITI Ethics Certification**, 25 points, is due Friday, September 25, 11:59 PM

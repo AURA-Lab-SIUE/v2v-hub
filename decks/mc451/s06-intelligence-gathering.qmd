@@ -52,6 +52,12 @@ format:
 - **It hands you methods**: validated measures, sampling strategies, and other people's documented limitations (Krippendorff, 2018; Neuendorf, 2017)
 - **It sharpens the question** from "something about Twitch chat" into something you can actually answer
 
+## What a Gap Is
+
+::: {.define}
+**Research gap:** a question the published research has not yet answered, or has answered only in part, that a new study can take up. Example: if studies of Twitch chat cover gaming streams but rarely non-gaming ones, that imbalance is a gap.
+:::
+
 ## Exercise: Write Your Search Terms {.discuss}
 
 Answer each in writing, because your librarian will ask you for them:
@@ -81,8 +87,13 @@ slide explains.
 
 ## Building a Search String
 
-- **AND** narrows, so both terms must appear. **OR** widens. **NOT** excludes
+::: {.define}
+**Boolean operators:** the words AND, OR, and NOT, which combine search terms: AND narrows a search, OR widens it, and NOT excludes a term. Example: `Twitch AND motivation*` returns only sources that contain both terms.
+:::
+
 - An asterisk is a wildcard: `stream*` catches stream, streams, streaming, and streamer
+
+## A Search String, Assembled
 
 ```
 (livestream* OR "live streaming" OR Twitch) AND
@@ -108,14 +119,24 @@ the strategy later, and it shows you fast which searches are not working.
 ## Phase Three: Follow the Citations
 
 - Pick a few **keystone articles**, the ones that clearly sit at the center
-- **Backward chaining:** read what they cite, which takes you to the foundations
-- **Forward chaining:** use Google Scholar's "Cited by" to see who has cited them since, which shows you how the argument moved
+
+::: {.define}
+**Backward chaining:** searching a key article's reference list for the earlier work it drew on. Example: reading the reference list of the most-cited study of Twitch viewers' motivations, which takes you to the foundations.
+:::
+
+::: {.define}
+**Forward chaining:** finding later articles that cite a key article. Example: clicking "Cited by" under that same study in Google Scholar, which shows you how the argument moved.
+:::
+
 - The search snowballs on purpose, following the network out from what matters most rather than wandering
 
 ## Knowing When to Stop
 
-**Saturation** is the point where more searching stops changing your understanding. You will
-recognize it three ways:
+::: {.define}
+**Saturation:** the point at which more searching stops changing your understanding, because new sources keep pointing back to ones you already have.
+:::
+
+You will recognize it three ways:
 
 - Three database searches in a row turn up nothing new that is relevant
 - New articles keep citing the same eight or ten sources you have already read
@@ -153,6 +174,16 @@ synthesizing.
 - Download this file into the **top folder** of your workspace, beside `README.md`:
   [aura-lab.siue.edu/v2v-hub/starters/01-commit-your-work.qmd](https://aura-lab.siue.edu/v2v-hub/starters/01-commit-your-work.qmd)
 - **Getting that file onto GitHub is the check.** It is not in the template, so if I can see it in your repository, you put it there yourself
+
+## Two More Git Words
+
+::: {.define}
+**Stage:** mark which changed files go into your next commit. Example: clicking the **+** beside `01-commit-your-work.qmd` in Source Control.
+:::
+
+::: {.define}
+**Push:** send your commits from your computer to your repository on GitHub. Example: **Sync Changes** in VS Code, which pushes your commits.
+:::
 
 ## Save, Stage, Commit, Push
 
