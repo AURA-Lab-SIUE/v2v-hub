@@ -138,6 +138,14 @@ The example data arrives through a **function call**, not a file path, which rem
 category of beginner error. You get the **working sample**, not the full 2018 collection.
 Loading your own source from a file uses a different first line, `read_csv()`; every step after it is the same.
 
+## What a Function Is
+
+::: {.define}
+**Function:** a named piece of code that does one job each time you call it, by writing its name followed by parentheses. Example: `v2v::twitch_chat()` hands back the chat table.
+:::
+
+- Whatever goes inside the parentheses tells the function what to work on, such as the file `read_csv()` should read
+
 ## The Companion Writes This Block
 
 ![](images/companion-write-r-code-load.png){fig-alt="VS Code editor showing a script named wrangle.R. The R Companion inserted a commented block: library(tidyverse), library(v2v), chat <- twitch_chat(), streams <- twitch_streams(), glimpse(chat), and glimpse(streams)." width="100%"}
