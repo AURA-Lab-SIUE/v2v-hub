@@ -64,8 +64,10 @@ Each student's own version of these points, with examples from their own topic, 
 
 ## The Four Levels of Measurement (NOIR)
 
-- **Every variable you measure has a level of measurement**
-    - The level decides which statistics you may use on it later
+::: {.define}
+**Level of measurement:** the kind of information a variable's values carry, which decides what you may later do with them. Example: `game` holds names, and `viewers` holds counts.
+:::
+
 - **NOIR names the four levels: nominal, ordinal, interval, and ratio**
 - **The `stream_log` columns give an example of each level**
     - The columns are channel, title, game, viewers, and date
@@ -74,9 +76,10 @@ The data does not fix the level. The level depends on how you decide to measure 
 
 ## Nominal
 
-- **Nominal variables are categories with no built-in order**
-    - `game`: Fortnite, Just Chatting, Art, Hearthstone
-    - You cannot add, subtract, or rank the categories
+::: {.define}
+**Nominal:** categories that are only names, with no order. Example: `game` holds Fortnite, Just Chatting, Art, and Hearthstone, and no arithmetic relates them.
+:::
+
 - **`channel` is nominal, and so is `title` kept as its original text**
 - **You can count each category and report the most common one**
 
@@ -84,29 +87,33 @@ You cannot average a nominal variable: there is no average of Fortnite and Art.
 
 ## Ordinal
 
-- **Ordinal variables are ordered categories with unequal distances between them**
-    - Example: group titles by length into short, medium, and long
-    - A long title ranks above a short one
-- **The distances between categories are not guaranteed to be equal**
-    - The step from short to medium may differ in size from the step from medium to long
+::: {.define}
+**Ordinal:** categories with a meaningful order, where the distances between them are not guaranteed equal. Example: titles binned short, medium, and long, where short-to-medium need not match medium-to-long.
+:::
+
 - You can rank cases and report the **median**, but a mean is not meaningful
+
+::: {.define}
+**Median:** the middle value once the values are sorted. Example: the middle category when every title is lined up from short to long.
+:::
 
 ## Interval
 
-- **Interval variables have equal distances and a zero point set by convention**
-    - Example: the date and time each message was posted
-    - One minute is the same length anywhere in the column
+::: {.define}
+**Interval:** numbers with equal distances between them but no true zero, so a difference means something and a ratio does not. Example: the posting time of each message, where a minute is a minute anywhere in the column.
+:::
+
 - **The zero point, 1970, is a convention; it does not mean "no time"**
     - `date` stores each time as milliseconds counted from 1970
 - Ratios are meaningless: a message posted at 2:00 was not posted twice as late as one posted at 1:00
 
 ## Ratio
 
-- **Ratio variables have equal distances and a true zero**
-    - `viewers` is ratio: zero means nobody is watching
-    - So 28,000 viewers is twice the audience of 14,000 viewers
+::: {.define}
+**Ratio:** numbers with equal distances and a true zero, where zero means none at all. Example: `viewers`, where zero means nobody is watching, so 28,000 really is twice the audience of 14,000.
+:::
+
 - **Elapsed time, such as hours since the stream started, is ratio**
-    - Subtracting one timestamp from another gives a duration, which is ratio
 - **You may add, subtract, multiply, and divide ratio values**
 - Most counts are ratio, such as viewers, characters, and messages
 
@@ -144,6 +151,16 @@ The same three checks work for data from any platform.
 
 Definitions Practice asks for one sentence per variable that names its level and says which
 statistics it allows and which it rules out.
+
+## Two Tests Named in That Table
+
+::: {.define}
+**Chi-square test:** a test of whether two categorical variables are associated, comparing the counts you observed with the counts you would expect if they were unrelated. Example: whether message target differs between gaming and non-gaming streams.
+:::
+
+::: {.define}
+**t-test:** a test of whether the averages of two groups differ by more than chance would explain. Example: whether gaming and non-gaming chat messages differ in average length.
+:::
 
 ## Measuring at a Lower Level Than Needed Limits Your Tests
 
@@ -185,16 +202,38 @@ unmeasurable definition.
 - **A reliable measure gives the same result under the same conditions**
     - A bathroom scale that reads 150, then 162, then 147 for the same person is useless
 - **In content analysis, reliability means coders apply the codebook consistently**
-    - **Intercoder:** two coders code the same messages independently
-    - **Intracoder, or stability:** one coder codes the same messages twice
+    - It comes in two forms, on the next slide
 - **Kappa and alpha measure agreement after removing the agreement expected by chance**
+
+## Two Forms of Coder Reliability
+
+::: {.define}
+**Intercoder reliability:** how closely two or more coders agree when each codes the same items independently. Example: two coders each label the same 100 messages without seeing the other's codes.
+:::
+
+::: {.define}
+**Stability:** how closely your own codes match when you code the same items a second time, after a gap. Example: re-coding 10 percent of the messages 48 hours later and comparing the two passes.
+:::
 
 ## Validity Means Accuracy
 
-- **A valid measure captures the concept it claims to measure**
-- **Face validity:** the measure looks like a reasonable way to measure the concept
-- **Content validity:** the measure covers every part of the concept
-- **Construct validity:** the measure relates to other variables the way theory says it should
+::: {.define}
+**Validity:** how well a measure captures the idea it claims to measure. Example: whether counting at-mentions really captures who a message is aimed at.
+:::
+
+::: {.define}
+**Face validity:** whether a measure looks, on its face, like a reasonable measure of the idea. Example: counting at-mentions to measure messages aimed at the streamer makes sense without much explanation.
+:::
+
+## Two Deeper Kinds of Validity
+
+::: {.define}
+**Content validity:** whether a measure covers every part of the idea, not just some of it. Example: a message count leaves out who is talking and to whom, so it covers only part of chat engagement.
+:::
+
+::: {.define}
+**Construct validity:** whether a measure behaves the way theory says the idea should, the most demanding of the three. Example: a measure of parasocial language should run higher where viewers report stronger bonds with the streamer.
+:::
 
 You support validity with a written argument; no statistic calculates it.
 
@@ -272,9 +311,25 @@ In step 1 you may not explain what you meant; the codebook must work on its own.
 
 ## Percent Agreement Alone Is Not Enough
 
-- **Do not report percent agreement by itself**
-    - Two coders guessing on a yes-or-no variable agree half the time
-    - Kappa and alpha subtract the agreement expected by chance
+::: {.define}
+**Raw agreement:** the share of items where the two passes gave the same code. Example: the two passes match on 74 of 100 items, which sounds respectable.
+:::
+
+::: {.define}
+**Chance agreement:** matches that happen by luck, even when nobody follows a rule. Example: two people flipping coins to sort messages into two categories agree about half the time.
+:::
+
+- **Do not report percent agreement by itself**: kappa and alpha subtract the agreement expected by chance
+
+## Two Scores That Correct for Chance
+
+::: {.define}
+**Cohen's kappa:** a score for how much two coding passes agree beyond what luck alone would give. Example: a kappa near 0 means the passes agree about as often as luck would.
+:::
+
+::: {.define}
+**Krippendorff's alpha:** a reliability score like kappa that also works with more than two coders, ranked or numeric codes, and missing codes. Example: three coders rating how heated a message is from 1 to 5.
+:::
 
 ## Which Reliability Statistic to Report
 
@@ -387,14 +442,20 @@ you to judge which of your own findings depends most on your coding.
 
 ## Categories Must Be Exhaustive and Mutually Exclusive
 
-- **Exhaustive:** every case fits some category
-    - A catch-all category, such as "unclassifiable," guarantees this
-- **Mutually exclusive:** every case fits exactly one category
-    - If categories overlap, coders keep disagreeing on the same cases, and reliability drops
-- **To fix overlap, sharpen the definitions or add a precedence rule that says which category wins**
+::: {.define}
+**Exhaustive:** every case can be given one of the variable's values, with no case left over. Example: an "unclassifiable" value catches any message the other values miss.
+:::
 
-If more than 10 percent of cases land in the catch-all, the categories are incomplete and need
-revision.
+::: {.define}
+**Mutually exclusive:** every case fits exactly one value, never two. Example: a message cannot be coded both "directed at the streamer" and "broadcast to the room."
+:::
+
+## Keeping Both Rules
+
+- **A catch-all category, such as "unclassifiable," guarantees exhaustive coding**
+    - If more than 10 percent of cases land in it, the categories are incomplete and need revision
+- **If categories overlap, coders keep disagreeing on the same cases, and reliability drops**
+- **To fix overlap, sharpen the definitions or add a precedence rule that says which category wins**
 
 ## Example Codebook: Unit and Message Target
 

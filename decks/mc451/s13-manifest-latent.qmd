@@ -73,10 +73,13 @@ You leave having sorted your field notes into the easy half and the hard half.
 
 [Chapter 7]{.eyebrow}
 
-- **Manifest content:** what is explicitly on the surface
-    - Countable almost mechanically, given one clear rule
-- **Latent content:** the underlying meaning
-    - It takes interpretation to reach
+::: {.define}
+**Manifest content:** what a message says or shows on its surface, which any trained coder can identify the same way by following one clear rule. Example: whether a message contains an `@` mention.
+:::
+
+::: {.define}
+**Latent content:** the meaning beneath a message's surface, which a coder has to interpret to reach. Example: whether a message is friendly or hostile.
+:::
 
 The split sits at the center of codebook design, and most first codebooks treat a latent
 variable as manifest.
@@ -157,6 +160,10 @@ Features you cannot read off the surface:
     - Statistical sampling later in the term does the same
 - Representativeness is a discipline at every stage
 
+::: {.define}
+**Representative:** a sample that gives a fair picture of every group your question is about. Example: twenty streams that span big and small channels, gaming and art.
+:::
+
 ## When Channels Are Live
 
 [Figure 7.1, the collection week]{.eyebrow}
@@ -184,6 +191,10 @@ ambiguous, and list the ways a codebook could handle it.
     - A message, and not written by that viewer in any normal sense
 - **A language you do not read**
 - **An obvious bot**, or a joke wearing the streamer's name
+
+::: {.define}
+**Bot:** an account run by software that posts automatically, often imitating a person. Example: an account that posts the same reminder message every half hour.
+:::
 
 ## Edge Cases Become Rules
 

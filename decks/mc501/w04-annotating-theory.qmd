@@ -77,6 +77,14 @@ format:
 > watching but chatting and subscribing (Hilvert-Bruce et al., 2018). All three rely on
 > self-report, leaving open whether the same patterns appear in behavioral chat-log data.
 
+## What Self-Report Leaves Out
+
+::: {.define}
+**Self-report:** data in which people describe their own feelings, attitudes, or behavior, usually in a survey or an interview. Example: a viewer answering "I watch to feel part of a community" on a questionnaire.
+:::
+
+- **Behavioral trace data**, such as a chat log, records what people did rather than what they say they did
+
 ## Why That Version Works
 
 - The **claim leads**, and the citations arrive behind it as support
@@ -94,20 +102,46 @@ format:
 - The **limitation the authors admit**, and the one they do not
 - One sentence you would be willing to quote in your own methods section
 
+## One Word From That List
+
+::: {.define}
+**Unit of analysis:** the one kind of thing each row of your coding sheet describes. Example: one chat message, or one TikTok video.
+:::
+
+- In someone else's article, find it by asking what one row of their data was
+
 ## The Number You Are Really There For
 
-- An **effect size** is a number saying how big a difference or relationship actually is, as opposed to whether it cleared a significance threshold
+::: {.define}
+**Effect size:** how big a difference or a relationship is, on a scale that does not grow with the sample. Example: how much longer non-gaming chat messages run than gaming ones.
+:::
+
+- It says how big the effect is, which is a different question from whether it cleared a significance threshold
 - You need one because before you can justify how much data to collect, you need a defensible estimate of the effect you expect to find
 - The most defensible source for that estimate is research that already measured it
 - So you copy it out of their paper. That is the whole task
 
 ## What to Write Down
 
-- Cohen's *d*, Cramer's *V*, or a correlation *r*, whichever the authors report
+- Cohen's *d*, Cramer's *V*, or a correlation *r*, whichever the authors report, as defined on the next slide
 - The *n* they used, because an effect size without a sample size is not much use
 - Whether they ran a power analysis themselves, and what they assumed if so
 - Those numbers become the inputs to your own **power analysis** later in the term
 - A review that cannot supply an effect size estimate has not finished its job
+
+## Three Effect Sizes You Will Meet
+
+::: {.define}
+**Cohen's *d*:** the difference between two group averages, measured in standard deviations, the usual spread of scores around an average. Example: a *d* of 0.5 means the two averages sit half a standard deviation apart.
+:::
+
+::: {.define}
+**Cramer's *V*:** how strongly two categorical variables are associated, from 0 for none to 1 for complete. Example: whether channel type and viewer band tend to go together.
+:::
+
+::: {.define}
+**Correlation (*r*):** how strongly two numeric variables rise or fall together in a straight-line pattern, from -1 to 1. Example: whether channels with more viewers also post more messages per minute.
+:::
 
 ## Cohen on the Hard Part
 
@@ -194,8 +228,14 @@ motivated. Three research programs explain that differently:
 
 ## Theory Is Not Speculation
 
-- A **theory** is a formal, systematic explanation of relationships between concepts
+::: {.define}
+**Theory:** a set of connected ideas that explains and predicts why something happens, within stated limits. Example: parasocial interaction explains why viewers talk to a streamer as if they knew them.
+:::
+
 - A good theory is logically coherent, generalizable, falsifiable, and generative
+
+## A Theory Makes Predictions
+
 - Social identity theory predicts that viewers rate their own community above rivals on subjective dimensions like authenticity, and that they respond defensively when the streamer or community is criticized
 - Change the domain and it predicts partisans rating aligned outlets as more credible
 - The theory does not change. The domain does, and that is what makes it testable
@@ -222,27 +262,50 @@ motivated. Three research programs explain that differently:
 
 - **Grand theories** explain human behavior across all contexts: Marxism, psychoanalysis, and structuralism
     - They are intellectually powerful, and too broad to design a study that could disprove them
-- **Middle-range theories** are specific enough to generate testable hypotheses and broad enough to travel beyond one case
-    - Merton named the zone, and most communication research lives in it
-    - Every theory in the catalogue ahead is middle-range
 
-## The Catalogue, Part One
+::: {.define}
+**Middle-range theory:** a theory specific enough to produce hypotheses you can test and general enough to apply beyond a single case. Example: social identity theory, which predicts how fans treat a rival community.
+:::
 
-- **Parasocial interaction** (Horton & Wohl, 1956): one-sided bonds that feel intimate without reciprocity
-    - It explains donating to a streamer you have never met
-- **Social identity** (Tajfel & Turner, 1979): group membership shapes self-concept
-    - It produces in-group favoritism and boundary policing through emotes and slang
-- **Agenda setting** (McCombs & Shaw, 1972): media do not tell people what to think, but what to think about
-    - The front page and the category rankings set an agenda
+- Merton named the zone, most communication research lives in it, and every theory in the catalogue ahead is middle-range
 
-## The Catalogue, Part Two
+## The Catalogue: Relationships and Groups
 
-- **Framing** (Goffman, 1974; Entman, 1993): the same facts, differently emphasized, produce different conclusions
-    - It is visible in how streamers title their own broadcasts
-- **Uses and gratifications** (Katz, Blumler, & Gurevitch, 1973): audiences actively select media to meet needs
-    - It is the lens behind most viewer-motivation research
-- **Cultivation** (Gerbner & Gross, 1976): cumulative exposure shapes perceptions of social reality
-    - It is strongest where audiences lack direct experience
+[Horton & Wohl, 1956; Tajfel & Turner, 1979]{.eyebrow}
+
+::: {.define}
+**Parasocial interaction:** an audience member's one-sided sense of a social relationship with a media figure, experienced as if it ran both ways. Example: donating to a streamer you have never met.
+:::
+
+::: {.define}
+**Social identity:** the part of a person's sense of self that comes from belonging to a group, which leads people to favor their own group over others. Example: regulars policing who belongs through the channel's own emotes and slang.
+:::
+
+## The Catalogue: Agendas and Frames
+
+[McCombs & Shaw, 1972; Goffman, 1974; Entman, 1993]{.eyebrow}
+
+::: {.define}
+**Agenda setting:** the theory that media do not tell people what to think, but do shape what they think about, by choosing which issues get attention. Example: Twitch's front page and category rankings.
+:::
+
+::: {.define}
+**Framing:** selecting some aspects of an issue and making them more prominent, which steers how an audience interprets and judges it. Example: how streamers title their own broadcasts.
+:::
+
+## The Catalogue: Audiences and Exposure
+
+[Katz, Blumler, & Gurevitch, 1973; Gerbner & Gross, 1976]{.eyebrow}
+
+::: {.define}
+**Uses and gratifications:** a theory that audiences actively choose media to meet their own needs, such as information, relaxation, or social connection. Example: a viewer who opens Twitch to feel part of a crowd.
+:::
+
+::: {.define}
+**Cultivation:** the theory that heavy, long-term exposure to media gradually shapes people's beliefs about the real world toward what the media show. Example: a heavy viewer of crime shows who overestimates how common crime is.
+:::
+
+- Uses and gratifications is the lens behind most viewer-motivation research, and cultivation is strongest where audiences lack direct experience to check against
 
 ## Two Lenses, Four Messages
 

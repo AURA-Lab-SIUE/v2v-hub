@@ -48,9 +48,11 @@ Somewhere in your field notes is an entry like this:
 
 [The act the book is named for]{.eyebrow}
 
-- **Operationalization:** turning a vibe into a variable
-    - From a holistic impression to a replicable measurement
-    - The central methodological act of content analysis
+::: {.define}
+**Operationalization:** turning an abstract idea into something you can actually observe and record. Example: counting a message as aimed at the streamer when it tags the streamer's name.
+:::
+
+- From a holistic impression to a replicable measurement, the central act of content analysis
 - **Done well, it preserves what you noticed**
 - **Done badly, it produces artifacts that look like findings**
 
@@ -91,6 +93,14 @@ Specify observable criteria:
 - **Broadcast:** a reaction with no specific addressee
 - **Unclassifiable:** no criterion settles it
 
+## The At-Mention
+
+::: {.define}
+**At-mention:** tagging an account in a message by typing @ before its name, to get that account's attention or to reply to it. Example: "@sodapoppin same."
+:::
+
+- The first two rules lean on it, because it is visible on the surface of the message
+
 ## Your Turn {.discuss}
 
 - Take one latent thing from your notes
@@ -100,12 +110,13 @@ Specify observable criteria:
 
 ## Two Definitions, Working Together
 
-- **The conceptual definition says what it means**
-    - What is this variable meant to capture?
-    - For message target: the intended addressee of a message
-    - Participation with the streamer, the collective, or one viewer
-- **The operational definition says what a coder does**
-    - The recipe, which is the next slide
+::: {.define}
+**Conceptual definition:** a statement of what a variable means in the abstract, the idea it is meant to capture. Example: message target is the intended addressee of a message, whether the streamer, the room, or one other viewer.
+:::
+
+::: {.define}
+**Operational definition:** the exact steps a coder follows to measure a variable, detailed enough that a stranger would get the same result. Example: a message that at-mentions the channel name is coded "directed at the streamer."
+:::
 
 The conceptual half is clear about the idea, and **not yet a recipe**.
 
@@ -156,8 +167,14 @@ The conceptual half is clear about the idea, and **not yet a recipe**.
     - "Sincere if the viewer genuinely means it"
     - That defines sincerity by something no coder observes
 - **The fix:** operationalize through **observable indicators**
-    - The best available surface evidence for the unseen thing
-- All four break one promise: that a stranger could repeat you
+
+## Observable Indicators
+
+::: {.define}
+**Observable indicator:** something a coder can see in the content that stands as evidence for an idea that cannot be seen directly. Example: an at-mention, as evidence that a message is aimed at the streamer.
+:::
+
+- All four failures break one promise: that a stranger could repeat you
 
 ## Not a Twitch Problem
 

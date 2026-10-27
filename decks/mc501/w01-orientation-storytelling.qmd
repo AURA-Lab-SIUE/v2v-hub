@@ -40,6 +40,26 @@ format:
 - A conference-ready **White Paper**, paired with an **academic poster**
 - Work at a level approaching publishable quality
 
+## Two Words From That List
+
+::: {.define}
+**Content analysis:** the systematic study of messages; in its quantitative form, the one this course uses, you sort each message into categories by written rules so the results can be counted. Example: marking each chat message as aimed at the streamer, at another viewer, or at the whole room, then counting each kind.
+:::
+
+::: {.define}
+**Immersion:** spending sustained time with your material, watching and reading it closely, before you analyze it. Example: hours of one channel's streams and chat before you write a single category.
+:::
+
+## Two Words for What You Build
+
+::: {.define}
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
+:::
+
+::: {.define}
+**Codebook:** the written rules that tell a coder what each variable means and which value to give each item; in this course the word also covers the coding sheet where you record those values. Example: the rule that a message tagging the streamer is coded "directed at the streamer."
+:::
+
 ## How the Term Is Built
 
 - **The Journalist runs the whole way through:** a weekly journal across the 14 teaching weeks, worth **150 points**. It is the habit, not a stage
@@ -70,6 +90,12 @@ format:
 - Statistics go deeper rather than broader: assumptions, diagnostics, and interpretation
 - Each week has **one required reading**, listed in the syllabus with access links
 
+## Who Makes That Determination
+
+::: {.define}
+**Institutional Review Board (IRB):** the committee that oversees research involving people, reviewing each study before it starts to protect the people in it. Example: SIUE's IRB decides whether a study of public chat counts as human subjects research.
+:::
+
 ## The Shared Example Dataset
 
 [One week of Twitch, November 2018]{.eyebrow}
@@ -83,6 +109,26 @@ format:
     - The **anchor set**: 8 channels used as named examples
 - This dataset is the shared example for the class. Your own study uses the source your question needs
 
+## Two Words for the Example Data
+
+::: {.define}
+**Snapshot:** one record of one stream at one moment, taken about once a minute: its channel, title, game, viewer count, and time. Example: xQc streaming Just Chatting to 19,381 viewers at one moment on November 18, 2018.
+:::
+
+::: {.define}
+**Population:** everything your conclusions will apply to, defined by the platform, the accounts or outlets, and the time period. Example: the 1,690 channels in both logs, that November week.
+:::
+
+## Two More Words for the Example Data
+
+::: {.define}
+**Corpus:** a collection of texts or records gathered to be studied as a set. Example: the working corpus, the chat and snapshots of 50 channels.
+:::
+
+::: {.define}
+**Stratified sampling:** split the population into groups, called **strata** (one group is a **stratum**), then draw from each group separately. Example: the working corpus draws channels from every chat-volume group.
+:::
+
 ## Mark Weeks 5, 9, and 11 Now
 
 Three weeks carry the term's weight, and all three are visible from here:
@@ -95,8 +141,26 @@ Three weeks carry the term's weight, and all three are visible from here:
 
 ## The Four Tools
 
-- **R** does the analysis, **VS Code** is the editor, **Quarto** builds the documents, and **Git and GitHub** handle version control and publication
+::: {.define}
+**R:** a free language and environment for statistical computing and graphics. Example: R counts how many messages each channel posted that week.
+:::
+
+::: {.define}
+**VS Code:** a free code editor from Microsoft, where you write code and prose in one place. Example: your White Paper's text and its R code open side by side in one window.
+:::
+
 - All four are free, and setup walkthroughs are on the course site
+
+## The Four Tools, Continued
+
+::: {.define}
+**Quarto:** an open-source publishing system that turns one file of text and code into a finished website, PDF, or paper. Example: your White Paper is a single Quarto file.
+:::
+
+::: {.define}
+**Git:** a program that tracks every change to the files in a project, so you can see or return to any earlier version. **GitHub:** a website that hosts those Git projects online. Example: your project's full history sits on GitHub, one dated change at a time.
+:::
+
 - Your White Paper and your poster will both be built from Quarto sources
 - Version control is not a convenience here. It is your audit trail
 
@@ -124,8 +188,12 @@ to least. Code is instructions in order, and you will read far more of it than y
 - **Bob Ross:** 3,178 average viewers, streaming under *Art*, and dead since 1995
 - **xQc:** 17,363 average viewers, live variety, and the highest chat volume in the collection
 - A social scientist asks not what the numbers *mean* but what they *are*
-- They are **data**, collected on purpose so a claim can be defended later
-- A **corpus** is a body of evidence that licenses some questions and refuses others
+
+::: {.define}
+**Data:** observations recorded on purpose, as numbers or as labels, so a claim can be checked later. Example: Bob Ross's 3,178 average viewers is a number; his category, *Art*, is a label.
+:::
+
+- A corpus can answer some questions and not others
 
 ## Stories and Science Share One Machinery
 
@@ -137,10 +205,20 @@ to least. Code is instructions in order, and you will read far more of it than y
 
 ## The Sacred Flaw and the Null Hypothesis
 
-- The **null hypothesis** is research's sacred flaw: it says *nothing is happening here*
-- To reject it is to force the data to tell a different story than you assumed
-- A *p* of 0.001 says the old story is untenable, not merely unlikely
+::: {.define}
+**Null hypothesis:** the claim that there is no real difference or relationship, only chance. Example: gaming and non-gaming streams draw the same average audience.
+:::
+
+- The null is research's sacred flaw: it says *nothing is happening here*, and to reject it is to force the data to tell a different story than you assumed
 - The framing puts the burden where it belongs: on the evidence, not on the elegance of your argument
+
+## Reading a *p*-Value
+
+::: {.define}
+**p-value:** how likely a gap at least this big would be if the null hypothesis were true. Below .05 is called *statistically significant*.
+:::
+
+- A *p* of 0.001 says the old story is untenable, not merely unlikely
 
 ## The Debt Cliff That Was Not There
 
@@ -173,14 +251,37 @@ A contribution in communication research does one of four things:
 Before you design a study, name which one you are doing. If you cannot say precisely, the
 research question is not ready yet.
 
+## What a Construct Is
+
+::: {.define}
+**Construct:** an abstract idea that a theory uses to explain something, and that a study has to find a way to measure. Example: parasocial attachment, a viewer's one-sided sense of closeness to a streamer, which you can only measure through what viewers write.
+:::
+
 ## The Reproducibility Crisis Is a Design Problem
 
-- The **garden of forking paths** is the many defensible analytic choices that inflate false positives, with no conscious fishing at all (Gelman & Loken, 2014)
+::: {.define}
+**Garden of forking paths:** the many defensible choices made during an analysis, each of which could have gone another way, which together raise the chance of a false positive with no conscious fishing at all (Gelman & Loken, 2014). Example: deciding after seeing the data whether to drop bot messages.
+:::
+
 - Munafò and colleagues locate a related danger in underpowered designs:
 
 > "Low statistical power increases the likelihood of obtaining both false-positive and false-negative results, meaning that it offers no advantage if the purpose is to accumulate knowledge."
 >
 > Munafò et al. (2017, p. 2)
+
+## Three Terms Behind That Quote
+
+::: {.define}
+**False positive:** concluding that an effect exists when it does not, by rejecting a null hypothesis that is true. Example: reporting that gaming chat is louder when the gap came from chance alone.
+:::
+
+::: {.define}
+**Statistical power:** the chance your study detects an effect that is really there. Example: with only 80 messages, a real but small gap between gaming and non-gaming chat could easily go unseen.
+:::
+
+::: {.define}
+**Underpowered:** a sample too small to give the study a good chance of detecting the effect it looks for. Example: 80 messages, when a small effect would take far more to detect.
+:::
 
 ## Four Pillars This Course Builds
 
@@ -191,6 +292,16 @@ research question is not ready yet.
 
 These are not add-ons. They follow from the epistemology you are adopting.
 
+## Two Pillars, Defined
+
+::: {.define}
+**A priori power analysis:** working out, before you collect data, how large a sample you need to detect an effect of a given size. Example: deciding how many messages to code before drawing any.
+:::
+
+::: {.define}
+**Pre-registration:** writing down your research plan, including hypotheses, measures, and analysis, and filing it with a registry before you study the data. Example: a dated plan stating which test you will run on which variables.
+:::
+
 ## Pre-Registration, Precisely
 
 > "The strongest form of pre-registration involves both registering the study ... and closely pre-specifying the study design, primary outcome and analysis plan in advance of conducting the study or knowing the outcomes of the research."
@@ -199,6 +310,16 @@ These are not add-ons. They follow from the epistemology you are adopting.
 
 - Pre-registration is what separates **confirmatory** from **exploratory** work
 - Exploratory research is legitimate. Presenting it as confirmatory is not
+
+## Confirmatory and Exploratory
+
+::: {.define}
+**Confirmatory research:** testing a prediction you made before seeing the data. Example: a pre-registered test of whether non-gaming chats address the streamer more often.
+:::
+
+::: {.define}
+**Exploratory research:** looking through data for patterns you did not predict, to generate ideas for later tests. Example: browsing the chat table to see which kinds of messages cluster around raids.
+:::
 
 ## A Study Is a Story Told With Discipline
 
@@ -212,13 +333,34 @@ These are not add-ons. They follow from the epistemology you are adopting.
 | Falling action | Interpretation and limitations |
 | Resolution | Implications and future research |
 
+## Three Words From That Table
+
+::: {.define}
+**Literature review:** a written overview of what published research has already found on a topic, and how those studies fit together. Example: summarizing the published studies of Twitch chat before you design your own.
+:::
+
+::: {.define}
+**Theory:** a set of connected ideas that explains and predicts why something happens, within stated limits. Example: parasocial interaction explains why viewers talk to a streamer as if they knew them.
+:::
+
+::: {.define}
+**Sampling bias:** a way of drawing a sample in which some members of the population are more likely to be picked than others. Example: studying only the biggest channels.
+:::
+
 ## Anecdote and Data Are Partners
 
 - **Journalism** makes the abstract concrete and makes an audience care
 - **Science** establishes generalizability: it asks whether the pattern holds across many cases
 - Anecdotes generate hypotheses, and data test them. Data find patterns, and anecdotes explain why they matter
+
+## Hypotheses and Human Context
+
+::: {.define}
+**Hypothesis:** a testable statement of the relationship you expect between variables, written before you test it. Example: non-gaming chats aim a larger share of their messages at the streamer than gaming chats do.
+:::
+
 - A significant finding without human context is true and unpersuasive
-- Your White Paper has to do both, which is harder than it sounds
+- Your White Paper has to carry both the pattern and the people, which is harder than it sounds
 
 ## Three Paradigms
 
@@ -226,6 +368,13 @@ These are not add-ons. They follow from the epistemology you are adopting.
 - **Interpretive** work asks how people make meaning, through interviews and ethnography
 - **Critical** work exposes and challenges structures of power
 - All three have produced foundational communication scholarship
+
+## Placing Your Own Question
+
+::: {.define}
+**Paradigm:** a shared set of beliefs about what reality is and how researchers can know it, which shapes how a study is designed. Example: the social scientific paradigm treats chat as something you can observe and count.
+:::
+
 - Place your own research question on the axis from ontology (what exists) to epistemology (how we can know it), and name one obligation that follows from that placement
 
 ## Before Week 2

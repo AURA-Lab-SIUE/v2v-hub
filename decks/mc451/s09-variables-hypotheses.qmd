@@ -31,12 +31,19 @@ format:
 - Last time: theory tells you what to look for and what would count as evidence
 - A lens on its own cannot be right or wrong, because there is nothing to check it against
 - Theories become checkable through **variables**
-- A **variable** is a measurable concept that can take different values
+
+::: {.define}
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
+:::
+
 - Everything today is about getting from something you believe to something you can count
 
 ## The Independent Variable
 
-- The **independent variable** is the proposed cause
+::: {.define}
+**Independent variable (IV):** the proposed cause, or the predictor you measure. Example: stream type, gaming or non-gaming.
+:::
+
 - In an experiment it is what you manipulate. In a study like yours it is what you measure as the predictor
 - In livestreaming research it might be:
     - the stream's category type, gaming or non-gaming
@@ -45,7 +52,10 @@ format:
 
 ## The Dependent Variable
 
-- The **dependent variable** is the outcome, the thing you think gets influenced
+::: {.define}
+**Dependent variable (DV):** the outcome you think the IV changes. Example: the share of chat messages aimed at the streamer.
+:::
+
 - In livestreaming research it might be:
     - chat messages per minute
     - viewer retention across a broadcast
@@ -75,6 +85,11 @@ Answer each in writing:
 - Code a sample of messages for whether each one addresses the streamer
 - Run a statistical test to see whether the predicted relationship holds
 - Most of that work is **coding** rather than statistics
+
+::: {.define}
+**Coding:** reading one item and writing down its value for each variable, following your codebook's rules. Example: reading a message and marking it "directed at the streamer."
+:::
+
 - The codebook is where a hypothesis gets its teeth, and that is Chapters 7 and 8
 
 ## The Same Structure in a Different Domain
@@ -90,14 +105,19 @@ Learn the structure once, carefully, and it carries to anything you study later.
 
 ## Mediators Explain How and Why
 
-- A **mediator** explains **how** an independent variable affects a dependent one
-- It is the mechanism sitting in between the two
+::: {.define}
+**Mediator:** a variable in the middle that explains how or why the IV changes the DV.
+:::
+
 - If category affects the rate of directed messages, the mediator might be the perceived **pace** of the stream
 - Non-gaming streams may feel more conversational, and that conversational feel may be what invites viewers to speak to the streamer directly
 
 ## Moderators Set the Conditions
 
-- A **moderator** changes the **strength or direction** of a relationship
+::: {.define}
+**Moderator:** a variable that changes how strong the IV's effect is, or its direction.
+:::
+
 - It answers "under what conditions?"
 - The category-to-directed-message relationship might be moderated by **audience size**: holding on small streams and weakening on large ones
 - A moderator is not a nuisance to be controlled away. Often it is the finding
@@ -121,9 +141,23 @@ Learn the structure once, carefully, and it carries to anything you study later.
 4. **Let the theory produce the prediction.** Derive the hypothesis from the theory, rather than picking a theory afterward to decorate a hunch you already had
 5. **Design measures for the concepts.** Turn abstractions like identity or salience into variables somebody could record
 
-Step 5 has a name, **operationalization**, and it is most of the next two chapters.
+::: {.define}
+**Operationalization:** turning an abstract idea into something you can actually observe and record. Example: counting a message as aimed at the streamer when it tags the streamer's name.
+:::
+
+Step 5 is operationalization, and it is most of the next two chapters.
 
 ## Hypothesis Versus Research Question
+
+::: {.define}
+**Hypothesis:** a testable statement of the relationship you expect between variables, written before you test it. Example: non-gaming chats aim a larger share of their messages at the streamer than gaming chats do.
+:::
+
+::: {.define}
+**Research question (RQ):** a question a study sets out to answer, written before you look at the data. Example: does the share of messages aimed at the streamer differ between gaming and non-gaming streams?
+:::
+
+## Which One to Write
 
 - State a **hypothesis** when your theory is precise enough to predict a direction: more, less, higher, or lower
 - Ask a **research question** when the theory supports expecting a difference but not which way it goes

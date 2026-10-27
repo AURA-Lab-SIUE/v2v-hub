@@ -106,25 +106,57 @@ and a media figure, is not something you can see directly. Three routes to it:
 - **Language analysis:** code what viewers write for intimacy and direct address.
   Naturalistic, and labor-intensive.
 
+## The risk in the first route
+
+::: {.define}
+**Social desirability bias:** the tendency of people answering questions to give the answer that will look good to others, rather than the accurate one. Example: viewers reporting fewer hours watched than they really spend.
+:::
+
 ## Sentiment, the same problem
 
-**Chat sentiment** is the emotional valence of what gets typed. Same shape of choice:
+::: {.define}
+**Sentiment:** the positive, negative, or neutral feeling a piece of text expresses. Example: "this stream is amazing" carries positive sentiment.
+:::
+
+Same shape of choice:
 
 - **Automated scoring:** fast and replicable, blind to sarcasm and to emote vocabulary
 - **Human coding:** catches context, costs labor, and needs reliability testing
+
+## Dimensional coding, and the proxy
+
+::: {.define}
+**Valence:** how positive or negative a feeling is. **Arousal:** how calm or excited it is. Example: "lol nice" reads as positive and calm, and "LETS GOOOO" as positive and excited.
+:::
+
 - **Dimensional coding:** valence and arousal at once, richer, and demands a much more
   careful codebook
+
+::: {.define}
+**Proxy:** something you can measure that stands in for something you cannot measure directly, chosen because the two closely track each other. Example: hours watched standing in for attachment to a streamer.
+:::
 
 There is no single right answer. You pick, and then you **defend the proxy** in writing.
 
 ## Three goals, three kinds of question
 
-- **Exploratory:** "What is going on here?" Generates hypotheses.
-  - Output is patterns and themes.
-- **Descriptive:** "What does the landscape look like?"
-  - Output is frequencies and distributions.
-- **Explanatory:** "Why does this happen?" Tests relationships.
-  - Output is support or disconfirmation.
+::: {.define}
+**Exploratory research:** looking through data for patterns you did not predict, to generate ideas for later tests. Example: browsing the chat table to see which kinds of messages cluster around raids.
+:::
+
+::: {.define}
+**Descriptive research:** carefully observing and documenting what is happening, without testing why. Example: counting how often each kind of message appears in gaming and non-gaming chat.
+:::
+
+::: {.define}
+**Explanatory research:** testing why something happens, by checking a predicted relationship between variables. Example: testing whether stream type predicts the share of messages aimed at the streamer.
+:::
+
+## Which goal is yours
+
+- Each asks a different question: "What is going on here?", "What does the landscape look like?", or "Why does this happen?"
+- Each produces a different output: patterns and themes, frequencies and distributions, or support and disconfirmation
+
 Research on a topic tends to move through these in order. You do not have to do all three,
 and you do have to know which one you are attempting.
 

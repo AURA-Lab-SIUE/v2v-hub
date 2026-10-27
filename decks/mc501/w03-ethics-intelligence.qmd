@@ -109,24 +109,55 @@ Keep this one in mind. Of everything tonight, it sits closest to what you are ab
 
 [National Commission, 1979]{.eyebrow}
 
-- People are capable of deciding for themselves what happens to them
-- **Informed consent** means understanding the study, the risks, and the right to walk away
-- **Vulnerable populations** get extra protection: children, prisoners, and anyone whose capacity to consent freely is diminished
+::: {.define}
+**Respect for persons:** treating people as able to make their own decisions, and giving extra protection to people whose ability to decide is limited. Example: the Facebook users were never asked whether they wanted to take part.
+:::
+
+::: {.define}
+**Informed consent:** a person's voluntary agreement to take part in a study, given after they are told what it involves, its risks, and that they can stop at any time without penalty. Example: a listener reads what your podcast survey involves, including that they can quit, and then agrees to take part.
+:::
+
+## Respect for Persons in Practice
+
+::: {.define}
+**Vulnerable populations:** groups whose ability to give free and informed consent may be limited, such as children, prisoners, and people with impaired decision-making capacity, so federal rules require extra safeguards for them. Example: a study that interviews teenage streamers.
+:::
+
 - Survey a listener about a podcast and consent is simple
 - Analyze public posts and consent gets hard fast, which is your situation
 
-## Belmont: Beneficence and Justice
+## Belmont: Beneficence
 
-- **Beneficence** carries two duties: do no harm, and maximize benefit against risk
+::: {.define}
+**Beneficence:** the duty to do no harm, and to make a study's possible benefits as large, and its possible harms as small, as you can. Example: quoting chat messages without usernames, so no viewer is singled out.
+:::
+
 - Harm counts as physical, psychological, social, or economic
 - Content analysis usually carries minimal risk, because you work with texts and not people
-- **Justice** asks whether benefits and burdens fall fairly across groups
+
+## Belmont: Justice
+
+::: {.define}
+**Justice:** sharing the burdens and the benefits of research fairly, so no group carries the risk while others gain the knowledge. Example: recruiting from one group only because it is easy to reach would raise a justice question.
+:::
+
 - Tuskegee failed justice: all of the risk sat on one marginalized population while the knowledge accrued to everybody
 
 ## Consent in Practice
 
 - Valid consent covers the study, the risks, that participation is voluntary, who to contact, and how the data will be stored
-- **Deception** is sometimes defensible, and it is always paired with mandatory **debriefing**
+
+::: {.define}
+**Deception:** giving participants false or incomplete information about a study's purpose or procedures. Example: Milgram told participants the study was about memory and learning.
+:::
+
+::: {.define}
+**Debriefing:** telling participants, right after data collection, what the study's real purpose was and what risks it posed to them. Example: Milgram's participants learned afterward that the shocks were not real.
+:::
+
+## Consent, Continued
+
+- Deception is sometimes defensible, and it is always paired with mandatory debriefing
 - **Passive consent**, the terms-of-service move Facebook made, is generally not enough
 - **Active consent** needs an affirmative act: a signature, a click, or a spoken yes
 - **Secondary analysis** raises whether the original consent covered your use, and that question is still genuinely unsettled
@@ -136,9 +167,10 @@ Keep this one in mind. Of everything tonight, it sits closest to what you are ab
 Before anyone asks which level of review a study needs, there is a prior question: **is this
 human subjects research at all?**
 
-- Federal regulation defines a **human subject** as a living person about whom you obtain information in one of two ways
-    - Through **intervention or interaction** with them
-    - In the form of **identifiable private information**
+::: {.define}
+**Human subject:** under federal rules, a living person about whom a researcher gets information by interacting with them or intervening in their lives, or gets identifiable private information. Example: a viewer you interview.
+:::
+
 - You never interact with anyone, because the messages were sent before you arrived
 - The messages were **broadcast publicly**, so they are not private information
 - Neither limb is met, so this is **not human subjects research**
@@ -167,6 +199,16 @@ human subjects research at all?**
     - Do not republish whole chat logs verbatim
     - Do not amplify messages whose senders expected obscurity more than broadcast
 
+## Two Levels of Review
+
+::: {.define}
+**Expedited review:** review by the IRB chair or an experienced member, rather than the whole board, for research with no more than minimal risk in categories federal rules list. Example: many surveys and interview studies with adults.
+:::
+
+::: {.define}
+**Full board review:** review at a meeting with a majority of the IRB's members present, for research that is neither exempt nor eligible for expedited review. Example: a study that carries more than minimal risk to its participants.
+:::
+
 ## Three Cases That Would Be Human Subjects Research
 
 Change one thing about the data and the answer flips, and then the review tiers apply:
@@ -180,10 +222,22 @@ was designed rather than lucky.
 
 ## When the Reporting Goes Wrong
 
-- **Fabrication** is inventing data that do not exist
-- **Falsification** is manipulating data or results to change the outcome
-- **Selective reporting** is running many analyses and reporting only the ones that worked
-- **HARKing** is forming the hypothesis after seeing the results, then writing it up as though you predicted it all along
+::: {.define}
+**Fabrication:** making up data or results and reporting them. **Falsification:** manipulating research materials or processes, or changing or leaving out data or results, so the research record is no longer accurate. Example: inventing coded messages, or quietly dropping the ones that weaken your result.
+:::
+
+- Both are fraud, and both end careers
+
+## Two Quieter Distortions
+
+::: {.define}
+**Selective reporting:** running many analyses and reporting only the ones that came out the way you hoped, which distorts the literature. Example: testing ten channels and writing up only the two that showed a difference.
+:::
+
+::: {.define}
+**HARKing:** Hypothesizing After the Results are Known, then writing the hypothesis up as if you had predicted it. Example: finding that emote spam peaks during raids, then presenting that as your prediction from the start.
+:::
+
 - HARKing turns exploratory work, which is perfectly legitimate, into fake confirmatory work
 
 ## Prediction and Postdiction
@@ -192,8 +246,18 @@ was designed rather than lucky.
 
 The paper draws a sharper line than "exploratory versus confirmatory":
 
-- **Prediction** commits to the outcome before the data can inform it. The test can fail, which is the only reason passing it means anything
-- **Postdiction** explains a result you have already seen. It is legitimate, often the most creative part of the work, and it is where the next prediction comes from
+::: {.define}
+**Prediction:** a hypothesis committed to before the data that will test it have been seen, so the test can fail. Example: stating that non-gaming chats address the streamer more, then coding a new sample to check.
+:::
+
+::: {.define}
+**Postdiction:** an explanation built from results you have already seen, which can generate a hypothesis but cannot test it. Example: noticing that emote spam peaks during raids, then explaining why.
+:::
+
+## Why the Line Matters
+
+- A prediction can fail, which is the only reason passing it means anything
+- Postdiction is legitimate, often the most creative part of the work, and it is where the next prediction comes from
 - The error is never doing postdiction. The error is reporting it as prediction
 
 ## What Preregistration Does
@@ -216,11 +280,17 @@ answers hold:
 - **"It does not fit exploratory or qualitative work."** The answer: preregistration marks which claims were predicted, so work making no predictions gives up nothing by saying so
 - **"It slows everything down."** The answer: it front-loads decisions you were going to make anyway, later, under worse conditions, with the results already in view
 
-## Registered Reports, and What This Cannot Fix
+## Registered Reports
 
-- A **Registered Report** sends the plan to peer review *before* the data exist, and the acceptance stands whatever the results turn out to be
+::: {.define}
+**Registered Report:** a publishing format in which a journal peer-reviews a study's question, design, and analysis plan before the data are collected or analyzed, and accepts it in principle whatever the results. Example: a chat study accepted on its plan, then published even though it found no difference.
+:::
+
 - It aims at the incentive rather than the person: whether you get published stops depending on whether the finding came out positive
 - That is the same move Belmont makes: outside accountability, not private virtue
+
+## What This Cannot Fix
+
 - **It would not have saved the Facebook study.** That failure happened at consent, before any analysis began
     - Preregistration disciplines what you do with data you already had the right to hold, and it says nothing about whether you had the right
 
@@ -243,6 +313,12 @@ On Nosek et al. (2018), "The preregistration revolution," answer each in writing
     - **It hands you methods**: validated measures, sampling strategies, and documented limitations (Krippendorff, 2018; Neuendorf, 2017)
     - **It sharpens your question** from a vague curiosity into something you can actually do
 
+## What a Gap Is
+
+::: {.define}
+**Research gap:** a question the published research has not yet answered, or has answered only in part, that a new study can take up. Example: if studies of Twitch chat cover gaming streams but rarely non-gaming ones, that imbalance is a gap.
+:::
+
 ## Phase One: Exploratory Searching
 
 - Start broad. You are learning the terminology, the names, and which journals publish this
@@ -254,7 +330,14 @@ On Nosek et al. (2018), "The preregistration revolution," answer each in writing
 ## Phase Two: Systematic Searching
 
 - The real databases are Communication & Mass Media Complete, PsycINFO, Web of Science, and Scopus
-- **Boolean operators** are the syntax these databases expect: AND narrows, OR widens, NOT excludes, and `*` catches word variants
+
+::: {.define}
+**Boolean operators:** the words AND, OR, and NOT, which combine search terms: AND narrows a search, OR widens it, and NOT excludes a term. Example: `Twitch AND motivation*` returns only sources that contain both terms.
+:::
+
+- An asterisk catches word variants: `stream*` finds stream, streams, streaming, and streamer
+
+## A Search String, Assembled
 
 ```
 (livestream* OR "live streaming" OR Twitch) AND
@@ -267,16 +350,28 @@ On Nosek et al. (2018), "The preregistration revolution," answer each in writing
 
 ## Phase Three: Citation Chaining
 
-- **Backward chaining:** read the references inside an article that matters
-- **Forward chaining:** use "Cited by" to find who has built on it since
+::: {.define}
+**Backward chaining:** searching a key article's reference list for the earlier work it drew on. Example: reading the reference list of the most-cited study of Twitch viewers' motivations, which takes you to the foundations.
+:::
+
+::: {.define}
+**Forward chaining:** finding later articles that cite a key article. Example: clicking "Cited by" under that same study in Google Scholar to find who has built on it since.
+:::
+
 - The search snowballs strategically, following the network out from the work that counts most
+
+## Why Search Systematically
+
 - Ad hoc searching cannot support a later claim about the literature, because you cannot say whether what you found is representative of it
 - A systematic search can be reproduced, and updated, by somebody who is not you
 
 ## Knowing When to Stop
 
-**Saturation** is the point where more searching stops changing your understanding. You
-recognize it three ways:
+::: {.define}
+**Saturation:** the point at which more searching stops changing your understanding, because new sources keep pointing back to ones you already have.
+:::
+
+You will recognize it three ways:
 
 - Three database searches in a row turn up nothing new that is relevant
 - New articles keep citing the same eight or ten sources you have already read
@@ -294,9 +389,15 @@ Saturation does not mean you read everything. It means the map stopped changing.
 
 ## CITI, and What It Is
 
-- **CITI** is the Collaborative Institutional Training Initiative, the research ethics training nearly every American university runs
-- You complete the **Social and Behavioral Research** course and submit the completion certificate
+::: {.define}
+**CITI:** the Collaborative Institutional Training Initiative, an online program of research ethics training that SIUE students, faculty, and staff reach through the university. Example: the Social and Behavioral Research course you complete for this class.
+:::
+
+- You submit the completion certificate when you finish
 - The modules cover the ground of this first half: the history, the principles, informed consent, privacy and confidentiality, assessing risk, and vulnerable populations
+
+## Working Through CITI
+
 - Each module ends in a quiz you have to pass to earn the certificate
 - It takes hours rather than minutes, and it saves your place, so do it across several sittings rather than one
 - **CITI Ethics Certification**, 25 points, is due Monday, September 28, 11:59 PM

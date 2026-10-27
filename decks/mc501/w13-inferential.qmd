@@ -193,7 +193,7 @@ Answer each in writing:
 ## How Big Is the Difference
 
 ::: {.define}
-**Effect size:** how big a difference is, on a scale that does not grow with the sample. Example: Cohen's *d* of -0.13 for gaming against non-gaming message length.
+**Effect size:** how big a difference or a relationship is, on a scale that does not grow with the sample. Example: Cohen's *d* of -0.13 for gaming against non-gaming message length.
 :::
 
 - **For a gap between two means, the effect size is Cohen's *d***
@@ -209,11 +209,19 @@ Answer each in writing:
 
 A large enough sample detects a difference far too small to care about.
 
-## Seeing the Gap and Its Uncertainty
+## Standard Error and the Interval
 
 ::: {.define}
-**Confidence interval:** a range the true value probably falls in. Example: a group's mean plus or minus 1.96 standard errors gives its 95% interval.
+**Standard error:** how much an estimate, such as a group's mean, would shift from one sample to the next. Example: a mean from a large group has a smaller standard error than one from a small group.
 :::
+
+::: {.define}
+**Confidence interval:** a range around an estimate, built by a method that captures the true value in a stated share of repeated samples, such as 95 in 100. Example: a group's mean plus or minus 1.96 standard errors gives its 95% interval.
+:::
+
+- A 95% interval does not mean a 95% chance that this one interval holds the true value
+
+## Seeing the Gap and Its Uncertainty
 
 ```r
 means_ci <- analysis %>%
@@ -308,6 +316,12 @@ If the two disagree, the assumption was doing real work. Report the robust one. 
 - **Report the adjusted p-values, not the raw ones**
 
 With eta squared at 0.02, expect clean separations between pairs that matter little in size.
+
+## What Regression Is
+
+::: {.define}
+**Regression:** a model that estimates how an outcome variable changes with one or more other variables. Example: predicting message length from gaming status.
+:::
 
 ## Regression Re-Derives the t-test
 

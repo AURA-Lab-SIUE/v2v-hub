@@ -149,15 +149,31 @@ format:
 - **The analysis you will run**, chosen now
     - Before you have seen a single result
 
+## The Frame and the Gap
+
+::: {.define}
+**Sampling frame:** the actual list of items you can draw your sample from. Example: the 50-channel working corpus.
+:::
+
+- The gap is whatever part of the population the frame leaves out, and the design section says what it is
+
 ## Commit Before Data
 
 - **Pre-registration** fixes the plan before the evidence
     - Hypotheses, measures and analysis, timestamped
     - The Open Science Framework does this free
-- **Without a fixed plan the choices drift**
-    - Adjust until something reaches significance (Simmons et al., 2011)
-    - The source of **researcher degrees of freedom**
 - Your proposal is an informal pre-registration
+
+## Why the Choices Drift
+
+[Simmons et al., 2011]{.eyebrow}
+
+- **Without a fixed plan the choices drift**
+    - Adjust until something reaches significance
+
+::: {.define}
+**Researcher degrees of freedom:** the choices a researcher is free to make while collecting, analyzing, and reporting data, which, made after seeing the results, make it easy to find a significant result that is not real. Example: deciding, after a comparison fails, to drop the shortest streams and run it again.
+:::
 
 ## Justified, Not Conventional {.discuss}
 
@@ -191,6 +207,18 @@ format:
     - Reported as stability, never as agreement
 - **Analysis, committed now:** proportions compared by category, with effect size
 
+## Stability, Not Agreement
+
+::: {.define}
+**Reliability:** the codebook gives the same answer whoever holds it, and the same answer when you come back to it. Example: on both passes, a message that tags the streamer is coded "directed at the streamer."
+:::
+
+::: {.define}
+**Stability:** how closely your own codes match when you code the same items a second time, after a gap. Example: re-coding 10 percent of the messages 48 hours later and comparing the two passes.
+:::
+
+- One coder can show stability, and agreement needs a second coder
+
 ## Contribution, For The Field
 
 [Section 7, two to three points]{.eyebrow}
@@ -221,6 +249,18 @@ format:
     - The buckets do not mean what you think
 - The alternative is **thick description** (Geertz, 1973)
 
+## Copypasta and Thick Description
+
+[Geertz, 1973]{.eyebrow}
+
+::: {.define}
+**Copypasta:** a block of text that people copy and paste again and again, often as a joke. Example: thirty viewers posting the same long message in a row.
+:::
+
+::: {.define}
+**Thick description:** a description of what people did that also records what it meant to them in context, so an outsider can understand it. Example: noting that a wave of identical greetings was a raid arriving, not spam.
+:::
+
 ## Three Modes of Attention
 
 - **Casual watching:** exposure across the platform
@@ -235,6 +275,14 @@ format:
 
 Familiarize, then focus, then analyze. The sequence holds for any medium.
 
+## What Field Notes Are
+
+::: {.define}
+**Field notes:** written, dated notes an observer makes during or right after watching, recording what they saw and what they made of it. Example: "Chat went quiet while the streamer talked, then flooded at every pause."
+:::
+
+- Keep them in one dated plain-text document, with a note every fifteen or twenty minutes
+
 ## Field Notes, Four Kinds
 
 - **Observational:** what you saw
@@ -245,8 +293,6 @@ Familiarize, then focus, then analyze. The sequence holds for any medium.
     - Something you saw that the reading already named
 - **Comparative:** the difference between two cases
     - "Gaming and non-gaming chat are not the same object"
-
-One dated plain-text document, with a note every fifteen or twenty minutes.
 
 ## Watching This Week
 

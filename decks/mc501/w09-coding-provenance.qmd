@@ -137,6 +137,14 @@ chat <- v2v::twitch_chat()
 streams <- v2v::twitch_streams()
 ```
 
+## What a Function Is
+
+::: {.define}
+**Function:** a named piece of code that does one job each time you call it, by writing its name followed by parentheses. Example: `v2v::twitch_chat()` hands back the chat table.
+:::
+
+- Whatever goes inside the parentheses tells the function what to work on, such as the file `read_csv()` should read
+
 ## Why a Function Call, Not a File Path
 
 - **A new user's first encounter with data is usually a pile of file-path errors**
@@ -158,8 +166,11 @@ streams <- v2v::twitch_streams()
 
 ## Provenance Is a Disclosure
 
-- **First contact begins with documenting where the data came from**
-    - That record is written before the first line of analysis runs
+::: {.define}
+**Provenance:** a record of where your data came from and everything done to it since, so a stranger could trace it back to its source. Example: the platform, the channels, the dates, and how the messages were saved.
+:::
+
+- **That record is written before the first line of analysis runs**
 - **"I collected Twitch chat data" is not a methods section**
 - **Replication requires exact knowledge of what was done, and the provenance record is that knowledge**
 

@@ -39,14 +39,30 @@ format:
 
 ## What You Will Build
 
-- **Content analysis** is the method: it turns messages into countable, defensible data
-- **Phase one is qualitative**
-    - You read real messages closely until you can say what is there
-    - You write the memo that becomes your codebook
-- **Phase two is quantitative**
-    - You apply that codebook to a sample
-    - You re-code a share of it later to show your own coding held steady
-    - You test relationships in R
+::: {.define}
+**Content analysis:** the systematic study of messages; in its quantitative form, the one this course uses, you sort each message into categories by written rules so the results can be counted. Example: marking each chat message as aimed at the streamer, at another viewer, or at the whole room, then counting each kind.
+:::
+
+- **Phase one is qualitative:** you read real messages closely until you can say what is there
+- **Phase two is quantitative:** you count what you found and test relationships in R
+
+## Three Words You Will Use All Term
+
+::: {.define}
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
+:::
+
+::: {.define}
+**Codebook:** the written rules that tell a coder what each variable means and which value to give each item; in this course the word also covers the coding sheet where you record those values. Example: the rule that a message tagging the streamer is coded "directed at the streamer."
+:::
+
+::: {.define}
+**Sample:** the smaller set of cases you actually look at. Example: a few thousand messages drawn from the week's 21,964,296.
+:::
+
+## How the Two Phases Connect
+
+- Phase one ends in the memo that becomes your codebook; phase two applies it to a sample, then re-codes a share later to show your coding held steady
 - Every assignment this term is one piece of that study, in the order you need it
 
 ## The Road From Curiosity to Claim
@@ -71,6 +87,12 @@ Nothing here is a detour. Each row hands the next one its materials.
 - Bob Ross averaged 3,178 concurrent viewers that week, and xQc averaged 17,363
 - This dataset is the shared example the whole class works from
     - Your own study uses whatever source your question needs
+
+## What a Snapshot Is
+
+::: {.define}
+**Snapshot:** one record of one stream at one moment, taken about once a minute: its channel, title, game, viewer count, and time. Example: xQc streaming Just Chatting to 19,381 viewers at one moment on November 18, 2018.
+:::
 
 ## Exercise: Name a Curiosity {.discuss}
 
@@ -148,12 +170,25 @@ you reuse on your own analysis, and that is deliberate.
 
 ## The Four Tools
 
-- **R** is the language that does the counting and the statistics
-- **VS Code** is the editor where you write code and prose in one place
-- **Quarto** turns your work into a website, a PDF, or a paper
-- **Git and GitHub** keep a history of your work and give it a home online
+::: {.define}
+**R:** a free language and environment for statistical computing and graphics. Example: R counts how many messages each channel posted that week.
+:::
 
-None of these costs money. Setup walkthroughs are on the course site.
+::: {.define}
+**VS Code:** a free code editor from Microsoft, where you write code and prose in one place. Example: your White Paper's text and its R code open side by side in one window.
+:::
+
+None of these tools costs money. Setup walkthroughs are on the course site.
+
+## The Four Tools, Continued
+
+::: {.define}
+**Quarto:** an open-source publishing system that turns one file of text and code into a finished website, PDF, or paper. Example: your White Paper is a single Quarto file.
+:::
+
+::: {.define}
+**Git:** a program that tracks every change to the files in a project, so you can see or return to any earlier version. **GitHub:** a website that hosts those Git projects online. Example: your project's full history sits on GitHub, one dated change at a time.
+:::
 
 ## What R Looks Like
 
@@ -174,8 +209,11 @@ most to least. **Code is instructions in order, and that is all it is.**
 
 ## What Quarto Gives You
 
+::: {.define}
+**Render:** telling Quarto to run the code in your document and build the finished file from it. Example: change the data, render again, and every number in your paper updates.
+:::
+
 - One document holds your writing, your code, and your results together
-- Change the data, re-render, and every number in your paper updates
 - You never paste a chart into a document and hope it is still current
 - The same source can become a website, a Word file, or a PDF
 - Your White Paper will be a Quarto document
@@ -186,7 +224,10 @@ most to least. **Code is instructions in order, and that is all it is.**
 - If you break something, you can go back to when it worked
 - GitHub puts that history online, which is where your paper will live
 - It is also how you show your work, because a reviewer can retrace every step
-- Reproducibility is the standard of evidence here, not a nicety
+
+::: {.define}
+**Reproducibility:** getting the same results again from the same data, the same code, and the same steps. Example: anyone who renders your file on the example data gets your exact message counts.
+:::
 
 ## How Each Week Works
 
