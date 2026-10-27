@@ -53,13 +53,20 @@ These six parts are the six graded rows of the codebook. The memo is graded sepa
 
 ## Two Rules for Every Variable
 
-- **Exhaustive:** every case can be coded
-    - An "unclassifiable" catch-all guarantees it
-- **Mutually exclusive:** every case fits exactly one value
-    - Overlap between two values destroys reliability
-- **The fix for overlap:** sharper definitions, or a precedence rule
+::: {.define}
+**Exhaustive:** every case can be given one of the variable's values, with no case left over. Example: an "unclassifiable" value catches any message the other values miss.
+:::
 
-More than one case in ten landing in the catch-all means the scheme is incomplete.
+::: {.define}
+**Mutually exclusive:** every case fits exactly one value, never two. Example: a message cannot be coded both "directed at the streamer" and "broadcast to the room."
+:::
+
+## Keeping Both Rules
+
+- **An "unclassifiable" catch-all guarantees exhaustive coding**
+    - More than one case in ten landing there means the scheme is incomplete
+- **Overlap between two values destroys reliability**
+- **The fix for overlap:** sharper definitions, or a precedence rule
 
 ## Part 1, Study Overview
 

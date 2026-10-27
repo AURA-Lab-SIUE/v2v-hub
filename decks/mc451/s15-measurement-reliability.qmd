@@ -29,46 +29,53 @@ format:
 
 ## NOIR
 
-- **Every operationalized variable has a level**
-    - That level decides what you may later do with it
+::: {.define}
+**Level of measurement:** the kind of information a variable's values carry, which decides what you may later do with them. Example: `game` holds names, and `viewers` holds counts.
+:::
+
 - **Four of them: nominal, ordinal, interval, ratio**
 - **The `stream_log` table spans all four**
     - Its columns: channel, title, game, viewers, date
 
 ## Nominal
 
-- **Categories with no inherent order**
-    - `game`: Fortnite, Just Chatting, Art, Hearthstone
-    - No arithmetic relates them
+::: {.define}
+**Nominal:** categories that are only names, with no order. Example: `game` holds Fortnite, Just Chatting, Art, and Hearthstone, and no arithmetic relates them.
+:::
+
 - **`channel` is nominal, and so is a raw `title`**
     - One string is not ranked above another
 - You can count and name the most common, never average
 
 ## Ordinal
 
-- **Ordered categories, uneven distances**
-    - Bin titles by length: short, medium, long
-    - Long outranks short
-- **The gaps are not guaranteed equal**
-    - Short-to-medium need not match medium-to-long
+::: {.define}
+**Ordinal:** categories with a meaningful order, where the distances between them are not guaranteed equal. Example: titles binned short, medium, and long, where short-to-medium need not match medium-to-long.
+:::
+
 - You can rank and find the **median**, but not a true mean
+
+::: {.define}
+**Median:** the middle value once every value is lined up in order, with half above it and half below. Example: the middle category when every title is lined up from short to long.
+:::
 
 ## Interval
 
-- **Equal distances, arbitrary zero**
-    - The posting date and time of each message
-    - Minute-to-minute distance is constant across the column
+::: {.define}
+**Interval:** numbers with equal distances between them but no true zero, so a difference means something and a ratio does not. Example: the posting time of each message, where a minute is a minute anywhere in the column.
+:::
+
 - **1970 does not mean "no time"**, it is a convention
     - `date` stores it as milliseconds counted from 1970
 - No message is "twice as late" as another
 
 ## Ratio
 
-- **Equal intervals and a true zero**
-    - `viewers` is ratio: zero means nobody is watching
-    - So 28,000 really is twice the audience of 14,000
-- **Elapsed time is ratio:** hours since the stream started
-    - Subtract two timestamps and the duration is ratio
+::: {.define}
+**Ratio:** numbers with equal distances and a true zero, where zero means none at all. Example: `viewers`, where zero means nobody is watching, so 28,000 really is twice the audience of 14,000.
+:::
+
+- **Elapsed time is ratio:** subtract two timestamps and the duration is ratio
 - **The full range of arithmetic is permitted**
 - Most counts are ratio: viewers, characters, messages
 
@@ -101,6 +108,12 @@ decision you make.**
 
 You make the choice **before coding a single case**.
 
+## The Test for Categories
+
+::: {.define}
+**Chi-square test:** a test of whether two categorical variables are associated, comparing the counts you observed with the counts you would expect if they were unrelated. Example: whether message target differs between gaming and non-gaming streams.
+:::
+
 ## Two Kinds of Variable
 
 - **Some arrive ready-made**
@@ -117,31 +130,64 @@ For the second kind, operationalization is most of the work.
 - **Reliability is consistency:** same conditions, same result
     - A scale reading 150, then 162, then 147 is worthless
     - Whatever you actually weigh
-- **Here it means coder reliability**, and it comes in two forms
-    - **Intercoder:** two coders, same messages, independently
-    - **Intracoder, or stability:** one coder, same messages, twice
+- **Here it means coder reliability**, and it comes in two forms, on the next slide
 - **You are the only coder**, so stability is the one you can report
     - A weaker claim than agreement, and you say so in those words
 - Without it, nothing downstream repairs the codebook
 
+## Two Forms of Coder Reliability
+
+::: {.define}
+**Intercoder reliability:** how closely two or more coders agree when each codes the same items independently. Example: two coders each label the same 100 messages without seeing the other's codes.
+:::
+
+::: {.define}
+**Stability:** how closely your own codes match when you code the same items a second time, after a gap. Example: re-coding 10 percent of the messages 48 hours later and comparing the two passes.
+:::
+
 ## Correcting for Chance
 
-- **Agreement statistics correct for luck**
-    - Any two passes land on the same code sometimes by chance
-- **Cohen's kappa and Krippendorff's alpha**
-    - The two you will meet
-- **Raw percent agreement flatters you**
-    - Especially when one category is common
+::: {.define}
+**Raw agreement:** the share of items where your two passes gave the same code. Example: 74 of 100 items match, so raw agreement is 74 percent.
+:::
+
+::: {.define}
+**Chance agreement:** matches that happen by luck, even when nobody follows a rule. Example: two people flipping coins to sort messages into two categories agree about half the time.
+:::
+
+- **Raw agreement flatters you**, especially when one category is common
+
+## Two Scores That Correct for Chance
+
+::: {.define}
+**Cohen's kappa:** a score for how much two coding passes agree beyond what luck alone would give. Example: a kappa near 0 means the passes agree about as often as luck would.
+:::
+
+::: {.define}
+**Krippendorff's alpha:** a reliability score like kappa that also works with more than two passes, ranked or numeric codes, and missing codes. Example: three coders rating how heated a message is from 1 to 5.
+:::
 
 A codebook's job is to make independent passes agree, whoever makes them.
 
 ## Validity
 
-- **Validity is accuracy:** does it capture what it claims?
-- **Face validity:** does it look like the right instrument?
-- **Content validity:** does it cover the whole concept?
-- **Construct validity:** the most demanding of the three
-    - Does it behave as theory says it should?
+::: {.define}
+**Validity:** how well a measure captures the idea it claims to measure. Example: whether counting at-mentions really captures who a message is aimed at.
+:::
+
+::: {.define}
+**Face validity:** whether a measure looks, on its face, like a reasonable measure of the idea. Example: counting at-mentions to measure messages aimed at the streamer makes sense without much explanation.
+:::
+
+## Two Deeper Kinds of Validity
+
+::: {.define}
+**Content validity:** whether a measure covers every part of the idea, not just some of it. Example: a message count leaves out who is talking and to whom, so it covers only part of chat engagement.
+:::
+
+::: {.define}
+**Construct validity:** whether a measure behaves the way theory says the idea should, the most demanding of the three. Example: a measure of parasocial language should run higher where viewers report stronger bonds with the streamer.
+:::
 
 ## They Are Independent
 
