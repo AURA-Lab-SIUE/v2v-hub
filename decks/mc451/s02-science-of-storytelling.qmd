@@ -27,22 +27,39 @@ format:
 - **xQc:** 17,363 average viewers, a live variety streamer
 - Same platform, same week, very different audiences
 - A social scientist asks not what those numbers *mean* but what they *are*
-- They are **data:** numbers collected on purpose, so a claim can be defended later
+
+::: {.define}
+**Data:** observations recorded on purpose, as numbers or as labels, so a claim can be checked later. Example: Bob Ross's 3,178 average viewers is a number; his category, *Art*, is a label.
+:::
 
 ## From a Snapshot to a Corpus
 
-- One **snapshot** is one row with six columns: channel, title, game, viewers, timestamp, and key
-- Multiply by half a million (590,876 snapshots over six days) and you have a **corpus**
-- A corpus is a body of evidence that licenses some questions and refuses others
-- Your first job is to respect what a given corpus can and cannot answer
+::: {.define}
+**Snapshot:** one record of one stream at one moment, taken about once a minute: its channel, title, game, viewer count, and time. Example: xQc streaming Just Chatting to 19,381 viewers at one moment on November 18, 2018.
+:::
+
+::: {.define}
+**Corpus:** a collection of texts or records gathered to be studied as a set. Example: 590,876 snapshots over six days.
+:::
+
+- A corpus can answer some questions and not others, and your first job is to respect which
 
 ## One Dataset, Three Roles
 
 The same data plays three roles, and mixing them up is where first projects go wrong:
 
-- **Population:** the 1,690 channels present in both the chat and stream logs
+::: {.define}
+**Population:** every case your conclusions are about. Example: the 1,690 channels present in both the chat and stream logs.
+:::
+
 - **Working corpus:** 50 channels, stratified by chat volume, that you load into R
 - **Anchor set:** 8 channels that recur as named examples (xqcow, forsen, bobross)
+
+## What Stratified Means
+
+::: {.define}
+**Stratified sampling:** split the population into groups, called **strata** (one group is a **stratum**), then draw from each group separately. Example: the working corpus draws channels from every chat-volume group, from the quietest to the busiest.
+:::
 
 This dataset is the shared example for the class. The same three roles apply to any source
 you choose for your own study.
@@ -76,8 +93,19 @@ Research is disciplined because the process **exposes bias to scrutiny**.
 ## The Sacred Flaw and the Null Hypothesis
 
 - Storr's **sacred flaw** is a false belief the protagonist clings to as evidence mounts
-- The **null hypothesis** plays that role in a study: it says *nothing interesting is happening here*
-- To **reject the null** is to force the data to tell a different story than you assumed
+
+::: {.define}
+**Null hypothesis:** the claim that there is no real difference or relationship, only chance. Example: gaming and non-gaming streams draw the same average audience.
+:::
+
+- The null plays the sacred flaw's role in a study, and to **reject the null** is to force the data to tell a different story than you assumed
+
+## Reading a *p*-Value
+
+::: {.define}
+**p-value:** how likely a gap at least this big would be if the null hypothesis were true. Below .05 is called *statistically significant*.
+:::
+
 - A *p*-value of 0.001 means the old story is so incompatible with the evidence that keeping it takes willful blindness
 
 ## When the Established Story Was Wrong
@@ -102,10 +130,29 @@ Research is disciplined because the process **exposes bias to scrutiny**.
 | Falling action | Interpretation and limitations |
 | Resolution | Implications and future research |
 
+## Three Words From That Table
+
+::: {.define}
+**Literature review:** a written overview of what published research has already found on a topic, and how those studies fit together. Example: summarizing the published studies of Twitch chat before you design your own.
+:::
+
+::: {.define}
+**Theory:** a set of connected ideas that explains and predicts why something happens, within stated limits. Example: parasocial interaction explains why viewers talk to a streamer as if they knew them.
+:::
+
+::: {.define}
+**Sampling bias:** a way of drawing a sample in which some members of the population are more likely to be picked than others. Example: studying only the biggest channels.
+:::
+
 ## Anecdote and Data Are Partners
 
 - **Journalism** makes the abstract concrete, humanizes it, and makes audiences care
 - **Science** establishes generalizability: it asks whether the pattern holds across many cases
+
+::: {.define}
+**Hypothesis:** a testable statement of the relationship you expect between variables, written before you test it. Example: non-gaming chats aim a larger share of their messages at the streamer than gaming chats do.
+:::
+
 - Anecdotes generate hypotheses, and data test them
 - A significant result without human context is true and unpersuasive
 - The best work holds both in tension
@@ -116,7 +163,14 @@ Research is disciplined because the process **exposes bias to scrutiny**.
 - You do original research end to end and publish a **White Paper**
 - The example dataset is the vehicle, and the destination is **methodological literacy**
 - The book has five parts: Foundations, Planning, Operationalization, Execution, and Publication
+
+## The Paradigm This Course Works In
+
 - This course works in the social scientific paradigm, and interpretive and critical work are legitimate too
+
+::: {.define}
+**Paradigm:** a shared set of beliefs about what reality is and how researchers can know it, which shapes how a study is designed. Example: the social scientific paradigm treats chat as something you can observe and count.
+:::
 
 ## Looking Ahead to Thursday
 
