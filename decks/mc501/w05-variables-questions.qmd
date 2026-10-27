@@ -32,11 +32,21 @@ Everything here feeds the Research Proposal you draft next week.
 
 ## Variables: The Building Blocks
 
-- Theories become testable through **variables**, concepts that take values
-- **Independent variable:** the proposed cause, or the predictor you measure
-    - In this corpus: stream category, streamer tenure, viewer count.
-- **Dependent variable:** the outcome you think gets influenced
-    - In this corpus: messages per minute, retention, subscription rate.
+- Theories become testable through **variables**
+
+::: {.define}
+**Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
+:::
+
+## Independent and Dependent Variables
+
+::: {.define}
+**Independent variable (IV):** the proposed cause, or the predictor you measure. Example: in this corpus, stream category, streamer tenure, or viewer count.
+:::
+
+::: {.define}
+**Dependent variable (DV):** the outcome you think the IV changes. Example: in this corpus, messages per minute, retention, or subscription rate.
+:::
 
 ## A Testable Hypothesis
 
@@ -51,11 +61,13 @@ Everything here feeds the Research Proposal you draft next week.
 
 ## Mediators And Moderators
 
-- A **mediator** explains how or why, the mechanism in between
-    - Category may affect directed messages through perceived pace.
-    - Non-gaming streams feel conversational, which invites direct address.
-- A **moderator** changes strength or direction, under what conditions
-    - The effect might hold on small streams and weaken on large ones.
+::: {.define}
+**Mediator:** a variable in the middle that explains how or why the IV changes the DV. Example: perceived pace, if non-gaming streams feel conversational and that is what invites direct address.
+:::
+
+::: {.define}
+**Moderator:** a variable that changes how strong the IV's effect is, or its direction. Example: audience size, if the effect holds on small streams and weakens on large ones.
+:::
 
 Together they move you from "X relates to Y" to "X relates to Y, by this mechanism, under
 these conditions".
@@ -158,6 +170,12 @@ semester.
     - Your review tells you whether it is genuinely open.
 - **It matters:** contributes to theory, resolves a contradiction, or applies
 
+## What Measurable Means
+
+::: {.define}
+**Operationalization:** turning an abstract idea into something you can actually observe and record. Example: counting a message as aimed at the streamer when it tags the streamer's name.
+:::
+
 ## The Question Template
 
 Some combination of *does there exist*, plus a *specific variable*, plus a *relationship,
@@ -202,6 +220,16 @@ the one you chose.
 - **Language analysis:** code chat for intimacy, disclosure, direct address
     - Naturalistic, labor-intensive, blind to viewers who say nothing.
 
+## Two Words From That Slide
+
+::: {.define}
+**Proxy:** something you can measure that stands in for something you cannot measure directly, chosen because the two closely track each other. Example: hours watched standing in for attachment to a streamer.
+:::
+
+::: {.define}
+**Social desirability bias:** the tendency of people answering questions to give the answer that will look good to others, rather than the accurate one. Example: viewers reporting fewer hours watched than they really spend.
+:::
+
 ## Operationalizing Chat Sentiment
 
 - **Automated scoring:** fast and replicable
@@ -214,6 +242,16 @@ the one you chose.
 
 There is no right answer here. You pick the proxy that fits the question and the resources
 you have, then defend its validity in writing.
+
+## Sentiment, Valence, and Arousal
+
+::: {.define}
+**Sentiment:** the positive, negative, or neutral feeling a piece of text expresses. Example: "this stream is amazing" carries positive sentiment.
+:::
+
+::: {.define}
+**Valence:** how positive or negative a feeling is. **Arousal:** how calm or excited it is. Example: "lol nice" reads as positive and calm, and "LETS GOOOO" as positive and excited.
+:::
 
 ## Variables Hide In Descriptions {.discuss}
 
@@ -257,25 +295,41 @@ The pair travels. Pick the medium your question actually lives in.
 
 ## Three Kinds Of Goal
 
-- **Exploratory:** "what is going on here?"
-    - Generates hypotheses. Output is patterns and frameworks.
-- **Descriptive:** "what does the landscape look like?"
-    - Output is frequencies, distributions, prevalence.
-- **Explanatory:** "why does this happen?"
-    - Hypothesis-driven. Output is support or disconfirmation.
+::: {.define}
+**Exploratory research:** looking through data for patterns you did not predict, to generate ideas for later tests. Example: browsing the chat table to see which kinds of messages cluster around raids.
+:::
+
+::: {.define}
+**Descriptive research:** carefully observing and documenting what is happening, without testing why. Example: counting how often each kind of message appears in gaming and non-gaming chat.
+:::
+
+::: {.define}
+**Explanatory research:** testing why something happens, by checking a predicted relationship between variables. Example: testing whether stream type predicts the share of messages aimed at the streamer.
+:::
+
+## Which Goal Is Yours
+
+- Each asks a different question: "what is going on here?", "what does the landscape look like?", or "why does this happen?"
+- Each produces a different output: patterns and frameworks; frequencies, distributions, and prevalence; or support and disconfirmation
 
 Research usually moves through them in that order. You do not need all three, and you do
 need to know which one you are attempting.
 
 ## Question Or Hypothesis
 
-- A **research question** is interrogative and open
-    - Use it when exploring, describing, or when the literature conflicts.
-- A **hypothesis** is declarative and predictive
-    - Use it when theory predicts, or when prior work suggests an outcome.
-- Behind every hypothesis sits the **null hypothesis**
-    - No relationship, no difference. The skeptical default.
-    - It is what your test actually evaluates.
+::: {.define}
+**Research question (RQ):** a question a study sets out to answer, written before you look at the data. Example: does the share of messages aimed at the streamer differ between gaming and non-gaming streams?
+:::
+
+::: {.define}
+**Hypothesis:** a testable statement of the relationship you expect between variables, written before you test it. Example: non-gaming chats aim a larger share of their messages at the streamer than gaming chats do.
+:::
+
+## When to Use Each
+
+- Ask a research question, which is interrogative and open, when exploring, describing, or when the literature conflicts
+- State a hypothesis, which is declarative and predictive, when theory predicts or prior work suggests an outcome
+- Behind every hypothesis sits the **null hypothesis**: no relationship and no difference, the skeptical default your test actually evaluates
 
 The question is never whether you can tell a story. It is whether this data could have come
 from a world with no effect in it.
