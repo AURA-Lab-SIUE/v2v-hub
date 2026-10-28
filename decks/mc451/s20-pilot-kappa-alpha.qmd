@@ -105,7 +105,7 @@ Answer each question in writing, with one reason:
 
 - Is 74 percent agreement good enough to start coding for real? Answer yes or no
 - Two coders who flip coins to choose between two categories will agree how often?
-- If both coders use one category 90 percent of the time, how often will they agree by chance?
+- If both coders use one category almost all the time, would you expect them to agree often just by chance? Why or why not?
 - What agreement number would satisfy you, and where does that number come from?
 
 ## Why Raw Agreement Misleads
