@@ -52,8 +52,9 @@ A study scattered across a dozen files is raw material. Tonight gives it a form.
 ## Numbers You Never Type
 
 ```markdown
-The analysis dataset held `r nrow(analysis)` coded messages,
-of which `r sum(!is.na(analysis$is_gaming))` carried a
+The analysis dataset held `r nrow(analysis)`
+coded messages, of which
+`r sum(!is.na(analysis$is_gaming))` carried a
 gaming-status label.
 ```
 
@@ -188,17 +189,20 @@ v2v::deploy_portfolio()
 
 ```
 ── Pre-flight checks ──
-✔ renv library in sync
+ℹ No renv.lock found - skipping renv check
 ✔ no uncommitted changes
 ✔ _quarto.yml valid
-ℹ Rendering 9 pages ... done
-ℹ Publishing to GitHub Pages ... done
+──────────────────────
+✔ Rendering 9 pages
+Publish to GitHub Pages? [y/N] y
+✔ Publishing to GitHub Pages
+ℹ Published to https://your-username.github.io/your-repository/
 ✔ Portfolio live on GitHub Pages.
 ```
 
 ## The Three Pre-Flight Checks
 
-- **renv in sync:** the site is built with the package versions the source declares
+- **renv in sync:** the site is built with the package versions the source declares, checked only when the project has a `renv.lock`
 - **No uncommitted changes:** the live site matches what is saved
 - **`_quarto.yml` valid:** the render will not fail partway through
 

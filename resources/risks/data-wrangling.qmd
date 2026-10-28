@@ -44,14 +44,14 @@ If that warning is silenced, the table grows from 35,267 rows to 31,565,309.
 
 **How to check.** A join that adds columns to messages must leave one row per message. Run
 `nrow()` before the join and after it; the two numbers must be equal. The same check catches a
-coding form that lists one message twice: a single duplicated `id` in your codes turns 35,267
+coding sheet that lists one message twice: a single duplicated `id` in your codes turns 35,267
 rows into 35,268.
 
 ## 3. Codes that do not find their message
 
 **What it looks like.** Your thirty codes join on, but `count(reaction_only)` shows the coded
 groups adding to fewer than 30. Some codes found no message, usually because the `id` column was
-changed when the coding form was saved: a spreadsheet reformatted it, a row was sorted on its
+changed when the coding sheet was saved: a spreadsheet reformatted it, a row was sorted on its
 own, or an `id` was typed over.
 
 **How to check.** `anti_join()` returns the rows of its first table that have no match in the
@@ -101,7 +101,7 @@ Levels: commentary reaction
 ```
 
 **How to check.** Run `count()` on the variable right after `factor()`. The groups must add to
-30 and there must be no `NA` row. If there is one, find the cell in the coding form and fix it
+30 and there must be no `NA` row. If there is one, find the cell in the coding sheet and fix it
 there, not in the script.
 
 ## 7. Factor levels in the wrong order
@@ -118,10 +118,10 @@ Every table, chart, and test after this uses that order.
 **How to check.** Print `levels()` of every factor you make and read it as a sentence. Small,
 medium, large is an order; large, medium, small is the alphabet.
 
-## 8. A coding form overwritten, or saved as something else
+## 8. A coding sheet overwritten, or saved as something else
 
-**What it looks like.** Running a line that writes the coding form again replaces your thirty
-codes with an empty form. Saving from a spreadsheet as `.xlsx`, or under a new name, leaves
+**What it looks like.** Running a line that writes the coding sheet again replaces your thirty
+codes with an empty one. Saving from a spreadsheet as `.xlsx`, or under a new name, leaves
 `read_csv()` reading the old empty file, or failing to find one. Spreadsheets can also show a
 message that starts with `@`, `=`, or `-` as a formula; the worksheet joins only `id` and your code
 back, so the message text in the form does not have to survive.

@@ -66,7 +66,7 @@ sudo apt install r-base
 ## Step 2: Install the R extension in VS Code
 
 1. Open VS Code and open the Extensions view (`Ctrl/Cmd+Shift+X`).
-2. Search for **R** by REditorSupport and click **Install**.
+2. Search for **R** by REditorSupport and click **Install**. With R 4.6 or newer it must be version 3.0.0 or newer, because earlier versions never connect to R 4.6.
 3. If you cloned the [course workspace](workspace-setup.qmd), this extension is already in the recommended list, so the workspace will prompt you to install it.
 
 Optional: install the **AURA Lab R Companion** the same way (Extensions view, search **AURA Lab R Companion**, **Install**). Its **Check my setup** command finds R even on Windows, where R is not on your command line.
@@ -75,7 +75,7 @@ Optional: install the **AURA Lab R Companion** the same way (Extensions view, se
 
 ## Step 3: Install the helper packages
 
-The R extension talks to R through two small packages. Open a terminal in VS Code (**Terminal, New Terminal**), type `R` to start an R session, and run:
+The R extension talks to R through two small packages. **With the AURA Lab R Companion,** run **AURA: Check my setup** from the Command Palette and choose your course: its **Install what is missing** installs both. **Without it,** open a terminal in VS Code (**Terminal, New Terminal**), type `R` to start an R session, and run:
 
 ```r
 install.packages("languageserver")  # code completion, diagnostics, help
@@ -88,7 +88,9 @@ Type `q()` and then `n` to leave the R session when they finish.
 
 ## Step 4: Install the course packages
 
-Start R again (`R` in the terminal) and install the analysis packages, one at a time:
+**With the AURA Lab R Companion,** run **AURA: Check my setup** from the Command Palette and choose your course: it installs any course package that is missing and confirms that each one loads.
+
+**Without it,** start R again (`R` in the terminal) and install the analysis packages, one at a time:
 
 ```r
 install.packages("tidyverse")   # ggplot2, dplyr, readr, tidyr, and more
@@ -109,8 +111,6 @@ install.packages("ggstatsplot")  # statistical plots with test results (optional
 
 **Wait for each to finish** (you'll see a blank `>` prompt when done).
 
-Or run **Check my setup** from the Command Palette and choose your course: it installs any course package that is missing and confirms that each one loads.
-
 ---
 
 ## Step 5: Run your first R code in VS Code
@@ -120,7 +120,7 @@ Or run **Check my setup** from the Command Palette and choose your course: it in
 
 The first time R opens in VS Code, a notice appears in the bottom-right corner: **vscode-R needs bundled sess to attach the session watcher.** Click **Install bundled sess** and wait about a minute. You must say yes: if you click **Not now** or **Don't ask again**, R will not connect to VS Code, and the bottom bar keeps saying **R: (not attached)**.
 
-**Missed it?** Click the bell icon in the bottom-right corner of VS Code to find the notice again. If it is not there, close VS Code, open R itself (from the Start menu on Windows, or Applications on a Mac), and run these three lines one at a time:
+**Missed it?** Click the bell icon in the bottom-right corner of VS Code to find the notice again. If it is not there and you have the AURA Lab R Companion, run **AURA: Fix R (not attached)** from the Command Palette: it closes your R terminals, installs sess and the packages it needs, and opens a new R terminal. Without the Companion, close VS Code, open R itself (from the Start menu on Windows, or Applications on a Mac), and run these three lines one at a time:
 
 ```r
 install.packages(c("processx", "later", "jsonlite", "rstudioapi"), repos = "https://cloud.r-project.org")

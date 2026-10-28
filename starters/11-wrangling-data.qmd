@@ -72,7 +72,7 @@ them stops making sense.
 ```{r}
 #| label: setup
 library(tidyverse)     # the tools for every data step
-library(janitor)       # clean_names(), for the coding form's column names
+library(janitor)       # clean_names(), for the coding sheet's column names
 library(v2v)           # the course package: the Twitch data and helpers
 options(scipen = 10)  # long numbers such as timestamps print in full; p-values keep the usual form
 ```
@@ -107,9 +107,9 @@ coding_sample %>%
 and the draw comes second. Drawing from all fifty channels and keeping these two afterward
 gives a different thirty.
 
-### Task 0.2: Write the coding form
+### Task 0.2: Write the coding sheet
 
-This writes the thirty messages to `data/coding-form.csv`, one row per message. It writes the
+This writes the thirty messages to your coding sheet, `data/coding-form.csv`, one row per message. It writes the
 file only if it is not there yet, so running the worksheet again never wipes out codes you have
 typed.
 
@@ -221,7 +221,7 @@ length(intersect(chat$id, streams$id))  # id values that appear in both tables
 **What you should see:** `[1] 31`. Thirty-one numbers appear in both, but a chat `id` names a
 message and a stream `id` names a snapshot, so those thirty-one matches mean nothing. A join on
 `id` across these two tables would run without an error and pair messages with unrelated
-snapshots. The tables join on channel and time instead (Task 4.1). Your coding form joins on
+snapshots. The tables join on channel and time instead (Task 4.1). Your coding sheet joins on
 `id` (Task 5.3), because its `id` is the chat `id`.
 
 ### Task 2.3: Categories
@@ -393,7 +393,7 @@ levels(analysis$viewer_band)
 
 ## Part 5: Read your codes back and join them
 
-### Task 5.1: Read the coding form
+### Task 5.1: Read the coding sheet
 
 Read your thirty codes back into R and tidy the column names, so `Reaction Only` and
 `reaction_only` both end up as `reaction_only`.

@@ -67,7 +67,7 @@ Open the Extensions view (`Ctrl/Cmd+Shift+X`) and install these. If you cloned t
 
 ### 1. R (REditorSupport), required
 
-Search for **R** by REditorSupport and click **Install**. This is what lets you run R, get completions, and view data inside VS Code. Finish the wiring in [Install R](install-r.qmd).
+Search for **R** by REditorSupport and click **Install**. This is what lets you run R, get completions, and view data inside VS Code. With R 4.6 or newer it must be version 3.0.0 or newer, because earlier versions never connect to R 4.6. Finish the wiring in [Install R](install-r.qmd).
 
 ### 2. Quarto, required
 
@@ -87,7 +87,7 @@ Search for **GitLens** and install. It shows who changed each line and when, mak
 
 ### 4. AURA Lab R Companion, recommended
 
-Search for **AURA Lab R Companion** and click **Install**. It needs VS Code 1.95 or newer; VS Code updates itself, so this only matters on a locked-down or offline machine. Once R is installed ([Install R](install-r.qmd)), run **Check my setup** from the Command Palette: it confirms that each course package loads, and its **Install what is missing** action installs any that are not. Its **Explain an R error** command gives a plain-English reading of an R error message.
+Search for **AURA Lab R Companion** and click **Install**. It needs VS Code 1.95 or newer; VS Code updates itself, so this only matters on a locked-down or offline machine. Once R is installed ([Install R](install-r.qmd)), run **Check my setup** from the Command Palette: it confirms that each course package loads and checks the R extension, its sess helper, and the Quarto extension, and its **Install what is missing** action installs what is not there. Its **Explain an R error** command gives a plain-English reading of an R error message.
 
 ### Optional extras
 
@@ -114,7 +114,7 @@ In VS Code you work in a **folder**, not a project file. The open folder is your
 
 The first time R opens in VS Code, a notice appears in the bottom-right corner: **vscode-R needs bundled sess to attach the session watcher.** Click **Install bundled sess** and wait about a minute. You must say yes: if you click **Not now** or **Don't ask again**, R will not connect to VS Code, and the bottom bar keeps saying **R: (not attached)**.
 
-**Missed it?** Click the bell icon in the bottom-right corner of VS Code to find the notice again. If it is not there, close VS Code, open R itself (from the Start menu on Windows, or Applications on a Mac), and run these three lines one at a time:
+**Missed it?** Click the bell icon in the bottom-right corner of VS Code to find the notice again. If it is not there and you have the AURA Lab R Companion, run **AURA: Fix R (not attached)** from the Command Palette: it closes your R terminals, installs sess and the packages it needs, and opens a new R terminal. Without the Companion, close VS Code, open R itself (from the Start menu on Windows, or Applications on a Mac), and run these three lines one at a time:
 
 ```r
 install.packages(c("processx", "later", "jsonlite", "rstudioapi"), repos = "https://cloud.r-project.org")

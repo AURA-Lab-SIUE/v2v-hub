@@ -61,7 +61,7 @@ A pilot can send you back to [Chapter 8](https://aura-lab.siue.edu/v2v/chapters/
 ## Where the Codes Go
 
 ::: {.define}
-**Coding sheet:** the form where you record each item's code for every variable, also called a coding form. Example: a spreadsheet with one row per sampled message and one column per variable, such as message target.
+**Coding sheet:** the grid where you record each item's code for every variable in the codebook. Example: a spreadsheet with one row per sampled message and one column per variable, such as message target.
 :::
 
 - **The codebook says how to decide each code; the coding sheet is where you write it down**

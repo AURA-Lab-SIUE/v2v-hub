@@ -54,8 +54,9 @@ Nothing is typed by hand, so nothing can fall out of date.
 ## Numbers Computed Inline
 
 ```markdown
-The analysis dataset held `r nrow(analysis)` coded messages,
-of which `r sum(!is.na(analysis$is_gaming))` carried a
+The analysis dataset held `r nrow(analysis)`
+coded messages, of which
+`r sum(!is.na(analysis$is_gaming))` carried a
 gaming-status label.
 ```
 
@@ -150,15 +151,18 @@ v2v::deploy_portfolio()
 
 ```
 ── Pre-flight checks ──
-✔ renv library in sync
+ℹ No renv.lock found - skipping renv check
 ✔ no uncommitted changes
 ✔ _quarto.yml valid
-ℹ Rendering 9 pages ... done
-ℹ Publishing to GitHub Pages ... done
+──────────────────────
+✔ Rendering 9 pages
+Publish to GitHub Pages? [y/N] y
+✔ Publishing to GitHub Pages
+ℹ Published to https://your-username.github.io/your-repository/
 ✔ Portfolio live on GitHub Pages.
 ```
 
-Three checks run first. Only if all three pass does the book render and publish.
+Three checks run first. Only if none fails does the book render, and it publishes only after you type `y`. The renv check is skipped here because the course scaffold has no `renv.lock`.
 
 ## What renv Is
 
@@ -168,7 +172,7 @@ Three checks run first. Only if all three pass does the book render and publish.
 
 ## Why the Checks Exist
 
-- **renv in sync:** the site is built with the package versions your source declares
+- **renv in sync:** the site is built with the package versions your source declares, checked only when the project has a `renv.lock`
 - **No uncommitted changes:** the live site matches what you saved
 - **A valid `_quarto.yml`:** the render will not collapse halfway through
 - **Each check heads off one specific, demoralizing failure**

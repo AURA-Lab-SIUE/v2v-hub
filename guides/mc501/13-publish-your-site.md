@@ -27,13 +27,18 @@ To read what the command does before you run it, put your cursor on `deploy_port
 
 ```
 ── Pre-flight checks ──
-✔ renv library in sync
+ℹ No renv.lock found - skipping renv check
 ✔ no uncommitted changes
 ✔ _quarto.yml valid
+──────────────────────
+✔ Rendering 9 pages
+Publish to GitHub Pages? [y/N] y
+✔ Publishing to GitHub Pages
+ℹ Published to https://your-username.github.io/your-repository/
 ✔ Portfolio live on GitHub Pages.
 ```
 
-The renv line appears only when your project has a `renv.lock` file; without one, that check is skipped.
+The first line is normal: the course scaffold has no `renv.lock` file, so the renv check is skipped. A project with one shows **renv library in sync** there instead. The **Published to** line gives your site's address.
 
 ## If it does not work
 

@@ -50,14 +50,18 @@ format:
 **Immersion:** spending sustained time with your material, watching and reading it closely, before you analyze it. Example: hours of one channel's streams and chat before you write a single category.
 :::
 
-## Two Words for What You Build
+## Three Words for What You Build
 
 ::: {.define}
 **Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
 :::
 
 ::: {.define}
-**Codebook:** the written rules that tell a coder what each variable means and which value to give each item; in this course the word also covers the coding sheet where you record those values. Example: the rule that a message tagging the streamer is coded "directed at the streamer."
+**Codebook:** the document of rules for coding: each variable, its definition, its categories, the decision rules, and examples. Example: the rule that a message tagging the streamer is coded "directed at the streamer."
+:::
+
+::: {.define}
+**Coding sheet:** the grid where you record the codes, with one row for each thing you code and one column for each variable in the codebook. Example: a spreadsheet with one row per chat message and a column where each message's target is entered.
 :::
 
 ## How the Term Is Built

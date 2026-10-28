@@ -46,18 +46,24 @@ format:
 - **Phase one is qualitative:** you read real messages closely until you can say what is there
 - **Phase two is quantitative:** you count what you found and test relationships in R
 
-## Three Words You Will Use All Term
+## Four Words You Will Use All Term
 
 ::: {.define}
 **Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message. Example: the `game` column says Fortnite for one stream and Just Chatting for another.
 :::
 
 ::: {.define}
-**Codebook:** the written rules that tell a coder what each variable means and which value to give each item; in this course the word also covers the coding sheet where you record those values. Example: the rule that a message tagging the streamer is coded "directed at the streamer."
+**Sample:** the smaller set of cases you actually look at. Example: a few thousand messages drawn from the week's 21,964,296.
+:::
+
+## Four Words You Will Use All Term (cont.)
+
+::: {.define}
+**Codebook:** the document of rules for coding: each variable, its definition, its categories, the decision rules, and examples. Example: the rule that a message tagging the streamer is coded "directed at the streamer."
 :::
 
 ::: {.define}
-**Sample:** the smaller set of cases you actually look at. Example: a few thousand messages drawn from the week's 21,964,296.
+**Coding sheet:** the grid where you record the codes, with one row for each thing you code and one column for each variable in the codebook. Example: a spreadsheet with one row per chat message and a column where each message's target is entered.
 :::
 
 ## How the Two Phases Connect

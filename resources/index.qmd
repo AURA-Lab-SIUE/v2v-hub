@@ -86,12 +86,12 @@ are already installed there.
 
 ## Check your setup
 
-`00-check-your-setup.qmd` walks you through every install, one gray box at a time, and
-tells you what each box should print. Save it into your workspace folder and open it in
-VS Code. Run it whenever something stops working, not only in week one.
+With the AURA Lab R Companion installed, run **AURA: Check my setup** from the Command Palette.
+Run it whenever something stops working, not only in week one.
 
-With the AURA Lab R Companion installed, run **Check my setup** from the Command Palette instead;
-the file still works without it.
+Without the Companion, `00-check-your-setup.qmd` walks you through every install, one gray box at a time, and
+tells you what each box should print. Save it into your workspace folder and open it in
+VS Code.
 
 [Download 00-check-your-setup.qmd](../starters/00-check-your-setup.qmd){.btn .btn-primary}
 

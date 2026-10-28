@@ -27,7 +27,7 @@ The Output panel reads **RESULT: everything this course needs is installed** and
 
 The first time R opens in VS Code, a notice appears in the bottom-right corner: **vscode-R needs bundled sess to attach the session watcher.** Click **Install bundled sess** and wait about a minute. You must say yes: if you click **Not now** or **Don't ask again**, R will not connect to VS Code, and the bottom bar keeps saying **R: (not attached)**.
 
-**Missed it?** Click the bell icon in the bottom-right corner of VS Code to find the notice again. If it is not there, close VS Code, open R itself (from the Start menu on Windows, or Applications on a Mac), and run these three lines one at a time:
+**Missed it?** Click the bell icon in the bottom-right corner of VS Code to find the notice again. If it is not there and you have the AURA Lab R Companion, run **AURA: Fix R (not attached)** from the Command Palette: it closes your R terminals, installs sess and the packages it needs, and opens a new R terminal. Without the Companion, close VS Code, open R itself (from the Start menu on Windows, or Applications on a Mac), and run these three lines one at a time:
 
 ```r
 install.packages(c("processx", "later", "jsonlite", "rstudioapi"), repos = "https://cloud.r-project.org")

@@ -69,7 +69,7 @@ the Render button will do nothing.
 
 **Check your setup:** open the Command Palette (Ctrl+Shift+P, or Cmd+Shift+P on a Mac), run
 **AURA: Check my setup**, and choose your course. It finds R, installs any course package that is
-missing, and confirms that each one loads. `00-check-your-setup.qmd` runs the same check by hand.
+missing, confirms that each one loads, and checks the R extension, its sess helper, and the Quarto extension. `00-check-your-setup.qmd` runs the same check by hand.
 
 ---
 

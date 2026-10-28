@@ -41,6 +41,8 @@ Two commands that will **not** work, and the error each produces:
 
 ## Install it
 
+**With the AURA Lab R Companion,** run **AURA: Check my setup** from the Command Palette and choose your course. Its **Install what is missing** installs `remotes` and then `v2v` from GitHub. **Without it,** follow Steps 1 and 2 in R.
+
 ### Step 1. Get `remotes`
 
 `remotes` is on CRAN, so this part is ordinary. You only ever do this once.
