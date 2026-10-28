@@ -13,7 +13,7 @@ format:
 
 ## Today's Agenda
 
-- A recap: variables, mediators, and moderators
+- A recap: variables
 - Why an unbiased sample is not the same as a representative one
 - Stratified sampling, and how your planned sample size meets the data
 - The pilot test, and why the two coding passes must be independent
@@ -46,55 +46,6 @@ format:
 :::
 
 All three come from [Chapter 5](https://aura-lab.siue.edu/v2v/chapters/chapter05.html#variables-the-building-blocks-of-hypotheses).
-
-## Mediators and Moderators
-
-[Recap from Week 5]{.eyebrow}
-
-::: {.define}
-**Mediator:** a variable in the middle that explains how or why the IV changes the DV.
-:::
-
-<svg class="diagram" viewBox="0 0 900 96" role="img">
-<title>Mediator diagram: stream type leads to a conversational feel, which leads to more messages aimed at the streamer.</title>
-<defs><marker id="arrow-med" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#101113"/></marker></defs>
-<rect x="2" y="8" width="236" height="80" rx="8" fill="#ffffff" stroke="#101113" stroke-width="2"/>
-<text x="120" y="42" text-anchor="middle" font-size="24" fill="#101113">Stream type</text>
-<text x="120" y="70" text-anchor="middle" font-size="20" fill="#101113">(IV)</text>
-<rect x="332" y="8" width="236" height="80" rx="8" fill="#f3efe4" stroke="#101113" stroke-width="3"/>
-<text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#101113">Conversational feel</text>
-<text x="450" y="70" text-anchor="middle" font-size="20" fill="#101113">(mediator)</text>
-<rect x="662" y="8" width="236" height="80" rx="8" fill="#ffffff" stroke="#101113" stroke-width="2"/>
-<text x="780" y="42" text-anchor="middle" font-size="24" fill="#101113">Messages to</text>
-<text x="780" y="70" text-anchor="middle" font-size="24" fill="#101113">the streamer (DV)</text>
-<line x1="240" y1="48" x2="328" y2="48" stroke="#101113" stroke-width="3" marker-end="url(#arrow-med)"/>
-<line x1="570" y1="48" x2="658" y2="48" stroke="#101113" stroke-width="3" marker-end="url(#arrow-med)"/>
-</svg>
-
-::: {.define}
-**Moderator:** a variable that changes how strong the IV's effect is, or its direction.
-:::
-
-<svg class="diagram" viewBox="0 0 900 160" role="img">
-<title>Moderator diagram: stream type leads to messages aimed at the streamer, and audience size points at that arrow, changing how strong the link is.</title>
-<defs><marker id="arrow-mod" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#101113"/></marker></defs>
-<rect x="332" y="2" width="236" height="56" rx="8" fill="#f3efe4" stroke="#101113" stroke-width="3"/>
-<text x="450" y="38" text-anchor="middle" font-size="24" font-weight="700" fill="#101113">Audience size</text>
-<rect x="2" y="76" width="236" height="80" rx="8" fill="#ffffff" stroke="#101113" stroke-width="2"/>
-<text x="120" y="110" text-anchor="middle" font-size="24" fill="#101113">Stream type</text>
-<text x="120" y="138" text-anchor="middle" font-size="20" fill="#101113">(IV)</text>
-<rect x="662" y="76" width="236" height="80" rx="8" fill="#ffffff" stroke="#101113" stroke-width="2"/>
-<text x="780" y="110" text-anchor="middle" font-size="24" fill="#101113">Messages to</text>
-<text x="780" y="138" text-anchor="middle" font-size="24" fill="#101113">the streamer (DV)</text>
-<line x1="240" y1="116" x2="658" y2="116" stroke="#101113" stroke-width="3" marker-end="url(#arrow-mod)"/>
-<line x1="450" y1="60" x2="450" y2="110" stroke="#101113" stroke-width="3" marker-end="url(#arrow-mod)"/>
-</svg>
-
-## What the Two Diagrams Say
-
-- **Mediator:** non-gaming streams may feel more like a conversation, and that feeling is what invites messages to the streamer
-- **Moderator:** the link between stream type and messages to the streamer might hold on small streams and fade on large ones
-- **Together they turn "X relates to Y" into "X relates to Y, by this mechanism, under these conditions"**
 
 ## Why You Sample
 
@@ -177,13 +128,13 @@ A well-drawn sample makes the work finishable and still supports the conclusions
     - So stratifying by channel puts every non-gaming channel in the sample by construction
 - For your own source, the stratum is whatever group your question compares: an account, a subreddit, a month, an outlet
 
-## Strata for a Moderator
+## Strata for Every Group You Compare
 
-- **If you expect a moderator, your sample needs cases at every level of it**
-- **Example: if audience size is the moderator, stratify by audience size**
+- **If your question compares groups, your sample needs cases from every group**
+- **Example: to compare small and large streams, stratify by audience size**
     - Then small streams and large streams both appear in the sample
 - **A random draw of messages would come mostly from the busiest channels**
-    - Leaving too few small streams to see the moderator at work
+    - Stratifying keeps enough small streams to make the comparison
 
 ## The Example Corpus Is a Stratified Design
 
@@ -356,19 +307,16 @@ With few categories, or one dominant category, coincidental agreement piles up f
 
 Answer each question in writing:
 
-- A pilot scores a kappa of 0.62, and the threshold named before coding was 0.70. Does it clear the threshold? Answer yes or no
+- A pilot scores a kappa of 0.62 against a threshold of 0.70 named before coding. What would you look at in the disagreements before piloting again, and why there?
 - Write the sentence you would put in the report about that result
 - Name whose trust the reliability standard protects: the reader's, the coder's, or the field's, and say why
 
-## Report What Your Pilot Could Not Settle
+## Report What Your Pilot Settled
 
-> "Do not try to spin a story where it looks like a study was highly informative when it
-> was not."
->
-> [Lakens (2022, p. 11)](https://doi.org/10.1525/collabra.33267)
-
-- **When you write up your pilot, state one thing it could not settle**
-- **Name the White Paper claim that becomes weaker because of it**
+- **A pilot is a small test, so its write-up says what the test covered**
+    - Which rules it tried, and which rules it confirmed
+- **Note any question it left open, and the White Paper claim that question touches**
+    - The full coding run is where an open question gets its answer
 
 ## Chance Agreement
 
@@ -501,7 +449,7 @@ Due Monday, November 9, 11:59 PM. Submit the plan and the pilot together as one 
 8. **Every codebook revision the pilot required**, with the wording before and after
 9. **One paragraph on the full coding run:** how long it will take and what you will change
 
-If your pilot led to no codebook changes, the items you piloted were probably too easy.
+Include a few hard items on purpose, so the pilot tests the rules most likely to need a revision.
 
 ## Unit of Analysis and Key
 
