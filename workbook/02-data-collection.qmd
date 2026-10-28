@@ -98,13 +98,13 @@ Before you move to R, run through this checklist on your completed spreadsheet:
 
 If you coded in the R Companion's data viewer, there is nothing to export: your codes are already in `data/derived/<name>-codes.csv`, and **Insert rebuild code** writes the lines that read the original file and the codes and join them.
 
-Name your file descriptively: `my_coding_data_raw.csv` (the "raw" reminds you this is pre-cleaning). To read the CSV into R, the R Companion's Data menu, **Import a CSV file**, writes the `read_csv()` lines for you; change the file name inside the quotation marks to yours.
+Name your file descriptively: `my_coding_data_raw.csv` (the "raw" reminds you this is pre-cleaning). To read the CSV into R, the R Companion's Data menu, **Import a data file (CSV or Excel)**, asks you to pick your file and name the table, then writes the `read_csv()` lines for you.
 
 ## Try It Yourself
 
 1. Calculate your personal data collection timeline using the table above. Is your target realistic? If not, what can you adjust: batch size, sessions per day, or sample size (consult your professor before reducing sample size)?
 
-2. Open your coding spreadsheet and run the quality self-check. Fix any issues you find *now*, before you import to R.
+2. Open your coding sheet and run the quality self-check. Fix any issues you find *now*, before you import to R.
 
 ::: {.callout-tip}
 ## Connection to Your Project

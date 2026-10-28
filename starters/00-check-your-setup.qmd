@@ -116,8 +116,10 @@ red marks for what is missing.
 setup()
 ```
 
-**What you should see:** a list of package names with green check marks, then a
-**Command-line tools** section.
+**What you should see:** a list of package names with green check marks, a **VS Code**
+section, then a **Command-line tools** section. The **VS Code** section lists `languageserver`
+and `httpgd`, which the R extension uses; a yellow mark there does not fail the check, and the
+install line under **What to do next** adds them.
 
 **Two red marks are expected and fine at this stage** if you have not done the later
 setup steps yet: Quarto CLI and Git. Everything under **Required R packages** should be

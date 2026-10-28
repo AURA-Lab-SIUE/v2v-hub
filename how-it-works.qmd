@@ -104,5 +104,5 @@ You do not need to learn everything at once. Each tool is introduced when you ne
 3. **Follow your course's step-by-step guides** for numbered click paths with screenshots: [MC 451 guides](guides/mc451/index.md) or [MC 501 guides](guides/mc501/index.md).
 4. **Check the textbook.** The relevant chapter usually explains the concept.
 5. **Ask a classmate.** Someone else probably had the same issue.
-6. **Email Dr. Leith** at aleith@siue.edu (allow 24 hours Mon-Fri).
+6. **Email Dr. Leith** at aleith@siue.edu (allow 24 hours Mon-Fri). For a setup problem, paste in the report from **AURA: Make a help report**.
 7. **Office hours:** TuTh 12:30 to 1:45 PM in person, Dunham Hall 1017, or remote Tu/W/Th 3:00 to 5:00 PM by appointment.

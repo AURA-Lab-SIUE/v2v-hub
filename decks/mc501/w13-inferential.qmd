@@ -85,7 +85,8 @@ A test on the wrong kind of data produces a meaningless number. Unsure? Write yo
 t.test(message_length ~ is_gaming, data = analysis) %>%
   broom::tidy()
 
-effectsize::cohens_d(message_length ~ is_gaming, data = analysis)
+effectsize::cohens_d(message_length ~ is_gaming,
+                     data = analysis)
 ```
 
 `t.test()` runs the test, `broom::tidy()` turns its result into a one-row table, and `effectsize::cohens_d()` adds the effect size.
@@ -113,17 +114,23 @@ v2v::run_t_test(
 )
 ```
 
+One call, one labeled block, the same numbers. The Companion writes the two plain calls first and this check after them.
+
+## The Same Test, Labeled (cont.)
+
 ```
-  Mean, gaming         28.49 characters
-  Mean, non-gaming     33.70 characters
-  Difference           -5.21 characters
-  t                    -4.94
-  df                   3768.7
-  p-value              < .001
-  Cohen's d            -0.13  (negligible)
+Welch two-sample t-test
+message_length by is_gaming
+  FALSE                  n = 3457, mean = 33.70, SD = 60.68
+  TRUE                   n = 31305, mean = 28.49, SD = 38.47
+  Difference             5.21
+  t                      4.94
+  df                     3768.7
+  p-value                < .001
+  Cohen's d              0.13  (negligible)
 ```
 
-One call, one labeled block, the same numbers. The Companion writes the two plain calls first and this check after them.
+`FALSE` is non-gaming and `TRUE` is gaming, in the order R sorts them, so the difference is non-gaming minus gaming. Below these lines it prints a one-sentence reading and the two plain calls it stands for, `t.test()` and `effectsize::cohens_d()`.
 
 ## Why Welch, and Not Student
 
@@ -276,9 +283,11 @@ League of Legends 4000       22.63
 ```r
 four_games <- analysis %>%
   filter(main_game %in% c("Fortnite", "Hearthstone",
-                          "Just Chatting", "League of Legends"))
+                          "Just Chatting",
+                          "League of Legends"))
 
-summary(aov(message_length ~ main_game, data = four_games))
+summary(aov(message_length ~ main_game,
+            data = four_games))
 ```
 
 ```

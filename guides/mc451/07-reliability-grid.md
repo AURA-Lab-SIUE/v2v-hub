@@ -18,7 +18,7 @@ Prefer to watch first? The walkthrough video [Wrangling and the reliability grid
 
 ![](img/reliability-grid.png){fig-alt="The Reliability grid panel titled Reliability grid: code tone twice. Settings show the statistic Cohen's kappa and a Pass 1 date. The line Step 1 of 2: Pass 1. Code every item. sits above a table with Item, Pass 1, and Pass 2 columns, and a drop-down open on item 3 offering not coded, calm, and high-energy."}
 
-![](img/reliability-result.png){fig-alt="R terminal output: Items coded 6, Observed agreement 0.83, Cohen's kappa 0.667 (substantial), and the line The same number, without v2v: irr::kappa2(data.frame(pass_1, pass_2))."}
+![](img/reliability-result.png){fig-alt="R terminal output: Items coded 6, Observed agreement 0.83, Cohen's kappa 0.667 (substantial (Landis & Koch 1977)), and the line The same number, without v2v: irr::kappa2(data.frame(pass_1, pass_2))."}
 
 The terminal prints the items coded, the observed agreement, and the statistic, then the same number from `irr` as a check.
 

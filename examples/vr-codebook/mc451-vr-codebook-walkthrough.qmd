@@ -101,8 +101,8 @@ The study was published as Foxman et al. (2022) in *IEEE Transactions on Games*.
 ## Counting a Variable
 
 - **Save `vr-sample.csv` in your project's `data/raw/` folder**
-- **Run AURA: Write R code, then pick Import a CSV file under R2 Data**
-    - On its `read_csv()` line, change the file to `"data/raw/vr-sample.csv"` and the name to `vr`
+- **Run AURA: Write R code, then pick Import a data file (CSV or Excel) under R2 Data**
+    - Pick `data/raw/vr-sample.csv`, and call the table `vr` when it asks
 - **Then pick Count rows per group (count), and choose `vr` and `interactive`**
 
 What the Companion writes for you:

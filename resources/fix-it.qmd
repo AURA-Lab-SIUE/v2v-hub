@@ -150,7 +150,7 @@ packages, and the R Companion already installed.
 
 ## None of this fixed it
 
-Run **Check my setup** and include its output. Send me the exact wording of what you see rather than a description of it. A screenshot of
+Run **AURA: Make a help report** from the Command Palette, select **Copy to clipboard**, and paste the report into your email. It holds your Check my setup result and the versions of R, VS Code, and the R extension. Without the Companion, run `v2v::setup()` in R and include its output. Send me the exact wording of what you see rather than a description of it. A screenshot of
 the whole console is ideal. Office hours are Tuesday and Thursday, 12:30 to 1:45 in person in Dunham Hall 1017, where you are welcome to bring the laptop, or remote Tu/W/Th 3:00 to 5:00 by appointment.
 
 The longer guides have more detail if you want it: [Install R](install-r.qmd),
