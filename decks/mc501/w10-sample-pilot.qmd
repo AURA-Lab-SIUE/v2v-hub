@@ -128,14 +128,6 @@ A well-drawn sample makes the work finishable and still supports the conclusions
     - So stratifying by channel puts every non-gaming channel in the sample by construction
 - For your own source, the stratum is whatever group your question compares: an account, a subreddit, a month, an outlet
 
-## Strata for Every Group You Compare
-
-- **If your question compares groups, your sample needs cases from every group**
-- **Example: to compare small and large streams, stratify by audience size**
-    - Then small streams and large streams both appear in the sample
-- **A random draw of messages would come mostly from the busiest channels**
-    - Stratifying keeps enough small streams to make the comparison
-
 ## The Example Corpus Is a Stratified Design
 
 - **Its fifty channels were not the fifty busiest**
@@ -394,8 +386,11 @@ v2v::reliability(
 ```
 Reliability: Cohen's kappa
 
-  Messages coded   100
-  Cohen's kappa    0.236
+  Items coded          100
+  Observed agreement   0.74
+  Cohen's kappa        0.236  (fair (Landis & Koch 1977))
+
+  The same number, without v2v: irr::kappa2(data.frame(pass_1, pass_2))
 ```
 
 ## What a Kappa of 0.236 Means
@@ -477,7 +472,7 @@ Include a few hard items on purpose, so the pilot tests the rules most likely to
 - **Read [Chapter 11](https://aura-lab.siue.edu/v2v/chapters/chapter11.html)**
     - Plus the assigned article: **Wickham (2014)**, ["Tidy data"](https://doi.org/10.18637/jss.v059.i10)
 - **Write a [journal entry](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words**
-- **Bring a laptop with R, VS Code, and `v2v` working, and Check my setup reporting everything installed**
+- **Bring a laptop with `v2v` 0.3.6 and the R Companion 0.5.4, with Check my setup reporting everything installed**
 - **Check yourself on this week's terms:** [Week 10 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc501-week10.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}
