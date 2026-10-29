@@ -205,7 +205,7 @@ Answer each in writing:
 
 - **For a gap between two means, the effect size is Cohen's *d***
     - It states the gap in units of the natural variation in the data
-- **Cohen's benchmarks: about 0.2 is small, 0.5 is medium, 0.8 is large** (Cohen, 1988)
+- Cohen's benchmarks: about 0.2 is small, 0.5 is medium, 0.8 is large (Cohen, 1988)
 - A *d* of 0.13 is below small, and the word for it is negligible
 
 ## Why a Negligible Gap Reached Significance

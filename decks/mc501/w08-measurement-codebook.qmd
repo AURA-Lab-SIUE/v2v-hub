@@ -284,8 +284,8 @@ Your study has one coder, so intercoder reliability cannot be established. Discu
 
 - In your study you are both researcher and coder
     - Question: what specific risk does that create, and what would catch it? A good answer names one way your expectations could change a code and one check that would reveal it
-- **A codebook pilot of about 30 units is the usual rule of thumb** (Lombard et al., 2002)
-- **The reliability sample you report needs at least 50 units or 10 percent of the sample, and rarely more than 300** (Lombard et al., 2002)
+- A codebook pilot of about 30 units is the usual rule of thumb (Lombard et al., 2002)
+- The reliability sample you report needs at least 50 units or 10 percent of the sample, and rarely more than 300 (Lombard et al., 2002)
 
 ## The Standard Two-Coder Protocol, Steps 1 and 2
 
@@ -307,7 +307,7 @@ In step 1 you may not explain what you meant; the codebook must work on its own.
 
 - Do not report the agreement from the training set
     - It is inflated, because the coders discussed those same units in step 2
-- **Report more than one agreement statistic** (Lombard et al., 2002)
+- Report more than one agreement statistic (Lombard et al., 2002)
 
 ## Percent Agreement Alone Is Not Enough
 
@@ -333,9 +333,9 @@ In step 1 you may not explain what you meant; the codebook must work on its own.
 
 ## Which Reliability Statistic to Report
 
-- **One approach: report one standard measure, alpha** (Hayes & Krippendorff, 2007)
+- One approach: report one standard measure, alpha (Hayes & Krippendorff, 2007)
     - Alpha works with any number of coders, any level of measurement, and missing codes
-- **Another approach: report two or more statistics, with a decision rule** (Lombard et al., 2002)
+- Another approach: report two or more statistics, with a decision rule (Lombard et al., 2002)
     - Accept when a conservative statistic reaches a moderate value or a liberal one reaches a high value
 - Your protocol names the statistic you will report and explains why you chose it
 

@@ -249,7 +249,7 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 **Pilot test:** a practice round, before any real coding, where you code a few items twice to see if your codebook's rules give the same answer both times. Example: code twenty-five sampled messages on a Monday, then again on Wednesday with Monday's codes hidden.
 :::
 
-- **In this course the pilot is twenty to thirty items; about 30 is the usual rule of thumb** ([Lombard et al., 2002](https://doi.org/10.1111/j.1468-2958.2002.tb00826.x))
+- In this course the pilot is twenty to thirty items; about 30 is the usual rule of thumb ([Lombard et al., 2002](https://doi.org/10.1111/j.1468-2958.2002.tb00826.x))
 - **The question the pilot answers:** applied independently, do these rules give the same codes?
 
 ## What Reliability Means
@@ -283,7 +283,7 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 **Raw agreement:** the share of items where the two passes gave the same code. Example: the two passes match on 74 of 100 items, which sounds respectable.
 :::
 
-- **The founding example: two clinicians assigning categories blindly** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
+- The founding example: two clinicians assigning categories blindly ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
     - At the observed rates for each category, they still agree often
 - That agreement reflects the number of categories, not judgment
 
@@ -324,7 +324,7 @@ Answer each question in writing:
 **Cohen's kappa:** a score for how much two coding passes agree beyond what luck alone would give. Example: the example pilot scores 0.236, so most of its agreement was luck.
 :::
 
-- **Kappa is built for two sets of codes and nominal categories (names with no order)** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
+- Kappa is built for two sets of codes and nominal categories (names with no order) ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
     - Two coders, or one coder twice: the arithmetic is the same
 - Kappa is observed agreement, minus chance agreement, divided by the room left above chance
     - `kappa = (observed - expected) / (1 - expected)`
@@ -346,7 +346,7 @@ The codebook is credited only for the agreement that luck did not produce.
 **Krippendorff's alpha:** a reliability score like kappa that also works with more than two coders, ranked or numeric codes, and missing codes. Example: three coders rating how heated a message is from 1 to 5.
 :::
 
-- **Alpha is the more general instrument** ([Krippendorff, 2018](https://doi.org/10.4135/9781071878781))
+- Alpha is the more general instrument ([Krippendorff, 2018](https://doi.org/10.4135/9781071878781))
 - Three coders, or an ordinal variable (ranked categories, such as low, medium, high): use alpha
 - For a pilot with two passes and nominal categories, kappa and alpha agree
 
@@ -419,7 +419,7 @@ Name your threshold in your protocol before you see the number, not after.
     - Walk through every disagreement with the written rule in front of you
     - **The disagreements are the data:** each one points at an unclear rule
 - Repair the rule by stating operationally what counts
-- **Then pilot again, on fresh items** ([Chapter 10, When reliability fails](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#when-reliability-fails-revising-the-codebook))
+- Then pilot again, on fresh items ([Chapter 10, When reliability fails](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#when-reliability-fails-revising-the-codebook))
 
 Pilot, diagnose, revise, and repeat until the number clears your threshold.
 
