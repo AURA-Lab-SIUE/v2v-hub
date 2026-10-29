@@ -206,7 +206,7 @@ That spread is the raw material. Week 12 looks hard at its shape.
 >
 > Wickham (2014, p. 4)
 
-Answer each in writing, about your own table:
+Answer about your own table.
 
 - State in one sentence what one row of your table means (for example, "one comment on one post")
 - Name one place where your table's structure fights that meaning, such as two values in one cell

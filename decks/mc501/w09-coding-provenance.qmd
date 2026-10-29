@@ -204,8 +204,6 @@ Write the same kind of sentence for your own source, whatever the platform.
 >
 > Munafo et al. (2017, p. 4)
 
-Answer each question in writing:
-
 - Which failure is worse for the field: a study nobody can find, or a study nobody can evaluate? Give one reason
 - Name one thing your provenance statement owes a stranger who wants to repeat your study
 - Name one step in your own workflow that a stranger could not repeat today

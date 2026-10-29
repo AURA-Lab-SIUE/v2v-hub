@@ -95,7 +95,7 @@ logged in each category, then keep each channel's most frequent category.
 
 ## Exercise: Trace a Channel With No Category {.discuss}
 
-Some channels have no `game` recorded in any snapshot. Answer in writing:
+Some channels have no `game` recorded in any snapshot. Use Chapter 11, [Labeling gaming and non-gaming](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#labeling-gaming-and-non-gaming).
 
 - Trace such a channel through `filter()` and then `count()`. What happens to it at each step?
 - Does that channel appear in `channel_type` at all? Answer yes or no

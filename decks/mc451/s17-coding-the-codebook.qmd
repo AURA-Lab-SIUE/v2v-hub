@@ -117,7 +117,7 @@ v2v::setup()
 ## Exercise: Guess the Columns Before You Look {.discuss}
 
 We are about to run `glimpse(chat)`, which prints every column in the example chat table.
-Answer these three questions in writing before we run it:
+Answer these three questions before we run it.
 
 - Name three columns you expect to find in a table of chat messages
 - The book's example codebook needs the message text and the sender. Which columns does your own codebook need from your own source?

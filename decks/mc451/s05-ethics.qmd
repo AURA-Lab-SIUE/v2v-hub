@@ -103,8 +103,6 @@ format:
 
 ## Exercise: Was It Consent? {.discuss}
 
-Answer each in writing:
-
 - Facebook says the terms of service covered the study. State whether that counts as consent, and give one reason
 - Say whether a tiny effect changes your answer, and why
 - Name one feature that separates a company's A/B test from a psychology experiment

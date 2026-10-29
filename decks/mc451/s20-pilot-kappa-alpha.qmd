@@ -101,7 +101,7 @@ Start from the [coding sheet template (CSV)](https://aura-lab.siue.edu/v2v-hub/r
 
 ## Exercise: Judge the Example Pilot {.discuss}
 
-Use Chapter 10 to answer:
+Use Chapter 10, [Why raw agreement is not enough](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#why-raw-agreement-is-not-enough) and [Cohen's kappa and Krippendorff's alpha](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#cohens-kappa-and-krippendorffs-alpha), to answer:
 
 - Is 74 percent agreement good enough to start coding for real? Answer yes or no
 - Two coders who flip coins to choose between two categories will agree how often?

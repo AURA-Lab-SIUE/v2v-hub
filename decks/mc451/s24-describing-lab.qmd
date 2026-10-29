@@ -73,7 +73,7 @@ against the median before you draw anything.
 
 ## Exercise: Read Your Own Summary Table {.discuss}
 
-Answer in writing from the table you just built:
+Answer from the table you just built.
 
 - Do your mean and median agree, or do they pull apart?
 - If they pull apart, which one is larger?

@@ -297,10 +297,8 @@ With few categories, or one dominant category, coincidental agreement piles up f
 >
 > [Hayes and Krippendorff (2007, p. 77)](https://doi.org/10.1080/19312450709336664)
 
-Answer each question in writing:
-
 - A pilot scores a kappa of 0.62 against a threshold of 0.70 named before coding. What would you look at in the disagreements before piloting again, and why there?
-- Write the sentence you would put in the report about that result
+- State the sentence you would put in the report about that result
 - Name whose trust the reliability standard protects: the reader's, the coder's, or the field's, and say why
 
 ## Report What Your Pilot Settled
