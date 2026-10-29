@@ -20,9 +20,9 @@ format:
 
 ## A Decision, Not Vocabulary
 
-- **Today looks like vocabulary**
+- Today looks like vocabulary
     - It is a decision with November consequences
-- **The level decides which tests you may run**
+- The level decides which tests you may run
     - Choose narrowly now and the paper cannot say some things
     - By then recoding two thousand messages is not an option
 - You leave with a level on every variable
@@ -33,8 +33,8 @@ format:
 **Level of measurement:** the kind of information a variable's values carry, which decides what you may later do with them. Example: `game` holds names, and `viewers` holds counts.
 :::
 
-- **Four of them: nominal, ordinal, interval, ratio**
-- **The `stream_log` table spans all four**
+- Four of them: nominal, ordinal, interval, ratio
+- The `stream_log` table spans all four
     - Its columns: channel, title, game, viewers, date
 
 ## Nominal
@@ -43,7 +43,7 @@ format:
 **Nominal:** categories that are only names, with no order. Example: `game` holds Fortnite, Just Chatting, Art, and Hearthstone, and no arithmetic relates them.
 :::
 
-- **`channel` is nominal, and so is a raw `title`**
+- `channel` is nominal, and so is a raw `title`
     - One string is not ranked above another
 - You can count and name the most common, never average
 
@@ -76,7 +76,7 @@ format:
 :::
 
 - **Elapsed time is ratio:** subtract two timestamps and the duration is ratio
-- **The full range of arithmetic is permitted**
+- The full range of arithmetic is permitted
 - Most counts are ratio: viewers, characters, messages
 
 ## One Column, Three Levels
@@ -87,8 +87,8 @@ Stream title, measured three ways:
 - **Character count:** ratio, since a title can have zero
 - **Binned short, medium, long:** ordinal
 
-**Level of measurement is not a property the data hands you. It is a property of the
-decision you make.**
+Level of measurement is not a property the data hands you. It is a property of the
+decision you make.
 
 ## Your Turn {.discuss}
 
@@ -99,9 +99,9 @@ decision you make.**
 
 ## Levels Govern the Statistics
 
-- **Nominal gets a chi-square test for association**
-- **Ratio can be averaged, correlated, and modeled**
-- **Choosing nominal where ratio was available narrows you**
+- Nominal gets a chi-square test for association
+- Ratio can be averaged, correlated, and modeled
+- Choosing nominal where ratio was available narrows you
     - Nobody catches it at the time
     - It shows up in November as a test you may not run
     - On data you already spent forty hours coding
@@ -116,10 +116,10 @@ You make the choice **before coding a single case**.
 
 ## Two Kinds of Variable
 
-- **Some arrive ready-made**
+- Some arrive ready-made
     - `viewers` is already a number, `game` already a category
     - The work is classification: pick the level and move on
-- **Others do not exist until you build them**
+- Others do not exist until you build them
     - Message target is not a column in `chat_log`
     - It exists only after a human reads each message
 
@@ -201,10 +201,10 @@ Consistency is the easiest thing to mistake for accuracy.
 
 ## The Principle to Hold
 
-- **Reliability is necessary, not sufficient**
+- Reliability is necessary, not sufficient
     - An inconsistent measure cannot be capturing anything
     - So unreliability rules validity out
-- **A consistent measure can still measure the wrong thing**
+- A consistent measure can still measure the wrong thing
 - You need both, and reliability comes first
 
 A codebook is the instrument that produces it.

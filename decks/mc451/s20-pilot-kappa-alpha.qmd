@@ -22,11 +22,11 @@ format:
 
 [Lab session]{.eyebrow}
 
-- **Tuesday you drew a sample; today the codebook is tested against real items**
-- **We run a pilot and turn agreement between two coding passes into one number**
+- Tuesday you drew a sample; today the codebook is tested against real items
+- We run a pilot and turn agreement between two coding passes into one number
     - We watch an example codebook fail, and diagnose why
     - You leave with a reliability coefficient for your own instrument
-- **A reliability coefficient is a single score, usually between 0 and 1, for how consistent your coding was**
+- A reliability coefficient is a single score, usually between 0 and 1, for how consistent your coding was
 
 A pilot can send you back to [Chapter 8](https://aura-lab.siue.edu/v2v/chapters/chapter08.html) to rewrite rules, and that is a normal result.
 
@@ -36,13 +36,13 @@ A pilot can send you back to [Chapter 8](https://aura-lab.siue.edu/v2v/chapters/
 **Pilot test:** a practice round, before any real coding, where you code a few items twice to see if your codebook's rules give the same answer both times. Example: code twenty sampled messages on Monday, then again on Wednesday with Monday's codes hidden.
 :::
 
-- **Take a subset of your sample: ten to twenty items**
-- **Code them from the same codebook, twice, then compare the two sets of codes**
+- Take a subset of your sample: ten to twenty items
+- Code them from the same codebook, twice, then compare the two sets of codes
 - **The question the pilot answers:** do the same written rules produce the same classifications?
 
 ## Coding Twice by Yourself
 
-- **In this course you are the only coder, so you code the items twice yourself**
+- In this course you are the only coder, so you code the items twice yourself
     - At least 48 hours apart, with your first codes hidden
     - Re-code at least a quarter of the pilot items on the second pass
 - **Each round of coding is called a pass:** pass 1 and pass 2
@@ -55,8 +55,8 @@ A pilot can send you back to [Chapter 8](https://aura-lab.siue.edu/v2v/chapters/
 **Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
 :::
 
-- **Message target is a variable: its value changes from one message to the next**
-- **In the pilot you record that value for each item, once per pass**
+- Message target is a variable: its value changes from one message to the next
+- In the pilot you record that value for each item, once per pass
 
 ## Where the Codes Go
 
@@ -64,9 +64,9 @@ A pilot can send you back to [Chapter 8](https://aura-lab.siue.edu/v2v/chapters/
 **Coding sheet:** the grid where you record each item's code for every variable in the codebook. Example: a spreadsheet with one row per sampled message and one column per variable, such as message target.
 :::
 
-- **The codebook says how to decide each code; the coding sheet is where you write it down**
-- **An `id` column matches every code back to its item**
-- **For the pilot, each pass on a variable gets its own column, `pass_1` and `pass_2`, which the reliability check compares**
+- The codebook says how to decide each code; the coding sheet is where you write it down
+- An `id` column matches every code back to its item
+- For the pilot, each pass on a variable gets its own column, `pass_1` and `pass_2`, which the reliability check compares
 
 Start from the [coding sheet template (CSV)](https://aura-lab.siue.edu/v2v-hub/resources/templates/coding-sheet-template.csv).
 
@@ -76,8 +76,8 @@ Start from the [coding sheet template (CSV)](https://aura-lab.siue.edu/v2v-hub/r
 **Reliability:** your codebook gives the same code to the same item every time, whoever applies it and whenever. Example: on both passes, a message that tags the streamer is coded "directed at the streamer."
 :::
 
-- **The pilot is how reliability stops being a hope and becomes a number**
-- **A codebook that is not reliable gives different answers to the same message**
+- The pilot is how reliability stops being a hope and becomes a number
+- A codebook that is not reliable gives different answers to the same message
 
 ## The Two Passes Must Be Independent
 
@@ -85,9 +85,9 @@ Start from the [coding sheet template (CSV)](https://aura-lab.siue.edu/v2v-hub/r
 **Independent:** each coding pass is done without seeing, discussing, or remembering the other. Example: your Monday codes stay in a hidden file until Wednesday's pass is finished.
 :::
 
-- **This is not suspicion of the coder: the pilot measures the codebook, not the coder**
-- **If you reread your first codes before the second pass, you measure your memory, not the rules**
-- **For one coder, independence means a time gap and a blind: 48 hours, first codes hidden**
+- This is not suspicion of the coder: the pilot measures the codebook, not the coder
+- If you reread your first codes before the second pass, you measure your memory, not the rules
+- For one coder, independence means a time gap and a blind: 48 hours, first codes hidden
 
 ## The Obvious Number Is Raw Agreement
 
@@ -95,8 +95,8 @@ Start from the [coding sheet template (CSV)](https://aura-lab.siue.edu/v2v-hub/r
 **Raw agreement:** the share of items where your two passes gave the same code. Example: 74 of 100 items match, so raw agreement is 74 percent.
 :::
 
-- **Seventy-four percent agreement sounds respectable**
-- **That number is misleading, and seeing why is the key idea of the chapter**
+- Seventy-four percent agreement sounds respectable
+- That number is misleading, and seeing why is the key idea of the chapter
 - Some agreement happens by coincidence, for no good reason at all
 
 ## Exercise: Judge the Example Pilot {.discuss}
@@ -117,7 +117,7 @@ Answer each question in writing, with one reason:
 - **The founding paper on kappa imagined two clinicians sorting patients blindly** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
     - Each assigns categories blindly, at the rates those categories occur
     - Without coordinating at all, they still agree often
-- **That agreement comes from the number of categories and how often each is used**
+- That agreement comes from the number of categories and how often each is used
     - It reflects no judgment at all
 - Raw agreement counts coincidence and genuine agreement alike
 
@@ -139,7 +139,7 @@ kappa = (observed - expected) / (1 - expected)
 
 - **Agreement no better than chance:** the top of the formula is zero, so kappa is zero
 - **Perfect agreement:** kappa is one
-- **Kappa is built for two sets of codes and nominal categories**
+- Kappa is built for two sets of codes and nominal categories
     - Two coders, or one coder twice
 
 ::: {.define}
@@ -152,9 +152,9 @@ kappa = (observed - expected) / (1 - expected)
 **Krippendorff's alpha:** a reliability score like kappa that also works with more than two passes, ranked or numeric codes, and missing codes. Example: three coders rating how heated a message is from 1 to 5 ([Krippendorff, 2018](https://doi.org/10.4135/9781071878781)).
 :::
 
-- **For a pilot with two passes and nominal categories, kappa and alpha agree**
+- For a pilot with two passes and nominal categories, kappa and alpha agree
     - Kappa is the more familiar choice, so it is the one we report
-- **If a pass skipped an item, alpha can still run**
+- If a pass skipped an item, alpha can still run
 
 ## Running the Check
 
@@ -188,16 +188,16 @@ Reliability: Cohen's kappa
 
 - **Observed agreement was 0.74**, the respectable-looking number
 - **Chance alone would produce about 0.66**, given how often each category was used
-- **The formula returns 0.236**
+- The formula returns 0.236
 
 Almost all of the raw agreement was coincidence.
 
 ## Why the Example Failed: Two Rules Under One Name
 
-- **The example codebook said "high-energy" and never defined it**
+- The example codebook said "high-energy" and never defined it
     - **Coder A** read it as "the message carries a Twitch emote"
     - **Coder B** read it as "the message is shouted, in all capitals"
-- **Both readings are reasonable**
+- Both readings are reasonable
     - Both coders believed they were coding one variable, one trait of each message
     - Emotes and all-caps overlap often enough to agree by accident
 
@@ -218,11 +218,11 @@ proceed on, and **0.80** as a comfortable floor.
 
 ## Diagnose, Revise, Re-Pilot
 
-- **A kappa of 0.236 is an instruction to fix the codebook, not a final result**
-- **Go back to the items the two passes coded differently**
+- A kappa of 0.236 is an instruction to fix the codebook, not a final result
+- Go back to the items the two passes coded differently
     - Walk through each one with the written rule in front of you
     - **The disagreements are the data:** each one points at a rule that is unclear
-- **Repair the rule in writing, then pilot again**
+- Repair the rule in writing, then pilot again
 
 The second pilot uses fresh items, independent coding passes, and produces another coefficient.
 
@@ -248,13 +248,13 @@ You should now have:
 
 ## Before Next Time
 
-- **Revise the codebook against your disagreement list, then re-pilot**
-- **Read [Chapter 11, Wrangling the Data](https://aura-lab.siue.edu/v2v/chapters/chapter11.html)**
-- **Next week you work in R on the data itself**
+- Revise the codebook against your disagreement list, then re-pilot
+- Read [Chapter 11, Wrangling the Data](https://aura-lab.siue.edu/v2v/chapters/chapter11.html)
+- Next week you work in R on the data itself
     - Unreadable timestamps, missing variables, and two tables that need joining
-- **Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo), 50 points**
-- **Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot), 75 points**
-- **Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points**
+- Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo), 50 points
+- Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot), 75 points
+- Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
 - **Check yourself on this week's terms:** [Week 10 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc451-week10.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}

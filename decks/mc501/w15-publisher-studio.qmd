@@ -24,29 +24,29 @@ Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.s
 
 [Studio session]{.eyebrow}
 
-- **Two working blocks: the White Paper, then the poster**
+- Two working blocks: the White Paper, then the poster
     - Short input between them; the rest of the evening is your working time
     - Help is in the room all evening
-- **What you build tonight is what you submit**
-- **Leave with a rendered site, a poster layout, and a draft reflection**
+- What you build tonight is what you submit
+- Leave with a rendered site, a poster layout, and a draft reflection
 
 ## Done, and Not Finished
 
-- **The study has every hard part behind it**
+- The study has every hard part behind it
     - A question, a theory, and a reliability-tested codebook
     - A defensible sample, a clean dataset, three figures, and a finding
-- **And it still lives in pieces**
+- And it still lives in pieces
     - A codebook here, a script there, output that scrolled past
 
 A study scattered across a dozen files is raw material. Tonight gives it a form.
 
 ## A Report That Rebuilds Itself
 
-- **The ordinary way to write up a study is quietly fragile**
+- The ordinary way to write up a study is quietly fragile
     - Run the analysis, copy the numbers, screenshot the figures, write around them
     - Change one coding rule and every pasted number is stale
     - Nothing in the document tells you so
-- **The alternative: put the analysis inside the document**
+- The alternative: put the analysis inside the document
     - A **Quarto document** interleaves prose with live code chunks
 
 ## Numbers You Never Type
@@ -78,8 +78,8 @@ time rather than pasted in.
 
 ## Two Payoffs That Matter
 
-- **The report cannot drift from the analysis, because the report is the analysis**
-- **The report can be checked**
+- The report cannot drift from the analysis, because the report is the analysis
+- The report can be checked
     - Anyone with the source files and the data renders the same results (Peng, 2011)
 
 The idea predates Quarto and R. Runnable code and its prose in one document is what Knuth
@@ -98,10 +98,10 @@ An abstract goes in front, and the references at the back.
 
 ## The White Paper, Specifically
 
-- **IMRaD structure, in APA 7 throughout**
-- **Effect sizes, confidence intervals, and power statistics, not only p-values**
-- **A pre-registration disclosure in the Methods**
-- **A Discussion that situates the finding in your theoretical literature**
+- IMRaD structure, in APA 7 throughout
+- Effect sizes, confidence intervals, and power statistics, not only p-values
+- A pre-registration disclosure in the Methods
+- A Discussion that situates the finding in your theoretical literature
 
 Converting your results into IMRaD costs something. Ask what is lost in the conversion, and what must be added.
 
@@ -121,8 +121,8 @@ plan is labeled **exploratory**.
 >
 > Nosek et al. (2018, p. 2600)
 
-- **Preregistration is not a promise of virtue. It makes one distinction legible: what was planned and what was found afterwards**
-- **Draft your disclosure sentence tonight**
+- Preregistration is not a promise of virtue. It makes one distinction legible: what was planned and what was found afterwards
+- Draft your disclosure sentence tonight
     - List every departure from your plan, and say how you report each one
 
 ## Where the 200 Points Sit
@@ -175,11 +175,11 @@ codebook and the journal as appendices. Set the title to your own.
 
 [White Paper]{.eyebrow}
 
-- **Get `index.qmd` rendering, even if it is mostly headings**
-- **Move your Results section into `03-results.qmd` first, since you already have it**
-- **Replace every pasted number with an inline `r` expression**
-- **Replace every pasted figure with a chunk that produces it**
-- **Then write the Discussion paragraph that reports both the size and the significance of your result**
+- Get `index.qmd` rendering, even if it is mostly headings
+- Move your Results section into `03-results.qmd` first, since you already have it
+- Replace every pasted number with an inline `r` expression
+- Replace every pasted figure with a chunk that produces it
+- Then write the Discussion paragraph that reports both the size and the significance of your result
 
 ## Going Live
 
@@ -211,19 +211,19 @@ portfolio is due. The checks exist so the last step of a long study is the calm 
 
 ## The Poster
 
-- **36 by 24 inches, in landscape orientation**
-- **Title, authors, and institution, plus a 100-word abstract**
-- **Background and hypotheses, then the methods in condensed form**
-- **Key results, with one or two `theme_v2v()` figures**
-- **Discussion and implications, plus a QR code to your pre-registration or portfolio**
+- 36 by 24 inches, in landscape orientation
+- Title, authors, and institution, plus a 100-word abstract
+- Background and hypotheses, then the methods in condensed form
+- Key results, with one or two `theme_v2v()` figures
+- Discussion and implications, plus a QR code to your pre-registration or portfolio
 
 ## What Earns Space on a Poster
 
-- **A poster is a ninety-second pitch, not a paper at a larger font**
-- **Pick the one figure that lands the finding in thirty seconds**
+- A poster is a ninety-second pitch, not a paper at a larger font
+- Pick the one figure that lands the finding in thirty seconds
     - Give that figure the most space on the board
-- **Cut every sentence that shows effort rather than result**
-- **Numbers survive the cut. Hedges do not**
+- Cut every sentence that shows effort rather than result
+- Numbers survive the cut. Hedges do not
 
 Your reader is standing up, holding a drink, four feet away.
 
@@ -231,29 +231,29 @@ Your reader is standing up, holding a drink, four feet away.
 
 [Poster]{.eyebrow}
 
-- **Sketch the layout on paper first, in blocks, before opening any software**
-- **Place your chosen figure, then build the text around it**
-- **Write the 100-word abstract last, once the blocks exist**
-- **Generate the QR code from the URL the deploy gave you**
-- **Read your title aloud, and cut it if it takes two breaths**
+- Sketch the layout on paper first, in blocks, before opening any software
+- Place your chosen figure, then build the text around it
+- Write the 100-word abstract last, once the blocks exist
+- Generate the QR code from the URL the deploy gave you
+- Read your title aloud, and cut it if it takes two breaths
 
 ## Common Failures in the Last Week
 
-- **The site renders on your machine and nowhere else, because renv drifted**
-- **A figure vanishes from the site**
+- The site renders on your machine and nowhere else, because renv drifted
+- A figure vanishes from the site
     - Its chunk depends on an object that exists only in your console
-- **The poster is exported at screen resolution and printed at 36 inches, so it is blurry**
-- **The QR code points at a private repository**
+- The poster is exported at screen resolution and printed at 36 inches, so it is blurry
+- The QR code points at a private repository
 
 Test the whole chain tonight, on a machine you did not build it on.
 
 ## The Reflection
 
-- **One paragraph, and the portfolio is incomplete without it**
+- One paragraph, and the portfolio is incomplete without it
     - What turned out harder than expected
     - What the dataset could not answer, and why
     - What a second attempt would change
-- **Avoid both the bland version ("it went well") and the anxious version ("it all went wrong")**
+- Avoid both the bland version ("it went well") and the anxious version ("it all went wrong")
 
 A reflection is evidence of judgment, not an apology.
 
@@ -269,10 +269,10 @@ You should have:
 
 ## From Vibes to Variables
 
-- **A question became a design, and the design became data**
-- **The data became figures and a test**
-- **All of it became a site another person can check and extend**
-- **The shared example happened to be Twitch chat. Nothing in the method depended on that, and your own study proves it**
+- A question became a design, and the design became data
+- The data became figures and a test
+- All of it became a site another person can check and extend
+- The shared example happened to be Twitch chat. Nothing in the method depended on that, and your own study proves it
 
 The distance from vibes to variables is the whole of research methods, and you have now
 walked it once.
@@ -281,11 +281,11 @@ walked it once.
 
 [Two deadlines left]{.eyebrow}
 
-- **Due Monday, December 7, 11:59 PM: Inferencing Data in R, 100 points**
-- **Due Friday, December 18, 11:59 PM: the White Paper and its poster, 200 points**
+- Due Monday, December 7, 11:59 PM: Inferencing Data in R, 100 points
+- Due Friday, December 18, 11:59 PM: the White Paper and its poster, 200 points
     - The paper as a PDF, the poster as a PDF, and the live URL of your site, all three required
-- **Your reflection paragraph, included in the paper**
-- **Your final journal entry**
-- **Office hours run through finals week, so bring a draft early**
+- Your reflection paragraph, included in the paper
+- Your final journal entry
+- Office hours run through finals week, so bring a draft early
 
 ## Questions, Comments, or Concerns? {.titlecard}

@@ -22,10 +22,10 @@ format:
 
 [Describing Data, 75 points, due Friday, November 20, 11:59 PM]{.eyebrow}
 
-- **Tuesday you watched three figures being built on the example data**
-- **Today you fill the Describing Data worksheet, with help in the room**
+- Tuesday you watched three figures being built on the example data
+- Today you fill the Describing Data worksheet, with help in the room
     - The same moves on your own data become your White Paper's Results section
-- **Work in the worksheet, not in the console**
+- Work in the worksheet, not in the console
 
 [MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc451.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
@@ -33,9 +33,9 @@ Say out loud when you are stuck. That is what this session is for.
 
 ## Where You Should Be Starting
 
-- **Your workspace opens and the Data Wrangling worksheet renders**
-- **`data/twitch_analysis.RDS` is in your `data` folder, with your thirty codes inside**
-- **The Describing Data worksheet is saved beside the Data Wrangling worksheet**
+- Your workspace opens and the Data Wrangling worksheet renders
+- `data/twitch_analysis.RDS` is in your `data` folder, with your thirty codes inside
+- The Describing Data worksheet is saved beside the Data Wrangling worksheet
 
 If any of those three is missing, say so now and we fix it first.
 
@@ -97,11 +97,11 @@ the saved chart opens in a VS Code tab.
 
 ## Reading Your Own Histogram
 
-- **Find the tall stack. That is the typical case**
-- **Look for a long thin tail, and note which direction it runs**
+- Find the tall stack. That is the typical case
+- Look for a long thin tail, and note which direction it runs
     - **Right-skewed** means most values are small and a few are very large
     - A skewed variable is the reason the mean and the median disagreed
-- **If you capped the axis with `pmin()`, say so in the axis label**
+- If you capped the axis with `pmin()`, say so in the axis label
 
 ## Figure Two, Counts by Category
 
@@ -152,10 +152,10 @@ and every cap is named in the label.
 
 ## Colorblind-Safe by Default
 
-- **Roughly one man in twelve has a color-vision deficiency**
+- Roughly one man in twelve has a color-vision deficiency
     - Red against green is the notorious pair, and not the only one
-- **Use `scale_colour_v2v()` and `scale_fill_v2v()`, which are built to be safe**
-- **Do not let color carry the message alone**
+- Use `scale_colour_v2v()` and `scale_fill_v2v()`, which are built to be safe
+- Do not let color carry the message alone
     - Add a line type, or split the groups into panels
 - If the figure fails in grayscale, it fails for some readers
 
@@ -165,9 +165,9 @@ and every cap is named in the label.
 **Alt text:** a sentence that says what a chart shows, for a reader who cannot see it. A screen reader reads it aloud.
 :::
 
-- **With no alt text, the figure is simply missing for a screen-reader user**
-- **Alt text is not the caption repeated**
-- **Alt text says the chart type, the axes, and what the chart shows**
+- With no alt text, the figure is simply missing for a screen-reader user
+- Alt text is not the caption repeated
+- Alt text says the chart type, the axes, and what the chart shows
 - In Quarto it goes in the figure's `fig-alt` attribute
 - **The Companion's chart code leaves an `alt =` line marked YOUR TURN inside `labs()`, and a `fig-alt` line when it opens a new chunk:** write the sentence in both
 
@@ -206,11 +206,11 @@ You should now have, in your worksheet:
 
 ## Before Next Time
 
-- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
-- **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
-- **Check your worksheet against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)**
-- **Read Chapter 13, "Making the call," before Tuesday**
-- **Tuesday we answer the questions your figures only framed**
+- Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points
+- Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points
+- Check your worksheet against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
+- Read Chapter 13, "Making the call," before Tuesday
+- Tuesday we answer the questions your figures only framed
     - Bring the summary table you built today
     - There is no new math to learn in advance
 

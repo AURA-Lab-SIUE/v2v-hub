@@ -22,30 +22,30 @@ format:
 
 [Last class of the term]{.eyebrow}
 
-- **There is no lecture: three rounds of review, then your revision list**
+- There is no lecture: three rounds of review, then your revision list
     - You read two papers, and two people read yours
-- **Then you draft the reflection in class, while the study is fresh**
-- **Help with rendering and deployment is in the room the whole session**
+- Then you draft the reflection in class, while the study is fresh
+- Help with rendering and deployment is in the room the whole session
 
 Leave today knowing exactly what is left to do.
 
 ## What You Should Have in Hand
 
-- **A rendered draft, even if some sections are thin**
+- A rendered draft, even if some sections are thin
     - Thin is expected. A rough draft is the point of today
-- **Your three figures, produced by code inside the document**
-- **Your test output: the means, the statistic, *p*, and the effect size**
-- **A project that builds without error**
+- Your three figures, produced by code inside the document
+- Your test output: the means, the statistic, *p*, and the effect size
+- A project that builds without error
 
 If your render is broken, say so now.
 
 ## The White Paper, 250 Points
 
-- **The largest piece of the course, due Friday, December 18, 11:59 PM**
-- **Abstract, Introduction, Methods, Results, Discussion, and References**
+- The largest piece of the course, due Friday, December 18, 11:59 PM
+- Abstract, Introduction, Methods, Results, Discussion, and References
     - Plus your one-paragraph Reflection
-- **You submit two things, both required: the PDF, and the live URL of your GitHub Pages site**
-- **It is graded on the study, the writing, and whether it reproduces from the code**
+- You submit two things, both required: the PDF, and the live URL of your GitHub Pages site
+- It is graded on the study, the writing, and whether it reproduces from the code
 
 ## Where the 250 Points Sit
 
@@ -62,11 +62,11 @@ If your render is broken, say so now.
 The full rubric, with what earns full marks in each row, is linked from the White Paper
 entry on the Assignments page. Read it as five questions:
 
-- **Does the paper answer its own question?**
-- **Could someone else repeat the study from the Methods?**
-- **Are the numbers complete: means, test, *p*, and effect size?**
-- **Is the paper honest about its limits?**
-- **Does the site deploy?**
+- Does the paper answer its own question?
+- Could someone else repeat the study from the Methods?
+- Are the numbers complete: means, test, *p*, and effect size?
+- Is the paper honest about its limits?
+- Does the site deploy?
 
 ## Exercise: State Your Claim in One Sentence {.discuss}
 
@@ -80,43 +80,43 @@ Answer in writing:
 
 Read your partner's Introduction only. Answer each question in writing:
 
-- **After the first paragraph, do you know what the question is?**
-- **Is the theory doing work in the argument, or is it decoration?**
-- **Does the Introduction promise only what the study can deliver?**
-- **Name one sentence that could be cut with no loss**
+- After the first paragraph, do you know what the question is?
+- Is the theory doing work in the argument, or is it decoration?
+- Does the Introduction promise only what the study can deliver?
+- Name one sentence that could be cut with no loss
 
 ## Round Two, the Methods
 
 Read the Methods only. Answer each question in writing:
 
-- **Could you repeat this study? Name the first place you would stall**
-- **Is the sample described: how many cases, drawn how, from what population?**
-- **Is each coding rule clear enough that you would code the same way?**
-- **Are the choices disclosed: bins, caps, filters, and dropped cases?**
+- Could you repeat this study? Name the first place you would stall
+- Is the sample described: how many cases, drawn how, from what population?
+- Is each coding rule clear enough that you would code the same way?
+- Are the choices disclosed: bins, caps, filters, and dropped cases?
 
 ## Round Three, the Results and Discussion
 
 Read the Results and Discussion. Answer each question in writing:
 
-- **Does every figure have a label, units, and a sentence saying what it shows?**
-- **Is the test reported in full, with the effect size?**
-- **Does the Discussion claim more than the Results support?**
-- **Are the stated limits real limits, or apologies?**
+- Does every figure have a label, units, and a sentence saying what it shows?
+- Is the test reported in full, with the effect size?
+- Does the Discussion claim more than the Results support?
+- Are the stated limits real limits, or apologies?
 
 ## What a Useful Review Sounds Like
 
 - **Not useful:** "This is good, maybe add more detail"
 - **Useful:** "I could not tell whether your cases were drawn at random. Say which, in paragraph two"
-- **Point at a location, name the problem, and suggest one fix**
-- **You are not grading. You are the first reader who is not the author**
+- Point at a location, name the problem, and suggest one fix
+- You are not grading. You are the first reader who is not the author
 
 ## Common Problems Reviewers Find
 
-- **The Introduction and the Results answer different questions**
-- **The effect size is missing, so "significant" claims more than it should**
-- **Default axis labels, still reading `message_length`**
-- **A cap or filter that is in the code and never mentioned in the prose**
-- **The Discussion says "proves." Nothing in a study like this proves anything**
+- The Introduction and the Results answer different questions
+- The effect size is missing, so "significant" claims more than it should
+- Default axis labels, still reading `message_length`
+- A cap or filter that is in the code and never mentioned in the prose
+- The Discussion says "proves." Nothing in a study like this proves anything
 
 ## Back at Your Own Paper
 
@@ -130,8 +130,8 @@ Save the list in your project as a plain text file. It is your plan for finals w
 
 ## The Reflection Paragraph
 
-- **One paragraph. It is not part of IMRaD and it is not a result**
-- **It is your candid account of what the study taught you**
+- One paragraph. It is not part of IMRaD and it is not a result
+- It is your candid account of what the study taught you
     - What turned out harder than expected
     - Where a coding rule proved ambiguous in practice
     - What the dataset could not answer, and why
@@ -141,8 +141,8 @@ Save the list in your project as a plain text file. It is your plan for finals w
 
 - **The bland version:** "Everything went well and I learned a lot"
 - **The anxious version:** "Everything went wrong and I am sorry"
-- **A reflection is evidence of judgment, not an apology**
-- **Saying precisely where a study is weak is proof that you understand it**
+- A reflection is evidence of judgment, not an apology
+- Saying precisely where a study is weak is proof that you understand it
 
 One honest paragraph beats a page of hedging.
 
@@ -170,11 +170,11 @@ Before you leave today you should have:
 
 ## Before Finals Week
 
-- **Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points**
-- **Due Friday, December 18, 11:59 PM: White Paper, the PDF and the live URL**
-- **Work the must-fix list first. The rest is optional**
-- **Re-render after every change, so every number stays computed, not typed**
-- **Deploy early, not the night before**
+- Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points
+- Due Friday, December 18, 11:59 PM: White Paper, the PDF and the live URL
+- Work the must-fix list first. The rest is optional
+- Re-render after every change, so every number stays computed, not typed
+- Deploy early, not the night before
 - You began the term with a curiosity and no tools. You finish with a published,
   reproducible study at a public address
 

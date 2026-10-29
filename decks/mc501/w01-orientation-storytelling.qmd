@@ -67,7 +67,7 @@ format:
 ## How the Term Is Built
 
 - **The Journalist runs the whole way through:** a weekly journal across the 14 teaching weeks, worth **150 points**. It is the habit, not a stage
-- **The project moves through four stages, each tracking a part of the textbook**
+- The project moves through four stages, each tracking a part of the textbook
 
 | Stage | Weeks | Book part | Points |
 |---|---|---|---|
@@ -76,7 +76,7 @@ format:
 | The Analyst | 11 to 13 | IV, Execution | 250 |
 | The Publisher | 15 to 17 | V, Inference and Publication | 200 |
 
-**1,025 points total.**
+1,025 points total.
 
 ## What Each Stage Asks of You
 
@@ -250,7 +250,7 @@ A contribution in communication research does one of four things:
 1. **Tests a theory** in a new context
 2. **Replicates a finding** with new data
 3. **Resolves a conflict** between findings in the literature
-4. **Introduces a testable construct**
+4. Introduces a testable construct
 
 Before you design a study, name which one you are doing. If you cannot say precisely, the
 research question is not ready yet.

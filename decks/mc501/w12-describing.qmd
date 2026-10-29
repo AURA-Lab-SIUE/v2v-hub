@@ -23,30 +23,30 @@ format:
 
 [Working session]{.eyebrow}
 
-- **Three figures and one table of descriptive statistics, built on the example data**
+- Three figures and one table of descriptive statistics, built on the example data
     - A line chart for change over time, a bar chart for counts, a histogram for shape
     - Each chart type fits a different kind of question
-- **The same figures, built on your own data, go into your Results and onto your poster**
-- **Plus the rule that turns a picture into a claim: report the effect size**
+- The same figures, built on your own data, go into your Results and onto your poster
+- Plus the rule that turns a picture into a claim: report the effect size
 
 Expect every first version to look wrong. The fix is usually one line.
 
 ## The Twitch Job, Part 2
 
-- **The Describing Data worksheet is part 2 of the Twitch job**
+- The Describing Data worksheet is part 2 of the Twitch job
     - It loads `data/twitch_analysis.RDS`, with your thirty codes inside
-- **Frequency tables, mean, median, and sd, a cross-tabulation, and three figures**
-- **Part 5: the diagnostics behind each figure**
-- **Your interpretation and your alt text are never filled in for you**
+- Frequency tables, mean, median, and sd, a cross-tabulation, and three figures
+- Part 5: the diagnostics behind each figure
+- Your interpretation and your alt text are never filled in for you
 
 [MC 501 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc501.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
 ## A Table Too Long to Read
 
-- **The analysis table is complete, but too long to read**
+- The analysis table is complete, but too long to read
     - Nobody scrolls through 35,267 rows and learns anything
     - The numbers are present, but the pattern is not visible
-- **A figure turns a long column of numbers into a shape you can see**
+- A figure turns a long column of numbers into a shape you can see
 
 Visualization is not decoration applied afterwards. It is part of the analysis.
 
@@ -68,10 +68,10 @@ Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
 ## Figure 1, a Line Chart for Change Over Time
 
 - **The question:** how did viewership move across the week, and how was it split across games?
-- **Time goes on the x axis and a rising and falling value on the y axis, so this is a line chart**
+- Time goes on the x axis and a rising and falling value on the y axis, so this is a line chart
     - A line implies a sequence, and real distance between the points
     - A line is right for time and wrong for unordered categories
-- **The data needs shaping before it can be drawn**
+- The data needs shaping before it can be drawn
 
 ## Shaping the Data
 
@@ -111,10 +111,10 @@ publication-ready fonts, spacing, and gridlines in one call.
 
 ## What Dominates the Chart, and Why
 
-- **The towering line is "Other", the catch-all for everything beyond the top five games**
+- The towering line is "Other", the catch-all for everything beyond the top five games
     - As a finding: viewership really is spread across a long tail of games
     - As a caution: lumping fifty categories into one guarantees that result
-- **There is a plain design cost too**
+- There is a plain design cost too
     - The five named lines are pressed into the bottom of the panel
 
 A dominant series crowds out the rest. Noticing that is reading the chart honestly.
@@ -122,9 +122,9 @@ A dominant series crowds out the rest. Noticing that is reading the chart honest
 ## Figure 2, a Bar Chart for Counts
 
 - **The question:** at which hours of the day are channels busiest?
-- **Hour of day is 24 separate categories, not a continuous sweep**
-- **What is measured is a simple count of messages in each hour**
-- **Counts across categories call for a bar chart**
+- Hour of day is 24 separate categories, not a continuous sweep
+- What is measured is a simple count of messages in each hour
+- Counts across categories call for a bar chart
     - One bar per category, the height is the count, the bars sit side by side
 
 ## The Code for the Bar Chart
@@ -145,10 +145,10 @@ ggplot(chat_by_hour, aes(x = hour, y = messages)) +
 
 ## Chat Volume by Hour of Day
 
-- **The example chat is busiest through UTC midday, peaking at 13:00 with 2,201 messages**
-- **It is quietest in the small hours, bottoming out at 03:00 with 833 messages**
-- **That is a swing of well over two to one**
-- **The 2018 audience was mostly in the Americas and Europe, which explains the pattern**
+- The example chat is busiest through UTC midday, peaking at 13:00 with 2,201 messages
+- It is quietest in the small hours, bottoming out at 03:00 with 833 messages
+- That is a swing of well over two to one
+- The 2018 audience was mostly in the Americas and Europe, which explains the pattern
 
 The chart shows all twenty-four hourly counts at once.
 
@@ -158,9 +158,9 @@ The chart shows all twenty-four hourly counts at once.
 >
 > Lakens (2013, p. 1)
 
-- **Every figure that shows a comparison must report its effect size**
-- **A taller bar is a visual impression, not a claim**
-- **The effect size states the magnitude of a difference in a unit that does not depend on the scale**
+- Every figure that shows a comparison must report its effect size
+- A taller bar is a visual impression, not a claim
+- The effect size states the magnitude of a difference in a unit that does not depend on the scale
 
 ## Exercise: The Most Important Outcome {.discuss}
 
@@ -183,9 +183,9 @@ Answer each in writing:
 :::
 
 - **The central question of the example study:** how long is a chat message, and does the answer depend on the kind of channel?
-- **The answer is not a total and not a trend. It is a distribution**
+- The answer is not a total and not a trend. It is a distribution
     - Where the values cluster, and where they thin out
-- **Two histograms overlaid let the two shapes be compared directly**
+- Two histograms overlaid let the two shapes be compared directly
 
 ## The Code for the Histogram
 
@@ -211,10 +211,10 @@ The code drops unlabeled messages, caps the shown length at 120, and overlays th
 
 ## Two Choices You Must Disclose
 
-- **`binwidth = 5` makes each bar cover five characters**
+- `binwidth = 5` makes each bar cover five characters
     - A wider bin smooths the shape and a narrower bin roughens it
     - The bin width is a judgment, so you report it
-- **`pmin(message_length, 120)` caps the display at 120 characters**
+- `pmin(message_length, 120)` caps the display at 120 characters
     - Twitch's real limit is 500 characters, so the last bar is a pile-up of everything longer
     - Capping keeps the bulk of the data legible
 
@@ -226,10 +226,10 @@ An unannounced cap is a quiet distortion. The axis label states the cap.
 **Skew:** a lopsided shape. Right-skewed means most values are small and a few are very large, like message length here.
 :::
 
-- **Both groups share one shape: heavily right-skewed**
+- Both groups share one shape: heavily right-skewed
     - A tall stack of very short messages on the left
     - A long thin tail of longer messages to the right
-- **Most Twitch chat messages are brief: a word or an emote**
+- Most Twitch chat messages are brief: a word or an emote
 
 The skew is the most important thing the histogram reveals, and no summary number can show it.
 
@@ -275,11 +275,11 @@ the two groups are all but identical, pointing the other way.
 **Standard deviation (sd):** how far values typically sit from the mean. Example: non-gaming chat's sd of 60.68 says its lengths are more spread out than gaming chat's 38.47.
 :::
 
-- **The mean is sensitive to a long tail; the median is not**
+- The mean is sensitive to a long tail; the median is not
     - A few very long messages lift the average
     - The middle value is untouched by them
-- **Non-gaming chat has the heavier tail, and its larger standard deviation records that**
-- **The gap in means is the work of the tail, not of the typical message**
+- Non-gaming chat has the heavier tail, and its larger standard deviation records that
+- The gap in means is the work of the tail, not of the typical message
 
 Report the mean alone and you misreport what a typical message looks like.
 
@@ -292,7 +292,7 @@ Report the mean alone and you misreport what a typical message looks like.
 - **A difference between two group means:** **Cohen's *d*** with a 95% confidence interval
 - **A cross-tabulation of two categorical variables:** **Cramer's *V***
 - **A correlation between two numeric variables:** ***r*** and its confidence interval
-- **`run_t_test()` and `run_chi_square()` return output ready to paste into a caption**
+- `run_t_test()` and `run_chi_square()` return output ready to paste into a caption
 
 Put the effect size in the caption or in a companion table, never in a footnote.
 
@@ -312,11 +312,11 @@ Put the effect size in the caption or in a companion table, never in a footnote.
 
 ## Figures Other People Can Read
 
-- **Roughly one in twelve men has a color-vision deficiency**
+- Roughly one in twelve men has a color-vision deficiency
     - Choose a colorblind-safe palette, such as `scale_colour_v2v()`
     - Do not let color carry the message alone
     - Vary the line type, or split the groups into panels
-- **Alt text is what a screen-reader user gets instead of the figure**
+- Alt text is what a screen-reader user gets instead of the figure
     - With no alt text, the figure is simply missing for that reader
 
 Alt text states the chart type, the axes, and the takeaway. In Quarto it goes in `fig-alt`. The Companion's chart code leaves an `alt =` line marked YOUR TURN inside `labs()`, and a `fig-alt` line when it opens a new chunk: write the sentence in both.
@@ -337,9 +337,9 @@ You should now have:
 - **Due Monday, November 23, 11:59 PM:** Describing Data in R, 100 points
     - The worksheet: tables, figures, diagnostics, alt text, and the disclosed choices
     - Check it against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
-- **Read Chapter 13**
+- Read Chapter 13
     - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"
-- **Write a journal entry, 450 to 500 words**
+- Write a journal entry, 450 to 500 words
 
 The histogram left a precise question: is the gap between the groups real or chance? Week 13 answers it.
 

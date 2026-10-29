@@ -27,7 +27,7 @@ format:
 - **The symptom:** thirty articles, notes everywhere
     - The project feels too small and too large at once
     - A shortage of focus rather than of ideas
-- **The proposal is where it resolves**
+- The proposal is where it resolves
     - Cannot write the design, cannot run the study
     - Every later document is this one, expanded
 
@@ -43,11 +43,11 @@ format:
 
 ## What a Strong Question Does
 
-- **Specific and measurable**
+- Specific and measurable
     - Names the platform, outcome, and bounded population
     - Survives **operationalization** into something observable
     - "Authentic streamers, better communities" cannot start
-- **Answerable and open**
+- Answerable and open
     - Decades of data is not a semester project
     - Your Chapter 4 search is what shows it is open
 - **It matters:** Tuesday against Thursday is trivia
@@ -57,13 +57,13 @@ format:
 - **The Research Proposal**, a structured sentence outline
     - 1,200 to 1,800 words, in outline form
     - It is the front half of your White Paper in skeleton
-- **Not a one-page prospectus**
+- Not a one-page prospectus
     - Chapter 6 describes the short form
     - Yours carries the argument, not only the plan
 
 ## A Point Is a Claim
 
-- **Every point is a full sentence that asserts something**
+- Every point is a full sentence that asserts something
 - **A topic label:** "Parasocial interaction and chat"
     - Names a subject and commits to nothing
 - **A claim:** "Viewers of smaller channels report stronger
@@ -89,7 +89,7 @@ format:
 
 - **The phenomenon**, named concretely
 - **Why it matters now**, with something that changed
-- **What is at stake in getting it wrong**
+- What is at stake in getting it wrong
     - A wrong answer costs someone something
     - Name who, and what it costs them
 
@@ -100,7 +100,7 @@ format:
 - **Name the lens** and what it predicts here
 - **Name a competing lens** and what it predicts instead
     - Where the two diverge is your empirical bite
-- **A framework with no rival is a decoration**
+- A framework with no rival is a decoration
     - It explains the result whatever the result is
     - Unfalsifiable framing reads as unserious
 
@@ -108,9 +108,9 @@ format:
 
 [Section 3, six to ten points]{.eyebrow}
 
-- **Organize by theme, never by author**
+- Organize by theme, never by author
     - "Smith found... Jones found..." is a bibliography
-- **Carry three things through**
+- Carry three things through
     - What the studies converge on
     - Where they qualify or contradict each other
     - The limitation they share
@@ -123,7 +123,7 @@ format:
 - **It rests on the shared limitation**, not on absence
     - "Nobody has studied X" is usually false
     - "Everyone measured X by self-report" is a gap
-- **Name what your study does about it**
+- Name what your study does about it
 - A gap nobody would want filled is not a gap
 
 ## Questions, Stated Formally
@@ -131,9 +131,9 @@ format:
 [Section 5]{.eyebrow}
 
 - **One to three**, not ten
-- **Each traceable to a point in your theory section**
+- Each traceable to a point in your theory section
     - If the lens does not predict it, why ask it?
-- **Hypothesis when theory gives you a direction**
+- Hypothesis when theory gives you a direction
     - Question when it does not, and say which
 - Null stated explicitly where you hypothesize
 
@@ -168,7 +168,7 @@ format:
 
 [Simmons et al., 2011]{.eyebrow}
 
-- **Without a fixed plan the choices drift**
+- Without a fixed plan the choices drift
     - Adjust until something reaches significance
 
 ::: {.define}
@@ -223,17 +223,17 @@ format:
 
 [Section 7, two to three points]{.eyebrow}
 
-- **Write it for your discipline, not for this course**
+- Write it for your discipline, not for this course
     - Never "I will learn content analysis"
-- **Say what someone could do with the answer**
+- Say what someone could do with the answer
 - **Among the first to**, if that is honestly true
 - Methodological contributions count, if you name them
 
 ## How It Is Graded
 
 - **Theory 15, literature 15, design 15** carry the weight
-- **Questions 10, framing 8, gap 8, contribution 4**
-- **Two ways this loses points**
+- Questions 10, framing 8, gap 8, contribution 4
+- Two ways this loses points
     - Topic labels where sentences belong
     - A design section naming no analysis
 
@@ -241,11 +241,11 @@ format:
 
 [Chapter 7]{.eyebrow}
 
-- **The vocabulary is invisible from outside**
+- The vocabulary is invisible from outside
     - "LULW" reads as a typo rather than laughter
     - Thirty identical messages are **copypasta**, not noise
     - "@sodapoppin same" may be agreement or a stock reply
-- **The scheme still sorts everything confidently**
+- The scheme still sorts everything confidently
     - The buckets do not mean what you think
 - The alternative is **thick description** (Geertz, 1973)
 
@@ -300,11 +300,11 @@ Familiarize, then focus, then analyze. The sequence holds for any medium.
     - At least thirty minutes each
     - Pick different audience sizes on purpose
     - A 200-viewer and a 20,000-viewer chat differ
-- **First pass is casual**
+- First pass is casual
     - Do not code, and resist deciding what matters
-- **Second pass, watch chat only**
+- Second pass, watch chat only
     - Note what you cannot explain
-- **Bring the confusing bits to Week 7**
+- Bring the confusing bits to Week 7
     - Those are where codebooks come from
 
 ## Before Week 7

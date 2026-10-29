@@ -113,7 +113,7 @@ You choose a topic in Week 6, and these notes are your starting list.
 ## How the Term Is Built
 
 - **The Journalist runs the whole way through:** a weekly reading journal, 10 points a week for 14 weeks, plus 10 for consistency, 150 points
-- **The project moves through four stages, and each one feeds the next**
+- The project moves through four stages, and each one feeds the next
 
 | Stage | Weeks | Book part | Points |
 |---|---|---|---|
@@ -122,7 +122,7 @@ You choose a topic in Week 6, and these notes are your starting list.
 | The Analyst | 11 to 13 | IV, Execution | 225 |
 | The Publisher | 15 to 17 | V, Inference and Publication | 250 |
 
-**1,000 points total.**
+1,000 points total.
 
 ## Mark the R Deadlines Now
 

@@ -23,10 +23,10 @@ format:
 
 [Working session]{.eyebrow}
 
-- **One analysis-ready table, built from the raw example chat and stream tables**
+- One analysis-ready table, built from the raw example chat and stream tables
     - A readable timestamp, a message length, a stream join, and a gaming label
-- **Weeks 12 and 13 compute everything from this table**
-- **Your Methods section is largely this script**
+- Weeks 12 and 13 compute everything from this table
+- Your Methods section is largely this script
 - The example data is the shared practice case. You run the same steps on your own source
 
 Wrangling is the least rewarding evening of the term, and it is where researchers spend most of their hours.
@@ -39,21 +39,21 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 **Hand-coding:** reading each message yourself and recording its value by a written rule. Example: `LULW` alone is coded 1, a reaction; `BIG TREE` is coded 0, commentary.
 :::
 
-- **Data Wrangling, Describing, and Inferencing are three parts of one Twitch study**
-- **Each part is a worksheet: routine code written, core steps left blank**
-- **Part 0: hand-code thirty messages; Inferencing tests that variable**
-- **The worksheet marks where your three reviewer-facing comments go**
+- Data Wrangling, Describing, and Inferencing are three parts of one Twitch study
+- Each part is a worksheet: routine code written, core steps left blank
+- Part 0: hand-code thirty messages; Inferencing tests that variable
+- The worksheet marks where your three reviewer-facing comments go
 
 [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd) · [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
 
 ## The Gap You Are Closing
 
-- **The example study asks whether the two kinds of channel differ**
+- The example study asks whether the two kinds of channel differ
     - It measures that difference through message length
-- **Neither column exists in the loaded table**
+- Neither column exists in the loaded table
     - There is no message length column and no gaming label column
-- **The timestamps are unreadable strings of digits**
-- **The gaming information is in the other table entirely**
+- The timestamps are unreadable strings of digits
+- The gaming information is in the other table entirely
 - Your own source will be missing its own columns. The same four moves build them
 
 ## Variables, Revisited
@@ -64,8 +64,8 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 **Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
 :::
 
-- **The example study's two variables are the gaming label and message length**
-- **An analysis-ready table gives each variable its own column and each case its own row**
+- The example study's two variables are the gaming label and message length
+- An analysis-ready table gives each variable its own column and each case its own row
 
 ## Data Wrangling, Defined
 
@@ -73,8 +73,8 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 **Data wrangling:** getting data into a form you can analyze, by tidying it (one row per case, one column per variable) and transforming it (keeping rows, adding columns, summarizing, joining tables). Example: turning the chat table's timestamp digits into dates and adding a message length column.
 :::
 
-- **It is most of the work, and the paper rarely describes it**
-- **Every result in Weeks 12 and 13 rests on the table it builds**
+- It is most of the work, and the paper rarely describes it
+- Every result in Weeks 12 and 13 rests on the table it builds
 
 ## Packages and the Tidyverse
 
@@ -86,7 +86,7 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 **Tidyverse:** a collection of R packages for data science that share one design and are built to work together. Example: `library(tidyverse)` loads its core packages at once, including dplyr for tables and ggplot2 for charts.
 :::
 
-- **dplyr, one of those packages, supplies the verbs on the next slide**
+- dplyr, one of those packages, supplies the verbs on the next slide
 
 ## The Verbs of Data Wrangling
 
@@ -136,10 +136,10 @@ The Companion's **Write R code** menu writes this same block: **Turn the date co
 **Timestamp:** the date and time something happened. Example: `1542578127023` is the first message's timestamp, 9:55 PM on November 18, 2018 (UTC).
 :::
 
-- **`date` counts milliseconds since 1 January 1970**
+- `date` counts milliseconds since 1 January 1970
     - That starting moment is the **Unix epoch**
-- **`as.POSIXct()` expects seconds, which are a thousand times coarser**
-- **Hand it the raw number and every message lands tens of thousands of years in the future**
+- `as.POSIXct()` expects seconds, which are a thousand times coarser
+- Hand it the raw number and every message lands tens of thousands of years in the future
 - **`clean_dates()` does the division for you**, and prints the lubridate line it stands for the first time you call it
 
 `date / 1000` converts milliseconds to seconds first.
@@ -184,7 +184,7 @@ new column.
 ```
 
 - **`message_length` is a ratio variable:** it has a true zero and equal intervals, so it can be averaged
-- **Eight, twenty-three, and 441 characters are all real Twitch chat messages**
+- Eight, twenty-three, and 441 characters are all real Twitch chat messages
 
 That spread is the raw material. Week 12 looks hard at its shape.
 
@@ -194,7 +194,7 @@ That spread is the raw material. Week 12 looks hard at its shape.
 >
 > Wickham (2014, p. 4)
 
-- **Tidy data has one observation per row, one variable per column, and one value per cell**
+- Tidy data has one observation per row, one variable per column, and one value per cell
 - **Tidiness is not a preference.** It is the structural assumption every tidyverse function
   makes about its inputs and keeps in its outputs
 
@@ -218,8 +218,8 @@ Answer each in writing, about your own table:
 **Join:** putting two tables together by matching a shared key, so each row picks up the other table's columns. Example: every message picks up the `game` and `viewers` of its channel's latest stream snapshot.
 :::
 
-- **Steps 1 and 4 below are both joins**
-- **Step 4 matches rows on `channel` alone**
+- Steps 1 and 4 below are both joins
+- Step 4 matches rows on `channel` alone
 - **Step 1 matches on `channel` and on time:** the nearest snapshot at or before each message
 
 ## Step 1, Match Each Message to Its Stream
@@ -243,10 +243,10 @@ messages arrived before their channel's first snapshot, so they get `NA`.
 
 ## A Rolling Join, Named
 
-- **The same join without the course package is a `left_join()` with a rolling key**
+- The same join without the course package is a `left_join()` with a rolling key
     - `join_by(channel, closest(ts >= snapshot_ts))`: same channel, nearest earlier snapshot
     - `join_chat_streams()` prints that line the first time you call it
-- **It is a rolling join because snapshots come every few minutes and messages every second**
+- It is a rolling join because snapshots come every few minutes and messages every second
 - The Companion's Data menu writes this step as **Match each message to its stream**
 
 ## Step 2, Find What a Channel Mostly Streams
@@ -303,11 +303,11 @@ For your own tables, the Companion's **Join two tables by a shared column** writ
 **Key:** the column two tables share, which says which row in one goes with which row in the other. Example: `channel`, which reads `bobross` in both tables.
 :::
 
-- **A join is only as good as the match between its keys**
+- A join is only as good as the match between its keys
     - Twitch writes channel names with a leading `#`
     - So one source says `#bobross` and another says `bobross`
-- **Keys that disagree fail on every row, and R reports no error**
-- **The `v2v` example data has normalized keys. Raw data does not**
+- Keys that disagree fail on every row, and R reports no error
+- The `v2v` example data has normalized keys. Raw data does not
 - Check the key column in your own source before every join
 
 ## Always Inspect a Derived Column
@@ -334,11 +334,11 @@ not anticipate.
 **Missing value (`NA`):** a cell with nothing in it, which R prints as `NA`. Example: the 501 messages from the two channels with no recorded category.
 :::
 
-- **Two channels never had a category recorded**
+- Two channels never had a category recorded
     - No categories means no modal category, which means no row in the lookup table
     - The join left their messages as `NA`
-- **The data genuinely does not say whether those 501 messages came from gaming channels**
-- **An honest `NA` records that the study cannot classify them**
+- The data genuinely does not say whether those 501 messages came from gaming channels
+- An honest `NA` records that the study cannot classify them
 
 Those messages sit the comparison out, not guessed into one side.
 
@@ -380,10 +380,10 @@ labels print `NA`.
 
 ## Your Script Is a Methods Section
 
-- **The script is a documented chain of transformations, from raw data to analysis-ready data**
+- The script is a documented chain of transformations, from raw data to analysis-ready data
     - Every `mutate()` and `filter()` is a methodological decision
     - Which cases to exclude, how to treat missing values, how to group time
-- **A reviewer will ask how you handled something**
+- A reviewer will ask how you handled something
     - The answer is in the script, if the script is commented and committed
 
 Identify **three** decisions a reviewer could challenge, and write a comment on each at the three places the worksheet marks.
@@ -391,11 +391,11 @@ A comment the Companion wrote does not count as one of your three. Write your ow
 
 ## Never Overwrite Raw Data
 
-- **`data/raw/` is read-only after the first commit**
+- `data/raw/` is read-only after the first commit
     - Your script reads from it and writes new files, such as `data/twitch_analysis.RDS`, never back into it
-- **That separation lets you rebuild everything from unchanged raw data**
+- That separation lets you rebuild everything from unchanged raw data
     - Overwriting the raw data breaks that guarantee, quietly and permanently
-- **Test it: re-run the script in a fresh session**
+- Test it: re-run the script in a fresh session
 
 If the script does not reproduce the table without your intervention, it has a hidden dependency.
 
@@ -427,9 +427,9 @@ You should now have:
     - The worksheet, your thirty codes, and three justifications
     - Check it against the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
     - The three justifications are yours; a comment the Companion wrote does not count
-- **Read Chapter 12**
+- Read Chapter 12
     - Plus the assigned article: **Lakens (2013)** on effect sizes
-- **Write a journal entry, 450 to 500 words**
-- **Bring the same laptop and the same working environment**
+- Write a journal entry, 450 to 500 words
+- Bring the same laptop and the same working environment
 
 ## Questions, Comments, or Concerns? {.titlecard}

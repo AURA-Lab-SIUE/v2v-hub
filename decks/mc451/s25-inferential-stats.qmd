@@ -23,19 +23,19 @@ format:
 
 [Inferencing Data, 100 points, due Friday, December 4, 11:59 PM]{.eyebrow}
 
-- **In the example data, gaming channels averaged 28.49 characters per message**
-- **Non-gaming channels averaged 33.70, a gap of about five characters**
-- **The histogram showed the gap, and could not say whether the gap is real or chance**
+- In the example data, gaming channels averaged 28.49 characters per message
+- Non-gaming channels averaged 33.70, a gap of about five characters
+- The histogram showed the gap, and could not say whether the gap is real or chance
 
 Today we settle that question. There are no formulas to memorize, only questions to ask.
 
 ## The Twitch Job, Part 3
 
-- **The Inferencing Data worksheet is part 3 of the Twitch job**
-- **Four hypotheses first, written before any code**
-- **Then four tests: chi-square, t-test, ANOVA, and regression**
+- The Inferencing Data worksheet is part 3 of the Twitch job
+- Four hypotheses first, written before any code
+- Then four tests: chi-square, t-test, ANOVA, and regression
     - The t-test runs on the thirty messages you hand-coded
-- **Every test is reported with its effect size**
+- Every test is reported with its effect size
 
 [MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
@@ -44,9 +44,9 @@ Today we settle that question. There are no formulas to memorize, only questions
 Split a group of people in half at random and the two halves' average heights still differ
 a little. Samples wobble.
 
-- **We measured 34,762 example messages to learn about chat in general**
+- We measured 34,762 example messages to learn about chat in general
     - The sample is the means to an end, and the population is the point
-- **The honest question is not whether there is a gap in the sample**
+- The honest question is not whether there is a gap in the sample
     - It is whether chance alone is a convincing explanation for that gap
 
 ## The Skeptic's Move
@@ -55,9 +55,9 @@ a little. Samples wobble.
 **Null hypothesis:** the claim that there is no real difference or relationship, only chance. Example: gaming and non-gaming messages have the same average length.
 :::
 
-- **A test starts from the opposite of what you suspect**
+- A test starts from the opposite of what you suspect
     - Then it asks: if that were true, how surprising is the gap we saw?
-- **Testing a coin works the same way**
+- Testing a coin works the same way
     - Assume the coin is fair, flip it a hundred times, and ask how often a fair coin looks this lopsided
 - If the answer is "almost never," the fair-coin assumption is hard to keep
 
@@ -138,10 +138,10 @@ The Test group of the Companion's **Write R code** writes the plain calls first 
 **p-value:** how likely a gap at least this big would be if the null hypothesis were true. Below .05 is called *statistically significant*.
 :::
 
-- **If the two groups truly had the same mean length,**
+- If the two groups truly had the same mean length,
     - a gap this large would appear in fewer than one sample in a thousand
     - so the data are surprising if nothing is going on
-- **A p-value below .05 counts as statistically significant, by convention**
+- A p-value below .05 counts as statistically significant, by convention
     - It is a convention, not a law: .049 and .051 are the same strength of evidence
 
 ## What the p-value Does Not Mean
@@ -159,7 +159,7 @@ A small *p* says the gap is probably not zero. It says nothing about the gap's s
 **Effect size:** how big a difference is, on a scale that does not grow with the sample. Example: Cohen's *d* of -0.13 for gaming against non-gaming message length.
 :::
 
-- **To report size you need an effect size**
+- To report size you need an effect size
     - For a gap between two means, the effect size is **Cohen's d**
     - It states the gap in units of the natural variation in the data
 - **Cohen's benchmarks:** 0.2 is small, 0.5 is medium, 0.8 is large
@@ -167,9 +167,9 @@ A small *p* says the gap is probably not zero. It says nothing about the gap's s
 
 ## A Difference Can Be Real and Trivial at Once
 
-- **Five characters is fifteen percent of the non-gaming mean**
+- Five characters is fifteen percent of the non-gaming mean
     - Against standard deviations of 38 and 61 characters, five is a ripple
-- **The gap was significant because the sample was large: 34,762 messages**
+- The gap was significant because the sample was large: 34,762 messages
     - A large enough sample makes almost any gap significant
 
 Significance and size are different questions, and big samples pull them apart.
@@ -230,11 +230,11 @@ You should now be able to:
 
 ## Before Next Time
 
-- **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
-- **Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points**
-- **Thursday is a lab: you fill the Inferencing Data worksheet with help in the room**
+- Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points
+- Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points
+- Thursday is a lab: you fill the Inferencing Data worksheet with help in the room
     - Write its four hypotheses before Thursday, and bring `data/twitch_analysis.RDS`
-- **Re-read the Chapter 13 section on significance against importance**
-- **Thursday the White Paper (250 points) is assigned**
+- Re-read the Chapter 13 section on significance against importance
+- Thursday the White Paper (250 points) is assigned
 
 ## Questions, Comments, or Concerns? {.titlecard}

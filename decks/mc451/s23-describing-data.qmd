@@ -23,9 +23,9 @@ format:
 
 [Describing Data, 75 points, due Friday, November 20, 11:59 PM]{.eyebrow}
 
-- **Chapter 11 left you an `analysis` table of about 35,000 rows**
+- Chapter 11 left you an `analysis` table of about 35,000 rows
     - Nobody reads 35,000 rows, so a figure is how you make the data visible
-- **Today we build three figures and one summary table from the example data**
+- Today we build three figures and one summary table from the example data
     - Each chart type fits a different kind of question
     - The same three figures, built from your own data, become the Results section of your White Paper
 
@@ -33,10 +33,10 @@ Your first version of each figure will look wrong. Fixing it takes about three l
 
 ## The Twitch Job, Part 2
 
-- **The Describing Data worksheet is part 2 of the Twitch job**
+- The Describing Data worksheet is part 2 of the Twitch job
     - It loads `data/twitch_analysis.RDS`, with your thirty codes inside
-- **Frequency tables, mean, median, and sd, a cross-tabulation, and three figures**
-- **Your interpretation and your alt text are never filled in for you**
+- Frequency tables, mean, median, and sd, a cross-tabulation, and three figures
+- Your interpretation and your alt text are never filled in for you
 
 [MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc451.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
@@ -108,10 +108,10 @@ writes 20,000,000 instead of 2.0e+07, and `theme_v2v()` gives every figure in th
 
 ## What the Line Chart Shows
 
-- **The "Other" category dominates, spiking above 20 million viewers**
+- The "Other" category dominates, spiking above 20 million viewers
     - One reading: viewership really does have a long tail of small categories
     - The other reading: lumping fifty categories into one guarantees that one wins
-- **That design choice has a real cost**
+- That design choice has a real cost
     - The five named lines are pressed flat against the bottom axis
 
 A dominant series crowds out the rest. Notice that in your own figure, and say so in the caption.
@@ -137,10 +137,10 @@ ggplot(chat_by_hour, aes(x = hour, y = messages)) +
 
 [Twitch, November 2018]{.eyebrow}
 
-- **The example chat has a clear daily pulse, busiest through UTC midday**
-- **The peak is 13:00 UTC, with 2,201 messages**
-- **The low point is 03:00 UTC, with 833 messages, a swing of more than two to one**
-- **The pattern is not mysterious: the audience sat in the Americas and Europe**
+- The example chat has a clear daily pulse, busiest through UTC midday
+- The peak is 13:00 UTC, with 2,201 messages
+- The low point is 03:00 UTC, with 833 messages, a swing of more than two to one
+- The pattern is not mysterious: the audience sat in the Americas and Europe
 
 Twenty-four numbers become a rhythm you can read in one glance.
 
@@ -168,9 +168,9 @@ Two groups are overlaid. `after_stat(density)` draws each as **shares**, so the 
 
 ## Two Choices You Must Disclose
 
-- **`binwidth = 5` makes each bar five characters wide**
+- `binwidth = 5` makes each bar five characters wide
     - A wider bin smooths the shape and a narrower bin roughens it, so report the width you used
-- **`pmin(message_length, 120)` caps the display at 120 characters**
+- `pmin(message_length, 120)` caps the display at 120 characters
     - Twitch's real limit is 500 characters, so the last bar is a pile-up of everything longer
     - Capping keeps the bulk of the data legible
 
@@ -182,10 +182,10 @@ An unannounced cap is a quiet distortion. Label the axis with the cap.
 **Skew:** a lopsided shape. Right-skewed means most values are small and a few are very large, like message length here.
 :::
 
-- **Both groups are heavily right-skewed**
+- Both groups are heavily right-skewed
     - A tall stack of very short messages, then a long thin tail of longer ones
     - Most Twitch chat messages are brief: a word or an emote
-- **A minority of long messages stretches the range**
+- A minority of long messages stretches the range
 
 The skew is the most important thing the figure reveals, and no single summary number can show it.
 
@@ -208,7 +208,7 @@ Group by `is_gaming`, then `summarize()` the count (n), the mean, the median, an
 
 - **The mean says non-gaming chat is longer:** 33.70 characters to 28.49
 - **The median says the two groups are nearly identical:** 16 against 17, and pointing the other way
-- **The mean is pulled upward by a long tail of long messages; the median is not**
+- The mean is pulled upward by a long tail of long messages; the median is not
     - Non-gaming chat has the heavier tail, and its larger standard deviation records that
 
 The gap in means is real arithmetic, but it is the work of the tail, not of the typical message.
@@ -228,11 +228,11 @@ If a figure will not render, check that every `+` ends the line above it.
 
 ## Before Next Time
 
-- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
-- **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
-- **Thursday is a lab: you fill the Describing Data worksheet**
+- Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points
+- Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points
+- Thursday is a lab: you fill the Describing Data worksheet
     - Bring `data/twitch_analysis.RDS` from the Data Wrangling worksheet
-- **Read Chapter 12, especially the section on readable figures**
+- Read Chapter 12, especially the section on readable figures
 
 A figure can frame the question. It cannot answer it.
 
