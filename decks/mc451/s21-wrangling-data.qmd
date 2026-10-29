@@ -136,7 +136,7 @@ chat %>%
   select(sender, message)
 ```
 
-Write down your answers before running the code:
+Work out your answers before running the code.
 
 - How many columns come back? How many rows?
 - What changes in the result if the `filter()` line and the `select()` line swap places?

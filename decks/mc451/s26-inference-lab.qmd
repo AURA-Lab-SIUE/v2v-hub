@@ -65,9 +65,9 @@ The code shows the example columns. In the worksheet the settings block renames 
 
 ## Exercise: Read Your Own Output {.discuss}
 
-Answer in writing from your own output:
+Answer from your own output.
 
-- Write down the two means, the difference, *p*, and *d*
+- Find the two means, the difference, *p*, and *d*
 - Is your effect small, medium, or large by Cohen's benchmarks (0.2, 0.5, 0.8)?
 - Do your *p* and your *d* tell the same story, or do they pull apart? Say which and why
 

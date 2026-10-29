@@ -163,7 +163,7 @@ format:
 
 ## Discussion: A Power Primer {.discuss}
 
-On Cohen (1992), "A power primer," answer each in writing:
+These questions are on "A power primer" (Cohen, 1992).
 
 - Cohen offers conventions for small, medium, and large effects. Conventions make a field legible. Name one thing they cost it
 - He says specifying the effect size is the hardest part. Give one reason that step, and not the arithmetic, stalls people

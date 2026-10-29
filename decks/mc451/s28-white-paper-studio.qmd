@@ -70,10 +70,8 @@ entry on the Assignments page. Read it as five questions:
 
 ## Exercise: State Your Claim in One Sentence {.discuss}
 
-Answer in writing:
-
-- Write the one sentence your paper is actually claiming
-- Rewrite it without the words "significant" or "*p*-value"
+- State the one sentence your paper is actually claiming
+- Restate it without the words "significant" or "*p*-value"
 - If it takes you more than one sentence, name the part you are unsure of
 
 ## Round One, the Introduction

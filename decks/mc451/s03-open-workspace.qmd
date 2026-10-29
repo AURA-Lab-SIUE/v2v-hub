@@ -70,8 +70,6 @@ The course's VS Code menus are different: each one writes its R code into your s
 
 ## Exercise: Could You Rebuild Your Number? {.discuss}
 
-Answer each in writing:
-
 - Think of a number you produced for a class: an average, a count, or a percentage
 - State whether you could reconstruct exactly how you got it six months from now
 - List what you would have needed to write down at the time

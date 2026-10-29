@@ -296,7 +296,7 @@ answers hold:
 
 ## Discussion: The Preregistration Revolution {.discuss}
 
-On Nosek et al. (2018), "The preregistration revolution," answer each in writing:
+These questions are on "The preregistration revolution" (Nosek et al., 2018).
 
 - They call it a revolution. State whether the mechanism is strong enough to change behavior on its own, or whether it rests on incentives the authors do not control
 - The paper separates prediction from postdiction. Name where that line blurs most easily, and say whether you would catch yourself crossing it

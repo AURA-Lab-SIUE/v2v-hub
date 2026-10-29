@@ -65,7 +65,7 @@ Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
 
 ## Exercise: Choose a Chart for Your Own Variable {.discuss}
 
-Pick one variable from your own codebook and answer in writing:
+Pick one variable from your own codebook.
 
 - What **shape** do you expect its values to have: a few large values and many small ones, an even spread, or a daily rhythm?
 - Which chart answers your question best: a line chart (change over time), a bar chart (a count per category), or a histogram (the shape of a numeric variable)?

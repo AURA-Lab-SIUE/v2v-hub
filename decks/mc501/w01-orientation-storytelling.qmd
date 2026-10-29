@@ -236,12 +236,12 @@ to least. Code is instructions in order, and you will read far more of it than y
 
 ## Discussion: A Manifesto for Reproducible Science {.discuss}
 
-On Munafò et al. (2017), "A manifesto for reproducible science," answer each in writing:
+These questions are on "A manifesto for reproducible science" (Munafò et al., 2017).
 
 - The paper names four threats: low power, analytic flexibility, publication bias, and poor reporting. Name the one that most endangers a content analysis study like the ones we are building, and give one reason
 - The authors argue the fixes must change **incentives**, not just habits. State whether you accept that, and why
 - State whether pre-registration is always appropriate, or name one kind of question it constrains unfairly
-- Write down one sentence from the paper you would quote in your own methods section
+- Name one sentence from the paper you would quote in your own methods section
 
 ## What Makes a Scholarly Contribution
 

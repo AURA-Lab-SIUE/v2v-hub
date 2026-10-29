@@ -80,7 +80,7 @@ and shows only the plot.
 
 ## Exercise: Find Your Own Pasted Numbers {.discuss}
 
-Answer in writing, from your own draft:
+Answer from your own draft.
 
 - Name one place where you have already typed a number by hand instead of computing it
 - Name one thing in your draft that would break if your data changed tomorrow

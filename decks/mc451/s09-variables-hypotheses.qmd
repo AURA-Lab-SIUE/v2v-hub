@@ -73,9 +73,7 @@ format:
 
 ## Exercise: Split Your Prediction {.discuss}
 
-Answer each in writing:
-
-- Take the theory you are leaning toward and write one thing it predicts
+- Take the theory you are leaning toward and name one thing it predicts
 - Name which half of that prediction is the cause and which is the outcome
 - State whether you could see both of them in a chat log or a comment thread, or whether you would have to ask somebody
 

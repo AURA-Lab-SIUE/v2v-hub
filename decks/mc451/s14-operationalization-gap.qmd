@@ -104,7 +104,7 @@ Specify observable criteria:
 ## Your Turn {.discuss}
 
 - Take one latent thing from your notes
-- Write a one-sentence coder instruction for it
+- State a one-sentence coder instruction for it
 - We will try to break each rule with an invented message
 - What did the rule fail to tell you?
 

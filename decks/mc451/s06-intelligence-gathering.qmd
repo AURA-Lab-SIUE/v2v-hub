@@ -60,8 +60,6 @@ format:
 
 ## Exercise: Write Your Search Terms {.discuss}
 
-Answer each in writing, because your librarian will ask you for them:
-
 - Name a media topic you are curious about, in one sentence
 - List the words a scholar would use for it that you would not
 - Name where you would look first, and state how you would know if you had missed the main body of work

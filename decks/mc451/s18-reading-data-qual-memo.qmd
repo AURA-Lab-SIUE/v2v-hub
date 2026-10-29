@@ -59,7 +59,7 @@ Check every variable in your own codebook the same way against your own source.
 
 ## Exercise: Check Your Codebook Against the Data {.discuss}
 
-Answer each question in writing about your own codebook and your own source, one line each:
+Answer each question about your own codebook and your own source.
 
 - Which variable in your codebook needs information your data does not show? Name the column or detail that is missing
 - Which of your decision rules depends on something you have not yet looked at in your own data?

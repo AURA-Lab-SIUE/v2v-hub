@@ -66,8 +66,6 @@ you choose for your own study.
 
 ## Exercise: Is Your Number Data? {.discuss}
 
-Answer each in writing:
-
 - Pick a number from your own media life: a follower count, a watch time, or a like count
 - State whether it is **data**, then name one claim it would let you defend and one it would refuse
 - Say where the number came from, and who decided what got counted

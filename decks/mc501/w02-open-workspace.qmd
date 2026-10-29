@@ -257,8 +257,7 @@ setup()
 
 ## Discussion: Good Enough Practices {.discuss}
 
-On Wilson et al. (2017), "Good enough practices in scientific computing," answer each in
-writing:
+These questions are on "Good enough practices in scientific computing" (Wilson et al., 2017).
 
 - The title concedes something. State what work "good enough" is doing in it, and who it is for
 - Name one of their practices that would survive contact with your actual working habits, and one you would quietly abandon by October

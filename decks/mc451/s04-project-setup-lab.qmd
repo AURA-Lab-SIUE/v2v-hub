@@ -93,11 +93,9 @@ git --version
 
 ## Exercise: While the Installers Run {.discuss}
 
-Answer each in your journal this week:
-
-- We ask you to install four separate programs, not one. Write one sentence on what that says about how research software gets built, compared with Word or Photoshop
+- We ask you to install four separate programs, not one. Say in one sentence what that says about how research software gets built, compared with Word or Photoshop
 - Think of the last time software failed you. Say whether you assumed the software was broken or that you were, and what made you pick that one
-- Write down what you would need to see to believe this setup is going to be worth it
+- Name what you would need to see to believe this setup is going to be worth it
 
 ## Two Words Before You Start
 

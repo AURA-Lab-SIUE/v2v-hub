@@ -102,10 +102,8 @@ Nothing here is a detour. Each row hands the next one its materials.
 
 ## Exercise: Name a Curiosity {.discuss}
 
-Answer each in writing:
-
 - Name one thing about online media you have genuinely wondered about
-- Write it as a curiosity, not a research question. "I wonder whether" is enough
+- Phrase it as a curiosity, not a research question. "I wonder whether" is enough
 - Name what you would need to *observe* to say something defensible about it
 
 You choose a topic in Week 6, and these notes are your starting list.

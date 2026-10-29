@@ -146,7 +146,7 @@ Methods carries the most weight because it carries the three transparency marker
 >
 > Wasserstein and Lazar (2016, p. 131)
 
-The word doing the work in that sentence is *only*. Answer each in writing:
+The word doing the work in that sentence is *only*.
 
 - Name two things your White Paper reports beside the p-value, such as the effect size or the confidence interval
 - Describe what would convince a reader who ignores your p-value entirely
