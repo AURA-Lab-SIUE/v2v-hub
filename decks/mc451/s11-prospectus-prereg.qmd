@@ -26,7 +26,7 @@ format:
 - **What you hand in:** one page, next week
     - The topic, the reason, the method
     - Chapter 6's model runs 250 words
-- **A diagnostic, not busywork**
+- A diagnostic, not busywork
     - Cannot state it briefly, cannot start it
     - Better found now than in November
 - You leave knowing which piece you cannot write
@@ -47,7 +47,7 @@ format:
 
 - **Title:** directed and broadcast chat, gaming versus not
 - **RQ:** does the directed proportion differ between them?
-- **What the pair buys you**
+- What the pair buys you
     - The title names the variables
     - The question names the comparison
 
@@ -89,13 +89,13 @@ Between them they have already ruled out most of what you could have done, which
 
 ## Two Scales, One Set of Mechanics
 
-- **1,500 messages is what a publishable study of this kind costs**
+- 1,500 messages is what a publishable study of this kind costs
     - That is the scale these worked examples are written at
     - It is why the method paragraph reads the way it does
-- **Your project runs the same mechanics at a smaller scale**
+- Your project runs the same mechanics at a smaller scale
     - Two to four hours of coding, 250 items at 45 seconds
     - Fifty coded units is the floor
-- **Nothing about the method changes with the number**
+- Nothing about the method changes with the number
     - Same stratification, same codebook, same stability check
 
 Read the examples for their moving parts, and take your own size from your budget.
@@ -121,28 +121,28 @@ Same corpus. Different study entirely.
 
 - **Sample:** 1,000 messages, top and bottom quartile
     - Quartiles by average viewer count
-- **Three markers, coded present or absent**
+- Three markers, coded present or absent
     - Second-person address, familiarity, emotional disclosure
-- **Reliability and comparison**
+- Reliability and comparison
     - Stability on 10 percent re-coded after 48 hours, Krippendorff's alpha
     - Each marker's rate compared between groups
 
 ## Pick the Workload
 
-- **One variable against three**
+- One variable against three
     - The first prospectus codes one, the second three
     - Three means three codebook decisions and three checks
-- **The better study is the heavier term**
+- The better study is the heavier term
     - Roughly three times the coding hours
     - Neither is more correct, and both are defensible
 - Make the trade visible now, not in November
 
 ## What You Do Not Need
 
-- **The prospectus is pre-statistics work**
+- The prospectus is pre-statistics work
     - No test, no *p*-value, no R code yet
     - "Will be compared" is all the method needs
-- **What you commit to is structure**
+- What you commit to is structure
     - Question, theory, unit, coding scheme, comparison
 - Waiting for the statistics is not a reason
 
@@ -160,10 +160,10 @@ Same corpus. Different study entirely.
 
 ## Why It Fails
 
-- **The title and question fail first**
+- The title and question fail first
     - No variables are named
     - Three or four questions stacked together
-- **The theory and method cannot be judged**
+- The theory and method cannot be judged
     - Three theories pull in different directions
     - Nothing in the method is specific enough
 - The contribution could be pasted into any project
@@ -172,12 +172,12 @@ That draft was not lazy. It was ambition before discipline.
 
 ## The Feasibility Test
 
-- **Can you get the data, and analyze it?**
+- Can you get the data, and analyze it?
     - The working corpus ships inside the `v2v` package
     - Fifty channels is manageable, 1,690 is not
-- **Does the method match the question?**
+- Does the method match the question?
     - Content analysis reaches content, never why someone felt
-- **Have you controlled scope creep?**
+- Have you controlled scope creep?
     - Narrow until it hurts slightly, then narrow again
 
 ## Prospectus as Pre-Registration
@@ -192,7 +192,7 @@ That draft was not lazy. It was ambition before discipline.
 
 [Simmons et al., 2011]{.eyebrow}
 
-- **Without a fixed plan, the plan drifts**
+- Without a fixed plan, the plan drifts
     - Researchers adjust until something crosses significance
 
 ::: {.define}
@@ -203,9 +203,9 @@ That draft was not lazy. It was ambition before discipline.
 
 ## Your Prospectus Is Your Record
 
-- **It records what you planned**
+- It records what you planned
     - Written before any coding or analysis
-- **It is what you check yourself against**
+- It is what you check yourself against
     - When you are tempted to chase a surprise
     - A gap is visible, not automatically wrong
 - Chapter 2's transparency argument, aimed at your project

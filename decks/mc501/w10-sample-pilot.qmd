@@ -23,11 +23,11 @@ format:
 
 [Chapter 10]{.eyebrow}
 
-- **Draw the sample: the items you will actually code**
-- **Test the codebook with a pilot, which is what makes it an instrument**
+- Draw the sample: the items you will actually code
+- Test the codebook with a pilot, which is what makes it an instrument
     - The pilot can send you back to [Chapter 8](https://aura-lab.siue.edu/v2v/chapters/chapter08.html) to rewrite rules
     - Being sent back is a normal result, and it means the pilot did its job
-- **Both are due together as the [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items), Monday, November 9, 11:59 PM**
+- Both are due together as the [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items), Monday, November 9, 11:59 PM
 
 ## Variables, Revisited
 
@@ -49,7 +49,7 @@ All three come from [Chapter 5](https://aura-lab.siue.edu/v2v/chapters/chapter05
 
 ## Why You Sample
 
-- **Coding one message by hand takes about forty-five seconds**
+- Coding one message by hand takes about forty-five seconds
     - The 35,267 messages in the example working sample would take over four hundred hours
     - The full 2018 collection would outlast your degree
 
@@ -57,7 +57,7 @@ All three come from [Chapter 5](https://aura-lab.siue.edu/v2v/chapters/chapter05
 **Census:** coding every case in the population, which works only when the population is small. Example: the example stream table ships whole, about 32,000 snapshots of one stream at one moment.
 :::
 
-- **Chat is the opposite case: far too much to code, which is true of most content analysis studies**
+- Chat is the opposite case: far too much to code, which is true of most content analysis studies
 
 A well-drawn sample makes the work finishable and still supports the conclusions.
 
@@ -93,7 +93,7 @@ A well-drawn sample makes the work finishable and still supports the conclusions
 
 ## Chat Volume Is Right-Skewed
 
-- **Chat volume in the example data is severely right-skewed**
+- Chat volume in the example data is severely right-skewed
     - The busiest channel logged over a million messages that week
     - The median channel (the middle one by size) logged about 1,440, and the quietest logged one
 
@@ -103,7 +103,7 @@ A well-drawn sample makes the work finishable and still supports the conclusions
 
 ## Unbiased Is Not Representative
 
-- **Forty-three of the fifty example channels are gaming channels**
+- Forty-three of the fifty example channels are gaming channels
 - Draw at random and almost every message comes from giant gaming channels
 
 ::: {.define}
@@ -118,32 +118,32 @@ A well-drawn sample makes the work finishable and still supports the conclusions
 **Stratified sampling:** split the population into groups, called **strata** (one group is a **stratum**), then draw from each group separately. Example: draw thirty messages from each of the fifty channels.
 :::
 
-- **Every stratum gets a place in the sample, in the proportion you decide**
-- **The strata must matter for the research question**
+- Every stratum gets a place in the sample, in the proportion you decide
+- The strata must matter for the research question
     - In the example study the stratifying variable is the **channel**
 
 ## Stratifying by Channel
 
-- **Whether a channel is a gaming channel is a property of the channel**
+- Whether a channel is a gaming channel is a property of the channel
     - So stratifying by channel puts every non-gaming channel in the sample by construction
 - For your own source, the stratum is whatever group your question compares: an account, a subreddit, a month, an outlet
 
 ## The Example Corpus Is a Stratified Design
 
-- **Its fifty channels were not the fifty busiest**
+- Its fifty channels were not the fifty busiest
     - Eight were fixed anchors: channels picked on purpose for variety
     - Bob Ross was among them, the deliberate non-gaming case
-- **The other 42 came from ten volume bands, groups of channels with similar amounts of chat**
+- The other 42 came from ten volume bands, groups of channels with similar amounts of chat
     - Every band was sampled
 
 The skew is kept on purpose: small, middle, and giant channels are all in the corpus ([Chapter 10, Stratified sampling](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#stratified-sampling)).
 
 ## Small Strata: Take All of It
 
-- **Ask for 30 messages from a channel that produced 9, and there is no 30 to take**
+- Ask for 30 messages from a channel that produced 9, and there is no 30 to take
     - The rule the tools follow: take everything that stratum has
-- **Nineteen of the fifty example channels hold fewer than a thousand messages**
-- **A stratum gives either its full share or everything it has**
+- Nineteen of the fifty example channels hold fewer than a thousand messages
+- A stratum gives either its full share or everything it has
 
 Write this rule into your sampling plan, because it is a choice you made.
 
@@ -157,9 +157,9 @@ coding_sample <- v2v::sample_messages(
 )
 ```
 
-- **`sample_messages()` treats each channel as a stratum**
+- `sample_messages()` treats each channel as a stratum
 - **`n_per_channel = 30` asks for thirty messages from each channel:** 1,350 across fifty channels
-- **`seed = 409` fixes the draw so it can be repeated**
+- `seed = 409` fixes the draw so it can be repeated
 - Your own draw uses the same command with your own stratum column and number per stratum ([Chapter 10, Drawing the sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#drawing-the-sample))
 
 ## The Seed Is Not Optional
@@ -168,15 +168,15 @@ coding_sample <- v2v::sample_messages(
 **Seed:** a number that fixes a random draw so it comes out the same every time. Example: `seed = 409` gives you the same 1,350 messages on every run.
 :::
 
-- **A random draw differs every time you run it**
+- A random draw differs every time you run it
     - The seed fixes the starting point of R's random number generator, because `sample_messages()` calls `set.seed()` with it before drawing
-- **Without a seed your sample cannot be reproduced**
+- Without a seed your sample cannot be reproduced
     - Nobody can check your results, including you
 
 ## The Seed Itself Is Arbitrary
 
-- **The number itself is arbitrary: 409 means nothing**
-- **What matters is that a seed is set and recorded, so the draw is frozen**
+- The number itself is arbitrary: 409 means nothing
+- What matters is that a seed is set and recorded, so the draw is frozen
 
 ## What Power Means
 
@@ -192,11 +192,11 @@ coding_sample <- v2v::sample_messages(
 
 ## Where Your Planned Sample Size Meets the Data
 
-- **Sampling is not only about capturing variation**
+- Sampling is not only about capturing variation
     - Your [Research Proposal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#research-proposal-sentence-outline) specified a minimum sample size, *n*, the number of cases you code
     - This is the week that number meets your dataset
-- **If you need 128 and the data offers 10,000, stratification solves the problem**
-- **If you need 128 and the data offers 80, the study is underpowered**
+- If you need 128 and the data offers 10,000, stratification solves the problem
+- If you need 128 and the data offers 80, the study is underpowered
 
 Then you change the design, or you justify the limitation explicitly in the plan.
 
@@ -213,15 +213,15 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 
 ## Setting Your Sample Size from Your Coding Time
 
-- **Plan on two to four hours of coding in total**
+- Plan on two to four hours of coding in total
     - About one third building and revising the codebook, two thirds coding with the finished codebook unchanged
-- **Time how long you take to code twenty items, and work out your rate per item**
+- Time how long you take to code twenty items, and work out your rate per item
     - The table on the [assignment page](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items) is only a planning estimate; your own timed rate replaces it
 - **[Sampling Check](https://aura-lab.siue.edu/sampling-check/) on the Hub** converts your rate and your hours into a sample size
 
 ## The Minimum Sample and the Cost of Each Variable
 
-- **Code at least fifty units**
+- Code at least fifty units
     - If your rate allows fewer than fifty, change the unit of analysis instead of coding fewer units
 - **Each added variable slows you down:** coding ten variables per item roughly halves your rate
 
@@ -249,7 +249,7 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 **Pilot test:** a practice round, before any real coding, where you code a few items twice to see if your codebook's rules give the same answer both times. Example: code twenty-five sampled messages on a Monday, then again on Wednesday with Monday's codes hidden.
 :::
 
-- **In this course the pilot is twenty to thirty items; about 30 is the usual rule of thumb** ([Lombard et al., 2002](https://doi.org/10.1111/j.1468-2958.2002.tb00826.x))
+- In this course the pilot is twenty to thirty items; about 30 is the usual rule of thumb ([Lombard et al., 2002](https://doi.org/10.1111/j.1468-2958.2002.tb00826.x))
 - **The question the pilot answers:** applied independently, do these rules give the same codes?
 
 ## What Reliability Means
@@ -259,7 +259,7 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 :::
 
 - **Each round of coding is a pass:** pass 1 and pass 2
-- **The pilot turns reliability into a number you can report**
+- The pilot turns reliability into a number you can report
 
 ## Independent Coding Passes
 
@@ -267,15 +267,15 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 **Independent:** each coding pass is done without seeing, discussing, or remembering the other. Example: your first-pass codes stay in a hidden file until the second pass is finished.
 :::
 
-- **This is not suspicion of the coder: the pilot measures the codebook**
-- **If you read your earlier codes, you measure your memory, not the clarity of the written rules**
-- **When you code twice yourself, the isolation is a time gap and a blind**
+- This is not suspicion of the coder: the pilot measures the codebook
+- If you read your earlier codes, you measure your memory, not the clarity of the written rules
+- When you code twice yourself, the isolation is a time gap and a blind
     - At least 48 hours between passes, with the first codes out of sight
 
 ## Independence in Your Protocol
 
-- **The written rules must carry each classification on their own**
-- **Build the isolation into your protocol, and say so in the write-up**
+- The written rules must carry each classification on their own
+- Build the isolation into your protocol, and say so in the write-up
 
 ## Why Raw Agreement Is Not Enough
 
@@ -283,9 +283,9 @@ Saying only that the study has 80 percent power does not justify the size; 80 pe
 **Raw agreement:** the share of items where the two passes gave the same code. Example: the two passes match on 74 of 100 items, which sounds respectable.
 :::
 
-- **The founding example: two clinicians assigning categories blindly** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
+- The founding example: two clinicians assigning categories blindly ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
     - At the observed rates for each category, they still agree often
-- **That agreement reflects the number of categories, not judgment**
+- That agreement reflects the number of categories, not judgment
 
 With few categories, or one dominant category, coincidental agreement piles up fast.
 
@@ -305,9 +305,9 @@ Answer each question in writing:
 
 ## Report What Your Pilot Settled
 
-- **A pilot is a small test, so its write-up says what the test covered**
+- A pilot is a small test, so its write-up says what the test covered
     - Which rules it tried, and which rules it confirmed
-- **Note any question it left open, and the White Paper claim that question touches**
+- Note any question it left open, and the White Paper claim that question touches
     - The full coding run is where an open question gets its answer
 
 ## Chance Agreement
@@ -316,7 +316,7 @@ Answer each question in writing:
 **Chance agreement:** matches that happen by luck, even when nobody follows a rule. Example: two people flipping coins to sort messages into two categories agree about half the time.
 :::
 
-- **Kappa and alpha both subtract it before they credit the codebook**
+- Kappa and alpha both subtract it before they credit the codebook
 
 ## Cohen's Kappa
 
@@ -324,9 +324,9 @@ Answer each question in writing:
 **Cohen's kappa:** a score for how much two coding passes agree beyond what luck alone would give. Example: the example pilot scores 0.236, so most of its agreement was luck.
 :::
 
-- **Kappa is built for two sets of codes and nominal categories (names with no order)** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
+- Kappa is built for two sets of codes and nominal categories (names with no order) ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
     - Two coders, or one coder twice: the arithmetic is the same
-- **Kappa is observed agreement, minus chance agreement, divided by the room left above chance**
+- Kappa is observed agreement, minus chance agreement, divided by the room left above chance
     - `kappa = (observed - expected) / (1 - expected)`
 
 ## Kappa From Zero to One
@@ -346,9 +346,9 @@ The codebook is credited only for the agreement that luck did not produce.
 **Krippendorff's alpha:** a reliability score like kappa that also works with more than two coders, ranked or numeric codes, and missing codes. Example: three coders rating how heated a message is from 1 to 5.
 :::
 
-- **Alpha is the more general instrument** ([Krippendorff, 2018](https://doi.org/10.4135/9781071878781))
-- **Three coders, or an ordinal variable (ranked categories, such as low, medium, high): use alpha**
-- **For a pilot with two passes and nominal categories, kappa and alpha agree**
+- Alpha is the more general instrument ([Krippendorff, 2018](https://doi.org/10.4135/9781071878781))
+- Three coders, or an ordinal variable (ranked categories, such as low, medium, high): use alpha
+- For a pilot with two passes and nominal categories, kappa and alpha agree
 
 `v2v::reliability()` computes either one, selected by `method`.
 
@@ -365,8 +365,8 @@ v2v::reliability(
 )
 ```
 
-- **The code takes the first thirty messages and passes your two columns of codes to `reliability()`, asking for alpha**
-- **[Agreement Check](https://aura-lab.siue.edu/agreement-check/) on the Hub gives the same result when you paste in the two columns**
+- The code takes the first thirty messages and passes your two columns of codes to `reliability()`, asking for alpha
+- [Agreement Check](https://aura-lab.siue.edu/agreement-check/) on the Hub gives the same result when you paste in the two columns
 
 ## Entering Codes in the Companion
 
@@ -378,10 +378,10 @@ v2v::reliability(
 
 ## A Worked Failure
 
-- **The example codebook said "high-energy" and never defined it**
+- The example codebook said "high-energy" and never defined it
     - **Coder A** flagged messages carrying a Twitch emote (a small image posted with a text code)
     - **Coder B** flagged messages written in all capitals
-- **Both readings are reasonable, and both coders believed they were coding one variable**
+- Both readings are reasonable, and both coders believed they were coding one variable
 
 ```
 Reliability: Cohen's kappa
@@ -395,11 +395,11 @@ Reliability: Cohen's kappa
 
 ## What a Kappa of 0.236 Means
 
-- **Observed agreement 0.74, chance agreement 0.66, kappa 0.24**
-- **Emote messages and all-caps messages overlap in Twitch chat**
+- Observed agreement 0.74, chance agreement 0.66, kappa 0.24
+- Emote messages and all-caps messages overlap in Twitch chat
     - Two coders keying on different features often land on the same code by accident
     - They never coded the same concept
-- **A loose codebook let two careful people measure two different things**
+- A loose codebook let two careful people measure two different things
 
 Kappa exposed what raw agreement hid. One coder working twice fails the same way when a rule is undefined ([Chapter 10, A worked reliability check](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#a-worked-reliability-check)).
 
@@ -408,18 +408,18 @@ Kappa exposed what raw agreement hid. One coder working twice fails the same way
 - **Published labels for kappa values** ([Landis and Koch, 1977](https://doi.org/10.2307/2529310))**:**
     - 0.0 to 0.2 slight, 0.2 to 0.4 fair, 0.4 to 0.6 moderate
     - 0.6 to 0.8 substantial, above 0.8 almost perfect
-- **Those labels are a convention; no rule requires them**
-- **Published work treats a value below 0.70 as too low to proceed on, with 0.80 comfortable**
+- Those labels are a convention; no rule requires them
+- Published work treats a value below 0.70 as too low to proceed on, with 0.80 comfortable
 
 Name your threshold in your protocol before you see the number, not after.
 
 ## When Reliability Fails
 
-- **A kappa of 0.236 is an instruction to fix the codebook, not a final result**
+- A kappa of 0.236 is an instruction to fix the codebook, not a final result
     - Walk through every disagreement with the written rule in front of you
     - **The disagreements are the data:** each one points at an unclear rule
-- **Repair the rule by stating operationally what counts**
-- **Then pilot again, on fresh items** ([Chapter 10, When reliability fails](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#when-reliability-fails-revising-the-codebook))
+- Repair the rule by stating operationally what counts
+- Then pilot again, on fresh items ([Chapter 10, When reliability fails](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#when-reliability-fails-revising-the-codebook))
 
 Pilot, diagnose, revise, and repeat until the number clears your threshold.
 
@@ -458,21 +458,21 @@ Include a few hard items on purpose, so the pilot tests the rules most likely to
 
 ## One Codebook or Two?
 
-- **Write one codebook per unit of analysis, not one per platform**
-- **Different units, different codebooks, joined by a key variable**
+- Write one codebook per unit of analysis, not one per platform
+- Different units, different codebooks, joined by a key variable
     - Spotify numbers and TikTok videos: a song and a video, linked by the song
     - Box office and reviews: a film and a review, linked by the film
-- **Same unit on every source: one codebook, with a source variable**
+- Same unit on every source: one codebook, with a source variable
 - The codebook template's linking section records the key and how records match: [codebook template](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC501-codebook-template.docx)
 
 ## Before Week 11
 
-- **Submit the [Extended Codebook and Reliability Protocol](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#extended-codebook-and-reliability-protocol) by Monday, November 2, 11:59 PM**
-- **Submit the [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items) by Monday, November 9, 11:59 PM, with the reliability computation**
-- **Read [Chapter 11](https://aura-lab.siue.edu/v2v/chapters/chapter11.html)**
+- Submit the [Extended Codebook and Reliability Protocol](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#extended-codebook-and-reliability-protocol) by Monday, November 2, 11:59 PM
+- Submit the [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items) by Monday, November 9, 11:59 PM, with the reliability computation
+- Read [Chapter 11](https://aura-lab.siue.edu/v2v/chapters/chapter11.html)
     - Plus the assigned article: **Wickham (2014)**, ["Tidy data"](https://doi.org/10.18637/jss.v059.i10)
-- **Write a [journal entry](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words**
-- **Bring a laptop with `v2v` 0.3.6 and the R Companion 0.5.4, with Check my setup reporting everything installed**
+- Write a [journal entry](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
+- Bring a laptop with `v2v` 0.3.6 and the R Companion 0.5.4, with Check my setup reporting everything installed
 - **Check yourself on this week's terms:** [Week 10 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc501-week10.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}

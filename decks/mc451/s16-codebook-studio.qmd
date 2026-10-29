@@ -21,19 +21,19 @@ format:
 
 ## What Today Is
 
-- **Today is a demonstration, not a work session**
+- Today is a demonstration, not a work session
     - You watch one complete codebook get built, one part at a time
     - Every part is shown as finished text you can copy the shape of
-- **The example is the shared Twitch chat corpus**
+- The example is the shared Twitch chat corpus
     - Your own codebook uses the same six parts on your own material
-- **Your codebook is written at home, not in this room**
+- Your codebook is written at home, not in this room
     - It is due Friday, October 30
 
 ## The Codebook Is the Instrument
 
-- **The complete set of instructions for coding**
+- The complete set of instructions for coding
     - Not paperwork assembled afterward
-- **Think of it as a recipe**
+- Think of it as a recipe
     - It states every step and every exception
     - The same message, coded twice, gets the same value
 - The heart of a content analysis (Neuendorf, 2017)
@@ -63,9 +63,9 @@ These six parts are the six graded rows of the codebook. The memo is graded sepa
 
 ## Keeping Both Rules
 
-- **An "unclassifiable" catch-all guarantees exhaustive coding**
+- An "unclassifiable" catch-all guarantees exhaustive coding
     - More than one case in ten landing there means the scheme is incomplete
-- **Overlap between two values destroys reliability**
+- Overlap between two values destroys reliability
 - **The fix for overlap:** sharper definitions, or a precedence rule
 
 ## Part 1, Study Overview
@@ -152,10 +152,10 @@ Rules for the cases that do not sort themselves. The finished text:
 
 ## Part 4, A Rule Is Not an Intention
 
-- **A rule names the case, then the single action**
+- A rule names the case, then the single action
     - "An emote with no words is coded 3" is a rule
     - "Be careful with emotes" is an intention, and earns nothing
-- **Every hard case you mention anywhere in the codebook has a rule**
+- Every hard case you mention anywhere in the codebook has a rule
 - **Four to six rules** is the working range, at least two per variable
 
 **The usual mistake:** one or two rules for the whole codebook, or a rule that restates a
@@ -175,22 +175,22 @@ Examples do double duty: a reference while coding, and a check when re-coding.
 
 ## Part 5, The Usual Mistake
 
-- **An invented example**
+- An invented example
     - A made-up message is the gap between Exemplary and Proficient
     - The example must come from your own material
-- **One example per value**
+- One example per value
     - One case shows what fits; two or three show where the edge is
-- **Examples for some values only**
+- Examples for some values only
     - A rule without examples is hard to use for anyone who was not in your head
 
 ## Part 6, The Single-Coder Note
 
-- **Paragraph one: you are the only coder, said in those words**
+- Paragraph one: you are the only coder, said in those words
     - Every reliability claim is a claim about your own consistency
     - **Stability**, one coder twice, not agreement between two
     - A weaker claim than agreement, and named as one
-- **Paragraph two: at least three safeguards against your own drift**
-- **Paragraph three: the second-coder counterfactual**
+- Paragraph two: at least three safeguards against your own drift
+- Paragraph three: the second-coder counterfactual
 
 Leaving the limitation out does not hide it. Naming it is part of the grade.
 
@@ -255,15 +255,15 @@ On paper or in a file, for your own project:
 
 ## Common Problems
 
-- **Values that overlap**
+- Values that overlap
     - Hesitating between two means they are not exclusive yet
-- **A latent variable with no observable criteria**
+- A latent variable with no observable criteria
     - A concept was written instead of a recipe
 - **Six variables:** cut to four
     - Each one is a reliability check and a results paragraph
-- **A catch-all doing all the work**
+- A catch-all doing all the work
     - A third of the cases unclassifiable means the scheme is wrong
-- **Rules that restate the value**
+- Rules that restate the value
     - A rule resolves a conflict, it does not repeat a definition
 
 ## Checkpoint

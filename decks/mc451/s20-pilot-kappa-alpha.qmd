@@ -114,7 +114,7 @@ Use Chapter 10 to answer:
 **Chance agreement:** matches that happen by luck, even when nobody follows a rule. Example: two people flipping coins to sort messages into two categories agree about half the time.
 :::
 
-- **The founding paper on kappa imagined two clinicians sorting patients blindly** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
+- The founding paper on kappa imagined two clinicians sorting patients blindly ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
     - Each assigns categories blindly, at the rates those categories occur
     - Without coordinating at all, they still agree often
 - That agreement comes from the number of categories and how often each is used
@@ -133,7 +133,7 @@ kappa = (observed - expected) / (1 - expected)
 
 - **Observed:** the raw agreement your two passes produced
 - **Expected:** the chance agreement, what luck alone would produce
-- **Kappa credits the codebook only with the difference** ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
+- Kappa credits the codebook only with the difference ([Cohen, 1960](https://doi.org/10.1177/001316446002000104))
 
 ## Kappa From Zero to One
 

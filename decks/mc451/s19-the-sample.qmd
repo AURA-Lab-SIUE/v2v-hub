@@ -39,10 +39,10 @@ Your codebook is a list of variables. Today you choose which messages to code th
 **Coding:** reading one item and writing down its value for each variable, following your codebook's rules. Example: reading a message and marking it "directed at the streamer."
 :::
 
-- **Coding one message by hand takes about forty-five seconds**
+- Coding one message by hand takes about forty-five seconds
     - The 35,267 messages in the example working sample would take over four hundred hours
     - The full 2018 collection would outlast your degree
-- **So you will code a sample, not the whole set**
+- So you will code a sample, not the whole set
 - Time your own coding on a few items, then multiply by the number of items in your source
 
 ## Population and Sample
@@ -70,10 +70,10 @@ Today is about how to draw that sample well.
 
 ## The Chat Table Is the Opposite Case
 
-- **There is far too much chat to code, so a census is impossible**
+- There is far too much chat to code, so a census is impossible
     - Most content analysis studies face the same problem
-- **A sample makes the work finite without making the conclusions worthless**
-- **A sample of any size can be sound or misleading**
+- A sample makes the work finite without making the conclusions worthless
+- A sample of any size can be sound or misleading
     - 1,500 messages or 250, the sampling method decides which
 
 You choose the sampling method, and the method decides whether the sample is sound.
@@ -92,7 +92,7 @@ You choose the sampling method, and the method decides whether the sample is sou
 
 ## Why Equal Chances Are Not Enough
 
-- **Chat volume is heavily concentrated in a few channels**
+- Chat volume is heavily concentrated in a few channels
     - Busiest channel: more than a million messages that week
     - Median channel (the middle one when all fifty are lined up by size): about 1,440 messages
     - Quietest channel: one message
@@ -125,17 +125,17 @@ Answer each question in writing:
 
 ## The Second Dimension: Gaming and Non-Gaming Channels
 
-- **Forty-three of the fifty example channels are gaming channels**
+- Forty-three of the fifty example channels are gaming channels
     - Bob Ross's painting channel is the clearest exception
-- **A random sample would be almost all gaming chat**
+- A random sample would be almost all gaming chat
     - Not because the draw is biased, but because that is where the messages are
 - For a study comparing gaming and non-gaming chat, a random draw is close to fatal
 
 ## Unbiased and Still Unrepresentative
 
-- **A random sample copies the population's imbalance into a smaller set**
-- **A comparison needs enough cases from every group being compared**
-- **Unbiased is a property of the procedure, not a guarantee about the result**
+- A random sample copies the population's imbalance into a smaller set
+- A comparison needs enough cases from every group being compared
+- Unbiased is a property of the procedure, not a guarantee about the result
 
 Check your population for this imbalance before you draw the sample.
 
@@ -145,34 +145,34 @@ Check your population for this imbalance before you draw the sample.
 **Stratified sampling:** split the population into groups, called **strata** (one group is a **stratum**), then draw from each group separately. Example: draw thirty messages from each of the fifty channels.
 :::
 
-- **Do not draw from one undifferentiated pool**
-- **Every stratum gets a place in the sample**
+- Do not draw from one undifferentiated pool
+- Every stratum gets a place in the sample
     - In the proportion you decide, not the proportion the population hands you
 
 ## Choosing Strata That Matter
 
-- **Strata follow the research question, not convenience**
+- Strata follow the research question, not convenience
     - For the example chat study the stratum is the **channel**
     - A fixed number of messages per channel admits the small channels fully
-- **Whether a channel is a gaming channel is a property of the channel**
+- Whether a channel is a gaming channel is a property of the channel
     - So stratifying by channel rescues the gaming versus non-gaming comparison
     - Every non-gaming channel is in the sample by construction
 - For your own source, the stratum is whatever group your question compares: an account, a subreddit, a month, an outlet
 
 ## The Example Corpus Is Itself Stratified
 
-- **The fifty channels were not the fifty busiest**
+- The fifty channels were not the fifty busiest
     - Eight were fixed anchors: channels picked on purpose for variety
     - Bob Ross was one of them, the deliberate non-gaming case
-- **The other forty-two came from ten volume bands, and every band was sampled**
+- The other forty-two came from ten volume bands, and every band was sampled
     - A volume band is a group of channels with similar amounts of chat
 - The skew is kept: small, middle, and giant channels are all in the corpus
 - How the corpus was built: [Chapter 10, Stratified sampling](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#stratified-sampling)
 
 ## When a Stratum Is Too Small
 
-- **If you ask for thirty messages from a channel that produced nine, the tools take all nine**
-- **Nineteen of the fifty example channels hold fewer than a thousand messages, and a few hold only a handful**
+- If you ask for thirty messages from a channel that produced nine, the tools take all nine
+- Nineteen of the fifty example channels hold fewer than a thousand messages, and a few hold only a handful
 - A stratum contributes either its full share or everything it has
 
 ## Drawing the Sample
@@ -185,19 +185,19 @@ coding_sample <- v2v::sample_messages(
 )
 ```
 
-- **`sample_messages()` treats each channel as a stratum**
-- **`n_per_channel = 30` asks for thirty messages from each channel**
+- `sample_messages()` treats each channel as a stratum
+- `n_per_channel = 30` asks for thirty messages from each channel
     - Across the fifty channels, this draw returns 1,350 messages
-- **`seed = 409` fixes the random draw so it can be repeated**
+- `seed = 409` fixes the random draw so it can be repeated
 - 1,350 messages is a size for a team of coders; your draw uses the same command at your own budget ([Chapter 10, Drawing the sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#drawing-the-sample))
 
 ## Sizing the Draw to Your Time Budget
 
-- **At 45 seconds a message, 1,350 messages take nearly seventeen hours**
-- **Lower `n_per_channel` until the arithmetic fits the time you have**
+- At 45 seconds a message, 1,350 messages take nearly seventeen hours
+- Lower `n_per_channel` until the arithmetic fits the time you have
     - `n_per_channel = 5` across fifty channels is 250 messages, about three hours
     - The sample is still stratified, so the comparison still holds
-- **Write the arithmetic into your sampling plan: seconds per item, number of items, total hours**
+- Write the arithmetic into your sampling plan: seconds per item, number of items, total hours
 
 ## Why the Seed Is Not Optional
 
@@ -205,16 +205,16 @@ coding_sample <- v2v::sample_messages(
 **Seed:** a number that fixes a random draw so it comes out the same every time. Example: `seed = 409` gives you the same 1,350 messages on every run.
 :::
 
-- **A random draw differs every time you run it**
-- **The seed fixes the starting point of R's random number generator**
+- A random draw differs every time you run it
+- The seed fixes the starting point of R's random number generator
     - `sample_messages()` calls `set.seed()` with that number before it draws
-- **Without a seed, nobody can check your results, including you in six months**
+- Without a seed, nobody can check your results, including you in six months
 
 ## The Seed Itself Is Arbitrary
 
-- **The number 409 means nothing**
-- **What matters is that a seed is set**
-- **And that it is recorded in your [sampling plan](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot)**
+- The number 409 means nothing
+- What matters is that a seed is set
+- And that it is recorded in your [sampling plan](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot)
 
 ## Unit of Analysis and Key
 
@@ -228,22 +228,22 @@ coding_sample <- v2v::sample_messages(
 
 ## One Codebook or Two?
 
-- **Write one codebook per unit of analysis, not one per platform**
-- **Different units, different codebooks, joined by a key variable**
+- Write one codebook per unit of analysis, not one per platform
+- Different units, different codebooks, joined by a key variable
     - Spotify numbers and TikTok videos: a song and a video, linked by the song
     - Box office and reviews: a film and a review, linked by the film
-- **Same unit on every source: one codebook, with a source variable**
+- Same unit on every source: one codebook, with a source variable
 - The codebook template's linking section records the key and how records match: [codebook template](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC451-codebook-template.docx)
 
 ## Looking Ahead to Thursday
 
-- **Today showed how to draw a sample; Thursday tests your draft codebook on items from it**
-- **Thursday is the pilot: ten to twenty items coded twice, with your first codes hidden**
+- Today showed how to draw a sample; Thursday tests your draft codebook on items from it
+- Thursday is the pilot: ten to twenty items coded twice, with your first codes hidden
 - **Cohen's kappa:** a score for how much your two coding passes agree beyond what luck alone would give
-- **Read the second half of [Chapter 10](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#the-pilot-test) before Thursday**
-- **Bring your draft codebook, because it is the thing being tested**
-- **Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo)**
-- **Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot)**
+- Read the second half of [Chapter 10](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#the-pilot-test) before Thursday
+- Bring your draft codebook, because it is the thing being tested
+- Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo)
+- Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot)
 - **Check yourself on this week's terms:** [Week 10 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc451-week10.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}

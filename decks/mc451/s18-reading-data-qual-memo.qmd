@@ -21,10 +21,10 @@ format:
 
 ## What We Are Doing Today
 
-- **Tuesday we loaded the data; today we hold the data next to the codebook**
-- **The question for today: does the data contain what your study needs?**
-- **Then we find the messages your rules do not yet cover**
-- **Then we write the qualitative memo, which is due with the codebook**
+- Tuesday we loaded the data; today we hold the data next to the codebook
+- The question for today: does the data contain what your study needs?
+- Then we find the messages your rules do not yet cover
+- Then we write the qualitative memo, which is due with the codebook
 
 We check the book's [example codebook](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study) against the example data first. Then you repeat each step
 with your own codebook and your own source.
@@ -33,24 +33,24 @@ Open `codebook/codebook.qmd` ([template](https://aura-lab.siue.edu/v2v-hub/resou
 
 ## Check That the Data Contains What Each Variable Needs
 
-- **Open the codebook next to the data viewer or your `glimpse()` output**
-- **Walk through the variables one at a time, and check each one against the columns**
-- **Answer the question now, not a thousand messages into coding**
+- Open the codebook next to the data viewer or your `glimpse()` output
+- Walk through the variables one at a time, and check each one against the columns
+- Answer the question now, not a thousand messages into coding
 
 A missing column found today is a good result. The same missing column found in three weeks costs you weeks.
 
 ## Example Variable 1, Message Target
 
-- **Run AURA: Open the data viewer, then pick Twitch chat (the course sample)**
+- Run AURA: Open the data viewer, then pick Twitch chat (the course sample)
     - Each row is one message, with its `channel`, `sender`, and `message` side by side
     - This is what a coder would actually be looking at
-- **In the [example codebook](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study), message target is coded from the message text**
+- In the [example codebook](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study), message target is coded from the message text
     - Plus the sender, for at-mentions and replies
 - Both columns exist in the data, so the variable is supported
 
 ## Example Variables 2 and 3
 
-- **Stay in the data viewer and read down the `message` column**
+- Stay in the data viewer and read down the `message` column
 - **Message length** is the character count of the message, so the message column supports it
 - **Contains emote** is read from the same column, so it is supported too
 - Three example variables, three confirmations: the example study can be built from this data
@@ -67,18 +67,18 @@ Answer each question in writing about your own codebook and your own source, one
 
 ## What First Contact Confirmed
 
-- **The columns the example variables need are present**
-- **The messiness the book warned about is visible in the first row**
+- The columns the example variables need are present
+- The messiness the book warned about is visible in the first row
     - The edge cases you wrote in [Chapter 7](https://aura-lab.siue.edu/v2v/chapters/chapter07.html) are real messages, not hypothetical ones
     - Twenty-three question marks has no obvious target
     - "TriEasy Clap" repeated many times is copypasta, which the [example codebook's Rule 3](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study) already covers
 
 ## What the Data Makes Harder
 
-- **Short messages made only of emotes are everywhere; the [example codebook's Rule 2](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study) covers them**
-- **A wall of punctuation has no addressee, so it is coded "unclassifiable"**
-- **Stream titles contain line breaks and long strings of digits**
-- **None of this is broken data. It is what people type**
+- Short messages made only of emotes are everywhere; the [example codebook's Rule 2](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study) covers them
+- A wall of punctuation has no addressee, so it is coded "unclassifiable"
+- Stream titles contain line breaks and long strings of digits
+- None of this is broken data. It is what people type
 
 Your codebook has to meet the data as it is. Every source has its own edge cases like these.
 
@@ -94,35 +94,35 @@ Each of these needs a written rule before coding starts.
 
 ## One Edge Case in the Example Data
 
-- **A message begins "@xQcOW"**
+- A message begins "@xQcOW"
     - The `channel` column on that same row reads "xqcow"
-- **The two are the same name written with different capitalization**
+- The two are the same name written with different capitalization
     - The display name the viewer typed differs from the stored login name
-- **A rule that matches on the exact channel name will miss this message**
+- A rule that matches on the exact channel name will miss this message
 - Unless you decide the rule now, you will resolve this case two different ways on two different days
 
 ## The Edge Case in the Data Viewer
 
 ![](images/companion-data-viewer.png){fig-alt="The R Companion data viewer showing the Twitch chat sample, 35,267 rows. Row 5 has channel xqcow and a message beginning @xQcOW PLAY JACKBOX. Row 1 is a string of question marks and row 2 repeats TriEasy Clap." width="100%"}
 
-- **Run AURA: Open the data viewer, then pick Twitch chat (the course sample)**
-- **Row 5: the message says "@xQcOW" and the channel says "xqcow"**
+- Run AURA: Open the data viewer, then pick Twitch chat (the course sample)
+- Row 5: the message says "@xQcOW" and the channel says "xqcow"
 - Step-by-step guide: [The data viewer](https://aura-lab.siue.edu/v2v-hub/guides/mc451/05-data-viewer-and-coding-columns.html)
 
 ## Turning an Edge Case Into a Coding Rule
 
-- **Write the rule down now, while the codebook is still being revised**
+- Write the rule down now, while the codebook is still being revised
     - The rule: at-mentions are matched **ignoring capitalization**
-- **State it in the decision rules, numbered, next to [Rules 1 through 5](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study)**
+- State it in the decision rules, numbered, next to [Rules 1 through 5](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study)
 - This is what the special-cases section is for, and your special-cases section stops being empty
 
 Every rule you add now is a disagreement you will not have to settle later.
 
 ## Hunting Your Own Edge Cases
 
-- **In the data viewer, select the `message` header to sort by it**
+- In the data viewer, select the `message` header to sort by it
     - Messages that begin with "@" sort together, so you can read real at-mentions in a row
-- **Read for the cases your own rules depend on, and note each one you find**
+- Read for the cases your own rules depend on, and note each one you find
 - To list every message that contains a piece of text anywhere, copy this block into your script and change the `"@"` to your text
 
 ```r
@@ -132,10 +132,10 @@ chat %>%
 
 ## The Qualitative Memo
 
-- **Write 200 to 300 words on the patterns you observed while watching your source**
+- Write 200 to 300 words on the patterns you observed while watching your source
     - The memo is the written record of what watching taught you
     - It explains **why** your codebook has the categories it has
-- **The memo is graded with the codebook as one 50-point assignment, due Friday, October 30, 11:59 PM**
+- The memo is graded with the codebook as one 50-point assignment, due Friday, October 30, 11:59 PM
 
 Short does not mean easy. Every sentence should point at something you actually saw.
 [Assignment](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo), [rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC451-rubric-codebook-and-qualitative-memo.pdf), and [worked example](https://aura-lab.siue.edu/v2v-hub/resources/examples/MC451-example-codebook-and-qualitative-memo.pdf)
@@ -152,16 +152,16 @@ Your memo is assembled from the field notes you already have:
 ## From Notes to Memo
 
 - **Name the dimensions that mattered** for your research question
-- **Name the edge cases that drove your rules, with an example of each**
-- **Say where you are still uncertain**
+- Name the edge cases that drove your rules, with an example of each
+- Say where you are still uncertain
     - Uncertainty you can name is a finding, not a weakness
-- **Connect at least one pattern to your theory**
+- Connect at least one pattern to your theory
 
 Do not summarize your source. Write what changed your codebook.
 
 ## A Second Worked Example: The VR Codebook
 
-- **One real study, from store pages to a published finding (Foxman et al., 2022)**
+- One real study, from store pages to a published finding (Foxman et al., 2022)
     - The codebook as it should be written, beside where practice fell short
 - [Walkthrough slides](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/mc451-vr-codebook-walkthrough.html)
 - **Codebook and Qualitative Memo:** [Word](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/MC451-vr-codebook-example.docx) or [Quarto](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/MC451-vr-codebook-example.qmd)
@@ -188,11 +188,11 @@ You should now have:
 
 ## Before Next Time
 
-- **Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo)**
+- Due Friday, October 30, 11:59 PM: [Codebook and Qualitative Memo](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#codebook-and-qualitative-memo)
     - The codebook, 800 to 1,500 words; the memo, 200 to 300 words
     - Render the codebook before you submit it
-- **Read [Chapter 10, The Sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html)**
-- **Next Tuesday we cover why you cannot code every message in your source, and how to draw a sample**
+- Read [Chapter 10, The Sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html)
+- Next Tuesday we cover why you cannot code every message in your source, and how to draw a sample
     - The Thursday after that, your codebook is tested: the same items coded twice, compared as one number
 
 ## Questions, Comments, or Concerns? {.titlecard}

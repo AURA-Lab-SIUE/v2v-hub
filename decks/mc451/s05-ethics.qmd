@@ -97,7 +97,7 @@ format:
 
 - Every one of these researchers believed the work served a greater good
 - Every one produced participants who were harmed, deceived, or exploited
-- **Good intentions are not sufficient protection**
+- Good intentions are not sufficient protection
 - Researchers need external accountability and formal principles
 - Tuskegee's exposure in 1972 produced the framework we use today
 

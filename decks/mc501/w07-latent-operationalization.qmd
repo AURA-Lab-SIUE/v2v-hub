@@ -15,9 +15,9 @@ format:
 
 [Week 7 · Chapters 7 and 8]{.eyebrow}
 
-- **Your notes become instructions somebody could follow**
+- Your notes become instructions somebody could follow
     - First from field notes to rules, then from concepts to variables
-- **The argument underneath the evening**
+- The argument underneath the evening
     - Reliability is designed in while you are watching
     - It is not repaired afterwards
     - By the time your second pass disagrees with your first, prevention has passed
@@ -26,11 +26,11 @@ format:
 ## Corrections From Your Topics
 
 - **Bound the topic:** name the population and the period
-- **Ask about what content can show**
+- Ask about what content can show
     - Feelings and decisions are not in content; their traces are
-- **Causal verbs claim more than coding can show**
+- Causal verbs claim more than coding can show
     - "Impact" and "leads to" need a design that supports them
-- **A hypothesis needs a theory behind its direction**
+- A hypothesis needs a theory behind its direction
     - Naming a lens is not yet using it
 
 Each of these is fixable in the revision, and each carries into the proposal.
@@ -39,18 +39,18 @@ Each of these is fixable in the revision, and each carries into the proposal.
 
 - **One unit of analysis per variable:** the thing you code once
 - **A level of measurement for each variable**, matched to what you record
-- **Numbers you look up can sit beside coded ones**
+- Numbers you look up can sit beside coded ones
     - The codebook still needs variables you code yourself
-- **The five-criteria check runs once per question**
+- The five-criteria check runs once per question
     - "Not already answered" names the closest studies
-- **"Why it matters" is written for your field**
+- "Why it matters" is written for your field
 
 ## Where the Codebook Comes From
 
-- **You have a field-notes document**
+- You have a field-notes document
     - Observations, uncertainties, and cases that resisted
     - Those three are the raw material, in that order
-- **Nothing should be a desk idea**
+- Nothing should be a desk idea
     - If you did not watch it, it does not belong
 - Tonight converts the record into instructions
 
@@ -60,7 +60,7 @@ Each of these is fixable in the revision, and each carries into the proposal.
 **Manifest content:** what a message says or shows on its surface, which any trained coder can identify the same way by following one clear rule. Example: whether a message contains an `@` mention.
 :::
 
-- **What that looks like in a chat log**
+- What that looks like in a chat log
     - An `@` mention, or under ten characters
     - A known emote token, or a word count
 
@@ -72,7 +72,7 @@ The split sits at the center of codebook design (Krippendorff, 2018).
 **Latent content:** the meaning beneath a message's surface, which a coder has to interpret to reach. Example: whether a message is friendly or hostile.
 :::
 
-- **What that looks like here**
+- What that looks like here
     - Friendly or hostile? Aimed at the streamer or the room?
     - Is "first" a genuine claim or a running joke?
     - Is the mood celebratory or restless?
@@ -82,16 +82,16 @@ That is the definition of latent, not a sign somebody was careless.
 
 ## Why Immersion Makes It Codeable
 
-- **Latent coding needs an interpretive framework**
+- Latent coding needs an interpretive framework
     - Built by watching rather than by defining
-- **Twenty hours on live Twitch teaches the pattern**
+- Twenty hours on live Twitch teaches the pattern
     - A wall of one emote after a big play is celebration
     - Learned by watching it happen until it was obvious
 - Immersion turns an impression into a defensible judgment
 
 ## The Edge-Case Log
 
-- **Some observations resist every category**
+- Some observations resist every category
     - A message made entirely of emotes, no words
     - **Copypasta**, pasted by regulars and written by none
     - A language you do not read, or an obvious bot
@@ -105,10 +105,10 @@ Log the case, what makes it ambiguous, and how a codebook could handle it.
 
 ## Edge Cases Become Rules
 
-- **Not exceptions to wave past, but raw material**
+- Not exceptions to wave past, but raw material
     - Chapter 6's model prospectus carried "unclassifiable"
     - The log is how you learn what lands in it
-- **A codebook without one pays during coding**
+- A codebook without one pays during coding
     - That is when handling them costs the most
     - A codebook with one has already decided
 
@@ -124,24 +124,24 @@ claim that you have seen enough.
 
 ## When Observation Changes the Question
 
-- **Observation confirms the question, or complicates it**
+- Observation confirms the question, or complicates it
     - Confirmed: the distinction is real and worth measuring
     - Complicated: much of chat is aimed at another viewer
-- **Then the two-way split has a third term**
+- Then the two-way split has a third term
 - A distinction found now is a category
 
 Found after coding, it is a reason to start again. This is the cheapest moment.
 
 ## Reliability Starts in the Notes
 
-- **You are doing two things while you watch**
+- You are doing two things while you watch
     - Identifying candidate categories
     - Identifying **where you will disagree with yourself**
-- **Notes that mark your own uncertainty**
+- Notes that mark your own uncertainty
     - They are the earliest record of the reliability problem
-- **Most codebook failures are boundary failures**
+- Most codebook failures are boundary failures
     - Underspecified decision rules, not bad categories
-- **The shape of it**
+- The shape of it
     - On Tuesday you code a comment "hostile"
     - Re-coding on Thursday, you call it "sarcastic"
     - The boundary between them was never drawn
@@ -191,7 +191,7 @@ anyone else can apply, and "more conversational" is not something you can count.
 
 - **The variable:** the target of a message, who it is aimed at
 - **A vague attempt:** "code each message by who it is for"
-- **Then a coder meets a real message**
+- Then a coder meets a real message
     - "same." "LULW." "no way that just happened."
     - Each could be the streamer, the room, or another viewer
 - Named rather than operationalized
@@ -231,39 +231,39 @@ Clear about the idea. Not yet a recipe.
 **Operational definition:** the exact steps a coder follows to measure a variable, detailed enough that a stranger would get the same result. Example: the at-mention, second-person, and reply rules.
 :::
 
-- **Conceptual tells you what it is for**
-- **Operational tells you what counts as evidence**
+- Conceptual tells you what it is for
+- Operational tells you what counts as evidence
 
 Write the two side by side for every variable.
 
 ## Four Failures, Conflating Concepts
 
-- **Community measured by counting messages**
+- Community measured by counting messages
     - A large channel's chat can be shallow and anonymous
     - Thousands reacting in parallel, never to each other
-- **Volume is activity, not community**
+- Volume is activity, not community
 - **The fix:** defend volume as a narrow proxy, or measure community
 
 ## Four Failures, the Unjustified Proxy
 
-- **Stream quality measured by viewer count**
+- Stream quality measured by viewer count
     - It reflects discoverability and time of day
     - It reflects the popularity of the game, and momentum
     - None of that is quality
-- **A proxy is not forbidden, an undefended one is**
+- A proxy is not forbidden, an undefended one is
 
 ## Four Failures, Oversimplification
 
-- **Chat engagement is not only how many messages appear**
+- Chat engagement is not only how many messages appear
     - It is who is talking, and whether to each other
     - It is also in what spirit
-- **A message count keeps one dimension**
+- A message count keeps one dimension
     - The rest is discarded silently
 - **The fix:** measure the others, or narrow the claim
 
 ## Four Failures, the Unmeasurable
 
-- **"Sincere if the viewer genuinely means it"**
+- "Sincere if the viewer genuinely means it"
     - Sincerity defined by nothing a coder can observe
 - **The fix:** use **observable indicators**
 
@@ -275,19 +275,19 @@ Write the two side by side for every variable.
 
 ## The Promise You Are Making
 
-- **Somebody else could follow your recipe**
+- Somebody else could follow your recipe
     - And measure what you measured
-- **The medium changes and the act does not**
+- The medium changes and the act does not
     - "This article feels sympathetic" becomes a frame variable
     - "This ad feels fear-based" becomes a coder's category
 
 ## Where This Points
 
-- **A precise definition can still be bad measurement**
-- **Reliability is consistency**
+- A precise definition can still be bad measurement
+- Reliability is consistency
     - Applied twice to the same item, does the rule return the same value?
     - If not, nothing downstream repairs that
-- **No second coder is available in this course**
+- No second coder is available in this course
     - So what you demonstrate is **stability**, your own consistency
     - Re-code a sample later, first codes hidden, and compare
     - It is a weaker claim than agreement, and it is named as one
@@ -297,13 +297,13 @@ Next week is that machinery, and the codebook built to satisfy it.
 
 ## Drift
 
-- **Your reading of a category moves during a long pass**
+- Your reading of a category moves during a long pass
     - Faster, looser, or stricter as the hours go on
     - Item 900 is not judged quite like item 40
-- **Two coders would expose it as disagreement**
+- Two coders would expose it as disagreement
     - Coding alone, nothing does
     - Every code still feels right when you assign it
-- **A check at the start says nothing about the end**
+- A check at the start says nothing about the end
 
 ## Catching Your Own Drift
 
@@ -317,40 +317,40 @@ Next week is that machinery, and the codebook built to satisfy it.
 
 ## Freeze the Codebook, Then Version It
 
-- **Freeze it before the real coding begins**
+- Freeze it before the real coding begins
     - Every code is then applied under one fixed set of rules
-- **A rule added later is a new version**
+- A rule added later is a new version
     - Numbered and dated, with what changed and why
     - Items it could affect are re-coded under it
-- **The write-up names the version behind the data**
+- The write-up names the version behind the data
 
 A reader holding your source can see which rules every number rests on.
 
 ## Checking Your Proposal
 
-- **Does every variable have both definitions?**
+- Does every variable have both definitions?
 - **Is each category observable**, or does one read minds?
-- **Which variables are manifest, and which latent?**
-- **Where will your second pass disagree with your first?**
+- Which variables are manifest, and which latent?
+- Where will your second pass disagree with your first?
 
 Those expected disagreements are next week's decision rules, so write them down tonight.
 
 ## Due Monday, Two Separate Pieces
 
-- **The Topic Selection revision, if you choose to**
+- The Topic Selection revision, if you choose to
     - Revise for a higher grade, and the two grades are averaged
     - Your feedback attachment says what to change
-- **The Research Proposal, 75 points, new work**
+- The Research Proposal, 75 points, new work
     - A sentence outline built on those questions
     - Due whether or not you revise
 - Both are due at 11:59 PM, Monday, October 12
 
 ## The Research Proposal
 
-- **A sentence outline, 1,200 to 1,800 words**
-- **The front half of a conference paper**
+- A sentence outline, 1,200 to 1,800 words
+- The front half of a conference paper
     - Each point becomes a sentence or paragraph in the White Paper
-- **Every point is a full sentence carrying a claim**
+- Every point is a full sentence carrying a claim
     - Never a topic label
 - **References in APA 7** for everything cited
 
@@ -383,11 +383,11 @@ Full requirements: `aura-lab.siue.edu/v2v-hub/mc501-assignments.html`
 
 ## Where Proposals Lose Points
 
-- **Topic labels instead of sentences**
+- Topic labels instead of sentences
     - The failure this assignment is named for
-- **A design that names no analysis**
+- A design that names no analysis
     - Every hard decision deferred until after the data
-- **A theory with no rival**
+- A theory with no rival
     - A framework with no rival is a decoration
 
 ## From Questions to Proposal

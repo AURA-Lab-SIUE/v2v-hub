@@ -55,7 +55,7 @@ Everything here feeds the Research Proposal you draft next week.
 
 - **IV:** category type, gaming or non-gaming
 - **DV:** whether a message addresses the streamer or the room
-- **The whole procedure is visible in that sentence**
+- The whole procedure is visible in that sentence
     - Classify streams, code a sample, test the predicted relationship.
     - Swap the domain and the structure survives.
 
@@ -108,7 +108,7 @@ anything.
 
 [Gelman and Loken, 2014]{.eyebrow}
 
-- **The point is subtler than p-hacking**
+- The point is subtler than p-hacking
     - No conscious fishing is required for the problem to appear.
 - **Many defensible choices**, each contingent on the data
     - You would have chosen differently had the data come out differently.
@@ -361,7 +361,7 @@ question needs: a comment section, a subreddit, a news archive, a set of TikToks
     - Name where each one lives in the content itself.
 - **Two candidate DVs** the same theory predicts
     - Say what a coder would look at to record it.
-- **Then cut what you cannot code**
+- Then cut what you cannot code
     - If it needs a survey, it is out tonight.
 
 ## What Content Analysis Reaches

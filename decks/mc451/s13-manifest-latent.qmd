@@ -20,39 +20,39 @@ format:
 
 ## Four Corrections From Your Topics
 
-- **Both rounds of this study are content analysis**
+- Both rounds of this study are content analysis
     - You build a codebook, then you apply it
-- **This project collects no survey or interview data**
+- This project collects no survey or interview data
     - So your unit is an artifact that already exists
-- **If your unit is a person, the question needs rewriting**
+- If your unit is a person, the question needs rewriting
     - Move the unit from the person to the thing they made
-- **Three questions is a ceiling, not a target**
+- Three questions is a ceiling, not a target
     - A long list means none has been chosen yet
-- **One coder means stability, not agreement**
+- One coder means stability, not agreement
     - You re-code your own work after 48 hours
 
 A method this course does not run is fixable this week.
 
 ## Which Scale Is Yours
 
-- **The model prospectus is written at professional scale**
+- The model prospectus is written at professional scale
     - 1,500 messages, which is what a publishable study costs
     - That is the example, not the assignment
-- **Your scale is set by your budget**
+- Your scale is set by your budget
     - Two to four hours, so 250 items at 45 seconds
     - Fifty coded units is the floor
-- **Nobody lost a point on this**
+- Nobody lost a point on this
     - Size is graded on the Sampling Plan in November, with arithmetic
 
 Same mechanics either way. If you wrote 1,500, keep the design and resize it.
 
 ## Numbers You Look Up
 
-- **Retrieved counts are welcome**
+- Retrieved counts are welcome
     - Box office, Rotten Tomatoes, view counts, stream counts
-- **They cannot be the whole study**
+- They cannot be the whole study
     - Something in it has to be coded by you
-- **Pair them**
+- Pair them
     - Code the thumbnails, compare to the view counts
     - Code the reviews, compare to the box office
 
@@ -60,10 +60,10 @@ A study made only of numbers you looked up gives the codebook nothing to do.
 
 ## The Argument You Will Have
 
-- **You will disagree with yourself**
+- You will disagree with yourself
     - Same chat message, two readings, a week apart
     - Neither reading is wrong, exactly
-- **Today is about seeing it coming**
+- Today is about seeing it coming
     - Build the codebook that settles it in advance
     - Not at eleven at night in November
 
@@ -104,14 +104,14 @@ Features you cannot read off the surface:
 - Is "first" a genuine claim or a running joke?
 - Is the mood of chat celebratory or restless?
 
-**Two careful coders can disagree about every one of these in good faith.**
+Two careful coders can disagree about every one of these in good faith.
 
 ## The Argument for Watching
 
-- **Latent coding needs an interpretive framework**
+- Latent coding needs an interpretive framework
     - It turns an impression into a defensible judgment
     - That framework gets built by watching
-- **Twenty hours of live Twitch teaches the pattern**
+- Twenty hours of live Twitch teaches the pattern
     - A wall of one emote after a big play is celebration
     - Learned by watching it happen, repeatedly
 - Immersion is how latent content becomes codeable
@@ -124,38 +124,38 @@ Features you cannot read off the surface:
 
 ## Sorting Your Notes
 
-- **Mark every observation M or L**
+- Mark every observation M or L
     - Manifest items are variables you could write today
     - Latent items will need **decision rules**
-- **A workable codebook mixes both**
+- A workable codebook mixes both
     - Two or three manifest measures, one that takes judgment
 - All latent, and your reliability check is going to hurt
 
 ## Sampling Your Observation
 
-- **You cannot watch all of it, and need not**
-- **What you need is a structured sample**
+- You cannot watch all of it, and need not
+- What you need is a structured sample
     - It should reflect the range of the thing you study
-- **Ten large competitive-gaming channels teach you one thing**
+- Ten large competitive-gaming channels teach you one thing
     - About everything else they will actively mislead you
 
 ## Match Your Source's Range
 
-- **The class dataset spans a deliberate range**
+- The class dataset spans a deliberate range
     - 50 channels across the volume distribution
     - Gaming and non-gaming, crowded and nearly empty
-- **That range is the principle, not the assignment**
+- That range is the principle, not the assignment
     - Span whatever source you settled on with the librarian
 - **On Twitch:** big channels and small, gaming and art
 - **On a subreddit:** busy threads and dead ones
 - **On a news site:** the front page and the unlinked pages
-- **Sample across time as well**
+- Sample across time as well
     - A feed at peak and in a quiet hour are different rooms
 
 ## Coverage Beats Volume
 
-- **Twenty streams spanning the variety beat fifty alike**
-- **The same principle keeps returning**
+- Twenty streams spanning the variety beat fifty alike
+- The same principle keeps returning
     - The wide literature search sees the whole conversation
     - Statistical sampling later in the term does the same
 - Representativeness is a discipline at every stage
@@ -170,7 +170,7 @@ Features you cannot read off the surface:
 
 - **Eight channels across the distribution**, November 18 to 24
 - **Large channels are live daily**, for long stretches
-- **Small channels appear once or twice all week**
+- Small channels appear once or twice all week
     - A random two-hour window catches the big ones easily
     - It catches the small ones only if you place it
 - Scheduling your observation is a sampling decision
@@ -189,7 +189,7 @@ ambiguous, and list the ways a codebook could handle it.
     - Directed, broadcast, or a different object entirely?
 - **Copypasta:** a block every regular pastes unread
     - A message, and not written by that viewer in any normal sense
-- **A language you do not read**
+- A language you do not read
 - **An obvious bot**, or a joke wearing the streamer's name
 
 ::: {.define}
@@ -198,10 +198,10 @@ ambiguous, and list the ways a codebook could handle it.
 
 ## Edge Cases Become Rules
 
-- **These are the raw material of decision rules**
+- These are the raw material of decision rules
     - The model prospectus carried "unclassifiable"
     - The log is how you learn what lands in it
-- **A codebook without one pays later**
+- A codebook without one pays later
     - It meets these messages first during coding
     - A codebook with one has already decided
 
@@ -227,26 +227,26 @@ Those four are the raw material of a codebook, which is what you build next.
 
 ## Before Next Time
 
-- **Finish your notes and edge-case log**
+- Finish your notes and edge-case log
     - Three or more sessions, big and small, gaming and not
     - Mark each entry manifest or latent
     - Star the three you expect to argue with yourself about
-- **Write two or three candidate questions**
+- Write two or three candidate questions
     - Grounded in what you saw, not what you assumed
 - **Read** Chapter 8, through how operationalization fails
 
 ## Due Friday: The Prospectus
 
-- **One page, 250 to 400 words, six headed sections**
+- One page, 250 to 400 words, six headed sections
     - Descriptive title, questions, theoretical framework
     - The gap, method overview, expected contribution
-- **The method overview names how much data**
+- The method overview names how much data
     - Budget two to four hours of coding
     - 250 chat messages at 45 seconds is about three hours
     - Fifty coded units is the floor
-- **The table is a planning estimate, not your final number**
+- The table is a planning estimate, not your final number
     - Say which row you used; we set the real one together
-- **Going over one page is a diagnostic, not a formatting error**
+- Going over one page is a diagnostic, not a formatting error
 
 Full requirements and the sizing table are on the assignments page.
 

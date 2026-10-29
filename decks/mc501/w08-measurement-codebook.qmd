@@ -55,10 +55,10 @@ Each student's own version of these points, with examples from their own topic, 
 
 [Week 8 · Chapter 8]{.eyebrow}
 
-- **Levels of measurement are decisions you make about each variable**
+- Levels of measurement are decisions you make about each variable
     - The level you choose decides which statistical tests you may run in November
     - By November there is no time to recode your sample at a different level
-- **The second topic is the codebook**
+- The second topic is the codebook
     - The assignments in the second half of this course all build on your codebook
 - **Due Monday, October 19, 11:59 PM:** Definitions Practice
 
@@ -68,8 +68,8 @@ Each student's own version of these points, with examples from their own topic, 
 **Level of measurement:** the kind of information a variable's values carry, which decides what you may later do with them. Example: `game` holds names, and `viewers` holds counts.
 :::
 
-- **NOIR names the four levels: nominal, ordinal, interval, and ratio**
-- **The `stream_log` columns give an example of each level**
+- NOIR names the four levels: nominal, ordinal, interval, and ratio
+- The `stream_log` columns give an example of each level
     - The columns are channel, title, game, viewers, and date
 
 The data does not fix the level. The level depends on how you decide to measure the variable.
@@ -80,8 +80,8 @@ The data does not fix the level. The level depends on how you decide to measure 
 **Nominal:** categories that are only names, with no order. Example: `game` holds Fortnite, Just Chatting, Art, and Hearthstone, and no arithmetic relates them.
 :::
 
-- **`channel` is nominal, and so is `title` kept as its original text**
-- **You can count each category and report the most common one**
+- `channel` is nominal, and so is `title` kept as its original text
+- You can count each category and report the most common one
 
 You cannot average a nominal variable: there is no average of Fortnite and Art.
 
@@ -103,7 +103,7 @@ You cannot average a nominal variable: there is no average of Fortnite and Art.
 **Interval:** numbers with equal distances between them but no true zero, so a difference means something and a ratio does not. Example: the posting time of each message, where a minute is a minute anywhere in the column.
 :::
 
-- **The zero point, 1970, is a convention; it does not mean "no time"**
+- The zero point, 1970, is a convention; it does not mean "no time"
     - `date` stores each time as milliseconds counted from 1970
 - Ratios are meaningless: a message posted at 2:00 was not posted twice as late as one posted at 1:00
 
@@ -113,8 +113,8 @@ You cannot average a nominal variable: there is no average of Fortnite and Art.
 **Ratio:** numbers with equal distances and a true zero, where zero means none at all. Example: `viewers`, where zero means nobody is watching, so 28,000 really is twice the audience of 14,000.
 :::
 
-- **Elapsed time, such as hours since the stream started, is ratio**
-- **You may add, subtract, multiply, and divide ratio values**
+- Elapsed time, such as hours since the stream started, is ratio
+- You may add, subtract, multiply, and divide ratio values
 - Most counts are ratio, such as viewers, characters, and messages
 
 ## One Column Can Be Measured at Three Levels
@@ -164,18 +164,18 @@ statistics it allows and which it rules out.
 
 ## Measuring at a Lower Level Than Needed Limits Your Tests
 
-- **Recording a variable as nominal when ratio was possible removes the tests that need ratio data**
+- Recording a variable as nominal when ratio was possible removes the tests that need ratio data
     - That limit is set before you code a single item
-- **The problem is usually not visible while you are coding**
+- The problem is usually not visible while you are coding
     - It appears in November, when a test you planned is not allowed
     - By then you have already spent many hours coding
 
 ## Two Kinds of Variable: Ready-Made and Coded
 
-- **Some variables arrive ready-made in the data**
+- Some variables arrive ready-made in the data
     - `viewers` is a number, `game` is a category
     - Your only task is to identify the level
-- **Other variables exist only after a person codes them**
+- Other variables exist only after a person codes them
     - Message target (who a chat message is addressed to) is not a column in `chat_log`
     - It exists only after a coder reads each message and assigns a category
 
@@ -199,11 +199,11 @@ unmeasurable definition.
 
 ## Reliability Means Consistency
 
-- **A reliable measure gives the same result under the same conditions**
+- A reliable measure gives the same result under the same conditions
     - A bathroom scale that reads 150, then 162, then 147 for the same person is useless
-- **In content analysis, reliability means coders apply the codebook consistently**
+- In content analysis, reliability means coders apply the codebook consistently
     - It comes in two forms, on the next slide
-- **Kappa and alpha measure agreement after removing the agreement expected by chance**
+- Kappa and alpha measure agreement after removing the agreement expected by chance
 
 ## Two Forms of Coder Reliability
 
@@ -249,12 +249,12 @@ valid. You establish reliability first, because a clear codebook is what produce
 
 ## Writing the Validity Sentence
 
-- **Definitions Practice asks for one validity sentence per variable**
+- Definitions Practice asks for one validity sentence per variable
     - It says what would make you doubt the variable measures your concept
-- **Name another explanation for what your number could mean**
+- Name another explanation for what your number could mean
     - Message length as engagement: a long pasted block can come from a disengaged sender
     - Share count as quality: outrage articles get shared as often as good ones
-- **Write the doubt, not a reassurance**
+- Write the doubt, not a reassurance
     - "It measures what I say it does" states no doubt, so it does not count
 
 A good validity sentence describes a case where the number is recorded correctly but does not
@@ -282,10 +282,10 @@ Your study has one coder, so intercoder reliability cannot be established. Discu
 >
 > Lombard et al. (2002, p. 601)
 
-- **In your study you are both researcher and coder**
+- In your study you are both researcher and coder
     - Question: what specific risk does that create, and what would catch it? A good answer names one way your expectations could change a code and one check that would reveal it
-- **A codebook pilot of about 30 units is the usual rule of thumb** (Lombard et al., 2002)
-- **The reliability sample you report needs at least 50 units or 10 percent of the sample, and rarely more than 300** (Lombard et al., 2002)
+- A codebook pilot of about 30 units is the usual rule of thumb (Lombard et al., 2002)
+- The reliability sample you report needs at least 50 units or 10 percent of the sample, and rarely more than 300 (Lombard et al., 2002)
 
 ## The Standard Two-Coder Protocol, Steps 1 and 2
 
@@ -305,9 +305,9 @@ In step 1 you may not explain what you meant; the codebook must work on its own.
 4. The second coder codes a **fresh reliability sample**, separate from the training set.
    That agreement is the kappa you report.
 
-- **Do not report the agreement from the training set**
+- Do not report the agreement from the training set
     - It is inflated, because the coders discussed those same units in step 2
-- **Report more than one agreement statistic** (Lombard et al., 2002)
+- Report more than one agreement statistic (Lombard et al., 2002)
 
 ## Percent Agreement Alone Is Not Enough
 
@@ -333,28 +333,28 @@ In step 1 you may not explain what you meant; the codebook must work on its own.
 
 ## Which Reliability Statistic to Report
 
-- **One approach: report one standard measure, alpha** (Hayes & Krippendorff, 2007)
+- One approach: report one standard measure, alpha (Hayes & Krippendorff, 2007)
     - Alpha works with any number of coders, any level of measurement, and missing codes
-- **Another approach: report two or more statistics, with a decision rule** (Lombard et al., 2002)
+- Another approach: report two or more statistics, with a decision rule (Lombard et al., 2002)
     - Accept when a conservative statistic reaches a moderate value or a liberal one reaches a high value
 - Your protocol names the statistic you will report and explains why you chose it
 
 ## Reliability Thresholds
 
-- **State your threshold, with its source, before you compute the statistic**
+- State your threshold, with its source, before you compute the statistic
     - Kappa of 0.70 or higher is the course floor (Landis & Koch, 1977)
     - 0.90 nearly always acceptable, 0.80 in most situations, 0.70 in some exploratory studies (Lombard et al., 2002)
     - Alpha of 0.80, or 0.667 for tentative conclusions (Krippendorff, 2018)
-- **If the result is below your threshold, revise the codebook; a caveat is not enough**
+- If the result is below your threshold, revise the codebook; a caveat is not enough
 
 Two passes that agree on 40 of 50 units have 80 percent agreement. That is not kappa, so
 compute kappa before comparing the result with the 0.70 floor.
 
 ## Reliability Sample Size and Computing Kappa
 
-- **The reliability sample needs at least 50 coded units**
+- The reliability sample needs at least 50 coded units
     - If some categories are rare, 100 or more units are preferred
-- **`v2v::reliability()` computes kappa and labels its strength, such as "substantial"**
+- `v2v::reliability()` computes kappa and labels its strength, such as "substantial"
 
 ## The One-Coder Protocol You Will Run
 
@@ -380,12 +380,12 @@ In this course about 10 percent is enough to practice the mechanics; a study mea
 
 ## If Your Reliability Falls Below the Threshold
 
-- **Write your revision rule now, before you see the number**
+- Write your revision rule now, before you see the number
     - The rule says which categories you will revise and how
-- **Use the list of items your two passes coded differently**
+- Use the list of items your two passes coded differently
     - For each one, rewrite the codebook rule that failed to decide it
     - Do not settle a disagreement by re-reading your first codes and going with your feeling
-- **Keep a record so the codebook does not drift toward your habits**
+- Keep a record so the codebook does not drift toward your habits
     - Log every change with its date and reason
     - Re-code the affected items under the new version
 - **Report the first number anyway**, and explain what it showed you about the codebook
@@ -420,14 +420,14 @@ you to judge which of your own findings depends most on your coding.
 >
 > Hayes and Krippendorff (2007, p. 77)
 
-- **Either protocol, two-coder or one-coder, provides the demonstration this quote requires**
-- **Every later analysis depends on the codes being reliable**
+- Either protocol, two-coder or one-coder, provides the demonstration this quote requires
+- Every later analysis depends on the codes being reliable
 - A finding from a codebook whose reliability was never tested has no support
 
 ## The Codebook Is Your Measuring Instrument
 
-- **The codebook is not paperwork written to satisfy a requirement**
-- **If coding were a computer program, the codebook would be its source code**
+- The codebook is not paperwork written to satisfy a requirement
+- If coding were a computer program, the codebook would be its source code
     - It specifies every step and every if-then decision
     - Run on the same input twice, it gives the same output
 - The codebook is the core of a content analysis (Neuendorf, 2017)
@@ -452,10 +452,10 @@ you to judge which of your own findings depends most on your coding.
 
 ## Keeping Both Rules
 
-- **A catch-all category, such as "unclassifiable," guarantees exhaustive coding**
+- A catch-all category, such as "unclassifiable," guarantees exhaustive coding
     - If more than 10 percent of cases land in it, the categories are incomplete and need revision
-- **If categories overlap, coders keep disagreeing on the same cases, and reliability drops**
-- **To fix overlap, sharpen the definitions or add a precedence rule that says which category wins**
+- If categories overlap, coders keep disagreeing on the same cases, and reliability drops
+- To fix overlap, sharpen the definitions or add a precedence rule that says which category wins
 
 ## Example Codebook: Unit and Message Target
 

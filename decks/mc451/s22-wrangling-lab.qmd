@@ -23,16 +23,16 @@ format:
 
 [Lab session]{.eyebrow}
 
-- **Tuesday we built readable timestamps and message length**
-- **Today we build the transformation the example question depends on**
+- Tuesday we built readable timestamps and message length
+- Today we build the transformation the example question depends on
     - The stream join, the gaming label, and the rows a join leaves unlabeled
     - Then one pipeline you can rerun from scratch
 - Open your [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd). We continue from Part 4
 
 ## What Is Still Missing
 
-- **`ts` exists, and `message_length` exists**
-- **Nothing says whether a message came from a gaming channel**
+- `ts` exists, and `message_length` exists
+- Nothing says whether a message came from a gaming channel
     - That information sits in the stream table, which the chat table cannot see
     - So one side of the example comparison is still undefined
 - Your own study has its own missing column. The join you learn today is how you build it
@@ -41,9 +41,9 @@ Joins go wrong for everyone the first few times, and they go wrong quietly.
 
 ## Gaming Is a Property of the Channel
 
-- **Whether a channel is a gaming channel is fixed by what it mostly streams**
+- Whether a channel is a gaming channel is fixed by what it mostly streams
     - Bob Ross streams painting, so every message in that channel is non-gaming
-- **So we classify the channels first, then attach the label to every message**
+- So we classify the channels first, then attach the label to every message
     - Find what each channel mostly streams
     - Decide whether that category counts as gaming
     - Attach the decision to every message from that channel
@@ -71,10 +71,10 @@ before their channel's first snapshot, so they get `NA`.
 
 ## A Rolling Join, Named
 
-- **The same join without the course package is a `left_join()` with a rolling key**
+- The same join without the course package is a `left_join()` with a rolling key
     - `join_by(channel, closest(ts >= snapshot_ts))`: same channel, nearest earlier snapshot
     - `join_chat_streams()` prints that line the first time you call it
-- **It is a rolling join because snapshots come every few minutes and messages every second**
+- It is a rolling join because snapshots come every few minutes and messages every second
 - The Companion's Data menu writes this step as **Match each message to its stream**
 
 ## Step 2, Find Each Channel's Most Frequent Category
@@ -154,10 +154,10 @@ chat_streams <- chat_streams %>%
 **Key:** the column two tables share, which says which row in one goes with which row in the other. Example: `channel`, which reads `bobross` in both tables.
 :::
 
-- **A join is only as good as the match between its keys**
+- A join is only as good as the match between its keys
     - Twitch's chat protocol writes channel names with a leading "#"
     - So one source says `#bobross` and another says `bobross`
-- **Keys that disagree fail on every row, and R reports no error**
+- Keys that disagree fail on every row, and R reports no error
 - The example data in `v2v` has normalized keys; raw Twitch data does not
 - Check the key column in your own source before every join
 
@@ -183,10 +183,10 @@ value nobody asked for.
 **Missing value (`NA`):** a cell with nothing in it, which R prints as `NA`. Example: the 501 messages from the two channels with no recorded category.
 :::
 
-- **Two channels never had a category recorded**
+- Two channels never had a category recorded
     - Every snapshot of those channels had a missing `game`, so there was no most frequent category
     - They never entered `channel_type`, so the join left their messages as `NA`
-- **That is the correct outcome, not a bug**
+- That is the correct outcome, not a bug
 
 The data genuinely does not say whether those channels are gaming, so those 501 messages sit the comparison out.
 
@@ -249,13 +249,13 @@ You should now have:
 
 ## Before Next Time
 
-- **Restart R, render your worksheet, and confirm it rebuilds the same table**
-- **Check it against the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)**
-- **Comment your wrangling decisions in the worksheet**
+- Restart R, render your worksheet, and confirm it rebuilds the same table
+- Check it against the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
+- Comment your wrangling decisions in the worksheet
     - A reviewer will ask why you excluded what you excluded
     - A comment the Companion writes says what a step does. Your comment says why you chose it
-- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points**
-- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
-- **Read Chapter 12, Describing the Data**
+- Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points
+- Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points
+- Read Chapter 12, Describing the Data
 
 ## Questions, Comments, or Concerns? {.titlecard}

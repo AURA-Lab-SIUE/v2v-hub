@@ -22,11 +22,11 @@ format:
 
 [Inferencing Data, 100 points, due Friday, December 4, 11:59 PM]{.eyebrow}
 
-- **Tuesday the test ran on the example data; today you fill the Inferencing Data worksheet**
+- Tuesday the test ran on the example data; today you fill the Inferencing Data worksheet
     - Each test correctly chosen, correctly read, honestly reported
     - The same settings block, changed, runs on your own data for the paper
-- **The White Paper is assigned today**
-- **Work in the worksheet, not in the console**
+- The White Paper is assigned today
+- Work in the worksheet, not in the console
 
 [MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
@@ -37,7 +37,7 @@ For each pair in the worksheet's Part 0, fill in these three lines before you to
 
 - **My outcome variable is ______**, and it is numeric or categorical
 - **My grouping variable is ______**, and it has ______ levels
-- **Therefore the test is ______**
+- Therefore the test is ______
 
 A numeric outcome and two groups: **t-test**. A numeric outcome and three or more groups:
 **ANOVA**. Two categorical variables: **chi-square**.
@@ -84,11 +84,11 @@ Every element earns its place: both means, the test with its degrees of freedom,
 
 ## Then Say It Again in Plain English
 
-- **A string of statistics is not an interpretation**
+- A string of statistics is not an interpretation
     - Write a second sentence a reader with no statistics can understand
 - **For the example study:** the two kinds of channel do differ in message length, and the difference is so small that the two are better thought of as alike
 - **That second sentence is the call:** it reports the result without inflating it
-- **The Companion's APA numbers fill in the statistics line; the plain-English sentence is yours to write**
+- The Companion's APA numbers fill in the statistics line; the plain-English sentence is yours to write
 
 If you cannot write that sentence, you do not yet understand your result.
 
@@ -96,8 +96,8 @@ If you cannot write that sentence, you do not yet understand your result.
 
 - **Statistical significance asks:** can the effect be distinguished from zero?
 - **Practical significance asks:** is the effect large enough to matter?
-- **These are different questions, and large samples pull them apart**
-- **A finding is honestly reported only when both answers are on the page**
+- These are different questions, and large samples pull them apart
+- A finding is honestly reported only when both answers are on the page
 
 "Significant" without a *d* is a claim you have not supported.
 
@@ -140,11 +140,11 @@ Select the error and run **AURA: Explain an R error** from the Command Palette.
 
 [Assigned today, due Friday, December 18, 11:59 PM]{.eyebrow}
 
-- **The full study written up as one reproducible document**
+- The full study written up as one reproducible document
     - An abstract, then Introduction, Methods, Results, and Discussion, then a Reflection
-- **It is not a term paper. It is a document an invested reader could act on**
-- **It is rendered from Quarto, so every number in it comes from your code**
-- **You submit two things, both required: the PDF, and the live URL of your GitHub Pages site**
+- It is not a term paper. It is a document an invested reader could act on
+- It is rendered from Quarto, so every number in it comes from your code
+- You submit two things, both required: the PDF, and the live URL of your GitHub Pages site
 
 ## What Goes In It
 
@@ -176,12 +176,12 @@ You should now have, in your worksheet:
 
 ## Before Next Time
 
-- **Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points**
-- **Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points**
-- **Check your worksheet against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)**
-- **Read Chapter 14, "The one-click report," before Tuesday**
-- **Tuesday is The Publisher: assembling the whole study into one document**
+- Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points
+- Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points
+- Check your worksheet against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
+- Read Chapter 14, "The one-click report," before Tuesday
+- Tuesday is The Publisher: assembling the whole study into one document
     - Bring your figures and your test output
-- **Start thinking about your title**
+- Start thinking about your title
 
 ## Questions, Comments, or Concerns? {.titlecard}

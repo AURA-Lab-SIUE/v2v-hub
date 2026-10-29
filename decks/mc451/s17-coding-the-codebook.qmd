@@ -21,18 +21,18 @@ format:
 
 ## Meet the R Companion
 
-- **A free VS Code extension built for this course**
+- A free VS Code extension built for this course
     - Checks your setup and installs what is missing
     - Writes commented R code into your own script from menus
     - Explains R error messages in plain language
-- **Everything it writes is ordinary R you can read and explain**
+- Everything it writes is ordinary R you can read and explain
 - It is not an AI tool, so using it needs no AI-use log entry
 
 ## Installing the Companion
 
 - **Open the Extensions view:** Ctrl+Shift+X, or Cmd+Shift+X on a Mac
-- **Search for AURA Lab R Companion, then select Install**
-- **Select View, then Command Palette, and run AURA: Check my setup**
+- Search for AURA Lab R Companion, then select Install
+- Select View, then Command Palette, and run AURA: Check my setup
     - Pick MC 451 when it asks for your course
     - If a line says MISSING, run **AURA: Install what is missing**
 - Every Companion command starts with **AURA:** in the Command Palette
@@ -40,18 +40,18 @@ format:
 
 ## What We Build Today
 
-- **One project folder that holds the whole study**
+- One project folder that holds the whole study
     - Your Chapter 8 codebook, installed as a document
     - The shared Twitch example data, loaded and looked at
-- **No analysis today: we open the project, load the data, and look**
+- No analysis today: we open the project, load the data, and look
 - The steps you practice today on the example data are the steps you repeat on your own source
 - Your White Paper's method section will describe these same steps
 
 ## Why the Folder Comes First
 
-- **You designed a study and have not yet seen the data in R**
-- **Reproducible work lives in files in known places, not in commands typed once**
-- **A project is one folder that holds the data, the code, the codebook, and the report**
+- You designed a study and have not yet seen the data in R
+- Reproducible work lives in files in known places, not in commands typed once
+- A project is one folder that holds the data, the code, the codebook, and the report
     - Nothing in the study depends on a file only you have
 
 Deciding where each file goes is a decision you do not need to make. The scaffold makes it for you.
@@ -100,18 +100,18 @@ v2v::setup()
 **AURA: Check my setup** in the R Companion checks R, Quarto, Git, and every package this course uses, and **AURA: Install what is missing** installs anything it flags.
 `v2v::setup()` runs the course package's own version of the same check from the console.
 
-- **You ran it once, when you installed the stack**
-- **Run it every time you open the project**
+- You ran it once, when you installed the stack
+- Run it every time you open the project
 - It reports a missing piece before that piece interrupts your work
 
 ![](images/companion-check-setup-result.png){fig-alt="The R Companion's Output panel after Check my setup. Two lines read: RESULT: everything this course needs is installed. SETUP OK: R and the course packages are working." width="100%"}
 
 ## The Codebook Becomes a Document
 
-- **The scaffold includes a file named `codebook/codebook.qmd`**
+- The scaffold includes a file named `codebook/codebook.qmd`
     - In Chapter 8 your codebook was a plan on paper
     - From today it is the reference document every later step follows
-- **Move your draft codebook into that file, then add a version line and a date**
+- Move your draft codebook into that file, then add a version line and a date
 - A codebook that renders cleanly is a codebook a coder can read
 
 ## Exercise: Guess the Columns Before You Look {.discuss}
@@ -173,17 +173,17 @@ $ date    <dbl> 1.542578e+12, 1.542578e+12, 1.542578e+12, …
 
 ## Reading That Output
 
-- **The table has 35,267 rows and five columns, one message per row**
-- **The first two messages are not errors**
+- The table has 35,267 rows and five columns, one message per row
+- The first two messages are not errors
     - One is twenty-three question marks, and one is copypasta (a block of text pasted over and over)
     - Messages like these are normal in Twitch chat, and every source has its own version of them
-- **The `date` column is a number (`<dbl>`) and is unreadable as it stands**
+- The `date` column is a number (`<dbl>`) and is unreadable as it stands
     - It counts milliseconds since 1970; Chapter 11 converts it into a readable date and time
 
 ## One Row in Your Own Data
 
-- **In the example, one row is one chat message**
-- **Decide what one row is in your own study before you load anything**
+- In the example, one row is one chat message
+- Decide what one row is in your own study before you load anything
     - A study of influencer posts on YouTube and Instagram: one row per comment
     - A study of debut films by YouTube creators: one row per review, with its film attached
     - A study of comments on targeted Instagram ads: one row per comment, with its ad
@@ -191,7 +191,7 @@ $ date    <dbl> 1.542578e+12, 1.542578e+12, 1.542578e+12, …
 
 ## One Row in Your Own Data (cont.)
 
-- **Every source has its own odd rows**
+- Every source has its own odd rows
     - Emoji-only comments, replies to replies, deleted reviews, and scenes with no speaker
     - Your codebook says what happens to each one
 
@@ -246,18 +246,18 @@ n_distinct(chat$channel)
 [1] 50
 ```
 
-- **The example corpus has fifty channels, as the book has said since Chapter 1**
-- **`n_distinct(streams$channel)` returns the same fifty**
-- **The fifty channels streamed 61 different game categories, so most channels move between games**
+- The example corpus has fifty channels, as the book has said since Chapter 1
+- `n_distinct(streams$channel)` returns the same fifty
+- The fifty channels streamed 61 different game categories, so most channels move between games
 
 Counting is how you check that the data is what you were told it is. Run the same checks on your own source.
 
 ## When a Line Breaks
 
-- **R returns an error message instead of a result**
+- R returns an error message instead of a result
     - The usual causes are a misspelling, a package that is not loaded, or a stray bracket
     - This happens to everyone, and it says nothing about your ability
-- **An error message is information, so read it before you retype anything**
+- An error message is information, so read it before you retype anything
 - **Copy the error text and run AURA: Explain an R error** from the Command Palette for a plain-English reading
 
 
@@ -265,7 +265,7 @@ Counting is how you check that the data is what you were told it is. Run the sam
 
 ![](images/companion-explain-error.png){fig-alt="An R Companion panel titled object not found. It quotes the message object chat_dta not found, then explains why this happens (R has no value stored under that name: the line that creates it never ran, the name is misspelled, or text was typed without quotation marks) and what to do (run the line that creates it first, check the spelling and capital letters against the name you assigned, or put text in quotation marks)." width="40%"}
 
-- **The panel quotes your error, says why it happens, and lists what to do**
+- The panel quotes your error, says why it happens, and lists what to do
 - In this example, `chat_dta` is a misspelling of a name R never stored
 
 ## Checkpoint
@@ -281,10 +281,10 @@ Nothing changed in the data. Looking is all we did.
 
 ## Before Thursday
 
-- **Finish moving your codebook into `codebook/codebook.qmd`, then render it**
-- **Due Friday, October 30, 11:59 PM: Codebook and Qualitative Memo**
+- Finish moving your codebook into `codebook/codebook.qmd`, then render it
+- Due Friday, October 30, 11:59 PM: Codebook and Qualitative Memo
     - The full codebook plus a 200 to 300 word memo
-- **Bring your `glimpse()` output on Thursday**
+- Bring your `glimpse()` output on Thursday
     - On Thursday we read the data against your codebook
 
 ## Questions, Comments, or Concerns? {.titlecard}

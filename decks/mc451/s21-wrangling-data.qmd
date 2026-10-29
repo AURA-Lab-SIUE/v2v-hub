@@ -23,11 +23,11 @@ format:
 
 [Lab session]{.eyebrow}
 
-- **The example chat table cannot answer the example question yet**
-- **Today: five verbs, then two transformations**
+- The example chat table cannot answer the example question yet
+- Today: five verbs, then two transformations
     - Readable timestamps, and message length
     - Thursday adds the gaming label and joins the two tables
-- **Nothing today is analysis, and every later result rests on it**
+- Nothing today is analysis, and every later result rests on it
 
 Wrangling is the least rewarding part of the term, and it is what professionals spend most of their time on.
 
@@ -39,22 +39,22 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 **Hand-coding:** reading each message yourself and recording its value by a written rule. Example: `LULW` alone is coded 1, a reaction; `BIG TREE` is coded 0, commentary.
 :::
 
-- **Data Wrangling, Describing, and Inferencing are three parts of one Twitch study**
-- **Each part is a worksheet: routine code written, core steps left blank**
+- Data Wrangling, Describing, and Inferencing are three parts of one Twitch study
+- Each part is a worksheet: routine code written, core steps left blank
     - Under each step: what you should see
-- **Part 0: hand-code thirty messages as reaction or commentary**
+- Part 0: hand-code thirty messages as reaction or commentary
     - Inferencing tests the variable you build here
-- **Each worksheet has a risks guide: the traps, and how to check for them**
+- Each worksheet has a risks guide: the traps, and how to check for them
 
 [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd) · [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
 
 ## What the Table Cannot Answer
 
-- **The example study compares gaming and non-gaming chat**
+- The example study compares gaming and non-gaming chat
     - It measures that difference through message length
-- **Neither column exists in the loaded table**
+- Neither column exists in the loaded table
     - There is no message length column and no gaming label column
-- **The timestamps are unreadable strings of digits**
+- The timestamps are unreadable strings of digits
     - Whether a channel was gaming sits in the other table, not yet linked
 - Your own source will be missing its own columns. The same steps build them
 
@@ -66,8 +66,8 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 **Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
 :::
 
-- **The example study's two variables are the gaming label and message length**
-- **An analysis-ready table gives each variable its own column and each case its own row**
+- The example study's two variables are the gaming label and message length
+- An analysis-ready table gives each variable its own column and each case its own row
 
 ## Data Wrangling, Defined
 
@@ -75,7 +75,7 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 **Data wrangling:** getting data into a form you can analyze, by tidying it (one row per case, one column per variable) and transforming it (keeping rows, adding columns, summarizing, joining tables). Example: turning the chat table's timestamp digits into dates and adding a message length column.
 :::
 
-- **It is unglamorous, rarely described in the paper, and most of the work**
+- It is unglamorous, rarely described in the paper, and most of the work
     - It looks like small technical steps
     - It builds the table every result rests on
 
@@ -89,7 +89,7 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 **Tidyverse:** a collection of R packages for data science that share one design and are built to work together. Example: `library(tidyverse)` loads its core packages at once, including dplyr for tables and ggplot2 for charts.
 :::
 
-- **dplyr, one of those packages, supplies today's five verbs**
+- dplyr, one of those packages, supplies today's five verbs
 
 ## The Verbs: filter() and select()
 
@@ -121,10 +121,10 @@ These five verbs carry almost all the wrangling you will ever do.
 **Pipe (`%>%`):** read it as "and then"; it hands the result of one line to the next. Example: `chat %>% filter(channel == "bobross")` takes the chat table, then keeps Bob Ross's messages.
 :::
 
-- **Each verb takes a data frame and returns a data frame**
+- Each verb takes a data frame and returns a data frame
     - That shared design is what lets `%>%` string them together
     - One verb's output is the next verb's input
-- **A pipeline reads in order: take the data, then do this, then do that**
+- A pipeline reads in order: take the data, then do this, then do that
 
 Four transformations of this kind rebuild the example chat table into the table the study needs.
 
@@ -148,9 +148,9 @@ Write down your answers before running the code:
 **Timestamp:** the date and time something happened. Example: `1542578127023` is the first message's timestamp, 9:55 PM on November 18, 2018 (UTC).
 :::
 
-- **`date` is a column of very large numbers, typed `<dbl>`**
+- `date` is a column of very large numbers, typed `<dbl>`
     - Each number counts milliseconds since midnight on 1 January 1970
-- **That starting moment is called the Unix epoch**
+- That starting moment is called the Unix epoch
     - Counting from it stores a whole timestamp as one integer
     - The integer is precise, and unreadable
 
@@ -173,10 +173,10 @@ The Companion's **Write R code** menu writes this same block: **Turn the date co
 
 ## The Factor of a Thousand That Breaks It
 
-- **`as.POSIXct()` expects seconds**
+- `as.POSIXct()` expects seconds
     - `date` counts milliseconds, which is a thousand times finer
-- **Hand it the raw number and every message lands tens of thousands of years in the future**
-- **`date / 1000` converts milliseconds to seconds first**
+- Hand it the raw number and every message lands tens of thousands of years in the future
+- `date / 1000` converts milliseconds to seconds first
 - **`clean_dates()` does the division for you**, and prints the lubridate line it stands for the first time you call it
 
 This one arithmetic step is the most common way a hand conversion fails.
@@ -254,10 +254,10 @@ Still missing: the gaming label. That is Thursday.
 
 ## Before Thursday
 
-- **Code your thirty messages in the worksheet's Part 0, and fill Parts 1 to 3**
-- **Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points**
-- **Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points**
-- **Thursday: the gaming label, the join, and the rows a join leaves behind**
-- **Bring your worksheet, because Thursday picks it up where it stops**
+- Code your thirty messages in the worksheet's Part 0, and fill Parts 1 to 3
+- Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points
+- Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points
+- Thursday: the gaming label, the join, and the rows a join leaves behind
+- Bring your worksheet, because Thursday picks it up where it stops
 
 ## Questions, Comments, or Concerns? {.titlecard}

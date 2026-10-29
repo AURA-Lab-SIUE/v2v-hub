@@ -24,7 +24,7 @@ format:
 
 - **27,934**, then **28,076**, then **28,203** concurrent viewers
 - Two hundred sixty-nine viewers in 122 seconds
-- **The dataset records that climb to the second**
+- The dataset records that climb to the second
     - What it cannot tell you is what the climb was
 
 ## Same Rows, Four Events
@@ -39,10 +39,10 @@ was.
 
 ## Signatures You Learn by Watching
 
-- **A raid has a signature**
+- A raid has a signature
     - A near-vertical jump in the count
     - A wave of near-identical greetings in chat
-- **A viral clip has a different one**
+- A viral clip has a different one
     - A slower swell of arriving viewers
     - They do not know the room's conventions
 - **You bring the labels**, and only if you looked
@@ -54,7 +54,7 @@ was.
 :::
 
 - Here it takes the form of **structured listening**: watch, read chat, and take notes, with an ethnographer's discipline
-- **The data is historical, the platform is live**
+- The data is historical, the platform is live
     - November 18 to 24, 2018, and the site is open right now
     - The behaviors it recorded are still there to watch
 
@@ -73,7 +73,7 @@ A coder who has never watched Twitch reads the log as plain text and:
 
 ## Your Turn {.discuss}
 
-- **Name a convention an outsider would misread**
+- Name a convention an outsider would misread
     - In a media space you already know well
 - What would they count wrong, and which direction?
 - Which Twitch convention do you not know yet?
@@ -86,7 +86,7 @@ A coder who has never watched Twitch reads the log as plain text and:
 **Thick description:** a description of what people did that also records what it meant to them in context, so an outsider can understand it. Example: noting that a wave of identical greetings was a raid arriving, not spam.
 :::
 
-- **Thin counts the messages; thick explains them**
+- Thin counts the messages; thick explains them
     - Raids, inside jokes, and reflexive replies
 - Structured listening is how thin becomes thick
 
@@ -94,10 +94,10 @@ The medium changes and the discipline does not.
 
 ## Mode One, Casual Watching
 
-- **Initial exposure and nothing more**
+- Initial exposure and nothing more
     - Open several streams across the range
     - A large gaming channel, a small one, Just Chatting, art
-- **Do not take notes, and do not code**
+- Do not take notes, and do not code
     - Let the medium be unfamiliar
     - What surprises you, and what do you not understand?
 - The goal is exposure replacing assumption
@@ -114,15 +114,15 @@ Brief notes after each pass. You are still describing, not coding.
 
 ## Mode Three, Analytical Watching
 
-- **Watch more streams, asking what recurs**
+- Watch more streams, asking what recurs
     - Do chat behaviors cluster with kinds of stream?
     - Does competitive-game chat differ from art-stream chat?
-- **Which cases resist easy description?**
+- Which cases resist easy description?
 - The contours of your coding scheme show up here
 
 ## Field Notes Exist or Not
 
-- **Observation without a record is watching television**
+- Observation without a record is watching television
 
 ::: {.define}
 **Field notes:** written, dated notes an observer makes during or right after watching, recording what they saw and what they made of it. Example: "Chat went quiet while the streamer talked, then flooded at every pause."
@@ -153,15 +153,15 @@ Brief notes after each pass. You are still describing, not coding.
 
 - **One plain-text document**, dated, one entry per session
     - The Hub template carries the four note types
-- **A note every fifteen or twenty minutes**
+- A note every fifteen or twenty minutes
     - The record has to keep pace, because memory will not
 - Your codebook gets assembled out of these notes
 
 ## Observation Tests Your Question
 
-- **Your prospectus commits you to some distinction**
+- Your prospectus commits you to some distinction
     - Observation will confirm it, or complicate it
-- **The classic case is directed against broadcast**
+- The classic case is directed against broadcast
     - Watch a while and you find messages aimed at neither
     - Replies, arguments, and inside jokes between regulars
 - A two-way split gains a third term
@@ -173,7 +173,7 @@ That is not a failure of your prospectus. It is the cheapest possible moment to 
 - **Due Friday, October 2, 11:59 PM:** Topic Selection and Research Questions
 - **Next week:** the Project Prospectus
     - Submit the version you can defend, not the one you love
-- **Start your field-notes document tonight**
+- Start your field-notes document tonight
     - Template on the Hub, dated entries, four types
     - Log two observation sessions, one gaming and one not
 - **Read** the rest of Chapter 7

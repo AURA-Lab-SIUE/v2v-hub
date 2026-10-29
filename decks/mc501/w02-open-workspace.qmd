@@ -80,7 +80,7 @@ Everything tonight exists to make that impossible.
 
 - SPSS, Excel, and JMP work through menus and dialog boxes
 - You click Analyze, then Compare Means, then One-Way ANOVA, and the result appears
-- **The click history vanishes**
+- The click history vanishes
 - Redoing it next month means remembering which menus, in what order, with which options
 - Writing it down means describing every click in prose, and nobody does this well
 

@@ -30,17 +30,17 @@ Somewhere in your field notes is an entry like this:
 
 ## Holding Both at Once
 
-- **Both statements are true together**
+- Both statements are true together
     - The note records something you actually saw
     - No stranger could apply it to a thousand messages
-- **Holding them together is the skill**
+- Holding them together is the skill
 - You leave with three of your own variables a stranger could apply
 
 ## Why It Is Useless
 
-- **"Calmer" is not a category anyone can apply**
-- **"More conversational" is not something you can count**
-- **Two people, a thousand messages, two sortings**
+- "Calmer" is not a category anyone can apply
+- "More conversational" is not something you can count
+- Two people, a thousand messages, two sortings
     - You would have no way to say which was right
 - The observation is true, and it is unmeasurable
 
@@ -53,8 +53,8 @@ Somewhere in your field notes is an entry like this:
 :::
 
 - From a holistic impression to a replicable measurement, the central act of content analysis
-- **Done well, it preserves what you noticed**
-- **Done badly, it produces artifacts that look like findings**
+- Done well, it preserves what you noticed
+- Done badly, it produces artifacts that look like findings
 
 Easy to fake, because a vague rule still produces numbers.
 
@@ -62,10 +62,10 @@ Easy to fake, because a vague rule still produces numbers.
 
 Message target: who a chat message is aimed at. Observation gave us four categories:
 
-- **Directed at the streamer**
-- **Directed at another viewer**
-- **Broadcast to the room**
-- **Unclassifiable**
+- Directed at the streamer
+- Directed at another viewer
+- Broadcast to the room
+- Unclassifiable
 
 Naming the categories is not the same as operationalizing them.
 
@@ -122,11 +122,11 @@ The conceptual half is clear about the idea, and **not yet a recipe**.
 
 ## The Operational Definition Is the Recipe
 
-- **It says exactly what a coder does**
+- It says exactly what a coder does
     - Detailed enough for a stranger to measure the same thing
     - The at-mention, second-person and reply rules are it
-- **Conceptual tells you what the variable is for**
-- **Operational tells you what counts as evidence**
+- Conceptual tells you what the variable is for
+- Operational tells you what counts as evidence
 
 ## They Discipline Each Other
 
@@ -137,33 +137,33 @@ The conceptual half is clear about the idea, and **not yet a recipe**.
 
 ## Failure One, Conflating Concepts
 
-- **Two distinct ideas treated as one**
+- Two distinct ideas treated as one
     - Counting chat messages to measure **community**
     - That conflates community with activity
-- **A fast chat can be shallow and anonymous**
+- A fast chat can be shallow and anonymous
     - Thousands of strangers reacting in parallel, never to each other
 - **The fix:** defend volume as a narrow proxy, or measure community
 
 ## Failure Two, the Unjustified Proxy
 
-- **An indirect measure with no stated reason**
+- An indirect measure with no stated reason
     - The standard example is quality measured by viewer count
-- **Viewer count reflects other things entirely**
+- Viewer count reflects other things entirely
     - Discoverability, time of day, the game, existing momentum
     - None of that is quality
 - **The fix:** a proxy is fine, an undefended one is not
 
 ## Failure Three, Oversimplification
 
-- **A multi-dimensional concept collapsed into one indicator**
+- A multi-dimensional concept collapsed into one indicator
     - **Chat engagement** is not only how many messages appear
     - It is who talks, whether to each other, and in what spirit
-- **A message count keeps one dimension and discards the rest**
+- A message count keeps one dimension and discards the rest
 - **The fix:** measure the others, or say the study is about volume
 
 ## Failure Four, the Unmeasurable Definition
 
-- **A recipe that cannot be carried out**
+- A recipe that cannot be carried out
     - "Sincere if the viewer genuinely means it"
     - That defines sincerity by something no coder observes
 - **The fix:** operationalize through **observable indicators**

@@ -60,7 +60,7 @@ The course's VS Code menus are different: each one writes its R code into your s
 ## Code Is the Methods Section
 
 - A script is a description of every step, in a language a computer can re-run
-- **When you write your analysis as code, the code is the methods section**
+- When you write your analysis as code, the code is the methods section
 - Reinhart and Rogoff was caught because the spreadsheet was eventually shared
 - It would have been caught faster if the analysis had been code from the start
 
@@ -199,7 +199,7 @@ v2v::setup()
 
 - **There is a hidden newline** inside sodapoppin's title
     - Real data is messy in exactly this way
-- **Titles are themselves data**
+- Titles are themselves data
     - "No Smoking in Chat" performs etiquette, and Chapter 12 returns to title content
 
 ## The v2v Package
