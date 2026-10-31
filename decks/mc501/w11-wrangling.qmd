@@ -26,10 +26,9 @@ format:
 - One analysis-ready table, built from the raw example chat and stream tables
     - A readable timestamp, a message length, a stream join, and a gaming label
 - Weeks 12 and 13 compute everything from this table
-- Your Methods section is largely this script
+- Your script records the steps your Methods section reports
 - The example data is the shared practice case. You run the same steps on your own source
-
-Wrangling is the least rewarding evening of the term, and it is where researchers spend most of their hours.
+- Wrangling is slow, repetitive work, and researchers spend most of their data time on it
 
 Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
 
@@ -52,9 +51,9 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
     - It measures that difference through message length
 - Neither column exists in the loaded table
     - There is no message length column and no gaming label column
-- The timestamps are unreadable strings of digits
+- The timestamps are long numbers that no person can read as dates
 - The gaming information is in the other table entirely
-- Your own source will be missing its own columns. The same four moves build them
+- Your own data will probably lack some columns your question needs; the same four moves build them
 
 ## Variables, Revisited
 
@@ -74,7 +73,7 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 :::
 
 - It is most of the work, and the paper rarely describes it
-- Every result in Weeks 12 and 13 rests on the table it builds
+- Every result in Weeks 12 and 13 depends on the table it builds
 
 ## Packages and the Tidyverse
 
@@ -90,13 +89,12 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 
 ## The Verbs of Data Wrangling
 
-- **`filter()`** keeps the rows that meet a condition
-- **`select()`** keeps or drops columns
-- **`mutate()`** adds a column or changes one, computed from other columns
-- **`arrange()`** reorders the rows by a column's values
-- **`group_by()` with `summarize()`** collapses many rows into one row per group
-
-Each verb takes a data frame and returns a data frame, which is what lets the pipe chain them.
+- `filter()` keeps the rows that meet a condition
+- `select()` keeps or drops columns
+- `mutate()` adds a column or changes one, computed from other columns
+- `arrange()` reorders the rows by a column's values
+- `group_by()` with `summarize()` collapses many rows into one row per group
+- Each verb takes a **data frame** (R's name for a table) and returns a data frame, which is what lets the pipe chain them
 
 ## Two Verbs, Seen
 
@@ -112,8 +110,8 @@ chat %>%
   select(channel, sender, message)
 ```
 
-The first command keeps only Bob Ross's messages and drops every other row. The second keeps
-three columns and drops the rest.
+- The first command keeps only Bob Ross's messages and drops every other row
+- The second keeps three columns and drops the rest
 
 ## Transformation 1, a Readable Timestamp
 
@@ -124,11 +122,11 @@ streams <- streams %>%
   mutate(ts = clean_dates(date))
 ```
 
-`clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count
-seconds, then turns the result into a date and time, stored in a new `ts` column. The same step without
-the course package is `as_datetime(date / 1000)`, from lubridate, which the tidyverse loads.
-
-The Companion's **Write R code** menu writes this same block: **Turn the date column into a time**.
+- `clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count seconds
+    - It then turns the result into a date and time, stored in a new `ts` column
+- Without the course package, the same step is `as_datetime(date / 1000)`
+    - `as_datetime()` comes from lubridate, the tidyverse package for dates
+- The Companion's **Write R code** menu writes this same block: **Turn the date column into a time**
 
 ## Dates Are Stored in Milliseconds
 
@@ -138,11 +136,10 @@ The Companion's **Write R code** menu writes this same block: **Turn the date co
 
 - `date` counts milliseconds since 1 January 1970
     - That starting moment is the **Unix epoch**
-- `as.POSIXct()` expects seconds, which are a thousand times coarser
-- Hand it the raw number and every message lands tens of thousands of years in the future
-- **`clean_dates()` does the division for you**, and prints the lubridate line it stands for the first time you call it
-
-`date / 1000` converts milliseconds to seconds first.
+- `as.POSIXct()`, base R's date converter, expects seconds, which are a thousand times coarser
+- Hand it the raw number and every message is dated around the year 50,850
+- `clean_dates()` does the division for you, and prints the lubridate line it stands for the first time you call it
+- By hand, `date / 1000` converts milliseconds to seconds first
 
 ## The Column Type Changes to a Date-Time
 
@@ -155,8 +152,9 @@ The Companion's **Write R code** menu writes this same block: **Turn the date co
 3 1542578143610 2018-11-18 21:55:43
 ```
 
-The type moved from `<dbl>` to `<dttm>`. Only from a date-time can you pull out the hour, the
-weekday, or the calendar date.
+- The type moved from `<dbl>`, a decimal number, to `<dttm>`, a date-time
+- Only from a date-time can you pull out the hour, the weekday, or the calendar date
+- Once converted, the timestamp is an interval variable ([Chapter 8, Levels of measurement](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#levels-of-measurement))
 
 ## Transformation 2, Message Length
 
@@ -169,8 +167,9 @@ chat %>%
   slice_head(n = 3)
 ```
 
-`str_length()` counts the characters in a string, and `mutate()` writes the count into a
-new column.
+- `str_length()` counts the characters in a **string**, R's name for a piece of text
+- `mutate()` writes the count into a new column
+- The example codebook names this variable ([Chapter 8, A codebook for the chat study](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study))
 
 ## What the Lengths Look Like
 
@@ -183,10 +182,9 @@ new column.
 3 "cmonBruh"                                            8
 ```
 
-- **`message_length` is a ratio variable:** it has a true zero and equal intervals, so it can be averaged
+- `message_length` is a **ratio variable**: it has a true zero and equal intervals, so it can be averaged
 - Eight, twenty-three, and 441 characters are all real Twitch chat messages
-
-That spread is the raw material. Week 12 looks hard at its shape.
+- Week 12 describes the shape of that spread
 
 ## Tidy Data, Defined
 
@@ -206,10 +204,8 @@ That spread is the raw material. Week 12 looks hard at its shape.
 >
 > Wickham (2014, p. 4)
 
-Answer about your own table.
-
-- State in one sentence what one row of your table means (for example, "one comment on one post")
-- Name one place where your table's structure fights that meaning, such as two values in one cell
+- In one sentence, what would one row of your own data mean (for example, "one comment on one post")?
+- Where might your data's structure not match that meaning, such as two values in one cell?
 - Is tidiness a property of the data, or of the question you ask of it? Give one reason
 
 ## Joins, Defined
@@ -220,7 +216,7 @@ Answer about your own table.
 
 - Steps 1 and 4 below are both joins
 - Step 4 matches rows on `channel` alone
-- **Step 1 matches on `channel` and on time:** the nearest snapshot at or before each message
+- Step 1 matches on `channel` and on time: the nearest snapshot at or before each message
 
 ## Step 1, Match Each Message to Its Stream
 
@@ -237,9 +233,9 @@ chat_streams %>%
 2 TRUE           11
 ```
 
-`join_chat_streams()` gives each message the `game` and `viewers` of the latest stream snapshot taken
-at or before it, on the same channel. Both tables need the `ts` column from Transformation 1. Eleven
-messages arrived before their channel's first snapshot, so they get `NA`.
+- `join_chat_streams()` gives each message the `game` and `viewers` of the latest stream snapshot taken at or before it, on the same channel
+- Both tables need the `ts` column from Transformation 1
+- Eleven messages arrived before their channel's first snapshot, so they get `NA` (missing)
 
 ## A Rolling Join, Named
 
@@ -248,6 +244,7 @@ messages arrived before their channel's first snapshot, so they get `NA`.
     - `join_chat_streams()` prints that line the first time you call it
 - It is a rolling join because snapshots come every few minutes and messages every second
 - The Companion's Data menu writes this step as **Match each message to its stream**
+- More detail: [Chapter 11, Matching each message to its stream](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#matching-each-message-to-its-stream)
 
 ## Step 2, Find What a Channel Mostly Streams
 
@@ -260,8 +257,9 @@ channel_type <- streams %>%
   ungroup()
 ```
 
-Drop the snapshots with no category, count how often each channel streamed each category,
-then keep each channel's **modal** category (its most frequent one), one row per channel.
+- Drop the snapshots with no category
+- Count how often each channel streamed each category
+- Keep each channel's **modal** category (its most frequent one), one row per channel
 
 ## Step 3, Name the Non-Gaming Categories
 
@@ -276,8 +274,8 @@ nongaming_categories <- c(
 )
 ```
 
-Listing the categories states the rule, so the judgment is visible in the code where a
-reader can check it.
+- Listing the categories states the rule
+- The judgment is then visible in the code, where a reader can check it
 
 ## Step 4, the Join
 
@@ -292,10 +290,17 @@ chat_streams <- chat_streams %>%
   left_join(channel_type, by = "channel")
 ```
 
-`select()` renames the category `main_game`, because `chat_streams` already has a `game` column, the
-category streaming at that moment. `left_join()` keeps every row and attaches each channel's
-`main_game` and `is_gaming`, matching on the shared `channel` key. Later analyses use `main_game`.
-For your own tables, the Companion's **Join two tables by a shared column** writes this kind of join.
+- `channel_type` is now a **lookup table**: one row per channel, looked up by the join
+- `left_join()` keeps every row and attaches each channel's `main_game` and `is_gaming`, matching on the shared `channel` key
+
+## Step 4, What the Code Does
+
+- `select()` renames the category `main_game`
+    - `chat_streams` already has a `game` column: the category streaming at that moment
+    - `main_game` is the channel's usual category, and later analyses use it
+- `is_gaming` is `TRUE` when the channel's usual category is not on the non-gaming list
+- For your own tables, the Companion's **Join two tables by a shared column** writes this kind of join
+- More detail: [Chapter 11, Labeling gaming and non-gaming](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#labeling-gaming-and-non-gaming)
 
 ## Joins Fail Silently When Keys Disagree
 
@@ -307,7 +312,7 @@ For your own tables, the Companion's **Join two tables by a shared column** writ
     - Twitch writes channel names with a leading `#`
     - So one source says `#bobross` and another says `bobross`
 - Keys that disagree fail on every row, and R reports no error
-- The `v2v` example data has normalized keys. Raw data does not
+- The `v2v` example data has matching keys. Raw data does not
 - Check the key column in your own source before every join
 
 ## Always Inspect a Derived Column
@@ -325,8 +330,8 @@ chat_streams %>% count(is_gaming)
 3 NA          501
 ```
 
-Counting the new column is one line, and it is the line that catches the problem you did
-not anticipate.
+- Counting the new column takes one line
+- It catches problems you did not expect, such as the 501 `NA` values here
 
 ## The `NA` Is the Correct Outcome
 
@@ -337,10 +342,9 @@ not anticipate.
 - Two channels never had a category recorded
     - No categories means no modal category, which means no row in the lookup table
     - The join left their messages as `NA`
-- The data genuinely does not say whether those 501 messages came from gaming channels
+- The data does not say whether those 501 messages came from gaming channels
 - An honest `NA` records that the study cannot classify them
-
-Those messages sit the comparison out, not guessed into one side.
+- Those messages are left out of the comparison rather than guessed into one side
 
 ## The Whole Pipeline in One Place
 
@@ -357,8 +361,8 @@ analysis <- join_chat_streams(chat, streams) %>%
 write_rds(analysis, "data/twitch_analysis.RDS")
 ```
 
-With `channel_type` built as above, two transformations and two joins rebuild the table that every
-later result depends on, and `write_rds()` saves it with every column type intact.
+- With `channel_type` built as above, two transformations and two joins rebuild the table every later result depends on
+- `write_rds()` saves it as an RDS file, R's own data file, with every column type intact
 
 ## The Analysis-Ready Table
 
@@ -375,8 +379,7 @@ $ main_game      <chr> NA, NA, NA, …
 $ is_gaming      <lgl> NA, NA, NA, …
 ```
 
-The first rows shown belong to `704cb1fgnty`, one of the two channels with no category, so its
-labels print `NA`.
+- The first rows shown belong to `704cb1fgnty`, one of the two channels with no category, so its labels print `NA`
 
 ## Your Script Is a Methods Section
 
@@ -386,22 +389,25 @@ labels print `NA`.
 - A reviewer will ask how you handled something
     - The answer is in the script, if the script is commented and committed
 
-Identify **three** decisions a reviewer could challenge, and write a comment on each at the three places the worksheet marks.
-A comment the Companion wrote does not count as one of your three. Write your own justification beside it.
+## Three Decisions, Commented
+
+- Identify **three** decisions a reviewer could challenge
+- Write a comment on each, at the three places the worksheet marks
+- A comment the Companion wrote does not count as one of your three
+    - Write your own justification beside it
 
 ## Never Overwrite Raw Data
 
 - `data/raw/` is read-only after the first commit
     - Your script reads from it and writes new files, such as `data/twitch_analysis.RDS`, never back into it
 - That separation lets you rebuild everything from unchanged raw data
-    - Overwriting the raw data breaks that guarantee, quietly and permanently
+    - Overwriting the raw data breaks that guarantee, and it cannot be undone
 - Test it: re-run the script in a fresh session
-
-If the script does not reproduce the table without your intervention, it has a hidden dependency.
+- If the script does not reproduce the table without your help, it depends on something it does not write down
 
 ## Common Errors and What They Mean
 
-- **Timestamps in the year 51,000:** you converted by hand and forgot `/ 1000`
+- **Timestamps around the year 50,850:** you converted by hand and forgot `/ 1000`
 - **`could not find function "%>%"`:** the tidyverse never loaded
 - **Every joined column is `NA`:** the keys disagree, often because of a `#`
 - **The row count grew after a join:** the lookup table has duplicate keys
@@ -415,21 +421,21 @@ You should now have:
 
 - An `analysis` table with **12 columns** and **35,267 rows**
 - The worksheet adds viewer band and your thirty codes, then saves `data/twitch_analysis.RDS`
-- A `ts` column of type `<dttm>` and a `message_length` column of type `<int>`
+- A `ts` column of type `<dttm>` and a `message_length` column of type `<int>` (whole numbers)
 - An `is_gaming` column with 3,457 `FALSE`, 31,309 `TRUE`, and 501 `NA`
 - A commented worksheet that renders top to bottom in a clean session
 - The processed dataset written out, with the raw data untouched
 
 ## Before Week 12
 
-- **Due Monday, November 9, 11:59 PM:** Sampling Plan and Pilot, 75 points
-- **Due Monday, November 16, 11:59 PM:** Data Wrangling in R, 50 points
+- **Due Monday, November 9, 11:59 PM:** [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items), 75 points
+- **Due Monday, November 9, 11:59 PM:** [Week 11 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
+- **Due Monday, November 16, 11:59 PM:** [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#data-wrangling-in-r), 50 points
     - The worksheet, your thirty codes, and three justifications
     - Check it against the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
     - The three justifications are yours; a comment the Companion wrote does not count
-- Read Chapter 12
-    - Plus the assigned article: **Lakens (2013)** on effect sizes
-- Write a journal entry, 450 to 500 words
+- Read [Chapter 12, Visualizing the Narrative](https://aura-lab.siue.edu/v2v/chapters/chapter12.html)
+    - Plus the assigned article: [Lakens (2013)](https://doi.org/10.3389/fpsyg.2013.00863) on effect sizes
 - Bring the same laptop and the same working environment
 
 ## Questions, Comments, or Concerns? {.titlecard}

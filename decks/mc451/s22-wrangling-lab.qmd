@@ -24,7 +24,7 @@ format:
 [Lab session]{.eyebrow}
 
 - Tuesday we built readable timestamps and message length
-- Today we build the transformation the example question depends on
+- Today we build the gaming label, which the example question depends on
     - The stream join, the gaming label, and the rows a join leaves unlabeled
     - Then one pipeline you can rerun from scratch
 - Open your [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd). We continue from Part 4
@@ -33,11 +33,10 @@ format:
 
 - `ts` exists, and `message_length` exists
 - Nothing says whether a message came from a gaming channel
-    - That information sits in the stream table, which the chat table cannot see
+    - That information sits in the stream table, which is separate from the chat table
     - So one side of the example comparison is still undefined
-- Your own study has its own missing column. The join you learn today is how you build it
-
-Joins go wrong for everyone the first few times, and they go wrong quietly.
+- Your own data may need a column from a second table; a join is how you add it
+- Joins often go wrong the first few times you write them, and R often gives no error when one does
 
 ## Gaming Is a Property of the Channel
 
@@ -65,9 +64,9 @@ chat_streams %>%
 2 TRUE           11
 ```
 
-`join_chat_streams()` gives each message the `game` and `viewers` of the latest stream snapshot taken
-at or before it, on the same channel. Both tables need Tuesday's `ts` column. Eleven messages arrived
-before their channel's first snapshot, so they get `NA`.
+- `join_chat_streams()` gives each message the `game` and `viewers` of the latest stream snapshot taken at or before it, on the same channel
+- Both tables need Tuesday's `ts` column
+- Eleven messages arrived before their channel's first snapshot, so they get `NA` (missing)
 
 ## A Rolling Join, Named
 
@@ -76,6 +75,7 @@ before their channel's first snapshot, so they get `NA`.
     - `join_chat_streams()` prints that line the first time you call it
 - It is a rolling join because snapshots come every few minutes and messages every second
 - The Companion's Data menu writes this step as **Match each message to its stream**
+- More detail: [Chapter 11, Matching each message to its stream](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#matching-each-message-to-its-stream)
 
 ## Step 2, Find Each Channel's Most Frequent Category
 
@@ -88,10 +88,12 @@ channel_type <- streams %>%
   ungroup()
 ```
 
-Read it in order: drop the snapshots with no category, count how many snapshots each channel
-logged in each category, then keep each channel's most frequent category.
-
-`is.na()` finds missing values, and `!` means "not". The result is one row per channel.
+- Read it in order:
+    - Drop the snapshots with no category
+    - Count how many snapshots each channel logged in each category
+    - Keep each channel's most frequent category
+- `is.na()` finds missing values, and `!` means "not"
+- The result is one row per channel
 
 ## Exercise: Trace a Channel With No Category {.discuss}
 
@@ -112,10 +114,9 @@ nongaming_categories <- c(
 )
 ```
 
-`c()` builds a list. Here the list holds every category treated as not a game.
-
-Which categories count as non-gaming is a **judgment**, so it belongs in the code where a
-reader can see it, not buried in prose.
+- `c()` builds a list; here the list holds every category treated as not a game
+- Which categories count as non-gaming is a **judgment**
+    - So it belongs in the code, where a reader can see and check it
 
 ## Step 3, Apply the Rule
 
@@ -125,12 +126,12 @@ channel_type <- channel_type %>%
   select(channel, main_game = game, is_gaming)
 ```
 
-`%in%` asks whether a channel's most frequent category is on the non-gaming list, and `!`
-flips the answer, so `is_gaming` is `TRUE` for game channels.
-
-`select()` also renames the category `main_game`, because `chat_streams` already has a `game`
-column: the category the channel was streaming at that moment. `main_game` is the channel's usual
-category, and the example study labels by channel, so every later analysis uses `main_game`.
+- `%in%` asks whether a channel's most frequent category is on the non-gaming list
+    - `!` flips the answer, so `is_gaming` is `TRUE` for game channels
+- `select()` also renames the category `main_game`
+    - `chat_streams` already has a `game` column: what the channel was streaming at that moment
+    - `main_game` is the channel's usual category
+- The example study labels by channel, so every later analysis uses `main_game`
 
 ## Step 4, Join the Label Onto the Messages
 
@@ -143,10 +144,15 @@ chat_streams <- chat_streams %>%
 **Join:** putting two tables together by matching a shared key, so each row picks up the other table's columns. Example: every message picks up its channel's `main_game` and `is_gaming`.
 :::
 
-`left_join()` keeps every row of `chat_streams` and attaches each channel's `main_game` and `is_gaming`.
+- `left_join()` keeps every row of `chat_streams` and attaches each channel's `main_game` and `is_gaming`
+- `by = "channel"` names the key column both tables share
+- `channel_type` works as a **lookup table**: one row per channel, looked up by the join
 
-`by = "channel"` names the key column both tables share. For your own tables, the Companion's
-**Join two tables by a shared column** writes a join like this one, plus two checks.
+## Joining Your Own Tables
+
+- For your own tables, the Companion's **Join two tables by a shared column** writes a join like this one
+    - It also adds two checks on the result
+- Every join needs a key column that both tables share
 
 ## Joins Fail When the Keys Do Not Match
 
@@ -158,7 +164,7 @@ chat_streams <- chat_streams %>%
     - Twitch's chat protocol writes channel names with a leading "#"
     - So one source says `#bobross` and another says `bobross`
 - Keys that disagree fail on every row, and R reports no error
-- The example data in `v2v` has normalized keys; raw Twitch data does not
+- The example data in `v2v` has matching keys; raw Twitch data does not
 - Check the key column in your own source before every join
 
 ## Always Inspect What You Derived
@@ -174,8 +180,8 @@ chat_streams %>% count(is_gaming)
 3 NA          501
 ```
 
-Running `count()` on a new column is the cheapest check there is. Here it turns up a third
-value nobody asked for.
+- Running `count()` on a new column is the quickest check there is
+- Here it shows a third value, `NA`, alongside `TRUE` and `FALSE`
 
 ## The 501 Unlabeled Messages
 
@@ -187,8 +193,7 @@ value nobody asked for.
     - Every snapshot of those channels had a missing `game`, so there was no most frequent category
     - They never entered `channel_type`, so the join left their messages as `NA`
 - That is the correct outcome, not a bug
-
-The data genuinely does not say whether those channels are gaming, so those 501 messages sit the comparison out.
+- The data does not say whether those channels are gaming, so their 501 messages are left out of the comparison
 
 ## The Whole Wrangle in One Block
 
@@ -205,9 +210,14 @@ analysis <- join_chat_streams(chat, streams) %>%
 write_rds(analysis, "data/twitch_analysis.RDS")
 ```
 
-With `channel_type` built as above, two transformations and two joins rebuild the table from the
-raw data in one run, and `write_rds()` saves it with every column type intact. Describing Data reads
-that file. The Companion's **Save a table as an RDS file** writes the same last line.
+- With `channel_type` built as above, this block rebuilds the table from the raw data in one run
+    - Two transformations, then two joins
+
+## Saving the Table
+
+- `write_rds()` saves the table as an RDS file, R's own data file, with every column type intact
+    - Describing Data reads that file
+    - The Companion's **Save a table as an RDS file** writes the same last line
 
 ## What the Table Has Become
 
@@ -224,15 +234,15 @@ $ main_game      <chr> NA, NA, NA, …
 $ is_gaming      <lgl> NA, NA, NA, …
 ```
 
-The table is now **tidy**: one row per observation, one column per variable. The first rows shown
-belong to `704cb1fgnty`, one of the two channels with no category, so its labels print `NA`.
+- The table is now **tidy**: one row per observation, one column per variable
+- The first rows shown belong to `704cb1fgnty`, one of the two channels with no category, so its labels print `NA`
 
 ## Common Errors Today
 
 - **The join returns all `NA`:** the keys do not match, so check for a leading "#"
 - **`object 'channel_type' not found`:** you ran the join before building the lookup table
 - **`slice_max` errors:** you skipped `group_by()`
-- **A misspelled category name** silently mislabels a channel
+- **A misspelled category name** mislabels a channel without any error
 - **A worksheet that will not render in a fresh session** depends on something you have not written down
 
 Copy the error and run **AURA: Explain an R error** from the Command Palette.
@@ -254,8 +264,8 @@ You should now have:
 - Comment your wrangling decisions in the worksheet
     - A reviewer will ask why you excluded what you excluded
     - A comment the Companion writes says what a step does. Your comment says why you chose it
-- Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points
-- Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points
-- Read Chapter 12, Describing the Data
+- Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot), 75 points
+- Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
+- Read [Chapter 12, Visualizing the Narrative](https://aura-lab.siue.edu/v2v/chapters/chapter12.html)
 
 ## Questions, Comments, or Concerns? {.titlecard}
