@@ -89,7 +89,7 @@ are already installed there.
 With the AURA Lab R Companion installed, run **AURA: Check my setup** from the Command Palette.
 Run it whenever something stops working, not only in week one.
 
-Without the Companion, `00-check-your-setup.qmd` walks you through every install, one gray box at a time, and
+Without the R Companion, `00-check-your-setup.qmd` walks you through every install, one gray box at a time, and
 tells you what each box should print. Save it into your workspace folder and open it in
 VS Code.
 
@@ -101,12 +101,12 @@ VS Code.
 
 `01-commit-your-work.qmd` walks you through saving, staging, committing, and pushing, with
 what you should see at every step and what to do when it does not happen. Save it into the
-**top folder** of your workspace, next to `README.md`.
+**top folder** of your workspace, next to `README.md`. The guide *Put a Worksheet in Your Workspace* shows how, step by step: [MC 451](../guides/mc451/14-put-a-worksheet-in-your-workspace.md) or [MC 501](../guides/mc501/14-put-a-worksheet-in-your-workspace.md).
 
 Getting that file onto GitHub is itself the check: it is deliberately not in the workspace
 template, so if it appears in your repository, you put it there.
 
-[Download 01-commit-your-work.qmd](../starters/01-commit-your-work.qmd){.btn .btn-primary}
+[Download 01-commit-your-work.qmd](../starters/01-commit-your-work.qmd){.btn .btn-primary download="01-commit-your-work.qmd"}
 
 ---
 
@@ -114,9 +114,9 @@ template, so if it appears in your repository, you put it there.
 
 `09-coding-the-codebook.qmd` walks you through creating your White Paper project, moving your
 codebook into it, and taking a first look at the example data, with what each step should
-print. Save it into the **top folder** of your workspace, next to `README.md`.
+print. Save it into the **top folder** of your workspace, next to `README.md`. The guide *Put a Worksheet in Your Workspace* shows how, step by step: [MC 451](../guides/mc451/14-put-a-worksheet-in-your-workspace.md) or [MC 501](../guides/mc501/14-put-a-worksheet-in-your-workspace.md).
 
-[Download 09-coding-the-codebook.qmd](../starters/09-coding-the-codebook.qmd){.btn .btn-primary}
+[Download 09-coding-the-codebook.qmd](../starters/09-coding-the-codebook.qmd){.btn .btn-primary download="09-coding-the-codebook.qmd"}
 
 ## Wrangling the data (Chapter 11)
 
@@ -126,7 +126,15 @@ code is written for you, the core steps are blanks you fill, and each step says 
 print. Save it into the **top folder** of your workspace, next to `README.md`. The
 [Data Wrangling risks guide](risks/data-wrangling.qmd) shows the traps on this job.
 
-[Download 11-wrangling-data.qmd](../starters/11-wrangling-data.qmd){.btn .btn-primary}
+1. Click the **Download** button below. Your browser saves the file to your **Downloads** folder.
+2. Open your File Explorer (Windows) or Finder (Mac), find `11-wrangling-data.qmd` in Downloads,
+   and drag it into your course workspace folder, the one with `README.md` in it. In VS Code it
+   now shows in the Explorer on the left, beside `README.md`.
+3. Click it in VS Code's Explorer to open it.
+
+The guide *Put a Worksheet in Your Workspace* shows how, step by step: [MC 451](../guides/mc451/14-put-a-worksheet-in-your-workspace.md) or [MC 501](../guides/mc501/14-put-a-worksheet-in-your-workspace.md).
+
+[Download 11-wrangling-data.qmd](../starters/11-wrangling-data.qmd){.btn .btn-primary download="11-wrangling-data.qmd"}
 
 ---
 
@@ -136,11 +144,12 @@ The Describing Data worksheet is part 2 of the Twitch job. It loads the `twitch_
 file you saved in part 1, with your thirty hand-coded messages inside, and walks you through
 frequency tables, means and medians, a cross-tabulation, and three figures. The routine code is
 written for you, the core steps are blanks you fill, and each step says what it should print.
-Save it in the same folder as the Data Wrangling worksheet. Download the one for your course. The
+Save it in the same folder as the Data Wrangling worksheet, the top folder of your workspace.
+The guide *Put a Worksheet in Your Workspace* shows how, step by step: [MC 451](../guides/mc451/14-put-a-worksheet-in-your-workspace.md) or [MC 501](../guides/mc501/14-put-a-worksheet-in-your-workspace.md). Download the one for your course. The
 [Describing Data risks guide](risks/describing-data.qmd) shows the traps on this job.
 
-[Download the MC 451 worksheet](../starters/12-describing-data-mc451.qmd){.btn .btn-primary}
-[Download the MC 501 worksheet](../starters/12-describing-data-mc501.qmd){.btn .btn-primary}
+[Download the MC 451 worksheet](../starters/12-describing-data-mc451.qmd){.btn .btn-primary download="12-describing-data-mc451.qmd"}
+[Download the MC 501 worksheet](../starters/12-describing-data-mc501.qmd){.btn .btn-primary download="12-describing-data-mc501.qmd"}
 
 ---
 
@@ -150,11 +159,12 @@ The Inferencing Data worksheet is part 3 of the Twitch job. You write four hypot
 run four tests on the same `twitch_analysis.RDS` file, one of them on the thirty messages you
 hand-coded, and report how big each result is. The routine code is written for you, the core
 steps are blanks you fill, and each step says what it should print. Save it in the same folder
-as the other two worksheets. Download the one for your course. The
+as the other two worksheets, the top folder of your workspace. The guide *Put a Worksheet in Your Workspace* shows how, step by step: [MC 451](../guides/mc451/14-put-a-worksheet-in-your-workspace.md) or [MC 501](../guides/mc501/14-put-a-worksheet-in-your-workspace.md). Download the one for
+your course. The
 [Inferencing Data risks guide](risks/inferencing-data.qmd) shows the traps on this job.
 
-[Download the MC 451 worksheet](../starters/13-inferencing-data-mc451.qmd){.btn .btn-primary}
-[Download the MC 501 worksheet](../starters/13-inferencing-data-mc501.qmd){.btn .btn-primary}
+[Download the MC 451 worksheet](../starters/13-inferencing-data-mc451.qmd){.btn .btn-primary download="13-inferencing-data-mc451.qmd"}
+[Download the MC 501 worksheet](../starters/13-inferencing-data-mc501.qmd){.btn .btn-primary download="13-inferencing-data-mc501.qmd"}
 
 ---
 
@@ -163,9 +173,9 @@ as the other two worksheets. Download the one for your course. The
 `14-publishing-your-paper.qmd` walks you through giving your Results chapter its data, writing
 numbers and a figure that come from the code, installing the PDF tool, rendering the whole
 paper, and publishing it to GitHub Pages, with what each step should print. Save it into the
-**top folder** of your workspace, next to `README.md`.
+**top folder** of your workspace, next to `README.md`. The guide *Put a Worksheet in Your Workspace* shows how, step by step: [MC 451](../guides/mc451/14-put-a-worksheet-in-your-workspace.md) or [MC 501](../guides/mc501/14-put-a-worksheet-in-your-workspace.md).
 
-[Download 14-publishing-your-paper.qmd](../starters/14-publishing-your-paper.qmd){.btn .btn-primary}
+[Download 14-publishing-your-paper.qmd](../starters/14-publishing-your-paper.qmd){.btn .btn-primary download="14-publishing-your-paper.qmd"}
 
 ---
 
@@ -237,8 +247,8 @@ A visual Git interface if you prefer buttons to the command line.
 :::
 
 ::: card
-### AURA Lab R Companion (optional)
-A one-command setup check that installs the course packages, and a plain-English explainer for R errors. Install from the Extensions view: search **AURA Lab R Companion**.
+### AURA Lab R Companion (recommended)
+The VS Code extension the step-by-step guides use. Its commands start with **AURA:** in the Command Palette, and its icon in the left bar is labeled **AURA R Companion**. Install from the Extensions view: search **AURA Lab R Companion**.
 
 <span class="resource-badge">Free</span>
 
@@ -327,13 +337,13 @@ grade, and using one is not required.
 - [Agreement Check](https://aura-lab.siue.edu/agreement-check/) takes two columns of codes and
   returns percent agreement, the reliability statistic, and the items the two passes split on. It
   handles one coder at two times, which is the stability this course asks for.
-- Inside VS Code, the R Companion's **Reliability grid** does the same from two columns and writes the R
+- Inside VS Code, the R Companion's **AURA: Reliability grid** does the same from two columns and writes the R
   code for your script.
 - [Sampling Check](https://aura-lab.siue.edu/sampling-check/) turns your own coding rate into a
   corpus size, sizes the reliability subset, and reports the smallest effect that sample could find.
 - [Inferential Check](https://aura-lab.siue.edu/inferential-check/) recomputes your chi-square or t
   test from your own numbers and gives you the APA sentence to check your write-up against.
-- Inside VS Code, the Test group of the R Companion's **Write R code** runs the four tests in your script, and its
+- Inside VS Code, the R Companion's **AURA: Write R code**, under **R4 Test**, runs the four tests in your script, and its
   **APA numbers to check your sentence** prints the numbers in APA form. Inferential Check stays a second
   opinion on the numbers.
 

@@ -15,5 +15,6 @@ Each guide is a numbered click path. Commands run from the Command Palette: **Vi
 11. [Render a Quarto Document](11-render-a-quarto-document.md)
 12. [Commit and Push with Git](12-commit-and-push-with-git.md)
 13. [Publish Your Site](13-publish-your-site.md)
+14. [Put a Worksheet in Your Workspace](14-put-a-worksheet-in-your-workspace.md)
 
 The [lab-weeks table in the MC 501 syllabus](../../mc501-syllabus.qmd#weekly-schedule) shows which guide goes with each week.

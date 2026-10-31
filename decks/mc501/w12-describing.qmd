@@ -41,6 +41,9 @@ Expect every first version to look wrong. The fix is usually one line.
 
 [MC 501 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc501.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
+- Click the link: your browser saves `12-describing-data-mc501.qmd` in your Downloads folder
+- Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
+
 ## A Table Too Long to Read
 
 - The analysis table is complete, but too long to read
@@ -76,6 +79,8 @@ Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
 ## Shaping the Data
 
 ```r
+streams <- twitch_streams()  # stream snapshots, from v2v
+
 viewers_over_time <- streams %>%
   filter(!is.na(game)) %>%
   mutate(
@@ -87,8 +92,12 @@ viewers_over_time <- streams %>%
   summarize(total_viewers = sum(viewers), .groups = "drop")
 ```
 
-This code groups the snapshots into six-hour windows, lumps everything past the top five
-games into "Other", and adds up the viewers inside each window.
+## Shaping the Data (cont.)
+
+- `streams` is not in the analysis file, so the first line loads it from the course package, v2v
+- The code groups the snapshots into six-hour windows
+- It lumps everything past the top five games into "Other"
+- It adds up the viewers inside each window
 
 ## Drawing the Line Chart
 
@@ -102,7 +111,7 @@ ggplot(viewers_over_time,
        x = "Date (UTC, six-hour buckets)",
        y = "Total viewers in bucket",
        color = "Category") +
-  v2v::scale_colour_v2v() +
+  v2v::scale_color_v2v() +
   v2v::theme_v2v()
 ```
 
@@ -239,11 +248,18 @@ The skew is the most important thing the histogram reveals, and no summary numbe
 
 ## The Descriptive Statistics
 
+- The R Companion (the **AURA R Companion** icon on VS Code's left edge) writes a grouped summary
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
+- Under **R3 Describe**, **Summary by group** writes n, mean, median, and sd for each `channel_type`
+- To summarize another column, change the column names in the block it writes
+
+## The Descriptive Statistics (cont.)
+
 ```r
 msglen %>%
   group_by(is_gaming) %>%
   summarize(
-    n      = n(),
+    n      = sum(!is.na(message_length)),
     mean   = mean(message_length, na.rm = TRUE),
     median = median(message_length, na.rm = TRUE),
     sd     = sd(message_length, na.rm = TRUE),
@@ -252,8 +268,14 @@ msglen %>%
   v2v::pretty_table()
 ```
 
-This code computes, for each gaming status, the four numbers a Results section needs: n,
-mean, median, and sd. The Companion's **Summary by group** writes this grouped summary for any variable you pick, without `pretty_table()`; its Describe group also writes this week's figures (**Bar chart**, **Histogram**, **Histogram comparing two groups**, **Line chart over time**), and after **Run it** the saved chart opens in a VS Code tab.
+- This code computes n, mean, median, and sd for each gaming status
+
+## The Descriptive Statistics (cont.)
+
+- **AURA: Write R code**, then **R3 Describe**, then **Line chart over time** writes Figure 1
+- **Histogram comparing two groups** writes Figure 3
+- Its **Bar chart** draws the top ten games, not Figure 2
+- After **Run it**, the saved chart opens in its own VS Code tab
 
 ## The Numbers
 
@@ -262,7 +284,7 @@ mean, median, and sd. The Companion's **Summary by group** writes this grouped s
 :::
 
 - **Non-gaming:** n 3,457, mean 33.70, median 16, sd 60.68
-- **Gaming:** n 31,309, mean 28.49, median 17, sd 38.47
+- **Gaming:** n 31,305, mean 28.49, median 17, sd 38.47
 
 Read the **means** and non-gaming chat is longer. Read the **medians**, 16 against 17, and
 the two groups are all but identical, pointing the other way.
@@ -311,33 +333,42 @@ Put the effect size in the caption or in a companion table, never in a footnote.
 ## Figures Other People Can Read
 
 - Roughly one in twelve men has a color-vision deficiency
-    - Choose a colorblind-safe palette, such as `scale_colour_v2v()`
+    - Choose a colorblind-safe palette, such as `scale_color_v2v()`
     - Do not let color carry the message alone
     - Vary the line type, or split the groups into panels
 - Alt text is what a screen-reader user gets instead of the figure
     - With no alt text, the figure is simply missing for that reader
 
-Alt text states the chart type, the axes, and the takeaway. In Quarto it goes in `fig-alt`. The Companion's chart code leaves an `alt =` line marked YOUR TURN inside `labs()`, and a `fig-alt` line when it opens a new chunk: write the sentence in both.
+## Figures Other People Can Read (cont.)
+
+- Alt text states the chart type, the axes, and the takeaway
+- In a Quarto file it goes on a line at the top of the chunk: `#| fig-alt: "A histogram of message length..."`
+- The R Companion's chart code also leaves an `alt =` line marked YOUR TURN inside `labs()`
+- Write the same sentence in both places
 
 ## Checkpoint
 
 You should now have:
 
-- Three rendered figures, each ending in `v2v::theme_v2v()`
-- A table of descriptive statistics with n, mean, median, and sd
-- `fig-alt` text written for all three figures
-- The bin width and the cap named in your labels or captions
-- One sentence per figure, ready to paste into your Results
+- The worksheet's three figures (Tasks 4.1 to 4.3), each saved in `figures/` and drawn with `theme_v2v()`
+- A `#| fig-alt:` sentence for each figure, with no YOUR TURN left
+- The table of n, mean, median, and sd
+- One disclosure sentence per figure: the cap, the categories kept, or the bin width
+- One interpretation of two to three sentences per figure
 
 ## Before Week 13
 
-- **Due Monday, November 16, 11:59 PM:** Data Wrangling in R, 50 points
-- **Due Monday, November 23, 11:59 PM:** Describing Data in R, 100 points
+- **Due Monday, November 16, 11:59 PM:** [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#data-wrangling-in-r), 50 points
+- **Due Monday, November 16, 11:59 PM:** [Week 12 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
+- **Due Monday, November 23, 11:59 PM:** [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#describing-data-in-r), 100 points
     - The worksheet: tables, figures, diagnostics, alt text, and the disclosed choices
     - Check it against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
-- Read Chapter 13
+
+## Before Week 13 (cont.)
+
+- Click by click: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc501/09-describing-tables-and-charts.html) and its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
+- Read [Chapter 13, Making the Call](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
     - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"
-- Write a journal entry, 450 to 500 words
 
 The histogram left a precise question: is the gap between the groups real or chance? Week 13 answers it.
 

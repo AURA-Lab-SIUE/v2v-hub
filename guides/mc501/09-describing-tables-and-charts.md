@@ -7,11 +7,12 @@ Prefer to watch first? The walkthrough video [Describing data](https://siue.yuja
 ## Steps
 
 1. In your Quarto document, load your saved analysis: **AURA: Write R code**, then **Load your saved analysis (RDS)**, then **Run it**.
-2. Run **AURA: Write R code** and, under **R3 Describe**, select **Frequency table**, then **Use the course default columns**, then **Run it**.
-3. Select **Summary by group**, then **Run it**.
-4. Select **Bar chart**. Before running it, replace both lines marked `YOUR TURN` with one sentence that says what the chart shows: the `#| fig-alt:` line and the `alt =` line inside `labs()`.
-5. Select **Run it**. The chart opens in its own tab and is saved in your `figures` folder.
-6. Repeat for **Histogram**, **Boxplot**, **Line chart over time**, or **Histogram comparing two groups**, as your project needs.
+2. The **Bar chart** and **Line chart over time** blocks draw from the stream snapshots, `streams`. On a new line under the load block, type `streams <- twitch_streams()` and press **Ctrl+Enter** (**Cmd+Enter** on a Mac). It prints nothing. It worked if `streams` appears in the Workspace panel (run **AURA: Show what is loaded in R (Workspace panel)**).
+3. Run **AURA: Write R code** and, under **R3 Describe**, select **Frequency table**, then **Use the course default columns**, then **Run it**.
+4. Select **Summary by group**, then **Run it**.
+5. Select **Bar chart**. Before running it, replace both lines marked `YOUR TURN` with one sentence that says what the chart shows: the `#| fig-alt:` line and the `alt =` line inside `labs()`.
+6. Select **Run it**. The chart opens in its own tab and is saved in your `figures` folder.
+7. Repeat for **Histogram**, **Boxplot**, **Line chart over time**, or **Histogram comparing two groups**, as your project needs.
 
 ## What you should see
 

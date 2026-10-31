@@ -5,6 +5,10 @@ execute:
   echo: true
 ---
 
+::: {.callout-note}
+## This week's assignment
+The graded work for this chapter is [Data Wrangling in R](../mc451-assignments.qmd#data-wrangling-in-r) ([MC 501](../mc501-assignments.qmd#data-wrangling-in-r)). Get the worksheet, the guide, and the rubric there.
+:::
 
 Real data is messy. The Twitch dataset you're about to work with has missing values, unreadable timestamps, messages that are twenty-three question marks long, and the information you most need sitting in a second table that the first one has no link to. This chapter teaches you how to find and fix these problems using R.
 
@@ -118,9 +122,8 @@ Run the same check on `streams`. In this sample the tables are almost complete: 
 
 ```r
 
-cat("Total rows:", nrow(chat), "\n")
-cat("Unique rows:", nrow(distinct(chat)), "\n")
-cat("Duplicates:", nrow(chat) - nrow(distinct(chat)), "\n")
+nrow(chat)              # total rows
+nrow(distinct(chat))    # unique rows; the same number means no duplicates
 ```
 
 ### Check Categorical Variables
@@ -129,7 +132,8 @@ For text and categorical columns, check the unique values. `count()` tallies how
 
 ```r
 
-streams %>% count(game, sort = TRUE)
+streams %>%
+  count(game, sort = TRUE)
 ```
 
 ```
@@ -149,13 +153,15 @@ streams %>% count(game, sort = TRUE)
 # ℹ 50 more rows
 ```
 
-Sixty categories, with a handful of games accounting for most of the snapshots and a long tail accounting for the rest. That shape matters: sixty is far too many lines to put on one chart, and Chapter 5 will have to do something about it.
+Sixty named categories plus a row of `NA` for the 96 snapshots with none, with a handful of games accounting for most of the snapshots and a long tail accounting for the rest. That shape matters: sixty is far too many lines to put on one chart, and Chapter 5 will have to do something about it.
 
-`count()` is also a way to confirm the data is the corpus you expect. A related function, `n_distinct()`, counts how many different values a column holds:
+`count()` is also a way to confirm the data is the corpus you expect. `distinct()` keeps one row for each different value in a column, and `nrow()` counts those rows:
 
 ```r
 
-n_distinct(chat$channel)
+chat %>%
+  distinct(channel) %>%
+  nrow()
 ```
 
 ```
@@ -198,7 +204,9 @@ streams <- streams %>%
 
 ```r
 
-chat %>% select(date, ts) %>% slice_head(n = 3)
+chat %>%
+  select(date, ts) %>%
+  slice_head(n = 3)
 ```
 
 ```
@@ -230,7 +238,9 @@ chat <- chat %>%
 
 ```r
 
-chat %>% select(message, message_length) %>% slice_head(n = 3)
+chat %>%
+  select(message, message_length) %>%
+  slice_head(n = 3)
 ```
 
 ```
@@ -252,7 +262,8 @@ The information the research question turns on lives in the *other* table, so th
 
 chat_streams <- join_chat_streams(chat, streams)
 
-chat_streams %>% count(no_snapshot = is.na(viewers))
+chat_streams %>%
+  count(no_snapshot = is.na(viewers))
 ```
 
 ```
@@ -268,7 +279,7 @@ Each message now carries the `game` and `viewers` of the latest snapshot before 
 ::: {.callout-note}
 ## Or Use the R Companion
 
-The Data group of the AURA Lab R Companion's **Write R code** writes the `clean_dates()` and `join_chat_streams()` calls, and the filter, select, mutate, and count steps, into your script with a comment above each block. Build each step by hand once first, as above, so you know what the generated code is doing.
+In the R Companion, **AURA: Write R code**, under **R2 Data**, writes the `clean_dates()` and `join_chat_streams()` calls, and the filter, select, mutate, and count steps, into your script with a comment above each block. Build each step by hand once first, as above, so you know what the generated code is doing.
 :::
 
 ### 3d: Label Gaming and Non-Gaming
@@ -303,7 +314,7 @@ channel_type <- channel_type %>%
   select(channel, main_game = game, is_gaming)
 ```
 
-`game %in% nongaming_categories` asks whether a channel's dominant category is on the non-gaming list, and the `!` negates it, so `is_gaming` is `TRUE` for every channel whose main category is a game. `select()` also renames the category `main_game`, because `chat_streams` already has a `game` column, the category the channel was streaming when each message was sent. `main_game` is the channel's usual category. The study labels by channel, so Chapters 5 and 6 group by `main_game`; grouping by `game` runs without an error and gives different numbers.
+`game %in% nongaming_categories` asks whether a channel's dominant category is on the non-gaming list, and the `!` negates it, so `is_gaming` is `TRUE` for every channel whose main category is a game. `select()` also renames the category `main_game`, because `chat_streams` already has a `game` column, the category the channel was streaming when each message was sent. `main_game` is the channel's usual category. The study labels by channel, so later chapters group by `channel_type`, which is built from `is_gaming`. If you ever group by category, use `main_game`; grouping by `game` runs without an error and gives different numbers.
 
 Third, the second **join**. A join brings columns from one table onto another by matching on a shared key, here the channel name. `left_join()` keeps every row of `chat_streams` and attaches the matching values:
 
@@ -317,7 +328,8 @@ Always inspect a column you just derived:
 
 ```r
 
-analysis %>% count(is_gaming)
+analysis %>%
+  count(is_gaming)
 ```
 
 ```
@@ -339,7 +351,7 @@ Twitch's chat protocol writes channel names with a leading `#`, so the same chan
 
 ### 3e: Band the Channels by Audience Size
 
-You'll want a second categorical variable for Chapter 6's chi-square test. Audience size is a good one, and `case_when()` is the tool. It works like a series of if/then rules:
+You'll want a second categorical variable for Chapter 6's chi-square test. Audience size is a good one, and `cut()` is the tool. It sorts each number into a band between two cutoffs:
 
 ```r
 
@@ -352,15 +364,17 @@ channel_size <- streams %>%
   ) %>%
   select(channel, viewer_band)
 
-analysis <- analysis %>% left_join(channel_size, by = "channel")
+analysis <- analysis %>%
+  left_join(channel_size, by = "channel")
 
-analysis %>% count(viewer_band)
+analysis %>%
+  count(viewer_band)
 ```
 
 ::: {.callout-note}
-## How `case_when()` Works
+## How `cut()` Works
 
-`case_when()` checks conditions from top to bottom. The first condition that's TRUE determines the result. The `TRUE ~` at the end is a catch-all: it handles anything that didn't match the earlier rules. Think of it as "if none of the above, then..."
+`breaks = c(0, 5000, 20000, Inf)` makes three bands: above 0 up to 5,000, above 5,000 up to 20,000, and above 20,000. `labels` names them in that order.
 
 The cutoffs above (5,000 and 20,000 median concurrent viewers) are a decision *you* are making, not a fact about the data. Write them into your codebook. A reader who disagrees with the cutoffs needs to be able to see them.
 :::
@@ -382,9 +396,14 @@ analysis <- analysis %>%
     viewer_band  = factor(viewer_band, levels = c("small", "medium", "large"))
   )
 
-levels(analysis$channel_type)
-levels(analysis$viewer_band)
+analysis %>%
+  count(channel_type)   # the labels, in the factor's order
+
+analysis %>%
+  count(viewer_band)    # small, medium, large, in the order you set
 ```
+
+`case_when()` checks its conditions from top to bottom, and the first one that is TRUE sets the label. The `TRUE ~` at the end is a catch-all: it handles anything the earlier rules did not match.
 
 Setting `levels` explicitly for `viewer_band` matters. Without it R sorts alphabetically and you get large, medium, small, which puts your bands in a nonsense order on every chart you draw.
 
@@ -394,16 +413,19 @@ Save your cleaned data as an `.RDS` file. RDS is R's native format: it preserves
 
 ```r
 
-write_rds(analysis, "data/twitch_analysis.RDS")
+dir.create("data", showWarnings = FALSE)
+write_rds(analysis, "data/workbook_analysis.RDS")
 
-read_rds("data/twitch_analysis.RDS") %>%
+read_rds("data/workbook_analysis.RDS") %>%
   nrow()
 ```
+
+This practice file has its own name so it never replaces `twitch_analysis.RDS`, the file your Data Wrangling worksheet saves and the next two worksheets read.
 
 ::: {.callout-important}
 ## Why `.RDS` Instead of `.csv`?
 
-When you save as CSV, R forgets which columns are factors and what their levels are. It also flattens your `<dttm>` timestamp back into text. When you save as RDS, everything is preserved. Since you just spent time converting timestamps and setting up factors, you do not want to lose that work. Always save your *cleaned* data as RDS. If you export from the R Companion, choose **Save a table as an RDS file**; it offers this file name.
+When you save as CSV, R forgets which columns are factors and what their levels are. It also flattens your `<dttm>` timestamp back into text. When you save as RDS, everything is preserved. Since you just spent time converting timestamps and setting up factors, you do not want to lose that work. Always save your *cleaned* data as RDS. If you export from the R Companion, choose **Save a table as an RDS file**.
 :::
 
 ## The Complete Pipeline (Summary)
@@ -453,7 +475,8 @@ analysis <- join_chat_streams(chat, streams) %>%    # join key: channel, nearest
   left_join(channel_size, by = "channel") %>%       # join key: channel
   mutate(channel_type = factor(if_else(is_gaming, "gaming", "non-gaming")))
 
-write_rds(analysis, "data/twitch_analysis.RDS")
+dir.create("data", showWarnings = FALSE)
+write_rds(analysis, "data/workbook_analysis.RDS")
 ```
 
 A `glimpse()` of the finished table shows what the transformations bought you. The first twelve columns are the table the textbook builds; your pipeline adds `median_viewers`, `viewer_band`, and `channel_type` on top of it:
@@ -486,11 +509,19 @@ None of this was analysis. Not one result has been computed. But every figure in
 
 These exercises directly prepare you for the Data Wrangling [R] assignment:
 
-1. **Diagnose another column:** Run `summary()` on `streams$viewers`. What is the largest value? What is the median? Why is the gap between them so large?
+1. **Diagnose another column:** Run `summary()` on the `viewers` column of `streams`, the way the numeric check above does. What is the largest value? What is the median? Why is the gap between them so large?
 
 2. **Practice `case_when()`:** The `viewer_band` cutoffs above are arbitrary. Build a second version using tertiles instead (`quantile()` will find them for you), and compare how many channels land in each band under the two schemes.
 
-3. **Check your joins:** After running the full pipeline, run `analysis %>% filter(is.na(is_gaming)) %>% count(channel)`. Which channels came back `NA`, and what does the stream table say about them? Then run `analysis %>% filter(is.na(viewers)) %>% count(channel)` for the messages the stream join could not place.
+3. **Check your joins:** After running the full pipeline, run this. Which channels came back `NA`, and what does the stream table say about them?
+
+    ```r
+    analysis %>%
+      filter(is.na(is_gaming)) %>%
+      count(channel)
+    ```
+
+    Then run the same three lines with `is.na(viewers)` in the `filter()` line, for the messages the stream join could not place.
 
 4. **Run the full pipeline:** Starting from `twitch_chat()`, apply all four steps to produce a clean `.RDS` file. Verify it loads correctly with `read_rds()` and that `nrow()` still reports 35,267.
 

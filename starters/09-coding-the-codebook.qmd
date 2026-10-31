@@ -17,7 +17,10 @@ inside the box and press **Ctrl+Enter** (Windows) or **Cmd+Enter** (Mac). Under 
 file tells you what should appear and what to do when it does not.
 
 Save this file in the **top folder** of your workspace, next to `README.md`, and open it from
-there. Nothing in it changes the example data. Looking is all we do today.
+there. The guide *Put a Worksheet in Your Workspace* shows how, step by step:
+[MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
+Nothing in it changes the example data. Looking is all we do today.
 
 ## Step 1: Switch the course package on
 
@@ -50,12 +53,12 @@ If you do not have the AURA Lab R Companion, run this chunk instead:
 setup()
 ```
 
-**What you should see:** the Companion prints `RESULT: everything this course needs is
+**What you should see:** the R Companion prints `RESULT: everything this course needs is
 installed.` The chunk shows green check marks under **Required R packages**, and green checks
 for the Quarto CLI and Git under **Command-line tools**.
 
 **If something is missing,** run **AURA: Install what is missing** from the Command Palette. Without
-the Companion, `setup()` prints the exact command that fixes it under **What to do
+the R Companion, `setup()` prints the exact command that fixes it under **What to do
 next**. Copy that command, paste it into the R console, press Enter, then run this chunk
 again. If it tells you to quit R and open it again, do that: R only notices a newly installed
 program when it starts.
@@ -211,8 +214,13 @@ Counting is how you check that the data is what you were told it is. The book sa
 example corpus has fifty channels. Check it.
 
 ```{r}
-n_distinct(chat$channel)
-n_distinct(streams$channel)
+chat %>%
+  distinct(channel) %>%     # one row per channel in the chat
+  nrow()                    # and count them
+
+streams %>%
+  distinct(channel) %>%     # the same for the stream snapshots
+  nrow()
 ```
 
 **What you should see:** `[1] 50`, twice.

@@ -23,4 +23,4 @@ The test prints the plain R result first, then the effect size, then the `v2v` c
 
 ## If it does not work
 
-If the test errors on a missing value, select **Welch t-test, dropping missing values** instead.
+If R says `grouping factor must have exactly 2 levels`, the `group2` column in your settings block does not have exactly two groups. Run `analysis %>% count(group2)` to see them, then fix the settings block and run it again.

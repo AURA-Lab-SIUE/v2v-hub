@@ -32,10 +32,17 @@ the worksheet says **Write:**, answer in your own words in the space under it. A
 `___` still in it stops with `object '___' not found`; that is the blank telling you it is
 empty, not a bug.
 
-**Where to save it.** Save this file in the top folder of your workspace, next to `README.md`,
-and run the chunks in order: each one uses what the one before it made. To run a chunk, click
+**Where to save it.** Save this file in the top folder of your workspace, next to `README.md`.
+The guide *Put a Worksheet in Your Workspace* shows how, step by step:
+[MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
+Run the chunks in order: each one uses what the one before it made. To run a chunk, click
 **Run Cell** at its top left, or click inside it and press **Ctrl+Enter** (**Cmd+Enter** on a
 Mac).
+
+**`data/`** in this worksheet means the folder named `data` in the top folder of your workspace,
+beside `README.md`. Task 0.2 makes it for you. Every worksheet and the R Companion read and save
+there.
 
 **The R Companion.** Where a menu of **AURA: Write R code** writes a step, the worksheet names
 it. What the menu writes lands in your file and counts as your code. You still fill the blank
@@ -43,8 +50,9 @@ yourself or replace it with the menu's block; either way, be ready to explain ev
 
 **What you submit** (Blackboard, under Data Wrangling in R): this worksheet with every blank
 filled, the HTML it renders to, your filled `data/coding-form.csv`, and
-`data/twitch_analysis.RDS`. Before you submit, restart R and render the worksheet from the top
-(guide 11, *Render a Quarto document*). If it renders, it runs in a clean session.
+`data/twitch_analysis.RDS`. Before you submit, render the worksheet (guide 11, *Render a Quarto
+Document*). Quarto runs it in a fresh R session from the top, so if it renders, it runs. It
+worked if the Terminal panel ends with `Output created: 11-wrangling-data.html`.
 
 **Before you start,** read the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html).
 It shows what each trap on this job looks like and how to check for it.
@@ -147,12 +155,18 @@ Code one variable, `reaction_only`, for all thirty messages, using this codebook
 columns headed `reaction_only` and `coder_notes`, type `0` or `1` in every row, and save it
 **as a CSV with the same name**. Do not change or delete the `id` column.
 
-**In the R Companion's data viewer:** run **AURA: Open the data viewer** on
-`data/coding-form.csv`, select **Add coding column** for `reaction_only` and again for
-`coder_notes`, and type a code in every row. Your codes save to `data/derived/` and the form
-itself is never changed. You will use **Insert rebuild code** in Task 5.1.
+**In the R Companion's data viewer:** run **AURA: Open the data viewer**, select **Pick a data
+file (CSV or Excel)**, and open `coding-form.csv` in the `data` folder. Then:
 
-Guide 05, *Read and Code Data in the Data Viewer*, shows the viewer route.
+1. Select **Add coding column**, type `reaction_only`, choose **Allowed values (a dropdown)**,
+   and type `0, 1`.
+2. Select **Add coding column** again, type `coder_notes`, and choose **Free text**.
+3. Click the first cell under `reaction_only`, type `0` or `1`, and press **Enter**. The cursor
+   moves down a row.
+
+It worked if the line above the grid reads `Saved` after each code. Your codes save to
+`data/derived/` and the form itself never changes. You will use **Insert rebuild code** in Task
+5.1. Guide 05, *Read and Code Data in the Data Viewer*, shows these steps with pictures.
 
 ## Part 1: Load the two tables
 
@@ -166,10 +180,12 @@ chat <- ___()        # one row per chat message
 streams <- ___()  # one row per snapshot of a stream
 ```
 
-Or with the R Companion: **AURA: Write R code**, then **R2 Data**, then **Load the course Twitch
-corpus**.
+Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Load the
+course Twitch corpus**, then **Run it**.
 
-**What you should see:** nothing in the console. `chat` and `streams` appear in the **R** panel.
+**What you should see:** nothing in the console. `chat` and `streams` appear in the Workspace
+panel. To open it, run **AURA: Show what is loaded in R (Workspace panel)** from the Command
+Palette.
 
 ### Task 1.2: First look
 
@@ -215,7 +231,9 @@ Both tables have a column named `id`. This checks whether the same numbers turn 
 
 ```{r}
 #| label: id-overlap
-length(intersect(chat$id, streams$id))  # id values that appear in both tables
+chat %>%
+  semi_join(streams, by = "id") %>%  # keep the chat rows whose id also appears in streams
+  nrow()                             # and count them
 ```
 
 **What you should see:** `[1] 31`. Thirty-one numbers appear in both, but a chat `id` names a
@@ -231,7 +249,9 @@ snapshots. The tables join on channel and time instead (Task 4.1). Your coding s
 streams %>%
   count(game, sort = TRUE)  # snapshots per category, most common first
 
-n_distinct(chat$channel)    # how many channels
+chat %>%
+  distinct(channel) %>%     # one row per channel
+  nrow()                    # how many channels
 ```
 
 **What you should see:** a table that starts `Art`, `Fortnite`, `Just Chatting`, then `[1] 50`.
@@ -251,13 +271,16 @@ chat <- chat %>%
 streams <- streams %>%
   mutate(ts = ___(date))
 
-range(chat$ts)  # the first and last message
+chat %>%
+  summarize(first = min(ts), last = max(ts))  # the first and last message
 ```
 
-Or with the R Companion: **R2 Data**, then **Turn the date column into a time (clean_dates)**.
+Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Turn the
+date column into a time (clean_dates)**, then **Run it**.
 
 **What you should see:** a line saying what `clean_dates()` is the same as in plain lubridate,
-then `"2018-11-18 21:55:27 UTC" "2018-11-24 18:20:23 UTC"`. Six days in November 2018.
+then a one-row table: `first` is `2018-11-18 21:55:27` and `last` is `2018-11-24 18:20:23`. Six
+days in November 2018.
 
 **If the year is in the tens of thousands,** the milliseconds were read as seconds. Use
 `clean_dates()`, which divides by 1,000 first.
@@ -277,7 +300,8 @@ chat %>%
   slice_head(n = 3)
 ```
 
-Or with the R Companion: **R2 Data**, then **Add a column (mutate)**.
+Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Add a
+column (mutate)**, then **Run it**.
 
 **What you should see:** three messages with lengths `23`, `441`, and `8`.
 
@@ -298,7 +322,8 @@ chat_streams %>%
   count(no_snapshot = is.na(viewers))  # messages with no earlier snapshot
 ```
 
-Or with the R Companion: **R2 Data**, then **Match each message to its stream (join_chat_streams)**.
+Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Match each
+message to its stream (join_chat_streams)**, then **Run it**.
 
 **What you should see:** a line naming the plain dplyr join this stands for, then `[1] 35267`,
 then `FALSE` with `35256` and `TRUE` with `11`. Eleven messages came before their channel's
@@ -336,8 +361,11 @@ analysis %>%
   count(is_gaming)
 ```
 
-Or with the R Companion: **R2 Data**, then **Label each channel by its top category**, then
-**Join the channel labels onto the messages**.
+Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Label each
+channel by its top category**, then **Run it**. Then select **Join the channel labels onto the
+messages**, then **Run it**. The menu adds the labels to `chat_streams`. If you used it, type
+`analysis <- chat_streams` on the line under its block and run it, so the next tasks find
+`analysis`.
 
 **What you should see:** `FALSE` with `3457`, `TRUE` with `31309`, and `NA` with `501`. The 501
 come from two channels that never recorded a category. An honest `NA` is the right answer.
@@ -385,11 +413,16 @@ analysis <- analysis %>%
     viewer_band  = factor(viewer_band, levels = c(___))
   )
 
-levels(analysis$channel_type)
-levels(analysis$viewer_band)
+analysis %>%
+  count(channel_type)  # messages per label, in the factor's order
+
+analysis %>%
+  count(viewer_band)   # messages per band, in the order you set
 ```
 
-**What you should see:** `[1] "gaming"     "non-gaming"`, then `[1] "small"  "medium" "large"`.
+**What you should see:** `gaming` with `31309`, `non-gaming` with `3457`, and `NA` with `501`,
+then `small` with `27766`, `medium` with `5501`, and `large` with `2000`. The rows come in the
+order the factor sets.
 
 ## Part 5: Read your codes back and join them
 
@@ -493,7 +526,9 @@ read_rds("data/twitch_analysis.RDS") %>%              # load it back
   nrow()                                              # and count the rows
 ```
 
-Or with the R Companion: **R2 Data**, then **Save a table as an RDS file**.
+Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Save a
+table as an RDS file**. A box asks for the file name: leave `data/twitch_analysis.RDS` and press
+**Enter**. Then **Run it**.
 
 **What you should see:** `[1] 35267`, and `twitch_analysis.RDS` in the `data` folder.
 
@@ -510,7 +545,7 @@ three; the comments the R Companion writes are that kind.
 - [ ] No `___` is left anywhere in the file.
 - [ ] `analysis %>% count(reaction_only)` shows your two groups adding to 30.
 - [ ] `data/twitch_analysis.RDS` loads back with 35,267 rows.
-- [ ] You restarted R and rendered the worksheet from the top without an error.
+- [ ] The worksheet renders without an error.
 
 When a line breaks, read the error before retyping anything; the wording is the diagnosis. Run
 `?v2v::common_errors` in the R console for the errors this data produces most often, or use

@@ -39,6 +39,9 @@ Today we settle that question. There are no formulas to memorize, only questions
 
 [MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
+- Click the link: your browser saves 13-inferencing-data-mc451.qmd in your Downloads folder
+- Move it into your workspace's top folder, next to README.md and the Data Wrangling worksheet: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+
 ## What a Test Actually Asks
 
 Split a group of people in half at random and the two halves' average heights still differ
@@ -66,6 +69,7 @@ a little. Samples wobble.
 - **A numeric outcome compared across two groups:** the **t-test**
 - **A numeric outcome compared across three or more groups:** **ANOVA**
 - **Two categorical variables:** **chi-square**, `chisq.test()`, with `v2v::run_chi_square()` as the check
+- **Two numeric variables:** **linear regression**, such as message length by hour of the day
 - **The example:** message length is a count, and gaming status has two values, so the t-test
 
 ## Two Terms From That List
@@ -78,7 +82,12 @@ a little. Samples wobble.
 **Categorical variable:** a variable whose values are categories rather than measured amounts. Example: gaming status, gaming or non-gaming.
 :::
 
-A test applied to the wrong kind of data produces a meaningless number. Unsure? Write your choice down, then run the Companion's **Check my test choice**: it says whether the choice fits these rules, and it does not choose for you.
+## Two Terms From That List (cont.)
+
+- A test applied to the wrong kind of data produces a meaningless number
+- Unsure? Write your choice down, then ask the R Companion (the **AURA R Companion** icon on VS Code's left edge)
+    - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Check my test choice**, and press **Enter**
+    - It says whether the choice fits these rules, and it does not choose for you
 
 ## Exercise: State the Null for Your Own Question {.discuss}
 
@@ -92,7 +101,8 @@ A test applied to the wrong kind of data produces a meaningless number. Unsure? 
 t.test(message_length ~ is_gaming, data = analysis) %>%
   broom::tidy()
 
-effectsize::cohens_d(message_length ~ is_gaming, data = analysis)
+effectsize::cohens_d(message_length ~ is_gaming,
+                     data = analysis)
 ```
 
 `t.test()` runs the test, `broom::tidy()` turns its result into a one-row table, and `effectsize::cohens_d()` adds the effect size.
@@ -112,11 +122,18 @@ Cohen's d |       95% CI
 0.13      | [0.09, 0.16]
 ```
 
-`estimate1` and `estimate2` are the two means, non-gaming first; `estimate` is the gap; `statistic` is `t`; `parameter` is the Welch df, 3768.7 before rounding.
+- `estimate1` and `estimate2` are the two means, non-gaming first; `estimate` is the gap
+- `statistic` is `t`; `parameter` is the Welch df, 3768.7 before rounding
 
-`t` measures the gap in units of its own uncertainty. Its sign shows direction only: list the groups the other way around and `t` is -4.94.
+## Reading the Output (cont.)
+
+- `t` measures the gap in units of its own uncertainty
+    - Its sign shows direction only: list the groups the other way around and `t` is -4.94
+- *d* follows the same order: 0.13 with non-gaming first, as printed, and -0.13 with gaming first, as reported
 
 ## The Same Test, Labeled
+
+- The R Companion writes the plain calls first and this check after them: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
 
 ```r
 v2v::run_t_test(
@@ -126,9 +143,8 @@ v2v::run_t_test(
 )
 ```
 
-One call, one labeled block: both means with their n, the gap, `t`, `df`, `p`, and Cohen's d. It prints the same numbers as the two plain calls and ends by naming them.
-
-The Test group of the Companion's **Write R code** writes the plain calls first and this check after them.
+- One call, one labeled block: both means with their n, the gap, `t`, `df`, `p`, and Cohen's d
+- It prints the same numbers as the two plain calls and ends by naming them
 
 ## What the p-value Means
 
@@ -177,9 +193,15 @@ Significance and size are different questions, and big samples pull them apart.
 ```r
 four_games <- analysis %>%
   filter(main_game %in% c("Fortnite", "Hearthstone",
-                          "Just Chatting", "League of Legends"))
+                          "Just Chatting",
+                          "League of Legends"))
 
-summary(aov(message_length ~ main_game, data = four_games))
+fit <- aov(message_length ~ main_game, data = four_games)
+summary(fit)
+
+fit %>%
+  broom::tidy() %>%
+  mutate(eta_sq = sumsq / sum(sumsq))
 ```
 
 `main_game` is the channel's usual category. Four means, so a t-test will not do. Comparing four groups two at a time would take six
@@ -196,13 +218,16 @@ Residuals   13429 26552407    1977
 **F** compares the variation between the group means against the variation within the
 groups. If all four groups shared one mean, F would sit near one. Here it is **92.26**.
 
-The effect size for ANOVA is **eta-squared**, here **0.02**: game category accounts for
-about two percent of the variation in message length. The difference is real, and small.
+- The effect size for ANOVA is **eta-squared**, here **0.02**
+    - The last three lines of the ANOVA code compute it: each row's share of the total sum of squares
+- Game category accounts for about two percent of the variation in message length
+- The difference is real, and small
 
 ## From a Difference to a Model
 
 ```r
-summary(lm(message_length ~ is_gaming, data = analysis))
+fit <- lm(message_length ~ is_gaming, data = analysis)
+summary(fit)
 ```
 
 ```
@@ -214,7 +239,8 @@ is_gamingTRUE   -5.21       0.74      -7.06   < .001
 The intercept is the non-gaming mean. The coefficient, **-5.21**, is exactly the gap the
 t-test found, now written as a baseline plus an adjustment. That is what a regression is.
 
-The Companion's **Linear regression** writes this `lm()` and `summary()` pair, then `broom::glance()` for the n.
+- The R Companion's version (**AURA: Write R code**, then **R4 Test**, then **Linear regression**) is the worksheet's: `lm(outcome ~ predictor)`
+    - There `predictor` is a number (the hour of the day), and `broom::glance()` follows for R-squared and the n
 
 ## Checkpoint
 
@@ -228,10 +254,12 @@ You should now be able to:
 
 ## Before Next Time
 
-- Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points
-- Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points
+- Due Friday, November 20, 11:59 PM: [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#describing-data-in-r), 75 points
+- Due Friday, December 4, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points
 - Thursday is a lab: you fill the Inferencing Data worksheet with help in the room
-    - Write its four hypotheses before Thursday, and bring `data/twitch_analysis.RDS`
+    - Write its four hypotheses before Thursday
+    - Check that `data/twitch_analysis.RDS` is in your workspace's data folder
+- Step by step: [Run a Test and Check Your Test Choice](https://aura-lab.siue.edu/v2v-hub/guides/mc451/10-tests-and-check-my-test-choice.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490908&a=168993969)
 - Re-read the Chapter 13 section on significance against importance
 - Thursday the White Paper (250 points) is assigned
 

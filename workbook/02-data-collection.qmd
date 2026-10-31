@@ -77,7 +77,7 @@ You need your data collection complete before the R assignments begin. Let's cal
 ::: {.callout-warning}
 ## The Hard Deadline
 
-Your Data Wrangling in R assignment is due **Friday, November 13 (MC 451)** or **Monday, November 16 (MC 501)**. You need a completed, clean dataset in CSV format *before* you can start that assignment. Working backward: finish coding a week ahead, spend the next two days cleaning and checking your spreadsheet, and start the R assignment with most of the week still open.
+Your Data Wrangling in R assignment, due **Friday, November 13 (MC 451)** or **Monday, November 16 (MC 501)**, practices on the Twitch data. Your own coded dataset is due with the White Paper's dated step (December 4 in MC 451, December 7 in MC 501).
 :::
 
 ## Quality Self-Check
@@ -98,7 +98,7 @@ Before you move to R, run through this checklist on your completed spreadsheet:
 
 If you coded in the R Companion's data viewer, there is nothing to export: your codes are already in `data/derived/<name>-codes.csv`, and **Insert rebuild code** writes the lines that read the original file and the codes and join them.
 
-Name your file descriptively: `my_coding_data_raw.csv` (the "raw" reminds you this is pre-cleaning). To read the CSV into R, the R Companion's Data menu, **Import a data file (CSV or Excel)**, asks you to pick your file and name the table, then writes the `read_csv()` lines for you.
+Name your file descriptively: `my_coding_data_raw.csv` (the "raw" reminds you this is pre-cleaning). To read the CSV into R, the R Companion's **AURA: Write R code**, under **R2 Data**, **Import a data file (CSV or Excel)**, asks you to pick your file and name the table, then writes the `read_csv()` lines for you.
 
 ## Try It Yourself
 

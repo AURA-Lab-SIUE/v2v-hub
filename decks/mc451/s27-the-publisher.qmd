@@ -20,6 +20,9 @@ format:
 
 Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd)
 
+- Click the link: your browser saves 14-publishing-your-paper.qmd in your Downloads folder
+- Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+
 ## Where the Study Stands
 
 [The Publisher]{.eyebrow}
@@ -55,13 +58,20 @@ Nothing is typed by hand, so nothing can fall out of date.
 
 ```markdown
 The analysis dataset held `r nrow(analysis)`
-coded messages, of which
-`r sum(!is.na(analysis$is_gaming))` carried a
-gaming-status label.
+coded messages, of which `r n_labeled` carried
+a gaming-status label.
 ```
 
-Those backtick expressions become the actual counts in the rendered report. Add a hundred
-messages to the data, re-render, and the sentence updates itself.
+- `n_labeled` comes from a chunk above the sentence:
+
+```r
+n_labeled <- analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  nrow()
+```
+
+- Those backtick expressions become the actual counts in the rendered report
+- Add a hundred messages to the data, re-render, and the sentence updates itself
 
 ## Figures Produced, Not Pasted
 
@@ -69,8 +79,10 @@ messages to the data, re-render, and the sentence updates itself.
 #| label: fig-msglen
 #| echo: false
 #| fig-cap: "Message length by channel type."
-
-ggplot(msglen, aes(message_length, fill = is_gaming)) +
+#| fig-alt: "YOUR TURN: what this chart shows."
+analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  ggplot(aes(x = message_length, fill = is_gaming)) +
   geom_histogram(binwidth = 5) +
   v2v::theme_v2v()
 ```
@@ -132,21 +144,23 @@ Discussion is also where an honest study states its limits.
     - The codebook, the sampling record, and the wrangling log are documents too
 - They become chapters of one Quarto book, not one enormous file
 - `_quarto.yml` lists the chapters in order: the five section files, the references, and the codebook and journal as appendices
-- `quarto render` builds every chapter into one website
+- Rendering the project builds every chapter into one website and one PDF: Step 10 of the Chapter 14 starter file runs it
 
 ## Going Live
 
 - A site in a folder on a laptop is still private
     - Publishing means giving the site a public address
 - The standard free option is GitHub Pages
-- `v2v::deploy_portfolio()` runs the checks, then publishes the site
-
-When it finishes, your paper is live at your repository's GitHub Pages address. That URL, with the PDF, is what you submit for the White Paper.
+- Commit and push first: [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html)
+- `v2v::deploy_portfolio(project)` runs the checks, then publishes the site: Steps 12 and 13 of the Chapter 14 starter file
+    - `project` is your White Paper folder's name, set in Step 2 of that file
+- When it finishes, your paper is live at your repository's GitHub Pages address
+    - That URL, with the PDF, is what you submit for the White Paper
 
 ## The Pre-Flight Checks
 
 ```r
-v2v::deploy_portfolio()
+v2v::deploy_portfolio(project)
 ```
 
 ```
@@ -162,7 +176,12 @@ Publish to GitHub Pages? [y/N] y
 ✔ Portfolio live on GitHub Pages.
 ```
 
-Three checks run first. Only if none fails does the book render, and it publishes only after you type `y`. The renv check is skipped here because the course scaffold has no `renv.lock`.
+## The Pre-Flight Checks (cont.)
+
+- Commit and push first, or the second check stops you ([Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html))
+- Three checks run first. Only if none fails does the book render
+- It publishes only after you click in the R terminal, type `y`, and press **Enter**
+- The renv check is skipped here because the course scaffold has no `renv.lock`
 
 ## What renv Is
 
@@ -173,8 +192,8 @@ Three checks run first. Only if none fails does the book render, and it publishe
 ## Why the Checks Exist
 
 - **renv in sync:** the site is built with the package versions your source declares, checked only when the project has a `renv.lock`
-- **No uncommitted changes:** the live site matches what you saved
-- **A valid `_quarto.yml`:** the render will not collapse halfway through
+- **No uncommitted changes:** every saved change is also committed (a snapshot Git records and sends to GitHub), so the live site matches your files
+- **`_quarto.yml` found:** R is pointed at your White Paper folder, not the workspace around it
 - Each check heads off one specific, demoralizing failure
 
 The last step of a long study should be the calm one.
@@ -196,7 +215,9 @@ A researcher who can say where their study is weak understands it.
 - Bring a rendered draft, not notes toward one
     - It does not have to be finished. It has to render
 - Bring your public URL, or the error message that is stopping you
-- Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points
-- Due Friday, December 18, 11:59 PM: White Paper, 250 points
+- Due Friday, December 4, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points
+- Due Friday, December 4, 11:59 PM: your full coded corpus and its stability check, pushed to your project repository ([White Paper dated step](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper))
+- Due Friday, December 18, 11:59 PM: [White Paper](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper), 250 points
+- Step by step: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html), [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc451/13-publish-your-site.html)
 
 ## Questions, Comments, or Concerns? {.titlecard}

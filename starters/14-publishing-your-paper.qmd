@@ -21,7 +21,10 @@ Some boxes are not for running here. Those are marked **Paste this into
 `03-results.qmd`**: they are written for your Results chapter, and they only work there.
 
 Save this file in the **top folder** of your workspace, next to `README.md`, and open it from
-there. Your White Paper project is the folder you made with the Chapter 9 file
+there. The guide *Put a Worksheet in Your Workspace* shows how, step by step:
+[MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
+Your White Paper project is the folder you made with the Chapter 9 file
 (`09-coding-the-codebook.qmd`).
 
 The examples below use the Twitch data from the three worksheets, so you can see each step
@@ -131,7 +134,7 @@ Before you write anything in the paper, check that the copy loads and has the ro
 ```{r}
 library(tidyverse)
 
-analysis <- readRDS(file.path(project, "data", "derived", "twitch_analysis.RDS"))
+analysis <- read_rds(file.path(project, "data", "derived", "twitch_analysis.RDS"))
 nrow(analysis)                                   # one row per message
 ```
 
@@ -154,7 +157,7 @@ file:
 #| include: false
 library(tidyverse)
 library(v2v)
-analysis <- readRDS("data/derived/twitch_analysis.RDS")
+analysis <- read_rds("data/derived/twitch_analysis.RDS")
 ```
 ````
 
@@ -171,7 +174,7 @@ code is computed again on every render. `format(..., big.mark = ",")` prints `35
 
 ```markdown
 The analysis dataset held `r format(nrow(analysis), big.mark = ",")` messages,
-of which `r format(sum(!is.na(analysis$channel_type)), big.mark = ",")`
+of which `r format(nrow(drop_na(analysis, channel_type)), big.mark = ",")`
 carried a channel type.
 ```
 

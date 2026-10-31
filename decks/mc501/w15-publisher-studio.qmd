@@ -20,6 +20,9 @@ format:
 
 Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd)
 
+- Click the link: your browser saves `14-publishing-your-paper.qmd` in your Downloads folder
+- Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
+
 ## The Last Meeting
 
 [Studio session]{.eyebrow}
@@ -53,9 +56,16 @@ A study scattered across a dozen files is raw material. Tonight gives it a form.
 
 ```markdown
 The analysis dataset held `r nrow(analysis)`
-coded messages, of which
-`r sum(!is.na(analysis$is_gaming))` carried a
-gaming-status label.
+coded messages, of which `r n_labeled` carried
+a gaming-status label.
+```
+
+- `n_labeled` comes from a chunk above the sentence:
+
+```r
+n_labeled <- analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  nrow()
 ```
 
 In the rendered report those backtick expressions become the actual counts, so nothing in
@@ -67,8 +77,11 @@ the sentence can fall out of date.
 #| label: fig-msglen
 #| echo: false
 #| fig-cap: "Message length by channel type."
+#| fig-alt: "YOUR TURN: what this chart shows."
 
-ggplot(msglen, aes(message_length, fill = is_gaming)) +
+analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  ggplot(aes(message_length, fill = is_gaming)) +
   geom_histogram(binwidth = 5) +
   v2v::theme_v2v()
 ```
@@ -82,8 +95,9 @@ time rather than pasted in.
 - The report can be checked
     - Anyone with the source files and the data renders the same results (Peng, 2011)
 
-The idea predates Quarto and R. Runnable code and its prose in one document is what Knuth
-named literate programming in 1984, and the "one click" is the render button.
+- The idea predates Quarto and R: Knuth named it literate programming in 1984
+- Here the "one click" is **Quarto: Preview** (**Ctrl+Shift+K**, **Cmd+Shift+K** on a Mac)
+- It **renders**: it runs every chunk and builds the finished page
 
 ## IMRaD, and What Each Section Owes the Reader
 
@@ -168,14 +182,18 @@ book:
     - references.qmd
 ```
 
-`_quarto.yml` lists the chapters in order. `new_portfolio()` wrote it for you, with the
-codebook and the journal as appendices. Set the title to your own.
+## One Book, Many Chapters (cont.)
+
+- `_quarto.yml` lists the chapters in order
+- The course package, v2v, wrote it for you with `new_portfolio()`, with the codebook and the journal as appendices
+- Open `_quarto.yml` from your White Paper folder in the **Explorer** panel and change the words after `title:`
 
 ## Studio Block One
 
 [White Paper]{.eyebrow}
 
 - Get `index.qmd` rendering, even if it is mostly headings
+- Copy `twitch_analysis.RDS` into your project and give `03-results.qmd` its setup chunk: [Chapter 14 starter](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd), Steps 4 to 6
 - Move your Results section into `03-results.qmd` first, since you already have it
 - Replace every pasted number with an inline `r` expression
 - Replace every pasted figure with a chunk that produces it
@@ -184,8 +202,15 @@ codebook and the journal as appendices. Set the title to your own.
 ## Going Live
 
 ```r
-v2v::deploy_portfolio()
+v2v::deploy_portfolio(project)
 ```
+
+- Run it from the Chapter 14 starter, Step 13; `project` is your White Paper folder's name, set in Step 2
+- Commit and push first ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)), or the second check stops it
+- When it asks **Publish to GitHub Pages? [y/N]**, type `y` in the R terminal and press **Enter**
+- Click by click: [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc501/13-publish-your-site.html)
+
+## What Going Live Prints
 
 ```
 ── Pre-flight checks ──
@@ -200,10 +225,12 @@ Publish to GitHub Pages? [y/N] y
 ✔ Portfolio live on GitHub Pages.
 ```
 
+- You type the `y` in the R terminal, after you commit and push ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html))
+
 ## The Three Pre-Flight Checks
 
 - **renv in sync:** the site is built with the package versions the source declares, checked only when the project has a `renv.lock`
-- **No uncommitted changes:** the live site matches what is saved
+- **No uncommitted changes:** every change is committed in **Source Control** ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)), not only saved with **Ctrl+S** (**Cmd+S** on a Mac)
 - **`_quarto.yml` valid:** the render will not fail partway through
 
 Each check heads off one demoralizing failure, the worst being a collapse the night the
@@ -281,11 +308,17 @@ walked it once.
 
 [Two deadlines left]{.eyebrow}
 
-- Due Monday, December 7, 11:59 PM: Inferencing Data in R, 100 points
-- Due Friday, December 18, 11:59 PM: the White Paper and its poster, 200 points
+- Due Monday, December 7, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#inferencing-data-in-r), 100 points
+- Due Monday, December 7, 11:59 PM: push your full coded dataset and a re-code of a fresh subsample to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)); the stability figure earns points only if that commit is dated by then
+    - This is the [White Paper's dated step](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster)
+- Due Monday, December 7, 11:59 PM: [Week 15 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
+- Due Friday, December 18, 11:59 PM: [White Paper and conference poster](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster), 200 points
     - The paper as a PDF, the poster as a PDF, and the live URL of your site, all three required
+
+## Before Finals Week (cont.)
+
 - Your reflection paragraph, included in the paper
-- Your final journal entry
+- Click by click: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html), [Commit and Push](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc501/13-publish-your-site.html)
 - Office hours run through finals week, so bring a draft early
 
 ## Questions, Comments, or Concerns? {.titlecard}

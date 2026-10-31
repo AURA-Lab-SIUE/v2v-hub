@@ -105,8 +105,8 @@ You'll also find NAs in `base_experience`. Some Pokemon simply don't have this s
 ### Duplicates
 
 ```r
-cat("Total rows:", nrow(pokemon), "\n")
-cat("Unique rows:", nrow(distinct(pokemon)), "\n")
+nrow(pokemon)              # total rows
+nrow(distinct(pokemon))    # unique rows; the same number means no duplicates
 ```
 
 ### Categories
@@ -164,7 +164,7 @@ This is typical. Not every dataset has dramatic errors. Sometimes cleaning is ju
 
 Everything below this line is yours. The downloaded `.qmd` file has empty code chunks for each step. Fill them in, render, and verify your output.
 
-Type this practice by hand, without the R Companion's menus: the point is to find out what you can write on your own. Afterward, rebuild one step with the Data menu and compare its code to yours.
+Type this practice by hand, without the R Companion's menus: the point is to find out what you can write on your own. Afterward, rebuild one step with **AURA: Write R code**, under **R2 Data**, and compare its code to yours.
 
 ---
 
@@ -268,24 +268,28 @@ pokemon_clean <- pokemon_clean %>%
     generation_id = factor(generation_id)
   )
 
-levels(pokemon_clean$type_1)
-levels(pokemon_clean$power_tier)
-levels(pokemon_clean$size_class)
+pokemon_clean %>%
+  count(type_1)       # one row per level, in the factor's order
+
+pokemon_clean %>%
+  count(power_tier)
+
+pokemon_clean %>%
+  count(size_class)
 ```
 
 ## Export
 
 ```r
-saveRDS(pokemon_clean, "pokemon_clean.RDS")
+write_rds(pokemon_clean, "pokemon_clean.RDS")
 
-pokemon_verify <- readRDS("pokemon_clean.RDS")
+pokemon_verify <- read_rds("pokemon_clean.RDS")
 
-cat(
-  "Rows:", nrow(pokemon_verify),
-  "| Columns:", ncol(pokemon_verify), "\n"
-)
+nrow(pokemon_verify)    # rows
+ncol(pokemon_verify)    # columns
 
-levels(pokemon_verify$power_tier)
+pokemon_verify %>%
+  count(power_tier)     # the factor came back with its levels
 ```
 
 ## The Complete Pipeline
@@ -334,7 +338,7 @@ pokemon_clean <- pokemon_raw %>%
     generation_id = factor(generation_id)
   )
 
-saveRDS(pokemon_clean, "pokemon_clean.RDS")
+write_rds(pokemon_clean, "pokemon_clean.RDS")
 ```
 
 ---

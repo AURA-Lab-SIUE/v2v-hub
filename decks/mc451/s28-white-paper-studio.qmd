@@ -44,7 +44,7 @@ If your render is broken, say so now.
 - The largest piece of the course, due Friday, December 18, 11:59 PM
 - Abstract, Introduction, Methods, Results, Discussion, and References
     - Plus your one-paragraph Reflection
-- You submit two things, both required: the PDF, and the live URL of your GitHub Pages site
+- You submit two things, both required: the PDF (in the docs folder inside your White Paper folder, after a render) and the live URL of your GitHub Pages site
 - It is graded on the study, the writing, and whether it reproduces from the code
 
 ## Where the 250 Points Sit
@@ -59,8 +59,7 @@ If your render is broken, say so now.
 
 ## Reading the Rubric
 
-The full rubric, with what earns full marks in each row, is linked from the White Paper
-entry on the Assignments page. Read it as five questions:
+The full rubric is in the [White Paper entry](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper) on the Assignments page. Read it as five questions:
 
 - Does the paper answer its own question?
 - Could someone else repeat the study from the Methods?
@@ -124,7 +123,10 @@ Turn the two reviews you received into one list with three parts:
 - **Should fix:** clarity, labels, and tighter prose
 - **Disagree, and here is why:** you are the author, and you may decline a suggestion with a reason
 
-Save the list in your project as a plain text file. It is your plan for finals week.
+Then save the list:
+
+- Save it in your White Paper folder: **File**, then **New Text File**, type the list, then **File**, **Save As**, and name it revision-list.txt
+- It is your plan for finals week
 
 ## The Reflection Paragraph
 
@@ -146,15 +148,16 @@ One honest paragraph beats a page of hedging.
 
 ## Render and Deploy Before You Leave
 
+- Commit and push first: Source Control, a message, Commit, then Sync Changes ([Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html))
+
 ```r
-v2v::deploy_portfolio()
+v2v::deploy_portfolio(project)
 ```
 
-Run it today, even on an unfinished draft. A deployment failure is the classic finals-week
-disaster, and it is much easier to fix with help in the room.
-
-If the pre-flight checks stop you, that is the function working. Read which of the three
-checks failed and fix that one thing.
+- `project` is your White Paper folder's name, set in Step 2 of the [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd)
+- When it asks `Publish to GitHub Pages? [y/N]`, click in the R terminal, type `y`, and press **Enter**
+- A failed check names the one thing to fix ([Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc451/13-publish-your-site.html))
+- Run it today, even on an unfinished draft: a deployment failure is much easier to fix with help in the room
 
 ## Checkpoint
 
@@ -168,8 +171,10 @@ Before you leave today you should have:
 
 ## Before Finals Week
 
-- Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points
-- Due Friday, December 18, 11:59 PM: White Paper, the PDF and the live URL
+- Due Friday, December 4, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points
+- Due Friday, December 4, 11:59 PM: your full coded corpus and its stability check, pushed to your project repository ([White Paper dated step](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper))
+- Due Friday, December 18, 11:59 PM: [White Paper](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper), the PDF and the live URL
+- Step by step: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html), [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc451/13-publish-your-site.html)
 - Work the must-fix list first. The rest is optional
 - Re-render after every change, so every number stays computed, not typed
 - Deploy early, not the night before

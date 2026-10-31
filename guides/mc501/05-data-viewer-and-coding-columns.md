@@ -8,7 +8,7 @@ Prefer to watch first? The walkthrough video [The data viewer and coding sheet](
 
 1. Open the Command Palette: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac).
 2. Type `AURA: Open the data viewer` and press **Enter**.
-3. Select **Pick a CSV file**, choose your sampled CSV, then **Open in the data viewer**.
+3. Select **Pick a data file (CSV or Excel)**, choose your sample file (for the worksheet, your coding sheet, the file `coding-form.csv` in the `data` folder), then select **Open in the data viewer**.
 4. Select a column header to sort by it. Select it again to reverse the order.
 5. Select **Add coding column**. Type the variable name from your codebook, for example `tone`.
 6. Choose **Allowed values (a dropdown)**, then type your codebook values separated by commas, for example `positive, neutral, negative`.
@@ -17,9 +17,9 @@ Prefer to watch first? The walkthrough video [The data viewer and coding sheet](
 
 ## What you should see
 
-![](img/data-viewer.png){fig-alt="The R Companion data viewer showing the Twitch chat sample as a grid of 35,267 rows, with columns for channel, sender, message, and date."}
+![](img/data-viewer.png){fig-alt="The R Companion data viewer showing coding-form.csv as a grid of 30 rows, with columns for id, channel, and message."}
 
-![](img/coding-column.png){fig-alt="The data viewer with buttons Refresh, Add coding column, Insert rebuild code, and Export HTML for accessibility check. A new column named tone on the right holds the code positive in row 1, and the line above the grid reads: tone, row 1: positive. Saved."}
+![](img/coding-column.png){fig-alt="The data viewer with the buttons Refresh, Add coding column, and Insert rebuild code. A new column named reaction_only on the right holds the code 1 in row 1, and the line above the grid reads: reaction_only, row 1: 1. Saved."}
 
 Your codes save by themselves to `data/derived/`, one row per coded cell. The original CSV never changes.
 

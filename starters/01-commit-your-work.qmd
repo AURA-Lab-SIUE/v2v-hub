@@ -17,7 +17,9 @@ at once: your workspace is a real repository, it is connected to GitHub, and you
 send your work there. That is the check.
 
 Save this file into the **top folder** of your workspace, next to `README.md`. Not in
-`01_Journal/`, not in Downloads.
+`01_Journal/`, not in Downloads. The guide *Put a Worksheet in Your Workspace* shows how, step by step:
+[MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
 
 ## What committing actually is
 

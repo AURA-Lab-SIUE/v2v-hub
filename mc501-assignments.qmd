@@ -19,7 +19,7 @@ Everything is due at **11:59 PM** on the **Monday** listed. The one exception is
 
 Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, submit again.
 
-**AI-use log:** where an assignment asks for it, the AURA Lab R Companion's output (its setup check, its error explanations, and any code its menus write) is not AI use and is not logged; Copilot is, including any answer Copilot gives using the Companion's tools.
+**AI-use log:** where an assignment asks for it, the AURA Lab R Companion's output (its setup check, its error explanations, and any code its menus write) is not AI use and is not logged; Copilot is, including any answer Copilot gives using the R Companion's tools.
 :::
 
 
@@ -383,11 +383,11 @@ Build the analysis-ready table from the raw one, in code that runs start to fini
 
 **Rubric:** [Data Wrangling in R rubric (PDF)](resources/rubrics/MC501-rubric-data-wrangling-in-r.pdf). It lists the nine requirements, including the three reviewer-facing comments, and the points for each.
 
-**Worksheet:** [11-wrangling-data.qmd](starters/11-wrangling-data.qmd), the worksheet you fill in and submit.
+**Worksheet:** [11-wrangling-data.qmd](starters/11-wrangling-data.qmd){download="11-wrangling-data.qmd"}, the worksheet you fill in and submit. The link saves it in your **Downloads** folder; [Put a Worksheet in Your Workspace](guides/mc501/14-put-a-worksheet-in-your-workspace.md) moves it into your workspace's top folder, beside `README.md`. In Blackboard, attach each file on its own; do not zip them.
 
 **Risks guide:** [Data Wrangling risks guide](resources/risks/data-wrangling.qmd). The traps on this job, what each looks like, and how to check for it. It shows no answers.
 
-**How-to:** [Wrangling](guides/mc501/08-wrangling.md) step-by-step guide, and the [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025) walkthrough video.
+**How-to:** [Load the course data](guides/mc501/04-load-the-course-data.md), [Code data in the data viewer](guides/mc501/05-data-viewer-and-coding-columns.md), and [Wrangling](guides/mc501/08-wrangling.md) step-by-step guides, and the [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025) walkthrough video.
 
 </details>
 
@@ -408,7 +408,7 @@ Say what is in the data before you test anything.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** the filled worksheet and the HTML it renders to, which carries the figures, uploaded to Blackboard under Describing Data in R. The worksheet is part 2 of the Twitch job: it loads `twitch_analysis.RDS` with your hand-coded variable inside, writes the code that is not the point, and leaves blanks for the tables, figures, and diagnostics and a prompt after each output for your interpretation. Optional: the Describe group of the R Companion's **Write R code** writes frequency tables, crosstabs with proportions, grouped summaries, and the bar chart, histogram, histogram comparing two groups, line chart over time, and boxplot in `theme_v2v()`, each chart saved with `ggsave()` and carrying an alt-text line marked YOUR TURN. The alt text and the interpretation stay your own writing. The diagnostics behind each figure are yours to run and report.
+**What you submit:** the filled worksheet and the HTML it renders to, which carries the figures, uploaded to Blackboard under Describing Data in R. The worksheet is part 2 of the Twitch job: it loads `twitch_analysis.RDS` with your hand-coded variable inside, writes the code that is not the point, and leaves blanks for the tables, figures, and diagnostics and a prompt after each output for your interpretation. Optional: in the R Companion, **AURA: Write R code**, under **R3 Describe**, writes frequency tables, crosstabs with proportions, grouped summaries, and the bar chart, histogram, histogram comparing two groups, line chart over time, and boxplot in `theme_v2v()`, each chart saved with `ggsave()` and carrying an alt-text line marked YOUR TURN. The alt text and the interpretation stay your own writing. The diagnostics behind each figure are yours to run and report.
 
 **Length:** 500 to 900 words of your own writing (interpretation, diagnostics and alt text), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -418,7 +418,7 @@ Say what is in the data before you test anything.
 
 **Rubric:** [Describing Data in R rubric (PDF)](resources/rubrics/MC501-rubric-describing-data-in-r.pdf). It lists the tables, figures, diagnostics, and interpretation it asks for, and the points for each.
 
-**Worksheet:** [12-describing-data-mc501.qmd](starters/12-describing-data-mc501.qmd), the worksheet you fill in and submit.
+**Worksheet:** [12-describing-data-mc501.qmd](starters/12-describing-data-mc501.qmd){download="12-describing-data-mc501.qmd"}, the worksheet you fill in and submit. The link saves it in your **Downloads** folder; [Put a Worksheet in Your Workspace](guides/mc501/14-put-a-worksheet-in-your-workspace.md) moves it into your workspace's top folder, beside `README.md`. In Blackboard, attach each file on its own; do not zip them.
 
 **Risks guide:** [Describing Data risks guide](resources/risks/describing-data.qmd). The traps on this job, what each looks like, and how to check for it. It shows no answers.
 
@@ -435,7 +435,7 @@ Test four relationships, one per test, and report how big each is.
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** the filled worksheet and the HTML it renders to, uploaded to Blackboard under Inferencing Data in R. The worksheet is part 3 of the Twitch job: four hypotheses written before any code, then four tests, one of them on the thirty messages you hand-coded in Data Wrangling, each with its assumptions, effect size, and interval. Optional: the Test group of the R Companion's **Write R code** writes the four tests for your settings-block variables, the plain R call first and the `v2v` wrapper after it as a check, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, and the interpretation are your own writing. Assumption checks are not generated; the Test group's **Power analysis for your sample size** writes the `pwr.t.test()` call for your design, and what its answer means for your study stays your own writing.
+**What you submit:** the filled worksheet and the HTML it renders to, uploaded to Blackboard under Inferencing Data in R. The worksheet is part 3 of the Twitch job: four hypotheses written before any code, then four tests, one of them on the thirty messages you hand-coded in Data Wrangling, each with its assumptions, effect size, and interval. Optional: in the R Companion, **AURA: Write R code**, under **R4 Test**, writes the four tests for your settings-block variables, the plain R call first and the `v2v` wrapper after it as a check, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, and the interpretation are your own writing. Assumption checks are not generated; **R4 Test**'s **Power analysis for your sample size** writes the `pwr.t.test()` call for your design, and what its answer means for your study stays your own writing.
 
 **Length:** 700 to 1,100 words of your own writing (hypotheses, justifications, diagnostics, the four reports and the two paragraphs), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -445,7 +445,7 @@ Test four relationships, one per test, and report how big each is.
 
 **Rubric:** [Inferencing Data in R rubric (PDF)](resources/rubrics/MC501-rubric-inferencing-data-in-r.pdf). It lists each step from the four hypotheses to what the results do not license, and the points for each.
 
-**Worksheet:** [13-inferencing-data-mc501.qmd](starters/13-inferencing-data-mc501.qmd), the worksheet you fill in and submit.
+**Worksheet:** [13-inferencing-data-mc501.qmd](starters/13-inferencing-data-mc501.qmd){download="13-inferencing-data-mc501.qmd"}, the worksheet you fill in and submit. The link saves it in your **Downloads** folder; [Put a Worksheet in Your Workspace](guides/mc501/14-put-a-worksheet-in-your-workspace.md) moves it into your workspace's top folder, beside `README.md`. In Blackboard, attach each file on its own; do not zip them.
 
 **Risks guide:** [Inferencing Data risks guide](resources/risks/inferencing-data.qmd). The traps on this job, what each looks like, and how to check for it. It shows no answers.
 
@@ -477,6 +477,10 @@ The final deliverable: your study written up in IMRaD, rendered to PDF, publishe
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [White Paper and conference poster rubric (PDF)](resources/rubrics/MC501-rubric-white-paper-and-conference-poster.pdf). It lists what each section of the paper carries, including the three transparency markers, what the poster shows, and the points for each.
+
+**Worksheet:** [14-publishing-your-paper.qmd](starters/14-publishing-your-paper.qmd){download="14-publishing-your-paper.qmd"}, run in class, takes your project from Results to a live site.
+
+**How-to:** [Render a Quarto document](guides/mc501/11-render-a-quarto-document.md), [Commit and push](guides/mc501/12-commit-and-push-with-git.md), and [Publish your site](guides/mc501/13-publish-your-site.md) step-by-step guides.
 
 </details>
 

@@ -40,6 +40,9 @@ Your first version of each figure will look wrong. Fixing it takes about three l
 
 [MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc451.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
+- Click the link: your browser saves 12-describing-data-mc451.qmd in your Downloads folder
+- Move it into your workspace's top folder, next to README.md and the Data Wrangling worksheet: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+
 ## The Grammar of Graphics
 
 **ggplot2** is not a catalog of chart types. It is one idea from Wilkinson's *The Grammar of
@@ -85,8 +88,9 @@ viewers_over_time <- streams %>%
   summarize(total_viewers = sum(viewers), .groups = "drop")
 ```
 
-This code groups the snapshots into six-hour blocks, keeps the top five games and lumps the
-rest into "Other," then adds up the viewers in each block.
+- This chart starts from the stream table: load it first with `streams <- twitch_streams()`
+- The code groups the snapshots into six-hour blocks
+- It keeps the top five games and lumps the rest into "Other," then adds up the viewers in each block
 
 ## Drawing the Line Chart
 
@@ -215,24 +219,29 @@ The gap in means is real arithmetic, but it is the work of the tail, not of the 
 
 ## Checkpoint
 
-You should now have:
+You should now be able to:
 
-- A line chart, a bar chart, and a histogram, all using `theme_v2v()`
-- A grouped summary with n, mean, median, and sd
-- The bin width and any cap written into your axis labels
-- One sentence per figure saying what it shows
+- Pick a chart for a trend over time, a count per category, and the shape of a number
+- Say why the mean and the median of message length disagree
+- Name the bin width and any cap a figure must disclose
 
-The Describe group of the Companion's **Write R code** writes a first version of each figure, ending in `theme_v2v()`, into your worksheet: **Bar chart**, **Histogram**, **Histogram comparing two groups**, and **Line chart over time**.
+## Charts From the R Companion
+
+The R Companion (the **AURA R Companion** icon on VS Code's left edge) writes a first version of each chart, ending in `theme_v2v()`:
+
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
+- Under **R3 Describe**, pick **Bar chart**, **Histogram**, **Histogram comparing two groups**, **Line chart over time**, or **Boxplot**
 
 If a figure will not render, check that every `+` ends the line above it.
 
 ## Before Next Time
 
-- Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points
-- Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points
+- Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
+- Due Friday, November 20, 11:59 PM: [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#describing-data-in-r), 75 points
 - Thursday is a lab: you fill the Describing Data worksheet
-    - Bring `data/twitch_analysis.RDS` from the Data Wrangling worksheet
-- Read Chapter 12, especially the section on readable figures
+    - Check that `data/twitch_analysis.RDS` is in your workspace's data folder
+- Read [Chapter 12](https://aura-lab.siue.edu/v2v/chapters/chapter12.html), especially "A histogram for shape"
+- Step by step: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc451/09-describing-tables-and-charts.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
 
 A figure can frame the question. It cannot answer it.
 

@@ -26,25 +26,29 @@ format:
     - Each test correctly chosen, correctly read, honestly reported
     - The same settings block, changed, runs on your own data for the paper
 - The White Paper is assigned today
-- Work in the worksheet, not in the console
-
-[MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
-
+- Work in the worksheet, not in the console (the R terminal, where typed lines are not saved)
+- In VS Code's Explorer, open 13-inferencing-data-mc451.qmd, the copy you saved in your workspace's top folder
+    - [A fresh copy of the worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd), if you need one
+- [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
 ## Pick Your Test First
 
 For each pair in the worksheet's Part 0, fill in these three lines before you touch the keyboard:
 
 - **My outcome variable is ______**, and it is numeric or categorical
-- **My grouping variable is ______**, and it has ______ levels
+- **I compare it across, or predict it from, ______**: two groups, three or more groups, or a number
 - Therefore the test is ______
 
-A numeric outcome and two groups: **t-test**. A numeric outcome and three or more groups:
-**ANOVA**. Two categorical variables: **chi-square**.
+A number and two groups: **t-test**. A number and three or more groups: **ANOVA**. Two categories: **chi-square**. Two numbers: **linear regression**.
 
-The Companion's **Check my test choice** checks the third line against the first two; it does not write it.
+## Check Your Choice
+
+- The R Companion (the **AURA R Companion** icon on VS Code's left edge) checks the third line against the first two; it does not write it
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Check my test choice**, and press **Enter**
 
 ## Running Your Test
+
+- The R Companion writes this for the names in your settings block: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
 
 ```r
 library(tidyverse)
@@ -55,13 +59,20 @@ analysis <- read_rds("data/twitch_analysis.RDS")
 t.test(message_length ~ is_gaming, data = analysis) %>%
   broom::tidy()
 
-effectsize::cohens_d(message_length ~ is_gaming, data = analysis)
+effectsize::cohens_d(message_length ~ is_gaming,
+                     data = analysis)
 
-run_t_test(analysis, value = message_length, group = is_gaming)
+run_t_test(analysis, value = message_length,
+           group = is_gaming)
 ```
 
-The code shows the example columns. In the worksheet the settings block renames them:
-`outcome` for message length, and `group2` for your hand-coded variable. The last line is the `v2v` check: it prints the same `t`, df, `p`, and d in one labeled block. The Test group of the Companion's **Write R code** writes all of this for the names in your Settings block.
+## Running Your Test (cont.)
+
+- The code shows the example columns. In the worksheet the settings block renames them
+    - `outcome` for message length, and `group2` for your hand-coded variable
+- The last line is the check from the course package, v2v: it prints the same `t`, df, `p`, and d in one labeled block
+- The R Companion's **Settings block (name the test variables)** writes `group2 = factor(channel_type)`
+    - Change that one line to your hand-coded variable, `reaction_only`, or the t-test runs on channel type
 
 ## Exercise: Read Your Own Output {.discuss}
 
@@ -79,8 +90,9 @@ This is the compact form journals expect, written with the example study's numbe
 > (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.94, *p* < .001,
 > Cohen's *d* = -0.13.
 
-Every element earns its place: both means, the test with its degrees of freedom, the
-*p*-value, and the effect size. Never report *p* alone. The Companion's **APA numbers to check your sentence** prints these numbers from your own run; check your sentence against it.
+- Every element earns its place: both means, the test with its degrees of freedom, the *p*-value, and the effect size
+- Never report *p* alone
+- The R Companion's **APA numbers to check your sentence** prints these numbers from your own run; check your sentence against it
 
 ## Then Say It Again in Plain English
 
@@ -88,7 +100,7 @@ Every element earns its place: both means, the test with its degrees of freedom,
     - Write a second sentence a reader with no statistics can understand
 - **For the example study:** the two kinds of channel do differ in message length, and the difference is so small that the two are better thought of as alike
 - **That second sentence is the call:** it reports the result without inflating it
-- The Companion's APA numbers fill in the statistics line; the plain-English sentence is yours to write
+- The R Companion's **APA numbers to check your sentence** prints the numbers to check; both sentences are yours to write
 
 If you cannot write that sentence, you do not yet understand your result.
 
@@ -104,37 +116,48 @@ If you cannot write that sentence, you do not yet understand your result.
 ## If You Have More Than Two Groups
 
 ```r
+games <- c("Fortnite", "Hearthstone",
+           "Just Chatting", "League of Legends")
 four_games <- analysis %>%
-  filter(main_game %in% c("Fortnite", "Hearthstone",
-                          "Just Chatting", "League of Legends"))
+  filter(main_game %in% games)
 
-summary(aov(message_length ~ main_game, data = four_games))
+fit <- aov(message_length ~ main_game, data = four_games)
+summary(fit)
+
+fit %>%
+  broom::tidy() %>%
+  mutate(eta_sq = sumsq / sum(sumsq))
 ```
 
-ANOVA asks one question of all the groups at once. The example returned
-**F(3, 13429) = 92.26**, with an eta-squared of **0.02**: a real difference, and a small one.
+- ANOVA asks one question of all the groups at once. The example returned **F(3, 13429) = 92.26**, eta-squared **0.02**: a real difference, and a small one
+- In the worksheet the groups are `group3`, the three viewer bands. The R Companion's **One-way ANOVA with eta squared** writes that version
 
 ## If You Want a Model
 
 ```r
-summary(lm(message_length ~ is_gaming, data = analysis))
+fit <- lm(outcome ~ predictor, data = analysis)
+summary(fit)
 ```
 
-The intercept is the mean of your reference group, 33.70 in the example. The coefficient,
-**-5.21**, is the gap itself, written as a baseline plus an adjustment.
+- In the worksheet, `predictor` is the hour of the day, a number
+- The `predictor` row's Estimate is the slope: characters gained for each hour later in the day
+- The worksheet lists the slope and *p* you should see; report R-squared beside it
 
 A t-test is a regression with one two-level grouping variable. An ANOVA is a regression with
 one many-level grouping variable. Same framework, different shape.
 
 ## Common Errors and What They Mean
 
-- **`must have exactly 2 levels`:** your grouping column has NAs, or three groups
+- **`must have exactly 2 levels`:** your grouping column has one group, or three or more
 - **`not enough 'x' observations`:** your filter left almost no rows
 - **A *p* of exactly 1:** the two groups are identical, usually because of a bad join
 - **`NA` for the mean:** add `na.rm = TRUE`, then ask why values are missing
 - **An impossibly large *t*:** you compared a variable to itself
 
-Select the error and run **AURA: Explain an R error** from the Command Palette.
+## Any Other Error
+
+- Select the error R printed in the terminal, then press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) and run **AURA: Explain an R error**: the copied error is filled in for you
 
 ## The White Paper, 250 Points
 
@@ -176,9 +199,10 @@ You should now have, in your worksheet:
 
 ## Before Next Time
 
-- Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points
-- Due Friday, December 4, 11:59 PM: Inferencing Data in R, 100 points
+- Due Friday, November 20, 11:59 PM: [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#describing-data-in-r), 75 points
+- Due Friday, December 4, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points
 - Check your worksheet against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
+- Step by step: [Run a Test and Check Your Test Choice](https://aura-lab.siue.edu/v2v-hub/guides/mc451/10-tests-and-check-my-test-choice.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490908&a=168993969)
 - Read Chapter 14, "The one-click report," before Tuesday
 - Tuesday is The Publisher: assembling the whole study into one document
     - Bring your figures and your test output
