@@ -98,8 +98,8 @@ analysis <- read_rds("data/twitch_analysis.RDS") %>%
 glimpse(analysis)
 ```
 
-Or with the R Companion: **AURA: Write R code**, then **R4 Test**, then **Settings block (name the
-test variables)**. It writes this block with `group2 = factor(channel_type)`; change that one line
+Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Settings
+block (name the test variables)**, then **Run it**. It writes this block with `group2 = factor(channel_type)`; change that one line
 to your hand-coded variable.
 
 **What you should see:** `Rows: 35,267` and six columns: `outcome` `<int>`, `group2`, `group3`,
@@ -130,7 +130,8 @@ sum(counts)                                           # N, the messages in the t
 run_chi_square(analysis, x = cat_a, y = cat_b)        # the same numbers in one block, as a check
 ```
 
-Or with the R Companion: **R4 Test** writes the chi-square block for `cat_a` and `cat_b`.
+Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Chi-square
+test with Cramer's V**, then **Run it**. It writes the block for `cat_a` and `cat_b`.
 
 **What you should see:** the table from worksheet 2 (`25309` `2457` / `4000` `1000` / `2000`
 `0`); then `statistic` `823.` (822.66 in the check), `parameter` `2`, and a `p.value` far below
@@ -170,7 +171,8 @@ effectsize::___(outcome ~ group2, data = analysis)  # Cohen's d with its 95% int
 run_t_test(analysis, value = outcome, group = group2)  # the same numbers in one block, as a check
 ```
 
-Or with the R Companion: **R4 Test**, then **Welch t-test, dropping missing values**.
+Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Welch
+t-test with Cohen's d**, then **Run it**.
 
 **What you should see,** with the instructor's codes: `estimate1` `29.2` (commentary),
 `estimate2` `15.6` (reaction), `statistic` `1.45`, `p.value` `0.158`, `parameter` `27.7`; then
@@ -201,7 +203,8 @@ analysis %>%
             sd = sd(outcome, na.rm = TRUE))         # the means the F compares
 ```
 
-Or with the R Companion: **R4 Test**, then **One-way ANOVA with eta squared**.
+Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **One-way
+ANOVA with eta squared**, then **Run it**.
 
 **What you should see:** `F value` `66.2` on `2` and `35260` degrees of freedom, `Pr(>F)` far
 below .001, with sums of squares `223665` and `59566023`; then `Eta2` `3.74e-03`, which is .004;
@@ -223,7 +226,8 @@ model_lm <- ___(outcome ~ ___, data = analysis)
 summary(model_lm)  # the slope (predictor), its p, R-squared, and the F
 ```
 
-Or with the R Companion: **R4 Test**, then **Linear regression**.
+Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Linear
+regression**, then **Run it**.
 
 **What you should see:** the `predictor` estimate `0.05360` with `Pr(>|t|)` `0.102`;
 `Multiple R-squared` `7.603e-05`; `F-statistic: 2.681 on 1 and 35261 DF`.
@@ -245,7 +249,7 @@ to the message.
 
 - [ ] The four hypotheses in Part 0 were written before you ran Part 1.
 - [ ] No `___` is left anywhere in the file.
-- [ ] Each test has its APA report, its effect size in words, and its interpretation. The R
-      Companion's **R4 Test**, **APA numbers to check your sentence** prints a test's numbers so
-      you can check the sentence you wrote.
-- [ ] You restarted R and rendered the worksheet from the top without an error.
+- [ ] Each test has its APA report, its effect size in words, and its interpretation. In the R
+      Companion, **AURA: Write R code**, under **R4 Test**, **APA numbers to check your
+      sentence** prints a test's numbers so you can check the sentence you wrote.
+- [ ] The worksheet renders without an error.

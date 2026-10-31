@@ -22,7 +22,10 @@ follows each chunk. **Write:** marks a response in your own words. Your interpre
 alt text are the writing this assignment grades, so they are never filled in for you.
 
 **Where to save it.** In the top folder of your workspace, beside worksheet 1, so that
-`data/twitch_analysis.RDS` is where this file looks for it.
+`data/twitch_analysis.RDS` is where this file looks for it. The guide *Put a Worksheet in Your
+Workspace* shows how, step by step:
+[MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
 
 **What you submit** (Blackboard, under Describing Data in R): this worksheet with every blank and
 every **Write:** filled, and the HTML it renders to. The figures are saved in `figures/` by the
@@ -65,8 +68,8 @@ analysis %>%
   count(reaction_only)  # your hand-coded variable made it through
 ```
 
-Or with the R Companion: **AURA: Write R code**, then **R2 Data**, then **Load your saved
-analysis (RDS)**.
+Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Load your
+saved analysis (RDS)**, then **Run it**.
 
 **What you should see:** your two coded groups adding to `30`, and `NA` with `35237`. With the
 instructor's codes that is `commentary` `17` and `reaction` `13`.
@@ -101,7 +104,9 @@ analysis %>%
   mutate(percent = round(100 * n / sum(n), 1))
 ```
 
-Or with the R Companion: **R3 Describe**, then **Frequency table**.
+Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
+**Frequency table**. Choose **Choose columns from a data file**, open the `data` folder, pick
+`twitch_analysis.RDS`, then pick `viewer_band`. Then **Run it**.
 
 **What you should see:** `small` `27766` (78.7%), `medium` `5501` (15.6%), `large` `2000` (5.7%).
 
@@ -170,7 +175,8 @@ analysis %>%
   )
 ```
 
-Or with the R Companion: **R3 Describe**, then **Summary by group**.
+Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
+**Summary by group**, then **Run it**.
 
 **What you should see:** `gaming` n `31309`, mean `28.5`, median `17`, sd `38.5`; `non-gaming`
 n `3457`, mean `33.7`, median `16`, sd `60.7`. Then, with the instructor's codes, `commentary`
@@ -199,7 +205,8 @@ analysis %>%
               values_fill = 0)                      # a combination that never occurs is 0, not NA
 ```
 
-Or with the R Companion: **R3 Describe**, then **Crosstab with proportions**.
+Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
+**Crosstab with proportions**, then **Run it**.
 
 **What you should see:** three rows. `small`: `25309` gaming, `2457` non-gaming. `medium`:
 `4000` and `1000`. `large`: `2000` and `0`.
@@ -289,8 +296,6 @@ fig_length_reaction
 ggsave("figures/length-by-reaction.png", fig_length_reaction, width = 6, height = 4.5, dpi = 300)
 ```
 
-Or with the R Companion: **R3 Describe**, then **Boxplot**.
-
 **What you should see:** two boxes, the commentary box higher, a point far above each box (119
 and 90 with the instructor's codes), and `length-by-reaction.png` in `figures/`.
 
@@ -314,7 +319,9 @@ fig_own
 ggsave("figures/own-choice.png", fig_own, width = 7, height = 4.5, dpi = 300)
 ```
 
-Or with the R Companion: **R3 Describe**, then **Histogram** or **Line chart over time**.
+Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
+**Histogram**, then **Run it**. (**Line chart over time** draws from `streams`: add
+`streams <- twitch_streams()` to the setup chunk first.)
 
 **Write:** one sentence on why you chose this chart for this variable, the disclosure sentence,
 and two to three sentences of interpretation.
@@ -335,7 +342,7 @@ The chi-square in worksheet 3 needs every expected count to be at least 5.
 #| label: diag-expected
 analysis %>%
   filter(!is.na(channel_type)) %>%
-  with(table(viewer_band, channel_type)) %>%
+  xtabs(~ viewer_band + channel_type, data = .) %>%  # the cross-tabulation, as in worksheet 3
   chisq.test() %>%
   pluck("___") %>%   # the counts the test expects if the two were unrelated
   round(1)
@@ -354,11 +361,16 @@ coded %>%
   group_by(reaction_only) %>%
   summarize(n = n(), sd = sd(message_length), iqr = IQR(message_length))
 
-boxplot.stats(___)$out  # the values the boxplot draws as outliers
+coded %>%
+  group_by(reaction_only) %>%
+  filter(message_length > quantile(message_length, 0.75) +
+           1.5 * ___(message_length)) %>%  # beyond the upper whisker
+  select(reaction_only, message_length)
 ```
 
-**What you should see:** with the instructor's codes, sd `27.9` and `23.5`, and the outliers
-`90`, `59`, `119`, and `62`.
+**What you should see:** with the instructor's codes, sd `27.9` and `23.5`, then the four
+messages beyond the upper whisker of their own box: `90` in reaction, and `59`, `62`, and `119`
+in commentary.
 
 ### Task 5.3: Shape across viewer bands
 
@@ -385,4 +397,4 @@ on, and the outliers.
 - [ ] No `___` and no `YOUR TURN` is left anywhere in the file.
 - [ ] Every figure has its own alt text, a disclosure sentence, and an interpretation.
 - [ ] `figures/` holds the three saved charts.
-- [ ] You restarted R and rendered the worksheet from the top without an error.
+- [ ] The worksheet renders without an error.

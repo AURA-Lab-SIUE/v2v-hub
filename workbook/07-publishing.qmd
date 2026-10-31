@@ -5,6 +5,10 @@ execute:
   echo: true
 ---
 
+::: {.callout-note}
+## This week's assignment
+The graded work for this chapter is the [White Paper](../mc451-assignments.qmd#white-paper) ([MC 501](../mc501-assignments.qmd#white-paper-and-conference-poster)). Get the worksheet, the guides, and the rubric there.
+:::
 
 You have collected data, cleaned it, visualized it, and tested a hypothesis. Now you assemble everything into your **White Paper**, published simultaneously as a PDF and a live website.
 
@@ -12,7 +16,7 @@ The White Paper is the graded deliverable. A **Quarto Book** is the format it ta
 
 ## What You're Building
 
-One command (`quarto render`) produces:
+One render (Step 10 of `14-publishing-your-paper.qmd`) produces:
 
 1. **A PDF**: print-ready, submitted to Blackboard
 2. **A website**: hosted free on GitHub Pages, accessible to anyone with the link
@@ -25,17 +29,12 @@ Your White Paper follows **IMRaD**: Introduction, Methods, Results, and Discussi
 
 ## Scaffolding the Project
 
-Create the project with the course R package rather than assembling folders by hand:
+You made your White Paper project in Chapter 9, with `09-coding-the-codebook.qmd`: it ran `v2v::new_portfolio()` and made a folder (the example name is `twitch-portfolio`) inside your course workspace. Do not run `new_portfolio()` again; it refuses to overwrite a project that exists.
 
-```r
-library(v2v)
-new_portfolio("~/Documents/mc451-whitepaper")
-```
-
-That gives you the White Paper skeleton, a `journals/` directory for your weekly reading journal, a `codebook/` directory, a data tree with `data/raw/` already gitignored, and a `_quarto.yml` wired as a Quarto Book:
+That made the White Paper skeleton, a `journals/` directory for your weekly reading journal, a `codebook/` directory, a data tree with `data/raw/` already gitignored, and a `_quarto.yml` wired as a Quarto Book:
 
 ```
-mc451-whitepaper/
+twitch-portfolio/
 ├── _quarto.yml          ← Master configuration file
 ├── index.qmd            ← Abstract (write this LAST)
 ├── 01-introduction.qmd  ← Question, theory, research questions
@@ -72,10 +71,9 @@ Every section draws from an assignment you have already completed. This is assem
 
 ## Setup: Getting the Project Running
 
-### Step 1: Scaffold and Open
+### Step 1: Keep Your Workspace Open
 
-1. Run `v2v::new_portfolio()` as shown above.
-2. In VS Code, choose **File, Open Folder** and select the new folder. The open folder is your working directory.
+Keep your course workspace open in VS Code, the folder with `README.md` at its top. Your project folder sits inside it, so do not open the project folder by itself. Then run Steps 1 and 2 of `14-publishing-your-paper.qmd`, which name your project folder for every later step.
 
 ### Step 2: Install Required Packages
 
@@ -87,19 +85,11 @@ install.packages(c("tidyverse", "knitr", "kableExtra", "scales"))
 
 ### Step 3: Place Your Data
 
-Copy your cleaned `.RDS` file (from Chapter 4 and the Data Wrangling assignment) into `data/derived/`. Keep the name the Data Wrangling assignment gave it, `twitch_analysis.RDS`; `03-results.qmd` will read it with `readRDS("data/derived/twitch_analysis.RDS")`.
+Run Step 4 of `14-publishing-your-paper.qmd`. It copies `twitch_analysis.RDS`, the file your Data Wrangling worksheet saved in the `data` folder at the top of your workspace, into the project's `data/derived/` folder. `03-results.qmd` reads it with `read_rds("data/derived/twitch_analysis.RDS")`.
 
 ### Step 4: First Render
 
-Open VS Code's integrated terminal (**Terminal, New Terminal**) and type:
-
-```bash
-quarto render
-```
-
-Or press `Ctrl/Cmd+Shift+K` with any `.qmd` file open. Quarto will run all R code in `03-results.qmd`, combine the chapters into a single document, and produce a PDF and HTML website in the `docs/` folder.
-
-If it works, you will see a `docs/` folder appear with your rendered files. If it does not, check the error message; it will tell you exactly which line failed.
+Install the PDF tool first: follow Step 3 of `14-publishing-your-paper.qmd`. Then run Step 10 of that file, which renders every chapter into the website and the PDF. It worked if a `docs` folder appears inside your project with `index.html` and a PDF in it.
 
 ## Writing Each Section
 
@@ -156,7 +146,7 @@ Report what you found, plainly and without interpretation. Interpretation belong
 
 The scaffold's `03-results.qmd` holds guidance text and no code. You build it from code you have already written and had graded:
 
-1. Open with a chunk that reads your data: `dat <- readRDS("data/derived/twitch_analysis.RDS")`
+1. Open with the setup chunk from Step 6 of `14-publishing-your-paper.qmd`, which reads your data as `analysis`.
 2. Paste the chunks from your Describing Data and Inferencing Data assignments, one chunk per table, figure, or test
 3. Add your reporting paragraphs between the code chunks
 
@@ -227,64 +217,44 @@ Graduate submissions carry an **executive summary** in addition to the abstract.
 The rubric awards points for a document that **renders from source with no pasted numbers**. That means every figure in your prose comes from inline R rather than from typing what you saw in the console:
 
 ```r
-The mean message length was `r round(mean(dat$len), 1)` characters.
+The analysis dataset held `r format(nrow(analysis), big.mark = ",")` messages.
 ```
 
 If you retype a number and later re-run the analysis on a corrected dataset, the prose silently goes stale and disagrees with the table beside it. Inline code cannot go stale. It is also the single easiest place in the paper to lose points, because a grader can spot it by changing one row of your data and re-rendering.
 
 ## Publishing to GitHub Pages
 
-Publishing is one command from the course package, `v2v::deploy_portfolio()`. It checks your project, renders it, and pushes the rendered site to GitHub Pages. It needs two things in place first: your project is a GitHub repository, and everything in it is committed.
+Publishing is one command from the course package, `v2v::deploy_portfolio()`. It checks your project, renders it, and pushes the rendered site to GitHub Pages.
 
-### Step 1: Create a GitHub Repository
+Follow `14-publishing-your-paper.qmd`, Steps 12 to 14, in class. Your project sits inside your workspace repository, which is already on GitHub, so you do not make a new repository and you do not run `git init`.
 
-1. Go to [github.com](https://github.com) and sign in
-2. Click **New Repository** (the green button or the + icon)
-3. Name it something descriptive (for example, `mc451-whitepaper`)
-4. Set it to **Public** (GitHub Pages requires a public repo on free accounts)
-5. Do NOT add a README, .gitignore, or license (the scaffold already has these)
-6. Click **Create Repository**
+### Step 1: Commit and Push
 
-It worked if GitHub shows an empty repository page with a "Quick setup" box and your repository's URL in it.
+Commit and push with the Source Control panel. The guide *Commit and Push with Git* shows each click: [MC 451](../guides/mc451/12-commit-and-push-with-git.md) or [MC 501](../guides/mc501/12-commit-and-push-with-git.md).
 
-### Step 2: Push Your Project
+### Step 2: Run the Publish Command
 
-In VS Code's integrated terminal, run these commands (replace the URL with your repo's URL):
-
-```bash
-git init
-git add .
-git commit -m "Initial white paper commit"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/mc451-whitepaper.git
-git push -u origin main
-```
-
-It worked if reloading your repository page on GitHub shows `_quarto.yml`, `index.qmd`, and the numbered `.qmd` files.
-
-### Step 3: Run the Publish Command
-
-In an R session inside VS Code's terminal, with the project folder open as your working directory, run:
+In the R terminal, run this line, with your own project folder's name in the quotes:
 
 ```r
-v2v::deploy_portfolio()
+v2v::deploy_portfolio("twitch-portfolio")
 ```
 
 The command prints a short pre-flight list and stops if something is wrong:
 
-- **uncommitted changes detected**: save your files, then in the terminal run `git add .`, `git commit -m "update"`, and `git push`, and run the command again.
-- **_quarto.yml not found**: your R session is not in the project folder. Open the folder with **File, Open Folder** and run the command again.
+- **uncommitted changes detected**: commit and push with the Source Control panel (Step 1), then run the command again.
+- **_quarto.yml not found**: the name in the quotes does not match your project folder. Check its spelling in the Explorer, then run the command again.
 
-When the checks pass it renders every page, asks `Publish to GitHub Pages? [y/N]`, and you type `y` and press Enter.
+When the checks pass it renders every page and asks `Publish to GitHub Pages? [y/N]`. Click in the R terminal, type `y`, and press **Enter**.
 
 It worked if the last line reads **Portfolio live on GitHub Pages.**
 
-### Step 4: Wait and Test
+### Step 3: Wait and Test
 
 GitHub Pages takes 1 to 2 minutes to build. Your site will be available at:
 
 ```
-https://YOUR-USERNAME.github.io/mc451-whitepaper/
+https://YOUR-USERNAME.github.io/YOUR-WORKSPACE-REPOSITORY/
 ```
 
 Test it in an **incognito or private window** to make sure it works for someone who is not logged into your GitHub account. The rubric is explicit that a paper nobody can open scores nothing, and "it worked on my laptop" is the most common way to discover that too late.
@@ -301,9 +271,9 @@ If `v2v::deploy_portfolio()` stops with a message the two fixes above do not cov
 - [ ] Every reported number comes from inline R, with nothing retyped from the console
 - [ ] Test results include the statistic, its degrees of freedom, the p-value, and the effect size
 - [ ] `references.bib` contains all your citations (exported from Zotero) and renders in APA 7th edition
-- [ ] `quarto render` produces both PDF and HTML without errors
+- [ ] The full render (Step 10 of `14-publishing-your-paper.qmd`) produces both PDF and HTML without errors
 - [ ] The PDF in the `docs/` folder displays all sections
-- [ ] GitHub repo is public and every change is committed and pushed
+- [ ] Your workspace repository is public and every change is committed and pushed
 - [ ] `v2v::deploy_portfolio()` ended with "Portfolio live on GitHub Pages." and the site loads in an incognito window
 - [ ] PDF uploaded to Blackboard
 - [ ] GitHub Pages URL pasted into Blackboard submission text
@@ -318,12 +288,12 @@ If `v2v::deploy_portfolio()` stops with a message the two fixes above do not cov
 
 ## Try It Yourself
 
-1. **Scaffold the project** with `v2v::new_portfolio()` and open the folder in VS Code.
-2. **Run `quarto render`** without making any changes. Does it produce output in the `docs/` folder?
+1. **Find your project** in the Explorer: the folder you made with `09-coding-the-codebook.qmd`, inside your workspace.
+2. **Run the full render** (Step 10 of `14-publishing-your-paper.qmd`) without making any changes. Does it produce output in the `docs/` folder?
 3. **Read each `.qmd` file** and identify which of your prior assignments provides the content for each section.
 4. **Paste one graded chunk** from your Describing Data assignment into `03-results.qmd`, after a chunk that reads `data/derived/twitch_analysis.RDS`. Re-render and check the output.
 5. **Convert one retyped number** in your prose into inline R and re-render to confirm it still reads correctly.
-6. **Set up a GitHub repository**, push, run `v2v::deploy_portfolio()`, and verify the site loads in an incognito window.
+6. **Commit and push**, run `v2v::deploy_portfolio()` with your project folder's name in the quotes, and verify the site loads in an incognito window.
 
 ::: {.callout-tip}
 ## Connection to Your Project

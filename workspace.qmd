@@ -42,6 +42,8 @@ v2v-workspace/
 └── .vscode/                 # Recommended extensions and shared settings
 ```
 
+`03_Data/` holds your own study's data. The Twitch worksheets keep theirs in a folder named `data` that their first task makes in the top folder of the workspace, beside `README.md`; every worksheet and the R Companion read and save there.
+
 Because the notes are plain Markdown, they open in any editor and read fine on GitHub. The `.vscode/` folder ships a short list of **recommended extensions**, so everyone in the course works in the same environment: the Quarto extension, the R extension, and the AURA Lab R Companion. VS Code prompts you to install them the first time you open the folder.
 
 ---

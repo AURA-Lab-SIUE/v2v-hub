@@ -124,12 +124,10 @@ had, and the course package then refused to build because one of them was too ol
 **How to tell it worked:** `library(v2v)` returns without complaint, and `setup()` prints
 green ticks down the **Required R packages** list.
 
-If **Check my setup** in the AURA Lab R Companion reports `cannot remove prior installation` or
-`restored`, it hit this same problem: follow steps 1 to 6 above, then run Check my setup again.
+If **AURA: Check my setup** in the AURA Lab R Companion reports `cannot remove prior installation` or
+`restored`, it hit this same problem: follow steps 1 to 6 above, then run **AURA: Check my setup** again.
 
 ---
-
-Run **Explain an R error** on the message first, and paste its output with the error when you write to me.
 
 ## 4. Nothing installs and you need R for class
 
@@ -150,7 +148,7 @@ packages, and the R Companion already installed.
 
 ## None of this fixed it
 
-Run **AURA: Make a help report** from the Command Palette, select **Copy to clipboard**, and paste the report into your email. It holds your Check my setup result and the versions of R, VS Code, and the R extension. Without the Companion, run `v2v::setup()` in R and include its output. Send me the exact wording of what you see rather than a description of it. A screenshot of
+Run **AURA: Explain an R error** on the message first, and paste its output with the error when you write to me. Then run **AURA: Make a help report** from the Command Palette, select **Copy to clipboard**, and paste the report into your email. It holds your **AURA: Check my setup** result and the versions of R, VS Code, and the R extension. Without the R Companion, run `v2v::setup()` in R and include its output. Send me the exact wording of what you see rather than a description of it. A screenshot of
 the whole console is ideal. Office hours are Tuesday and Thursday, 12:30 to 1:45 in person in Dunham Hall 1017, where you are welcome to bring the laptop, or remote Tu/W/Th 3:00 to 5:00 by appointment.
 
 The longer guides have more detail if you want it: [Install R](install-r.qmd),

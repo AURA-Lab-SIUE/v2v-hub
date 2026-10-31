@@ -5,6 +5,10 @@ execute:
   echo: true
 ---
 
+::: {.callout-note}
+## This week's assignment
+The graded work for this chapter is [Inferencing Data in R](../mc451-assignments.qmd#inferencing-data-in-r) ([MC 501](../mc501-assignments.qmd#inferencing-data-in-r)). Get the worksheet, the guide, and the rubric there.
+:::
 
 Describing data tells you what *is*. Inferencing tells you what it *means*, specifically, whether the patterns you see are real or could have happened by chance.
 
@@ -19,7 +23,7 @@ This is what statistical inference answers. We set up a test, let the math run, 
 ::: {.callout-note}
 ## The Variables Choose the Test
 
-There is not one hypothesis test. There are many, and which one applies depends on the kind of data in hand. Two categorical variables call for a chi-square test, which is what this chapter runs. One continuous outcome across two groups calls for a t-test, which appears later in the chapter. Three or more groups call for an ANOVA. A test applied to the wrong kind of data still produces a number, and the number is meaningless. The V2V Hub keeps a test decision tree. Consult it before you run anything. The R Companion's **Check my test choice** checks the test you chose against these rules; the reason is yours to write.
+There is not one hypothesis test. There are many, and which one applies depends on the kind of data in hand. Two categorical variables call for a chi-square test, which is what this chapter runs. One continuous outcome across two groups calls for a t-test, which appears later in the chapter. Three or more groups call for an ANOVA. A test applied to the wrong kind of data still produces a number, and the number is meaningless. Before you run anything, run **AURA: Check my test choice** from the Command Palette: it asks about your variables and says whether the test fits. The reason is yours to write.
 :::
 
 ## Step 1: State Your Hypotheses (Before Any Code)
@@ -59,15 +63,16 @@ A contingency table is the raw input for the chi-square test. It shows the count
 
 ```r
 
-cont_table <- table(tested$viewer_band, tested$channel_type)
+cont_table <- xtabs(~ viewer_band + channel_type, data = tested)
 cont_table
 ```
 
 ```
-         gaming non-gaming
-  small   25309       2457
-  medium   4000       1000
-  large    2000          0
+           channel_type
+viewer_band gaming non-gaming
+     small   25309       2457
+     medium   4000       1000
+     large    2000          0
 ```
 
 Look at that bottom-right cell before running anything. Not one message in the
@@ -79,8 +84,11 @@ Now add proportions. This helps you see the pattern before running the test:
 
 ```r
 
-prop_table <- prop.table(cont_table, margin = 1)  # margin = 1 means row proportions
-round(prop_table, 3)
+tested %>%
+  count(viewer_band, channel_type) %>%
+  group_by(viewer_band) %>%
+  mutate(prop = round(n / sum(n), 3)) %>%   # each band's share, so each band adds to 1
+  ungroup()
 ```
 
 Look at the proportions. Do the audience-size bands differ in their gaming and non-gaming mix? If every band had roughly the same proportions, there would be no association. If they differ, the chi-square test will tell you whether that difference is statistically significant.
@@ -120,20 +128,7 @@ The p-value is the most important number, and the most misread number in statist
 
 Be precise about what the p-value does *not* say. It is not the probability that the null hypothesis is true. It is not the probability that the result is a fluke. And it is not a measure of how large the difference is. A small p-value says the pattern is probably not nothing. It says nothing at all about whether the pattern is big.
 
-```r
-
-cat("Chi-square statistic:", round(chi_result$statistic, 2), "\n")
-cat("Degrees of freedom:", chi_result$parameter, "\n")
-cat("p-value:", format.pval(chi_result$p.value, digits = 3), "\n")
-
-if (chi_result$p.value < .05) {
-  cat("\nResult: SIGNIFICANT, reject the null hypothesis.\n")
-  cat("There is evidence of an association between audience size and channel type.\n")
-} else {
-  cat("\nResult: NOT SIGNIFICANT, fail to reject the null hypothesis.\n")
-  cat("There is not enough evidence to claim an association.\n")
-}
-```
+Read the three numbers off the output above. The chi-square statistic is 822.66 on 2 degrees of freedom, and the p-value is below .001, far under .05. The result is significant, so you reject the null hypothesis: there is evidence of an association between audience size and channel type.
 
 ::: {.callout-note}
 ## The .05 Threshold Is a Convention
@@ -149,12 +144,7 @@ Cramér's V ranges from 0 (no association) to 1 (perfect association):
 
 ```r
 
-chi_sq <- as.numeric(chi_result$statistic)
-n <- sum(cont_table)
-k <- min(nrow(cont_table), ncol(cont_table))  # smaller dimension
-
-cramers_v <- sqrt(chi_sq / (n * (k - 1)))
-cat("Cramér's V:", round(cramers_v, 3), "\n")
+effectsize::cramers_v(cont_table, adjust = FALSE)
 ```
 
 ### Effect Size Benchmarks (Cohen's Guidelines)
@@ -167,30 +157,18 @@ cat("Cramér's V:", round(cramers_v, 3), "\n")
 
 A small effect means the relationship exists but is weak. A large effect means the variables are strongly associated. Most social science research finds small-to-medium effects, and that's normal and expected.
 
-```r
-
-cat("Cramér's V =", round(cramers_v, 3), "\n")
-if (cramers_v < .10) {
-  cat("Interpretation: Negligible effect\n")
-} else if (cramers_v < .30) {
-  cat("Interpretation: Small effect\n")
-} else if (cramers_v < .50) {
-  cat("Interpretation: Medium effect\n")
-} else {
-  cat("Interpretation: Large effect\n")
-}
-```
+Here Cramér's V is 0.15. That is above .10 and below .30, so by the benchmarks above the association is small.
 
 ::: {.callout-tip}
 ## The Shortcut
 
-`v2v::run_chi_square()` runs the test and computes Cramér's V for you, returning formatted output ready to paste into a caption. Compute it by hand once, so you know what the shortcut is doing, then use the shortcut.
+`v2v::run_chi_square()` runs the test and computes Cramér's V for you, returning formatted output ready to paste into a caption. Run the steps above once, so you know what the shortcut is doing, then use the shortcut.
 :::
 
 ::: {.callout-note}
 ## Or use the R Companion
 
-The Test group of **Write R code** writes the chi-square with Cramér's V, the Welch t-test with Cohen's d, the ANOVA with eta squared, and the regression into your script: the plain R call first (`chisq.test()` or `t.test()` with `broom::tidy()`, and the `effectsize` package), then the `v2v` wrapper as a check that prints the same numbers. Compute Cramér's V by hand once first, as above. Its **APA numbers to check your sentence** prints a test's numbers in APA form; the sentence, and the journalist translation, are yours to write.
+In the R Companion, **AURA: Write R code**, under **R4 Test**, writes the chi-square with Cramér's V, the Welch t-test with Cohen's d, the ANOVA with eta squared, and the regression into your script: the plain R call first (`chisq.test()` or `t.test()` with `broom::tidy()`, and the `effectsize` package), then the `v2v` wrapper as a check that prints the same numbers. Run each step once yourself first, as above. Its **APA numbers to check your sentence** prints a test's numbers in APA form; the sentence, and the journalist translation, are yours to write.
 :::
 
 ::: {.callout-important}
@@ -211,21 +189,12 @@ A standardized residual tells you, for each cell in the table, how much the obse
 
 ```r
 
-residuals <- chi_result$stdres
-round(residuals, 2)
+chi_result %>%
+  pluck("stdres") %>%
+  round(2)
 ```
 
-```r
-
-residual_df <- as.data.frame(as.table(residuals))
-names(residual_df) <- c("viewer_band", "channel_type", "residual")
-
-residual_df %>%
-  filter(abs(residual) > 2) %>%
-  arrange(desc(abs(residual)))
-```
-
-These are the combinations driving the result. If "large" by "non-gaming" comes back with a residual of +3.5, that means the biggest channels include more non-gaming channels than you'd expect by chance. That's a finding you can write about.
+These are the combinations driving the result. The large, non-gaming cell holds no messages at all, far fewer than chance would put there, so its residual is negative: the biggest channels in this corpus are all gaming channels.
 
 ## When the Outcome Is Continuous: The t-test
 
@@ -254,7 +223,7 @@ message_length by is_gaming
     effectsize::cohens_d(message_length ~ is_gaming, data = analysis)
 ```
 
-`FALSE` is the non-gaming group and `TRUE` the gaming group, printed in the order R sorts them, so the difference is non-gaming minus gaming. The last two lines name the plain R calls the wrapper stands for; the R Companion's Test menu writes those calls first and this one as a check.
+`FALSE` is the non-gaming group and `TRUE` the gaming group, printed in the order R sorts them, so the difference is non-gaming minus gaming. The last two lines name the plain R calls the wrapper stands for; **AURA: Write R code**, under **R4 Test**, writes those calls first and this one as a check.
 
 Read that output slowly, because it is the whole lesson of this chapter in one block.
 
@@ -280,20 +249,11 @@ Academic writing uses the American Psychological Association (APA) format for re
 
 > A chi-square test of independence was conducted to examine the relationship between [Variable 1] and [Variable 2]. The analysis revealed a [significant/non-significant] association, χ²([df]) = [X.XX], *p* [< .001 / = .XXX]. The effect size was [small/medium/large] (Cramér's V = [.XXX]). Examination of standardized residuals indicated that [specific finding about which cells deviated from expected values].
 
-```r
-
-cat(sprintf(
-  "χ²(%d) = %.2f, p %s, Cramér's V = %.3f",
-  chi_result$parameter,
-  chi_result$statistic,
-  ifelse(chi_result$p.value < .001, "< .001", sprintf("= %.3f", chi_result$p.value)),
-  cramers_v
-))
-```
+To check the numbers in your sentence, run **AURA: Write R code** and, under **R4 Test**, select **APA numbers to check your sentence**, then **Run it**. It prints the test's numbers in APA form.
 
 A t-test result is written up the same compact way. Here is the message-length finding, in the form a journal expects:
 
-> Gaming channels produced shorter chat messages on average than non-gaming channels (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.94, *p* < .001, Cohen's *d* = -0.13.
+> Gaming channels produced shorter chat messages on average than non-gaming channels (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = 4.94, *p* < .001, Cohen's *d* = 0.13, a negligible difference.
 
 ## Step 7: The Journalist Translation
 

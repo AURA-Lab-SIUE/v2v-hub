@@ -5,7 +5,7 @@ title: "Phase IV: The Analyst"
 :::{.phase-header}
 # Phase IV: The Analyst
 
-**Duration:** Weeks 11 to 13 (Book Part IV: Execution)
+**Duration:** Weeks 11 to 15 (Book Part IV: Execution)
 Analyze data using R for statistical insights
 :::
 
@@ -32,7 +32,7 @@ By the end of Phase IV, you will:
 
 ## Phase IV Overview
 
-This phase is where your research becomes quantitative. Weeks 11 to 13 work through one chapter each. In MC 451 every week pairs a concept session with a lab session on that chapter, so you practice in class rather than only at home. These three assignments build on each other in sequence: the output of one is the input of the next.
+This phase is where your research becomes quantitative. Weeks 11 to 13 each take one chapter, and Inferencing Data is due in Week 15, after Thanksgiving. In MC 451 every week pairs a concept session with a lab session on that chapter, so you practice in class rather than only at home. These three assignments build on each other in sequence: the output of one is the input of the next.
 
 ### Reading map
 
@@ -50,14 +50,14 @@ In MC 451 every assignment is due Friday of the week listed, by 11:59 PM. In MC 
 
 ### Data Wrangling in R (50 pts), Week 12
 
-Using the Twitch data from the `v2v` package:
+Using the Twitch data from the course package, `v2v`:
 
 1. **Hand-code** a variable for a 30-message sample drawn with `sample_messages()`
 2. **Load and clean** the chat and stream tables (timestamps, message length, factors, missing values)
 3. **Join** the stream-level information back onto the chat messages
 4. **Export** a clean dataset as `twitch_analysis.RDS`
 
-This assignment teaches the full data pipeline, from raw input to analysis-ready output. The R Companion's Data menu (optional) writes the import, cleaning, join, and export code into your script; export to RDS.
+This assignment teaches the full data pipeline, from raw input to analysis-ready output. The R Companion writes the load, date, join, and save steps for you (optional): **AURA: Write R code**, under **R2 Data**. Save the result as an RDS file, not a CSV.
 
 ::: {.graduate-extension}
 **MC 501:** your wrangling script carries a **data provenance statement**: where each field came from, every transformation applied, and every row dropped with the reason. It is the same 50 points, but it has to survive being read by someone reproducing your work.
@@ -80,7 +80,7 @@ Using `twitch_analysis.RDS`:
 3. Create a **cross-tabulation** showing the relationship between two variables, the table the chi-square tests in Inferencing Data
 4. Write **two to three sentences of narrative** interpreting each output
 
-The Describe group of the R Companion's **Write R code** (optional) writes the tables and charts; the narrative after each output is yours.
+Under **R3 Describe** in the R Companion's **AURA: Write R code** (optional), it writes the tables and charts; the narrative after each output is yours.
 
 ::: {.graduate-extension}
 **MC 501:** this assignment is worth 100 points rather than 75, and the extra weight is in the diagnostics. Report the distributional checks behind each figure, not only the figure: what the shape of the variable is, whether the assumptions of the test you are heading toward look tenable, and what the outliers are.

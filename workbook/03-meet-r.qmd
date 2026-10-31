@@ -43,7 +43,7 @@ With the R extension installed (see [Install R](../resources/install-r.qmd)), VS
 - **Editor** (center): Where you write and edit your `.qmd` and `.R` files. This is where most of your work happens. Press `Ctrl/Cmd+Enter` to send a line to R.
 - **R terminal** (bottom panel): Where R actually runs your code. You can type commands here directly, but usually you'll send code from the editor.
 - **Workspace** (R extension sidebar): Shows what data and variables R currently has loaded. When you import a dataset, it appears here.
-- **Plots panel:** Opens automatically when you draw a chart. A chart written by the R Companion's Describe menus also opens as a saved picture in an editor tab after **Run it**.
+- **Plots panel:** Opens automatically when you draw a chart. A chart written by **AURA: Write R code**, under **R3 Describe**, also opens as a saved picture in an editor tab after **Run it**.
 
 There is no separate "project file." In VS Code you open your **workspace folder**, and that folder is your working directory.
 
@@ -53,7 +53,7 @@ Let's verify everything works. Complete these steps in order, and don't skip ahe
 
 ### Step 1: Verify R is installed
 
-Open VS Code, open a terminal (**Terminal, New Terminal**), type `R` to start a session, and run:
+Open the Command Palette (**View**, then **Command Palette...**), type `AURA: Open an R terminal`, and press **Enter**. When the `>` prompt appears at the bottom, type this line and press **Enter**:
 
 ```r
 R.version.string
@@ -97,13 +97,9 @@ install.packages("tidyverse", dependencies = TRUE)
 If R says it can't install a package because a file is "in use," close any other R sessions and try again. Windows sometimes locks files that are open in another session.
 :::
 
-### Step 3: Open your workspace folder
+### Step 3: Open your course workspace
 
-Keeping your files in one folder makes file paths work correctly.
-
-1. Create a folder you can find easily, for example `Documents/MC451_Analysis` (no spaces).
-2. In VS Code: **File, Open Folder**, and select it.
-3. That folder is now your working directory for the whole R session. Inside it, make a `data/` subfolder for your datasets.
+Run **AURA: Open my course workspace** from the Command Palette and follow guide 02, *Open Your Course Workspace* ([MC 451](../guides/mc451/02-open-your-course-workspace.md), [MC 501](../guides/mc501/02-open-your-course-workspace.md)). That folder, the one with `README.md` at its top, is where every worksheet goes. It worked if the Explorer on the left lists `00_Inbox`, `01_Journal`, `02_Literature`, `03_Project`, and `04_Resources`.
 
 ### Step 4: Test with the Twitch dataset
 
@@ -151,7 +147,7 @@ Note the `v2v::` in front of the function name. It tells R, and tells you, that 
 ::: {.callout-tip}
 ## Optional: the AURA Lab R Companion
 
-**Check my setup** (Command Palette) covers Steps 1, 2, and 5: it finds R and runs the same checklist, and its **Install what is missing** action installs the course packages. Its **Explain an R error** command gives a plain-English reading of an error message.
+**AURA: Check my setup** (Command Palette) covers Steps 1, 2, and 5: it finds R and runs the same checklist, and its **Install what is missing** action installs the course packages. **AURA: Explain an R error** gives a plain-English reading of an error message.
 :::
 
 ## Quarto documents (.qmd)
@@ -167,7 +163,7 @@ A Quarto document has three parts:
 ---
 title: "My Analysis"
 author: "Your Name"
-format: pdf
+format: html
 ---
 ```
 
@@ -192,24 +188,26 @@ When you click **Render** in the Quarto preview (or press `Ctrl/Cmd+Shift+K`), Q
 1. Runs all the R code chunks in order
 2. Captures their output (tables, charts, printed results)
 3. Combines the text and output into a finished document
-4. Saves it as PDF or HTML (whichever you specified)
+4. Saves it as an HTML page (a PDF needs one more tool, installed in Chapter 7)
 
 This is exactly how your White Paper will work: one Quarto project that renders into both a PDF and a website.
 
 ## Try it yourself
 
 1. In your open workspace, create a new file named `my-first-doc.qmd`.
-2. Add a YAML header with a title, then a code chunk:
+2. Add a YAML header with a title, then a code chunk. Type the three backticks and `{r}` exactly; that line is what tells Quarto to run the code.
 
-```r
+````
+```{{r}}
 library(tidyverse)
 library(v2v)
 chat <- twitch_chat()
 nrow(chat)
 ```
+````
 
 3. Press `Ctrl/Cmd+Shift+K` to render (or click **Render** in the Quarto preview).
-4. You should see a PDF (or HTML) with the number `35267`, the number of chat messages in the dataset.
+4. An HTML page opens with the number `35267`, the number of chat messages in the dataset.
 
 If this works, you're ready for Chapter 4.
 

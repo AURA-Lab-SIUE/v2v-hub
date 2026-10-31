@@ -27,7 +27,8 @@ format:
 - Today we build the gaming label, which the example question depends on
     - The stream join, the gaming label, and the rows a join leaves unlabeled
     - Then one pipeline you can rerun from scratch
-- Open your [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd). We continue from Part 4
+- In VS Code's Explorer, open 11-wrangling-data.qmd, the copy you saved in your workspace's top folder. We continue from Part 4
+    - [A fresh copy of the worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd), if you need one
 
 ## What Is Still Missing
 
@@ -51,9 +52,20 @@ Each step is one small pipeline.
 
 ## Step 1, Match Each Message to Its Stream
 
+- The R Companion (the **AURA R Companion** icon on VS Code's left edge) writes this step
+- Click inside the worksheet's Task 4.1 chunk, press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
+- Under **R2 Data**, pick **Match each message to its stream (join_chat_streams)**
+
 ```r
 chat_streams <- join_chat_streams(chat, streams)
+```
 
+- `join_chat_streams()` gives each message the `game` and `viewers` of the latest stream snapshot taken at or before it, on the same channel
+- Both tables need Tuesday's `ts` column
+
+## Step 1, Match Each Message to Its Stream (cont.)
+
+```r
 chat_streams %>%
   count(no_snapshot = is.na(viewers))
 ```
@@ -64,20 +76,19 @@ chat_streams %>%
 2 TRUE           11
 ```
 
-- `join_chat_streams()` gives each message the `game` and `viewers` of the latest stream snapshot taken at or before it, on the same channel
-- Both tables need Tuesday's `ts` column
 - Eleven messages arrived before their channel's first snapshot, so they get `NA` (missing)
 
 ## A Rolling Join, Named
 
-- The same join without the course package is a `left_join()` with a rolling key
+- The same join without the course package, v2v, is a `left_join()` with a rolling key
     - `join_by(channel, closest(ts >= snapshot_ts))`: same channel, nearest earlier snapshot
     - `join_chat_streams()` prints that line the first time you call it
 - It is a rolling join because snapshots come every few minutes and messages every second
-- The Companion's Data menu writes this step as **Match each message to its stream**
 - More detail: [Chapter 11, Matching each message to its stream](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#matching-each-message-to-its-stream)
 
 ## Step 2, Find Each Channel's Most Frequent Category
+
+- Task 4.2: **AURA: Write R code**, **R2 Data**, **Label each channel by its top category** writes Steps 2 and 3
 
 ```r
 channel_type <- streams %>%
@@ -91,9 +102,8 @@ channel_type <- streams %>%
 - Read it in order:
     - Drop the snapshots with no category
     - Count how many snapshots each channel logged in each category
-    - Keep each channel's most frequent category
+    - Keep each channel's most frequent category: one row per channel
 - `is.na()` finds missing values, and `!` means "not"
-- The result is one row per channel
 
 ## Exercise: Trace a Channel With No Category {.discuss}
 
@@ -107,10 +117,12 @@ Some channels have no `game` recorded in any snapshot. Use Chapter 11, [Labeling
 
 ```r
 nongaming_categories <- c(
-  "Art", "ASMR", "Beauty & Body Art", "Creative", "Food & Drink",
+  "Art", "ASMR", "Beauty & Body Art", "Creative",
+  "Food & Drink",
   "IRL", "Just Chatting", "Makers & Crafting", "Music",
   "Music & Performing Arts", "Science & Technology",
-  "Sports & Fitness", "Talk Shows & Podcasts", "Travel & Outdoors"
+  "Sports & Fitness", "Talk Shows & Podcasts",
+  "Travel & Outdoors"
 )
 ```
 
@@ -135,22 +147,28 @@ channel_type <- channel_type %>%
 
 ## Step 4, Join the Label Onto the Messages
 
+- The R Companion writes this join: **AURA: Write R code**, then **R2 Data**, then **Join the channel labels onto the messages**
+    - Change `chat_streams <-` at its start to `analysis <-`
+
 ```r
-chat_streams <- chat_streams %>%
+analysis <- chat_streams %>%
   left_join(channel_type, by = "channel")
 ```
+
+- `left_join()` keeps every row of `chat_streams`, attaches each channel's `main_game` and `is_gaming`, and names the result `analysis`
+
+## Step 4, Join the Label Onto the Messages (cont.)
 
 ::: {.define}
 **Join:** putting two tables together by matching a shared key, so each row picks up the other table's columns. Example: every message picks up its channel's `main_game` and `is_gaming`.
 :::
 
-- `left_join()` keeps every row of `chat_streams` and attaches each channel's `main_game` and `is_gaming`
 - `by = "channel"` names the key column both tables share
 - `channel_type` works as a **lookup table**: one row per channel, looked up by the join
 
 ## Joining Your Own Tables
 
-- For your own tables, the Companion's **Join two tables by a shared column** writes a join like this one
+- For your own tables, the R Companion's **Join two tables by a shared column** writes a join like this one
     - It also adds two checks on the result
 - Every join needs a key column that both tables share
 
@@ -170,7 +188,7 @@ chat_streams <- chat_streams %>%
 ## Always Inspect What You Derived
 
 ```r
-chat_streams %>% count(is_gaming)
+analysis %>% count(is_gaming)
 ```
 
 ```
@@ -207,17 +225,27 @@ streams <- twitch_streams() %>%
 analysis <- join_chat_streams(chat, streams) %>%
   left_join(channel_type, by = "channel")
 
-write_rds(analysis, "data/twitch_analysis.RDS")
+# The worksheet adds viewer_band, channel_type, and your
+# codes; Part 7 saves the file
 ```
 
-- With `channel_type` built as above, this block rebuilds the table from the raw data in one run
+- With `channel_type` built as above, this block rebuilds the 12-column table from the raw data in one run
     - Two transformations, then two joins
+
+## The Whole Wrangle (cont.)
+
+- This block shows the shape only. Do not run it in your worksheet: it skips Tasks 4.3 to 5.3, so the table it builds has no viewer band, channel type, or codes
 
 ## Saving the Table
 
+- The R Companion writes the save line: **AURA: Write R code**, then **R2 Data**, then **Save a table as an RDS file**
+
+```r
+write_rds(analysis, "data/twitch_analysis.RDS")
+```
+
 - `write_rds()` saves the table as an RDS file, R's own data file, with every column type intact
-    - Describing Data reads that file
-    - The Companion's **Save a table as an RDS file** writes the same last line
+    - Worksheet Part 7 saves it, and Describing Data reads that file
 
 ## What the Table Has Become
 
@@ -237,33 +265,52 @@ $ is_gaming      <lgl> NA, NA, NA, …
 - The table is now **tidy**: one row per observation, one column per variable
 - The first rows shown belong to `704cb1fgnty`, one of the two channels with no category, so its labels print `NA`
 
+## Your Thirty Codes
+
+::: {.define}
+**Factor:** R's way of storing a category, with its labels in an order you choose. Example: `viewer_band` stored as small, medium, large.
+:::
+
+- Part 5 reads your coding sheet back: `read_csv()`, then `clean_names()`
+- `factor()` turns 0 and 1 into labeled groups, commentary and reaction
+- `left_join(codes, by = "id")` attaches them: the coding sheet's `id` is the chat `id`
+- Every other message gets `NA` on `reaction_only`, and that is correct
+
 ## Common Errors Today
 
 - **The join returns all `NA`:** the keys do not match, so check for a leading "#"
-- **`object 'channel_type' not found`:** you ran the join before building the lookup table
+- **`object 'channel_type' not found`:** R has no object (no named result) called that yet: you ran the join before building the lookup table
 - **`slice_max` errors:** you skipped `group_by()`
 - **A misspelled category name** mislabels a channel without any error
-- **A worksheet that will not render in a fresh session** depends on something you have not written down
+- **A worksheet that will not render:** it depends on a step you ran in the terminal but never wrote into the worksheet
 
-Copy the error and run **AURA: Explain an R error** from the Command Palette.
+## Any Other Error
+
+- Select the error R printed in the terminal, then press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) and run **AURA: Explain an R error**: the copied error is filled in for you
 
 ## Checkpoint
 
 You should now have:
 
 - A `channel_type` lookup table, one row per channel, with `main_game` and `is_gaming`
-- An `analysis` table of 12 columns
+- An `analysis` table of 16 columns: the 12 shown earlier plus `median_viewers`, `viewer_band`, `channel_type`, and `reaction_only`
 - A `count(is_gaming)` result you have actually looked at
 - Worksheet Parts 4 to 7 filled: viewer band, your thirty codes joined on, `data/twitch_analysis.RDS` saved
 - A worksheet that rebuilds all of it from the raw data when you render it
 
 ## Before Next Time
 
-- Restart R, render your worksheet, and confirm it rebuilds the same table
+- Render your worksheet: save it, then press **Ctrl+Shift+K** (**Cmd+Shift+K** on a Mac), as in [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html)
+    - Rendering runs every chunk from the top in a fresh R session, so a missing step shows up as an error
 - Check it against the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
+- Step by step: [Wrangle the Data with Write R Code](https://aura-lab.siue.edu/v2v-hub/guides/mc451/08-wrangling.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490319&a=95173025)
 - Comment your wrangling decisions in the worksheet
     - A reviewer will ask why you excluded what you excluded
-    - A comment the Companion writes says what a step does. Your comment says why you chose it
+    - A comment the R Companion writes says what a step does. Your comment says why you chose it
+
+## Before Next Time (cont.)
+
 - Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot), 75 points
 - Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
 - Read [Chapter 12, Visualizing the Narrative](https://aura-lab.siue.edu/v2v/chapters/chapter12.html)

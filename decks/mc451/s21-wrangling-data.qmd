@@ -30,7 +30,12 @@ format:
 - Today's steps produce no results yet, but every later result depends on them
 - Wrangling is slow, repetitive work, and professionals spend most of their data time on it
 
+## Get the Worksheet
+
 Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
+
+- Click the link: your browser saves 11-wrangling-data.qmd in your Downloads folder
+- Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
 
 ## The Twitch Job
 
@@ -81,7 +86,7 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 ## Packages and the Tidyverse
 
 ::: {.define}
-**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course's v2v package adds the example Twitch data and `clean_dates()`.
+**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course package, v2v, adds the example Twitch data and `clean_dates()`.
 :::
 
 ::: {.define}
@@ -156,6 +161,10 @@ Work out your answers before running the code.
 
 ## Converting the Timestamp
 
+- The R Companion (the **AURA R Companion** icon on VS Code's left edge) writes this block for you
+- Click inside the worksheet's Task 3.1 chunk, press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
+- Under **R2 Data**, pick **Turn the date column into a time (clean_dates)**
+
 ```r
 chat <- chat %>%
   mutate(ts = clean_dates(date))
@@ -163,15 +172,16 @@ streams <- streams %>%
   mutate(ts = clean_dates(date))
 ```
 
+## Converting the Timestamp (cont.)
+
 - `clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count seconds
     - It then turns the result into a date and time, stored in a new `ts` column
-- Without the course package, the same step is `as_datetime(date / 1000)`
+- Without v2v, the same step is `as_datetime(date / 1000)`
     - `as_datetime()` comes from lubridate, the tidyverse package for dates
-- The Companion's **Write R code** menu writes this same block: **Turn the date column into a time**
 
 ## The Factor of a Thousand That Breaks It
 
-- `as.POSIXct()`, base R's date converter, expects seconds
+- `as_datetime()`, lubridate's date converter, expects seconds
     - `date` counts milliseconds, which is a thousand times finer
 - Hand it the raw number and every message is dated around the year 50,850
 - `date / 1000` converts milliseconds to seconds first
@@ -200,6 +210,8 @@ chat %>%
     - A date-time gives you the hour and the weekday, which the raw number does not
 
 ## Measuring Message Length
+
+- The R Companion writes this block too: **AURA: Write R code**, then **R2 Data**, then **Add a column (mutate)**
 
 ```r
 chat <- chat %>%
@@ -233,11 +245,14 @@ chat %>%
 
 - **Every message is dated around the year 50,850:** you converted by hand and forgot `/ 1000`
 - **`could not find function "str_length"`:** you have not run `library(tidyverse)`
-- **`object 'message_length' not found`:** you never assigned the result back to `chat`
+- **`object 'message_length' not found`:** R has nothing by that name yet (R calls anything you have named an object): you never assigned the result back to `chat`
     - `<-` is what makes a change stick
 - **`unexpected '='`:** usually a single `=` where `==` belongs
 
-Copy the error and run **AURA: Explain an R error** from the Command Palette.
+## Any Other Error
+
+- Select the error R printed in the terminal, then press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) and run **AURA: Explain an R error**: the copied error is filled in for you
 
 ## Checkpoint
 
@@ -246,14 +261,17 @@ You should now have:
 - A `chat` object and a `streams` object, each with a working `ts` column, typed `<dttm>`
 - A `message_length` column on `chat`, typed `<int>` (whole numbers)
 - Output showing dates in November 2018
-- Today's steps filled in your worksheet, not typed into the console
-- Any step you built with the Companion's Data menu, sitting in the worksheet as commented code
+- Today's steps filled in your worksheet, not typed into the console (the R terminal, where typed lines are not saved)
+- Any step the R Companion wrote (**AURA: Write R code**, **R2 Data**) sits in the worksheet with its comments
 
 Still missing: the gaming label. That is Thursday.
 
 ## Before Thursday
 
-- Code your thirty messages in the worksheet's Part 0, and fill Parts 1 to 3
+- Code your thirty messages in the worksheet's Part 0, in a spreadsheet or in the R Companion's data viewer
+    - Data viewer: run **AURA: Open the data viewer** on `data/coding-form.csv`, then **Add coding column** ([Read and Code Data in the Data Viewer](https://aura-lab.siue.edu/v2v-hub/guides/mc451/05-data-viewer-and-coding-columns.html))
+- Then fill Parts 1 to 3
+- Step by step: [Wrangle the Data with Write R Code](https://aura-lab.siue.edu/v2v-hub/guides/mc451/08-wrangling.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490319&a=95173025)
 - Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot), 75 points
 - Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
 - Thursday: the gaming label, the join, and the rows a join leaves behind

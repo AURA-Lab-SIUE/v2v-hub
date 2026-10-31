@@ -30,7 +30,12 @@ format:
 - The example data is the shared practice case. You run the same steps on your own source
 - Wrangling is slow, repetitive work, and researchers spend most of their data time on it
 
+## Get the Worksheet
+
 Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
+
+- Click the link: your browser saves `11-wrangling-data.qmd` in your Downloads folder
+- Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
 
 ## The Twitch Job
 
@@ -78,7 +83,7 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 ## Packages and the Tidyverse
 
 ::: {.define}
-**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course's v2v package adds the example Twitch data and `clean_dates()`.
+**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course package, v2v, adds the example Twitch data and `clean_dates()`.
 :::
 
 ::: {.define}
@@ -115,6 +120,10 @@ chat %>%
 
 ## Transformation 1, a Readable Timestamp
 
+- The R Companion (the **AURA R Companion** icon on VS Code's left edge) writes this block for you
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette (the search box at the top of VS Code), type **AURA: Write R code**, and press **Enter**
+- Under **R2 Data**, pick **Turn the date column into a time (clean_dates)**, then select **Run it**
+
 ```r
 chat <- chat %>%
   mutate(ts = clean_dates(date))
@@ -122,11 +131,12 @@ streams <- streams %>%
   mutate(ts = clean_dates(date))
 ```
 
+## Transformation 1, a Readable Timestamp (cont.)
+
 - `clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count seconds
     - It then turns the result into a date and time, stored in a new `ts` column
-- Without the course package, the same step is `as_datetime(date / 1000)`
+- Without v2v, the same step is `as_datetime(date / 1000)`
     - `as_datetime()` comes from lubridate, the tidyverse package for dates
-- The Companion's **Write R code** menu writes this same block: **Turn the date column into a time**
 
 ## Dates Are Stored in Milliseconds
 
@@ -136,10 +146,9 @@ streams <- streams %>%
 
 - `date` counts milliseconds since 1 January 1970
     - That starting moment is the **Unix epoch**
-- `as.POSIXct()`, base R's date converter, expects seconds, which are a thousand times coarser
+- A date-time function such as `as_datetime()` expects seconds, which are a thousand times coarser
 - Hand it the raw number and every message is dated around the year 50,850
-- `clean_dates()` does the division for you, and prints the lubridate line it stands for the first time you call it
-- By hand, `date / 1000` converts milliseconds to seconds first
+- `clean_dates()` does the division (`date / 1000`) for you, and prints the lubridate line it stands for the first time you call it
 
 ## The Column Type Changes to a Date-Time
 
@@ -157,6 +166,8 @@ streams <- streams %>%
 - Once converted, the timestamp is an interval variable ([Chapter 8, Levels of measurement](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#levels-of-measurement))
 
 ## Transformation 2, Message Length
+
+- **AURA: Write R code**, then **R2 Data**, then **Add a column (mutate)** writes this block; select **Run it**
 
 ```r
 chat <- chat %>%
@@ -220,6 +231,8 @@ chat %>%
 
 ## Step 1, Match Each Message to Its Stream
 
+- **AURA: Write R code**, then **R2 Data**, then **Match each message to its stream (join_chat_streams)** writes this block
+
 ```r
 chat_streams <- join_chat_streams(chat, streams)
 
@@ -233,20 +246,20 @@ chat_streams %>%
 2 TRUE           11
 ```
 
-- `join_chat_streams()` gives each message the `game` and `viewers` of the latest stream snapshot taken at or before it, on the same channel
-- Both tables need the `ts` column from Transformation 1
+- `join_chat_streams()` gives each message the `game` and `viewers` of the latest earlier snapshot on its channel (both tables need `ts` from Transformation 1)
 - Eleven messages arrived before their channel's first snapshot, so they get `NA` (missing)
 
 ## A Rolling Join, Named
 
-- The same join without the course package is a `left_join()` with a rolling key
+- The same join without v2v is a `left_join()` with a rolling key
     - `join_by(channel, closest(ts >= snapshot_ts))`: same channel, nearest earlier snapshot
     - `join_chat_streams()` prints that line the first time you call it
 - It is a rolling join because snapshots come every few minutes and messages every second
-- The Companion's Data menu writes this step as **Match each message to its stream**
 - More detail: [Chapter 11, Matching each message to its stream](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#matching-each-message-to-its-stream)
 
 ## Step 2, Find What a Channel Mostly Streams
+
+- **AURA: Write R code**, then **R2 Data**, then **Label each channel by its top category** writes Steps 2 to 4's lookup table
 
 ```r
 channel_type <- streams %>%
@@ -279,6 +292,8 @@ nongaming_categories <- c(
 
 ## Step 4, the Join
 
+- **AURA: Write R code**, then **R2 Data**, then **Join the channel labels onto the messages** writes this join; for your own tables, **Join two tables by a shared column**
+
 ```r
 channel_type <- channel_type %>%
   mutate(
@@ -290,6 +305,8 @@ chat_streams <- chat_streams %>%
   left_join(channel_type, by = "channel")
 ```
 
+## Step 4, the Join (cont.)
+
 - `channel_type` is now a **lookup table**: one row per channel, looked up by the join
 - `left_join()` keeps every row and attaches each channel's `main_game` and `is_gaming`, matching on the shared `channel` key
 
@@ -299,7 +316,6 @@ chat_streams <- chat_streams %>%
     - `chat_streams` already has a `game` column: the category streaming at that moment
     - `main_game` is the channel's usual category, and later analyses use it
 - `is_gaming` is `TRUE` when the channel's usual category is not on the non-gaming list
-- For your own tables, the Companion's **Join two tables by a shared column** writes this kind of join
 - More detail: [Chapter 11, Labeling gaming and non-gaming](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#labeling-gaming-and-non-gaming)
 
 ## Joins Fail Silently When Keys Disagree
@@ -340,11 +356,17 @@ chat_streams %>% count(is_gaming)
 :::
 
 - Two channels never had a category recorded
-    - No categories means no modal category, which means no row in the lookup table
-    - The join left their messages as `NA`
+    - No category means no row in the lookup table, so the join left their messages as `NA`
 - The data does not say whether those 501 messages came from gaming channels
 - An honest `NA` records that the study cannot classify them
 - Those messages are left out of the comparison rather than guessed into one side
+
+## Two More Columns
+
+- `viewer_band` puts each channel in a band by its median viewers: small, medium, or large
+- `channel_type` writes `is_gaming` as words, "gaming" or "non-gaming", stored as a **factor**: R's way of storing categories in an order you choose
+- Weeks 12 and 13, and the R Companion's chart and test blocks, group by these two columns
+- In Step 2, `channel_type` also names the lookup table; after worksheet Task 4.4 it is a column of `analysis`
 
 ## The Whole Pipeline in One Place
 
@@ -358,11 +380,17 @@ streams <- twitch_streams() %>%
 analysis <- join_chat_streams(chat, streams) %>%
   left_join(channel_type, by = "channel")
 
-write_rds(analysis, "data/twitch_analysis.RDS")
+# The worksheet adds viewer_band, channel_type,
+# and your codes, then saves (Part 7)
 ```
 
-- With `channel_type` built as above, two transformations and two joins rebuild the table every later result depends on
-- `write_rds()` saves it as an RDS file, R's own data file, with every column type intact
+- With `channel_type` built as above, two transformations and two joins build the core of the table
+- The worksheet adds three more columns before it saves `data/twitch_analysis.RDS`, so save only from the worksheet
+
+## Saving the Table
+
+- In the worksheet's Part 7, **AURA: Write R code**, then **R2 Data**, then **Save a table as an RDS file** writes the save line for the table `analysis`
+- `write_rds()` saves an RDS file, R's own data file, with every column type intact
 
 ## The Analysis-Ready Table
 
@@ -387,22 +415,22 @@ $ is_gaming      <lgl> NA, NA, NA, …
     - Every `mutate()` and `filter()` is a methodological decision
     - Which cases to exclude, how to treat missing values, how to group time
 - A reviewer will ask how you handled something
-    - The answer is in the script, if the script is commented and committed
+    - The answer is in the script, if the script is commented and committed (saved to your GitHub history, [guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html))
 
 ## Three Decisions, Commented
 
 - Identify **three** decisions a reviewer could challenge
 - Write a comment on each, at the three places the worksheet marks
-- A comment the Companion wrote does not count as one of your three
+- A comment the R Companion wrote does not count as one of your three
     - Write your own justification beside it
 
 ## Never Overwrite Raw Data
 
-- `data/raw/` is read-only after the first commit
+- Keep what you collected in `data/raw/` exactly as it arrived; never edit it or save over it
     - Your script reads from it and writes new files, such as `data/twitch_analysis.RDS`, never back into it
 - That separation lets you rebuild everything from unchanged raw data
     - Overwriting the raw data breaks that guarantee, and it cannot be undone
-- Test it: re-run the script in a fresh session
+- Test it: render the worksheet with **Quarto: Preview** ([guide 11](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html)), which runs every chunk from the top in a fresh R session
 - If the script does not reproduce the table without your help, it depends on something it does not write down
 
 ## Common Errors and What They Mean
@@ -411,9 +439,14 @@ $ is_gaming      <lgl> NA, NA, NA, …
 - **`could not find function "%>%"`:** the tidyverse never loaded
 - **Every joined column is `NA`:** the keys disagree, often because of a `#`
 - **The row count grew after a join:** the lookup table has duplicate keys
-- **`object 'channel_type' not found`:** the chunks ran out of order
+- **`object 'channel_type' not found`:** the gray boxes of code (**chunks**) ran out of order; run them from the top
 
-Copy the error and run **AURA: Explain an R error** from the Command Palette.
+## Explain an Error
+
+- Select the red error text in the terminal and press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P**) to open the **Command Palette**, the search box at the top of VS Code
+- Type `AURA: Explain an R error` and press **Enter**
+- The error you copied is already filled in; press **Enter** and the plain-English fix appears
 
 ## Checkpoint
 
@@ -423,7 +456,7 @@ You should now have:
 - The worksheet adds viewer band and your thirty codes, then saves `data/twitch_analysis.RDS`
 - A `ts` column of type `<dttm>` and a `message_length` column of type `<int>` (whole numbers)
 - An `is_gaming` column with 3,457 `FALSE`, 31,309 `TRUE`, and 501 `NA`
-- A commented worksheet that renders top to bottom in a clean session
+- A commented worksheet that renders with no error (guide 11)
 - The processed dataset written out, with the raw data untouched
 
 ## Before Week 12
@@ -433,7 +466,11 @@ You should now have:
 - **Due Monday, November 16, 11:59 PM:** [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#data-wrangling-in-r), 50 points
     - The worksheet, your thirty codes, and three justifications
     - Check it against the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html)
-    - The three justifications are yours; a comment the Companion wrote does not count
+    - The three justifications are yours; a comment the R Companion wrote does not count
+
+## Before Week 12 (cont.)
+
+- Click by click: [Wrangle the Data with Write R Code](https://aura-lab.siue.edu/v2v-hub/guides/mc501/08-wrangling.html) and its [walkthrough video](https://siue.yuja.com/V/Video?v=17490319&a=95173025)
 - Read [Chapter 12, Visualizing the Narrative](https://aura-lab.siue.edu/v2v/chapters/chapter12.html)
     - Plus the assigned article: [Lakens (2013)](https://doi.org/10.3389/fpsyg.2013.00863) on effect sizes
 - Bring the same laptop and the same working environment

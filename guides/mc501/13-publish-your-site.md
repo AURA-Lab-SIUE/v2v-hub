@@ -5,12 +5,12 @@ Render your project and put it live on GitHub Pages, after three checks that cat
 ## Steps
 
 1. Commit and push every change first (guide 12).
-2. Open your project folder itself in VS Code: select **File**, then **Open Folder**, and choose the folder `v2v::new_portfolio()` made for your study (the one that holds `_quarto.yml`), not the workspace around it.
+2. Keep your workspace open (the folder with `README.md` at its top).
 3. Open an R terminal: run **AURA: Open an R terminal** from the Command Palette.
-4. Type this line in the R terminal and press **Enter**:
+4. Type this line in the R terminal and press **Enter**. Put your own project folder's name inside the quotes: the folder that holds `_quarto.yml`.
 
     ```r
-    v2v::deploy_portfolio()
+    v2v::deploy_portfolio("twitch-portfolio")
     ```
 
     ![](img/deploy-portfolio-typed.png){fig-alt="The R terminal in VS Code with v2v::deploy_portfolio() typed after the prompt, ready to run."}
@@ -42,4 +42,4 @@ The first line is normal: the course scaffold has no `renv.lock` file, so the re
 
 ## If it does not work
 
-If a check fails, fix that one thing and run the command again. **_quarto.yml** failing means VS Code has the wrong folder open: go back to step 2. **no uncommitted changes** failing means you have work to commit and push (guide 12).
+If a check fails, fix that one thing and run the command again. **_quarto.yml** failing means the name in the quotes does not match your project folder: check its spelling in the Explorer. **no uncommitted changes** failing means you have work to commit and push (guide 12).

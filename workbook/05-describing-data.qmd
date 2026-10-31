@@ -5,6 +5,10 @@ execute:
   echo: true
 ---
 
+::: {.callout-note}
+## This week's assignment
+The graded work for this chapter is [Describing Data in R](../mc451-assignments.qmd#describing-data-in-r) ([MC 501](../mc501-assignments.qmd#describing-data-in-r)). Get the worksheet, the guide, and the rubric there.
+:::
 
 You have clean data. Now you need to describe it. What's in the dataset? What patterns are visible? This chapter teaches you to build frequency tables and publication-ready charts using the same Twitch dataset you wrangled in Chapter 4.
 
@@ -148,7 +152,7 @@ Think of it like building a sandwich: you start with the bread (the canvas), add
 ::: {.callout-note}
 ## Or use the R Companion
 
-The Describe group of **Write R code** writes `count()`, crosstab, and `ggplot()` code with `theme_v2v()` into your script, saves each chart with `ggsave()`, and leaves an `alt =` line marked YOUR TURN inside `labs()` for your alt text. The code stays in your script, which is the difference from Excel's menus.
+In the R Companion, **AURA: Write R code**, under **R3 Describe**, writes `count()`, crosstab, and `ggplot()` code with `theme_v2v()` into your script, saves each chart with `ggsave()`, and leaves an `alt =` line marked YOUR TURN inside `labs()` for your alt text. The code stays in your script, which is the difference from Excel's menus.
 :::
 
 ## Bar Chart: Game Category Distribution
@@ -226,6 +230,18 @@ ggplot(top_games, aes(x = fct_reorder(game, n), y = n)) +
 That's the difference between a homework chart and a professional one. Every element serves a purpose: the sort order aids comparison, the labels provide exact values, and the clean theme reduces visual noise.
 
 `v2v::theme_v2v()` applies the course's house style in one call, so that every figure in your White Paper looks like a member of one set rather than a pile of unrelated charts. The bars here share one color on purpose: the axis already names each category, and a color per bar would add nothing a reader can use. When color does carry meaning, as in the stacked bars below, `v2v::scale_fill_v2v()` supplies the course palette for up to eight categories, and `scale_fill_brewer(palette = "Set2")` is a perfectly good alternative outside this course.
+
+### Alt text
+
+Every figure in your worksheet and your paper carries alt text: one sentence saying what the chart shows, for a reader who cannot see it. In a Quarto chunk it goes on a `#| fig-alt:` line at the top:
+
+````
+```{{r}}
+#| fig-alt: "Horizontal bar chart of the ten most-streamed categories. Art leads with 5,298 stream snapshots, followed by Fortnite and Just Chatting."
+ggplot(top_games, aes(x = fct_reorder(game, n), y = n)) +
+  geom_col()
+```
+````
 
 ## Bar Chart: Counts Across Time
 
@@ -361,7 +377,7 @@ Lean only on the mean here and you would tell your reader that non-gaming chat i
 
 ## Writing Your Interpretation
 
-Numbers and charts don't speak for themselves. Your assignment requires a 2 to 3 paragraph interpretation that cites specific numbers. Here's how to structure it:
+Numbers and charts don't speak for themselves. Your worksheet asks for two to three sentences after each table and figure. Here is the same thinking as three short paragraphs, the form it takes in your White Paper's Results:
 
 **Paragraph 1: What the data contains**
 

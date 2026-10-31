@@ -25,9 +25,10 @@ format:
 - Tuesday you watched three figures being built on the example data
 - Today you fill the Describing Data worksheet, with help in the room
     - The same moves on your own data become your White Paper's Results section
-- Work in the worksheet, not in the console
-
-[MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc451.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
+- Work in the worksheet, not in the console (the R terminal, where typed lines are not saved)
+- In VS Code's Explorer, open 12-describing-data-mc451.qmd, the copy you saved in your workspace's top folder
+    - [A fresh copy of the worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc451.qmd), if you need one
+- [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
 Say out loud when you are stuck. That is what this session is for.
 
@@ -41,6 +42,10 @@ If any of those three is missing, say so now and we fix it first.
 
 ## Loading and Looking
 
+- The R Companion (the **AURA R Companion** icon on VS Code's left edge) writes these lines
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
+- Under **R2 Data**, pick **Load your saved analysis (RDS)**
+
 ```r
 library(tidyverse)
 library(v2v)
@@ -50,9 +55,11 @@ analysis <- read_rds("data/twitch_analysis.RDS")
 glimpse(analysis)
 ```
 
-`glimpse()` prints every column with its type and its first few values. Before you plot
-anything, look at what you actually have. The Companion's **Save a table as an RDS file** wrote
-this file at the end of the wrangle, and **Load your saved analysis (RDS)** writes these lines.
+## Loading and Looking (cont.)
+
+- `data/twitch_analysis.RDS` is the file your wrangle saved at the end, in Part 7
+- `glimpse()` prints every column with its type and its first few values
+- Before you plot anything, look at what you actually have
 
 ## A Summary Table First
 
@@ -82,6 +89,10 @@ Answer from the table you just built.
 
 ## Figure One, the Shape of One Variable
 
+- The R Companion writes a first version: **AURA: Write R code**, then **R3 Describe**, then **Histogram**
+    - The same group holds **Histogram comparing two groups**, **Boxplot**, and **Line chart over time**
+    - After **Run it**, the saved chart opens in a VS Code tab
+
 ```r
 ggplot(analysis, aes(x = message_length)) +
   geom_histogram(binwidth = 5) +
@@ -89,11 +100,8 @@ ggplot(analysis, aes(x = message_length)) +
   v2v::theme_v2v()
 ```
 
-One variable, one histogram. Change `binwidth` and watch the shape change. That is why the
-bin width has to be reported rather than hidden. The Describe group of the Companion's
-**Write R code** writes a first version of this figure, and of Figures Two and Three and the
-line chart (**Histogram comparing two groups**, **Line chart over time**); after **Run it**
-the saved chart opens in a VS Code tab.
+- One variable, one histogram. Change `binwidth` and watch the shape change
+    - That is why the bin width has to be reported rather than hidden
 
 ## Reading Your Own Histogram
 
@@ -105,20 +113,33 @@ the saved chart opens in a VS Code tab.
 
 ## Figure Two, Counts by Category
 
+- Worksheet Task 4.1: one bar per viewer band, each scaled to 100%
+- `geom_bar()` counts the rows itself, so it takes no y
+- Its `position` argument sets the stacking: `"stack"` piles the counts, `"fill"` scales each bar to 100%
+
+## A Sorted Bar Chart
+
 ```r
 analysis %>%
   count(main_game, name = "messages") %>%
   slice_max(messages, n = 8) %>%
-  ggplot(aes(x = reorder(main_game, messages), y = messages)) +
+  ggplot(aes(x = fct_reorder(main_game, messages),
+             y = messages)) +
   geom_col(fill = "#2f7d8a") +
   coord_flip() +
   v2v::theme_v2v()
 ```
 
-Count the messages per category, keep the top eight, sort the bars by size, then flip the
-chart so long category names are readable. Unsorted bars are much harder to compare.
+- Count the messages per category, keep the top eight, and sort the bars by size
+- Then flip the chart so long category names are readable
+- Unsorted bars are much harder to compare
 
 ## Figure Three, Two Groups Side by Side
+
+- The R Companion's **Boxplot** (under **R3 Describe**) writes one by `channel_type`; change the x column to your hand-coded variable
+- Worksheet Task 4.2: a boxplot of message length for your thirty coded messages
+
+## Two Groups Overlaid
 
 ```r
 analysis %>%
@@ -169,18 +190,21 @@ and every cap is named in the label.
 - Alt text is not the caption repeated
 - Alt text says the chart type, the axes, and what the chart shows
 - In Quarto it goes in the figure's `fig-alt` attribute
-- **The Companion's chart code leaves an `alt =` line marked YOUR TURN inside `labs()`, and a `fig-alt` line when it opens a new chunk:** write the sentence in both
+- The R Companion's chart code leaves an `alt =` line marked YOUR TURN inside `labs()`, and a `fig-alt` line when it opens a new chunk: write the sentence in both
 
 ## Common Errors and What They Mean
 
-- **`object 'analysis' not found`:** you never ran the load line
-- **`cannot open the connection`:** the worksheet is not in the folder that holds `data/`
+- **`object 'analysis' not found`:** R has no object (no named result) called `analysis` yet: you never ran the load line
+- **`cannot open the connection`:** save the worksheet in your workspace's top folder, next to README.md and the `data` folder
 - **`could not find function "ggplot"`:** the tidyverse has not loaded
 - **A blank gray panel:** `aes()` names a column that does not exist
 - **`Error in +`:** a `+` is missing, or one is trailing at the end
 - **Everything piles onto one bar:** your x column is text, not a number
 
-Copy the error and run **AURA: Explain an R error** from the Command Palette.
+## Any Other Error
+
+- Select the error R printed in the terminal, then press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) and run **AURA: Explain an R error**: the copied error is filled in for you
 
 ## Saving Figures for the Paper
 
@@ -206,9 +230,10 @@ You should now have, in your worksheet:
 
 ## Before Next Time
 
-- Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points
-- Due Friday, November 20, 11:59 PM: Describing Data in R, 75 points
+- Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
+- Due Friday, November 20, 11:59 PM: [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#describing-data-in-r), 75 points
 - Check your worksheet against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
+- Step by step: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc451/09-describing-tables-and-charts.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
 - Read Chapter 13, "Making the call," before Tuesday
 - Tuesday we answer the questions your figures only framed
     - Bring the summary table you built today

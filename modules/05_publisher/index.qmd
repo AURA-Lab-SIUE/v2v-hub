@@ -65,7 +65,7 @@ A **Quarto project** that renders to two outputs from the same source files:
 - **A live website** hosted on GitHub Pages
 - **A print-ready PDF** submitted to Blackboard
 
-A paper nobody can open scores nothing, so both are required for the submission to count. The website goes live with one command from the project root, `v2v::deploy_portfolio()`; workbook 07 walks it step by step. Test your URL in a private or incognito browser window before you submit.
+A paper nobody can open scores nothing, so both are required for the submission to count. The website goes live with `v2v::deploy_portfolio(project)`, where `project` is your White Paper folder's name, set in Step 2 of the [Chapter 14 starter file](../../starters/14-publishing-your-paper.qmd). Steps 12 to 14 of that file walk it step by step: commit and push first, then run the command and type `y` in the R terminal when it asks to publish. Test your URL in a private or incognito browser window before you submit.
 
 ### Project structure
 
@@ -89,9 +89,9 @@ A paper nobody can open scores nothing, so both are required for the submission 
 | One categorical (three or more groups) by one continuous (for example, tone by outlet type) | One-way ANOVA |
 | One continuous outcome by one continuous predictor (for example, shares predicted by word count) | Linear regression |
 
-The Test group of the R Companion's **Write R code** covers all five, including `cor.test()` for correlation.
+Under **R4 Test**, the R Companion's **AURA: Write R code** covers all five, including `cor.test()` for correlation.
 
-Your Inferencing Data assignment already holds the working code for the test you chose; paste that chunk into `03-results.qmd`.
+Your Inferencing Data worksheet already holds the working code: paste its settings block first, with the path changed to `data/derived/twitch_analysis.RDS`, then the chunk for your test, into `03-results.qmd`.
 
 ### Recommended writing order
 
@@ -123,12 +123,12 @@ Both must be present for the submission to be considered complete.
 | Introduction | 30 | States the question and why it is worth asking. The theoretical lens is doing work, not decoration, and it sets up something the study can actually deliver. |
 | Methods | 60 | Says exactly what was done, in enough detail that another researcher could repeat it: the codebook, the sampling procedure, the reliability check, and the wrangling steps. |
 | Results | 50 | Reports what was found, plainly and without interpretation: distributions, group means, the test statistic with its degrees of freedom, its p-value, and its effect size. Figures are labeled and captioned. |
-| Discussion | 50 | Says what the results mean, answers the question the introduction asked, and states the study's limits honestly. Effect size is characterised accurately rather than inflated. |
-| Abstract and references | 20 | The abstract summarises all four sections. References are complete, in one consistently applied citation style of the student's choosing, and carry enough detail to find each source. |
+| Discussion | 50 | Says what the results mean, answers the question the introduction asked, and states the study's limits honestly. Effect size is characterized accurately rather than inflated. |
+| Abstract and references | 20 | The abstract summarizes all four sections. References are complete, in one consistently applied citation style of the student's choosing, and carry enough detail to find each source. |
 | Reproducibility and publication | 25 | The document renders from source with no pasted numbers, and is live at a public address. |
 | Reflection | 15 | One specific paragraph naming what proved harder than expected, where a rule was ambiguous in practice, what the data could not answer, and what a second attempt would change. |
 
-The reflection is graded on candour and precision, not on whether the study went well. A researcher who can say exactly where their study is weak is a researcher who understands it.
+The reflection is graded on candor and precision, not on whether the study went well. A researcher who can say exactly where their study is weak is a researcher who understands it.
 
 :::
 
@@ -155,7 +155,7 @@ Submit to Blackboard by Friday, December 18, 2026 at 11:59 PM:
 
 1. **PDF file** of the paper
 2. **Live URL**, your GitHub Pages link
-3. **Poster PDF**
+3. **Poster PDF** file
 
 ::: callout-warning
 All three must be present for the submission to be considered complete.
@@ -169,7 +169,7 @@ All three must be present for the submission to be considered complete.
 | Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, a coder reliability report giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the pre-registration disclosure: the dated pre-registration file in your project repository, cited by path and commit, and every departure from it. |
 | Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labeled and captioned. |
 | Discussion | 40 | Interprets the findings, situates them within the theoretical literature, distinguishes statistical significance from practical size, and states the limits. |
-| Abstract and references | 15 | The abstract summarises all four sections. References are complete and in APA 7th edition. |
+| Abstract and references | 15 | The abstract summarizes all four sections. References are complete and in APA 7th edition. |
 | Reproducibility and publication | 15 | The document renders from source with no pasted numbers, and is live at a public address. |
 | Reflection | 10 | One specific paragraph naming what proved harder than expected, what the data could not answer, and what a second attempt would change. |
 

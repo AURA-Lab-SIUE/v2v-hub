@@ -6,7 +6,7 @@ Prefer to watch first? The walkthrough video [Wrangling and the reliability grid
 
 ## Steps
 
-1. Open your R script or Quarto document and put the cursor on an empty line near the top.
+1. Open the file you are working in. For the Data Wrangling assignment that is `11-wrangling-data.qmd` in the top folder of your workspace ([Put a Worksheet in Your Workspace](14-put-a-worksheet-in-your-workspace.md) shows how to get it there): click it in the Explorer on the left. Put the cursor on an empty line near the top. (With no file open, the code goes to `steps.R` in your course folder.)
 2. Open the Command Palette: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac).
 3. Type `AURA: Open an R terminal` and press **Enter**. Wait for the R prompt `>` at the bottom.
 4. Open the Command Palette again, type `AURA: Write R code`, and press **Enter**.
@@ -21,4 +21,4 @@ The terminal lists the columns of `chat` (35,267 rows) and `streams` (32,276 row
 
 ## If it does not work
 
-If the terminal says `could not find function "%>%"`, the code ran before R was ready. Select the lines in the editor and press **Ctrl+Enter** to run them again.
+If the terminal says `there is no package called 'v2v'`, run **AURA: Check my setup**, select **Install what is missing**, then run the block again with **Ctrl+Enter** (**Cmd+Enter** on a Mac).

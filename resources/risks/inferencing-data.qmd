@@ -92,7 +92,14 @@ every message. A test on them counts 35,000 messages as independent observations
 information comes from 48 channels, and the large band is two of them. So every test on a
 channel-level variable reports a p-value smaller than the evidence behind it supports.
 
-**How to check.** For each test, count the channels behind each group with `n_distinct(channel)`.
+**How to check.** Read the saved file again and count the channels in each group:
+
+```r
+read_rds("data/twitch_analysis.RDS") %>%
+  group_by(viewer_band) %>%
+  summarize(channels = n_distinct(channel))
+```
+
 Say in the limits paragraph which tests rest on channel-level variables, and how many channels.
 
 ## 8. An hour that is in the wrong time zone, on a line it does not follow

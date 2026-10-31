@@ -42,6 +42,9 @@ The doing is one function call. The thinking around it takes the evening.
 
 [MC 501 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc501.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
+- Click the link: your browser saves `13-inferencing-data-mc501.qmd` in your Downloads folder
+- Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
+
 ## The Gap and the Doubt
 
 - In the example data, gaming channels averaged 28.49 characters per message, non-gaming channels 33.70
@@ -77,9 +80,24 @@ That is the whole logic of a test, applied to two groups instead of one coin.
 - Two categorical variables call for chi-square instead
 - Write down the level of measurement of each variable first. The test follows from those two levels
 
-A test on the wrong kind of data produces a meaningless number. Unsure? Write your choice down, then run the Companion's **Check my test choice**: it says whether the choice fits these rules, and it does not choose for you.
+## The Variables Choose the Test (cont.)
+
+- A test on the wrong kind of data produces a meaningless number
+- Unsure? Write your choice down, then ask the R Companion (the **AURA R Companion** icon on VS Code's left edge)
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Check my test choice**, and press **Enter**
+- It says whether your choice fits these rules; it does not choose for you
+
+## Name the Variables First
+
+- **AURA: Write R code**, then **R4 Test**, then **Settings block (name the test variables)**, then select **Run it**
+- It reloads `data/twitch_analysis.RDS` and keeps six columns under fixed names: `outcome`, `group2`, `group3`, `predictor`, `cat_a`, `cat_b`
+- Every test block the R Companion writes uses those names, so run this block first
+- For your own study, change only this block: put your own column after each `=`
+- These slides use the original names; after the Settings block, write `outcome` for `message_length` and `group2` for the two groups
 
 ## Running the Test
+
+- **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d** writes these two calls with `outcome ~ group2`, then the check on the next slides
 
 ```r
 t.test(message_length ~ is_gaming, data = analysis) %>%
@@ -89,7 +107,8 @@ effectsize::cohens_d(message_length ~ is_gaming,
                      data = analysis)
 ```
 
-`t.test()` runs the test, `broom::tidy()` turns its result into a one-row table, and `effectsize::cohens_d()` adds the effect size.
+- `t.test()` runs the test; `broom::tidy()` turns its result into a one-row table
+- `effectsize::cohens_d()` adds the effect size
 
 ## The Output
 
@@ -114,7 +133,8 @@ v2v::run_t_test(
 )
 ```
 
-One call, one labeled block, the same numbers. The Companion writes the two plain calls first and this check after them.
+- `run_t_test()` comes from the course package, v2v: one call, one labeled block, the same numbers
+- The R Companion writes the two plain calls first and this check after them
 
 ## The Same Test, Labeled (cont.)
 
@@ -254,14 +274,16 @@ a ninety-five percent confidence interval you can plot.
 > Gaming channels produced shorter chat messages on average than non-gaming channels
 > (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.94, *p* < .001, Cohen's *d* = -0.13.
 
-The Companion's **APA numbers to check your sentence** prints these numbers from your own run; check your sentence against it.
+- **AURA: Write R code**, then **R4 Test**, then **APA numbers to check your sentence** prints these numbers from your own run
+- Check your sentence against it
 
 ## Then Say It Plainly
 
 The two kinds of channel do differ in message length, but so slightly that they are better
 thought of as alike than as different.
 
-A reader who cannot follow the notation still has to be able to follow the claim. The Companion's APA numbers fill in the statistics line; the plain sentence, and the interpretation, are yours.
+- A reader who cannot follow the notation still has to be able to follow the claim
+- The R Companion's **APA numbers to check your sentence** prints the numbers to check; the statistics line, the plain sentence, and the interpretation are yours to write
 
 ## Four Groups, Four Means
 
@@ -278,15 +300,19 @@ League of Legends 4000       22.63
 
 ## ANOVA
 
+- **AURA: Write R code**, then **R4 Test**, then **One-way ANOVA with eta squared** writes `aov()`, `oneway.test()`, both effect sizes with their intervals, and `TukeyHSD()`
+
 ```r
 four_games <- analysis %>%
   filter(main_game %in% c("Fortnite", "Hearthstone",
                           "Just Chatting",
                           "League of Legends"))
 
-summary(aov(message_length ~ main_game,
-            data = four_games))
+fit <- aov(message_length ~ main_game, data = four_games)
+summary(fit)
 ```
+
+## ANOVA (cont.)
 
 ```
                Df   Sum Sq Mean Sq F value Pr(>F)
@@ -312,7 +338,7 @@ Residuals   13429 26552407    1977
 - `oneway.test()` is the safer choice over pooled `aov()`, because it drops that assumption
 - Run both and compare the results
 
-If the two disagree, the assumption was doing real work. Report the robust one. The Companion's **One-way ANOVA with eta squared** writes `aov()`, `oneway.test()`, both effect sizes with their intervals, and `TukeyHSD()`.
+- If the two disagree, the assumption was doing real work; report the robust one
 
 ## Which Pair Actually Differs
 
@@ -332,9 +358,14 @@ With eta squared at 0.02, expect clean separations between pairs that matter lit
 
 ## Regression Re-Derives the t-test
 
+- **AURA: Write R code**, then **R4 Test**, then **Linear regression** writes the worksheet's version, `lm(outcome ~ predictor)`, where `predictor` is a number (the hour of the day), then `lm.beta::lm.beta()` and `broom::glance()`
+
 ```r
-summary(lm(message_length ~ is_gaming, data = analysis))
+fit <- lm(message_length ~ is_gaming, data = analysis)
+summary(fit)
 ```
+
+## Regression Re-Derives the t-test (cont.)
 
 ```
               Estimate  Std. Error  t value  Pr(>|t|)
@@ -342,8 +373,8 @@ summary(lm(message_length ~ is_gaming, data = analysis))
 is_gamingTRUE   -5.21       0.74      -7.06   < .001
 ```
 
-The intercept is the non-gaming mean, and the coefficient is exactly the gap the t-test
-found, written as a baseline plus an adjustment. The Companion's **Linear regression** writes this `lm()` and `summary()` pair, then `lm.beta::lm.beta()` for the standardized slope and `broom::glance()` for the n.
+- The intercept is the non-gaming mean
+- The coefficient is exactly the gap the t-test found, written as a baseline plus an adjustment
 
 ## One Framework, Three Faces
 
@@ -362,7 +393,7 @@ All three are the general linear model, wearing three different names.
 **Residual:** the gap between a real value and the value the model predicts for it. Example: if the model predicts 29 characters and the message has 400, the residual is 371.
 :::
 
-- A model's credibility rests on its residuals, and `plot(model)` draws four diagnostic plots
+- A model's credibility rests on its residuals, and `plot(fit)`, where `fit` is the model the **Linear regression** block saves, draws four diagnostic plots
     - Residuals against fitted values: checks linearity and equal spread
     - A Q-Q plot: checks whether the residuals are normally distributed
     - Leverage: checks whether one point is carrying the result
@@ -379,16 +410,26 @@ All three are the general linear model, wearing three different names.
 - **The poster:** 36 by 24 inches, landscape, from title to implications
     - A QR code to your pre-registration or portfolio
     - Your ninety-second pitch, built from one or two figures
-- Due Friday, December 18, 11:59 PM: the paper as a PDF, the poster as a PDF, and the live URL of your site
+- Due Friday, December 18, 11:59 PM: [White Paper and conference poster](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster): the paper as a PDF, the poster as a PDF, and the live URL of your site
 
 ## Before Week 15
 
-- **Due Monday, November 23, 11:59 PM:** Describing Data in R, 100 points
-- **Due Monday, December 7, 11:59 PM:** Inferencing Data in R, 100 points
+- **Due Monday, November 23, 11:59 PM:** [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#describing-data-in-r), 100 points
+- **Due Monday, November 23, 11:59 PM:** [Week 13 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
+- **Due Monday, December 7, 11:59 PM:** [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#inferencing-data-in-r), 100 points
     - The worksheet: four tests, their assumption checks, effect sizes, and interpretation
     - Check it against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
+
+## Before Week 15 (cont.)
+
+- **Due Monday, December 7, 11:59 PM:** push your full coded dataset and a re-code of a fresh subsample to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)); the stability figure earns points only if that commit is dated by then
+    - This is the [White Paper's dated step](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster)
+
+## Before Week 15 (cont.)
+
+- Click by click: [Run a Test and Check Your Test Choice](https://aura-lab.siue.edu/v2v-hub/guides/mc501/10-tests-and-check-my-test-choice.html) and its [walkthrough video](https://siue.yuja.com/V/Video?v=17490908&a=168993969)
 - No class in Week 14, for Thanksgiving break
-- Read Chapter 14
+- Read [Chapter 14, The One-Click Report](https://aura-lab.siue.edu/v2v/chapters/chapter14.html)
     - Plus the assigned article: **Wasserstein and Lazar (2016)**
 - Bring an outline of the paper and a sketch of the poster to Week 15
 
