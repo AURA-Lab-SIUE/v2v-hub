@@ -27,9 +27,8 @@ format:
 - Today: five verbs, then two transformations
     - Readable timestamps, and message length
     - Thursday adds the gaming label and joins the two tables
-- Nothing today is analysis, and every later result rests on it
-
-Wrangling is the least rewarding part of the term, and it is what professionals spend most of their time on.
+- Today's steps produce no results yet, but every later result depends on them
+- Wrangling is slow, repetitive work, and professionals spend most of their data time on it
 
 Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://aura-lab.siue.edu/v2v-hub/starters/11-wrangling-data.qmd)
 
@@ -54,9 +53,9 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
     - It measures that difference through message length
 - Neither column exists in the loaded table
     - There is no message length column and no gaming label column
-- The timestamps are unreadable strings of digits
-    - Whether a channel was gaming sits in the other table, not yet linked
-- Your own source will be missing its own columns. The same steps build them
+- The timestamps are long numbers that no person can read as dates
+- Whether a channel was gaming sits in the other table, which is not yet linked
+- Your own data will probably lack some columns your question needs; the same steps build them
 
 ## Variables, Revisited
 
@@ -75,9 +74,9 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 **Data wrangling:** getting data into a form you can analyze, by tidying it (one row per case, one column per variable) and transforming it (keeping rows, adding columns, summarizing, joining tables). Example: turning the chat table's timestamp digits into dates and adding a message length column.
 :::
 
-- It is unglamorous, rarely described in the paper, and most of the work
-    - It looks like small technical steps
-    - It builds the table every result rests on
+- It is rarely described in the published paper, and it is most of the work
+    - Each step is small and technical
+    - Together, the steps build the table every result depends on
 
 ## Packages and the Tidyverse
 
@@ -97,23 +96,24 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 chat %>% filter(channel == "bobross")
 ```
 
-`filter()` keeps the rows that meet a condition and drops the rest. Here it keeps only Bob
-Ross's messages.
+- `filter()` keeps the rows that meet a condition and drops the rest
+    - Here it keeps only Bob Ross's messages
 
 ```r
 chat %>% select(channel, sender, message)
 ```
 
-`select()` keeps or drops **columns**. Here it narrows five columns to three.
+- `select()` keeps or drops **columns**
+    - Here it narrows five columns to three
 
 ## The Verbs: mutate(), arrange(), group_by(), and summarize()
 
-- **`mutate()`** adds a column or changes one, computed from other columns
-- **`arrange()`** reorders the rows by a column's values
-- **`group_by()` with `summarize()`** collapses many rows into one row per group
-    - That pair is how you get one figure per channel
+- `mutate()` adds a column or changes one, computed from other columns
+- `arrange()` reorders the rows by a column's values
+- `group_by()` with `summarize()` collapses many rows into one row per group
+    - That pair is how you get one number per channel, such as its message count
 
-These five verbs carry almost all the wrangling you will ever do.
+Chapter 11 uses these five verbs for most of its wrangling ([The verbs of data wrangling](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#the-verbs-of-data-wrangling)).
 
 ## Why the Verbs Chain Together
 
@@ -121,12 +121,11 @@ These five verbs carry almost all the wrangling you will ever do.
 **Pipe (`%>%`):** read it as "and then"; it hands the result of one line to the next. Example: `chat %>% filter(channel == "bobross")` takes the chat table, then keeps Bob Ross's messages.
 :::
 
-- Each verb takes a data frame and returns a data frame
+- Each verb takes a **data frame** (R's name for a table) and returns a data frame
     - That shared design is what lets `%>%` string them together
     - One verb's output is the next verb's input
 - A pipeline reads in order: take the data, then do this, then do that
-
-Four transformations of this kind rebuild the example chat table into the table the study needs.
+- Today and Thursday, four transformations built this way turn the example chat table into the table the study needs
 
 ## Exercise: Work Out the Output Before You Run It {.discuss}
 
@@ -148,13 +147,12 @@ Work out your answers before running the code.
 **Timestamp:** the date and time something happened. Example: `1542578127023` is the first message's timestamp, 9:55 PM on November 18, 2018 (UTC).
 :::
 
-- `date` is a column of very large numbers, typed `<dbl>`
+- `date` is a column of very large numbers, typed `<dbl>` (a column of decimal numbers)
     - Each number counts milliseconds since midnight on 1 January 1970
-- That starting moment is called the Unix epoch
-    - Counting from it stores a whole timestamp as one integer
-    - The integer is precise, and unreadable
-
-Chapter 8 called this interval data, with a catch. This conversion is the catch.
+- That starting moment is called the **Unix epoch**
+    - Counting from it stores a whole timestamp as one number
+    - The number is exact, but no person can read it as a date
+- Once converted, the timestamp is an interval variable ([Chapter 8, Levels of measurement](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#levels-of-measurement))
 
 ## Converting the Timestamp
 
@@ -165,21 +163,21 @@ streams <- streams %>%
   mutate(ts = clean_dates(date))
 ```
 
-`clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count
-seconds, then turns the result into a date and time, stored in a new `ts` column. The same step without
-the course package is `as_datetime(date / 1000)`, from lubridate, which the tidyverse loads.
-
-The Companion's **Write R code** menu writes this same block: **Turn the date column into a time**.
+- `clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count seconds
+    - It then turns the result into a date and time, stored in a new `ts` column
+- Without the course package, the same step is `as_datetime(date / 1000)`
+    - `as_datetime()` comes from lubridate, the tidyverse package for dates
+- The Companion's **Write R code** menu writes this same block: **Turn the date column into a time**
 
 ## The Factor of a Thousand That Breaks It
 
-- `as.POSIXct()` expects seconds
+- `as.POSIXct()`, base R's date converter, expects seconds
     - `date` counts milliseconds, which is a thousand times finer
-- Hand it the raw number and every message lands tens of thousands of years in the future
+- Hand it the raw number and every message is dated around the year 50,850
 - `date / 1000` converts milliseconds to seconds first
-- **`clean_dates()` does the division for you**, and prints the lubridate line it stands for the first time you call it
+- `clean_dates()` does the division for you, and prints the lubridate line it stands for the first time you call it
 
-This one arithmetic step is the most common way a hand conversion fails.
+A missing `/ 1000` is the mistake to check for whenever you convert a timestamp by hand.
 
 ## Seeing the Conversion
 
@@ -197,10 +195,9 @@ chat %>%
 3 1542578143610 2018-11-18 21:55:43
 ```
 
-The same instants are now legible: three messages eight seconds apart.
-
-The type changed from `<dbl>` to `<dttm>`. A date-time gives you the hour and the weekday,
-which the raw integer never will.
+- The same moments are now readable: three messages eight seconds apart
+- The type changed from `<dbl>` to `<dttm>`, a date-time
+    - A date-time gives you the hour and the weekday, which the raw number does not
 
 ## Measuring Message Length
 
@@ -209,8 +206,10 @@ chat <- chat %>%
   mutate(message_length = str_length(message))
 ```
 
-`str_length()` counts the characters in a string, and `mutate()` stores that count as a new
-column. Your codebook named this variable; the data did not contain it until now.
+- `str_length()` counts the characters in a **string**, R's name for a piece of text
+- `mutate()` stores that count as a new column
+- The example codebook names this variable ([Chapter 8, A codebook for the chat study](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study))
+    - The data did not contain it until now
 
 ## What the Lengths Show
 
@@ -227,12 +226,12 @@ chat %>%
 3 "cmonBruh"                                    8
 ```
 
-A single word is 8 characters, the punctuation wall is 23, and the copypasta is 441.
-`message_length` is a ratio variable: it has a true zero and equal intervals, so it is safe to average.
+- One emote name is 8 characters, the row of question marks is 23, and a block of repeated pasted text is 441
+- `message_length` is a ratio variable: it has a true zero and equal intervals, so it is safe to average
 
 ## Common Errors Today
 
-- **Every message is dated in the year 50000:** you converted by hand and forgot `/ 1000`
+- **Every message is dated around the year 50,850:** you converted by hand and forgot `/ 1000`
 - **`could not find function "str_length"`:** you have not run `library(tidyverse)`
 - **`object 'message_length' not found`:** you never assigned the result back to `chat`
     - `<-` is what makes a change stick
@@ -245,7 +244,7 @@ Copy the error and run **AURA: Explain an R error** from the Command Palette.
 You should now have:
 
 - A `chat` object and a `streams` object, each with a working `ts` column, typed `<dttm>`
-- A `message_length` column on `chat`, typed `<int>`
+- A `message_length` column on `chat`, typed `<int>` (whole numbers)
 - Output showing dates in November 2018
 - Today's steps filled in your worksheet, not typed into the console
 - Any step you built with the Companion's Data menu, sitting in the worksheet as commented code
@@ -255,8 +254,8 @@ Still missing: the gaming label. That is Thursday.
 ## Before Thursday
 
 - Code your thirty messages in the worksheet's Part 0, and fill Parts 1 to 3
-- Due Friday, November 6, 11:59 PM: Sampling Plan and Pilot, 75 points
-- Due Friday, November 13, 11:59 PM: Data Wrangling in R, 50 points
+- Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot), 75 points
+- Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
 - Thursday: the gaming label, the join, and the rows a join leaves behind
 - Bring your worksheet, because Thursday picks it up where it stops
 
