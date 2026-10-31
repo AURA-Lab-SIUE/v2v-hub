@@ -30,7 +30,6 @@ When the workspace opens, VS Code shows a prompt in the bottom-right: **"This wo
 |-----------|--------------|
 | **Quarto** | Preview and render `.qmd` documents |
 | **R** (REditorSupport) | Run R code and view data inside VS Code |
-| **GitLens** | See who changed what, and when, in your Git history |
 | **AURA Lab R Companion** | **Check my setup**, which installs the course packages, and **Explain an R error** |
 
 If you miss the prompt, open the Extensions view (`Ctrl/Cmd+Shift+X`), type `@recommended`, and install from there.
