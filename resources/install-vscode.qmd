@@ -81,11 +81,7 @@ The extension is a front end. It needs Quarto itself, a separate download, insta
 Install the program: [Install Quarto](install-quarto.qmd).
 :::
 
-### 3. GitLens, recommended
-
-Search for **GitLens** and install. It shows who changed each line and when, making your Git history easy to read as you learn version control.
-
-### 4. AURA Lab R Companion, recommended
+### 3. AURA Lab R Companion, recommended
 
 Search for **AURA Lab R Companion** and click **Install**. It needs VS Code 1.95 or newer; VS Code updates itself, so this only matters on a locked-down or offline machine. Once R is installed ([Install R](install-r.qmd)), run **Check my setup** from the Command Palette: it confirms that each course package loads and checks the R extension, its sess helper, and the Quarto extension, and its **Install what is missing** action installs what is not there. Its **Explain an R error** command gives a plain-English reading of an R error message.
 
@@ -278,7 +274,7 @@ so they should reappear once VS Code opens.
 ## Next steps
 
 1. Installed VS Code.
-2. Installed the R, Quarto, GitLens, and AURA Lab R Companion extensions.
+2. Installed the R, Quarto, and AURA Lab R Companion extensions.
 3. Connected GitHub.
 4. Opened a workspace and ran R from the editor.
 5. Next: finish [Install R](install-r.qmd), then set up your [course workspace](workspace-setup.qmd).

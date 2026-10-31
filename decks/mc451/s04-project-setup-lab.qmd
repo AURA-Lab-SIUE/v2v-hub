@@ -129,7 +129,7 @@ git --version
 
 - A box appears in the bottom right: **"This workspace has extension recommendations."**
 - Click **Install All**
-    - That installs Quarto, R, GitLens, and the **AURA Lab R Companion**, so everyone in the course works in the same environment
+    - That installs Quarto, R, and the **AURA Lab R Companion**, so everyone in the course works in the same environment
 - If the box already vanished, press `Ctrl+Shift+X` and search for **Quarto**, for **R** by REditorSupport, and for **AURA Lab R Companion**
 - If you are stuck, the Hub page [Install VS Code](https://aura-lab.siue.edu/v2v-hub/resources/install-vscode.html) walks through it
 

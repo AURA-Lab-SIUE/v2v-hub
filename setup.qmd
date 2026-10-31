@@ -60,7 +60,6 @@ When VS Code prompts you to install the recommended extensions, accept them. The
 
 - **Quarto**: authoring and rendering Quarto documents
 - **R**: running and editing R code
-- **GitLens**: seeing your Git history inside the editor
 - **AURA Lab R Companion**: a **Check my setup** command that installs the course packages and
   confirms they load, and an **Explain an R error** command
 
