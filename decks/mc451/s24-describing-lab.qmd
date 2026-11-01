@@ -42,7 +42,7 @@ If any of those three is missing, say so now and we fix it first.
 
 ## Loading and Looking
 
-- The R Companion (the **AURA R Companion** icon on VS Code's left edge) writes these lines
+- The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) writes these lines
 - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
 - Under **R2 Data**, pick **Load your saved analysis (RDS)**
 

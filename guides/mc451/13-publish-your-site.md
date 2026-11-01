@@ -13,7 +13,7 @@ Render your project and put it live on GitHub Pages, after three checks that cat
     v2v::deploy_portfolio("twitch-portfolio")
     ```
 
-    ![](img/deploy-portfolio-typed.png){fig-alt="The R terminal in VS Code with v2v::deploy_portfolio() typed after the prompt, ready to run."}
+    ![](img/deploy-portfolio-typed.png){fig-alt="The R terminal in VS Code. Under R's start-up text, the line [sess] Connected to VS Code shows that R is attached, and v2v::deploy_portfolio(&quot;twitch-portfolio&quot;) is typed after the prompt, ready to run."}
 
 5. Read the **Pre-flight checks**. Each line starts with a check mark when it passes.
 6. When it asks **Publish to GitHub Pages? [y/N]**, type `y` and press **Enter**. Any other answer stops without publishing.

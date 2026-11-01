@@ -16,9 +16,9 @@ Prefer to watch first? The walkthrough video [Setup](https://siue.yuja.com/V/Vid
 
 ## What you should see
 
-![](img/check-setup.png){fig-alt="The R Companion's Output panel after Check my setup. Two lines read: RESULT: everything this course needs is installed. SETUP OK: R and the course packages are working."}
+![](img/check-setup.png){fig-alt="The list that opens at the top of VS Code after Check my setup. Its title reads MC 501 Research Methods (graduate): everything is installed. The first action offers Install the recommended packages too (1), renv, then Copy this report, Make a help report, and Show the full report. Every row below says OK: R 4.6.1, then the required R packages tidyverse, janitor, likert, rmarkdown, languageserver, httpgd, remotes, v2v, effectsize, lm.beta, and pwr, each with its version."}
 
-The Output panel reads **RESULT: everything this course needs is installed.**
+A list opens at the top of VS Code. Its title reads **MC 501 Research Methods (graduate): everything is installed**, and every required package says **OK**. Your version numbers may be newer. If the list also offers **Install the recommended packages too**, you can select it, but the course works without them. Press **Esc** to close the list; the same report stays in the Output panel.
 
 ## If it does not work
 

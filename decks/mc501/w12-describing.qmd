@@ -248,7 +248,7 @@ The skew is the most important thing the histogram reveals, and no summary numbe
 
 ## The Descriptive Statistics
 
-- The R Companion (the **AURA R Companion** icon on VS Code's left edge) writes a grouped summary
+- The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) writes a grouped summary
 - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
 - Under **R3 Describe**, **Summary by group** writes n, mean, median, and sd for each `channel_type`
 - To summarize another column, change the column names in the block it writes

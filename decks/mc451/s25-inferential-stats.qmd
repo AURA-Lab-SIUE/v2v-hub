@@ -85,7 +85,7 @@ a little. Samples wobble.
 ## Two Terms From That List (cont.)
 
 - A test applied to the wrong kind of data produces a meaningless number
-- Unsure? Write your choice down, then ask the R Companion (the **AURA R Companion** icon on VS Code's left edge)
+- Unsure? Write your choice down, then ask the R Companion (the **AURA Lab R Companion** icon on VS Code's left edge)
     - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Check my test choice**, and press **Enter**
     - It says whether the choice fits these rules, and it does not choose for you
 
