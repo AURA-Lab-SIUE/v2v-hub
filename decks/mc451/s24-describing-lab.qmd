@@ -143,8 +143,9 @@ analysis %>%
 
 ```r
 analysis %>%
-  filter(!is.na(is_gaming)) %>%
-  ggplot(aes(x = message_length,
+  filter(!is.na(is_gaming), !is.na(message_length)) %>%
+  mutate(length_shown = pmin(message_length, 120)) %>%
+  ggplot(aes(x = length_shown,
              y = after_stat(density * width),
              fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
