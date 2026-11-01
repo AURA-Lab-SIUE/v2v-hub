@@ -202,7 +202,7 @@ msglen <- analysis %>%
   mutate(length_shown = pmin(message_length, 120))
 
 ggplot(msglen, aes(x = length_shown,
-                   y = after_stat(density),
+                   y = after_stat(density * width),
                    fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
                  alpha = 0.55) +
@@ -214,7 +214,7 @@ ggplot(msglen, aes(x = length_shown,
 ```
 
 The code drops unlabeled messages, caps the shown length at 120, and overlays the two groups.
-`after_stat(density)` draws each group as shares, so the small group still shows.
+`after_stat(density * width)` draws each group as shares, so the small group still shows.
 
 ## Two Choices You Must Disclose
 

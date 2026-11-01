@@ -144,7 +144,8 @@ analysis %>%
 ```r
 analysis %>%
   filter(!is.na(is_gaming)) %>%
-  ggplot(aes(x = message_length, y = after_stat(density),
+  ggplot(aes(x = message_length,
+             y = after_stat(density * width),
              fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
                  alpha = 0.55) +
@@ -153,7 +154,7 @@ analysis %>%
 ```
 
 `position = "identity"` with `alpha` overlays the two groups so their shapes can be
-compared, and `after_stat(density)` draws each group as shares, so the small group still shows.
+compared, and `after_stat(density * width)` draws each group as shares, so the small group still shows.
 Stacked bars would hide exactly the comparison you want.
 
 ## Labels Are Not Optional
