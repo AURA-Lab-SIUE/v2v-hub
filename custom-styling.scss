@@ -556,7 +556,8 @@ footer, .nav-footer, .page-footer {
   border-top: 3px solid var(--v2v-red-mark);
   font-family: $font-family-sans-serif;
 }
-footer a, .nav-footer a { color: var(--v2v-coral-mark);
+// Underlined: the footer link sits inside a sentence, so color alone cannot mark it (WCAG 1.4.1).
+footer a, .nav-footer a { color: var(--v2v-coral-mark); text-decoration: underline;
   &:hover, &:focus { color: #fff; } }
 
 // ============================================================================
@@ -664,6 +665,16 @@ div.sourceCode code, .sourceCode span {
 // ============================================================
 code span.at,
 pre code span.at { color: #55611C !important; }
+
+// a11y-2026-10-31: three more highlighter tokens under the 5:1 floor on #F1EDE4: strings
+// #20794D (4.60:1), constants #8f5902 (5.00:1), and functions #4758AB (5.53:1 declared, but
+// thin glyphs measured 4.59:1 in rendered pixels). Same fix as the v2v book.
+code span.st, pre code span.st,
+code span.ss, pre code span.ss,
+code span.vs, pre code span.vs,
+code span.ch, pre code span.ch { color: #186640 !important; }
+code span.cn, pre code span.cn { color: #7A4C02 !important; }
+code span.fu, pre code span.fu { color: #3B4A97 !important; }
 
 // ============================================================
 // Edition toggle (edition-toggle-2026-08-12)

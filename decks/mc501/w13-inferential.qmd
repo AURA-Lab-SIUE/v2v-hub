@@ -83,7 +83,7 @@ That is the whole logic of a test, applied to two groups instead of one coin.
 ## The Variables Choose the Test (cont.)
 
 - A test on the wrong kind of data produces a meaningless number
-- Unsure? Write your choice down, then ask the R Companion (the **AURA R Companion** icon on VS Code's left edge)
+- Unsure? Write your choice down, then ask the R Companion (the **AURA Lab R Companion** icon on VS Code's left edge)
 - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Check my test choice**, and press **Enter**
 - It says whether your choice fits these rules; it does not choose for you
 

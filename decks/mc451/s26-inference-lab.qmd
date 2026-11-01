@@ -43,7 +43,7 @@ A number and two groups: **t-test**. A number and three or more groups: **ANOVA*
 
 ## Check Your Choice
 
-- The R Companion (the **AURA R Companion** icon on VS Code's left edge) checks the third line against the first two; it does not write it
+- The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) checks the third line against the first two; it does not write it
 - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Check my test choice**, and press **Enter**
 
 ## Running Your Test

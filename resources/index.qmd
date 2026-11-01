@@ -248,7 +248,7 @@ A visual Git interface if you prefer buttons to the command line.
 
 ::: card
 ### AURA Lab R Companion (recommended)
-The VS Code extension the step-by-step guides use. Its commands start with **AURA:** in the Command Palette, and its icon in the left bar is labeled **AURA R Companion**. Install from the Extensions view: search **AURA Lab R Companion**.
+The VS Code extension the step-by-step guides use. Its commands start with **AURA:** in the Command Palette, and its icon in the left bar is labeled **AURA Lab R Companion**. Install from the Extensions view: search **AURA Lab R Companion**.
 
 <span class="resource-badge">Free</span>
 

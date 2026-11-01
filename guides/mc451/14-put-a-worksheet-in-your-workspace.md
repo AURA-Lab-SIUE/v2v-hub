@@ -11,7 +11,7 @@ Each R week starts with a worksheet: a file you download from the course site an
 
 ## Steps
 
-1. In VS Code, open your course workspace (guide 02). The **Explorer** on the left lists `00_Inbox`, `01_Journal`, `02_Literature`, `03_Project`, `04_Resources`, and `README.md`. If the Explorer is hidden, select **View**, then **Explorer** (or **Ctrl+Shift+E**; **Cmd+Shift+E** on a Mac).
+1. In VS Code, open your course workspace (guide 02). The **Explorer** on the left lists the workspace's folders and files, including `00_Inbox`, `01_Journal`, `02_Literature`, `03_Project`, `04_Resources`, and `README.md`. If the Explorer is hidden, select **View**, then **Explorer** (or **Ctrl+Shift+E**; **Cmd+Shift+E** on a Mac).
 2. In your web browser, click the worksheet link on the slide or the assignment page. The browser saves the file in your Downloads folder. It does not open it.
 3. Open your Downloads folder:
     - **Windows:** open File Explorer (the folder icon on the taskbar, or press the **Windows key** and **E** together), then select **Downloads** on the left.
@@ -23,6 +23,8 @@ Each R week starts with a worksheet: a file you download from the course site an
 ## What you should see
 
 The worksheet's name sits in the Explorer list at the same level as `README.md`, not indented under `03_Project` or any other folder. Its name also shows on the tab above the editor.
+
+![](img/worksheet-in-workspace.png){fig-alt="VS Code with the Explorer on the left showing the workspace folder v2v-workspace. The file 11-wrangling-data.qmd sits in the list at the same level as README.md and LICENSE, not inside 03_Project or any other folder, and the same name shows on the open tab above the editor."}
 
 ## If it does not work
 

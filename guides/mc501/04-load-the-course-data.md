@@ -21,6 +21,6 @@ The terminal lists the columns of `chat` (35,267 rows) and `streams` (32,276 row
 
 ## If it does not work
 
-If pressing **Ctrl+Enter** (**Cmd+Enter** on a Mac) opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
+If pressing **Ctrl+Enter** (**Cmd+Enter** on a Mac) opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
 
 If the terminal says `there is no package called 'v2v'`, run **AURA: Check my setup**, select **Install what is missing**, then run the block again with **Ctrl+Enter** (**Cmd+Enter** on a Mac).

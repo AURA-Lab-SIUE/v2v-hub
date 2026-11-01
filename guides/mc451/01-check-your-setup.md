@@ -16,9 +16,9 @@ Prefer to watch first? The walkthrough video [Setup](https://siue.yuja.com/V/Vid
 
 ## What you should see
 
-![](img/check-setup.png){fig-alt="The R Companion's Output panel after Check my setup. Two lines read: RESULT: everything this course needs is installed. SETUP OK: R and the course packages are working."}
+![](img/check-setup.png){fig-alt="The list that opens at the top of VS Code after Check my setup. Its title reads MC 451 Research Methods: everything is installed. Under the actions Copy this report, Make a help report, and Show the full report, every row says OK: R 4.6.1, then the required R packages tidyverse, janitor, likert, rmarkdown, languageserver, httpgd, remotes, v2v, and effectsize, each with its version."}
 
-The Output panel reads **RESULT: everything this course needs is installed.**
+A list opens at the top of VS Code. Its title reads **MC 451 Research Methods: everything is installed**, and every row says **OK**. Your version numbers may be newer. Press **Esc** to close the list; the same report stays in the Output panel.
 
 ## If it does not work
 

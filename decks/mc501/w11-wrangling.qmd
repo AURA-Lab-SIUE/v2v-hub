@@ -120,7 +120,7 @@ chat %>%
 
 ## Transformation 1, a Readable Timestamp
 
-- The R Companion (the **AURA R Companion** icon on VS Code's left edge) writes this block for you
+- The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) writes this block for you
 - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette (the search box at the top of VS Code), type **AURA: Write R code**, and press **Enter**
 - Under **R2 Data**, pick **Turn the date column into a time (clean_dates)**, then select **Run it**
 
