@@ -23,4 +23,6 @@ The terminal lists the columns of `chat` (35,267 rows) and `streams` (32,276 row
 
 If pressing **Ctrl+Enter** (**Cmd+Enter** on a Mac) opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
 
+If you press **Run Cell** (the ▷ at the top right of a code cell) and your code lands in a terminal named **powershell** (**zsh** on a Mac) instead of **R (AURA)**, it did not run in R. Click inside the cell and press **Ctrl+Shift+Enter** (**Cmd+Shift+Enter** on a Mac) instead: it switches to **R (AURA)** before it runs the cell. Or select **R (AURA)** in the list at the right of the Terminal panel, then press **Run Cell** again.
+
 If the terminal says `there is no package called 'v2v'`, run **AURA: Check my setup**, select **Install what is missing**, then run the block again with **Ctrl+Enter** (**Cmd+Enter** on a Mac).
