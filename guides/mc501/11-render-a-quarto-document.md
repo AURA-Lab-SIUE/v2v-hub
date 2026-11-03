@@ -2,6 +2,8 @@
 
 Turn your `.qmd` file into a finished page in which every number and chart comes from your code.
 
+Prefer to watch first? The walkthrough video [Render a Quarto Document](https://siue.yuja.com/V/Video?v=17649358&a=85867670) shows these steps.
+
 ## Steps
 
 1. Open your `.qmd` file in the editor.
@@ -15,8 +17,8 @@ Turn your `.qmd` file into a finished page in which every number and chart comes
 
     ![](img/quarto-preview.png){fig-alt="VS Code with pilot-summary.qmd open on the left and a Quarto Preview panel on the right showing the rendered page: the title Pilot summary, the code, a table counting messages by tone, and a bar chart. The Terminal panel below shows the render finishing."}
 
-6. After each change, save the file again. The preview updates.
-7. To build the final file without the preview, run **Quarto: Render Document** from the Command Palette.
+6. After each change, save the file again, then run **Quarto: Preview** again (**Ctrl+Shift+K**; **Cmd+Shift+K** on a Mac). Saving alone does not refresh the preview.
+7. To build the final file, first close the **Quarto Preview** tab. Then run **Quarto: Render Document** from the Command Palette. If a list of formats opens, select **Render HTML**.
 
     ![](img/quarto-render-palette.png){fig-alt="The Command Palette with Quarto: Render Document typed and highlighted as the first line."}
 

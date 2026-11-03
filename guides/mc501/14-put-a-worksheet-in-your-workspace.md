@@ -2,6 +2,8 @@
 
 Each R week starts with a worksheet: a file you download from the course site and keep in the top folder of your course workspace, next to `README.md`. This guide moves it there.
 
+Prefer to watch first? The walkthrough video [Put a Worksheet in Your Workspace](https://siue.yuja.com/V/Video?v=17649368&a=132829020) shows these steps.
+
 ## Words used here
 
 - **File:** one document, such as `11-wrangling-data.qmd`. The letters after the dot, `.qmd`, say what kind of file it is.

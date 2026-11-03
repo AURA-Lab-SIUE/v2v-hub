@@ -2,6 +2,8 @@
 
 Save a snapshot of your work and send it to your repository on GitHub.
 
+Prefer to watch first? The walkthrough video [Commit and Push with Git](https://siue.yuja.com/V/Video?v=17649364&a=23728097) shows these steps.
+
 ## Steps
 
 1. Select the **Source Control** icon in the Activity Bar on the left, or press **Ctrl+Shift+G**.

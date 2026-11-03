@@ -12,9 +12,9 @@ Each guide is a numbered click path. Commands run from the Command Palette: **Vi
 8. [Wrangle the Data with Write R Code](08-wrangling.md) (video)
 9. [Describe the Data: Tables and Charts](09-describing-tables-and-charts.md) (video)
 10. [Run a Test and Check Your Test Choice](10-tests-and-check-my-test-choice.md) (video)
-11. [Render a Quarto Document](11-render-a-quarto-document.md)
-12. [Commit and Push with Git](12-commit-and-push-with-git.md)
+11. [Render a Quarto Document](11-render-a-quarto-document.md) (video)
+12. [Commit and Push with Git](12-commit-and-push-with-git.md) (video)
 13. [Publish Your Site](13-publish-your-site.md)
-14. [Put a Worksheet in Your Workspace](14-put-a-worksheet-in-your-workspace.md)
+14. [Put a Worksheet in Your Workspace](14-put-a-worksheet-in-your-workspace.md) (video)
 
 The [lab-weeks table in the MC 501 syllabus](../../mc501-syllabus.qmd#weekly-schedule) shows which guide goes with each week.
