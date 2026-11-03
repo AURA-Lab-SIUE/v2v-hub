@@ -370,7 +370,8 @@ chat_streams <- chat_streams %>%
 ## Always Inspect a Derived Column
 
 ```r
-chat_streams %>% count(is_gaming)
+chat_streams %>%
+  count(is_gaming)
 ```
 
 ```

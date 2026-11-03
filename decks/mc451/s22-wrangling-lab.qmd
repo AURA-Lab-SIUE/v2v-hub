@@ -202,7 +202,8 @@ analysis <- chat_streams %>%
 ## Always Inspect What You Derived
 
 ```r
-analysis %>% count(is_gaming)
+analysis %>%
+  count(is_gaming)
 ```
 
 ```
