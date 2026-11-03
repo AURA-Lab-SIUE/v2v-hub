@@ -263,6 +263,35 @@ def timing_directive_issues(t):
             (len(hits), ", ".join("%s:%d" % h for h in hits[:4]))]
 
 
+# Owner 2026-11-03, a REPEAT correction ("again flatten the tidyverse code into single lines"):
+# every pipe is STACKED. The data line ends in %>% and each verb sits on its own indented line,
+# even when there is only one verb, because he teaches a pipe one component at a time and needs
+# a line to point at. The check reads fenced R blocks only (```r / ```{r}); prose and define
+# boxes may carry an inline example. After %>% only whitespace or a trailing # comment may follow.
+FLAT_PIPE = re.compile(r"%>%\s*(?!#)\S")
+
+
+def flattened_pipes(t):
+    """(line number, line) for each R-block line with code after %>% on the same line."""
+    out, in_r = [], False
+    for i, line in enumerate(t.split("\n"), 1):
+        s = line.strip()
+        if s.startswith("```"):
+            in_r = (not in_r) and bool(re.match(r"```\{?r\b", s))
+            continue
+        if in_r and FLAT_PIPE.search(line):
+            out.append((i, s))
+    return out
+
+
+def flattened_pipe_issue(t):
+    hits = flattened_pipes(t)
+    if not hits:
+        return []
+    return ["FLATTENED pipe x%d (line %s): stack it, one verb per line after %%>%%" %
+            (len(hits), ", ".join(str(ln) for ln, _ in hits[:5]))]
+
+
 # --------------------------------------------------------------------------- qmd rules
 def check_qmd(p, t, prof):
     """Unchanged semantics from the 2026-07-30 script."""
@@ -306,6 +335,7 @@ def check_qmd(p, t, prof):
                       (len(brit), ", ".join("%s:%d" % (w, ln) for ln, w in brit[:4])))
     issues += undated_due_issue(t, prof)
     issues += timing_directive_issues(t)
+    issues += flattened_pipe_issue(t)
     return n, dpos, issues
 
 

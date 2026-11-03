@@ -94,14 +94,16 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 ## The Verbs: filter() and select()
 
 ```r
-chat %>% filter(channel == "bobross")
+chat %>%
+  filter(channel == "bobross")
 ```
 
 - `filter()` keeps the rows that meet a condition and drops the rest
     - Here it keeps only Bob Ross's messages
 
 ```r
-chat %>% select(channel, sender, message)
+chat %>%
+  select(channel, sender, message)
 ```
 
 - `select()` keeps or drops **columns**
