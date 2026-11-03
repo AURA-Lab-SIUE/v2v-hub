@@ -1,0 +1,139 @@
+---
+title: "Week 11 Self-Check"
+subtitle: "MC 451 · Wrangling the Data"
+---
+
+Eight questions on this week's terms. **Nothing here is graded and nothing is recorded.** Answer
+each question in your head or on paper first, then open the answer under it.
+
+Every term is defined on the slides: [S21, Wrangling the Data](../decks/mc451/s21-wrangling-data.html)
+and [S22, Wrangling Lab](../decks/mc451/s22-wrangling-lab.html). The full explanation is in
+[Chapter 11](https://aura-lab.siue.edu/v2v/chapters/chapter11.html).
+
+## 1. What data wrangling is
+
+Which of these is **data wrangling**?
+
+- **A.** Reading thirty chat messages and coding each one as a reaction or as commentary
+- **B.** Adding a `message_length` column that counts the characters in each message
+- **C.** Writing the research question for the study
+- **D.** Reading a published article on Twitch chat
+
+<details class="tmpl-section"><summary>Show the answer to question 1</summary>
+
+**B.** **Data wrangling** is getting data into a form you can analyze: tidying it (one row per
+case, one column per variable) and transforming it (keeping rows, adding columns, summarizing,
+joining tables). Adding a column computed from the data is a transformation. A is hand-coding,
+which records a value by a written rule. C and D are part of designing the study.
+
+</details>
+
+## 2. Reading a pipe
+
+Read this code aloud, then say what it does, step by step.
+
+```r
+chat %>%
+  filter(channel == "bobross") %>%
+  select(sender, message)
+```
+
+<details class="tmpl-section"><summary>Show the answer to question 2</summary>
+
+Read **`%>%`** as "and then." Take the chat table, **and then** keep only the rows from Bob
+Ross's channel, **and then** keep only the `sender` and `message` columns. The **pipe** hands the
+result of one line to the next, so the code reads in the same order the steps happen.
+
+</details>
+
+## 3. Rows or columns
+
+You want only the messages from one channel, with every column still there. Which verb do you
+use?
+
+- **A.** `select()`
+- **B.** `filter()`
+- **C.** `arrange()`
+- **D.** `mutate()`
+
+<details class="tmpl-section"><summary>Show the answer to question 3</summary>
+
+**B.** `filter()` keeps the **rows** that meet a condition, such as `channel == "bobross"`, and
+drops the rest. `select()` keeps or drops **columns**. `arrange()` reorders the rows, and
+`mutate()` adds or changes a column.
+
+</details>
+
+## 4. The timestamp
+
+The first message's `date` reads `1542578127023`. If you hand that number straight to
+`as_datetime()`, every message is dated around the year 50,850. Why, and what does
+`clean_dates()` do about it?
+
+<details class="tmpl-section"><summary>Show the answer to question 4</summary>
+
+A **timestamp** is the date and time something happened. This one counts **milliseconds** since
+midnight on 1 January 1970, and `as_datetime()` expects **seconds**, so it reads a number a
+thousand times too large. `clean_dates()` divides by 1,000 first, then turns the result into a
+date and time. Without the course package, the same step is `as_datetime(date / 1000)`.
+
+</details>
+
+## 5. What a join does
+
+Which of these describes a **join**?
+
+- **A.** Putting the rows of one table underneath the rows of another
+- **B.** Putting two tables together by matching a shared column, so each row picks up the other
+  table's columns
+- **C.** Removing the rows that repeat
+- **D.** Sorting a table by one of its columns
+
+<details class="tmpl-section"><summary>Show the answer to question 5</summary>
+
+**B.** A **join** matches rows through a column both tables share. In the example study, every
+message picks up its channel's `main_game` and `is_gaming` from the lookup table. That is how a
+column from a second table reaches the table you analyze.
+
+</details>
+
+## 6. When the keys do not match
+
+One table writes the channel as `#bobross`, the other as `bobross`. You join them by `channel`.
+What do the joined columns hold, and will R give you an error?
+
+<details class="tmpl-section"><summary>Show the answer to question 6</summary>
+
+The joined columns are all `NA`, and **R gives no error**. The **key** is the column two tables
+share, which says which row in one goes with which row in the other. `#bobross` and `bobross` are
+different values to R, so no row finds a match. Check the key column in both tables before every
+join, and count the new column afterward, as with `analysis %>% count(is_gaming)`.
+
+</details>
+
+## 7. The 501 unlabeled messages
+
+After the join, `count(is_gaming)` shows `TRUE`, `FALSE`, and 501 rows of `NA`. Those messages
+come from the two channels with no category ever recorded. What should happen to them?
+
+<details class="tmpl-section"><summary>Show the answer to question 7</summary>
+
+**Leave them as `NA`.** A **missing value** is a cell with nothing in it, which R prints as `NA`.
+The data does not say whether those two channels are gaming channels, so `NA` is the correct
+outcome, not a bug. Guessing a label would put a value in the data that nobody observed. Their
+501 messages are left out of the gaming comparison.
+
+</details>
+
+## 8. Codes as a factor
+
+Your thirty codes are 0 (commentary) and 1 (reaction). Part 5 of the worksheet turns them into a
+**factor**. What does that change?
+
+<details class="tmpl-section"><summary>Show the answer to question 8</summary>
+
+A **factor** is R's way of storing a category, with its labels in an order you choose. As plain
+numbers, 0 and 1 look like amounts. As a factor, they become two named groups, commentary and
+reaction, which is what they are. Tables and charts then print the names instead of the digits.
+
+</details>

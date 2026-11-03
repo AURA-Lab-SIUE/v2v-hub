@@ -76,6 +76,10 @@ chat_streams %>%
 
 - Eleven messages arrived before their channel's first snapshot, so they get `NA` (missing)
 
+## Step 1, in the List
+
+![](images/companion-r2-list-join-streams.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Match each message to its stream (join_chat_streams) is highlighted." width="72%"}
+
 ## A Rolling Join, Named
 
 - The same join without the course package, v2v, is a `left_join()` with a rolling key
@@ -102,6 +106,10 @@ channel_type <- streams %>%
     - Count how many snapshots each channel logged in each category
     - Keep each channel's most frequent category: one row per channel
 - `is.na()` finds missing values, and `!` means "not"
+
+## Step 2, in the List
+
+![](images/companion-r2-list-channel-lookup.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Label each channel by its top category is highlighted." width="72%"}
 
 ## Exercise: Trace a Channel With No Category {.discuss}
 
@@ -164,11 +172,19 @@ analysis <- chat_streams %>%
 - `by = "channel"` names the key column both tables share
 - `channel_type` works as a **lookup table**: one row per channel, looked up by the join
 
+## Step 4, in the List
+
+![](images/companion-r2-list-join-labels.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Join the channel labels onto the messages is highlighted." width="72%"}
+
 ## Joining Your Own Tables
 
 - For your own tables, the R Companion's **Join two tables by a shared column** writes a join like this one
     - It also adds two checks on the result
 - Every join needs a key column that both tables share
+
+## Joining Your Own Tables, in the List
+
+![](images/companion-r2-list-join-two.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Join two tables by a shared column is highlighted." width="72%"}
 
 ## Joins Fail When the Keys Do Not Match
 
@@ -245,6 +261,10 @@ write_rds(analysis, "data/twitch_analysis.RDS")
 - `write_rds()` saves the table as an RDS file, R's own data file, with every column type intact
     - Worksheet Part 7 saves it, and Describing Data reads that file
 
+## Saving, in the List
+
+![](images/companion-r2-list-save-rds.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Save a table as an RDS file is highlighted." width="72%"}
+
 ## What the Table Has Become
 
 ```
@@ -287,6 +307,14 @@ $ is_gaming      <lgl> NA, NA, NA, …
 - Select the error R printed in the terminal, then press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
 - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) and run **AURA: Explain an R error**: the copied error is filled in for you
 
+![](images/companion-terminal-error.png){fig-alt="The R Interactive terminal at the bottom of VS Code. After the line summary(message_length), R printed Error: object 'message_length' not found." width="70%"}
+
+## What Explain an R Error Shows
+
+![](images/companion-explain-page.png){fig-alt="The explanation page that opens beside the script, headed object ... not found. Under From your message it quotes object 'message_length' not found. Why this happens says R has no value stored under that name: the line that creates it never ran, the name is misspelled, or a text value was typed without quotation marks. What to do lists three checks: run the line that creates it first, check the spelling and capital letters, and put text in quotation marks." width="50%"}
+
+- The explanation opens beside your script: why the error happens, then what to do
+
 ## Checkpoint
 
 You should now have:
@@ -312,5 +340,6 @@ You should now have:
 - Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot), 75 points
 - Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
 - Read [Chapter 12, Visualizing the Narrative](https://aura-lab.siue.edu/v2v/chapters/chapter12.html)
+- **Check yourself on this week's terms:** [Week 11 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc451-week11.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}

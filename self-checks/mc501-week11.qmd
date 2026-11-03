@@ -1,0 +1,136 @@
+---
+title: "Week 11 Self-Check"
+subtitle: "MC 501 · Wrangling the Data"
+---
+
+Eight questions on this week's terms. **Nothing here is graded and nothing is recorded.** Answer
+each question in your head or on paper first, then open the answer under it.
+
+Every term is defined on the slides: [Week 11, Wrangling the Data](../decks/mc501/w11-wrangling.html).
+The full explanation is in [Chapter 11](https://aura-lab.siue.edu/v2v/chapters/chapter11.html).
+
+## 1. What data wrangling is
+
+Which of these is **data wrangling**?
+
+- **A.** Reading thirty chat messages and coding each one as a reaction or as commentary
+- **B.** Adding a `message_length` column that counts the characters in each message
+- **C.** Writing the hypothesis for the study
+- **D.** Choosing which journal to submit the study to
+
+<details class="tmpl-section"><summary>Show the answer to question 1</summary>
+
+**B.** **Data wrangling** is getting data into a form you can analyze: tidying it (one row per
+case, one column per variable) and transforming it (keeping rows, adding columns, summarizing,
+joining tables). Adding a column computed from the data is a transformation. A is hand-coding,
+which records a value by a written rule. C and D are part of designing and publishing the study.
+
+</details>
+
+## 2. Tidy data
+
+A table of Reddit comments has a `tags` column, and one of its cells reads `politics, satire`.
+Which tidy-data rule does that cell break, and how would you fix it?
+
+<details class="tmpl-section"><summary>Show the answer to question 2</summary>
+
+**One value per cell.** Tidy data has one observation per row, one variable per column, and one
+value per cell. Two tags in one cell hide two values in one place, so R cannot count or filter
+them cleanly. One fix is a row per comment and tag; another is one yes-or-no column per tag. Which
+fits depends on what one row of your data is meant to be.
+
+</details>
+
+## 3. Reading a pipe
+
+Read this code aloud, then say what it does, step by step.
+
+```r
+chat %>%
+  filter(channel == "bobross") %>%
+  select(sender, message)
+```
+
+<details class="tmpl-section"><summary>Show the answer to question 3</summary>
+
+Read **`%>%`** as "and then." Take the chat table, **and then** keep only the rows from Bob
+Ross's channel, **and then** keep only the `sender` and `message` columns. The **pipe** hands the
+result of one line to the next, so the code reads in the same order the steps happen.
+
+</details>
+
+## 4. The timestamp
+
+The first message's `date` reads `1542578127023`. If you hand that number straight to
+`as_datetime()`, every message is dated around the year 50,850. Why, and what does
+`clean_dates()` do about it?
+
+<details class="tmpl-section"><summary>Show the answer to question 4</summary>
+
+A **timestamp** is the date and time something happened. This one counts **milliseconds** since
+midnight on 1 January 1970 (the Unix epoch), and `as_datetime()` expects **seconds**, so it reads
+a number a thousand times too large. `clean_dates()` divides by 1,000 first, then turns the
+result into a date and time. Without the course package, the same step is
+`as_datetime(date / 1000)`.
+
+</details>
+
+## 5. A rolling join
+
+Chat messages arrive every second; stream snapshots come every few minutes. Why can the two
+tables not be joined on an exact time, and what does the rolling join match instead?
+
+<details class="tmpl-section"><summary>Show the answer to question 5</summary>
+
+Almost no message shares its exact time with a snapshot, so an exact match would leave nearly
+every message unmatched. A **join** puts two tables together by matching a shared key, and a
+**rolling join** lets the time part of that key match the nearest earlier value: the same
+channel, and the latest snapshot at or before the message. In dplyr that is
+`join_by(channel, closest(ts >= snapshot_ts))`, which `join_chat_streams()` prints the first time
+you call it.
+
+</details>
+
+## 6. When the keys do not match
+
+One table writes the channel as `#bobross`, the other as `bobross`. You join them by `channel`.
+What do the joined columns hold, and will R give you an error?
+
+<details class="tmpl-section"><summary>Show the answer to question 6</summary>
+
+The joined columns are all `NA`, and **R gives no error**. The **key** is the column two tables
+share, which says which row in one goes with which row in the other. `#bobross` and `bobross` are
+different values to R, so no row finds a match. Check the key column in both tables before every
+join, and count the new column afterward.
+
+</details>
+
+## 7. More rows after a join
+
+`chat_streams` has 35,267 rows. After `left_join(channel_type, by = "channel")`, the result has
+more. What does that tell you about `channel_type`?
+
+<details class="tmpl-section"><summary>Show the answer to question 7</summary>
+
+**`channel_type` has duplicate keys:** at least one channel appears in it more than once.
+`left_join()` keeps every row of the left table and gives it one copy for each matching row on
+the right, so a channel listed twice doubles each of its messages. A lookup table needs one row
+per key, which is why Step 2 keeps one category per channel.
+
+</details>
+
+## 8. The 501 unlabeled messages
+
+After the join, `count(is_gaming)` shows `TRUE`, `FALSE`, and 501 rows of `NA`. Those messages
+come from the two channels with no category ever recorded. What should happen to them, and where
+does that decision belong?
+
+<details class="tmpl-section"><summary>Show the answer to question 8</summary>
+
+**Leave them as `NA`, and say so in a comment.** A **missing value** is a cell with nothing in it,
+which R prints as `NA`. The data does not say whether those two channels are gaming channels, so
+`NA` is the correct outcome, and their 501 messages are left out of the gaming comparison. How you
+handle missing values is a methodological decision, so it belongs in the script, commented, where
+a reviewer can find it.
+
+</details>

@@ -134,6 +134,26 @@ streams <- streams %>%
 - Without v2v, the same step is `as_datetime(date / 1000)`
     - `as_datetime()` comes from lubridate, the tidyverse package for dates
 
+## Opening Write R Code
+
+![](images/companion-palette-write-r-code.png){fig-alt="The VS Code Command Palette at the top of the window. The search box reads AURA: Write R code, and the highlighted first result is the command AURA: Write R code." width="80%"}
+
+- **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), type **AURA: Write R code**, then press **Enter**
+
+## Picking the Step From R2 Data
+
+![](images/companion-r2-list-clean-dates.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Turn the date column into a time (clean_dates) is highlighted." width="72%"}
+
+## The Block Arrives in the Worksheet
+
+![](images/companion-inserted-clean-dates.png){fig-alt="Lines 276 to 291 of the worksheet in VS Code, inside the Task 3.1 chunk. The R Companion inserted a comment headed Turn the date column into a readable time: clean_dates(). It says date counts milliseconds since midnight, January 1, 1970 (UTC), that clean_dates() divides by 1,000, and that the same step without v2v is mutate(ts = as_datetime(date / 1000)). Then come chat <- chat %>% mutate(ts = clean_dates(date)), the same two lines for streams, and a check: chat %>% select(date, ts) %>% slice_head(n = 3)." width="74%"}
+
+## Running the Block
+
+![](images/companion-run-it-message.png){fig-alt="A message at the bottom right of VS Code: Inserted the Turn the date column into a time (clean_dates) code. Run it now? Source: AURA Lab R Companion. A Run it button sits at its lower right." width="60%"}
+
+- Select **Run it** in the message at the bottom right of VS Code to run the block
+
 ## Dates Are Stored in Milliseconds
 
 ::: {.define}
@@ -177,6 +197,10 @@ chat %>%
 - `str_length()` counts the characters in a **string**, R's name for a piece of text
 - `mutate()` writes the count into a new column
 - The example codebook names this variable ([Chapter 8, A codebook for the chat study](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study))
+
+## Add a Column, in the List
+
+![](images/companion-r2-list-mutate.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Add a column (mutate) is highlighted." width="72%"}
 
 ## What the Lengths Look Like
 
@@ -245,6 +269,10 @@ chat_streams %>%
 - `join_chat_streams()` gives each message the `game` and `viewers` of the latest earlier snapshot on its channel (both tables need `ts` from Transformation 1)
 - Eleven messages arrived before their channel's first snapshot, so they get `NA` (missing)
 
+## Step 1, in the List
+
+![](images/companion-r2-list-join-streams.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Match each message to its stream (join_chat_streams) is highlighted." width="72%"}
+
 ## A Rolling Join, Named
 
 - The same join without v2v is a `left_join()` with a rolling key
@@ -269,6 +297,10 @@ channel_type <- streams %>%
 - Drop the snapshots with no category
 - Count how often each channel streamed each category
 - Keep each channel's **modal** category (its most frequent one), one row per channel
+
+## Step 2, in the List
+
+![](images/companion-r2-list-channel-lookup.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Label each channel by its top category is highlighted." width="72%"}
 
 ## Step 3, Name the Non-Gaming Categories
 
@@ -313,6 +345,14 @@ chat_streams <- chat_streams %>%
     - `main_game` is the channel's usual category, and later analyses use it
 - `is_gaming` is `TRUE` when the channel's usual category is not on the non-gaming list
 - More detail: [Chapter 11, Labeling gaming and non-gaming](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#labeling-gaming-and-non-gaming)
+
+## Step 4, in the List
+
+![](images/companion-r2-list-join-labels.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Join the channel labels onto the messages is highlighted." width="72%"}
+
+## Joining Your Own Tables, in the List
+
+![](images/companion-r2-list-join-two.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Join two tables by a shared column is highlighted." width="72%"}
 
 ## Joins Fail Silently When Keys Disagree
 
@@ -388,6 +428,10 @@ analysis <- join_chat_streams(chat, streams) %>%
 - In the worksheet's Part 7, **AURA: Write R code**, then **R2 Data**, then **Save a table as an RDS file** writes the save line for the table `analysis`
 - `write_rds()` saves an RDS file, R's own data file, with every column type intact
 
+## Saving, in the List
+
+![](images/companion-r2-list-save-rds.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Save a table as an RDS file is highlighted." width="72%"}
+
 ## The Analysis-Ready Table
 
 ```
@@ -444,6 +488,14 @@ $ is_gaming      <lgl> NA, NA, NA, …
 - Type `AURA: Explain an R error` and press **Enter**
 - The error you copied is already filled in; press **Enter** and the plain-English fix appears
 
+![](images/companion-terminal-error.png){fig-alt="The R Interactive terminal at the bottom of VS Code. After the line summary(message_length), R printed Error: object 'message_length' not found." width="70%"}
+
+## What Explain an R Error Shows
+
+![](images/companion-explain-page.png){fig-alt="The explanation page that opens beside the script, headed object ... not found. Under From your message it quotes object 'message_length' not found. Why this happens says R has no value stored under that name: the line that creates it never ran, the name is misspelled, or a text value was typed without quotation marks. What to do lists three checks: run the line that creates it first, check the spelling and capital letters, and put text in quotation marks." width="50%"}
+
+- The explanation opens beside your script: why the error happens, then what to do
+
 ## Checkpoint
 
 You should now have:
@@ -470,5 +522,6 @@ You should now have:
 - Read [Chapter 12, Visualizing the Narrative](https://aura-lab.siue.edu/v2v/chapters/chapter12.html)
     - Plus the assigned article: [Lakens (2013)](https://doi.org/10.3389/fpsyg.2013.00863) on effect sizes
 - Bring the same laptop and the same working environment
+- **Check yourself on this week's terms:** [Week 11 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc501-week11.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}
