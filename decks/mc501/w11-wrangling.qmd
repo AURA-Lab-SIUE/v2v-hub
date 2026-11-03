@@ -21,8 +21,6 @@ format:
 
 ## What We Build Today
 
-[Working session]{.eyebrow}
-
 - One analysis-ready table, built from the raw example chat and stream tables
     - A readable timestamp, a message length, a stream join, and a gaming label
 - Weeks 12 and 13 compute everything from this table
@@ -61,8 +59,6 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 - Your own data will probably lack some columns your question needs; the same four moves build them
 
 ## Variables, Revisited
-
-[Recap from Week 10]{.eyebrow}
 
 ::: {.define}
 **Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
@@ -415,7 +411,7 @@ $ is_gaming      <lgl> NA, NA, NA, …
     - Every `mutate()` and `filter()` is a methodological decision
     - Which cases to exclude, how to treat missing values, how to group time
 - A reviewer will ask how you handled something
-    - The answer is in the script, if the script is commented and committed (saved to your GitHub history, [guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html))
+    - The answer is in the script, if the script is commented and committed (saved to your GitHub history: [Commit and Push With Git](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html))
 
 ## Three Decisions, Commented
 
@@ -430,7 +426,7 @@ $ is_gaming      <lgl> NA, NA, NA, …
     - Your script reads from it and writes new files, such as `data/twitch_analysis.RDS`, never back into it
 - That separation lets you rebuild everything from unchanged raw data
     - Overwriting the raw data breaks that guarantee, and it cannot be undone
-- Test it: render the worksheet with **Quarto: Preview** ([guide 11](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html)), which runs every chunk from the top in a fresh R session
+- Test it: render the worksheet with **Quarto: Preview** ([Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html)), which runs every chunk from the top in a fresh R session
 - If the script does not reproduce the table without your help, it depends on something it does not write down
 
 ## Common Errors and What They Mean
