@@ -97,15 +97,14 @@ a little. Samples wobble.
 
 ## Running the t-test
 
-```r
-t.test(message_length ~ is_gaming, data = analysis) %>%
-  broom::tidy()
+- The R Companion writes this line: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
 
-effectsize::cohens_d(message_length ~ is_gaming,
-                     data = analysis)
+```r
+run_t_test(analysis, value = message_length,
+           group = is_gaming)
 ```
 
-`t.test()` runs the test, `broom::tidy()` turns its result into a one-row table, and `effectsize::cohens_d()` adds the effect size.
+One call, one labeled block: both means with their n, the gap, `t`, `df`, `p`, and Cohen's d. The block ends by naming the plain calls it stands for, `t.test()` and `effectsize::cohens_d()`.
 
 The output names a **Welch** t-test. The ordinary t-test assumes the two groups have equal
 spread, and the example groups plainly do not (sd 60.68 against 38.47). The Welch version
@@ -114,16 +113,19 @@ drops that assumption.
 ## Reading the Output
 
 ```
-  estimate estimate1 estimate2 statistic   p.value parameter
-     5.21      33.7      28.5      4.94   8.08e-7     3769.
-
-Cohen's d |       95% CI
-------------------------
-0.13      | [0.09, 0.16]
+Welch two-sample t-test
+message_length by is_gaming
+  FALSE                  n = 3457, mean = 33.70, SD = 60.68
+  TRUE                   n = 31305, mean = 28.49, SD = 38.47
+  Difference             5.21
+  t                      4.94
+  df                     3768.7
+  p-value                < .001
+  Cohen's d              0.13  (negligible)
 ```
 
-- `estimate1` and `estimate2` are the two means, non-gaming first; `estimate` is the gap
-- `statistic` is `t`; `parameter` is the Welch df, 3768.7 before rounding
+- `FALSE` is non-gaming and `TRUE` is gaming, in the order R sorts them; `Difference` is the gap, non-gaming minus gaming
+- `t` is the test statistic; `df` is the Welch degrees of freedom
 
 ## Reading the Output (cont.)
 
@@ -131,20 +133,16 @@ Cohen's d |       95% CI
     - Its sign shows direction only: list the groups the other way around and `t` is -4.94
 - *d* follows the same order: 0.13 with non-gaming first, as printed, and -0.13 with gaming first, as reported
 
-## The Same Test, Labeled
-
-- The R Companion writes the plain calls first and this check after them: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
+## The Same Test, Without v2v
 
 ```r
-v2v::run_t_test(
-  analysis,
-  value = message_length,
-  group = is_gaming
-)
+t.test(message_length ~ is_gaming, data = analysis)
+effectsize::cohens_d(message_length ~ is_gaming,
+                     data = analysis)
 ```
 
-- One call, one labeled block: both means with their n, the gap, `t`, `df`, `p`, and Cohen's d
-- It prints the same numbers as the two plain calls and ends by naming them
+- These are the two lines the block ends with: `t.test()` runs the test and `effectsize::cohens_d()` adds the effect size
+- Run them once if you want to see R's own output; the numbers are the same
 
 ## What the p-value Means
 
@@ -192,55 +190,49 @@ Significance and size are different questions, and big samples pull them apart.
 
 ```r
 four_games <- analysis %>%
-  filter(main_game %in% c("Fortnite", "Hearthstone",
-                          "Just Chatting",
-                          "League of Legends"))
+  filter(main_game == "Fortnite" |
+         main_game == "Hearthstone" |
+         main_game == "Just Chatting" |
+         main_game == "League of Legends")
 
-fit <- aov(message_length ~ main_game, data = four_games)
-summary(fit)
-
-fit %>%
-  broom::tidy() %>%
-  mutate(eta_sq = sumsq / sum(sumsq))
+run_anova(four_games, value = message_length,
+          group = main_game)
 ```
 
 `main_game` is the channel's usual category. Four means, so a t-test will not do. Comparing four groups two at a time would take six
 tests, each with its own chance of a false positive. ANOVA runs one test instead.
 
-## Reading the F Table
+## Reading the Output
 
 ```
-               Df   Sum Sq Mean Sq F value Pr(>F)
-main_game       3   547281  182427   92.26 <2e-16 ***
-Residuals   13429 26552407    1977
+  F                      92.26
+  df                     3, 13429
+  p-value                < .001
+  Eta squared            0.020  (small)
 ```
 
-**F** compares the variation between the group means against the variation within the
-groups. If all four groups shared one mean, F would sit near one. Here it is **92.26**.
+**F** compares the variation between the group means against the variation within the groups. If all four groups shared one mean, F would sit near one. Here it is **92.26**.
 
-- The effect size for ANOVA is **eta-squared**, here **0.02**
-    - The last three lines of the ANOVA code compute it: each row's share of the total sum of squares
-- Game category accounts for about two percent of the variation in message length
+- The effect size for ANOVA is **eta-squared**, here **0.02**: game category accounts for about two percent of the variation in message length
 - The difference is real, and small
+- The block ends with the plain calls it stands for: `aov()`, `summary()`, `effectsize::eta_squared()`, and `TukeyHSD()`
 
 ## From a Difference to a Model
 
 ```r
-fit <- lm(message_length ~ is_gaming, data = analysis)
-summary(fit)
+run_regression(analysis, outcome = message_length,
+               predictor = is_gaming)
 ```
 
 ```
-              Estimate  Std. Error  t value  Pr(>|t|)
-(Intercept)     33.70       0.70      48.08   < .001
-is_gamingTRUE   -5.21       0.74      -7.06   < .001
+  Slope                  -5.21
+  Intercept              33.70
+  R-squared              0.001
+  F                      49.79 on 1 and 34760 df
+  p-value                < .001
 ```
 
-The intercept is the non-gaming mean. The coefficient, **-5.21**, is exactly the gap the
-t-test found, now written as a baseline plus an adjustment. That is what a regression is.
-
-- The R Companion's version (**AURA: Write R code**, then **R4 Test**, then **Linear regression**) is the worksheet's: `lm(outcome ~ predictor)`
-    - There `predictor` is a number (the hour of the day), and `broom::glance()` follows for R-squared and the n
+The intercept is the non-gaming mean. The slope, **-5.21**, is exactly the gap the t-test found, now written as a baseline plus an adjustment. That is what a regression is. The R Companion's **Linear regression** (under **R4 Test**) writes the same line with `predictor` as the hour of the day.
 
 ## Checkpoint
 

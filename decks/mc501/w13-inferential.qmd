@@ -97,46 +97,27 @@ That is the whole logic of a test, applied to two groups instead of one coin.
 
 ## Running the Test
 
-- **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d** writes these two calls with `outcome ~ group2`, then the check on the next slides
+- **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d** writes this line with `outcome` and `group2`
 
 ```r
-t.test(message_length ~ is_gaming, data = analysis) %>%
-  broom::tidy()
+run_t_test(analysis, value = message_length,
+           group = is_gaming)
+```
 
+- `run_t_test()` comes from the course package, v2v: one call, one labeled block with both means, the gap, `t`, df, `p`, and Cohen's d
+- The block ends with the plain calls it stands for, `t.test()` and `effectsize::cohens_d()`; run them once if you want R's own output
+
+## The Same Test, Without v2v
+
+```r
+t.test(message_length ~ is_gaming, data = analysis)
 effectsize::cohens_d(message_length ~ is_gaming,
                      data = analysis)
 ```
 
-- `t.test()` runs the test; `broom::tidy()` turns its result into a one-row table
-- `effectsize::cohens_d()` adds the effect size
+`t.test()` runs the test and prints the two means, `t`, the Welch df, and `p`; `effectsize::cohens_d()` adds the effect size with its interval. The sign of `t` and d follows the group order: gaming first gives -4.94 and -0.13.
 
 ## The Output
-
-```
-  estimate estimate1 estimate2 statistic   p.value parameter
-     5.21      33.7      28.5      4.94   8.08e-7     3769.
-
-Cohen's d |       95% CI
-------------------------
-0.13      | [0.09, 0.16]
-```
-
-`estimate1` and `estimate2` are the two means, non-gaming first; `estimate` is the gap; `statistic` is `t`; `parameter` is the Welch df, 3768.7 before rounding. The sign of `t` and d follows the group order: gaming first gives -4.94 and -0.13.
-
-## The Same Test, Labeled
-
-```r
-v2v::run_t_test(
-  analysis,
-  value = message_length,
-  group = is_gaming
-)
-```
-
-- `run_t_test()` comes from the course package, v2v: one call, one labeled block, the same numbers
-- The R Companion writes the two plain calls first and this check after them
-
-## The Same Test, Labeled (cont.)
 
 ```
 Welch two-sample t-test
@@ -300,24 +281,28 @@ League of Legends 4000       22.63
 
 ## ANOVA
 
-- **AURA: Write R code**, then **R4 Test**, then **One-way ANOVA with eta squared** writes `aov()`, `oneway.test()`, both effect sizes with their intervals, and `TukeyHSD()`
+- **AURA: Write R code**, then **R4 Test**, then **One-way ANOVA with eta squared** writes this line; its block prints F, both effect sizes, Welch's version, and Tukey's pairs
 
 ```r
 four_games <- analysis %>%
-  filter(main_game %in% c("Fortnite", "Hearthstone",
-                          "Just Chatting",
-                          "League of Legends"))
+  filter(main_game == "Fortnite" |
+         main_game == "Hearthstone" |
+         main_game == "Just Chatting" |
+         main_game == "League of Legends")
 
-fit <- aov(message_length ~ main_game, data = four_games)
-summary(fit)
+run_anova(four_games, value = message_length,
+          group = main_game)
 ```
 
 ## ANOVA (cont.)
 
 ```
-               Df   Sum Sq Mean Sq F value Pr(>F)
-main_game       3   547281  182427   92.26 <2e-16 ***
-Residuals   13429 26552407    1977
+  F                      92.26
+  df                     3, 13429
+  p-value                < .001
+  Eta squared            0.020  (small)
+  Omega squared          0.020
+  Welch's ANOVA          F = 151.05, p < .001
 ```
 
 `main_game` is the channel's usual category, the one the gaming label was built from.
@@ -335,15 +320,15 @@ Residuals   13429 26552407    1977
 - ANOVA and ordinary regression assume homoscedasticity: equal spread in every group
     - Week 12 showed these groups plainly do not share one spread
     - That is why the two-group test used the Welch version
-- `oneway.test()` is the safer choice over pooled `aov()`, because it drops that assumption
-- Run both and compare the results
+- Welch's ANOVA (`oneway.test()` in plain R) is the safer choice over pooled `aov()`, because it drops that assumption
+- `run_anova()` prints both; compare them
 
 - If the two disagree, the assumption was doing real work; report the robust one
 
 ## Which Pair Actually Differs
 
 - A significant ANOVA says that some pair of groups differs, not which pair
-- Naming the pairs takes post-hoc comparisons, and `TukeyHSD()` is the standard one
+- Naming the pairs takes post-hoc comparisons, and Tukey's test (the last table `run_anova()` prints; `TukeyHSD()` in plain R) is the standard one
     - It corrects for the multiple comparisons you are making
     - Six separate t-tests would lack that correction
 - Report the adjusted p-values, not the raw ones
@@ -358,23 +343,24 @@ With eta squared at 0.02, expect clean separations between pairs that matter lit
 
 ## Regression Re-Derives the t-test
 
-- **AURA: Write R code**, then **R4 Test**, then **Linear regression** writes the worksheet's version, `lm(outcome ~ predictor)`, where `predictor` is a number (the hour of the day), then `lm.beta::lm.beta()` and `broom::glance()`
+- **AURA: Write R code**, then **R4 Test**, then **Linear regression** writes the worksheet's version, `run_regression(analysis, outcome, predictor)`, where `predictor` is a number (the hour of the day); the block prints the standardized slope and R-squared too
 
 ```r
-fit <- lm(message_length ~ is_gaming, data = analysis)
-summary(fit)
+run_regression(analysis, outcome = message_length,
+               predictor = is_gaming)
 ```
 
 ## Regression Re-Derives the t-test (cont.)
 
 ```
-              Estimate  Std. Error  t value  Pr(>|t|)
-(Intercept)     33.70       0.70      48.08   < .001
-is_gamingTRUE   -5.21       0.74      -7.06   < .001
+  Slope                  -5.21
+  Intercept              33.70
+  Beta                   -0.038  (standardized slope)
+  R-squared              0.001
 ```
 
 - The intercept is the non-gaming mean
-- The coefficient is exactly the gap the t-test found, written as a baseline plus an adjustment
+- The slope is exactly the gap the t-test found, written as a baseline plus an adjustment
 
 ## One Framework, Three Faces
 

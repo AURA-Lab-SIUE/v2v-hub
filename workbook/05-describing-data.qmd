@@ -89,40 +89,32 @@ A cross-tabulation shows how two categorical variables relate to each other. Thi
 
 ```r
 
-cross_tab <- analysis %>%
-  filter(!is.na(channel_type), !is.na(viewer_band)) %>%  # drop unclassifiable rows
-  count(viewer_band, channel_type) %>%                   # count each combination
-  pivot_wider(                                           # reshape long to wide
-    names_from = channel_type,
-    values_from = n,
-    values_fill = 0                                      # fill missing combos with 0
-  )
+crosstab(analysis, viewer_band, channel_type)
+```
 
-cross_tab
+```
+Counts: viewer_band (rows) by channel_type (columns), 34766 rows counted
+  viewer_band gaming `non-gaming`
+1 small        25309         2457
+2 medium        4000         1000
+3 large         2000            0
+Shares: each row of viewer_band adds up to 1
+  viewer_band gaming `non-gaming`
+1 small        0.912        0.088
+2 medium       0.8          0.2
+3 large        1            0
 ```
 
 ::: {.callout-note}
-## What Does `pivot_wider()` Do?
+## What `crosstab()` Stands For
 
-`pivot_wider()` reshapes your data from "long" format (one row per combination) to "wide" format (one row per viewer band, with a column for each channel type). This makes the table easier to read: it looks like the cross-tabulations you've seen in textbooks.
+The first time it runs, `crosstab()` prints the two tidyverse steps it stands for: `count()` makes one row per combination (the "long" shape), and `pivot_wider()` spreads the second variable across the columns (the "wide" shape, the cross-tabulation you have seen in textbooks). The 501 messages with no channel type are dropped first.
 :::
 
-### Adding Proportions
+### Reading the Proportions
 
-Raw counts are useful, but proportions tell a richer story:
-
-```r
-
-analysis %>%
-  filter(!is.na(channel_type), !is.na(viewer_band)) %>%
-  count(viewer_band, channel_type) %>%
-  group_by(viewer_band) %>%
-  mutate(
-    prop = n / sum(n),                  # proportion within each viewer band
-    prop = round(prop, 3)               # round to 3 decimals
-  ) %>%
-  ungroup()
-```
+Raw counts are useful, but proportions tell a richer story, and the second grid is those
+proportions: each band's share of its own messages in each channel type.
 
 Now you can see not just *how many* messages in each audience-size band came from gaming channels, but *what percentage*. If small channels are 90% gaming and large channels are 60% gaming, that is a meaningful difference, even though the large channels contribute far more messages in total.
 
@@ -163,7 +155,8 @@ Sixty categories will not fit on a readable chart, so the first decision is to s
 
 ```r
 
-top_games <- game_counts %>% slice_max(n, n = 10)
+top_games <- game_counts %>%
+  head(10)   # game_counts is already sorted, biggest first
 ```
 
 ### Stage 1: The Bare Minimum

@@ -96,7 +96,8 @@ Answer from the table you just built.
 ```r
 ggplot(analysis, aes(x = message_length)) +
   geom_histogram(binwidth = 5) +
-  labs(x = "Message length (characters)", y = "Messages") +
+  labs(x = "Message length (characters)",
+       y = "Messages") +
   v2v::theme_v2v()
 ```
 
@@ -121,16 +122,15 @@ ggplot(analysis, aes(x = message_length)) +
 
 ```r
 analysis %>%
-  count(main_game, name = "messages") %>%
-  slice_max(messages, n = 8) %>%
-  ggplot(aes(x = fct_reorder(main_game, messages),
-             y = messages)) +
+  count(main_game, sort = TRUE) %>%
+  head(8) %>%
+  ggplot(aes(x = fct_reorder(main_game, n), y = n)) +
   geom_col(fill = "#2f7d8a") +
   coord_flip() +
   v2v::theme_v2v()
 ```
 
-- Count the messages per category, keep the top eight, and sort the bars by size
+- Count the messages per category, biggest first, keep the top eight, and `fct_reorder()` sorts the bars by size
 - Then flip the chart so long category names are readable
 - Unsorted bars are much harder to compare
 
@@ -145,18 +145,16 @@ analysis %>%
 analysis %>%
   filter(!is.na(is_gaming), !is.na(message_length)) %>%
   mutate(length_shown = pmin(message_length, 120)) %>%
-  ggplot(aes(x = length_shown,
-             y = after_stat(density * width),
-             fill = is_gaming)) +
+  ggplot(aes(x = length_shown, fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
                  alpha = 0.55) +
   v2v::scale_fill_v2v() +
   v2v::theme_v2v()
 ```
 
-`position = "identity"` with `alpha` overlays the two groups so their shapes can be
-compared, and `after_stat(density * width)` draws each group as shares, so the small group still shows.
-Stacked bars would hide exactly the comparison you want.
+`position = "identity"` with `alpha` overlays the two groups so their shapes can be compared.
+Stacked bars would hide exactly the comparison you want. By count the small group barely shows;
+the R Companion's **Histogram comparing two groups** draws each group as shares instead.
 
 ## Labels Are Not Optional
 

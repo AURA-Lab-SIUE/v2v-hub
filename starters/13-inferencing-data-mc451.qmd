@@ -79,7 +79,7 @@ block and nothing else. Give `group2` your hand-coded variable.
 ```{r}
 #| label: settings
 library(tidyverse)     # data steps, tests, and hour()
-library(v2v)           # run_chi_square() and run_t_test(), the checks
+library(v2v)           # run_chi_square(), run_t_test(), run_anova(), run_regression()
 options(scipen = 10)  # long numbers such as timestamps print in full; p-values keep the usual form
 
 # Load the analysis file, then keep the columns the tests use under the names they use.
@@ -112,30 +112,21 @@ then **Install what is missing**, and run the chunk again.
 
 ### Task 2.1: The test and its effect size
 
-Build the table of counts the test reads, run the test, and compute Cramér's V.
+`run_chi_square()` builds the table of counts the test reads, runs the test, and computes
+Cramér's V. It prints N, the chi-square, its df, p, and V, then the expected counts and the
+standardized residuals, and ends with the `chisq.test()` and `effectsize::cramers_v()` lines it
+stands for.
 
 ```{r}
 #| label: chi-square
-counts <- xtabs(~ ___ + ___, data = analysis)  # the cross-tabulation, as the test reads it
-counts
-
-counts %>%
-  ___() %>%
-  broom::tidy()                                       # statistic = chi-square, parameter = df
-
-effectsize::___(counts, adjust = FALSE)      # Cramer's V with its 95% interval
-
-sum(counts)                                           # N, the messages in the test
-
-run_chi_square(analysis, x = cat_a, y = cat_b)        # the same numbers in one block, as a check
+run_chi_square(analysis, x = ___, y = ___)   # the two categories from the settings block
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Chi-square
-test with Cramer's V**, then **Run it**. It writes the block for `cat_a` and `cat_b`.
+test with Cramer's V**, then **Run it**. It writes the line for `cat_a` and `cat_b`.
 
-**What you should see:** the table from worksheet 2 (`25309` `2457` / `4000` `1000` / `2000`
-`0`); then `statistic` `823.` (822.66 in the check), `parameter` `2`, and a `p.value` far below
-.001; then `Cramer's V` `0.15`; then `[1] 34766`.
+**What you should see:** `N` `34766`, `Chi-squared` `822.66`, `df` `2`, `p-value` `< .001`, and
+`Cramer's V` `0.15  (small)`.
 
 **Write:** the APA report of Test 1 (statistic, df, N, p, Cramér's V), then two to three sentences
 on what it means for H1, with the effect size in words.
@@ -161,23 +152,22 @@ analysis %>%
 
 ### Task 3.2: The test and its effect size
 
+`run_t_test()` runs Welch's t-test, R's default, which does not assume the two groups spread
+out equally, and adds Cohen's d. It prints both groups with their n, mean, and SD, the gap, t,
+df, p, and d, and ends with the `t.test()` and `effectsize::cohens_d()` lines it stands for.
+
 ```{r}
 #| label: t-test
-t.test(outcome ~ ___, data = analysis) %>%      # Welch's t-test: R's default
-  broom::tidy()                                       # estimate1 and estimate2 are the two means
-
-effectsize::___(outcome ~ group2, data = analysis)  # Cohen's d with its 95% interval
-
-run_t_test(analysis, value = outcome, group = group2)  # the same numbers in one block, as a check
+run_t_test(analysis, value = outcome, group = ___)   # your hand-coded variable
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Welch
 t-test with Cohen's d**, then **Run it**.
 
-**What you should see,** with the instructor's codes: `estimate1` `29.2` (commentary),
-`estimate2` `15.6` (reaction), `statistic` `1.45`, `p.value` `0.158`, `parameter` `27.7`; then
-`Cohen's d` `0.52` with the interval `[-0.22, 1.25]`; then the check, with SDs `27.93` and
-`23.46`. Your numbers differ wherever your codes do.
+**What you should see,** with the instructor's codes: `commentary` with `n = 17`, a mean near
+`29.2`, and `SD = 27.93`; `reaction` with `n = 13`, a mean near `15.6`, and `SD = 23.46`; `t`
+`1.45`; `df` `27.7`; `p-value` `= .158`; `Cohen's d` `0.52  (medium)`. Your numbers differ
+wherever your codes do.
 
 **Write:** the APA report of Test 2 (both means and SDs, t, df, p, n, Cohen's d), then two to three
 sentences on what it means for H2. Say the size of the difference in characters.
@@ -188,27 +178,21 @@ sentences on what it means for H2. Say the size of the difference in characters.
 
 ### Task 4.1: The test and its effect size
 
+`run_anova()` compares three or more means at once. It prints each group with its n, mean, and
+SD, then F, both df, p, eta squared (the share of the variation the groups account for), omega
+squared, Welch's version of the test, and Tukey's follow-up for every pair of groups, and ends
+with the `aov()`, `effectsize::eta_squared()`, and `TukeyHSD()` lines it stands for.
+
 ```{r}
 #| label: anova
-model_anova <- ___(outcome ~ ___, data = analysis)
-
-summary(model_anova)                               # F, both dfs, p, and the sums of squares
-
-effectsize::___(model_anova)            # sum of squares for the groups / total
-
-analysis %>%
-  group_by(group3) %>%
-  summarize(n = sum(!is.na(outcome)),
-            mean = mean(outcome, na.rm = TRUE),
-            sd = sd(outcome, na.rm = TRUE))         # the means the F compares
+run_anova(analysis, value = outcome, group = ___)   # the three viewer bands
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **One-way
 ANOVA with eta squared**, then **Run it**.
 
-**What you should see:** `F value` `66.2` on `2` and `35260` degrees of freedom, `Pr(>F)` far
-below .001, with sums of squares `223665` and `59566023`; then `Eta2` `3.74e-03`, which is .004;
-then means of `29.5`, `30.1`, and `18.8` characters for small, medium, and large.
+**What you should see:** means of `29.51`, `30.14`, and `18.76` characters for small, medium, and
+large; `F` `66.20`; `df` `2, 35260`; `p-value` `< .001`; `Eta squared` `0.004  (negligible)`.
 
 **Write:** the APA report of Test 3 (F, both dfs, p, N, eta-squared), then two to three
 sentences on what it means for H3, with the effect size in words.
@@ -219,18 +203,20 @@ sentences on what it means for H3, with the effect size in words.
 
 ### Task 5.1: The test and its effect size
 
+`run_regression()` fits a straight line from one number to another. It prints n, the slope
+(characters gained per hour), the intercept, the standardized slope, R-squared, and the F-test
+with its df and p, and ends with the `lm()` line it stands for.
+
 ```{r}
 #| label: regression
-model_lm <- ___(outcome ~ ___, data = analysis)
-
-summary(model_lm)  # the slope (predictor), its p, R-squared, and the F
+run_regression(analysis, outcome = outcome, predictor = ___)   # the hour of the day
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Linear
 regression**, then **Run it**.
 
-**What you should see:** the `predictor` estimate `0.05360` with `Pr(>|t|)` `0.102`;
-`Multiple R-squared` `7.603e-05`; `F-statistic: 2.681 on 1 and 35261 DF`.
+**What you should see:** `Slope` `0.05`; `R-squared` `0.000`; `F` `2.68 on 1 and 35261 df`;
+`p-value` `= .102`.
 
 **Write:** the APA report of Test 4 (b, t, df, p, R-squared), then two to three sentences on what
 it means for H4, with the slope in characters per hour.

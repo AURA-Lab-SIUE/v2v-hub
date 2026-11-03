@@ -59,20 +59,19 @@ tested <- analysis %>%
   filter(!is.na(channel_type), !is.na(viewer_band))
 ```
 
-A contingency table is the raw input for the chi-square test. It shows the count for every combination of your two variables:
+A contingency table is the raw input for the chi-square test. It shows the count for every combination of your two variables, and `crosstab()` from Chapter 5 prints it:
 
 ```r
 
-cont_table <- xtabs(~ viewer_band + channel_type, data = tested)
-cont_table
+crosstab(tested, viewer_band, channel_type)
 ```
 
 ```
-           channel_type
-viewer_band gaming non-gaming
-     small   25309       2457
-     medium   4000       1000
-     large    2000          0
+Counts: viewer_band (rows) by channel_type (columns), 34766 rows counted
+  viewer_band gaming `non-gaming`
+1 small        25309         2457
+2 medium        4000         1000
+3 large         2000            0
 ```
 
 Look at that bottom-right cell before running anything. Not one message in the
@@ -80,34 +79,27 @@ sample comes from a large non-gaming channel. That zero is a real feature of thi
 corpus, not a coding error, and it is doing a lot of the work in the test you are
 about to run. Say so when you report the result.
 
-Now add proportions. This helps you see the pattern before running the test:
-
-```r
-
-tested %>%
-  count(viewer_band, channel_type) %>%
-  group_by(viewer_band) %>%
-  mutate(prop = round(n / sum(n), 3)) %>%   # each band's share, so each band adds to 1
-  ungroup()
-```
-
-Look at the proportions. Do the audience-size bands differ in their gaming and non-gaming mix? If every band had roughly the same proportions, there would be no association. If they differ, the chi-square test will tell you whether that difference is statistically significant.
+The second grid `crosstab()` prints is the proportions, each band's share of its own messages. This helps you see the pattern before running the test. Look at the proportions. Do the audience-size bands differ in their gaming and non-gaming mix? If every band had roughly the same proportions, there would be no association. If they differ, the chi-square test will tell you whether that difference is statistically significant.
 
 ## Step 3: Run the Chi-Square Test
 
 ```r
 
-chi_result <- chisq.test(cont_table)
-chi_result
+chi_result <- run_chi_square(tested, x = viewer_band, y = channel_type)
 ```
 
 ```
-
-	Pearson's Chi-squared test
-
-data:  cont_table
-X-squared = 822.66, df = 2, p-value < 2.2e-16
+Chi-square test of independence
+viewer_band by channel_type
+  N                       34766
+  Chi-squared             822.66
+  df                      2
+  p-value                 < .001
+  Cramer's V              0.15  (small)
+  Smallest expected count 198.87
 ```
+
+The block goes on to print the expected counts, the standardized residuals, a sentence, and the plain R lines it stands for: `chisq.test(xtabs(~ viewer_band + channel_type, data = tested))` and `effectsize::cramers_v()`. Run those once if you want R's own output; the numbers are the same.
 
 ### Reading the Output
 
@@ -140,12 +132,7 @@ It has no deep justification. A p-value of .049 and one of .051 describe almost 
 
 Statistical significance tells you *whether* there's a relationship. Effect size tells you *how strong* it is. A significant result with a tiny effect size means the relationship is real but practically unimportant.
 
-Cramér's V ranges from 0 (no association) to 1 (perfect association):
-
-```r
-
-effectsize::cramers_v(cont_table, adjust = FALSE)
-```
+Cramér's V ranges from 0 (no association) to 1 (perfect association), and the `Cramer's V` line of the block reports it with a word for its size.
 
 ### Effect Size Benchmarks (Cohen's Guidelines)
 
@@ -159,16 +146,10 @@ A small effect means the relationship exists but is weak. A large effect means t
 
 Here Cramér's V is 0.15. That is above .10 and below .30, so by the benchmarks above the association is small.
 
-::: {.callout-tip}
-## The Shortcut
-
-`v2v::run_chi_square()` runs the test and computes Cramér's V for you, returning formatted output ready to paste into a caption. Run the steps above once, so you know what the shortcut is doing, then use the shortcut.
-:::
-
 ::: {.callout-note}
 ## Or use the R Companion
 
-In the R Companion, **AURA: Write R code**, under **R4 Test**, writes the chi-square with Cramér's V, the Welch t-test with Cohen's d, the ANOVA with eta squared, and the regression into your script: the plain R call first (`chisq.test()` or `t.test()` with `broom::tidy()`, and the `effectsize` package), then the `v2v` wrapper as a check that prints the same numbers. Run each step once yourself first, as above. Its **APA numbers to check your sentence** prints a test's numbers in APA form; the sentence, and the journalist translation, are yours to write.
+In the R Companion, **AURA: Write R code**, under **R4 Test**, writes the chi-square with Cramér's V, the Welch t-test with Cohen's d, the ANOVA with eta squared, and the regression into your script, each as the one `v2v` line above. Its **APA numbers to check your sentence** prints a test's numbers in APA form; the sentence, and the journalist translation, are yours to write.
 :::
 
 ::: {.callout-important}
@@ -187,14 +168,15 @@ A standardized residual tells you, for each cell in the table, how much the obse
 - **Residual < -2:** This cell has *fewer* observations than expected (strong negative contribution)
 - **Residual between -2 and 2:** This cell is roughly what you'd expect
 
-```r
-
-chi_result %>%
-  pluck("stdres") %>%
-  round(2)
+```
+  Standardized residuals (beyond 2 or -2 drives the result):
+    viewer_band gaming non-gaming
+         small   13.58     -13.58
+         medium -25.68      25.68
+         large   15.31     -15.31
 ```
 
-These are the combinations driving the result. The large, non-gaming cell holds no messages at all, far fewer than chance would put there, so its residual is negative: the biggest channels in this corpus are all gaming channels.
+The block printed them under the expected counts. These are the combinations driving the result. The large, non-gaming cell holds no messages at all, far fewer than chance would put there, so its residual is negative: the biggest channels in this corpus are all gaming channels.
 
 ## When the Outcome Is Continuous: The t-test
 
@@ -223,7 +205,7 @@ message_length by is_gaming
     effectsize::cohens_d(message_length ~ is_gaming, data = analysis)
 ```
 
-`FALSE` is the non-gaming group and `TRUE` the gaming group, printed in the order R sorts them, so the difference is non-gaming minus gaming. The last two lines name the plain R calls the wrapper stands for; **AURA: Write R code**, under **R4 Test**, writes those calls first and this one as a check.
+`FALSE` is the non-gaming group and `TRUE` the gaming group, printed in the order R sorts them, so the difference is non-gaming minus gaming. The last two lines name the plain R calls the helper stands for; **AURA: Write R code**, under **R4 Test**, writes this one line.
 
 Read that output slowly, because it is the whole lesson of this chapter in one block.
 
