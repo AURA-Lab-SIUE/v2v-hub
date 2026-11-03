@@ -110,10 +110,10 @@ Two things in that output already tell you what the cleaning will involve. The `
 ```r
 
 chat %>%
-  summarize(across(everything(), ~sum(is.na(.)))) %>%
-  pivot_longer(everything(), names_to = "column", values_to = "missing") %>%
-  filter(missing > 0) %>%
-  arrange(desc(missing))
+  count(is.na(message))  # TRUE = the message is empty
+
+streams %>%
+  count(is.na(game))     # TRUE = the snapshot has no category
 ```
 
 Run the same check on `streams`. In this sample the tables are almost complete: four chat messages are missing their text, and ninety-six stream snapshots are missing both `title` and `game`. A few missing values are normal. Columns with *most* values missing might need to be dropped entirely. And missing values in a key column, like `game`, will matter later, because a snapshot with no category cannot help you decide whether a channel is a gaming channel.
@@ -122,8 +122,11 @@ Run the same check on `streams`. In this sample the tables are almost complete: 
 
 ```r
 
-nrow(chat)              # total rows
-nrow(distinct(chat))    # unique rows; the same number means no duplicates
+nrow(chat)   # total rows
+
+chat %>%
+  distinct() %>%
+  nrow()     # unique rows; the same number means no duplicates
 ```
 
 ### Check Categorical Variables
@@ -284,44 +287,35 @@ In the R Companion, **AURA: Write R code**, under **R2 Data**, writes the `clean
 
 ### 3d: Label Gaming and Non-Gaming
 
-Gaming or non-gaming is a property of the channel, fixed by what the channel mostly streams. So build it in three moves: find what each channel mostly streams, decide whether that counts as gaming, and attach the decision to every message from that channel.
-
-First, the modal category for each channel:
+Gaming or non-gaming is a property of the channel, fixed by what the channel mostly streams. So it takes three moves: find what each channel mostly streams, decide whether that counts as gaming, and attach the decision to every message from that channel. The course package has done the first two for all fifty channels and ships the result as a **lookup table**, one row per channel:
 
 ```r
 
-channel_type <- streams %>%
-  filter(!is.na(game)) %>%          # drop snapshots with no category
-  count(channel, game) %>%          # how many snapshots per channel per category
-  group_by(channel) %>%
-  slice_max(n, n = 1, with_ties = FALSE) %>%   # keep the most frequent
-  ungroup()
+channels <- twitch_channels()
+
+channels %>%
+  count(is_gaming)   # channels, not messages
 ```
 
-Second, the judgment call, written down where a reader can see it. Twitch sorts streams into categories and some of those categories are not games:
-
-```r
-
-nongaming_categories <- c(
-  "Art", "ASMR", "Beauty & Body Art", "Creative", "Food & Drink",
-  "IRL", "Just Chatting", "Makers & Crafting", "Music",
-  "Music & Performing Arts", "Science & Technology",
-  "Sports & Fitness", "Talk Shows & Podcasts", "Travel & Outdoors"
-)
-
-channel_type <- channel_type %>%
-  mutate(is_gaming = !(game %in% nongaming_categories)) %>%
-  select(channel, main_game = game, is_gaming)
+```
+# A tibble: 3 × 2
+  is_gaming     n
+  <lgl>     <int>
+1 FALSE         5
+2 TRUE         43
+3 NA            2
 ```
 
-`game %in% nongaming_categories` asks whether a channel's dominant category is on the non-gaming list, and the `!` negates it, so `is_gaming` is `TRUE` for every channel whose main category is a game. `select()` also renames the category `main_game`, because `chat_streams` already has a `game` column, the category the channel was streaming when each message was sent. `main_game` is the channel's usual category. The study labels by channel, so later chapters group by `channel_type`, which is built from `is_gaming`. If you ever group by category, use `main_game`; grouping by `game` runs without an error and gives different numbers.
+`main_game` is the category a channel streamed most often across its snapshots. `is_gaming` is `TRUE` unless that category is on the non-gaming list, and `channel_type` says the same thing in words. Two judgment calls sit inside the table: which categories count as non-gaming, and where the audience bands (next section) are cut. Run `?twitch_channels` to read both. They are decisions, not facts about the data, and a reader who disagrees needs to be able to see them. The package source, `data-raw/build_channels.R`, holds the dplyr pipeline that built the table.
 
-Third, the second **join**. A join brings columns from one table onto another by matching on a shared key, here the channel name. `left_join()` keeps every row of `chat_streams` and attaches the matching values:
+`chat_streams` already has a `game` column, the category the channel was streaming when each message was sent. `main_game` is the channel's usual category. The study labels by channel, so later chapters group by `channel_type`. If you ever group by category, use `main_game`; grouping by `game` runs without an error and gives different numbers.
+
+The third move is the second **join**. A join brings columns from one table onto another by matching on a shared key, here the channel name. `left_join()` keeps every row of `chat_streams` and attaches the matching values:
 
 ```r
 
 analysis <- chat_streams %>%
-  left_join(channel_type, by = "channel")
+  left_join(channels, by = "channel")
 ```
 
 Always inspect a column you just derived:
@@ -341,7 +335,7 @@ analysis %>%
 3 NA          501
 ```
 
-Two channels in the corpus streamed without ever having a category recorded, so they never made it into `channel_type` and the join left their messages with `is_gaming` set to `NA`. That is the correct outcome, not a bug. The data genuinely does not say whether those 501 messages came from gaming channels, and an honest `NA` records that. They will sit out the comparison rather than being guessed onto one side of it.
+Two channels in the corpus streamed without ever having a category recorded, so the lookup table holds `NA` for them and the join left their messages with `is_gaming` set to `NA`. That is the correct outcome, not a bug. The data genuinely does not say whether those 501 messages came from gaming channels, and an honest `NA` records that. They will sit out the comparison rather than being guessed onto one side of it.
 
 ::: {.callout-important}
 ## A Join Is Only as Good as Its Keys
@@ -349,63 +343,39 @@ Two channels in the corpus streamed without ever having a category recorded, so 
 Twitch's chat protocol writes channel names with a leading `#`, so the same channel can appear as `#bobross` in one source and `bobross` in another. Join two tables whose keys disagree like that and every row fails to match, silently, with no error message. The `v2v` data has already been normalized, but raw Twitch data would need that cleaning step first. When a join returns nothing, mismatched keys are the first thing to check.
 :::
 
-### 3e: Band the Channels by Audience Size
+### 3e: The Audience Bands
 
-You'll want a second categorical variable for Chapter 6's chi-square test. Audience size is a good one, and `cut()` is the tool. It sorts each number into a band between two cutoffs:
+You'll want a second categorical variable for Chapter 6's chi-square test. Audience size is a good one, and the lookup table brought it in with the join: `median_viewers` is each channel's typical audience, and `viewer_band` sorts it into three bands, `small` below 5,000 median viewers, `medium` up to 20,000, and `large` above. Count the channels in each band, then the messages:
 
 ```r
 
-channel_size <- streams %>%
-  group_by(channel) %>%
-  summarize(median_viewers = median(viewers, na.rm = TRUE)) %>%
-  mutate(
-    viewer_band = cut(median_viewers, breaks = c(0, 5000, 20000, Inf),
-                      labels = c("small", "medium", "large"))
-  ) %>%
-  select(channel, viewer_band)
-
-analysis <- analysis %>%
-  left_join(channel_size, by = "channel")
+channels %>%
+  count(viewer_band)   # channels per band
 
 analysis %>%
-  count(viewer_band)
+  count(viewer_band)   # messages per band
 ```
 
 ::: {.callout-note}
-## How `cut()` Works
+## The Cutoffs Are a Decision
 
-`breaks = c(0, 5000, 20000, Inf)` makes three bands: above 0 up to 5,000, above 5,000 up to 20,000, and above 20,000. `labels` names them in that order.
-
-The cutoffs above (5,000 and 20,000 median concurrent viewers) are a decision *you* are making, not a fact about the data. Write them into your codebook. A reader who disagrees with the cutoffs needs to be able to see them.
+The cutoffs (5,000 and 20,000 median concurrent viewers) are a decision the package made, not a fact about the data. Write them into your codebook. A reader who disagrees with the cutoffs needs to be able to see them, and `?twitch_channels` is where they are written down.
 :::
 
-### 3f: Convert to Factors
+### 3f: Factors, and Their Order
 
-A **factor** is R's way of storing a categorical variable. It remembers both the values and their labels, which matters for visualization and statistical tests. Give the gaming split readable labels while you're at it:
+A **factor** is R's way of storing a categorical variable. It remembers both the values and their labels, in an order you choose, which matters for visualization and statistical tests. `channel_type` and `viewer_band` arrived as factors, so `count()` lists them in the factor's order rather than alphabetically:
 
 ```r
 
-analysis <- analysis %>%
-  mutate(
-    channel_type = case_when(
-      is_gaming == TRUE  ~ "gaming",
-      is_gaming == FALSE ~ "non-gaming",
-      TRUE ~ NA_character_
-    ),
-    channel_type = factor(channel_type),
-    viewer_band  = factor(viewer_band, levels = c("small", "medium", "large"))
-  )
+analysis %>%
+  count(channel_type)   # gaming, then non-gaming
 
 analysis %>%
-  count(channel_type)   # the labels, in the factor's order
-
-analysis %>%
-  count(viewer_band)    # small, medium, large, in the order you set
+  count(viewer_band)    # small, medium, large
 ```
 
-`case_when()` checks its conditions from top to bottom, and the first one that is TRUE sets the label. The `TRUE ~` at the end is a catch-all: it handles anything the earlier rules did not match.
-
-Setting `levels` explicitly for `viewer_band` matters. Without it R sorts alphabetically and you get large, medium, small, which puts your bands in a nonsense order on every chart you draw.
+The order matters. A factor made without `levels =` sorts its labels alphabetically, and the bands come out large, medium, small, a nonsense order on every chart you draw. When you make your own factor (the worksheet's Task 5.2 turns your hand codes into one), `factor(x, levels = c(...), labels = c(...))` sets the order and the labels in one call.
 
 ## Step 4: Export
 
@@ -413,7 +383,6 @@ Save your cleaned data as an `.RDS` file. RDS is R's native format: it preserves
 
 ```r
 
-dir.create("data", showWarnings = FALSE)
 write_rds(analysis, "data/workbook_analysis.RDS")
 
 read_rds("data/workbook_analysis.RDS") %>%
@@ -440,13 +409,6 @@ library(v2v)
 chat <- twitch_chat()
 streams <- twitch_streams()
 
-nongaming_categories <- c(
-  "Art", "ASMR", "Beauty & Body Art", "Creative", "Food & Drink",
-  "IRL", "Just Chatting", "Makers & Crafting", "Music",
-  "Music & Performing Arts", "Science & Technology",
-  "Sports & Fitness", "Talk Shows & Podcasts", "Travel & Outdoors"
-)
-
 chat <- chat %>%                                     # readable time, message length
   mutate(
     ts             = clean_dates(date),
@@ -455,31 +417,17 @@ chat <- chat %>%                                     # readable time, message le
 streams <- streams %>%
   mutate(ts = clean_dates(date))
 
-channel_type <- streams %>%                         # what each channel mostly streams
-  filter(!is.na(game)) %>%
-  count(channel, game) %>%
-  group_by(channel) %>%
-  slice_max(n, n = 1, with_ties = FALSE) %>%
-  ungroup() %>%
-  mutate(is_gaming = !(game %in% nongaming_categories)) %>%
-  select(channel, main_game = game, is_gaming)
+chat_streams <- join_chat_streams(chat, streams)    # join key: channel, nearest earlier snapshot
 
-channel_size <- streams %>%                          # how big each channel's audience is
-  group_by(channel) %>%
-  summarize(median_viewers = median(viewers, na.rm = TRUE)) %>%
-  mutate(viewer_band = cut(median_viewers, breaks = c(0, 5000, 20000, Inf),
-                           labels = c("small", "medium", "large")))
+channels <- twitch_channels()                       # one row per channel: category, label, audience band
 
-analysis <- join_chat_streams(chat, streams) %>%    # join key: channel, nearest earlier snapshot
-  left_join(channel_type, by = "channel") %>%       # join key: channel
-  left_join(channel_size, by = "channel") %>%       # join key: channel
-  mutate(channel_type = factor(if_else(is_gaming, "gaming", "non-gaming")))
+analysis <- chat_streams %>%
+  left_join(channels, by = "channel")               # join key: channel
 
-dir.create("data", showWarnings = FALSE)
 write_rds(analysis, "data/workbook_analysis.RDS")
 ```
 
-A `glimpse()` of the finished table shows what the transformations bought you. The first twelve columns are the table the textbook builds; your pipeline adds `median_viewers`, `viewer_band`, and `channel_type` on top of it:
+A `glimpse()` of the finished table shows what the transformations bought you. The first ten columns are your own transformations; the join with `twitch_channels()` adds the last five:
 
 ```
 Rows: 35,267
@@ -496,9 +444,9 @@ $ game           <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,�
 $ viewers        <int> 13628, 14902, 16978, 16978, 16978, 16978, 16978, 16978,…
 $ main_game      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
 $ is_gaming      <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ channel_type   <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
 $ median_viewers <dbl> 16978, 16978, 16978, 16978, 16978, 16978, 16978, 16978,…
 $ viewer_band    <fct> medium, medium, medium, medium, medium, medium, medium,…
-$ channel_type   <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
 ```
 
 `join_chat_streams()` sorts the table by channel and then by time, so the first rows shown belong to `704cb1fgnty`, one of the two channels with no category; that is why its labels print `NA`. The table is now **tidy**: each row is one observation, one chat message; each column is one variable; and everything the analysis needs sits in one place. The unreadable integers have become timestamps. Message length and gaming status, named in the codebook and absent from the raw data, are now columns. The chat and stream tables, once disconnected, are joined twice: once to the snapshot nearest each message, once to the channel's label.
@@ -511,7 +459,7 @@ These exercises directly prepare you for the Data Wrangling [R] assignment:
 
 1. **Diagnose another column:** Run `summary()` on the `viewers` column of `streams`, the way the numeric check above does. What is the largest value? What is the median? Why is the gap between them so large?
 
-2. **Practice `case_when()`:** The `viewer_band` cutoffs above are arbitrary. Build a second version using tertiles instead (`quantile()` will find them for you), and compare how many channels land in each band under the two schemes.
+2. **Read the judgment calls:** Run `?twitch_channels` and find the non-gaming list and the two audience cutoffs. Pick one category you would have placed differently, and write one sentence for your codebook saying how the study's numbers would move if you did.
 
 3. **Check your joins:** After running the full pipeline, run this. Which channels came back `NA`, and what does the stream table say about them?
 

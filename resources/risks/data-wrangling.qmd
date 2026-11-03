@@ -127,8 +127,8 @@ message that starts with `@`, `=`, or `-` as a formula; the worksheet joins only
 back, so the message text in the form does not have to survive.
 
 **How to check.** Open `data/coding-form.csv` after you save it and look: thirty rows, your codes
-in their column, `id` unchanged. Keep the line in Task 0.2 that writes the form only when it does
-not exist.
+in their column, `id` unchanged. Task 0.2's `write_coding_form()` writes the form only when it
+does not exist; keep it that way, and never add a plain `write_csv()` of the form.
 
 ## 9. A different thirty messages
 
