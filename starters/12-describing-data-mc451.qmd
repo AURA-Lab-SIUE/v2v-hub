@@ -188,40 +188,26 @@ gap tell you about the shape of message length?
 
 ### Task 3.1: Viewer band by channel type
 
-This is the table worksheet 3 runs the chi-square test on. Count the combinations, then spread
-`channel_type` across the columns.
+This is the table worksheet 3 runs the chi-square test on. `crosstab()` counts every
+combination of two categories and lays the counts out as a grid, rows by the first column you
+name and columns by the second, then the same grid as shares of each row. The 501 messages with
+no channel type cannot be placed, so it leaves them out. The first time it runs it prints the
+`count()` and `pivot_wider()` lines it stands for.
 
 ```{r}
 #| label: crosstab
-analysis %>%
-  filter(!is.na(channel_type)) %>%                  # the 501 with no type cannot be placed
-  count(___, ___) %>%      # one row per combination
-  ___(names_from = channel_type,
-              values_from = n,
-              values_fill = 0)                      # a combination that never occurs is 0, not NA
+crosstab(analysis, ___, ___)   # viewer band as the rows, channel type as the columns
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
 **Crosstab with proportions**, then **Run it**.
 
-**What you should see:** three rows. `small`: `25309` gaming, `2457` non-gaming. `medium`:
-`4000` and `1000`. `large`: `2000` and `0`.
+**What you should see:** `34766 rows counted`, then three rows of counts. `small`: `25309`
+gaming, `2457` non-gaming. `medium`: `4000` and `1000`. `large`: `2000` and `0`.
 
 ### Task 3.2: As proportions of each band
 
-```{r}
-#| label: crosstab-prop
-analysis %>%
-  filter(!is.na(channel_type)) %>%
-  count(viewer_band, channel_type) %>%
-  group_by(viewer_band) %>%
-  mutate(share = round(n / sum(n), 3)) %>%  # share of each band's messages
-  ungroup() %>%
-  select(-n) %>%
-  pivot_wider(names_from = channel_type,
-              values_from = share,
-              values_fill = 0)
-```
+The second grid `crosstab()` printed is the shares: each row adds up to 1.
 
 **What you should see:** non-gaming is `0.088` of the small band, `0.2` of the medium band, and
 `0` of the large band.

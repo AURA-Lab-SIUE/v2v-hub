@@ -77,20 +77,14 @@ Pick one variable from your own codebook.
 ## A Line Chart Shows Change Over Time
 
 ```r
-viewers_over_time <- streams %>%
-  filter(!is.na(game)) %>%
-  mutate(
-    ts        = clean_dates(date),
-    six_hour  = floor_date(ts, "6 hours"),
-    category  = fct_lump_n(game, n = 5)
-  ) %>%
-  group_by(six_hour, category) %>%
-  summarize(total_viewers = sum(viewers), .groups = "drop")
+viewers_over_time <- twitch_viewers_over_time()
+
+viewers_over_time %>%
+  count(category)
 ```
 
-- This chart starts from the stream table: load it first with `streams <- twitch_streams()`
-- The code groups the snapshots into six-hour blocks
-- It keeps the top five games and lumps the rest into "Other," then adds up the viewers in each block
+- The course package ships this table ready to draw: the stream snapshots grouped into six-hour blocks, the top five games kept, the rest lumped into "Other," and the viewers in each block added up
+- Those are three judgment calls made for you; `?twitch_viewers_over_time` says how, and the package source holds the pipeline
 
 ## Drawing the Line Chart
 
@@ -102,7 +96,8 @@ ggplot(viewers_over_time,
   scale_y_continuous(labels = scales::label_comma()) +
   labs(title = "Concurrent viewers by game category",
        x = "Date (UTC, six-hour buckets)",
-       y = "Total viewers in bucket", color = "Category") +
+       y = "Total viewers in bucket",
+       color = "Category") +
   v2v::scale_colour_v2v() +
   v2v::theme_v2v()
 ```
@@ -131,7 +126,8 @@ chat_by_hour <- analysis %>%
 
 ggplot(chat_by_hour, aes(x = hour, y = messages)) +
   geom_col(fill = "#2f7d8a") +
-  labs(x = "Hour of day (UTC)", y = "Messages in sample") +
+  labs(x = "Hour of day (UTC)",
+       y = "Messages in sample") +
   v2v::theme_v2v()
 ```
 
@@ -154,21 +150,21 @@ Twenty-four numbers become a rhythm you can read in one glance.
 msglen <- analysis %>%
   filter(!is.na(is_gaming)) %>%
   mutate(length_shown = pmin(message_length, 120))
-ggplot(msglen, aes(x = length_shown,
-                   y = after_stat(density * width),
-                   fill = is_gaming)) +
+
+ggplot(msglen,
+       aes(x = length_shown, fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
                  alpha = 0.55) +
-  labs(y = "Share of the group's messages") +
+  labs(y = "Messages") +
   v2v::scale_fill_v2v() +
   v2v::theme_v2v()
 ```
 
 ::: {.define}
-**Histogram:** a bar chart of a number variable, where each bar counts the values in one range. Example: one bar counts the messages 0 to 5 characters long.
+**Histogram:** a bar chart of a number variable; each bar counts the values in one range, such as the messages 0 to 5 characters long.
 :::
 
-Two groups are overlaid. `after_stat(density * width)` draws each as **shares**, so the small group still shows.
+By count, non-gaming (one message in ten) barely shows. The R Companion's **Histogram comparing two groups** draws each group as **shares** instead.
 
 ## Two Choices You Must Disclose
 

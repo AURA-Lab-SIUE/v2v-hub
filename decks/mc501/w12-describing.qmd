@@ -79,25 +79,18 @@ Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
 ## Shaping the Data
 
 ```r
-streams <- twitch_streams()  # stream snapshots, from v2v
+viewers_over_time <- twitch_viewers_over_time()
 
-viewers_over_time <- streams %>%
-  filter(!is.na(game)) %>%
-  mutate(
-    ts        = clean_dates(date),
-    six_hour  = floor_date(ts, "6 hours"),
-    category  = fct_lump_n(game, n = 5)
-  ) %>%
-  group_by(six_hour, category) %>%
-  summarize(total_viewers = sum(viewers), .groups = "drop")
+viewers_over_time %>%
+  count(category)
 ```
 
 ## Shaping the Data (cont.)
 
-- `streams` is not in the analysis file, so the first line loads it from the course package, v2v
-- The code groups the snapshots into six-hour windows
-- It lumps everything past the top five games into "Other"
-- It adds up the viewers inside each window
+- The course package ships this table ready to draw
+- The stream snapshots are grouped into six-hour windows
+- Everything past the top five games is lumped into "Other," and the viewers inside each window are added up
+- Three judgment calls made for you: `?twitch_viewers_over_time` says how, and the package source holds the pipeline
 
 ## Drawing the Line Chart
 
@@ -146,7 +139,8 @@ chat_by_hour <- analysis %>%
 ggplot(chat_by_hour, aes(x = hour, y = messages)) +
   geom_col(fill = "#2f7d8a") +
   labs(title = "Chat volume by hour of day",
-       x = "Hour of day (UTC)", y = "Messages in sample") +
+       x = "Hour of day (UTC)",
+       y = "Messages in sample") +
   v2v::theme_v2v()
 ```
 
@@ -201,20 +195,20 @@ msglen <- analysis %>%
   filter(!is.na(is_gaming)) %>%
   mutate(length_shown = pmin(message_length, 120))
 
-ggplot(msglen, aes(x = length_shown,
-                   y = after_stat(density * width),
-                   fill = is_gaming)) +
+ggplot(msglen,
+       aes(x = length_shown, fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
                  alpha = 0.55) +
   labs(x = "Message length (characters, capped at 120)",
-       y = "Share of the group's messages",
+       y = "Messages",
        fill = "Gaming channel") +
   v2v::scale_fill_v2v() +
   v2v::theme_v2v()
 ```
 
-The code drops unlabeled messages, caps the shown length at 120, and overlays the two groups.
-`after_stat(density * width)` draws each group as shares, so the small group still shows.
+The code drops unlabeled messages, caps the shown length at 120, and overlays the two groups by
+count. Non-gaming is one message in ten, so by count it barely shows; the R Companion's
+**Histogram comparing two groups** draws each group as shares instead, so the shapes compare.
 
 ## Two Choices You Must Disclose
 

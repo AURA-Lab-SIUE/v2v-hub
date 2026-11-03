@@ -192,40 +192,26 @@ gap tell you about the shape of message length?
 
 ### Task 3.1: Viewer band by channel type
 
-This is the table worksheet 3 runs the chi-square test on. Count the combinations, then spread
-`channel_type` across the columns.
+This is the table worksheet 3 runs the chi-square test on. `crosstab()` counts every
+combination of two categories and lays the counts out as a grid, rows by the first column you
+name and columns by the second, then the same grid as shares of each row. The 501 messages with
+no channel type cannot be placed, so it leaves them out. The first time it runs it prints the
+`count()` and `pivot_wider()` lines it stands for.
 
 ```{r}
 #| label: crosstab
-analysis %>%
-  filter(!is.na(channel_type)) %>%                  # the 501 with no type cannot be placed
-  count(___, ___) %>%      # one row per combination
-  ___(names_from = channel_type,
-              values_from = n,
-              values_fill = 0)                      # a combination that never occurs is 0, not NA
+crosstab(analysis, ___, ___)   # viewer band as the rows, channel type as the columns
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
 **Crosstab with proportions**, then **Run it**.
 
-**What you should see:** three rows. `small`: `25309` gaming, `2457` non-gaming. `medium`:
-`4000` and `1000`. `large`: `2000` and `0`.
+**What you should see:** `34766 rows counted`, then three rows of counts. `small`: `25309`
+gaming, `2457` non-gaming. `medium`: `4000` and `1000`. `large`: `2000` and `0`.
 
 ### Task 3.2: As proportions of each band
 
-```{r}
-#| label: crosstab-prop
-analysis %>%
-  filter(!is.na(channel_type)) %>%
-  count(viewer_band, channel_type) %>%
-  group_by(viewer_band) %>%
-  mutate(share = round(n / sum(n), 3)) %>%  # share of each band's messages
-  ungroup() %>%
-  select(-n) %>%
-  pivot_wider(names_from = channel_type,
-              values_from = share,
-              values_fill = 0)
-```
+The second grid `crosstab()` printed is the shares: each row adds up to 1.
 
 **What you should see:** non-gaming is `0.088` of the small band, `0.2` of the medium band, and
 `0` of the large band.
@@ -338,17 +324,16 @@ reasonable, and where the outliers are, with the check shown.
 
 The chi-square in worksheet 3 needs every expected count to be at least 5.
 
+`run_chi_square()` prints, under the test, the counts it expected if the two were unrelated.
+Worksheet 3 reads the test itself; here read only the expected counts.
+
 ```{r}
 #| label: diag-expected
-analysis %>%
-  filter(!is.na(channel_type)) %>%
-  xtabs(~ viewer_band + channel_type, data = .) %>%  # the cross-tabulation, as in worksheet 3
-  chisq.test() %>%
-  pluck("___") %>%   # the counts the test expects if the two were unrelated
-  round(1)
+run_chi_square(analysis, x = ___, y = ___)   # the two categories of Task 3.1, in the same order
 ```
 
-**What you should see:** six expected counts, the smallest `198.9` (large, non-gaming).
+**What you should see:** under `Expected counts`, six numbers, the smallest `198.9` (large,
+non-gaming), and `Smallest expected count 198.87` above them.
 
 ### Task 5.2: Spread and outliers behind the boxplot
 
@@ -361,12 +346,12 @@ coded %>%
   group_by(reaction_only) %>%
   summarize(n = n(), sd = sd(message_length), iqr = IQR(message_length))
 
-coded %>%
-  group_by(reaction_only) %>%
-  filter(message_length > quantile(message_length, 0.75) +
-           1.5 * ___(message_length)) %>%  # beyond the upper whisker
-  select(reaction_only, message_length)
+flag_outliers(coded, message_length, ___)   # beyond the whiskers of each group's box
 ```
+
+`flag_outliers()` returns the messages that sit more than 1.5 times the interquartile range beyond
+their group's box, the points a boxplot draws on their own, with `side` saying which end. The
+first time it runs it prints the `filter()` line it stands for.
 
 **What you should see:** with the instructor's codes, sd `27.9` and `23.5`, then the four
 messages beyond the upper whisker of their own box: `90` in reaction, and `59`, `62`, and `119`

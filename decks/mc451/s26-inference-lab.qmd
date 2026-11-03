@@ -56,12 +56,6 @@ library(v2v)
 
 analysis <- read_rds("data/twitch_analysis.RDS")
 
-t.test(message_length ~ is_gaming, data = analysis) %>%
-  broom::tidy()
-
-effectsize::cohens_d(message_length ~ is_gaming,
-                     data = analysis)
-
 run_t_test(analysis, value = message_length,
            group = is_gaming)
 ```
@@ -70,7 +64,7 @@ run_t_test(analysis, value = message_length,
 
 - The code shows the example columns. In the worksheet the settings block renames them
     - `outcome` for message length, and `group2` for your hand-coded variable
-- The last line is the check from the course package, v2v: it prints the same `t`, df, `p`, and d in one labeled block
+- `run_t_test()` comes from the course package, v2v: it prints both means, `t`, df, `p`, and d in one labeled block, and ends with the `t.test()` and `effectsize::cohens_d()` lines it stands for
 - The R Companion's **Settings block (name the test variables)** writes `group2 = factor(channel_type)`
     - Change that one line to your hand-coded variable, `reaction_only`, or the t-test runs on channel type
 
@@ -116,17 +110,14 @@ If you cannot write that sentence, you do not yet understand your result.
 ## If You Have More Than Two Groups
 
 ```r
-games <- c("Fortnite", "Hearthstone",
-           "Just Chatting", "League of Legends")
 four_games <- analysis %>%
-  filter(main_game %in% games)
+  filter(main_game == "Fortnite" |
+         main_game == "Hearthstone" |
+         main_game == "Just Chatting" |
+         main_game == "League of Legends")
 
-fit <- aov(message_length ~ main_game, data = four_games)
-summary(fit)
-
-fit %>%
-  broom::tidy() %>%
-  mutate(eta_sq = sumsq / sum(sumsq))
+run_anova(four_games, value = message_length,
+          group = main_game)
 ```
 
 - ANOVA asks one question of all the groups at once. The example returned **F(3, 13429) = 92.26**, eta-squared **0.02**: a real difference, and a small one
@@ -135,12 +126,12 @@ fit %>%
 ## If You Want a Model
 
 ```r
-fit <- lm(outcome ~ predictor, data = analysis)
-summary(fit)
+run_regression(analysis, outcome = outcome,
+               predictor = predictor)
 ```
 
 - In the worksheet, `predictor` is the hour of the day, a number
-- The `predictor` row's Estimate is the slope: characters gained for each hour later in the day
+- The `Slope` line is the slope: characters gained for each hour later in the day
 - The worksheet lists the slope and *p* you should see; report R-squared beside it
 
 A t-test is a regression with one two-level grouping variable. An ANOVA is a regression with

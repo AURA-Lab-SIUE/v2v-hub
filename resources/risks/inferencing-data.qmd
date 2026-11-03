@@ -118,8 +118,8 @@ this table the smallest is 198.9, so it holds, but on your own data, with fewer 
 categories, it often does not. A zero in the observed table is not the problem; a small expected
 count is.
 
-**How to check.** Pull the expected counts from the test (`pluck("expected")`) and look at the
-smallest.
+**How to check.** Read the `Smallest expected count` line and the `Expected counts` grid that
+`run_chi_square()` prints.
 
 ## 10. Numbers copied wrong into the APA sentence
 
@@ -132,7 +132,8 @@ sentence** in the R Companion and compare each number with what you wrote.
 
 ## MC 501: an interval that looks wrong
 
-**What it looks like.** `effectsize` gives Cramér's V, eta-squared, and omega-squared a one-sided
+**What it looks like.** If you run the plain `effectsize` calls that `run_chi_square()` and
+`run_anova()` end with, they give Cramér's V, eta-squared, and omega-squared a one-sided
 interval, so the upper bound is always 1.00:
 
 ```
@@ -151,5 +152,5 @@ ordinary two-sided interval; report both ends.
 bands do not: standard deviations of 38.7, 53.9, and 31.1 characters. The classic F and Welch's F
 can then disagree in size even when both are significant.
 
-**How to check.** Put the group standard deviations beside the ANOVA, run Welch's version with
-`oneway.test()`, and say which one you report and why.
+**How to check.** `run_anova()` prints the group standard deviations beside the ANOVA and
+Welch's version under it; say which one you report and why.
