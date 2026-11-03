@@ -175,6 +175,26 @@ streams <- streams %>%
 - Without v2v, the same step is `as_datetime(date / 1000)`
     - `as_datetime()` comes from lubridate, the tidyverse package for dates
 
+## Opening Write R Code
+
+![](images/companion-palette-write-r-code.png){fig-alt="The VS Code Command Palette at the top of the window. The search box reads AURA: Write R code, and the highlighted first result is the command AURA: Write R code." width="80%"}
+
+- **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), type **AURA: Write R code**, then press **Enter**
+
+## Picking the Step From R2 Data
+
+![](images/companion-r2-list-clean-dates.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Turn the date column into a time (clean_dates) is highlighted." width="72%"}
+
+## The Block Arrives in the Worksheet
+
+![](images/companion-inserted-clean-dates.png){fig-alt="Lines 276 to 291 of the worksheet in VS Code, inside the Task 3.1 chunk. The R Companion inserted a comment headed Turn the date column into a readable time: clean_dates(). It says date counts milliseconds since midnight, January 1, 1970 (UTC), that clean_dates() divides by 1,000, and that the same step without v2v is mutate(ts = as_datetime(date / 1000)). Then come chat <- chat %>% mutate(ts = clean_dates(date)), the same two lines for streams, and a check: chat %>% select(date, ts) %>% slice_head(n = 3)." width="74%"}
+
+## Running the Block
+
+![](images/companion-run-it-message.png){fig-alt="A message at the bottom right of VS Code: Inserted the Turn the date column into a time (clean_dates) code. Run it now? Source: AURA Lab R Companion. A Run it button sits at its lower right." width="60%"}
+
+- Select **Run it** in the message at the bottom right of VS Code to run the block
+
 ## The Factor of a Thousand That Breaks It
 
 - `as_datetime()`, lubridate's date converter, expects seconds
@@ -219,6 +239,10 @@ chat <- chat %>%
 - The example codebook names this variable ([Chapter 8, A codebook for the chat study](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study))
     - The data did not contain it until now
 
+## Add a Column, in the List
+
+![](images/companion-r2-list-mutate.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Add a column (mutate) is highlighted." width="72%"}
+
 ## What the Lengths Show
 
 ```r
@@ -250,6 +274,14 @@ chat %>%
 - Select the error R printed in the terminal, then press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
 - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) and run **AURA: Explain an R error**: the copied error is filled in for you
 
+![](images/companion-terminal-error.png){fig-alt="The R Interactive terminal at the bottom of VS Code. After the line summary(message_length), R printed Error: object 'message_length' not found." width="70%"}
+
+## What Explain an R Error Shows
+
+![](images/companion-explain-page.png){fig-alt="The explanation page that opens beside the script, headed object ... not found. Under From your message it quotes object 'message_length' not found. Why this happens says R has no value stored under that name: the line that creates it never ran, the name is misspelled, or a text value was typed without quotation marks. What to do lists three checks: run the line that creates it first, check the spelling and capital letters, and put text in quotation marks." width="50%"}
+
+- The explanation opens beside your script: why the error happens, then what to do
+
 ## Checkpoint
 
 You should now have:
@@ -262,15 +294,26 @@ You should now have:
 
 Still missing: the gaming label. That is Thursday.
 
+## Coding in the Data Viewer
+
+![](images/companion-coding-column.png){fig-alt="The R Companion data viewer titled coding-form (30 rows), with the buttons Refresh, Add coding column, Hide pass 1, Insert rebuild code, and Write this view as R. The line under the buttons reads reaction_only, row 1: 1. Saved, with the time and 1 coded cell(s). A new reaction_only column holds 1 in row 1, and the empty cell in row 2 is selected." width="100%"}
+
+- **AURA: Open the data viewer** on `data/coding-form.csv`, then **Add coding column**
+- Type each code in the new column; the line under the buttons confirms each save
+
 ## Before Thursday
 
 - Code your thirty messages in the worksheet's Part 0, in a spreadsheet or in the R Companion's data viewer
     - Data viewer: run **AURA: Open the data viewer** on `data/coding-form.csv`, then **Add coding column** ([Read and Code Data in the Data Viewer](https://aura-lab.siue.edu/v2v-hub/guides/mc451/05-data-viewer-and-coding-columns.html))
 - Then fill Parts 1 to 3
 - Step by step: [Wrangle the Data with Write R Code](https://aura-lab.siue.edu/v2v-hub/guides/mc451/08-wrangling.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490319&a=95173025)
+
+## Before Thursday (cont.)
+
 - Due Friday, November 6, 11:59 PM: [Sampling Plan and Pilot](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#sampling-plan-and-pilot), 75 points
 - Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
 - Thursday: the gaming label, the join, and the rows a join leaves behind
 - Bring your worksheet, because Thursday picks it up where it stops
+- **Check yourself on this week's terms:** [Week 11 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc451-week11.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}
