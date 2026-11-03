@@ -31,3 +31,5 @@ The Terminal panel ends with `Output created:` followed by the file name, and th
 ## If it does not work
 
 If the render stops at a chunk, the Terminal names the chunk and the line. Run that chunk on its own to see the R error, then use guide 03.
+
+If you press **Run Cell** (the ▷ at the top right of a code cell) and your code lands in a terminal named **powershell** (**zsh** on a Mac) instead of **R (AURA)**, it did not run in R. Click inside the cell and press **Ctrl+Shift+Enter** (**Cmd+Shift+Enter** on a Mac) instead: it switches to **R (AURA)** before it runs the cell. Or select **R (AURA)** in the list at the right of the Terminal panel, then press **Run Cell** again.
