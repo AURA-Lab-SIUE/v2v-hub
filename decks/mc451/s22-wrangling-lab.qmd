@@ -21,8 +21,6 @@ format:
 
 ## Finishing the Wrangle
 
-[Lab session]{.eyebrow}
-
 - Tuesday we built readable timestamps and message length
 - Today we build the gaming label, which the example question depends on
     - The stream join, the gaming label, and the rows a join leaves unlabeled

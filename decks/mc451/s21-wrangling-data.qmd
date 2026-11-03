@@ -21,8 +21,6 @@ format:
 
 ## From Raw Data to Analysis-Ready Data
 
-[Lab session]{.eyebrow}
-
 - The example chat table cannot answer the example question yet
 - Today: five verbs, then two transformations
     - Readable timestamps, and message length
@@ -63,8 +61,6 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 - Your own data will probably lack some columns your question needs; the same steps build them
 
 ## Variables, Revisited
-
-[Recap from Session 19]{.eyebrow}
 
 ::: {.define}
 **Variable:** something about a case that can change from one case to the next, where a case is one thing you study, such as one chat message.
