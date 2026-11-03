@@ -14,7 +14,7 @@ format:
 ## Today's Agenda
 
 - Match each message to the stream snapshot taken just before it
-- Build the gaming label, starting from what each channel streams
+- Load the channel labels: what each channel streams, and how big its audience is
 - Join two tables on a shared key
 - Inspect the rows a join leaves behind
 - Write one pipeline that rebuilds the whole table
@@ -41,12 +41,12 @@ format:
 
 - Whether a channel is a gaming channel is fixed by what it mostly streams
     - Bob Ross streams painting, so every message in that channel is non-gaming
-- So we classify the channels first, then attach the label to every message
+- So the channels are classified first, then the label is attached to every message
     - Find what each channel mostly streams
     - Decide whether that category counts as gaming
     - Attach the decision to every message from that channel
 
-Each step is one small pipeline.
+The course package did the first two steps for all fifty channels. The join is yours.
 
 ## Step 1, Match Each Message to Its Stream
 
@@ -88,24 +88,25 @@ chat_streams %>%
 - It is a rolling join because snapshots come every few minutes and messages every second
 - More detail: [Chapter 11, Matching each message to its stream](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#matching-each-message-to-its-stream)
 
-## Step 2, Find Each Channel's Most Frequent Category
+## Step 2, Load the Channel Labels
 
-- Task 4.2: **AURA: Write R code**, **R2 Data**, **Label each channel by its top category** writes Steps 2 and 3
+- Task 4.2: **AURA: Write R code**, **R2 Data**, **Label each channel by its top category** writes this step
 
 ```r
-channel_type <- streams %>%
-  filter(!is.na(game)) %>%
-  count(channel, game) %>%
-  group_by(channel) %>%
-  slice_max(n, n = 1, with_ties = FALSE) %>%
-  ungroup()
+channels <- twitch_channels()
+
+channels %>%
+  count(is_gaming)
 ```
 
-- Read it in order:
-    - Drop the snapshots with no category
-    - Count how many snapshots each channel logged in each category
-    - Keep each channel's most frequent category: one row per channel
-- `is.na()` finds missing values, and `!` means "not"
+```
+  is_gaming     n
+1 FALSE         5
+2 TRUE         43
+3 NA            2
+```
+
+- A **lookup table**: one row per channel, 43 gaming, 5 non-gaming, and 2 the data cannot place
 
 ## Step 2, in the List
 
@@ -113,43 +114,28 @@ channel_type <- streams %>%
 
 ## Exercise: Trace a Channel With No Category {.discuss}
 
-Some channels have no `game` recorded in any snapshot. Use Chapter 11, [Labeling gaming and non-gaming](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#labeling-gaming-and-non-gaming).
+Two channels have no `game` recorded in any snapshot. Use Chapter 11, [Labeling gaming and non-gaming](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#labeling-gaming-and-non-gaming).
 
-- Trace such a channel through `filter()` and then `count()`. What happens to it at each step?
-- Does that channel appear in `channel_type` at all? Answer yes or no
+- What does `channels` hold for such a channel in `main_game`? In `is_gaming`?
+- After the join in Step 4, what will that channel's messages show in `is_gaming`? Answer in one word
 - When its messages are analyzed later, should R guess a label, drop the messages, or flag them? Give one reason
 
-## Step 3, Name the Non-Gaming Categories
+## Step 3, Two Judgments Inside the Table
 
-```r
-nongaming_categories <- c(
-  "Art", "ASMR", "Beauty & Body Art", "Creative",
-  "Food & Drink",
-  "IRL", "Just Chatting", "Makers & Crafting", "Music",
-  "Music & Performing Arts", "Science & Technology",
-  "Sports & Fitness", "Talk Shows & Podcasts",
-  "Travel & Outdoors"
-)
-```
+- Which categories count as non-gaming is a **judgment**, not a fact in the data
+    - Art, ASMR, Beauty & Body Art, Creative, Food & Drink, IRL, Just Chatting, Makers & Crafting, Music, Music & Performing Arts, Science & Technology, Sports & Fitness, Talk Shows & Podcasts, Travel & Outdoors
+    - Every other category counts as a game
+- Where the audience bands are cut is a second judgment
+    - `small` below 5,000 median viewers, `medium` up to 20,000, `large` above
+- Run `?twitch_channels` to read both, so a reviewer can check them
 
-- `c()` builds a list; here the list holds every category treated as not a game
-- Which categories count as non-gaming is a **judgment**
-    - So it belongs in the code, where a reader can see and check it
+## Step 3, How the Table Was Built
 
-## Step 3, Apply the Rule
-
-```r
-channel_type <- channel_type %>%
-  mutate(is_gaming = !(game %in% nongaming_categories)) %>%
-  select(channel, main_game = game, is_gaming)
-```
-
-- `%in%` asks whether a channel's most frequent category is on the non-gaming list
-    - `!` flips the answer, so `is_gaming` is `TRUE` for game channels
-- `select()` also renames the category `main_game`
-    - `chat_streams` already has a `game` column: what the channel was streaming at that moment
-    - `main_game` is the channel's usual category
-- The example study labels by channel, so every later analysis uses `main_game`
+- `main_game` is the category a channel streamed most often across its snapshots
+    - Bob Ross streams Art, so `is_gaming` is `FALSE` for every one of his messages
+- `median_viewers` is the channel's typical audience, and `viewer_band` cuts it into the three bands
+- The package source (`data-raw/build_channels.R`) holds the dplyr pipeline that built it: count the snapshots per channel and category, keep each channel's most frequent one, take the median viewers, cut the bands
+- More detail: [Chapter 11, Labeling gaming and non-gaming](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#labeling-gaming-and-non-gaming)
 
 ## Step 4, Join the Label Onto the Messages
 
@@ -158,10 +144,10 @@ channel_type <- channel_type %>%
 
 ```r
 analysis <- chat_streams %>%
-  left_join(channel_type, by = "channel")
+  left_join(channels, by = "channel")
 ```
 
-- `left_join()` keeps every row of `chat_streams`, attaches each channel's `main_game` and `is_gaming`, and names the result `analysis`
+- `left_join()` keeps every row of `chat_streams`, attaches each channel's five label columns, and names the result `analysis`
 
 ## Step 4, Join the Label Onto the Messages (cont.)
 
@@ -170,7 +156,7 @@ analysis <- chat_streams %>%
 :::
 
 - `by = "channel"` names the key column both tables share
-- `channel_type` works as a **lookup table**: one row per channel, looked up by the join
+- `channels` is the **lookup table**: one row per channel, looked up by the join
 
 ## Step 4, in the List
 
@@ -223,7 +209,7 @@ analysis %>% count(is_gaming)
 
 - Two channels never had a category recorded
     - Every snapshot of those channels had a missing `game`, so there was no most frequent category
-    - They never entered `channel_type`, so the join left their messages as `NA`
+    - `channels` holds `NA` for them, so the join left their messages as `NA`
 - That is the correct outcome, not a bug
 - The data does not say whether those channels are gaming, so their 501 messages are left out of the comparison
 
@@ -236,19 +222,20 @@ chat <- twitch_chat() %>%
 streams <- twitch_streams() %>%
   mutate(ts = clean_dates(date))
 
-analysis <- join_chat_streams(chat, streams) %>%
-  left_join(channel_type, by = "channel")
+channels <- twitch_channels()
 
-# The worksheet adds viewer_band, channel_type, and your
-# codes; Part 7 saves the file
+analysis <- join_chat_streams(chat, streams) %>%
+  left_join(channels, by = "channel")
+
+# The worksheet adds your codes; Part 7 saves the file
 ```
 
-- With `channel_type` built as above, this block rebuilds the 12-column table from the raw data in one run
+- This block rebuilds the 15-column table from the raw data in one run
     - Two transformations, then two joins
 
 ## The Whole Wrangle (cont.)
 
-- This block shows the shape only. Do not run it in your worksheet: it skips Tasks 4.3 to 5.3, so the table it builds has no viewer band, channel type, or codes
+- This block shows the shape only. Do not run it in your worksheet: it skips Part 5, so the table it builds has no codes
 
 ## Saving the Table
 
@@ -268,8 +255,7 @@ write_rds(analysis, "data/twitch_analysis.RDS")
 ## What the Table Has Become
 
 ```
-Rows: 35,267
-Columns: 12
+Rows: 35,267   Columns: 15
 $ id, channel, sender, message, date: the five raw columns
 $ ts             <dttm> 2018-11-24 15:01:02, …
 $ message_length <int> 11, 7, 5, …
@@ -278,6 +264,9 @@ $ game           <chr> NA, NA, NA, …
 $ viewers        <int> 13628, 14902, 16978, …
 $ main_game      <chr> NA, NA, NA, …
 $ is_gaming      <lgl> NA, NA, NA, …
+$ channel_type   <fct> NA, NA, NA, …
+$ median_viewers <dbl> 14902, 14902, 14902, …
+$ viewer_band    <fct> medium, medium, medium, …
 ```
 
 - The table is now **tidy**: one row per observation, one column per variable
@@ -297,9 +286,8 @@ $ is_gaming      <lgl> NA, NA, NA, …
 ## Common Errors Today
 
 - **The join returns all `NA`:** the keys do not match, so check for a leading "#"
-- **`object 'channel_type' not found`:** R has no object (no named result) called that yet: you ran the join before building the lookup table
-- **`slice_max` errors:** you skipped `group_by()`
-- **A misspelled category name** mislabels a channel without any error
+- **`object 'channels' not found`:** R has no object (no named result) called that yet: you ran the join before loading the lookup table
+- **`could not find function "twitch_channels"`:** your v2v is older than 0.3.8: run **AURA: Check my setup**, then **Install what is missing**
 - **A worksheet that will not render:** it depends on a step you ran in the terminal but never wrote into the worksheet
 
 ## Any Other Error
@@ -319,10 +307,10 @@ $ is_gaming      <lgl> NA, NA, NA, …
 
 You should now have:
 
-- A `channel_type` lookup table, one row per channel, with `main_game` and `is_gaming`
-- An `analysis` table of 16 columns: the 12 shown earlier plus `median_viewers`, `viewer_band`, `channel_type`, and `reaction_only`
+- A `channels` lookup table, one row per channel, with `main_game`, `is_gaming`, `channel_type`, `median_viewers`, and `viewer_band`
+- An `analysis` table of 16 columns: the 15 shown earlier plus `reaction_only`
 - A `count(is_gaming)` result you have actually looked at
-- Worksheet Parts 4 to 7 filled: viewer band, your thirty codes joined on, `data/twitch_analysis.RDS` saved
+- Worksheet Parts 4 to 7 filled: the labels joined on, your thirty codes joined on, `data/twitch_analysis.RDS` saved
 - A worksheet that rebuilds all of it from the raw data when you render it
 
 ## Before Next Time

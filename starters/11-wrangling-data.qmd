@@ -89,7 +89,9 @@ options(scipen = 10)  # long numbers such as timestamps print in full; p-values 
 lines about "conflicts" are normal.
 
 **If you see `there is no package called 'janitor'`,** run **AURA: Check my setup**, then
-**Install what is missing**, and run this chunk again.
+**Install what is missing**, and run this chunk again. The same fix applies if a later chunk
+says `could not find function "twitch_channels"` or `"write_coding_form"`: this worksheet needs
+v2v 0.3.8 or newer, and **Install what is missing** updates it.
 
 ## Part 0: Hand-code thirty messages
 
@@ -117,23 +119,18 @@ gives a different thirty.
 
 ### Task 0.2: Write the coding sheet
 
-This writes the thirty messages to your coding sheet, `data/coding-form.csv`, one row per message. It writes the
-file only if it is not there yet, so running the worksheet again never wipes out codes you have
-typed.
+This writes the thirty messages to your coding sheet, `data/coding-form.csv`, one row per
+message, with three columns: `id` (the key that joins your codes back), `channel`, and
+`message`. It writes the file only if it is not there yet, so running the worksheet again never
+wipes out codes you have typed.
 
 ```{r}
 #| label: write-form
-dir.create("data", showWarnings = FALSE)       # make the data folder if it is missing
-
-if (!file.exists("data/coding-form.csv")) {    # never overwrite a form you have coded
-  coding_sample %>%
-    select(id, channel, message) %>%           # the id is the key that joins your codes back
-    write_csv("data/coding-form.csv")
-}
+write_coding_form(coding_sample)  # writes data/coding-form.csv once; never overwrites it
 ```
 
-**What you should see:** nothing in the console, and `coding-form.csv` in the `data` folder in
-the **Explorer** panel.
+**What you should see:** `Wrote 30 messages to data/coding-form.csv`, and `coding-form.csv` in
+the `data` folder in the **Explorer** panel. On every later run it says the file was left alone.
 
 ### Task 0.3: Code each message by hand
 
@@ -203,44 +200,30 @@ are milliseconds since 1970, and Task 3.1 turns them into times.
 
 ### Task 2.1: Missing values
 
-This counts the missing values in every column, then keeps only the columns that have any.
+`is.na()` asks, for every row, whether a cell is empty. Counting its answers tells you how many
+messages have no text, and how many snapshots have no category. The `glimpse()` output above
+showed `NA` in `message` and in `game`, so those are the two columns to count.
 
 ```{r}
 #| label: missing-raw
 chat %>%
-  summarize(across(everything(), ~ sum(is.na(.)))) %>%  # missing values per column
-  pivot_longer(everything(),
-               names_to = "column",
-               values_to = "missing") %>%               # one row per column
-  filter(missing > 0)                                   # only the columns with gaps
+  count(is.na(message))  # TRUE = the message is empty
 
 streams %>%
-  summarize(across(everything(), ~ sum(is.na(.)))) %>%
-  pivot_longer(everything(),
-               names_to = "column",
-               values_to = "missing") %>%
-  filter(missing > 0)
+  count(is.na(game))     # TRUE = the snapshot has no category
 ```
 
-**What you should see:** for `chat`, one row: `message` with `4`. For `streams`, two rows:
-`title` and `game`, each with `96`. Part 6 comes back to these.
+**What you should see:** for `chat`, `TRUE` with `4`. For `streams`, `TRUE` with `96`. Part 6
+comes back to these.
 
 ### Task 2.2: Two columns called `id`
 
-Both tables have a column named `id`. This checks whether the same numbers turn up in both.
-
-```{r}
-#| label: id-overlap
-chat %>%
-  semi_join(streams, by = "id") %>%  # keep the chat rows whose id also appears in streams
-  nrow()                             # and count them
-```
-
-**What you should see:** `[1] 31`. Thirty-one numbers appear in both, but a chat `id` names a
-message and a stream `id` names a snapshot, so those thirty-one matches mean nothing. A join on
-`id` across these two tables would run without an error and pair messages with unrelated
-snapshots. The tables join on channel and time instead (Task 4.1). Your coding sheet joins on
-`id` (Task 5.3), because its `id` is the chat `id`.
+Both tables have a column named `id`, and thirty-one numbers happen to appear in both. They
+mean nothing: a chat `id` names a message and a stream `id` names a snapshot. A join on `id`
+across these two tables would run without an error and pair messages with unrelated snapshots.
+The tables join on channel and time instead (Task 4.1). Your coding sheet joins on `id` (Task
+5.3), because its `id` is the chat `id`. Nothing to run here; it is the first trap in the
+[risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html).
 
 ### Task 2.3: Categories
 
@@ -329,36 +312,28 @@ message to its stream (join_chat_streams)**, then **Run it**.
 then `FALSE` with `35256` and `TRUE` with `11`. Eleven messages came before their channel's
 first snapshot, so they have nothing to match.
 
-### Task 4.2: Label gaming and non-gaming channels
+### Task 4.2: Join the channel labels onto the messages
 
-Gaming belongs to the channel, not the message, so this works out each channel's most-streamed
-category and decides whether that counts as gaming. Which categories count as non-gaming is a
-judgment call, which is why the list is written where a reader can see it.
+Gaming belongs to the channel, not the message. The course package ships a **lookup table**,
+one row per channel, that says what each channel mostly streams (`main_game`), whether that
+counts as gaming (`is_gaming`, and the same thing in words, `channel_type`), and how big its
+audience is (`median_viewers`, banded as `viewer_band`). Two judgment calls sit inside it:
+which categories count as non-gaming, and where the audience bands are cut (5,000 and 20,000
+median viewers). Run `?twitch_channels` to read both; a reviewer may challenge either.
 
 ```{r}
-#| label: channel-type
-nongaming_categories <- c(
-  "Art", "ASMR", "Beauty & Body Art", "Creative", "Food & Drink",
-  "IRL", "Just Chatting", "Makers & Crafting", "Music",
-  "Music & Performing Arts", "Science & Technology",
-  "Sports & Fitness", "Talk Shows & Podcasts", "Travel & Outdoors"
-)
+#| label: channel-labels
+channels <- ___()  # the lookup table: one row per channel
+
+channels %>%
+  count(is_gaming)   # channels, not messages
+
 # MC 501 only: reviewer-facing comment 1 goes here (see Part 8).
-
-channel_type <- streams %>%
-  filter(!is.na(game)) %>%                                   # drop snapshots with no category
-  count(channel, game) %>%                                   # snapshots per channel per category
-  group_by(channel) %>%
-  slice_max(n, n = 1, with_ties = FALSE) %>%                 # each channel's top category
-  ungroup() %>%
-  mutate(is_gaming = !(game %in% nongaming_categories)) %>%  # TRUE unless it is on the list
-  select(channel, main_game = game, is_gaming)
-
 analysis <- chat_streams %>%
-  left_join(channel_type, by = "___")  # YOUR TURN: replace this comment with one naming the key and why
+  left_join(channels, by = "___")  # YOUR TURN: replace this comment with one naming the key and why
 
 analysis %>%
-  count(is_gaming)
+  count(is_gaming)   # messages
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Label each
@@ -367,62 +342,42 @@ messages**, then **Run it**. The menu adds the labels to `chat_streams`. If you 
 `analysis <- chat_streams` on the line under its block and run it, so the next tasks find
 `analysis`.
 
-**What you should see:** `FALSE` with `3457`, `TRUE` with `31309`, and `NA` with `501`. The 501
-come from two channels that never recorded a category. An honest `NA` is the right answer.
+**What you should see:** for the channels, `FALSE` with `5`, `TRUE` with `43`, and `NA` with
+`2`. For the messages, `FALSE` with `3457`, `TRUE` with `31309`, and `NA` with `501`. The 501
+come from the two channels that never recorded a category. An honest `NA` is the right answer.
 
-### Task 4.3: Band the channels by audience size
+### Task 4.3: Check the audience bands
 
-This puts each channel in a band by its median viewer count. The cutoffs, 5,000 and 20,000, are
-a decision; Inferencing uses the bands as groups.
+`viewer_band` came in with the join. It is a **factor**: a category whose labels sit in an
+order you choose, here small, medium, large. That order is the order every table, chart, and
+test will use. Inferencing uses the bands as groups.
 
 ```{r}
 #| label: viewer-band
 # MC 501 only: reviewer-facing comment 2 goes here (see Part 8).
-channel_size <- streams %>%
-  group_by(channel) %>%
-  summarize(median_viewers = median(viewers, na.rm = TRUE)) %>%  # typical audience per channel
-  mutate(viewer_band = cut(median_viewers,
-                           breaks = c(0, 5000, 20000, Inf),
-                           labels = c("small", "medium", "large")))
-
-analysis <- analysis %>%
-  left_join(___, by = "channel")
-
-channel_size %>%
+channels %>%
   count(viewer_band)  # channels per band
+
+analysis %>%
+  count(viewer_band)  # messages per band
 ```
 
-**What you should see:** `small` with `41`, `medium` with `7`, `large` with `2`. Count the
-channels, not the messages: the large band is two streamers.
+**What you should see:** `small` with `41`, `medium` with `7`, `large` with `2` for the
+channels: the large band is two streamers. Then `small` with `27766`, `medium` with `5501`, and
+`large` with `2000` for the messages. The rows come in the factor's order, not alphabetical.
 
-### Task 4.4: Turn the labels into factors
+### Task 4.4: Check the channel type
 
-A factor is how R stores a category, with its labels in the order you set. That order is the
-order every table, chart, and test will use.
+`channel_type` is `is_gaming` written as words, also a factor, in the order gaming then
+non-gaming. Every later table and test groups by it.
 
 ```{r}
-#| label: factors
-analysis <- analysis %>%
-  mutate(
-    channel_type = case_when(
-      is_gaming == TRUE  ~ "gaming",
-      is_gaming == FALSE ~ "non-gaming",
-      TRUE ~ NA_character_                                   # anything else stays missing
-    ),
-    channel_type = ___(channel_type),
-    viewer_band  = factor(viewer_band, levels = c(___))
-  )
-
+#| label: channel-type
 analysis %>%
   count(channel_type)  # messages per label, in the factor's order
-
-analysis %>%
-  count(viewer_band)   # messages per band, in the order you set
 ```
 
-**What you should see:** `gaming` with `31309`, `non-gaming` with `3457`, and `NA` with `501`,
-then `small` with `27766`, `medium` with `5501`, and `large` with `2000`. The rows come in the
-order the factor sets.
+**What you should see:** `gaming` with `31309`, `non-gaming` with `3457`, and `NA` with `501`.
 
 ## Part 5: Read your codes back and join them
 
@@ -490,21 +445,23 @@ column was not changed when you saved.
 
 ## Part 6: Missing values
 
-Count the messages missing a value on any column the tests will use, then decide what to do
-with them.
+Count the messages missing a value on each column the tests will use, then decide what to do
+with them. The same `count(is.na())` check as Task 2.1, once per column.
 
 ```{r}
 #| label: missing-analysis
 analysis %>%
-  filter(is.na(message_length) | is.na(viewers) | is.na(channel_type)) %>%
-  nrow()                                             # messages missing one of the three
+  count(is.na(message_length))  # the four empty messages
 
 analysis %>%
-  summarize(across(c(message_length, viewers, channel_type), ~ sum(is.na(.))))
+  count(is.na(viewers))         # the eleven messages with no earlier snapshot
+
+analysis %>%
+  count(is.na(channel_type))    # the 501 from the two unlabeled channels
 ```
 
-**What you should see:** `[1] 516`, then `4` missing on `message_length`, `11` on `viewers`, and
-`501` on `channel_type`.
+**What you should see:** `TRUE` with `4`, then `TRUE` with `11`, then `TRUE` with `501`. No
+message is missing on two of these at once, so 516 messages carry a missing value in all.
 
 **Write:** how many messages carry a missing value, where each kind comes from, and what you did
 with them. Say it as a decision another researcher could check.
@@ -535,9 +492,11 @@ table as an RDS file**. A box asks for the file name: leave `data/twitch_analysi
 ## Part 8: MC 501 only, three reviewer-facing comments
 
 MC 501 adds three comments to the code, each 40 to 100 words, at the three places marked
-*MC 501 only* above: the non-gaming list (Task 4.2), the viewer-band cutoffs (Task 4.3), and the
-export (Part 7). Each one names a decision a reviewer could challenge, the rule you applied, and
-why you chose it over the alternative. A comment that says what the code does is not one of the
+*MC 501 only* above: the non-gaming list the lookup table applies (Task 4.2), the viewer-band
+cutoffs it uses (Task 4.3), and the export (Part 7). Each one names a decision a reviewer could
+challenge, the rule you applied, and why you chose it over the alternative. Adopting the
+package's list or cutoffs is itself a decision: say why they fit this study, or what you would
+change. A comment that says what the code does is not one of the
 three; the comments the R Companion writes are that kind.
 
 ## Before you submit
