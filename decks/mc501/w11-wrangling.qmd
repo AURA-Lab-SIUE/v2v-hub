@@ -201,10 +201,6 @@ chat %>%
 - `mutate()` writes the count into a new column
 - The example codebook names this variable ([Chapter 8, A codebook for the chat study](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study))
 
-## Add a Column, in the List
-
-![](images/companion-r2-list-mutate.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Add a column (mutate) is highlighted." width="72%"}
-
 ## What the Lengths Look Like
 
 ```
@@ -347,10 +343,6 @@ chat_streams <- chat_streams %>%
 - `chat_streams` already has a `game` column: the category streaming at that moment
     - `main_game` is the channel's usual category, and later analyses use it
 
-## Step 4, in the List
-
-![](images/companion-r2-list-join-two.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Join two tables by a shared column is highlighted." width="72%"}
-
 ## Joins Fail Silently When Keys Disagree
 
 ::: {.define}
@@ -438,10 +430,6 @@ analysis <- chat %>%
 
 - In the worksheet's Part 7, **AURA: Write R code**, then **R2 Data**, then **Save a table as an RDS file** writes the save line for the table `analysis`
 - `write_rds()` saves an RDS file, R's own data file, with every column type intact
-
-## Saving, in the List
-
-![](images/companion-r2-list-save-rds.png){fig-alt="The Write R code list, titled Write R code (MC501), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Save a table as an RDS file is highlighted." width="72%"}
 
 ## The Analysis-Ready Table
 
