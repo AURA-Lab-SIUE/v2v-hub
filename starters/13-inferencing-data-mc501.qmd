@@ -15,10 +15,20 @@ This is the last part of the Twitch job. You described the table in worksheet 2;
 four relationships in it, one test each, and say how big each relationship is. One of the four
 runs on the variable you coded by hand in worksheet 1.
 
+**Who asked for this, and why.** Your client is still the channel manager at the small creator
+agency from worksheet 2, with the sponsor pitch coming up. Worksheet 2 showed them how the
+numbers sit: gaming chat against non-gaming chat, small audiences against large ones, reaction
+against commentary. What the manager wants from this stage is whether those differences are
+real or could be chance, and whether they are big enough to put in a pitch. The manager does not
+read R. Every **Write:** prompt below is a note to them, and the last section is the paragraph
+you would send.
+
 **How it works.** As before: the code that is not the point is written for you, the core steps
 have blanks shown as `___`, and **What you should see** follows each chunk. **Write:** marks your
-own writing. The hypotheses, the reason for each test, the four reports, and the interpretation
-are graded, so none of them is filled in for you.
+own writing. The hypotheses, the reason for each test, the four reports, the interpretation, and
+the closing paragraph to the client are graded, so none of them is filled in for you. Every
+blank is a column name from the settings block; no step asks you to write code of your own
+beyond that.
 
 **The order matters.** Write the four hypotheses in Part 0 **before** you run any chunk below
 it. A hypothesis written after the result is a description of the result.
@@ -26,11 +36,11 @@ it. A hypothesis written after the result is a description of the result.
 **What you submit** (Blackboard, under Inferencing Data in R): this worksheet with every blank
 and every **Write:** filled, and the HTML it renders to.
 
+**Before you start,** read the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html).
+
 **MC 501:** the tasks marked (MC 501) are yours as well: assumptions shown for every test,
 intervals on every effect size, Welch's ANOVA and Tukey's HSD, the standardized slope, a power
 analysis for one focal test, and the paragraph separating significance from size.
-
-**Before you start,** read the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html).
 
 ## Key terms
 
@@ -38,7 +48,7 @@ analysis for one focal test, and the paragraph separating significance from size
 |---|---|
 | **Hypothesis** | A sentence, written before you look, that says what you expect to find about two variables. |
 | **Statistical test** | A calculation that asks whether a pattern in the data is bigger than chance alone would produce. |
-| **p-value** | How likely a pattern at least this big would be if the two variables were really unrelated. Below .05 is called *statistically significant*. |
+| **p-value** | How likely a pattern at least this big would be if the two variables were really unrelated. Below .05 is called *statistically significant*. R prints a very small one as `< 2.2e-16`, which you report as *p* < .001. |
 | **Statistically significant** | The p-value is under .05. It says a pattern is unlikely to be chance. It does not say the pattern is big or important. |
 | **Effect size** | How big a difference or relationship is, on a scale that does not grow with the number of messages. |
 | **Chi-square test** | The test for two categories, such as viewer band and channel type. It compares the real counts with the counts you would expect if the two were unrelated. |
@@ -66,6 +76,7 @@ The job tests these four pairs of variables:
 **Write:** for each pair, a hypothesis in plain English naming both variables and the
 relationship you expect. Then name the test the two variables' types call for and say in one
 sentence why that test and not another.
+
 **MC 501:** for each, also name one alternative test you rejected, and why.
 
 *H1:*
@@ -86,8 +97,9 @@ block and nothing else. Give `group2` your hand-coded variable.
 
 ```{r}
 #| label: settings
-library(tidyverse)     # data steps, tests, and hour()
-library(v2v)           # run_chi_square(), run_t_test(), run_anova(), run_regression()
+library(tidyverse)     # data steps and hour()
+library(v2v)           # the course package; the tests below are plain R
+library(effectsize)    # cramers_v(), cohens_d(), eta_squared(): how big each result is
 options(scipen = 10)  # long numbers such as timestamps print in full; p-values keep the usual form
 
 # Load the analysis file, then keep the columns the tests use under the names they use.
@@ -113,34 +125,47 @@ to your hand-coded variable.
 **What you should see:** `Rows: 35,267` and six columns: `outcome` `<int>`, `group2`, `group3`,
 `cat_a`, and `cat_b` `<fct>`, `predictor` `<int>`.
 
-**If you see `there is no package called 'effectsize'`** later on, run **AURA: Check my setup**,
+**If you see `there is no package called 'effectsize'`,** run **AURA: Check my setup**,
 then **Install what is missing**, and run the chunk again.
+
 **MC 501:** the same goes for `'pwr'`.
 
 ## Part 2: Test 1, the chi-square test
 
 ### Task 2.1: The test and its effect size
 
-`run_chi_square()` builds the table of counts the test reads, runs the test, and computes
-Cramér's V. It prints N, the chi-square, its df, p, and V, then the expected counts and the
-standardized residuals, and ends with the `chisq.test()` and `effectsize::cramers_v()` lines it
-stands for.
+`xtabs()` builds the grid of counts from a formula naming the two categories, the same grid as
+worksheet 2's cross-tabulation. `chisq.test()` runs the test on that grid and reports the
+chi-square statistic, its df, and p. `cramers_v()` turns the result into Cramér's V, the effect
+size for two categories, from 0 (no relationship) to 1.
 
 ```{r}
 #| label: chi-square
-run_chi_square(analysis, x = ___, y = ___)   # the two categories from the settings block
+counts <- xtabs(~ ___ + ___, data = analysis)   # the two categories from the settings block
+sum(counts)                                     # N: the messages the test used
+chi <- chisq.test(counts)
+chi
+cramers_v(counts, adjust = FALSE)
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Chi-square
-test with Cramer's V**, then **Run it**. It writes the line for `cat_a` and `cat_b`.
+test with Cramer's V**, then **Run it**. It writes these lines for `cat_a` and `cat_b`.
 
-**What you should see:** `N` `34766`, `Chi-squared` `822.66`, `df` `2`, `p-value` `< .001`, and
-`Cramer's V` `0.15  (small)`.
+**What you should see:** `34766`; then `X-squared = 822.66`, `df = 2`, `p-value < 2.2e-16`;
+then `Cramer's V` `0.15`, with its 95% confidence interval beside it.
 
 ### Task 2.2: The assumption and the cells driving it (MC 501)
 
-Read the two grids under the test in Task 2.1: the expected counts (every one should be at
-least 5) and the standardized residuals (a cell beyond 2 or -2 drives the result).
+`chi` holds everything the test computed. `$expected` is the grid of counts the test expected
+if the two were unrelated (every one should be at least 5), and `$stdres` is the standardized
+residuals: how far each real count sits from its expected count, where a cell beyond 2 or -2
+drives the result.
+
+```{r}
+#| label: chi-square-501
+round(chi$expected, 1)   # expected counts
+round(chi$stdres, 2)     # standardized residuals
+```
 
 **What you should see:** the smallest expected count `198.9`, and residuals of `-25.68` and
 `25.68` in the medium row: the medium band holds far more non-gaming chat than chance would put
@@ -151,7 +176,7 @@ there.
 *Your answer:*
 
 **Write:** the APA report of Test 1 (statistic, df, N, p, Cramér's V), then two to three sentences
-on what it means for H1, with the effect size in words.
+for the client on what it means for H1, with the effect size in words.
 
 *Your answer:*
 
@@ -160,39 +185,48 @@ on what it means for H1, with the effect size in words.
 ### Task 3.1: How many messages the test uses
 
 The table has 35,267 rows, but only your thirty have a value of `group2`. Every other row is
-dropped from this test.
+dropped from this test. The second table gives the n, mean, and sd of each group that the APA
+sentence needs, counting only rows that have both a group and a message length, as the test
+does.
 
 ```{r}
 #| label: t-test-n
 analysis %>%
   filter(!is.na(group2)) %>%
   count(group2)
+
+analysis %>%
+  filter(!is.na(outcome), !is.na(group2)) %>%   # the rows the test itself uses
+  group_by(group2) %>%
+  summarize(n = n(), mean = mean(outcome), sd = sd(outcome))
 ```
 
 **What you should see:** your two groups adding to `30`. With the instructor's codes,
-`commentary` `17` and `reaction` `13`.
+`commentary` `17` and `reaction` `13`, then `commentary` mean `29.2`, sd `27.9` and `reaction`
+mean `15.6`, sd `23.5`.
 
 ### Task 3.2: The test and its effect size
 
-`run_t_test()` runs Welch's t-test, R's default, which does not assume the two groups spread
-out equally, and adds Cohen's d. It prints both groups with their n, mean, and SD, the gap, t,
-df, p, and d, and ends with the `t.test()` and `effectsize::cohens_d()` lines it stands for.
+`t.test()` with a formula (`a number ~ a two-group category`) runs Welch's t-test, R's default,
+which does not assume the two groups spread out equally. `cohens_d()` with the same formula
+gives Cohen's d: the gap between the two means, measured in standard deviations.
 
 ```{r}
 #| label: t-test
-run_t_test(analysis, value = outcome, group = ___)   # your hand-coded variable
+t.test(outcome ~ ___, data = analysis)     # your hand-coded variable
+cohens_d(outcome ~ ___, data = analysis)
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Welch
 t-test with Cohen's d**, then **Run it**.
 
-**What you should see,** with the instructor's codes: `commentary` with `n = 17`, a mean near
-`29.2`, and `SD = 27.93`; `reaction` with `n = 13`, a mean near `15.6`, and `SD = 23.46`; `t`
-`1.45`; `df` `27.7`; `p-value` `= .158`; `Cohen's d` `0.52  (medium)`. Your numbers differ
-wherever your codes do.
+**What you should see,** with the instructor's codes: `t = 1.4499`, `df = 27.701`,
+`p-value = 0.1583`, `mean in group commentary` `29.23529`, `mean in group reaction` `15.61538`; then
+`Cohen's d` `0.52`, with its 95% confidence interval. Your numbers differ wherever your codes
+do.
 
 **Write:** the APA report of Test 2 (both means and SDs, t, df, p, n, Cohen's d), then two to three
-sentences on what it means for H2. Say the size of the difference in characters.
+sentences for the client on what it means for H2. Say the size of the difference in characters.
 
 *Your answer:*
 
@@ -227,34 +261,51 @@ Task 3.2.
 
 ### Task 4.1: The test and its effect size
 
-`run_anova()` compares three or more means at once. It prints each group with its n, mean, and
-SD, then F, both df, p, eta squared (the share of the variation the groups account for), omega
-squared, Welch's version of the test, and Tukey's follow-up for every pair of groups, and ends
-with the `aov()`, `effectsize::eta_squared()`, and `TukeyHSD()` lines it stands for.
+`aov()` fits the ANOVA for a number across three or more groups, and `summary()` prints F, both
+df, and p. `eta_squared()` gives eta squared: the share of the variation in message length that
+the groups account for, from 0 to 1. The first table gives each group's n, mean, and sd for the
+report.
 
 ```{r}
 #| label: anova
-run_anova(analysis, value = outcome, group = ___)   # the three viewer bands
+analysis %>%
+  filter(!is.na(outcome)) %>%                   # the rows the test itself uses
+  group_by(group3) %>%
+  summarize(n = n(), mean = mean(outcome), sd = sd(outcome))
+
+fit_anova <- aov(outcome ~ ___, data = analysis)   # the three viewer bands
+summary(fit_anova)
+eta_squared(fit_anova)
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **One-way
 ANOVA with eta squared**, then **Run it**.
 
-**What you should see:** means of `29.51`, `30.14`, and `18.76` characters for small, medium, and
-large; `F` `66.20`; `df` `2, 35260`; `p-value` `< .001`; `Eta squared` `0.004  (negligible)`.
+**What you should see:** n of `27765`, `5501`, and `1997` and means of `29.5`, `30.1`, and `18.8`
+characters for small, medium, and large; `F value` `66.2`, `Df` `2` and `35260`, `Pr(>F)` `<2e-16`; then `Eta2` `3.74e-03`,
+which is `0.004` when rounded.
 
 ### Task 4.2: Welch's ANOVA, and which groups differ (MC 501)
 
-Read the rest of the block in Task 4.1: omega squared (less biased than eta squared; report
-both), Welch's ANOVA (which does not assume the groups spread out equally), and Tukey's follow-up
-(which pairs of bands differ, with p adjusted for making three comparisons).
+`oneway.test()` is Welch's ANOVA, which does not assume the groups spread out equally.
+`omega_squared()` is a less biased cousin of eta squared; report both. `TukeyHSD()` is the
+follow-up that says which pairs of bands differ, with p adjusted for making three comparisons.
 
-**What you should see:** `Omega squared` `0.004`; `Welch's ANOVA` `F = 109.83, p < .001`; and
-under Tukey, `large-small` `diff = -10.75, p < .001`, `large-medium` `diff = -11.38, p < .001`,
-and `medium-small` `diff = 0.63, p = .550`.
+```{r}
+#| label: anova-501
+oneway.test(outcome ~ group3, data = analysis)   # Welch's ANOVA
+omega_squared(fit_anova)
+TukeyHSD(fit_anova)
+```
+
+**What you should see:** Welch's `F = 109.83`, `p-value < 2.2e-16`; `Omega2` `3.68e-03`, which
+is `0.004` when rounded; and under Tukey, `large-small` `diff` `-10.7466059` (`-10.75`), `p adj`
+`0.0000000`, `large-medium` `diff` `-11.3791998` (`-11.38`), `p adj` `0.0000000`, and
+`medium-small` `diff` `0.6325938` (`0.63`), `p adj` `0.5497618`.
 
 **Write:** the APA report of Test 3 (F, both dfs, p, N, eta-squared), then two to three
-sentences on what it means for H3, with the effect size in words.
+sentences for the client on what it means for H3, with the effect size in words.
+
 **MC 501:** add the spread across the groups, Welch's result, and which bands differ.
 
 *Your answer:*
@@ -263,67 +314,76 @@ sentences on what it means for H3, with the effect size in words.
 
 ### Task 5.1: The test and its effect size
 
-`run_regression()` fits a straight line from one number to another. It prints n, the slope
-(characters gained per hour), the intercept, the standardized slope, R-squared, and the F-test
-with its df and p, and ends with the `lm()` line it stands for.
+`lm()` fits a straight line from one number to another, and `summary()` prints the slope (the
+`Estimate` on the predictor's row: characters gained per hour), the intercept, R-squared (the
+share of the variation the line explains), and the F-test with its df and p.
 
 ```{r}
 #| label: regression
-run_regression(analysis, outcome = outcome, predictor = ___)   # the hour of the day
+fit_lm <- lm(outcome ~ ___, data = analysis)   # the hour of the day
+summary(fit_lm)
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Linear
 regression**, then **Run it**.
 
-**What you should see:** `Slope` `0.05`; `R-squared` `0.000`; `F` `2.68 on 1 and 35261 df`;
-`p-value` `= .102`.
+**What you should see:** `Estimate` `0.05360` on the `predictor` row (the slope, `0.05` when
+rounded); `Multiple R-squared` `7.603e-05` (`0.000` when rounded); `F-statistic` `2.681` on `1`
+and `35261` DF; `p-value` `0.1016`.
 
 ### Task 5.2: The standardized slope, the interval, and the residuals (MC 501)
 
-The standardized slope is the `Beta` line of the block in Task 5.1: the change in message
-length, in standard deviations, per standard deviation of the hour. For the residuals, keep the
-fitted model and draw R's two standard diagnostic plots from it.
+`standardize_parameters()` reports the slope in standard deviations: the change in message
+length, in standard deviations, per standard deviation of the hour. For the residuals, draw R's
+two standard diagnostic plots from the fitted model.
 
 ```{r}
 #| label: regression-501
-model_lm <- run_regression(analysis, outcome = outcome, predictor = predictor)   # keeps the fit, prints nothing new
+standardize_parameters(fit_lm)   # the standardized slope, with its interval
 ```
 
 ```{r}
 #| label: regression-501-residuals
 #| fig-alt: "Residuals plotted against predicted message length for the regression on hour of day. The points stack in a vertical stripe at each of the 24 hours and stretch far above the zero line, up to about 470, while none fall below about minus 30."
-plot(model_lm$raw, which = 1)   # residuals against the predicted values
+plot(fit_lm, which = 1)   # residuals against the predicted values
 ```
 
 ```{r}
 #| label: regression-501-qq
 #| fig-alt: "Normal Q-Q plot of the standardized residuals. The points follow the line only in the middle, sit flat above minus 1 at the left, and curve sharply upward at the right end, to about 11."
-plot(model_lm$raw, which = 2)   # Q-Q plot: the residuals against a normal shape
+plot(fit_lm, which = 2)   # Q-Q plot: the residuals against a normal shape
 ```
 
-**What you should see:** `Beta` `0.009`; and two plots: the residuals stack in a stripe at each
-hour, and the Q-Q points bend sharply upward at the right.
+**What you should see:** `Std. Coef.` `8.72e-03` for `predictor`, which is `0.009`; and two
+plots: the residuals stack in a stripe at each hour, and the Q-Q points bend sharply upward at
+the right.
 
-**Write:** the APA report of Test 4 (b, t, df, p, R-squared), then two to three sentences on what
-it means for H4, with the slope in characters per hour.
+**Write:** the APA report of Test 4 (b, t, df, p, R-squared), then two to three sentences for
+the client on what it means for H4, with the slope in characters per hour.
+
 **MC 501:** add the standardized slope and what the residual plots show.
 
 *Your answer:*
 
-## Part 6: What the results do not license
-
-**Write:** one paragraph. A significant test on this sample is not a claim about Twitch. Say why,
-and say what changes when a variable belongs to the channel (its type, its audience) rather than
-to the message.
-
-*Your answer:*
-
-## Part 7: Significance against size (MC 501)
+## Part 6: Significance against size (MC 501)
 
 **Write:** one paragraph, across all four results, that separates statistical significance from
 practical size, the way a reviewer would want it.
 
 *Your answer:*
+
+## Explain this stage to the client
+
+**Write:** one short paragraph, in plain language, that you would send to the channel manager.
+Say what you did at this stage (four tests, one per question), what it shows (which differences
+held up, and how big each one is in words the manager can repeat to a sponsor), and what it
+does not show. Two limits belong in every version of this paragraph: a significant test on this
+sample is not a claim about Twitch as a whole, and a variable that belongs to a channel (its
+type, its audience) varies across about fifty channels, not tens of thousands of messages, so
+it is weaker evidence than its message count suggests. No R, no column names, no jargon the
+manager would have to look up.
+
+*Your paragraph:*
 
 ## Before you submit
 
@@ -332,4 +392,5 @@ practical size, the way a reviewer would want it.
 - [ ] Each test has its APA report, its effect size in words, and its interpretation. In the R
       Companion, **AURA: Write R code**, under **R4 Test**, **APA numbers to check your
       sentence** prints a test's numbers so you can check the sentence you wrote.
+- [ ] The paragraph to the client is written, and it names both limits.
 - [ ] The worksheet renders without an error.
