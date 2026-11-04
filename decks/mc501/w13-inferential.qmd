@@ -494,7 +494,7 @@ is gaming [TRUE] |      -0.13 | [-0.16, -0.09]
 ```
 
 - `standardize_parameters()`, from effectsize, puts the slope in standard deviations of the outcome
-- **-0.13** means gaming messages sit 0.13 standard deviations of message length below non-gaming, the same gap Cohen's *d* measured
+- **-0.13** means gaming messages sit 0.13 standard deviations of message length below non-gaming, close to Cohen's *d* (also -0.13), which divides by the within-group spread instead
 - With a yes/no predictor that is all it means; with a number predictor, as in the worksheet, it is the change per standard deviation of the predictor
 
 ## One Framework, Three Faces
