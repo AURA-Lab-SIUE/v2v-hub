@@ -90,8 +90,8 @@ lines about "conflicts" are normal.
 
 **If you see `there is no package called 'janitor'`,** run **AURA: Check my setup**, then
 **Install what is missing**, and run this chunk again. The same fix applies if a later chunk
-says `could not find function "twitch_channels"` or `"write_coding_form"`: this worksheet needs
-v2v 0.3.8 or newer, and **Install what is missing** updates it.
+says `could not find function "twitch_channels"`: this worksheet needs v2v 0.3.8 or newer, and
+**Install what is missing** updates it.
 
 ## Part 0: Hand-code thirty messages
 
@@ -99,13 +99,18 @@ v2v 0.3.8 or newer, and **Install what is missing** updates it.
 
 You will code the same thirty messages as everyone else in the class, so the draw is fixed:
 fifteen messages from `bobross` (a non-gaming channel, Art) and fifteen from `giantwaffle` (a
-gaming channel, Rocket League). `sample_messages()` draws the same rows every time because it
-sets its own seed.
+gaming channel, Rocket League). `set.seed()` fixes the random draw, so the same seed gives
+everyone the same thirty. `slice_sample()` draws rows at random, and `group_by(channel)` first
+makes it draw fifteen from each channel instead of fifteen in total.
 
 ```{r}
 #| label: draw-sample
+set.seed(20261113)  # the class seed: everyone draws the same thirty
+
 coding_sample <- twitch_chat(channels = c("bobross", "giantwaffle")) %>%  # keep the two channels first
-  sample_messages(n_per_channel = 15)                                      # then 15 from each
+  group_by(channel) %>%                                                    # one draw per channel
+  slice_sample(n = 15) %>%                                                 # 15 from each
+  ungroup()
 
 coding_sample %>%
   count(channel)
@@ -113,24 +118,34 @@ coding_sample %>%
 
 **What you should see:** two rows, `bobross` with `15` and `giantwaffle` with `15`.
 
-**If your thirty differ from your classmates',** check the order: the channels are kept first
-and the draw comes second. Drawing from all fifty channels and keeping these two afterward
-gives a different thirty.
+**If your thirty differ from your classmates',** check two things: the seed line ran right
+before the draw, and the channels are kept first and the draw comes second. Drawing from all
+fifty channels and keeping these two afterward gives a different thirty. (A worksheet from before
+November 4 drew with `sample_messages(n_per_channel = 15)`; that still works and gives the same
+thirty, so there is no need to redo your codes.)
 
 ### Task 0.2: Write the coding sheet
 
 This writes the thirty messages to your coding sheet, `data/coding-form.csv`, one row per
 message, with three columns: `id` (the key that joins your codes back), `channel`, and
-`message`. It writes the file only if it is not there yet, so running the worksheet again never
-wipes out codes you have typed.
+`message`. Run this chunk **once**, by clicking inside it and pressing **Ctrl+Shift+Enter**
+(**Cmd+Shift+Enter** on a Mac). It is marked `eval: false`, so rendering the worksheet skips it
+and never wipes out the codes you type into the file.
 
 ```{r}
 #| label: write-form
-write_coding_form(coding_sample)  # writes data/coding-form.csv once; never overwrites it
+#| eval: false
+dir.create("data", showWarnings = FALSE)  # makes the data folder if it is not there yet
+
+coding_sample %>%
+  select(id, channel, message) %>%   # the key, the channel, and the text to code
+  write_csv("data/coding-form.csv")  # run once; rendering skips this chunk
 ```
 
-**What you should see:** `Wrote 30 messages to data/coding-form.csv`, and `coding-form.csv` in
-the `data` folder in the **Explorer** panel. On every later run it says the file was left alone.
+**What you should see:** `coding-form.csv` in the `data` folder in the **Explorer** panel, with
+30 rows. If the file is already there from an earlier run of this worksheet (it was written by
+`write_coding_form()` before November 4), leave it: it holds the same thirty messages, and your
+codes are safe.
 
 ### Task 0.3: Code each message by hand
 
@@ -249,24 +264,25 @@ each side.
 ```{r}
 #| label: timestamps
 chat <- chat %>%
-  mutate(ts = ___(date))  # milliseconds -> date and time
+  mutate(ts = ___(date / 1000))  # milliseconds -> seconds -> date and time
 
 streams <- streams %>%
-  mutate(ts = ___(date))
+  mutate(ts = ___(date / 1000))
 
 chat %>%
   summarize(first = min(ts), last = max(ts))  # the first and last message
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Turn the
-date column into a time (clean_dates)**, then **Run it**.
+The blank is the lubridate function that turns a count of seconds into a date and time; the
+`/ 1000` turns milliseconds into seconds first. Or with the R Companion: run **AURA: Write R
+code** and, under **R2 Data**, select **Turn the date column into a time**, then **Run it**.
 
-**What you should see:** a line saying what `clean_dates()` is the same as in plain lubridate,
-then a one-row table: `first` is `2018-11-18 21:55:27` and `last` is `2018-11-24 18:20:23`. Six
-days in November 2018.
+**What you should see:** a one-row table: `first` is `2018-11-18 21:55:27` and `last` is
+`2018-11-24 18:20:23`. Six days in November 2018.
 
-**If the year is in the tens of thousands,** the milliseconds were read as seconds. Use
-`clean_dates()`, which divides by 1,000 first.
+**If the year is in the tens of thousands,** the milliseconds were read as seconds: the `/ 1000`
+is missing. (A worksheet from before November 4 used `clean_dates(date)` here; that still works
+and gives the same `ts`.)
 
 ### Task 3.2: Message length
 
@@ -293,24 +309,35 @@ column (mutate)**, then **Run it**.
 ### Task 4.1: Match each message to its stream
 
 Chat lives in continuous time; stream information lives in snapshots taken about once a minute.
-`join_chat_streams()` gives each message the snapshot taken at or just before it, on the same
-channel.
+A **rolling join** gives each message the snapshot taken at or just before it, on the same
+channel. First keep the stream columns the question needs and rename the snapshot's time, so
+it cannot be confused with the message's time. Then join with `closest()`, which matches the
+nearest earlier snapshot instead of an exact time.
 
 ```{r}
 #| label: join-streams
-chat_streams <- ___(chat, streams)
+snapshots <- streams %>%
+  select(channel, snapshot_ts = ts, game, viewers)  # four columns; ts renamed on the way
+
+chat_streams <- chat %>%
+  ___(
+    snapshots,
+    by = join_by(channel, closest(ts >= snapshot_ts))  # same channel, nearest earlier snapshot
+  )
 
 nrow(chat_streams)                     # the join must not add or lose rows
 chat_streams %>%
   count(no_snapshot = is.na(viewers))  # messages with no earlier snapshot
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Match each
-message to its stream (join_chat_streams)**, then **Run it**.
+The blank is the join that keeps every row of `chat`. Or with the R Companion: run **AURA: Write
+R code** and, under **R2 Data**, select **Join two tables by a key and nearest earlier time**,
+then **Run it**.
 
-**What you should see:** a line naming the plain dplyr join this stands for, then `[1] 35267`,
-then `FALSE` with `35256` and `TRUE` with `11`. Eleven messages came before their channel's
-first snapshot, so they have nothing to match.
+**What you should see:** `[1] 35267`, then `FALSE` with `35256` and `TRUE` with `11`. Eleven
+messages came before their channel's first snapshot, so they have nothing to match. (A worksheet
+from before November 4 used `join_chat_streams(chat, streams)` here; that still works and gives
+the same table.)
 
 ### Task 4.2: Join the channel labels onto the messages
 
