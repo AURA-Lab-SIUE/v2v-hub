@@ -114,7 +114,7 @@ you did.
 ## Packages and the Tidyverse
 
 ::: {.define}
-**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course's v2v package adds the example Twitch data and `clean_dates()`.
+**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course's v2v package adds the example Twitch data and a chart theme.
 :::
 
 ::: {.define}

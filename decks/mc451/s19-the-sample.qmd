@@ -176,36 +176,37 @@ Check your population for this imbalance before you draw the sample.
 ## Drawing the Sample
 
 ```r
-coding_sample <- v2v::sample_messages(
-  chat,
-  n_per_channel = 30,
-  seed = 409
-)
+set.seed(409)
+
+coding_sample <- chat %>%
+  group_by(channel) %>%
+  slice_sample(n = 30) %>%
+  ungroup()
 ```
 
-- `sample_messages()` treats each channel as a stratum
-- `n_per_channel = 30` asks for thirty messages from each channel
+- `group_by(channel)` treats each channel as a stratum
+- `slice_sample(n = 30)` asks for thirty messages from each channel
     - Across the fifty channels, this draw returns 1,350 messages
-- `seed = 409` fixes the random draw so it can be repeated
-- 1,350 messages is a size for a team of coders; your draw uses the same command at your own budget ([Chapter 10, Drawing the sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#drawing-the-sample))
+- `set.seed(409)` fixes the random draw so it can be repeated
+- 1,350 messages is a size for a team of coders; your draw uses the same lines with your own stratum column and number ([Chapter 10, Drawing the sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#drawing-the-sample))
 
 ## Sizing the Draw to Your Time Budget
 
 - At 45 seconds a message, 1,350 messages take nearly seventeen hours
-- Lower `n_per_channel` until the arithmetic fits the time you have
-    - `n_per_channel = 5` across fifty channels is 250 messages, about three hours
+- Lower the `n` in `slice_sample()` until the arithmetic fits the time you have
+    - `n = 5` across fifty channels is 250 messages, about three hours
     - The sample is still stratified, so the comparison still holds
 - Write the arithmetic into your sampling plan: seconds per item, number of items, total hours
 
 ## Why the Seed Is Not Optional
 
 ::: {.define}
-**Seed:** a number that fixes a random draw so it comes out the same every time. Example: `seed = 409` gives you the same 1,350 messages on every run.
+**Seed:** a number that fixes a random draw so it comes out the same every time. Example: `set.seed(409)` gives you the same 1,350 messages on every run.
 :::
 
 - A random draw differs every time you run it
 - The seed fixes the starting point of R's random number generator
-    - `sample_messages()` calls `set.seed()` with that number before it draws
+    - `set.seed()` must run right before the draw, every time
 - Without a seed, nobody can check your results, including you in six months
 
 ## The Seed Itself Is Arbitrary

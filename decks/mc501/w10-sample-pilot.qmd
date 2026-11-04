@@ -150,26 +150,27 @@ Write this rule into your sampling plan, because it is a choice you made.
 ## Drawing the Sample
 
 ```r
-coding_sample <- v2v::sample_messages(
-  chat,
-  n_per_channel = 30,
-  seed = 409
-)
+set.seed(409)
+
+coding_sample <- chat %>%
+  group_by(channel) %>%
+  slice_sample(n = 30) %>%
+  ungroup()
 ```
 
-- `sample_messages()` treats each channel as a stratum
-- **`n_per_channel = 30` asks for thirty messages from each channel:** 1,350 across fifty channels
-- `seed = 409` fixes the draw so it can be repeated
-- Your own draw uses the same command with your own stratum column and number per stratum ([Chapter 10, Drawing the sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#drawing-the-sample))
+- `group_by(channel)` treats each channel as a stratum
+- **`slice_sample(n = 30)` asks for thirty messages from each channel:** 1,350 across fifty channels
+- `set.seed(409)` fixes the draw so it can be repeated
+- Your own draw uses the same lines with your own stratum column and number per stratum ([Chapter 10, Drawing the sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html#drawing-the-sample))
 
 ## The Seed Is Not Optional
 
 ::: {.define}
-**Seed:** a number that fixes a random draw so it comes out the same every time. Example: `seed = 409` gives you the same 1,350 messages on every run.
+**Seed:** a number that fixes a random draw so it comes out the same every time. Example: `set.seed(409)` gives you the same 1,350 messages on every run.
 :::
 
 - A random draw differs every time you run it
-    - The seed fixes the starting point of R's random number generator, because `sample_messages()` calls `set.seed()` with it before drawing
+    - The seed fixes the starting point of R's random number generator, so `set.seed()` must run right before the draw
 - Without a seed your sample cannot be reproduced
     - Nobody can check your results, including you
 

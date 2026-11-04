@@ -193,17 +193,17 @@ Now build what the analysis needs. The order matters: make the timestamps readab
 
 ### 3a: Make the Timestamp Readable
 
-The `date` column holds a count of milliseconds elapsed since midnight on the first of January, 1970. That reference moment is the **Unix epoch**, the zero point nearly all computers use to keep time. The number is precise and entirely unreadable. `mutate()` is the verb that fixes it, and the course package's `clean_dates()` does the conversion. Both tables get the new column, because the join in step 3c needs it on each side:
+The `date` column holds a count of milliseconds elapsed since midnight on the first of January, 1970. That reference moment is the **Unix epoch**, the zero point nearly all computers use to keep time. The number is precise and entirely unreadable. `mutate()` is the verb that fixes it, and lubridate's `as_datetime()` does the conversion. Both tables get the new column, because the join in step 3c needs it on each side:
 
 ```r
 
 chat <- chat %>%
-  mutate(ts = clean_dates(date))
+  mutate(ts = as_datetime(date / 1000))
 streams <- streams %>%
-  mutate(ts = clean_dates(date))
+  mutate(ts = as_datetime(date / 1000))
 ```
 
-`clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count seconds, then turns the result into a date and time, stored in a new `ts` column. The same step without the course package is `as_datetime(date / 1000)`, from lubridate, which the tidyverse loads.
+`date / 1000` divides by 1,000, because `date` counts milliseconds and R's date-times count seconds. `as_datetime()`, from lubridate (which the tidyverse loads), then turns the seconds into a date and time, stored in a new `ts` column. Your own data will usually carry dates as text, such as `2024-03-01 14:22:05`; lubridate reads those with `ymd_hms()`, `ymd()`, or `mdy()`, named for the order the text writes the year, month, and day.
 
 ```r
 
@@ -224,7 +224,7 @@ chat %>%
 ::: {.callout-important}
 ## Divide by 1,000 or Land in the Year 50,000
 
-A date-time function expects a count of **seconds**. The `date` column is a count of **milliseconds**, a thousand times finer. Hand it the raw number and every message lands tens of thousands of years in the future. `date / 1000` converts milliseconds to seconds first. `clean_dates()` does that division for you, and prints the lubridate line it stands for the first time you call it. Doing the conversion by hand, this is the single most common way it fails, and it fails quietly: you get dates, they are just absurd ones.
+A date-time function expects a count of **seconds**. The `date` column is a count of **milliseconds**, a thousand times finer. Hand it the raw number and every message lands tens of thousands of years in the future. `date / 1000` converts milliseconds to seconds first. A missing `/ 1000` is the single most common way this step fails, and it fails quietly: you get dates, they are just absurd ones.
 :::
 
 The column type changed too, from `<dbl>` to `<dttm>`. That new type is what makes the column useful. From a real date-time you can pull the hour of day, the day of week, or the calendar date, none of which can be read off the raw integer.
@@ -259,11 +259,15 @@ A single-word message at eight characters, a row of punctuation at twenty-three,
 
 ### 3c: Match Each Message to Its Stream
 
-The information the research question turns on lives in the *other* table, so the chat and stream tables have to meet. The first join attaches to each message the stream snapshot taken at or before it, on the same channel. `join_chat_streams()` does it in one call:
+The information the research question turns on lives in the *other* table, so the chat and stream tables have to meet. The first join attaches to each message the stream snapshot taken at or before it, on the same channel. It takes two blocks. The first keeps the four stream columns the question needs and renames the snapshot's time to `snapshot_ts`, so it cannot be confused with the message's own `ts`. The second is the join itself:
 
 ```r
 
-chat_streams <- join_chat_streams(chat, streams)
+snapshots <- streams %>%
+  select(channel, snapshot_ts = ts, game, viewers)
+
+chat_streams <- chat %>%
+  left_join(snapshots, by = join_by(channel, closest(ts >= snapshot_ts)))
 
 chat_streams %>%
   count(no_snapshot = is.na(viewers))
@@ -277,12 +281,12 @@ chat_streams %>%
 2 TRUE           11
 ```
 
-Each message now carries the `game` and `viewers` of the latest snapshot before it, and `snapshot_ts`, the time of that snapshot. Eleven messages arrived before their channel's first snapshot, so they carry `NA`. The same join without the course package is `left_join(chat, streams, by = join_by(channel, closest(ts >= snapshot_ts)))`, a **rolling join**: snapshots come every few minutes and messages every second, so the key is "the nearest earlier snapshot," not an exact match. `join_chat_streams()` prints that line the first time you call it.
+Each message now carries the `game` and `viewers` of the latest snapshot before it, and `snapshot_ts`, the time of that snapshot. Eleven messages arrived before their channel's first snapshot, so they carry `NA`. `left_join()` keeps every message, and `join_by(channel, closest(ts >= snapshot_ts))` is a **rolling join** key: snapshots come every few minutes and messages every second, so the key is "the same channel and the nearest earlier snapshot," not an exact match. The same two blocks work on any pair of tables where one holds events and the other holds readings taken now and then: change the table and column names and nothing else.
 
 ::: {.callout-note}
 ## Or Use the R Companion
 
-In the R Companion, **AURA: Write R code**, under **R2 Data**, writes the `clean_dates()` and `join_chat_streams()` calls, and the filter, select, mutate, and count steps, into your script with a comment above each block. Build each step by hand once first, as above, so you know what the generated code is doing.
+In the R Companion, **AURA: Write R code**, under **R2 Data**, writes these same `as_datetime()` and `left_join()` blocks, and the filter, select, mutate, and count steps, into your script with a comment above each block. Build each step by hand once first, as above, so you know what the generated code is doing.
 :::
 
 ### 3d: Label Gaming and Non-Gaming
@@ -411,13 +415,15 @@ streams <- twitch_streams()
 
 chat <- chat %>%                                     # readable time, message length
   mutate(
-    ts             = clean_dates(date),
+    ts             = as_datetime(date / 1000),
     message_length = str_length(message)
   )
-streams <- streams %>%
-  mutate(ts = clean_dates(date))
+snapshots <- streams %>%
+  mutate(ts = as_datetime(date / 1000)) %>%
+  select(channel, snapshot_ts = ts, game, viewers)  # four columns, snapshot time renamed
 
-chat_streams <- join_chat_streams(chat, streams)    # join key: channel, nearest earlier snapshot
+chat_streams <- chat %>%
+  left_join(snapshots, by = join_by(channel, closest(ts >= snapshot_ts)))  # nearest earlier snapshot
 
 channels <- twitch_channels()                       # one row per channel: category, label, audience band
 
@@ -432,24 +438,24 @@ A `glimpse()` of the finished table shows what the transformations bought you. T
 ```
 Rows: 35,267
 Columns: 15
-$ id             <int> 21503485, 21505722, 21506809, 21507051, 21507140, 21507…
-$ channel        <chr> "704cb1fgnty", "704cb1fgnty", "704cb1fgnty", "704cb1fgn…
-$ sender         <chr> "cheezehammer", "lacari_myfave_trihard1", "lacari_myfav…
-$ message        <chr> "FBtouchdown", "TriHard", "ANELE", "TriHard", "TriHard …
-$ date           <dbl> 1.543072e+12, 1.543072e+12, 1.543072e+12, 1.543072e+12,…
-$ ts             <dttm> 2018-11-24 15:01:02, 2018-11-24 15:02:26, 2018-11-24 1…
-$ message_length <int> 11, 7, 5, 7, 15, 23, 31, 23, 15, 5, 7, 8, 22, 10, 4, 8,…
-$ snapshot_ts    <dttm> 2018-11-24 15:00:09, 2018-11-24 15:01:23, 2018-11-24 1…
-$ game           <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ viewers        <int> 13628, 14902, 16978, 16978, 16978, 16978, 16978, 16978,…
-$ main_game      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ is_gaming      <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ channel_type   <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ median_viewers <dbl> 16978, 16978, 16978, 16978, 16978, 16978, 16978, 16978,…
-$ viewer_band    <fct> medium, medium, medium, medium, medium, medium, medium,…
+$ id             <int> 89, 551, 1033, 2094, 2803, 10406, 16104, 22571, 31555, …
+$ channel        <chr> "sodapoppin", "xqcow", "forsen", "sodapoppin", "xqcow",…
+$ sender         <chr> "madzee", "prometheanow", "spectre155", "itsjer", "lase…
+$ message        <chr> "???????????????????????", "TriEasy Clap TriEasy Clap T…
+$ date           <dbl> 1.542578e+12, 1.542578e+12, 1.542578e+12, 1.542578e+12,…
+$ ts             <dttm> 2018-11-18 21:55:27, 2018-11-18 21:55:35, 2018-11-18 2…
+$ message_length <int> 23, 441, 8, 12, 206, 37, 6, 7, 4, 7, 3, 4, 12, 21, 3, 7…
+$ snapshot_ts    <dttm> NA, NA, NA, NA, NA, 2018-11-18 21:56:40, 2018-11-18 21…
+$ game           <chr> NA, NA, NA, NA, NA, "Artifact", "Marble It Up!", "Rocke…
+$ viewers        <int> NA, NA, NA, NA, NA, 15300, 28076, 4703, 19239, 28550, 2…
+$ main_game      <chr> "Hand Simulator", "Just Chatting", "The Elder Scrolls V…
+$ is_gaming      <lgl> TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE…
+$ channel_type   <fct> gaming, non-gaming, gaming, gaming, non-gaming, gaming,…
+$ median_viewers <dbl> 22944, 16176, 10163, 22944, 16176, 10163, 22944, 4867, …
+$ viewer_band    <fct> large, medium, medium, large, medium, medium, large, sm…
 ```
 
-`join_chat_streams()` sorts the table by channel and then by time, so the first rows shown belong to `704cb1fgnty`, one of the two channels with no category; that is why its labels print `NA`. The table is now **tidy**: each row is one observation, one chat message; each column is one variable; and everything the analysis needs sits in one place. The unreadable integers have become timestamps. Message length and gaming status, named in the codebook and absent from the raw data, are now columns. The chat and stream tables, once disconnected, are joined twice: once to the snapshot nearest each message, once to the channel's label.
+The rows keep the chat table's order, so the first rows are the earliest messages, which arrived before their channels' first snapshot; that is why `snapshot_ts`, `game`, and `viewers` open with `NA`. The table is now **tidy**: each row is one observation, one chat message; each column is one variable; and everything the analysis needs sits in one place. The unreadable integers have become timestamps. Message length and gaming status, named in the codebook and absent from the raw data, are now columns. The chat and stream tables, once disconnected, are joined twice: once to the snapshot nearest each message, once to the channel's label.
 
 None of this was analysis. Not one result has been computed. But every figure in Chapter 5 and every test in Chapter 6 comes out of this table, which is why the care spent building it is not optional. A wrangling mistake does not announce itself. It travels quietly into every chart downstream.
 
