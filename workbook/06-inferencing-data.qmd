@@ -52,6 +52,7 @@ The chi-square test evaluates how much the observed data differs from what you'd
 
 library(tidyverse)
 library(v2v)
+library(effectsize)
 
 analysis <- read_rds("data/twitch_analysis.RDS")
 
@@ -59,16 +60,19 @@ tested <- analysis %>%
   filter(!is.na(channel_type), !is.na(viewer_band))
 ```
 
-A contingency table is the raw input for the chi-square test. It shows the count for every combination of your two variables, and `crosstab()` from Chapter 5 prints it:
+A contingency table is the raw input for the chi-square test. It shows the count for every combination of your two variables, and the `count()` and `pivot_wider()` pipe from Chapter 5 prints it:
 
 ```r
 
-crosstab(tested, viewer_band, channel_type)
+tested %>%
+  count(viewer_band, channel_type) %>%
+  pivot_wider(names_from = channel_type, values_from = n, values_fill = 0)
 ```
 
 ```
-Counts: viewer_band (rows) by channel_type (columns), 34766 rows counted
+# A tibble: 3 × 3
   viewer_band gaming `non-gaming`
+  <fct>        <int>        <int>
 1 small        25309         2457
 2 medium        4000         1000
 3 large         2000            0
@@ -79,27 +83,37 @@ sample comes from a large non-gaming channel. That zero is a real feature of thi
 corpus, not a coding error, and it is doing a lot of the work in the test you are
 about to run. Say so when you report the result.
 
-The second grid `crosstab()` prints is the proportions, each band's share of its own messages. This helps you see the pattern before running the test. Look at the proportions. Do the audience-size bands differ in their gaming and non-gaming mix? If every band had roughly the same proportions, there would be no association. If they differ, the chi-square test will tell you whether that difference is statistically significant.
+Chapter 5's second pipe, `group_by(viewer_band)` then `mutate(share = round(n / sum(n), 3))` after the `count()`, prints the proportions, each band's share of its own messages. This helps you see the pattern before running the test. Look at the proportions. Do the audience-size bands differ in their gaming and non-gaming mix? If every band had roughly the same proportions, there would be no association. If they differ, the chi-square test will tell you whether that difference is statistically significant.
 
 ## Step 3: Run the Chi-Square Test
 
+The test functions want the table as a base R object, and `xtabs()` builds one from a formula: the two variables after the `~`. `sum()` of that table is the sample size, `chisq.test()` runs the test, and `cramers_v()` from the effectsize package adds the effect size.
+
 ```r
 
-chi_result <- run_chi_square(tested, x = viewer_band, y = channel_type)
+counts <- xtabs(~ viewer_band + channel_type, data = tested)
+sum(counts)
+chi <- chisq.test(counts)
+chi
+cramers_v(counts, adjust = FALSE)
 ```
 
 ```
-Chi-square test of independence
-viewer_band by channel_type
-  N                       34766
-  Chi-squared             822.66
-  df                      2
-  p-value                 < .001
-  Cramer's V              0.15  (small)
-  Smallest expected count 198.87
+[1] 34766
+
+	Pearson's Chi-squared test
+
+data:  counts
+X-squared = 822.66, df = 2, p-value < 2.2e-16
+
+Cramer's V |       95% CI
+-------------------------
+0.15       | [0.14, 1.00]
+
+- One-sided CIs: upper bound fixed at [1.00].
 ```
 
-The block goes on to print the expected counts, the standardized residuals, a sentence, and the plain R lines it stands for: `chisq.test(xtabs(~ viewer_band + channel_type, data = tested))` and `effectsize::cramers_v()`. Run those once if you want R's own output; the numbers are the same.
+`[1] 34766` is *N*, the number of messages in the table. The test result is saved as `chi` so that Step 5 can pull the expected counts and residuals out of it; typing `chi` on its own line prints it. **AURA: Write R code**, under **R4 Test**, writes these same lines. (Older worksheets called `run_chi_square()`; v2v keeps it as a deprecated shortcut.)
 
 ### Reading the Output
 
@@ -120,7 +134,7 @@ The p-value is the most important number, and the most misread number in statist
 
 Be precise about what the p-value does *not* say. It is not the probability that the null hypothesis is true. It is not the probability that the result is a fluke. And it is not a measure of how large the difference is. A small p-value says the pattern is probably not nothing. It says nothing at all about whether the pattern is big.
 
-Read the three numbers off the output above. The chi-square statistic is 822.66 on 2 degrees of freedom, and the p-value is below .001, far under .05. The result is significant, so you reject the null hypothesis: there is evidence of an association between audience size and channel type.
+Read the three numbers off the output above. The chi-square statistic is 822.66 on 2 degrees of freedom, and the p-value, `< 2.2e-16`, is smaller than R will print, so report it as below .001, far under .05. The result is significant, so you reject the null hypothesis: there is evidence of an association between audience size and channel type.
 
 ::: {.callout-note}
 ## The .05 Threshold Is a Convention
@@ -132,7 +146,7 @@ It has no deep justification. A p-value of .049 and one of .051 describe almost 
 
 Statistical significance tells you *whether* there's a relationship. Effect size tells you *how strong* it is. A significant result with a tiny effect size means the relationship is real but practically unimportant.
 
-Cramér's V ranges from 0 (no association) to 1 (perfect association), and the `Cramer's V` line of the block reports it with a word for its size.
+Cramér's V ranges from 0 (no association) to 1 (perfect association). `cramers_v(counts, adjust = FALSE)` reports it with a 95% interval; the upper bound of 1.00 is the package's one-sided convention, not a finding. Use the benchmarks below for the word that goes with the number.
 
 ### Effect Size Benchmarks (Cohen's Guidelines)
 
@@ -149,7 +163,7 @@ Here Cramér's V is 0.15. That is above .10 and below .30, so by the benchmarks 
 ::: {.callout-note}
 ## Or use the R Companion
 
-In the R Companion, **AURA: Write R code**, under **R4 Test**, writes the chi-square with Cramér's V, the Welch t-test with Cohen's d, the ANOVA with eta squared, and the regression into your script, each as the one `v2v` line above. Its **APA numbers to check your sentence** prints a test's numbers in APA form; the sentence, and the journalist translation, are yours to write.
+In the R Companion, **AURA: Write R code**, under **R4 Test**, writes the chi-square with Cramér's V, the Welch t-test with Cohen's d, the ANOVA with eta squared, and the regression into your script, as the same real code this chapter shows. Its **APA numbers to check your sentence** prints a test's numbers in APA form; the sentence, and the journalist translation, are yours to write.
 :::
 
 ::: {.callout-important}
@@ -168,52 +182,80 @@ A standardized residual tells you, for each cell in the table, how much the obse
 - **Residual < -2:** This cell has *fewer* observations than expected (strong negative contribution)
 - **Residual between -2 and 2:** This cell is roughly what you'd expect
 
-```
-  Standardized residuals (beyond 2 or -2 drives the result):
-    viewer_band gaming non-gaming
-         small   13.58     -13.58
-         medium -25.68      25.68
-         large   15.31     -15.31
+Both come out of the saved test result: `chi$expected` holds the counts the null hypothesis predicts for each cell, and `chi$stdres` holds the standardized residuals. `round()` trims the decimals.
+
+```r
+
+round(chi$expected, 1)
+round(chi$stdres, 2)
 ```
 
-The block printed them under the expected counts. These are the combinations driving the result. The large, non-gaming cell holds no messages at all, far fewer than chance would put there, so its residual is negative: the biggest channels in this corpus are all gaming channels.
+```
+           channel_type
+viewer_band  gaming non-gaming
+     small  25005.1     2760.9
+     medium  4502.8      497.2
+     large   1801.1      198.9
+           channel_type
+viewer_band gaming non-gaming
+     small   13.58     -13.58
+     medium -25.68      25.68
+     large   15.31     -15.31
+```
+
+The first grid is the expected counts. The chi-square test is trustworthy when every expected count is at least 5, and the smallest here, 198.9 in the large non-gaming cell, clears that easily. The second grid is the residuals, and beyond 2 or -2 in either direction is what drives the result. These are the combinations driving the result. The large, non-gaming cell holds no messages at all, far fewer than chance would put there, so its residual is negative: the biggest channels in this corpus are all gaming channels.
 
 ## When the Outcome Is Continuous: The t-test
 
 Chi-square needs two categorical variables. The study's central question pairs a categorical split with a *continuous* outcome: is `message_length` different on gaming and non-gaming channels? A continuous outcome compared across two groups is the textbook setting for the **t-test**.
 
-`v2v::run_t_test()` takes the data, the variable to compare, and the variable that splits it into groups:
+Three steps: print the two groups side by side, run the test, and add the effect size. The `filter()` keeps the messages that have both a length and a gaming label, so the `n` column matches what the test uses.
 
 ```r
 
-v2v::run_t_test(analysis, value = message_length, group = is_gaming)
+analysis %>%
+  filter(!is.na(message_length), !is.na(is_gaming)) %>%
+  group_by(is_gaming) %>%
+  summarize(n = n(), mean = mean(message_length), sd = sd(message_length))
+
+t.test(message_length ~ is_gaming, data = analysis)
+cohens_d(message_length ~ is_gaming, data = analysis)
 ```
 
 ```
-Welch two-sample t-test
-message_length by is_gaming
-  FALSE                  n = 3457, mean = 33.70, SD = 60.68
-  TRUE                   n = 31305, mean = 28.49, SD = 38.47
-  Difference             5.21
-  t                      4.94
-  df                     3768.7
-  p-value                < .001
-  Cohen's d              0.13  (negligible)
-  FALSE and TRUE differ by a statistically significant, negligible amount.
-  The same test without v2v:
-    t.test(message_length ~ is_gaming, data = analysis)
-    effectsize::cohens_d(message_length ~ is_gaming, data = analysis)
+# A tibble: 2 × 4
+  is_gaming     n  mean    sd
+  <lgl>     <int> <dbl> <dbl>
+1 FALSE      3457  33.7  60.7
+2 TRUE      31305  28.5  38.5
+
+	Welch Two Sample t-test
+
+data:  message_length by is_gaming
+t = 4.9418, df = 3768.7, p-value = 8.077e-07
+alternative hypothesis: true difference in means between group FALSE and group TRUE is not equal to 0
+95 percent confidence interval:
+ 3.144345 7.280115
+sample estimates:
+mean in group FALSE  mean in group TRUE
+           33.70234            28.49011
+
+Cohen's d |       95% CI
+------------------------
+0.13      | [0.09, 0.16]
+
+- Estimated using pooled SD.
 ```
 
-`FALSE` is the non-gaming group and `TRUE` the gaming group, printed in the order R sorts them, so the difference is non-gaming minus gaming. The last two lines name the plain R calls the helper stands for; **AURA: Write R code**, under **R4 Test**, writes this one line.
+`FALSE` is the non-gaming group and `TRUE` the gaming group, printed in the order R sorts them, so the difference is non-gaming minus gaming: 33.70 minus 28.49, or 5.21 characters. In the `t.test()` block, `t` is the test statistic, `df` is the degrees of freedom, `p-value = 8.077e-07` is scientific notation for 0.0000008077, and the `95 percent confidence interval` says the true gap most likely sits between 3.14 and 7.28 characters. `cohens_d()` prints the effect size with its own interval, and its `NAs dropped` warning only says the unlabeled messages were left out. **AURA: Write R code**, under **R4 Test**, writes these same lines. (Older worksheets called `run_t_test()`; v2v keeps it as a deprecated shortcut.)
 
 Read that output slowly, because it is the whole lesson of this chapter in one block.
 
 The test is a **Welch** t-test, and the choice is deliberate. The ordinary t-test assumes the two groups have the same spread, and Chapter 5 showed plainly that they do not: the non-gaming standard deviation of 60.68 is far larger than the gaming standard deviation of 38.47. Welch's version drops that assumption, which makes it the safer default whenever two groups might vary by different amounts.
 
-The p-value is below .001. If the two kinds of channel truly had the same mean message length, a gap this large would turn up less than one time in a thousand. Chance is an unconvincing explanation.
+The p-value is below .001 (report `8.077e-07` that way). If the two kinds of channel truly had the same mean message length, a gap this large would turn up less than one time in a thousand. Chance is an unconvincing explanation.
 
-And the effect size, Cohen's *d* of 0.13, says the difference is negligible. Cohen's benchmarks put a *d* of 0.2 at small, 0.5 at medium, and 0.8 at large, so 0.13 does not even reach small. The raw gap is about five characters, roughly fifteen percent of the non-gaming average, and fifteen percent does not *sound* negligible. But Cohen's *d* measures the gap against how much the data naturally vary, and message lengths vary enormously, with standard deviations of thirty-eight and sixty-one characters. Five characters set against that much variation is a ripple.
+And the effect size, Cohen's *d* of 0.13 with an interval from 0.09 to 0.16, says the difference is negligible. Cohen's benchmarks put a *d* of 0.2 at small, 0.5 at medium, and 0.8 at large, so 0.13 does not even reach small. The raw gap is about five characters, roughly fifteen percent of the non-gaming average, and fifteen percent does not *sound* negligible. But Cohen's *d* measures the gap against how much the data naturally vary, and message lengths vary enormously, with standard deviations of thirty-eight and sixty-one characters. Five characters set against that much variation is a ripple.
 
 So how did a negligible difference come back significant? Sample size. The test ran on 34,762 messages, every labeled message with a length. A large enough sample will make almost any difference, however tiny, statistically significant. Both halves of the finding are true, and a report giving only the first half would mislead.
 
@@ -269,7 +311,7 @@ These exercises map directly to the Inferencing Data [R] assignment:
 
 3. **Run the chi-square test.** Report the χ², df, and p-value.
 
-4. **Calculate Cramér's V** and interpret its magnitude using Cohen's benchmarks. Then check your work against `v2v::run_chi_square()`.
+4. **Calculate Cramér's V** and interpret its magnitude using Cohen's benchmarks. Then check your work against the output above.
 
 5. **Examine standardized residuals.** Which band-by-type combinations are driving the result? Why do you think that might be?
 

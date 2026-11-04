@@ -85,36 +85,59 @@ That table reports 3,457 messages from non-gaming channels, 31,309 from gaming c
 
 ### Two-Variable Cross-Tabulation
 
-A cross-tabulation shows how two categorical variables relate to each other. This is the foundation for the chi-square test in Chapter 6.
+A cross-tabulation shows how two categorical variables relate to each other. This is the foundation for the chi-square test in Chapter 6. It takes two tidyverse steps: `count()` makes one row per combination of the two variables (the "long" shape), and `pivot_wider()` spreads the second variable across the columns (the "wide" shape, the cross-tabulation you have seen in textbooks).
 
 ```r
 
-crosstab(analysis, viewer_band, channel_type)
+analysis %>%
+  filter(!is.na(channel_type)) %>%
+  count(viewer_band, channel_type) %>%
+  pivot_wider(names_from = channel_type, values_from = n, values_fill = 0)
 ```
 
 ```
-Counts: viewer_band (rows) by channel_type (columns), 34766 rows counted
+# A tibble: 3 × 3
   viewer_band gaming `non-gaming`
+  <fct>        <int>        <int>
 1 small        25309         2457
 2 medium        4000         1000
 3 large         2000            0
-Shares: each row of viewer_band adds up to 1
-  viewer_band gaming `non-gaming`
-1 small        0.912        0.088
-2 medium       0.8          0.2
-3 large        1            0
 ```
 
-::: {.callout-note}
-## What `crosstab()` Stands For
+The `filter()` drops the 501 messages with no channel type first, so the table counts 34,766 messages. `values_fill = 0` writes a `0` in a combination that never occurs; without it, `pivot_wider()` has nothing to put in the large, non-gaming cell and writes `NA`.
 
-The first time it runs, `crosstab()` prints the two tidyverse steps it stands for: `count()` makes one row per combination (the "long" shape), and `pivot_wider()` spreads the second variable across the columns (the "wide" shape, the cross-tabulation you have seen in textbooks). The 501 messages with no channel type are dropped first.
+::: {.callout-note}
+## A Shortcut You May Still See
+
+Older worksheets wrote `crosstab(analysis, viewer_band, channel_type)` for this table. v2v keeps `crosstab()` as a deprecated shortcut, and the two steps above are the code to write.
 :::
 
 ### Reading the Proportions
 
-Raw counts are useful, but proportions tell a richer story, and the second grid is those
-proportions: each band's share of its own messages in each channel type.
+Raw counts are useful, but proportions tell a richer story: each band's share of its own messages in each channel type. Group the counts by band before you divide, so each band's shares add up to 1.
+
+```r
+
+analysis %>%
+  filter(!is.na(channel_type)) %>%
+  count(viewer_band, channel_type) %>%
+  group_by(viewer_band) %>%
+  mutate(share = round(n / sum(n), 3))
+```
+
+```
+# A tibble: 5 × 4
+# Groups:   viewer_band [3]
+  viewer_band channel_type     n share
+  <fct>       <fct>        <int> <dbl>
+1 small       gaming       25309 0.912
+2 small       non-gaming    2457 0.088
+3 medium      gaming        4000 0.8
+4 medium      non-gaming    1000 0.2
+5 large       gaming        2000 1
+```
+
+`group_by(viewer_band)` makes `sum(n)` add up inside one band at a time, so `share` is that band's share. The large band has one row because its non-gaming count is zero: a combination with no rows has no share to print.
 
 Now you can see not just *how many* messages in each audience-size band came from gaming channels, but *what percentage*. If small channels are 90% gaming and large channels are 60% gaming, that is a meaningful difference, even though the large channels contribute far more messages in total.
 
@@ -144,7 +167,7 @@ Think of it like building a sandwich: you start with the bread (the canvas), add
 ::: {.callout-note}
 ## Or use the R Companion
 
-In the R Companion, **AURA: Write R code**, under **R3 Describe**, writes `count()`, crosstab, and `ggplot()` code with `theme_v2v()` into your script, saves each chart with `ggsave()`, and leaves an `alt =` line marked YOUR TURN inside `labs()` for your alt text. The code stays in your script, which is the difference from Excel's menus.
+In the R Companion, **AURA: Write R code**, under **R3 Describe**, writes `count()`, the cross-tabulation pipe, and `ggplot()` code with `theme_v2v()` into your script, saves each chart with `ggsave()`, and leaves an `alt =` line marked YOUR TURN inside `labs()` for your alt text. The code stays in your script, which is the difference from Excel's menus.
 :::
 
 ## Bar Chart: Game Category Distribution

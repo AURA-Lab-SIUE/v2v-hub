@@ -6,6 +6,7 @@ format:
     theme: [default, ../aura-reveal.scss]
     slide-number: c/t
     embed-resources: true
+    code-overflow: wrap
     incremental: false
     center: false
     transition: none
@@ -48,25 +49,28 @@ A number and two groups: **t-test**. A number and three or more groups: **ANOVA*
 
 ## Running Your Test
 
-- The R Companion writes this for the names in your settings block: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
+- The R Companion writes this same code for the names in your settings block: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
 
 ```r
-library(tidyverse)
-library(v2v)
+analysis %>%
+  filter(!is.na(outcome), !is.na(group2)) %>%
+  group_by(group2) %>%
+  summarize(n = n(),
+            mean = mean(outcome),
+            sd = sd(outcome))
 
-analysis <- read_rds("data/twitch_analysis.RDS")
-
-run_t_test(analysis, value = message_length,
-           group = is_gaming)
+t.test(outcome ~ group2, data = analysis)
+cohens_d(outcome ~ group2, data = analysis)
 ```
 
 ## Running Your Test (cont.)
 
-- The code shows the example columns. In the worksheet the settings block renames them
-    - `outcome` for message length, and `group2` for your hand-coded variable
-- `run_t_test()` comes from the course package, v2v: it prints both means, `t`, df, `p`, and d in one labeled block, and ends with the `t.test()` and `effectsize::cohens_d()` lines it stands for
+- `outcome` and `group2` are the names the settings block gives your two columns; in the example they were `message_length` and `is_gaming`
+- The first pipe prints each group's `n`, `mean`, and `sd`
+- `t.test()` prints both means, `t`, the Welch df, `p`, and a confidence interval; `cohens_d()` (from **effectsize**) adds the effect size
 - The R Companion's **Settings block (name the test variables)** writes `group2 = factor(channel_type)`
     - Change that one line to your hand-coded variable, `reaction_only`, or the t-test runs on channel type
+- Older worksheets called `run_t_test()`; v2v keeps it as a deprecated shortcut, and this is the code you write
 
 ## Exercise: Read Your Own Output {.discuss}
 
@@ -116,26 +120,30 @@ four_games <- analysis %>%
          main_game == "Just Chatting" |
          main_game == "League of Legends")
 
-run_anova(four_games, value = message_length,
-          group = main_game)
+fit_anova <- aov(message_length ~ main_game,
+                 data = four_games)
+summary(fit_anova)
+eta_squared(fit_anova)
 ```
 
-- ANOVA asks one question of all the groups at once. The example returned **F(3, 13429) = 92.26**, eta-squared **0.02**: a real difference, and a small one
-- In the worksheet the groups are `group3`, the three viewer bands. The R Companion's **One-way ANOVA with eta squared** writes that version
+## If You Have More Than Two Groups (cont.)
+
+- ANOVA asks one question of all the groups at once: `aov()` fits it, `summary()` prints the F table, and `eta_squared()` adds the effect size
+- The example returned **F(3, 13429) = 92.26**, eta-squared **0.02**: a real difference, and a small one
+- In the worksheet the groups are `group3`, the three viewer bands, so the model line is `aov(outcome ~ group3, data = analysis)`
+- The R Companion's **One-way ANOVA with eta squared** writes that version
 
 ## If You Want a Model
 
 ```r
-run_regression(analysis, outcome = outcome,
-               predictor = predictor)
+fit_lm <- lm(outcome ~ predictor, data = analysis)
+summary(fit_lm)
 ```
 
 - In the worksheet, `predictor` is the hour of the day, a number
-- The `Slope` line is the slope: characters gained for each hour later in the day
-- The worksheet lists the slope and *p* you should see; report R-squared beside it
-
-A t-test is a regression with one two-level grouping variable. An ANOVA is a regression with
-one many-level grouping variable. Same framework, different shape.
+- In the `Coefficients` table, the `Estimate` on the `predictor` row is the slope: characters gained for each hour later in the day
+- The worksheet lists the slope and *p* you should see; report the `Multiple R-squared` line beside them
+- A t-test is a regression with one two-level grouping variable, and an ANOVA is a regression with one many-level grouping variable: same framework, different shape
 
 ## Common Errors and What They Mean
 
