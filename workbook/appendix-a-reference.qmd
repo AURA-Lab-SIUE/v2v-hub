@@ -15,7 +15,7 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 | `read_csv()` | tidyverse | Imports a CSV file into R | `df <- read_csv("data.csv")` |
 | `read_rds()` | tidyverse | Loads a saved .RDS file | `df <- read_rds("data.RDS")` |
 | `clean_names()` | janitor | Converts column names to lowercase_with_underscores | `df <- df %>% clean_names()` |
-| `clean_dates()` | v2v | Turns epoch milliseconds into a date-time, dividing by 1,000 for you | `mutate(ts = clean_dates(date))` |
+| `as_datetime()` | lubridate | Turns a count of seconds into a date-time; divide epoch milliseconds by 1,000 first | `mutate(ts = as_datetime(date / 1000))` |
 
 ## Exploring Data
 
@@ -38,7 +38,7 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 | `case_when()` | tidyverse | Recode values with if/then logic | `case_when(x == 1 ~ "yes", TRUE ~ "no")` |
 | `str_to_lower()` | tidyverse | Convert text to lowercase | `str_to_lower("POP")` → `"pop"` |
 | `is.na()` | base R | Check for missing values | `filter(!is.na(column))` |
-| `join_chat_streams()` | v2v | Attaches each message's nearest earlier stream snapshot (a rolling join) | `join_chat_streams(chat, streams)` |
+| `left_join()` with `closest()` | tidyverse | Attaches each message's nearest earlier stream snapshot (a rolling join) | `left_join(chat, snapshots, by = join_by(channel, closest(ts >= snapshot_ts)))` |
 | `reliability()` | v2v | Cohen's kappa or Krippendorff's alpha from two columns of codes | `reliability(pull(pilot, pass_1), pull(pilot, pass_2), method = "kappa")` |
 | `factor()` | base R | Convert column to a categorical factor | `factor(df$genre)` |
 | `levels()` | base R | Show factor levels | `levels(df$genre)` |
@@ -93,8 +93,12 @@ Every R function used in this workbook, organized by task. Use this as a lookup 
 | `aov()` | base R | One-way ANOVA, then `summary()` for the F table | `summary(aov(y ~ g3, data = df))` |
 | `lm()` | base R | Linear regression, then `summary()` for the coefficients | `summary(lm(y ~ x, data = df))` |
 | `cor.test()` | base R | Pearson correlation with its interval | `cor.test(~ x + y, data = df)` |
-| `v2v::run_chi_square()` | v2v | The chi-square test and Cramér's V in one labeled block (a check on the lines above) | `v2v::run_chi_square(df, x = cat_a, y = cat_b)` |
-| `v2v::run_t_test()` | v2v | The Welch t-test and Cohen's d in one labeled block (a check) | `v2v::run_t_test(df, value = y, group = g)` |
+| `$expected` | n/a | Extract the expected counts under the null hypothesis | `round(result$expected, 1)` |
+| `effectsize::eta_squared()` | effectsize | Eta squared for an `aov()` fit, with its interval | `effectsize::eta_squared(fit)` |
+| `effectsize::omega_squared()` | effectsize | Omega squared, the less biased cousin of eta squared | `effectsize::omega_squared(fit)` |
+| `oneway.test()` | base R | Welch's ANOVA, which drops the equal-spread assumption | `oneway.test(y ~ g3, data = df)` |
+| `TukeyHSD()` | base R | Post-hoc pairwise comparisons after `aov()`, with adjusted p-values | `TukeyHSD(fit)` |
+| `effectsize::standardize_parameters()` | effectsize | Standardized slopes for an `lm()` fit | `effectsize::standardize_parameters(fit)` |
 
 ## Exporting Data
 

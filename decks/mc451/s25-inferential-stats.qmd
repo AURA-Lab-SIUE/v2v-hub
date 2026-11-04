@@ -6,6 +6,7 @@ format:
     theme: [default, ../aura-reveal.scss]
     slide-number: c/t
     embed-resources: true
+    code-overflow: wrap
     incremental: false
     center: false
     transition: none
@@ -68,7 +69,7 @@ a little. Samples wobble.
 
 - **A numeric outcome compared across two groups:** the **t-test**
 - **A numeric outcome compared across three or more groups:** **ANOVA**
-- **Two categorical variables:** **chi-square**, `chisq.test()`, with `v2v::run_chi_square()` as the check
+- **Two categorical variables:** **chi-square**, `chisq.test()`
 - **Two numeric variables:** **linear regression**, such as message length by hour of the day
 - **The example:** message length is a count, and gaming status has two values, so the t-test
 
@@ -97,52 +98,74 @@ a little. Samples wobble.
 
 ## Running the t-test
 
-- The R Companion writes this line: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
+- The R Companion writes this same code: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
+- `cohens_d()` comes from the **effectsize** package, loaded in the worksheet's settings block
 
 ```r
-run_t_test(analysis, value = message_length,
-           group = is_gaming)
+analysis %>%
+  filter(!is.na(message_length), !is.na(is_gaming)) %>%
+  group_by(is_gaming) %>%
+  summarize(n = n(),
+            mean = mean(message_length),
+            sd = sd(message_length))
+
+t.test(message_length ~ is_gaming, data = analysis)
+cohens_d(message_length ~ is_gaming, data = analysis)
 ```
-
-One call, one labeled block: both means with their n, the gap, `t`, `df`, `p`, and Cohen's d. The block ends by naming the plain calls it stands for, `t.test()` and `effectsize::cohens_d()`.
-
-The output names a **Welch** t-test. The ordinary t-test assumes the two groups have equal
-spread, and the example groups plainly do not (sd 60.68 against 38.47). The Welch version
-drops that assumption.
 
 ## Reading the Output
 
 ```
-Welch two-sample t-test
-message_length by is_gaming
-  FALSE                  n = 3457, mean = 33.70, SD = 60.68
-  TRUE                   n = 31305, mean = 28.49, SD = 38.47
-  Difference             5.21
-  t                      4.94
-  df                     3768.7
-  p-value                < .001
-  Cohen's d              0.13  (negligible)
+# A tibble: 2 × 4
+  is_gaming     n  mean    sd
+  <lgl>     <int> <dbl> <dbl>
+1 FALSE      3457  33.7  60.7
+2 TRUE      31305  28.5  38.5
 ```
 
-- `FALSE` is non-gaming and `TRUE` is gaming, in the order R sorts them; `Difference` is the gap, non-gaming minus gaming
-- `t` is the test statistic; `df` is the Welch degrees of freedom
+- `FALSE` is non-gaming and `TRUE` is gaming, in the order R sorts them
+- `n` is how many messages each group has; `mean` is the average length, 33.70 against 28.49, a gap of 5.21
+- `sd` is the spread: 60.68 against 38.47, so the two groups do not vary by the same amount
+- Older worksheets called `run_t_test()`; v2v keeps it as a deprecated shortcut, and this is the code you write
 
 ## Reading the Output (cont.)
 
-- `t` measures the gap in units of its own uncertainty
-    - Its sign shows direction only: list the groups the other way around and `t` is -4.94
-- *d* follows the same order: 0.13 with non-gaming first, as printed, and -0.13 with gaming first, as reported
+```
+	Welch Two Sample t-test
 
-## The Same Test, Without v2v
-
-```r
-t.test(message_length ~ is_gaming, data = analysis)
-effectsize::cohens_d(message_length ~ is_gaming,
-                     data = analysis)
+data:  message_length by is_gaming
+t = 4.9418, df = 3768.7, p-value = 8.077e-07
+alternative hypothesis: true difference in means between group FALSE and group TRUE is not equal to 0
+95 percent confidence interval:
+ 3.144345 7.280115
+sample estimates:
+mean in group FALSE  mean in group TRUE
+           33.70234            28.49011
 ```
 
-- These are the two lines the block ends with: `t.test()` runs the test and `effectsize::cohens_d()` adds the effect size
-- Run them once if you want to see R's own output; the numbers are the same
+## Reading the Output (cont.)
+
+- It says **Welch**: the ordinary t-test assumes equal spread, and 60.68 against 38.47 is not equal, so R drops that assumption
+- `t = 4.9418` measures the gap in units of its own uncertainty
+    - Its sign shows direction only: list the groups the other way around and `t` is -4.94
+- `df = 3768.7` is the Welch degrees of freedom, computed from both groups, so not a round number
+- `p-value = 8.077e-07` is scientific notation for 0.0000008077, reported as *p* < .001
+- The `95 percent confidence interval` says the true gap most likely sits between 3.14 and 7.28 characters
+
+## Reading the Effect Size
+
+```
+Cohen's d |       95% CI
+------------------------
+0.13      | [0.09, 0.16]
+
+- Estimated using pooled SD.
+```
+
+- Cohen's *d* measures the gap against how much message lengths vary: 0.13, with an interval from 0.09 to 0.16
+- By Cohen's benchmarks (0.2 small, 0.5 medium, 0.8 large), 0.13 does not reach small: **negligible**
+- *d* follows the group order too: 0.13 with non-gaming first, as printed, and -0.13 with gaming first, as reported
+- `Missing values detected. NAs dropped.` is a warning, not an error: the unlabeled messages were left out
 
 ## What the p-value Means
 
@@ -195,51 +218,108 @@ four_games <- analysis %>%
          main_game == "Just Chatting" |
          main_game == "League of Legends")
 
-run_anova(four_games, value = message_length,
-          group = main_game)
+fit_anova <- aov(message_length ~ main_game,
+                 data = four_games)
+summary(fit_anova)
+eta_squared(fit_anova)
 ```
 
-`main_game` is the channel's usual category. Four means, so a t-test will not do. Comparing four groups two at a time would take six
-tests, each with its own chance of a false positive. ANOVA runs one test instead.
+- `main_game` is the channel's usual category; four means, so no t-test
+- Four groups two at a time is six tests, each with its own false-positive chance; ANOVA runs one
+- `aov()` fits, `summary()` prints the table, `eta_squared()` adds the effect size
 
 ## Reading the Output
 
 ```
-  F                      92.26
-  df                     3, 13429
-  p-value                < .001
-  Eta squared            0.020  (small)
+               Df   Sum Sq Mean Sq F value Pr(>F)
+main_game       3   547281  182427   92.26 <2e-16 ***
+Residuals   13429 26552407    1977
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-**F** compares the variation between the group means against the variation within the groups. If all four groups shared one mean, F would sit near one. Here it is **92.26**.
+- `Df` is 3 for the groups (four minus one) and 13429 for the messages left over
+- **F value** compares the variation between the four means against the variation within the groups; if all four shared one mean, F would sit near one. Here it is **92.26**
+- `Pr(>F)` is the p-value: `<2e-16` means smaller than R will print, so *p* < .001
+- The `***` is R's star code for how small the p-value is; the `Signif. codes` line is its key
+
+## Reading the Effect Size
+
+```
+For one-way between subjects designs, partial eta squared is equivalent
+  to eta squared. Returning eta squared.
+# Effect Size for ANOVA
+
+Parameter | Eta2 |       95% CI
+-------------------------------
+main_game | 0.02 | [0.02, 1.00]
+
+- One-sided CIs: upper bound fixed at [1.00].
+```
 
 - The effect size for ANOVA is **eta-squared**, here **0.02**: game category accounts for about two percent of the variation in message length
 - The difference is real, and small
-- The block ends with the plain calls it stands for: `aov()`, `summary()`, `effectsize::eta_squared()`, and `TukeyHSD()`
+- The upper bound of 1.00 is the package's one-sided convention, not a finding; the first two lines are a note, not an error
 
 ## From a Difference to a Model
 
 ```r
-run_regression(analysis, outcome = message_length,
-               predictor = is_gaming)
+fit_lm <- lm(message_length ~ is_gaming, data = analysis)
+summary(fit_lm)
 ```
 
+- `lm()` fits the model and `summary()` prints it; the `Coefficients` table is the part to read
+- `(Intercept)`, 33.70, is the non-gaming mean, the baseline
+- `is_gamingTRUE`, **-5.21**, is the slope: the adjustment for gaming channels, exactly the gap the t-test found
+- A regression is a baseline plus an adjustment
+
+## From a Difference to a Model (cont.)
+
 ```
-  Slope                  -5.21
-  Intercept              33.70
-  R-squared              0.001
-  F                      49.79 on 1 and 34760 df
-  p-value                < .001
+Call:
+lm(formula = message_length ~ is_gaming, data = analysis)
+
+Residuals:
+   Min     1Q Median     3Q    Max
+-32.70 -21.49 -12.49   6.30 471.51
 ```
 
-The intercept is the non-gaming mean. The slope, **-5.21**, is exactly the gap the t-test found, now written as a baseline plus an adjustment. That is what a regression is. The R Companion's **Linear regression** (under **R4 Test**) writes the same line with `predictor` as the hour of the day.
+- `Call` repeats the model you asked for
+- `Residuals` summarize how far each message falls from its group's mean; they are not the part to read
+
+## From a Difference to a Model (cont.)
+
+```
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)    33.7023     0.7010  48.077  < 2e-16 ***
+is_gamingTRUE  -5.2122     0.7387  -7.056 1.75e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+- `Estimate` is the number to report on each row: the baseline, then the adjustment
+- `Pr(>|t|)` is each row's p-value; `1.75e-12` reads as *p* < .001
+
+## From a Difference to a Model (cont.)
+
+```
+Residual standard error: 41.22 on 34760 degrees of freedom
+  (505 observations deleted due to missingness)
+Multiple R-squared:  0.00143,	Adjusted R-squared:  0.001401
+F-statistic: 49.79 on 1 and 34760 DF,  p-value: 1.747e-12
+```
+
+- `Multiple R-squared: 0.00143` says gaming status accounts for about a tenth of a percent of the variation
+- `505 observations deleted` are the unlabeled messages
+- The R Companion's **Linear regression** (under **R4 Test**) writes these same lines with `predictor` as the hour of the day
 
 ## Checkpoint
 
 You should now be able to:
 
 - Name the test your question calls for, and say why
-- Run `v2v::run_t_test()` and read the means, the difference, *p*, and *d*
+- Run `t.test()` and `cohens_d()` and read the means, the difference, *p*, and *d*
 - Say what a *p*-value does and does not claim
 - Report a significant result that is negligible in size, without inflating it
 - Say that `aov()` handles three or more groups, and that `lm()` generalizes both tests

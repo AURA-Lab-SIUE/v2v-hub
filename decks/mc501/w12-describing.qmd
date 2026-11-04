@@ -306,7 +306,7 @@ Report the mean alone and you misreport what a typical message looks like.
 - **A difference between two group means:** **Cohen's *d*** with a 95% confidence interval
 - **A cross-tabulation of two categorical variables:** **Cramer's *V***
 - **A correlation between two numeric variables:** ***r*** and its confidence interval
-- `run_t_test()` and `run_chi_square()` return output ready to paste into a caption
+- `effectsize::cohens_d()` and `effectsize::cramers_v()` print each one with its interval, ready to copy into a caption
 
 Put the effect size in the caption or in a companion table, never in a footnote.
 

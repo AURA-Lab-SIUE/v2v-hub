@@ -68,7 +68,7 @@ That is a count of channels per band, and it is the number that limits what the 
 ## 5. An empty cell that reads as missing
 
 **What it looks like.** No large-band channel is non-gaming, so that combination never occurs.
-`crosstab()` writes `0` there, but a `pivot_wider()` of your own without `values_fill = 0` has
+`pivot_wider()` with `values_fill = 0` writes `0` there, but without `values_fill = 0` it has
 nothing to put there and writes `NA`:
 
 ```
