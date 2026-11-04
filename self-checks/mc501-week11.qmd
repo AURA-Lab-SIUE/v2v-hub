@@ -63,15 +63,14 @@ result of one line to the next, so the code reads in the same order the steps ha
 
 The first message's `date` reads `1542578127023`. If you hand that number straight to
 `as_datetime()`, every message is dated around the year 50,850. Why, and what does
-`clean_dates()` do about it?
+`as_datetime(date / 1000)` do about it?
 
 <details class="tmpl-section"><summary>Show the answer to question 4</summary>
 
 A **timestamp** is the date and time something happened. This one counts **milliseconds** since
 midnight on 1 January 1970 (the Unix epoch), and `as_datetime()` expects **seconds**, so it reads
-a number a thousand times too large. `clean_dates()` divides by 1,000 first, then turns the
-result into a date and time. Without the course package, the same step is
-`as_datetime(date / 1000)`.
+a number a thousand times too large. `date / 1000` turns milliseconds into seconds first, and
+then `as_datetime()` turns the seconds into a date and time.
 
 </details>
 
@@ -86,8 +85,8 @@ Almost no message shares its exact time with a snapshot, so an exact match would
 every message unmatched. A **join** puts two tables together by matching a shared key, and a
 **rolling join** lets the time part of that key match the nearest earlier value: the same
 channel, and the latest snapshot at or before the message. In dplyr that is
-`join_by(channel, closest(ts >= snapshot_ts))`, which `join_chat_streams()` prints the first time
-you call it.
+`join_by(channel, closest(ts >= snapshot_ts))`, after a `select()` that renames the snapshot's
+time to `snapshot_ts`.
 
 </details>
 

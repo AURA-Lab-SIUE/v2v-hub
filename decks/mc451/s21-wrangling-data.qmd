@@ -82,7 +82,7 @@ Today's steps, as a worksheet with blanks: [Data Wrangling worksheet](https://au
 ## Packages and the Tidyverse
 
 ::: {.define}
-**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course package, v2v, adds the example Twitch data and `clean_dates()`.
+**Package:** a bundle of functions, data, and help pages that adds to what R can do on its own. Example: the course package, v2v, adds the example Twitch data and a chart theme.
 :::
 
 ::: {.define}
@@ -159,53 +159,38 @@ Work out your answers before running the code.
 
 ## Converting the Timestamp
 
-- The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) writes this block for you
-- Click inside the worksheet's Task 3.1 chunk, press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
-- Under **R2 Data**, pick **Turn the date column into a time (clean_dates)**
+- Type this block into the worksheet's Task 3.1 chunk, then run it
 
 ```r
 chat <- chat %>%
-  mutate(ts = clean_dates(date))
+  mutate(ts = as_datetime(date / 1000))
 streams <- streams %>%
-  mutate(ts = clean_dates(date))
+  mutate(ts = as_datetime(date / 1000))
 ```
+
+- `as_datetime()` turns a count of seconds into a date and time
+    - It comes from lubridate, the tidyverse package for dates, which `library(tidyverse)` loads
+- `date / 1000` turns milliseconds into seconds first
+- `mutate()` stores the result in a new column, `ts`
 
 ## Converting the Timestamp (cont.)
 
-- `clean_dates()` divides `date` by 1,000, because `date` counts milliseconds and R's date-times count seconds
-    - It then turns the result into a date and time, stored in a new `ts` column
-- Without v2v, the same step is `as_datetime(date / 1000)`
-    - `as_datetime()` comes from lubridate, the tidyverse package for dates
-
-## Opening Write R Code
-
-![](images/companion-palette-write-r-code.png){fig-alt="The VS Code Command Palette at the top of the window. The search box reads AURA: Write R code, and the highlighted first result is the command AURA: Write R code." width="80%"}
-
-- **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), type **AURA: Write R code**, then press **Enter**
-
-## Picking the Step From R2 Data
-
-![](images/companion-r2-list-clean-dates.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Turn the date column into a time (clean_dates) is highlighted." width="72%"}
-
-## The Block Arrives in the Worksheet
-
-![](images/companion-inserted-clean-dates.png){fig-alt="Lines 276 to 291 of the worksheet in VS Code, inside the Task 3.1 chunk. The R Companion inserted a comment headed Turn the date column into a readable time: clean_dates(). It says date counts milliseconds since midnight, January 1, 1970 (UTC), that clean_dates() divides by 1,000, and that the same step without v2v is mutate(ts = as_datetime(date / 1000)). Then come chat <- chat %>% mutate(ts = clean_dates(date)), the same two lines for streams, and a check: chat %>% select(date, ts) %>% slice_head(n = 3)." width="74%"}
-
-## Running the Block
-
-![](images/companion-run-it-message.png){fig-alt="A message at the bottom right of VS Code: Inserted the Turn the date column into a time (clean_dates) code. Run it now? Source: AURA Lab R Companion. A Run it button sits at its lower right." width="60%"}
-
-- Select **Run it** in the message at the bottom right of VS Code to run the block
+- The same verb handles the dates your own data carries
+    - A count of seconds: `as_datetime(column)`
+    - Text such as `2024-03-01 14:22:05`: `ymd_hms(column)`
+    - Text such as `3/1/2024`: `mdy(column)`
+- lubridate names each reader after the order the text writes year, month, and day
+- Run `?ymd_hms` to see the whole family
 
 ## The Factor of a Thousand That Breaks It
 
-- `as_datetime()`, lubridate's date converter, expects seconds
+- `as_datetime()` expects seconds
     - `date` counts milliseconds, which is a thousand times finer
 - Hand it the raw number and every message is dated around the year 50,850
 - `date / 1000` converts milliseconds to seconds first
-- `clean_dates()` does the division for you, and prints the lubridate line it stands for the first time you call it
+- Writing the division yourself is the habit to keep: every timestamp you meet later needs you to know its unit
 
-A missing `/ 1000` is the mistake to check for whenever you convert a timestamp by hand.
+A missing `/ 1000` is the mistake to check for whenever you convert a timestamp.
 
 ## Seeing the Conversion
 
@@ -229,7 +214,7 @@ chat %>%
 
 ## Measuring Message Length
 
-- The R Companion writes this block too: **AURA: Write R code**, then **R2 Data**, then **Add a column (mutate)**
+- Type this block into Task 3.2, or let the R Companion write it: **AURA: Write R code**, then **R2 Data**, then **Add a column (mutate)**
 
 ```r
 chat <- chat %>%
@@ -240,6 +225,12 @@ chat <- chat %>%
 - `mutate()` stores that count as a new column
 - The example codebook names this variable ([Chapter 8, A codebook for the chat study](https://aura-lab.siue.edu/v2v/chapters/chapter08.html#a-codebook-for-the-chat-study))
     - The data did not contain it until now
+
+## Opening Write R Code
+
+![](images/companion-palette-write-r-code.png){fig-alt="The VS Code Command Palette at the top of the window. The search box reads AURA: Write R code, and the highlighted first result is the command AURA: Write R code." width="80%"}
+
+- **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), type **AURA: Write R code**, then press **Enter**
 
 ## Add a Column, in the List
 

@@ -175,12 +175,16 @@ Once loaded, the package supplies:
 channels. Reach them through `twitch_chat()` and `twitch_streams()`, which let you filter
 as you load, or directly with `data(twitch_chat_sample, package = "v2v")`.
 
-**Helpers for the places this data trips people up.** `clean_dates()` for the
-millisecond timestamps, `join_chat_streams()` for matching messages to stream snapshots,
-`sample_messages()` for drawing a reliability sample, and `reliability()` for intercoder
+**A lookup table and a reliability function.** `twitch_channels()`, one row per channel
+with its main category, gaming label, and audience band, and `reliability()` for intercoder
 agreement.
 
-**Analysis and presentation.** `run_t_test()`, `run_chi_square()`, and `pretty_table()`.
+**Presentation.** `pretty_table()`.
+
+**Older shortcuts, kept so finished work still runs.** `clean_dates()`, `join_chat_streams()`,
+`sample_messages()`, `write_coding_form()`, `crosstab()`, `run_t_test()`, `run_chi_square()`,
+`run_anova()`, and `run_regression()` still work, and each prints the plain tidyverse or base R
+code it stands for. The course teaches that plain code, not the shortcuts.
 
 **The course figure theme.** `theme_v2v()` with `scale_colour_v2v()` and
 `scale_fill_v2v()` for categories, and the `_c` variants

@@ -16,7 +16,7 @@ Which of these is a **variable** in the example chat study?
 
 - **A.** One chat message from Bob Ross's channel
 - **B.** Message target: whether a message speaks to the streamer, to another viewer, or to the whole room
-- **C.** The R function `sample_messages()`
+- **C.** The R function `slice_sample()`
 - **D.** The week the chat was collected, which is the same for every message
 
 <details class="tmpl-section"><summary>Show the answer to question 1</summary>

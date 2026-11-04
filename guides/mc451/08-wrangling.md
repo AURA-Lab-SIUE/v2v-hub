@@ -8,9 +8,9 @@ Prefer to watch first? The walkthrough video [Wrangle the Data with Write R Code
 
 1. Load the course data first (guide 04).
 2. Open the Command Palette: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac). Type `AURA: Write R code` and press **Enter**.
-3. Under **R2 Data**, select **Turn the date column into a time (clean_dates)**. When the message at the bottom right asks **Run it now?**, select **Run it**.
+3. Under **R2 Data**, select **Turn the date column into a time (as_datetime)**. When the message at the bottom right asks **Run it now?**, select **Run it**.
 4. Run **AURA: Write R code** again and select **Add a column (mutate)**, then **Run it**. Do this before the join, so every matched message keeps its length.
-5. Select **Match each message to its stream (join_chat_streams)**, then **Run it**.
+5. Select **Join two tables by a key and nearest earlier time (left_join)**, then **Run it**. It writes two blocks: a `select()` that keeps the stream columns and renames the snapshot time, then the `left_join()` with its rolling key.
 6. Select **Label each channel by its top category**, then **Run it**. Then select **Join the channel labels onto the messages**, then **Run it**.
 7. Select **Count rows per group (count)**. A list titled **Which table?** opens: press **Enter** to keep **chat**. Then select **Use the course default columns**, then **Run it**.
 8. Read your coding sheet into a table named `codes` that keeps only the key and your code. On a new line under the last block, type these two lines, select both, and press **Ctrl+Enter** (**Cmd+Enter** on a Mac):

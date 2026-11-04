@@ -52,7 +52,7 @@ In MC 451 every assignment is due Friday of the week listed, by 11:59 PM. In MC 
 
 Using the Twitch data from the course package, `v2v`:
 
-1. **Hand-code** a variable for a 30-message sample drawn with `sample_messages()`
+1. **Hand-code** a variable for a 30-message sample drawn with `set.seed()` and `slice_sample()`
 2. **Load and clean** the chat and stream tables (timestamps, message length, factors, missing values)
 3. **Join** the stream-level information back onto the chat messages
 4. **Export** a clean dataset as `twitch_analysis.RDS`
