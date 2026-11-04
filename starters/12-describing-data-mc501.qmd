@@ -16,10 +16,21 @@ thirty hand-coded messages inside it. Here you say what is in that table before 
 tested: how often each category occurs, how long messages run, how two categories line up, and
 what the distributions look like. Worksheet 3 tests what you describe here.
 
+**Who asked for this, and why.** Your client is the channel manager at a small creator agency
+that represents about a dozen Twitch streamers. The agency is about to pitch a sponsor on how
+engaged its streamers' chats are, and the manager wants three things settled with data before
+the pitch: whether chat in gaming and non-gaming channels looks different, whether a bigger
+audience changes how people write, and how much of chat is reaction (an emote, a cheer, a single
+word) rather than commentary. You are the analyst on this study. Worksheet 1 built the table,
+this worksheet describes it, and worksheet 3 tests it. The manager does not read R. Every
+**Write:** prompt below is a note to them, and the last section is the paragraph you would send.
+
 **How it works.** As in worksheet 1: code that is not the point of the assignment is written for
 you, the steps the assignment is about have blanks shown as `___`, and **What you should see**
-follows each chunk. **Write:** marks a response in your own words. Your interpretation and your
-alt text are the writing this assignment grades, so they are never filled in for you.
+follows each chunk. **Write:** marks a response in your own words. Your interpretation, your
+alt text, and the closing paragraph to the client are the writing this assignment grades, so
+they are never filled in for you. Every blank is a column name, a verb, a geom, or a word in
+quotation marks; no step asks you to write code of your own beyond that.
 
 **Where to save it.** In the top folder of your workspace, beside worksheet 1, so that
 `data/twitch_analysis.RDS` is where this file looks for it. The guide *Put a Worksheet in Your
@@ -31,9 +42,9 @@ or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in
 every **Write:** filled, and the HTML it renders to. The figures are saved in `figures/` by the
 code that makes them, and the HTML carries them.
 
-**MC 501:** Part 5, the diagnostics behind each figure, is yours as well.
-
 **Before you start,** read the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html).
+
+**MC 501:** Part 5, the diagnostics behind each figure, is yours as well.
 
 ## Key terms
 
@@ -125,8 +136,8 @@ analysis %>%
 **What you should see:** two rows adding to `30`. With the instructor's codes, `commentary` `17`
 (56.7%) and `reaction` `13` (43.3%).
 
-**Write:** two to three sentences on the three tables: what they show, and what they do not.
-Name the numbers.
+**Write:** two to three sentences for the client on the three tables: what they show, and what
+they do not. Name the numbers.
 
 *Your answer:*
 
@@ -183,8 +194,8 @@ n `3457`, mean `33.7`, median `16`, sd `60.7`. Then, with the instructor's codes
 n `17`, mean `29.2`, median `21`, sd `27.9`, max `119`; `reaction` n `13`, mean `15.6`, median
 `9`, sd `23.5`, max `90`.
 
-**Write:** two to three sentences. Where do the mean and the median disagree, and what does the
-gap tell you about the shape of message length?
+**Write:** two to three sentences for the client. Where do the mean and the median disagree, and
+what does the gap tell you about the shape of message length?
 
 *Your answer:*
 
@@ -192,32 +203,47 @@ gap tell you about the shape of message length?
 
 ### Task 3.1: Viewer band by channel type
 
-This is the table worksheet 3 runs the chi-square test on. `crosstab()` counts every
-combination of two categories and lays the counts out as a grid, rows by the first column you
-name and columns by the second, then the same grid as shares of each row. The 501 messages with
-no channel type cannot be placed, so it leaves them out. The first time it runs it prints the
-`count()` and `pivot_wider()` lines it stands for.
+This is the table worksheet 3 runs the chi-square test on. `count()` with two columns counts
+every combination of the two categories, one row per combination. `pivot_wider()` then turns
+those rows into a grid: one row per value of the first column, one column per value of the
+second, with the counts in the cells, and `values_fill = 0` writes a `0` where a combination
+never occurs. The 501 messages with no channel type cannot be placed, so the filter leaves them
+out.
 
 ```{r}
 #| label: crosstab
-crosstab(analysis, ___, ___)   # viewer band as the rows, channel type as the columns
+analysis %>%
+  filter(!is.na(channel_type)) %>%
+  count(___, ___) %>%                   # viewer band as the rows, channel type as the columns
+  pivot_wider(names_from = ___, values_from = n, values_fill = 0)   # one column per channel type
 ```
 
 Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
-**Crosstab with proportions**, then **Run it**.
+**Crosstab with proportions**, then **Run it**. It writes this grid and the shares in Task 3.2.
 
-**What you should see:** `34766 rows counted`, then three rows of counts. `small`: `25309`
-gaming, `2457` non-gaming. `medium`: `4000` and `1000`. `large`: `2000` and `0`.
+**What you should see:** three rows of counts. `small`: `25309` gaming, `2457` non-gaming.
+`medium`: `4000` and `1000`. `large`: `2000` and `0`.
 
 ### Task 3.2: As proportions of each band
 
-The second grid `crosstab()` printed is the shares: each row adds up to 1.
+The same counts as shares of each band. `group_by()` makes `sum(n)` add up within each viewer
+band instead of across the whole table, so each band's shares add up to 1.
 
-**What you should see:** non-gaming is `0.088` of the small band, `0.2` of the medium band, and
-`0` of the large band.
+```{r}
+#| label: crosstab-shares
+analysis %>%
+  filter(!is.na(channel_type)) %>%
+  count(viewer_band, channel_type) %>%
+  ___(viewer_band) %>%                           # shares within each band, not across the table
+  mutate(share = round(n / sum(n), 3))
+```
 
-**Write:** two to three sentences on the cross-tabulation. What does it show, and what can it not
-show yet?
+**What you should see:** non-gaming is `0.088` of the small band and `0.2` of the medium band.
+The large band has no non-gaming row at all: `count()` prints only the combinations it finds,
+and that count is `0`.
+
+**Write:** two to three sentences for the client on the cross-tabulation. What does it show, and
+what can it not show yet?
 
 *Your answer:*
 
@@ -226,7 +252,7 @@ show yet?
 Each figure is built, saved to `figures/` by the code that makes it, and carries alt text you
 write on its `#| fig-alt:` line. After each one, **Write:** one sentence disclosing a choice you
 made in it (a cap on an axis, which categories you kept, a bin width), and two to three
-sentences of interpretation.
+sentences of interpretation for the client.
 
 ### Task 4.1: Channel type within each viewer band
 
@@ -291,23 +317,23 @@ and 90 with the instructor's codes), and `length-by-reaction.png` in `figures/`.
 
 ### Task 4.3: A figure of your own choice
 
-Choose the variable and the chart. Two that suit this table: a histogram of `message_length`
-(decide where to cap the axis, since 361 messages run past 200 characters), or a line chart of
-messages per hour. Then say why you chose it.
+Choose the variable and the chart, and let the R Companion write it. Two that suit this table: a
+histogram of `message_length` (decide where to cap the axis, since 361 messages run past 200
+characters), or a line chart of messages per hour. Put your cursor on the `YOUR TURN` line, run
+**AURA: Write R code** and, under **R3 Describe**, select **Histogram** (or **Line chart over
+time**, which draws from `streams`: add `streams <- twitch_streams()` to the setup chunk first).
+The menu writes the complete chart; then fill in its title, axis labels, and caption, and keep
+the `fig_own <-` and `ggsave()` lines so the figure is saved. Then say why you chose it.
 
 ```{r}
 #| label: fig-own
 #| fig-alt: "YOUR TURN: one sentence saying what this chart shows."
 fig_own <- analysis %>%
-  ___  # YOUR TURN: your chart, with labs() for the title, axes, and caption, and + theme_v2v()
+  ___  # YOUR TURN: the chart the menu writes, with its labs() filled in and + theme_v2v()
 
 fig_own
 ggsave("figures/own-choice.png", fig_own, width = 7, height = 4.5, dpi = 300)
 ```
-
-Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
-**Histogram**, then **Run it**. (**Line chart over time** draws from `streams`: add
-`streams <- twitch_streams()` to the setup chunk first.)
 
 **Write:** one sentence on why you chose this chart for this variable, the disclosure sentence,
 and two to three sentences of interpretation.
@@ -322,20 +348,24 @@ reasonable, and where the outliers are, with the check shown.
 
 ### Task 5.1: The counts the chi-square will expect
 
-The chi-square in worksheet 3 needs every expected count to be at least 5.
-
-`run_chi_square()` prints, under the test, the counts it expected if the two were unrelated.
-Worksheet 3 reads the test itself; here read only the expected counts.
+The chi-square in worksheet 3 needs every expected count to be at least 5. `xtabs()` builds the
+grid of counts from a formula naming the two columns, `chisq.test()` runs the test on it, and
+`$expected` pulls out the counts the test expected if the two were unrelated. Worksheet 3 reads
+the test itself; here read only the expected counts.
 
 ```{r}
 #| label: diag-expected
-run_chi_square(analysis, x = ___, y = ___)   # the two categories of Task 3.1, in the same order
+expected <- chisq.test(xtabs(~ ___ + ___, data = analysis))$expected   # the two categories of Task 3.1, in the same order
+round(expected, 1)
 ```
 
-**What you should see:** under `Expected counts`, six numbers, the smallest `198.9` (large,
-non-gaming), and `Smallest expected count 198.87` above them.
+**What you should see:** six numbers, the smallest `198.9` (large, non-gaming).
 
 ### Task 5.2: Spread and outliers behind the boxplot
+
+A boxplot draws a point on its own for every value more than 1.5 times the interquartile range
+beyond the box. This filter finds those messages within each group: `quantile(..., 0.75)` is the
+top of the box and `IQR()` is its height.
 
 ```{r}
 #| label: diag-groups
@@ -346,15 +376,14 @@ coded %>%
   group_by(reaction_only) %>%
   summarize(n = n(), sd = sd(message_length), iqr = IQR(message_length))
 
-flag_outliers(coded, message_length, ___)   # beyond the whiskers of each group's box
+coded %>%
+  ___(reaction_only) %>%                                                                   # within each group
+  filter(message_length > quantile(message_length, 0.75) + 1.5 * IQR(message_length)) %>%  # beyond the upper whisker
+  select(reaction_only, message_length, message)
 ```
 
-`flag_outliers()` returns the messages that sit more than 1.5 times the interquartile range beyond
-their group's box, the points a boxplot draws on their own, with `side` saying which end. The
-first time it runs it prints the `filter()` line it stands for.
-
 **What you should see:** with the instructor's codes, sd `27.9` and `23.5`, then the four
-messages beyond the upper whisker of their own box: `90` in reaction, and `59`, `62`, and `119`
+messages beyond the upper whisker of their own box: `90` in reaction, and `59`, `119`, and `62`
 in commentary.
 
 ### Task 5.3: Shape across viewer bands
@@ -377,9 +406,21 @@ on, and the outliers.
 
 *Your answer:*
 
+## Explain this stage to the client
+
+**Write:** one short paragraph, in plain language, that you would send to the channel manager.
+Say what you did at this stage (what you counted, measured, and charted), what it shows about
+the three questions they asked, and what it does not show yet: a description says how the
+numbers sit, not whether a difference is bigger than chance, and that is worksheet 3. No R, no
+column names, no jargon the manager would have to look up. Name the numbers that matter to
+them.
+
+*Your paragraph:*
+
 ## Before you submit
 
 - [ ] No `___` and no `YOUR TURN` is left anywhere in the file.
 - [ ] Every figure has its own alt text, a disclosure sentence, and an interpretation.
 - [ ] `figures/` holds the three saved charts.
+- [ ] The paragraph to the client is written, and it names what this stage does not show yet.
 - [ ] The worksheet renders without an error.
