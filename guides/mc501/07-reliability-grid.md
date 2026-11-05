@@ -22,6 +22,8 @@ Prefer to watch first? The walkthrough video [Wrangling and the reliability grid
 
 The terminal prints the items coded, the observed agreement, and the statistic, then the same number from `irr` as a check.
 
+What each line of the generated code does, and how to read the number against the threshold: the [Reliability cheat sheet](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/reliability.html) ([PDF](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/reliability.pdf)).
+
 ## If it does not work
 
 If the buttons are out of sight, scroll down inside the panel. They sit below the last row.

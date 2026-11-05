@@ -55,7 +55,7 @@ A finished submission for six assignments, so you can see the form before you wr
 
 One page per package covering every R command the course uses: a plain sentence per command, a worked example on the Twitch data with the exact output R prints, the same call for your own columns, and the error you are most likely to hit.
 
-[Cheat-sheet index](cheat-sheets/index.qmd){.btn .btn-sm .btn-primary} [readr](cheat-sheets/readr.qmd){.btn .btn-sm .btn-secondary} [dplyr](cheat-sheets/dplyr.qmd){.btn .btn-sm .btn-secondary} [lubridate](cheat-sheets/lubridate.qmd){.btn .btn-sm .btn-secondary} [stringr](cheat-sheets/stringr.qmd){.btn .btn-sm .btn-secondary} [ggplot2](cheat-sheets/ggplot2.qmd){.btn .btn-sm .btn-secondary} [stats](cheat-sheets/stats.qmd){.btn .btn-sm .btn-secondary}
+[Cheat-sheet index](cheat-sheets/index.qmd){.btn .btn-sm .btn-primary} [readr](cheat-sheets/readr.qmd){.btn .btn-sm .btn-secondary} [dplyr](cheat-sheets/dplyr.qmd){.btn .btn-sm .btn-secondary} [lubridate](cheat-sheets/lubridate.qmd){.btn .btn-sm .btn-secondary} [stringr](cheat-sheets/stringr.qmd){.btn .btn-sm .btn-secondary} [ggplot2](cheat-sheets/ggplot2.qmd){.btn .btn-sm .btn-secondary} [stats](cheat-sheets/stats.qmd){.btn .btn-sm .btn-secondary} [Reliability](cheat-sheets/reliability.qmd){.btn .btn-sm .btn-secondary}
 :::
 
 ---
