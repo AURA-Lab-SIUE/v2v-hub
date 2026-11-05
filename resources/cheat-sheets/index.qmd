@@ -18,6 +18,7 @@ to hit. Every example below was run in R, and the output is pasted exactly as it
 | [stringr](stringr.qmd) ([PDF](stringr.pdf)) | Measure and change text: `str_length()`, `str_detect()`, `str_replace()`, `str_glue()` |
 | [ggplot2](ggplot2.qmd) ([PDF](ggplot2.pdf)) | Build a chart one layer at a time: `ggplot()`, `aes()`, the `geom_`s, `labs()`, `theme_v2v()` |
 | [stats](stats.qmd) ([PDF](stats.pdf)) | Describe a variable and run a test: `t.test()`, `chisq.test()`, `aov()`, `lm()`, and the effect sizes |
+| [Reliability](reliability.qmd) ([PDF](reliability.pdf)) | Check your own coding, pass 1 against pass 2: percent agreement, `irr::kappa2()`, `irr::kripp.alpha()`, `reliability()`, and the thresholds (MC 451 and MC 501) |
 
 ## Every worksheet starts the same way
 
