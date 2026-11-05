@@ -6,7 +6,7 @@ Take the coding sheet you filled in by hand, load it under a name you choose, jo
 
 ## The example data, and why it looks like yours
 
-The example continues the study from guide 15, *Your Pilot, Start to Finish*: two real tables about a television show, from the R community's weekly public-data project TidyTuesday (2024-08-27, Power Rangers).
+The example is a study like the one you set up in the [Sampling Plan and Pilot](../../mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items): two real tables about a television show, from the R community's weekly public-data project TidyTuesday (2024-08-27, Power Rangers).
 
 - [episode-codes.csv](../../resources/examples/own-study-walkthrough/episode-codes.csv): the **coding sheet**. 120 episodes drawn at random from the 921, one row each, with two columns coded by hand from each episode's synopsis: `threat` (`monster`, `villain`, or `none`) and `focus` (`team`, `one_ranger`, or `other`), plus a `coder_notes` column. Your coding sheet is the same shape: one row per item you coded, one column per variable in your codebook.
 - [power_rangers_seasons.csv](../../resources/examples/own-study-walkthrough/power_rangers_seasons.csv): the **table about the sources**. 28 seasons, one row each, with the season number and the producer. Yours describes your accounts, outlets, or channels.
