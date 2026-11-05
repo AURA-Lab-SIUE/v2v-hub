@@ -436,7 +436,14 @@ If pressing **Ctrl+Enter** (**Cmd+Enter** on a Mac) opens a box titled **Choose 
 
 **`object 'episodes' not found`.** The line that loads your analysis file has not run in this R session. Select it and press **Ctrl+Enter** again, then the line that failed.
 
-**`could not find function "scale_fill_v2v"`** (or `theme_v2v`). The `library(v2v)` line has not run in this session. Run Step 1's lines again.
+**`could not find function "read_rds"`** (or `glimpse`, `pull`, `%>%`, or any other function). R prints:
+
+```
+Error in read_rds("data/episodes_analysis.RDS") : 
+  could not find function "read_rds"
+```
+
+R does not know that function yet, because the `library()` lines at the top of your file have not run in this R session. That happens after R restarts, or when you run a line from the middle of your file first. Select the `library()` lines, press **Ctrl+Enter** (**Cmd+Enter** on a Mac), and run your line again. `read_csv()`, `read_rds()`, `glimpse()`, `pull()`, and `%>%` come from `library(tidyverse)`; `theme_v2v()` and `scale_fill_v2v()` come from `library(v2v)`. If the `library()` lines have run, check the spelling: R reads `Read_csv` and `read_csv` as two different names.
 
 **A chart does not appear, or R prints a `+` and waits.** Check that every `+` sits at the end of a line, not at the start of the next one, and that every `(` has its `)`. Press **Esc** in the terminal to stop the waiting, fix the line, and run the chart again.
 
