@@ -1,5 +1,5 @@
 # Wrangle your own data: the finished script for guide 08 (Wrangle Your Own Data).
-# Data: episode-codes.csv (this folder) and power_rangers_seasons.csv (resources/examples/pilot-walkthrough/),
+# Data: episode-codes.csv and power_rangers_seasons.csv (both in this folder),
 # both saved in your workspace's data folder. Run it from the top in a fresh R session.
 
 library(tidyverse)
