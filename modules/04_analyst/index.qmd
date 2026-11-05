@@ -140,14 +140,6 @@ There is no file to download and no path to get wrong.
 
 ---
 
-## Follow Along in Class
-
-Each R session has a teaching notebook: the slides as headings, with every code block as a chunk you run in VS Code during class. Save it in your workspace with the Put a Worksheet in Your Workspace guide ([MC 451](../../guides/mc451/14-put-a-worksheet-in-your-workspace.md), [MC 501](../../guides/mc501/14-put-a-worksheet-in-your-workspace.md)), then run **AURA: Check my setup** first. Notebooks are not assignments and are not submitted.
-
-- MC 451, S22 Wrangling Lab: [s22-wrangling-lab.qmd](../../notebooks/s22-wrangling-lab.qmd){download="s22-wrangling-lab.qmd"}
-- MC 451, S23 Describing: [s23-describing-data.qmd](../../notebooks/s23-describing-data.qmd){download="s23-describing-data.qmd"}
-- MC 501, W12 Describing: [w12-describing.qmd](../../notebooks/w12-describing.qmd){download="w12-describing.qmd"}
-
 ## Practice Activities
 
 - [**Pokemon Wrangling Practice**](practice-wrangling.qmd): apply the full import, diagnose, clean, export pipeline to a TidyTuesday Pokemon dataset. Includes a downloadable `.qmd` file to work through in VS Code.

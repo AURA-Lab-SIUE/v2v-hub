@@ -22,8 +22,6 @@ project:
     # render target, tries the knitr engine on its R chunks, and the CI runner has no
     # R installed. Build failed exactly that way 2026-09-01.
     - "!starters/*.qmd"
-    # Teaching notebooks (2026-11-05): source students download to follow along in class, never rendered.
-    - "!notebooks/*.qmd"
     # Codebook templates are handed over as source like the starters (2026-10-20).
     - "!resources/templates/*.qmd"
   resources:
@@ -31,7 +29,6 @@ project:
     # Starter files students DOWNLOAD and open in VS Code. Deliberately outside the
     # render list above: they are source to be handed over, not pages to be built.
     - "starters/*.qmd"
-    - "notebooks/*.qmd"
     # The AI-use log students download and submit with every assignment (2026-10-17). Blackboard links
     # its published URL directly, so it stays served even if a page link to it changes.
     - "resources/MC451-501-AI-use-log.docx"
