@@ -145,6 +145,8 @@ You produce a **white paper plus an academic conference poster**. The white pape
 
 The paper carries the three transparency markers a reviewer looks for: a **data provenance statement**, a **coder reliability report** giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the **pre-registration disclosure**: the dated pre-registration file in your project repository, cited by path and commit, and every departure from it.
 
+**Study 1 in MC 501.** Describe how you immersed yourself in the data and built your codebook in the Methods section. The MC 501 Results section reports Study 2, so `03-results.qmd` does not need qualitative themes.
+
 ### The conference poster
 
 The poster is a separate requirement shared with MC 500, rendered at 36 by 24 inches from the Quarto Typst poster template. It is assigned in Week 13 alongside the white paper and worked in the Week 15 studio session.
