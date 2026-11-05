@@ -1,51 +1,637 @@
-# Wrangle the Data with Write R Code
+# Wrangle Your Own Data: From Your Coding Sheet to Your Analysis File
 
-Clean the dates, add a column, join each message to its stream and its channel label, join your codes onto the messages, and save the analysis file.
+Take the coding sheet you filled in by hand, load it under a name you choose, join it to a second table about your sources, fix what is wrong with it, and save the one file every later step reads. You type every line of R yourself and see what each one prints.
 
-Prefer to watch first? The walkthrough video [Wrangle the Data with Write R Code](https://siue.yuja.com/V/Video?v=17649365&a=210065970) shows these steps.
+**How this guide and the Data Wrangling worksheet fit together.** The graded worksheet (`11-wrangling-data.qmd`) does this job on the course's Twitch data. Your White Paper does it again on your own data. This guide walks your own-data version, one step at a time, and after each step a box names the worksheet task that does the same thing on Twitch, the R Companion menu for it, and what the worksheet says you should see. Use the guide beside the worksheet, or come back to it when you start on your own study.
 
-## Steps
+## The example data, and why it looks like yours
 
-1. Load the course data first (guide 04).
-2. Open the Command Palette: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac). Type `AURA: Write R code` and press **Enter**.
-3. Under **R2 Data**, select **Turn the date column into a time (as_datetime)**. When the message at the bottom right asks **Run it now?**, select **Run it**.
-4. Run **AURA: Write R code** again and select **Add a column (mutate)**, then **Run it**. Do this before the join, so every matched message keeps its length.
-5. Select **Join two tables by a key and nearest earlier time (left_join)**, then **Run it**. It writes two blocks: a `select()` that keeps the stream columns and renames the snapshot time, then the `left_join()` with its rolling key.
-6. Select **Label each channel by its top category**, then **Run it**. Then select **Join the channel labels onto the messages**, then **Run it**.
-7. Select **Count rows per group (count)**. A list titled **Which table?** opens: press **Enter** to keep **chat**. Then select **Use the course default columns**, then **Run it**.
-8. Read your coding sheet into a table named `codes` that keeps only the key and your code. On a new line under the last block, type these two lines, select both, and press **Ctrl+Enter** (**Cmd+Enter** on a Mac):
+The example continues the study from guide 15, *Your Pilot, Start to Finish*: two real tables about a television show, from the R community's weekly public-data project TidyTuesday (2024-08-27, Power Rangers).
 
-    ```r
-    codes <- read_csv("data/coding-form.csv") %>%
-      select(id, reaction_only)
-    ```
+- [episode-codes.csv](../../resources/examples/own-study-walkthrough/episode-codes.csv): the **coding sheet**. 120 episodes drawn at random from the 921, one row each, with two columns coded by hand from each episode's synopsis: `threat` (`monster`, `villain`, or `none`) and `focus` (`team`, `one_ranger`, or `other`), plus a `coder_notes` column. Your coding sheet is the same shape: one row per item you coded, one column per variable in your codebook.
+- [power_rangers_seasons.csv](../../resources/examples/own-study-walkthrough/power_rangers_seasons.csv): the **table about the sources**. 28 seasons, one row each, with the season number and the producer. Yours describes your accounts, outlets, or channels.
 
-9. Run **AURA: Write R code** and select **Join two tables by a shared column**. Answer its three questions:
-    - **The table you keep every row of:** select **chat_streams**.
-    - **The table you take columns from:** select **codes**.
-    - **The column both tables share:** type `id` and press **Enter**.
+The coding sheet was drawn from the episodes table alone, so the coder never saw which company produced each episode while coding it. That is a good habit: keep anything that could sway your codes out of the coding sheet, and join it on afterward. That join is Step 6.
 
-    Then select **Keep every row of chat_streams** (the usual choice), then **Run it**. The block names the result `chat_streams_codes`.
-10. On a new line under that block, type `analysis <- chat_streams_codes` and press **Ctrl+Enter** (**Cmd+Enter** on a Mac). This names the finished table `analysis`, the name the save step and the next worksheets read.
-11. Select **Save a table as an RDS file**. A box asks for the file name: leave `data/twitch_analysis.RDS` and press **Enter**. Then **Run it**.
-12. Below each block, write your own comment saying why you chose that step.
+Two things in the example sheet are wrong on purpose, because real coding sheets have them: one code was typed with a capital letter, and one cell was left blank. Steps 4, 5, and 9 find and handle both.
 
-## What you should see
+The finished script is here, so you can compare yours with it at any step: [wrangle.R](../../resources/examples/own-study-walkthrough/wrangle.R).
 
-![](img/wrangling-blocks.png){fig-alt="Code the R Companion wrote into wrangle.R: a mutate() that adds message_length, a check that selects message and message_length for three rows, and a block headed Count the rows in each group: count() that counts chat by channel, largest first."}
+## Words used here
 
-Each block arrives with a heading comment. The terminal prints a table after each **Run it**.
+- **Coding sheet:** the table of your hand-coded items, saved as a CSV. Each row is one item; each code column is one variable from your codebook.
+- **Key:** the one column two tables share, used to match their rows.
+- **Join:** adding the columns of one table onto another by matching the key.
+- **Factor:** R's way of storing a category (`monster`, `villain`, `none`) with its values in an order you choose. Every table, chart, and test uses that order.
+- **Missing value (`NA`):** a cell with nothing in it. R prints `NA`, short for "not available."
+- **RDS file:** R's own file format. It saves a table exactly as you built it, factors included. A CSV does not.
 
-The join's two checks print `[1] 35267`, then `[1] 35237`. The first is the row count: the join kept every message and added none. The second counts the messages with no match in `codes`: every message except your thirty. Only your thirty coded messages carry a value in `reaction_only`; every other message is `NA` there, and that is correct.
+## Before you start: put both files in your data folder
 
-The save step ends with `[1] 35267`: the file holds every message. `twitch_analysis.RDS` appears in the `data` folder in the Explorer.
+Your workspace needs a folder named `data` at its top level, beside `README.md`, with your coding sheet and your sources table inside it. Guide 15, Step 1, shows how to make the folder and drag files in from Downloads. To follow along with the example, download the two files above and drag them into `data` the same way.
+
+**It worked if** the Explorer shows `episode-codes.csv` and `power_rangers_seasons.csv` (or your own two files) indented under `data`.
+
+## Step 1: Open a script and load the packages
+
+1. In the Explorer, right-click the empty space below the file list and select **New File...**. Type `wrangle.R` and press **Enter**.
+2. Open an R terminal: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac), type `AURA: Open an R terminal`, and press **Enter**. Wait for the `>` prompt.
+Type these three lines into `wrangle.R`, select them, and press **Ctrl+Enter** (**Cmd+Enter** on a Mac):
+
+```r
+library(tidyverse)
+library(janitor)
+library(v2v)
+```
+
+```
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────────────────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.6
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.1     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.2.0     
+── Conflicts ────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+> library(janitor)
+
+Attaching package: ‘janitor’
+
+The following objects are masked from ‘package:stats’:
+
+    chisq.test, fisher.test
+
+> library(v2v)
+v2v 0.3.9 loaded.
+  setup()  checks that R, Quarto and Git are ready
+  ?v2v     lists what this package gives you
+
+Attaching package: ‘v2v’
+
+The following object is masked from ‘package:janitor’:
+
+    crosstab
+```
+
+**Check:** the `v2v` line says `0.3.9` or newer. The `Conflicts` and `masked` lines are normal: they say one package's function replaces another's with the same name. If you see `there is no package called 'janitor'`, run **AURA: Check my setup**, then **Install what is missing**, and run the lines again.
+
+**In the worksheet (Twitch):** the Setup chunk loads the same three packages. **What you should see** there is the same list.
+
+## Step 2: Load your coding sheet under a name you choose
+
+The name on the **left** of `<-` is yours to pick: it is what you call this table in every later line. The example calls its coding sheet `coded`. The file name inside the quotes is **your** file's name, exactly as the Explorer shows it under `data`, with `data/` in front. See [read_csv() on the readr cheat sheet](../../resources/cheat-sheets/readr.html#read_csv-read-a-.csv-into-a-table).
+
+```r
+coded <- read_csv("data/episode-codes.csv")
+```
+
+```
+> coded <- read_csv("data/episode-codes.csv")
+Rows: 120 Columns: 10
+── Column specification ────────────────────────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (6): season_title, episode_title, desc, threat, focus, coder_notes
+dbl  (3): episode_num, IMDB_rating, total_votes
+date (1): air_date
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+**Check:** the row count is the number of items you coded (120 here). The `chr`, `dbl`, and `date` lines say what kind each column is: `chr` is text, `dbl` is a number, `date` is a date. Your code columns should be `chr` if you typed words, or `dbl` if you typed numbers.
+
+Now look at every column with its first values ([glimpse() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#glimpse-see-every-column-at-once)):
+
+```r
+glimpse(coded)
+```
+
+```
+> glimpse(coded)
+Rows: 120
+Columns: 10
+$ season_title  <chr> "Operation Overdrive", "Time Force", "Jungle Fury", "Time Force", "Wild Forc…
+$ episode_num   <dbl> 24, 38, 20, 30, 28, 7, 3, 24, 39, 40, 9, 11, 17, 15, 5, 44, 2, 30, 38, 28, 4…
+$ episode_title <chr> "Ronny on Empty: Part 2", "The End of Time: Part 1", "Dash for the Dagger", …
+$ air_date      <date> 2007-08-27, 2001-11-03, 2008-07-14, 2001-09-08, 2002-09-14, 2008-03-24, 199…
+$ IMDB_rating   <dbl> 7.8, 8.6, 7.2, 8.5, 6.7, 7.0, 7.8, 6.2, 8.9, 8.8, 7.1, 7.2, 8.6, 6.4, 7.6, 7…
+$ total_votes   <dbl> 26, 55, 35, 54, 40, 34, 210, 38, 59, 64, 35, 289, 29, 282, 99, 435, 54, 33, …
+$ desc          <chr> "With Ronny's life force fading, quickly, Will gets some \"unexpected help\"…
+$ threat        <chr> "villain", "villain", "villain", "villain", "villain", "villain", "villain",…
+$ focus         <chr> "team", "team", "one_ranger", "team", "one_ranger", "one_ranger", "team", "t…
+$ coder_notes   <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+```
+
+**Check:** every column you expect is there, and the values look like what you typed. `NA` in `coder_notes` is fine: most rows have no note.
+
+**The R Companion shortcut, once you have typed it yourself:** **AURA: Import a data file (CSV or Excel)** from the Command Palette asks for the file and the name, then writes the same `read_csv()` and `glimpse()` lines into your script, with the `library()` lines and an `options()` line above them.
+
+**In the worksheet (Twitch):** Task 1.1 loads the Twitch tables from the course package instead of a file (R Companion: **R2 Data**, then **Load the course Twitch corpus**), and Task 1.2 runs `glimpse()`: `Rows: 35,267` for `chat`. Task 5.1 reads your coding sheet with this same `read_csv()` line: `Rows: 30`.
+
+## Step 3: Clean the column names
+
+A spreadsheet lets you name a column `IMDB_rating` or `Reaction Only`. R would make you type those exactly, capitals and spaces included. `clean_names()` makes every name lowercase with underscores ([clean_names() on the readr cheat sheet](../../resources/cheat-sheets/readr.html#clean_names-make-column-names-safe-to-type)).
+
+```r
+coded <- coded %>%
+  clean_names()
+```
+
+```r
+names(coded)
+```
+
+```
+> coded <- coded %>%
++   clean_names()
+
+> names(coded)
+ [1] "season_title"  "episode_num"   "episode_title" "air_date"      "imdb_rating"   "total_votes"  
+ [7] "desc"          "threat"        "focus"         "coder_notes"  
+```
+
+**Check:** `IMDB_rating` is now `imdb_rating`. Every later line uses the new names.
+
+**In the worksheet (Twitch):** Task 5.1 adds the same `clean_names()` line under its `read_csv()`.
+
+## Step 4: Check every code column
+
+Before you trust a code column, count its values. `count()` lists each value once with how many rows have it ([count() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#count-how-many-rows-in-each-group)). Do this for every column you coded.
+
+```r
+coded %>%
+  count(threat)
+```
+
+```
+> coded %>%
++   count(threat)
+# A tibble: 4 × 2
+  threat      n
+  <chr>   <int>
+1 Monster     1
+2 monster    36
+3 none       27
+4 villain    56
+```
+
+```r
+coded %>%
+  count(focus)
+```
+
+```
+> coded %>%
++   count(focus)
+# A tibble: 4 × 2
+  focus          n
+  <chr>      <int>
+1 one_ranger    52
+2 other         13
+3 team          54
+4 <NA>           1
+```
+
+**Check:** each code column should list only the values your codebook allows. Here two things are wrong:
+
+- `threat` has `Monster` (1 row) and `monster` (36 rows). To R those are different values, because R treats capital and lowercase letters as different. It is one typing slip.
+- `focus` has an `NA` row: one cell was left blank. The `coder_notes` column says why ("synopsis says nothing about the story"). Step 9 decides what to do with it.
+
+**The R Companion shortcut, once you have typed it yourself:** **AURA: Write R code**, then under **R2 Data**, **Count rows per group (count)**. In the **Which table?** list pick `coded`, then select **Choose the column from coded** and pick the code column.
+
+**In the worksheet (Twitch):** Task 2.1 counts the missing values (`TRUE` with `4` for `chat`, `96` for `streams`), and Task 2.3 counts the categories (a table that starts `Art`, `Fortnite`, `Just Chatting`, then `[1] 50` channels).
+
+## Step 5: Fix what the check found
+
+Fix a typing slip in R, not by hand in the spreadsheet, so the fix is written down and runs again every time. `str_to_lower()` makes text lowercase ([str_to_lower() on the stringr cheat sheet](../../resources/cheat-sheets/stringr.html#str_to_lower-make-text-lowercase)), and `mutate()` replaces the column with the fixed version ([mutate() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#mutate-add-or-change-a-column)).
+
+```r
+coded <- coded %>%
+  mutate(threat = str_to_lower(threat))
+```
+
+Then count again, to see the fix worked:
+
+```r
+coded %>%
+  count(threat)
+```
+
+```
+> coded <- coded %>%
++   mutate(threat = str_to_lower(threat))
+
+> coded %>%
++   count(threat)
+# A tibble: 3 × 2
+  threat      n
+  <chr>   <int>
+1 monster    37
+2 none       27
+3 villain    56
+```
+
+**Check:** three values, `37` monsters now (36 plus the one that was `Monster`), and nothing else.
+
+Your own check may find a different problem, such as a space after a code or a code that is not in your codebook. Fix each one in its own line, then count again. If you are not sure how, run **AURA: Explain an R error** or email me the output of your `count()`.
+
+**In the worksheet (Twitch):** Part 3 is the worksheet's fix step. Task 3.1 turns the timestamps into readable times (R Companion: **R2 Data**, then **Turn the date column into a time (as_datetime)**): `first` is `2018-11-18 21:55:27`.
+
+## Step 6: Load the second table and join it to your coding sheet
+
+### 6a. Load it and look at it
+
+Load your sources table the same way, under a second name you choose. The example calls the raw file `seasons_raw`.
+
+```r
+seasons_raw <- read_csv("data/power_rangers_seasons.csv")
+```
+
+```r
+glimpse(seasons_raw)
+```
+
+```
+> seasons_raw <- read_csv("data/power_rangers_seasons.csv")
+Rows: 28 Columns: 7
+── Column specification ────────────────────────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (3): season_title, air_date_last_ep, producer
+dbl  (3): season_num, number_of_episodes, IMDB_rating
+date (1): air_date_first_ep
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+> glimpse(seasons_raw)
+Rows: 28
+Columns: 7
+$ season_title       <chr> "Mighty Morphin (Season 1)", "Mighty Morphin (Season 2)", "Mighty Morph…
+$ season_num         <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, …
+$ number_of_episodes <dbl> 60, 52, 33, 50, 45, 43, 45, 40, 40, 40, 38, 38, 38, 32, 32, 32, 32, 22,…
+$ air_date_first_ep  <date> 1993-08-28, 1994-07-21, 1995-09-02, 1996-04-20, 1997-04-19, 1998-02-06…
+$ air_date_last_ep   <chr> "1994-05-23", "1995-05-20", "1995-11-27", "1996-11-27", "1997-11-24", "…
+$ producer           <chr> "Saban", "Saban", "Saban", "Saban", "Saban", "Saban", "Saban", "Saban",…
+$ IMDB_rating        <dbl> 6.5, 6.5, 6.5, 6.6, 5.7, 7.3, 6.9, 6.5, 7.1, 6.3, 6.4, 6.8, 6.7, 6.7, 5…
+```
+
+**Check the column types.** `air_date_first_ep` is a `date`, but `air_date_last_ep` is `chr`, text. When `read_csv()` finds even one cell in a column that is not a full date, it reads the whole column as text. The last three rows show which cell:
+
+```r
+seasons_raw %>%
+  select(season_title, air_date_last_ep) %>%
+  slice_tail(n = 3)
+```
+
+```
+> seasons_raw %>%
++   select(season_title, air_date_last_ep) %>%
++   slice_tail(n = 3)
+# A tibble: 3 × 2
+  season_title              air_date_last_ep
+  <chr>                     <chr>           
+1 Beast Morphers (Season 1) 2019-12-14      
+2 Beast Morphers (Season 2) 2020-12-12      
+3 Dino Fury                 2022            
+```
+
+`2022` is a year, not a date. This study does not need that column, so the next step leaves it out. If a date column you **do** need reads as `chr`, the fix is in **If it does not work** at the end of this guide.
+
+### 6b. Keep only the columns you need, and the key
+
+Find the key: the one column name that appears in both `glimpse()` printouts and means the same thing in both. Here it is `season_title`. In your data, it might be `channel`, `username`, `account`, or `outlet`, spelled exactly the same in both files.
+
+Then keep the key plus the columns you want to add. Both tables have a rating column, and joining without this step would give you two of them. `select()` keeps the columns you name ([select() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#select-keep-the-columns-you-name)):
+
+```r
+seasons <- seasons_raw %>%
+  select(season_title, season_num, producer)
+```
+
+This prints nothing. A line that makes a table with `<-` is silent; the table is there, and the R Companion's **Workspace** panel lists it.
+
+### 6c. Join, then check the join two ways
+
+Count your rows before the join, so you can compare after it:
+
+```r
+nrow(coded)
+```
+
+```
+> nrow(coded)
+[1] 120
+```
+
+`left_join()` keeps every row of the first table (your coding sheet) and adds the matching columns from the second. `join_by()` names the key ([left_join() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#left_join-add-another-tables-columns-by-a-shared-key)). Guide 15 wrote the key as `by = "season_title"`; `by = join_by(season_title)` means the same thing.
+
+```r
+coded_seasons <- coded %>%
+  left_join(seasons, by = join_by(season_title))
+```
+
+```r
+nrow(coded_seasons)
+```
+
+```
+> coded_seasons <- coded %>%
++   left_join(seasons, by = join_by(season_title))
+
+> nrow(coded_seasons)
+[1] 120
+```
+
+**Check 1:** the row count is the same as before the join. If it grew, the key appears more than once in your second table (two rows for the same account), and some items were matched twice.
+
+**Check 2:** count the items whose key found no match in the second table. `anti_join()` keeps exactly those rows ([anti_join() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#anti_join-find-the-rows-that-did-not-match)):
+
+```r
+coded %>%
+  anti_join(seasons, by = join_by(season_title)) %>%
+  nrow()
+```
+
+```
+> coded %>%
++   anti_join(seasons, by = join_by(season_title)) %>%
++   nrow()
+[1] 0
+```
+
+Zero is what you want. A number above zero means some keys in your coding sheet are spelled differently in your second table: usually capitals, a space, or a typo. Drop the `nrow()` line to see which rows they are.
+
+**The R Companion shortcut, once you have typed it yourself:** **AURA: Write R code**, then under **R2 Data**, **Join two tables by a shared column**. Answer its three questions (the table you keep every row of: `coded`; the table you take columns from: `seasons`; the shared column: type `season_title`), then select **Keep every row of coded**. It writes this same `left_join()` with both checks, and names the result `coded_seasons`.
+
+**In the worksheet (Twitch):** Part 4 has two joins. Task 4.1 matches each message to its stream by channel and nearest earlier time (R Companion: **Join two tables by a key and nearest earlier time (left_join)**): `[1] 35267`, then `FALSE` `35256` and `TRUE` `11`. Task 4.2 joins the channel labels by `channel` (R Companion: **Label each channel by its top category**, then **Join the channel labels onto the messages**). Task 5.3 joins your codes by `id`: `[1] 35267`, your coded rows adding to `30`, and `NA` with `35237`.
+
+## Step 7: Make every code column a factor
+
+A code column holds categories, and a factor stores a category with its values in the order you choose ([factor() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#factor-store-a-category-in-the-order-you-choose)). `levels` lists every allowed value in that order. Give the order your codebook uses. Do it for every code column, and for any category column from the second table you will compare groups on. One `mutate()` line per column, so each one is easy to read and fix:
+
+```r
+coded_seasons <- coded_seasons %>%
+  mutate(threat = factor(threat, levels = c("monster", "villain", "none"))) %>%
+  mutate(focus = factor(focus, levels = c("team", "one_ranger", "other"))) %>%
+  mutate(producer = factor(producer, levels = c("Saban", "Saban/Disney", "Disney", "Saban Brands")))
+```
+
+Count each one again:
+
+```r
+coded_seasons %>%
+  count(threat)
+```
+
+```r
+coded_seasons %>%
+  count(focus)
+```
+
+```r
+coded_seasons %>%
+  count(producer)
+```
+
+```
+> coded_seasons <- coded_seasons %>%
++   mutate(threat = factor(threat, levels = c("monster", "villain", "none"))) %>%
++   mutate(focus = factor(focus, levels = c("team", "one_ranger", "other"))) %>%
++   mutate(producer = factor(producer, levels = c("Saban", "Saban/Disney", "Disney", "Saban Brands")))
+
+> coded_seasons %>%
++   count(threat)
+# A tibble: 3 × 2
+  threat      n
+  <fct>   <int>
+1 monster    37
+2 villain    56
+3 none       27
+
+> coded_seasons %>%
++   count(focus)
+# A tibble: 4 × 2
+  focus          n
+  <fct>      <int>
+1 team          54
+2 one_ranger    52
+3 other         13
+4 <NA>           1
+
+> coded_seasons %>%
++   count(producer)
+# A tibble: 4 × 2
+  producer         n
+  <fct>        <int>
+1 Saban           54
+2 Saban/Disney     5
+3 Disney          31
+4 Saban Brands    30
+```
+
+**Check:** the type line now says `<fct>`, and the rows come in your order, not alphabetical (`monster`, `villain`, `none`). If a value is missing from `levels`, its rows turn into `NA`. So if a new `NA` row appears that was not there in Step 4, a value is misspelled in `levels` or in the data.
+
+If your codes are numbers, such as `0` and `1`, add `labels` so the tables say what the numbers mean: `factor(reaction_only, levels = c(0, 1), labels = c("commentary", "reaction"))`.
+
+**In the worksheet (Twitch):** Task 5.2 makes your `0` and `1` codes a factor with `labels = c("commentary", "reaction")`: two rows adding to `30`, no `NA`. Task 4.3 shows that `viewer_band` arrives as a factor: `small`, `medium`, `large`, in that order.
+
+## Step 8: Add a column you need
+
+If your study needs a number your data does not have, make it with `mutate()`. The example counts the characters in each synopsis with `str_length()` ([str_length() on the stringr cheat sheet](../../resources/cheat-sheets/stringr.html#str_length-count-the-characters)), the same way the worksheet counts the characters in each message.
+
+```r
+coded_seasons <- coded_seasons %>%
+  mutate(desc_length = str_length(desc))
+```
+
+```r
+coded_seasons %>%
+  select(episode_title, desc_length) %>%
+  slice_head(n = 3)
+```
+
+```
+> coded_seasons <- coded_seasons %>%
++   mutate(desc_length = str_length(desc))
+
+> coded_seasons %>%
++   select(episode_title, desc_length) %>%
++   slice_head(n = 3)
+# A tibble: 3 × 2
+  episode_title           desc_length
+  <chr>                         <int>
+1 Ronny on Empty: Part 2          225
+2 The End of Time: Part 1         396
+3 Dash for the Dagger             369
+```
+
+**Check:** the new column is there, and the first few numbers look possible for what it measures.
+
+**In the worksheet (Twitch):** Task 3.2 adds `message_length` (R Companion: **R2 Data**, then **Add a column (mutate)**, which writes the Twitch column only): lengths `23`, `441`, and `8`.
+
+## Step 9: Count the missing values and decide
+
+Count the blanks in every column your analysis will use ([the same count() entry](../../resources/cheat-sheets/dplyr.html#count-how-many-rows-in-each-group)). `is.na()` is `TRUE` where a cell is empty:
+
+```r
+coded_seasons %>%
+  count(is.na(focus))
+```
+
+```r
+coded_seasons %>%
+  count(is.na(imdb_rating))
+```
+
+```
+> coded_seasons %>%
++   count(is.na(focus))
+# A tibble: 2 × 2
+  `is.na(focus)`     n
+  <lgl>          <int>
+1 FALSE            119
+2 TRUE               1
+
+> coded_seasons %>%
++   count(is.na(imdb_rating))
+# A tibble: 1 × 2
+  `is.na(imdb_rating)`     n
+  <lgl>                <int>
+1 FALSE                  120
+```
+
+**Check and decide:** one episode has no `focus`, and every episode has a rating. The example keeps that row, because its `threat` code and rating are still good: the `NA` only leaves it out of anything that uses `focus`. Write your decision down in plain words for your Methods section, such as: "One of 120 episodes was not coded for focus because its synopsis described no story; it is kept in every analysis that does not use focus."
+
+**In the worksheet (Twitch):** Part 6 counts three kinds of missing values: `TRUE` with `4`, then `11`, then `501`, and asks you to write the same kind of decision.
+
+## Step 10: Save your analysis file
+
+Save the finished table as an RDS file, under a name you choose, in `data`. Your describing and testing code will read this file. RDS keeps the factors and their order; a CSV would lose them ([write_rds() on the readr cheat sheet](../../resources/cheat-sheets/readr.html#write_rds-save-a-table-in-rs-own-format)).
+
+```r
+write_rds(coded_seasons, "data/episodes_analysis.RDS")
+```
+
+Then read it back and count its rows, to be sure the save worked:
+
+```r
+read_rds("data/episodes_analysis.RDS") %>%
+  nrow()
+```
+
+```
+> write_rds(coded_seasons, "data/episodes_analysis.RDS")
+
+> read_rds("data/episodes_analysis.RDS") %>%
++   nrow()
+[1] 120
+```
+
+**Check:** the count matches your table, and `episodes_analysis.RDS` (or your file's name) appears under `data` in the Explorer. One last look at the whole table:
+
+```r
+glimpse(coded_seasons)
+```
+
+```
+> glimpse(coded_seasons)
+Rows: 120
+Columns: 13
+$ season_title  <chr> "Operation Overdrive", "Time Force", "Jungle Fury", "Time Force", "Wild Forc…
+$ episode_num   <dbl> 24, 38, 20, 30, 28, 7, 3, 24, 39, 40, 9, 11, 17, 15, 5, 44, 2, 30, 38, 28, 4…
+$ episode_title <chr> "Ronny on Empty: Part 2", "The End of Time: Part 1", "Dash for the Dagger", …
+$ air_date      <date> 2007-08-27, 2001-11-03, 2008-07-14, 2001-09-08, 2002-09-14, 2008-03-24, 199…
+$ imdb_rating   <dbl> 7.8, 8.6, 7.2, 8.5, 6.7, 7.0, 7.8, 6.2, 8.9, 8.8, 7.1, 7.2, 8.6, 6.4, 7.6, 7…
+$ total_votes   <dbl> 26, 55, 35, 54, 40, 34, 210, 38, 59, 64, 35, 289, 29, 282, 99, 435, 54, 33, …
+$ desc          <chr> "With Ronny's life force fading, quickly, Will gets some \"unexpected help\"…
+$ threat        <fct> villain, villain, villain, villain, villain, villain, villain, none, none, v…
+$ focus         <fct> team, team, one_ranger, team, one_ranger, one_ranger, team, team, team, team…
+$ coder_notes   <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+$ season_num    <dbl> 15, 9, 16, 9, 10, 16, 7, 18, 9, 8, 16, 4, 26, 4, 8, 2, 24, 16, 11, 11, 1, 20…
+$ producer      <fct> Disney, Saban, Disney, Saban, Saban/Disney, Disney, Saban, Saban Brands, Sab…
+$ desc_length   <int> 225, 396, 369, 574, 125, 482, 136, 177, 416, 91, 427, 288, 92, 181, 56, 573,…
+```
+
+**The R Companion shortcut, once you have typed it yourself:** **AURA: Write R code**, then under **R2 Data**, **Save a table as an RDS file**. Type your file name in the box (it starts as `data/twitch_analysis.RDS`, so change it) and press **Enter**. It writes these same two blocks for a table named `analysis`, so change `analysis` in its first line to your table's name (`coded_seasons` here) before you run it.
+
+**In the worksheet (Twitch):** Part 7 saves `analysis` as `data/twitch_analysis.RDS`, the exact name the next two worksheets read: `[1] 35267`.
+
+## MC 501: reviewer-facing comments
+
+The worksheet's Part 8 asks for three comments in the code, each 40 to 100 words, at the places where you made a decision a reviewer could challenge. Do the same in your own wrangling script. A reviewer-facing comment names the decision, the rule you applied, and why you chose it over the alternative. A comment that only says what the code does ("make producer a factor") is not one of them.
+
+The example has one such decision: what to do with the season made during the handover between Saban and Disney. Its comment sits on the line above the `factor()` step, and starts each line with `#`, so R skips it:
+
+```
+# Reviewer note: producer keeps Saban/Disney as its own level, in broadcast order,
+# instead of folding its 5 episodes into Saban or Disney. The season was made during
+# the handover between the two companies, so assigning it to either one would be a
+# guess. The cost is a group too small to test on its own: the tests leave it out,
+# and the paper says so.
+```
+
+That is 65 words. Your other two are likely to be your missing-values decision (Step 9) and anything you fixed in Step 5.
+
+**In the worksheet (Twitch):** the three places are marked *MC 501 only* in Task 4.2 (the non-gaming list), Task 4.3 (the viewer-band cutoffs), and Part 7 (the export).
 
 ## If it does not work
 
-If pressing **Ctrl+Enter** (**Cmd+Enter** on a Mac) opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
+**`'data/episode-codes.csv' does not exist in current working directory`.** R looked for the file and did not find it:
 
-If a step's list offers no table, run the block that creates that table first. The menu offers only tables made above the cursor.
+```
+> library(readr)
 
-If the join's first check prints a number bigger than `35267`, an `id` appears twice in your coding sheet. If the second prints more than `35237`, some `id` values in your sheet no longer match a message: check that the `id` column was not changed when you saved the sheet.
+> coded <- read_csv("data/episode-code.csv")
+Error: 'data/episode-code.csv' does not exist in current working directory ('C:/Users/alexl/MC451-workspace').
+Execution halted
+```
 
-If R says `cannot open file 'data/...': No such file or directory`, your workspace has no `data` folder yet. Click in the R terminal, type `dir.create("data")`, press **Enter**, and run the block again.
+Check three things: the file is inside `data` (not still in Downloads); the name in quotes matches the Explorer exactly, including `-` and `_` (the example typed `episode-code` for `episode-codes`); and the folder at the end of the message is your workspace. If it is not, VS Code has a different folder open: use **File**, then **Open Folder...**, and open your workspace.
+
+**Every column ends up in one.** If `read_csv()` reports `Columns: 1` and one long column name full of `;`, the file was saved with semicolons between the values instead of commas, as some versions of Excel do:
+
+```
+> library(readr)
+
+> coded <- read_csv("data/episode-codes-semicolon.csv")
+Warning: One or more parsing issues, call `problems()` on your data frame for details, e.g.:
+  dat <- vroom(...)
+  problems(dat)
+Rows: 5 Columns: 1
+── Column specification ────────────────────────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): season_title;episode_num;episode_title;air_date;IMDB_rating;total_votes;desc;threat;foc...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+Save it again from Excel with **File**, then **Save As**, and choose **CSV UTF-8 (Comma delimited)**, or read it with `read_csv2()`, which expects semicolons.
+
+**A date column reads as `chr`.** One or more cells are not a full date (Step 6a). `ymd()` turns text written year-month-day into a date ([ymd() on the lubridate cheat sheet](../../resources/cheat-sheets/lubridate.html#ymd-read-a-date-with-no-time); use `mdy()` for month-day-year, such as `11/05/2026`). A cell it cannot read becomes `NA`, and R warns you how many:
+
+```
+> seasons_raw %>%
++   mutate(air_date_last_ep = ymd(air_date_last_ep)) %>%
++   select(season_title, air_date_last_ep) %>%
++   slice_tail(n = 2)
+Warning: There was 1 warning in `mutate()`.
+ℹ In argument: `air_date_last_ep = ymd(air_date_last_ep)`.
+Caused by warning:
+!  1 failed to parse.
+# A tibble: 2 × 2
+  season_title              air_date_last_ep
+  <chr>                     <date>          
+1 Beast Morphers (Season 2) 2020-12-12      
+2 Dino Fury                 NA              
+```
+
+`1 failed to parse` is the `2022`. Count and decide on those `NA` rows as in Step 9.
+
+**Ctrl+Enter opens a box titled Choose where to run the selected code.** Press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
+
+**`could not find function`** or **`object 'coded' not found`.** A line above this one has not been run in this R session. Run your file from the top (the step above), then this line again.

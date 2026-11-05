@@ -9,7 +9,7 @@ Each guide is a numbered click path. Commands run from the Command Palette: **Vi
 5. [Read and Code Data in the Data Viewer](05-data-viewer-and-coding-columns.md) (video)
 6. [Draw Your Coding Sample](06-draw-your-coding-sample.md)
 7. [Check Reliability with the Reliability Grid](07-reliability-grid.md) (video)
-8. [Wrangle the Data with Write R Code](08-wrangling.md) (video)
+8. [Wrangle Your Own Data: From Your Coding Sheet to Your Analysis File](08-wrangling.md) (video)
 9. [Describe the Data: Tables and Charts](09-describing-tables-and-charts.md) (video)
 10. [Run a Test and Check Your Test Choice](10-tests-and-check-my-test-choice.md) (video)
 11. [Render a Quarto Document](11-render-a-quarto-document.md) (video)
