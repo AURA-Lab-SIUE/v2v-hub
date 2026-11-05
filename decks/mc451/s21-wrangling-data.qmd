@@ -232,10 +232,6 @@ chat <- chat %>%
 
 - **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), type **AURA: Write R code**, then press **Enter**
 
-## Add a Column, in the List
-
-![](images/companion-r2-list-mutate.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Add a column (mutate) is highlighted." width="72%"}
-
 ## What the Lengths Show
 
 ```r
