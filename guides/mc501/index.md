@@ -11,7 +11,7 @@ Each guide is a numbered click path. Commands run from the Command Palette: **Vi
 7. [Check Reliability with the Reliability Grid](07-reliability-grid.md) (video)
 8. [Wrangle Your Own Data: From Your Coding Sheet to Your Analysis File](08-wrangling.md) (video)
 9. [Describe Your Own Data: Tables, Numbers, and Charts](09-describing-tables-and-charts.md) (video)
-10. [Run a Test and Check Your Test Choice](10-tests-and-check-my-test-choice.md) (video)
+10. [Test Your Own Hypotheses: Check Your Test Choice, Run Four Tests, Check Your Numbers](10-tests-and-check-my-test-choice.md) (video)
 11. [Render a Quarto Document](11-render-a-quarto-document.md) (video)
 12. [Commit and Push with Git](12-commit-and-push-with-git.md) (video)
 13. [Publish Your Site](13-publish-your-site.md)
