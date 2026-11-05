@@ -1,0 +1,372 @@
+---
+title: "Describing the Data [R]: Teaching Notebook"
+subtitle: "Week 12 · Chapter 12"
+format: html
+---
+
+Follow along in class: save this file in your workspace ([Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)), then run **AURA: Check my setup** so the v2v package is current. Run each chunk with **Run Cell** above it, or select the lines and press **Ctrl+Enter**. This notebook is not an assignment and is not submitted; the slides on the hub carry the same content for review.
+
+## Setup (run first)
+
+```{r}
+library(tidyverse)
+library(v2v)
+
+# The analysis table from the Wrangling Lab, rebuilt without codes
+chat <- twitch_chat() %>%
+  mutate(ts = as_datetime(date / 1000),
+         message_length = str_length(message))
+snapshots <- twitch_streams() %>%
+  mutate(ts = as_datetime(date / 1000)) %>%
+  select(channel, snapshot_ts = ts, game, viewers)
+channels <- twitch_channels()
+analysis <- chat %>%
+  left_join(
+    snapshots,
+    by = join_by(channel, closest(ts >= snapshot_ts))
+  ) %>%
+  left_join(channels, by = "channel")
+```
+
+
+## Today's Agenda
+
+- The Twitch job, part 2: the Describing Data worksheet
+- The grammar of graphics: every plot is built from the same three parts
+- Three chart types: a line chart, a bar chart, and a histogram
+- Effect sizes, and the design choices a figure must disclose
+- Figures other people can actually read
+
+## What We Build Today
+
+[Working session]
+
+- Three figures and one table of descriptive statistics, built on the example data
+    - A line chart for change over time, a bar chart for counts, a histogram for shape
+    - Each chart type fits a different kind of question
+- The same figures, built on your own data, go into your Results and onto your poster
+- Plus the rule that turns a picture into a claim: report the effect size
+
+Expect every first version to look wrong. The fix is usually one line.
+
+## The Twitch Job, Part 2
+
+- The Describing Data worksheet is part 2 of the Twitch job
+    - It loads `data/twitch_analysis.RDS`, with your thirty codes inside
+- Frequency tables, mean, median, and sd, a cross-tabulation, and three figures
+- Part 5: the diagnostics behind each figure
+- Your interpretation and your alt text are never filled in for you
+
+[MC 501 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc501.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
+
+- Click the link: your browser saves `12-describing-data-mc501.qmd` in your Downloads folder
+- Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
+
+## A Table Too Long to Read
+
+- The analysis table is complete, but too long to read
+    - Nobody scrolls through 35,267 rows and learns anything
+    - The numbers are present, but the pattern is not visible
+- A figure turns a long column of numbers into a shape you can see
+
+Visualization is not decoration applied afterwards. It is part of the analysis.
+
+## The Grammar of Graphics
+
+Three parts do most of the work (Wilkinson, 2005; Wickham, 2016):
+
+```{r}
+#| eval: false
+# Shown, not run: a template or a step for your own files
+ggplot(data, aes(x = ..., y = ...)) +
+  geom_line()
+```
+
+- **Data:** the table being shown
+- **Aesthetic mappings:** which column goes to which visual property, such as the x axis or the color
+- **Geometry:** the kind of mark used to draw the data, such as a line or a bar
+
+Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
+
+## Figure 1, a Line Chart for Change Over Time
+
+- **The question:** how did viewership move across the week, and how was it split across games?
+- Time goes on the x axis and a rising and falling value on the y axis, so this is a line chart
+    - A line implies a sequence, and real distance between the points
+    - A line is right for time and wrong for unordered categories
+- The data needs shaping before it can be drawn
+
+## Shaping the Data
+
+```{r}
+viewers_over_time <- twitch_viewers_over_time()
+
+viewers_over_time %>%
+  count(category)
+```
+
+## Shaping the Data (cont.)
+
+- The course package ships this table ready to draw
+- The stream snapshots are grouped into six-hour windows
+- Everything past the top five games is lumped into "Other," and the viewers inside each window are added up
+- Three judgment calls made for you: `?twitch_viewers_over_time` says how, and the package source holds the pipeline
+
+## Drawing the Line Chart
+
+```{r}
+ggplot(viewers_over_time,
+       aes(x = six_hour, y = total_viewers,
+           color = category)) +
+  geom_line(linewidth = 0.9) +
+  scale_y_continuous(labels = scales::label_comma()) +
+  labs(title = "Concurrent viewers by game category",
+       x = "Date (UTC, six-hour buckets)",
+       y = "Total viewers in bucket",
+       color = "Category") +
+  v2v::scale_color_v2v() +
+  v2v::theme_v2v()
+```
+
+`label_comma()` writes 20,000,000 instead of 2.0e+07, and `theme_v2v()` applies
+publication-ready fonts, spacing, and gridlines in one call.
+
+## What Dominates the Chart, and Why
+
+- The towering line is "Other", the catch-all for everything beyond the top five games
+    - As a finding: viewership really is spread across a long tail of games
+    - As a caution: lumping fifty categories into one guarantees that result
+- There is a plain design cost too
+    - The five named lines are pressed into the bottom of the panel
+
+A dominant series crowds out the rest. Noticing that is reading the chart honestly.
+
+## Figure 2, a Bar Chart for Counts
+
+- **The question:** at which hours of the day are channels busiest?
+- Hour of day is 24 separate categories, not a continuous sweep
+- What is measured is a simple count of messages in each hour
+- Counts across categories call for a bar chart
+    - One bar per category, the height is the count, the bars sit side by side
+
+## The Code for the Bar Chart
+
+```{r}
+chat_by_hour <- analysis %>%
+  mutate(hour = hour(ts)) %>%
+  count(hour, name = "messages")
+
+ggplot(chat_by_hour, aes(x = hour, y = messages)) +
+  geom_col(fill = "#2f7d8a") +
+  labs(title = "Chat volume by hour of day",
+       x = "Hour of day (UTC)",
+       y = "Messages in sample") +
+  v2v::theme_v2v()
+```
+
+`geom_col()` draws a bar whose height is a value you already computed.
+
+## Chat Volume by Hour of Day
+
+- The example chat is busiest through UTC midday, peaking at 13:00 with 2,201 messages
+- It is quietest in the small hours, bottoming out at 03:00 with 833 messages
+- That is a swing of well over two to one
+- The 2018 audience was mostly in the Americas and Europe, which explains the pattern
+
+The chart shows all twenty-four hourly counts at once.
+
+## Effect Sizes, and Their Standing
+
+> "Effect sizes are the most important outcome of empirical studies."
+>
+> Lakens (2013, p. 1)
+
+- Every figure that shows a comparison must report its effect size
+- A taller bar is a visual impression, not a claim
+- The effect size states the magnitude of a difference in a unit that does not depend on the scale
+
+## Exercise: The Most Important Outcome
+
+[Lakens (2013)]
+
+> "Effect sizes are the most important outcome of empirical studies."
+>
+> Lakens (2013, p. 1)
+
+- Lakens says effect sizes are the most important outcome. Name the reader for whom that is true, and say why
+- Articles in your field usually report *p* before the effect size. Give one reason that habit persists
+- Describe one thing that would change in your field if journals required the effect size first
+
+## Figure 3, a Histogram for Shape
+
+**Histogram:** a bar chart of a number variable, where each bar counts the values in one range. Example: one bar counts the messages 0 to 5 characters long.
+
+- **The central question of the example study:** how long is a chat message, and does the answer depend on the kind of channel?
+- The answer is not a total and not a trend. It is a distribution
+    - Where the values cluster, and where they thin out
+- Two histograms overlaid let the two shapes be compared directly
+
+## The Code for the Histogram
+
+```{r}
+msglen <- analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  mutate(length_shown = pmin(message_length, 120))
+
+ggplot(msglen,
+       aes(x = length_shown, fill = is_gaming)) +
+  geom_histogram(binwidth = 5, position = "identity",
+                 alpha = 0.55) +
+  labs(x = "Message length (characters, capped at 120)",
+       y = "Messages",
+       fill = "Gaming channel") +
+  v2v::scale_fill_v2v() +
+  v2v::theme_v2v()
+```
+
+The code drops unlabeled messages, caps the shown length at 120, and overlays the two groups by
+count. Non-gaming is one message in ten, so by count it barely shows; the R Companion's
+**Histogram comparing two groups** draws each group as shares instead, so the shapes compare.
+
+## Two Choices You Must Disclose
+
+- `binwidth = 5` makes each bar cover five characters
+    - A wider bin smooths the shape and a narrower bin roughens it
+    - The bin width is a judgment, so you report it
+- `pmin(message_length, 120)` caps the display at 120 characters
+    - Twitch's real limit is 500 characters, so the last bar is a pile-up of everything longer
+    - Capping keeps the bulk of the data legible
+
+An unannounced cap is a quiet distortion. The axis label states the cap.
+
+## What the Shape Shows
+
+**Skew:** a lopsided shape. Right-skewed means most values are small and a few are very large, like message length here.
+
+- Both groups share one shape: heavily right-skewed
+    - A tall stack of very short messages on the left
+    - A long thin tail of longer messages to the right
+- Most Twitch chat messages are brief: a word or an emote
+
+The skew is the most important thing the histogram reveals, and no summary number can show it.
+
+## What Descriptive Statistics Are
+
+**Descriptive statistics:** numbers that summarize a set of data, such as how many cases there are, where the middle sits, and how spread out the values are. Example: n, mean, median, and sd of message length for each group.
+
+## The Descriptive Statistics
+
+- The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) writes a grouped summary
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
+- Under **R3 Describe**, **Summary by group** writes n, mean, median, and sd for each `channel_type`
+- To summarize another column, change the column names in the block it writes
+
+## The Descriptive Statistics (cont.)
+
+```{r}
+msglen %>%
+  group_by(is_gaming) %>%
+  summarize(
+    n      = sum(!is.na(message_length)),
+    mean   = mean(message_length, na.rm = TRUE),
+    median = median(message_length, na.rm = TRUE),
+    sd     = sd(message_length, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  v2v::pretty_table()
+```
+
+- This code computes n, mean, median, and sd for each gaming status
+
+## The Descriptive Statistics (cont.)
+
+- **AURA: Write R code**, then **R3 Describe**, then **Line chart over time** writes Figure 1
+- **Histogram comparing two groups** writes Figure 3
+- Its **Bar chart** draws the top ten games, not Figure 2
+- After **Run it**, the saved chart opens in its own VS Code tab
+
+## The Numbers
+
+**Mean:** the average, the total divided by the count. **Median:** the middle value once the values are sorted. Example: the mean message is 29.0 characters long, the median 17.
+
+- **Non-gaming:** n 3,457, mean 33.70, median 16, sd 60.68
+- **Gaming:** n 31,305, mean 28.49, median 17, sd 38.47
+
+Read the **means** and non-gaming chat is longer. Read the **medians**, 16 against 17, and
+the two groups are all but identical, pointing the other way.
+
+## When the Mean and the Median Disagree
+
+**Standard deviation (sd):** how far values typically sit from the mean. Example: non-gaming chat's sd of 60.68 says its lengths are more spread out than gaming chat's 38.47.
+
+- The mean is sensitive to a long tail; the median is not
+    - A few very long messages lift the average
+    - The middle value is untouched by them
+- Non-gaming chat has the heavier tail, and its larger standard deviation records that
+- The gap in means is the work of the tail, not of the typical message
+
+Report the mean alone and you misreport what a typical message looks like.
+
+## Which Effect Size to Report
+
+**Effect size:** how big a difference or a relationship is, on a scale that does not grow with the sample. Example: Cramer's *V* of 0.15 for viewer band by channel type.
+
+- **A difference between two group means:** **Cohen's *d*** with a 95% confidence interval
+- **A cross-tabulation of two categorical variables:** **Cramer's *V***
+- **A correlation between two numeric variables:** ***r*** and its confidence interval
+- `effectsize::cohens_d()` and `effectsize::cramers_v()` print each one with its interval, ready to copy into a caption
+
+Put the effect size in the caption or in a companion table, never in a footnote.
+
+## Three Terms From That List
+
+**Confidence interval:** a range around an estimate, built by a method that captures the true value in a stated share of repeated samples, such as 95 in 100. Example: *d* with its 95% interval shows how far the true gap could plausibly sit from the measured one.
+
+**Categorical variable:** a variable whose values are categories rather than measured amounts. Example: channel type, gaming or non-gaming.
+
+**Cross-tabulation:** a table that counts how often each combination of two categorical variables occurs. Example: viewer band by channel type.
+
+## Figures Other People Can Read
+
+- Roughly one in twelve men has a color-vision deficiency
+    - Choose a colorblind-safe palette, such as `scale_color_v2v()`
+    - Do not let color carry the message alone
+    - Vary the line type, or split the groups into panels
+- Alt text is what a screen-reader user gets instead of the figure
+    - With no alt text, the figure is simply missing for that reader
+
+## Figures Other People Can Read (cont.)
+
+- Alt text states the chart type, the axes, and the takeaway
+- In a Quarto file it goes on a line at the top of the chunk: `#| fig-alt: "A histogram of message length..."`
+- The R Companion's chart code also leaves an `alt =` line marked YOUR TURN inside `labs()`
+- Write the same sentence in both places
+
+## Checkpoint
+
+You should now have:
+
+- The worksheet's three figures (Tasks 4.1 to 4.3), each saved in `figures/` and drawn with `theme_v2v()`
+- A `#| fig-alt:` sentence for each figure, with no YOUR TURN left
+- The table of n, mean, median, and sd
+- One disclosure sentence per figure: the cap, the categories kept, or the bin width
+- One interpretation of two to three sentences per figure
+
+## Before Week 13
+
+- **Due Monday, November 16, 11:59 PM:** [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#data-wrangling-in-r), 50 points
+- **Due Monday, November 16, 11:59 PM:** [Week 12 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
+- **Due Monday, November 23, 11:59 PM:** [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#describing-data-in-r), 100 points
+    - The worksheet: tables, figures, diagnostics, alt text, and the disclosed choices
+    - Check it against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
+
+## Before Week 13 (cont.)
+
+- Click by click: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc501/09-describing-tables-and-charts.html) and its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
+- Read [Chapter 13, Making the Call](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
+    - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"
+
+The histogram left a precise question: is the gap between the groups real or chance? Week 13 answers it.
+
+## Questions, Comments, or Concerns?
+

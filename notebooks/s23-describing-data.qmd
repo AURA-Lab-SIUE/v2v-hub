@@ -1,0 +1,257 @@
+---
+title: "Describing: Statistics and Graphics: Teaching Notebook"
+subtitle: "S23 · Chapter 12"
+format: html
+---
+
+Follow along in class: save this file in your workspace ([Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)), then run **AURA: Check my setup** so the v2v package is current. Run each chunk with **Run Cell** above it, or select the lines and press **Ctrl+Enter**. This notebook is not an assignment and is not submitted; the slides on the hub carry the same content for review.
+
+## Setup (run first)
+
+```{r}
+library(tidyverse)
+library(v2v)
+
+# The analysis table from the Wrangling Lab, rebuilt without codes
+chat <- twitch_chat() %>%
+  mutate(ts = as_datetime(date / 1000),
+         message_length = str_length(message))
+snapshots <- twitch_streams() %>%
+  mutate(ts = as_datetime(date / 1000)) %>%
+  select(channel, snapshot_ts = ts, game, viewers)
+channels <- twitch_channels()
+analysis <- chat %>%
+  left_join(
+    snapshots,
+    by = join_by(channel, closest(ts >= snapshot_ts))
+  ) %>%
+  left_join(channels, by = "channel")
+```
+
+
+## Today's Agenda
+
+- The Twitch job, part 2: the Describing Data worksheet
+- The grammar of graphics: every plot is built from the same three parts
+- Three chart types: a line chart, a bar chart, and a histogram
+- The design choices a figure has to disclose to its reader
+- Why the mean and the median of the same variable disagree
+
+## What We Build Today
+
+[Describing Data, 75 points, due Friday, November 20, 11:59 PM]
+
+- Chapter 11 left you an `analysis` table of about 35,000 rows
+    - Nobody reads 35,000 rows, so a figure is how you make the data visible
+- Today we build three figures and one summary table from the example data
+    - Each chart type fits a different kind of question
+    - The same three figures, built from your own data, become the Results section of your White Paper
+
+Your first version of each figure will look wrong. Fixing it takes about three lines.
+
+## The Twitch Job, Part 2
+
+- The Describing Data worksheet is part 2 of the Twitch job
+    - It loads `data/twitch_analysis.RDS`, with your thirty codes inside
+- Frequency tables, mean, median, and sd, a cross-tabulation, and three figures
+- Your interpretation and your alt text are never filled in for you
+
+[MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/12-describing-data-mc451.qmd) · [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
+
+- Click the link: your browser saves 12-describing-data-mc451.qmd in your Downloads folder
+- Move it into your workspace's top folder, next to README.md and the Data Wrangling worksheet: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+
+## The Grammar of Graphics
+
+**ggplot2** is not a catalog of chart types. It is one idea from Wilkinson's *The Grammar of
+Graphics*: every plot is built from the same few parts.
+
+- **Data:** the table being shown
+- **Aesthetic mappings:** which column goes to the x axis, the y axis, or the color
+- **Geometry:** the kind of mark used to draw the data, such as a line or a bar
+
+Choose those three parts and the plot is fully specified.
+
+## The Skeleton in Code
+
+```{r}
+#| eval: false
+# Shown, not run: a template or a step for your own files
+ggplot(data, aes(x = ..., y = ...)) +
+  geom_line()
+```
+
+`ggplot()` names the data and, inside `aes()`, says which column maps to which visual
+property. `geom_line()` says what mark to draw, and `+` stacks layers on top of each other.
+
+Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
+
+## Exercise: Choose a Chart for Your Own Variable
+
+Pick one variable from your own codebook.
+
+- What **shape** do you expect its values to have: a few large values and many small ones, an even spread, or a daily rhythm?
+- Which chart answers your question best: a line chart (change over time), a bar chart (a count per category), or a histogram (the shape of a numeric variable)?
+- Describe one result that would surprise you if the chart showed it
+
+## A Line Chart Shows Change Over Time
+
+```{r}
+viewers_over_time <- twitch_viewers_over_time()
+
+viewers_over_time %>%
+  count(category)
+```
+
+- The course package ships this table ready to draw: the stream snapshots grouped into six-hour blocks, the top five games kept, the rest lumped into "Other," and the viewers in each block added up
+- Those are three judgment calls made for you; `?twitch_viewers_over_time` says how, and the package source holds the pipeline
+
+## Drawing the Line Chart
+
+```{r}
+ggplot(viewers_over_time,
+       aes(x = six_hour, y = total_viewers,
+           color = category)) +
+  geom_line(linewidth = 0.9) +
+  scale_y_continuous(labels = scales::label_comma()) +
+  labs(title = "Concurrent viewers by game category",
+       x = "Date (UTC, six-hour buckets)",
+       y = "Total viewers in bucket",
+       color = "Category") +
+  v2v::scale_colour_v2v() +
+  v2v::theme_v2v()
+```
+
+Time goes on the x axis, summed viewers on the y axis, and category to color. `label_comma()`
+writes 20,000,000 instead of 2.0e+07, and `theme_v2v()` gives every figure in the set one consistent look.
+
+## What the Line Chart Shows
+
+- The "Other" category dominates, spiking above 20 million viewers
+    - One reading: viewership really does have a long tail of small categories
+    - The other reading: lumping fifty categories into one guarantees that one wins
+- That design choice has a real cost
+    - The five named lines are pressed flat against the bottom axis
+
+A dominant series crowds out the rest. Notice that in your own figure, and say so in the caption.
+
+## A Bar Chart Shows a Count per Category
+
+Hour of day is 24 separate categories, and we want a count of messages in each one.
+
+```{r}
+chat_by_hour <- analysis %>%
+  mutate(hour = hour(ts)) %>%
+  count(hour, name = "messages")
+
+ggplot(chat_by_hour, aes(x = hour, y = messages)) +
+  geom_col(fill = "#2f7d8a") +
+  labs(x = "Hour of day (UTC)",
+       y = "Messages in sample") +
+  v2v::theme_v2v()
+```
+
+`geom_col()` draws a bar whose height is a number you already computed.
+
+## What the Bar Chart Shows
+
+[Twitch, November 2018]
+
+- The example chat has a clear daily pulse, busiest through UTC midday
+- The peak is 13:00 UTC, with 2,201 messages
+- The low point is 03:00 UTC, with 833 messages, a swing of more than two to one
+- The pattern is not mysterious: the audience sat in the Americas and Europe
+
+Twenty-four numbers become a rhythm you can read in one glance.
+
+## A Histogram Shows the Shape of a Numeric Variable
+
+```{r}
+msglen <- analysis %>%
+  filter(!is.na(is_gaming)) %>%
+  mutate(length_shown = pmin(message_length, 120))
+
+ggplot(msglen,
+       aes(x = length_shown, fill = is_gaming)) +
+  geom_histogram(binwidth = 5, position = "identity",
+                 alpha = 0.55) +
+  labs(y = "Messages") +
+  v2v::scale_fill_v2v() +
+  v2v::theme_v2v()
+```
+
+**Histogram:** a bar chart of a number variable; each bar counts the values in one range, such as the messages 0 to 5 characters long.
+
+By count, non-gaming (one message in ten) barely shows. The R Companion's **Histogram comparing two groups** draws each group as **shares** instead.
+
+## Two Choices You Must Disclose
+
+- `binwidth = 5` makes each bar five characters wide
+    - A wider bin smooths the shape and a narrower bin roughens it, so report the width you used
+- `pmin(message_length, 120)` caps the display at 120 characters
+    - Twitch's real limit is 500 characters, so the last bar is a pile-up of everything longer
+    - Capping keeps the bulk of the data legible
+
+An unannounced cap is a quiet distortion. Label the axis with the cap.
+
+## What the Histogram Shows
+
+**Skew:** a lopsided shape. Right-skewed means most values are small and a few are very large, like message length here.
+
+- Both groups are heavily right-skewed
+    - A tall stack of very short messages, then a long thin tail of longer ones
+    - Most Twitch chat messages are brief: a word or an emote
+- A minority of long messages stretches the range
+
+The skew is the most important thing the figure reveals, and no single summary number can show it.
+
+## Mean and Median Disagree
+
+**Mean:** the average, the total divided by the count. **Median:** the middle value once the values are sorted. Example: the mean message is 29.0 characters long, the median 17.
+
+Group by `is_gaming`, then `summarize()` the count (n), the mean, the median, and the standard deviation (sd):
+
+- **Non-gaming:** n 3,457, mean 33.70, median 16, sd 60.68
+- **Gaming:** n 31,309, mean 28.49, median 17, sd 38.47
+
+## Why the Mean and the Median Disagree
+
+**Standard deviation (sd):** how far values typically sit from the mean. Example: non-gaming chat's sd of 60.68 says its lengths are more spread out than gaming chat's 38.47.
+
+- **The mean says non-gaming chat is longer:** 33.70 characters to 28.49
+- **The median says the two groups are nearly identical:** 16 against 17, and pointing the other way
+- The mean is pulled upward by a long tail of long messages; the median is not
+    - Non-gaming chat has the heavier tail, and its larger standard deviation records that
+
+The gap in means is real arithmetic, but it is the work of the tail, not of the typical message.
+
+## Checkpoint
+
+You should now be able to:
+
+- Pick a chart for a trend over time, a count per category, and the shape of a number
+- Say why the mean and the median of message length disagree
+- Name the bin width and any cap a figure must disclose
+
+## Charts From the R Companion
+
+The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) writes a first version of each chart, ending in `theme_v2v()`:
+
+- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
+- Under **R3 Describe**, pick **Bar chart**, **Histogram**, **Histogram comparing two groups**, **Line chart over time**, or **Boxplot**
+
+If a figure will not render, check that every `+` ends the line above it.
+
+## Before Next Time
+
+- Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
+- Due Friday, November 20, 11:59 PM: [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#describing-data-in-r), 75 points
+- Thursday is a lab: you fill the Describing Data worksheet
+    - Check that `data/twitch_analysis.RDS` is in your workspace's data folder
+- Read [Chapter 12](https://aura-lab.siue.edu/v2v/chapters/chapter12.html), especially "A histogram for shape"
+- Step by step: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc451/09-describing-tables-and-charts.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
+
+A figure can frame the question. It cannot answer it.
+
+## Questions, Comments, or Concerns?
+
