@@ -52,7 +52,8 @@ coded %>%
 coded_seasons <- coded_seasons %>%
   mutate(threat = factor(threat, levels = c("monster", "villain", "none"))) %>%
   mutate(focus = factor(focus, levels = c("team", "one_ranger", "other"))) %>%
-  mutate(producer = factor(producer, levels = c("Saban", "Saban/Disney", "Disney", "Saban Brands")))
+  mutate(producer = factor(producer,
+                           levels = c("Saban", "Saban/Disney", "Disney", "Saban Brands")))
 
 coded_seasons %>%
   count(threat)
