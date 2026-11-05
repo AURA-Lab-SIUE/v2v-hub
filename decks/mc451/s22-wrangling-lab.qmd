@@ -132,10 +132,6 @@ channels <- read_csv("data/channels.csv")
 
 - One row per thing you label (a channel, an account, an outlet), one column for the key, and one column per label
 
-## Step 2, in the List
-
-![](images/companion-r2-list-channel-lookup.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Label each channel by its top category is highlighted." width="72%"}
-
 ## Exercise: Trace a Channel With No Category {.discuss}
 
 Two channels have no `game` recorded in any snapshot. Use Chapter 11, [Labeling gaming and non-gaming](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#labeling-gaming-and-non-gaming).
@@ -182,19 +178,11 @@ analysis <- chat_streams %>%
 - `by = "channel"` names the key column both tables share
 - `channels` is the **lookup table**: one row per channel, looked up by the join
 
-## Step 4, in the List
-
-![](images/companion-r2-list-join-labels.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Join the channel labels onto the messages is highlighted." width="72%"}
-
 ## Joining Your Own Tables
 
 - For your own tables, the R Companion's **Join two tables by a shared column** writes a join like this one
     - It also adds two checks on the result
 - Every join needs a key column that both tables share
-
-## Joining Your Own Tables, in the List
-
-![](images/companion-r2-list-join-two.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Join two tables by a shared column is highlighted." width="72%"}
 
 ## Joins Fail When the Keys Do Not Match
 
@@ -272,10 +260,6 @@ write_rds(analysis, "data/twitch_analysis.RDS")
 
 - `write_rds()` saves the table as an RDS file, R's own data file, with every column type intact
     - Worksheet Part 7 saves it, and Describing Data reads that file
-
-## Saving, in the List
-
-![](images/companion-r2-list-save-rds.png){fig-alt="The Write R code list, titled Write R code (MC451), with a Pick a task box at the top. Under the R2 Data heading are seventeen tasks, from Import a data file (CSV or Excel) to Reliability: compare two coding passes. Save a table as an RDS file is highlighted." width="72%"}
 
 ## What the Table Has Become
 
