@@ -636,4 +636,13 @@ Caused by warning:
 
 **Ctrl+Enter opens a box titled Choose where to run the selected code.** Press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
 
-**`could not find function`** or **`object 'coded' not found`.** A line above this one has not been run in this R session. Run your file from the top (the step above), then this line again.
+**`could not find function "read_csv"`** (or `glimpse`, `pull`, `%>%`, or any other function). R prints:
+
+```
+Error in read_csv("data/power_rangers_seasons.csv") : 
+  could not find function "read_csv"
+```
+
+R does not know that function yet, because the `library()` lines at the top of your file have not run in this R session. That happens after R restarts, or when you run a line from the middle of your file first. Select the `library()` lines, press **Ctrl+Enter** (**Cmd+Enter** on a Mac), and run your line again. `read_csv()`, `read_rds()`, `glimpse()`, `pull()`, and `%>%` come from `library(tidyverse)`; `theme_v2v()` and `scale_fill_v2v()` come from `library(v2v)`. If the `library()` lines have run, check the spelling: R reads `Read_csv` and `read_csv` as two different names.
+
+**`object 'coded' not found`.** A line above this one has not been run in this R session. Run your file from the top (the step above), then this line again.
