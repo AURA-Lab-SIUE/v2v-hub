@@ -639,7 +639,7 @@ Caused by warning:
 **`could not find function "read_csv"`** (or `glimpse`, `pull`, `%>%`, or any other function). R prints:
 
 ```
-Error in read_csv("data/power_rangers_seasons.csv") : 
+Error in read_csv("data/episode-codes.csv") : 
   could not find function "read_csv"
 ```
 
