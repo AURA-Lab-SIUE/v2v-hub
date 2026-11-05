@@ -6,7 +6,7 @@ Load the analysis file you saved after wrangling, count your categories, find th
 
 ## The example data
 
-The example continues the study from guide 15, *Your Pilot, Start to Finish*, and guide 08, *Wrangle Your Own Data*: 120 Power Rangers episodes, drawn at random and hand-coded for `threat` (`monster`, `villain`, or `none`) and `focus` (`team`, `one_ranger`, or `other`), joined to a table about each season that adds `producer`. Each episode also has its IMDb rating, `imdb_rating`, a number from 1 to 10.
+The example continues the study from guide 08, *Wrangle Your Own Data*: 120 Power Rangers episodes, drawn at random and hand-coded for `threat` (`monster`, `villain`, or `none`) and `focus` (`team`, `one_ranger`, or `other`), joined to a table about each season that adds `producer`. Each episode also has its IMDb rating, `imdb_rating`, a number from 1 to 10.
 
 - [episodes_analysis.RDS](../../resources/examples/own-study-walkthrough/episodes_analysis.RDS): the analysis file guide 08 saved in its last step. If you worked through guide 08, you already have it in your `data` folder. If not, download it and drag it into `data`.
 - [describe.R](../../resources/examples/own-study-walkthrough/describe.R): the finished script, so you can compare yours with it at any step.
