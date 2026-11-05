@@ -13,6 +13,7 @@ format:
 
 ## Today's Agenda
 
+- Follow along in VS Code: [today's teaching notebook](../../notebooks/s22-wrangling-lab.qmd){download="s22-wrangling-lab.qmd"}
 - Match each message to the stream snapshot taken just before it
 - Load the channel labels: what each channel streams, and how big its audience is
 - Join two tables on a shared key
