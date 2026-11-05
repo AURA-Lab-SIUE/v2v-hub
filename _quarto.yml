@@ -41,6 +41,8 @@ project:
     - "examples/vr-codebook/files/*"
     # Printable PDF of each R cheat sheet (2026-11-05), linked from the cheat-sheet index.
     - "resources/cheat-sheets/*.pdf"
+    # The own-study walkthroughs' example coding sheet and finished scripts (guides 08 to 10, 2026-11-05): students download them.
+    - "resources/examples/own-study-walkthrough/*"
 
 website:
   title: "V2V Hub"
