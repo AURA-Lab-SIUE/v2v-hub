@@ -57,6 +57,15 @@ worked if the Terminal panel ends with `Output created: 11-wrangling-data.html`.
 **Before you start,** read the [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html).
 It shows what each trap on this job looks like and how to check for it.
 
+**Keep the R cheat sheets open while you work.** Each one explains a package on a single page, with
+a worked example on this Twitch data and the output R prints. The
+[cheat-sheet index](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/index.html) links all
+six; for this worksheet you want
+[readr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/readr.html),
+[dplyr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/dplyr.html),
+[lubridate](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/lubridate.html), and
+[stringr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/stringr.html).
+
 ## Key terms
 
 These words come up in every part of the worksheet. Come back to this table whenever one of

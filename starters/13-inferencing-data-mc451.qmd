@@ -38,6 +38,12 @@ and every **Write:** filled, and the HTML it renders to.
 
 **Before you start,** read the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html).
 
+**Keep the R cheat sheets open while you work.** The
+[cheat-sheet index](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/index.html) explains
+every command on a page, with a worked example and the output it prints; for this worksheet you want
+[stats](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/stats.html) and
+[dplyr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/dplyr.html).
+
 ## Key terms
 
 | Term | What it means |

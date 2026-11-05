@@ -11,6 +11,8 @@ project:
     - "resources/*.qmd"
     # Risks guides for the three R worksheets (2026-10-22): static code only, no R chunks, so CI renders them.
     - "resources/risks/*.qmd"
+    # R cheat sheets (2026-11-05): one page per package, static code only with pasted real output, so CI renders them.
+    - "resources/cheat-sheets/*.qmd"
     # Step-by-step guides, one set per course; the Markdown source lives in each teaching workspace on O:.
     - "guides/**/*.md"
     - "workbook/*.qmd"
@@ -40,6 +42,8 @@ project:
     - "resources/templates/*"
     # VR codebook worked example downloads (2026-10-21): the walkthrough decks link these.
     - "examples/vr-codebook/files/*"
+    # Printable PDF of each R cheat sheet (2026-11-05), linked from the cheat-sheet index.
+    - "resources/cheat-sheets/*.pdf"
 
 website:
   title: "V2V Hub"
