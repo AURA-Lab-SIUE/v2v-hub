@@ -1,0 +1,14 @@
+> msglen %>%
++   group_by(is_gaming) %>%
++   summarize(
++     n      = sum(!is.na(message_length)),
++     mean   = mean(message_length, na.rm = TRUE),
++     median = median(message_length, na.rm = TRUE),
++     sd     = sd(message_length, na.rm = TRUE),
++     .groups = "drop"
++   )
+# A tibble: 2 × 5
+  is_gaming     n  mean median    sd
+  <lgl>     <int> <dbl>  <int> <dbl>
+1 FALSE      3457  33.7     16  60.7
+2 TRUE      31305  28.5     17  38.5

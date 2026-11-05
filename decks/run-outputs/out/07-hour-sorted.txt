@@ -1,0 +1,16 @@
+> chat_by_hour %>%
++   arrange(desc(messages))
+# A tibble: 24 × 2
+    hour messages
+   <int>    <int>
+ 1    13     2201
+ 2    16     2132
+ 3    17     2084
+ 4     1     1959
+ 5    12     1915
+ 6     0     1816
+ 7    11     1775
+ 8    18     1717
+ 9    15     1578
+10    10     1449
+# ℹ 14 more rows

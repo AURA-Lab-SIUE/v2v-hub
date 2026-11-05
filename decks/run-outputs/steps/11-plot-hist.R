@@ -1,0 +1,9 @@
+ggplot(msglen,
+       aes(x = length_shown, fill = is_gaming)) +
+  geom_histogram(binwidth = 5, position = "identity",
+                 alpha = 0.55) +
+  labs(x = "Message length (characters, capped at 120)",
+       y = "Messages",
+       fill = "Gaming channel") +
+  v2v::scale_fill_v2v() +
+  v2v::theme_v2v()

@@ -71,3 +71,32 @@ $code-block-font-size: 0.8em;
 .reveal .define em { color: #101113; }
 // two plain diagrams built from SVG shapes (mediator, moderator); never an image file
 .reveal svg.diagram { display: block; width: 100%; height: auto; margin: 0.2em 0 0.5em; }
+
+// R terminal output, light (owner 2026-11-05, q-20261105-0011: "dark does not read well over
+// projector"). Every code slide is followed by an output slide that shows exactly what VS Code's
+// R terminal prints: the typed lines echoed with "> " and "+ ", then the output. Modeled on the
+// VS Code Light+ terminal. Use a plain fenced block:
+//   ```{.term code-line-numbers="false" step="04-viewers-count"}
+// (step names the transcript in decks/run-outputs/out/, which run.py --check compares).
+// Long lines wrap as a terminal wraps them; 72 characters fit the slide width at 0.68em. A block
+// over about 16 lines adds .tall (0.58em) so it fits the slide height:
+//   ```{.term .tall code-line-numbers="false" step="02-glimpse"}
+// With code-line-numbers="false" Quarto writes a bare <pre class="term">, so the frame is the pre.
+.reveal pre.term {
+  background: #ffffff; color: #1f1f1f; border: 1px solid #8a8a8a; border-radius: 6px;
+  box-shadow: none; width: 100%; margin: 0.3em 0 0.4em; padding: 0 0.8em 0.5em;
+  font-size: 0.68em; line-height: 1.2; white-space: pre-wrap; overflow: visible; max-height: none;
+}
+.reveal pre.term.tall { font-size: 0.58em; }
+.reveal pre.term::before {
+  content: "TERMINAL"; display: block; margin: 0 -0.8em 0.45em; padding: 0.3em 0.8em 0.22em;
+  font-size: 0.82em; letter-spacing: 0.08em; color: #3b3b3b; background: #f3f3f3;
+  border-bottom: 2px solid #005fb8; border-radius: 6px 6px 0 0;
+}
+.reveal pre.term code {
+  background: transparent; color: #1f1f1f; padding: 0; font-size: 1em; line-height: inherit;
+  white-space: pre-wrap; max-height: none; overflow: visible;
+}
+// the rendered figure from the same run, on its own output slide
+.reveal img.run-figure { display: block; max-height: 520px; width: auto; margin: 0.2em auto 0;
+  border: 1px solid #8a8a8a; }

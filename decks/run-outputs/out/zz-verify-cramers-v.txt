@@ -1,0 +1,18 @@
+> # Not on a slide: checks the W12 define-box example (Cramer's V of 0.15 for viewer band by channel type).
+> analysis %>%
++   count(viewer_band, channel_type)
+# A tibble: 6 × 3
+  viewer_band channel_type     n
+  <fct>       <fct>        <int>
+1 small       gaming       25309
+2 small       non-gaming    2457
+3 medium      gaming        4000
+4 medium      non-gaming    1000
+5 medium      <NA>           501
+6 large       gaming        2000
+> effectsize::cramers_v(table(analysis$viewer_band, analysis$channel_type))
+Cramer's V (adj.) |       95% CI
+--------------------------------
+0.15              | [0.14, 1.00]
+
+- One-sided CIs: upper bound fixed at [1.00].

@@ -1,0 +1,11 @@
+> viewers_over_time %>%
++   count(category)
+# A tibble: 6 × 2
+  category                               n
+  <fct>                              <int>
+1 Art                                   21
+2 Fortnite                              17
+3 Hearthstone                            9
+4 Just Chatting                         18
+5 Pokemon: Let's Go, Pikachu!/Eevee!    10
+6 Other                                 22
