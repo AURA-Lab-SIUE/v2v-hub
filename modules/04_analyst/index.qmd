@@ -44,6 +44,12 @@ This phase is where your research becomes quantitative. Weeks 11 to 13 each take
 
 In MC 451 every assignment is due Friday of the week listed, by 11:59 PM. In MC 501 it is due the Monday after that week, by 11:59 PM.
 
+### R cheat sheets
+
+Keep these open while you work through the three R worksheets. There is one page per package, and each command gets a plain sentence, a worked example on the Twitch data with the exact output R prints, the same call written for your own columns, and the error you are most likely to hit.
+
+[R cheat sheets](../../resources/cheat-sheets/index.qmd){.btn .btn-primary}
+
 ---
 
 ## Assignments

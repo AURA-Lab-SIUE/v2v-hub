@@ -44,6 +44,12 @@ code that makes them, and the HTML carries them.
 
 **Before you start,** read the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html).
 
+**Keep the R cheat sheets open while you work.** The
+[cheat-sheet index](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/index.html) explains
+every command on a page, with a worked example and the output it prints; for this worksheet you want
+[dplyr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/dplyr.html) and
+[ggplot2](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/ggplot2.html).
+
 **MC 501:** Part 5, the diagnostics behind each figure, is yours as well.
 
 ## Key terms

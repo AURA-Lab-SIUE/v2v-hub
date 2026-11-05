@@ -1,0 +1,70 @@
+---
+title: "R cheat sheets"
+subtitle: "MC 451 / MC 501 / MC 427 · every command, one explained on a page"
+---
+
+One page per package, covering every R command the worksheets, decks, and the R Companion use.
+Each command gets a plain sentence, a worked example on the course Twitch data with the exact
+output R prints, the same call rewritten for your own columns, and the error you are most likely
+to hit. Every example below was run in R, and the output is pasted exactly as it printed.
+
+## The sheets
+
+| Sheet | What it covers |
+|---|---|
+| [readr](readr.qmd) ([PDF](readr.pdf)) | Read a file in and write one out: `read_csv()`, `write_csv()`, `read_rds()`, `write_rds()`, `clean_names()` |
+| [dplyr](dplyr.qmd) ([PDF](dplyr.pdf)) | The verbs that reshape a table: `select()`, `filter()`, `mutate()`, `count()`, `group_by()` with `summarize()`, the joins, and the reshape helpers |
+| [lubridate](lubridate.qmd) ([PDF](lubridate.pdf)) | Turn numbers and text into real dates: `as_datetime()`, `ymd_hms()`, `hour()`, `floor_date()` |
+| [stringr](stringr.qmd) ([PDF](stringr.pdf)) | Measure and change text: `str_length()`, `str_detect()`, `str_replace()`, `str_glue()` |
+| [ggplot2](ggplot2.qmd) ([PDF](ggplot2.pdf)) | Build a chart one layer at a time: `ggplot()`, `aes()`, the `geom_`s, `labs()`, `theme_v2v()` |
+| [stats](stats.qmd) ([PDF](stats.pdf)) | Describe a variable and run a test: `t.test()`, `chisq.test()`, `aov()`, `lm()`, and the effect sizes |
+
+## Every worksheet starts the same way
+
+The first chunk of every worksheet loads the tools and the data. The examples on every sheet
+assume these lines have already run:
+
+```
+library(tidyverse)    # dplyr, readr, stringr, lubridate, ggplot2, and more
+library(v2v)           # the course package: the Twitch data and the course look
+options(scipen = 10)  # long numbers, such as timestamps, print in full
+```
+
+The inferencing sheet also loads `library(effectsize)`, and the wrangling worksheet loads
+`library(janitor)` for `clean_names()`. Each sheet lists the lines it needs at the top.
+
+## How to read an entry
+
+Every entry has the same shape:
+
+- **A plain sentence** saying what the command does.
+- **The code**, stacked one step per line, using the pipe `%>%` (read it as "and then").
+- **The output**, exactly as R prints it after a real run.
+- **On your data**, the same call written with plain column names you can copy.
+- **If it breaks**, the error you are most likely to see and what it means.
+
+## The data in the examples
+
+Every example uses the course Twitch corpus from the `v2v` package: `twitch_chat()` is one row per
+chat message, `twitch_streams()` is one row per stream snapshot, and `twitch_channels()` describes
+each channel. Here are five messages, so you can picture the data the examples work on:
+
+```
+twitch_chat() %>%
+  select(channel, sender, message) %>%
+  slice_head(n = 5)
+```
+
+```
+# A tibble: 5 × 3
+  channel    sender       message
+  <chr>      <chr>        <chr>
+1 sodapoppin madzee       ???????????????????????
+2 xqcow      prometheanow TriEasy Clap TriEasy Clap TriEasy Clap TriEasy Cl…
+3 forsen     spectre155   cmonBruh
+4 sodapoppin itsjer       sodaTHINKING
+5 xqcow      laserfruit   @xQcOW PLAY JACKBOX PARTY GAMES PLAY JACKBOX PART…
+```
+
+Where an example needs the joined analysis table, it starts from `analysis`, the table the Data
+Wrangling worksheet builds by joining the three together.

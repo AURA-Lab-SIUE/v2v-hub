@@ -50,6 +50,14 @@ A finished submission for six assignments, so you can see the form before you wr
 [MC 451 Definitions Practice (PDF)](examples/MC451-example-definitions-practice.pdf){.btn .btn-sm .btn-secondary} [MC 451 Project Prospectus (PDF)](examples/MC451-example-project-prospectus.pdf){.btn .btn-sm .btn-secondary} [MC 451 Codebook and Qualitative Memo (PDF)](examples/MC451-example-codebook-and-qualitative-memo.pdf){.btn .btn-sm .btn-secondary} [MC 501 Definitions Practice (PDF)](examples/MC501-example-definitions-practice.pdf){.btn .btn-sm .btn-secondary} [MC 501 Research Proposal (PDF)](examples/MC501-example-research-proposal.pdf){.btn .btn-sm .btn-secondary} [MC 501 Extended Codebook and Reliability Protocol (PDF)](examples/MC501-example-extended-codebook-and-reliability-protocol.pdf){.btn .btn-sm .btn-secondary}
 :::
 
+:::{.resource-card}
+#### R Cheat Sheets
+
+One page per package covering every R command the course uses: a plain sentence per command, a worked example on the Twitch data with the exact output R prints, the same call for your own columns, and the error you are most likely to hit.
+
+[Cheat-sheet index](cheat-sheets/index.qmd){.btn .btn-sm .btn-primary} [readr](cheat-sheets/readr.qmd){.btn .btn-sm .btn-secondary} [dplyr](cheat-sheets/dplyr.qmd){.btn .btn-sm .btn-secondary} [lubridate](cheat-sheets/lubridate.qmd){.btn .btn-sm .btn-secondary} [stringr](cheat-sheets/stringr.qmd){.btn .btn-sm .btn-secondary} [ggplot2](cheat-sheets/ggplot2.qmd){.btn .btn-sm .btn-secondary} [stats](cheat-sheets/stats.qmd){.btn .btn-sm .btn-secondary}
+:::
+
 ---
 
 ## Step-by-step guides
