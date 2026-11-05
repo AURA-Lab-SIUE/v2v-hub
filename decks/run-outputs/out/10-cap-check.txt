@@ -1,0 +1,9 @@
+> msglen %>%
++   summarize(
++     longest = max(message_length, na.rm = TRUE),
++     longest_shown = max(length_shown, na.rm = TRUE)
++   )
+# A tibble: 1 × 2
+  longest longest_shown
+    <int>         <dbl>
+1     501           120

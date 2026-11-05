@@ -1,0 +1,16 @@
+> viewers_over_time <- twitch_viewers_over_time()
+> viewers_over_time
+# A tibble: 97 × 3
+   six_hour            category                           total_viewers
+   <dttm>              <fct>                                      <int>
+ 1 2018-11-18 18:00:00 Art                                       238217
+ 2 2018-11-18 18:00:00 Just Chatting                            2034123
+ 3 2018-11-18 18:00:00 Pokemon: Let's Go, Pikachu!/Eevee!         99909
+ 4 2018-11-18 18:00:00 Other                                    4333423
+ 5 2018-11-19 00:00:00 Art                                       870710
+ 6 2018-11-19 00:00:00 Fortnite                                  258780
+ 7 2018-11-19 00:00:00 Just Chatting                            4312125
+ 8 2018-11-19 00:00:00 Pokemon: Let's Go, Pikachu!/Eevee!       1991196
+ 9 2018-11-19 00:00:00 Other                                    6933016
+10 2018-11-19 06:00:00 Art                                        12444
+# ℹ 87 more rows

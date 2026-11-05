@@ -44,6 +44,80 @@ Expect every first version to look wrong. The fix is usually one line.
 - Click the link: your browser saves `12-describing-data-mc501.qmd` in your Downloads folder
 - Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
 
+## Load the Saved Table
+
+Three lines start every Describing session: two packages, then the table Data Wrangling saved.
+
+```r
+library(tidyverse)
+library(v2v)
+analysis <- read_rds("data/twitch_analysis.RDS")
+```
+
+- `library()` switches a package on for this session
+- `read_rds()` reads the saved file and names the table `analysis`
+- If R says `cannot open the connection`, the file is not in your `data` folder
+
+## Load the Table: Output
+
+```{.term .tall code-line-numbers="false" step="01-setup"}
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.6
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.1     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.2.0
+── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> library(v2v)
+v2v 0.3.9 loaded.
+  setup()  checks that R, Quarto and Git are ready
+  ?v2v     lists what this package gives you
+> analysis <- read_rds("data/twitch_analysis.RDS")
+```
+
+- The two `masks` lines are normal, not errors
+- `read_rds()` prints nothing: the table went into `analysis` quietly
+
+## A First Look at the Table
+
+```r
+glimpse(analysis)
+```
+
+- `glimpse()` prints one line per column: its name, its type, and its first few values
+- Use it every time you load a table, before you draw anything
+
+## A First Look: Output
+
+```{.term .tall code-line-numbers="false" step="02-glimpse"}
+> glimpse(analysis)
+Rows: 35,267
+Columns: 16
+$ id             <dbl> 89, 551, 1033, 2094, 2803, 10406, 16104, 22571,…
+$ channel        <chr> "sodapoppin", "xqcow", "forsen", "sodapoppin", …
+$ sender         <chr> "madzee", "prometheanow", "spectre155", "itsjer…
+$ message        <chr> "???????????????????????", "TriEasy Clap TriEas…
+$ date           <dbl> 1.542578e+12, 1.542578e+12, 1.542578e+12, 1.542…
+$ ts             <dttm> 2018-11-18 21:55:27, 2018-11-18 21:55:35, 2018…
+$ message_length <int> 23, 441, 8, 12, 206, 37, 6, 7, 4, 7, 3, 4, 12, …
+$ snapshot_ts    <dttm> NA, NA, NA, NA, NA, 2018-11-18 21:56:40, 2018-…
+$ game           <chr> NA, NA, NA, NA, NA, "Artifact", "Marble It Up!"…
+$ viewers        <int> NA, NA, NA, NA, NA, 15300, 28076, 4703, 19239, …
+$ main_game      <chr> "Hand Simulator", "Just Chatting", "The Elder S…
+$ is_gaming      <lgl> TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE, TRU…
+$ channel_type   <fct> gaming, non-gaming, gaming, gaming, non-gaming,…
+$ median_viewers <dbl> 22944, 16176, 10163, 22944, 16176, 10163, 22944…
+$ viewer_band    <fct> large, medium, medium, large, medium, medium, l…
+$ reaction_only  <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+```
+
+- 35,267 rows, one per chat message, and 16 columns
+- `reaction_only` is `NA` except on your thirty coded messages
+
 ## A Table Too Long to Read
 
 - The analysis table is complete, but too long to read
@@ -80,10 +154,62 @@ Swap `geom_line()` for `geom_col()` and the same data is drawn as bars.
 
 ```r
 viewers_over_time <- twitch_viewers_over_time()
+viewers_over_time
+```
 
+- The course package ships this table already shaped for a line chart
+- Typing the table's name on its own line prints it
+
+## The Viewers Table: Output
+
+```{.term .tall code-line-numbers="false" step="03-viewers-print"}
+> viewers_over_time <- twitch_viewers_over_time()
+> viewers_over_time
+# A tibble: 97 × 3
+   six_hour            category                           total_viewers
+   <dttm>              <fct>                                      <int>
+ 1 2018-11-18 18:00:00 Art                                       238217
+ 2 2018-11-18 18:00:00 Just Chatting                            2034123
+ 3 2018-11-18 18:00:00 Pokemon: Let's Go, Pikachu!/Eevee!         99909
+ 4 2018-11-18 18:00:00 Other                                    4333423
+ 5 2018-11-19 00:00:00 Art                                       870710
+ 6 2018-11-19 00:00:00 Fortnite                                  258780
+ 7 2018-11-19 00:00:00 Just Chatting                            4312125
+ 8 2018-11-19 00:00:00 Pokemon: Let's Go, Pikachu!/Eevee!       1991196
+ 9 2018-11-19 00:00:00 Other                                    6933016
+10 2018-11-19 06:00:00 Art                                        12444
+# ℹ 87 more rows
+```
+
+- Three columns: the six-hour window, the category, and the viewers added up inside it
+- R prints the first ten rows and says how many more there are
+
+## Count the Categories
+
+```r
 viewers_over_time %>%
   count(category)
 ```
+
+- `count()` makes one row per category and counts the rows in each
+
+## Count the Categories: Output
+
+```{.term code-line-numbers="false" step="04-viewers-count"}
+> viewers_over_time %>%
++   count(category)
+# A tibble: 6 × 2
+  category                               n
+  <fct>                              <int>
+1 Art                                   21
+2 Fortnite                              17
+3 Hearthstone                            9
+4 Just Chatting                         18
+5 Pokemon: Let's Go, Pikachu!/Eevee!    10
+6 Other                                 22
+```
+
+- Six categories, so six rows; `n` is how many six-hour windows each one has
 
 ## Shaping the Data (cont.)
 
@@ -111,6 +237,12 @@ ggplot(viewers_over_time,
 `label_comma()` writes 20,000,000 instead of 2.0e+07, and `theme_v2v()` applies
 publication-ready fonts, spacing, and gridlines in one call.
 
+## Drawing the Line Chart: Output
+
+![](images/run-2026-11-05/05-plot-line-501.png){.run-figure fig-alt="A line chart of total viewers per six-hour window from November 18 to 25, 2018, one line per category. The Other line towers over the rest, peaking above 22 million; Art, Fortnite, Hearthstone, Just Chatting, and Pokemon stay mostly under 7.5 million."}
+
+- In VS Code the chart opens in its own Plot tab, beside your code
+
 ## What Dominates the Chart, and Why
 
 - The towering line is "Other", the catch-all for everything beyond the top five games
@@ -129,13 +261,79 @@ A dominant series crowds out the rest. Noticing that is reading the chart honest
 - Counts across categories call for a bar chart
     - One bar per category, the height is the count, the bars sit side by side
 
-## The Code for the Bar Chart
+## Count Messages per Hour
 
 ```r
 chat_by_hour <- analysis %>%
   mutate(hour = hour(ts)) %>%
   count(hour, name = "messages")
+chat_by_hour
+```
 
+- `hour()` pulls the hour, 0 to 23, out of each message's time stamp
+- `count()` then counts the messages in each hour and names the count `messages`
+
+## Messages per Hour: Output
+
+```{.term code-line-numbers="false" step="06-hour-table"}
+> chat_by_hour <- analysis %>%
++   mutate(hour = hour(ts)) %>%
++   count(hour, name = "messages")
+> chat_by_hour
+# A tibble: 24 × 2
+    hour messages
+   <int>    <int>
+ 1     0     1816
+ 2     1     1959
+ 3     2     1013
+ 4     3      833
+ 5     4     1384
+ 6     5     1317
+ 7     6     1393
+ 8     7     1165
+ 9     8     1016
+10     9     1381
+# ℹ 14 more rows
+```
+
+- One row per hour; R shows the first ten and says 14 more are there
+
+## Find the Busiest Hour
+
+```r
+chat_by_hour %>%
+  arrange(desc(messages))
+```
+
+- `arrange()` sorts the rows; `desc()` puts the biggest count first
+- Sorting is how you find the peak before you draw it
+
+## Find the Busiest Hour: Output
+
+```{.term code-line-numbers="false" step="07-hour-sorted"}
+> chat_by_hour %>%
++   arrange(desc(messages))
+# A tibble: 24 × 2
+    hour messages
+   <int>    <int>
+ 1    13     2201
+ 2    16     2132
+ 3    17     2084
+ 4     1     1959
+ 5    12     1915
+ 6     0     1816
+ 7    11     1775
+ 8    18     1717
+ 9    15     1578
+10    10     1449
+# ℹ 14 more rows
+```
+
+- The busiest hour is 13:00 UTC, with 2,201 messages
+
+## The Code for the Bar Chart
+
+```r
 ggplot(chat_by_hour, aes(x = hour, y = messages)) +
   geom_col(fill = "#2f7d8a") +
   labs(title = "Chat volume by hour of day",
@@ -145,6 +343,10 @@ ggplot(chat_by_hour, aes(x = hour, y = messages)) +
 ```
 
 `geom_col()` draws a bar whose height is a value you already computed.
+
+## The Bar Chart: Output
+
+![](images/run-2026-11-05/08-plot-bar-501.png){.run-figure fig-alt="A bar chart titled Chat volume by hour of day: messages in the sample for each hour, 0 to 23 UTC. The tallest bar is 13:00 at about 2,200 messages, with high bars again at 16:00 and 17:00; the shortest is 03:00 at about 830."}
 
 ## Chat Volume by Hour of Day
 
@@ -188,13 +390,70 @@ The chart shows all twenty-four hourly counts at once.
     - Where the values cluster, and where they thin out
 - Two histograms overlaid let the two shapes be compared directly
 
-## The Code for the Histogram
+## The Table Behind the Histogram
 
 ```r
 msglen <- analysis %>%
   filter(!is.na(is_gaming)) %>%
   mutate(length_shown = pmin(message_length, 120))
+msglen %>%
+  count(is_gaming)
+```
 
+- `filter()` drops the messages from channels with no gaming label
+- `pmin()` keeps each length, but shows anything over 120 as 120
+- `count(is_gaming)` checks how many messages each group has left
+
+## The Table Behind It: Output
+
+```{.term code-line-numbers="false" step="09-msglen"}
+> msglen <- analysis %>%
++   filter(!is.na(is_gaming)) %>%
++   mutate(length_shown = pmin(message_length, 120))
+> msglen %>%
++   count(is_gaming)
+# A tibble: 2 × 2
+  is_gaming     n
+  <lgl>     <int>
+1 FALSE      3457
+2 TRUE      31309
+```
+
+- `FALSE` is non-gaming: 3,457 messages, about one in ten
+- `TRUE` is gaming: 31,309 messages
+
+## Check the Cap
+
+```r
+msglen %>%
+  summarize(
+    longest = max(message_length, na.rm = TRUE),
+    longest_shown = max(length_shown, na.rm = TRUE)
+  )
+```
+
+- `max()` finds the biggest value; `na.rm = TRUE` skips the empty messages
+- One line compares the real longest message with the longest one the chart will show
+
+## Check the Cap: Output
+
+```{.term code-line-numbers="false" step="10-cap-check"}
+> msglen %>%
++   summarize(
++     longest = max(message_length, na.rm = TRUE),
++     longest_shown = max(length_shown, na.rm = TRUE)
++   )
+# A tibble: 1 × 2
+  longest longest_shown
+    <int>         <dbl>
+1     501           120
+```
+
+- The longest message is 501 characters; the chart draws it at 120
+
+## The Code for the Histogram
+
+```r
 ggplot(msglen,
        aes(x = length_shown, fill = is_gaming)) +
   geom_histogram(binwidth = 5, position = "identity",
@@ -206,9 +465,38 @@ ggplot(msglen,
   v2v::theme_v2v()
 ```
 
-The code drops unlabeled messages, caps the shown length at 120, and overlays the two groups by
-count. Non-gaming is one message in ten, so by count it barely shows; the R Companion's
-**Histogram comparing two groups** draws each group as shares instead, so the shapes compare.
+- `binwidth = 5` makes each bar five characters wide; `alpha` lets the overlap show through
+
+## The Histogram: Output
+
+![](images/run-2026-11-05/11-plot-hist.png){.run-figure fig-alt="Two overlaid histograms of message length in characters, capped at 120, for gaming (TRUE) and non-gaming (FALSE) channels. Both pile up under 20 characters and thin out to the right, with a small spike in the last bar at 120. The non-gaming bars are so short they barely show."}
+
+## The Warning Under the Chart
+
+The terminal also prints this under the histogram code:
+
+```{.term code-line-numbers="false" step="11-plot-hist"}
+> ggplot(msglen,
++        aes(x = length_shown, fill = is_gaming)) +
++   geom_histogram(binwidth = 5, position = "identity",
++                  alpha = 0.55) +
++   labs(x = "Message length (characters, capped at 120)",
++        y = "Messages",
++        fill = "Gaming channel") +
++   v2v::scale_fill_v2v() +
++   v2v::theme_v2v()
+Warning message:
+Removed 4 rows containing non-finite outside the scale range
+(`stat_bin()`).
+```
+
+- A **warning** is not an error: the chart still drew
+- The 4 rows are the empty messages, which have no length to draw
+
+## Counts Hide the Smaller Group
+
+- Non-gaming is one message in ten, so by count it barely shows
+- The R Companion's **Histogram comparing two groups** draws each group as shares instead, so the shapes compare
 
 ## Two Choices You Must Disclose
 
@@ -216,7 +504,7 @@ count. Non-gaming is one message in ten, so by count it barely shows; the R Comp
     - A wider bin smooths the shape and a narrower bin roughens it
     - The bin width is a judgment, so you report it
 - `pmin(message_length, 120)` caps the display at 120 characters
-    - Twitch's real limit is 500 characters, so the last bar is a pile-up of everything longer
+    - The longest message is 501 characters, so the last bar is a pile-up of everything longer
     - Capping keeps the bulk of the data legible
 
 An unannounced cap is a quiet distortion. The axis label states the cap.
@@ -258,11 +546,30 @@ msglen %>%
     median = median(message_length, na.rm = TRUE),
     sd     = sd(message_length, na.rm = TRUE),
     .groups = "drop"
-  ) %>%
-  v2v::pretty_table()
+  )
 ```
 
-- This code computes n, mean, median, and sd for each gaming status
+- `group_by(is_gaming)` splits the table into the two groups; `summarize()` makes one row per group
+- `na.rm = TRUE` leaves the four empty messages out of each number
+
+## The Descriptive Statistics: Output
+
+```{.term code-line-numbers="false" step="12-summary"}
+> msglen %>%
++   group_by(is_gaming) %>%
++   summarize(
++     n      = sum(!is.na(message_length)),
++     mean   = mean(message_length, na.rm = TRUE),
++     median = median(message_length, na.rm = TRUE),
++     sd     = sd(message_length, na.rm = TRUE),
++     .groups = "drop"
++   )
+# A tibble: 2 × 5
+  is_gaming     n  mean median    sd
+  <lgl>     <int> <dbl>  <int> <dbl>
+1 FALSE      3457  33.7     16  60.7
+2 TRUE      31305  28.5     17  38.5
+```
 
 ## The Descriptive Statistics (cont.)
 
@@ -277,8 +584,9 @@ msglen %>%
 **Mean:** the average, the total divided by the count. **Median:** the middle value once the values are sorted. Example: the mean message is 29.0 characters long, the median 17.
 :::
 
-- **Non-gaming:** n 3,457, mean 33.70, median 16, sd 60.68
-- **Gaming:** n 31,305, mean 28.49, median 17, sd 38.47
+- **Non-gaming:** n 3,457, mean 33.7, median 16, sd 60.7
+- **Gaming:** n 31,305, mean 28.5, median 17, sd 38.5
+    - 31,305, not 31,309: the four empty messages have no length to count
 
 Read the **means** and non-gaming chat is longer. Read the **medians**, 16 against 17, and
 the two groups are all but identical, pointing the other way.
@@ -286,7 +594,7 @@ the two groups are all but identical, pointing the other way.
 ## When the Mean and the Median Disagree
 
 ::: {.define}
-**Standard deviation (sd):** how far values typically sit from the mean. Example: non-gaming chat's sd of 60.68 says its lengths are more spread out than gaming chat's 38.47.
+**Standard deviation (sd):** how far values typically sit from the mean. Example: non-gaming chat's sd of 60.7 says its lengths are more spread out than gaming chat's 38.5.
 :::
 
 - The mean is sensitive to a long tail; the median is not
@@ -306,9 +614,36 @@ Report the mean alone and you misreport what a typical message looks like.
 - **A difference between two group means:** **Cohen's *d*** with a 95% confidence interval
 - **A cross-tabulation of two categorical variables:** **Cramer's *V***
 - **A correlation between two numeric variables:** ***r*** and its confidence interval
-- `effectsize::cohens_d()` and `effectsize::cramers_v()` print each one with its interval, ready to copy into a caption
+- `effectsize::cohens_d()` and `effectsize::cramers_v()` print each one with its 95% confidence interval
 
 Put the effect size in the caption or in a companion table, never in a footnote.
+
+## Cohen's *d* for Message Length
+
+```r
+effectsize::cohens_d(message_length ~ is_gaming,
+                     data = msglen)
+```
+
+- `message_length ~ is_gaming` reads "message length, compared across gaming status"
+- `effectsize::` calls the function from the effectsize package without loading the whole package
+- Copy the *d* and its interval into your caption by hand
+
+## Cohen's *d*: Output
+
+```{.term code-line-numbers="false" step="13-cohens-d"}
+> effectsize::cohens_d(message_length ~ is_gaming,
++                      data = msglen)
+Cohen's d |       95% CI
+------------------------
+0.13      | [0.09, 0.16]
+
+- Estimated using pooled SD.Warning message:
+Missing values detected. NAs dropped.
+```
+
+- Non-gaming messages run 0.13 standard deviations longer, with a 95% interval of 0.09 to 0.16
+- The warning is the four empty messages again, dropped before the calculation
 
 ## Three Terms From That List
 
@@ -350,9 +685,40 @@ You should now have:
 - One disclosure sentence per figure: the cap, the categories kept, or the bin width
 - One interpretation of two to three sentences per figure
 
+## Commit Your Pre-Registration
+
+- Your Methods must cite a **dated pre-registration file** in your project repository, by its path and commit
+- Revise your Research Proposal first if it needs it, then commit it to your project repository as that file
+- **Commit it by Monday, November 16, 11:59 PM**, before you analyze your own data
+- Every change after that commit is a departure you disclose in Methods
+- Step by step: [Commit Your Pre-Registration](#TODO-prereg-guide)
+
+<!-- TODO(#mc451501-improve): replace #TODO-prereg-guide with the pre-registration commit guide URL when its worker ships it (owner q-0014 = b, 2026-11-05). -->
+
+## Your Own Study, Starting Now
+
+- **By Monday, December 7, 11:59 PM:** push your full coded dataset and a re-code of a fresh subsample to your project repository
+- The re-code happens at least 48 hours after your first pass, with your first codes hidden
+- So finish the first coding pass on your full corpus by **Thursday, December 3**
+- The reliability figure in your Methods comes from this re-code, not from the pilot
+- This week's own-study starter: [Your Own Study, Week 12](#TODO-own-study-w12)
+
+<!-- TODO(#mc451501-improve): replace #TODO-own-study-w12 with the W12 own-study starter URL when its worker ships it (owner q-0013 = b, 2026-11-05). -->
+
+## How Big Is the Re-Code?
+
+The subsample is **at least 50 units or 20 percent of your corpus, whichever is larger**. It leaves out your immersion and pilot items.
+
+| Your corpus | 20 percent | Re-code |
+|---|---|---|
+| 200 units | 40 | 50 |
+| 250 units | 50 | 50 |
+| 400 units | 80 | 80 |
+
 ## Before Week 13
 
 - **Due Monday, November 16, 11:59 PM:** [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#data-wrangling-in-r), 50 points
+- **By Monday, November 16, 11:59 PM:** commit your pre-registration file to your project repository
 - **Due Monday, November 16, 11:59 PM:** [Week 12 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
 - **Due Monday, November 23, 11:59 PM:** [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#describing-data-in-r), 100 points
     - The worksheet: tables, figures, diagnostics, alt text, and the disclosed choices
@@ -361,6 +727,7 @@ You should now have:
 ## Before Week 13 (cont.)
 
 - Click by click: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc501/09-describing-tables-and-charts.html) and its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
+- Finish the first coding pass on your own full corpus by Thursday, December 3; the re-code and push are due Monday, December 7, 11:59 PM
 - Read [Chapter 13, Making the Call](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
     - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"
 
