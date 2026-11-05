@@ -381,6 +381,15 @@ b = 0.025, SE = 0.009, t(118) = 2.92, p = .004; R-squared = .067, F(1, 118) = 8.
 
 If pressing **Ctrl+Enter** (**Cmd+Enter** on a Mac) opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
 
+**`could not find function "%>%"`** (or `read_rds`, `glimpse`, `pull`, or any other function). R prints:
+
+```
+Error in read_rds("data/episodes_analysis.RDS") %>% transmute(outcome = imdb_rating) : 
+  could not find function "%>%"
+```
+
+R does not know that function yet, because the `library()` lines at the top of your file have not run in this R session. That happens after R restarts, or when you run a line from the middle of your file first. Select the `library()` lines, press **Ctrl+Enter** (**Cmd+Enter** on a Mac), and run your line again. `read_csv()`, `read_rds()`, `glimpse()`, `pull()`, and `%>%` come from `library(tidyverse)`; `theme_v2v()` and `scale_fill_v2v()` come from `library(v2v)`. If the `library()` lines have run, check the spelling: R reads `Read_csv` and `read_csv` as two different names.
+
 **`grouping factor must have exactly 2 levels`.** The `group2` column in your settings block does not have exactly two groups. Run `analysis %>% count(group2)` to see them, list the two you compare in `levels = c(...)`, and run the settings block again.
 
 **`there is no package called 'effectsize'`** (or `'pwr'`). Run **AURA: Check my setup**, then **Install what is missing**, and run your lines again.
