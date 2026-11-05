@@ -13,7 +13,6 @@ format:
 
 ## Today's Agenda
 
-- Follow along in VS Code: [today's teaching notebook](../../notebooks/w12-describing.qmd){download="w12-describing.qmd"}
 - The Twitch job, part 2: the Describing Data worksheet
 - The grammar of graphics: every plot is built from the same three parts
 - Three chart types: a line chart, a bar chart, and a histogram
