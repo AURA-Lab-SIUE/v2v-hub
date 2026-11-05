@@ -37,3 +37,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # 2026-11-05: three of five deploys hit the 10-minute default while Pages processed the
+          # ~118 MB artifact (runs for #29, #33, #34, #37); successes between them used the same size.
+          timeout: 1800000
