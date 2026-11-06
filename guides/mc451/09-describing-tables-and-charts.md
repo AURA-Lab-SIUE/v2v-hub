@@ -8,9 +8,9 @@ Prefer to watch first? The walkthrough video [Describe Your Own Data](https://si
 
 ## The example data
 
-The example continues the study from guide 08, *Wrangle Your Own Data*: 120 Power Rangers episodes, drawn at random and hand-coded for `threat` (`monster`, `villain`, or `none`) and `focus` (`team`, `one_ranger`, or `other`), joined to a table about each season that adds `producer`. Each episode also has its IMDb rating, `imdb_rating`, a number from 1 to 10.
+The example continues the study from [guide 08](08-wrangling.md), *Wrangle Your Own Data*: 120 Power Rangers episodes, drawn at random and hand-coded for `threat` (`monster`, `villain`, or `none`) and `focus` (`team`, `one_ranger`, or `other`), joined to a table about each season that adds `producer`. Each episode also has its IMDb rating, `imdb_rating`, a number from 1 to 10.
 
-- [episodes_analysis.RDS](../../resources/examples/own-study-walkthrough/episodes_analysis.RDS): the analysis file guide 08 saved in its last step. If you worked through guide 08, you already have it in your `data` folder. If not, download it and drag it into `data`.
+- [episodes_analysis.RDS](../../resources/examples/own-study-walkthrough/episodes_analysis.RDS): the analysis file [guide 08](08-wrangling.md) saved in its last step. If you worked through [guide 08](08-wrangling.md), you already have it in your `data` folder. If not, download it and drag it into `data`.
 - [describe.R](../../resources/examples/own-study-walkthrough/describe.R): the finished script, so you can compare yours with it at any step.
 
 Your analysis file is the same shape: one row per item you coded, your code columns stored as factors, and the columns you joined on from your sources table.
@@ -32,10 +32,10 @@ Your analysis file is the same shape: one row per item you coded, your code colu
 
 ## Step 1: Open a script, load the packages, and load your analysis file
 
-1. In the Explorer, right-click the empty space below the file list and select **New File...**. Type `describe.R` and press **Enter**.
+1. In the Explorer, right-click (on a Mac, Control-click or click with two fingers) the empty space below the file list and select **New File...**. Type `describe.R` and press **Enter**.
 2. Open an R terminal: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac), type `AURA: Open an R terminal`, and press **Enter**. Wait for the `>` prompt.
 
-Type these lines into `describe.R`, select them, and press **Ctrl+Enter** (**Cmd+Enter** on a Mac):
+Type these lines into `describe.R`, select them, then right-click them (on a Mac, Control-click or click with two fingers) and select **Run the selected lines in R** (keyboard: **Ctrl+Enter**, or **Cmd+Enter** on a Mac):
 
 ```r
 library(tidyverse)
@@ -125,7 +125,7 @@ episodes %>%
 3 none       27    22.5
 ```
 
-**Check:** the counts add up to your number of rows (37 + 56 + 27 = 120), and the percents add up to about 100. The rows come out in your factor order from guide 08 (`monster`, `villain`, `none`), not in alphabetical order.
+**Check:** the counts add up to your number of rows (37 + 56 + 27 = 120), and the percents add up to about 100. The rows come out in your factor order from [guide 08](08-wrangling.md) (`monster`, `villain`, `none`), not in alphabetical order.
 
 Do the same for every category column. Here, `focus` and `producer`:
 
@@ -167,7 +167,7 @@ episodes %>%
 4 Saban Brands    30    25  
 ```
 
-**Check:** `focus` has an `<NA>` row with 1 episode: the blank cell guide 08 found and left blank. Keep it in the table and say so in your write-up. In `producer`, `Saban/Disney` has only 5 episodes. A group that small gives shaky percents and averages, so watch it in every later step.
+**Check:** `focus` has an `<NA>` row with 1 episode: the blank cell [guide 08](08-wrangling.md) found and left blank. Keep it in the table and say so in your write-up. In `producer`, `Saban/Disney` has only 5 episodes. A group that small gives shaky percents and averages, so watch it in every later step.
 
 **The R Companion shortcut:** **AURA: Write R code**, under **R3 Describe**, **Frequency table**, then **Choose the table and the columns**. It asks which table, then which column. It writes the same two lines with `count(threat, sort = TRUE)`, which lists the biggest group first instead of in your factor order. Its comment line says "Count each channel type" whatever column you pick, so change the comment to match your column.
 
@@ -265,7 +265,7 @@ episodes %>%
 3 other         13  7.68    7.6 0.877
 ```
 
-**Check:** the `n` column adds up to your rows (119 for `focus`, after the blank one is dropped). Monster episodes average about half a point lower (7.16) than villain (7.71) or no-threat episodes (7.79). The three `focus` groups sit within 0.15 of each other. A description can say how big a gap is; whether it is bigger than chance is a test, in guide 10.
+**Check:** the `n` column adds up to your rows (119 for `focus`, after the blank one is dropped). Monster episodes average about half a point lower (7.16) than villain (7.71) or no-threat episodes (7.79). The three `focus` groups sit within 0.15 of each other. A description can say how big a gap is; whether it is bigger than chance is a test, in [guide 10](10-tests-and-check-my-test-choice.md).
 
 **The R Companion shortcut:** under **R3 Describe**, **Summary by group**, then **Choose the table and the columns**. It asks for the column to group by, then the number column, and writes the same lines with a `filter(!is.na(...))` line and `na.rm = TRUE` added.
 
@@ -432,11 +432,11 @@ ggsave("figures/rating-histogram.png", fig_rating_hist,
 
 ## If it does not work
 
-If pressing **Ctrl+Enter** (**Cmd+Enter** on a Mac) opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
+If running a line opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
 
 **`cannot open the connection` on `read_rds()`.** The file name in the quotes does not match a file in `data`. Look under `data` in the Explorer and copy the name exactly, capital letters included.
 
-**`object 'episodes' not found`.** The line that loads your analysis file has not run in this R session. Select it and press **Ctrl+Enter** again, then the line that failed.
+**`object 'episodes' not found`.** The line that loads your analysis file has not run in this R session. Select it, right-click it (on a Mac, Control-click or click with two fingers) and select **Run the selected lines in R** again, then do the same for the line that failed.
 
 **`could not find function "read_rds"`** (or `glimpse`, `pull`, `%>%`, or any other function). R prints:
 
@@ -445,8 +445,8 @@ Error in read_rds("data/episodes_analysis.RDS") :
   could not find function "read_rds"
 ```
 
-R does not know that function yet, because the `library()` lines at the top of your file have not run in this R session. That happens after R restarts, or when you run a line from the middle of your file first. Select the `library()` lines, press **Ctrl+Enter** (**Cmd+Enter** on a Mac), and run your line again. `read_csv()`, `read_rds()`, `glimpse()`, `pull()`, and `%>%` come from `library(tidyverse)`; `theme_v2v()` and `scale_fill_v2v()` come from `library(v2v)`. If the `library()` lines have run, check the spelling: R reads `Read_csv` and `read_csv` as two different names.
+R does not know that function yet, because the `library()` lines at the top of your file have not run in this R session. That happens after R restarts, or when you run a line from the middle of your file first. Select the `library()` lines, right-click them (on a Mac, Control-click or click with two fingers), select **Run the selected lines in R**, and run your line again the same way. `read_csv()`, `read_rds()`, `glimpse()`, `pull()`, and `%>%` come from `library(tidyverse)`; `theme_v2v()` and `scale_fill_v2v()` come from `library(v2v)`. If the `library()` lines have run, check the spelling: R reads `Read_csv` and `read_csv` as two different names.
 
 **A chart does not appear, or R prints a `+` and waits.** Check that every `+` sits at the end of a line, not at the start of the next one, and that every `(` has its `)`. Press **Esc** in the terminal to stop the waiting, fix the line, and run the chart again.
 
-**The rows of a table come out in alphabetical order.** The column is text, not a factor. Go back to guide 08, Step 7, set the factor order, and save the analysis file again.
+**The rows of a table come out in alphabetical order.** The column is text, not a factor. Go back to [guide 08](08-wrangling.md), Step 7, set the factor order, and save the analysis file again.

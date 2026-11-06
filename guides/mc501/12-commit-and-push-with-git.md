@@ -6,7 +6,7 @@ Prefer to watch first? The walkthrough video [Commit and Push with Git](https://
 
 ## Steps
 
-1. Select the **Source Control** icon in the Activity Bar on the left, or press **Ctrl+Shift+G**.
+1. Open **Source Control**: in the menu bar at the top, select **View**, then **Source Control**. (It is also the icon of three small circles joined by lines in the column of icons on VS Code's left edge. Keyboard: **Ctrl+Shift+G**, with **Control** on a Mac too, not **Cmd**.)
 2. Under **Changes**, read the list of files you changed.
 
     ![](img/source-control-changes.png){fig-alt="The Source Control view. Under Changes are two files: README.md in 03_Project, marked M for modified, and pilot-codes.csv in 03_Project/03_Data, marked U for new. Above them are an empty Message box and the blue Commit button."}

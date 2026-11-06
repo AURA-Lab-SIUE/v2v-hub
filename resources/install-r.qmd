@@ -45,8 +45,11 @@ setup working".
 ### macOS
 
 1. Go to [r-project.org](https://www.r-project.org/) and click **Download R for macOS**.
-2. Download the right `.pkg`: **Apple Silicon (M1/M2/M3)** uses the ARM64 build, **Intel Macs** use the Intel build. Not sure? Apple menu, **About This Mac**, check the chip.
-3. Run the installer and accept the defaults.
+2. Download the right `.pkg`. Not sure which Mac you have? Apple menu, **About This Mac**: it lists the **Chip** (Apple M1, M2, and so on) or the **Processor** (Intel), and the **macOS** version.
+    - **Apple chip, macOS 14 (Sonoma) or newer:** the `arm64.pkg` at the top of the page.
+    - **Apple chip, macOS 11 to 13:** the newest `arm64.pkg` in [the big-sur-arm64 folder](https://cloud.r-project.org/bin/macosx/big-sur-arm64/base/). The `arm64.pkg` at the top of the page does not install on these versions.
+    - **Intel chip:** the `x86_64.pkg`. It runs on an Apple chip too, but slowly, so do not pick it there.
+3. Run the installer and accept the defaults. If macOS asks whether the installer may use your **Downloads** folder, select **Allow**. If you selected **Don't Allow**, the install fails: drag the `.pkg` from **Downloads** into your home folder (in Finder, **Go**, then **Home**) and open it from there.
 
 **Verify:** open Terminal and type `R --version`. You should see version information.
 
@@ -208,7 +211,7 @@ install.packages("tidyverse", repos = "https://cloud.r-project.org")
 ### Stray characters around every chunk, or two chunks running as one
 
 Two symptoms, one cause. Either **Run Cell** puts odd characters before and after your code
-in the R console, something like `[200~` and `[201~`, or the next chunk you run comes out
+in the R console, something like `[200~` and `[201~` (on a Mac, `00~` and `01~`), or the next chunk you run comes out
 joined onto the previous one and both execute together.
 
 Fix it in your workspace:

@@ -10,7 +10,7 @@ Get a plain-English reading of an R error message and the steps that usually fix
 4. Type `AURA: Explain an R error` and press **Enter**. The copied message is already in the box.
 5. Press **Enter** again.
 6. Read **Why this happens**, then work through the numbered steps under **What to do**.
-7. Close the explanation with **Ctrl+W**.
+7. Close the explanation: click the **×** on its tab, along the top of the editor.
 
 ## What you should see
 

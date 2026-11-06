@@ -11,7 +11,7 @@ Open your own copy of the course workspace, the folder that holds your journal, 
 
 3. Pick one line from the list:
     - **Open a course folder already on this computer** if you cloned your copy before. Choose the folder, then **Select folder**.
-    - **Clone your copy from GitHub** if this computer does not have it yet. Paste your repository URL and choose where to keep it.
+    - **Clone your copy from GitHub** if this computer does not have it yet. Paste your repository URL and choose where to keep it. On a Mac, pick a folder inside your home folder (the one with your name, in Finder under **Go**, then **Home**), not **Desktop**, **Documents**, or **iCloud Drive**: when iCloud syncs those, it can move files out from under Git.
     - **Make your copy on GitHub first** if you have no copy yet. It opens the template page, where you select **Use this template**.
 
     ![](img/open-folder-dialog.png){fig-alt="The Open Folder window inside the workspace folder, listing 00_Inbox, 01_Journal, 02_Literature, 03_Project, and 04_Resources. The Folder box reads v2v-workspace, beside the Select folder button."}

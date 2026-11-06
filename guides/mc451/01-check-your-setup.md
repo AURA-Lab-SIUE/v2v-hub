@@ -20,6 +20,12 @@ Prefer to watch first? The walkthrough video [Setup](https://siue.yuja.com/V/Vid
 
 A list opens at the top of VS Code. Its title reads **MC 451 Research Methods: everything is installed**, and every row says **OK**. Your version numbers may be newer. Press **Esc** to close the list; the same report stays in the Output panel.
 
+## On a Mac
+
+- **XQuartz** is the one extra program a Mac may need. Only `View()` uses it: without it, `View(data)` stops with **X11 library is missing: install XQuartz from www.xquartz.org**. Install it from [xquartz.org](https://www.xquartz.org), log out of your Mac and back in, then open VS Code again. Until then, `glimpse(data)` shows every column.
+- **Git needs Apple's Command Line Tools.** If a window asks to install the command line developer tools when you commit or clone, select **Install**. Or open **Terminal** and run `xcode-select --install`.
+- Check my setup in R Companion 0.7.1 and newer checks both: a missing XQuartz shows as a warning, and missing Command Line Tools show on the **Git** row.
+
 ## If it does not work
 
 ::: {.callout-important}

@@ -7,7 +7,7 @@ Prefer to watch first? The walkthrough video [Render a Quarto Document](https://
 ## Steps
 
 1. Open your `.qmd` file in the editor.
-2. Save it with **Ctrl+S** (**Cmd+S** on a Mac).
+2. Save it: in the menu bar at the top, select **File**, then **Save**.
 3. Open the Command Palette: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac).
 4. Type `Quarto: Preview` and press **Enter**, or press **Ctrl+Shift+K** (**Cmd+Shift+K** on a Mac).
 
