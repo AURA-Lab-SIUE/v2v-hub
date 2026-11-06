@@ -30,15 +30,15 @@ The finished script is here, so you can compare yours with it at any step: [wran
 
 ## Before you start: put both files in your data folder
 
-Your workspace needs a folder named `data` at its top level, beside `README.md`, with your coding sheet and your sources table inside it. Guide 15, Step 1, shows how to make the folder and drag files in from Downloads. To follow along with the example, download the two files above and drag them into `data` the same way.
+Your workspace needs a folder named `data` at its top level, beside `README.md`, with your coding sheet and your sources table inside it. To make it, right-click (on a Mac, Control-click or click with two fingers) the empty space below the file list in the Explorer, select **New Folder...**, type `data`, and press **Enter** (**Return** on a Mac). Then drag your files from Downloads onto the `data` folder, the way [guide 14](14-put-a-worksheet-in-your-workspace.md) drags a worksheet into the workspace. To follow along with the example, download the two files above and drag them into `data` the same way.
 
 **It worked if** the Explorer shows `episode-codes.csv` and `power_rangers_seasons.csv` (or your own two files) indented under `data`.
 
 ## Step 1: Open a script and load the packages
 
-1. In the Explorer, right-click the empty space below the file list and select **New File...**. Type `wrangle.R` and press **Enter**.
+1. In the Explorer, right-click (on a Mac, Control-click or click with two fingers) the empty space below the file list and select **New File...**. Type `wrangle.R` and press **Enter**.
 2. Open an R terminal: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac), type `AURA: Open an R terminal`, and press **Enter**. Wait for the `>` prompt.
-Type these three lines into `wrangle.R`, select them, and press **Ctrl+Enter** (**Cmd+Enter** on a Mac):
+Type these three lines into `wrangle.R`, select them, then right-click them (on a Mac, Control-click or click with two fingers) and select **Run the selected lines in R** (keyboard: **Ctrl+Enter**, or **Cmd+Enter** on a Mac):
 
 ```r
 library(tidyverse)
@@ -104,7 +104,7 @@ date (1): air_date
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
-**Check:** the row count is the number of items you coded (120 here). The `chr`, `dbl`, and `date` lines say what kind each column is: `chr` is text, `dbl` is a number, `date` is a date. Your code columns should be `chr` if you typed words, or `dbl` if you typed numbers.
+**Check:** the row count is the number of items you coded (120 here). If it reports `Columns: 1` instead, see **Everything lands in one column** under If it does not work. The `chr`, `dbl`, and `date` lines say what kind each column is: `chr` is text, `dbl` is a number, `date` is a date. Your code columns should be `chr` if you typed words, or `dbl` if you typed numbers.
 
 Now look at every column with its first values ([glimpse() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#glimpse-see-every-column-at-once)):
 
@@ -329,7 +329,7 @@ nrow(coded)
 [1] 120
 ```
 
-`left_join()` keeps every row of the first table (your coding sheet) and adds the matching columns from the second. `join_by()` names the key ([left_join() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#left_join-add-another-tables-columns-by-a-shared-key)). Guide 15 wrote the key as `by = "season_title"`; `by = join_by(season_title)` means the same thing.
+`left_join()` keeps every row of the first table (your coding sheet) and adds the matching columns from the second. `join_by()` names the key ([left_join() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#left_join-add-another-tables-columns-by-a-shared-key)). You may also see the key written `by = "season_title"`; `by = join_by(season_title)` means the same thing.
 
 ```r
 coded_seasons <- coded %>%
@@ -598,6 +598,40 @@ chr (1): season_title;episode_num;episode_title;air_date;IMDB_rating;total_votes
 
 Save it again from Excel with **File**, then **Save As**, and choose **CSV UTF-8 (Comma delimited)**, or read it with `read_csv2()`, which expects semicolons.
 
+**Everything lands in one column named `Table 1`.** If `read_csv()` reports `Columns: 1` and `names()` shows one name that is none of your column names, such as `Table 1` or a sheet title, the file has a title row above the real column names. Numbers on a Mac writes one when **Include table names** is ticked as it exports; a title typed in the first row of a spreadsheet does the same:
+
+```
+> coded <- read_csv("data/episode-codes-title.csv")
+Rows: 121 Columns: 1
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Table 1
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Warning message:
+One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat <- vroom(...)
+  problems(dat)
+> names(coded)
+[1] "Table 1"
+```
+
+Export the file again without the title (in Numbers: **File**, then **Export To**, then **CSV...**, untick **Include table names**, and save over the old file), or tell `read_csv()` to skip the first line:
+
+```r
+coded <- read_csv("data/episode-codes.csv", skip = 1)
+```
+
+`Rows:` then counts your items again (120 here), and `names(coded)` lists your column names.
+
+**Letters with accents turn into `�`.** If `café` reads as `caf�`, the file was saved in an older Mac text format, not UTF-8. Save it again as UTF-8: in Excel, **File**, then **Save As**, and choose **CSV UTF-8 (Comma delimited)**; in Numbers, **File**, then **Export To**, then **CSV...**, open **Advanced Options**, and set **Text Encoding** to **Unicode (UTF-8)**. Or read the file as it is:
+
+```r
+coded <- read_csv("data/episode-codes.csv", locale = locale(encoding = "macintosh"))
+```
+
 **A date column reads as `chr`.** One or more cells are not a full date (Step 6a). `ymd()` turns text written year-month-day into a date ([ymd() on the lubridate cheat sheet](../../resources/cheat-sheets/lubridate.html#ymd-read-a-date-with-no-time); use `mdy()` for month-day-year, such as `11/05/2026`). A cell it cannot read becomes `NA`, and R warns you how many:
 
 ```
@@ -618,7 +652,7 @@ Caused by warning:
 
 `1 failed to parse` is the `2022`. Count and decide on those `NA` rows as in Step 9.
 
-**Ctrl+Enter opens a box titled Choose where to run the selected code.** Press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
+**Running a line opens a box titled Choose where to run the selected code.** Press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
 
 **`could not find function "read_csv"`** (or `glimpse`, `pull`, `%>%`, or any other function). R prints:
 
@@ -627,6 +661,6 @@ Error in read_csv("data/episode-codes.csv") :
   could not find function "read_csv"
 ```
 
-R does not know that function yet, because the `library()` lines at the top of your file have not run in this R session. That happens after R restarts, or when you run a line from the middle of your file first. Select the `library()` lines, press **Ctrl+Enter** (**Cmd+Enter** on a Mac), and run your line again. `read_csv()`, `read_rds()`, `glimpse()`, `pull()`, and `%>%` come from `library(tidyverse)`; `theme_v2v()` and `scale_fill_v2v()` come from `library(v2v)`. If the `library()` lines have run, check the spelling: R reads `Read_csv` and `read_csv` as two different names.
+R does not know that function yet, because the `library()` lines at the top of your file have not run in this R session. That happens after R restarts, or when you run a line from the middle of your file first. Select the `library()` lines, right-click them (on a Mac, Control-click or click with two fingers), select **Run the selected lines in R**, and run your line again the same way. `read_csv()`, `read_rds()`, `glimpse()`, `pull()`, and `%>%` come from `library(tidyverse)`; `theme_v2v()` and `scale_fill_v2v()` come from `library(v2v)`. If the `library()` lines have run, check the spelling: R reads `Read_csv` and `read_csv` as two different names.
 
 **`object 'coded' not found`.** A line above this one has not been run in this R session. Run your file from the top (the step above), then this line again.

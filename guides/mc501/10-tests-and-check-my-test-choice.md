@@ -8,9 +8,9 @@ Prefer to watch first? The walkthrough video [Test Your Own Hypotheses](https://
 
 ## The example data and its four questions
 
-The example continues the study from guide 08, *Wrangle Your Own Data*, and guide 09, *Describe Your Own Data*: 120 Power Rangers episodes, hand-coded for `threat` (`monster`, `villain`, or `none`) and `focus` (`team`, `one_ranger`, or `other`), with each episode's IMDb rating (`imdb_rating`), its season's number (`season_num`), and its season's producer (`producer`).
+The example continues the study from [guide 08](08-wrangling.md), *Wrangle Your Own Data*, and [guide 09](09-describing-tables-and-charts.md), *Describe Your Own Data*: 120 Power Rangers episodes, hand-coded for `threat` (`monster`, `villain`, or `none`) and `focus` (`team`, `one_ranger`, or `other`), with each episode's IMDb rating (`imdb_rating`), its season's number (`season_num`), and its season's producer (`producer`).
 
-- [episodes_analysis.RDS](../../resources/examples/own-study-walkthrough/episodes_analysis.RDS): the analysis file guide 08 saved. If it is not already in your `data` folder, download it and drag it into `data`.
+- [episodes_analysis.RDS](../../resources/examples/own-study-walkthrough/episodes_analysis.RDS): the analysis file [guide 08](08-wrangling.md) saved. If it is not already in your `data` folder, download it and drag it into `data`.
 - [test.R](../../resources/examples/own-study-walkthrough/test.R): the finished script, so you can compare yours with it at any step.
 
 The example's four questions were written down before any test was run, the way the worksheet's Part 0 asks you to write yours:
@@ -49,12 +49,12 @@ Had the t-test been chosen for the third question, where `threat` has three grou
 
 ## Step 2: Name your variables once, in a settings block
 
-1. In the Explorer, right-click the empty space below the file list and select **New File...**. Type `test.R` and press **Enter**.
+1. In the Explorer, right-click (on a Mac, Control-click or click with two fingers) the empty space below the file list and select **New File...**. Type `test.R` and press **Enter**.
 2. Open an R terminal: in the Command Palette, run `AURA: Open an R terminal`, and wait for the `>` prompt.
 
 Every test below uses six short names instead of your column names: `outcome` (a number), `group2` (a category with two groups), `group3` (a category with three or more), `predictor` (a number), and `cat_a` and `cat_b` (two categories). Only this block knows your column names. `transmute()` builds a new table with only the columns you name ([transmute() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#transmute-keep-only-the-columns-you-build)), and `factor(..., levels = ...)` keeps only the groups you list, in that order ([factor() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#factor-store-a-category-in-the-order-you-choose)).
 
-Type these lines, select them, and press **Ctrl+Enter** (**Cmd+Enter** on a Mac):
+Type these lines, select them, then right-click them (on a Mac, Control-click or click with two fingers) and select **Run the selected lines in R** (keyboard: **Ctrl+Enter**, or **Cmd+Enter** on a Mac):
 
 ```r
 library(tidyverse)
@@ -128,7 +128,7 @@ $ cat_b     <fct> Disney, Saban, Disney, Saban, NA, Disney, Saban, Saban Brands,
 Two lines make a choice, and each choice goes in your write-up:
 
 - **`group2`** must have exactly two groups, but `focus` has three. Listing `team` and `one_ranger` in `levels` keeps those two, and the 13 `other` episodes become `NA`, so the t-test leaves them out.
-- **`cat_b`** lists three of the four producers. Guide 09's MC 501 diagnostics found that the 5 `Saban/Disney` episodes give expected counts below 5, too few for a chi-square. Leaving that producer out of `levels` turns those 5 rows into `NA`, so the chi-square leaves them out. The `NA` you can see in `cat_b` above is one of them.
+- **`cat_b`** lists three of the four producers. [Guide 09](09-describing-tables-and-charts.md)'s MC 501 diagnostics found that the 5 `Saban/Disney` episodes give expected counts below 5, too few for a chi-square. Leaving that producer out of `levels` turns those 5 rows into `NA`, so the chi-square leaves them out. The `NA` you can see in `cat_b` above is one of them.
 
 **Check:** `Rows: 120` and six columns. `outcome` and `predictor` are `<dbl>` (numbers); the other four are `<fct>` (categories).
 
@@ -550,7 +550,7 @@ The worksheet's Part 6 asks for one paragraph, across all four results, that sep
 
 ## If it does not work
 
-If pressing **Ctrl+Enter** (**Cmd+Enter** on a Mac) opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
+If running a line opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**. It runs your file from the first line, in the same R as **Run it**.
 
 **`could not find function "%>%"`** (or `read_rds`, `glimpse`, `pull`, or any other function). R prints:
 
@@ -559,12 +559,12 @@ Error in read_rds("data/episodes_analysis.RDS") %>% transmute(outcome = imdb_rat
   could not find function "%>%"
 ```
 
-R does not know that function yet, because the `library()` lines at the top of your file have not run in this R session. That happens after R restarts, or when you run a line from the middle of your file first. Select the `library()` lines, press **Ctrl+Enter** (**Cmd+Enter** on a Mac), and run your line again. `read_csv()`, `read_rds()`, `glimpse()`, `pull()`, and `%>%` come from `library(tidyverse)`; `theme_v2v()` and `scale_fill_v2v()` come from `library(v2v)`. If the `library()` lines have run, check the spelling: R reads `Read_csv` and `read_csv` as two different names.
+R does not know that function yet, because the `library()` lines at the top of your file have not run in this R session. That happens after R restarts, or when you run a line from the middle of your file first. Select the `library()` lines, right-click them (on a Mac, Control-click or click with two fingers), select **Run the selected lines in R**, and run your line again the same way. `read_csv()`, `read_rds()`, `glimpse()`, `pull()`, and `%>%` come from `library(tidyverse)`; `theme_v2v()` and `scale_fill_v2v()` come from `library(v2v)`. If the `library()` lines have run, check the spelling: R reads `Read_csv` and `read_csv` as two different names.
 
 **`grouping factor must have exactly 2 levels`.** The `group2` column in your settings block does not have exactly two groups. Run `analysis %>% count(group2)` to see them, list the two you compare in `levels = c(...)`, and run the settings block again.
 
 **`there is no package called 'effectsize'`** (or `'pwr'`). Run **AURA: Check my setup**, then **Install what is missing**, and run your lines again.
 
-**`object 'analysis' not found`.** The settings block has not run in this R session. Select it and press **Ctrl+Enter**, then the line that failed.
+**`object 'analysis' not found`.** The settings block has not run in this R session. Select it, right-click it (on a Mac, Control-click or click with two fingers) and select **Run the selected lines in R**, then do the same for the line that failed.
 
-**`Chi-squared approximation may be incorrect`.** At least one expected count is below 5. Find the small group with guide 09's MC 501 diagnostics, then leave it out of `levels` in the settings block, as Step 2 does for `Saban/Disney`, or combine it with another group.
+**`Chi-squared approximation may be incorrect`.** At least one expected count is below 5. Find the small group with [guide 09](09-describing-tables-and-charts.md)'s MC 501 diagnostics, then leave it out of `levels` in the settings block, as Step 2 does for `Saban/Disney`, or combine it with another group.

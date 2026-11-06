@@ -5,12 +5,12 @@ Get a plain-English reading of an R error message and the steps that usually fix
 ## Steps
 
 1. In the R terminal, select the error message with the mouse, starting at `Error`.
-2. Copy it with **Ctrl+C** (**Cmd+C** on a Mac).
+2. Copy it: right-click the selected message. On Windows, that copies it and nothing else appears. On a Mac, Control-click or click with two fingers on the selected message, and select **Copy** in the menu that opens.
 3. Open the Command Palette: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac).
 4. Type `AURA: Explain an R error` and press **Enter**. The copied message is already in the box.
 5. Press **Enter** again.
 6. Read **Why this happens**, then work through the numbered steps under **What to do**.
-7. Close the explanation with **Ctrl+W**.
+7. Close the explanation: click the **×** on its tab, along the top of the editor.
 
 ## What you should see
 

@@ -26,4 +26,4 @@ Your codes save by themselves to `data/derived/`, one row per coded cell. The or
 
 ## If it does not work
 
-If you typed a wrong code, press **Ctrl+Z** (**Cmd+Z** on a Mac) to undo it, or select the cell and press **Delete** to clear it.
+If you typed a wrong code, select the cell, press **Delete** to clear it, and type the right code. (Keyboard undo also works: **Ctrl+Z**, or **Cmd+Z** on a Mac.)
