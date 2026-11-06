@@ -9,7 +9,7 @@ Prefer to watch first? The walkthrough video [Render a Quarto Document](https://
 1. Open your `.qmd` file in the editor.
 2. Save it: in the menu bar at the top, select **File**, then **Save**.
 3. Open the Command Palette: **View**, then **Command Palette...** (or **Ctrl+Shift+P**; **Cmd+Shift+P** on a Mac).
-4. Type `Quarto: Preview` and press **Enter**, or press **Ctrl+Shift+K** (**Cmd+Shift+K** on a Mac).
+4. Type `Quarto: Preview` and press **Enter** (**Return** on a Mac). (Keyboard: **Ctrl+Shift+K**, or **Cmd+Shift+K** on a Mac.)
 
     ![](img/quarto-preview-palette.png){fig-alt="The Command Palette with Quarto: Preview typed. The first line, Quarto: Preview, is highlighted and shows its shortcut Ctrl+Shift+K."}
 
@@ -17,7 +17,7 @@ Prefer to watch first? The walkthrough video [Render a Quarto Document](https://
 
     ![](img/quarto-preview.png){fig-alt="VS Code with pilot-summary.qmd open on the left and a Quarto Preview panel on the right showing the rendered page: the title Pilot summary, the code, a table counting messages by tone, and a bar chart. The Terminal panel below shows the render finishing."}
 
-6. After each change, save the file again, then run **Quarto: Preview** again (**Ctrl+Shift+K**; **Cmd+Shift+K** on a Mac). Saving alone does not refresh the preview.
+6. After each change, save the file again, then run **Quarto: Preview** again from the Command Palette, as in steps 3 and 4. Saving alone does not refresh the preview.
 7. To build the final file, first close the **Quarto Preview** tab. Then run **Quarto: Render Document** from the Command Palette. If a list of formats opens, select **Render HTML**.
 
     ![](img/quarto-render-palette.png){fig-alt="The Command Palette with Quarto: Render Document typed and highlighted as the first line."}
@@ -32,4 +32,4 @@ The Terminal panel ends with `Output created:` followed by the file name, and th
 
 If the render stops at a chunk, the Terminal names the chunk and the line. Run that chunk on its own to see the R error, then use guide 03.
 
-If you press **Run Cell** (the ▷ at the top right of a code cell) and your code lands in a terminal named **powershell** (**zsh** on a Mac) instead of **R (AURA)**, it did not run in R. Click inside the cell and press **Ctrl+Shift+Enter** (**Cmd+Shift+Enter** on a Mac) instead: it switches to **R (AURA)** before it runs the cell. Or select **R (AURA)** in the list at the right of the Terminal panel, then press **Run Cell** again.
+If you press **Run Cell** (the ▷ at the top right of a code cell) and your code lands in a terminal named **powershell** (**zsh** on a Mac) instead of **R (AURA)**, it did not run in R. Select **R (AURA)** in the list of terminals at the right of the Terminal panel, then press **Run Cell** again. (Keyboard: click inside the cell and press **Ctrl+Shift+Enter**, or **Cmd+Shift+Enter** on a Mac; it switches to **R (AURA)** before it runs the cell.)
