@@ -344,7 +344,7 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure, uploaded to Blackboard under Sampling Plan and Pilot, 20 to 30 items. Optional: the R Companion's **Reliability grid** takes your pass 1 and pass 2 codes, saves them as a CSV, and writes the `v2v::reliability()` call into your script; that call counts as the code that computed the figure. To code the pilot items in VS Code instead of a spreadsheet, **AURA: Open the data viewer** opens your CSV in a grid where you add your coding columns and code each row; your codes save to `data/derived/`, the original file is never changed, and **Insert rebuild code** writes the lines that join the codes back on. Excel and Google Sheets still work.
+**What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure, uploaded to Blackboard under Sampling Plan and Pilot, 20 to 30 items. [Guide 07, Check your reliability in R](guides/mc501/07-reliability-grid.md), lines your pass 1 and pass 2 codes up in one sheet and computes the figure from them; its script counts as the code that computed the figure. To code the pilot items in VS Code instead of a spreadsheet, **AURA: Open the data viewer** opens your CSV in a grid where you add your coding columns and code each row; your codes save to `data/derived/`, the original file is never changed, and **Insert rebuild code** writes the lines that join the codes back on. Excel and Google Sheets still work.
 
 **Length:** 700 to 1,200 words across the plan and the pilot write-up, plus 20 to 30 coded items. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -356,7 +356,7 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 
 **Worked example:** [Sampling Plan and Pilot worked example (PDF)](resources/examples/MC501-example-sampling-plan-and-pilot.pdf), with its [coded pilot data (CSV)](resources/examples/MC501-sampling-pilot/MC501-pilot-codes.csv) and [stability script (R)](resources/examples/MC501-sampling-pilot/02-pilot-stability.R). A finished submission, so you can see the form before you write yours.
 
-**How-to:** the [Draw your coding sample](guides/mc501/06-draw-your-coding-sample.md) and [Reliability grid](guides/mc501/07-reliability-grid.md) step-by-step guides.
+**How-to:** the [Draw your coding sample](guides/mc501/06-draw-your-coding-sample.md), [Draw a pilot and make a blind re-code sheet](guides/mc501/15-draw-a-pilot-and-make-a-blind-recode-sheet.md), and [Check your reliability in R](guides/mc501/07-reliability-grid.md) step-by-step guides.
 
 </details>
 

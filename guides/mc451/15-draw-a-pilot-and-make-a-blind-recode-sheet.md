@@ -338,7 +338,7 @@ write_csv(both_passes, "data/pilot-both-passes.csv", na = "")
 
 ## Step 8: Compare the two passes
 
-[Guide 07](07-reliability-grid.md), *Check Reliability with the Reliability Grid*, compares the two passes and computes the statistic your codebook calls for, Cohen's kappa or Krippendorff's alpha. Use `threat_p1` and `threat_p2` (your own variable's `_p1` and `_p2`) from `pilot-both-passes.csv`.
+[Guide 07](07-reliability-grid.md), *Check Your Reliability in R*, compares the two passes and computes the statistic your codebook calls for, Cohen's kappa or Krippendorff's alpha. Your `pilot-both-passes.csv` already has the shape it needs, so start at [its Part 2](07-reliability-grid.md#part-2-run-the-check).
 
 ## Step 9: Later, the White Paper re-code
 
