@@ -8,7 +8,7 @@ Each guide is a numbered click path. Commands run from the Command Palette: **Vi
 4. [Load the Course Data with Write R Code](04-load-the-course-data.md) (video)
 5. [Read and Code Data in the Data Viewer](05-data-viewer-and-coding-columns.md) (video)
 6. [Draw Your Coding Sample](06-draw-your-coding-sample.md)
-7. [Check Reliability with the Reliability Grid](07-reliability-grid.md) (video)
+7. [Check Your Reliability in R: Pass 1 Against Pass 2](07-reliability-grid.md)
 8. [Wrangle Your Own Data: From Your Coding Sheet to Your Analysis File](08-wrangling.md) (video)
 9. [Describe Your Own Data: Tables, Numbers, and Charts](09-describing-tables-and-charts.md) (video)
 10. [Test Your Own Hypotheses: Check Your Test Choice, Run Four Tests, Check Your Numbers](10-tests-and-check-my-test-choice.md) (video)
