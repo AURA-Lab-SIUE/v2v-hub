@@ -2,6 +2,8 @@
 
 Load the analysis file you saved after wrangling, count your categories, find the middle and the spread of your number columns, cross two categories, and draw three charts with alt text you write. You type every line of R yourself and see what each one prints.
 
+Prefer to watch first? The walkthrough video [Describe Your Own Data](https://siue.yuja.com/V/Video?v=17679641&a=131613932) shows these steps.
+
 **How this guide and the Describing Data worksheet fit together.** The graded worksheet (`12-describing-data-mc501.qmd`) does this job on the course's Twitch data. Your White Paper does it again on your own data. This guide walks your own-data version, one step at a time, and after each step a box names the worksheet task that does the same thing on Twitch, the R Companion menu for it, and what the worksheet says you should see. Use the guide beside the worksheet, or come back to it when you start on your own study.
 
 ## The example data
