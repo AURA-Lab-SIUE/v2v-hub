@@ -2,6 +2,8 @@
 
 Take the coding sheet you filled in by hand, load it under a name you choose, join it to a second table about your sources, fix what is wrong with it, and save the one file every later step reads. You type every line of R yourself and see what each one prints.
 
+Prefer to watch first? The walkthrough video [Wrangle Your Own Data](https://siue.yuja.com/V/Video?v=17679761&a=78020491) shows these steps.
+
 **How this guide and the Data Wrangling worksheet fit together.** The graded worksheet (`11-wrangling-data.qmd`) does this job on the course's Twitch data. Your White Paper does it again on your own data. This guide walks your own-data version, one step at a time, and after each step a box names the worksheet task that does the same thing on Twitch, the R Companion menu for it, and what the worksheet says you should see. Use the guide beside the worksheet, or come back to it when you start on your own study.
 
 ## The example data, and why it looks like yours
