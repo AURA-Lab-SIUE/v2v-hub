@@ -117,7 +117,7 @@ spent on the study.
 - **One document, two headed parts:** Extended Codebook and Reliability Protocol
     - The codebook, 1,200 to 2,000 words
     - The reliability protocol, 500 to 900 words
-- **The protocol's five parts:** the statistic and its threshold, the stability procedure and a fresh sample, when it fails and how you report it, single-coder safeguards, and the second-coder counterfactual
+- **The protocol's five parts:** the statistic and its threshold, the stability procedure and its re-code subsample, when it fails and how you report it, single-coder safeguards, and the second-coder counterfactual
 - **The template carries every part as a heading:** [Word](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC501-codebook-template.docx) or [Quarto](https://aura-lab.siue.edu/v2v-hub/resources/templates/MC501-codebook-template.qmd)
     - The Quarto version can serve as your `codebook/codebook.qmd`
 - [Rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC501-rubric-extended-codebook-and-reliability-protocol.pdf), [worked example](https://aura-lab.siue.edu/v2v-hub/resources/examples/MC501-example-extended-codebook-and-reliability-protocol.pdf), and the [AI-use log](https://aura-lab.siue.edu/v2v-hub/resources/AI-use-log.docx)

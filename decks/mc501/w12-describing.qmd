@@ -697,7 +697,7 @@ You should now have:
 
 ## Your Own Study, Starting Now
 
-- **By Monday, December 7, 11:59 PM:** push your full coded dataset and a re-code of a fresh subsample to your project repository
+- **By Monday, December 7, 11:59 PM:** push your full coded dataset and a re-code of a subsample to your project repository
 - The re-code happens at least 48 hours after your first pass, with your first codes hidden
 - So finish the first coding pass on your full corpus by **Thursday, December 3**
 - The reliability figure in your Methods comes from this re-code, not from the pilot
@@ -707,7 +707,7 @@ You should now have:
 
 ## How Big Is the Re-Code?
 
-The subsample is **at least 50 units or 20 percent of your corpus, whichever is larger**. It leaves out your immersion and pilot items.
+The subsample is **at least 50 units or 20 percent of your corpus, whichever is larger**. It leaves out your immersion items. It may include or leave out your pilot items; say which in your Methods.
 
 | Your corpus | 20 percent | Re-code |
 |---|---|---|
