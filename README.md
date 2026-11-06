@@ -84,6 +84,24 @@ quarto render
 
 Output goes to `docs/`. Open `docs/index.html` in your browser. Use `quarto preview` for live reload.
 
+### Before you open a pull request
+
+Run the pre-merge check from the repository root. It renders the whole site, then checks what GitHub Pages would receive:
+
+```bash
+quarto run tools/predeploy-check.ts
+```
+
+Add `--no-render` to check a `docs/` folder you have already rendered. The check exits with an error, and lists every problem, when:
+
+- the site is over **150 MB** in total, or any single file is over **4 MB**;
+- a slide deck loads anything from the network, so it would not open offline in the classroom;
+- a slide deck is missing an AURA font (Archivo, Newsreader, Spline Sans Mono) or still carries the unused Source Sans Pro faces.
+
+Every pull request runs the same check on GitHub (`.github/workflows/pr-check.yml`), and the deploy workflow runs it again before uploading, so a pull request that fails it should not be merged. The budgets and the reasons for them are at the top of `tools/predeploy-check.ts`; change a budget there, deliberately, with the reason beside it.
+
+Why it exists: Quarto embeds every font into each self-contained deck, and its RevealJS theme always adds Source Sans Pro, which these decks never use. That font was about 3 MB per deck and more than half of a 238 MB site, while deploys were failing. `decks/strip-unused-fonts.ts` now removes it after every render (the `post-render` step in `_quarto.yml`).
+
 ---
 
 ## Design

@@ -10,18 +10,23 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    # A newer push makes an older build pointless: cancel it, so a run of quick merges
+    # deploys once, from the newest commit.
+    concurrency:
+      group: pages-build-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
       - uses: quarto-dev/quarto-actions/setup@v2
       - name: Render site
         uses: quarto-dev/quarto-actions/render@v2
+      # Same gate as the pull-request check and the local pre-merge script: size budget,
+      # self-contained decks, AURA fonts embedded. Fails before anything is uploaded.
+      - name: Check the Pages artifact
+        run: quarto run tools/predeploy-check.ts --no-render
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -30,6 +35,12 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    # One deploy at a time. A deploy already running is never cancelled (stopping one
+    # mid-publish can leave Pages half-updated); a newer queued deploy replaces an
+    # older queued one.
+    concurrency:
+      group: pages-deploy
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -38,6 +49,6 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          # 2026-11-05: three of five deploys hit the 10-minute default while Pages processed the
-          # ~118 MB artifact (runs for #29, #33, #34, #37); successes between them used the same size.
-          timeout: 1800000
+          # 600000 ms (10 minutes) is the most deploy-pages accepts; larger values are
+          # cut back to it. The lever is a smaller artifact (tools/predeploy-check.ts).
+          timeout: 600000

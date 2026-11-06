@@ -1,0 +1,26 @@
+on:
+  pull_request:
+    branches: [main, master]
+
+name: Pre-merge check
+
+permissions:
+  contents: read
+
+# A new push to the same pull request replaces the check already running.
+concurrency:
+  group: pr-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Render site
+        uses: quarto-dev/quarto-actions/render@v2
+      # Size budget, self-contained decks, AURA fonts embedded: the same script a
+      # contributor runs locally before opening the pull request.
+      - name: Check the Pages artifact
+        run: quarto run tools/predeploy-check.ts --no-render

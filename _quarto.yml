@@ -2,6 +2,10 @@ project:
   type: website
   title: "V2V Hub"
   output-dir: docs
+  # Drop the Source Sans Pro faces Quarto's revealjs theme embeds in every deck and the AURA
+  # theme never uses (about 3 MB a deck, more than half the Pages artifact; 2026-11-06).
+  post-render:
+    - decks/strip-unused-fonts.ts
   render:
     - "*.qmd"
     # about.qmd is unpublished (2026-10-20): an unlinked bio page. Source kept, excluded from render.
