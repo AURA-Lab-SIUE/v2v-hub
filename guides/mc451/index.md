@@ -16,5 +16,8 @@ Each guide is a numbered click path. Commands run from the Command Palette: **Vi
 12. [Commit and Push with Git](12-commit-and-push-with-git.md) (video)
 13. [Publish Your Site](13-publish-your-site.md)
 14. [Put a Worksheet in Your Workspace](14-put-a-worksheet-in-your-workspace.md) (video)
+15. [Draw a Pilot Sample and Make a Blind Re-code Sheet](15-draw-a-pilot-and-make-a-blind-recode-sheet.md)
+16. [Describe a Coded Category Against Counts and Source Measures](16-describe-counts-and-source-measures.md)
+17. [Choose Your Test and Write It in APA](17-choose-your-test-and-write-it-in-apa.md)
 
 The [lab-weeks table in the MC 451 syllabus](../../syllabus.qmd#weekly-schedule) shows which guide goes with each week.
