@@ -100,3 +100,6 @@ $code-block-font-size: 0.8em;
 // the rendered figure from the same run, on its own output slide
 .reveal img.run-figure { display: block; max-height: 520px; width: auto; margin: 0.2em auto 0;
   border: 1px solid #8a8a8a; }
+
+// The slide menu named Source Sans Pro, which strip-unused-fonts.ts removes (2026-11-05); use the suite font.
+body .slide-menu-wrapper { font-family: "Archivo", system-ui, sans-serif; }

@@ -38,6 +38,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          # 2026-11-05: three of five deploys hit the 10-minute default while Pages processed the
-          # ~118 MB artifact (runs for #29, #33, #34, #37); successes between them used the same size.
-          timeout: 1800000
+          # deploy-pages@v4 caps timeout at 600000 ms (10 min) and rejects anything larger
+          # ("timeout value is greater than the allowed maximum"), so the 1800000 set in #40 never
+          # applied. The fix for the 2026-11-05 timeouts is a smaller artifact (decks/strip-unused-fonts.ts).
+          timeout: 600000
