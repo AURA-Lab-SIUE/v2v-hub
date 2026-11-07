@@ -348,6 +348,21 @@ The number to report is the `Kappa` line: 0.746 for `threat` and 0.844 for `focu
 
 Kappa's course floor is 0.70, and 0.80 is comfortable.
 
+## Or let the R Companion write the check
+
+Version 0.7.2 of the AURA Lab R Companion writes the same check for you, from your own file. To see your version, click the **Extensions** icon on VS Code's left edge and find **AURA Lab R Companion** in the list.
+
+1. Click inside your `reliability.R` script, on an empty line at the end.
+2. Click the **AURA Lab R Companion** icon on VS Code's left edge. Under **Data**, click **Reliability: compare two coding passes**.
+3. A list opens at the top of the window, asking **Where are your two coding passes?** Click **A CSV file with both passes**.
+4. In the box that opens, find your `data` folder, click `pilot-both-passes.csv` (or your own file of both passes), and click **Use this file**.
+5. Keep the table name it suggests, or type your own, and press **Enter**.
+6. The next list shows each variable with a `_p1` and a `_p2` column, all ticked. Click **OK** to check them all. If your two pass columns have other names, tick **Choose the two columns myself** instead, then click your pass 1 column and your pass 2 column.
+
+The code lands in your script with a comment above every step, and a message at the bottom right offers **Run it**. It prints percent agreement, every pair of codes, Cohen's kappa, and Krippendorff's alpha for each variable, then the same kappa from the course package's `reliability()` as a check.
+
+**Check:** the numbers match the ones the steps above printed. In the example: agreement 0.85 and 0.9, kappa 0.746 and 0.844, alpha 0.747 and 0.846. The Companion reads every column as text too, so long ids keep their digits.
+
 ## What goes in your write-up
 
 - **In the pilot write-up:** how many items you re-coded, the gap between the two passes in hours (at least 48), that your pass 1 codes were hidden during pass 2, and for each variable its percent agreement beside its alpha (and its kappa, if your protocol names it). Call it a stability figure from your own two passes, never agreement between coders. Then the edge cases and codebook revisions the Step 7 disagreements led to.
