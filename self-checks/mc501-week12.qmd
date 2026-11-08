@@ -1,0 +1,143 @@
+---
+title: "Week 12 Self-Check"
+subtitle: "MC 501 · Describing: Statistics and Graphics"
+---
+
+Eight questions on this week's terms. **Nothing here is graded and nothing is recorded.** Answer
+each question in your head or on paper first, then open the answer under it.
+
+Every term is defined on the slides: [Week 12, Describing](../decks/mc501/w12-describing.html).
+The full explanation is in [Chapter 12](https://aura-lab.siue.edu/v2v/chapters/chapter12.html).
+
+## 1. The three parts of a plot
+
+Name the **data**, the **aesthetic mapping**, and the **geometry** in this code.
+
+```r
+ggplot(viewers_over_time,
+       aes(x = six_hour, y = total_viewers,
+           color = category)) +
+  geom_line()
+```
+
+<details class="tmpl-section"><summary>Show the answer to question 1</summary>
+
+The **data** is `viewers_over_time`, the table being shown. The **aesthetic mapping** is the
+`aes()` call: the six-hour window goes to the x axis, total viewers to the y axis, and the
+category to the color. The **geometry** is `geom_line()`, the kind of mark drawn. Those three
+parts do most of the work in the grammar of graphics (Wilkinson, 2005; Wickham, 2016). Swap
+`geom_line()` for `geom_col()` and the same data is drawn as bars.
+
+</details>
+
+## 2. When a line is wrong
+
+Figure 1 draws viewers across the week as a line. Why would a line be the wrong mark for
+messages per game?
+
+<details class="tmpl-section"><summary>Show the answer to question 2</summary>
+
+A line implies a sequence, and real distance between the points. Time has both, so a line is
+right for change over time. Games are unordered categories: nothing comes between Fortnite and
+Hearthstone, and a line joining them would show a trend that does not exist. Counts across
+categories call for a bar chart, one bar per category, side by side.
+
+</details>
+
+## 3. Reading the histogram
+
+The message-length histogram uses `binwidth = 5`, caps the display with
+`pmin(message_length, 120)`, and shows a tall stack of short messages with a long thin tail to
+the right. Name the shape, and name the two choices the figure must disclose.
+
+<details class="tmpl-section"><summary>Show the answer to question 3</summary>
+
+The shape is **right-skewed**. **Skew** is a lopsided shape; right-skewed means most values are
+small and a few are very large. The two choices are the **bin width**, because a wider bin
+smooths the shape and a narrower bin roughens it, and the **cap**, because the longest message
+is 501 characters and the last bar piles up everything past 120. An unannounced cap is a quiet
+distortion, so the axis label states it.
+
+</details>
+
+## 4. Mean or median
+
+| Group | n | Mean | Median | sd |
+|---|---|---|---|---|
+| Non-gaming | 3,457 | 33.7 | 16 | 60.7 |
+| Gaming | 31,305 | 28.5 | 17 | 38.5 |
+
+These are **descriptive statistics** for message length. A classmate writes, "Non-gaming chat
+writes longer messages." What would you tell them?
+
+<details class="tmpl-section"><summary>Show the answer to question 4</summary>
+
+That holds for the **mean** and not for the **median**. The mean is the average, the total
+divided by the count; the median is the middle value once the values are sorted. By the
+medians, 16 against 17, the two groups are all but identical, pointing the other way. The mean
+is sensitive to a long tail and the median is not, so the gap in means is the work of a few
+long messages, not of the typical one. Report the mean alone and you misreport what a typical
+message looks like.
+
+</details>
+
+## 5. What the standard deviation adds
+
+In the same table, non-gaming chat's **standard deviation** is 60.7 and gaming chat's is 38.5.
+What does that difference tell you?
+
+<details class="tmpl-section"><summary>Show the answer to question 5</summary>
+
+The **standard deviation (sd)** is how far values typically sit from the mean. Non-gaming
+message lengths are more spread out. That is the heavier tail from question 4, recorded as a
+number.
+
+</details>
+
+## 6. Reading Cohen's *d*
+
+`effectsize::cohens_d()` prints *d* = 0.13 with a 95% confidence interval of [0.09, 0.16].
+Say in plain words what each part means.
+
+<details class="tmpl-section"><summary>Show the answer to question 6</summary>
+
+An **effect size** is how big a difference or a relationship is, on a scale that does not grow
+with the sample. Here, non-gaming messages run 0.13 standard deviations longer than gaming
+messages. A **confidence interval** is a range around an estimate, built by a method that
+captures the true value in a stated share of repeated samples, such as 95 in 100. The interval
+of 0.09 to 0.16 shows how far the true gap could plausibly sit from the measured 0.13. Copy both
+into your caption.
+
+</details>
+
+## 7. Which effect size to report
+
+Match each comparison to **Cohen's *d***, **Cramer's *V***, or ***r***.
+
+- **A.** Viewer band by channel type (gaming or non-gaming), counted in a cross-tabulation
+- **B.** Mean message length in gaming chat against non-gaming chat
+- **C.** Viewer count against message length, two numeric variables
+
+<details class="tmpl-section"><summary>Show the answer to question 7</summary>
+
+**A** is **Cramer's *V***. Both columns are **categorical variables**, whose values are categories
+rather than measured amounts, and a **cross-tabulation** counts how often each combination of
+the two occurs; on the slides, *V* is 0.15 for this table. **B** is **Cohen's *d***, for a
+difference between two group means. **C** is ***r***, for a correlation between two numeric
+variables. Each is reported with its 95% confidence interval.
+
+</details>
+
+## 8. Alt text
+
+What does a figure's **alt text** have to say, and where does it go in your worksheet?
+
+<details class="tmpl-section"><summary>Show the answer to question 8</summary>
+
+Alt text is what a screen-reader user gets instead of the figure; with none, the figure is
+simply missing for that reader. It states the chart type, the axes, and the takeaway. In a
+Quarto file it goes on a `#| fig-alt:` line at the top of the chunk, and the R Companion's chart
+code also leaves an `alt =` line marked YOUR TURN inside `labs()`. Write the same sentence in
+both places.
+
+</details>

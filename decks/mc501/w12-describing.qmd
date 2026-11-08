@@ -730,6 +730,7 @@ The subsample is **at least 50 units or 20 percent of your corpus, whichever is 
 - Finish the first coding pass on your own full corpus by Thursday, December 3; the re-code and push are due Monday, December 7, 11:59 PM
 - Read [Chapter 13, Making the Call](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
     - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"
+- **Check yourself on this week's terms:** [Week 12 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc501-week12.html), ungraded, with the answer after each question
 
 The histogram left a precise question: is the gap between the groups real or chance? Week 13 answers it.
 

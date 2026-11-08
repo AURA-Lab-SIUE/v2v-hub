@@ -587,8 +587,12 @@ The subsample is **at least 50 units or 20 percent of your corpus, whichever is 
 - Finish the first coding pass on your own full corpus by Tuesday, December 1; the re-code and push are due Friday, December 4, 11:59 PM
 - Thursday is a lab: you fill the Describing Data worksheet
     - Check that `data/twitch_analysis.RDS` is in your workspace's data folder
+
+## Before Next Time (cont.)
+
 - Read [Chapter 12](https://aura-lab.siue.edu/v2v/chapters/chapter12.html), especially "A histogram for shape"
 - Step by step: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc451/09-describing-tables-and-charts.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
+- **Check yourself on this week's terms:** [Week 12 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc451-week12.html), ungraded, with the answer after each question
 
 A figure can frame the question. It cannot answer it.
 
