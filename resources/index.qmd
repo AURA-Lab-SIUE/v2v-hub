@@ -345,8 +345,9 @@ grade, and using one is not required.
 - [Agreement Check](https://aura-lab.siue.edu/agreement-check/) takes two columns of codes and
   returns percent agreement, the reliability statistic, and the items the two passes split on. It
   handles one coder at two times, which is the stability this course asks for.
-- Inside VS Code, the R Companion's **AURA: Reliability grid** does the same from two columns and writes the R
-  code for your script.
+- Inside VS Code, the R Companion's **Data > Reliability: compare two coding passes** (version 0.7.2) does the same
+  from your own CSV file or table and writes the R code for your script. [Guide 07 for MC 451](../guides/mc451/07-reliability-grid.md)
+  and [for MC 501](../guides/mc501/07-reliability-grid.md) walk the check line by line.
 - [Sampling Check](https://aura-lab.siue.edu/sampling-check/) turns your own coding rate into a
   corpus size, sizes the reliability subset, and reports the smallest effect that sample could find.
 - [Inferential Check](https://aura-lab.siue.edu/inferential-check/) recomputes your chi-square or t
