@@ -47,7 +47,7 @@ Which of these describes your files?
 
 - **You made your re-code sheet with guide 15.** Your `data/pilot-both-passes.csv` already has this shape. Skip to [Part 2](#part-2-run-the-check).
 - **You have one sheet per pass**, such as a pass 1 sheet and a pass 2 sheet with the same column names. Steps 1 to 3 join them into one sheet. The example is this case.
-- **You typed both passes into one sheet**, side by side. Rename its columns in your spreadsheet to the `_p1` and `_p2` pattern, save it as `pilot-both-passes.csv` in your `data` folder, and skip to [Part 2](#part-2-run-the-check).
+- **You typed both passes into one sheet**, side by side. Rename its columns in your spreadsheet to the `_p1` and `_p2` pattern, save it as `pilot-both-passes.csv` in your `data` folder, and skip to [Part 2](#part-2-run-the-check). If that sheet holds every item but you re-coded only some of them, keep only the re-coded rows in `pilot-both-passes.csv`: a row with a blank pass 2 makes Step 6 print `NA`.
 
 If you study two sources, such as Reddit posts and news articles, keep one sheet per source, each with its own pass 1 and pass 2, and run this guide once per source. You report one number per source.
 
