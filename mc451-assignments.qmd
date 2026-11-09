@@ -23,11 +23,6 @@ Submissions are **unlimited**. If you upload the wrong file, or want to revise b
 :::
 
 
-## Every assignment is a part of the paper
-
-Almost nothing here is submitted and then finished. Each assignment builds a component the next one
-consumes, and the White Paper is those components assembled and argued.
-
 ## Everything at a glance
 
 | Due | Assignment | Phase | Points |
@@ -444,8 +439,6 @@ Say what is in the data before you test anything.
 
 **Length:** 300 to 600 words of your own writing (interpretation, alt text, and the paragraph to the client), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
-**Part of the White Paper:** a draft of the Results section's descriptive tables and figures. The paper reruns these calls on your own variables; the Twitch numbers stay here.
-
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [Describing Data in R rubric (PDF)](resources/rubrics/MC451-rubric-describing-data-in-r.pdf). It lists the tables, numbers, figures, and interpretation it asks for, and the points for each.
@@ -470,8 +463,6 @@ Test four relationships, one per test, and report how big each is.
 **What you submit:** the filled worksheet and the HTML it renders to, uploaded to Blackboard under Inferencing Data in R. The worksheet is part 3 of the Twitch job: four hypotheses written before any code, then four tests, one of them on the thirty messages you hand-coded in Data Wrangling, and a closing paragraph that explains the results and their limits to the same client as Describing Data. Optional: in the R Companion, **AURA: Write R code**, under **R4 Test**, writes the four tests for your settings-block variables as the plain R calls (`chisq.test()`, `t.test()`, `aov()`, `lm()`) with their effect sizes from the `effectsize` package, and its **APA numbers to check your sentence** prints a test's numbers in APA form. The hypotheses, the reason for each test, the four reports, the interpretation, and the paragraph to the client are your own writing.
 
 **Length:** 400 to 700 words of your own writing (hypotheses, the four reports, interpretation, and the paragraph to the client), not counting code or output. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
-
-**Part of the White Paper:** a draft of the Results section's tests, with the limits paragraph a draft of part of the Discussion. The paper reruns this script on your own variables; the Twitch numbers stay here.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
