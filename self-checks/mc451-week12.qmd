@@ -1,0 +1,141 @@
+---
+title: "Week 12 Self-Check"
+subtitle: "MC 451 · Describing: Statistics and Graphics"
+---
+
+Eight questions on this week's terms. **Nothing here is graded and nothing is recorded.** Answer
+each question in your head or on paper first, then open the answer under it.
+
+Every term is defined on the slides: [S23, Describing: Statistics and Graphics](../decks/mc451/s23-describing-data.html)
+and [S24, Describing Lab](../decks/mc451/s24-describing-lab.html). The full explanation is in
+[Chapter 12](https://aura-lab.siue.edu/v2v/chapters/chapter12.html).
+
+## 1. The three parts of a plot
+
+Name the **data**, the **aesthetic mapping**, and the **geometry** in this code.
+
+```r
+ggplot(chat_by_hour, aes(x = hour, y = messages)) +
+  geom_col()
+```
+
+<details class="tmpl-section"><summary>Show the answer to question 1</summary>
+
+The **data** is `chat_by_hour`, the table being shown. The **aesthetic mapping** is
+`aes(x = hour, y = messages)`: the hour goes to the x axis and the message count to the y axis.
+The **geometry** is `geom_col()`, the kind of mark drawn, here a bar. That is the **grammar of
+graphics**: choose those three parts and the plot is fully specified. Swap `geom_col()` for
+`geom_line()` and the same data is drawn as a line.
+
+</details>
+
+## 2. Which chart for which question
+
+Match each question to a line chart, a bar chart, or a histogram.
+
+- **A.** How did viewers rise and fall across the week?
+- **B.** How many messages arrived in each hour of the day?
+- **C.** How long are chat messages, from the shortest to the longest?
+
+<details class="tmpl-section"><summary>Show the answer to question 2</summary>
+
+**A** is a **line chart**, because it shows change over time. **B** is a **bar chart**, because
+it shows a count for each category, and the 24 hours are 24 categories. **C** is a
+**histogram**, because it shows the shape of a number variable.
+
+</details>
+
+## 3. What a histogram counts
+
+Which of these columns would you draw as a **histogram**?
+
+- **A.** `channel_type`, gaming or non-gaming
+- **B.** `message_length`, the number of characters in each message
+- **C.** `channel`, the name of the stream
+- **D.** `main_game`, the game a channel usually streams
+
+<details class="tmpl-section"><summary>Show the answer to question 3</summary>
+
+**B.** A **histogram** is a bar chart of a number variable: each bar counts the values in one
+range, such as the messages 0 to 5 characters long. `message_length` is a number. The other
+three are categories, so a count of each one is a bar chart.
+
+</details>
+
+## 4. Two choices to disclose
+
+The histogram code uses `binwidth = 5` and shows message length with
+`pmin(message_length, 120)`. What does each choice do, and why does your reader need to know
+about it?
+
+<details class="tmpl-section"><summary>Show the answer to question 4</summary>
+
+`binwidth = 5` makes each bar five characters wide. A wider bin smooths the shape and a narrower
+bin roughens it, so the same data can look different, and you report the width you used.
+`pmin(message_length, 120)` shows any message longer than 120 characters as 120. The longest
+message is 501 characters, so the last bar is a pile-up of everything longer. Capping keeps
+the bulk of the data readable, but an unannounced cap is a quiet distortion, so the axis label
+names it: "capped at 120."
+
+</details>
+
+## 5. The shape of message length
+
+The histogram shows a tall stack of very short messages, then a long thin tail of longer ones
+stretching to the right. What is that shape called?
+
+<details class="tmpl-section"><summary>Show the answer to question 5</summary>
+
+**Right-skewed.** **Skew** is a lopsided shape. Right-skewed means most values are small and a
+few are very large. Most Twitch chat messages are a word or an emote, and a few long messages
+stretch the range. No single summary number can show that shape, which is why you draw it.
+
+</details>
+
+## 6. Mean or median
+
+For non-gaming chat, the mean message is 33.7 characters and the median is 16. For gaming chat,
+the mean is 28.5 and the median is 17. Do non-gaming channels write longer messages?
+
+<details class="tmpl-section"><summary>Show the answer to question 6</summary>
+
+**It depends on which number you read, and the median tells you more about a typical
+message.** The **mean** is the average, the total divided by the count. The **median** is the
+middle value once the values are sorted. By the mean, non-gaming chat is longer. By the median,
+the two groups are nearly the same, 16 against 17, and pointing the other way. A few very long
+messages pull the mean up and leave the median alone, so the gap in means is the work of the
+tail, not of the typical message.
+
+</details>
+
+## 7. Standard deviation
+
+Non-gaming chat has a **standard deviation** of 60.7 characters; gaming chat has 38.5. What does
+the larger number tell you?
+
+<details class="tmpl-section"><summary>Show the answer to question 7</summary>
+
+The **standard deviation (sd)** is how far values typically sit from the mean. Non-gaming
+message lengths are more spread out than gaming message lengths. That fits question 6:
+non-gaming chat has the heavier tail of long messages, and the larger sd records it.
+
+</details>
+
+## 8. Alt text
+
+Which of these is the best **alt text** for the bar chart of messages per hour?
+
+- **A.** "Figure 2"
+- **B.** "A chart made in R with ggplot2"
+- **C.** "A bar chart of messages for each hour of the day, 0 to 23 UTC. Chat is busiest at 13:00
+  and quietest at 03:00."
+- **D.** The same words as the caption
+
+<details class="tmpl-section"><summary>Show the answer to question 8</summary>
+
+**C.** **Alt text** is a sentence that says what a chart shows, for a reader who cannot see it;
+a screen reader reads it aloud. It names the chart type, the axes, and what the chart shows. A
+and B tell that reader nothing, and alt text is not the caption repeated. In your worksheet it
+goes in the figure's `fig-alt` line and in the `alt =` line marked YOUR TURN inside `labs()`.
+
+</details>

@@ -238,5 +238,6 @@ You should now have, in your worksheet:
 - Tuesday we answer the questions your figures only framed
     - Bring the summary table you built today
     - There is no new math to learn in advance
+- **Check yourself on this week's terms:** [Week 12 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc451-week12.html), ungraded, with the answer after each question
 
 ## Questions, Comments, or Concerns? {.titlecard}
