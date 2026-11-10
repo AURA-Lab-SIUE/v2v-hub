@@ -12,6 +12,9 @@
 //      no stylesheet, script, image, or font fetched over the network.
 //   3. Every deck embeds the three AURA faces (Archivo, Newsreader, Spline Sans Mono)
 //      and none of the unused Source Sans Pro faces (decks/strip-unused-fonts.ts).
+//   5. Every file students download (.qmd, .R, .Rmd, .md, .txt in docs/) links with full
+//      addresses on one host, so its links open from a local copy
+//      (tools/absolute-download-links.ts).
 //
 // Budgets (2026-11-06). The artifact was 238 MB, 194 MB of it in 44 decks that each
 // carried about 3 MB of unused Source Sans Pro. With that stripped the site is about
@@ -20,6 +23,8 @@
 //   total 150 MB  (with the fonts back: about 238 MB)
 //   file    4 MB  (a deck with the fonts back: 4.6 to 5.2 MB)
 // Raise a budget only on purpose, in this file, with the reason beside it.
+
+import { downloads, findDownloadLinkProblems } from "./absolute-download-links.ts";
 
 const TOTAL_BUDGET_MB = 150;
 const FILE_BUDGET_MB = 4;
@@ -135,6 +140,13 @@ for (const [s, f] of sizes.slice(0, 10)) console.log(`  ${(s / MB).toFixed(2).pa
 console.log(`Decks checked for offline use and fonts: ${decks}`);
 
 if (decks === 0) failures.push(`no RevealJS decks found under ${OUT_DIR}/; the deck checks did not run`);
+
+// 5. Downloaded files open from a student's own computer: no relative links, one host.
+const downloadProblems = await findDownloadLinkProblems(OUT_DIR);
+let downloadCount = 0;
+for await (const _ of downloads(OUT_DIR)) downloadCount++;
+console.log(`Downloaded files checked for full-address links: ${downloadCount}`);
+failures.push(...downloadProblems);
 
 if (failures.length) {
   console.error(`\nFAIL: ${failures.length} problem(s)`);
