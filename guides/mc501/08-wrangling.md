@@ -30,9 +30,24 @@ The finished script is here, so you can compare yours with it at any step: [wran
 
 ## Before you start: put both files in your data folder
 
-Your workspace needs a folder named `data` at its top level, beside `README.md`, with your coding sheet and your sources table inside it. To make it, right-click (on a Mac, Control-click or click with two fingers) the empty space below the file list in the Explorer, select **New Folder...**, type `data`, and press **Enter** (**Return** on a Mac). Then drag your files from Downloads onto the `data` folder, the way [guide 14](14-put-a-worksheet-in-your-workspace.md) drags a worksheet into the workspace. To follow along with the example, download the two files above and drag them into `data` the same way.
+The steps below use two example files, so that what you see on your screen matches what the guide shows. Your own coding sheet and your own table about your sources go in the folder these steps make, the same way, when you are ready to use them.
 
-**It worked if** the Explorer shows `episode-codes.csv` and `power_rangers_seasons.csv` (or your own two files) indented under `data`.
+Get the two example files now. Click each of these links once: [episode-codes.csv](../../resources/examples/own-study-walkthrough/episode-codes.csv) and [power_rangers_seasons.csv](../../resources/examples/own-study-walkthrough/power_rangers_seasons.csv). Your browser saves each file in your Downloads folder, and most browsers show the file's name for a moment near the top right corner of the browser window. You will see both names again at step 7 below.
+
+Both files go in a folder named `data` in your course workspace, the folder you have open in VS Code. These steps make the folder and put the files in it.
+
+1. Look at the Explorer, the list of files and folders on the left side of VS Code. (If you do not see the word **EXPLORER** at the top of it, select **View** in the menu bar, then **Explorer**. The menu bar is at the top of the VS Code window on Windows, and at the top of the screen on a Mac.) Under the word **EXPLORER** at the top of this list, a line in capital letters shows the name of your course workspace. Do not click that line. Below it, each folder has a small arrow in front of its name. The arrow points right, like `>`, when the folder is closed, and points down, like `v`, when it is open. Click the name of every folder whose arrow points down, so that every arrow points right. Every folder is now closed, and the list is short.
+2. Read down the short list. If one line reads `data`, you have the folder: skip to step 5 below.
+3. Right-click the empty space below the last line of the list. (On a Mac, hold the **Control** key and click. On a Windows laptop touchpad, tap with two fingers.) A small menu opens. Select **New Folder...**. An empty box opens in the list. (The bars named **OUTLINE** and **TIMELINE** at the bottom of the left side are not part of the list. The empty space is above them.)
+4. Type `data` and press **Enter** (**Return** on a Mac). You should see a new line reading `data` in the list, with a small arrow in front of it.
+5. Open your Downloads folder. On Windows, click the yellow folder icon on the taskbar, the row of icons along the bottom of the screen, then select **Downloads** on the left of the window that opens. On a Mac, click the smiling-face icon in the Dock, the row of icons along the bottom or the side of the screen, then select **Downloads** on the left of the window that opens. You should see a window that lists the files you have downloaded.
+6. Put the Downloads window on top of VS Code. First make the Downloads window small: drag one of its corners toward its middle. (On Windows, if the window fills the whole screen, double-click its top edge first. The window gets smaller.) Next click the blue VS Code icon on the taskbar or the Dock, so that VS Code shows. Then click the icon from step 5 again, the yellow folder or the smiling face. You should see the small Downloads window on top of VS Code. Drag the Downloads window by its top edge until the word `data` in VS Code shows beside it.
+7. In the Downloads window, find `episode-codes.csv`. (The name may show as `episode-codes`, without `.csv` on the end. That is the same file. If you see a second one with a number, such as `episode-codes (1)`, use the one without the number.) Drag it onto the word `data` in VS Code and let go. Do the same with `power_rangers_seasons.csv`. Nothing may seem to change yet: step 8 shows you both files. If you do not see the two names in the Downloads window, click the two links at the top of this section again.
+8. Look at the arrow in front of `data`. If it points right, click the word `data` once, so that it points down. You should see both file names right below `data`. Click `data` again and both names disappear, which is how you can tell a file is inside `data`. Click it once more so the names show again.
+
+**It worked if** both file names show right below `data` while its arrow points down. If they do not, email your instructor a picture of the whole VS Code window, with the list on the left showing.
+
+**Why the folder is named `data`.** Later steps in this guide give you lines to type, and each line that opens a file names it like this: `"data/episode-codes.csv"`. R reads that as directions. R begins in your course workspace, the folder you have open in VS Code. `data/` sends R into the folder named `data`. `episode-codes.csv` is the file R opens there. R begins in your course workspace at every step of this guide.
 
 ## Step 1: Open a script and load the packages
 
@@ -584,7 +599,7 @@ That is 65 words. Your other two are likely to be your missing-values decision (
 
 ## If it does not work
 
-**`'data/episode-codes.csv' does not exist in current working directory`.** R looked for the file and did not find it:
+**`'data/episode-codes.csv' does not exist in current working directory`.** R did not find your file. Your red message has your own file's name where this one has `episode-codes.csv`. The example below typed the name wrong, `episode-code` for `episode-codes`:
 
 ```
 > library(readr)
@@ -594,7 +609,14 @@ Error: 'data/episode-code.csv' does not exist in current working directory ('C:/
 Execution halted
 ```
 
-Check three things: the file is inside `data` (not still in Downloads); the name in quotes matches the Explorer exactly, including `-` and `_` (the example typed `episode-code` for `episode-codes`); and the folder at the end of the message is your workspace. If it is not, VS Code has a different folder open: use **File**, then **Open Folder...**, and open your workspace.
+The line you ran tells R to open a file inside the folder named `data` in your course workspace, the folder you have open in VS Code. Go through these checks in order, in the Explorer, the list of files and folders on the left side of VS Code. After each fix, run the same line again, the way Step 1 showed, and look at the bottom of the Terminal panel, the panel along the bottom of VS Code where the red message printed. **It worked if** the newest lines there show `Rows:` and `Columns:`, and nothing red comes after them. If the same red message prints, go on to the next check. If a different red message prints, find its first words among the bold headings in this section.
+
+1. **Close every folder in the Explorer.** Under the word **EXPLORER** at the top of this list, a line in capital letters shows the name of your course workspace. Do not click that line. Below it, each folder has a small arrow in front of its name. The arrow points right, like `>`, when the folder is closed, and points down, like `v`, when it is open. Click the name of every folder whose arrow points down, so that every arrow points right. Every folder is now closed, and the list is short. You should see `03_Project`, `04_Resources`, and `README.md` in it. If those three are not in the short list, VS Code has a different folder open: open your course workspace with [guide 02](02-open-your-course-workspace.md), then start this check again.
+2. **Look for `data` in the short list.** If no line reads `data`, make the folder with steps 3 and 4 of [Before you start](#before-you-start-put-both-files-in-your-data-folder), then come back to check 3.
+3. **Find out whether your file is inside `data`.** Your file's name is the same as, or close to, the name after `data/` in your red message. Read the short list, with `data` still closed. If your file's name is in it, the file is outside `data`: drag its name onto the word `data` and let go, and if a box asks whether to move it, select **Move**. Then click the word `data` once, so that its arrow points down. The names that appear right below `data` when you click are the files inside it. You should see your file's name among them. If it is not there, bring it in from Downloads with steps 5 to 8 of [Before you start](#before-you-start-put-both-files-in-your-data-folder), using your file where those steps name the example files, then come back here and run your line again.
+4. **Compare the two names, letter by letter.** One is your file's name below `data` in the Explorer. The other is in `wrangle.R`, the file you type your lines into: in the line you ran, it is the part between `data/` and the next quote mark. Every letter, every `-` and `_`, every capital letter, and the ending `.csv` must be the same in both. If they differ, retype that part of your line to match the Explorer, and leave `"data/` in front of it as it is.
+
+**The same red message after all four checks?** Then email your instructor a picture of the whole VS Code window, with the list on the left and the red message at the bottom both showing (a photo taken with your phone is fine).
 
 **Every column ends up in one.** If `read_csv()` reports `Columns: 1` and one long column name full of `;`, the file was saved with semicolons between the values instead of commas, as some versions of Excel do:
 

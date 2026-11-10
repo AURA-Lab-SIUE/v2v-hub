@@ -11,9 +11,9 @@ This guide is for the [Sampling Plan and Pilot](../../mc501-assignments.html#sam
 - [pilot-recode-done.csv](../../resources/examples/own-study-walkthrough/pilot-recode-done.csv): a **practice** second pass on the example's 20 pilot episodes, made up for this guide so Step 7 has something to find (three codes changed, one typed with a capital and a space, one left blank). Your own second pass is real coding.
 - [pilot-recode.R](../../resources/examples/own-study-walkthrough/pilot-recode.R): the finished script, to compare with yours at any step.
 
-Put the three CSV files in your workspace's `data` folder, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
+Put the three CSV files in the folder named `data` in your course workspace, the folder you have open in VS Code. [Guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder) has the steps.
 
-**No `data` folder?** The course workspace does not come with one. If the Explorer shows no folder named `data` beside `README.md`, make it first, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
+**No folder named `data`?** Look at the Explorer, the list of files and folders on the left side of VS Code. If no line in that list reads `data`, make the folder before you go on: [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder) has the steps.
 
 ## Words used here
 

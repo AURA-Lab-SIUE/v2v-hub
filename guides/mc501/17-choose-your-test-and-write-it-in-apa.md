@@ -11,7 +11,7 @@ The same 120 Power Rangers episodes as [guide 16](16-describe-counts-and-source-
 - [episodes_analysis.RDS](../../resources/examples/own-study-walkthrough/episodes_analysis.RDS) and [power_rangers_seasons.csv](../../resources/examples/own-study-walkthrough/power_rangers_seasons.csv), both in your `data` folder, as in [guide 16](16-describe-counts-and-source-measures.md).
 - [choose-test.R](../../resources/examples/own-study-walkthrough/choose-test.R): the finished script, to compare with yours at any step.
 
-**No `data` folder?** The course workspace does not come with one. If the Explorer shows no folder named `data` beside `README.md`, make it first, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
+**No folder named `data`?** Look at the Explorer, the list of files and folders on the left side of VS Code. If no line in that list reads `data`, make the folder before you go on: [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder) has the steps.
 
 ## Words used here
 

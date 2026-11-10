@@ -4,7 +4,7 @@ Draw a stratified random sample of messages that you, or anyone else, can draw a
 
 ## Steps
 
-**No `data` folder?** The course workspace does not come with one. If the Explorer shows no folder named `data` beside `README.md`, make it first, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
+**No folder named `data`?** Look at the Explorer, the list of files and folders on the left side of VS Code. If no line in that list reads `data`, make the folder before you go on: [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder) has the steps.
 
 1. Load the course data first ([guide 04](04-load-the-course-data.md)).
 2. Add this code below it:

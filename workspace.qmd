@@ -35,14 +35,15 @@ v2v-workspace/
 ├── 03_Project/              # Your research project
 │   ├── 01_Prospectus/       # Research design (Chapter 6)
 │   ├── 02_Codebook/         # Data dictionary (Chapter 8)
-│   ├── 03_Data/             # Sampled data and analysis (Chapters 10 to 12)
+│   ├── 03_Data/             # Notes on your data: sources, sampling, terms
 │   └── 04_Drafts/           # White Paper drafts (Chapters 13 to 14)
 ├── 04_Resources/            # PDFs, images, and attachments
+├── data/                    # Your data files (if your copy has none, make it: see below)
 ├── _templates/              # Reusable templates for journals and codebooks
 └── .vscode/                 # Recommended extensions and shared settings
 ```
 
-`03_Data/` holds your own study's data. The Twitch worksheets keep theirs in a folder named `data` that their first task makes in the top folder of the workspace, beside `README.md`; every worksheet and the R Companion read and save there.
+`data/` holds every data file you load in R, your own study's files and the class Twitch files alike. It sits in the top folder of the workspace, beside `README.md`, and every guide, every worksheet, and the R Companion open and save files there. `03_Project/03_Data/` is for your notes about the data: where it came from, how you sampled it, and its terms of use. If your copy of the workspace has no folder named `data`, make it with your course's guide: [MC 451](guides/mc451/08-wrangling.md#before-you-start-put-both-files-in-your-data-folder) or [MC 501](guides/mc501/08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
 
 Because the notes are plain Markdown, they open in any editor and read fine on GitHub. The `.vscode/` folder ships a short list of **recommended extensions**, so everyone in the course works in the same environment: the Quarto extension, the R extension, and the AURA Lab R Companion. VS Code prompts you to install them the first time you open the folder.
 
