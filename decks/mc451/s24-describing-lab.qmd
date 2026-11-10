@@ -58,38 +58,31 @@ Say out loud when you are stuck. That is what this session is for.
 **CSV:** a table saved as plain text, one row per line, with a comma between each column.
 :::
 
-- R reads your codes from `data/coding-form.csv`, so the file must stay a CSV
-- A spreadsheet app saves its own kind of file unless you tell it not to
-    - Excel saves `.xlsx`, Numbers saves `.numbers`, Google Sheets keeps it online
-- Save it back as `coding-form.csv`, in the `data` folder, over the old one
+- R reads your codes from `data/coding-form.csv`, so the file must be a CSV
+- Google Sheets keeps your codes online, so you download them as a CSV
+- Then you move that file into the `data` folder and name it `coding-form.csv`
 - Keep the `id` column exactly as it is
 
-## Save as a CSV: Excel
+## Download It as a CSV
 
-1. Click **File**, then **Save As**
-2. Go to your workspace folder, then into the **data** folder
-3. In the list of file types, pick **CSV UTF-8 (Comma delimited)**
-4. Name it `coding-form` and click **Save**
-5. Asked about replacing the old file: click **Yes** (on a Mac, **Replace**)
+1. In your coding sheet in Google Sheets, click **File**
+2. Point to **Download**
+3. Click **Comma Separated Values (.csv)**
+4. The file lands in your **Downloads** folder
 
-## Save as a CSV: Numbers
+- Its name has the tab's name added, such as `coding-form - Sheet1.csv`
+- You fix the name in VS Code, two slides from now
 
-- **File**, then **Save**, makes a `.numbers` file that R cannot read
-- Export it instead:
+## Download It: What You See
 
-1. Click **File**, then **Export To**, then **CSV...**
-2. Untick **Include table names**
-3. Click **Save**, then type `coding-form` as the name
-4. In the **Where** menu, pick your workspace's **data** folder
-5. Click **Export**, then **Replace**
+![](images/shots-2026-11-09/sheets-download-csv.png){.run-figure fig-alt="Google Sheets with a sheet named coding-form open. The File menu is open with Download highlighted, and its submenu lists Microsoft Excel (.xlsx), OpenDocument (.ods), PDF (.pdf), Web Page (.html), Comma Separated Values (.csv), and Tab Separated Values (.tsv). The pointer rests on Comma Separated Values (.csv)."}
 
-## Save as a CSV: Google Sheets
+## Move It into the Data Folder
 
-1. Click **File**, then **Download**, then **Comma Separated Values (.csv)**
-2. The file lands in your **Downloads** folder
-3. Rename it `coding-form.csv`
-4. Move it into your workspace's **data** folder, the same way you moved the worksheet in [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
-5. Asked about replacing the old file: replace it
+1. In the VS Code Explorer, right-click the old `coding-form.csv` inside `data`, click **Delete**, and confirm
+2. Open your Downloads folder beside VS Code, as in [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+3. Drag the downloaded file onto the folder named **data** in the VS Code Explorer, and let go
+4. Right-click the file inside `data`, click **Rename...**, type `coding-form.csv`, and press **Enter**
 
 ## Check the Coding Sheet in R
 
@@ -131,8 +124,7 @@ $ coder_notes   <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
 
 ## When the Check Goes Wrong
 
-- Same line, on a file Numbers exported with **Include table names** ticked
-- The first line of that file is the table's name, so R takes it as the only column name
+- Same line, when the downloaded file still has its long name
 
 ```r
 read_csv("data/coding-form.csv") %>%
@@ -141,28 +133,32 @@ read_csv("data/coding-form.csv") %>%
 
 ## When the Check Goes Wrong: Output
 
-```{.term .tall code-line-numbers="false" step="23-read-title-row"}
+```{.term code-line-numbers="false"}
 > read_csv("data/coding-form.csv") %>%
 +   glimpse()
-Rows: 31 Columns: 1
-── Column specification ────────────────────────────────────────────────
-Delimiter: ","
-chr (1): Table 1
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 31
-Columns: 1
-$ `Table 1` <chr> "id,channel,message,reaction_only,coder_notes", "162…
-Warning message:
-One or more parsing issues, call `problems()` on your data frame for
-details, e.g.:
-  dat <- vroom(...)
-  problems(dat)
+Error: 'data/coding-form.csv' does not exist in current working directory ('C:/offices/teaching/work/mc451/wk1109-run/check/mc451-workspace').
 ```
 
-- `Columns: 1`, called `Table 1`: the file has a title line above the headers
-- The fix: export again from Numbers with **Include table names** unticked
+- `does not exist`: no file in `data` has exactly that name
+- The folder in brackets is the one open in VS Code; yours shows your own
+
+## Find the Name It Has
+
+```r
+list.files("data")
+```
+
+- `list.files("data")` lists every file in the `data` folder
+
+## Find the Name It Has: Output
+
+```{.term code-line-numbers="false"}
+> list.files("data")
+[1] "coding-form - Sheet1.csv" "twitch_analysis.RDS"
+```
+
+- The download kept its long name
+- Rename it to `coding-form.csv` in the VS Code Explorer, then run the check again
 
 ## Where R Starts
 
