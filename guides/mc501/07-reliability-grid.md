@@ -373,6 +373,13 @@ The code lands in your script with a comment above every step, and a message at 
 
 If running a line opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**.
 
+**``'data/pilot-both-passes.csv' does not exist in current working directory``.** R looked inside your workspace's `data` folder and found no file with that exact name. Check two things in the VS Code Explorer, which shows full file names, even when the Mac Finder hides the ending:
+
+- The file sits indented under `data`, not at the top level beside `README.md`. If it does not, drag it onto the `data` folder.
+- Its name matches the one in quotes exactly and ends in `.csv`. Rename `pilot-both-passes.csv.csv` to `pilot-both-passes.csv`. A file ending in `.numbers` or `.xlsx` is not a CSV yet: export it as one (in Numbers: **File**, then **Export To**, then **CSV...**; in Excel: **File**, then **Save As**, with the format **CSV UTF-8**; in Google Sheets: **File**, then **Download**, then **Comma-separated values (.csv)**) and put that file in `data`.
+
+[Guide 08](08-wrangling.md#if-it-does-not-work) shows the same error with an example.
+
 **``Join columns in `y` must be present in the data``, with ``Problem with `id` ``.** One file has no column named `id`. Run `names(read_csv("data/pilot-pass-2.csv"))`: usually a title row sits above the headers, or the column is spelled differently, such as `ID`. For a title row, add `skip = 1,` on the line after the file name in `read_csv()`.
 
 **Every `_p2` code is `NA` after the join.** The ids in the two files do not match. Run `head(pass_1$id)` and `head(pass_2$id)` and compare them: a spreadsheet may have changed long ids into numbers ending in `e+18`, or the files came from different draws. [Guide 15](15-draw-a-pilot-and-make-a-blind-recode-sheet.md) shows how to keep ids as text in Google Sheets.
