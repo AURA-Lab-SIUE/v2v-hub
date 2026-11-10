@@ -575,7 +575,7 @@ ggplot(analysis, aes(x = message_length)) +
 
 ## Figure One: Output
 
-![](images/run-2026-11-05/33-s24-plot-hist1.png){.run-figure fig-alt="A histogram of message length in characters for all messages. A tall stack of short messages under about 20 characters, about 8,000 in the tallest bar, then a long thin tail to the right that reaches past 500 characters."}
+![](images/run-2026-11-09/33-s24-plot-hist1.png){.run-figure fig-alt="A histogram of message length in characters for all messages. A tall stack of short messages under about 20 characters, about 8,000 in the tallest bar, then a long thin tail to the right that reaches past 500 characters."}
 
 ## Reading Your Own Histogram
 
@@ -604,7 +604,7 @@ analysis %>%
 
 ## Figure Two: Output
 
-![](images/run-2026-11-05/30-s24-plot-bar.png){.run-figure fig-alt="A horizontal bar chart of messages for the eight categories with the most chat, longest bar at the top: League of Legends and Fortnite at 4,000, Hearthstone about 3,000, Just Chatting about 2,400, then Pokemon: Let's Go, Overwatch, Counter-Strike: Global Offensive, and Call of Duty: Black Ops 4 at 2,000 each."}
+![](images/run-2026-11-09/30-s24-plot-bar.png){.run-figure fig-alt="A horizontal bar chart of messages for the eight categories with the most chat, longest bar at the top: League of Legends and Fortnite at 4,000, Hearthstone about 3,000, Just Chatting about 2,400, then Pokemon: Let's Go, Overwatch, Counter-Strike: Global Offensive, and Call of Duty: Black Ops 4 at 2,000 each."}
 
 - Each channel gives the course sample at most 1,000 messages, so these bars mostly count channels
 - Worksheet Task 4.1 is a different bar chart: one bar per viewer band, each scaled to 100%

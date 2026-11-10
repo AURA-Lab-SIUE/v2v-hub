@@ -98,10 +98,10 @@ def fill(blocks: dict[str, str]) -> None:
         new = TERM_BLOCK.sub(lambda m: m.group(1) + blocks[m.group(2)] + "\n```", text)
         deck.write_text(new, encoding="utf-8", newline="\n")
         print(f"filled {len(TERM_BLOCK.findall(new))} blocks in {deck.name}")
-    for fig in FIGS.glob("*.png"):  # copy each figure next to the deck that shows it
+    for fig in FIGS.glob("*.png"):  # copy each figure to the images/run-<date>/ folder its deck names
         for deck in DECKS:
-            if fig.name in deck.read_text(encoding="utf-8"):
-                dest = deck.parent / "images" / "run-2026-11-05" / fig.name
+            for folder in re.findall(r"images/(run-[0-9-]+)/" + re.escape(fig.name), deck.read_text(encoding="utf-8")):
+                dest = deck.parent / "images" / folder / fig.name
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 dest.write_bytes(fig.read_bytes())
 
