@@ -35,7 +35,6 @@ stopifnot(!anyNA(form$reaction_only))
 write_csv(form, "data/coding-form.csv", na = "")
 
 dir.create("../wk12-fixtures", showWarnings = FALSE)
-write_lines(c("Table 1", read_lines("data/coding-form.csv")), "../wk12-fixtures/coding-form-title-row.csv")
 pass <- function(f) {
   read_csv(file.path(examples, f), col_types = cols(.default = col_character())) %>%
     select(id, threat, focus)
