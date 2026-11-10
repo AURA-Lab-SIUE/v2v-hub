@@ -13,15 +13,306 @@ format:
 
 ## Today's Agenda
 
+- Coming up: what is due, and when
+- Finish Data Wrangling, due Monday: save your codes as a CSV, check the data folder, render, and upload
 - The Twitch job, part 2: the Describing Data worksheet
 - The grammar of graphics: every plot is built from the same three parts
 - Three chart types: a line chart, a bar chart, and a histogram
 - Effect sizes, and the design choices a figure must disclose
 - Figures other people can actually read
+- Your own study: the stability check in R
+
+## Upcoming Assignments
+
+| What | Due | Have done by |
+|---|---|---|
+| [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#data-wrangling-in-r), 50 points | Mon, Nov 16, 11:59 PM | Codes saved as a CSV tonight |
+| Pre-registration file committed | Mon, Nov 16, 11:59 PM | Research Proposal revised first, if it needs it |
+| [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#describing-data-in-r), 100 points | Mon, Nov 23, 11:59 PM | Started tonight, after Data Wrangling renders |
+| [Weekly reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal) | Mon, Nov 16 and Mon, Nov 23, 11:59 PM | The Week 12, then the Week 13 reading |
+
+No class Nov 25: Thanksgiving Break.
+
+## Upcoming Assignments (cont.)
+
+| What | Due | Have done by |
+|---|---|---|
+| [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#inferencing-data-in-r), 100 points | Mon, Dec 7, 11:59 PM | Taught Nov 18 |
+| Coded dataset and re-code pushed ([White Paper](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster) dated step) | Mon, Dec 7, 11:59 PM | First coding pass done by Thu, Dec 3 |
+| Week 15 reading journal | Mon, Dec 7, 11:59 PM | The Week 15 reading |
+| [White Paper and conference poster](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster), 200 points | Fri, Dec 18, 11:59 PM | Results built from your own data |
+
+## Finish Data Wrangling {.titlecard}
+
+## Where R Starts
+
+```r
+list.files()
+```
+
+- `list.files()` lists what is in the folder R started in
+- In your workspace, R starts in the folder open in VS Code
+    - That folder's name is at the top of the Explorer
+    - It does not matter which file you run a line from
+
+## Where R Starts: Output
+
+```{.term code-line-numbers="false" step="20-list-top"}
+> list.files()
+ [1] "_templates"              "00-check-your-setup.qmd"
+ [3] "00_Inbox"                "01_Journal"
+ [5] "02_Literature"           "03_Project"
+ [7] "04_Resources"            "11-wrangling-data.qmd"
+ [9] "data"                    "LICENSE"
+[11] "README.md"
+```
+
+- The same names as your Explorer: R started in the workspace's top folder
+- `data` is in the list, beside `README.md`
+
+## No Data Folder?
+
+- Older copies of the workspace came without a `data` folder
+- Data Wrangling Task 0.2 makes it when you run that chunk
+- To make it by hand:
+    1. In the Explorer, right-click the empty space below the file list (on a Mac, Control-click)
+    2. Select **New Folder...**
+    3. Type `data` and press **Enter** (**Return** on a Mac)
+- It worked if `data` sits beside `README.md`, not inside another folder
+
+## Save Your Codes as a CSV
+
+[Data Wrangling worksheet, Task 0.3]{.eyebrow}
+
+::: {.define}
+**CSV:** a table saved as plain text, one row per line, with a comma between each column.
+:::
+
+- R reads your codes from `data/coding-form.csv`, so the file must stay a CSV
+- A spreadsheet app saves its own kind of file unless you tell it not to
+    - Excel saves `.xlsx`, Numbers saves `.numbers`, Google Sheets keeps it online
+- Save it back as `coding-form.csv`, in the `data` folder, over the old one
+- Keep the `id` column exactly as it is
+
+## Save as a CSV: Excel
+
+1. Click **File**, then **Save As**
+2. Go to your workspace folder, then into the **data** folder
+3. In the list of file types, pick **CSV UTF-8 (Comma delimited)**
+4. Name it `coding-form` and click **Save**
+5. Asked about replacing the old file: click **Yes** (on a Mac, **Replace**)
+
+## Save as a CSV: Numbers
+
+- **File**, then **Save**, makes a `.numbers` file that R cannot read
+- Export it instead:
+
+1. Click **File**, then **Export To**, then **CSV...**
+2. Untick **Include table names**
+3. Click **Save**, then type `coding-form` as the name
+4. In the **Where** menu, pick your workspace's **data** folder
+5. Click **Export**, then **Replace**
+
+## Save as a CSV: Google Sheets
+
+1. Click **File**, then **Download**, then **Comma Separated Values (.csv)**
+2. The file lands in your **Downloads** folder
+3. Rename it `coding-form.csv`
+4. Move it into your workspace's **data** folder, the same way you moved the worksheet in [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
+5. Asked about replacing the old file: replace it
+
+## Check the Coding Sheet in R
+
+```r
+read_csv("data/coding-form.csv") %>%
+  glimpse()
+```
+
+- `read_csv()` reads a CSV file into a table
+- `glimpse()` prints how many rows and columns it has, and each column's type
+- `"data/coding-form.csv"` means: start in the folder open in VS Code, go into `data`, open `coding-form.csv`
+    - The folder open in VS Code is the name at the top of the Explorer
+- Run it from the worksheet or the R terminal: the start is the same
+
+## Check the Coding Sheet: Output
+
+```{.term .tall code-line-numbers="false" step="22-read-form"}
+> read_csv("data/coding-form.csv") %>%
++   glimpse()
+Rows: 30 Columns: 5
+── Column specification ────────────────────────────────────────────────
+Delimiter: ","
+chr (2): channel, message
+dbl (2): id, reaction_only
+lgl (1): coder_notes
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 30
+Columns: 5
+$ id            <dbl> 16240927, 182383, 19530370, 12102429, 7123505, 2…
+$ channel       <chr> "bobross", "bobross", "bobross", "bobross", "bob…
+$ message       <chr> "press F to bring back bob", "BIG TREE", "CoolSt…
+$ reaction_only <dbl> 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, …
+$ coder_notes   <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+```
+
+- `Rows: 30`, `Columns: 5`, and `reaction_only` as `<dbl>` (a number): the sheet is right
+
+## When the Check Goes Wrong
+
+- Same line, on a file Numbers exported with **Include table names** ticked
+- The first line of that file is the table's name, so R takes it as the only column name
+
+```r
+read_csv("data/coding-form.csv") %>%
+  glimpse()
+```
+
+## When the Check Goes Wrong: Output
+
+```{.term .tall code-line-numbers="false" step="23-read-title-row"}
+> read_csv("data/coding-form.csv") %>%
++   glimpse()
+Rows: 31 Columns: 1
+── Column specification ────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Table 1
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 31
+Columns: 1
+$ `Table 1` <chr> "id,channel,message,reaction_only,coder_notes", "162…
+Warning message:
+One or more parsing issues, call `problems()` on your data frame for
+details, e.g.:
+  dat <- vroom(...)
+  problems(dat)
+```
+
+- `Columns: 1`, called `Table 1`: the file has a title line above the headers
+- The fix: export again from Numbers with **Include table names** unticked
+
+## What Is in the Data Folder
+
+```r
+list.files("data")
+```
+
+- `"data"` again means: start in the folder open in VS Code, go into `data`
+- Run this before you submit Data Wrangling
+
+## What Is in the Data Folder: Output
+
+```{.term code-line-numbers="false" step="21-list-data"}
+> list.files("data")
+[1] "coding-form.csv"     "twitch_analysis.RDS"
+```
+
+- `coding-form.csv`: your thirty codes, saved as a CSV
+- `twitch_analysis.RDS`: the table Part 7 saved
+- Both files go to Blackboard with the worksheet
+
+## Check the Saved Table
+
+```r
+read_rds("data/twitch_analysis.RDS") %>%
+  nrow()
+```
+
+- The last line of worksheet Part 7
+- `read_rds()` loads the saved file back, and `nrow()` counts its rows
+
+## Check the Saved Table: Output
+
+```{.term code-line-numbers="false" step="24-rds-check"}
+> read_rds("data/twitch_analysis.RDS") %>%
++   nrow()
+[1] 35267
+```
+
+- `35267`: one row per chat message, nothing lost and nothing added
+- Describing Data and Inferencing Data both start from this file
+
+## Render: The Final Check
+
+- Rendering runs the whole worksheet from the top, in a fresh R session
+- If it renders, it runs
+
+1. Save the worksheet: **File**, then **Save**
+2. Open the Command Palette: **View**, then **Command Palette...**
+3. Type `Quarto: Render Document` and press **Enter**
+4. If a list of formats opens, select **Render HTML**
+
+## Render: Output
+
+The last line of the Terminal panel:
+
+```{.term code-line-numbers="false"}
+Output created: 11-wrangling-data.html
+```
+
+- `Output created` means it worked
+- `11-wrangling-data.html` appears beside the worksheet in the Explorer
+
+## Render Starts in the File's Folder
+
+- Running lines starts in the folder open in VS Code
+- Render starts in the folder the **`.qmd` file** is saved in
+- Saved in the top folder, beside `README.md`: both starts are the same folder
+- Saved inside another folder, such as `03_Project`: render looks for `data` inside that folder, and stops
+
+## Render Starts in the File's Folder: Output
+
+The same worksheet, saved in `03_Project` and rendered:
+
+```{.term .tall code-line-numbers="false"}
+Error:
+! 'data/coding-form.csv' does not exist in current working directory ('C:/offices/teaching/work/mc451/wk1109-run/mc451-workspace/03_Project').
+Backtrace:
+    ▆
+ 1. ├─read_csv("data/coding-form.csv") %>% clean_names()
+ 2. ├─janitor::clean_names(.)
+ 3. ├─readr::read_csv("data/coding-form.csv")
+ 4. │ └─vroom::vroom(...)
+ 5. │   └─vroom:::vroom_(...)
+ 6. └─vroom (local) `<fn>`("data/coding-form.csv")
+ 7.   └─vroom:::check_path(path)
+
+Quitting from 11-wrangling-data.qmd:425-429 [read-codes]
+Execution halted
+```
+
+- The folder in brackets ends in `03_Project`: that is where render started
+- The fix: drag the worksheet up to the top folder, beside `README.md`, and render again
+
+## Three Reviewer Comments
+
+[Data Wrangling worksheet, Part 8]{.eyebrow}
+
+- Three comments in the code, 40 to 100 words each, at the places marked *MC 501 only*
+    - The non-gaming list (Task 4.2), the viewer-band cutoffs (Task 4.3), and the export (Part 7)
+- Each one names a decision a reviewer could challenge, the rule you applied, and why you chose it
+- Adopting the package's list or cutoffs is itself a decision: say why it fits
+- A comment that says what the code does is not one of the three
+
+## What to Upload
+
+[Data Wrangling in R, Blackboard]{.eyebrow}
+
+- `11-wrangling-data.qmd`, with no `___` left
+- `11-wrangling-data.html`, the rendered page
+- `data/coding-form.csv`, your thirty codes
+- `data/twitch_analysis.RDS`, the saved table
+- The AI-use log, with an entry or the no-AI box checked
+- Attach each file on its own; do not zip them
+
+## Describing Data {.titlecard}
 
 ## What We Build Today
 
-[Working session]{.eyebrow}
+[Describing Data, 100 points, due Monday, November 23, 11:59 PM]{.eyebrow}
 
 - Three figures and one table of descriptive statistics, built on the example data
     - A line chart for change over time, a bar chart for counts, a histogram for shape
@@ -675,6 +966,99 @@ Missing values detected. NAs dropped.
 - The R Companion's chart code also leaves an `alt =` line marked YOUR TURN inside `labs()`
 - Write the same sentence in both places
 
+## A Cross-Tabulation
+
+[Example data from guide 16: Power Rangers episodes, coded for threat and focus](https://aura-lab.siue.edu/v2v-hub/guides/mc501/16-describe-counts-and-source-measures.html)
+
+::: {.define}
+**Cross-tabulation:** a grid that counts every combination of two categories.
+:::
+
+```r
+episodes <- read_rds("data/episodes_analysis.RDS")
+
+episodes %>%
+  filter(!is.na(focus)) %>%
+  count(threat, focus) %>%
+  pivot_wider(names_from = focus,
+              values_from = n,
+              values_fill = 0)
+```
+
+- `count()` with two columns: one row per combination
+- `pivot_wider()` turns those rows into a grid, one column per `focus` code
+
+## A Cross-Tabulation: Output
+
+```{.term code-line-numbers="false" step="34-own-crosstab"}
+> episodes <- read_rds("data/episodes_analysis.RDS")
+>
+> episodes %>%
++   filter(!is.na(focus)) %>%
++   count(threat, focus) %>%
++   pivot_wider(names_from = focus,
++               values_from = n,
++               values_fill = 0)
+# A tibble: 3 × 4
+  threat   team one_ranger other
+  <fct>   <int>      <int> <int>
+1 monster    15         21     1
+2 villain    29         18     9
+3 none       10         13     3
+```
+
+- One row per `threat` code, one column per `focus` code
+- 15 episodes were coded `monster` and `team`
+- Worksheet Task 3.1 builds the same kind of grid from the Twitch table
+
+## Shares Within Each Row
+
+```r
+episodes %>%
+  filter(!is.na(focus)) %>%
+  count(threat, focus) %>%
+  group_by(threat) %>%
+  mutate(share = round(n / sum(n), 3))
+```
+
+- `group_by(threat)` makes `sum(n)` add up within each `threat` code
+- So each code's shares add up to 1
+
+## Shares Within Each Row: Output
+
+```{.term .tall code-line-numbers="false" step="35-own-shares"}
+> episodes %>%
++   filter(!is.na(focus)) %>%
++   count(threat, focus) %>%
++   group_by(threat) %>%
++   mutate(share = round(n / sum(n), 3))
+# A tibble: 9 × 4
+# Groups:   threat [3]
+  threat  focus          n share
+  <fct>   <fct>      <int> <dbl>
+1 monster team          15 0.405
+2 monster one_ranger    21 0.568
+3 monster other          1 0.027
+4 villain team          29 0.518
+5 villain one_ranger    18 0.321
+6 villain other          9 0.161
+7 none    team          10 0.385
+8 none    one_ranger    13 0.5
+9 none    other          3 0.115
+```
+
+- `one_ranger`: 0.568 of the `monster` episodes, 0.321 of the `villain` ones
+
+## Explain This Stage to the Client
+
+- The worksheet ends with one paragraph to the client
+    - A channel manager at a small creator agency, about to pitch a sponsor
+    - The manager does not read R
+- Say what you counted, measured, and charted
+- Name the numbers that matter for their three questions
+- Say what it does not show yet: whether a difference is bigger than chance
+- No R, no column names, no words the manager would have to look up
+
 ## Checkpoint
 
 You should now have:
@@ -691,9 +1075,7 @@ You should now have:
 - Revise your Research Proposal first if it needs it, then commit it to your project repository as that file
 - **Commit it by Monday, November 16, 11:59 PM**, before you analyze your own data
 - Every change after that commit is a departure you disclose in Methods
-- Step by step: [Commit Your Pre-Registration](#TODO-prereg-guide)
-
-<!-- TODO(#mc451501-improve): replace #TODO-prereg-guide with the pre-registration commit guide URL when its worker ships it (owner q-0014 = b, 2026-11-05). -->
+- Step by step: [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)
 
 ## Your Own Study, Starting Now
 
@@ -701,9 +1083,7 @@ You should now have:
 - The re-code happens at least 48 hours after your first pass, with your first codes hidden
 - So finish the first coding pass on your full corpus by **Thursday, December 3**
 - The reliability figure in your Methods comes from this re-code, not from the pilot
-- This week's own-study starter: [Your Own Study, Week 12](#TODO-own-study-w12)
-
-<!-- TODO(#mc451501-improve): replace #TODO-own-study-w12 with the W12 own-study starter URL when its worker ships it (owner q-0013 = b, 2026-11-05). -->
+- On data shaped like yours: [Describe Counts and Source Measures](https://aura-lab.siue.edu/v2v-hub/guides/mc501/16-describe-counts-and-source-measures.html)
 
 ## How Big Is the Re-Code?
 
@@ -714,6 +1094,143 @@ The subsample is **at least 50 units or 20 percent of your corpus, whichever is 
 | 200 units | 40 | 50 |
 | 250 units | 50 | 50 |
 | 400 units | 80 | 80 |
+
+## Your Stability Check in R
+
+[Guide 07: Check Your Reliability in R](https://aura-lab.siue.edu/v2v-hub/guides/mc501/07-reliability-grid.html)
+
+- The same check you ran on your pilot, now on your re-code
+- One sheet: an `id` column, then pass 1 and pass 2 side by side for each variable
+    - `threat_p1` and `threat_p2` in the example below
+- Guide 07, Part 1, builds that sheet from two separate pass files
+- The example: 20 Power Rangers episodes, each coded twice
+
+## Read the Two Passes
+
+```r
+both_passes <- read_csv(
+  "data/pilot-both-passes.csv",
+  col_types = cols(.default = col_character())
+)
+
+glimpse(both_passes)
+```
+
+- `col_types = cols(.default = col_character())` reads every column as text
+    - A long id read as a number can lose its last digits
+
+## Read the Two Passes: Output
+
+```{.term code-line-numbers="false" step="25-rel-read"}
+> both_passes <- read_csv(
++   "data/pilot-both-passes.csv",
++   col_types = cols(.default = col_character())
++ )
+>
+> glimpse(both_passes)
+Rows: 20
+Columns: 5
+$ id        <chr> "In Space 36", "Megaforce 15", "In Space 11", "Time …
+$ threat_p1 <chr> "villain", "villain", "villain", "villain", "villain…
+$ focus_p1  <chr> "team", "one_ranger", "one_ranger", "one_ranger", "o…
+$ threat_p2 <chr> "villain", "villain", "villain", "none", "villain", …
+$ focus_p2  <chr> "team", "one_ranger", "team", "one_ranger", "one_ran…
+```
+
+- `Rows: 20`: the items coded twice
+- Each variable has a `_p1` and a `_p2` column
+
+## Every Pair of Codes
+
+```r
+both_passes %>%
+  count(threat_p1, threat_p2)
+```
+
+- `count()` with both columns counts how often each pair of codes came up
+
+## Every Pair of Codes: Output
+
+```{.term code-line-numbers="false" step="26-rel-count"}
+> both_passes %>%
++   count(threat_p1, threat_p2)
+# A tibble: 4 × 3
+  threat_p1 threat_p2     n
+  <chr>     <chr>     <int>
+1 monster   monster       4
+2 none      none          3
+3 villain   none          3
+4 villain   villain      10
+```
+
+- Same code twice: an agreement
+- `villain` then `none`, three times: the codebook line to reread
+
+## Percent Agreement
+
+```r
+both_passes %>%
+  summarize(
+    items = n(),
+    threat = mean(threat_p1 == threat_p2),
+    focus = mean(focus_p1 == focus_p2)
+  )
+```
+
+- `threat_p1 == threat_p2` is `TRUE` where the two passes match
+- `mean()` turns those into a share between 0 and 1
+
+## Percent Agreement: Output
+
+```{.term code-line-numbers="false" step="27-rel-agree"}
+> both_passes %>%
++   summarize(
++     items = n(),
++     threat = mean(threat_p1 == threat_p2),
++     focus = mean(focus_p1 == focus_p2)
++   )
+# A tibble: 1 × 3
+  items threat focus
+  <int>  <dbl> <dbl>
+1    20   0.85   0.9
+```
+
+- 17 of 20 matched on `threat` (0.85), 18 of 20 on `focus` (0.9)
+- Percent agreement counts lucky matches too, so it never goes in Methods alone
+
+## Cohen's Kappa
+
+```r
+both_passes %>%
+  select(threat_p1, threat_p2) %>%
+  irr::kappa2()
+```
+
+::: {.define}
+**Cohen's kappa:** agreement after taking out the matches luck alone would give. 1 is perfect; 0 is no better than chance.
+:::
+
+- Run it once per variable
+
+## Cohen's Kappa: Output
+
+```{.term code-line-numbers="false" step="28-rel-kappa"}
+> both_passes %>%
++   select(threat_p1, threat_p2) %>%
++   irr::kappa2()
+ Cohen's Kappa for 2 Raters (Weights: unweighted)
+
+ Subjects = 20
+   Raters = 2
+    Kappa = 0.746
+
+        z = 4.8
+  p-value = 1.59e-06
+```
+
+- Report the `Kappa` line: 0.746 for `threat`
+- 0.70 or higher is good enough to go on; 0.80 is comfortable
+- Call it a stability figure: both passes are yours
 
 ## Before Week 13
 

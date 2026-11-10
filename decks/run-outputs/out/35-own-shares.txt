@@ -1,0 +1,18 @@
+> episodes %>%
++   filter(!is.na(focus)) %>%
++   count(threat, focus) %>%
++   group_by(threat) %>%
++   mutate(share = round(n / sum(n), 3))
+# A tibble: 9 × 4
+# Groups:   threat [3]
+  threat  focus          n share
+  <fct>   <fct>      <int> <dbl>
+1 monster team          15 0.405
+2 monster one_ranger    21 0.568
+3 monster other          1 0.027
+4 villain team          29 0.518
+5 villain one_ranger    18 0.321
+6 villain other          9 0.161
+7 none    team          10 0.385
+8 none    one_ranger    13 0.5
+9 none    other          3 0.115

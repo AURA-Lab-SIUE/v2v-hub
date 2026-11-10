@@ -1,4 +1,4 @@
-# Run outputs for S23 (MC 451) and W12 (MC 501)
+# Run outputs for S23 and S24 (MC 451) and W12 (MC 501)
 
 Every code slide in these two decks is followed by an output slide that shows exactly what the R
 terminal in VS Code prints, or the chart the code draws. The output slides are pasted from a real
@@ -41,3 +41,20 @@ python C:\path\to\v2v-hub\decks\run-outputs\run.py --check
   13 reaction.
 - Every one of the 21 terminal blocks (10 in S23, 11 in W12) matched its transcript
   (`run.py --check`).
+
+## The run behind the Week 12 additions (2026-11-09)
+
+- Steps `20` to `28` (finishing Data Wrangling and the stability check) and `30` to `33` (S24's
+  figures) were added for S23, S24, and W12. `build-week12-files.R` adds what they read: the
+  workspace's top-level names, `data/coding-form.csv` with the instructor's thirty codes, and in
+  `../wk12-fixtures/` the same sheet with a title line above the headers (what Numbers writes with
+  **Include table names** ticked) and guide 07's example passes lined up as
+  `pilot-both-passes.csv`. Lines ending in `#@@hide` copy those fixtures in and out of `data/`;
+  they run but never reach a transcript.
+- Pythia, R 4.5.2, v2v 0.3.9, tidyverse 2.0.0, irr 0.85. All 46 terminal blocks (12 in S23,
+  14 in S24, 20 in W12) matched (`run.py --check`); the 21 blocks from 2026-11-05 reproduced byte
+  for byte.
+- Two Quarto Render blocks have no `step` and are not checked by `run.py`; their transcripts are
+  `out/render-top-tail.txt` (the last line of `quarto render 11-wrangling-data.qmd` on a filled
+  worksheet in the top folder) and `out/render-subfolder-error.txt` (the same worksheet saved in
+  `03_Project`, Quarto 1.9.38).

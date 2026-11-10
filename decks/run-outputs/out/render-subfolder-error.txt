@@ -1,0 +1,14 @@
+Error:
+! 'data/coding-form.csv' does not exist in current working directory ('C:/offices/teaching/work/mc451/wk1109-run/mc451-workspace/03_Project').
+Backtrace:
+    ▆
+ 1. ├─read_csv("data/coding-form.csv") %>% clean_names()
+ 2. ├─janitor::clean_names(.)
+ 3. ├─readr::read_csv("data/coding-form.csv")
+ 4. │ └─vroom::vroom(...)
+ 5. │   └─vroom:::vroom_(...)
+ 6. └─vroom (local) `<fn>`("data/coding-form.csv")
+ 7.   └─vroom:::check_path(path)
+
+Quitting from 11-wrangling-data.qmd:425-429 [read-codes]
+Execution halted

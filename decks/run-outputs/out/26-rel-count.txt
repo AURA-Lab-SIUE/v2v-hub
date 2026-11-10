@@ -1,0 +1,9 @@
+> both_passes %>%
++   count(threat_p1, threat_p2)
+# A tibble: 4 × 3
+  threat_p1 threat_p2     n
+  <chr>     <chr>     <int>
+1 monster   monster       4
+2 none      none          3
+3 villain   none          3
+4 villain   villain      10

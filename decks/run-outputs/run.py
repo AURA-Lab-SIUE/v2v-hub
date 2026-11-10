@@ -1,4 +1,4 @@
-"""Run every S23 / W12 code step in one real R session and save what the R terminal prints.
+"""Run every S23 / S24 / W12 code step in one real R session and save what the R terminal prints.
 
 Why: each code slide in S23 (MC 451) and W12 (MC 501) is followed by an output slide that must
 show exactly what VS Code's R terminal prints, checked on the day it is taught. This script feeds
@@ -26,7 +26,8 @@ HERE = Path(__file__).resolve().parent
 STEPS = HERE / "steps"
 OUT = HERE / "out"
 FIGS = HERE / "figs"
-DECKS = [HERE.parent / "mc451" / "s23-describing-data.qmd", HERE.parent / "mc501" / "w12-describing.qmd"]
+DECKS = [HERE.parent / "mc451" / "s23-describing-data.qmd", HERE.parent / "mc451" / "s24-describing-lab.qmd",
+         HERE.parent / "mc501" / "w12-describing.qmd"]
 WIDTH = 72  # characters; the terminal width the transcripts are printed at
 HIDE = "#@@hide"
 
@@ -97,10 +98,10 @@ def fill(blocks: dict[str, str]) -> None:
         new = TERM_BLOCK.sub(lambda m: m.group(1) + blocks[m.group(2)] + "\n```", text)
         deck.write_text(new, encoding="utf-8", newline="\n")
         print(f"filled {len(TERM_BLOCK.findall(new))} blocks in {deck.name}")
-    for fig in FIGS.glob("*.png"):  # copy each figure next to the deck that shows it
+    for fig in FIGS.glob("*.png"):  # copy each figure to the images/run-<date>/ folder its deck names
         for deck in DECKS:
-            if fig.name in deck.read_text(encoding="utf-8"):
-                dest = deck.parent / "images" / "run-2026-11-05" / fig.name
+            for folder in re.findall(r"images/(run-[0-9-]+)/" + re.escape(fig.name), deck.read_text(encoding="utf-8")):
+                dest = deck.parent / "images" / folder / fig.name
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 dest.write_bytes(fig.read_bytes())
 
