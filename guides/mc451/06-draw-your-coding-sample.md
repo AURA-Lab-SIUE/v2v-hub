@@ -4,6 +4,8 @@ Draw a stratified random sample of messages that you, or anyone else, can draw a
 
 ## Steps
 
+**No `data` folder?** The course workspace does not come with one. If the Explorer shows no folder named `data` beside `README.md`, make it first, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
+
 1. Load the course data first ([guide 04](04-load-the-course-data.md)).
 2. Add this code below it:
 

@@ -16,6 +16,8 @@ The example is the Power Rangers study from [guide 08](08-wrangling.md) and [gui
 
 Put the two CSV files in your workspace's `data` folder, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
 
+**No `data` folder?** The course workspace does not come with one. If the Explorer shows no folder named `data` beside `README.md`, make it first, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
+
 ## Words used here
 
 - **Pass 1, pass 2:** your first coding of an item, and your second coding of the same item at least 48 hours later, with your first codes out of sight.

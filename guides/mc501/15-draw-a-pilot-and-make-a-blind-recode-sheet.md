@@ -13,6 +13,8 @@ This guide is for the [Sampling Plan and Pilot](../../mc501-assignments.html#sam
 
 Put the three CSV files in your workspace's `data` folder, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
 
+**No `data` folder?** The course workspace does not come with one. If the Explorer shows no folder named `data` beside `README.md`, make it first, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
+
 ## Words used here
 
 - **Pilot:** a small first set of items you code to test your codebook before you code everything.
