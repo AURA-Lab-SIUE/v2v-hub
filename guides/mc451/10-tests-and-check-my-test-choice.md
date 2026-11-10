@@ -13,6 +13,8 @@ The example continues the study from [guide 08](08-wrangling.md), *Wrangle Your 
 - [episodes_analysis.RDS](../../resources/examples/own-study-walkthrough/episodes_analysis.RDS): the analysis file [guide 08](08-wrangling.md) saved. If it is not already in your `data` folder, download it and drag it into `data`.
 - [test.R](../../resources/examples/own-study-walkthrough/test.R): the finished script, so you can compare yours with it at any step.
 
+**No `data` folder?** The course workspace does not come with one. If the Explorer shows no folder named `data` beside `README.md`, make it first, as in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder).
+
 The example's four questions were written down before any test was run, the way the worksheet's Part 0 asks you to write yours:
 
 1. Does the threat an episode has go with the company that produced it? (two categories)
