@@ -1,0 +1,14 @@
+> episodes <- read_rds("data/episodes_analysis.RDS")
+>
+> episodes %>%
++   filter(!is.na(focus)) %>%
++   count(threat, focus) %>%
++   pivot_wider(names_from = focus,
++               values_from = n,
++               values_fill = 0)
+# A tibble: 3 × 4
+  threat   team one_ranger other
+  <fct>   <int>      <int> <int>
+1 monster    15         21     1
+2 villain    29         18     9
+3 none       10         13     3

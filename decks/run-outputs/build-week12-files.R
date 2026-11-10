@@ -5,7 +5,8 @@
 #    worksheet, so list.files() prints what a student's Explorer shows.
 # 2. data/coding-form.csv as a spreadsheet saves it: the class draw with the instructor's thirty codes.
 # 3. ../wk12-fixtures/: the same sheet with a title line above the headers (what Numbers writes with
-#    Include table names ticked), and guide 07's example passes lined up as pilot-both-passes.csv.
+#    Include table names ticked), guide 07's example passes lined up as pilot-both-passes.csv, and
+#    guide 16's episodes_analysis.RDS for the cross-tabulation slides.
 suppressMessages({library(tidyverse); library(v2v)})
 here <- dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE))))
 examples <- file.path(here, "..", "..", "resources", "examples", "own-study-walkthrough")
@@ -42,4 +43,5 @@ pass <- function(f) {
 both <- pass("pilot-pass-1.csv") %>%
   left_join(pass("pilot-pass-2.csv"), by = join_by(id), suffix = c("_p1", "_p2"))
 write_csv(both, "../wk12-fixtures/pilot-both-passes.csv", na = "")
+file.copy(file.path(examples, "episodes_analysis.RDS"), "../wk12-fixtures/episodes_analysis.RDS", overwrite = TRUE)
 cat("coding-form rows:", nrow(form), " both-passes rows:", nrow(both), "\n")
