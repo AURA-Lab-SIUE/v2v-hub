@@ -380,6 +380,12 @@ If running a line opens a box titled **Choose where to run the selected code**, 
 
 [Guide 08](08-wrangling.md#if-it-does-not-work) shows the same error with an example.
 
+**``unexpected ',' in "  "data/pilot-both-passes.csv","``.** R started reading partway through the `read_csv()` call, so the comma after the file name had nothing to belong to. Either the selection began below the `both_passes <- read_csv(` line, or that line lost its `(`. Select every line from `both_passes` down to the closing `)` and run them together, or replace the call with one line:
+
+```r
+both_passes <- read_csv("data/pilot-both-passes.csv", col_types = cols(.default = col_character()))
+```
+
 **``Join columns in `y` must be present in the data``, with ``Problem with `id` ``.** One file has no column named `id`. Run `names(read_csv("data/pilot-pass-2.csv"))`: usually a title row sits above the headers, or the column is spelled differently, such as `ID`. For a title row, add `skip = 1,` on the line after the file name in `read_csv()`.
 
 **Every `_p2` code is `NA` after the join.** The ids in the two files do not match. Run `head(pass_1$id)` and `head(pass_2$id)` and compare them: a spreadsheet may have changed long ids into numbers ending in `e+18`, or the files came from different draws. [Guide 15](15-draw-a-pilot-and-make-a-blind-recode-sheet.md) shows how to keep ids as text in Google Sheets.
