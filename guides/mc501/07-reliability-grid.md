@@ -375,7 +375,7 @@ The code lands in your script with a comment above every step, and a message at 
 
 If running a line opens a box titled **Choose where to run the selected code**, press **Esc**. Do not pick **New R Interactive window** or **Create R terminal**: both start a new R that has none of your tables. Instead, click the **AURA Lab R Companion** icon on VS Code's left edge and select **Run my steps from the top**.
 
-**``'data/pilot-both-passes.csv' does not exist in current working directory``.** R looked inside your workspace's `data` folder and found no file with that exact name. Check two things in the VS Code Explorer, which shows full file names, even when the Mac Finder hides the ending:
+**``'data/pilot-both-passes.csv' does not exist in current working directory``.** The path in quotes points R to a file inside your workspace's `data` folder, and R found no file there with that exact name. Check two things in the VS Code Explorer, which shows full file names, even when the Mac Finder hides the ending:
 
 - The file sits indented under `data`, not at the top level beside `README.md`. If it does not, drag it onto the `data` folder.
 - Its name matches the one in quotes exactly and ends in `.csv`. Rename `pilot-both-passes.csv.csv` to `pilot-both-passes.csv`. A file ending in `.numbers` or `.xlsx` is not a CSV yet: export it as one (in Numbers: **File**, then **Export To**, then **CSV...**; in Excel: **File**, then **Save As**, with the format **CSV UTF-8**; in Google Sheets: **File**, then **Download**, then **Comma-separated values (.csv)**) and put that file in `data`.
