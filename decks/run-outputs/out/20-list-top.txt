@@ -1,0 +1,7 @@
+> list.files()
+ [1] "_templates"              "00-check-your-setup.qmd"
+ [3] "00_Inbox"                "01_Journal"
+ [5] "02_Literature"           "03_Project"
+ [7] "04_Resources"            "11-wrangling-data.qmd"
+ [9] "data"                    "LICENSE"
+[11] "README.md"

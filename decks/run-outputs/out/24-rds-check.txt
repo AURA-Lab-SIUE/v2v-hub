@@ -1,0 +1,3 @@
+> read_rds("data/twitch_analysis.RDS") %>%
++   nrow()
+[1] 35267

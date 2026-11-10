@@ -13,11 +13,146 @@ format:
 
 ## Today's Agenda
 
+- Coming up: what is due, and when
+- Before Friday: save your Data Wrangling codes as a CSV and check them in R
 - The Twitch job, part 2: the Describing Data worksheet
 - The grammar of graphics: every plot is built from the same three parts
 - Three chart types: a line chart, a bar chart, and a histogram
 - The design choices a figure has to disclose to its reader
 - Why the mean and the median of the same variable disagree
+
+## Upcoming Assignments
+
+| What | Due | Have done by |
+|---|---|---|
+| [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points | Fri, Nov 13, 11:59 PM | Codes saved as a CSV before Thursday's lab |
+| [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#describing-data-in-r), 75 points | Fri, Nov 20, 11:59 PM | Started in Thursday's lab |
+| [Weekly reading journal](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#weekly-reading-journal) | Fri, Nov 13 and Fri, Nov 20, 11:59 PM | Chapter 12, then Chapter 13 |
+
+No class Nov 23 to 29: Thanksgiving Break.
+
+## Upcoming Assignments (cont.)
+
+| What | Due | Have done by |
+|---|---|---|
+| [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points | Fri, Dec 4, 11:59 PM | Taught Nov 17 and 19 |
+| Coded dataset and re-code pushed ([White Paper](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper) dated step) | Fri, Dec 4, 11:59 PM | First coding pass done by Tue, Dec 1 |
+| Week 15 reading journal | Fri, Dec 4, 11:59 PM | Chapter 14 |
+| [White Paper](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper), 250 points | Fri, Dec 18, 11:59 PM | Results built from your own data |
+
+## Save Your Codes as a CSV
+
+[Data Wrangling worksheet, Task 0.3]{.eyebrow}
+
+::: {.define}
+**CSV:** a table saved as plain text, one row per line, with a comma between each column.
+:::
+
+- R reads your codes from `data/coding-form.csv`, so the file must stay a CSV
+- A spreadsheet app saves its own kind of file unless you tell it not to
+    - Excel saves `.xlsx`, Numbers saves `.numbers`, Google Sheets keeps it online
+- Save it back as `coding-form.csv`, in the `data` folder, over the old one
+- Keep the `id` column exactly as it is
+
+## Save as a CSV: Excel
+
+1. Click **File**, then **Save As**
+2. Go to your workspace folder, then into the **data** folder
+3. In the list of file types, pick **CSV UTF-8 (Comma delimited)**
+4. Name it `coding-form` and click **Save**
+5. Asked about replacing the old file: click **Yes** (on a Mac, **Replace**)
+
+## Save as a CSV: Numbers
+
+- **File**, then **Save**, makes a `.numbers` file that R cannot read
+- Export it instead:
+
+1. Click **File**, then **Export To**, then **CSV...**
+2. Untick **Include table names**
+3. Click **Save**, then type `coding-form` as the name
+4. In the **Where** menu, pick your workspace's **data** folder
+5. Click **Export**, then **Replace**
+
+## Save as a CSV: Google Sheets
+
+1. Click **File**, then **Download**, then **Comma Separated Values (.csv)**
+2. The file lands in your **Downloads** folder
+3. Rename it `coding-form.csv`
+4. Move it into your workspace's **data** folder, the same way you moved the worksheet in [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+5. Asked about replacing the old file: replace it
+
+## Check the Coding Sheet in R
+
+```r
+read_csv("data/coding-form.csv") %>%
+  glimpse()
+```
+
+- `read_csv()` reads a CSV file into a table
+- `glimpse()` prints how many rows and columns it has, and each column's type
+- `"data/coding-form.csv"` means: start in the folder open in VS Code, go into `data`, open `coding-form.csv`
+    - The folder open in VS Code is the name at the top of the Explorer
+- Run it from the worksheet or the R terminal: the start is the same
+
+## Check the Coding Sheet: Output
+
+```{.term .tall code-line-numbers="false" step="22-read-form"}
+> read_csv("data/coding-form.csv") %>%
++   glimpse()
+Rows: 30 Columns: 5
+── Column specification ────────────────────────────────────────────────
+Delimiter: ","
+chr (2): channel, message
+dbl (2): id, reaction_only
+lgl (1): coder_notes
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 30
+Columns: 5
+$ id            <dbl> 16240927, 182383, 19530370, 12102429, 7123505, 2…
+$ channel       <chr> "bobross", "bobross", "bobross", "bobross", "bob…
+$ message       <chr> "press F to bring back bob", "BIG TREE", "CoolSt…
+$ reaction_only <dbl> 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, …
+$ coder_notes   <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+```
+
+- `Rows: 30`, `Columns: 5`, and `reaction_only` as `<dbl>` (a number): the sheet is right
+
+## When the Check Goes Wrong
+
+- Same line, on a file Numbers exported with **Include table names** ticked
+- The first line of that file is the table's name, so R takes it as the only column name
+
+```r
+read_csv("data/coding-form.csv") %>%
+  glimpse()
+```
+
+## When the Check Goes Wrong: Output
+
+```{.term .tall code-line-numbers="false" step="23-read-title-row"}
+> read_csv("data/coding-form.csv") %>%
++   glimpse()
+Rows: 31 Columns: 1
+── Column specification ────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Table 1
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 31
+Columns: 1
+$ `Table 1` <chr> "id,channel,message,reaction_only,coder_notes", "162…
+Warning message:
+One or more parsing issues, call `problems()` on your data frame for
+details, e.g.:
+  dat <- vroom(...)
+  problems(dat)
+```
+
+- `Columns: 1`, called `Table 1`: the file has a title line above the headers
+- The fix: export again from Numbers with **Include table names** unticked
 
 ## What We Build Today
 

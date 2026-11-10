@@ -1,0 +1,11 @@
+> both_passes %>%
++   select(threat_p1, threat_p2) %>%
++   irr::kappa2()
+ Cohen's Kappa for 2 Raters (Weights: unweighted)
+
+ Subjects = 20
+   Raters = 2
+    Kappa = 0.746
+
+        z = 4.8
+  p-value = 1.59e-06

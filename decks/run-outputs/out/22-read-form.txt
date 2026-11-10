@@ -1,0 +1,18 @@
+> read_csv("data/coding-form.csv") %>%
++   glimpse()
+Rows: 30 Columns: 5
+── Column specification ────────────────────────────────────────────────
+Delimiter: ","
+chr (2): channel, message
+dbl (2): id, reaction_only
+lgl (1): coder_notes
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 30
+Columns: 5
+$ id            <dbl> 16240927, 182383, 19530370, 12102429, 7123505, 2…
+$ channel       <chr> "bobross", "bobross", "bobross", "bobross", "bob…
+$ message       <chr> "press F to bring back bob", "BIG TREE", "CoolSt…
+$ reaction_only <dbl> 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, …
+$ coder_notes   <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …

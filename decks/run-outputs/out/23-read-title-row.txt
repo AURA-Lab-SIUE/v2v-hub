@@ -1,0 +1,17 @@
+> read_csv("data/coding-form.csv") %>%
++   glimpse()
+Rows: 31 Columns: 1
+── Column specification ────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Table 1
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 31
+Columns: 1
+$ `Table 1` <chr> "id,channel,message,reaction_only,coder_notes", "162…
+Warning message:
+One or more parsing issues, call `problems()` on your data frame for
+details, e.g.:
+  dat <- vroom(...)
+  problems(dat)
