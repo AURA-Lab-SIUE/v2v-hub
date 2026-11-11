@@ -126,7 +126,7 @@ read_csv("data/coding-form.csv") %>%
 ```{.term code-line-numbers="false"}
 > read_csv("data/coding-form.csv") %>%
 +   glimpse()
-Error: 'data/coding-form.csv' does not exist in current working directory ('C:/offices/teaching/work/mc451/wk1109-run/check/mc451-workspace').
+Error: 'data/coding-form.csv' does not exist in current working directory ('C:/Users/you/Documents/mc451-workspace').
 ```
 
 - `does not exist`: no file in `data` has exactly that name
