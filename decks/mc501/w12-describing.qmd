@@ -166,7 +166,7 @@ read_csv("data/coding-form.csv") %>%
 ```{.term code-line-numbers="false"}
 > read_csv("data/coding-form.csv") %>%
 +   glimpse()
-Error: 'data/coding-form.csv' does not exist in current working directory ('C:/offices/teaching/work/mc451/wk1109-run/check/mc451-workspace').
+Error: 'data/coding-form.csv' does not exist in current working directory ('C:/Users/you/Documents/mc501-workspace').
 ```
 
 - `does not exist`: no file in `data` has exactly that name
@@ -265,7 +265,7 @@ The same worksheet, saved in `03_Project` and rendered:
 
 ```{.term .tall code-line-numbers="false"}
 Error:
-! 'data/coding-form.csv' does not exist in current working directory ('C:/offices/teaching/work/mc451/wk1109-run/mc451-workspace/03_Project').
+! 'data/coding-form.csv' does not exist in current working directory ('C:/Users/you/Documents/mc501-workspace/03_Project').
 Backtrace:
     ▆
  1. ├─read_csv("data/coding-form.csv") %>% clean_names()
