@@ -9,66 +9,63 @@ execute:
   echo: true
 ---
 
-## What this worksheet is
+## The case
 
-This is part 2 of the Twitch job. Worksheet 1 left you `data/twitch_analysis.RDS`, with your
-thirty hand-coded messages inside it. Here you say what is in that table before anything is
-tested: how often each category occurs, how long messages run, how two categories line up, and
-what the distributions look like. Worksheet 3 tests what you describe here.
+You are the data analyst on a small study. Your client is the channel manager at a small creator
+agency that represents about a dozen Twitch streamers. The agency is about to pitch a sponsor on
+how engaged its streamers' chats are. Before the pitch, the manager wants three questions
+answered with data:
 
-**Who asked for this, and why.** Your client is the channel manager at a small creator agency
-that represents about a dozen Twitch streamers. The agency is about to pitch a sponsor on how
-engaged its streamers' chats are, and the manager wants three things settled with data before
-the pitch: whether chat in gaming and non-gaming channels looks different, whether a bigger
-audience changes how people write, and how much of chat is reaction (an emote, a cheer, a single
-word) rather than commentary. You are the analyst on this study. Worksheet 1 built the table,
-this worksheet describes it, and worksheet 3 tests it. The manager does not read R. Every
-**Write:** prompt below is a note to them, and the last section is the paragraph you would send.
+1. Does chat in gaming channels look different from chat in non-gaming channels?
+2. Does a bigger audience change how people write?
+3. How much of chat is reaction (an emote, a cheer, a single word) and how much is commentary?
 
-**How it works.** As in worksheet 1: code that is not the point of the assignment is written for
-you, the steps the assignment is about have blanks shown as `___`, and **What you should see**
-follows each chunk. **Write:** marks a response in your own words. Your interpretation, your
-alt text, and the closing paragraph to the client are the writing this assignment grades, so
-they are never filled in for you. Every blank is a column name, a verb, a geom, or a word in
-quotation marks; no step asks you to write code of your own beyond that.
+**Where the job stands.** In Data Wrangling you built the table, `data/twitch_analysis.RDS`,
+with your thirty hand-coded messages inside it. The manager has not seen a number from it yet.
 
-**Where to save it.** In the top folder of your workspace, beside worksheet 1, so that
-`data/twitch_analysis.RDS` is where this file looks for it. The guide *Put a Worksheet in Your
-Workspace* shows how, step by step:
-[MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
-or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
+**Your job.** Show the manager what is in the table before anything is tested: how often each
+category occurs, how long messages run, how two categories line up, and what the patterns look
+like in a chart. A description says how the numbers sit. Whether a difference is bigger than
+chance is the next assignment, Inferencing Data.
 
-**What you submit** (Blackboard, under Describing Data in R): this worksheet with every blank and
-every **Write:** filled, and the HTML it renders to. The figures are saved in `figures/` by the
-code that makes them, and the HTML carries them.
+The manager does not read R. Every **Write:** prompt in this worksheet is a note to them, and
+the last section is the paragraph you would send.
 
-**Before you start,** read the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html).
+## Your assignment
 
-**Keep the R cheat sheets open while you work.** The
-[cheat-sheet index](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/index.html) explains
-every command on a page, with a worked example and the output it prints; for this worksheet you want
-[dplyr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/dplyr.html) and
-[ggplot2](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/ggplot2.html).
+Work through the parts in order.
 
-**MC 501:** Part 5, the diagnostics behind each figure, is yours as well.
+| Part | What you do | Why the client needs it |
+|---|---|---|
+| 1 | Frequency tables: count how often each category occurs | The manager sees how much of chat is gaming, large-audience, and reaction |
+| 2 | The three numbers: the mean, median, and standard deviation of message length | "How people write" becomes numbers the manager can compare |
+| 3 | The cross-tabulation: count viewer band against channel type | The manager sees whether audience size and channel type go together |
+| 4 | Three figures, each with alt text, a disclosure sentence, and an interpretation | A chart is what the manager can put in front of a sponsor |
+| 5 | Diagnostics behind each figure | A reviewer can check that each figure supports what you say about it |
+| Last | Explain this stage to the client, in one short paragraph | The manager gets what you found in plain language |
 
-## Key terms
+The code sits in gray boxes called chunks, as in Data Wrangling. Replace each blank, shown as
+`___`, with the code it needs, click **Run Cell** at the top left of the gray box, and compare
+what R prints with **What you should see**, the line right under the chunk.
+Where the worksheet says **Write:**, type your answer under it, in your own words. Your interpretation, your alt
+text, and the closing paragraph to the client are the writing this assignment grades, so they
+are never filled in for you. Every blank is a short piece of code: a column name, a function
+name, or a word in quotation marks. Start at **Setup**, the heading after **What to submit**.
 
-| Term | What it means |
-|---|---|
-| **Frequency table** | A count of how many rows fall in each category, often with each count as a percent of the total. |
-| **Mean** | The average: add up the values and divide by how many there are. A few very large values pull it up. |
-| **Median** | The middle value once the values are sorted. Half the messages are shorter, half are longer. |
-| **Standard deviation (sd)** | How far values typically sit from the mean. A bigger sd means the values are more spread out. |
-| **Skew** | A lopsided shape. Message length is skewed right: most messages are short and a few are very long, which puts the mean above the median. |
-| **Outlier** | A value far from the rest, such as one 441-character message among messages of 10 or 20. |
-| **Cross-tabulation** | A table that counts every combination of two categories, such as viewer band by channel type. |
-| **Proportion** | A share of a whole, written as a decimal: 0.2 is 20 percent. |
-| **Boxplot** | A chart of a variable's middle half (the box), its median (the line), and its outliers (points beyond the whiskers). |
-| **Histogram** | A bar chart of a number variable, where each bar counts the values that fall in one range, such as 0 to 5 characters. |
-| **Alt text** | A sentence that says what a chart shows, for a reader who cannot see it. A screen reader reads it aloud. |
-| **Expected count** | The count a cell of a cross-tabulation would hold if the two variables were unrelated. The chi-square test compares it with the real count. |
-| **Interquartile range (IQR)** | The width of the boxplot's box: the spread of the middle half of the values. |
+## What to submit
+
+**100 points.** Due Monday, November 23, 11:59 PM, in Blackboard, under **Describing Data in R**.
+
+Upload each of these on its own, not in a zip:
+
+- this worksheet, with every blank and every **Write:** filled
+- the HTML file with the same name, which you make when you render the worksheet (**Help and reference** links the guide). It holds your figures.
+- your [AI-use log](https://aura-lab.siue.edu/v2v-hub/resources/AI-use-log.docx)
+
+The rubric lists the points for each part:
+[Describing Data in R rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC501-rubric-describing-data-in-r.pdf).
+
+When a word or a step stops you, go to [Help and reference](#help), the last section of this worksheet.
 
 ## Setup
 
@@ -430,3 +427,45 @@ them.
 - [ ] `figures/` holds the three saved charts.
 - [ ] The paragraph to the client is written, and it names what this stage does not show yet.
 - [ ] The worksheet renders without an error.
+
+## Help and reference {#help}
+
+Nothing in this section is graded. Come here when a word or a step stops you.
+
+### Where things go
+
+This worksheet goes in the top folder of your workspace, beside your Data Wrangling worksheet,
+so that it finds `data/twitch_analysis.RDS`. The guide *Put a Worksheet in Your Workspace* shows
+how: [MC 501 guide](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
+
+To render the worksheet before you submit, follow the guide *Render a Quarto Document*:
+[MC 501 guide](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html).
+
+### Guides for this assignment
+
+- [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html): the traps on this job, what
+  each looks like, and how to check for it.
+- *Describe the Data: Tables and Charts*: [MC 501 guide](https://aura-lab.siue.edu/v2v-hub/guides/mc501/09-describing-tables-and-charts.html).
+- R cheat sheets, each with a worked example and the output it prints:
+  [dplyr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/dplyr.html) and [ggplot2](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/ggplot2.html).
+  The [cheat-sheet index](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/index.html) links every sheet.
+
+For an error you cannot read, run **AURA: Explain an R error**.
+
+### Key terms
+
+| Term | What it means |
+|---|---|
+| **Frequency table** | A count of how many rows fall in each category, often with each count as a percent of the total. |
+| **Mean** | The average: add up the values and divide by how many there are. A few very large values pull it up. |
+| **Median** | The middle value once the values are sorted. Half the messages are shorter, half are longer. |
+| **Standard deviation (sd)** | How far values typically sit from the mean. A bigger sd means the values are more spread out. |
+| **Skew** | A lopsided shape. Message length is skewed right: most messages are short and a few are very long, which puts the mean above the median. |
+| **Outlier** | A value far from the rest, such as one 441-character message among messages of 10 or 20. |
+| **Cross-tabulation** | A table that counts every combination of two categories, such as viewer band by channel type. |
+| **Proportion** | A share of a whole, written as a decimal: 0.2 is 20 percent. |
+| **Boxplot** | A chart of a variable's middle half (the box), its median (the line), and its outliers (points beyond the whiskers). |
+| **Histogram** | A bar chart of a number variable, where each bar counts the values that fall in one range, such as 0 to 5 characters. |
+| **Alt text** | A sentence that says what a chart shows, for a reader who cannot see it. A screen reader reads it aloud. |
+| **Expected count** | The count a cell of a cross-tabulation would hold if the two variables were unrelated. The chi-square test compares it with the real count. |
+| **Interquartile range (IQR)** | The width of the boxplot's box: the spread of the middle half of the values. |

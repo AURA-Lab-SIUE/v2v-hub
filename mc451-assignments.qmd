@@ -405,12 +405,14 @@ Decide what you will code, then prove the codebook survives contact with it. The
 
 **50 points. Due Friday, November 13, 11:59 PM.** *(Week 12)*
 
-Build the analysis-ready table from the raw one.
+**The case.** You are the data analyst for the channel manager at a small creator agency that represents about a dozen Twitch streamers. The agency is about to pitch a sponsor on how engaged its streamers' chats are, and the manager wants three questions answered with data first: whether chat in gaming and non-gaming channels looks different, whether a bigger audience changes how people write, and how much of chat is reaction and how much is commentary. The raw data cannot answer any of them yet.
+
+**Your job.** Build the analysis-ready table from the raw one. You save it as `twitch_analysis.RDS`, and Describing Data and Inferencing Data both start from that file. The worksheet walks you through it, one part at a time.
 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** the filled worksheet and the HTML it renders to, your coded `data/coding-form.csv`, and the exported dataset, saved as `twitch_analysis.RDS` because Describing Data and Inferencing Data both read that file, uploaded to Blackboard under Data Wrangling in R. The worksheet is part 1 of one Twitch job in three worksheets: the code that is not the point is written for you, the core steps are blanks you fill, and the thirty messages you hand-code in its Part 0 are tested in Inferencing Data. Where an R Companion menu writes a step, the worksheet names it, and what the menu writes counts as your code. Export to RDS, not CSV.
+**What you submit:** the filled worksheet, the HTML it renders to, your coded `data/coding-form.csv`, and your finished table, `data/twitch_analysis.RDS`, uploaded to Blackboard under Data Wrangling in R.
 
 **Length:** The worksheet's code, 40 to 120 lines with its comments, plus the 30-row coding sheet. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -430,7 +432,9 @@ Build the analysis-ready table from the raw one.
 
 **75 points. Due Friday, November 20, 11:59 PM.** *(Week 13)*
 
-Say what is in the data before you test anything.
+**The case.** The channel manager from Data Wrangling has not seen a number yet. Your table is built; now you show them what is in it.
+
+**Your job.** Say what is in the data before you test anything.
 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
@@ -455,7 +459,9 @@ Say what is in the data before you test anything.
 
 **100 points. Due Friday, December 4, 11:59 PM.** *(Week 15)*
 
-Test four relationships, one per test, and report how big each is.
+**The case.** The channel manager has seen how the numbers sit. Now they want to know whether the differences are real or could be chance, and whether they are big enough to put in the sponsor pitch.
+
+**Your job.** Test four relationships, one per test, and report how big each is.
 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
