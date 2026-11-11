@@ -946,21 +946,18 @@ Missing values detected. NAs dropped.
 **Cross-tabulation:** a table that counts how often each combination of two categorical variables occurs. Example: viewer band by channel type.
 :::
 
-## Figures Other People Can Read
+## Color Never Works Alone
 
-- Roughly one in twelve men has a color-vision deficiency
-    - Choose a colorblind-safe palette, such as `scale_color_v2v()`
-    - Do not let color carry the message alone
-    - Vary the line type, or split the groups into panels
-- Alt text is what a screen-reader user gets instead of the figure
-    - With no alt text, the figure is simply missing for that reader
+- About one in twelve men has a color-vision deficiency
+- Use a colorblind-safe palette, such as `scale_color_v2v()`
+- Also vary the line type, or split the groups into panels
 
-## Figures Other People Can Read (cont.)
+## Alt Text Replaces the Figure
 
-- Alt text states the chart type, the axes, and the takeaway
-- In a Quarto file it goes on a line at the top of the chunk: `#| fig-alt: "A histogram of message length..."`
-- The R Companion's chart code also leaves an `alt =` line marked YOUR TURN inside `labs()`
-- Write the same sentence in both places
+- A screen-reader user hears the alt text instead of seeing the figure
+- Good alt text states the chart type, the axes, and the takeaway
+- In a Quarto chunk it goes on the top line: `#| fig-alt: "A histogram of message length..."`
+- Write the same sentence in the `alt =` line inside `labs()`
 
 ## A Cross-Tabulation
 
