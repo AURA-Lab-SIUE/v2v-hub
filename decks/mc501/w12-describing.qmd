@@ -297,12 +297,13 @@ Execution halted
 
 [Data Wrangling in R, Blackboard]{.eyebrow}
 
-- `11-wrangling-data.qmd`, with no `___` left
-- `11-wrangling-data.html`, the rendered page
-- `data/coding-form.csv`, your thirty codes
-- `data/twitch_analysis.RDS`, the saved table
-- The AI-use log, with an entry or the no-AI box checked
-- Attach each file on its own; do not zip them
+- One ZIP file of your whole workspace, the folder open in VS Code, holding:
+    - `11-wrangling-data.qmd`, with no `___` left
+    - `11-wrangling-data.html`, the rendered page
+    - `data/coding-form.csv`, your thirty codes
+    - `data/twitch_analysis.RDS`, the saved table
+    - The AI-use log, saved beside `README.md`, with an entry or the no-AI box checked
+- Make the ZIP file: [Submit Your Work as One ZIP File](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file)
 
 ## Describing Data {.titlecard}
 

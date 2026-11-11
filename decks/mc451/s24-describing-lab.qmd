@@ -293,12 +293,13 @@ Execution halted
 
 [Data Wrangling in R, Blackboard]{.eyebrow}
 
-- `11-wrangling-data.qmd`, with no `___` left
-- `11-wrangling-data.html`, the rendered page
-- `data/coding-form.csv`, your thirty codes
-- `data/twitch_analysis.RDS`, the saved table
-- The AI-use log, with an entry or the no-AI box checked
-- Attach each file on its own; do not zip them
+- One ZIP file of your whole workspace, the folder open in VS Code, holding:
+    - `11-wrangling-data.qmd`, with no `___` left
+    - `11-wrangling-data.html`, the rendered page
+    - `data/coding-form.csv`, your thirty codes
+    - `data/twitch_analysis.RDS`, the saved table
+    - The AI-use log, saved beside `README.md`, with an entry or the no-AI box checked
+- Make the ZIP file: [Submit Your Work as One ZIP File](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file)
 
 ## Part 2: Start Describing Data {.titlecard}
 
@@ -851,7 +852,7 @@ both_passes %>%
 ## Before Next Time
 
 - Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
-    - The five files from "What to Upload", each attached on its own
+    - One ZIP file of your workspace, holding the five files from "What to Upload"
 - Due Friday, November 20, 11:59 PM: [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#describing-data-in-r), 75 points
 - Check your worksheet against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 - Step by step: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc451/09-describing-tables-and-charts.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
