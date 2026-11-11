@@ -324,7 +324,7 @@ analysis <- read_rds("data/twitch_analysis.RDS")
 
 - `library()` switches a package on for this session
 - `read_rds()` loads the table Data Wrangling saved and names it `analysis`
-- The R Companion writes these lines too: **AURA: Write R code**, then **R2 Data**, then **Load your saved analysis (RDS)**
+- The R Companion writes these lines too: in its panel, under **Data**, **Load your saved analysis (RDS)**
 
 ## Loading and Looking: Output
 
@@ -568,7 +568,7 @@ ggplot(analysis, aes(x = message_length)) +
 ```
 
 - One variable, one histogram; each bar is five characters wide
-- The R Companion writes a first version: **AURA: Write R code**, then **R3 Describe**, then **Histogram**
+- The R Companion writes a first version: in its panel, under **Describe**, **Histogram**
 
 ## Figure One: Output
 
@@ -699,7 +699,7 @@ list.files("figures")
 ## Any Other Error
 
 - Select the error R printed in the terminal, then press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
-- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) and run **AURA: Explain an R error**: the copied error is filled in for you
+- Click the **AURA Lab R Companion** icon on VS Code's left edge; under **Help**, click **Explain an R error**: the copied error is filled in for you
 
 ## Checkpoint
 

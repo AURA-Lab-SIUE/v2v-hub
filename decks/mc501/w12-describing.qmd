@@ -818,9 +818,8 @@ The skew is the most important thing the histogram reveals, and no summary numbe
 
 ## The Descriptive Statistics
 
-- The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) writes a grouped summary
-- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
-- Under **R3 Describe**, **Summary by group** writes n, mean, median, and sd for each `channel_type`
+- Click the **AURA Lab R Companion** icon on VS Code's left edge
+- Under **Describe**, click **Summary by group**: it writes n, mean, median, and sd for each `channel_type`
 - To summarize another column, change the column names in the block it writes
 
 ## The Descriptive Statistics (cont.)
@@ -861,7 +860,7 @@ msglen %>%
 
 ## The Descriptive Statistics (cont.)
 
-- **AURA: Write R code**, then **R3 Describe**, then **Line chart over time** writes Figure 1
+- In the R Companion panel, under **Describe**, **Line chart over time** writes Figure 1
 - **Histogram comparing two groups** writes Figure 3
 - Its **Bar chart** draws the top ten games, not Figure 2
 - After **Run it**, the saved chart opens in its own VS Code tab
