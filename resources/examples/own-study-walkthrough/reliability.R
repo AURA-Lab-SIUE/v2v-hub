@@ -3,6 +3,20 @@
 # Example: 20 Power Rangers pilot episodes, coded twice for threat and focus.
 # data/pilot-pass-2.csv is a PRACTICE second pass made up for the guide.
 # Lines marked CHANGE are the ones you edit for your own study.
+#
+# Get the data first, in three steps.
+# 1. Hold Ctrl (Cmd on a Mac) and click each link below. When VS Code asks
+#    whether to open the website, click Open. Your browser saves the file in
+#    your Downloads folder and shows its name for a moment near the top right
+#    corner of the browser window.
+#      https://aura-lab.siue.edu/v2v-hub/resources/examples/own-study-walkthrough/pilot-pass-1.csv
+#      https://aura-lab.siue.edu/v2v-hub/resources/examples/own-study-walkthrough/pilot-pass-2.csv
+# 2. Put each file in the folder named data, in the list of files on the left
+#    side of VS Code. This part of guide 08 shows each click, including how to
+#    make the data folder:
+#      https://aura-lab.siue.edu/v2v-hub/guides/mc451/08-wrangling.html#before-you-start-put-both-files-in-your-data-folder
+# 3. Click the word data in that list. You should see each file's name right
+#    below it.
 
 library(tidyverse)
 
