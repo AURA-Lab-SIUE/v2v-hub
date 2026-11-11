@@ -961,7 +961,7 @@ Missing values detected. NAs dropped.
 
 ## A Cross-Tabulation
 
-[Example data from guide 16: Power Rangers episodes, coded for threat and focus](https://aura-lab.siue.edu/v2v-hub/guides/mc501/16-describe-counts-and-source-measures.html)
+[Example data: episodes_analysis.RDS, Power Rangers episodes coded for threat and focus](https://aura-lab.siue.edu/v2v-hub/resources/examples/own-study-walkthrough/episodes_analysis.RDS)
 
 ::: {.define}
 **Cross-tabulation:** a grid that counts every combination of two categories.
@@ -1100,7 +1100,7 @@ You should now have:
 - One sheet: an `id` column, then pass 1 and pass 2 side by side for each variable
     - `threat_p1` and `threat_p2` in the example below
 - Guide 07, Part 1, builds that sheet from two separate pass files
-- The example: 20 Power Rangers episodes, each coded twice
+- The example: [pilot-both-passes.csv](https://aura-lab.siue.edu/v2v-hub/resources/examples/own-study-walkthrough/pilot-both-passes.csv), 20 Power Rangers episodes coded twice
 
 ## Read the Two Passes
 
