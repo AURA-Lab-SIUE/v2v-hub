@@ -15,6 +15,8 @@ The example is a study like the one you set up in the [Sampling Plan and Pilot](
 
 The coding sheet was drawn from the episodes table alone, so the coder never saw which company produced each episode while coding it. That is a good habit: keep anything that could sway your codes out of the coding sheet, and join it on afterward. That join is Step 6.
 
+**Which of your files is which.** Your coding sheet is the file with the columns you coded by hand, one row for each item you coded. Steps 2 to 5 use your coding sheet. Every other table in your study is a second table, even one you typed yourself, and even one about something other than your sources, such as the songs, products, or hashtags that appear in your items. Step 6 loads a second table and joins it to your coding sheet. For the join, both files need one column that names the same thing, spelled the same way in both, such as a song title. Check that your coding sheet has that column. When it is missing, add it after you finish coding, and type each value exactly as it appears in the second table. A study with more than one second table does Step 6 once for each one.
+
 Two things in the example sheet are wrong on purpose, because real coding sheets have them: one code was typed with a capital letter, and one cell was left blank. Steps 4, 5, and 9 find and handle both.
 
 The finished script is here, so you can compare yours with it at any step: [wrangle.R](../../resources/examples/own-study-walkthrough/wrangle.R).
