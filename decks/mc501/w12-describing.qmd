@@ -1070,17 +1070,21 @@ You should now have:
 - Every change after that commit is a departure you disclose in Methods
 - Step by step: [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)
 
-## Your Own Study, Starting Now
+## Re-Code Again, Like the Pilot
 
-- **By Monday, December 7, 11:59 PM:** push your full coded dataset and a re-code of a subsample to your project repository
-- The re-code happens at least 48 hours after your first pass, with your first codes hidden
-- So finish the first coding pass on your full corpus by **Thursday, December 3**
-- The reliability figure in your Methods comes from this re-code, not from the pilot
+- You already re-coded your pilot: 48 hours later, first codes hidden
+- The White Paper repeats that re-code on a subsample of your full corpus
+- Finish the first pass on your full corpus by **Thursday, December 3**
+- **By Monday, December 7, 11:59 PM:** push your full coded dataset and the re-code
+- Your Methods reports reliability from this re-code
 - On data shaped like yours: [Describe Counts and Source Measures](https://aura-lab.siue.edu/v2v-hub/guides/mc501/16-describe-counts-and-source-measures.html)
 
-## How Big Is the Re-Code?
+## Re-Code at Least 50
 
-The subsample is **at least 50 units or 20 percent of your corpus, whichever is larger**. It leaves out your immersion items. It may include or leave out your pilot items; say which in your Methods.
+- At least 50 units or 20 percent of your corpus, whichever is larger
+- Your pilot items may count or be left out; say which in your Methods
+- Leave out your immersion items
+- Draw it and hide your first codes: [Guide 15](https://aura-lab.siue.edu/v2v-hub/guides/mc501/15-draw-a-pilot-and-make-a-blind-recode-sheet.html)
 
 | Your corpus | 20 percent | Re-code |
 |---|---|---|

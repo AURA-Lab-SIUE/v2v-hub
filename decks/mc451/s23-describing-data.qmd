@@ -694,16 +694,20 @@ The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) write
 
 If a figure will not render, check that every `+` ends the line above it.
 
-## Your Own Study, Starting Now
+## Re-Code Again, Like the Pilot
 
-- **By Friday, December 4, 11:59 PM:** push your full coded dataset and a re-code of a subsample to your project repository
-- The re-code happens at least 48 hours after your first pass, with your first codes hidden
-- So finish the first coding pass on your full corpus by **Tuesday, December 1**
-- The stability figure in your Methods comes from this re-code, not from the pilot
+- You already re-coded your pilot: 48 hours later, first codes hidden
+- The White Paper repeats that re-code on a subsample of your full corpus
+- Finish the first pass on your full corpus by **Tuesday, December 1**
+- **By Friday, December 4, 11:59 PM:** push your full coded dataset and the re-code
+- Your Methods reports stability from this re-code
 
-## How Big Is the Re-Code?
+## Re-Code at Least 50
 
-The subsample is **at least 50 units or 20 percent of your corpus, whichever is larger**. It leaves out your immersion items. It may include or leave out your pilot items; say which in your Methods.
+- At least 50 units or 20 percent of your corpus, whichever is larger
+- Your pilot items may count or be left out; say which in your Methods
+- Leave out your immersion items
+- Draw it and hide your first codes: [Guide 15](https://aura-lab.siue.edu/v2v-hub/guides/mc451/15-draw-a-pilot-and-make-a-blind-recode-sheet.html)
 
 | Your corpus | 20 percent | Re-code |
 |---|---|---|
