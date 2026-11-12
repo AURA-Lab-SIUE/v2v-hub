@@ -20,22 +20,15 @@ answered with data:
 2. Does a bigger audience change how people write?
 3. How much of chat is reaction (an emote, a cheer, a single word) and how much is commentary?
 
-**The problem.** The data you have been handed cannot answer any of these yet. It is two raw
-tables: one of chat messages, and one of stream snapshots (what each channel was streaming and
-how many people were watching). The time on every message is a thirteen-digit number. Nothing
-connects a message to the size of its audience. No column says which channels are gaming
-channels. And no dataset records whether a message is a reaction: someone has to read the
-messages and decide.
+**The problem.** The data you were handed cannot answer these yet. It is two raw tables: one of
+chat messages and one of stream snapshots. Nothing connects a message to its channel type or its
+audience size, and no column says whether a message is a reaction.
 
 **Your job.** Turn the two raw tables into one clean table that can answer the manager's
-questions, and save it as `twitch_analysis.RDS`. The next two assignments, Describing Data and
-Inferencing Data, both start from that file. Everything you tell the client later rests on the
-table you build here.
+questions, and save it as `twitch_analysis.RDS`. Describing Data and Inferencing Data both start
+from that file.
 
 ## Your assignment
-
-Work through the parts in order. Each one fixes one thing that stands between the raw data and
-the client's questions.
 
 | Part | What you do | Why the client needs it |
 |---|---|---|
@@ -49,18 +42,15 @@ the client's questions.
 | 7 | Save the finished table | The next two assignments start from this file |
 | 8 | MC 501 only: three reviewer-facing comments | A reviewer can check the decisions behind the table |
 
-The code sits in gray boxes called chunks. In every part, the work is the same three moves:
+The code sits in gray boxes called chunks. Work through them in order:
 
 1. Replace each blank, shown as `___`, with the code it needs.
-2. Run the chunk: click **Run Cell** at the top left of its gray box.
-3. Compare what R prints with **What you should see**, the text right under the chunk.
+2. Click **Run Cell** at the top left of the gray box.
+3. Compare what R prints with **What you should see**.
 
-Not sure what a blank needs? [Help and reference](#help), the last section, lists the R Companion
-menu that writes each step and links the cheat sheets.
-
-Where the worksheet says **Write:**, type your answer under *Your answer:*, in your own words.
-Run the chunks in order, because each one uses what the one before it made. Start at **Setup**,
-the heading after **What to submit**, and then go on to Part 0.
+Where the worksheet says **Write:**, type your answer in your own words. Every task has a
+**Help** link. It opens the page that explains that task: what the blank needs, where to click,
+and what to do when R prints an error.
 
 ## What to submit
 
@@ -72,19 +62,13 @@ the heading after **What to submit**, and then go on to Part 0.
 You turn in an R assignment as one ZIP file: your whole course workspace, the folder you have open in VS Code, packed into a single file. How to make the ZIP: [MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file) or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file). The ZIP must hold:
 
 - this worksheet, with every blank filled
-- the HTML file with the same name, which you make in the last step, **Before you submit**
+- the HTML file with the same name, which you make in **Before you submit**
 - your filled coding sheet, `coding-form.csv`
 - your finished table, `twitch_analysis.RDS`
 - your [AI-use log](https://aura-lab.siue.edu/v2v-hub/resources/AI-use-log.docx)
 
-The coding sheet and the table are in the folder named `data`, which sits in the same folder as
-this worksheet. Task 0.2 makes that folder for you.
-
-The rubric lists the points for each part. Open the one for your course:
-[MC 451 rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC451-rubric-data-wrangling-in-r.pdf)
-or [MC 501 rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC501-rubric-data-wrangling-in-r.pdf).
-
-When a word or an error stops you, the same Help section has the key terms and the fixes.
+Rubric: [MC 451](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC451-rubric-data-wrangling-in-r.pdf)
+or [MC 501](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC501-rubric-data-wrangling-in-r.pdf).
 
 ## Setup
 
@@ -96,18 +80,15 @@ library(v2v)           # the course package: the Twitch data and helpers
 options(scipen = 10)  # long numbers such as timestamps print in full; p-values keep the usual form
 ```
 
-**What you should see:** a list of attached packages and a line naming the `v2v` version. The
-lines about "conflicts" are normal.
+**What you should see:** a list of attached packages and a line naming the `v2v` version.
+[Help with Setup](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#setup)
 
 ## Part 0: Hand-code thirty messages
 
 The manager's third question is about reactions, and no dataset has a reaction column. You make
-one by reading thirty messages and coding each by hand.
+one by hand.
 
 ### Task 0.1: Draw the coding sample
-
-Everyone in the class codes the same thirty messages: fifteen from `bobross` (a non-gaming
-channel) and fifteen from `giantwaffle` (a gaming channel).
 
 ```{r}
 #| label: draw-sample
@@ -123,12 +104,12 @@ coding_sample %>%
 ```
 
 **What you should see:** two rows, `bobross` with `15` and `giantwaffle` with `15`.
+[Help with Task 0.1](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-0-1)
 
 ### Task 0.2: Write the coding sheet
 
-This saves the thirty messages as your coding sheet, `data/coding-form.csv`. Run this chunk
-**once**: click **Run Cell** at its top left. Rendering the worksheet skips this chunk, so it
-never wipes out the codes you type into the file.
+Run this chunk **once**. It saves the thirty messages as your coding sheet,
+`data/coding-form.csv`.
 
 ```{r}
 #| label: write-form
@@ -140,8 +121,8 @@ coding_sample %>%
   write_csv("data/coding-form.csv")  # run once; rendering skips this chunk
 ```
 
-**What you should see:** `coding-form.csv` in the `data` folder in the **Explorer** panel, with
-30 rows.
+**What you should see:** `coding-form.csv` in the `data` folder, with 30 rows.
+[Help with Task 0.2](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-0-2)
 
 ### Task 0.3: Code each message by hand
 
@@ -159,19 +140,14 @@ Code one variable, `reaction_only`, for all thirty messages, using this codebook
 | **Rule 5** | One word plus emotes is commentary only if the word says something about the stream or the chat; otherwise it is a reaction. |
 | **When unsure** | Code 0 and write why in `coder_notes`. |
 
-Open `data/coding-form.csv` in a spreadsheet (Excel, Google Sheets, or Numbers). Add two columns
-headed `reaction_only` and `coder_notes`. Type `0` or `1` in every row of `reaction_only`. Save
-the file **as a CSV with the same name**. Leave the `id` column exactly as it is.
-
-To code in the R Companion's data viewer instead, follow the guide *Read and Code Data in the
-Data Viewer*:
-[MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/05-data-viewer-and-coding-columns.html)
-or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/05-data-viewer-and-coding-columns.html).
+Open `data/coding-form.csv` in a spreadsheet. Add two columns headed `reaction_only` and
+`coder_notes`. Type `0` or `1` in every row of `reaction_only`. Save the file **as a CSV with the
+same name**. Leave the `id` column exactly as it is.
+[Help with Task 0.3](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-0-3)
 
 ## Part 1: Load the two tables
 
-These are the two raw tables you were handed. The Twitch data ships inside the course package,
-`v2v`, so there is no file to find.
+These are the two raw tables you were handed.
 
 ### Task 1.1: Load from the course package
 
@@ -181,8 +157,8 @@ chat <- ___()        # one row per chat message
 streams <- ___()  # one row per snapshot of a stream
 ```
 
-**What you should see:** nothing in the console. `chat` and `streams` appear in the Workspace
-panel.
+**What you should see:** nothing printed. `chat` and `streams` are now loaded.
+[Help with Task 1.1](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-1-1)
 
 ### Task 1.2: First look
 
@@ -193,18 +169,16 @@ glimpse(streams)
 ```
 
 **What you should see:** `Rows: 35,267` and `Columns: 5` for `chat`, then `Rows: 32,276` and
-`Columns: 6` for `streams`. Look at `date`: it is a run of thirteen-digit numbers. Task 3.1
-turns them into times.
+`Columns: 6` for `streams`.
+[Help with Task 1.2](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-1-2)
 
 ## Part 2: Diagnose
 
-Before you fix anything, find out what is wrong with the data. A problem you miss here ends up
-in the numbers the client reads.
+Find out what is wrong with the data before you fix anything.
 
 ### Task 2.1: Missing values
 
-`is.na()` asks, for every row, whether a cell is empty. Count the messages with no text and the
-snapshots with no category.
+Count the messages with no text and the snapshots with no category.
 
 ```{r}
 #| label: missing-raw
@@ -215,16 +189,14 @@ streams %>%
   count(is.na(game))     # TRUE = the snapshot has no category
 ```
 
-**What you should see:** for `chat`, `TRUE` with `4`. For `streams`, `TRUE` with `96`. Part 6
-comes back to these.
+**What you should see:** for `chat`, `TRUE` with `4`. For `streams`, `TRUE` with `96`.
+[Help with Task 2.1](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-2-1)
 
 ### Task 2.2: Two columns called `id`
 
-Nothing to run here. Both tables have a column named `id`, and the two mean different things: a
-chat `id` names a message and a stream `id` names a snapshot. Joining the two tables on `id`
-would run without an error and pair messages with unrelated snapshots. So the tables join on
-channel and time (Task 4.1). Your coding sheet joins on `id` (Task 5.3), because its `id` is the
-chat `id`.
+Nothing to run here. Both tables have a column named `id`, and the two mean different things. So
+the tables join on channel and time (Task 4.1), not on `id`.
+[Help with Task 2.2](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-2-2)
 
 ### Task 2.3: Categories
 
@@ -239,6 +211,7 @@ chat %>%
 ```
 
 **What you should see:** a table that starts `Art`, `Fortnite`, `Just Chatting`, then `[1] 50`.
+[Help with Task 2.3](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-2-3)
 
 ## Part 3: Fix
 
@@ -261,10 +234,8 @@ chat %>%
   summarize(first = min(ts), last = max(ts))  # the first and last message
 ```
 
-The blank is the lubridate function that turns a count of seconds into a date and time.
-
-**What you should see:** a one-row table: `first` is `2018-11-18 21:55:27` and `last` is
-`2018-11-24 18:20:23`. Six days in November 2018.
+**What you should see:** `first` is `2018-11-18 21:55:27` and `last` is `2018-11-24 18:20:23`.
+[Help with Task 3.1](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-3-1)
 
 ### Task 3.2: Message length
 
@@ -281,6 +252,7 @@ chat %>%
 ```
 
 **What you should see:** three messages with lengths `23`, `441`, and `8`.
+[Help with Task 3.2](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-3-2)
 
 ## Part 4: Join
 
@@ -289,8 +261,7 @@ in other tables, so you join them onto every message.
 
 ### Task 4.1: Match each message to its stream
 
-A stream snapshot is taken about once a minute. Give each message the snapshot taken at or just
-before it, on the same channel.
+Give each message the snapshot taken at or just before it, on the same channel.
 
 ```{r}
 #| label: join-streams
@@ -308,16 +279,10 @@ chat_streams %>%
   count(no_snapshot = is.na(viewers))  # messages with no earlier snapshot
 ```
 
-The blank is the join that keeps every row of `chat`.
-
-**What you should see:** `[1] 35267`, then `FALSE` with `35256` and `TRUE` with `11`. Eleven
-messages came before their channel's first snapshot, so they have nothing to match.
+**What you should see:** `[1] 35267`, then `FALSE` with `35256` and `TRUE` with `11`.
+[Help with Task 4.1](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-4-1)
 
 ### Task 4.2: Join the channel labels onto the messages
-
-The course package ships a table with one row per channel. It says whether the channel counts as
-gaming (`is_gaming`, and the same thing in words, `channel_type`) and how big its audience is
-(`viewer_band`). Run `?twitch_channels` in the R console to read how those labels were decided.
 
 ```{r}
 #| label: channel-labels
@@ -335,13 +300,10 @@ analysis %>%
 ```
 
 **What you should see:** for the channels, `FALSE` with `5`, `TRUE` with `43`, and `NA` with
-`2`. For the messages, `FALSE` with `3457`, `TRUE` with `31309`, and `NA` with `501`. The 501
-come from the two channels that never recorded a category. An honest `NA` is the right answer.
+`2`. For the messages, `FALSE` with `3457`, `TRUE` with `31309`, and `NA` with `501`.
+[Help with Task 4.2](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-4-2)
 
 ### Task 4.3: Check the audience bands
-
-`viewer_band` came in with the join. It sorts channels into small, medium, and large audiences,
-in that order.
 
 ```{r}
 #| label: viewer-band
@@ -354,12 +316,11 @@ analysis %>%
 ```
 
 **What you should see:** `small` with `41`, `medium` with `7`, `large` with `2` for the
-channels: the large band is two streamers. Then `small` with `27766`, `medium` with `5501`, and
-`large` with `2000` for the messages.
+channels. Then `small` with `27766`, `medium` with `5501`, and `large` with `2000` for the
+messages.
+[Help with Task 4.3](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-4-3)
 
 ### Task 4.4: Check the channel type
-
-`channel_type` says gaming or non-gaming in words. Every later table and test groups by it.
 
 ```{r}
 #| label: channel-type
@@ -368,11 +329,12 @@ analysis %>%
 ```
 
 **What you should see:** `gaming` with `31309`, `non-gaming` with `3457`, and `NA` with `501`.
+[Help with Task 4.4](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-4-4)
 
 ## Part 5: Read your codes back and join them
 
-Your thirty codes from Part 0 answer the client's third question only once they sit in the same
-table as everything else.
+Your thirty codes answer the client's third question only once they sit in the same table as
+everything else.
 
 ### Task 5.1: Read the coding sheet
 
@@ -385,6 +347,7 @@ codes <- ___("data/coding-form.csv") %>%  # the form you filled in
 ```
 
 **What you should see:** `Rows: 30` and the column types.
+[Help with Task 5.1](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-5-1)
 
 ### Task 5.2: Make the codes a labeled factor
 
@@ -402,9 +365,8 @@ codes %>%
   count(reaction_only)
 ```
 
-**What you should see:** two rows that add to `30`, and no `NA` row. With the instructor's codes
-it is `commentary` `17` and `reaction` `13`; yours may differ by a few, because five of the
-thirty are deliberately borderline.
+**What you should see:** two rows that add to `30`, and no `NA` row.
+[Help with Task 5.2](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-5-2)
 
 ### Task 5.3: Join the codes onto the analysis table
 
@@ -420,13 +382,13 @@ analysis %>%
 ```
 
 **What you should see:** `[1] 35267`, then your two coded groups adding to `30`, and `NA` with
-`35237`. Only your thirty messages carry a code; every other message is `NA` on this variable,
-and that is correct.
+`35237`.
+[Help with Task 5.3](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#task-5-3)
 
 ## Part 6: Missing values
 
-The client will see numbers built from this table. They should know which messages those numbers
-leave out. Count the messages missing a value on each column the tests will use.
+The client should know which messages the numbers leave out. Count the messages missing a value
+on each column the tests will use.
 
 ```{r}
 #| label: missing-analysis
@@ -440,8 +402,8 @@ analysis %>%
   count(is.na(channel_type))    # the 501 from the two unlabeled channels
 ```
 
-**What you should see:** `TRUE` with `4`, then `TRUE` with `11`, then `TRUE` with `501`. No
-message is missing on two of these at once, so 516 messages carry a missing value in all.
+**What you should see:** `TRUE` with `4`, then `TRUE` with `11`, then `TRUE` with `501`.
+[Help with Part 6](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#part-6)
 
 **Write:** how many messages carry a missing value, where each kind comes from, and what you did
 with them. Say it as a decision another researcher could check.
@@ -450,9 +412,7 @@ with them. Say it as a decision another researcher could check.
 
 ## Part 7: Export
 
-Save the finished table as `twitch_analysis.RDS`. Describing Data and Inferencing Data both read
-that exact name. An `.RDS` file keeps every column exactly as you built it; a `.csv` would lose
-the order of small, medium, and large.
+Save the finished table as `twitch_analysis.RDS`.
 
 ```{r}
 #| label: export
@@ -464,6 +424,7 @@ read_rds("data/twitch_analysis.RDS") %>%              # load it back
 ```
 
 **What you should see:** `[1] 35267`, and `twitch_analysis.RDS` in the `data` folder.
+[Help with Part 7](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#part-7)
 
 ## Part 8: MC 501 only, three reviewer-facing comments
 
@@ -482,89 +443,4 @@ three; the comments the R Companion writes are that kind.
 - [ ] `data/twitch_analysis.RDS` loads back with 35,267 rows.
 - [ ] The worksheet renders without an error.
 
-To render, follow the guide *Render a Quarto Document*:
-[MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html)
-or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html).
-It worked if the Terminal panel ends with `Output created: 11-wrangling-data.html`.
-
-## Help and reference {#help}
-
-Nothing in this section is graded. Come here when a word, a step, or an error stops you.
-
-### Where things go
-
-- **This worksheet** goes in the top folder of your workspace, next to `README.md`. The guide
-  *Put a Worksheet in Your Workspace* shows how:
-  [MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
-  or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
-- **`data/`** means the folder named `data` in that same top folder. Task 0.2 makes it for you.
-
-### Guides for this assignment
-
-- [Data Wrangling risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/data-wrangling.html):
-  the traps on this job, what each looks like, and how to check for it.
-- *Wrangle the Data with Write R Code*:
-  [MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/08-wrangling.html)
-  or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/08-wrangling.html).
-- R cheat sheets, each with a worked example on this Twitch data:
-  [readr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/readr.html),
-  [dplyr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/dplyr.html),
-  [lubridate](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/lubridate.html), and
-  [stringr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/stringr.html).
-
-### The R Companion can write a step
-
-Run **AURA: Write R code**, open **R2 Data**, select the menu item below, then **Run it**. What
-the menu writes lands in your file and counts as your code, so be ready to explain every line. The
-guide *Wrangle the Data with Write R Code*, linked above, shows where the menu is, with pictures.
-
-| Task | Menu item under R2 Data |
-|---|---|
-| 1.1 | **Load the course Twitch corpus** |
-| 3.1 | **Turn the date column into a time** |
-| 3.2 | **Add a column (mutate)** |
-| 4.1 | **Join two tables by a key and nearest earlier time** |
-| 4.2 | **Label each channel by its top category**, then **Join the channel labels onto the messages**. The menu adds the labels to `chat_streams`, so type `analysis <- chat_streams` on the line under its block and run it. |
-| 7 | **Save a table as an RDS file**. A box asks for the file name: leave `data/twitch_analysis.RDS` and press **Enter**. |
-
-To see the tables R has loaded, run **AURA: Show what is loaded in R (Workspace panel)** from
-the Command Palette.
-
-**If you coded in the data viewer (Task 5.1):** put your cursor on an empty line in the
-`read-codes` chunk, run **Insert rebuild code** in the viewer, run the block it writes, and then
-replace the chunk's two lines with `codes <- coded_data %>% clean_names()`.
-
-### If something goes wrong
-
-| Where | What you see | What to do |
-|---|---|---|
-| Any chunk | `object '___' not found` | A blank is still empty in that chunk. Fill it and run the chunk again. |
-| Setup | `there is no package called 'janitor'`, or later `could not find function "twitch_channels"` | Run **AURA: Check my setup**, then **Install what is missing**, and run the chunk again. |
-| Task 0.1 | Your thirty messages differ from a classmate's | Run the whole chunk again from its first line, so the seed line runs right before the draw. |
-| Task 0.2 | `coding-form.csv` was already in `data` | Leave it. It holds the same thirty messages, and your codes are safe. |
-| Task 3.1 | The year is in the tens of thousands | The `/ 1000` is missing from the line. |
-| Task 5.2 | An `NA` row in the count | A code is something other than `0` or `1`: a blank cell, a space after the number, or a word. Fix it in the coding sheet and run Task 5.1 again. |
-| Task 5.3 | The row count went up | The coding sheet has the same `id` twice. |
-| Task 5.3 | The coded rows add to fewer than 30 | An `id` in your coding sheet no longer matches a message. Check that the `id` column was not changed when you saved. |
-
-**If your worksheet was downloaded before November 4,** some of its lines use
-`sample_messages()`, `write_coding_form()`, `clean_dates()`, or `join_chat_streams()`. Those
-still work and give the same results, so keep your work as it is.
-
-For any other error, run **AURA: Explain an R error**. Still stuck after fifteen minutes: email
-me the exact error text and the task number.
-
-### Key terms
-
-| Term | What it means |
-|---|---|
-| **Row** | One of the things you study. Here, one row is one chat message. |
-| **Variable** | One thing you record about every row, such as a message's length or its channel. Each variable is one column. |
-| **Hand-code** | Read each message yourself and record a value for it, following a written rule. The rule is the codebook entry in Task 0.3. |
-| **Pipe (`%>%`)** | Read it as "and then": it hands the result of one line to the next line. |
-| **Timestamp** | The date and time something happened. In this data it is stored as a count of milliseconds since January 1, 1970. |
-| **Missing value (`NA`)** | A cell with nothing in it. R prints `NA`, short for "not available." |
-| **Key** | The column two tables share, which tells R which row in one table goes with which row in the other. |
-| **Join** | Putting two tables together by matching their keys, so each row picks up the other table's columns. |
-| **Factor** | R's way of storing a category (small, medium, large) with its labels in an order you choose. |
-| **RDS file** | R's own file format. It saves a table exactly as you built it, factors and times included. |
+[Help with rendering and submitting](https://aura-lab.siue.edu/v2v-hub/resources/help/data-wrangling.html#before-you-submit)
