@@ -155,7 +155,7 @@ Discussion is also where an honest study states its limits.
 - `v2v::deploy_portfolio(project)` runs the checks, then publishes the site: Steps 12 and 13 of the Chapter 14 starter file
     - `project` is your White Paper folder's name, set in Step 2 of that file
 - When it finishes, your paper is live at your repository's GitHub Pages address
-    - That URL, with the PDF, is what you submit for the White Paper
+    - Paste that URL into the White Paper submission, beside one ZIP file holding the paper PDF and your AI-use log
 
 ## The Pre-Flight Checks
 

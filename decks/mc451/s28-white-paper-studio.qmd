@@ -44,7 +44,7 @@ If your render is broken, say so now.
 - The largest piece of the course, due Friday, December 18, 11:59 PM
 - Abstract, Introduction, Methods, Results, Discussion, and References
     - Plus your one-paragraph Reflection
-- You submit two things, both required: the PDF (in the docs folder inside your White Paper folder, after a render) and the live URL of your GitHub Pages site
+- You submit one ZIP file holding the paper PDF (in the docs folder inside your White Paper folder, after a render) and your AI-use log, plus the live URL of your GitHub Pages site pasted into the submission
 - It is graded on the study, the writing, and whether it reproduces from the code
 
 ## Where the 250 Points Sit
@@ -173,7 +173,10 @@ Before you leave today you should have:
 
 - Due Friday, December 4, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points
 - Due Friday, December 4, 11:59 PM: your full coded corpus, pushed to your project repository ([White Paper dated step](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper))
-- Due Friday, December 18, 11:59 PM: [White Paper](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper), the PDF and the live URL
+- Due Friday, December 18, 11:59 PM: [White Paper](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper): one ZIP file holding the paper PDF and your AI-use log, plus the live URL pasted into the submission
+
+## Before Finals Week (cont.)
+
 - Step by step: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html), [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc451/13-publish-your-site.html)
 - Work the must-fix list first. The rest is optional
 - Re-render after every change, so every number stays computed, not typed
