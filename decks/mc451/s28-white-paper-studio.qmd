@@ -67,11 +67,10 @@ The full rubric is in the [White Paper entry](https://aura-lab.siue.edu/v2v-hub/
 - Is the paper honest about its limits?
 - Does the site deploy?
 
-## Exercise: State Your Claim in One Sentence {.discuss}
+## Exercise: The Claim in Plain Words {.discuss}
 
-- State the one sentence your paper is actually claiming
-- Restate it without the words "significant" or "*p*-value"
-- If it takes you more than one sentence, name the part you are unsure of
+- The result: gaming messages average 28.5 characters, non-gaming 33.7; *p* below .001, Cohen's *d* = -0.13
+- How would you state this finding in one sentence, without the words "significant" or "*p*-value"?
 
 ## Round One, the Introduction
 
