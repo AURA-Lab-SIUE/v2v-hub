@@ -90,11 +90,10 @@ a little. Samples wobble.
     - Under **Test**, click **Check my test choice**
     - It says whether the choice fits these rules, and it does not choose for you
 
-## Exercise: State the Null for Your Own Question {.discuss}
+## Exercise: State the Null {.discuss}
 
-- State the null hypothesis for **your** research question in one sentence: "There is no association between ... and ..."
-- Describe what your result would look like if it were nothing but sampling wobble
-- Name the size of difference that would change how you think about your topic
+- The research question asks whether gaming and non-gaming channels differ in message length
+- What is the null hypothesis for this question, in one sentence?
 
 ## Running the t-test
 

@@ -90,13 +90,11 @@ analysis %>%
 The histogram is a chunk that redraws itself on every render. `echo: false` hides the code
 and shows only the plot.
 
-## Exercise: Find Your Own Pasted Numbers {.discuss}
+## Exercise: The Typed Number {.discuss}
 
-Answer from your own draft.
-
-- Name one place where you have already typed a number by hand instead of computing it
-- Name one thing in your draft that would break if your data changed tomorrow
-- Name one figure you could produce from code inside the report today
+- A draft sentence, typed by hand: "Non-gaming messages averaged 33.7 characters; gaming messages averaged 28.5"
+- Next week the data gain 200 more coded messages
+- Which numbers in that sentence are now wrong, with nothing in the report to warn you?
 
 ## Why a Reproducible Report Matters
 
