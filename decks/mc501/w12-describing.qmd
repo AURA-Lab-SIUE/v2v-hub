@@ -150,6 +150,7 @@ $ coder_notes   <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
 ```
 
 - `Rows: 30`, `Columns: 5`, and `reaction_only` as `<dbl>` (a number): the sheet is right
+- The class example files behind these outputs: [coding-form.csv](https://aura-lab.siue.edu/v2v-hub/resources/examples/twitch-demo/coding-form.csv) and [twitch_analysis.RDS](https://aura-lab.siue.edu/v2v-hub/resources/examples/twitch-demo/twitch_analysis.RDS)
 
 ## When the Check Goes Wrong
 
