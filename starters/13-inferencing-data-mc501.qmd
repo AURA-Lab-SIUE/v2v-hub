@@ -65,7 +65,7 @@ block. Start at **Part 0**, the heading after **What to submit**.
 
 **100 points.** Due Monday, December 7, 11:59 PM, in Blackboard, under **Inferencing Data in R**.
 
-Upload each of these on its own, not in a zip:
+You turn in an R assignment as one ZIP file: your whole course workspace, the folder you have open in VS Code, packed into a single file. [How to make the ZIP](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file). The ZIP must hold:
 
 - this worksheet, with every blank and every **Write:** filled
 - the HTML file with the same name, which you make when you render the worksheet (**Help and reference** links the guide)

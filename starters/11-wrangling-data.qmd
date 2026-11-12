@@ -69,7 +69,7 @@ the heading after **What to submit**, and then go on to Part 0.
 - MC 451: Friday, November 13, 11:59 PM
 - MC 501: Monday, November 16, 11:59 PM
 
-Upload each of these on its own, not in a zip:
+You turn in an R assignment as one ZIP file: your whole course workspace, the folder you have open in VS Code, packed into a single file. How to make the ZIP: [MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file) or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file). The ZIP must hold:
 
 - this worksheet, with every blank filled
 - the HTML file with the same name, which you make in the last step, **Before you submit**
