@@ -48,7 +48,7 @@ Two commands that will **not** work, and the error each produces:
 `remotes` is on CRAN, so this part is ordinary. You only ever do this once.
 
 ```r
-install.packages("remotes")
+install.packages("remotes", repos = "https://cloud.r-project.org")
 ```
 
 ### Step 2. Install `v2v` from GitHub
@@ -113,7 +113,7 @@ together can exhaust it in minutes.
 Two fixes. Wait an hour, or authenticate, which raises the limit substantially:
 
 ```r
-install.packages("gitcreds")
+install.packages("gitcreds", repos = "https://cloud.r-project.org")
 gitcreds::gitcreds_set()
 ```
 

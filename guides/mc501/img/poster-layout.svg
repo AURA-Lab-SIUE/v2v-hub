@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" width="960" height="720" role="img" aria-labelledby="t d" font-family="Arial, Helvetica, sans-serif">
+  <title id="t">Poster layout, 48 by 36 inches</title>
+  <desc id="d">A wide poster with a title band across the top and three columns below it. Left column: abstract, background and hypotheses, method. Middle column: key results, with the main chart taking most of the space and the result with its effect size under it. Right column: discussion and implications, limitation, and the QR code with a short line under it.</desc>
+  <rect x="2" y="2" width="956" height="716" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+  <rect x="24" y="24" width="912" height="104" fill="#e8eef5" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="480" y="72" text-anchor="middle" font-size="34" font-weight="bold" fill="#1a1a1a">Title (about 90 pt)</text>
+  <text x="480" y="110" text-anchor="middle" font-size="22" fill="#1a1a1a">Your name and SIUE</text>
+  <g font-size="20" fill="#1a1a1a">
+    <rect x="24" y="148" width="280" height="150" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="40" y="182" font-weight="bold">Abstract</text>
+    <text x="40" y="210">100 words</text>
+    <rect x="24" y="314" width="280" height="190" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="40" y="348" font-weight="bold">Background and</text>
+    <text x="40" y="374" font-weight="bold">hypotheses</text>
+    <rect x="24" y="520" width="280" height="176" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="40" y="554" font-weight="bold">Method</text>
+    <rect x="324" y="148" width="312" height="400" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="340" y="182" font-weight="bold">Key results</text>
+    <rect x="344" y="202" width="272" height="326" fill="#ffffff" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="480" y="372" text-anchor="middle">Your main chart</text>
+    <text x="480" y="398" text-anchor="middle">(the largest thing)</text>
+    <rect x="324" y="564" width="312" height="132" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="340" y="598" font-weight="bold">The result and</text>
+    <text x="340" y="624" font-weight="bold">its effect size</text>
+    <rect x="656" y="148" width="280" height="230" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="672" y="182" font-weight="bold">Discussion and</text>
+    <text x="672" y="208" font-weight="bold">implications</text>
+    <rect x="656" y="394" width="280" height="120" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="672" y="428" font-weight="bold">Limitation</text>
+    <rect x="656" y="530" width="280" height="166" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="2"/>
+    <rect x="736" y="546" width="120" height="104" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="796" y="604" text-anchor="middle" font-size="18">QR code</text>
+    <text x="796" y="680" text-anchor="middle" font-size="18">Read the full paper</text>
+  </g>
+</svg>

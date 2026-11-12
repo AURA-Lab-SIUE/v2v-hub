@@ -99,7 +99,7 @@ session. Last, check for the small R package that hands your project to Quarto:
 
 ```{r}
 if (!requireNamespace("quarto", quietly = TRUE)) {
-  install.packages("quarto")                       # only if it is missing
+  install.packages("quarto", repos = "https://cloud.r-project.org")  # only if it is missing
 }
 ```
 

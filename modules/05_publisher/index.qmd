@@ -149,7 +149,7 @@ The paper carries the three transparency markers a reviewer looks for: a **data 
 
 ### The conference poster
 
-The poster is a separate requirement shared with MC 500, rendered at 36 by 24 inches from the Quarto Typst poster template. It is assigned in Week 13 alongside the white paper and worked in the Week 15 studio session.
+The poster is a separate requirement shared with MC 500: one appropriately large PowerPoint slide (48 by 36 inches recommended, 36 by 24 inches accepted) with a QR code to your published site, saved as a PDF ([guide 18](../../guides/mc501/18-build-your-conference-poster.md)). It is assigned in Week 13 alongside the white paper and worked in the Week 15 studio session.
 
 ## Submission (MC 501)
 

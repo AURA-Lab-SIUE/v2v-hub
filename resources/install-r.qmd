@@ -31,7 +31,7 @@ This guide installs R and wires it into VS Code. If you have not installed VS Co
 
 1. Go to [r-project.org](https://www.r-project.org/).
 2. Click **Download R**, then **Download R for Windows**, then **base**.
-3. Click **Download R X.X.X for Windows** and run the installer.
+3. Click **Download R X.X.X for Windows** and run the installer. If Windows asks **Do you want to allow this app to make changes to your device?**, select **Yes**. If it asks for an administrator password instead, the person who manages that computer has to type it.
 4. Click through with the default location and components, then **Finish**.
 
 **Verify:** open the **R x64** app from the Start menu. You should get an R console with
@@ -81,8 +81,8 @@ Optional: install the **AURA Lab R Companion** the same way (Extensions view, se
 The R extension talks to R through two small packages. **With the AURA Lab R Companion,** run **AURA: Check my setup** from the Command Palette and choose your course: its **Install what is missing** installs both. **Without it,** open a terminal in VS Code (**Terminal, New Terminal**), type `R` to start an R session, and run:
 
 ```r
-install.packages("languageserver")  # code completion, diagnostics, help
-install.packages("httpgd")           # plots render in a VS Code panel
+install.packages("languageserver", repos = "https://cloud.r-project.org")  # code completion, diagnostics, help
+install.packages("httpgd", repos = "https://cloud.r-project.org")           # plots render in a VS Code panel
 ```
 
 Type `q()` and then `n` to leave the R session when they finish.
@@ -96,20 +96,21 @@ Type `q()` and then `n` to leave the R session when they finish.
 **Without it,** start R again (`R` in the terminal) and install the analysis packages, one at a time:
 
 ```r
-install.packages("tidyverse")   # ggplot2, dplyr, readr, tidyr, and more
-install.packages("janitor")     # clean_names(), used from the first wrangling practice on
-install.packages("likert")      # Likert-scale survey analysis
-install.packages("rmarkdown")   # reports from your analysis
-install.packages("effectsize")  # effect sizes in the tests (all courses)
+install.packages("tidyverse", repos = "https://cloud.r-project.org")   # ggplot2, dplyr, readr, tidyr, and more
+install.packages("janitor", repos = "https://cloud.r-project.org")     # clean_names(), used from the first wrangling practice on
+install.packages("likert", repos = "https://cloud.r-project.org")      # Likert-scale survey analysis
+install.packages("rmarkdown", repos = "https://cloud.r-project.org")   # reports from your analysis
+install.packages("effectsize", repos = "https://cloud.r-project.org")  # effect sizes in the tests (all courses)
 ```
 
-MC 501 needs two more, which the Companion's **Install what is missing** also installs; `car` and `ggstatsplot` are optional extras:
+MC 501 needs two more, which the Companion's **Install what is missing** also installs, plus `qrcode` for the poster's QR code ([guide 18](../guides/mc501/18-build-your-conference-poster.md)); `car` and `ggstatsplot` are optional extras:
 
 ```r
-install.packages("lm.beta")      # standardized slope in the regression (required in MC 501)
-install.packages("pwr")          # power analysis for your sample size (required in MC 501)
-install.packages("car")          # post-hoc tests and diagnostics (optional)
-install.packages("ggstatsplot")  # statistical plots with test results (optional)
+install.packages("lm.beta", repos = "https://cloud.r-project.org")      # standardized slope in the regression (required in MC 501)
+install.packages("pwr", repos = "https://cloud.r-project.org")          # power analysis for your sample size (required in MC 501)
+install.packages("qrcode", repos = "https://cloud.r-project.org")       # the QR code on your conference poster (MC 501)
+install.packages("car", repos = "https://cloud.r-project.org")          # post-hoc tests and diagnostics (optional)
+install.packages("ggstatsplot", repos = "https://cloud.r-project.org")  # statistical plots with test results (optional)
 ```
 
 **Wait for each to finish** (you'll see a blank `>` prompt when done).

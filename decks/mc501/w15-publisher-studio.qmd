@@ -238,7 +238,7 @@ portfolio is due. The checks exist so the last step of a long study is the calm 
 
 ## The Poster
 
-- 36 by 24 inches, in landscape orientation
+- Appropriately large, in landscape: 48 by 36 inches recommended, 36 by 24 accepted
 - Title, authors, and institution, plus a 100-word abstract
 - Background and hypotheses, then the methods in condensed form
 - Key results, with one or two `theme_v2v()` figures
@@ -269,7 +269,7 @@ Your reader is standing up, holding a drink, four feet away.
 - The site renders on your machine and nowhere else, because renv drifted
 - A figure vanishes from the site
     - Its chunk depends on an object that exists only in your console
-- The poster is exported at screen resolution and printed at 36 inches, so it is blurry
+- The poster is exported at screen resolution and printed at full size, so it is blurry
 - The QR code points at a private repository
 
 Test the whole chain tonight, on a machine you did not build it on.

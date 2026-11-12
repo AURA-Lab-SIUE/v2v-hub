@@ -486,13 +486,15 @@ The final deliverable: your study written up in IMRaD, rendered to PDF, publishe
 
 **What you submit:** one ZIP file holding the paper PDF, the poster PDF, and your AI-use log, plus the live URL of your GitHub Pages site pasted into the submission. Upload the ZIP and paste the URL into the Blackboard submission for White Paper and conference poster; the submission is incomplete without each.
 
-**Length:** The paper 5,000 to 7,000 words from the introduction through the reflection, plus the 150 to 250 word abstract; the poster one page of 400 to 800 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
+**Length:** The paper 5,000 to 7,000 words from the introduction through the reflection, plus the 150 to 250 word abstract; the poster one appropriately large page of 400 to 800 words (48 by 36 inches is recommended, and 36 by 24 inches is accepted). Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
 **AI-use log:** submit the [AI-use log (.docx)](resources/AI-use-log.docx) with this assignment, with an entry for each time an AI tool shaped it, or with the no-AI box checked.
 
 **Rubric:** [White Paper and conference poster rubric (PDF)](resources/rubrics/MC501-rubric-white-paper-and-conference-poster.pdf). It lists what each section of the paper carries, including the three transparency markers, what the poster shows, and the points for each.
 
 **Worksheet:** [14-publishing-your-paper.qmd](starters/14-publishing-your-paper.qmd){download="14-publishing-your-paper.qmd"}, run in class, takes your project from Results to a live site.
+
+**Poster:** [Build Your Conference Poster](guides/mc501/18-build-your-conference-poster.md) walks through the 48 by 36 inch slide, the QR code to your site, and the PDF.
 
 **How-to:** [Render a Quarto document](guides/mc501/11-render-a-quarto-document.md), [Commit and push](guides/mc501/12-commit-and-push-with-git.md), and [Publish your site](guides/mc501/13-publish-your-site.md) step-by-step guides.
 

@@ -43,7 +43,7 @@ the R code inside your documents.
 
 1. Go to [quarto.org/docs/get-started](https://quarto.org/docs/get-started/).
 2. Click the download button for **Windows**. You get a `.msi` file.
-3. Run it and accept every default.
+3. Run it and accept every default. If Windows asks **Do you want to allow this app to make changes to your device?**, select **Yes**. If it asks for an administrator password instead, the person who manages that computer has to type it.
 
 The installer adds Quarto to your PATH, which is what lets you type `quarto` in a terminal.
 

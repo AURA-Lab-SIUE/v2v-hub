@@ -170,8 +170,8 @@ To work with repositories on your computer, you need **Git** (the tool GitHub us
 **Windows:**
 
 1. Download Git from [git-scm.com](https://git-scm.com)
-2. Run the installer and accept the default options. It asks a lot of questions and **Next**
-   is the right answer to all of them.
+2. Run the installer and accept the default options. If Windows asks **Do you want to allow this app to make changes to your device?**, select **Yes**. If it asks for an administrator password instead, the person who manages that computer has to type it. After that, it asks a lot of
+   questions, and **Next** is the right answer to all of them.
 3. **Quit VS Code completely and reopen it.** Not just the terminal, and not Reload
    Window: VS Code reads your PATH once when it starts, so anything installed while it was
    running stays invisible to it until the program itself restarts.

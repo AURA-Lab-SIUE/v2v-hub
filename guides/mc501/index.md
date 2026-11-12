@@ -19,5 +19,6 @@ Each guide is a numbered click path. Commands run from the Command Palette: **Vi
 15. [Draw a Pilot Sample and Make a Blind Re-code Sheet](15-draw-a-pilot-and-make-a-blind-recode-sheet.md)
 16. [Describe a Coded Category Against Counts and Source Measures](16-describe-counts-and-source-measures.md)
 17. [Choose Your Test and Write It in APA](17-choose-your-test-and-write-it-in-apa.md)
+18. [Build Your Conference Poster](18-build-your-conference-poster.md)
 
 The [lab-weeks table in the MC 501 syllabus](../../mc501-syllabus.qmd#weekly-schedule) shows which guide goes with each week.

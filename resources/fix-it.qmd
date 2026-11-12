@@ -101,7 +101,7 @@ had, and the course package then refused to build because one of them was too ol
 3. In that R window, run this line and let it finish:
 
    ```r
-   install.packages(c("rlang", "cli", "curl", "xfun", "fs"))
+   install.packages(c("rlang", "cli", "curl", "xfun", "fs"), repos = "https://cloud.r-project.org")
    ```
 
 4. Then run this one. The ending matters, so copy the whole line:
