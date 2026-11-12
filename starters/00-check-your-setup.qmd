@@ -61,7 +61,7 @@ how to fetch it from somewhere else. That tool is called `remotes`.
 You only ever run this once, on this computer, for the whole semester.
 
 ```{r}
-install.packages("remotes")
+install.packages("remotes", repos = "https://cloud.r-project.org")
 ```
 
 **What you should see:** a lot of text scrolling past, some of it red, ending in something

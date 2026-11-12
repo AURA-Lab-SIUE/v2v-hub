@@ -166,7 +166,7 @@ streams <- v2v::twitch_streams()
 **What you should see:** a short list of attached packages after the first line, then nothing
 for the other two. `chat` and `streams` now appear in the **R** panel's list of objects.
 
-**If you see `there is no package called 'tidyverse'`,** run `install.packages("tidyverse")`
+**If you see `there is no package called 'tidyverse'`,** run `install.packages("tidyverse", repos = "https://cloud.r-project.org")`
 in the R console, wait for it to finish, then run this chunk again.
 
 The example data arrives through a function, not a file path. Loading your own source from a

@@ -55,7 +55,7 @@ For an assignment that is not an R worksheet, put the files it asks for in one f
 
 1. In the Explorer on the left side of VS Code, right-click `README.md` and select **Reveal in File Explorer**. A File Explorer window opens with `README.md` highlighted.
 2. Click the up arrow (↑) to the left of the address bar at the top of that window. You should see your workspace's name in the list of folders.
-3. Right-click your workspace's name and select **Compress to ZIP file**. (On an older Windows, select **Send to**, then **Compressed (zipped) folder**.) You should see a new file with the same name, ending in `.zip`.
+3. Right-click your workspace's name, select **Compress to...**, then select **ZIP File**. (Some Windows versions show these as one item, **Compress to ZIP file**. On an older Windows, select **Send to**, then **Compressed (zipped) folder**.) A new file with the same name, ending in `.zip`, appears with its name highlighted. Press **Enter** to keep that name.
 4. In Blackboard, open the assignment, attach that `.zip` file, and submit.
 
 **On a Mac**

@@ -530,7 +530,7 @@ All three are the general linear model, wearing three different names.
 
 ## The White Paper and Its Poster (cont.)
 
-- **The poster:** 36 by 24 inches, landscape, from title to implications
+- **The poster:** appropriately large (48 by 36 inches recommended), landscape, from title to implications
     - A QR code to your pre-registration or portfolio
     - Your ninety-second pitch, built from one or two figures
 - Due Friday, December 18, 11:59 PM: [White Paper and conference poster](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster): one ZIP file holding the paper PDF, the poster PDF, and your AI-use log, plus the live URL of your site pasted into the submission
