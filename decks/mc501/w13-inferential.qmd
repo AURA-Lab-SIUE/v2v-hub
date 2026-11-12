@@ -200,7 +200,7 @@ Chance alone is an unconvincing explanation for the gap. That is the entire cont
 - Ten tests run without correction produce one false positive on average
 - Declare your tests and your correction for multiple tests in advance
 
-## Exercise: Justify, Not Redefine {.discuss}
+## Exercise: Justify the Alpha {.discuss}
 
 [Lakens et al. (2018)]{.eyebrow}
 
@@ -209,9 +209,8 @@ Chance alone is an unconvincing explanation for the gap. That is the entire cont
 >
 > Lakens et al. (2018, p. 168)
 
-- Name the one design choice in your own study that is least justified so far, and say what a justification would need to contain
-- Lakens and colleagues answer a proposed stricter threshold with a demand for justification. Is a justification enough to replace a threshold? Give one reason either way
-- Eighty-eight authors signed this paper. Say whether that number should change how much weight you give it, and why
+- A study compares gaming and non-gaming message length and calls *p* below .05 significant
+- What one sentence would justify .05 for this study, rather than leaving it as habit?
 
 ## Retiring the Phrase
 
@@ -543,7 +542,7 @@ All three are the general linear model, wearing three different names.
 
 ## Before Week 15 (cont.)
 
-- **Due Monday, December 7, 11:59 PM:** push your full coded dataset and a re-code of a subsample to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)); the stability figure earns points only if that commit is dated by then
+- **Due Monday, December 7, 11:59 PM:** push your full coded dataset to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html))
     - This is the [White Paper's dated step](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster)
 
 ## Before Week 15 (cont.)

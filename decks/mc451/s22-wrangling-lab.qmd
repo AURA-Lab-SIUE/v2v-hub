@@ -154,7 +154,7 @@ Two channels have no `game` recorded in any snapshot. Use Chapter 11, [Labeling 
 - `main_game` is the category a channel streamed most often across its snapshots
     - Bob Ross streams Art, so `is_gaming` is `FALSE` for every one of his messages
 - `median_viewers` is the channel's typical audience, and `viewer_band` cuts it into the three bands
-- The package source (`data-raw/build_channels.R`) holds the dplyr pipeline that built it: count the snapshots per channel and category, keep each channel's most frequent one, take the median viewers, cut the bands
+- The package source, [build_channels.R](https://github.com/AURA-Lab-SIUE/v2v-r/blob/main/data-raw/build_channels.R), holds the dplyr pipeline that built it: count the snapshots per channel and category, keep each channel's most frequent one, take the median viewers, cut the bands
 - More detail: [Chapter 11, Labeling gaming and non-gaming](https://aura-lab.siue.edu/v2v/chapters/chapter11.html#labeling-gaming-and-non-gaming)
 
 ## Step 4, Join the Label Onto the Messages
