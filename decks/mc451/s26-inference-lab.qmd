@@ -164,7 +164,7 @@ summary(fit_lm)
     - An abstract, then Introduction, Methods, Results, and Discussion, then a Reflection
 - It is not a term paper. It is a document an invested reader could act on
 - It is rendered from Quarto, so every number in it comes from your code
-- You submit two things, both required: the PDF, and the live URL of your GitHub Pages site
+- You submit one ZIP file holding the paper PDF and your AI-use log, plus the live URL of your GitHub Pages site pasted into the submission
 
 ## What Goes In It
 

@@ -313,7 +313,7 @@ walked it once.
     - This is the [White Paper's dated step](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster)
 - Due Monday, December 7, 11:59 PM: [Week 15 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
 - Due Friday, December 18, 11:59 PM: [White Paper and conference poster](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster), 200 points
-    - The paper as a PDF, the poster as a PDF, and the live URL of your site, all three required
+    - One ZIP file holding the paper PDF, the poster PDF, and your AI-use log, plus the live URL of your site pasted into the submission
 
 ## Before Finals Week (cont.)
 
