@@ -24,3 +24,6 @@ jobs:
       # contributor runs locally before opening the pull request.
       - name: Check the Pages artifact
         run: quarto run tools/predeploy-check.ts --no-render
+      # The deck overlap check must still fail on a known repeated pair.
+      - name: Deck overlap self-test
+        run: quarto run tools/deck-overlap.ts --self-test
