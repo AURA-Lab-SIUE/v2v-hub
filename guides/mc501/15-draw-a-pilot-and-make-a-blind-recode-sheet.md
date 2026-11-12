@@ -2,7 +2,7 @@
 
 Draw your pilot items so anyone can draw them again, read long ids without losing digits, make a re-code sheet that hides your first codes, and line the two passes up for a reliability check. You type every line of R yourself and see what each one prints.
 
-This guide is for the [Sampling Plan and Pilot](../../mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items) (20 to 30 items) and for the stability re-code in the [White Paper](../../mc501-assignments.html#white-paper-and-conference-poster). [Guide 06](06-draw-your-coding-sample.md), *Draw Your Coding Sample*, draws a sample from the course chat data; this guide draws from **your own** coding sheet. [Guide 07](07-reliability-grid.md) compares the two passes once you have them.
+This guide is for the [Sampling Plan and Pilot](../../mc501-assignments.html#sampling-plan-and-pilot-20-to-30-items) (20 to 30 items). [Guide 06](06-draw-your-coding-sample.md), *Draw Your Coding Sample*, draws a sample from the course chat data; this guide draws from **your own** coding sheet. [Guide 07](07-reliability-grid.md) compares the two passes once you have them.
 
 ## The example data
 
@@ -342,68 +342,11 @@ write_csv(both_passes, "data/pilot-both-passes.csv", na = "")
 
 [Guide 07](07-reliability-grid.md), *Check Your Reliability in R*, compares the two passes and computes the statistic your codebook calls for, Cohen's kappa or Krippendorff's alpha. Your `pilot-both-passes.csv` already has the shape it needs, so start at [its Part 2](07-reliability-grid.md#part-2-run-the-check).
 
-## Step 9: Later, the White Paper re-code
-
-The [White Paper](../../mc501-assignments.html#white-paper-and-conference-poster) asks for a second re-code once you have coded your full set: at least 50 items or 20 percent of your coded items, whichever is larger. Make its sheet the same way as Steps 4 to 7, drawn from your full coded sheet.
-
-Two choices are yours, and either is allowed. Say which you made in your Methods.
-
-- **Your pilot items in the full set.** Your pilot items may count toward your full coded set, or you may code a full set without them.
-- **Your pilot items in the re-code.** The re-code may draw from all your coded items, pilot items included, or leave the pilot items out.
-
-To draw from all your coded items:
-
-```r
-set.seed(1204)
-
-recode_all <- coded %>%
-  slice_sample(n = 50)
-
-nrow(recode_all)
-```
-
-```
-> write_csv(both_passes, "data/pilot-both-passes.csv", na = "")
-
-> set.seed(1204)
-
-> recode_all <- coded %>%
-+   slice_sample(n = 50)
-
-> nrow(recode_all)
-[1] 50
-```
-
-To leave the pilot items out, `anti_join()` first keeps only the items whose id is **not** in the pilot ([anti_join() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#anti_join-find-the-rows-that-did-not-match)):
-
-```r
-set.seed(1204)
-
-recode_no_pilot <- coded %>%
-  anti_join(pilot, by = join_by(id)) %>%
-  slice_sample(n = 50)
-
-nrow(recode_no_pilot)
-```
-
-```
-> set.seed(1204)
-
-> recode_no_pilot <- coded %>%
-+   anti_join(pilot, by = join_by(id)) %>%
-+   slice_sample(n = 50)
-
-> nrow(recode_no_pilot)
-[1] 50
-```
-
-**Check:** 50 rows either way. In the second, none of the 20 pilot ids can appear.
-
 ## What goes in your write-up
 
 - In the sampling plan: the pilot size, how you drew it, and the seed.
 - In the pilot write-up: the gap between the two passes in hours, that pass 1 codes were hidden during pass 2, and the reliability figure from [guide 07](07-reliability-grid.md).
-- In the White Paper Methods: the re-code size, its seed, whether the pilot items count toward your full set, and whether the re-code includes or leaves out the pilot items.
+- In the White Paper Methods: the stability figure from this pilot re-code. There is no second re-code.
 
 ## If it does not work
 

@@ -49,6 +49,8 @@ If you press **Run Cell** (the ▷ at the top right of a code cell) and your cod
 
 You turn in an R assignment as one ZIP file: your whole course workspace, the folder you have open in VS Code, packed into a single file. Before you start, render the worksheet, and save the AI-use log in the same place as `README.md`, so that both are inside the workspace.
 
+For an assignment that is not an R worksheet, put the files it asks for in one folder, then follow the same steps on that folder instead of your workspace.
+
 **On Windows**
 
 1. In the Explorer on the left side of VS Code, right-click `README.md` and select **Reveal in File Explorer**. A File Explorer window opens with `README.md` highlighted.

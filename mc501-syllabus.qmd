@@ -514,7 +514,7 @@ The one exception is the White Paper and poster in finals week.
 | 12 | Nov 11 | Ch 12 [R] Describing: descriptive statistics + graphics (Reading: Lakens (2013))| [Data Wrangling [R]](mc501-assignments.qmd#data-wrangling-in-r) |
 | 13 | Nov 18 | Ch 13 [R] Inferential: t-test, ANOVA, regression; *White Paper + poster assigned* (Reading: Lakens et al. (2018))| [Describing Data [R]](mc501-assignments.qmd#describing-data-in-r) |
 | 14 | Nov 25 | **Thanksgiving Break, Nov 23 to 29, no class** | |
-| 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio (Reading: Wasserstein & Lazar (2016))| [Inferencing Data [R]](mc501-assignments.qmd#inferencing-data-in-r); coded corpus and stability check pushed (Mon Dec 7, dated step) |
+| 15 | Dec 2 | Ch 14 The Publisher; white-paper + poster studio (Reading: Wasserstein & Lazar (2016))| [Inferencing Data [R]](mc501-assignments.qmd#inferencing-data-in-r); coded dataset pushed (Mon Dec 7, dated step) |
 | 16 | Dec 9 | **Work Session: open lab / support** | |
 | 17 | Dec 16 | **Finals Week** | [White Paper (+ conference poster)](mc501-assignments.qmd#white-paper-and-conference-poster) |
 

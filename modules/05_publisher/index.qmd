@@ -50,7 +50,7 @@ Your paper reports a two-part study:
 
 | Week | Focus | Deliverable |
 |:--|:--|:--|
-| 15 | Ch 14: The Publisher; assemble your paper | Dated step: the full coded corpus and its stability check pushed to your project repository (MC 451 Friday, December 4; MC 501 Monday, December 7) |
+| 15 | Ch 14: The Publisher; assemble your paper | Dated step: the full coded dataset pushed to your project repository (MC 451 Friday, December 4; MC 501 Monday, December 7) |
 | 16 | Work session: open lab and support | |
 | 17 | Finals week | White paper due |
 

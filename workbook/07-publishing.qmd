@@ -121,7 +121,7 @@ The rubric standard is repeatability: enough detail that another researcher coul
 1. **Data provenance** (1 paragraph): what media content did you analyze, where did it come from, and over what time period?
 2. **Sampling strategy** (1 paragraph): how did you select your sample? What was the population, and what was the final sample size?
 3. **Variables** (1 to 2 paragraphs): define each variable, conceptually and operationally. This comes directly from your codebook.
-4. **Reliability** (1 paragraph): you are the only coder, so report your own stability check: how many items you re-coded after a gap with your first codes hidden (about 10 percent in this course), the agreement figure that re-code produced, the threshold you applied before coding the full sample, and any codebook changes the pilot prompted. Name the single-coder limitation as such; a second coder is not part of this course.
+4. **Reliability** (1 paragraph): you are the only coder, so report the stability check from your pilot: how many pilot items you re-coded after a gap with your first codes hidden, the agreement figure that re-code produced, the threshold you applied before coding the full sample, and any codebook changes the pilot prompted. Name the single-coder limitation as such; a second coder is not part of this course.
 5. **Wrangling** (1 paragraph): the steps between raw file and analysis-ready data.
 
 ::: {.undergraduate-only}

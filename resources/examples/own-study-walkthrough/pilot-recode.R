@@ -74,18 +74,3 @@ both_passes %>%
   filter(is.na(threat_p1) | is.na(threat_p2))
 
 write_csv(both_passes, "data/pilot-both-passes.csv", na = "")
-
-set.seed(1204)
-
-recode_all <- coded %>%
-  slice_sample(n = 50)
-
-nrow(recode_all)
-
-set.seed(1204)
-
-recode_no_pilot <- coded %>%
-  anti_join(pilot, by = join_by(id)) %>%
-  slice_sample(n = 50)
-
-nrow(recode_no_pilot)

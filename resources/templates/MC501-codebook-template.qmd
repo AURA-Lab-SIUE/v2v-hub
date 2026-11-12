@@ -98,7 +98,7 @@ Repeat the table below once per variable, as many times as your study has variab
 
 ## 7. The stability procedure and a fresh sample
 
-*Say how many items you will re-code (at least 10 percent of your coded items), that you will re-code them yourself at least 48 hours after the first pass, and that your first codes will be hidden while you do.*
+*Say how many of your pilot items you will re-code, that you will re-code them yourself at least 48 hours after the first pass, and that your first codes will be hidden while you do.*
 
 *Name the dated file in your repository that records this plan before the re-code (for example, `codebook/stability-plan.md`), committed before you start the second pass.*
 
