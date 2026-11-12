@@ -19,6 +19,8 @@ Everything is due at **11:59 PM** on the **Monday** listed. The one exception is
 
 Submissions are **unlimited**. If you upload the wrong file, or want to revise before the deadline, submit again.
 
+**More than one file goes in as one ZIP file.** When an assignment asks for two or more files, the AI-use log included, put them in one folder, pack that folder into a single ZIP file, and upload the ZIP. That way no file gets left out. You may also upload a file beside the ZIP. [How to make the ZIP](guides/mc501/11-render-a-quarto-document.md#submit-your-work-as-one-zip-file).
+
 **AI-use log:** where an assignment asks for it, the AURA Lab R Companion's output (its setup check, its error explanations, and any code its menus write) is not AI use and is not logged; Copilot is, including any answer Copilot gives using the R Companion's tools.
 :::
 
@@ -156,7 +158,7 @@ Complete the CITI Program's Social and Behavioral Research training, and draft t
 <details class="syl-policy">
 <summary>Full requirements</summary>
 
-**What you submit:** two files. The CITI completion certificate as a PDF, and your non-human-subjects determination draft.
+**What you submit:** two files, packed into one ZIP file. The CITI completion certificate as a PDF, and your non-human-subjects determination draft.
 
 **Requirements**
 
@@ -184,7 +186,7 @@ Annotate three peer-reviewed articles, then write the paragraph that makes them 
 
 **Worked example:** [Annotated manuscript example (PDF)](resources/annotation-example.pdf).
 
-**What you submit:** the three annotated PDFs, plus one document holding the per-article notes and the synthesis.
+**What you submit:** the three annotated PDFs, plus one document holding the per-article notes and the synthesis. Upload them together as one ZIP file.
 
 **Requirements**
 
@@ -344,7 +346,7 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure, uploaded to Blackboard under Sampling Plan and Pilot, 20 to 30 items. [Guide 07, Check your reliability in R](guides/mc501/07-reliability-grid.md), lines your pass 1 and pass 2 codes up in one sheet and computes the figure from them; its script counts as the code that computed the figure. To code the pilot items in VS Code instead of a spreadsheet, **AURA: Open the data viewer** opens your CSV in a grid where you add your coding columns and code each row; your codes save to `data/derived/`, the original file is never changed, and **Insert rebuild code** writes the lines that join the codes back on. Excel and Google Sheets still work.
+**What you submit:** the plan and the pilot as one document, plus your coded pilot data and the code that computed the reliability figure, uploaded to Blackboard under Sampling Plan and Pilot, 20 to 30 items, as one ZIP file. [Guide 07, Check your reliability in R](guides/mc501/07-reliability-grid.md), lines your pass 1 and pass 2 codes up in one sheet and computes the figure from them; its script counts as the code that computed the figure. To code the pilot items in VS Code instead of a spreadsheet, **AURA: Open the data viewer** opens your CSV in a grid where you add your coding columns and code each row; your codes save to `data/derived/`, the original file is never changed, and **Insert rebuild code** writes the lines that join the codes back on. Excel and Google Sheets still work.
 
 **Length:** 700 to 1,200 words across the plan and the pilot write-up, plus 20 to 30 coded items. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 
@@ -477,12 +479,12 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 
 The final deliverable: your study written up in IMRaD, rendered to PDF, published to the web, and carried onto a conference poster.
 
-**Dated step, Monday, December 7, 11:59 PM:** push the full coded dataset and a re-code of a subsample to your project repository. The subsample may include or leave out your pilot items; say which in Methods. The stability figure in Methods earns its points only if that commit is dated on or before December 7; the rubric carries the subsample rule. Nothing about your analysis is due that day.
+**Dated step, Monday, December 7, 11:59 PM:** push your full coded dataset to your project repository. Your Methods reports stability from your pilot re-code; there is no second re-code. Nothing about your analysis is due that day.
 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
-**What you submit:** three things, all required: the paper as a PDF, the poster as a PDF, and the live URL of your GitHub Pages site. Upload both PDFs and paste the URL into the Blackboard submission for White Paper and conference poster; the submission is incomplete without each.
+**What you submit:** one ZIP file holding the paper PDF, the poster PDF, and your AI-use log, plus the live URL of your GitHub Pages site pasted into the submission. Upload the ZIP and paste the URL into the Blackboard submission for White Paper and conference poster; the submission is incomplete without each.
 
 **Length:** The paper 5,000 to 7,000 words from the introduction through the reflection, plus the 150 to 250 word abstract; the poster one page of 400 to 800 words. Word counts cover your own writing, not the title, headings, tables, references, figure captions, code, or output, and writing more than the range never costs points.
 

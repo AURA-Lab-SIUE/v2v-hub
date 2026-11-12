@@ -437,7 +437,7 @@ All guides: [MC 451 guides](guides/mc451/index.md)
 | 12 | Nov 10 / 12 | S23 · Ch 12 [R] Describing: descriptive statistics + graphics | S24 · Ch 12 [R] describing lab | [Data Wrangling [R]](mc451-assignments.qmd#data-wrangling-in-r) |
 | 13 | Nov 17 / 19 | S25 · Ch 13 [R] Inferential: t-test, ANOVA, regression | S26 · Ch 13 [R] inference lab; *White Paper assigned* | [Describing Data [R]](mc451-assignments.qmd#describing-data-in-r) |
 | 14 | Nov 23–29 | **Thanksgiving Break, no class** | | |
-| 15 | Dec 1 / 3 | S27 · Ch 14 The Publisher; assemble your paper | S28 · White-paper studio: peer review; the reflection | [Inferencing Data [R]](mc451-assignments.qmd#inferencing-data-in-r); coded corpus and stability check pushed (Fri Dec 4, dated step) |
+| 15 | Dec 1 / 3 | S27 · Ch 14 The Publisher; assemble your paper | S28 · White-paper studio: peer review; the reflection | [Inferencing Data [R]](mc451-assignments.qmd#inferencing-data-in-r); coded dataset pushed (Fri Dec 4, dated step) |
 | 16 | Dec 8–12 | **Work Session: open lab / support** | | |
 | 17 | Dec 14–18 | **Finals Week** | | [White Paper](mc451-assignments.qmd#white-paper) |
 

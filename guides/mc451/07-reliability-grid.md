@@ -2,7 +2,7 @@
 
 Put your two coding passes side by side in one sheet, then have R count how often you agreed with yourself, list the items you coded differently, and compute Cohen's kappa for each variable. It works on your own coding sheet, whatever you study. You type every line of R yourself and see what each one prints.
 
-This guide is for the stability check in the [Sampling Plan and Pilot](../../mc451-assignments.html#sampling-plan-and-pilot) and for the stability re-code in the [White Paper](../../mc451-assignments.html#white-paper). Make your second pass first: [Guide 15](15-draw-a-pilot-and-make-a-blind-recode-sheet.md), *Draw a Pilot Sample and Make a Blind Re-code Sheet*, draws the items and makes a re-code sheet that hides your first codes.
+This guide is for the stability check in the [Sampling Plan and Pilot](../../mc451-assignments.html#sampling-plan-and-pilot). Make your second pass first: [Guide 15](15-draw-a-pilot-and-make-a-blind-recode-sheet.md), *Draw a Pilot Sample and Make a Blind Re-code Sheet*, draws the items and makes a re-code sheet that hides your first codes.
 
 **Stability:** how closely you agree with yourself when you code the same items twice. You are the only coder on your project, so pass 1 and pass 2 are both yours. In your write-up, call the number a stability figure, never agreement between coders.
 
@@ -366,7 +366,7 @@ The code lands in your script with a comment above every step, and a message at 
 
 - **In the pilot write-up:** how many items you re-coded (the rubric asks for at least a quarter of your pilot items), the gap between the two passes in hours (at least 48), that your pass 1 codes were hidden during pass 2, and for each variable its percent agreement beside its kappa. Call it a stability figure from your own two passes. Then the codebook changes the Step 7 disagreements led to.
 - **In your submission:** your coded pilot data (`pilot-both-passes.csv` holds both passes) and your `reliability.R`.
-- **In the White Paper Methods:** the same check on your larger re-code, run with this guide on that re-code's sheet. The re-code may include or leave out your pilot items; say which you chose.
+- **In the White Paper Methods:** the stability figure from this pilot check. There is no second re-code.
 
 ## If it does not work
 
