@@ -72,13 +72,11 @@ cohens_d(outcome ~ group2, data = analysis)
     - Change that one line to your hand-coded variable, `reaction_only`, or the t-test runs on channel type
 - Older worksheets called `run_t_test()`; v2v keeps it as a deprecated shortcut, and this is the code you write
 
-## Exercise: Read Your Own Output {.discuss}
+## Exercise: Significant but Small? {.discuss}
 
-Answer from your own output.
-
-- Find the two means, the difference, *p*, and *d*
-- Is your effect small, medium, or large by Cohen's benchmarks (0.2, 0.5, 0.8)?
-- Do your *p* and your *d* tell the same story, or do they pull apart? Say which and why
+- Gaming and non-gaming message length: *p* below .001, Cohen's *d* = -0.13
+- Cohen's benchmarks: 0.2 small, 0.5 medium, 0.8 large
+- A headline reads "Gamers write much shorter messages": does this result support the word "much"?
 
 ## Report It in One Line
 

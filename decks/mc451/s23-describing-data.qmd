@@ -687,10 +687,9 @@ You should now be able to:
 
 ## Charts From the R Companion
 
-The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) writes a first version of each chart, ending in `theme_v2v()`:
-
-- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
-- Under **R3 Describe**, pick **Bar chart**, **Histogram**, **Histogram comparing two groups**, **Line chart over time**, or **Boxplot**
+- The R Companion writes a first version of each chart, ending in `theme_v2v()`
+- Click the **AURA Lab R Companion** icon on VS Code's left edge
+- Under **Describe**, click the chart you need, such as **Histogram** or **Line chart over time**
 
 If a figure will not render, check that every `+` ends the line above it.
 

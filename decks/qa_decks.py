@@ -263,6 +263,58 @@ def timing_directive_issues(t):
             (len(hits), ", ".join("%s:%d" % h for h in hits[:4]))]
 
 
+# Owner 2026-11-11 (q-20261111-0019 = a), the four-rule deck standard. Three parts are mechanical:
+# (1) an R assignment goes in as ONE ZIP of the workspace, so no slide says not to zip;
+# (2) an exercise asks ONE question, so a {.discuss} slide carries at most one question mark;
+# (3) a how-to shows ONE route, the R Companion panel, so no slide names the panel AND the
+#     Command Palette for the same task, and an "AURA: ..." palette command alone is flagged.
+# Quarto Render has no panel route; "Quarto: Render" on the Command Palette is not flagged.
+STANDARD_FROM = {"mc451": "s24", "mc501": "w13"}
+NO_ZIP = re.compile(r"(do\s*n[o']t|not)\s+(zip|in\s+a\s+zip)|each\s+file\s+on\s+its\s+own|attach\s+each\s+file", re.I)
+PANEL = re.compile(r"R Companion\*?\*?\s+icon|R Companion panel|in its panel", re.I)
+PALETTE = re.compile(r"Command Palette|Ctrl\+Shift\+P|Cmd\+Shift\+P", re.I)
+AURA_CMD = re.compile(r"\*\*AURA: (?!Open an R terminal)[^*]+\*\*")
+
+
+def _slides(t):
+    """(heading line number, heading, body lines) per ## slide, with notes and code blanked."""
+    out, cur = [], None
+    for ln, line in enumerate(_slide_text(t), 1):
+        if line.startswith("## "):
+            cur = [ln, line, []]
+            out.append(cur)
+        elif cur is not None:
+            cur[2].append(line)
+    return out
+
+
+def deck_standard_issues(t):
+    issues = []
+    zips = [ln for ln, line in enumerate(_slide_text(t), 1) if NO_ZIP.search(line)]
+    if zips:
+        issues.append("NO-ZIP line x%d (%s): submit one ZIP of the workspace" %
+                      (len(zips), ", ".join(map(str, zips[:4]))))
+    two, palette_only, multi = [], [], []
+    for ln, head, body in _slides(t):
+        text = "\n".join(body)
+        if PANEL.search(text) and (PALETTE.search(text) or AURA_CMD.search(text)) and "Quarto: Render" not in text:
+            two.append(ln)
+        elif AURA_CMD.search(text):
+            palette_only.append(ln)
+        if "{.discuss}" in head and text.count("?") > 1:
+            multi.append(ln)
+    if two:
+        issues.append("TWO ROUTES on a how-to slide x%d (%s): keep the R Companion panel" %
+                      (len(two), ", ".join(map(str, two[:4]))))
+    if palette_only:
+        issues.append("palette-only route x%d (%s): name the panel item instead" %
+                      (len(palette_only), ", ".join(map(str, palette_only[:4]))))
+    if multi:
+        issues.append("multi-part exercise x%d (%s): one question per exercise" %
+                      (len(multi), ", ".join(map(str, multi[:4]))))
+    return issues
+
+
 # Owner 2026-11-03, a REPEAT correction ("again flatten the tidyverse code into single lines"):
 # every pipe is STACKED. The data line ends in %>% and each verb sits on its own indented line,
 # even when there is only one verb, because he teaches a pipe one component at a time and needs
@@ -336,6 +388,8 @@ def check_qmd(p, t, prof):
     issues += undated_due_issue(t, prof)
     issues += timing_directive_issues(t)
     issues += flattened_pipe_issue(t)
+    if p.stem >= STANDARD_FROM.get(p.parent.name, "~"):  # remaining decks only; taught decks stay as taught
+        issues += deck_standard_issues(t)
     return n, dpos, issues
 
 

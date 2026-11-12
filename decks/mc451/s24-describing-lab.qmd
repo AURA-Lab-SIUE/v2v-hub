@@ -455,14 +455,15 @@ msglen %>%
 
 - The worksheet runs the same summary by channel type and by your hand-coded variable
 
-## Exercise: Read Your Own Summary Table {.discuss}
+## Exercise: Which Typical Length? {.discuss}
 
-Answer from the table you just built.
+| Channels   | Messages | Mean | Median |
+|------------|----------|------|--------|
+| Non-gaming | 3,457    | 33.7 | 16     |
+| Gaming     | 31,305   | 28.5 | 17     |
 
-- Do your mean and median agree, or do they pull apart?
-- If they pull apart, which one is larger?
-- A mean larger than the median means a tail of large values. What shape do you expect the histogram to show?
-- Which single number would you put in an abstract, and why that one?
+- Message length is counted in characters
+- Someone asks how long a typical non-gaming message is: do you answer with the mean or the median, and why?
 
 ## A Cross-Tabulation
 
