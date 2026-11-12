@@ -12,6 +12,9 @@
 //      no stylesheet, script, image, or font fetched over the network.
 //   3. Every deck embeds the three AURA faces (Archivo, Newsreader, Spline Sans Mono)
 //      and none of the unused Source Sans Pro faces (decks/strip-unused-fonts.ts).
+//   4. No two decks of one course repeat each other: shared content-slide titles under 35
+//      percent and shared slide text under 20 percent (tools/deck-overlap.ts; added 2026-11-12
+//      after MC 451's Thursday deck repeated Tuesday's).
 //   5. Every file students download (.qmd, .R, .Rmd, .md, .txt in docs/) links with full
 //      addresses on one host, so its links open from a local copy
 //      (tools/absolute-download-links.ts).
@@ -25,6 +28,7 @@
 // Raise a budget only on purpose, in this file, with the reason beside it.
 
 import { downloads, findDownloadLinkProblems } from "./absolute-download-links.ts";
+import { checkCourses } from "./deck-overlap.ts";
 
 const TOTAL_BUDGET_MB = 150;
 const FILE_BUDGET_MB = 4;
@@ -140,6 +144,11 @@ for (const [s, f] of sizes.slice(0, 10)) console.log(`  ${(s / MB).toFixed(2).pa
 console.log(`Decks checked for offline use and fonts: ${decks}`);
 
 if (decks === 0) failures.push(`no RevealJS decks found under ${OUT_DIR}/; the deck checks did not run`);
+
+// 4. Two sessions of one course must not show the same slides (checked from the .qmd sources).
+const overlap = await checkCourses(".");
+console.log(`Deck pairs checked for repeated slides: ${overlap.results.length}`);
+failures.push(...overlap.failures);
 
 // 5. Downloaded files open from a student's own computer: no relative links, one host.
 const downloadProblems = await findDownloadLinkProblems(OUT_DIR);
