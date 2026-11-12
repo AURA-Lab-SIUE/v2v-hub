@@ -50,6 +50,7 @@ project:
     - "resources/cheat-sheets/*.pdf"
     # The own-study walkthroughs' example coding sheet and finished scripts (guides 08 to 10, 2026-11-05): students download them.
     - "resources/examples/own-study-walkthrough/*"
+    - "resources/examples/twitch-demo/*"
 
 website:
   title: "V2V Hub"
