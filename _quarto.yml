@@ -89,6 +89,8 @@ website:
             href: guides/mc451/index.md
           - text: "MC 501"
             href: guides/mc501/index.md
+          - text: "MC 427 R guides"
+            href: guides/mc427/index.md
       - text: "Resources"
         href: resources/index.qmd
       - text: "Course Workspace"
@@ -197,6 +199,7 @@ website:
             - setup.qmd
             - guides/mc451/index.md
             - guides/mc501/index.md
+            - guides/mc427/index.md
             - resources/fix-it.qmd
             - resources/install-r.qmd
             - resources/install-quarto.qmd

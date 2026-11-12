@@ -1,0 +1,6 @@
+/* MC 427 R guides (2026-11-12): long inline code, such as a full R error message, wraps on a phone
+   instead of pushing the page wider than the screen. Code blocks keep their own scroll. */
+main p code:not(.sourceCode), main li code:not(.sourceCode), main td code:not(.sourceCode) {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
