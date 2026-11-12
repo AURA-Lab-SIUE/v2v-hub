@@ -84,13 +84,13 @@ That is the whole logic of a test, applied to two groups instead of one coin.
 ## The Variables Choose the Test (cont.)
 
 - A test on the wrong kind of data produces a meaningless number
-- Unsure? Write your choice down, then ask the R Companion (the **AURA Lab R Companion** icon on VS Code's left edge)
-- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Check my test choice**, and press **Enter**
+- Unsure? Write your choice down, then click the **AURA Lab R Companion** icon on VS Code's left edge
+- Under **Test**, click **Check my test choice**
 - It says whether your choice fits these rules; it does not choose for you
 
 ## Name the Variables First
 
-- **AURA: Write R code**, then **R4 Test**, then **Settings block (name the test variables)**, then select **Run it**
+- In the R Companion panel, under **Test**, click **Settings block (name the test variables)**, then **Run it**
 - It reloads `data/twitch_analysis.RDS` and keeps six columns under fixed names: `outcome`, `group2`, `group3`, `predictor`, `cat_a`, `cat_b`
 - Every test block the R Companion writes uses those names, so run this block first
 - For your own study, change only this block: put your own column after each `=`
@@ -98,7 +98,7 @@ That is the whole logic of a test, applied to two groups instead of one coin.
 
 ## Running the Test
 
-- **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d** writes this same code with `outcome` and `group2`
+- In the R Companion panel, under **Test**, **Welch t-test with Cohen's d** writes this same code with `outcome` and `group2`
 - `cohens_d()` comes from the **effectsize** package; v2v keeps the older `run_t_test()` as a deprecated shortcut, and this is the code you write
 
 ```r
@@ -281,7 +281,7 @@ a ninety-five percent confidence interval you can plot.
 > Gaming channels produced shorter chat messages on average than non-gaming channels
 > (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.94, *p* < .001, Cohen's *d* = -0.13.
 
-- **AURA: Write R code**, then **R4 Test**, then **APA numbers to check your sentence** prints these numbers from your own run
+- In the R Companion panel, under **Test**, **APA numbers to check your sentence** prints these numbers from your own run
 - Check your sentence against it
 
 ## Then Say It Plainly
@@ -307,7 +307,7 @@ League of Legends 4000       22.63
 
 ## ANOVA
 
-- **AURA: Write R code**, then **R4 Test**, then **One-way ANOVA with eta squared** writes this same code, with Welch's version, omega squared, and Tukey's pairs after it
+- In the R Companion panel, under **Test**, **One-way ANOVA with eta squared** writes this same code, with Welch's version, omega squared, and Tukey's pairs after it
 
 ```r
 four_games <- analysis %>%
@@ -433,7 +433,7 @@ League of Legends-Just Chatting -16.403935 -19.3428158 -13.465055 0.0000000
 
 ## Regression Re-Derives the t-test
 
-- **AURA: Write R code**, then **R4 Test**, then **Linear regression** writes this same code with `outcome` and `predictor`, where `predictor` is a number (the hour of the day)
+- In the R Companion panel, under **Test**, **Linear regression** writes this same code with `outcome` and `predictor`, where `predictor` is a number (the hour of the day)
 
 ```r
 fit_lm <- lm(message_length ~ is_gaming, data = analysis)

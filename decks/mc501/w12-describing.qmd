@@ -297,12 +297,13 @@ Execution halted
 
 [Data Wrangling in R, Blackboard]{.eyebrow}
 
-- `11-wrangling-data.qmd`, with no `___` left
-- `11-wrangling-data.html`, the rendered page
-- `data/coding-form.csv`, your thirty codes
-- `data/twitch_analysis.RDS`, the saved table
-- The AI-use log, with an entry or the no-AI box checked
-- Attach each file on its own; do not zip them
+- One ZIP file of your whole workspace, the folder open in VS Code, holding:
+    - `11-wrangling-data.qmd`, with no `___` left
+    - `11-wrangling-data.html`, the rendered page
+    - `data/coding-form.csv`, your thirty codes
+    - `data/twitch_analysis.RDS`, the saved table
+    - The AI-use log, saved beside `README.md`, with an entry or the no-AI box checked
+- Make the ZIP file: [Submit Your Work as One ZIP File](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file)
 
 ## Describing Data {.titlecard}
 
@@ -817,9 +818,8 @@ The skew is the most important thing the histogram reveals, and no summary numbe
 
 ## The Descriptive Statistics
 
-- The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) writes a grouped summary
-- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Write R code**, and press **Enter**
-- Under **R3 Describe**, **Summary by group** writes n, mean, median, and sd for each `channel_type`
+- Click the **AURA Lab R Companion** icon on VS Code's left edge
+- Under **Describe**, click **Summary by group**: it writes n, mean, median, and sd for each `channel_type`
 - To summarize another column, change the column names in the block it writes
 
 ## The Descriptive Statistics (cont.)
@@ -860,7 +860,7 @@ msglen %>%
 
 ## The Descriptive Statistics (cont.)
 
-- **AURA: Write R code**, then **R3 Describe**, then **Line chart over time** writes Figure 1
+- In the R Companion panel, under **Describe**, **Line chart over time** writes Figure 1
 - **Histogram comparing two groups** writes Figure 3
 - Its **Bar chart** draws the top ten games, not Figure 2
 - After **Run it**, the saved chart opens in its own VS Code tab
@@ -946,25 +946,22 @@ Missing values detected. NAs dropped.
 **Cross-tabulation:** a table that counts how often each combination of two categorical variables occurs. Example: viewer band by channel type.
 :::
 
-## Figures Other People Can Read
+## Color Never Works Alone
 
-- Roughly one in twelve men has a color-vision deficiency
-    - Choose a colorblind-safe palette, such as `scale_color_v2v()`
-    - Do not let color carry the message alone
-    - Vary the line type, or split the groups into panels
-- Alt text is what a screen-reader user gets instead of the figure
-    - With no alt text, the figure is simply missing for that reader
+- About one in twelve men has a color-vision deficiency
+- Use a colorblind-safe palette, such as `scale_color_v2v()`
+- Also vary the line type, or split the groups into panels
 
-## Figures Other People Can Read (cont.)
+## Alt Text Replaces the Figure
 
-- Alt text states the chart type, the axes, and the takeaway
-- In a Quarto file it goes on a line at the top of the chunk: `#| fig-alt: "A histogram of message length..."`
-- The R Companion's chart code also leaves an `alt =` line marked YOUR TURN inside `labs()`
-- Write the same sentence in both places
+- A screen-reader user hears the alt text instead of seeing the figure
+- Good alt text states the chart type, the axes, and the takeaway
+- In a Quarto chunk it goes on the top line: `#| fig-alt: "A histogram of message length..."`
+- Write the same sentence in the `alt =` line inside `labs()`
 
 ## A Cross-Tabulation
 
-[Example data from guide 16: Power Rangers episodes, coded for threat and focus](https://aura-lab.siue.edu/v2v-hub/guides/mc501/16-describe-counts-and-source-measures.html)
+[Example data: episodes_analysis.RDS, Power Rangers episodes coded for threat and focus](https://aura-lab.siue.edu/v2v-hub/resources/examples/own-study-walkthrough/episodes_analysis.RDS)
 
 ::: {.define}
 **Cross-tabulation:** a grid that counts every combination of two categories.
@@ -1073,17 +1070,21 @@ You should now have:
 - Every change after that commit is a departure you disclose in Methods
 - Step by step: [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)
 
-## Your Own Study, Starting Now
+## Re-Code Again, Like the Pilot
 
-- **By Monday, December 7, 11:59 PM:** push your full coded dataset and a re-code of a subsample to your project repository
-- The re-code happens at least 48 hours after your first pass, with your first codes hidden
-- So finish the first coding pass on your full corpus by **Thursday, December 3**
-- The reliability figure in your Methods comes from this re-code, not from the pilot
+- You already re-coded your pilot: 48 hours later, first codes hidden
+- The White Paper repeats that re-code on a subsample of your full corpus
+- Finish the first pass on your full corpus by **Thursday, December 3**
+- **By Monday, December 7, 11:59 PM:** push your full coded dataset and the re-code
+- Your Methods reports reliability from this re-code
 - On data shaped like yours: [Describe Counts and Source Measures](https://aura-lab.siue.edu/v2v-hub/guides/mc501/16-describe-counts-and-source-measures.html)
 
-## How Big Is the Re-Code?
+## Re-Code at Least 50
 
-The subsample is **at least 50 units or 20 percent of your corpus, whichever is larger**. It leaves out your immersion items. It may include or leave out your pilot items; say which in your Methods.
+- At least 50 units or 20 percent of your corpus, whichever is larger
+- Your pilot items may count or be left out; say which in your Methods
+- Leave out your immersion items
+- Draw it and hide your first codes: [Guide 15](https://aura-lab.siue.edu/v2v-hub/guides/mc501/15-draw-a-pilot-and-make-a-blind-recode-sheet.html)
 
 | Your corpus | 20 percent | Re-code |
 |---|---|---|
@@ -1099,7 +1100,7 @@ The subsample is **at least 50 units or 20 percent of your corpus, whichever is 
 - One sheet: an `id` column, then pass 1 and pass 2 side by side for each variable
     - `threat_p1` and `threat_p2` in the example below
 - Guide 07, Part 1, builds that sheet from two separate pass files
-- The example: 20 Power Rangers episodes, each coded twice
+- The example: [pilot-both-passes.csv](https://aura-lab.siue.edu/v2v-hub/resources/examples/own-study-walkthrough/pilot-both-passes.csv), 20 Power Rangers episodes coded twice
 
 ## Read the Two Passes
 

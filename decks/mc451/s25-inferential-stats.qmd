@@ -86,8 +86,8 @@ a little. Samples wobble.
 ## Two Terms From That List (cont.)
 
 - A test applied to the wrong kind of data produces a meaningless number
-- Unsure? Write your choice down, then ask the R Companion (the **AURA Lab R Companion** icon on VS Code's left edge)
-    - Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Check my test choice**, and press **Enter**
+- Unsure? Write your choice down, then click the **AURA Lab R Companion** icon on VS Code's left edge
+    - Under **Test**, click **Check my test choice**
     - It says whether the choice fits these rules, and it does not choose for you
 
 ## Exercise: State the Null for Your Own Question {.discuss}
@@ -98,7 +98,7 @@ a little. Samples wobble.
 
 ## Running the t-test
 
-- The R Companion writes this same code: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
+- The R Companion writes this same code: in its panel, under **Test**, **Welch t-test with Cohen's d**
 - `cohens_d()` comes from the **effectsize** package, loaded in the worksheet's settings block
 
 ```r

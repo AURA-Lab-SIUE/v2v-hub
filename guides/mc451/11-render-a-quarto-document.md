@@ -44,3 +44,21 @@ If the render stops at a chunk, the Terminal names the chunk and the line. Run t
 Why moving it works: when you render, R begins in the folder that holds the worksheet, so `data/` in your lines leads to a folder named `data` inside that folder, and there is none. Once the worksheet is outside every folder, it sits next to `data`, and `data/` leads to the right place. When you highlight lines and run them with a right-click, R begins in your course workspace wherever the worksheet is, so the same lines can work that way and still stop a render.
 
 If you press **Run Cell** (the ▷ at the top right of a code cell) and your code lands in a terminal named **powershell** (**zsh** on a Mac) instead of **R (AURA)**, it did not run in R. Select **R (AURA)** in the list of terminals at the right of the Terminal panel, then press **Run Cell** again. (Keyboard: click inside the cell and press **Ctrl+Shift+Enter**, or **Cmd+Shift+Enter** on a Mac; it switches to **R (AURA)** before it runs the cell.)
+
+## Submit your work as one ZIP file
+
+You turn in an R assignment as one ZIP file: your whole course workspace, the folder you have open in VS Code, packed into a single file. Before you start, render the worksheet, and save the AI-use log in the same place as `README.md`, so that both are inside the workspace.
+
+**On Windows**
+
+1. In the Explorer on the left side of VS Code, right-click `README.md` and select **Reveal in File Explorer**. A File Explorer window opens with `README.md` highlighted.
+2. Click the up arrow (↑) to the left of the address bar at the top of that window. You should see your workspace's name in the list of folders.
+3. Right-click your workspace's name and select **Compress to ZIP file**. (On an older Windows, select **Send to**, then **Compressed (zipped) folder**.) You should see a new file with the same name, ending in `.zip`.
+4. In Blackboard, open the assignment, attach that `.zip` file, and submit.
+
+**On a Mac**
+
+1. In the Explorer on the left side of VS Code, Control-click `README.md` and select **Reveal in Finder**. A Finder window opens with `README.md` highlighted.
+2. In the menu bar at the top of the screen, select **Go**, then **Enclosing Folder**. You should see your workspace's name in the list of folders.
+3. Control-click your workspace's name and select **Compress**. You should see a new file with the same name, ending in `.zip`.
+4. In Blackboard, open the assignment, attach that `.zip` file, and submit.

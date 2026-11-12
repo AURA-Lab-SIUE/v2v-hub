@@ -44,12 +44,12 @@ A number and two groups: **t-test**. A number and three or more groups: **ANOVA*
 
 ## Check Your Choice
 
-- The R Companion (the **AURA Lab R Companion** icon on VS Code's left edge) checks the third line against the first two; it does not write it
-- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) to open the Command Palette, type **AURA: Check my test choice**, and press **Enter**
+- The R Companion checks the third line against the first two; it does not write it
+- Click the **AURA Lab R Companion** icon on VS Code's left edge; under **Test**, click **Check my test choice**
 
 ## Running Your Test
 
-- The R Companion writes this same code for the names in your settings block: **AURA: Write R code**, then **R4 Test**, then **Welch t-test with Cohen's d**
+- The R Companion writes this same code for the names in your settings block: in its panel, under **Test**, **Welch t-test with Cohen's d**
 
 ```r
 analysis %>%
@@ -156,7 +156,7 @@ summary(fit_lm)
 ## Any Other Error
 
 - Select the error R printed in the terminal, then press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
-- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) and run **AURA: Explain an R error**: the copied error is filled in for you
+- Click the **AURA Lab R Companion** icon on VS Code's left edge; under **Help**, click **Explain an R error**: the copied error is filled in for you
 
 ## The White Paper, 250 Points
 

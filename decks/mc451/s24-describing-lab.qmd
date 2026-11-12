@@ -293,12 +293,13 @@ Execution halted
 
 [Data Wrangling in R, Blackboard]{.eyebrow}
 
-- `11-wrangling-data.qmd`, with no `___` left
-- `11-wrangling-data.html`, the rendered page
-- `data/coding-form.csv`, your thirty codes
-- `data/twitch_analysis.RDS`, the saved table
-- The AI-use log, with an entry or the no-AI box checked
-- Attach each file on its own; do not zip them
+- One ZIP file of your whole workspace, the folder open in VS Code, holding:
+    - `11-wrangling-data.qmd`, with no `___` left
+    - `11-wrangling-data.html`, the rendered page
+    - `data/coding-form.csv`, your thirty codes
+    - `data/twitch_analysis.RDS`, the saved table
+    - The AI-use log, saved beside `README.md`, with an entry or the no-AI box checked
+- Make the ZIP file: [Submit Your Work as One ZIP File](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file)
 
 ## Part 2: Start Describing Data {.titlecard}
 
@@ -323,7 +324,7 @@ analysis <- read_rds("data/twitch_analysis.RDS")
 
 - `library()` switches a package on for this session
 - `read_rds()` loads the table Data Wrangling saved and names it `analysis`
-- The R Companion writes these lines too: **AURA: Write R code**, then **R2 Data**, then **Load your saved analysis (RDS)**
+- The R Companion writes these lines too: in its panel, under **Data**, **Load your saved analysis (RDS)**
 
 ## Loading and Looking: Output
 
@@ -465,7 +466,7 @@ Answer from the table you just built.
 
 ## A Cross-Tabulation
 
-[Example data from guide 16: Power Rangers episodes, coded for threat and focus](https://aura-lab.siue.edu/v2v-hub/guides/mc451/16-describe-counts-and-source-measures.html)
+[Example data: episodes_analysis.RDS, Power Rangers episodes coded for threat and focus](https://aura-lab.siue.edu/v2v-hub/resources/examples/own-study-walkthrough/episodes_analysis.RDS)
 
 ::: {.define}
 **Cross-tabulation:** a grid that counts every combination of two categories.
@@ -567,7 +568,7 @@ ggplot(analysis, aes(x = message_length)) +
 ```
 
 - One variable, one histogram; each bar is five characters wide
-- The R Companion writes a first version: **AURA: Write R code**, then **R3 Describe**, then **Histogram**
+- The R Companion writes a first version: in its panel, under **Describe**, **Histogram**
 
 ## Figure One: Output
 
@@ -698,7 +699,7 @@ list.files("figures")
 ## Any Other Error
 
 - Select the error R printed in the terminal, then press **Ctrl+C** (**Cmd+C** on a Mac) to copy it
-- Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac) and run **AURA: Explain an R error**: the copied error is filled in for you
+- Click the **AURA Lab R Companion** icon on VS Code's left edge; under **Help**, click **Explain an R error**: the copied error is filled in for you
 
 ## Checkpoint
 
@@ -719,7 +720,7 @@ You should now have, in your Describing Data worksheet:
 - One sheet: an `id` column, then pass 1 and pass 2 side by side for each variable
     - `threat_p1` and `threat_p2` in the example below
 - Guide 07, Part 1, builds that sheet from two separate pass files
-- The example: 20 Power Rangers episodes, each coded twice
+- The example: [pilot-both-passes.csv](https://aura-lab.siue.edu/v2v-hub/resources/examples/own-study-walkthrough/pilot-both-passes.csv), 20 Power Rangers episodes coded twice
 
 ## Read the Two Passes
 
@@ -851,7 +852,7 @@ both_passes %>%
 ## Before Next Time
 
 - Due Friday, November 13, 11:59 PM: [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#data-wrangling-in-r), 50 points
-    - The five files from "What to Upload", each attached on its own
+    - One ZIP file of your workspace, holding the five files from "What to Upload"
 - Due Friday, November 20, 11:59 PM: [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#describing-data-in-r), 75 points
 - Check your worksheet against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 - Step by step: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc451/09-describing-tables-and-charts.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
