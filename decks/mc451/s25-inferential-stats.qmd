@@ -92,7 +92,7 @@ a little. Samples wobble.
 
 ## Exercise: State the Null {.discuss}
 
-- The research question: do gaming and non-gaming channels differ in message length?
+- The research question asks whether gaming and non-gaming channels differ in message length
 - What is the null hypothesis for this question, in one sentence?
 
 ## Running the t-test
