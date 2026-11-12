@@ -20,7 +20,6 @@ format:
 - Three chart types: a line chart, a bar chart, and a histogram
 - Effect sizes, and the design choices a figure must disclose
 - Figures other people can actually read
-- Your own study: the stability check in R
 
 ## Upcoming Assignments
 
@@ -38,7 +37,7 @@ No class Nov 25: Thanksgiving Break.
 | What | Due | Have done by |
 |---|---|---|
 | [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#inferencing-data-in-r), 100 points | Mon, Dec 7, 11:59 PM | Taught Nov 18 |
-| Coded dataset and re-code pushed ([White Paper](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster) dated step) | Mon, Dec 7, 11:59 PM | First coding pass done by Thu, Dec 3 |
+| Coded dataset pushed ([White Paper](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster) dated step) | Mon, Dec 7, 11:59 PM | First coding pass done by Thu, Dec 3 |
 | Week 15 reading journal | Mon, Dec 7, 11:59 PM | The Week 15 reading |
 | [White Paper and conference poster](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster), 200 points | Fri, Dec 18, 11:59 PM | Results built from your own data |
 
@@ -1070,165 +1069,6 @@ You should now have:
 - Every change after that commit is a departure you disclose in Methods
 - Step by step: [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)
 
-## Re-Code Again, Like the Pilot
-
-- You already re-coded your pilot: 48 hours later, first codes hidden
-- The White Paper repeats that re-code on a subsample of your full corpus
-- Finish the first pass on your full corpus by **Thursday, December 3**
-- **By Monday, December 7, 11:59 PM:** push your full coded dataset and the re-code
-- Your Methods reports reliability from this re-code
-- On data shaped like yours: [Describe Counts and Source Measures](https://aura-lab.siue.edu/v2v-hub/guides/mc501/16-describe-counts-and-source-measures.html)
-
-## Re-Code at Least 50
-
-- At least 50 units or 20 percent of your corpus, whichever is larger
-- Your pilot items may count or be left out; say which in your Methods
-- Leave out your immersion items
-- Draw it and hide your first codes: [Guide 15](https://aura-lab.siue.edu/v2v-hub/guides/mc501/15-draw-a-pilot-and-make-a-blind-recode-sheet.html)
-
-| Your corpus | 20 percent | Re-code |
-|---|---|---|
-| 200 units | 40 | 50 |
-| 250 units | 50 | 50 |
-| 400 units | 80 | 80 |
-
-## Your Stability Check in R
-
-[Guide 07: Check Your Reliability in R](https://aura-lab.siue.edu/v2v-hub/guides/mc501/07-reliability-grid.html)
-
-- The same check you ran on your pilot, now on your re-code
-- One sheet: an `id` column, then pass 1 and pass 2 side by side for each variable
-    - `threat_p1` and `threat_p2` in the example below
-- Guide 07, Part 1, builds that sheet from two separate pass files
-- The example: [pilot-both-passes.csv](https://aura-lab.siue.edu/v2v-hub/resources/examples/own-study-walkthrough/pilot-both-passes.csv), 20 Power Rangers episodes coded twice
-
-## Read the Two Passes
-
-```r
-both_passes <- read_csv(
-  "data/pilot-both-passes.csv",
-  col_types = cols(.default = col_character())
-)
-
-glimpse(both_passes)
-```
-
-- `col_types = cols(.default = col_character())` reads every column as text
-    - A long id read as a number can lose its last digits
-
-## Read the Two Passes: Output
-
-```{.term code-line-numbers="false" step="25-rel-read"}
-> both_passes <- read_csv(
-+   "data/pilot-both-passes.csv",
-+   col_types = cols(.default = col_character())
-+ )
->
-> glimpse(both_passes)
-Rows: 20
-Columns: 5
-$ id        <chr> "In Space 36", "Megaforce 15", "In Space 11", "Time …
-$ threat_p1 <chr> "villain", "villain", "villain", "villain", "villain…
-$ focus_p1  <chr> "team", "one_ranger", "one_ranger", "one_ranger", "o…
-$ threat_p2 <chr> "villain", "villain", "villain", "none", "villain", …
-$ focus_p2  <chr> "team", "one_ranger", "team", "one_ranger", "one_ran…
-```
-
-- `Rows: 20`: the items coded twice
-- Each variable has a `_p1` and a `_p2` column
-
-## Every Pair of Codes
-
-```r
-both_passes %>%
-  count(threat_p1, threat_p2)
-```
-
-- `count()` with both columns counts how often each pair of codes came up
-
-## Every Pair of Codes: Output
-
-```{.term code-line-numbers="false" step="26-rel-count"}
-> both_passes %>%
-+   count(threat_p1, threat_p2)
-# A tibble: 4 × 3
-  threat_p1 threat_p2     n
-  <chr>     <chr>     <int>
-1 monster   monster       4
-2 none      none          3
-3 villain   none          3
-4 villain   villain      10
-```
-
-- Same code twice: an agreement
-- `villain` then `none`, three times: the codebook line to reread
-
-## Percent Agreement
-
-```r
-both_passes %>%
-  summarize(
-    items = n(),
-    threat = mean(threat_p1 == threat_p2),
-    focus = mean(focus_p1 == focus_p2)
-  )
-```
-
-- `threat_p1 == threat_p2` is `TRUE` where the two passes match
-- `mean()` turns those into a share between 0 and 1
-
-## Percent Agreement: Output
-
-```{.term code-line-numbers="false" step="27-rel-agree"}
-> both_passes %>%
-+   summarize(
-+     items = n(),
-+     threat = mean(threat_p1 == threat_p2),
-+     focus = mean(focus_p1 == focus_p2)
-+   )
-# A tibble: 1 × 3
-  items threat focus
-  <int>  <dbl> <dbl>
-1    20   0.85   0.9
-```
-
-- 17 of 20 matched on `threat` (0.85), 18 of 20 on `focus` (0.9)
-- Percent agreement counts lucky matches too, so it never goes in Methods alone
-
-## Cohen's Kappa
-
-```r
-both_passes %>%
-  select(threat_p1, threat_p2) %>%
-  irr::kappa2()
-```
-
-::: {.define}
-**Cohen's kappa:** agreement after taking out the matches luck alone would give. 1 is perfect; 0 is no better than chance.
-:::
-
-- Run it once per variable
-
-## Cohen's Kappa: Output
-
-```{.term code-line-numbers="false" step="28-rel-kappa"}
-> both_passes %>%
-+   select(threat_p1, threat_p2) %>%
-+   irr::kappa2()
- Cohen's Kappa for 2 Raters (Weights: unweighted)
-
- Subjects = 20
-   Raters = 2
-    Kappa = 0.746
-
-        z = 4.8
-  p-value = 1.59e-06
-```
-
-- Report the `Kappa` line: 0.746 for `threat`
-- 0.70 or higher is good enough to go on; 0.80 is comfortable
-- Call it a stability figure: both passes are yours
-
 ## Before Week 13
 
 - **Due Monday, November 16, 11:59 PM:** [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#data-wrangling-in-r), 50 points
@@ -1241,7 +1081,8 @@ both_passes %>%
 ## Before Week 13 (cont.)
 
 - Click by click: [Describe the Data: Tables and Charts](https://aura-lab.siue.edu/v2v-hub/guides/mc501/09-describing-tables-and-charts.html) and its [walkthrough video](https://siue.yuja.com/V/Video?v=17490672&a=193714265)
-- Finish the first coding pass on your own full corpus by Thursday, December 3; the re-code and push are due Monday, December 7, 11:59 PM
+- Finish the first coding pass on your own full corpus by Thursday, December 3, and push it by Monday, December 7, 11:59 PM
+    - Your Methods reports stability from your pilot re-code; there is no second re-code
 - Read [Chapter 13, Making the Call](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
     - The assigned article: **Lakens et al. (2018)**, "Justify your alpha"
 - **Check yourself on this week's terms:** [Week 12 self-check](https://aura-lab.siue.edu/v2v-hub/self-checks/mc501-week12.html), ungraded, with the answer after each question

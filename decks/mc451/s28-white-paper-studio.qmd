@@ -172,7 +172,7 @@ Before you leave today you should have:
 ## Before Finals Week
 
 - Due Friday, December 4, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points
-- Due Friday, December 4, 11:59 PM: your full coded corpus and its stability check, pushed to your project repository ([White Paper dated step](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper))
+- Due Friday, December 4, 11:59 PM: your full coded corpus, pushed to your project repository ([White Paper dated step](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper))
 - Due Friday, December 18, 11:59 PM: [White Paper](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper), the PDF and the live URL
 - Step by step: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html), [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc451/13-publish-your-site.html)
 - Work the must-fix list first. The rest is optional

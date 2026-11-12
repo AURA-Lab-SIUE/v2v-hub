@@ -542,7 +542,7 @@ All three are the general linear model, wearing three different names.
 
 ## Before Week 15 (cont.)
 
-- **Due Monday, December 7, 11:59 PM:** push your full coded dataset and a re-code of a subsample to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)); the stability figure earns points only if that commit is dated by then
+- **Due Monday, December 7, 11:59 PM:** push your full coded dataset to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)); the stability figure earns points only if that commit is dated by then
     - This is the [White Paper's dated step](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster)
 
 ## Before Week 15 (cont.)

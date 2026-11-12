@@ -309,7 +309,7 @@ walked it once.
 [Two deadlines left]{.eyebrow}
 
 - Due Monday, December 7, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#inferencing-data-in-r), 100 points
-- Due Monday, December 7, 11:59 PM: push your full coded dataset and a re-code of a subsample to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)); the stability figure earns points only if that commit is dated by then
+- Due Monday, December 7, 11:59 PM: push your full coded dataset to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html)); the stability figure earns points only if that commit is dated by then
     - This is the [White Paper's dated step](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster)
 - Due Monday, December 7, 11:59 PM: [Week 15 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
 - Due Friday, December 18, 11:59 PM: [White Paper and conference poster](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster), 200 points
