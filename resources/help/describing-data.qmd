@@ -129,7 +129,7 @@ With the instructor's codes the second table reads `commentary` n `17`, mean `29
 ### Task 3.1: Viewer band by channel type {#task-3-1}
 
 The blanks are column names: viewer band first, then channel type, then channel type again.
-The Setup chunk prints every column name. This is the table Inferencing Data runs the
+Tasks 1.1 and 1.2 show how the two column names are written. This is the table Inferencing Data runs the
 chi-square test on. `count()` with two columns
 counts every combination of the two categories, one row per combination. `pivot_wider()` then
 turns those rows into a grid: one row per value of the first column, one column per value of the
