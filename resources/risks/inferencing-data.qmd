@@ -9,7 +9,7 @@ It does not fill in the worksheet or report any test for you. Each section names
 what it looks like on the Twitch data, and gives you a check. Every output below is real.
 
 Words such as p-value, effect size, and confidence interval are defined in plain English in
-the worksheet's **Key terms** table.
+the [Inferencing Data worksheet help](../help/inferencing-data.qmd#key-terms) page.
 
 ## 1. A hypothesis written after the result
 

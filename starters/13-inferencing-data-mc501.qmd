@@ -25,15 +25,10 @@ chat against non-gaming chat, small audiences against large ones, reaction again
 
 **Your job.** Tell the manager whether those differences are real or could be chance, and
 whether they are big enough to put in a pitch. You test four relationships, one test each, and
-say how big each one is. One of the four runs on the variable you coded by hand in Data
-Wrangling.
-
-The manager does not read R. Every **Write:** prompt in this worksheet is a note to them, and
-the last section is the paragraph you would send.
+say how big each one is. The manager does not read R, so every **Write:** prompt is a note to
+them.
 
 ## Your assignment
-
-Work through the parts in order.
 
 | Part | What you do | What it tells the client |
 |---|---|---|
@@ -46,35 +41,32 @@ Work through the parts in order.
 | 6 | Significance against size: one paragraph across all four results | A reviewer sees which results are big, not only which are significant |
 | Last | Explain this stage to the client, in one short paragraph | The manager gets the results and their limits in plain language |
 
-**This is the MC 501 worksheet,** so the tasks marked (MC 501) are part of your assignment: assumptions shown for every test,
-intervals on every effect size, Welch's ANOVA and Tukey's HSD, the standardized slope, a power
-analysis for one focal test, and the paragraph separating significance from size.
+**This is the MC 501 worksheet,** so the tasks marked (MC 501) are part of your assignment.
 
 **The order matters.** Write the four hypotheses in Part 0 **before** you run any chunk below
-it. A hypothesis written after the result is a description of the result.
+it.
 
-The code sits in gray boxes called chunks, as in Data Wrangling. Replace each blank, shown as
-`___`, with the code it needs, click **Run Cell** at the top left of the gray box, and compare
-what R prints with **What you should see**, the line right under the chunk.
-Where the worksheet says **Write:**, type your answer under it, in your own words. The hypotheses, the reason for
-each test, the four reports, the interpretation, and the closing paragraph to the client are
-graded, so none of them is filled in for you. Every blank is a column name from the settings
-block. Start at **Part 0**, the heading after **What to submit**.
+The code sits in gray boxes called chunks, as in Data Wrangling. Work through them in order:
+
+1. Replace each blank, shown as `___`, with the code it needs.
+2. Click **Run Cell** at the top left of the gray box.
+3. Compare what R prints with **What you should see**.
+
+Where the worksheet says **Write:**, type your answer in your own words. Every task has a
+**Help** link. It opens the page that explains that task: what the blank needs, what each
+function does, and what to do when R prints an error.
 
 ## What to submit
 
 **100 points.** Due Monday, December 7, 11:59 PM, in Blackboard, under **Inferencing Data in R**.
 
-Upload each of these on its own, not in a zip:
+You turn in an R assignment as one ZIP file: your whole course workspace, the folder you have open in VS Code, packed into a single file. [How to make the ZIP](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file). The ZIP must hold:
 
 - this worksheet, with every blank and every **Write:** filled
-- the HTML file with the same name, which you make when you render the worksheet (**Help and reference** links the guide)
+- the HTML file with the same name, which you make in **Before you submit**
 - your [AI-use log](https://aura-lab.siue.edu/v2v-hub/resources/AI-use-log.docx)
 
-The rubric lists the points for each part:
-[Inferencing Data in R rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC501-rubric-inferencing-data-in-r.pdf).
-
-When a word or a step stops you, go to [Help and reference](#help), the last section of this worksheet.
+Rubric: [Inferencing Data in R rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC501-rubric-inferencing-data-in-r.pdf).
 
 ## Part 0: Four hypotheses, before any code
 
@@ -103,11 +95,12 @@ sentence why that test and not another.
 
 *Tests and reasons:*
 
+[Help with Part 0](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#part-0)
+
 ## Part 1: The settings block
 
-Every test below uses six short names instead of the Twitch column names. Only this block knows
-the column names, so the same code runs on your own data for the White Paper when you change this
-block and nothing else. Give `group2` your hand-coded variable.
+Every test below uses six short names instead of the Twitch column names. Give `group2` your
+hand-coded variable.
 
 ```{r}
 #| label: settings
@@ -132,26 +125,13 @@ analysis <- read_rds("data/twitch_analysis.RDS") %>%
 glimpse(analysis)
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Settings
-block (name the test variables)**, then **Run it**. It writes this block with `group2 = factor(channel_type)`; change that one line
-to your hand-coded variable.
-
 **What you should see:** `Rows: 35,267` and six columns: `outcome` `<int>`, `group2`, `group3`,
 `cat_a`, and `cat_b` `<fct>`, `predictor` `<int>`.
-
-**If you see `there is no package called 'effectsize'`,** run **AURA: Check my setup**,
-then **Install what is missing**, and run the chunk again.
-
-**MC 501:** the same goes for `'pwr'`.
+[Help with Part 1](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#part-1)
 
 ## Part 2: Test 1, the chi-square test
 
 ### Task 2.1: The test and its effect size
-
-`xtabs()` builds the grid of counts from a formula naming the two categories, the same grid as
-worksheet 2's cross-tabulation. `chisq.test()` runs the test on that grid and reports the
-chi-square statistic, its df, and p. `cramers_v()` turns the result into Cramér's V, the effect
-size for two categories, from 0 (no relationship) to 1.
 
 ```{r}
 #| label: chi-square
@@ -162,18 +142,11 @@ chi
 cramers_v(counts, adjust = FALSE)
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Chi-square
-test with Cramer's V**, then **Run it**. It writes these lines for `cat_a` and `cat_b`.
-
 **What you should see:** `34766`; then `X-squared = 822.66`, `df = 2`, `p-value < 2.2e-16`;
 then `Cramer's V` `0.15`, with its 95% confidence interval beside it.
+[Help with Task 2.1](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#task-2-1)
 
 ### Task 2.2: The assumption and the cells driving it (MC 501)
-
-`chi` holds everything the test computed. `$expected` is the grid of counts the test expected
-if the two were unrelated (every one should be at least 5), and `$stdres` is the standardized
-residuals: how far each real count sits from its expected count, where a cell beyond 2 or -2
-drives the result.
 
 ```{r}
 #| label: chi-square-501
@@ -182,8 +155,8 @@ round(chi$stdres, 2)     # standardized residuals
 ```
 
 **What you should see:** the smallest expected count `198.9`, and residuals of `-25.68` and
-`25.68` in the medium row: the medium band holds far more non-gaming chat than chance would put
-there.
+`25.68` in the medium row.
+[Help with Task 2.2](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#task-2-2)
 
 **Write:** one sentence naming the cell that drives the result.
 
@@ -199,9 +172,7 @@ for the client on what it means for H1, with the effect size in words.
 ### Task 3.1: How many messages the test uses
 
 The table has 35,267 rows, but only your thirty have a value of `group2`. Every other row is
-dropped from this test. The second table gives the n, mean, and sd of each group that the APA
-sentence needs, counting only rows that have both a group and a message length, as the test
-does.
+dropped from this test.
 
 ```{r}
 #| label: t-test-n
@@ -215,15 +186,10 @@ analysis %>%
   summarize(n = n(), mean = mean(outcome), sd = sd(outcome))
 ```
 
-**What you should see:** your two groups adding to `30`. With the instructor's codes,
-`commentary` `17` and `reaction` `13`, then `commentary` mean `29.2`, sd `27.9` and `reaction`
-mean `15.6`, sd `23.5`.
+**What you should see:** your two groups adding to `30`, then the mean and sd of each.
+[Help with Task 3.1](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#task-3-1)
 
 ### Task 3.2: The test and its effect size
-
-`t.test()` with a formula (`a number ~ a two-group category`) runs Welch's t-test, R's default,
-which does not assume the two groups spread out equally. `cohens_d()` with the same formula
-gives Cohen's d: the gap between the two means, measured in standard deviations.
 
 ```{r}
 #| label: t-test
@@ -231,13 +197,9 @@ t.test(outcome ~ ___, data = analysis)     # your hand-coded variable
 cohens_d(outcome ~ ___, data = analysis)
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Welch
-t-test with Cohen's d**, then **Run it**.
-
-**What you should see,** with the instructor's codes: `t = 1.4499`, `df = 27.701`,
-`p-value = 0.1583`, `mean in group commentary` `29.23529`, `mean in group reaction` `15.61538`; then
-`Cohen's d` `0.52`, with its 95% confidence interval. Your numbers differ wherever your codes
-do.
+**What you should see:** `t`, `df`, and `p-value`, the mean of each group, then `Cohen's d` with
+its 95% confidence interval. Your numbers depend on your codes.
+[Help with Task 3.2](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#task-3-2)
 
 **Write:** the APA report of Test 2 (both means and SDs, t, df, p, n, Cohen's d), then two to three
 sentences for the client on what it means for H2. Say the size of the difference in characters.
@@ -260,11 +222,9 @@ pwr::pwr.t.test(d = 0.52,                        # the d you observed
                 power = .80)                     # n is the messages needed in EACH group
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Power
-analysis for your sample size**, then **Run it**. It writes the `pwr.t.test()` call.
-
 **What you should see,** with 17 and 13: `d = 1.069343`. Then `n = 59.03` per group for the d of
 0.52.
+[Help with Task 3.3](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#task-3-3)
 
 **Write:** what effect this sample could detect, and what that means for the null result in
 Task 3.2.
@@ -274,11 +234,6 @@ Task 3.2.
 ## Part 4: Test 3, the one-way ANOVA
 
 ### Task 4.1: The test and its effect size
-
-`aov()` fits the ANOVA for a number across three or more groups, and `summary()` prints F, both
-df, and p. `eta_squared()` gives eta squared: the share of the variation in message length that
-the groups account for, from 0 to 1. The first table gives each group's n, mean, and sd for the
-report.
 
 ```{r}
 #| label: anova
@@ -292,18 +247,12 @@ summary(fit_anova)
 eta_squared(fit_anova)
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **One-way
-ANOVA with eta squared**, then **Run it**.
-
 **What you should see:** n of `27765`, `5501`, and `1997` and means of `29.5`, `30.1`, and `18.8`
 characters for small, medium, and large; `F value` `66.2`, `Df` `2` and `35260`, `Pr(>F)` `<2e-16`; then `Eta2` `3.74e-03`,
 which is `0.004` when rounded.
+[Help with Task 4.1](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#task-4-1)
 
 ### Task 4.2: Welch's ANOVA, and which groups differ (MC 501)
-
-`oneway.test()` is Welch's ANOVA, which does not assume the groups spread out equally.
-`omega_squared()` is a less biased cousin of eta squared; report both. `TukeyHSD()` is the
-follow-up that says which pairs of bands differ, with p adjusted for making three comparisons.
 
 ```{r}
 #| label: anova-501
@@ -313,9 +262,9 @@ TukeyHSD(fit_anova)
 ```
 
 **What you should see:** Welch's `F = 109.83`, `p-value < 2.2e-16`; `Omega2` `3.68e-03`, which
-is `0.004` when rounded; and under Tukey, `large-small` `diff` `-10.7466059` (`-10.75`), `p adj`
-`0.0000000`, `large-medium` `diff` `-11.3791998` (`-11.38`), `p adj` `0.0000000`, and
-`medium-small` `diff` `0.6325938` (`0.63`), `p adj` `0.5497618`.
+is `0.004` when rounded; and under Tukey, `large-small` `diff` `-10.75`, `large-medium` `diff`
+`-11.38`, and `medium-small` `diff` `0.63`.
+[Help with Task 4.2](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#task-4-2)
 
 **Write:** the APA report of Test 3 (F, both dfs, p, N, eta-squared), then two to three
 sentences for the client on what it means for H3, with the effect size in words.
@@ -328,28 +277,18 @@ sentences for the client on what it means for H3, with the effect size in words.
 
 ### Task 5.1: The test and its effect size
 
-`lm()` fits a straight line from one number to another, and `summary()` prints the slope (the
-`Estimate` on the predictor's row: characters gained per hour), the intercept, R-squared (the
-share of the variation the line explains), and the F-test with its df and p.
-
 ```{r}
 #| label: regression
 fit_lm <- lm(outcome ~ ___, data = analysis)   # the hour of the day
 summary(fit_lm)
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R4 Test**, select **Linear
-regression**, then **Run it**.
-
 **What you should see:** `Estimate` `0.05360` on the `predictor` row (the slope, `0.05` when
 rounded); `Multiple R-squared` `7.603e-05` (`0.000` when rounded); `F-statistic` `2.681` on `1`
 and `35261` DF; `p-value` `0.1016`.
+[Help with Task 5.1](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#task-5-1)
 
 ### Task 5.2: The standardized slope, the interval, and the residuals (MC 501)
-
-`standardize_parameters()` reports the slope in standard deviations: the change in message
-length, in standard deviations, per standard deviation of the hour. For the residuals, draw R's
-two standard diagnostic plots from the fitted model.
 
 ```{r}
 #| label: regression-501
@@ -369,8 +308,8 @@ plot(fit_lm, which = 2)   # Q-Q plot: the residuals against a normal shape
 ```
 
 **What you should see:** `Std. Coef.` `8.72e-03` for `predictor`, which is `0.009`; and two
-plots: the residuals stack in a stripe at each hour, and the Q-Q points bend sharply upward at
-the right.
+plots.
+[Help with Task 5.2](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#task-5-2)
 
 **Write:** the APA report of Test 4 (b, t, df, p, R-squared), then two to three sentences for
 the client on what it means for H4, with the slope in characters per hour.
@@ -403,52 +342,8 @@ manager would have to look up.
 
 - [ ] The four hypotheses in Part 0 were written before you ran Part 1.
 - [ ] No `___` is left anywhere in the file.
-- [ ] Each test has its APA report, its effect size in words, and its interpretation. In the R
-      Companion, **AURA: Write R code**, under **R4 Test**, **APA numbers to check your
-      sentence** prints a test's numbers so you can check the sentence you wrote.
+- [ ] Each test has its APA report, its effect size in words, and its interpretation.
 - [ ] The paragraph to the client is written, and it names both limits.
 - [ ] The worksheet renders without an error.
 
-## Help and reference {#help}
-
-Nothing in this section is graded. Come here when a word or a step stops you.
-
-### Where things go
-
-This worksheet goes in the top folder of your workspace, beside your Data Wrangling worksheet,
-so that it finds `data/twitch_analysis.RDS`. The guide *Put a Worksheet in Your Workspace* shows
-how: [MC 501 guide](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
-
-To render the worksheet before you submit, follow the guide *Render a Quarto Document*:
-[MC 501 guide](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html).
-
-### Guides for this assignment
-
-- [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html): the traps on this job, what
-  each looks like, and how to check for it.
-- *Run a Test and Check Your Test Choice*: [MC 501 guide](https://aura-lab.siue.edu/v2v-hub/guides/mc501/10-tests-and-check-my-test-choice.html).
-- R cheat sheets, each with a worked example and the output it prints:
-  [stats](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/stats.html) and [dplyr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/dplyr.html).
-  The [cheat-sheet index](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/index.html) links every sheet.
-
-For an error you cannot read, run **AURA: Explain an R error**.
-
-### Key terms
-
-| Term | What it means |
-|---|---|
-| **Hypothesis** | A sentence, written before you look, that says what you expect to find about two variables. |
-| **Statistical test** | A calculation that asks whether a pattern in the data is bigger than chance alone would produce. |
-| **p-value** | How likely a pattern at least this big would be if the two variables were really unrelated. Below .05 is called *statistically significant*. R prints a very small one as `< 2.2e-16`, which you report as *p* < .001. |
-| **Statistically significant** | The p-value is under .05. It says a pattern is unlikely to be chance. It does not say the pattern is big or important. |
-| **Effect size** | How big a difference or relationship is, on a scale that does not grow with the number of messages. |
-| **Chi-square test** | The test for two categories, such as viewer band and channel type. It compares the real counts with the counts you would expect if the two were unrelated. |
-| **t-test** | The test for a number across two groups, such as message length for commentary and reaction. |
-| **ANOVA** | The test for a number across three or more groups, such as message length across the three viewer bands. |
-| **Linear regression** | The test for two numbers. It fits a straight line and reports its slope: how much one number changes when the other goes up by one. |
-| **Degrees of freedom (df)** | A number each test reports beside its result, set by how many groups and rows went into it. You copy it into the report. |
-| **Confidence interval** | A range of values the true effect probably falls in. A wide interval means the estimate is uncertain. |
-| **Null result** | A test that is not significant. It means the data could not tell the pattern apart from chance, not that there is no pattern. |
-| **Assumption** | A condition a test needs to give trustworthy answers, such as groups that spread about equally. |
-| **Residual** | The gap between a real value and the value the model predicts for it. |
-| **Power** | The chance a test would detect a difference of a given size, if that difference is real. Small samples have low power. |
+[Help with rendering and submitting](https://aura-lab.siue.edu/v2v-hub/resources/help/inferencing-data.html#before-you-submit)

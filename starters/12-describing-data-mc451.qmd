@@ -25,15 +25,9 @@ with your thirty hand-coded messages inside it. The manager has not seen a numbe
 
 **Your job.** Show the manager what is in the table before anything is tested: how often each
 category occurs, how long messages run, how two categories line up, and what the patterns look
-like in a chart. A description says how the numbers sit. Whether a difference is bigger than
-chance is the next assignment, Inferencing Data.
-
-The manager does not read R. Every **Write:** prompt in this worksheet is a note to them, and
-the last section is the paragraph you would send.
+like in a chart. The manager does not read R, so every **Write:** prompt is a note to them.
 
 ## Your assignment
-
-Work through the parts in order.
 
 | Part | What you do | Why the client needs it |
 |---|---|---|
@@ -43,28 +37,27 @@ Work through the parts in order.
 | 4 | Three figures, each with alt text, a disclosure sentence, and an interpretation | A chart is what the manager can put in front of a sponsor |
 | Last | Explain this stage to the client, in one short paragraph | The manager gets what you found in plain language |
 
-The code sits in gray boxes called chunks, as in Data Wrangling. Replace each blank, shown as
-`___`, with the code it needs, click **Run Cell** at the top left of the gray box, and compare
-what R prints with **What you should see**, the line right under the chunk.
-Where the worksheet says **Write:**, type your answer under it, in your own words. Your interpretation, your alt
-text, and the closing paragraph to the client are the writing this assignment grades, so they
-are never filled in for you. Every blank is a short piece of code: a column name, a function
-name, or a word in quotation marks. Start at **Setup**, the heading after **What to submit**.
+The code sits in gray boxes called chunks, as in Data Wrangling. Work through them in order:
+
+1. Replace each blank, shown as `___`, with the code it needs.
+2. Click **Run Cell** at the top left of the gray box.
+3. Compare what R prints with **What you should see**.
+
+Where the worksheet says **Write:**, type your answer in your own words. Every task has a
+**Help** link. It opens the page that explains that task: what the blank needs, where to click,
+and what to do when R prints an error.
 
 ## What to submit
 
 **75 points.** Due Friday, November 20, 11:59 PM, in Blackboard, under **Describing Data in R**.
 
-Upload each of these on its own, not in a zip:
+You turn in an R assignment as one ZIP file: your whole course workspace, the folder you have open in VS Code, packed into a single file. [How to make the ZIP](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html#submit-your-work-as-one-zip-file). The ZIP must hold:
 
 - this worksheet, with every blank and every **Write:** filled
-- the HTML file with the same name, which you make when you render the worksheet (**Help and reference** links the guide). It holds your figures.
+- the HTML file with the same name, which you make in **Before you submit**
 - your [AI-use log](https://aura-lab.siue.edu/v2v-hub/resources/AI-use-log.docx)
 
-The rubric lists the points for each part:
-[Describing Data in R rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC451-rubric-describing-data-in-r.pdf).
-
-When a word or a step stops you, go to [Help and reference](#help), the last section of this worksheet.
+Rubric: [Describing Data in R rubric](https://aura-lab.siue.edu/v2v-hub/resources/rubrics/MC451-rubric-describing-data-in-r.pdf).
 
 ## Setup
 
@@ -81,14 +74,8 @@ analysis %>%
   count(reaction_only)  # your hand-coded variable made it through
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R2 Data**, select **Load your
-saved analysis (RDS)**, then **Run it**.
-
-**What you should see:** your two coded groups adding to `30`, and `NA` with `35237`. With the
-instructor's codes that is `commentary` `17` and `reaction` `13`.
-
-**If you see `cannot open the connection`,** this file is not in the same folder as the `data`
-folder from worksheet 1. Move it there.
+**What you should see:** your two coded groups adding to `30`, and `NA` with `35237`.
+[Help with Setup](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#setup)
 
 ## Part 1: Frequency tables
 
@@ -105,6 +92,7 @@ analysis %>%
 
 **What you should see:** `gaming` `31309` (88.8%), `non-gaming` `3457` (9.8%), and `NA` `501`
 (1.4%).
+[Help with Task 1.1](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-1-1)
 
 ### Task 1.2: Viewer band
 
@@ -117,11 +105,8 @@ analysis %>%
   mutate(percent = round(100 * n / sum(n), 1))
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
-**Frequency table**. Choose **Choose columns from a data file**, open the `data` folder, pick
-`twitch_analysis.RDS`, then pick `viewer_band`. Then **Run it**.
-
 **What you should see:** `small` `27766` (78.7%), `medium` `5501` (15.6%), `large` `2000` (5.7%).
+[Help with Task 1.2](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-1-2)
 
 ### Task 1.3: Your hand-coded variable
 
@@ -135,8 +120,8 @@ analysis %>%
   mutate(percent = round(100 * n / sum(n), 1))
 ```
 
-**What you should see:** two rows adding to `30`. With the instructor's codes, `commentary` `17`
-(56.7%) and `reaction` `13` (43.3%).
+**What you should see:** two rows adding to `30`.
+[Help with Task 1.3](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-1-3)
 
 **Write:** two to three sentences for the client on the three tables: what they show, and what
 they do not. Name the numbers.
@@ -159,6 +144,7 @@ analysis %>%
 ```
 
 **What you should see:** `n` `35263`, `mean` `29.0`, `median` `17`, `sd` `41.2`.
+[Help with Task 2.1](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-2-1)
 
 ### Task 2.2: By channel type, and by your code
 
@@ -188,13 +174,9 @@ analysis %>%
   )
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
-**Summary by group**, then **Run it**.
-
 **What you should see:** `gaming` n `31309`, mean `28.5`, median `17`, sd `38.5`; `non-gaming`
-n `3457`, mean `33.7`, median `16`, sd `60.7`. Then, with the instructor's codes, `commentary`
-n `17`, mean `29.2`, median `21`, sd `27.9`, max `119`; `reaction` n `13`, mean `15.6`, median
-`9`, sd `23.5`, max `90`.
+n `3457`, mean `33.7`, median `16`, sd `60.7`. Then one row for each of your two coded groups.
+[Help with Task 2.2](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-2-2)
 
 **Write:** two to three sentences for the client. Where do the mean and the median disagree, and
 what does the gap tell you about the shape of message length?
@@ -205,13 +187,6 @@ what does the gap tell you about the shape of message length?
 
 ### Task 3.1: Viewer band by channel type
 
-This is the table worksheet 3 runs the chi-square test on. `count()` with two columns counts
-every combination of the two categories, one row per combination. `pivot_wider()` then turns
-those rows into a grid: one row per value of the first column, one column per value of the
-second, with the counts in the cells, and `values_fill = 0` writes a `0` where a combination
-never occurs. The 501 messages with no channel type cannot be placed, so the filter leaves them
-out.
-
 ```{r}
 #| label: crosstab
 analysis %>%
@@ -220,16 +195,13 @@ analysis %>%
   pivot_wider(names_from = ___, values_from = n, values_fill = 0)   # one column per channel type
 ```
 
-Or with the R Companion: run **AURA: Write R code** and, under **R3 Describe**, select
-**Crosstab with proportions**, then **Run it**. It writes this grid and the shares in Task 3.2.
-
 **What you should see:** three rows of counts. `small`: `25309` gaming, `2457` non-gaming.
 `medium`: `4000` and `1000`. `large`: `2000` and `0`.
+[Help with Task 3.1](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-3-1)
 
 ### Task 3.2: As proportions of each band
 
-The same counts as shares of each band. `group_by()` makes `sum(n)` add up within each viewer
-band instead of across the whole table, so each band's shares add up to 1.
+The same counts as shares of each band.
 
 ```{r}
 #| label: crosstab-shares
@@ -241,8 +213,8 @@ analysis %>%
 ```
 
 **What you should see:** non-gaming is `0.088` of the small band and `0.2` of the medium band.
-The large band has no non-gaming row at all: `count()` prints only the combinations it finds,
-and that count is `0`.
+The large band has no non-gaming row.
+[Help with Task 3.2](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-3-2)
 
 **Write:** two to three sentences for the client on the cross-tabulation. What does it show, and
 what can it not show yet?
@@ -281,8 +253,8 @@ fig_band_type
 ggsave("figures/band-by-type.png", fig_band_type, width = 7, height = 4.5, dpi = 300)
 ```
 
-**What you should see:** three bars of equal height, the non-gaming part shrinking from small to
-medium to none at all in large, and `band-by-type.png` in `figures/`.
+**What you should see:** three bars of equal height, and `band-by-type.png` in `figures/`.
+[Help with Task 4.1](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-4-1)
 
 **Write:** the disclosure sentence, then two to three sentences of interpretation.
 
@@ -310,8 +282,8 @@ fig_length_reaction
 ggsave("figures/length-by-reaction.png", fig_length_reaction, width = 6, height = 4.5, dpi = 300)
 ```
 
-**What you should see:** two boxes, the commentary box higher, a point far above each box (119
-and 90 with the instructor's codes), and `length-by-reaction.png` in `figures/`.
+**What you should see:** two boxes, and `length-by-reaction.png` in `figures/`.
+[Help with Task 4.2](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-4-2)
 
 **Write:** the disclosure sentence, then two to three sentences of interpretation.
 
@@ -319,13 +291,9 @@ and 90 with the instructor's codes), and `length-by-reaction.png` in `figures/`.
 
 ### Task 4.3: A figure of your own choice
 
-Choose the variable and the chart, and let the R Companion write it. Two that suit this table: a
-histogram of `message_length` (decide where to cap the axis, since 361 messages run past 200
-characters), or a line chart of messages per hour. Put your cursor on the `YOUR TURN` line, run
-**AURA: Write R code** and, under **R3 Describe**, select **Histogram** (or **Line chart over
-time**, which draws from `streams`: add `streams <- twitch_streams()` to the setup chunk first).
-The menu writes the complete chart; then fill in its title, axis labels, and caption, and keep
-the `fig_own <-` and `ggsave()` lines so the figure is saved. Then say why you chose it.
+Choose the variable and the chart, and let the R Companion write it. Then fill in its title, axis
+labels, and caption, and keep the `fig_own <-` and `ggsave()` lines so the figure is saved.
+[Help with Task 4.3](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#task-4-3)
 
 ```{r}
 #| label: fig-own
@@ -361,42 +329,4 @@ them.
 - [ ] The paragraph to the client is written, and it names what this stage does not show yet.
 - [ ] The worksheet renders without an error.
 
-## Help and reference {#help}
-
-Nothing in this section is graded. Come here when a word or a step stops you.
-
-### Where things go
-
-This worksheet goes in the top folder of your workspace, beside your Data Wrangling worksheet,
-so that it finds `data/twitch_analysis.RDS`. The guide *Put a Worksheet in Your Workspace* shows
-how: [MC 451 guide](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html).
-
-To render the worksheet before you submit, follow the guide *Render a Quarto Document*:
-[MC 451 guide](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html).
-
-### Guides for this assignment
-
-- [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html): the traps on this job, what
-  each looks like, and how to check for it.
-- *Describe the Data: Tables and Charts*: [MC 451 guide](https://aura-lab.siue.edu/v2v-hub/guides/mc451/09-describing-tables-and-charts.html).
-- R cheat sheets, each with a worked example and the output it prints:
-  [dplyr](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/dplyr.html) and [ggplot2](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/ggplot2.html).
-  The [cheat-sheet index](https://aura-lab.siue.edu/v2v-hub/resources/cheat-sheets/index.html) links every sheet.
-
-For an error you cannot read, run **AURA: Explain an R error**.
-
-### Key terms
-
-| Term | What it means |
-|---|---|
-| **Frequency table** | A count of how many rows fall in each category, often with each count as a percent of the total. |
-| **Mean** | The average: add up the values and divide by how many there are. A few very large values pull it up. |
-| **Median** | The middle value once the values are sorted. Half the messages are shorter, half are longer. |
-| **Standard deviation (sd)** | How far values typically sit from the mean. A bigger sd means the values are more spread out. |
-| **Skew** | A lopsided shape. Message length is skewed right: most messages are short and a few are very long, which puts the mean above the median. |
-| **Outlier** | A value far from the rest, such as one 441-character message among messages of 10 or 20. |
-| **Cross-tabulation** | A table that counts every combination of two categories, such as viewer band by channel type. |
-| **Proportion** | A share of a whole, written as a decimal: 0.2 is 20 percent. |
-| **Boxplot** | A chart of a variable's middle half (the box), its median (the line), and its outliers (points beyond the whiskers). |
-| **Histogram** | A bar chart of a number variable, where each bar counts the values that fall in one range, such as 0 to 5 characters. |
-| **Alt text** | A sentence that says what a chart shows, for a reader who cannot see it. A screen reader reads it aloud. |
+[Help with rendering and submitting](https://aura-lab.siue.edu/v2v-hub/resources/help/describing-data.html#before-you-submit)

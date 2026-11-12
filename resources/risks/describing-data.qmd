@@ -8,8 +8,7 @@ This guide goes with the Describing Data worksheet
 It does not fill in the worksheet. Each section names a trap, shows what it looks like on the
 Twitch data, and gives you a check. Every output below is real.
 
-Words such as median, skew, outlier, and cross-tabulation are defined in plain English in the
-worksheet's **Key terms** table.
+Words such as median, skew, outlier, and cross-tabulation are defined in plain English in [Describing Data worksheet help](../help/describing-data.qmd#key-terms) page.
 
 ## 1. A table that is mostly `NA`
 

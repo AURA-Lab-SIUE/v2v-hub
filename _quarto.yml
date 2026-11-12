@@ -18,6 +18,8 @@ project:
     - "resources/*.qmd"
     # Risks guides for the three R worksheets (2026-10-22): static code only, no R chunks, so CI renders them.
     - "resources/risks/*.qmd"
+    # Help pages for the three R worksheets (2026-11-11): the help that used to sit inside each worksheet. Static, no R chunks.
+    - "resources/help/*.qmd"
     # R cheat sheets (2026-11-05): one page per package, static code only with pasted real output, so CI renders them.
     - "resources/cheat-sheets/*.qmd"
     # Step-by-step guides, one set per course; the Markdown source lives in each teaching workspace on O:.

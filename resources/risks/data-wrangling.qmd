@@ -8,8 +8,7 @@ does not fill in the worksheet. Each section names a trap this job sets, shows w
 when you fall into it, and gives you a check that tells you whether you did. Every output below
 is real: it is what the Twitch data in `v2v` prints when the mistake is made.
 
-Words such as key, join, factor, and missing value are defined in plain English in the
-worksheet's **Key terms** table.
+Words such as key, join, factor, and missing value are defined in plain English in [Data Wrangling worksheet help](../help/data-wrangling.qmd#key-terms) page.
 
 Run the check after the step it belongs to, not at the end. A wrong join in Part 4 still runs,
 and everything after it inherits the error.
