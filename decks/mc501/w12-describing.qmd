@@ -861,8 +861,8 @@ msglen %>%
 ## The Descriptive Statistics (cont.)
 
 - In the R Companion panel, under **Describe**, **Line chart over time** writes Figure 1
+- **Bar chart**, then **The table already has the numbers**, writes Figure 2
 - **Histogram comparing two groups** writes Figure 3
-- Its **Bar chart** draws the top ten games, not Figure 2
 - After **Run it**, the saved chart opens in its own VS Code tab
 
 ## The Numbers
