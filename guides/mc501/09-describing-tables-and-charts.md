@@ -81,9 +81,9 @@ dir.create("figures", showWarnings = FALSE)
 > dir.create("figures", showWarnings = FALSE)
 ```
 
-**Check:** both lines print nothing. `episodes` appears in the Workspace panel (**AURA: Show what is loaded in R (Workspace panel)**) with 120 rows, and a `figures` folder appears in the Explorer. If you see `cannot open the connection`, the file name in the quotes does not match the one under `data`: check the spelling and the capital letters.
+**Check:** both lines print nothing, and a `figures` folder appears in the Explorer. To see that `episodes` is there, click in the **R (AURA)** terminal, type `nrow(episodes)`, and press **Enter**: R prints `[1] 120`, its number of rows. If you see `cannot open the connection`, the file name in the quotes does not match the one under `data`: check the spelling and the capital letters.
 
-**The R Companion shortcut, once you have typed it yourself:** **AURA: Write R code**, then under **R2 Data**, **Load your saved analysis (RDS)**.
+**The R Companion:** its **Load your saved analysis (RDS)** loads the course's Twitch file only, so type these lines yourself, as above.
 
 **In the worksheet (Twitch):** the Setup chunk runs these same lines on `data/twitch_analysis.RDS`, named `analysis`, then counts `reaction_only`. **What you should see** there: your two coded groups adding to `30`, and `NA` with `35237`.
 
@@ -171,7 +171,7 @@ episodes %>%
 
 **Check:** `focus` has an `<NA>` row with 1 episode: the blank cell [guide 08](08-wrangling.md) found and left blank. Keep it in the table and say so in your write-up. In `producer`, `Saban/Disney` has only 5 episodes. A group that small gives shaky percents and averages, so watch it in every later step.
 
-**The R Companion shortcut:** **AURA: Write R code**, under **R3 Describe**, **Frequency table**, then **Choose the table and the columns**. It asks which table, then which column. It writes the same two lines with `count(threat, sort = TRUE)`, which lists the biggest group first instead of in your factor order. Its comment line says "Count each channel type" whatever column you pick, so change the comment to match your column.
+**The R Companion shortcut:** click the **AURA Lab R Companion** icon on VS Code's left edge. Under **Describe**, click **Frequency table**, then **Choose columns from a data file**. A window opens: double-click the `data` folder, click your analysis file (`episodes_analysis.RDS` here), and click **Open**. Then click the column you want. The Companion writes the lines for a table named `analysis`, so in the first line it writes, change `analysis` to your table's name (`episodes` here). It writes `count(threat, sort = TRUE)`, which lists the biggest group first instead of in your factor order. Its comment line says "Count each channel type" whatever column you pick, so change the comment to match your column.
 
 **In the worksheet (Twitch):** Tasks 1.1, 1.2, and 1.3. **What you should see** for Task 1.1: `gaming` `31309` (88.8%), `non-gaming` `3457` (9.8%), and `NA` `501` (1.4%). Task 1.3 adds a `filter(!is.na(...))` line first, because only thirty messages have your code.
 

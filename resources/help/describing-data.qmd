@@ -30,8 +30,8 @@ section below. The first three sections apply to every task.
   that panel if the answer has already gone past.
 - **Command Palette:** select **View**, then **Command Palette...**. A box opens at the top of
   VS Code. Type the name of a command, such as `AURA: Write R code`, and press **Enter**.
-- **Workspace panel:** the list of tables R has loaded. To open it, open the Command Palette,
-  type `AURA: Show what is loaded in R (Workspace panel)`, and press **Enter**.
+- **Check what R has loaded:** click in the **R (AURA)** terminal, type `ls()`, and press
+  **Enter**. R prints the names of the tables it has loaded.
 
 ![](../../guides/mc451/img/worksheet-in-workspace.png){fig-alt="VS Code with the Explorer on the left showing the workspace folder v2v-workspace. The folder named data and the file 11-wrangling-data.qmd sit in the list at the same level as README.md, and the worksheet is open in the editor on the right."}
 
@@ -62,8 +62,13 @@ lines with `___`. Delete the unfinished lines.
 
 - `object '___' not found`: a blank is still empty in that chunk. Fill it and run the chunk
   again.
-- `there is no package called ...` or `could not find function ...`: open the Command Palette,
-  run **AURA: Check my setup**, select **Install what is missing**, and run the chunk again.
+- `there is no package called ...` or `could not find function ...`: open the
+  [Command Palette](#around), type `AURA: Check my setup`, and press **Enter**. A list opens at
+  the top of VS Code. Click **Install what is missing** in it. If a box asks about an open R
+  terminal, click **Close R terminals and install**; if no box asks, go on. Installing can take a
+  few minutes. Wait until a box at the bottom right says **Installed and confirmed**. Then click
+  **Run Cell** on every chunk again, starting from the first chunk at the top of the worksheet.
+  It worked when the chunk that showed the error now runs with no error.
 - Any other error: follow *Explain an R Error*:
   [MC 451](../../guides/mc451/03-explain-an-r-error.md) or
   [MC 501](../../guides/mc501/03-explain-an-r-error.md).

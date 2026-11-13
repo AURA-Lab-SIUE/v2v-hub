@@ -123,6 +123,17 @@ date (1): air_date
 
 **Check:** the row count is the number of items you coded (120 here). If it reports `Columns: 1` instead, see **Everything lands in one column** under If it does not work. The `chr`, `dbl`, and `date` lines say what kind each column is: `chr` is text, `dbl` is a number, `date` is a date. Your code columns should be `chr` if you typed words, or `dbl` if you typed numbers.
 
+**If your sheet has a post id or a video id**, a long number, look at the `chr` and `dbl` lines in the output above. If your id column's name is on the `chr` line, or your sheet has no id, skip to the paragraph that starts **Now look at every column**. If your id column's name is on the `dbl` line, R has changed the last digits of each id. Fix it this way. In `wrangle.R`, select the whole line you typed that starts with `coded <- read_csv(`, the same way you select lines to run them in Step 1, and press **Delete**. On that same line, type the four lines below. Then make two changes in them: put your file's name in place of `episode-codes.csv`, and put your id column's name, exactly as the `dbl` line shows it, in place of `Post ID`. Keep the backquote mark (`` ` ``) on each side of the name: it is the key to the left of **1**. Select the four lines and run them as in Step 1:
+
+```r
+coded <- read_csv(
+  "data/episode-codes.csv",
+  col_types = cols(`Post ID` = col_character())
+)
+```
+
+**Check:** R prints a new `Column specification` box, and your id column's name is now on its `chr` line.
+
 Now look at every column with its first values ([glimpse() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#glimpse-see-every-column-at-once)):
 
 ```r
@@ -220,7 +231,7 @@ coded %>%
 - `threat` has `Monster` (1 row) and `monster` (36 rows). To R those are different values, because R treats capital and lowercase letters as different. It is one typing slip.
 - `focus` has an `NA` row: one cell was left blank. The `coder_notes` column says why ("synopsis says nothing about the story"). Step 9 decides what to do with it.
 
-**The R Companion shortcut, once you have typed it yourself:** **AURA: Write R code**, then under **R2 Data**, **Count rows per group (count)**. In the **Which table?** list pick `coded`, then select **Choose the column from coded** and pick the code column.
+**The R Companion:** its **Count rows per group (count)** counts the course's Twitch tables only, so type this count yourself, as above.
 
 **In the worksheet (Twitch):** Task 2.1 counts the missing values (`TRUE` with `4` for `chat`, `96` for `streams`), and Task 2.3 counts the categories (a table that starts `Art`, `Fortnite`, `Just Chatting`, then `[1] 50` channels).
 
@@ -331,7 +342,7 @@ seasons <- seasons_raw %>%
   select(season_title, season_num, producer)
 ```
 
-This prints nothing. A line that makes a table with `<-` is silent; the table is there, and the R Companion's **Workspace** panel lists it.
+This prints nothing. A line that makes a table with `<-` is silent; the table is there. To see it, click in the **R (AURA)** terminal, type `seasons`, and press **Enter**.
 
 ### 6c. Join, then check the join two ways
 
