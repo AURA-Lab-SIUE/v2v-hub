@@ -38,8 +38,14 @@ In this course VS Code is the standard environment. This guide installs it and s
 
 ### macOS
 
-1. Open the `.dmg` and drag **Visual Studio Code** into Applications.
-2. Open it from Applications.
+1. Click the **Finder** icon (a blue and white face) in the Dock, the row of icons at the edge of the screen. A Finder window opens.
+2. Click **Downloads** in the left sidebar of the Finder window. You see the files you downloaded.
+3. Double-click the file named `VSCode-darwin-universal.zip`. You see **Visual Studio Code**, with a blue icon, in the same window. If that blue icon is already there and the `.zip` file is not, go to step 4.
+4. Press and hold on the blue **Visual Studio Code** icon, move the pointer onto **Applications** in the left sidebar, and let go.
+5. Click **Applications** in the left sidebar. You see **Visual Studio Code** in the window.
+6. Double-click **Visual Studio Code**. If your Mac asks whether you are sure, click **Open**. You see the VS Code window.
+
+From now on, open VS Code from **Applications**. A VS Code opened from Downloads cannot update.
 
 ### Linux (Ubuntu/Debian)
 
@@ -183,6 +189,15 @@ Your whole repository is now in VS Code, ready to edit, commit, and push.
 ### The R extension cannot find R
 
 Install R first ([Install R](install-r.qmd)), then in Settings search `r.rpath` and point it at your R executable. Restart VS Code.
+
+### VS Code says it cannot update {#readonly}
+
+A box that says **Cannot update while running on a read-only volume** means VS Code was opened from Downloads on a Mac.
+
+1. Click **Code** at the top left of the screen, next to the Apple logo, then **Quit Visual Studio Code**. The VS Code window closes.
+2. Do steps 1 to 6 under the heading **macOS** in Step 2, near the top of this page. You see the VS Code window, and the box does not come back.
+
+Then go back to what you were doing before the box appeared.
 
 ### Extensions won't install
 
