@@ -60,15 +60,22 @@ lines with `___`. Delete the unfinished lines.
 
 ## When R prints an error {#errors}
 
-- `object '___' not found`: a blank is still empty in that chunk. Fill it and run the chunk
-  again.
-- `there is no package called ...` or `could not find function ...`: open the
+- `object '___' not found`, with three underscores between the quote marks: a blank is still
+  empty in that chunk. Fill it and run the chunk again.
+- `object '` and then a name, such as `object 'coding_sample' not found`: in the worksheet, scroll to the
+  top. Click **Run Cell** on the gray box under the worksheet's heading **Setup**. Then click
+  **Run Cell** on each gray box below it, one at a time from top to bottom, and stop after the
+  gray box where the error appeared. It worked when R prints no message that begins with `Error`.
+- `could not find function ...` or `there is no package called ...`: click **Run Cell** on the
+  gray box under the worksheet's heading **Setup**, then on the chunk that showed the error. It worked
+  when R prints no message that begins with `Error`. If the same message comes back, open the
   [Command Palette](#around), type `AURA: Check my setup`, and press **Enter**. A list opens at
   the top of VS Code. Click **Install what is missing** in it. If a box asks about an open R
   terminal, click **Close R terminals and install**; if no box asks, go on. Installing can take a
   few minutes. Wait until a box at the bottom right says **Installed and confirmed**. Then click
-  **Run Cell** on every chunk again, starting from the first chunk at the top of the worksheet.
-  It worked when the chunk that showed the error now runs with no error.
+  **Run Cell** on the gray box under **Setup** and on each gray box below it, top to bottom,
+  down to the one that showed the error. It worked when that chunk prints no message that begins
+  with `Error`.
 - Any other error: follow *Explain an R Error*:
   [MC 451](../../guides/mc451/03-explain-an-r-error.md) or
   [MC 501](../../guides/mc501/03-explain-an-r-error.md).
@@ -78,8 +85,10 @@ lines with `___`. Delete the unfinished lines.
 
 ### Setup {#setup}
 
-The lines about "conflicts" are normal. If R says `there is no package called 'janitor'`, see
-[When R prints an error](#errors).
+Each time you open VS Code to work on the worksheet, click **Run Cell** on the gray box under the
+worksheet's heading **Setup** before you run any task. The tasks below use what it loads. It
+worked when R prints a line naming the `v2v` version. The lines about "conflicts" are normal. If
+R says `there is no package called 'janitor'`, see [When R prints an error](#errors).
 
 ### Task 0.1: Draw the coding sample {#task-0-1}
 
@@ -88,6 +97,11 @@ channel) and fifteen from `giantwaffle` (a gaming channel). There is no blank he
 thirty messages differ from a classmate's, run the whole chunk again from its first line, so the
 seed line runs right before the draw.
 
+If R says `could not find function "twitch_chat"`, click **Run Cell** on the gray box under the
+worksheet's heading **Setup**, then on the gray box under **Task 0.1** again. It worked when R
+prints two rows: `bobross` with `15` and `giantwaffle` with `15`. If the same message comes back,
+do the steps in the `could not find function` line of [When R prints an error](#errors).
+
 ### Task 0.2: Write the coding sheet {#task-0-2}
 
 The chunk makes the `data` folder if it is not there yet and saves the thirty messages in it.
@@ -95,6 +109,11 @@ After you run it, look in the Explorer: click the small arrow beside `data`, and
 `coding-form.csv` is listed under it. Rendering the worksheet skips this chunk, so it never
 wipes out the codes you type. If `coding-form.csv` was already in `data`, leave it: it holds the
 same thirty messages.
+
+If R says `object 'coding_sample' not found`, do the steps in the `object '` line of
+[When R prints an error](#errors): in the worksheet, run the Setup gray box, then each gray box
+below it, top to bottom, down to the one under **Task 0.2**. It worked when R prints no message that begins with `Error` and `coding-form.csv` is
+listed under `data` in the [Explorer](#around).
 
 ### Task 0.3: Code each message by hand {#task-0-3}
 

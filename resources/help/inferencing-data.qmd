@@ -60,15 +60,22 @@ lines with `___`. Delete the unfinished lines.
 
 ## When R prints an error {#errors}
 
-- `object '___' not found`: a blank is still empty in that chunk. Fill it and run the chunk
-  again.
-- `there is no package called ...` or `could not find function ...`: open the
+- `object '___' not found`, with three underscores between the quote marks: a blank is still
+  empty in that chunk. Fill it and run the chunk again.
+- `object '` and then a name, such as `object 'analysis' not found`: in the worksheet, scroll to the
+  top. Click **Run Cell** on the gray box under the worksheet's heading **Part 1: The settings block**. Then click
+  **Run Cell** on each gray box below it, one at a time from top to bottom, and stop after the
+  gray box where the error appeared. It worked when R prints no message that begins with `Error`.
+- `could not find function ...` or `there is no package called ...`: click **Run Cell** on the
+  gray box under the worksheet's heading **Part 1: The settings block**, then on the chunk that showed the error. It worked
+  when R prints no message that begins with `Error`. If the same message comes back, open the
   [Command Palette](#around), type `AURA: Check my setup`, and press **Enter**. A list opens at
   the top of VS Code. Click **Install what is missing** in it. If a box asks about an open R
   terminal, click **Close R terminals and install**; if no box asks, go on. Installing can take a
   few minutes. Wait until a box at the bottom right says **Installed and confirmed**. Then click
-  **Run Cell** on every chunk again, starting from the first chunk at the top of the worksheet.
-  It worked when the chunk that showed the error now runs with no error.
+  **Run Cell** on the gray box under **Part 1: The settings block** and on each gray box below it, top to bottom,
+  down to the one that showed the error. It worked when that chunk prints no message that begins
+  with `Error`.
 - Any other error: follow *Explain an R Error*:
   [MC 451](../../guides/mc451/03-explain-an-r-error.md) or
   [MC 501](../../guides/mc501/03-explain-an-r-error.md).
