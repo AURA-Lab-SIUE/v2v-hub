@@ -600,7 +600,7 @@ $ desc_length   <int> 225, 396, 369, 574, 125, 482, 136, 177, 416, 91, 427, 288,
 > library(readr)
 
 > coded <- read_csv("data/episode-code.csv")
-Error: 'data/episode-code.csv' does not exist in current working directory ('C:/Users/alexl/MC451-workspace').
+Error: 'data/episode-code.csv' does not exist in current working directory ('C:/Users/yourname/MC451-workspace').
 Execution halted
 ```
 
