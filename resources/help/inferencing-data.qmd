@@ -92,6 +92,7 @@ output it prints. The guide *Run a Test and Check Your Test Choice* walks throug
 [MC 451](../../guides/mc451/10-tests-and-check-my-test-choice.md) or
 [MC 501](../../guides/mc501/10-tests-and-check-my-test-choice.md). The
 [Inferencing Data risks guide](../risks/inferencing-data.qmd) shows the traps on this job.
+The walkthrough video [Tests](https://siue.yuja.com/V/Video?v=17490908&a=168993969) shows the same steps.
 
 To check an APA sentence you wrote, use the R Companion menu: **R4 Test**, then **APA numbers
 to check your sentence**. It prints a test's numbers.
@@ -200,6 +201,11 @@ To make the HTML file, follow *Render a Quarto Document*:
 [MC 501](../../guides/mc501/11-render-a-quarto-document.md). It worked if the Terminal panel
 ends with `Output created:` and the worksheet's name ending in `.html`. The last section of that
 guide shows how to make the ZIP file you turn in.
+
+**If the render stops with `does not exist in current working directory`,** your worksheet is
+inside a folder, such as `data`, instead of next to `README.md`. The section *If it does not
+work* in the same guide moves it: [MC 451](../../guides/mc451/11-render-a-quarto-document.md#if-it-does-not-work) or
+[MC 501](../../guides/mc501/11-render-a-quarto-document.md#if-it-does-not-work).
 
 ## Key terms
 

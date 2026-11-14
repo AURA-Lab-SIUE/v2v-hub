@@ -1,0 +1,20 @@
+<script>
+/* course-choice-2026-11-14: which course's bar a shared page (help, cheat sheets, setup)
+   shows. Same key and values as the MC 451 / MC 501 edition switch in site-scripts.html
+   ('1' is MC 501), so one choice drives both. It runs in the head so the right bar paints
+   first; with scripting off, the shared pages show a bar that names both courses. */
+(function(){
+  try {
+    var KEY = 'v2v-show-grad-ext';
+    var q = new URLSearchParams(window.location.search).get('edition');
+    if (q === 'grad' || q === 'mc501') localStorage.setItem(KEY, '1');
+    if (q === 'ug'   || q === 'mc451') localStorage.setItem(KEY, '0');
+    var path = window.location.pathname;
+    if (/\/mc501[-\/]|\/self-checks\/mc501-/.test(path))                        localStorage.setItem(KEY, '1');
+    else if (/\/mc451[-\/]|\/syllabus\.html$|\/self-checks\/mc451-/.test(path)) localStorage.setItem(KEY, '0');
+    var v = localStorage.getItem(KEY);
+    if (v === '1' || v === '0')
+      document.documentElement.setAttribute('data-v2v-course', v === '1' ? 'mc501' : 'mc451');
+  } catch (e) { /* storage blocked: the bar that names both courses stays */ }
+})();
+</script>

@@ -27,11 +27,13 @@
    flourish; code ligatures are OFF so <- and |> stay literal for new coders.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+// Fonts are self-hosted (2026-11-14): the @font-face rules at the top of scss:rules load the
+// variable woff2 files in assets/fonts/ (SIL OFL 1.1, from @fontsource-variable 5.2.5). No call to
+// Google Fonts or any other third-party server.
 
 // SIUE approved web typefaces (Visual Identity Requirements p.28, p.39).
 // Source Sans and Source Serif are the named alternates for URW Grotesk and
-// ITC Slimbach, free on Google Fonts, with Arial and Helvetica as the fallback
+// ITC Slimbach, free and openly licensed, with Arial and Helvetica as the fallback
 // stack the requirements specify. Do not reintroduce Archivo, Newsreader or
 // Spline Sans Mono: only approved brand fonts are permitted.
 $font-family-sans-serif: 'Source Sans 3', Arial, Helvetica, sans-serif;
@@ -48,7 +50,10 @@ $primary:          #C8102E;
 $secondary:        #6B6357;
 $body-color:       #2B2A28;
 $body-bg:          #FCFBF7;
-$link-color:       #B0301F;   // deep AURA red: 5.6:1 on warm paper
+// Link red #922619 (2026-11-14): #B0301F measured 4.41 to 4.98:1 on 13 syllabus schedule links at
+// 390 px (rendered pixels, tinted table rows), under the 5:1 house floor. #922619 measured 0 links
+// under 5:1 at 390, 768, and 1440 px on the live syllabus with only the color swapped.
+$link-color:       #922619;
 $link-hover-color: #E5182D;
 
 
@@ -70,7 +75,7 @@ $link-hover-color: #E5182D;
   --v2v-muted: #6B6357;
 
   // Brand red: interactive TEXT uses the deep variant; -fill/-mark for solids
-  --v2v-red:      #B0301F;  // link/label TEXT, 5.6:1 on paper
+  --v2v-red:      #922619;  // link/label TEXT; see $link-color for the measurement
   --v2v-red-fill: #C8102E;  // button/accent fill (white text 5.88:1); the mark below stays #E5182D
   --v2v-red-mark: #E5182D;  // the diamond, rules, dots
   --v2v-red-tint: rgba(229, 24, 45, 0.07);
@@ -743,7 +748,7 @@ body.show-grad-ext .undergraduate-only { display: none; }
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--v2v-red);          // #B0301F, 6.4:1 on paper
+  color: var(--v2v-red);          // #922619, 8.07:1 on paper (declared values)
   margin-bottom: 0.35rem;
 }
 // Name the COURSE NUMBER, not just the edition: "Undergraduate edition" asks a
@@ -772,7 +777,7 @@ body.show-grad-ext .undergraduate-only { display: none; }
   box-shadow: 0 2px 10px rgba(0,0,0,0.18);
   transition: background-color .15s ease, border-color .15s ease;
 }
-// Pressed uses --v2v-red (#B0301F, 6.4:1 with white) and deliberately NOT
+// Pressed uses --v2v-red (#922619, 8.35:1 with white) and deliberately NOT
 // --v2v-red-fill (#E5182D), which measures 4.9:1 with white and sits under the
 // 5:1 house floor.
 #v2v-edition-toggle[aria-pressed="true"] {

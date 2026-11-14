@@ -18,6 +18,8 @@
 //   5. Every file students download (.qmd, .R, .Rmd, .md, .txt in docs/) links with full
 //      addresses on one host, so its links open from a local copy
 //      (tools/absolute-download-links.ts).
+//   6. The course layer ran (tools/course-layer.ts, 2026-11-14): the Pagefind search index
+//      exists and both course homes list their weeks.
 //
 // Budgets (2026-11-06). The artifact was 238 MB, 194 MB of it in 44 decks that each
 // carried about 3 MB of unused Source Sans Pro. With that stripped the site is about
@@ -156,6 +158,17 @@ let downloadCount = 0;
 for await (const _ of downloads(OUT_DIR)) downloadCount++;
 console.log(`Downloaded files checked for full-address links: ${downloadCount}`);
 failures.push(...downloadProblems);
+
+// 6. The course layer: search index and the course homes' week lists.
+try { await Deno.stat(`${OUT_DIR}/pagefind/pagefind.js`); }
+catch { failures.push(`${OUT_DIR}/pagefind/pagefind.js is missing: the search page has no index (tools/course-layer.ts)`); }
+for (const c of ["mc451", "mc501"]) {
+  let home = "";
+  try { home = await Deno.readTextFile(`${OUT_DIR}/${c}/index.html`); } catch { /* reported below */ }
+  const weeks = (home.match(/class="v2v-week"/g) ?? []).length;
+  console.log(`${c} course home: ${weeks} weeks listed`);
+  if (weeks < 10) failures.push(`${OUT_DIR}/${c}/index.html lists ${weeks} weeks; the course layer did not build them`);
+}
 
 if (failures.length) {
   console.error(`\nFAIL: ${failures.length} problem(s)`);

@@ -144,14 +144,28 @@ nrow(analysis)                                   # one row per message
 
 ## Step 6: Give your Results chapter its own setup chunk
 
-Each chapter of the paper starts from nothing when it renders, so `03-results.qmd` needs its
-own lines that switch the packages on and load the data. `include: false` runs the chunk
-but leaves both the code and its output out of the paper.
+Your Results chapter is its own file, `03-results.qmd`, and it cannot see anything this worksheet
+loaded. It needs its own chunk that switches the packages on and loads the data. The line
+`#| include: false` keeps that chunk, and anything it prints, out of the finished paper.
 
-**Paste this into `03-results.qmd`,** on a new line under the guidance text, then save the
-file:
+**Paste this into `03-results.qmd`:**
 
-````markdown
+1. In the **Explorer** panel on the left, find the name of your White Paper project folder (the
+   name you typed in Step 2). If no files show under that name, click it once to open it.
+   `03-results.qmd` is in the list under it.
+2. Click `03-results.qmd`. It opens in the editor.
+3. Scroll to the bottom of that file, click just after the last character on its last line, then
+   press **Enter**. The blinking cursor moves to a new empty line.
+4. In the box below, drag from the line that reads ```` ```{r} ```` down to the line that reads
+   only ```` ``` ````, seven lines in all. The two lines of `~` marks, above and below them, stay
+   out. The seven lines turn a darker shade. Right-click them and click **Copy**.
+5. Click the `03-results.qmd` tab at the top of the editor, right-click the new empty line, and
+   click **Paste**. Change nothing in the pasted lines. The last seven lines of the file now match
+   the box.
+6. Click **File**, then **Save**. The round dot on the file's tab, at the top of the editor, goes
+   away.
+
+~~~~markdown
 ```{r}
 #| label: setup
 #| include: false
@@ -159,10 +173,16 @@ library(tidyverse)
 library(v2v)
 analysis <- read_rds("data/derived/twitch_analysis.RDS")
 ```
-````
+~~~~
 
-The path here is shorter than the one in Step 5, because the chapter runs from inside the
-project folder, where `data` sits at the top.
+The data line, `data/derived/twitch_analysis.RDS`, means: start in your White Paper project folder,
+go into the folder named `data`, then the folder named `derived`, and open the file. Step 4 put
+your file there, and its last line of output showed the file's name.
+
+**Do not click Run Cell on this chunk in `03-results.qmd`.** From there, Run Cell cannot find the
+data file, so it stops with `cannot open the connection`. If you already clicked it, that message
+does no harm and is not in your file, so leave the chunk as it is. Step 9 checks the chunk with
+Preview. Now go on to Step 7.
 
 ## Step 7: Write a sentence whose numbers come from the code
 
@@ -222,8 +242,8 @@ sentence with the real counts in it, and the histogram with its caption undernea
 **If you see `object 'analysis' not found`,** the setup chunk from Step 6 is missing or sits
 below the sentence. It has to come first.
 
-**If you see `cannot open the connection`,** the data file is not inside the project. Run Step 4
-again.
+**If you see `cannot open the connection` in the preview,** the data file is not inside the
+project. Run Step 4 again.
 
 ## Step 10: Render the whole paper
 

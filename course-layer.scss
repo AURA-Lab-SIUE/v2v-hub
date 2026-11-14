@@ -1,0 +1,194 @@
+/*-- scss:rules --*/
+
+// ============================================================================
+// Course layer (2026-11-14, design direction B, owner q-20261114-0005)
+// ----------------------------------------------------------------------------
+// Styles for what tools/course-layer.ts adds to every rendered page: the course bar under the
+// site navbar, the breadcrumb, the phone "Steps on this page" list, the week list and "This week"
+// box on the course homes, and the search page. Every colour is a --v2v token from
+// custom-styling.scss. Motion: none beyond the colour change on hover that links already have.
+// ============================================================================
+
+// Self-hosted fonts: variable woff2 files from @fontsource-variable 5.2.5 (SIL OFL 1.1, licence
+// text beside them in assets/fonts/). Quarto resolves each url() from this file's own folder and
+// copies the font next to the compiled stylesheet.
+@font-face {
+  font-family: 'Source Sans 3'; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url('assets/fonts/source-sans-3-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans 3'; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url('assets/fonts/source-sans-3-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Sans 3'; font-style: italic; font-display: swap; font-weight: 200 900;
+  src: url('assets/fonts/source-sans-3-latin-wght-italic.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Serif 4'; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url('assets/fonts/source-serif-4-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Serif 4'; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url('assets/fonts/source-serif-4-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Serif 4'; font-style: italic; font-display: swap; font-weight: 200 900;
+  src: url('assets/fonts/source-serif-4-latin-wght-italic.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html, body { overflow-x: clip; }
+
+// ---------- course bar ----------
+.v2v-coursebar {
+  background: var(--v2v-surface);
+  border-bottom: 1px solid var(--v2v-rule);
+  font-family: $font-family-sans-serif;
+}
+.v2v-coursebar-inner {
+  max-width: 1400px; margin: 0 auto; padding: 0.35rem 1.25rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1.25rem;
+}
+.v2v-course-name {
+  font-weight: 800; color: var(--v2v-ink); font-size: 1.05rem; text-decoration: none;
+}
+a.v2v-course-name:hover { color: var(--v2v-red); }
+.v2v-coursebar ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 0 0.25rem;
+}
+.v2v-coursebar li a, .v2v-course-swap {
+  display: inline-flex; align-items: center; min-height: 2.5rem; padding: 0 0.55rem;
+  color: var(--v2v-text); font-weight: 600; text-decoration: none; border-radius: 6px;
+  border-bottom: 2px solid transparent;
+  transition: color .15s var(--v2v-ease), background-color .15s var(--v2v-ease);
+}
+.v2v-coursebar li a:hover, .v2v-course-swap:hover { color: var(--v2v-red); background: var(--v2v-red-tint); }
+.v2v-coursebar li a[aria-current="page"] {
+  color: var(--v2v-red); border-bottom-color: var(--v2v-red-mark); border-radius: 6px 6px 0 0;
+}
+.v2v-course-swap { font-weight: 500; color: var(--v2v-red); text-decoration: underline; text-underline-offset: 0.18em; }
+.v2v-coursebar a:focus-visible, .v2v-search input:focus-visible, .v2v-search button:focus-visible {
+  outline: 3px solid var(--v2v-info); outline-offset: 2px;
+}
+
+// One bar per course on pages both courses share; the head script names the course.
+.v2v-coursebar[data-course="mc451"], .v2v-coursebar[data-course="mc501"] { display: none; }
+.v2v-coursebar[data-course="none"] { display: block; }
+html[data-v2v-course="mc451"] .v2v-coursebar[data-course="none"],
+html[data-v2v-course="mc501"] .v2v-coursebar[data-course="none"] { display: none; }
+html[data-v2v-course="mc451"] .v2v-coursebar[data-course="mc451"],
+html[data-v2v-course="mc501"] .v2v-coursebar[data-course="mc501"] { display: block; }
+// A page that belongs to one course carries only that bar: always shown.
+.v2v-coursebar.v2v-coursebar-only { display: block !important; }
+
+.v2v-search { display: flex; gap: 0.4rem; margin-left: auto; align-items: center; }
+.v2v-search input {
+  min-height: 2.5rem; width: 15rem; max-width: 100%; padding: 0 0.7rem;
+  border: 1px solid var(--v2v-muted); border-radius: 6px;
+  background: var(--v2v-raised); color: var(--v2v-text); font: inherit;
+}
+.v2v-search button {
+  min-height: 2.5rem; padding: 0 0.9rem; border-radius: 6px; border: 1px solid var(--v2v-red-fill);
+  background: var(--v2v-red-fill); color: var(--v2v-raised); font-weight: 700; font: inherit; font-weight: 700;
+  cursor: pointer;
+}
+.v2v-search button:hover { background: var(--v2v-red); border-color: var(--v2v-red); }
+
+@media (max-width: 767.98px) {
+  .v2v-coursebar-inner { padding: 0.4rem 1rem; }
+  .v2v-search { margin-left: 0; width: 100%; }
+  .v2v-search input { flex: 1 1 auto; width: auto; min-width: 0; }
+}
+
+// ---------- breadcrumb ----------
+.v2v-crumbs { font-size: 0.92rem; margin: 0.25rem 0 0.75rem; }
+.v2v-crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.15rem 0; max-width: none; }
+.v2v-crumbs li { color: var(--v2v-muted); }
+.v2v-crumbs li + li::before { content: "/"; padding: 0 0.5rem; color: var(--v2v-muted); }
+.v2v-crumbs li[aria-current="page"] { color: var(--v2v-text); }
+main .v2v-crumbs a:not(.btn) { color: var(--v2v-red); }
+
+// ---------- phone steps list ----------
+.v2v-steps {
+  margin: 1rem 0 1.5rem; border: 1px solid var(--v2v-rule); border-radius: var(--v2v-radius);
+  background: var(--v2v-surface); max-width: var(--v2v-measure);
+}
+.v2v-steps > summary {
+  cursor: pointer; padding: 0.7rem 1rem; font-weight: 700; color: var(--v2v-ink); min-height: 2.75rem;
+}
+.v2v-steps nav { padding: 0 1rem 0.75rem; }
+.v2v-steps ul { margin: 0; padding-left: 1.1rem; }
+.v2v-steps ul ul { padding-left: 1rem; }
+.v2v-steps li { margin: 0.3rem 0; }
+@media (min-width: 992px) { .v2v-steps { display: none; } }
+
+// ---------- course home ----------
+#v2v-this-week {
+  border: 1px solid var(--v2v-rule); border-left: 4px solid var(--v2v-red-mark);
+  border-radius: 0 var(--v2v-radius) var(--v2v-radius) 0;
+  background: var(--v2v-raised); padding: 1rem 1.25rem; margin: 1rem 0 2rem; max-width: var(--v2v-measure);
+}
+#v2v-this-week h3 { margin-top: 0; }
+#v2v-this-week p:last-child { margin-bottom: 0; }
+.v2v-week {
+  border-top: 1px solid var(--v2v-rule); max-width: var(--v2v-measure);
+}
+.v2v-week:last-child { border-bottom: 1px solid var(--v2v-rule); }
+.v2v-week > summary {
+  cursor: pointer; padding: 0.7rem 0.25rem; min-height: 2.75rem;
+  display: flex; flex-wrap: wrap; gap: 0 1rem; align-items: baseline;
+}
+.v2v-week-name { font-weight: 800; color: var(--v2v-ink); }
+.v2v-week-dates { color: var(--v2v-muted); }
+.v2v-week.v2v-week-current > summary .v2v-week-name { color: var(--v2v-red); }
+.v2v-week dl, #v2v-this-week dl {
+  display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 0.4rem 1rem;
+  margin: 0 0 1rem; padding: 0 0.25rem; max-width: none;
+}
+.v2v-week dt, #v2v-this-week dt { font-weight: 700; color: var(--v2v-ink); }
+.v2v-week dd, #v2v-this-week dd { margin: 0; min-width: 0; overflow-wrap: break-word; }
+@media (max-width: 575.98px) {
+  .v2v-week dl, #v2v-this-week dl { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
+  .v2v-week dd, #v2v-this-week dd { margin-bottom: 0.6rem; }
+}
+
+// Course doors on the site home.
+.v2v-doors {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 1.5rem 0 2rem;
+}
+.v2v-door {
+  border: 1px solid var(--v2v-rule); border-radius: var(--v2v-radius); background: var(--v2v-raised);
+  padding: 1.25rem 1.35rem;
+}
+.v2v-door h2 { border-top: 0; margin-top: 0; padding-top: 0; font-size: 1.5rem; }
+.v2v-door p { margin-bottom: 0.9rem; }
+@media (max-width: 991.98px) { .v2v-doors { grid-template-columns: minmax(0, 1fr); } }
+
+// ---------- search page ----------
+.v2v-search-page { max-width: var(--v2v-measure); }
+.v2v-search-page .v2v-search { margin: 0.5rem 0 1rem; }
+.v2v-search-page .v2v-search input { width: auto; flex: 1 1 auto; min-width: 0; }
+.v2v-search-courses { border: 0; padding: 0; margin: 0 0 1.25rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+.v2v-search-courses legend { font-size: 1rem; font-weight: 700; color: var(--v2v-ink); margin-bottom: 0.25rem; width: 100%; }
+.v2v-search-courses label { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 2.5rem; cursor: pointer; }
+.v2v-search-courses input { width: 1.1rem; height: 1.1rem; accent-color: var(--v2v-red-fill); }
+.v2v-search-courses input:focus-visible { outline: 3px solid var(--v2v-info); outline-offset: 2px; }
+#v2v-results h2 { font-size: 1.25rem; }
+#v2v-results ol { list-style: none; padding: 0; margin: 0; }
+#v2v-results li { padding: 0.75rem 0; border-bottom: 1px solid var(--v2v-rule); }
+#v2v-results li a { font-weight: 700; font-size: 1.08rem; }
+#v2v-results .v2v-hit-where { color: var(--v2v-muted); font-size: 0.92rem; margin: 0.1rem 0 0.3rem; }
+#v2v-results .v2v-hit-text { margin: 0; }
+#v2v-results mark { background: var(--v2v-red-tint); color: var(--v2v-ink); padding: 0 0.1em; }
+#v2v-search-status { color: var(--v2v-text); }
+
+@media print {
+  .v2v-coursebar, .v2v-crumbs, .v2v-steps { display: none !important; }
+}

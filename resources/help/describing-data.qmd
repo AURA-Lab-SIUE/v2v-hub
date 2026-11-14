@@ -91,6 +91,7 @@ the same steps on another dataset:
 [MC 451](../../guides/mc451/09-describing-tables-and-charts.md) or
 [MC 501](../../guides/mc501/09-describing-tables-and-charts.md). The
 [Describing Data risks guide](../risks/describing-data.qmd) shows the traps on this job.
+The walkthrough video [Describing data](https://siue.yuja.com/V/Video?v=17490672&a=193714265) shows the same steps.
 
 ### Setup {#setup}
 
@@ -216,6 +217,11 @@ To make the HTML file, follow *Render a Quarto Document*:
 [MC 501](../../guides/mc501/11-render-a-quarto-document.md). It worked if the Terminal panel
 ends with `Output created:` and the worksheet's name ending in `.html`. The last section of that
 guide shows how to make the ZIP file you turn in.
+
+**If the render stops with `does not exist in current working directory`,** your worksheet is
+inside a folder, such as `data`, instead of next to `README.md`. The section *If it does not
+work* in the same guide moves it: [MC 451](../../guides/mc451/11-render-a-quarto-document.md#if-it-does-not-work) or
+[MC 501](../../guides/mc501/11-render-a-quarto-document.md#if-it-does-not-work).
 
 ## Key terms
 

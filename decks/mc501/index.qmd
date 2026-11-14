@@ -1,27 +1,32 @@
 ---
-title: "MC 501 Lecture Decks"
-subtitle: "Research Methods for Mass Communications"
+title: "MC 501 Slides"
+pagetitle: "MC 501 slides"
+format:
+  html:
+    # Named here because decks/_metadata.yml's include-after-body would replace the site's own.
+    include-after-body: ../../_includes/site-scripts.html
+toc: false
 ---
 
-One deck per weekly meeting. Each deck folds the week's material together with the assigned reading and the discussion built on it. Each deck opens in your browser; use the arrow keys to move through it.
+One deck per weekly meeting. Each deck folds the week's material together with the assigned reading and the discussion built on it. Click a topic to open its deck in your browser, then use the arrow keys to move through it.
 
 ::: {.schedule-table}
 
-| Week | Topic | Deck |
-|---|---|---|
-| Week 1 | Orientation and The Science of Storytelling | [Open](w01-orientation-storytelling.html) |
-| Week 2 | The Open Workspace | [Open](w02-open-workspace.html) |
-| Week 3 | Ethics and Intelligence Gathering | [Open](w03-ethics-intelligence.html) |
-| Week 4 | Annotating the Literature and Theory as a Lens | [Open](w04-annotating-theory.html) |
-| Week 5 | Variables, Hypotheses, and the Research Question | [Open](w05-variables-questions.html) |
-| Week 6 | The Research Proposal and Structured Listening | [Open](w06-prospectus-listening.html) |
-| Week 7 | Manifest, Latent, and the Move to Variables | [Open](w07-latent-operationalization.html) |
-| Week 8 | Measurement, Reliability, and the Codebook | [Open](w08-measurement-codebook.html) |
-| Week 9 | Coding the Codebook and First Contact in R | [Open](w09-coding-provenance.html) |
-| Week 10 | The Sample and the Pilot | [Open](w10-sample-pilot.html) |
-| Week 11 | Wrangling the Data [R] | [Open](w11-wrangling.html) |
-| Week 12 | Describing the Data [R] | [Open](w12-describing.html) |
-| Week 13 | Inferencing the Data [R] | [Open](w13-inferential.html) |
-| Week 15 | The Publisher: White Paper and Poster Studio | [Open](w15-publisher-studio.html) |
+| Week | Topic |
+|:---|:---|
+| 1 | [Orientation and The Science of Storytelling](w01-orientation-storytelling.html) |
+| 2 | [The Open Workspace](w02-open-workspace.html) |
+| 3 | [Ethics and Intelligence Gathering](w03-ethics-intelligence.html) |
+| 4 | [Annotating the Literature and Theory as a Lens](w04-annotating-theory.html) |
+| 5 | [Variables, Hypotheses, and the Research Question](w05-variables-questions.html) |
+| 6 | [The Research Proposal and Structured Listening](w06-prospectus-listening.html) |
+| 7 | [Manifest, Latent, and the Move to Variables](w07-latent-operationalization.html) |
+| 8 | [Measurement, Reliability, and the Codebook](w08-measurement-codebook.html) |
+| 9 | [Coding the Codebook and First Contact in R](w09-coding-provenance.html) |
+| 10 | [The Sample and the Pilot](w10-sample-pilot.html) |
+| 11 | [Wrangling the Data [R]](w11-wrangling.html) |
+| 12 | [Describing the Data [R]](w12-describing.html) |
+| 13 | [Inferencing the Data [R]](w13-inferential.html) |
+| 15 | [The Publisher: White Paper and Poster Studio](w15-publisher-studio.html) |
 
 :::

@@ -9,8 +9,15 @@ project:
     # Downloaded files (the resources: below) are opened from a student's own computer, where a
     # relative link opens nothing: give every link in them a full address (2026-11-10).
     - tools/absolute-download-links.ts
+    # The course layer (2026-11-14, owner q-20261114-0005): course bar, breadcrumb, phone steps
+    # list, tab titles, the course homes' week lists, and the Pagefind search index. Runs last,
+    # because it reads the rendered syllabus and slide index.
+    - tools/course-layer.ts
   render:
     - "*.qmd"
+    # Course homes (2026-11-14): the front door for each course.
+    - "mc451/*.qmd"
+    - "mc501/*.qmd"
     # about.qmd is unpublished (2026-10-20): an unlinked bio page. Source kept, excluded from render.
     - "!about.qmd"
     - "modules/**/*.qmd"
@@ -53,163 +60,37 @@ project:
     # The own-study walkthroughs' example coding sheet and finished scripts (guides 08 to 10, 2026-11-05): students download them.
     - "resources/examples/own-study-walkthrough/*"
     - "resources/examples/twitch-demo/*"
+    # Self-hosted fonts (2026-11-14), loaded by course-layer.scss; licence files beside them.
+    - "assets/fonts/*"
 
 website:
   title: "V2V Hub"
   page-footer:
     center: "© 2026 Alex P. Leith. Text and course materials are licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) unless noted."
+  # Quarto's own search is off (2026-11-14): tools/course-layer.ts builds a Pagefind index, which
+  # can filter by course, and search.qmd shows it. The sidebar is gone too: each course home
+  # (mc451/, mc501/) lists the weeks and the textbook parts the sidebar used to carry, and the
+  # course bar under the navbar reaches the rest.
+  search: false
   navbar:
     background: primary
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Syllabus"
-        menu:
-          - text: "MC 451 (Fall 2026)"
-            href: syllabus.qmd
-          - text: "MC 501 (Fall 2026)"
-            href: mc501-syllabus.qmd
-          - text: "MC 451 decks"
-            href: decks/mc451/index.qmd
-          - text: "MC 501 decks"
-            href: decks/mc501/index.qmd
-      - text: "Assignments"
-        menu:
-          - text: "MC 451 (Fall 2026)"
-            href: mc451-assignments.qmd
-          - text: "MC 451 Prospectus template"
-            href: mc451-prospectus-template.qmd
-          - text: "MC 501 (Fall 2026)"
-            href: mc501-assignments.qmd
-          - text: "MC 501 Research Proposal template"
-            href: mc501-research-proposal-template.qmd
-      - text: "Guides"
-        menu:
-          - text: "MC 451"
-            href: guides/mc451/index.md
-          - text: "MC 501"
-            href: guides/mc501/index.md
-          - text: "MC 427 R guides"
-            href: guides/mc427/index.md
-      - text: "Resources"
+      - text: "MC 451"
+        href: mc451/index.qmd
+      - text: "MC 501"
+        href: mc501/index.qmd
+      - text: "Getting started"
+        href: setup.qmd
+      - text: "Help and resources"
         href: resources/index.qmd
-      - text: "Course Workspace"
-        href: workspace.qmd
+      - text: "Search"
+        href: search.qmd
     right:
       - text: "Textbook"
         href: https://aura-lab.siue.edu/v2v/
         target: _blank
-
-  sidebar:
-    - title: "V2V Hub"
-      style: "docked"
-      contents:
-        - text: "Course Home"
-          href: index.qmd
-        - section: "Syllabus"
-          contents:
-            - text: "MC 451 Syllabus"
-              href: syllabus.qmd
-            - text: "MC 501 Syllabus"
-              href: mc501-syllabus.qmd
-        - section: "Assignments"
-          contents:
-            - text: "MC 451 Assignments"
-              href: mc451-assignments.qmd
-            - text: "MC 501 Assignments"
-              href: mc501-assignments.qmd
-        - text: "How It Works"
-          href: how-it-works.qmd
-        - text: "Course Workspace"
-          href: workspace.qmd
-        - text: "---"
-
-        - section: "Part I: Foundation"
-          contents:
-            - text: "Phase I: The Journalist"
-              href: modules/01_journalist/index.qmd
-            - text: "Ch 1: The Science of Storytelling"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter01.html
-            - text: "Ch 2: The Open Workspace"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter02.html
-            - text: "Ch 3: Knowing and Knowing Well"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter03.html
-
-        - section: "Part II: Planning"
-          contents:
-            - text: "Phase II: The Architect"
-              href: modules/02_architect/index.qmd
-            - text: "Ch 4: Intelligence Gathering"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter04.html
-            - text: "Ch 5: Theory as a Lens"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter05.html
-            - text: "Ch 6: The Prospectus"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter06.html
-
-        - section: "Part III: Operationalization"
-          contents:
-            - text: "Phase III: The Builder"
-              href: modules/03_builder/index.qmd
-            - text: "Ch 7: Structured Listening"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter07.html
-            - text: "Ch 8: From Vibes to Variables"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter08.html
-            - text: "Ch 9: The Rulebook and First Workspace"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter09.html
-
-        - section: "Part IV: Execution"
-          contents:
-            - text: "Phase IV: The Analyst"
-              href: modules/04_analyst/index.qmd
-            - text: "Ch 10: The Sample"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter10.html
-            - text: "Ch 11: Wrangling the Data"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter11.html
-            - text: "Ch 12: Visualizing the Narrative"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter12.html
-            - text: "Practice: Pokemon Wrangling"
-              href: modules/04_analyst/practice-wrangling.qmd
-
-        - section: "Part V: Inference and Publication"
-          contents:
-            - text: "Phase V: The Publisher"
-              href: modules/05_publisher/index.qmd
-            - text: "Ch 13: Making the Call"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter13.html
-            - text: "Ch 14: The One-Click Report"
-              href: https://aura-lab.siue.edu/v2v/chapters/chapter14.html
-
-        - text: "---"
-
-        - section: "R Workbook (Reference)"
-          contents:
-            - workbook/index.qmd
-            - workbook/01-codebook.qmd
-            - workbook/02-data-collection.qmd
-            - workbook/03-meet-r.qmd
-            - workbook/04-data-wrangling.qmd
-            - workbook/05-describing-data.qmd
-            - workbook/06-inferencing-data.qmd
-            - workbook/07-publishing.qmd
-            - workbook/appendix-a-reference.qmd
-            - workbook/appendix-b-glossary.qmd
-
-        - section: "Setup Guides"
-          contents:
-            - setup.qmd
-            - guides/mc451/index.md
-            - guides/mc501/index.md
-            - guides/mc427/index.md
-            - resources/fix-it.qmd
-            - resources/install-r.qmd
-            - resources/install-quarto.qmd
-            - resources/install-v2v.qmd
-            - resources/install-vscode.qmd
-            - resources/vscode-customization.qmd
-            - resources/copilot-setup.qmd
-            - resources/workspace-setup.qmd
-            - resources/github-setup.qmd
-            - resources/github-desktop-setup.qmd
 
 format:
   html:
@@ -221,145 +102,13 @@ format:
     # violations on a single workbook page. A real dark skin needs a dark
     # variant of every token in custom-styling.scss; until then light-only is
     # the honest state, and matches the book.
-    theme: [cosmo, custom-styling.scss, syllabus-styling.scss]
+    theme: [cosmo, custom-styling.scss, syllabus-styling.scss, course-layer.scss]
     toc: true
     code-fold: false
-    include-in-header:
-      text: |
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    include-after-body:
-      text: |
-        <script>
-        /* a11y-2026-07-30 scrollable-pre: overflowing <pre> blocks scroll
-           horizontally, and with no focusable content a keyboard-only reader
-           cannot scroll them, so the truncated code is unreachable (WCAG 2.1.1).
-           tabindex="0" is the minimum that fixes it. We deliberately do NOT add
-           role="region": that would put every code block in the landmark list
-           and make the page markedly noisier to navigate by screen reader. */
-        (function(){
-          /* a11y-2026-11-13 table-scroll: a wide table scrolls inside its own
-             box instead of pushing the whole page sideways on a phone. Tables
-             already inside a scrolling container are left alone. */
-          function wrapTables(){
-            document.querySelectorAll('main table').forEach(function(t){
-              var p = t.parentElement;
-              if (!p || p.classList.contains('v2v-table-scroll')) return;
-              if (/(auto|scroll)/.test(getComputedStyle(p).overflowX)) return;
-              var box = document.createElement('div');
-              box.className = 'v2v-table-scroll';
-              p.insertBefore(box, t);
-              box.appendChild(t);
-            });
-          }
-          function mark(){
-            wrapTables();
-            document.querySelectorAll('pre, .v2v-table-scroll').forEach(function(el){
-              var scrolls = el.scrollWidth > el.clientWidth + 1 ||
-                            el.scrollHeight > el.clientHeight + 1;
-              if (scrolls && !el.hasAttribute('tabindex')) el.setAttribute('tabindex','0');
-            });
-          }
-          if (document.readyState === 'loading')
-            document.addEventListener('DOMContentLoaded', mark);
-          else mark();
-          window.addEventListener('load', mark);
-          window.addEventListener('resize', mark);
-          /* code-fold blocks measure 0 until opened */
-          document.addEventListener('toggle', mark, true);
-        })();
-        </script>
-        <script>
-        /* edition-toggle-2026-08-12: MC 451 / MC 501 view switch. Shares the
-           key and the origin with the textbook, so the choice follows the
-           student across both sites. */
-        (function(){
-          var KEY = 'v2v-show-grad-ext';
-          function apply(on){
-            document.body.classList.toggle('show-grad-ext', on);
-            var b = document.getElementById('v2v-edition-toggle');
-            if(b){
-              b.setAttribute('aria-pressed', on ? 'true' : 'false');
-              /* State the CONSEQUENCE, not the setting. 'Graduate edition: off'
-                 reads as a disabled feature; 'Showing MC 451' tells a graduate
-                 student, in the words on their own registration, that they are
-                 looking at the wrong course. */
-              b.querySelector('.label').textContent =
-                on ? 'Showing MC 501 (graduate)' : 'Showing MC 451 (undergraduate)';
-            }
-          }
-          document.addEventListener('DOMContentLoaded', function(){
-            /* edition-by-url-2026-08-29: a ?edition= parameter beats the stored
-               choice and is then remembered. This is what lets a Blackboard link
-               land a student in the right view without finding the button. Added
-               after an MC 501 student followed MC 451 requirements, because the
-               toggle defaults to OFF and nothing on the page said the view might
-               not be theirs. Accepts course numbers as well as edition names,
-               since a link is easier to read as ?edition=mc501. */
-            var q = new URLSearchParams(window.location.search).get('edition');
-            if (q === 'grad' || q === 'mc501') { localStorage.setItem(KEY, '1'); }
-            if (q === 'ug'   || q === 'mc451') { localStorage.setItem(KEY, '0'); }
-
-            /* single-course-page-2026-09-30: the syllabi and the assignment pages
-               were split into one page per course, so on those pages there is
-               nothing to toggle and the control was lying. A graduate student on
-               mc501-assignments.html saw a floating button reading "Showing
-               MC 451 (undergraduate)", which says they are on the wrong course
-               when they are not. The page itself now decides the edition, the
-               same way the ?edition= parameter does, and shows no button. */
-            var path = window.location.pathname;
-            if (/\/mc501-/.test(path))                           localStorage.setItem(KEY, '1');
-            else if (/\/mc451-|\/syllabus\.html$/.test(path))    localStorage.setItem(KEY, '0');
-
-            var on = localStorage.getItem(KEY) === '1';
-
-            /* Render the control only where it controls something. On a page with
-               no .graduate-extension and no .undergraduate-only block it is a
-               switch wired to nothing. apply() still runs, so the body class stays
-               correct for any page that does carry gated content. */
-            if (!document.querySelector('.graduate-extension, .undergraduate-only')) {
-              apply(on);
-              return;
-            }
-
-            var btn = document.createElement('button');
-            btn.id = 'v2v-edition-toggle';
-            btn.type = 'button';
-            btn.title = 'Switch between the MC 451 and MC 501 view. Your choice is remembered across pages.';
-            btn.innerHTML = '<span class="dot" aria-hidden="true"></span><span class="label"></span>';
-            btn.addEventListener('click', function(){
-              var now = !(localStorage.getItem(KEY) === '1');
-              localStorage.setItem(KEY, now ? '1' : '0');
-              apply(now);
-            });
-            document.body.appendChild(btn);
-            apply(on);
-          });
-        })();
-        </script>
-        <script>
-        /* syllabus-print-2026-08-17: force every <details> open for printing,
-           then restore. Without this the collapsed policy blocks are simply
-           absent from the printed syllabus and from Chrome's PDF export.
-           CSS cannot do it: Chrome hides the content with content-visibility
-           on a UA-level slot, not with display. */
-        (function(){
-          var opened = [];
-          function expand(){
-            opened = [];
-            document.querySelectorAll('details:not([open])').forEach(function(d){
-              opened.push(d); d.open = true;
-            });
-          }
-          function restore(){ opened.forEach(function(d){ d.open = false; }); opened = []; }
-          window.addEventListener('beforeprint', expand);
-          window.addEventListener('afterprint', restore);
-          /* Safari and headless Chrome drive print through matchMedia only. */
-          if (window.matchMedia) {
-            var mq = window.matchMedia('print');
-            var onChange = function(m){ m.matches ? expand() : restore(); };
-            if (mq.addEventListener) mq.addEventListener('change', onChange);
-            else if (mq.addListener) mq.addListener(onChange);
-          }
-        })();
-        </script>
+    # Head script: which course's bar a shared page shows (2026-11-14). It replaced two preconnect
+    # links to Google Fonts; the fonts are self-hosted now (custom-styling.scss).
+    include-in-header: _includes/site-head.html
+    # The site scripts (scrollable code and tables, the MC 451 / MC 501 edition switch, print
+    # expansion) moved from inline text to a file on 2026-11-14, so the two deck index pages can
+    # name the same file in their own front matter (decks/_metadata.yml would replace it otherwise).
+    include-after-body: _includes/site-scripts.html
