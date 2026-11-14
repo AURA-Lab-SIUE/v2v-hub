@@ -157,14 +157,25 @@ If the first row of your file is a title and the column names are on the second 
 
 ## Step 3: Give every item an id, if it has none
 
-If your sheet has an id column (a post id, a video id), use it and skip to the check. The example has none, but the season and the episode number together name each episode once. `paste()` joins them into one text column, and `mutate()` adds it ([mutate() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#mutate-add-or-change-a-column)):
+The later steps find each item by a column named `id`. Look in the **Terminal** panel at the list `glimpse(coded)` printed at the end of Step 2: each of its lines starts with `$` and then one of your column names, such as `$ season_title`. `clean_names()` wrote these names in lower case with no spaces, so `Post ID` on your sheet shows here as `post_id`.
+
+**If one of those names is your sheet's id**, the column that gives each post or video its own number, such as `post_id` or `video_id`, copy that column into a new column named `id`. At the bottom of your script, under the lines from Step 2, type these two lines. Change `post_id` to your id column's name, exactly as the list shows it after the `$`. Then select both lines and run them:
+
+```r
+coded <- coded %>%
+  mutate(id = post_id)
+```
+
+R shows your two lines again and no message. That means it worked: R added a column named `id` to `coded`, the copy of your sheet that R holds, and your file does not change. Now go down to the paragraph that starts **The check, for every sheet**.
+
+**If none of those names is an id**, make one from two of your columns: the column that says who posted the item, such as an account name, and the column with its date. The check below tells you whether those two are enough. The course's example sheet has no id column, but the season and the episode number together name each episode once. `paste()` joins them into one text column, and `mutate()` adds it ([mutate() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#mutate-add-or-change-a-column)). At the bottom of your script, type these two lines, with your two column names in place of `season_title` and `episode_num`. Then select both lines and run them:
 
 ```r
 coded <- coded %>%
   mutate(id = paste(season_title, episode_num))
 ```
 
-Then check that no id appears twice. `count()` counts the rows for each id, and `filter()` keeps the ids with more than one ([count() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#count-how-many-rows-in-each-group)):
+**The check, for every sheet:** no id appears twice. `count()` counts the rows for each id, and `filter()` keeps the ids with more than one ([count() on the dplyr cheat sheet](../../resources/cheat-sheets/dplyr.html#count-how-many-rows-in-each-group)). At the bottom of your script, type these three lines, select them, and run them:
 
 ```r
 coded %>%
@@ -183,7 +194,10 @@ coded %>%
 # ℹ 2 variables: id <chr>, n <int>
 ```
 
-**Check:** `0 × 2`: every id is used once. If rows appear, those ids name more than one item: add another column to `paste()`, such as a date.
+**Check:** your output includes the line `# A tibble: 0 × 2`, as in the example: no id is used twice. If your output lists rows instead, each row shows an id that more than one item shares.
+
+- **If you copied your own id column**, that item is on your sheet twice. Open your sheet where you coded it, delete one of the two rows, and download it again as a CSV file into your `data` folder under the same name, with the steps in [guide 08, Before you start](08-wrangling.md#before-you-start-put-both-files-in-your-data-folder). Then select every line from Step 2 down to here and run them again.
+- **If you used `paste()`**, add a third column inside it: after the second name, type a comma, a space, and the name of another column, such as a time. The example's line would become `mutate(id = paste(season_title, episode_num, air_date))`. Then select the `mutate()` lines and the check lines and run them again.
 
 ## Step 4: Draw the pilot
 

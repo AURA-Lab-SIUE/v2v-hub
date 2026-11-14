@@ -30,8 +30,8 @@ every task.
   that panel if the answer has already gone past.
 - **Command Palette:** select **View**, then **Command Palette...**. A box opens at the top of
   VS Code. Type the name of a command, such as `AURA: Write R code`, and press **Enter**.
-- **Workspace panel:** the list of tables R has loaded. To open it, open the Command Palette,
-  type `AURA: Show what is loaded in R (Workspace panel)`, and press **Enter**.
+- **Check what R has loaded:** click in the **R (AURA)** terminal, type `ls()`, and press
+  **Enter**. R prints the names of the tables it has loaded.
 
 ![](../../guides/mc451/img/worksheet-in-workspace.png){fig-alt="VS Code with the Explorer on the left showing the workspace folder v2v-workspace. The folder named data and the file 11-wrangling-data.qmd sit in the list at the same level as README.md, and the worksheet is open in the editor on the right."}
 
@@ -62,8 +62,13 @@ lines with `___`. Delete the unfinished lines.
 
 - `object '___' not found`: a blank is still empty in that chunk. Fill it and run the chunk
   again.
-- `there is no package called ...` or `could not find function ...`: open the Command Palette,
-  run **AURA: Check my setup**, select **Install what is missing**, and run the chunk again.
+- `there is no package called ...` or `could not find function ...`: open the
+  [Command Palette](#around), type `AURA: Check my setup`, and press **Enter**. A list opens at
+  the top of VS Code. Click **Install what is missing** in it. If a box asks about an open R
+  terminal, click **Close R terminals and install**; if no box asks, go on. Installing can take a
+  few minutes. Wait until a box at the bottom right says **Installed and confirmed**. Then click
+  **Run Cell** on every chunk again, starting from the first chunk at the top of the worksheet.
+  It worked when the chunk that showed the error now runs with no error.
 - Any other error: follow *Explain an R Error*:
   [MC 451](../../guides/mc451/03-explain-an-r-error.md) or
   [MC 501](../../guides/mc501/03-explain-an-r-error.md).
@@ -121,12 +126,14 @@ Data in the Data Viewer*, which has pictures of every step:
 ### Task 1.1: Load from the course package {#task-1-1}
 
 The Twitch data ships inside the course package, `v2v`, so there is no file to find. Each blank
-is the name of the function that loads one of the two tables. The
-[readr cheat sheet](../cheat-sheets/readr.qmd) shows loading data.
+is the name of the function that loads one of the two tables. To find the names, open
+[The data in the examples](../cheat-sheets/index.qmd#the-data-in-the-examples) on the cheat sheets
+page: it names the three loading commands in the course package and says what each one loads.
 
 R Companion menu: **R2 Data**, then **Load the course Twitch corpus**.
 
-To check that it worked, open the [Workspace panel](#around): `chat` and `streams` are listed.
+To check that it worked, click in the **R (AURA)** terminal, type `ls()`, and press **Enter**.
+R prints `"chat"` and `"streams"` among the names.
 
 ### Task 1.2: First look {#task-1-2}
 
@@ -182,8 +189,10 @@ before their channel's first snapshot, so they have nothing to match.
 
 The course package ships a table with one row per channel. It says whether the channel counts as
 gaming (`is_gaming`, and the same thing in words, `channel_type`) and how big its audience is
-(`viewer_band`). The first blank is the function that loads that table. The second blank is the
-name of the column both tables share.
+(`viewer_band`). The first blank is the function that loads that table. To find its name, open
+[The data in the examples](../cheat-sheets/index.qmd#the-data-in-the-examples) on the cheat sheets
+page: it names the three loading commands in the course package and says what each one loads. The
+second blank is the name of the column both tables share.
 
 The words after `#` on that line are a comment: a note to the reader, which R ignores. Delete
 the words after `#` and type your own note naming the shared column and why it is the right one
@@ -195,6 +204,12 @@ channel labels onto the messages**. The menu adds the labels to `chat_streams`, 
 
 The 501 messages with `NA` come from the two channels that never recorded a category. An honest
 `NA` is the right answer.
+
+If R says `could not find function "twitch_channels"`, your copy of `v2v`, the course's add-on
+for R, is older than this worksheet. Do the steps in the bullet that starts
+`there is no package called` under [When R prints an error](#errors). In the list that opens, the
+`v2v` line says **NEEDS UPDATE**, and **Install what is missing** updates it. It worked when
+Task 4.2 runs with no error.
 
 ### Task 4.3: Check the audience bands {#task-4-3}
 
@@ -226,6 +241,13 @@ borderline.
 If the count has an `NA` row, a code is something other than `0` or `1`: an empty cell, a space
 after the number, or a word. Fix it in the coding sheet and run Task 5.1 again.
 
+If R says `object 'reaction_only' not found`, click **Run Cell** on the Task 5.1 chunk, then on
+this chunk again. If R still says it, open `coding-form.csv` the way you did in
+[Task 0.3](#task-0-3). In the column where you typed your `0`s and `1`s, click the cell in the
+first row, above your first `0` or `1`. Delete what it holds, type `reaction_only`, and save the
+file the way you did in Task 0.3. Then click **Run Cell** on Task 5.1, then on this chunk. It
+worked when R prints a small table with a `commentary` row and a `reaction` row and no error.
+
 ### Task 5.3: Join the codes onto the analysis table {#task-5-3}
 
 The blank is the name of the column both tables share. Only your thirty messages carry a code;
@@ -243,7 +265,8 @@ stays as `NA`. That is the decision your **Write:** answer reports.
 
 ### Part 7: Export {#part-7}
 
-The first blank is the readr function that saves a table as an `.RDS` file. The second is the
+The first blank is the readr function that saves a table as an `.RDS` file (the
+[readr cheat sheet](../cheat-sheets/readr.qmd) has it). The second is the
 file name. Describing Data and Inferencing Data both read that exact name. An `.RDS` file keeps
 every column exactly as you built it; a `.csv` would lose the order of small, medium, and large.
 
