@@ -1,109 +1,49 @@
 ---
-title: "Home"
+pagetitle: "Home"
 toc: false
 ---
 
 ::: hero-section
 # V2V Hub
 
-**Design, execute, and communicate original research in mass media.**
+**Design, run, and publish an original content analysis of real media.**
 
-Your central workspace for MC 451 and MC 501. Textbook chapters, the R workbook, tools, and resources live in one place. Follow the sidebar to read in order.
+Pick your course. Each course page shows this week, every week of the semester, and links to the slides, guides, and assignments.
 :::
 
-## How to use this site
+::::: v2v-doors
+::: v2v-door
+## MC 451
 
-The sidebar on the left follows the textbook (*Vibes to Variables*, 3rd Edition) chapter by chapter across five parts. Each entry links to either a Hub page with hands-on R walkthroughs or the corresponding textbook chapter.
+Research Methods in Mass Media, the undergraduate course.
 
-[Start here if you are new]{.eyebrow}
-
-::::: card-grid
-::: card
-### Set up your workspace
-
-Install R, Quarto, VS Code, and Git, then clone the course workspace. One folder holds everything.
-
-[Get started](setup.qmd){.btn .btn-primary}
+[Open MC 451](mc451/index.qmd){.btn .btn-primary}
 :::
 
-::: card
-### Read the textbook
+::: v2v-door
+## MC 501
 
-Fourteen chapters from foundations to publication. Free and open access.
+Research Methods for Mass Communications, the graduate course.
 
-[Open textbook](https://aura-lab.siue.edu/v2v/){.btn .btn-primary}
+[Open MC 501](mc501/index.qmd){.btn .btn-primary}
 :::
 
-::: card
-### R workbook
+::: v2v-door
+## MC 427
 
-Seven chapters, from codebook to published White Paper.
+The R guides, the R Field Guide, and the R Quick Reference.
 
-[Open workbook](workbook/index.qmd){.btn .btn-secondary}
-:::
-
-::: card
-### Course workspace
-
-Your VS Code workspace: journals, project folders, and templates in one Git repository.
-
-[Get the workspace](workspace.qmd){.btn .btn-secondary}
-:::
-
-::: card
-### Step-by-step guides
-
-Numbered click paths with screenshots, from checking your setup to publishing your site.
-
-[MC 451 guides](guides/mc451/index.md){.btn .btn-secondary} [MC 501 guides](guides/mc501/index.md){.btn .btn-secondary}
+[Open MC 427](guides/mc427/index.md){.btn .btn-primary}
 :::
 :::::
 
-## The five parts
+## New to the course?
 
-Over one semester you build a complete content analysis from scratch, moving from qualitative immersion through quantitative testing, using real media data.
+Start with [Getting started](setup.qmd). It walks you through installing R, Quarto, VS Code, and Git, then setting up your [Course Workspace](workspace.qmd), the one folder that holds your journals and project.
 
-::: {.v2v-arc}
-::: {.v2v-phase}
-[Foundation]{.v2v-phase-name}
-[Ch 1 to 3]{.v2v-phase-meta}
-:::
-::: {.v2v-phase}
-[Planning]{.v2v-phase-name}
-[Ch 4 to 6]{.v2v-phase-meta}
-:::
-::: {.v2v-phase}
-[Operationalization]{.v2v-phase-name}
-[Ch 7 to 9]{.v2v-phase-meta}
-:::
-::: {.v2v-phase}
-[Execution]{.v2v-phase-name}
-[Ch 10 to 12]{.v2v-phase-meta}
-:::
-::: {.v2v-phase}
-[Inference & Publication]{.v2v-phase-name}
-[Ch 13 to 14]{.v2v-phase-meta}
-:::
-:::
+Stuck on something? [Help and resources](resources/index.qmd) has help for each R worksheet, and [Search](search.qmd) finds a word on any page of this site.
 
-| Part | Chapters | Focus |
-|------|----------|-------|
-| **I: Foundation** | 1 to 3 | Storytelling as science, open tools, epistemology |
-| **II: Planning** | 4 to 6 | Literature, theory, the research prospectus |
-| **III: Operationalization** | 7 to 9 | Qualitative immersion, codebook, data collection |
-| **IV: Execution** | 10 to 12 | Sampling, data wrangling, visualization |
-| **V: Inference and Publication** | 13 to 14 | Statistical inference, the one-click report |
-
-## The ecosystem
-
-Four tools work together throughout the course. Each serves a distinct role, and they all live inside VS Code or link out from it.
-
-| Tool | What it does | When you use it |
-|------|-------------|-----------------|
-| [**Course Workspace**](workspace.qmd) | VS Code workspace for journals, notes, and project files | Every week, as your personal research archive |
-| **v2v R package** | Sets up your environment, checks that everything works, and provides the practice corpus | Installed in Week 2, used through the applied weeks |
-| [**Textbook**](https://aura-lab.siue.edu/v2v/) | *Vibes to Variables* (3rd Edition, 14 chapters) | Every week, for the conceptual foundation of each part |
-| **This website (V2V Hub)** | Syllabus, schedule, assignments, the [R Workbook](workbook/index.qmd), and setup guides | Whenever you need to know what is due or how to do something |
+The free textbook, [*Vibes to Variables*](https://aura-lab.siue.edu/v2v/), has fourteen chapters in five parts. Each course page lists them in order.
 
 ## Course information
 
@@ -111,4 +51,4 @@ Four tools work together throughout the course. Each serves a distinct role, and
 **Office:** Dunham Hall 1017
 **Office Hours:** TuTh 12:30 to 1:45 PM in person, or remote Tu/W/Th 3:00 to 5:00 PM by appointment
 
-[View MC 451 syllabus](syllabus.qmd){.btn .btn-primary} [View MC 501 syllabus](mc501-syllabus.qmd){.btn .btn-secondary} [How it works](how-it-works.qmd){.btn .btn-secondary}
+[How the course tools fit together](how-it-works.qmd)

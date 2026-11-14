@@ -96,7 +96,7 @@ The study was published as Foxman et al. (2022) in *IEEE Transactions on Games*.
 - **`vr-sample-as-recorded.csv`: the same titles, as the team recorded them**
 - **Run AURA: Open the data viewer, then Pick a CSV file**
     - Compare a title such as YouTube VR across the two files
-- [Download the files](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/)
+- Download [vr-sample.csv](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/vr-sample.csv) and [vr-sample-as-recorded.csv](https://aura-lab.siue.edu/v2v-hub/examples/vr-codebook/files/vr-sample-as-recorded.csv)
 
 ## Counting a Variable
 

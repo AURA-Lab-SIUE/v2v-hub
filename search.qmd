@@ -1,0 +1,119 @@
+---
+title: "Search"
+pagetitle: "Search"
+toc: false
+---
+
+```{=html}
+<div class="v2v-search-page">
+<form class="v2v-search" role="search" id="v2v-search-form" action="search.html">
+  <label class="visually-hidden" for="v2v-search-q">Search the hub</label>
+  <input id="v2v-search-q" type="search" name="q" placeholder="Type a word, such as codebook or read_csv" autocomplete="off">
+  <button type="submit">Search</button>
+</form>
+<fieldset class="v2v-search-courses">
+  <legend>Show results for</legend>
+  <label><input type="radio" name="course" value="mc451" form="v2v-search-form"> MC 451</label>
+  <label><input type="radio" name="course" value="mc501" form="v2v-search-form"> MC 501</label>
+  <label><input type="radio" name="course" value="mc427" form="v2v-search-form"> MC 427</label>
+  <label><input type="radio" name="course" value="all" form="v2v-search-form"> All courses</label>
+</fieldset>
+<p id="v2v-search-status" role="status" aria-live="polite"></p>
+<div id="v2v-results"></div>
+<noscript><p>Search needs JavaScript, which is turned off in this browser. Without it, start from your course page: <a href="mc451/index.html">MC 451</a> or <a href="mc501/index.html">MC 501</a>.</p></noscript>
+</div>
+<script type="module">
+/* search-2026-11-14: Pagefind (built by tools/course-layer.ts after each full render). Results
+   come back grouped by kind, guides first, and filtered to one course unless "All courses". */
+const NAMES = { mc451: 'MC 451', mc501: 'MC 501', mc427: 'MC 427' };
+const GROUPS = [
+  ['Guides', ['Guide']],
+  ['Help and reference', ['Help', 'Reference']],
+  ['Assignments and syllabus', ['Assignment', 'Syllabus']],
+  ['Getting started', ['Setup']],
+  ['Course pages and the textbook', ['Course page', 'Textbook part', 'Page']],
+  ['Slides and self-checks', ['Slides', 'Self-check']],
+];
+const form = document.getElementById('v2v-search-form');
+const radios = document.querySelector(".v2v-search-courses");
+const box = document.getElementById('v2v-search-q');
+const status = document.getElementById('v2v-search-status');
+const out = document.getElementById('v2v-results');
+const params = new URLSearchParams(location.search);
+let course = params.get('course');
+if (!NAMES[course] && course !== 'all') {
+  let v = null;
+  try { v = localStorage.getItem('v2v-show-grad-ext'); } catch (e) {}
+  course = v === '1' ? 'mc501' : v === '0' ? 'mc451' : 'all';
+}
+radios.querySelector(`input[name="course"][value="${course}"]`).checked = true;
+box.value = params.get('q') || '';
+
+let pagefind = null;
+async function load() {
+  if (pagefind) return pagefind;
+  const base = new URL('.', location.href).pathname;
+  pagefind = await import(base + 'pagefind/pagefind.js');
+  await pagefind.options({ baseUrl: base, excerptLength: 24 });
+  return pagefind;
+}
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+let run = 0;
+async function search() {
+  const q = box.value.trim();
+  const c = radios.querySelector('input[name="course"]:checked').value;
+  const url = new URL(location.href);
+  url.searchParams.set('q', q); url.searchParams.set('course', c);
+  history.replaceState(null, '', url);
+  out.textContent = '';
+  if (!q) { status.textContent = 'Type a word or a topic, then press Search.'; return; }
+  const mine = ++run;
+  status.textContent = 'Searching...';
+  let pf;
+  try { pf = await load(); } catch (e) {
+    status.textContent = 'Search could not load. Reload the page and try again.'; return;
+  }
+  const res = await pf.search(q, c === 'all' ? {} : { filters: { course: NAMES[c] } });
+  const data = await Promise.all(res.results.slice(0, 40).map(r => r.data()));
+  if (mine !== run) return;
+  const where = c === 'all' ? 'all courses' : NAMES[c];
+  if (!data.length) {
+    status.textContent = `No pages in ${where} match "${q}". Try a shorter word, or choose All courses.`;
+    return;
+  }
+  status.textContent = `${res.results.length} ${res.results.length === 1 ? 'page matches' : 'pages match'} "${q}" in ${where}.` +
+    (res.results.length > 40 ? ' The first 40 are below.' : '');
+  for (const [label, kinds] of GROUPS) {
+    const hits = data.filter(d => kinds.includes((d.filters.kind || ['Page'])[0]));
+    if (!hits.length) continue;
+    out.appendChild(el('h2', '', label));
+    const ol = el('ol');
+    for (const d of hits) {
+      const li = el('li');
+      const a = el('a', '', d.meta.title || d.url);
+      const sub = (d.sub_results || []).find(s => s.url !== d.url && s.url.includes('#'));
+      a.href = d.url;
+      li.appendChild(a);
+      const courses = (d.filters.course || []).join(', ');
+      li.appendChild(el('p', 'v2v-hit-where', courses ? `${(d.filters.kind || ['Page'])[0]}, ${courses}` : (d.filters.kind || ['Page'])[0]));
+      const t = el('p', 'v2v-hit-text'); t.innerHTML = d.excerpt; li.appendChild(t);
+      if (sub && sub.title) {
+        const p = el('p', 'v2v-hit-text');
+        const s = el('a', '', `Go to the section: ${sub.title}`); s.href = sub.url;
+        p.appendChild(s); li.appendChild(p);
+      }
+      ol.appendChild(li);
+    }
+    out.appendChild(ol);
+  }
+}
+form.addEventListener('submit', e => { e.preventDefault(); search(); });
+radios.querySelectorAll('input[name="course"]').forEach(r => r.addEventListener('change', () => { if (box.value.trim()) search(); }));
+if (box.value.trim()) search(); else box.focus();
+</script>
+```

@@ -1,0 +1,73 @@
+---
+title: "MC 501: Research Methods for Mass Communications"
+pagetitle: "MC 501 course home"
+toc: true
+toc-title: "On this page"
+---
+
+## This week {#this-week}
+
+::: {#v2v-this-week}
+Every week of the semester is in the list below. Open a week to see its classes, what to watch, the guides, and what is due.
+:::
+
+## Course links {#links}
+
+- [Syllabus](../mc501-syllabus.qmd): the schedule, grading, and course policies.
+- [Assignments](../mc501-assignments.qmd): every assignment and what it asks for.
+- [Research Proposal template](../mc501-research-proposal-template.qmd): the template your Research Proposal follows.
+- [Step-by-step guides](../guides/mc501/index.md): numbered steps with pictures for the R work.
+- [Slides](../decks/mc501/index.qmd): the slides from every class.
+- [Help and resources](../resources/index.qmd): help for each R worksheet, cheat sheets, and the R Workbook.
+- [Search](../search.qmd): find a word or a topic on every page of this site.
+
+## Every week {#weeks}
+
+::: {#v2v-weeks}
+The week-by-week list is built from the [syllabus](../mc501-syllabus.qmd) when the site is published.
+:::
+
+## The textbook, part by part {#textbook}
+
+The course follows *Vibes to Variables* (3rd Edition) in five parts. Each part has a page on this site with its goals and assignments, and its chapters are in the free online textbook.
+
+### Part I: Foundation
+
+- [Phase I: The Journalist](../modules/01_journalist/index.qmd)
+- [Chapter 1: The Science of Storytelling](https://aura-lab.siue.edu/v2v/chapters/chapter01.html)
+- [Chapter 2: The Open Workspace](https://aura-lab.siue.edu/v2v/chapters/chapter02.html)
+- [Chapter 3: Knowing and Knowing Well](https://aura-lab.siue.edu/v2v/chapters/chapter03.html)
+
+### Part II: Planning
+
+- [Phase II: The Architect](../modules/02_architect/index.qmd)
+- [Chapter 4: Intelligence Gathering](https://aura-lab.siue.edu/v2v/chapters/chapter04.html)
+- [Chapter 5: Theory as a Lens](https://aura-lab.siue.edu/v2v/chapters/chapter05.html)
+- [Chapter 6: The Prospectus](https://aura-lab.siue.edu/v2v/chapters/chapter06.html)
+
+### Part III: Operationalization
+
+- [Phase III: The Builder](../modules/03_builder/index.qmd)
+- [Chapter 7: Structured Listening](https://aura-lab.siue.edu/v2v/chapters/chapter07.html)
+- [Chapter 8: From Vibes to Variables](https://aura-lab.siue.edu/v2v/chapters/chapter08.html)
+- [Chapter 9: The Rulebook and First Workspace](https://aura-lab.siue.edu/v2v/chapters/chapter09.html)
+
+### Part IV: Execution
+
+- [Phase IV: The Analyst](../modules/04_analyst/index.qmd)
+- [Chapter 10: The Sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html)
+- [Chapter 11: Wrangling the Data](https://aura-lab.siue.edu/v2v/chapters/chapter11.html)
+- [Chapter 12: Visualizing the Narrative](https://aura-lab.siue.edu/v2v/chapters/chapter12.html)
+- [Practice: Pokemon Wrangling](../modules/04_analyst/practice-wrangling.qmd)
+
+### Part V: Inference and Publication
+
+- [Phase V: The Publisher](../modules/05_publisher/index.qmd)
+- [Chapter 13: Making the Call](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
+- [Chapter 14: The One-Click Report](https://aura-lab.siue.edu/v2v/chapters/chapter14.html)
+
+## Getting started {#getting-started}
+
+- [Getting started](../setup.qmd): install R, Quarto, VS Code, and Git, in order.
+- [Course Workspace](../workspace.qmd): the one folder in VS Code that holds your journals and project.
+- [How the course tools fit together](../how-it-works.qmd): the textbook, this site, the workspace, and the v2v R package.

@@ -1,8 +1,22 @@
 ---
-title: "Resources"
+title: "Help and resources"
 ---
 
-Everything you need to set up, run, and get help with the course. If you are just getting started, follow the [Getting Started](../setup.qmd) guide first.
+Help for each R worksheet comes first, then the course documents, the worksheets to download, and the software you install. If you are just getting started, follow [Getting started](../setup.qmd) first.
+
+## Help for each R worksheet {#help-by-worksheet}
+
+Each R worksheet has a help page, with what to do when a step goes wrong, and a risks guide, with the traps on that job.
+
+| Worksheet | When a step goes wrong | Traps on this job |
+|:---|:---|:---|
+| Data Wrangling (Chapter 11) | [Data Wrangling help](help/data-wrangling.qmd) | [Data Wrangling risks](risks/data-wrangling.qmd) |
+| Describing Data (Chapter 12) | [Describing Data help](help/describing-data.qmd) | [Describing Data risks](risks/describing-data.qmd) |
+| Inferencing Data (Chapter 13) | [Inferencing Data help](help/inferencing-data.qmd) | [Inferencing Data risks](risks/inferencing-data.qmd) |
+
+If your worksheet was downloaded before the new layout, [Move your work to the new worksheet](help/move-your-work.qmd) shows how to copy your answers into it.
+
+For a problem outside the worksheets, see [Something broken?](#something-broken) below.
 
 ---
 
@@ -79,7 +93,7 @@ Your VS Code course workspace holds your journals, notes, and project files in o
 
 ---
 
-## Something broken?
+## Something broken? {#something-broken}
 
 Four problems have come up across the course. The **Fix It** page has each one in plain
 steps: strange characters when you run a cell, a missing `Git: Clone` command, an install

@@ -83,6 +83,11 @@ lines with `___`. Delete the unfinished lines.
 
 ## Help by task
 
+The guide *Wrangle Your Own Data* walks through the same steps on another dataset:
+[MC 451](../../guides/mc451/08-wrangling.md) or [MC 501](../../guides/mc501/08-wrangling.md). The
+walkthrough video [Wrangling and the reliability grid](https://siue.yuja.com/V/Video?v=17490319&a=95173025) shows them in its wrangling part. The
+[Data Wrangling risks guide](../risks/data-wrangling.qmd) shows the traps on this job.
+
 ### Setup {#setup}
 
 Each time you open VS Code to work on the worksheet, click **Run Cell** on the gray box under the
@@ -299,6 +304,11 @@ To make the HTML file, follow *Render a Quarto Document*:
 [MC 501](../../guides/mc501/11-render-a-quarto-document.md). It worked if the Terminal panel
 ends with `Output created: 11-wrangling-data.html`. The last section of that guide shows how to
 make the ZIP file you turn in.
+
+**If the render stops with `does not exist in current working directory`,** your worksheet is
+inside a folder, such as `data`, instead of next to `README.md`. The section *If it does not
+work* in the same guide moves it: [MC 451](../../guides/mc451/11-render-a-quarto-document.md#if-it-does-not-work) or
+[MC 501](../../guides/mc501/11-render-a-quarto-document.md#if-it-does-not-work).
 
 ## If your worksheet was downloaded before November 4
 
