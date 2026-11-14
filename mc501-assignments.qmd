@@ -413,6 +413,8 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 
 **Your job.** Say what is in the data before you test anything.
 
+**If your Data Wrangling table is not right,** start from the correct one: [twitch_analysis.RDS](resources/examples/twitch-demo/twitch_analysis.RDS){download="twitch_analysis.RDS"}. The link saves it in your **Downloads** folder. Move it into the folder named `data` in your workspace, the same way [Put a Worksheet in Your Workspace](guides/mc501/14-put-a-worksheet-in-your-workspace.md) moves a worksheet, and choose **Replace** when asked. It holds the instructor's codes for the thirty messages, so your counts read `commentary` `17` and `reaction` `13`. Using it costs no points on this assignment. It does not change your Data Wrangling grade, and turned in for Data Wrangling it earns no credit.
+
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
@@ -443,6 +445,8 @@ Design your sampling strategy (search terms, date range, method) and pilot test 
 **The case.** The channel manager has seen how the numbers sit. Now they want to know whether the differences are real or could be chance, and whether they are big enough to put in the sponsor pitch.
 
 **Your job.** Test four relationships, one per test, and report how big each is.
+
+**If your Data Wrangling table is not right,** start from the correct one: [twitch_analysis.RDS](resources/examples/twitch-demo/twitch_analysis.RDS){download="twitch_analysis.RDS"}. The link saves it in your **Downloads** folder. Move it into the folder named `data` in your workspace, the same way [Put a Worksheet in Your Workspace](guides/mc501/14-put-a-worksheet-in-your-workspace.md) moves a worksheet, and choose **Replace** when asked. It holds the instructor's codes for the thirty messages, so your counts read `commentary` `17` and `reaction` `13`. Using it costs no points on this assignment. It does not change your Data Wrangling grade, and turned in for Data Wrangling it earns no credit.
 
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
