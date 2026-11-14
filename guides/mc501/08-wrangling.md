@@ -618,7 +618,7 @@ That is 65 words. Your other two are likely to be your missing-values decision (
 > library(readr)
 
 > coded <- read_csv("data/episode-code.csv")
-Error: 'data/episode-code.csv' does not exist in current working directory ('C:/Users/alexl/MC451-workspace').
+Error: 'data/episode-code.csv' does not exist in current working directory ('C:/Users/yourname/MC501-workspace').
 Execution halted
 ```
 

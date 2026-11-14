@@ -600,7 +600,7 @@ $ desc_length   <int> 225, 396, 369, 574, 125, 482, 136, 177, 416, 91, 427, 288,
 > library(readr)
 
 > coded <- read_csv("data/episode-code.csv")
-Error: 'data/episode-code.csv' does not exist in current working directory ('C:/Users/alexl/MC451-workspace').
+Error: 'data/episode-code.csv' does not exist in current working directory ('C:/Users/yourname/MC451-workspace').
 Execution halted
 ```
 
@@ -613,7 +613,7 @@ The line you ran tells R to open a file inside the folder named `data` in your c
 
 **The same red message after all four checks?** Then email your instructor a picture of the whole VS Code window, with the list on the left and the red message at the bottom both showing (a photo taken with your phone is fine).
 
-**Every column ends up in one.** If `read_csv()` reports `Columns: 1` and one long column name full of `;`, the file was saved with semicolons between the values instead of commas, as some versions of Excel do:
+**Every column ends up in one.** If `read_csv()` reports `Columns: 1` and one long column name full of `;`, the file was saved with semicolons between the values instead of commas, as happens when a sheet is saved in a different program or country setting:
 
 ```
 > library(readr)
@@ -631,9 +631,11 @@ chr (1): season_title;episode_num;episode_title;air_date;IMDB_rating;total_votes
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
-Save it again from Excel with **File**, then **Save As**, and choose **CSV UTF-8 (Comma delimited)**, or read it with `read_csv2()`, which expects semicolons.
+Download the sheet again from Google Sheets. Open it, click **File** in the web page's menu bar, below the sheet's title, then **Download**, then **Comma Separated Values (.csv)**. Google Sheets writes commas. You can also read the file you have with `read_csv2()`, which expects semicolons.
 
-**Everything lands in one column named `Table 1`.** If `read_csv()` reports `Columns: 1` and `names()` shows one name that is none of your column names, such as `Table 1` or a sheet title, the file has a title row above the real column names. Numbers on a Mac writes one when **Include table names** is ticked as it exports; a title typed in the first row of a spreadsheet does the same:
+![](img/sheets-download-csv.png){fig-alt="Google Sheets with the File menu open. Download is highlighted, and its submenu lists Microsoft Excel (.xlsx), OpenDocument (.ods), PDF (.pdf), Web Page (.html), Comma Separated Values (.csv), and Tab Separated Values (.tsv). Comma Separated Values (.csv) is highlighted."}
+
+**Everything lands in one column named `Table 1`.** If `read_csv()` reports `Columns: 1` and `names()` shows one name that is none of your column names, such as `Table 1` or a sheet title, the file has a title row above the real column names. A title typed in the first row of the sheet does this:
 
 ```
 > coded <- read_csv("data/episode-codes-title.csv")
@@ -653,7 +655,7 @@ e.g.:
 [1] "Table 1"
 ```
 
-Export the file again without the title (in Numbers: **File**, then **Export To**, then **CSV...**, untick **Include table names**, and save over the old file), or tell `read_csv()` to skip the first line:
+In Google Sheets, right-click the number of row 1 at the left edge of the sheet, click **Delete row**, then download the CSV again (**File**, **Download**, **Comma Separated Values (.csv)**). Or tell `read_csv()` to skip the first line:
 
 ```r
 coded <- read_csv("data/episode-codes.csv", skip = 1)
@@ -661,7 +663,7 @@ coded <- read_csv("data/episode-codes.csv", skip = 1)
 
 `Rows:` then counts your items again (120 here), and `names(coded)` lists your column names.
 
-**Letters with accents turn into `�`.** If `café` reads as `caf�`, the file was saved in an older Mac text format, not UTF-8. Save it again as UTF-8: in Excel, **File**, then **Save As**, and choose **CSV UTF-8 (Comma delimited)**; in Numbers, **File**, then **Export To**, then **CSV...**, open **Advanced Options**, and set **Text Encoding** to **Unicode (UTF-8)**. Or read the file as it is:
+**Letters with accents turn into `�`.** If `café` reads as `caf�`, the file was saved in an older text format, not UTF-8. Download it again from Google Sheets (**File**, **Download**, **Comma Separated Values (.csv)**), which saves UTF-8. Or read the file as it is:
 
 ```r
 coded <- read_csv("data/episode-codes.csv", locale = locale(encoding = "macintosh"))

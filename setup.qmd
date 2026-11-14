@@ -83,7 +83,7 @@ Your workspace is organized into these folders:
 | **02_literature** | Reading notes & course materials | Includes textbook chapters and citation templates |
 | **03_project** | Active research work | Organized by prospectus, codebook, data, and drafts folders |
 | **04_resources** | Media & attachments | Images, PDFs, external files, and course materials |
-| **_templates** | Reusable templates | The journal template (`_templates/journal-entry.md`) and a data dictionary template to copy and customize |
+| **\_templates** | Reusable templates | The journal template (`_templates/journal-entry.md`) and a data dictionary template to copy and customize |
 
 ---
 
