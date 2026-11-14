@@ -238,8 +238,23 @@ format:
            role="region": that would put every code block in the landmark list
            and make the page markedly noisier to navigate by screen reader. */
         (function(){
+          /* a11y-2026-11-13 table-scroll: a wide table scrolls inside its own
+             box instead of pushing the whole page sideways on a phone. Tables
+             already inside a scrolling container are left alone. */
+          function wrapTables(){
+            document.querySelectorAll('main table').forEach(function(t){
+              var p = t.parentElement;
+              if (!p || p.classList.contains('v2v-table-scroll')) return;
+              if (/(auto|scroll)/.test(getComputedStyle(p).overflowX)) return;
+              var box = document.createElement('div');
+              box.className = 'v2v-table-scroll';
+              p.insertBefore(box, t);
+              box.appendChild(t);
+            });
+          }
           function mark(){
-            document.querySelectorAll('pre').forEach(function(el){
+            wrapTables();
+            document.querySelectorAll('pre, .v2v-table-scroll').forEach(function(el){
               var scrolls = el.scrollWidth > el.clientWidth + 1 ||
                             el.scrollHeight > el.clientHeight + 1;
               if (scrolls && !el.hasAttribute('tabindex')) el.setAttribute('tabindex','0');

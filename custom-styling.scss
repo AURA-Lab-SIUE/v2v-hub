@@ -498,6 +498,12 @@ details.tmpl-section {
 // Tables: editorial, no fill; horizontal scroll on small screens (reflow)
 // ============================================================================
 .table-responsive, .cell-output-display { overflow-x: auto; }
+// a11y-2026-11-13: a wide table scrolls in its own box (the wrapper is added by the
+// table-scroll script in _quarto.yml), and long link text wraps inside the column,
+// so neither pushes the page wider than a phone screen.
+.v2v-table-scroll { overflow-x: auto; margin: 2rem 0; }
+.v2v-table-scroll > table { margin: 0; }
+main a { overflow-wrap: anywhere; }
 table {
   font-family: $font-family-sans-serif; font-size: 0.92rem;
   border-collapse: collapse; width: 100%; margin: 2rem 0;
@@ -537,7 +543,17 @@ pre {
   code { background: transparent; padding: 0; color: inherit; }
 }
 div.sourceCode { background: var(--v2v-surface); border-radius: 6px; }
-
+// a11y-2026-11-13 code-wrap: a long code line wraps inside its box instead of running
+// past it, so a phone reader sees the whole command without scrolling sideways. The wrap
+// is visual only: copying still gives the original single line. Continuation lines hang
+// 2em in, the same device Quarto uses for print. !important because Quarto's own
+// sourceCode rules (white-space: pre) load after the theme. Printed output (a plain pre,
+// such as a tibble) keeps scrolling, because wrapping would scramble its columns.
+pre > code.sourceCode { white-space: pre-wrap !important; }
+pre > code.sourceCode > span {
+  display: inline-block !important; max-width: 100%;
+  text-indent: -2em; padding-left: 2em; overflow-wrap: anywhere;
+}
 // ============================================================================
 // Figures
 // ============================================================================
@@ -664,17 +680,38 @@ div.sourceCode code, .sourceCode span {
 // emits its highlight CSS after the theme.
 // ============================================================
 code span.at,
-pre code span.at { color: #55611C !important; }
+pre code span.at { color: #3E4714 !important; }
 
 // a11y-2026-10-31: three more highlighter tokens under the 5:1 floor on #F1EDE4: strings
 // #20794D (4.60:1), constants #8f5902 (5.00:1), and functions #4758AB (5.53:1 declared, but
 // thin glyphs measured 4.59:1 in rendered pixels). Same fix as the v2v book.
+// a11y-2026-11-13: the 10-31 values (5.8 to 6.9:1 declared) still measured 3.8 to 4.7:1 in
+// rendered pixels on PowerShell and R lines, because thin monospace strokes anti-alias toward the
+// paper. Every token now declares at least 7.5:1 on #F1EDE4, keeping its hue: strings 8.82,
+// attributes 8.49, constants 8.99, functions 9.54, the grey group (operators, comments) 8.87,
+// the red group (numbers, data types) 8.64, imports 7.55.
 code span.st, pre code span.st,
 code span.ss, pre code span.ss,
 code span.vs, pre code span.vs,
-code span.ch, pre code span.ch { color: #186640 !important; }
-code span.cn, pre code span.cn { color: #7A4C02 !important; }
-code span.fu, pre code span.fu { color: #3B4A97 !important; }
+code span.ch, pre code span.ch { color: #0E4A2E !important; }
+code span.cn, pre code span.cn { color: #5A3800 !important; }
+code span.fu, pre code span.fu { color: #2B3770 !important; }
+code span.op, pre code span.op,
+code span.sc, pre code span.sc,
+code span.co, pre code span.co,
+code span.an, pre code span.an,
+code span.cv, pre code span.cv,
+code span.do, pre code span.do,
+code span.in, pre code span.in,
+code span.wa, pre code span.wa { color: #404040 !important; }
+code span.al, pre code span.al,
+code span.bn, pre code span.bn,
+code span.dt, pre code span.dt,
+code span.dv, pre code span.dv,
+code span.er, pre code span.er,
+code span.fl, pre code span.fl,
+code span.pp, pre code span.pp { color: #8A0000 !important; }
+code span.im, pre code span.im { color: #005070 !important; }
 
 // ============================================================
 // Edition toggle (edition-toggle-2026-08-12)
