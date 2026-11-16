@@ -30,6 +30,16 @@ format:
 
 Today we settle that question. There are no formulas to memorize, only questions to ask.
 
+## Real, Important, or Chance
+
+- Non-gaming chat averaged 33.70 characters per message, and gaming chat averaged 28.49
+- The example data holds 34,762 messages
+- Which is the best description of the five-character gap?
+    - A. Real and important
+    - B. Real, but too small to matter
+    - C. Possibly just chance
+    - D. Impossible to judge from two averages
+
 ## The Twitch Job, Part 3
 
 - The Inferencing Data worksheet is part 3 of the Twitch job
@@ -208,6 +218,16 @@ A small *p* says the gap is probably not zero. It says nothing about the gap's s
 
 Significance and size are different questions, and big samples pull them apart.
 
+## Describe the Gap Again
+
+- Non-gaming chat averaged 33.70 characters per message, and gaming chat averaged 28.49
+- The test reported *p* < .001, and the effect size is Cohen's *d* = 0.13
+- Which is the best description of the five-character gap now?
+    - A. Real and important
+    - B. Real, but too small to matter
+    - C. Possibly just chance
+    - D. Impossible to judge from two averages
+
 ## More Than Two Groups: ANOVA
 
 ```r
@@ -241,6 +261,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 - **F value** compares the variation between the four means against the variation within the groups; if all four shared one mean, F would sit near one. Here it is **92.26**
 - `Pr(>F)` is the p-value: `<2e-16` means smaller than R will print, so *p* < .001
 - The `***` is R's star code for how small the p-value is; the `Signif. codes` line is its key
+
+## Report This Result
+
+- The ANOVA compared message length across four game categories
+- It reported *F* = 92.26 and *p* < .001
+- Its effect size, eta-squared, is 0.02: game category accounts for about two percent of the variation in message length
+- In one sentence, how would you report this result to a reader?
 
 ## Reading the Effect Size
 
