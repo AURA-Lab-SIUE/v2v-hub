@@ -169,8 +169,10 @@ Every slide must fit without overflowing at a 33px root font. In practice:
 
 ## Required structural elements
 
-1. An **eyebrow label** on a slide or two for orientation:
-   `[November 2018]{.eyebrow}` renders as a small red uppercase kicker.
+1. An **eyebrow label** only for a source or a URL, never for orientation, a due
+   date, a session type, or a timing: `[Wasserstein and Lazar (2016)]{.eyebrow}`
+   renders as a small red uppercase kicker. A due date or a point value goes in a
+   bullet.
 2. A **discussion or activity slide**, placed **early or in the middle**, never
    at the end. Mark it `## Your turn {.discuss}` (451) or
    `## Discussion {.discuss}` (501). Give 2 to 4 real questions and nothing else.
