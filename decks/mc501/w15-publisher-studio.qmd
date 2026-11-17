@@ -186,9 +186,7 @@ book:
 - The course package, v2v, wrote it for you with `new_portfolio()`, with the codebook and the journal as appendices
 - Open `_quarto.yml` from your White Paper folder in the **Explorer** panel and change the words after `title:`
 
-## Studio Block One
-
-[White Paper]{.eyebrow}
+## Studio Block One: White Paper
 
 - Get `index.qmd` rendering, even if it is mostly headings
 - Copy `twitch_analysis.RDS` into your project and give `03-results.qmd` its setup chunk: [Chapter 14 starter](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd), Steps 4 to 6
@@ -252,9 +250,7 @@ portfolio is due. The checks exist so the last step of a long study is the calm 
 
 Your reader is standing up, holding a drink, four feet away.
 
-## Studio Block Two
-
-[Poster]{.eyebrow}
+## Studio Block Two: Poster
 
 - Sketch the layout on paper first, in blocks, before opening any software
 - Place your chosen figure, then build the text around it

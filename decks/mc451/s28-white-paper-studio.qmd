@@ -39,7 +39,7 @@ If your render is broken, say so now.
 
 ## Where the PDF Is
 
-[Recap of the White Paper slide in [S26](https://aura-lab.siue.edu/v2v-hub/decks/mc451/s26-inference-lab.html)]{.eyebrow}
+[[S26, The White Paper](https://aura-lab.siue.edu/v2v-hub/decks/mc451/s26-inference-lab.html)]{.eyebrow}
 
 - Due Friday, December 18, 11:59 PM, as one ZIP file plus the live URL pasted beside it
 - The paper PDF is in the docs folder inside your White Paper folder, after a render

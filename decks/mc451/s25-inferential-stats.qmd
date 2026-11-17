@@ -22,8 +22,6 @@ format:
 
 ## Where We Left Off
 
-[Inferencing Data, 100 points, due Friday, December 4, 11:59 PM]{.eyebrow}
-
 - In the example data, gaming channels averaged 28.49 characters per message
 - Non-gaming channels averaged 33.70, a gap of about five characters
 - The histogram showed the gap, and could not say whether the gap is real or chance
@@ -336,7 +334,7 @@ F-statistic: 49.79 on 1 and 34760 DF,  p-value: 1.747e-12
 
 - `Multiple R-squared: 0.00143` says gaming status accounts for about a tenth of a percent of the variation
 - `505 observations deleted` are the unlabeled messages
-- The R Companion's **Linear regression** (under **R4 Test**) writes these same lines with `predictor` as the hour of the day
+- The R Companion's **Linear regression** (in its panel, under **Test**) writes these same lines with `predictor` as the hour of the day
 
 ## Checkpoint
 

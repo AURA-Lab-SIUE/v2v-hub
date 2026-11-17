@@ -21,8 +21,6 @@ format:
 
 ## Today's Job
 
-[Inferencing Data, 100 points, due Friday, December 4, 11:59 PM]{.eyebrow}
-
 - Tuesday the test ran on the example data; today you fill the Inferencing Data worksheet
     - Each test correctly chosen, correctly read, honestly reported
     - The same settings block, changed, runs on your own data for the paper
@@ -244,8 +242,7 @@ summary(fit_lm)
 
 ## The White Paper, 250 Points
 
-[Assigned today, due Friday, December 18, 11:59 PM]{.eyebrow}
-
+- Assigned today, due Friday, December 18, 11:59 PM
 - The full study written up as one reproducible document
     - An abstract, then Introduction, Methods, Results, and Discussion, then a Reflection
 - It is not a term paper. It is a document an invested reader could act on
