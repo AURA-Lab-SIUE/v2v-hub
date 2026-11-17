@@ -25,12 +25,10 @@ Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.s
 
 ## Where the Study Stands
 
-[The Publisher]{.eyebrow}
-
 - You have a question, a theory, and a tested codebook
 - You have a defensible sample and a clean dataset
-- You have three figures and a finding you interpreted honestly
-- Every hard part is finished, and the study is still not done
+- You have three figures, and a test you ran in the Inference Lab
+- The hardest parts are behind you, and the study is still not done
     - It lives in a script, a folder of images, and output you scrolled past
 
 Scattered across a dozen files, the study is raw material, not a report.
@@ -195,17 +193,6 @@ Publish to GitHub Pages? [y/N] y
 - Each check heads off one specific, demoralizing failure
 
 The last step of a long study should be the calm one.
-
-## The Reflection
-
-- The Reflection is one paragraph, and it is not part of IMRaD
-    - It is your own candid account of the study, not a result
-- Name what was harder than expected
-    - Where a coding rule turned out to be ambiguous in practice
-    - What the dataset could not answer
-- Avoid both easy failures: "everything went well" and "everything went wrong"
-
-A researcher who can say where their study is weak understands it.
 
 ## Before Next Time
 

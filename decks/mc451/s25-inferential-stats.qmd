@@ -262,13 +262,6 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 - `Pr(>F)` is the p-value: `<2e-16` means smaller than R will print, so *p* < .001
 - The `***` is R's star code for how small the p-value is; the `Signif. codes` line is its key
 
-## Report This Result
-
-- The ANOVA compared message length across four game categories
-- It reported *F* = 92.26 and *p* < .001
-- Its effect size, eta-squared, is 0.02: game category accounts for about two percent of the variation in message length
-- In one sentence, how would you report this result to a reader?
-
 ## Reading the Effect Size
 
 ```
@@ -286,6 +279,13 @@ main_game | 0.02 | [0.02, 1.00]
 - The effect size for ANOVA is **eta-squared**, here **0.02**: game category accounts for about two percent of the variation in message length
 - The difference is real, and small
 - The upper bound of 1.00 is the package's one-sided convention, not a finding; the first two lines are a note, not an error
+
+## Report This Result
+
+- The ANOVA compared message length across four game categories
+- It reported *F* = 92.26 and *p* < .001
+- Its effect size, eta-squared, is 0.02
+- In one sentence, how would you report this result to a reader?
 
 ## From a Difference to a Model
 

@@ -214,9 +214,9 @@ Chance alone is an unconvincing explanation for the gap. That is the entire cont
 
 ## Retiring the Phrase
 
-> "We conclude that the term 'statistically significant' should no longer be used."
+> "it is time to stop using the term 'statistically significant' entirely."
 >
-> Lakens et al. (2018)
+> Wasserstein, Schirm, and Lazar (2019, p. 2)
 
 - Write your own result in one sentence without the phrase "statistically significant"
 - Then write down one thing the sentence lost and one thing it gained

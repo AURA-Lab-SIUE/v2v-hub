@@ -179,7 +179,7 @@ summary(fit_lm)
 
 - **Your prospectus** is the spine of the Introduction
 - **Your codebook and your sampling plan** are most of the Methods
-- **Last week's figures and this week's test** are the Results
+- **The figures from the Describing lab and the test from today's lab** are the Results
 - **Today's two sentences** are the heart of the Discussion
 
 The work left is assembly and honesty, not starting over.
