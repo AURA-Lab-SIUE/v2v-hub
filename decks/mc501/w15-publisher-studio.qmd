@@ -23,9 +23,7 @@ Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.s
 - Click the link: your browser saves `14-publishing-your-paper.qmd` in your Downloads folder
 - Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
 
-## The Last Meeting
-
-[Studio session]{.eyebrow}
+## Tonight Is a Studio
 
 - Two working blocks: the White Paper, then the poster
     - Short input between them; the rest of the evening is your working time
@@ -37,7 +35,7 @@ Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.s
 
 - The study has every hard part behind it
     - A question, a theory, and a reliability-tested codebook
-    - A defensible sample, a clean dataset, three figures, and a finding
+    - A defensible sample, a clean dataset, three figures, and a test from Week 13
 - And it still lives in pieces
     - A codebook here, a script there, output that scrolled past
 
@@ -306,8 +304,6 @@ walked it once.
 
 ## Before Finals Week
 
-[Two deadlines left]{.eyebrow}
-
 - Due Monday, December 7, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#inferencing-data-in-r), 100 points
 - Due Monday, December 7, 11:59 PM: push your full coded dataset to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html))
     - This is the [White Paper's dated step](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster)
@@ -318,6 +314,7 @@ walked it once.
 ## Before Finals Week (cont.)
 
 - Your reflection paragraph, included in the paper
+- Wednesday, December 9 is a work session: open lab, with help in the room
 - Click by click: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc501/11-render-a-quarto-document.html), [Commit and Push](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc501/13-publish-your-site.html)
 - Office hours run through finals week, so bring a draft early
 

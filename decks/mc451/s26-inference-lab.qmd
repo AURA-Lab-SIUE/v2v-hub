@@ -16,7 +16,7 @@ format:
 
 - Choose your test before you run it
 - Report the result in one line of statistics, then in one plain sentence
-- Report an effect size every time
+- Report an effect size every time, and a result that is not significant
 - The White Paper, assigned today
 
 ## Today's Job
@@ -47,7 +47,55 @@ A number and two groups: **t-test**. A number and three or more groups: **ANOVA*
 - The R Companion checks the third line against the first two; it does not write it
 - Click the **AURA Lab R Companion** icon on VS Code's left edge; under **Test**, click **Check my test choice**
 
-## Running Your Test
+## Test 1, the Chi-Square
+
+- Two categories call for chi-square: does the split between gaming and non-gaming change across the three viewer bands?
+- This is Part 2 of the worksheet, with `cat_a` and `cat_b` from the settings block
+- The R Companion writes it: under **Test**, **Chi-square test with Cramer's V**
+
+```r
+counts <- xtabs(~ cat_a + cat_b, data = analysis)
+counts
+sum(counts)
+chi <- chisq.test(counts)
+chi
+cramers_v(counts, adjust = FALSE)
+```
+
+## Test 1, the Output
+
+```
+        cat_b
+cat_a    gaming non-gaming
+  small   25309       2457
+  medium   4000       1000
+  large    2000          0
+[1] 34766
+```
+
+- `counts` is the grid: each viewer band split into gaming and non-gaming messages
+- `34766` is N, the number of messages the test used
+
+## Test 1, the Output (cont.)
+
+```
+	Pearson's Chi-squared test
+
+data:  counts
+X-squared = 822.66, df = 2, p-value < 2.2e-16
+
+Cramer's V |       95% CI
+-------------------------
+0.15       | [0.14, 1.00]
+
+- One-sided CIs: upper bound fixed at [1.00].
+```
+
+- `X-squared` is the chi-square statistic; `df` is (rows - 1) times (columns - 1), here 2
+- `p-value < 2.2e-16` is smaller than R will print, so *p* < .001
+- **Cramér's V** is the effect size for two categories, from 0 (no link) to 1; 0.15 is small
+
+## Test 2, the t-test
 
 - The R Companion writes this same code for the names in your settings block: in its panel, under **Test**, **Welch t-test with Cohen's d**
 
@@ -63,7 +111,7 @@ t.test(outcome ~ group2, data = analysis)
 cohens_d(outcome ~ group2, data = analysis)
 ```
 
-## Running Your Test (cont.)
+## Test 2, the t-test (cont.)
 
 - `outcome` and `group2` are the names the settings block gives your two columns; in the example they were `message_length` and `is_gaming`
 - The first pipe prints each group's `n`, `mean`, and `sd`
@@ -109,27 +157,65 @@ If you cannot write that sentence, you do not yet understand your result.
 
 "Significant" without a *d* is a claim you have not supported.
 
+## When p Is Above .05
+
+```r
+set.seed(2026)
+small <- analysis %>%
+  filter(!is.na(cat_b)) %>%
+  slice_sample(n = 30)
+
+t.test(outcome ~ cat_b, data = small)
+cohens_d(outcome ~ cat_b, data = small)
+```
+
+- Tuesday's comparison again, on 30 messages drawn at random instead of 34,762
+- `set.seed()` makes the random draw the same every time it runs
+
+## When p Is Above .05 (cont.)
+
+```
+	Welch Two Sample t-test
+
+data:  outcome by cat_b
+t = 1.7881, df = 27.665, p-value = 0.08473
+alternative hypothesis: true difference in means between group gaming and group non-gaming is not equal to 0
+95 percent confidence interval:
+ -4.856628 71.279705
+sample estimates:
+    mean in group gaming mean in group non-gaming
+                48.46154                 15.25000
+```
+
+- *p* = .085 is above .05: this test cannot rule out chance
+- The interval runs from about -5 to 71 characters, so it holds zero
+
+## When p Is Above .05 (cont.)
+
+```
+Cohen's d |        95% CI
+-------------------------
+0.39      | [-0.68, 1.44]
+
+- Estimated using pooled SD.
+```
+
+- Not significant is not evidence of no difference: *d*'s interval runs from -0.68 to 1.44
+- Report it in full anyway: both means, *t*, df, *p*, and *d*, then say that 30 messages were too few to tell
+- Test 2 runs on your thirty hand-coded messages, so it may land here too; that is a result, not a failure
+
 ## If You Have More Than Two Groups
 
 ```r
-four_games <- analysis %>%
-  filter(main_game == "Fortnite" |
-         main_game == "Hearthstone" |
-         main_game == "Just Chatting" |
-         main_game == "League of Legends")
-
-fit_anova <- aov(message_length ~ main_game,
-                 data = four_games)
+fit_anova <- aov(outcome ~ group3, data = analysis)
 summary(fit_anova)
 eta_squared(fit_anova)
 ```
 
-## If You Have More Than Two Groups (cont.)
-
-- ANOVA asks one question of all the groups at once: `aov()` fits it, `summary()` prints the F table, and `eta_squared()` adds the effect size
-- The example returned **F(3, 13429) = 92.26**, eta-squared **0.02**: a real difference, and a small one
-- In the worksheet the groups are `group3`, the three viewer bands, so the model line is `aov(outcome ~ group3, data = analysis)`
-- The R Companion's **One-way ANOVA with eta squared** writes that version
+- This is Part 4 of the worksheet: `group3` is the three viewer bands
+- `aov()` fits the ANOVA, `summary()` prints the F table, and `eta_squared()` adds the effect size
+- How to read F and eta-squared: [Tuesday's ANOVA slides](https://aura-lab.siue.edu/v2v-hub/decks/mc451/s25-inferential-stats.html)
+- The R Companion's **One-way ANOVA with eta squared** writes the same lines
 
 ## If You Want a Model
 
@@ -179,7 +265,7 @@ summary(fit_lm)
 
 - **Your prospectus** is the spine of the Introduction
 - **Your codebook and your sampling plan** are most of the Methods
-- **Last week's figures and this week's test** are the Results
+- **The figures from the Describing lab and the test from today's lab** are the Results
 - **Today's two sentences** are the heart of the Discussion
 
 The work left is assembly and honesty, not starting over.

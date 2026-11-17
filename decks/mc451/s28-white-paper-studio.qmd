@@ -20,8 +20,6 @@ format:
 
 ## Today Is a Working Session
 
-[Last class of the term]{.eyebrow}
-
 - There is no lecture: three rounds of review, then your revision list
     - You read two papers, and two people read yours
 - Then you draft the reflection in class, while the study is fresh
@@ -39,12 +37,12 @@ Leave today knowing exactly what is left to do.
 
 If your render is broken, say so now.
 
-## The White Paper, 250 Points
+## Where the PDF Is
 
-- The largest piece of the course, due Friday, December 18, 11:59 PM
-- Abstract, Introduction, Methods, Results, Discussion, and References
-    - Plus your one-paragraph Reflection
-- You submit one ZIP file holding the paper PDF (in the docs folder inside your White Paper folder, after a render) and your AI-use log, plus the live URL of your GitHub Pages site pasted into the submission
+[Recap of the White Paper slide in [S26](https://aura-lab.siue.edu/v2v-hub/decks/mc451/s26-inference-lab.html)]{.eyebrow}
+
+- Due Friday, December 18, 11:59 PM, as one ZIP file plus the live URL pasted beside it
+- The paper PDF is in the docs folder inside your White Paper folder, after a render
 - It is graded on the study, the writing, and whether it reproduces from the code
 
 ## Where the 250 Points Sit
@@ -177,6 +175,7 @@ Before you leave today you should have:
 ## Before Finals Week (cont.)
 
 - Step by step: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html), [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc451/13-publish-your-site.html)
+- Next week, December 8 to 12, is a work session: open lab, with help in the room
 - Work the must-fix list first. The rest is optional
 - Re-render after every change, so every number stays computed, not typed
 - Deploy early, not the night before
