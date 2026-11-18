@@ -680,6 +680,37 @@ All three are the general linear model, wearing three different names.
 - Whether an added variable earns its place in the model is a model-comparison question
     - Compare adjusted R², AIC, or a nested F-test, never raw R²
 
+## Discrete or Continuous
+
+::: {.define}
+**Discrete (categorical):** each value is a category you count, not a number you average. Example: gaming or non-gaming, or a code from your codebook.
+:::
+
+::: {.define}
+**Continuous (numeric):** each value is a measured number where an average makes sense. Example: message length in characters.
+:::
+
+- A code stored as a number is still discrete
+
+## Which Test Fits
+
+| Outcome | Other variable | Test |
+|:--|:--|:--|
+| Discrete | Discrete | Chi-square, with Cramér's *V* |
+| Continuous | Two groups | Welch t-test, with Cohen's *d* |
+| Continuous | Three or more groups | One-way ANOVA, with eta squared |
+| Continuous | Continuous | Linear regression, with R² |
+| One variable alone | None | Counts and percents, no test |
+
+- In your paper, regression takes two numbers. A category goes to the t-test or ANOVA
+
+## Exercise: Your Questions, Your Tests
+
+- Download the [RQ and hypothesis worksheet](https://aura-lab.siue.edu/v2v-hub/resources/templates/rq-test-worksheet.docx) (Word)
+- Copy each research question or hypothesis from your Research Proposal into it, word for word
+- For each one, which test fits? Name its variables, mark each discrete or continuous, then pick from the table
+- Check each pick: in the R Companion panel, under **Test**, click **Check my test choice**
+
 ## The White Paper and Its Poster
 
 - **The White Paper:** IMRaD in APA 7, with effect sizes, confidence intervals, and power statistics

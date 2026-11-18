@@ -1,0 +1,58 @@
+---
+title: "Your Questions and Their Tests"
+subtitle: "RQ and Hypothesis worksheet"
+---
+
+How to use this worksheet: copy each research question or hypothesis from your Prospectus or Research Proposal into its own table, word for word. Then replace every line in italics with your answer. Most studies have one to three questions; delete any table you do not use.
+
+# Question 1
+
+| Element | Your entry |
+|:--|:--|
+| Label | *RQ1 or H1* |
+| Your question or hypothesis, word for word | *Paste it here.* |
+| Variables it names | *List each variable, such as message length or channel type.* |
+| Discrete or continuous | *Write discrete or continuous beside each variable.* |
+| Outcome | *The variable you measure or count.* |
+| Other variable | *The variable the outcome is compared across or predicted from. Write none if the question names only one variable.* |
+| Test | *Chi-square, Welch t-test, one-way ANOVA, linear regression, or counts and percents.* |
+
+# Question 2
+
+| Element | Your entry |
+|:--|:--|
+| Label | *RQ2 or H2* |
+| Your question or hypothesis, word for word | *Paste it here.* |
+| Variables it names | *List each variable.* |
+| Discrete or continuous | *Write discrete or continuous beside each variable.* |
+| Outcome | *The variable you measure or count.* |
+| Other variable | *The variable the outcome is compared across or predicted from, or none.* |
+| Test | *The test from the table below.* |
+
+# Question 3
+
+| Element | Your entry |
+|:--|:--|
+| Label | *RQ3 or H3* |
+| Your question or hypothesis, word for word | *Paste it here.* |
+| Variables it names | *List each variable.* |
+| Discrete or continuous | *Write discrete or continuous beside each variable.* |
+| Outcome | *The variable you measure or count.* |
+| Other variable | *The variable the outcome is compared across or predicted from, or none.* |
+| Test | *The test from the table below.* |
+
+# Which Test
+
+**Discrete (categorical):** each value is a category you count, not a number you average, such as gaming or non-gaming, or a code from your codebook. A code stored as a number is still discrete.
+
+**Continuous (numeric):** each value is a measured number where an average makes sense, such as message length in characters.
+
+| Outcome | Other variable | Test |
+|:--|:--|:--|
+| Discrete | Discrete | Chi-square, with Cramér's V |
+| Continuous | Two groups | Welch t-test, with Cohen's d |
+| Continuous | Three or more groups | One-way ANOVA, with eta squared |
+| Continuous | Continuous | Linear regression, with R² |
+| One variable alone | None | Counts and percents, no test |
+
+In your paper, regression takes two numbers. A category goes to the t-test or ANOVA.
