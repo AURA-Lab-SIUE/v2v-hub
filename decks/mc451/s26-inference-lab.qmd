@@ -18,6 +18,7 @@ format:
 - Report the result in one line of statistics, then in one plain sentence
 - Report an effect size every time, and a result that is not significant
 - The White Paper, assigned today
+- Your own questions: the variables and the test for each
 
 ## Today's Job
 
@@ -267,6 +268,72 @@ summary(fit_lm)
 
 The work left is assembly and honesty, not starting over.
 
+## Now Your Own Study
+
+- The Inferencing Data worksheet runs its tests on the Twitch example; your White Paper runs on your own questions
+- Your questions are in your Prospectus, under Research questions or hypotheses
+- For each one, settle three things before the break:
+    - Which variables it names
+    - Whether each variable is discrete or continuous
+    - Which test the pair calls for
+
+## Discrete or Continuous
+
+::: {.define}
+**Discrete (categorical):** each value is a category you count, not a number you average. Example: gaming or non-gaming, a viewer band, a code from your codebook.
+:::
+
+::: {.define}
+**Continuous (numeric):** each value is a measured number where an average makes sense. Example: message length in characters, the hour of the day.
+:::
+
+- Ask: would "the average ______" make sense? Yes means continuous; no means discrete
+- A code stored as a number is still discrete: 1 for apology and 2 for denial are labels
+
+## Why a Category Skips Regression
+
+::: {.define}
+**Dummy variable:** a category recoded as 0 and 1 so a regression can use it. Example: non-gaming is 0 and gaming is 1.
+:::
+
+- Give `lm()` gaming status and R makes it a dummy for you
+- Its slope, **-5.21**, is exactly the gap the t-test found
+- So a two-group category already has its test: the t-test
+
+## One Hypothesis, Worked Through
+
+> H1: Gaming channels produce shorter chat messages than non-gaming channels.
+
+| Variable | Discrete or continuous | Role |
+|---|---|---|
+| Message length | Continuous | Outcome |
+| Gaming status | Discrete, two groups | Other variable |
+
+- **Test:** Welch t-test, with Cohen's *d*
+
+## The Variables Choose the Test
+
+| Outcome | Other variable | Test |
+|---|---|---|
+| Discrete | Discrete | Chi-square, Cramér's *V* |
+| Continuous | Two groups | Welch t-test, Cohen's *d* |
+| Continuous | Three or more groups | One-way ANOVA, eta squared |
+| Continuous | Continuous | Linear regression, *R*² |
+| One variable alone | None | Counts and percents, no test |
+
+- Regression takes two numbers; a category goes to the t-test or ANOVA
+- Two numbers can also take a correlation, *r*: [Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#two-continuous-variables-correlation)
+
+## Your Turn: Your Questions
+
+- Download the [RQ and Hypothesis worksheet (Word)](https://aura-lab.siue.edu/v2v-hub/resources/templates/rq-test-worksheet.docx)
+- Copy each research question and hypothesis from your Prospectus into its own table, word for word
+- For each one, fill in:
+    - The variables it names
+    - Discrete or continuous, for each variable
+    - Which variable is the outcome, and which is the other variable
+    - The test, from the table on the slide before
+
 ## Checkpoint
 
 You should now have, in your worksheet:
@@ -276,6 +343,7 @@ You should now have, in your worksheet:
 - The one-line statistical report, in the format shown above
 - The plain-English sentence that goes with it
 - The White Paper assignment open, and its rubric read
+- The RQ and Hypothesis worksheet, one table per question, each with its variables and its test
 
 ## Before Next Time
 
