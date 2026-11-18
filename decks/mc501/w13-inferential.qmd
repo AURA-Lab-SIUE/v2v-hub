@@ -115,8 +115,7 @@ chi
 cramers_v(counts, adjust = FALSE)
 ```
 
-- Does a message contain a question mark, and does that depend on the kind of channel?
-- `str_detect()` marks each message TRUE or FALSE; `xtabs()` counts the grid
+- Does a message contain a question mark (`str_detect()`), and does that depend on the kind of channel? `xtabs()` counts the grid
 
 ## Two Categories: Chi-Square (cont.)
 
@@ -673,7 +672,7 @@ All three are the general linear model, wearing three different names.
 **Residual:** the gap between a real value and the value the model predicts for it. Example: if the model predicts 29 characters and the message has 400, the residual is 371.
 :::
 
-- A model's credibility rests on its residuals, and `plot(fit_lm)`, where `fit_lm` is the model the **Linear regression** block saves, draws four diagnostic plots
+- A model's credibility rests on its residuals; `plot(fit_lm)` draws four diagnostic plots of the **Linear regression** block's model
     - Residuals against fitted values: checks linearity and equal spread
     - A Q-Q plot: checks whether the residuals are normally distributed
     - Leverage: checks whether one point is carrying the result
