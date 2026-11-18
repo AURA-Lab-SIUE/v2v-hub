@@ -43,13 +43,13 @@ Today we settle that question. There are no formulas to memorize, only questions
 - The Inferencing Data worksheet is part 3 of the Twitch job
 - Four hypotheses first, written before any code
 - Then four tests: chi-square, t-test, ANOVA, and regression
-    - The t-test runs on the thirty messages you hand-coded
 - Every test is reported with its effect size
 
-[MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
+## Get the Worksheet
 
-- Click the link: your browser saves 13-inferencing-data-mc451.qmd in your Downloads folder
-- Move it into your workspace's top folder, next to README.md and the Data Wrangling worksheet: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+- Click the [MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) link: your browser saves 13-inferencing-data-mc451.qmd in your Downloads folder
+- Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+- Check your work against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
 ## What a Test Actually Asks
 

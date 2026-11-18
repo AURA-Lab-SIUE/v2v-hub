@@ -26,21 +26,28 @@ format:
 - Tuesday the test ran on the example data; today you fill the Inferencing Data worksheet
     - Each test correctly chosen, correctly read, honestly reported
     - The same settings block, changed, runs on your own data for the paper
-- The White Paper is assigned today
-- Work in the worksheet, not in the console (the R terminal, where typed lines are not saved)
+
+## Open the Worksheet
+
 - In VS Code's Explorer, open 13-inferencing-data-mc451.qmd, the copy you saved in your workspace's top folder
     - [A fresh copy of the worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd), if you need one
-- [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
+- Work in the worksheet, not in the console (the R terminal, where typed lines are not saved)
+- Check your work against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
 ## Pick Your Test First
 
-For each pair in the worksheet's Part 0, fill in these three lines before you touch the keyboard:
+For each pair in the worksheet's Part 0, fill in three lines:
 
 - **My outcome variable is ______**, and it is numeric or categorical
 - **I compare it across, or predict it from, ______**: two groups, three or more groups, or a number
 - Therefore the test is ______
 
-A number and two groups: **t-test**. A number and three or more groups: **ANOVA**. Two categories: **chi-square**. A number and a number, or a number and two groups coded 0 and 1: **linear regression**.
+## Pick Your Test First (cont.)
+
+- A number and two groups: **t-test**
+- A number and three or more groups: **ANOVA**
+- Two categories: **chi-square**
+- A number and a number, or a number and two groups coded 0 and 1: **linear regression**
 
 ## Check Your Choice
 
@@ -359,18 +366,13 @@ The work left is assembly and honesty, not starting over.
 | Continuous | Continuous, or a dummy coded 0 and 1 | Linear regression, *R*² |
 | One variable alone | None | Counts and percents, no test |
 
-- Regression takes a numeric outcome and a numeric or dummy-coded predictor
 - Two numbers can also take a correlation, *r*: [Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#two-continuous-variables-correlation)
 
 ## Your Turn: Your Questions
 
 - Download the [RQ and Hypothesis worksheet (Word)](https://aura-lab.siue.edu/v2v-hub/resources/templates/rq-test-worksheet.docx)
 - Copy each research question and hypothesis from your Prospectus into its own table, word for word
-- For each one, fill in:
-    - The variables it names
-    - Discrete or continuous, for each variable
-    - Which variable is the outcome, and which is the other variable
-    - The test, from the table on the slide before
+- Fill in each table's rows: the variables, discrete or continuous, the outcome, and the test
 
 ## Checkpoint
 
@@ -378,20 +380,21 @@ You should now have, in your worksheet:
 
 - A chosen test, with a written reason for choosing it
 - Output showing the means, the test statistic, *p*, and the effect size
-- The one-line statistical report, in the format of the model for your test
-- The plain-English sentence that goes with it
+- The one-line statistical report, in the format of the model for your test, and its plain-English sentence
 - The White Paper assignment open, and its rubric read
 - The RQ and Hypothesis worksheet, one table per question, each with its variables and its test
+
+## Inferencing Data, Due December 4
+
+- Due Friday, December 4, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points
+- Check your worksheet against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
+- Step by step: [Run a Test and Check Your Test Choice](https://aura-lab.siue.edu/v2v-hub/guides/mc451/10-tests-and-check-my-test-choice.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490908&a=168993969)
 
 ## Before Next Time
 
 - Due Friday, November 20, 11:59 PM: [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#describing-data-in-r), 75 points
-- Due Friday, December 4, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points
-- Check your worksheet against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
-- Step by step: [Run a Test and Check Your Test Choice](https://aura-lab.siue.edu/v2v-hub/guides/mc451/10-tests-and-check-my-test-choice.html), with its [walkthrough video](https://siue.yuja.com/V/Video?v=17490908&a=168993969)
 - Read Chapter 14, "The one-click report," before Tuesday
-- Tuesday is The Publisher: assembling the whole study into one document
-    - Bring your figures and your test output
+- Tuesday is The Publisher: bring your figures and your test output
 - Start thinking about your title
 
 ## Questions, Comments, or Concerns? {.titlecard}
