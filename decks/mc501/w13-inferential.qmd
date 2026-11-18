@@ -37,11 +37,10 @@ format:
 ## The Twitch Job, Part 3
 
 - The Inferencing Data worksheet is part 3 of the Twitch job
-- Four hypotheses first, written before any code
-- Four tests: chi-square, t-test, ANOVA, and regression
-    - The t-test runs on the thirty messages you hand-coded
-- Checks: assumptions, intervals, Welch's ANOVA, Tukey's HSD, and power
+- Four hypotheses first, then four tests
 - Every test is reported with its effect size
+
+## Get the Worksheet
 
 [MC 501 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc501.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
@@ -246,6 +245,9 @@ mean in group FALSE  mean in group TRUE
 - The ordinary (Student) t-test assumes the two groups have equal spread
     - Week 12 showed standard deviations of 60.68 against 38.47
     - The Welch version drops that assumption, so it is the safer default
+
+## Reading t and df
+
 - `t = 4.9418` measures the gap in units of its own noise
     - The sign shows direction only
 - `df` is not a round number because Welch computes it from both groups
@@ -359,12 +361,14 @@ means_ci <- analysis %>%
 This code computes each group's mean and standard error, then turns the standard error into
 a ninety-five percent confidence interval you can plot.
 
-## Writing the Result Up
+## What the Intervals Show
 
 - The two confidence intervals are tiny, and they do not overlap
     - That is the visual signature of statistical significance
 - Both points still sit close together, far above zero
     - That is the negligible effect size made visible
+
+## Writing the Result Up
 
 > Gaming channels produced shorter chat messages on average than non-gaming channels
 > (28.49 vs. 33.70 characters; *n* = 31,305 and 3,457), Welch's *t*(3768.7) = -4.94, *p* < .001, Cohen's *d* = -0.13.
@@ -691,7 +695,7 @@ is gaming [TRUE] |      -0.13 | [-0.16, -0.09]
 
 All three are the general linear model, wearing three different names.
 
-## Residuals, and Whether a Variable Earns Its Place
+## Residuals
 
 ::: {.define}
 **Residual:** the gap between a real value and the value the model predicts for it. Example: if the model predicts 29 characters and the message has 400, the residual is 371.
@@ -701,6 +705,9 @@ All three are the general linear model, wearing three different names.
     - Residuals against fitted values: checks linearity and equal spread
     - A Q-Q plot: checks whether the residuals are normally distributed
     - Leverage: checks whether one point is carrying the result
+
+## Whether a Variable Earns Its Place
+
 - Whether an added variable earns its place in the model is a model-comparison question
     - Compare adjusted R², AIC, or a nested F-test, never raw R²
 
