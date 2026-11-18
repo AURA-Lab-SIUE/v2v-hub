@@ -13,10 +13,10 @@ format:
 
 ## Today's Agenda
 
-- Three rounds of peer review
-- Turn the two reviews you receive into a revision list
-- Draft the reflection paragraph
-- Deploy your site before you leave, with the [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd)
+- Peer review, three rounds
+- Your revision list
+- The reflection
+- Deploying your site
 
 ## Today Is a Working Session
 
@@ -30,7 +30,6 @@ Leave today knowing exactly what is left to do.
 ## What You Should Have in Hand
 
 - A rendered draft, even if some sections are thin
-    - Thin is expected. A rough draft is the point of today
 - Your three figures, produced by code inside the document
 - Your test output: the means, the statistic, *p*, and the effect size
 - A project that builds without error
@@ -57,7 +56,7 @@ If your render is broken, say so now.
 
 ## Reading the Rubric
 
-The full rubric is in the [White Paper entry](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper) on the Assignments page. Read it as five questions:
+Read the [White Paper rubric](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper) as five questions:
 
 - Does the paper answer its own question?
 - Could someone else repeat the study from the Methods?
@@ -120,15 +119,14 @@ Turn the two reviews you received into one list with three parts:
 - **Should fix:** clarity, labels, and tighter prose
 - **Disagree, and here is why:** you are the author, and you may decline a suggestion with a reason
 
-Then save the list:
+## Save the Revision List
 
 - Save it in your White Paper folder: **File**, then **New Text File**, type the list, then **File**, **Save As**, and name it revision-list.txt
 - It is your plan for finals week
 
 ## The Reflection Paragraph
 
-- One paragraph. It is not part of IMRaD and it is not a result
-- It is your candid account of what the study taught you
+- One paragraph, outside IMRaD: your candid account of what the study taught you
     - What turned out harder than expected
     - Where a coding rule proved ambiguous in practice
     - What the dataset could not answer, and why
@@ -177,7 +175,6 @@ Before you leave today you should have:
 - Step by step: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html), [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc451/13-publish-your-site.html)
 - Next week, December 8 to 12, is a work session: open lab, with help in the room
 - Work the must-fix list first. The rest is optional
-- Re-render after every change, so every number stays computed, not typed
 - Deploy early, not the night before
 - You began the term with a curiosity and no tools. You finish with a published,
   reproducible study at a public address
