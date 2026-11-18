@@ -14,33 +14,33 @@ format:
 
 ## Today's Agenda
 
-- The Twitch job, part 3: the Inferencing Data worksheet
-- What a test asks, and the two numbers every test reports
-- The chi-square test for two categories
-- The t-test for two groups, and a result that is not significant
-- ANOVA for three or more groups, then regression
-- A model write-up for each test
-- The White Paper and its poster, both assigned tonight
+- The Twitch job, part 3
+- What a test asks
+- Chi-square
+- The t-test
+- ANOVA
+- Regression
+- Your questions, your tests
+- The White Paper and its poster
 
 ## What We Build Today
 
-- Four tests, in the order the variables call for them
-    - Chi-square, then the t-test that settles the example study's question
-    - Then an ANOVA, and a regression that contains both
-- The checks that decide whether any of it holds
-- Two deliverables open this week: the paper and the poster
-- You leave with the sentence that goes in your Results
-
-The doing is one function call. The thinking around it takes the evening.
+- Four tests
+    - Chi-square
+    - The t-test
+    - ANOVA
+    - Regression
+- The checks that decide whether a result holds
+- A model write-up for each test
+- Two deliverables: the White Paper and its poster
 
 ## The Twitch Job, Part 3
 
 - The Inferencing Data worksheet is part 3 of the Twitch job
-- Four hypotheses first, written before any code
-- Then four tests: chi-square, t-test, ANOVA, and regression
-    - The t-test runs on the thirty messages you hand-coded
-- Plus assumptions, intervals, Welch's ANOVA, Tukey's HSD, and power
+- Four hypotheses first, then four tests
 - Every test is reported with its effect size
+
+## Get the Worksheet
 
 [MC 501 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc501.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
@@ -56,13 +56,11 @@ The doing is one function call. The thinking around it takes the evening.
 - The test starts from the null hypothesis
     - The null hypothesis says there is no pattern: no link, no gap
 
-## The Coin Analogy
+## How a Test Decides
 
-- Assume the coin is fair
-- Work out how often a fair coin lands this lopsided
-- Judge the assumption by how surprising the data are under it
-
-That is the whole logic of a test, applied to data instead of one coin.
+- Assume the null hypothesis is true: no real link or gap
+- Ask how often a pattern this big would show up anyway, by chance alone
+- That share is the p-value; a small one makes the null hard to believe
 
 ## What Every Test Reports
 
@@ -245,6 +243,9 @@ mean in group FALSE  mean in group TRUE
 - The ordinary (Student) t-test assumes the two groups have equal spread
     - Week 12 showed standard deviations of 60.68 against 38.47
     - The Welch version drops that assumption, so it is the safer default
+
+## Reading t and df
+
 - `t = 4.9418` measures the gap in units of its own noise
     - The sign shows direction only
 - `df` is not a round number because Welch computes it from both groups
@@ -358,12 +359,14 @@ means_ci <- analysis %>%
 This code computes each group's mean and standard error, then turns the standard error into
 a ninety-five percent confidence interval you can plot.
 
-## Writing the Result Up
+## What the Intervals Show
 
 - The two confidence intervals are tiny, and they do not overlap
     - That is the visual signature of statistical significance
 - Both points still sit close together, far above zero
     - That is the negligible effect size made visible
+
+## Writing the Result Up
 
 > Gaming channels produced shorter chat messages on average than non-gaming channels
 > (28.49 vs. 33.70 characters; *n* = 31,305 and 3,457), Welch's *t*(3768.7) = -4.94, *p* < .001, Cohen's *d* = -0.13.
@@ -690,7 +693,7 @@ is gaming [TRUE] |      -0.13 | [-0.16, -0.09]
 
 All three are the general linear model, wearing three different names.
 
-## Residuals, and Whether a Variable Earns Its Place
+## Residuals
 
 ::: {.define}
 **Residual:** the gap between a real value and the value the model predicts for it. Example: if the model predicts 29 characters and the message has 400, the residual is 371.
@@ -700,6 +703,9 @@ All three are the general linear model, wearing three different names.
     - Residuals against fitted values: checks linearity and equal spread
     - A Q-Q plot: checks whether the residuals are normally distributed
     - Leverage: checks whether one point is carrying the result
+
+## Whether a Variable Earns Its Place
+
 - Whether an added variable earns its place in the model is a model-comparison question
     - Compare adjusted R², AIC, or a nested F-test, never raw R²
 
@@ -748,7 +754,7 @@ All three are the general linear model, wearing three different names.
 
 ## The White Paper and Its Poster
 
-- **The White Paper:** IMRaD in APA 7, with effect sizes, confidence intervals, and power statistics
+- **The White Paper:** IMRaD, one citation style used consistently, with effect sizes, confidence intervals, and power statistics
     - Its Methods carry three transparency markers: data provenance, the reliability report, and the pre-registration disclosure, citing the dated file in your repository
     - Its Discussion situates the finding in your theoretical literature
 
