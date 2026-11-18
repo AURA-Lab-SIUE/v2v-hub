@@ -22,7 +22,7 @@ By the end of Phase V, you will:
 :::{.learning-objectives}
 - Assemble a complete IMRaD research report from the work of the previous four phases
 - Render your report from source, with no pasted numbers, to both a PDF and a live web address
-- Manage citations in one consistently applied style (MC 501: APA 7th edition)
+- Manage citations in one consistently applied style of your choosing, such as APA 7
 - Deploy your paper to GitHub Pages
 - Write honestly about what your study could and could not establish
 :::
@@ -171,7 +171,7 @@ All three must be present for the submission to be considered complete.
 | Methods | 55 | Repeatable in detail, and carries the three transparency markers: a data provenance statement, a coder reliability report giving your intracoder stability figure, the procedure that produced it and the threshold applied, with the single-coder limitation named as such, and the pre-registration disclosure: the dated pre-registration file in your project repository, cited by path and commit, and every departure from it. |
 | Results | 40 | Reports the findings without interpretation, including effect sizes and the power statistics behind the design. Figures are labeled and captioned. |
 | Discussion | 40 | Interprets the findings, situates them within the theoretical literature, distinguishes statistical significance from practical size, and states the limits. |
-| Abstract and references | 15 | The abstract summarizes all four sections. References are complete and in APA 7th edition. |
+| Abstract and references | 15 | The abstract summarizes all four sections. References are complete, in one consistently applied citation style of the student's choosing. |
 | Reproducibility and publication | 15 | The document renders from source with no pasted numbers, and is live at a public address. |
 | Reflection | 10 | One specific paragraph naming what proved harder than expected, what the data could not answer, and what a second attempt would change. |
 

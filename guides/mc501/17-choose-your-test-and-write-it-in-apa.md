@@ -18,7 +18,7 @@ The same 120 Power Rangers episodes as [guide 16](16-describe-counts-and-source-
 - **Outcome:** the variable you are explaining or comparing, such as votes.
 - **Unit of analysis:** the thing each row stands for in a test: an item (an episode, a post) or a source (a season, an account).
 - **Expected count:** how many items a chi-square expects in a cell if the two categories had nothing to do with each other.
-- **APA sentence:** one sentence that reports a result the way APA style asks: the finding in words, then the statistic, its degrees of freedom, the p-value, and the effect size.
+- **APA sentence:** one sentence that reports a result the way APA style asks: the finding in words, then the statistic, its degrees of freedom, the p-value, and the effect size. APA is one widely used style, and the one these examples follow; your White Paper may use another, as long as it keeps to that one style throughout.
 
 ### How to run lines in this guide
 

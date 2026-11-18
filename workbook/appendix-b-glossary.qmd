@@ -14,7 +14,7 @@ Key terms from this workbook, defined in plain English.
 : The claim that there *is* a relationship between two variables. This is what you're hoping to find evidence for. If the p-value is small enough, you reject the null hypothesis in favor of this one.
 
 **APA Format**
-: The citation and writing style used by the American Psychological Association. In research methods, it refers specifically to how you report statistical results, for example *χ²(5) = 23.41, p < .001*.
+: The citation and writing style used by the American Psychological Association. In research methods, it refers specifically to how you report statistical results, for example *χ²(5) = 23.41, p < .001*. It is one widely used style; the White Paper may use another, as long as it keeps to that one style throughout.
 
 **Categorical Variable**
 : A variable whose values are groups or labels, not numbers on a scale. Examples: genre (pop, rock, rap), tone (positive, neutral, negative), mode (major, minor).
