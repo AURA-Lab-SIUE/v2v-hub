@@ -52,7 +52,7 @@ How to use this worksheet: copy each research question or hypothesis from your P
 | Discrete | Discrete | Chi-square, with Cramér's V |
 | Continuous | Two groups | Welch t-test, with Cohen's d |
 | Continuous | Three or more groups | One-way ANOVA, with eta squared |
-| Continuous | Continuous | Linear regression, with R² |
+| Continuous | Continuous, or two groups coded 0 and 1 | Linear regression, with R² |
 | One variable alone | None | Counts and percents, no test |
 
-In your paper, regression takes two numbers. A category goes to the t-test or ANOVA.
+Two groups coded 0 and 1 (a dummy variable) give the same answer in a t-test and in a regression.

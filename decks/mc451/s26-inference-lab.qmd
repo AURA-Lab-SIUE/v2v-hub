@@ -40,7 +40,7 @@ For each pair in the worksheet's Part 0, fill in these three lines before you to
 - **I compare it across, or predict it from, ______**: two groups, three or more groups, or a number
 - Therefore the test is ______
 
-A number and two groups: **t-test**. A number and three or more groups: **ANOVA**. Two categories: **chi-square**. Two numbers: **linear regression**.
+A number and two groups: **t-test**. A number and three or more groups: **ANOVA**. Two categories: **chi-square**. A number and a number, or a number and two groups coded 0 and 1: **linear regression**.
 
 ## Check Your Choice
 
@@ -326,15 +326,17 @@ The work left is assembly and honesty, not starting over.
 - Ask: would "the average ______" make sense? Yes means continuous; no means discrete
 - A code stored as a number is still discrete: 1 for apology and 2 for denial are labels
 
-## Why a Category Skips Regression
+## A Number or a Category
 
 ::: {.define}
 **Dummy variable:** a category recoded as 0 and 1 so a regression can use it. Example: non-gaming is 0 and gaming is 1.
 :::
 
-- Give `lm()` gaming status and R makes it a dummy for you
-- Its slope, **-5.21**, is exactly the gap the t-test found
-- So a two-group category already has its test: the t-test
+- The outcome is always a number, such as message length
+- **A number as predictor:** the slope is the change per one-unit step, such as characters per hour
+- **A two-group category as predictor:** give `lm()` gaming status and R makes it a dummy for you
+    - Its slope, **-5.21**, is the gap between the two group means, the same gap the t-test found
+- So two groups can take either the t-test or a regression with a dummy
 
 ## One Hypothesis, Worked Through
 
@@ -354,10 +356,10 @@ The work left is assembly and honesty, not starting over.
 | Discrete | Discrete | Chi-square, Cramér's *V* |
 | Continuous | Two groups | Welch t-test, Cohen's *d* |
 | Continuous | Three or more groups | One-way ANOVA, eta squared |
-| Continuous | Continuous | Linear regression, *R*² |
+| Continuous | Continuous, or a dummy coded 0 and 1 | Linear regression, *R*² |
 | One variable alone | None | Counts and percents, no test |
 
-- Regression takes two numbers; a category goes to the t-test or ANOVA
+- Regression takes a numeric outcome and a numeric or dummy-coded predictor
 - Two numbers can also take a correlation, *r*: [Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#two-continuous-variables-correlation)
 
 ## Your Turn: Your Questions
