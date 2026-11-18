@@ -1,0 +1,152 @@
+---
+title: "When Your Question Has One Variable"
+subtitle: "MC 451 and MC 501 · a test for a research question or hypothesis about one thing"
+---
+
+Most tests in this course compare two variables. Some research questions and hypotheses name only one, such as "Most comments praise the creator" or "Messages in this chat are short." This page shows which test fits a single variable, and when no test fits. Nothing here is graded.
+
+## Key terms {#key-terms}
+
+- **Expected value:** what you would see if your prediction were wrong, written down before you look at your data. It is a share (such as half) or a number (such as 140 characters).
+- **Goodness-of-fit test:** a chi-square test that compares the counts you coded with the counts your expected shares predict.
+- **One-sample t-test:** a test that compares the average of one numeric variable with one benchmark number.
+- **Benchmark:** the number you compare your average with. It comes from a rule, an official figure, or an earlier study you can cite.
+
+## Pick the route {#pick}
+
+| Your one variable | What you predict | Test |
+|:--|:--|:--|
+| Discrete (categories you count) | A share, such as "most" or "more than a quarter" | Chi-square goodness of fit |
+| Continuous (a number you average) | Above or below a benchmark number | One-sample t-test |
+| Either kind | No expected share or benchmark you can justify | No test: report counts and percents, or the average |
+
+If you coded each item into a category (yes or no, or a list of types), your variable is discrete. If each item gets a number you can average (a length, a count, a score), it is continuous.
+
+When you use the last row, write one sentence in your paper saying why: no theory or earlier figure gives an expected value, so the question is answered by description.
+
+## State the expected value first {#expected}
+
+Write the expected value into your hypothesis before you run anything. It needs a reason a reader can check.
+
+- **"Most" or "mostly":** the expected share is half (0.5). If your coded category is more than half and the test says the split differs from half, the prediction holds.
+- **A share from an earlier study:** if a study you annotated found that 20 percent of comments asked a question, the expected shares are 0.2 and 0.8.
+- **A benchmark number:** a platform rule (such as a character limit), an official figure, or an average an earlier study reports.
+
+An expected value chosen after you see your own numbers is not a test. It is a description.
+
+## Test 1: Chi-square goodness of fit {#goodness-of-fit}
+
+**The example.** H1: Most chat messages in big Twitch channels speak to the stream rather than tag another chatter. The reason: big-channel chat moves too fast for back-and-forth, so few messages are addressed to one person. The variable is coded yes or no for each message: does it tag someone with `@`? The expected shares are 0.5 and 0.5, because "most" means more than half.
+
+**Run it.** The R Companion has no menu item for this test, so you start from its frequency table and add two lines.
+
+1. Open your analysis file in VS Code. Click the R Companion icon on the left edge of VS Code, open **Describe**, and click **Frequency table**. Pick your coded column when it asks. A gray box of code appears in your file. Its first line is your table's name followed by `%>%` (in the worksheets, `analysis %>%`), and the name inside `count()` is your column.
+2. In that gray box, type `counts <- ` in front of the first line, so it reads `counts <- analysis %>%`.
+3. At the bottom of the same gray box, add these two lines:
+
+```r
+counts
+
+chisq.test(counts$n, p = c(0.5, 0.5))
+```
+
+4. Click **Run Cell**, the small link just above the gray box. The results appear under the box.
+
+The whole box now reads like this, with your own table and column names:
+
+```r
+counts <- analysis %>%
+  count(tags_someone, sort = TRUE) %>%
+  mutate(percent = round(100 * n / sum(n), 1))
+
+counts
+
+chisq.test(counts$n, p = c(0.5, 0.5))
+```
+
+`p = c(0.5, 0.5)` holds the expected shares, one for each row of `counts`, and they add up to 1. The rows print biggest count first, so the first share goes with the top row. For a share from an earlier study, write it in that order, such as `p = c(0.8, 0.2)` when the top row is the one expected at 80 percent.
+
+**What R prints.** This output comes from a sample of 200 messages from the course Twitch data.
+
+```
+  tags_someone     n percent
+1 no tag         182      91
+2 tags someone    18       9
+
+	Chi-squared test for given probabilities
+
+data:  counts$n
+X-squared = 134.48, df = 1, p-value < 2.2e-16
+```
+
+- `n` holds the counts and `percent` their shares: 182 of 200 messages (91 percent) tag no one.
+- `X-squared` is the chi-square statistic. It grows as your counts move away from the expected ones.
+- `df` is the number of categories minus 1, here 1.
+- `p-value < 2.2e-16` is smaller than R will print, so *p* < .001. The split differs from half and half. The counts show which way: far more messages tag no one.
+
+**Write it up.**
+
+> Most chat messages in the sample tagged no other chatter (182 of 200, 91%). This split differed from an even split, χ²(1, *N* = 200) = 134.48, *p* < .001, supporting H1.
+
+## Test 2: One-sample t-test {#one-sample-t}
+
+**The example.** H2: Twitch chat messages are shorter than Twitter's original 140-character limit, a common yardstick for a short post. The variable is each message's length in characters. The benchmark is 140.
+
+**Run it.** The R Companion has no menu item for this test either, so you start from its summary and add three lines.
+
+1. In the R Companion, open **Describe** and click **Total, smallest, middle, average, and biggest**. Pick your number column when it asks. A gray box of code appears in your file.
+2. At the bottom of that gray box, add these three lines, with your table's name in place of `analysis`, your column's name in place of `message_length`, and your benchmark in place of `140`:
+
+```r
+sd(analysis$message_length, na.rm = TRUE)
+
+t.test(analysis$message_length, mu = 140)
+
+effectsize::cohens_d(analysis$message_length, mu = 140)
+```
+
+3. Click **Run Cell** above the gray box. The results appear under it.
+
+`effectsize::` tells R which package `cohens_d()` comes from, so it runs even if that package is not loaded yet.
+
+**What R prints.** Same 200-message sample.
+
+```
+  total smallest middle average biggest
+1  6409        1     15    32.0     404
+
+[1] 51.03189
+
+	One Sample t-test
+
+data:  analysis$message_length
+t = -29.917, df = 199, p-value < 2.2e-16
+alternative hypothesis: true mean is not equal to 140
+95 percent confidence interval:
+ 24.9292 39.1608
+sample estimates:
+mean of x
+   32.045
+
+Cohen's d |         95% CI
+--------------------------
+-2.12     | [-2.36, -1.86]
+```
+
+- `average` is the mean length, and the `[1]` line under the table is the standard deviation (*SD*): how spread out the lengths are.
+- `t` is negative because the average sits below 140. `df` is the number of messages minus 1.
+- `p-value < 2.2e-16` means *p* < .001: the average differs from 140.
+- The confidence interval, 24.9 to 39.2 characters, is the range the true average likely falls in. It does not reach 140.
+- **Cohen's d** is the effect size: how far the average sits from the benchmark, in standard deviations. Benchmarks: 0.2 small, 0.5 medium, 0.8 large. Here it is -2.12, a very large gap.
+
+**Write it up.**
+
+> Chat messages averaged 32.05 characters (*SD* = 51.03, *n* = 200), well below the 140-character benchmark, *t*(199) = -29.92, *p* < .001, Cohen's *d* = -2.12, supporting H2.
+
+## When no test fits {#descriptive}
+
+If no theory, rule, or earlier figure gives you an expected share or benchmark, do not invent one. Report the counts and percents (a discrete variable) or the average and standard deviation (a continuous variable), and add one sentence such as: "No earlier figure gives an expected share for this category, so RQ1 is answered descriptively."
+
+If your study codes a second variable, check whether one of your questions can compare the two. Then a chi-square, t-test, or ANOVA fits, and the [RQ and Hypothesis worksheet](../templates/rq-test-worksheet.docx) shows which.
+
+For the two-variable tests, see the [Inferencing Data help](inferencing-data.qmd) and the [stats cheat sheet](../cheat-sheets/stats.qmd).

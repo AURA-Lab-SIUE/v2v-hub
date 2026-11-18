@@ -14,6 +14,8 @@ Each R worksheet has a help page, with what to do when a step goes wrong, and a 
 | Describing Data (Chapter 12) | [Describing Data help](help/describing-data.qmd) | [Describing Data risks](risks/describing-data.qmd) |
 | Inferencing Data (Chapter 13) | [Inferencing Data help](help/inferencing-data.qmd) | [Inferencing Data risks](risks/inferencing-data.qmd) |
 
+If your research question or hypothesis names only one variable, [When Your Question Has One Variable](help/one-variable.qmd) shows the test that fits, or why none does.
+
 If your worksheet was downloaded before the new layout, [Move your work to the new worksheet](help/move-your-work.qmd) shows how to copy your answers into it.
 
 For a problem outside the worksheets, see [Something broken?](#something-broken) below.
