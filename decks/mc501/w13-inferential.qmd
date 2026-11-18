@@ -754,7 +754,7 @@ All three are the general linear model, wearing three different names.
 
 ## The White Paper and Its Poster
 
-- **The White Paper:** IMRaD in APA 7, with effect sizes, confidence intervals, and power statistics
+- **The White Paper:** IMRaD, one citation style used consistently, with effect sizes, confidence intervals, and power statistics
     - Its Methods carry three transparency markers: data provenance, the reliability report, and the pre-registration disclosure, citing the dated file in your repository
     - Its Discussion situates the finding in your theoretical literature
 
