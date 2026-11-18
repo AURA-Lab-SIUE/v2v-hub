@@ -56,13 +56,11 @@ format:
 - The test starts from the null hypothesis
     - The null hypothesis says there is no pattern: no link, no gap
 
-## The Coin Analogy
+## How a Test Decides
 
-- Assume the coin is fair
-- Work out how often a fair coin lands this lopsided
-- Judge the assumption by how surprising the data are under it
-
-That is the whole logic of a test, applied to data instead of one coin.
+- Assume the null hypothesis is true: no real link or gap
+- Ask how often a pattern this big would show up anyway, by chance alone
+- That share is the p-value; a small one makes the null hard to believe
 
 ## What Every Test Reports
 
