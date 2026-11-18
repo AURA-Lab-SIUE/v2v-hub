@@ -374,6 +374,7 @@ The work left is assembly and honesty, not starting over.
 - Download the [RQ and Hypothesis worksheet (Word)](https://aura-lab.siue.edu/v2v-hub/resources/templates/rq-test-worksheet.docx)
 - Copy each research question and hypothesis from your Prospectus into its own table, word for word
 - Fill in each table's rows: the variables, discrete or continuous, the outcome, and the test
+- Only one variable? [When Your Question Has One Variable](https://aura-lab.siue.edu/v2v-hub/resources/help/one-variable.html)
 
 ## Checkpoint
 

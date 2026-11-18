@@ -751,6 +751,7 @@ All three are the general linear model, wearing three different names.
 - Copy each research question or hypothesis from your Research Proposal into it, word for word
 - For each one, which test fits? Name its variables, mark each discrete or continuous, then pick from the table
 - Check each pick: in the R Companion panel, under **Test**, click **Check my test choice**
+- Only one variable? [When Your Question Has One Variable](https://aura-lab.siue.edu/v2v-hub/resources/help/one-variable.html)
 
 ## The White Paper and Its Poster
 
