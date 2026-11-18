@@ -365,6 +365,7 @@ The work left is assembly and honesty, not starting over.
 | Continuous | Three or more groups | One-way ANOVA, eta squared |
 | Continuous | Continuous, or a dummy coded 0 and 1 | Linear regression, *R*² |
 | One variable alone | None | Counts and percents, no test |
+| One variable, predicted ("mostly X") | None | Chi-square goodness of fit |
 
 - Two numbers can also take a correlation, *r*: [Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#two-continuous-variables-correlation)
 
