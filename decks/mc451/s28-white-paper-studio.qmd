@@ -93,7 +93,7 @@ Read the Methods only. Answer each question in writing:
 Read the Results and Discussion. Answer each question in writing:
 
 - Does every figure have a label, units, and a sentence saying what it shows?
-- Is the test reported in full, with the effect size?
+- Is the test reported in full, with the effect size, as in [the model for that test](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)?
 - Does the Discussion claim more than the Results support?
 - Are the stated limits real limits, or apologies?
 

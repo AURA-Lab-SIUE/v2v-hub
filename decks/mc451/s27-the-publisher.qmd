@@ -134,6 +134,8 @@ negligible, and the Discussion says what that implies for the opening question.
 
 Discussion is also where an honest study states its limits.
 
+A model write-up for each test: [Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
+
 ## One Book, Many Chapters
 
 - The report is not the only document the study produced

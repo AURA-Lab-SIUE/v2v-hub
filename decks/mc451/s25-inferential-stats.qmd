@@ -282,6 +282,7 @@ main_game | 0.02 | [0.02, 1.00]
 - It reported *F* = 92.26 and *p* < .001
 - Its effect size, eta-squared, is 0.02
 - In one sentence, how would you report this result to a reader?
+- Check your sentence: [the model in Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#more-than-two-groups-anova)
 
 ## From a Difference to a Model
 
