@@ -14,32 +14,33 @@ format:
 
 ## Today's Agenda
 
-- The Twitch job, part 3: the Inferencing Data worksheet
-- What a test asks, and the two numbers every test reports
-- The chi-square test for two categories
-- The t-test for two groups, and a result that is not significant
-- ANOVA for three or more groups, then regression
-- A model write-up for each test
-- The White Paper and its poster, both assigned tonight
+- The Twitch job, part 3
+- What a test asks
+- Chi-square
+- The t-test
+- ANOVA
+- Regression
+- Your questions, your tests
+- The White Paper and its poster
 
 ## What We Build Today
 
-- Four tests, in the order the variables call for them
-    - Chi-square, then the t-test that settles the example study's question
-    - Then an ANOVA, and a regression that contains both
-- The checks that decide whether any of it holds
-- Two deliverables open this week: the paper and the poster
-- You leave with the sentence that goes in your Results
-
-The doing is one function call. The thinking around it takes the evening.
+- Four tests
+    - Chi-square
+    - The t-test
+    - ANOVA
+    - Regression
+- The checks that decide whether a result holds
+- A model write-up for each test
+- Two deliverables: the White Paper and its poster
 
 ## The Twitch Job, Part 3
 
 - The Inferencing Data worksheet is part 3 of the Twitch job
 - Four hypotheses first, written before any code
-- Then four tests: chi-square, t-test, ANOVA, and regression
+- Four tests: chi-square, t-test, ANOVA, and regression
     - The t-test runs on the thirty messages you hand-coded
-- Plus assumptions, intervals, Welch's ANOVA, Tukey's HSD, and power
+- Checks: assumptions, intervals, Welch's ANOVA, Tukey's HSD, and power
 - Every test is reported with its effect size
 
 [MC 501 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc501.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
