@@ -16,6 +16,7 @@ format:
 
 - Choose your test before you run it
 - Report the result in one line of statistics, then in one plain sentence
+- A model write-up for each test
 - Report an effect size every time, and a result that is not significant
 - The White Paper, assigned today
 - Your own questions: the variables and the test for each
@@ -130,10 +131,10 @@ cohens_d(outcome ~ group2, data = analysis)
 This is the compact form journals expect, written with the example study's numbers:
 
 > Gaming channels produced shorter chat messages on average than non-gaming channels
-> (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.94, *p* < .001,
+> (28.49 vs. 33.70 characters; *n* = 31,305 and 3,457), Welch's *t*(3768.7) = -4.94, *p* < .001,
 > Cohen's *d* = -0.13.
 
-- Every element earns its place: both means, the test with its degrees of freedom, the *p*-value, and the effect size
+- Every element earns its place: both means, each group's *n*, the test with its degrees of freedom, the *p*-value, and the effect size
 - Never report *p* alone
 - The R Companion's **APA numbers to check your sentence** prints these numbers from your own run; check your sentence against it
 
@@ -227,6 +228,41 @@ summary(fit_lm)
 - In the `Coefficients` table, the `Estimate` on the `predictor` row is the slope: characters gained for each hour later in the day
 - The worksheet lists the slope and *p* you should see; report the `Multiple R-squared` line beside them
 - A t-test is a regression with one two-level grouping variable, and an ANOVA is a regression with one many-level grouping variable: same framework, different shape
+
+## Reporting a Chi-Square
+
+[Chapter 13, two categorical variables](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#two-categorical-variables-chi-square){.eyebrow}
+
+> Whether a message carried an at-mention was associated with whether its channel was gaming,
+> χ²(1, *N* = 34,762) = 31.15, *p* < .001, Cramér's *V* = .03.
+
+- **χ²(1, *N* = 34,762) = 31.15:** the statistic, its df, and the number of messages
+- **Cramér's *V* = .03:** the effect size, with no zero before the point because *V* never passes 1
+- **Common mistake:** leaving out *N*, or calling the link strong because *p* is tiny
+
+## Reporting an ANOVA
+
+[Chapter 13, more than two groups](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#more-than-two-groups-anova){.eyebrow}
+
+> Mean message length differed across the four game categories (*N* = 13,433), *F*(3, 13429) = 92.26,
+> *p* < .001, η² = .02. League of Legends chat ran shortest (*M* = 22.63 characters) and Just Chatting
+> chat longest (*M* = 39.03).
+
+- ***F*(3, 13429):** categories minus 1, then messages minus categories
+- **η² = .02:** game category accounts for about two percent of the variation
+- **Common mistake:** naming which pairs differ from *F* alone; that takes a follow-up test
+
+## Reporting a Regression
+
+[Chapter 13, from difference to model](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#from-difference-to-model-regression){.eyebrow}
+
+> Gaming status, coded 1 for gaming and 0 for non-gaming channels, was associated with message length,
+> *b* = -5.21, *SE* = 0.74, *t*(34760) = -7.06, *p* < .001, *R*² = .001.
+
+- **Coded 1 and 0:** gaming status is a dummy variable, so the slope is the gap between the groups
+- ***b* = -5.21:** the slope, in characters; ***R*² = .001:** the share of variation it explains
+- **Common mistake:** writing that gaming causes shorter messages; a slope describes an association
+- In the worksheet the predictor is a number, so the slope is characters per hour; the sentence keeps this shape
 
 ## Common Errors and What They Mean
 
@@ -340,7 +376,7 @@ You should now have, in your worksheet:
 
 - A chosen test, with a written reason for choosing it
 - Output showing the means, the test statistic, *p*, and the effect size
-- The one-line statistical report, in the format shown above
+- The one-line statistical report, in the format of the model for your test
 - The plain-English sentence that goes with it
 - The White Paper assignment open, and its rubric read
 - The RQ and Hypothesis worksheet, one table per question, each with its variables and its test
