@@ -15,17 +15,18 @@ format:
 ## Today's Agenda
 
 - The Twitch job, part 3: the Inferencing Data worksheet
-- The t-test that settles the example study's central question
-- What a p-value does and does not say, and a result that is not significant
+- What a test asks, and the two numbers every test reports
 - The chi-square test for two categories
-- ANOVA, regression, and the assumptions underneath them
+- The t-test for two groups, and a result that is not significant
+- ANOVA for three or more groups, then regression
 - The White Paper and its poster, both assigned tonight
 
 ## What We Build Today
 
-- The t-test that settles the example study's question
+- Four tests, in the order the variables call for them
+    - Chi-square, then the t-test that settles the example study's question
     - Then an ANOVA, and a regression that contains both
-    - Then the checks that decide whether any of it holds
+- The checks that decide whether any of it holds
 - Two deliverables open this week: the paper and the poster
 - You leave with the sentence that goes in your Results
 
@@ -45,24 +46,14 @@ The doing is one function call. The thinking around it takes the evening.
 - Click the link: your browser saves `13-inferencing-data-mc501.qmd` in your Downloads folder
 - Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
 
-## The Gap and the Doubt
-
-- In the example data, gaming channels averaged 28.49 characters per message, non-gaming channels 33.70
-    - That is a difference of a little over five characters
-- The doubt about that gap is not idle
-    - Split any group in two at random and the two averages differ
-- The gap could be real, or it could be ordinary sampling wobble
-
-The histogram cannot tell the two apart, because both produce a gap.
-
 ## What a Test Actually Asks
 
-- Nobody cares about those 34,762 example messages as such
+- Nobody cares about the 34,762 example messages as such
     - They were measured to learn about chat in general
-- The honest question is not whether a gap exists in the sample
-    - It is whether chance is an unconvincing explanation for that gap
+- The honest question is not whether a pattern exists in the sample
+    - It is whether chance is an unconvincing explanation for that pattern
 - The test starts from the null hypothesis
-    - The null hypothesis says the two groups share one true mean length
+    - The null hypothesis says there is no pattern: no link, no gap
 
 ## The Coin Analogy
 
@@ -70,14 +61,26 @@ The histogram cannot tell the two apart, because both produce a gap.
 - Work out how often a fair coin lands this lopsided
 - Judge the assumption by how surprising the data are under it
 
-That is the whole logic of a test, applied to two groups instead of one coin.
+That is the whole logic of a test, applied to data instead of one coin.
+
+## What Every Test Reports
+
+::: {.define}
+**p-value:** how likely a pattern at least this big would be if the null hypothesis were true. Below .05 is called *statistically significant*.
+:::
+
+::: {.define}
+**Effect size:** how big a difference or a relationship is, on a scale that does not grow with the sample. Example: Cramér's *V* near 0 means two categories barely go together.
+:::
+
+- The p-value says whether chance explains the pattern; the effect size says how big it is
 
 ## The Variables Choose the Test
 
-- Message length is a ratio variable: an exact count of characters
-- Gaming status is a nominal variable with two values
-- A numeric outcome compared across two groups calls for the t-test
-- Two categorical variables call for chi-square instead
+- Two categorical variables: **chi-square**
+- A numeric outcome across two groups: the **t-test**
+- A numeric outcome across three or more groups: **ANOVA**
+- Two numeric variables: **linear regression**
 - Write down the level of measurement of each variable first. The test follows from those two levels
 
 ## The Variables Choose the Test (cont.)
@@ -93,7 +96,90 @@ That is the whole logic of a test, applied to two groups instead of one coin.
 - It reloads `data/twitch_analysis.RDS` and keeps six columns under fixed names: `outcome`, `group2`, `group3`, `predictor`, `cat_a`, `cat_b`
 - Every test block the R Companion writes uses those names, so run this block first
 - For your own study, change only this block: put your own column after each `=`
-- These slides use the original names; after the Settings block, write `outcome` for `message_length` and `group2` for the two groups
+- These slides use the original column names; each test block writes the same test with the fixed names
+
+## Two Categories: Chi-Square
+
+- In the R Companion panel, under **Test**, **Chi-square test with Cramer's V** writes this same test for `cat_a` and `cat_b`
+
+```r
+asks <- analysis %>%
+  mutate(has_question = str_detect(message,
+                                   fixed("?")))
+
+counts <- xtabs(~ has_question + channel_type,
+                data = asks)
+counts
+chi <- chisq.test(counts)
+chi
+cramers_v(counts, adjust = FALSE)
+```
+
+- Does a message contain a question mark, and does that depend on the kind of channel?
+- `str_detect()` marks each message TRUE or FALSE; `xtabs()` counts the grid
+
+## Two Categories: Chi-Square (cont.)
+
+```
+            channel_type
+has_question gaming non-gaming
+       FALSE  28804       3239
+       TRUE    2501        218
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  counts
+X-squared = 12, df = 1, p-value = 0.0005321
+```
+
+- `X-squared` is 12.00 on 1 df, *p* < .001; N is the four cells added up, 34,762
+- On a two-by-two grid R applies Yates' correction; the worksheet's three-by-two grid does not
+
+## Two Categories: Chi-Square (cont.)
+
+```
+Cramer's V |       95% CI
+-------------------------
+0.02       | [0.01, 1.00]
+
+- One-sided CIs: upper bound fixed at [1.00].
+```
+
+- Cramér's *V* of 0.02 is negligible: significant, and close to no link at all
+- With 34,762 messages, a trivial pattern clears .05; the t-test shows the same thing next
+
+## Which Cells Drive It
+
+```r
+round(chi$expected, 1)
+round(chi$stdres, 2)
+```
+
+```
+            channel_type
+has_question gaming non-gaming
+       FALSE 28856.4     3186.6
+       TRUE   2448.6      270.4
+            channel_type
+has_question gaming non-gaming
+       FALSE   -3.5        3.5
+       TRUE     3.5       -3.5
+```
+
+- `expected`: each cell's count if the categories were unrelated; the smallest, 270.4, is well above 5
+- `stdres`: each cell's standardized residual; beyond 2 or -2, the cell is off
+- Non-gaming chat holds fewer question-mark messages than expected (-3.5); on a two-by-two grid all four residuals share one size
+
+## The Gap and the Doubt
+
+- Message length is a number and gaming status has two groups, so the test is the t-test
+- In the example data, gaming channels averaged 28.49 characters per message, non-gaming channels 33.70
+    - That is a difference of a little over five characters
+- The doubt about that gap is not idle
+    - Split any group in two at random and the two averages differ
+- The gap could be real, or it could be ordinary sampling wobble
+
+The histogram cannot tell the two apart, because both produce a gap.
 
 ## Running the Test
 
@@ -154,10 +240,6 @@ mean in group FALSE  mean in group TRUE
 
 ## Reading the p-value
 
-::: {.define}
-**p-value:** how likely a gap at least this big would be if the null hypothesis were true. Below .05 is called *statistically significant*.
-:::
-
 - If the two groups truly shared one mean length,
     - a gap this large would occur in fewer than one sample in a thousand
 - So the data are surprising under that assumption
@@ -174,10 +256,6 @@ Chance alone is an unconvincing explanation for the gap. That is the entire cont
 - **It is not** a measure of how much the difference matters
 
 ## How Big Is the Difference
-
-::: {.define}
-**Effect size:** how big a difference or a relationship is, on a scale that does not grow with the sample. Example: Cohen's *d* of -0.13 for gaming against non-gaming message length.
-:::
 
 - **For a gap between two means, the effect size is Cohen's *d***
     - It states the gap in units of the natural variation in the data
@@ -359,76 +437,6 @@ pwr::pwr.t2n.test(n1 = 4, n2 = 26,
 - Here that is *d* = 1.56, far past large, so this sample could only have found a huge difference
 - Task 3.3 of the worksheet runs the same check on your thirty hand-coded messages
 
-## Two Categories: Chi-Square
-
-```r
-asks <- analysis %>%
-  mutate(has_question = str_detect(message,
-                                   fixed("?")))
-
-counts <- xtabs(~ has_question + channel_type,
-                data = asks)
-counts
-chi <- chisq.test(counts)
-chi
-cramers_v(counts, adjust = FALSE)
-```
-
-- Does a message contain a question mark, and does that depend on the kind of channel?
-- `str_detect()` marks each message TRUE or FALSE; `xtabs()` counts the grid
-
-## Two Categories: Chi-Square (cont.)
-
-```
-            channel_type
-has_question gaming non-gaming
-       FALSE  28804       3239
-       TRUE    2501        218
-
-	Pearson's Chi-squared test with Yates' continuity correction
-
-data:  counts
-X-squared = 12, df = 1, p-value = 0.0005321
-```
-
-- `X-squared` is 12.00 on 1 df, *p* < .001; N is the four cells added up, 34,762
-- On a two-by-two grid R applies Yates' correction; the worksheet's three-by-two grid does not
-
-## Two Categories: Chi-Square (cont.)
-
-```
-Cramer's V |       95% CI
--------------------------
-0.02       | [0.01, 1.00]
-
-- One-sided CIs: upper bound fixed at [1.00].
-```
-
-- Cramér's *V* of 0.02 is negligible: significant, and close to no link at all
-- The same lesson as the t-test: with 34,762 messages, a trivial pattern clears .05
-
-## Which Cells Drive It
-
-```r
-round(chi$expected, 1)
-round(chi$stdres, 2)
-```
-
-```
-            channel_type
-has_question gaming non-gaming
-       FALSE 28856.4     3186.6
-       TRUE   2448.6      270.4
-            channel_type
-has_question gaming non-gaming
-       FALSE   -3.5        3.5
-       TRUE     3.5       -3.5
-```
-
-- `expected`: each cell's count if the categories were unrelated; the smallest, 270.4, is well above 5
-- `stdres`: each cell's standardized residual; beyond 2 or -2, the cell is off
-- Non-gaming chat holds fewer question-mark messages than expected (-3.5); on a two-by-two grid all four residuals share one size
-
 ## Four Groups, Four Means
 
 ```
@@ -565,12 +573,26 @@ League of Legends-Just Chatting -16.403935 -19.3428158 -13.465055 0.0000000
 ## What Regression Is
 
 ::: {.define}
-**Regression:** a model that estimates how an outcome variable changes with one or more other variables. Example: predicting message length from gaming status.
+**Regression:** a model that estimates how an outcome variable changes with one or more other variables. Example: predicting message length from the hour of the day.
 :::
+
+## A Number or a Category
+
+::: {.define}
+**Dummy variable:** a category recoded as 0 and 1 so a regression can use it. Example: non-gaming is 0 and gaming is 1.
+:::
+
+- The outcome is always a number, such as message length
+- **A number as predictor:** the slope is the change per one-unit step, such as characters per hour
+- **A category as predictor:** R turns it into a dummy, and the slope is the gap between the two group means
+    - A category with *k* groups takes *k* - 1 dummies, each compared with one baseline group
+- **In your worksheet and paper, regression takes two numbers;** a category goes to the t-test or ANOVA
 
 ## Regression Re-Derives the t-test
 
-- In the R Companion panel, under **Test**, **Linear regression** writes this same code with `outcome` and `predictor`, where `predictor` is a number (the hour of the day)
+- In the R Companion panel, under **Test**, **Linear regression** writes `lm(outcome ~ predictor)`, and the Settings block keeps `predictor` a number (the hour of the day)
+- Pick linear regression for a number and a category, and **Check my test choice** says it does not fit
+- The code below gives `lm()` the gaming dummy only to show what a t-test is underneath
 
 ```r
 fit_lm <- lm(message_length ~ is_gaming, data = analysis)
@@ -604,7 +626,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 - `(Intercept)`, 33.70, is the non-gaming mean
-- `is_gamingTRUE`, **-5.21**, is the slope: exactly the gap the t-test found, written as a baseline plus an adjustment
+- `is_gamingTRUE` is the dummy (gaming is 1); its slope, **-5.21**, is exactly the gap the t-test found, written as a baseline plus an adjustment
 - `Pr(>|t|)` is each row's p-value; `1.75e-12` reads as *p* < .001
 
 ## Regression Re-Derives the t-test (cont.)
@@ -636,8 +658,8 @@ is gaming [TRUE] |      -0.13 | [-0.16, -0.09]
 
 ## One Framework, Three Faces
 
-- A t-test is a regression with one two-level explanatory variable
-- An ANOVA is a regression with one many-level explanatory variable
+- A t-test is a regression with one dummy variable: two groups
+- An ANOVA is a regression with *k* - 1 dummies: three for the four games
 - Regression is the general form of both
     - Its `t` differs from Welch's because regression pools the two spreads
     - The coefficient itself is identical
@@ -651,7 +673,7 @@ All three are the general linear model, wearing three different names.
 **Residual:** the gap between a real value and the value the model predicts for it. Example: if the model predicts 29 characters and the message has 400, the residual is 371.
 :::
 
-- A model's credibility rests on its residuals, and `plot(fit)`, where `fit` is the model the **Linear regression** block saves, draws four diagnostic plots
+- A model's credibility rests on its residuals, and `plot(fit_lm)`, where `fit_lm` is the model the **Linear regression** block saves, draws four diagnostic plots
     - Residuals against fitted values: checks linearity and equal spread
     - A Q-Q plot: checks whether the residuals are normally distributed
     - Leverage: checks whether one point is carrying the result

@@ -292,7 +292,7 @@ summary(fit_lm)
 
 - `lm()` fits the model and `summary()` prints it; the `Coefficients` table is the part to read
 - `(Intercept)`, 33.70, is the non-gaming mean, the baseline
-- `is_gamingTRUE`, **-5.21**, is the slope: the adjustment for gaming channels, exactly the gap the t-test found
+- `is_gamingTRUE`, **-5.21**, is the slope: R made gaming status a dummy variable (0 for non-gaming, 1 for gaming), so the slope is exactly the gap the t-test found
 - A regression is a baseline plus an adjustment
 
 ## From a Difference to a Model (cont.)
@@ -334,7 +334,7 @@ F-statistic: 49.79 on 1 and 34760 DF,  p-value: 1.747e-12
 
 - `Multiple R-squared: 0.00143` says gaming status accounts for about a tenth of a percent of the variation
 - `505 observations deleted` are the unlabeled messages
-- The R Companion's **Linear regression** (in its panel, under **Test**) writes these same lines with `predictor` as the hour of the day
+- The R Companion's **Linear regression** (in its panel, under **Test**) writes these lines with `predictor`, a number (the hour of the day): in your worksheet, regression takes two numbers
 
 ## Checkpoint
 

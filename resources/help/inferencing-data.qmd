@@ -220,6 +220,7 @@ work* in the same guide moves it: [MC 451](../../guides/mc451/11-render-a-quarto
 | **t-test** | The test for a number across two groups, such as message length for commentary and reaction. |
 | **ANOVA** | The test for a number across three or more groups, such as message length across the three viewer bands. |
 | **Linear regression** | The test for two numbers. It fits a straight line and reports its slope: how much one number changes when the other goes up by one. |
+| **Dummy variable** | A category recoded as 0 and 1 so a regression can use it; its slope is the gap between the two group means. The class example uses one to show that a t-test is a regression. Your own regression uses two numbers. |
 | **Degrees of freedom (df)** | A number each test reports beside its result, set by how many groups and rows went into it. You copy it into the report. |
 | **Confidence interval** | A range of values the true effect probably falls in. A wide interval means the estimate is uncertain. |
 | **Null result** | A test that is not significant. It means the data could not tell the pattern apart from chance, not that there is no pattern. |
