@@ -14,12 +14,12 @@ format:
 
 ## Today's Agenda
 
-- Choose your test before you run it
-- Report the result in one line of statistics, then in one plain sentence
-- A model write-up for each test
-- Report an effect size every time, and a result that is not significant
-- The White Paper, assigned today
-- Your own questions: the variables and the test for each
+- Choosing the test
+- Reporting the result
+- A model for each test
+- Effect sizes and null results
+- The White Paper
+- Your own questions
 
 ## Today's Job
 
