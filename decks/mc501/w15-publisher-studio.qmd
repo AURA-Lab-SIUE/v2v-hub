@@ -112,6 +112,7 @@ An abstract goes in front, and the references at the back.
 
 - IMRaD structure, in APA 7 throughout
 - Effect sizes, confidence intervals, and power statistics, not only p-values
+    - A model write-up for each test: [Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
 - A pre-registration disclosure in the Methods
 - A Discussion that situates the finding in your theoretical literature
 

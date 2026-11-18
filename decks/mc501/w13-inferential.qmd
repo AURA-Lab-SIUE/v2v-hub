@@ -19,6 +19,7 @@ format:
 - The chi-square test for two categories
 - The t-test for two groups, and a result that is not significant
 - ANOVA for three or more groups, then regression
+- A model write-up for each test
 - The White Paper and its poster, both assigned tonight
 
 ## What We Build Today
@@ -168,6 +169,17 @@ has_question gaming non-gaming
 - `expected`: each cell's count if the categories were unrelated; the smallest, 270.4, is well above 5
 - `stdres`: each cell's standardized residual; beyond 2 or -2, the cell is off
 - Non-gaming chat holds fewer question-mark messages than expected (-3.5); on a two-by-two grid all four residuals share one size
+
+## Reporting the Chi-Square
+
+[Chapter 13, two categorical variables](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#two-categorical-variables-chi-square){.eyebrow}
+
+> Whether a message contained a question mark was associated with whether its channel was gaming,
+> χ²(1, *N* = 34,762) = 12.00, *p* < .001, Cramér's *V* = .02.
+
+- **χ²(1, *N* = 34,762) = 12.00:** the statistic, its df, and the number of messages
+- **Cramér's *V* = .02:** the effect size, with no zero before the point because *V* never passes 1
+- **Common mistake:** leaving out *N*, or calling the link strong because *p* is tiny
 
 ## The Gap and the Doubt
 
@@ -354,7 +366,7 @@ a ninety-five percent confidence interval you can plot.
     - That is the negligible effect size made visible
 
 > Gaming channels produced shorter chat messages on average than non-gaming channels
-> (28.49 vs. 33.70 characters), Welch's *t*(3768.7) = -4.94, *p* < .001, Cohen's *d* = -0.13.
+> (28.49 vs. 33.70 characters; *n* = 31,305 and 3,457), Welch's *t*(3768.7) = -4.94, *p* < .001, Cohen's *d* = -0.13.
 
 - In the R Companion panel, under **Test**, **APA numbers to check your sentence** prints these numbers from your own run
 - Check your sentence against it
@@ -569,6 +581,18 @@ League of Legends-Just Chatting -16.403935 -19.3428158 -13.465055 0.0000000
 - Five of the six pairs differ; Just Chatting and Hearthstone do not (`p adj` 0.26)
 - With eta squared at 0.02, the separations are clean and small
 
+## Reporting the ANOVA
+
+[Chapter 13, more than two groups](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#more-than-two-groups-anova){.eyebrow}
+
+> Mean message length differed across the four game categories (*N* = 13,433), *F*(3, 13429) = 92.26,
+> *p* < .001, η² = .02. Tukey's HSD showed that five of the six pairs differed; Just Chatting and
+> Hearthstone did not (*p* = .26).
+
+- ***F*(3, 13429):** categories minus 1, then messages minus categories
+- **η² = .02:** game category accounts for about two percent of the variation
+- **Common mistake:** naming which pairs differ from *F* alone; the Tukey line does that
+
 ## What Regression Is
 
 ::: {.define}
@@ -678,6 +702,18 @@ All three are the general linear model, wearing three different names.
     - Leverage: checks whether one point is carrying the result
 - Whether an added variable earns its place in the model is a model-comparison question
     - Compare adjusted R², AIC, or a nested F-test, never raw R²
+
+## Reporting the Regression
+
+[Chapter 13, from difference to model](https://aura-lab.siue.edu/v2v/chapters/chapter13.html#from-difference-to-model-regression){.eyebrow}
+
+> Gaming status, coded 1 for gaming and 0 for non-gaming channels, was associated with message length,
+> *b* = -5.21, *SE* = 0.74, *t*(34760) = -7.06, *p* < .001, *R*² = .001.
+
+- **Coded 1 and 0:** gaming status is a dummy variable, so the slope is the gap between the groups
+- ***b* = -5.21:** the slope, in characters; ***R*² = .001:** the share of variation it explains
+- **Common mistake:** writing that gaming causes shorter messages; a slope describes an association
+- In the worksheet the predictor is a number, so the slope is characters per hour; the sentence keeps this shape
 
 ## Discrete or Continuous
 
