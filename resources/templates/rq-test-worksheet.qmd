@@ -14,7 +14,7 @@ How to use this worksheet: copy each research question or hypothesis from your P
 | Variables it names | *List each variable, such as message length or channel type.* |
 | Discrete or continuous | *Write discrete or continuous beside each variable.* |
 | Outcome | *The variable you measure or count.* |
-| Other variable | *The variable the outcome is compared across or predicted from. Write none if the question names only one variable.* |
+| Other variable | *The variable the outcome is compared across or predicted from. Write none if the question names only one variable. A one-variable question is answered with descriptives; a one-variable prediction (such as 'mostly X') uses a chi-square goodness-of-fit test. See [When Your Question Has One Variable](https://aura-lab.siue.edu/v2v-hub/resources/help/one-variable.html).* |
 | Test | *Chi-square, Welch t-test, one-way ANOVA, linear regression, or counts and percents.* |
 
 # Question 2
@@ -52,7 +52,7 @@ How to use this worksheet: copy each research question or hypothesis from your P
 | Discrete | Discrete | Chi-square, with Cramér's V |
 | Continuous | Two groups | Welch t-test, with Cohen's d |
 | Continuous | Three or more groups | One-way ANOVA, with eta squared |
-| Continuous | Continuous | Linear regression, with R² |
+| Continuous | Continuous, or two groups coded 0 and 1 | Linear regression, with R² |
 | One variable alone | None | Counts and percents, no test |
 
-In your paper, regression takes two numbers. A category goes to the t-test or ANOVA.
+Two groups coded 0 and 1 (a dummy variable) give the same answer in a t-test and in a regression.

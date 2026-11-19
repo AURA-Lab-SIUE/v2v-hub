@@ -43,13 +43,13 @@ Today we settle that question. There are no formulas to memorize, only questions
 - The Inferencing Data worksheet is part 3 of the Twitch job
 - Four hypotheses first, written before any code
 - Then four tests: chi-square, t-test, ANOVA, and regression
-    - The t-test runs on the thirty messages you hand-coded
 - Every test is reported with its effect size
 
-[MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) · [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
+## Get the Worksheet
 
-- Click the link: your browser saves 13-inferencing-data-mc451.qmd in your Downloads folder
-- Move it into your workspace's top folder, next to README.md and the Data Wrangling worksheet: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+- Click the [MC 451 worksheet](https://aura-lab.siue.edu/v2v-hub/starters/13-inferencing-data-mc451.qmd) link: your browser saves 13-inferencing-data-mc451.qmd in your Downloads folder
+- Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+- Check your work against the [Inferencing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/inferencing-data.html)
 
 ## What a Test Actually Asks
 
@@ -78,7 +78,7 @@ a little. Samples wobble.
 - **A numeric outcome compared across two groups:** the **t-test**
 - **A numeric outcome compared across three or more groups:** **ANOVA**
 - **Two categorical variables:** **chi-square**, `chisq.test()`
-- **Two numeric variables:** **linear regression**, such as message length by hour of the day
+- **A numeric outcome and a numeric or dummy-coded predictor:** **linear regression**, such as message length by hour of the day
 - **The example:** message length is a count, and gaming status has two values, so the t-test
 
 ## Two Terms From That List
@@ -335,7 +335,7 @@ F-statistic: 49.79 on 1 and 34760 DF,  p-value: 1.747e-12
 
 - `Multiple R-squared: 0.00143` says gaming status accounts for about a tenth of a percent of the variation
 - `505 observations deleted` are the unlabeled messages
-- The R Companion's **Linear regression** (in its panel, under **Test**) writes these lines with `predictor`, a number (the hour of the day): in your worksheet, regression takes two numbers
+- The R Companion's **Linear regression** (in its panel, under **Test**) writes these lines with `predictor`, a number (the hour of the day), as in your worksheet
 
 ## Checkpoint
 
