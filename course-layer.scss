@@ -190,5 +190,5 @@ main .v2v-crumbs a:not(.btn) { color: var(--v2v-red); }
 #v2v-search-status { color: var(--v2v-text); }
 
 @media print {
-  .v2v-coursebar, .v2v-crumbs, .v2v-steps { display: none !important; }
+  .v2v-coursebar, .v2v-coursebar.v2v-coursebar-only, .v2v-crumbs, .v2v-steps { display: none !important; }
 }
