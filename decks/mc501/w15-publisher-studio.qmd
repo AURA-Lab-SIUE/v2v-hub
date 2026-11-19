@@ -13,15 +13,16 @@ format:
 
 ## Today's Agenda
 
-- A report that rebuilds itself from the code
-- IMRaD, and the three transparency markers the Methods must carry
-- Two studio blocks: the paper, then the poster
-- Publishing the site, and the checks that run before it goes live
+- A report that rebuilds itself
+- IMRaD and transparency markers
+- Two studio blocks
+- Publishing the site
 
-Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd)
+## Tonight's Starter File
 
-- Click the link: your browser saves `14-publishing-your-paper.qmd` in your Downloads folder
+- Click the [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd) link: your browser saves `14-publishing-your-paper.qmd` in your Downloads folder
 - Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
+- It lists tonight's steps and what each one prints
 
 ## Tonight Is a Studio
 
@@ -36,8 +37,6 @@ Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.s
 - The study has every hard part behind it
     - A question, a theory, and a reliability-tested codebook
     - A defensible sample, a clean dataset, three figures, and a test from Week 13
-- And it still lives in pieces
-    - A codebook here, a script there, output that scrolled past
 
 A study scattered across a dozen files is raw material. Tonight gives it a form.
 
@@ -93,6 +92,8 @@ time rather than pasted in.
 - The report can be checked
     - Anyone with the source files and the data renders the same results (Peng, 2011)
 
+## One Click Renders It
+
 - The idea predates Quarto and R: Knuth named it literate programming in 1984
 - Here the "one click" is **Quarto: Preview** (**Ctrl+Shift+K**, **Cmd+Shift+K** on a Mac)
 - It **renders**: it runs every chunk and builds the finished page
@@ -101,16 +102,14 @@ time rather than pasted in.
 
 - **Introduction:** the question and why it matters, built from your Research Proposal
 - **Methods:** what was done, in enough detail for someone else to repeat it
-    - The codebook, the sampling, the reliability check, and the wrangling
 - **Results:** what was found, without interpretation
-    - The figures, the means, and the test statistic with its df, p-value, and effect size
 - **Discussion:** what the result means, plus the honest limits
 
 An abstract goes in front, and the references at the back.
 
 ## The White Paper, Specifically
 
-- IMRaD structure, in APA 7 throughout
+- IMRaD structure, one citation style used consistently
 - Effect sizes, confidence intervals, and power statistics, not only p-values
     - A model write-up for each test: [Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
 - A pre-registration disclosure in the Methods
@@ -192,6 +191,9 @@ book:
 - Get `index.qmd` rendering, even if it is mostly headings
 - Copy `twitch_analysis.RDS` into your project and give `03-results.qmd` its setup chunk: [Chapter 14 starter](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd), Steps 4 to 6
 - Move your Results section into `03-results.qmd` first, since you already have it
+
+## Studio Block One (cont.)
+
 - Replace every pasted number with an inline `r` expression
 - Replace every pasted figure with a chunk that produces it
 - Then write the Discussion paragraph that reports both the size and the significance of your result
@@ -244,8 +246,7 @@ portfolio is due. The checks exist so the last step of a long study is the calm 
 ## What Earns Space on a Poster
 
 - A poster is a ninety-second pitch, not a paper at a larger font
-- Pick the one figure that lands the finding in thirty seconds
-    - Give that figure the most space on the board
+- Pick the one figure that lands the finding in thirty seconds, and give it the most space
 - Cut every sentence that shows effort rather than result
 - Numbers survive the cut. Hedges do not
 
@@ -262,8 +263,7 @@ Your reader is standing up, holding a drink, four feet away.
 ## Common Failures in the Last Week
 
 - The site renders on your machine and nowhere else, because renv drifted
-- A figure vanishes from the site
-    - Its chunk depends on an object that exists only in your console
+- A figure vanishes from the site, because its chunk uses an object that exists only in your console
 - The poster is exported at screen resolution and printed at full size, so it is blurry
 - The QR code points at a private repository
 
@@ -302,8 +302,7 @@ walked it once.
 ## Before Finals Week
 
 - Due Monday, December 7, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#inferencing-data-in-r), 100 points
-- Due Monday, December 7, 11:59 PM: push your full coded dataset to your project repository ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html))
-    - This is the [White Paper's dated step](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster)
+- Due Monday, December 7, 11:59 PM: push your full coded dataset to your project repository, the [White Paper's dated step](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster) ([guide 12](https://aura-lab.siue.edu/v2v-hub/guides/mc501/12-commit-and-push-with-git.html))
 - Due Monday, December 7, 11:59 PM: [Week 15 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
 - Due Friday, December 18, 11:59 PM: [White Paper and conference poster](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#white-paper-and-conference-poster), 200 points
     - One ZIP file holding the paper PDF, the poster PDF, and your AI-use log, plus the live URL of your site pasted into the submission

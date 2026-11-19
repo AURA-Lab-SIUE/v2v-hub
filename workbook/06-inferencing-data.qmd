@@ -269,7 +269,7 @@ So how did a negligible difference come back significant? Sample size. The test 
 
 ## Step 6: Write It Up, APA Format
 
-Academic writing uses the American Psychological Association (APA) format for reporting statistical results. Here's the template:
+The American Psychological Association (APA) format is one widely used style for reporting statistical results, and the one this template follows:
 
 > A chi-square test of independence was conducted to examine the relationship between [Variable 1] and [Variable 2]. The analysis revealed a [significant/non-significant] association, χ²([df]) = [X.XX], *p* [< .001 / = .XXX]. The effect size was [small/medium/large] (Cramér's V = [.XXX]). Examination of standardized residuals indicated that [specific finding about which cells deviated from expected values].
 
@@ -298,7 +298,7 @@ Notice what that paragraph does. It reports the real difference, it refuses to i
 ::: {.callout-important}
 ## Both Paragraphs Are Required
 
-The APA paragraph is for researchers. The journalist translation is for everyone else. You need both in your assignment and in your White Paper. Being able to write in both registers is what makes a communication researcher different from a statistics student.
+The statistics paragraph is for researchers. The journalist translation is for everyone else. You need both in your assignment and in your White Paper. Being able to write in both registers is what makes a communication researcher different from a statistics student.
 :::
 
 ## Try It Yourself

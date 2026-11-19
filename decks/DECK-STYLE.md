@@ -183,7 +183,11 @@ Every slide must fit without overflowing at a 33px root font. In practice:
    course: he makes pacing calls in the room. An eyebrow carries a source or a URL
    and nothing else.
 3. A closing **"Before next time"** slide with concrete preparation (what to read,
-   what is due), then **`## Questions?` with an empty body as the final slide**
+   what is due), **only when something is due or must be done before the next
+   class** (owner, 2026-11-18). MC 451 meets twice a week, so the test is the next
+   session two or three days later; MC 501 meets weekly, so it is next week's
+   session. Work due later goes on its own slide, such as
+   `## Inferencing Data, Due December 4` or `## Coming Due`. Then **`## Questions?` with an empty body as the final slide**
    (owner, 2026-09-25, applying DECK-CONSTRUCTION.md section 3 to v2v).
    **Every due line carries a date:** `Due Monday, October 12, 11:59 PM`. Never
    "due tonight", "due today", "due this week", "due next week" or a bare "Due
@@ -193,10 +197,23 @@ Every slide must fit without overflowing at a 33px root font. In practice:
    Take the date from the course's assignments page, never from the schedule row
    alone.
 4. **`## Today's Agenda` as the first content slide**, naming the parts of the
-   session (owner, 2026-09-25, DECK-CONSTRUCTION.md section 2). The deck title and
+   session (owner, 2026-09-25, DECK-CONSTRUCTION.md section 2). **Signposts only**
+   (owner, 2026-11-18): each line is a short section name, such as "Choosing the
+   test" or "The White Paper", with no explanation, no link, and no download step. The deck title and
    subtitle are the topic plus source anchor, so they satisfy slide 1 already.
 5. **Title Case on every slide title**, 5 words or fewer (DECK-CONSTRUCTION.md
    section 4). Sentence case is the defect, settled 2026-09-25.
+
+## Slide load (owner, 2026-11-18)
+
+- **One job per slide, about five short lines at most.** Content and logistics
+  (a download, moving a file, opening a worksheet) go on separate slides, and
+  detail moves to the slide where it is taught.
+- **Prose on a slide must add information.** A slide that only lists or announces
+  things uses a plain bulleted list, never a sentence that strings the items
+  together.
+- **Never refer to an example, analogy, or term the deck has not set up.** If it
+  comes from an earlier session, say which one or set it up again.
 
 ## Lab and studio sessions
 

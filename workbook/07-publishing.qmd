@@ -154,7 +154,7 @@ The scaffold's `03-results.qmd` holds guidance text and no code. You build it fr
 |-----------|----------------|-------------------|
 | Frequency table | `knitr::kable()` formatted table with counts and percentages | Describing Data |
 | Bar chart | `ggplot2` publication-ready chart, labeled and captioned | Describing Data |
-| Test result | The test statistic with its degrees of freedom, its p-value, **and its effect size**, in APA format, plus the journalist translation | Inferencing Data |
+| Test result | The test statistic with its degrees of freedom, its p-value, **and its effect size**, in one reporting style such as APA, plus the journalist translation | Inferencing Data |
 
 ::: {.callout-warning}
 ## The Effect Size Is Not Optional
@@ -270,7 +270,7 @@ If `v2v::deploy_portfolio()` stops with a message the two fixes above do not cov
 - [ ] All IMRaD sections plus the abstract and reflection are complete and in your own words
 - [ ] Every reported number comes from inline R, with nothing retyped from the console
 - [ ] Test results include the statistic, its degrees of freedom, the p-value, and the effect size
-- [ ] `references.bib` contains all your citations (exported from Zotero) and renders in APA 7th edition
+- [ ] `references.bib` contains all your citations (exported from Zotero), and every reference uses the one citation style you chose
 - [ ] The full render (Step 10 of `14-publishing-your-paper.qmd`) produces both PDF and HTML without errors
 - [ ] The PDF in the `docs/` folder displays all sections
 - [ ] Your workspace repository is public and every change is committed and pushed

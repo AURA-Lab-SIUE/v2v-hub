@@ -13,15 +13,16 @@ format:
 
 ## Today's Agenda
 
-- Why a copy-and-paste write-up is fragile
-- A report that rebuilds itself from the code
-- IMRaD: the four sections of a report, and what each owes the reader
-- Publishing the site, and the checks that run before it goes live
+- Why copy-and-paste is fragile
+- A report that rebuilds itself
+- IMRaD
+- Publishing the site
 
-Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd)
+## Today's Starter File
 
-- Click the link: your browser saves 14-publishing-your-paper.qmd in your Downloads folder
+- Click the [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd) link: your browser saves 14-publishing-your-paper.qmd in your Downloads folder
 - Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
+- It lists today's steps and what each one prints
 
 ## Where the Study Stands
 
@@ -29,7 +30,6 @@ Today's steps and what each prints: [Chapter 14 starter file](https://aura-lab.s
 - You have a defensible sample and a clean dataset
 - You have three figures, and a test you ran in the Inference Lab
 - The hardest parts are behind you, and the study is still not done
-    - It lives in a script, a folder of images, and output you scrolled past
 
 Scattered across a dozen files, the study is raw material, not a report.
 
@@ -104,37 +104,27 @@ and shows only the plot.
 
 ## IMRaD, the Shape of a Report
 
-**I**ntroduction, **M**ethods, **R**esults, **D**iscussion, in that fixed order. The order is
-itself an argument.
+**I**ntroduction, **M**ethods, **R**esults, **D**iscussion, in that fixed order.
 
 - It carries a reader from why, to what was done, to what was found, to what it means
 - An abstract sits in front, and the references close it
 - `new_portfolio()` already created the section files: `01-introduction.qmd` through `05-reflection.qmd`, with `index.qmd` for the abstract and `references.qmd`
 
-IMRaD is not bureaucracy. It is a contract with the reader about where to look.
-
 ## Introduction and Methods
 
-**Introduction** states the question and why it is worth asking. For the example chat study
-that is the prospectus: do the two kinds of channel differ in message length, and what does
-theory lead you to expect?
-
-**Methods** says exactly what was done, in enough detail for someone else to repeat it: the
-codebook, the sampling, the reliability check, and the wrangling.
-
-Methods is the section that earns the reader's trust, and a reproducible document supports it best.
+- **Introduction:** the question, and why it is worth asking
+    - For the example study: do the two kinds of channel differ in message length, and what does theory lead you to expect?
+- **Methods:** what was done, in enough detail for someone else to repeat it
+    - The codebook, the sampling, the reliability check, and the wrangling
+- Methods is the section that earns the reader's trust
 
 ## Results and Discussion
 
-**Results** reports what was found, plainly and without interpretation: the figures, the
-distributions, the group means, and the test with its degrees of freedom, *p*, and effect size.
-
-**Discussion** says what the result means. For the example study, the difference is real but
-negligible, and the Discussion says what that implies for the opening question.
-
-Discussion is also where an honest study states its limits.
-
-A model write-up for each test: [Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
+- **Results:** what was found, without interpretation
+    - The figures, the group means, and the test with its degrees of freedom, *p*, and effect size
+- **Discussion:** what the result means, and the study's limits
+    - For the example study: a real difference, but a negligible one
+- A model write-up for each test: [Chapter 13](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
 
 ## One Book, Many Chapters
 
@@ -149,11 +139,14 @@ A model write-up for each test: [Chapter 13](https://aura-lab.siue.edu/v2v/chapt
 - A site in a folder on a laptop is still private
     - Publishing means giving the site a public address
 - The standard free option is GitHub Pages
+- Your paper's address goes into the White Paper submission, beside one ZIP file holding the paper PDF and your AI-use log
+
+## Publish in Two Steps
+
 - Commit and push first: [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html)
-- `v2v::deploy_portfolio(project)` runs the checks, then publishes the site: Steps 12 and 13 of the Chapter 14 starter file
+- Then `v2v::deploy_portfolio(project)` runs the checks and publishes the site: Steps 12 and 13 of the Chapter 14 starter file
     - `project` is your White Paper folder's name, set in Step 2 of that file
 - When it finishes, your paper is live at your repository's GitHub Pages address
-    - Paste that URL into the White Paper submission, beside one ZIP file holding the paper PDF and your AI-use log
 
 ## The Pre-Flight Checks
 
@@ -202,9 +195,12 @@ The last step of a long study should be the calm one.
 - Bring a rendered draft, not notes toward one
     - It does not have to be finished. It has to render
 - Bring your public URL, or the error message that is stopping you
+- Step by step: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html), [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc451/13-publish-your-site.html)
+
+## Coming Due
+
 - Due Friday, December 4, 11:59 PM: [Inferencing Data in R](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#inferencing-data-in-r), 100 points
 - Due Friday, December 4, 11:59 PM: your full coded corpus, pushed to your project repository ([White Paper dated step](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper))
 - Due Friday, December 18, 11:59 PM: [White Paper](https://aura-lab.siue.edu/v2v-hub/mc451-assignments.html#white-paper), 250 points
-- Step by step: [Render a Quarto Document](https://aura-lab.siue.edu/v2v-hub/guides/mc451/11-render-a-quarto-document.html), [Commit and Push with Git](https://aura-lab.siue.edu/v2v-hub/guides/mc451/12-commit-and-push-with-git.html), and [Publish Your Site](https://aura-lab.siue.edu/v2v-hub/guides/mc451/13-publish-your-site.html)
 
 ## Questions, Comments, or Concerns? {.titlecard}
