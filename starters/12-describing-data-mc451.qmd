@@ -9,6 +9,10 @@ execute:
   echo: true
 ---
 
+## Where this file goes
+
+Save this worksheet in the top folder of your course workspace, the folder open in VS Code, beside `README.md`, not inside `00_Inbox` or any other folder. Keep `twitch_analysis.RDS` in the folder named `data` beside it, or render stops with `cannot open the connection`: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html).
+
 ## The case
 
 You are the data analyst on a small study. Your client is the channel manager at a small creator
