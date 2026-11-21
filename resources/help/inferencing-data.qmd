@@ -116,6 +116,8 @@ block with `group2 = factor(channel_type)`; change that one line to your hand-co
 If R says `there is no package called 'effectsize'` (or `'pwr'`, in MC 501), see
 [When R prints an error](#errors).
 
+If your Data Wrangling worksheet did not produce `twitch_analysis.RDS`, download the reference copy, [twitch_analysis.RDS](../examples/twitch-demo/twitch_analysis.RDS){download="twitch_analysis.RDS"}, and move it from **Downloads** into the folder named `data`.
+
 ### Task 2.1: The test and its effect size {#task-2-1}
 
 `xtabs()` builds the grid of counts from a formula naming the two categories, the same grid as
