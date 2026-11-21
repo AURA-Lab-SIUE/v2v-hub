@@ -104,6 +104,8 @@ If R says `cannot open the connection`, this worksheet is not in the same folder
 folder from Data Wrangling. Move the worksheet into the top folder of your workspace: see
 [Find your way around VS Code](#around).
 
+If your Data Wrangling worksheet did not produce `twitch_analysis.RDS`, download the reference copy, [twitch_analysis.RDS](../examples/twitch-demo/twitch_analysis.RDS){download="twitch_analysis.RDS"}, and move it from **Downloads** into the folder named `data`.
+
 ### Task 1.1: Channel type {#task-1-1}
 
 There is no blank. Read the chunk line by line: it is the model for Tasks 1.2 and 1.3.
