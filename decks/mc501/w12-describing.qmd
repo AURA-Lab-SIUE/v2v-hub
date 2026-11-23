@@ -27,8 +27,8 @@ format:
 |---|---|---|
 | [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#data-wrangling-in-r), 50 points | Mon, Nov 16, 11:59 PM | Codes saved as a CSV tonight |
 | Pre-registration file committed | Mon, Nov 16, 11:59 PM | Research Proposal revised first, if it needs it |
-| [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#describing-data-in-r), 100 points | Mon, Nov 23, 11:59 PM | Started tonight, after Data Wrangling renders |
-| [Weekly reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal) | Mon, Nov 16 and Mon, Nov 23, 11:59 PM | The Week 12, then the Week 13 reading |
+| [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#describing-data-in-r), 100 points | Mon, Nov 30, 11:59 PM | Started tonight, after Data Wrangling renders |
+| [Weekly reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal) | Mon, Nov 16 and Mon, Nov 30, 11:59 PM | The Week 12, then the Week 13 reading |
 
 No class Nov 25: Thanksgiving Break.
 
@@ -309,7 +309,7 @@ Execution halted
 
 ## What We Build Today
 
-[Describing Data, 100 points, due Monday, November 23, 11:59 PM]{.eyebrow}
+[Describing Data, 100 points, due Monday, November 30, 11:59 PM]{.eyebrow}
 
 - Three figures and one table of descriptive statistics, built on the example data
     - A line chart for change over time, a bar chart for counts, a histogram for shape
@@ -1075,7 +1075,7 @@ You should now have:
 - **Due Monday, November 16, 11:59 PM:** [Data Wrangling in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#data-wrangling-in-r), 50 points
 - **By Monday, November 16, 11:59 PM:** commit your pre-registration file to your project repository
 - **Due Monday, November 16, 11:59 PM:** [Week 12 reading journal](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#weekly-reading-journal), 450 to 500 words
-- **Due Monday, November 23, 11:59 PM:** [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#describing-data-in-r), 100 points
+- **Due Monday, November 30, 11:59 PM:** [Describing Data in R](https://aura-lab.siue.edu/v2v-hub/mc501-assignments.html#describing-data-in-r), 100 points
     - The worksheet: tables, figures, diagnostics, alt text, and the disclosed choices
     - Check it against the [Describing Data risks guide](https://aura-lab.siue.edu/v2v-hub/resources/risks/describing-data.html)
 
