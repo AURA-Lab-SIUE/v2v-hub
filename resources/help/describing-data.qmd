@@ -104,6 +104,19 @@ If R says `cannot open the connection`, this worksheet is not in the same folder
 folder from Data Wrangling. Move the worksheet into the top folder of your workspace: see
 [Find your way around VS Code](#around).
 
+If R says `` Column `reaction_only` is not found ``, the table you saved in Data Wrangling does
+not hold your hand codes. Open your Data Wrangling worksheet, `11-wrangling-data.qmd`, from the
+[Explorer](#around). Look at two gray boxes in it. The one under the heading **Task 5.3** must
+hold a line that starts with `left_join(codes`, and the one under the heading **Part 7** must
+have no `___` left in it. If either box fails that test, the help for that
+task shows how to fill it: [Help with Task 5.3](data-wrangling.qmd#task-5-3) and
+[Help with Part 7](data-wrangling.qmd#part-7). Then, still in the Data Wrangling worksheet, click
+**Run Cell** on the gray box under **Setup** and on each gray box below it, top to bottom,
+through **Part 7**. Skip the gray box under **Task 0.2**: it would replace your filled coding
+sheet with an empty one. Last, open the Describing Data worksheet again from the Explorer and
+click **Run Cell** on the gray box under its **Setup** heading. It worked when R prints your two
+coded groups and the `NA` row.
+
 If your Data Wrangling worksheet did not produce `twitch_analysis.RDS`, download the reference copy, [twitch_analysis.RDS](../examples/twitch-demo/twitch_analysis.RDS){download="twitch_analysis.RDS"}, and move it from **Downloads** into the folder named `data`.
 
 ### Task 1.1: Channel type {#task-1-1}
