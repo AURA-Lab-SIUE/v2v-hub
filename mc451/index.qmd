@@ -33,38 +33,48 @@ The course follows *Vibes to Variables* (3rd Edition) in five parts. Each part h
 
 ### Part I: Foundation
 
+::: {.v2v-linklist}
 - [Phase I: The Journalist](../modules/01_journalist/index.qmd)
 - [Chapter 1: The Science of Storytelling](https://aura-lab.siue.edu/v2v/chapters/chapter01.html)
 - [Chapter 2: The Open Workspace](https://aura-lab.siue.edu/v2v/chapters/chapter02.html)
 - [Chapter 3: Knowing and Knowing Well](https://aura-lab.siue.edu/v2v/chapters/chapter03.html)
+:::
 
 ### Part II: Planning
 
+::: {.v2v-linklist}
 - [Phase II: The Architect](../modules/02_architect/index.qmd)
 - [Chapter 4: Intelligence Gathering](https://aura-lab.siue.edu/v2v/chapters/chapter04.html)
 - [Chapter 5: Theory as a Lens](https://aura-lab.siue.edu/v2v/chapters/chapter05.html)
 - [Chapter 6: The Prospectus](https://aura-lab.siue.edu/v2v/chapters/chapter06.html)
+:::
 
 ### Part III: Operationalization
 
+::: {.v2v-linklist}
 - [Phase III: The Builder](../modules/03_builder/index.qmd)
 - [Chapter 7: Structured Listening](https://aura-lab.siue.edu/v2v/chapters/chapter07.html)
 - [Chapter 8: From Vibes to Variables](https://aura-lab.siue.edu/v2v/chapters/chapter08.html)
 - [Chapter 9: The Rulebook and First Workspace](https://aura-lab.siue.edu/v2v/chapters/chapter09.html)
+:::
 
 ### Part IV: Execution
 
+::: {.v2v-linklist}
 - [Phase IV: The Analyst](../modules/04_analyst/index.qmd)
 - [Chapter 10: The Sample](https://aura-lab.siue.edu/v2v/chapters/chapter10.html)
 - [Chapter 11: Wrangling the Data](https://aura-lab.siue.edu/v2v/chapters/chapter11.html)
 - [Chapter 12: Visualizing the Narrative](https://aura-lab.siue.edu/v2v/chapters/chapter12.html)
 - [Practice: Pokemon Wrangling](../modules/04_analyst/practice-wrangling.qmd)
+:::
 
 ### Part V: Inference and Publication
 
+::: {.v2v-linklist}
 - [Phase V: The Publisher](../modules/05_publisher/index.qmd)
 - [Chapter 13: Making the Call](https://aura-lab.siue.edu/v2v/chapters/chapter13.html)
 - [Chapter 14: The One-Click Report](https://aura-lab.siue.edu/v2v/chapters/chapter14.html)
+:::
 
 ## Getting started {#getting-started}
 

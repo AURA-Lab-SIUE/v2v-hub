@@ -56,6 +56,7 @@ html, body { overflow-x: clip; }
   display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1.25rem;
 }
 .v2v-course-name {
+  display: inline-flex; align-items: center; min-height: 44px;
   font-weight: 800; color: var(--v2v-ink); font-size: 1.05rem; text-decoration: none;
 }
 a.v2v-course-name:hover { color: var(--v2v-red); }
@@ -64,7 +65,7 @@ a.v2v-course-name:hover { color: var(--v2v-red); }
   display: flex; flex-wrap: wrap; gap: 0 0.25rem;
 }
 .v2v-coursebar li a, .v2v-course-swap {
-  display: inline-flex; align-items: center; min-height: 2.5rem; padding: 0 0.55rem;
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 0.55rem;
   color: var(--v2v-text); font-weight: 600; text-decoration: none; border-radius: 6px;
   border-bottom: 2px solid transparent;
   transition: color .15s var(--v2v-ease), background-color .15s var(--v2v-ease);
@@ -90,12 +91,12 @@ html[data-v2v-course="mc501"] .v2v-coursebar[data-course="mc501"] { display: blo
 
 .v2v-search { display: flex; gap: 0.4rem; margin-left: auto; align-items: center; }
 .v2v-search input {
-  min-height: 2.5rem; width: 15rem; max-width: 100%; padding: 0 0.7rem;
+  min-height: 44px; width: 15rem; max-width: 100%; padding: 0 0.7rem;
   border: 1px solid var(--v2v-muted); border-radius: 6px;
   background: var(--v2v-raised); color: var(--v2v-text); font: inherit;
 }
 .v2v-search button {
-  min-height: 2.5rem; padding: 0 0.9rem; border-radius: 6px; border: 1px solid var(--v2v-red-fill);
+  min-height: 44px; padding: 0 0.9rem; border-radius: 6px; border: 1px solid var(--v2v-red-fill);
   background: var(--v2v-red-fill); color: var(--v2v-raised); font-weight: 700; font: inherit; font-weight: 700;
   cursor: pointer;
 }
@@ -154,6 +155,16 @@ main .v2v-crumbs a:not(.btn) { color: var(--v2v-red); }
 }
 .v2v-week dt, #v2v-this-week dt { font-weight: 700; color: var(--v2v-ink); }
 .v2v-week dd, #v2v-this-week dd { margin: 0; min-width: 0; overflow-wrap: break-word; }
+// 44 px tap floor (design audit 2026-11-23, rule C01): the slide and due links in the week lists,
+// the "full list" link, the phone steps list, the course homes' link lists (.v2v-linklist in
+// mc451/ and mc501/), and a standalone link marked .v2v-tap.
+.v2v-week dd a, #v2v-this-week a, .v2v-linklist li > a, .v2v-steps nav a, a.v2v-tap {
+  display: inline-flex; align-items: center; min-height: 44px;
+}
+// A short link such as "Open" is also at least 44 px wide.
+.v2v-week dd a, #v2v-this-week a { min-width: 44px; }
+.v2v-linklist li { margin-bottom: 0; }
+.navbar-toggler { min-width: 44px; min-height: 44px; }
 @media (max-width: 575.98px) {
   .v2v-week dl, #v2v-this-week dl { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
   .v2v-week dd, #v2v-this-week dd { margin-bottom: 0.6rem; }
@@ -177,7 +188,7 @@ main .v2v-crumbs a:not(.btn) { color: var(--v2v-red); }
 .v2v-search-page .v2v-search input { width: auto; flex: 1 1 auto; min-width: 0; }
 .v2v-search-courses { border: 0; padding: 0; margin: 0 0 1.25rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
 .v2v-search-courses legend { font-size: 1rem; font-weight: 700; color: var(--v2v-ink); margin-bottom: 0.25rem; width: 100%; }
-.v2v-search-courses label { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 2.5rem; cursor: pointer; }
+.v2v-search-courses label { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 44px; cursor: pointer; }
 .v2v-search-courses input { width: 1.1rem; height: 1.1rem; accent-color: var(--v2v-red-fill); }
 .v2v-search-courses input:focus-visible { outline: 3px solid var(--v2v-info); outline-offset: 2px; }
 #v2v-results h2 { font-size: 1.25rem; }

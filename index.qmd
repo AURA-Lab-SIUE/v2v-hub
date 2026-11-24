@@ -51,4 +51,4 @@ The free textbook, [*Vibes to Variables*](https://aura-lab.siue.edu/v2v/), has f
 **Office:** Dunham Hall 1017
 **Office Hours:** TuTh 12:30 to 1:45 PM in person, or remote Tu/W/Th 3:00 to 5:00 PM by appointment
 
-[How the course tools fit together](how-it-works.qmd)
+[How the course tools fit together](how-it-works.qmd){.v2v-tap}
