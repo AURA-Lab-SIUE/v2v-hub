@@ -76,6 +76,13 @@ lines with `___`. Delete the unfinished lines.
   **Run Cell** on the gray box under **Setup** and on each gray box below it, top to bottom,
   down to the one that showed the error. It worked when that chunk prints no message that begins
   with `Error`.
+- `argument ... is missing, with no default`: one line of a gray box ran by itself, so it had
+  nothing to work on. Click **Run Cell** at the top left of that gray box, which runs all of its
+  lines together. It worked when R prints no message that begins with `Error`.
+- `is an unrecognized escape`, or `does not exist` for a file in `data`: in the file name between
+  the quotation marks, use the slash `/` (the key with `?` on it), never `\`, and put no slash
+  before `data`, as in `"data/coding-form.csv"`. The name must match the file in `data` letter for
+  letter. Then click **Run Cell** again.
 - Any other error: follow *Explain an R Error*:
   [MC 451](../../guides/mc451/03-explain-an-r-error.md) or
   [MC 501](../../guides/mc501/03-explain-an-r-error.md).
@@ -139,7 +146,8 @@ To code in a spreadsheet:
 4. Save it as a CSV with the same name, in the same folder. In Excel: **File**, then
    **Save As**, then choose **CSV UTF-8 (Comma delimited)** in the file type list. In Google
    Sheets: **File**, then **Download**, then **Comma Separated Values (.csv)**, then move the
-   downloaded file into `data` in place of the old one. In Numbers: **File**, then
+   downloaded file into `data` in place of the old one. Google Sheets names the download
+   `coding-form - coding-form.csv`; rename it `coding-form.csv` so the worksheet finds it. In Numbers: **File**, then
    **Export To**, then **CSV**.
 
 To code inside VS Code instead, with no spreadsheet and no saving step, follow *Read and Code
