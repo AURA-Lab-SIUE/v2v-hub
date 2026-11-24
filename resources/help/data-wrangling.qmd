@@ -265,8 +265,24 @@ lines with `codes <- coded_data %>% clean_names()`.
 
 ### Task 5.2: Make the codes a labeled factor {#task-5-2}
 
-The first blank is the function that makes a factor. The second is the two code values, in the
-same order as the labels. With the instructor's codes the count is `commentary` `17` and
+The first blank is the function that makes a factor. The
+[dplyr cheat sheet](../cheat-sheets/dplyr.qmd#factor-store-a-category-in-the-order-you-choose)
+has it. The second is the two code values, in the same order as the labels: the first value in
+`levels` gets the first label, and the second value gets the second label. Numbers go in without
+quotation marks, separated by a comma.
+
+The same pattern on a different column, where a survey stored its answers as `1`, `2`, and `3`:
+
+```r
+mutate(answer = factor(answer,
+                       levels = c(1, 2, 3),
+                       labels = c("no", "maybe", "yes")))
+```
+
+Here `1` becomes `no`, `2` becomes `maybe`, and `3` becomes `yes`. In Task 5.2, ask which code
+your codebook gives to commentary and which it gives to reaction, and list them in that order.
+
+With the instructor's codes the count is `commentary` `17` and
 `reaction` `13`; yours may differ by a few, because five of the thirty are deliberately
 borderline.
 
