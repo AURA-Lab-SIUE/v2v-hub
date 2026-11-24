@@ -149,6 +149,15 @@ plan is labeled **exploratory**.
 
 Methods carries the most weight because it carries the three transparency markers.
 
+## Two Discussion Moves
+
+- **Show interest** in what another person said
+    - "Your point about sample size changes how I read this result"
+- **Ask them to say more**
+    - "What in the statement makes you think that?"
+
+A comment that only agrees gives the room nothing new to answer.
+
 ## Exercise: Not Only a Threshold {.discuss}
 
 [Wasserstein and Lazar (2016)]{.eyebrow}
@@ -162,6 +171,27 @@ The word doing the work in that sentence is *only*.
 
 - The result: gaming messages average 28.5 characters, non-gaming 33.7; *p* below .001, Cohen's *d* = -0.13
 - For a reader who ignores the *p*-value, which number shows whether the gap matters?
+
+## Your Questions on the Statement
+
+[Wasserstein and Lazar (2016)]{.eyebrow}
+
+- Ask a question you brought about the statement, or one that came up tonight
+- A good question has more than one defensible answer
+    - When is a result too small to be worth reporting?
+- Answer the last speaker before you add a new point
+
+## Rate Your Own Discussion
+
+[Scale adapted from Tara Lineweaver, Butler University]{.eyebrow}
+
+- **4:** the room knows more because of something I said
+- **3:** I asked a question, and other people answered it
+- **2:** I spoke, mostly to agree or to repeat a point
+- **0:** I added nothing tonight
+- Name one classmate whose comment changed your thinking
+
+This rating has no points.
 
 ## One Book, Many Chapters
 
