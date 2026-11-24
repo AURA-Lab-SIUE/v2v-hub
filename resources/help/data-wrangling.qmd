@@ -301,9 +301,19 @@ worked when R prints a small table with a `commentary` row and a `reaction` row 
 The blank is the name of the column both tables share. Only your thirty messages carry a code;
 every other message is `NA` on this variable, and that is correct.
 
+To see a table's column names, click in the **R (AURA)** terminal, type `names(codes)`, and press
+**Enter**; then do the same with `names(analysis)`. The key is the name on both lists. It is never
+a label such as `commentary`, which is a value inside a column, and never `reaction_only`, the
+column the join is adding, because `analysis` does not have it yet. Either one makes R print
+`Join columns in x must be present in the data`, and then `count()` says
+`Column reaction_only is not found`.
+
 - The row count went up: the coding sheet has the same `id` twice.
 - The coded rows add to fewer than 30: an `id` in your coding sheet no longer matches a message.
   Check that the `id` column was not changed when you saved.
+- `names(analysis)` lists `reaction_only.x` and `reaction_only.y`: the join ran twice. Click
+  **Run Cell** on the gray box under **Task 4.2**, which builds `analysis` again, and then on
+  this one.
 
 ### Part 6: Missing values {#part-6}
 
