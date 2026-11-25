@@ -519,6 +519,8 @@ The final deliverable: your study written up in IMRaD, reporting the quantitativ
 
 **Rubric:** [White Paper rubric (PDF)](resources/rubrics/MC451-rubric-white-paper.pdf). It lists what each section carries, the source and citation requirements, and the points for each.
 
+**Template:** [white-paper-mc451.zip](starters/white-paper-mc451.zip), your White Paper as a set of files, one for each rubric row, with a note in each on what goes there. Unzip it into your workspace's top folder; Step 2 of the worksheet below walks each click.
+
 **Worksheet:** [14-publishing-your-paper.qmd](starters/14-publishing-your-paper.qmd){download="14-publishing-your-paper.qmd"}, run in class, takes your project from Results to a live site.
 
 **How-to:** [Render a Quarto document](guides/mc451/11-render-a-quarto-document.md), [Commit and push](guides/mc451/12-commit-and-push-with-git.md), and [Publish your site](guides/mc451/13-publish-your-site.md) step-by-step guides.

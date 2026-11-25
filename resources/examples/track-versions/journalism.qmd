@@ -1,0 +1,49 @@
+---
+title: "Journalism"
+subtitle: "MC 451 · One Study, Four Outputs · the No Man's Sky study as a news story, a numbers box, and a social post"
+---
+
+A journalist uses data to tell the public what happened and why it matters, and says plainly what the numbers cannot show. The study is the same one on the [One Study, Four Outputs](index.qmd) page. Here it becomes three pieces for a gaming or technology desk. Each is a course example written for practice, not a published story.
+
+## Key terms {#key-terms}
+
+- **Lede:** the first sentence of a news story, carrying the most important news.
+- **Nut graf:** the paragraph that says why the story matters, usually the second or third.
+- **Sidebar:** a short box beside a story that holds numbers or background the story itself does not have room for.
+- **Attribution:** saying where a fact came from, in the sentence that uses it.
+
+## Example 1: Data-driven news story {#story}
+
+**Players warmed most to No Man's Sky's Frontiers update, review sample shows**
+
+Nearly every player who reviewed No Man's Sky in the week of its 2021 Frontiers update recommended the game, a warmer reception than either of two earlier updates, according to an analysis of 750 Steam reviews.
+
+The game launched in 2016 to angry reviews and was rebuilt over years of free updates. How players greet each update shows whether that rebuilding is still working.
+
+In a random sample of 250 English reviews from each update's release week, 96 percent recommended Frontiers. The 2018 NEXT update drew 86 percent, and the 2019 Beyond update 78 percent. The gap is larger than chance would produce, though modest in size.
+
+Players who did not recommend the game tended to have played less: half had logged under 14 hours when they wrote, against about 38 hours for those who recommended it. Their reviews also ran longer, about 93 words on average against 58.
+
+The sample covers only players who chose to write in English, and Steam shows each review's current text, so some verdicts were changed later. The analysis shows how players responded, not why.
+
+## Example 2: By the numbers {#numbers}
+
+**No Man's Sky, three updates, one week each**
+
+- **750** Steam reviews and **750** posts on X, sampled at random
+- **96%** of Frontiers reviews recommended the game (Beyond: **78%**)
+- **126** reviews in the sample came the day after release, the busiest day
+- **13.6 hours:** middle playtime of reviewers who did not recommend the game
+- **0** reviews in the sample drew a reply from the developer
+
+*Source: course analysis of Steam reviews and #NoMansSky posts, release day plus or minus seven days.*
+
+## Example 3: Social post for the newsroom's account {#social}
+
+> Players liked No Man's Sky's Frontiers update best of the three we checked: 96% of sampled Steam reviews recommended it, vs. 78% for Beyond. The unhappy reviewers had played less, and wrote more. Full story: [link]
+
+What changed from the White Paper: the story leads with the result in everyday words, gives two or three numbers, and moves the test statistics out entirely. "Larger than chance would produce, though modest in size" carries the p-value and the effect size for a general reader. The limits stay in, in one plain paragraph, because a reader needs them to judge the claim.
+
+## The same data, other ways {#other-ways}
+
+[Strategic Communication and Advertising](strategic-communication.qmd) · [Media Production](media-production.qmd) · [back to One Study, Four Outputs](index.qmd)

@@ -13,16 +13,46 @@ format:
 
 ## Today's Agenda
 
+- Your White Paper template
 - A report that rebuilds itself
-- IMRaD and transparency markers
+- The paper, part by part
 - Two studio blocks
-- Publishing the site
+- Publishing the site and the poster
 
 ## Tonight's Starter File
 
 - Click the [Chapter 14 starter file](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd) link: your browser saves `14-publishing-your-paper.qmd` in your Downloads folder
 - Move it into your workspace's top folder, next to README.md: [Put a Worksheet in Your Workspace](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html)
 - It lists tonight's steps and what each one prints
+
+## Your White Paper Template
+
+- One folder, `white-paper`, with one file for each part of the paper
+- Each file holds a gray note: what goes there, and what the rubric looks for
+- It also holds `poster-template.pptx`, your poster already laid out
+- You paste in your writing and your code, and the paper renders
+
+::: {.define}
+**Template:** a set of files already laid out, which you fill with your own work. Example: `02-methods.qmd` already has a heading for each of the three transparency markers.
+:::
+
+## Get the Template
+
+- Click the [MC 501 White Paper template](https://aura-lab.siue.edu/v2v-hub/starters/white-paper-mc501.zip): your browser saves `white-paper-mc501.zip` in your Downloads folder
+- Right-click it, then **Extract All**, then **Extract** (on a Mac, double-click it)
+- Move the `white-paper` folder into your workspace's top folder, next to README.md
+- Step 2 of the Chapter 14 starter file walks each click
+
+## Your Code Runs Unchanged
+
+- The template runs its code from your workspace's top folder, where your worksheets run
+- So a line from a worksheet works as it is:
+
+```r
+analysis <- read_rds("data/twitch_analysis.RDS")
+```
+
+- That line goes once, into the `setup` chunk at the top of `03-results.qmd`
 
 ## Tonight Is a Studio
 
@@ -149,6 +179,50 @@ plan is labeled **exploratory**.
 
 Methods carries the most weight because it carries the three transparency markers.
 
+## One File per Row
+
+| Template file | Rubric row |
+|:--|:--|
+| `01-introduction.qmd` | Introduction and framing |
+| `02-methods.qmd` | Methods |
+| `03-results.qmd` | Results |
+| `04-discussion.qmd` | Discussion |
+| `index.qmd` and `references.qmd` | Abstract and references |
+| `05-reflection.qmd` | Reflection |
+
+## Introduction and Framing, 25
+
+- The question, why it matters now, and the gap
+- Your theoretical lens, and one rival lens that predicts something else
+- Each research question or hypothesis, traceable to the theory section
+
+## Methods, 55
+
+- Unit of analysis, population, frame, sampling method, and corpus size with its reason
+- How the codebook was built, and the wrangling steps in plain words
+- The three transparency markers, each under its own heading in `02-methods.qmd`
+- Without all three, Methods cannot reach full credit
+
+## Results, 40
+
+- Descriptive statistics for every coded variable
+- One test per research question, each with its effect size, confidence interval, and power
+- One robustness check: the same question tested another reasonable way
+- Two figures and one table, numbered, captioned, given alt text, and named in your text
+
+## Discussion, 40
+
+- The findings read through your lens and the rival lens
+- Significance and size, kept apart
+- The limits, including the single coder
+- What a second coder would have added, and which finding is most at risk
+
+## The Last Three Rows
+
+- **Abstract and references, 15:** 150 to 250 words; fifteen sources, ten of them peer-reviewed studies; one style, used throughout
+- **Reproducibility and publication, 15:** it renders, every number comes from the code, and it is live
+- **Reflection, 10:** what was harder than expected, what the data could not answer, and what you would change
+
 ## Two Discussion Moves
 
 - **Show interest** in what another person said
@@ -199,7 +273,7 @@ This rating has no points.
 project:
   type: book
 book:
-  title: "White Paper"
+  title: "Your White Paper's Title"
   chapters:
     - index.qmd
     - 01-introduction.qmd
@@ -208,18 +282,20 @@ book:
     - 04-discussion.qmd
     - 05-reflection.qmd
     - references.qmd
+  appendices:
+    - appendix-codebook.qmd
 ```
 
 ## One Book, Many Chapters (cont.)
 
 - `_quarto.yml` lists the chapters in order
-- The course package, v2v, wrote it for you with `new_portfolio()`, with the codebook and the journal as appendices
-- Open `_quarto.yml` from your White Paper folder in the **Explorer** panel and change the words after `title:`
+- The template wrote it for you, with your codebook as the appendix
+- Open `_quarto.yml` in the `white-paper` folder in the **Explorer** panel and change the words after `title:` and `author:`
 
 ## Studio Block One: White Paper
 
 - Get `index.qmd` rendering, even if it is mostly headings
-- Copy `twitch_analysis.RDS` into your project and give `03-results.qmd` its setup chunk: [Chapter 14 starter](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd), Steps 4 to 6
+- Add the line that reads your data to the setup chunk of `03-results.qmd`: [Chapter 14 starter](https://aura-lab.siue.edu/v2v-hub/starters/14-publishing-your-paper.qmd), Steps 4 to 6
 - Move your Results section into `03-results.qmd` first, since you already have it
 
 ## Studio Block One (cont.)
@@ -272,6 +348,31 @@ portfolio is due. The checks exist so the last step of a long study is the calm 
 - Background and hypotheses, then the methods in condensed form
 - Key results, with one or two `theme_v2v()` figures
 - Discussion and implications, plus a QR code to your pre-registration or portfolio
+
+## Your Poster Template
+
+- `poster-template.pptx`, in the `white-paper` folder: one PowerPoint slide, 48 by 36 inches
+- A box for each block, with its type size already set
+- Replace each box's text with that block's short version from your paper
+- Add your chart and QR code: [Build Your Conference Poster](https://aura-lab.siue.edu/v2v-hub/guides/mc501/18-build-your-conference-poster.html), Parts 1, 3, and 4
+
+## The Poster, Block by Block
+
+| Block | From the paper |
+|:--|:--|
+| Abstract | The abstract, cut to 100 words |
+| Background and hypotheses | Two or three sentences, then each hypothesis |
+| Method | What you studied, how many, how you coded it |
+| Key results | The chart for your main test |
+| Result and effect size | The sentence that reports your main test |
+| Discussion and limitation | What it means, and the limit your paper names |
+
+## One Study, Three Forms
+
+- **The site:** your paper at a public address, where anyone can read and check it
+- **The PDF:** the same paper as a document, for a client or a conference submission
+- **The poster:** the study at a glance, for a conference session
+- All three come from the same files, so a fix in one place reaches the site and the PDF on the next render
 
 ## What Earns Space on a Poster
 

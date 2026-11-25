@@ -8,10 +8,10 @@ execute:
 
 ## What this file is
 
-This file walks you through turning your White Paper project into the two things you submit:
-a PDF and a live website. You will give your Results chapter its data, write a sentence whose
-numbers come from the code, add a figure that redraws itself, render the whole paper, and
-publish it.
+This file walks you through turning your White Paper into the two things you submit: a PDF
+and a live website. You will set up the White Paper template, give your Results chapter its
+data, write a sentence whose numbers come from the code, add a figure that redraws itself,
+render the whole paper, and publish it.
 
 Every gray box below is a **code chunk**. Click **Run Cell** at its top left corner, or click
 inside the box and press **Ctrl+Enter** (Windows) or **Cmd+Enter** (Mac). Under each box this
@@ -24,8 +24,7 @@ Save this file in the **top folder** of your workspace, next to `README.md`, and
 there. The guide *Put a Worksheet in Your Workspace* shows how, step by step:
 [MC 451](https://aura-lab.siue.edu/v2v-hub/guides/mc451/14-put-a-worksheet-in-your-workspace.html)
 or [MC 501](https://aura-lab.siue.edu/v2v-hub/guides/mc501/14-put-a-worksheet-in-your-workspace.html).
-Your White Paper project is the folder you made with the Chapter 9 file
-(`09-coding-the-codebook.qmd`).
+Your White Paper is the `white-paper` folder from the White Paper template, which Step 2 sets up.
 
 The examples below use the Twitch data from the three worksheets, so you can see each step
 work before you change it. Your paper reports your own study: wherever a box names
@@ -52,22 +51,36 @@ then open VS Code again and rerun this step.
 remotes::install_github("AURA-Lab-SIUE/v2v-r", upgrade = "never")
 ```
 
-## Step 2: Point R at your White Paper project
+## Step 2: Set up the White Paper template
 
-This names your project folder once, so every later step can use it. **Change the name inside
-the quotes to the name you used in the Chapter 9 file.** If you do not remember it, it is the
-folder holding `_quarto.yml` and `01-introduction.qmd` in the **Explorer** panel.
+The template is your White Paper with every part already in place: one file per part of the
+paper, each matching a row of your rubric, with a note inside saying what goes there.
+
+1. Click your course's link. Your browser saves the ZIP file in your Downloads folder.
+   [MC 451 template](https://aura-lab.siue.edu/v2v-hub/starters/white-paper-mc451.zip) or
+   [MC 501 template](https://aura-lab.siue.edu/v2v-hub/starters/white-paper-mc501.zip).
+2. Open your Downloads folder, right-click the ZIP file, and click **Extract All**, then
+   **Extract** (on a Mac, double-click it). A folder named `white-paper` appears inside the
+   folder that opens.
+3. Move the `white-paper` folder into your workspace's top folder, next to `README.md`, the
+   way the guide *Put a Worksheet in Your Workspace* moves a file.
+4. In VS Code's **Explorer**, `white-paper` is now listed with `data` and `README.md`.
+
+Then run this chunk. It names the folder once, so every later step can use it.
 
 ```{r}
-project <- "twitch-portfolio"                      # your project folder's name
+project <- "white-paper"                           # your White Paper folder
 file.exists(file.path(project, "_quarto.yml"))     # TRUE means R found it
 ```
 
 **What you should see:** `[1] TRUE`.
 
-**If you see `[1] FALSE`,** the name in the quotes does not match your folder. Check the
-spelling against the Explorer panel, including capital letters and hyphens, and run the step
-again.
+**If you see `[1] FALSE`,** the `white-paper` folder is not in your workspace's top folder.
+Check the Explorer panel: `white-paper` should sit next to `README.md`, not inside another
+folder. Move it there and run the step again.
+
+The template's own `README.md`, inside `white-paper`, lists which file each part of your paper
+goes in.
 
 ## Step 3: Install the PDF tool
 
@@ -106,83 +119,55 @@ if (!requireNamespace("quarto", quietly = TRUE)) {
 **What you should see:** nothing if you already had it, or an install that ends with a line
 about the downloaded packages.
 
-## Step 4: Put your analysis file inside the project
+## Step 4: Check that your analysis file is in your data folder
 
-Your Results chapter renders from inside the project folder, so the file it reads has to be
-inside that folder too. The Data Wrangling worksheet saved `twitch_analysis.RDS` in the `data`
-folder at the top of your workspace. This copies it into the project's `data/derived` folder.
+The template runs its code from your workspace's top folder, the same place R starts when you
+run a line here. So your paper reads its data from the same `data` folder your worksheets used,
+and nothing needs to be copied.
 
 ```{r}
-file.copy(
-  from = "data/twitch_analysis.RDS",                         # where the worksheet saved it
-  to   = file.path(project, "data", "derived"),              # where the paper reads it
-  overwrite = TRUE                                           # replace an older copy
-)
-
-list.files(file.path(project, "data", "derived"))            # what is there now
+file.exists("data/twitch_analysis.RDS")          # TRUE means the file is there
 ```
 
-**What you should see:** `[1] TRUE`, then `[1] "twitch_analysis.RDS"`.
+**What you should see:** `[1] TRUE`.
 
-**If you see `[1] FALSE` and a warning that begins `problem copying`,** R could not find the file to copy. Check that `twitch_analysis.RDS`
-is in the `data` folder next to your worksheets, or change the `from` line to where it is.
+**If you see `[1] FALSE`,** `twitch_analysis.RDS` is not in the `data` folder. The Data
+Wrangling worksheet saves it there at its last step; check the Explorer panel under `data`.
 
 ## Step 5: Load the data the way your Results chapter will
 
-Before you write anything in the paper, check that the copy loads and has the rows you expect.
+Before you write anything in the paper, check that the file loads and has the rows you expect.
 
 ```{r}
 library(tidyverse)
 
-analysis <- read_rds(file.path(project, "data", "derived", "twitch_analysis.RDS"))
+analysis <- read_rds("data/twitch_analysis.RDS")
 nrow(analysis)                                   # one row per message
 ```
 
 **What you should see:** the list of attached packages, then `[1] 35267`.
 
-**If you see `cannot open the connection`,** Step 4 did not copy the file. Run Step 4 again.
+**If you see `cannot open the connection`,** the file is not in `data`. Go back to Step 4.
 
-## Step 6: Give your Results chapter its own setup chunk
+## Step 6: Give your Results chapter its data
 
 Your Results chapter is its own file, `03-results.qmd`, and it cannot see anything this worksheet
-loaded. It needs its own chunk that switches the packages on and loads the data. The line
-`#| include: false` keeps that chunk, and anything it prints, out of the finished paper.
+loaded. The template already gives it a setup chunk that switches the packages on. You add the
+one line that loads the data.
 
-**Paste this into `03-results.qmd`:**
+1. In the **Explorer** panel on the left, click `white-paper` to open it, then click
+   `03-results.qmd`. It opens in the editor.
+2. Find the chunk that starts with `#| label: setup`, near the top. Click just after
+   `library(v2v)` and press **Enter**. The blinking cursor moves to a new empty line inside the
+   chunk.
+3. Type this line, then click **File**, then **Save**:
 
-1. In the **Explorer** panel on the left, find the name of your White Paper project folder (the
-   name you typed in Step 2). If no files show under that name, click it once to open it.
-   `03-results.qmd` is in the list under it.
-2. Click `03-results.qmd`. It opens in the editor.
-3. Scroll to the bottom of that file, click just after the last character on its last line, then
-   press **Enter**. The blinking cursor moves to a new empty line.
-4. In the box below, drag from the line that reads ```` ```{r} ```` down to the line that reads
-   only ```` ``` ````, seven lines in all. The two lines of `~` marks, above and below them, stay
-   out. The seven lines turn a darker shade. Right-click them and click **Copy**.
-5. Click the `03-results.qmd` tab at the top of the editor, right-click the new empty line, and
-   click **Paste**. Change nothing in the pasted lines. The last seven lines of the file now match
-   the box.
-6. Click **File**, then **Save**. The round dot on the file's tab, at the top of the editor, goes
-   away.
-
-~~~~markdown
-```{r}
-#| label: setup
-#| include: false
-library(tidyverse)
-library(v2v)
-analysis <- read_rds("data/derived/twitch_analysis.RDS")
+```r
+analysis <- read_rds("data/twitch_analysis.RDS")
 ```
-~~~~
 
-The data line, `data/derived/twitch_analysis.RDS`, means: start in your White Paper project folder,
-go into the folder named `data`, then the folder named `derived`, and open the file. Step 4 put
-your file there, and its last line of output showed the file's name.
-
-**Do not click Run Cell on this chunk in `03-results.qmd`.** From there, Run Cell cannot find the
-data file, so it stops with `cannot open the connection`. If you already clicked it, that message
-does no harm and is not in your file, so leave the chunk as it is. Step 9 checks the chunk with
-Preview. Now go on to Step 7.
+This is the same line as in Step 5, unchanged. The line `#| include: false` at the top of the
+chunk keeps it, and anything it prints, out of the finished paper.
 
 ## Step 7: Write a sentence whose numbers come from the code
 
@@ -242,8 +227,8 @@ sentence with the real counts in it, and the histogram with its caption undernea
 **If you see `object 'analysis' not found`,** the setup chunk from Step 6 is missing or sits
 below the sentence. It has to come first.
 
-**If you see `cannot open the connection` in the preview,** the data file is not inside the
-project. Run Step 4 again.
+**If you see `cannot open the connection` in the preview,** the data line in the setup chunk
+does not match where the file is. Compare it with the line from Step 5, which worked.
 
 ## Step 10: Render the whole paper
 
@@ -255,9 +240,8 @@ quarto::quarto_render(project)
 ```
 
 **What you should see:** a stream of lines about each chapter, a section headed `Rendering
-PDF`, and last `Output created: docs/index.html`. A `docs` folder appears inside your project,
-and inside it a PDF named after your paper's title (`White-Paper.pdf` until you change the
-title in `_quarto.yml`).
+PDF`, and last `Output created: docs/index.html`. A `docs` folder appears inside `white-paper`,
+and inside it your paper's PDF, `white-paper.pdf`.
 
 **If you see `No TeX installation was detected`,** TinyTeX is missing. Go back to Step 3.
 
@@ -269,14 +253,14 @@ that line, save, and run this step again.
 The PDF is what you upload, so read it the way a grader will. This opens it in your PDF reader.
 
 ```{r}
-browseURL(file.path(project, "docs", "White-Paper.pdf"))
+browseURL(file.path(project, "docs", "white-paper.pdf"))
 ```
 
 **What you should see:** a title page and a table of contents, then the abstract, every section
-in order, the references, and the codebook and journal as appendices.
+in order, the references, and your codebook as Appendix A.
 
-**If you see an error that the file does not exist,** your title is no longer "White Paper," so
-the PDF has another name. Open the `docs` folder in the Explorer panel to find it.
+**If you see an error that the file does not exist,** Step 10 did not finish. Run it again and
+read its last lines.
 
 ## Step 12: Commit and push
 
@@ -335,7 +319,7 @@ printed. Do not try to publish by hand through the GitHub settings pages.
 
 Save, commit and push (Step 12), then publish again (Step 13). The site updates within a minute
 or two. You do not need Steps 1 to 4 again unless you open a new R session; then run Step 1 and
-Step 2 first.
+the last chunk of Step 2 first.
 
 ## When a line breaks
 

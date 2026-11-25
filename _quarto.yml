@@ -29,6 +29,9 @@ project:
     - "resources/help/*.qmd"
     # R cheat sheets (2026-11-05): one page per package, static code only with pasted real output, so CI renders them.
     - "resources/cheat-sheets/*.qmd"
+    # One Study, Four Outputs (2026-11-25): the MC 427 No Man's Sky study as a white paper, a campaign,
+    # a news story, and a production. Static pages, no R chunks; aggregates only.
+    - "resources/examples/track-versions/*.qmd"
     # Step-by-step guides, one set per course; the Markdown source lives in each teaching workspace on O:.
     - "guides/**/*.md"
     - "workbook/*.qmd"
@@ -47,6 +50,8 @@ project:
     # Starter files students DOWNLOAD and open in VS Code. Deliberately outside the
     # render list above: they are source to be handed over, not pages to be built.
     - "starters/*.qmd"
+    # White Paper templates (2026-11-25): one ZIP per course, a Quarto book students unzip into their workspace.
+    - "starters/*.zip"
     # The AI-use log students download and submit with every assignment (2026-10-17). Blackboard links
     # its published URL directly, so it stays served even if a page link to it changes.
     - "resources/MC451-501-AI-use-log.docx"

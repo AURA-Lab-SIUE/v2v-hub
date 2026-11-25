@@ -1,0 +1,54 @@
+---
+title: "Strategic Communication and Advertising"
+subtitle: "MC 451 · One Study, Four Outputs · the No Man's Sky study as a brief, a calendar, and an insight sheet"
+---
+
+A strategic communicator uses research to decide what a client should say, to whom, and when. The study is the same one on the [One Study, Four Outputs](index.qmd) page. Here it becomes three working documents for a brand team planning the launch of a game's next update. Each is a course example; Hello Games did not commission it.
+
+## Key terms {#key-terms}
+
+- **Creative brief:** a one-page plan that tells the people making an ad or campaign what it must do, for whom, and what it must say.
+- **Insight:** a finding about the audience that explains what they do and suggests what to say to them.
+- **Content calendar:** a day-by-day plan of what a brand posts, where, and why.
+- **KPI (key performance indicator):** the number a team agrees to watch to judge whether the campaign worked.
+
+## Example 1: Creative brief {#brief}
+
+| | |
+|:--|:--|
+| **Project** | Launch campaign for the game's next free update |
+| **Objective** | Keep the share of Steam reviews that recommend the game at or above the best recent launch (96 percent for Frontiers) through the first week |
+| **Audience** | Players returning for the update, and new players who arrive with it |
+| **Insight** | Players who did not recommend the game had played far less when they reviewed (half under 13.6 hours, against 37.9 hours for those who recommended it). The unhappy review comes early, before the game has had time to win the player over |
+| **Proposition** | Your first ten hours, made easy |
+| **Support** | A new-player guide and a returning-player "what changed" video, both ready on release day |
+| **Channels and timing** | Most posts and reviews arrive on release day and the day after; spend the effort there |
+| **Mandatories** | Platform names and store links; no claims the update cannot support |
+| **KPIs** | Share of reviews that recommend the game in days 0 to 7; review volume in days 0 to 2 |
+
+What changed from the White Paper: no tests and no p-values. The brief keeps one finding that explains behavior (hours played) and one that sets timing, and turns each into an instruction.
+
+## Example 2: Launch-window content calendar {#calendar}
+
+| Day | Channel | Post | Why, from the data |
+|:--|:--|:--|:--|
+| -7 | YouTube, Steam | Update trailer | Each of the three updates posted its trailer or launch announcement in the week before or on release day |
+| -1 | X | Release-time reminder with a short video clip | Posts with an image or video drew more likes (median 2 against 1) |
+| 0 | X, Steam | Launch post with video | Posts on X peak on release day (114 of 750) |
+| 1 | Steam, YouTube | New-player guide: the first ten hours | Reviews peak the day after release (126 of 750); unhappy reviewers had played less |
+| 2 | Steam | Patch notes and known fixes | 43 percent of reviews arrive from release day through day 2 |
+| 3 to 7 | X | Community screenshots, reposted with credit | After release, posts settle between about 55 and 75 a day in the sample, so talk continues all week |
+
+## Example 3: Audience insight sheet {#insight}
+
+**Three numbers for the launch team**
+
+- **96 percent:** Frontiers' share of recommending reviews, the best of the three updates studied (Beyond was 78 percent). The difference is real, and small to moderate in size.
+- **Day 1:** the busiest review day across the three updates, and every update's reviews peaked within two days of release. Release day is for announcing; the days right after are when players decide what to say about it.
+- **13.6 hours:** the middle playtime of players who did not recommend the game. Help new players through the first hours.
+
+**What this cannot tell you:** why Beyond drew more negative reviews. The data show when and how much, not the cause. A content analysis of what the negative reviews say would be the next study.
+
+## The same data, other ways {#other-ways}
+
+[Journalism](journalism.qmd) · [Media Production](media-production.qmd) · [back to One Study, Four Outputs](index.qmd)

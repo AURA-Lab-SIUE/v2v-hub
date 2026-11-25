@@ -13,6 +13,7 @@ format:
 
 ## Today's Agenda
 
+- The paper, part by part
 - Peer review, three rounds
 - Your revision list
 - The reflection
@@ -53,6 +54,60 @@ If your render is broken, say so now.
 - **Abstract and references:** 20
 - **Reproducibility and publication:** 25
 - **Reflection:** 15
+
+## One File per Row
+
+| Template file | Rubric row |
+|:--|:--|
+| `01-introduction.qmd` | Introduction |
+| `02-methods.qmd` | Methods |
+| `03-results.qmd` | Results |
+| `04-discussion.qmd` | Discussion |
+| `index.qmd` and `references.qmd` | Abstract and references |
+| `05-reflection.qmd` | Reflection |
+
+## Introduction, 30 Points
+
+- The question, stated in the first paragraph
+- The earlier studies it builds on, each one cited
+- The theory, doing work: what it leads you to expect
+- Each research question or hypothesis, numbered
+- A promise the study can keep
+
+## Methods, 60 Points
+
+- What one case is, where the material came from, and what was left out and why
+- The sample as you drew it, not as you planned it
+- How the codebook was built, and what you did with cases that did not fit
+- The wrangling steps, in plain words
+
+## Methods, 60 Points (cont.)
+
+- The reliability report, from your pilot re-code
+    - Your stability figure, and how it was produced
+    - One sentence naming the single-coder limitation
+- The full codebook goes in `appendix-codebook.qmd`; Methods points to it
+
+## Results, 50 Points
+
+- Counts or averages for every coded variable
+- The test, with its degrees of freedom, *p*, and effect size
+- At least three qualitative themes, each with an example from your material
+- Two figures and one table, numbered, captioned, given alt text, and named in your text
+- No interpretation yet
+
+## Discussion, 50 Points
+
+- The answer to the question your Introduction asked, first
+- Significance and size, kept apart: a small effect is small, even below .05
+- The limits, including the single coder
+- What a second coder would have added, and which finding is most at risk
+
+## The Last Three Rows
+
+- **Abstract and references, 20:** 150 to 250 words; twelve sources, eight of them peer-reviewed studies; one citation style, named on the first page
+- **Reproducibility and publication, 25:** it renders, every number comes from the code, and it is live
+- **Reflection, 15:** what was harder than expected, a rule that proved unclear, what the data could not answer, and what you would change
 
 ## Reading the Rubric
 
