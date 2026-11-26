@@ -68,7 +68,7 @@ The workbook lives inside the site at `workbook/` with a docked sidebar. The lab
 
 ### Prerequisites
 
-- [Quarto](https://quarto.org/docs/get-started/) (v1.4 or later)
+- [Quarto](https://github.com/quarto-dev/quarto-cli/releases/tag/v1.9.38) 1.9.38, the version CI pins in `.github/workflows/publish.yml` (1.11.9 writes code-line links that fail an accessibility check, and `tools/predeploy-check.ts` stops on them)
 - R (>= 4.1) with the `v2v` package installed (the workbook labs execute R code):
 
   ```r

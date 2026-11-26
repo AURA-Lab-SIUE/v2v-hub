@@ -20,6 +20,9 @@
 //      (tools/absolute-download-links.ts).
 //   6. The course layer ran (tools/course-layer.ts, 2026-11-14): the Pagefind search index
 //      exists and both course homes list their weeks.
+//   7. No page has an <a> with aria-label but no href or role (axe aria-prohibited-attr,
+//      WCAG 4.1.2; added 2026-11-25 after Quarto 1.11.9 wrote one on every code line of
+//      every deck). CI pins Quarto to 1.9.38 for this reason.
 //
 // Budgets (2026-11-06). The artifact was 238 MB, 194 MB of it in 44 decks that each
 // carried about 3 MB of unused Source Sans Pro. With that stripped the site is about
@@ -108,6 +111,17 @@ function checkDeck(path: string, html: string): void {
   }
 }
 
+// 7. An <a> with no href and no role may not carry aria-label (axe aria-prohibited-attr,
+// WCAG 4.1.2). Quarto 1.11.9 writes one before every numbered code line in a deck; the CI
+// pin to 1.9.38 in .github/workflows avoids it, and this check catches a version bump that
+// does not. Runs on every page, decks and guides alike.
+let ariaPages = 0;
+function checkAriaAnchors(path: string, html: string): void {
+  ariaPages++;
+  const labeled = [...html.matchAll(/<a\b(?![^>]*\s(?:href|role)=)[^>]*\saria-label=["'][^"']*["'][^>]*>/gi)];
+  if (labeled.length) failures.push(`${path}: ${labeled.length} link(s) with aria-label but no href, such as ${labeled[0][0].slice(0, 60)} (axe aria-prohibited-attr; check the Quarto version against the pin in .github/workflows/publish.yml)`);
+}
+
 if (!args.has("--no-render")) await render();
 
 try {
@@ -127,6 +141,7 @@ for await (const f of walk(OUT_DIR)) {
   if (size > FILE_BUDGET_MB * MB) failures.push(`${f}: ${(size / MB).toFixed(2)} MB is over the ${FILE_BUDGET_MB} MB per-file budget`);
   if (f.endsWith(".html")) {
     const html = await Deno.readTextFile(f);
+    checkAriaAnchors(f, html);
     // decks/mc451/index.html and decks/mc501/index.html inherit the folder's revealjs format
     // but are listing pages, not class decks, and are not rendered self-contained.
     if (/<div class="reveal"/.test(html) && !f.endsWith("/index.html")) {
@@ -144,6 +159,7 @@ console.log(`\nPages artifact (${OUT_DIR}/): ${(total / MB).toFixed(1)} MB in ${
 console.log("Largest files:");
 for (const [s, f] of sizes.slice(0, 10)) console.log(`  ${(s / MB).toFixed(2).padStart(6)} MB  ${f}`);
 console.log(`Decks checked for offline use and fonts: ${decks}`);
+console.log(`Pages checked for code-line ARIA (aria-label without href): ${ariaPages}`);
 
 if (decks === 0) failures.push(`no RevealJS decks found under ${OUT_DIR}/; the deck checks did not run`);
 
@@ -175,4 +191,4 @@ if (failures.length) {
   for (const f of failures) console.error(`  - ${f}`);
   Deno.exit(1);
 }
-console.log("\nPASS: within budget, every deck is self-contained and embeds the AURA fonts.");
+console.log("\nPASS: within budget, every deck is self-contained and embeds the AURA fonts, and no page has an aria-label link without href.");

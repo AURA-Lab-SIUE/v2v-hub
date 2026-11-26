@@ -17,7 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Same pin as publish.yml; see the note there.
       - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.9.38
       - name: Render site
         uses: quarto-dev/quarto-actions/render@v2
       # Size budget, self-contained decks, AURA fonts embedded: the same script a

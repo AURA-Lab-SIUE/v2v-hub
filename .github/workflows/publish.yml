@@ -20,7 +20,13 @@ jobs:
       cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
+      # Pinned to the version contributors render with locally. Quarto 1.11.9 puts an
+      # aria-label on the empty anchor before each numbered code line, which axe reports
+      # as aria-prohibited-attr (WCAG 4.1.2) on every deck with code. Change the pin only
+      # after the predeploy check passes on the new version.
       - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.9.38
       - name: Render site
         uses: quarto-dev/quarto-actions/render@v2
       # Same gate as the pull-request check and the local pre-merge script: size budget,
