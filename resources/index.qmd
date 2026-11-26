@@ -67,6 +67,22 @@ A finished submission for six assignments, so you can see the form before you wr
 :::
 
 :::{.resource-card}
+#### White Paper Templates
+
+Your White Paper as a set of files, one for each rubric row, with a note in each on what goes there. Unzip it into your workspace's top folder.
+
+[MC 451 template (ZIP)](../starters/white-paper-mc451.zip){.btn .btn-sm .btn-secondary} [MC 501 template, with the poster (ZIP)](../starters/white-paper-mc501.zip){.btn .btn-sm .btn-secondary}
+:::
+
+:::{.resource-card}
+#### One Study, Four Outputs
+
+One real study, the MC 427 No Man's Sky data, published as a white paper, a campaign brief, a news story, and a documentary treatment.
+
+[One Study, Four Outputs](examples/track-versions/index.qmd){.btn .btn-sm .btn-secondary}
+:::
+
+:::{.resource-card}
 #### R Cheat Sheets
 
 One page per package covering every R command the course uses: a plain sentence per command, a worked example on the Twitch data with the exact output R prints, the same call for your own columns, and the error you are most likely to hit.

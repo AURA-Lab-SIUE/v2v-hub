@@ -1,0 +1,54 @@
+---
+title: "Media Production"
+subtitle: "MC 451 · One Study, Four Outputs · the No Man's Sky study as a treatment, a pitch, and a short video plan"
+---
+
+A media producer uses research to find the story, check that it is true, and plan what the audience will see and hear. The study is the same one on the [One Study, Four Outputs](index.qmd) page. Here it becomes three pieces for a short documentary and a social video. Each is a course example, not a commissioned production.
+
+## Key terms {#key-terms}
+
+- **Treatment:** a short prose description of a film or video before it is made: its story, its structure, and how it will look.
+- **Logline:** the whole story in one sentence.
+- **Pitch one-sheet:** a single page that sells a project to a producer or channel.
+- **Shot list:** the plan of each shot, in order, with what is on screen and what is heard.
+
+## Example 1: Documentary treatment {#treatment}
+
+**Working title:** Second Launch
+
+**Logline:** A game that failed at launch tries to win its players back one free update at a time, and the players keep score.
+
+**Treatment.** We open on release day for the 2018 NEXT update: a counter of player reviews climbing on screen. The film follows three updates across three years. Each act begins a week before release, with the trailer and the waiting, and ends a week after, when the reviews are in.
+
+Act one is NEXT: most reviewers recommend the game, 86 percent in our sample. Act two is Beyond, the stumble: the share falls to 78 percent, and the film stays with the players who were not convinced. Across all three updates, they had played far less than the players who stayed. Act three is Frontiers, the warmest week of the three, at 96 percent.
+
+The data give the film its shape: in every act, reviews peak within two days of release. That beat repeats in each act: the counter climbing, then settling.
+
+**Look and sound.** Animated charts built from the study, in one consistent style; gameplay footage and the official trailers, cleared with the publisher; interviews with players and with people who make live games. No review is read aloud word for word: the film paraphrases, the way the data's handling rule asks.
+
+## Example 2: Pitch one-sheet {#pitch}
+
+| | |
+|:--|:--|
+| **Title** | Second Launch |
+| **Format** | 12-minute documentary for a gaming channel on YouTube, plus three 60-second cuts |
+| **Hook** | The comeback is measured: 750 player reviews across three updates show when players turned, and when they did not |
+| **Why now** | Live games are rebuilt in public, and players judge each update within days |
+| **What we have** | The analysis, its two charts, and the dates of every trailer and announcement |
+| **What we need** | Footage clearance from the publisher; two to four player interviews |
+
+## Example 3: 60-second vertical video plan {#short}
+
+| Time | On screen | Voice-over |
+|:--|:--|:--|
+| 0 to 5 s | Title card: "Do players forgive a game?" | "This game launched to angry reviews in 2016." |
+| 5 to 20 s | Bar chart builds: 86%, 78%, 96% | "Then it kept updating. We checked 250 reviews from each of three updates." |
+| 20 to 35 s | Line chart: posts and reviews by day, release day marked | "Players post the day it drops, and review in the days right after." |
+| 35 to 50 s | Text: "13.6 hours" beside "37.9 hours" | "The players who didn't recommend it had played a lot less." |
+| 50 to 60 s | End card with the source | "Reviews are only the people who chose to write. But they show the turn." |
+
+What changed from the White Paper: the order. The paper goes question, method, result; the video goes hook, story, result, with the method in one line at the end. Each number appears alone on screen, and the limits are said aloud, briefly.
+
+## The same data, other ways {#other-ways}
+
+[Strategic Communication and Advertising](strategic-communication.qmd) · [Journalism](journalism.qmd) · [back to One Study, Four Outputs](index.qmd)

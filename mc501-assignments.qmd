@@ -492,6 +492,8 @@ The final deliverable: your study written up in IMRaD, rendered to PDF, publishe
 
 **Rubric:** [White Paper and conference poster rubric (PDF)](resources/rubrics/MC501-rubric-white-paper-and-conference-poster.pdf). It lists what each section of the paper carries, including the three transparency markers, what the poster shows, and the points for each.
 
+**Template:** [white-paper-mc501.zip](starters/white-paper-mc501.zip), your White Paper and the poster, already laid out as a set of files, one for each rubric row, with a note in each on what goes there. Unzip it into your workspace's top folder; Step 2 of the worksheet below walks each click.
+
 **Worksheet:** [14-publishing-your-paper.qmd](starters/14-publishing-your-paper.qmd){download="14-publishing-your-paper.qmd"}, run in class, takes your project from Results to a live site.
 
 **Poster:** [Build Your Conference Poster](guides/mc501/18-build-your-conference-poster.md) walks through the 48 by 36 inch slide, the QR code to your site, and the PDF.
