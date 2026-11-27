@@ -149,7 +149,7 @@ The paper carries the three transparency markers a reviewer looks for: a **data 
 
 ### The conference poster
 
-The poster is a separate requirement shared with MC 500: one appropriately large PowerPoint slide (48 by 36 inches recommended, 36 by 24 inches accepted) with a QR code to your published site, saved as a PDF ([guide 18](../../guides/mc501/18-build-your-conference-poster.md)). It is assigned in Week 13 alongside the white paper and worked in the Week 15 studio session.
+The poster is a separate requirement shared with MC 500: one appropriately large PowerPoint slide (48 by 36 inches recommended, 36 by 24 inches accepted) with a QR code to your published site, saved as a PDF ([guide 18](../../guides/mc501/18-build-your-conference-poster.md)). It is assigned in Week 13 alongside the white paper and worked in the Week 15 studio session. You present it in person on Friday, December 11, at 11:00 AM, and then turn in the revised poster PDF with the White Paper on Friday, December 18, 11:59 PM.
 
 ## Submission (MC 501)
 
