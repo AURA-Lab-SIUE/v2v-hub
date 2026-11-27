@@ -481,6 +481,8 @@ The final deliverable: your study written up in IMRaD, rendered to PDF, publishe
 
 **Dated step, Monday, December 7, 11:59 PM:** push your full coded dataset to your project repository. Your Methods reports stability from your pilot re-code; there is no second re-code. Nothing about your analysis is due that day.
 
+**Poster dates:** have your poster ready to print by Friday, December 4, and present it in person on Friday, December 11, at 11:00 AM. After the presentation, revise the digital copy using the feedback you get, and turn in the poster PDF with your White Paper on Friday, December 18, 11:59 PM.
+
 <details class="syl-policy">
 <summary>What to submit, and the rubric</summary>
 
